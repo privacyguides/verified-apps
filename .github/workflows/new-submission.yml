@@ -11,11 +11,6 @@ concurrency:
 jobs:
   parse:
     name: Parse Submission
-    # if: |
-    #   (
-    #   github.event.label.name == 'Unchecked' &&
-    #   github.event.label.name == 'Android'
-    #   )
     runs-on: ubuntu-latest
     outputs:
       packageName: ${{ steps.setOutputs.outputs.packageName }}
@@ -82,6 +77,7 @@ jobs:
     name: F-Droid
     runs-on: ubuntu-latest
     needs: parse
+    continue-on-error: true
 
     env:
       PACKAGE_NAME: ${{ needs.parse.outputs.packageName }}
@@ -146,6 +142,7 @@ jobs:
     name: Accrescent
     runs-on: ubuntu-latest
     needs: parse
+    continue-on-error: true
 
     env:
       PACKAGE_NAME: ${{ needs.parse.outputs.packageName }}
@@ -163,30 +160,38 @@ jobs:
           packageName: ${{ env.PACKAGE_NAME }}
 
       - name: Print App Info
+        id: accrescentInfo
         env:
           DOWNLOAD_INFO: ${{ steps.appInfo.outputs.downloadInfo }}
         run: |
           printf '%s\n' "$DOWNLOAD_INFO" | jq .
+          firstUrl=$(printf '%s\n' "$DOWNLOAD_INFO" | jq -r '.split_download_info[0].url')
+          firstApk=$(basename $firstUrl)
+          echo "First URL: $firstUrl"
+          echo "APK Basename: $firstApk"
+          echo "apkUrl=$firstUrl" >> "$GITHUB_OUTPUT"
+          echo "apkName=$firstApk" >> "$GITHUB_OUTPUT"
+
+      - name: Restore APK Cache
+        id: apkCache
+        uses: actions/cache@v5
+        with:
+          path: ${{ steps.accrescentInfo.outputs.apkName }}
+          key: accrescent-${{ env.PACKAGE_NAME }}-${{ steps.accrescentInfo.outputs.apkName }}
 
       - name: Download APKs
+        if: steps.apkCache.outputs.cache-hit != 'true'
         id: appDownload
         env:
-          DOWNLOAD_INFO: ${{ steps.appInfo.outputs.downloadInfo }}
+          DOWNLOAD_INFO: ${{ steps.accrescentInfo.outputs.apkUrl }}
         run: |
-          apk_dir="accrescent-${PACKAGE_NAME}"
-          mkdir -p "$apk_dir"
-          while IFS= read -r url; do
-            curl -fsSL "$url" -o "$apk_dir/$(basename "$url")"
-          done < <(printf '%s\n' "$DOWNLOAD_INFO" | jq -r '.split_download_info[].url')
-          ls -la "$apk_dir"
-          echo "apkPath=$(ls -1 $apk_dir | head -1)" >> "$GITHUB_OUTPUT"
+          wget "$DOWNLOAD_INFO"
 
-      # Currently only checking the first APK, presumably all the same?
       - name: Get (First) APK Signature
         id: appSignature
         uses: ./.github/actions/get-signature
         with:
-          path: accrescent-${{ env.PACKAGE_NAME }}/${{ steps.appDownload.outputs.apkPath }}
+          path: ${{ steps.accrescentInfo.outputs.apkName }}
 
       - name: Write Summary
         env: 
@@ -242,7 +247,7 @@ jobs:
         env:
           PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION: python
         run: |
-          echo "version=$(./gplay-apk-downloader/gplay check-version net.ivpn.client 2>&1 | grep '^Version Code:' | sed 's/^Version Code: //') >> $GITHUB_OUTPUT
+          echo "version=$(./gplay-apk-downloader/gplay check-version net.ivpn.client 2>&1 | grep '^Version Code:' | sed 's/^Version Code: //')" >> $GITHUB_OUTPUT
         
       - name: Restore APK Cache
         id: apkCache
@@ -251,7 +256,6 @@ jobs:
           path: ${{ env.PACKAGE_NAME }}-${{ steps.appVersion.outputs.version }}.apk
           key: gplay-${{ env.PACKAGE_NAME }}-${{ steps.appVersion.outputs.version }}
 
-      # Currently only checking the first APK, presumably all the same?
       - name: Download APK
         if: steps.apkCache.outputs.cache-hit != 'true'
         env:
