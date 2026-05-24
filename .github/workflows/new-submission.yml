@@ -1,0 +1,78 @@
+name: Process Submission
+
+on:
+  issues:
+    types: [labeled, unlabeled]
+
+jobs:
+  parse:
+    # if: |
+    #   (
+    #   github.event.label.name == 'Unchecked' &&
+    #   github.event.label.name == 'Android'
+    #   )
+    runs-on: ubuntu-latest
+    outputs:
+      packageName: ${{ steps.setOutputs.outputs.packageName }}
+      packageSignature: ${{ steps.setOutputs.outputs.packageSignature }}
+
+    steps:
+      - uses: stefanbuck/github-issue-parser@v3.2.5
+        id: issue-parser
+        with:
+          template-path: .github/ISSUE_TEMPLATE/app-submission.yml
+
+      - name: Print jsonString
+        env:
+          JSON_STRING: ${{ steps.issue-parser.outputs.jsonString }}
+        run:
+          echo "$JSON_STRING"
+          echo "${{ github.event.opened.labels }}"
+
+      - name: Set outputs
+        id: setOutputs
+        env:
+          JSON_STRING: ${{ steps.issue-parser.outputs.issueparser_verification_info }}
+        
+        run: |
+          input="$JSON_STRING"
+
+          echo "$input"
+
+          stripped="${input#\`\`\`}"
+          stripped="${stripped%\`\`\`}"
+          packageName=$(printf '%s\n' "$input" | sed -n '2p')
+          packageSignature=$(printf '%s\n' "$input" | sed -n '3p')
+          export packageName packageSignature
+
+          echo "Package Name: $packageName"
+          echo "Signature: $packageSignature"
+
+          is_valid_package_name() {
+            [[ "$1" =~ ^[a-z][a-z0-9_]*(\.[a-z][a-z0-9_]+)+$ ]]
+          }
+          is_valid_sha256_colon() {
+            [[ "$1" =~ ^([0-9A-Fa-f]{2}:){31}[0-9A-Fa-f]{2}$ ]]
+          }
+          errors=0
+          if ! is_valid_package_name "$packageName"; then
+            echo "Invalid packageName: $packageName" >&2
+            errors=1
+          fi
+          if ! is_valid_sha256_colon "$packageSignature"; then
+            echo "Invalid packageSignature: $packageSignature" >&2
+            errors=1
+          fi
+          if (( errors )); then
+            exit 1
+          fi
+
+          echo "packageName=$packageName" >> "$GITHUB_OUTPUT"
+          echo "packageSignature=$packageSignature" >> "$GITHUB_OUTPUT"
+
+          cat "$GITHUB_OUTPUT"
+
+      - name: Print outputs
+        run:
+          echo "${{ steps.setOutputs.outputs.packageName }}"
+          echo "${{ steps.setOutputs.outputs.packageSignature }}"
