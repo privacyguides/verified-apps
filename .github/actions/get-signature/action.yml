@@ -24,5 +24,4 @@ runs:
         echo "SHA-256: $sha256"
         formattedSig=$(printf '%s' "$sha256" | tr '[:lower:]' '[:upper:]' | sed -E 's/(..)/\1:/g; s/:$//')
         echo "Formatted: $formattedSig"
-        echo "$formattedSig" >> $GITHUB_STEP_SUMMARY
         echo "formattedSig=$formattedSig" >> "$GITHUB_OUTPUT"

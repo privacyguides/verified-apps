@@ -86,9 +86,6 @@ jobs:
     env:
       PACKAGE_NAME: ${{ needs.parse.outputs.packageName }}
 
-    # outputs:
-    #   fdroidSignature: ${{ steps. }}
-
     steps:
       - name: Download Repository
         uses: actions/checkout@v6
@@ -138,6 +135,13 @@ jobs:
         with:
           path: ${{ steps.appDownload.outputs.apkPath }}
 
+      - name: Write Summary
+        env: 
+          SIGNATURE: ${{ steps.appSignature.outputs.signature }}
+        run: |
+          echo "$PACKAGE_NAME" >> $GITHUB_STEP_SUMMARY
+          echo "$SIGNATURE" >> $GITHUB_STEP_SUMMARY
+
       - name: Upload APK
         uses: actions/upload-artifact@v7
         with:
@@ -170,3 +174,37 @@ jobs:
           DOWNLOAD_INFO: ${{ steps.appInfo.outputs.downloadInfo }}
         run: |
           printf '%s\n' "$DOWNLOAD_INFO" | jq .
+
+      - name: Download APKs
+        id: appDownload
+        env:
+          DOWNLOAD_INFO: ${{ steps.appInfo.outputs.downloadInfo }}
+        run: |
+          apk_dir="accrescent-${PACKAGE_NAME}"
+          mkdir -p "$apk_dir"
+          while IFS= read -r url; do
+            curl -fsSL "$url" -o "$apk_dir/$(basename "$url")"
+          done < <(printf '%s\n' "$DOWNLOAD_INFO" | jq -r '.split_download_info[].url')
+          ls -la "$apk_dir"
+          echo "apkPath=$(ls -1 $apk_dir | head -1)" >> "$GITHUB_OUTPUT"
+
+      - name: Upload APKs
+        uses: actions/upload-artifact@v7
+        with:
+          name: accrescent-${{ env.PACKAGE_NAME }}.zip
+          path: accrescent-${{ env.PACKAGE_NAME }}
+          retention-days: 7
+
+      # Currently only checking the first APK, presumably all the same?
+      - name: Get (First) APK Signature
+        id: appSignature
+        uses: ./.github/actions/get-signature
+        with:
+          path: accrescent-${{ env.PACKAGE_NAME }}/${{ steps.appDownload.outputs.apkPath }}
+
+      - name: Write Summary
+        env: 
+          SIGNATURE: ${{ steps.appSignature.outputs.signature }}
+        run: |
+          echo "$PACKAGE_NAME" >> $GITHUB_STEP_SUMMARY
+          echo "$SIGNATURE" >> $GITHUB_STEP_SUMMARY
