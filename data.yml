@@ -101,3 +101,11 @@
     - source: Direct APK Link
       issue: 171
       fingerprint: 01:CC:E9:31:6F:CB:77:EA:02:C6:DE:A8:1F:DE:9F:31:76:46:92:02:C0:CE:A0:51:4C:0E:03:CB:96:9B:C7:BE
+- package: xyz.malkki.neostumbler
+  signature:
+    - source: "Accrescent"
+      issue: 143
+      fingerprint: 7F:83:9A:C7:AF:C4:FF:6F:1C:7F:B1:34:8A:C1:0D:E2:F1:7D:E8:A7:8D:0D:81:2C:1F:43:AE:83:5A:51:11:DF
+    - source: "Direct APK Link"
+      issue: 143
+      fingerprint: 7F:83:9A:C7:AF:C4:FF:6F:1C:7F:B1:34:8A:C1:0D:E2:F1:7D:E8:A7:8D:0D:81:2C:1F:43:AE:83:5A:51:11:DF
