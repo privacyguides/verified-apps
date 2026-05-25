@@ -88,6 +88,11 @@
     - source: F-Droid
       issue: 53
       fingerprint: 5E:C0:A5:31:3A:A4:35:58:EE:75:B2:0B:58:CC:D8:19:4C:DB:F0:66:DF:94:A4:3B:A2:88:D9:33:D6:0B:86:CE
+- package: it.fast4x.rimusic
+  signature:
+    - source: "Accrescent"
+      issue: 112
+      fingerprint: A1:BA:8B:D7:4A:F8:F9:2C:B3:71:9A:07:21:13:A2:18:CF:AE:C0:2B:CE:2B:73:6A:28:0E:31:D8:CD:11:80:8C
 - package: net.ivpn.client
   signature:
     - source: Accrescent
