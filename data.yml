@@ -68,6 +68,11 @@
     - source: "Direct APK Link"
       issue: 203
       fingerprint: 23:AF:C1:F8:ED:5F:BB:D0:85:2A:37:22:2D:DC:E0:6F:92:92:71:02:F0:12:6F:99:6A:56:23:F5:27:74:C6:90
+- package: com.wizzair.WizzAirApp
+  signature:
+    - source: "Google Play"
+      issue: 339
+      fingerprint: 71:39:71:8A:9C:7A:50:3A:F9:7D:38:78:31:4E:C0:9A:6F:EF:E6:27:7E:A7:16:30:56:E0:22:73:F3:55:31:02
 - package: com.x8bit.bitwarden
   signature:
     - source: Direct APK Link
