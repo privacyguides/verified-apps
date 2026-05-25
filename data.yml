@@ -1,3 +1,11 @@
+- package: com.cakewallet.cake_wallet
+  signature:
+    - source: Accrescent
+      issue: 97
+      fingerprint: C5:40:53:AB:0F:10:D9:54:17:62:A3:DA:76:65:AE:3D:BA:5E:7C:74:3A:B4:F1:08:A5:34:9D:62:AC:10:6E:F5
+    - source: Direct APK Link
+      issue: 97
+      fingerprint: C5:40:53:AB:0F:10:D9:54:17:62:A3:DA:76:65:AE:3D:BA:5E:7C:74:3A:B4:F1:08:A5:34:9D:62:AC:10:6E:F5
 - package: com.donnnno.arcticons
   signature:
     - source: Accrescent
