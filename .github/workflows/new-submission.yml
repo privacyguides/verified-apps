@@ -575,6 +575,8 @@ jobs:
           git commit -m "Add ${PACKAGE} from #${ISSUE}"
           git push -u origin "$branch"
           
+          echo "**Agree with these changes? Please add a :+1: reaction to this PR!**" >> ${RUNNER_TEMP}/prBody.md
+          echo "" >> ${RUNNER_TEMP}/prBody.md
           echo "One or more app stores matched the signature in issue #${ISSUE}, so I've created this PR automatically." >> ${RUNNER_TEMP}/prBody.md
           echo "These entries should now be verified manually (or additional entries can be added) before merging!" >> ${RUNNER_TEMP}/prBody.md
           echo "This PR does **not** add signatures from stores unless they also match what the submitter provided. We may need to add additional signatures to this PR if we believe the other ones are legitimate as well." >> ${RUNNER_TEMP}/prBody.md
