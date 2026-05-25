@@ -398,6 +398,11 @@ jobs:
             exit 1
           fi
 
+      - name: Download Repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: "false"
+
       - name: Create Table
         run: |
           echo "We attempted to check Accrescent, F-Droid, and Google Play for this app. If we found any results, they'll be in the table below:" >> $GITHUB_STEP_SUMMARY
@@ -409,6 +414,44 @@ jobs:
           echo "| F-Droid | ${{ needs.fdroid.outputs.match }} | ${{ needs.fdroid.outputs.packageName }}<br>${{ needs.fdroid.outputs.signature }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Google Play | ${{ needs.gplay.outputs.match }} | ${{ needs.gplay.outputs.packageName }}<br>${{ needs.gplay.outputs.signature }} |" >> $GITHUB_STEP_SUMMARY
           cat "$GITHUB_STEP_SUMMARY" > ${RUNNER_TEMP}/issueBody.md
+
+      - name: Append matching fingerprints from other packages
+        env:
+          PACKAGE: ${{ needs.parse.outputs.packageName }}
+          SIGNATURE: ${{ needs.parse.outputs.packageSignature }}
+        run: |
+          set -euo pipefail
+          issue_body="${RUNNER_TEMP}/issueBody.md"
+
+          if [[ ! -f data.yml ]] || [[ ! -s data.yml ]]; then
+            exit 0
+          fi
+
+          export PACKAGE SIGNATURE
+          related_lines=$(
+            yq -r '
+              [
+                .[]
+                | select(.package != strenv(PACKAGE))
+                | . as $entry
+                | $entry.signature[]
+                | select((.fingerprint | upcase) == strenv(SIGNATURE))
+                | select((.issue // $entry.issue) != null)
+                | "- \($entry.package) from #\(.issue // $entry.issue)"
+              ] | unique | .[]
+            ' data.yml
+          )
+
+          if [[ -z "$related_lines" ]]; then
+            exit 0
+          fi
+
+          {
+            echo ""
+            echo "This fingerprint matches another app already confirmed in our database! This may indicate it's from the same developer, you should check. If so, this is a stronger indication that this submission is legitimate:"
+            echo ""
+            echo "$related_lines"
+          } | tee -a "$GITHUB_STEP_SUMMARY" >> "$issue_body"
 
       - name: Append informational notes
         env:
