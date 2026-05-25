@@ -55,6 +55,11 @@
       fingerprint: |
         7C:E8:3C:1B:71:F3:D5:72:FE:D0:4C:8D:40:C5:CB:10:FF:75:E6:D8:7D:9D:F6:FB:D5:3F:04:68:C2:90:50:53
         F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
+- package: com.navitime.inbound.walk
+  signature:
+    - source: "Google Play"
+      issue: 298
+      fingerprint: BC:2E:DD:D7:A9:FF:50:30:41:5F:DE:27:2D:D7:70:3C:86:C4:63:09:C0:C0:8B:46:54:B0:C1:FD:AE:99:CF:59
 - package: com.none.tom.exiferaser
   signature:
     - source: Accrescent
