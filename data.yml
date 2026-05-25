@@ -97,6 +97,11 @@ packages:
       - source: Google Play
         issue: 49
         fingerprint: D9:10:86:7C:E2:CF:3D:CD:37:DB:51:85:3E:BE:F8:63:3F:D8:3A:14:2B:26:42:27:4E:D0:68:15:2F:F1:22:01
+  - package: com.nuvio.app
+    signature:
+      - source: "Direct APK Link"
+        issue: 413
+        fingerprint: 1C:BA:06:FB:DF:97:8D:0E:3F:9A:D5:8D:E6:BA:3D:69:E2:4A:94:83:84:AD:DE:3A:ED:95:45:1E:83:0E:52:10
   - package: com.streetwriters.notesnook
     signature:
       - source: "Direct APK Link"
