@@ -78,6 +78,11 @@
     - source: F-Droid
       issue: 53
       fingerprint: 5E:C0:A5:31:3A:A4:35:58:EE:75:B2:0B:58:CC:D8:19:4C:DB:F0:66:DF:94:A4:3B:A2:88:D9:33:D6:0B:86:CE
+- package: io.heckel.ntfy
+  signature:
+    - source: "F-Droid"
+      issue: 206
+      fingerprint: 76:E9:4D:8E:04:70:6C:5B:99:06:4C:23:21:0D:8C:A9:91:06:08:AB:AE:8F:3E:97:2B:41:E3:88:39:16:46:E0
 - package: net.ivpn.client
   signature:
     - source: Accrescent
