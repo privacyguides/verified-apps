@@ -29,6 +29,10 @@ inputs:
     description: Fingerprint(s) from Google Play (store-match mode only)
     required: false
     default: ""
+  appverifierSignature:
+    description: Fingerprint(s) from AppVerifier internal database (store-match mode only)
+    required: false
+    default: ""
   directApkSignature:
     description: Fingerprint(s) from direct APK download (store-match mode only)
     required: false
@@ -62,6 +66,7 @@ runs:
         ACC_SIG: ${{ inputs.accrescentSignature }}
         FDROID_SIG: ${{ inputs.fdroidSignature }}
         GPLAY_SIG: ${{ inputs.gplaySignature }}
+        APPVERIFIER_SIG: ${{ inputs.appverifierSignature }}
         DIRECT_SIG: ${{ inputs.directApkSignature }}
         SUBMITTER_SOURCE: ${{ inputs.submitterSource }}
         GH_TOKEN: ${{ github.token }}
@@ -107,6 +112,9 @@ runs:
           fi
           if [[ -n "$GPLAY_SIG" ]] && signatures_equal "$GPLAY_SIG" "$USER_SIG"; then
             add_signature "Google Play" "$USER_SIG"
+          fi
+          if [[ -n "$APPVERIFIER_SIG" ]] && signatures_equal "$APPVERIFIER_SIG" "$USER_SIG"; then
+            add_signature "AppVerifier" "$USER_SIG"
           fi
           if [[ -n "$DIRECT_SIG" ]] && signatures_equal "$DIRECT_SIG" "$USER_SIG"; then
             add_signature "Direct APK Link" "$USER_SIG"
