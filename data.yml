@@ -68,6 +68,11 @@
     - source: "Direct APK Link"
       issue: 203
       fingerprint: 23:AF:C1:F8:ED:5F:BB:D0:85:2A:37:22:2D:DC:E0:6F:92:92:71:02:F0:12:6F:99:6A:56:23:F5:27:74:C6:90
+- package: com.turkishairlines.mobile
+  signature:
+    - source: "Google Play"
+      issue: 343
+      fingerprint: DD:85:EB:7F:24:CC:AD:39:D3:B8:30:26:12:5C:D5:16:4E:19:FD:1E:AA:26:7F:A0:B0:73:AE:72:20:D2:75:6E
 - package: com.x8bit.bitwarden
   signature:
     - source: Direct APK Link
