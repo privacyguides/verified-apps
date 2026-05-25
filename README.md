@@ -1,6 +1,6 @@
 # Verified Apps
 
-Privacy Guides is building a database of Android app signing certificate hashes for use with [AppVerifier](https://github.com/soupslurpr/AppVerifier) or [https://roundsalmon4.github.io/certhashviewer/](certhashviewer) or `apksigner verify --print-certs`.
+Privacy Guides is building a database of Android app signing certificate hashes for use with [AppVerifier](https://github.com/soupslurpr/AppVerifier) or [certhashviewer](https://roundsalmon4.github.io/certhashviewer) or `apksigner verify --print-certs`.
 
 **Discussions:** Please discuss anything related to this project [on the Privacy Guides forum.](https://discuss.privacyguides.net/t/submit-android-apps-to-our-appverifier-database/38125)
 
