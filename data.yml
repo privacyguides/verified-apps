@@ -96,3 +96,8 @@
     - source: Direct APK Link
       issue: 171
       fingerprint: 01:CC:E9:31:6F:CB:77:EA:02:C6:DE:A8:1F:DE:9F:31:76:46:92:02:C0:CE:A0:51:4C:0E:03:CB:96:9B:C7:BE
+- package: se.postnord.private
+  signature:
+    - source: "Google Play"
+      issue: 293
+      fingerprint: 71:33:6E:97:C6:D3:EF:FF:FA:42:38:5F:A8:33:F9:05:95:AC:8C:1C:05:D8:98:04:97:DE:2F:E1:F5:3D:97:53
