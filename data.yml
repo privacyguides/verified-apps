@@ -96,3 +96,8 @@
     - source: Direct APK Link
       issue: 171
       fingerprint: 01:CC:E9:31:6F:CB:77:EA:02:C6:DE:A8:1F:DE:9F:31:76:46:92:02:C0:CE:A0:51:4C:0E:03:CB:96:9B:C7:BE
+- package: se.malardalstrafik.malartag
+  signature:
+    - source: "Google Play"
+      issue: 309
+      fingerprint: C2:A1:A4:10:4F:59:0F:19:08:A3:91:1F:DF:B9:CB:9F:A0:35:E0:2D:F6:54:DA:B8:F4:DB:08:9A:9D:3D:14:D4
