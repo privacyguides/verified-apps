@@ -1,0 +1,60 @@
+name: Match APK signature
+description: Compare a store signature to the user-provided fingerprint
+inputs:
+  packageName:
+    description: Android application ID
+    required: true
+  userSignature:
+    description: Fingerprint submitted in the issue
+    required: true
+  storeSignature:
+    description: Fingerprint extracted from the store APK
+    required: true
+  signerKind:
+    description: Signer profile from get-signature (google-play-app-signing, fdroid, or empty)
+    required: false
+    default: ""
+outputs:
+  status:
+    description: Match indicator emoji for the summary table
+    value: ${{ steps.match.outputs.status }}
+  packageName:
+    description: Application ID passed through for job outputs
+    value: ${{ steps.match.outputs.packageName }}
+  infoNote:
+    description: Optional footnote when status is informational
+    value: ${{ steps.match.outputs.infoNote }}
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      id: match
+      env:
+        PACKAGE_NAME: ${{ inputs.packageName }}
+        USER_SIG: ${{ inputs.userSignature }}
+        STORE_SIG: ${{ inputs.storeSignature }}
+        SIGNER_KIND: ${{ inputs.signerKind }}
+      run: |
+        if [[ "$STORE_SIG" == "$USER_SIG" ]]; then
+          echo "status=:white_check_mark:" >> "$GITHUB_OUTPUT"
+          echo "infoNote=" >> "$GITHUB_OUTPUT"
+        elif [[ "$SIGNER_KIND" == "google-play-app-signing" && ! "$PACKAGE_NAME" =~ ^com\.google\. ]]; then
+          echo "status=:information_source:" >> "$GITHUB_OUTPUT"
+          {
+            echo 'infoNote<<EOF'
+            echo "Google Play: this APK is signed with **Google Play App Signing**, not a developer-owned key."
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
+        elif [[ "$SIGNER_KIND" == "fdroid" && ! "$PACKAGE_NAME" =~ ^org\.fdroid\. ]]; then
+          echo "status=:information_source:" >> "$GITHUB_OUTPUT"
+          {
+            echo 'infoNote<<EOF'
+            echo "F-Droid: this APK is signed by the **F-Droid project key**, which usually means the app has **non-reproducible builds** on F-Droid. You should complain to the developer to add [reproducible build](https://f-droid.org/docs/Reproducible_Builds/) support."
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
+        else
+          echo "status=:x:" >> "$GITHUB_OUTPUT"
+          echo "infoNote=" >> "$GITHUB_OUTPUT"
+        fi
+        echo "packageName=$PACKAGE_NAME" >> "$GITHUB_OUTPUT"
