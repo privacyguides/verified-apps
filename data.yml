@@ -95,6 +95,11 @@
     - source: Google Play
       issue: 49
       fingerprint: D9:10:86:7C:E2:CF:3D:CD:37:DB:51:85:3E:BE:F8:63:3F:D8:3A:14:2B:26:42:27:4E:D0:68:15:2F:F1:22:01
+- package: com.retroarch
+  signature:
+    - source: "Direct APK Link"
+      issue: 402
+      fingerprint: D7:A5:EA:B3:09:02:C9:B2:77:5A:F6:FB:4E:AC:2D:29:4A:64:63:4F:B4:7D:D1:38:2B:C3:AC:5B:F6:69:98:2E
 - package: com.streetwriters.notesnook
   signature:
     - source: "Direct APK Link"
