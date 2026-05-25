@@ -8,6 +8,11 @@
     - source: "Direct APK Link"
       issue: 247
       fingerprint: 48:94:E8:E6:96:36:27:EF:66:00:31:D8:59:3F:E7:72:97:F8:35:AC:B4:E2:38:10:00:3E:92:61:35:02:3B:4C
+- package: app.mihon
+  signature:
+    - source: "Direct APK Link"
+      issue: 436
+      fingerprint: 9A:DD:65:5A:78:E9:6C:4E:C7:A5:3E:F8:9D:CC:B5:57:CB:5D:76:74:89:FA:C5:E7:85:D6:71:A5:A7:5D:4D:A2
 - package: app.organicmaps
   signature:
     - source: "Accrescent"
