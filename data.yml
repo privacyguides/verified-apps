@@ -1,3 +1,11 @@
+- package: com.donnnno.arcticons
+  signature:
+    - source: Accrescent
+      issue: 87
+      fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
+    - source: F-Droid
+      issue: 87
+      fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
 - package: com.donnnno.arcticons.light
   signature:
     - source: Accrescent
