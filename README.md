@@ -1,6 +1,6 @@
 # Verified Apps
 
-Privacy Guides is building a database of Android app signing certificate hashes for use with [AppVerifier](https://github.com/soupslurpr/AppVerifier) or [https://roundsalmon4.github.io/certhashviewer/](certhashviewer) or `apksigner verify --print-certs`.
+Privacy Guides is building a database of Android app signing certificate hashes for use with [AppVerifier](https://github.com/soupslurpr/AppVerifier) or [certhashviewer](https://roundsalmon4.github.io/certhashviewer) or `apksigner verify --print-certs`.
 
 **Discussions:** Please discuss anything related to this project [on the Privacy Guides forum.](https://discuss.privacyguides.net/t/submit-android-apps-to-our-appverifier-database/38125)
 
@@ -59,6 +59,7 @@ We would also be open to forks of AppVerifier including this data in their inter
 
 If you use this data in your app, the [MIT License](./LICENSE.txt) at minimum requires appropriate attribution. We would also appreciate if you could let us know about it so we can potentially link to projects that use this data. We would also recommend:
 
+- Checking the `schema` field in `data.yml` before parsing. The current format may change without notice currently.
 - Using the issue number in the data file to provide a link to the issue for users to see the information about how the app was verified.
 - Informing your users that new apps can be submitted to our issue tracker, so that we can expand our database and make it more useful for everyone.
 - Providing a link to this repository in your app's about page or documentation to credit the project.
