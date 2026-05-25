@@ -24,6 +24,9 @@ outputs:
   infoNote:
     description: Optional footnote when status is informational
     value: ${{ steps.match.outputs.infoNote }}
+  storeSignedMatch:
+    description: True when fingerprints match and the store APK uses Play or F-Droid signing
+    value: ${{ steps.match.outputs.storeSignedMatch }}
 
 runs:
   using: composite
@@ -36,9 +39,15 @@ runs:
         STORE_SIG: ${{ inputs.storeSignature }}
         SIGNER_KIND: ${{ inputs.signerKind }}
       run: |
+        store_signed_match=false
+
         if [[ "$STORE_SIG" == "$USER_SIG" ]]; then
           echo "status=:white_check_mark:" >> "$GITHUB_OUTPUT"
           echo "infoNote=" >> "$GITHUB_OUTPUT"
+          if [[ "$SIGNER_KIND" == "google-play-app-signing" && ! "$PACKAGE_NAME" =~ ^com\.google\. ]] \
+            || [[ "$SIGNER_KIND" == "fdroid" && ! "$PACKAGE_NAME" =~ ^org\.fdroid\. ]]; then
+            store_signed_match=true
+          fi
         elif [[ "$SIGNER_KIND" == "google-play-app-signing" && ! "$PACKAGE_NAME" =~ ^com\.google\. ]]; then
           echo "status=:information_source:" >> "$GITHUB_OUTPUT"
           {
@@ -58,3 +67,4 @@ runs:
           echo "infoNote=" >> "$GITHUB_OUTPUT"
         fi
         echo "packageName=$PACKAGE_NAME" >> "$GITHUB_OUTPUT"
+        echo "storeSignedMatch=$store_signed_match" >> "$GITHUB_OUTPUT"

@@ -144,6 +144,7 @@ jobs:
       match: ${{ steps.matches.outputs.status }}
       packageName: ${{ steps.matches.outputs.packageName }}
       infoNote: ${{ steps.matches.outputs.infoNote }}
+      storeSignedMatch: ${{ steps.matches.outputs.storeSignedMatch }}
 
     env:
       PACKAGE_NAME: ${{ needs.parse.outputs.packageName }}
@@ -223,6 +224,7 @@ jobs:
       match: ${{ steps.matches.outputs.status }}
       packageName: ${{ steps.matches.outputs.packageName }}
       infoNote: ${{ steps.matches.outputs.infoNote }}
+      storeSignedMatch: ${{ steps.matches.outputs.storeSignedMatch }}
 
     env:
       PACKAGE_NAME: ${{ needs.parse.outputs.packageName }}
@@ -305,6 +307,7 @@ jobs:
       match: ${{ steps.matches.outputs.status }}
       packageName: ${{ steps.matches.outputs.packageName }}
       infoNote: ${{ steps.matches.outputs.infoNote }}
+      storeSignedMatch: ${{ steps.matches.outputs.storeSignedMatch }}
 
     env:
       PACKAGE_NAME: ${{ needs.parse.outputs.packageName }}
@@ -407,7 +410,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [parse, accrescent, fdroid, gplay]
 
-    if: needs.parse.outputs.isDuplicate != 'true'
+    if: always() && needs.parse.outputs.isDuplicate != 'true'
     permissions:
       contents: write
       pull-requests: write
@@ -486,6 +489,13 @@ jobs:
       - name: Add Match Count
         env:
           MATCHES: ${{ steps.count.outputs.matches }}
+          USER_SIG: ${{ needs.parse.outputs.packageSignature }}
+          ACC_SIG: ${{ needs.accrescent.outputs.signature }}
+          FDROID_SIG: ${{ needs.fdroid.outputs.signature }}
+          GPLAY_SIG: ${{ needs.gplay.outputs.signature }}
+          ACC_STORE_SIGNED: ${{ needs.accrescent.outputs.storeSignedMatch }}
+          FDROID_STORE_SIGNED: ${{ needs.fdroid.outputs.storeSignedMatch }}
+          GPLAY_STORE_SIGNED: ${{ needs.gplay.outputs.storeSignedMatch }}
           ACC_INFO: ${{ needs.accrescent.outputs.infoNote }}
           FDROID_INFO: ${{ needs.fdroid.outputs.infoNote }}
           GPLAY_INFO: ${{ needs.gplay.outputs.infoNote }}
@@ -498,15 +508,30 @@ jobs:
           if [[ -n "$ACC_INFO" || -n "$FDROID_INFO" || -n "$GPLAY_INFO" ]]; then
             has_info=true
           fi
+          store_signed_label=false
+          if [[ -n "$ACC_SIG" && "$ACC_SIG" == "$USER_SIG" && "$ACC_STORE_SIGNED" == "true" ]]; then
+            store_signed_label=true
+          fi
+          if [[ -n "$FDROID_SIG" && "$FDROID_SIG" == "$USER_SIG" && "$FDROID_STORE_SIGNED" == "true" ]]; then
+            store_signed_label=true
+          fi
+          if [[ -n "$GPLAY_SIG" && "$GPLAY_SIG" == "$USER_SIG" && "$GPLAY_STORE_SIGNED" == "true" ]]; then
+            store_signed_label=true
+          fi
           if [[ "$MATCHES" != "0" ]]; then
             echo "${MATCHES}/3 of our sources matched what was provided. Some mismatches between app stores can be normal." >> ${RUNNER_TEMP}/issueBody.md
-            gh issue edit "$NUMBER" --add-label "Likely Good" --remove-label "Unchecked"
-          elif [[ "$has_info" == true ]]; then
-            echo "None of our sources matched the fingerprint you provided exactly, but see the notes above (:information_source:) — for example **Google Play App Signing** or **non-reproducible F-Droid builds** can explain a mismatch without indicating a bad submission." >> ${RUNNER_TEMP}/issueBody.md
-            gh issue edit "$NUMBER" --add-label "Store Signed" --remove-label "Unchecked"
+            if [[ "$store_signed_label" == true ]]; then
+              gh issue edit "$NUMBER" --repo "$GH_REPO" --add-label "Store Signed" --remove-label "Unchecked"
+            else
+              gh issue edit "$NUMBER" --repo "$GH_REPO" --add-label "Likely Good" --remove-label "Unchecked"
+            fi
           else
             echo "We either weren't able to grab this app from stores, or no stores matched it. Please provide a link to exactly where you downloaded it, thanks!" >> ${RUNNER_TEMP}/issueBody.md
-            gh issue edit "$NUMBER" --add-label "Likely Bad" --remove-label "Unchecked"
+            if [[ "$has_info" == true ]]; then
+              echo "" >> ${RUNNER_TEMP}/issueBody.md
+              echo "None of our sources matched the fingerprint you provided exactly, but see the notes above: For example, **Google Play App Signing** or **non-reproducible F-Droid builds** can explain a mismatch without indicating a bad submission." >> ${RUNNER_TEMP}/issueBody.md
+            fi
+            gh issue edit "$NUMBER" --repo "$GH_REPO" --add-label "Likely Bad" --remove-label "Unchecked"
           fi
 
       - name: Comment on Issue
