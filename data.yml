@@ -137,6 +137,11 @@
     - source: "AppVerifier"
       issue: 62
       fingerprint: 6A:A8:0F:DF:4A:8C:C1:37:37:CF:B4:34:FC:0C:DE:48:6F:09:CF:8F:CD:A2:1A:67:BE:A5:EE:1C:A2:70:08:86
+- package: keepass2android.keepass2android
+  signature:
+    - source: "Direct APK Link"
+      issue: 388
+      fingerprint: 0B:F8:05:6D:3A:39:4E:D7:C7:71:73:C4:B4:2C:80:05:65:B4:F0:A4:29:77:56:9C:F3:47:2C:27:1C:56:29:39
 - package: me.easyapps.easynotes
   signature:
     - source: "Accrescent"
