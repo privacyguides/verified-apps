@@ -147,6 +147,14 @@
     - source: Accrescent
       issue: 3
       fingerprint: 88:A6:B4:0F:C9:7F:DC:84:2F:23:1F:50:EB:12:DE:11:6F:5B:75:9E:3C:5B:38:AA:CC:AF:6A:7B:39:3C:85:BB
+- package: net.thunderbird.android
+  signature:
+    - source: "F-Droid"
+      issue: 390
+      fingerprint: B6:52:47:79:B3:DB:BC:5A:C1:7A:5A:C2:71:DD:B2:9D:CF:BF:72:35:78:C2:38:E0:3C:3C:21:78:11:35:6D:D1
+    - source: "Direct APK Link"
+      issue: 390
+      fingerprint: B6:52:47:79:B3:DB:BC:5A:C1:7A:5A:C2:71:DD:B2:9D:CF:BF:72:35:78:C2:38:E0:3C:3C:21:78:11:35:6D:D1
 - package: nodomain.freeyourgadget.gadgetbridge
   signature:
     - source: F-Droid
