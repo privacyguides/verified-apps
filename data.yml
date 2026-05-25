@@ -83,6 +83,14 @@
     - source: F-Droid
       issue: 53
       fingerprint: 5E:C0:A5:31:3A:A4:35:58:EE:75:B2:0B:58:CC:D8:19:4C:DB:F0:66:DF:94:A4:3B:A2:88:D9:33:D6:0B:86:CE
+- package: io.github.devhyper.openvideoeditor
+  signature:
+    - source: "F-Droid"
+      issue: 237
+      fingerprint: 84:DF:64:4C:C5:DB:D4:EA:50:60:2B:9F:23:E4:FB:F3:B2:2E:E5:CD:21:82:43:7B:EF:72:C7:C7:99:F1:2D:B6
+    - source: "Direct APK Link"
+      issue: 237
+      fingerprint: 84:DF:64:4C:C5:DB:D4:EA:50:60:2B:9F:23:E4:FB:F3:B2:2E:E5:CD:21:82:43:7B:EF:72:C7:C7:99:F1:2D:B6
 - package: net.ivpn.client
   signature:
     - source: Accrescent
