@@ -68,6 +68,11 @@
     - source: "Direct APK Link"
       issue: 203
       fingerprint: 23:AF:C1:F8:ED:5F:BB:D0:85:2A:37:22:2D:DC:E0:6F:92:92:71:02:F0:12:6F:99:6A:56:23:F5:27:74:C6:90
+- package: com.ubercab
+  signature:
+    - source: "Google Play"
+      issue: 324
+      fingerprint: 40:03:23:1A:B4:2F:EB:8D:95:5E:62:FD:FA:A4:FA:D5:95:67:05:4B:9C:6B:BC:3D:95:02:99:DD:FC:26:83:92
 - package: com.x8bit.bitwarden
   signature:
     - source: Direct APK Link
