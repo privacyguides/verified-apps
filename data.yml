@@ -53,6 +53,11 @@
     - source: F-Droid
       issue: 53
       fingerprint: 5E:C0:A5:31:3A:A4:35:58:EE:75:B2:0B:58:CC:D8:19:4C:DB:F0:66:DF:94:A4:3B:A2:88:D9:33:D6:0B:86:CE
+- package: io.github.muntashirakon.AppManager
+  signature:
+    - source: F-Droid
+      issue: 127
+      fingerprint: B6:8E:93:49:10:C0:05:80:14:A0:6A:2E:14:47:29:F9:AA:11:3F:C5:D9:E0:DF:F5:29:EC:BF:1D:1F:61:2D:13
 - package: net.ivpn.client
   signature:
     - source: Accrescent
