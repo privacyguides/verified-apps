@@ -29,6 +29,14 @@
     - source: Direct APK Link
       issue: 97
       fingerprint: C5:40:53:AB:0F:10:D9:54:17:62:A3:DA:76:65:AE:3D:BA:5E:7C:74:3A:B4:F1:08:A5:34:9D:62:AC:10:6E:F5
+- package: com.cyb3rko.flashdim
+  signature:
+    - source: "Accrescent"
+      issue: 126
+      fingerprint: EA:78:69:1C:BA:41:86:00:A4:56:32:89:B1:33:F9:D0:0D:3D:0C:24:A5:F5:4C:5C:59:EE:1C:95:2B:B0:E1:1D
+    - source: "Direct APK Link"
+      issue: 126
+      fingerprint: EA:78:69:1C:BA:41:86:00:A4:56:32:89:B1:33:F9:D0:0D:3D:0C:24:A5:F5:4C:5C:59:EE:1C:95:2B:B0:E1:1D
 - package: com.donnnno.arcticons
   signature:
     - source: Accrescent
