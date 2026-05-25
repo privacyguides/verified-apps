@@ -1,3 +1,13 @@
+- package: app.revanced.android.gms
+  signature:
+    - source: Direct APK Link
+      issue: 182
+      fingerprint: 0B:6C:95:15:AF:B1:95:FA:C5:96:01:69:6B:A0:A7:90:7A:0B:21:7C:CF:72:0B:43:14:84:27:CC:F6:43:43:E7
+- package: com.aurora.store
+  signature:
+    - source: Direct APK Link
+      issue: 132
+      fingerprint: 4C:62:61:57:AD:02:BD:A3:40:1A:72:63:55:5F:68:A7:96:63:FC:3E:13:A4:D4:36:9A:12:57:09:41:AA:28:0F
 - package: com.brave.browser
   signature:
     - source: Google Play
@@ -6,11 +16,6 @@
     - source: Direct APK Link
       issue: 146
       fingerprint: 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
-- package: com.aurora.store
-  signature:
-    - source: Direct APK Link
-      issue: 132
-      fingerprint: 4C:62:61:57:AD:02:BD:A3:40:1A:72:63:55:5F:68:A7:96:63:FC:3E:13:A4:D4:36:9A:12:57:09:41:AA:28:0F
 - package: com.cakewallet.cake_wallet
   signature:
     - source: Accrescent
