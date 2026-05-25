@@ -6,8 +6,14 @@ inputs:
     required: true
 outputs:
   signature:
-    description: APK file signature
+    description: APK file signature (colon-separated SHA-256)
     value: ${{ steps.analysis.outputs.formattedSig }}
+  certificateDn:
+    description: Distinguished name of the app signing certificate
+    value: ${{ steps.analysis.outputs.certificateDn }}
+  signerKind:
+    description: Known signer profile (google-play-app-signing, fdroid, or empty)
+    value: ${{ steps.analysis.outputs.signerKind }}
 
 runs:
   using: composite
@@ -16,6 +22,8 @@ runs:
       id: analysis
       env:
         APK_PATH: ${{ inputs.path }}
+        GOOGLE_PLAY_APP_SIGNING_DN: "CN=Android, OU=Android, O=Google Inc., L=Mountain View, ST=California, C=US"
+        FDROID_SIGNER_DN: "CN=FDroid, OU=FDroid, O=fdroid.org, L=ORG, ST=ORG, C=UK"
       run: |
         set -euo pipefail
 
@@ -31,13 +39,17 @@ runs:
           exit 1
         fi
 
-        # verify may exit non-zero for warnings while still printing certs; do not fail on status.
         verification=$("$apksigner" verify --print-certs "$APK_PATH" 2>&1) || true
 
-        # apksigner formats vary by version, e.g.:
-        #   Signer #1 certificate SHA-256 digest: <hex>
-        #   V3.0 Signer: certificate SHA-256 digest: <hex>
-        # Take the first app-signer certificate digest (not public key, not Source Stamp).
+        cert_dn=$(echo "$verification" | awk '
+          /^Source Stamp Signer/ { next }
+          /certificate DN:/ {
+            sub(/^.*certificate DN: /, "")
+            print
+            exit
+          }
+        ')
+
         sha256=$(echo "$verification" | awk '
           /^Source Stamp Signer/ { next }
           /public key SHA-256 digest/ { next }
@@ -54,8 +66,18 @@ runs:
           exit 1
         fi
 
+        signer_kind=""
+        if [[ -n "$cert_dn" && "$cert_dn" == "$GOOGLE_PLAY_APP_SIGNING_DN" ]]; then
+          signer_kind="google-play-app-signing"
+        elif [[ -n "$cert_dn" && "$cert_dn" == "$FDROID_SIGNER_DN" ]]; then
+          signer_kind="fdroid"
+        fi
+
         echo "---"
+        echo "Certificate DN: ${cert_dn:-unknown}"
         echo "SHA-256: $sha256"
         formattedSig=$(printf '%s' "$sha256" | tr '[:lower:]' '[:upper:]' | sed -E 's/(..)/\1:/g; s/:$//')
         echo "Formatted: $formattedSig"
         echo "formattedSig=$formattedSig" >> "$GITHUB_OUTPUT"
+        echo "certificateDn=$cert_dn" >> "$GITHUB_OUTPUT"
+        echo "signerKind=$signer_kind" >> "$GITHUB_OUTPUT"
