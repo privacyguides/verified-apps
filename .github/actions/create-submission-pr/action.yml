@@ -141,15 +141,22 @@ runs:
         fi
 
         export ENTRY="$entry"
-        if [[ -f data.yml ]] && [[ -s data.yml ]] && yq -e '.[] | select(.package == strenv(PACKAGE))' data.yml >/dev/null 2>&1; then
-          yq -i 'with(.[] | select(.package == strenv(PACKAGE)); .signature += load(strenv(ENTRY)).signature)' data.yml
-          yq -i 'with(.[] | select(.package == strenv(PACKAGE)); .signature |= unique_by(.source + "|" + .fingerprint))' data.yml
-        elif [[ -f data.yml ]]; then
-          yq -i '. += [load(strenv(ENTRY))]' data.yml
+        if [[ -f data.yml ]] && [[ -s data.yml ]]; then
+          schema=$(yq -r '.schema // 0' data.yml)
+          if [[ "$schema" != "2" ]]; then
+            echo "Unsupported data.yml schema (expected 2): $schema" >&2
+            exit 1
+          fi
+          if yq -e '.packages[] | select(.package == strenv(PACKAGE))' data.yml >/dev/null 2>&1; then
+            yq -i 'with(.packages[] | select(.package == strenv(PACKAGE)); .signature += load(strenv(ENTRY)).signature)' data.yml
+            yq -i 'with(.packages[] | select(.package == strenv(PACKAGE)); .signature |= unique_by(.source + "|" + .fingerprint))' data.yml
+          else
+            yq -i '.packages += [load(strenv(ENTRY))]' data.yml
+          fi
+          yq -i '.packages |= sort_by(.package)' data.yml
         else
-          cp "$entry" data.yml
+          yq -n '.schema = 2 | .packages = [load(strenv(ENTRY))]' > data.yml
         fi
-        yq -i 'sort_by(.package)' data.yml
         rm -f "$entry"
 
         branch="new/${ISSUE}"
