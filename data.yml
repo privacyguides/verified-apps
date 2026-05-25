@@ -5,6 +5,11 @@ packages:
       - source: Accrescent
         issue: 66
         fingerprint: 06:7A:40:C4:19:3A:AD:51:AC:87:F9:DD:FD:EB:B1:5E:24:A1:85:0B:AB:FA:48:21:C2:8C:5C:25:C3:FD:C0:71
+  - package: app.alextran.immich
+    signature:
+      - source: "Direct APK Link"
+        issue: 462
+        fingerprint: 86:C5:C4:55:DF:AF:49:85:92:3A:8F:35:AD:B3:1D:0C:9E:0B:95:7D:7F:94:C2:D2:AF:6A:24:38:AA:96:00:20
   - package: app.comaps
     signature:
       - source: "Direct APK Link"
