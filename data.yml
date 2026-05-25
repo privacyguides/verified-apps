@@ -95,6 +95,14 @@
     - source: Google Play
       issue: 49
       fingerprint: D9:10:86:7C:E2:CF:3D:CD:37:DB:51:85:3E:BE:F8:63:3F:D8:3A:14:2B:26:42:27:4E:D0:68:15:2F:F1:22:01
+- package: com.secuso.privacyFriendlyCodeScanner
+  signature:
+    - source: "F-Droid"
+      issue: 433
+      fingerprint: 75:9D:2D:25:78:5A:6D:F4:CD:66:19:69:2B:37:F0:05:32:BA:19:B2:6D:F2:0A:4E:F5:B2:21:28:C7:F1:51:BC
+    - source: "Direct APK Link"
+      issue: 433
+      fingerprint: 75:9D:2D:25:78:5A:6D:F4:CD:66:19:69:2B:37:F0:05:32:BA:19:B2:6D:F2:0A:4E:F5:B2:21:28:C7:F1:51:BC
 - package: com.streetwriters.notesnook
   signature:
     - source: "Direct APK Link"
