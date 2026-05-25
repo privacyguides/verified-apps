@@ -68,6 +68,11 @@
     - source: "Direct APK Link"
       issue: 203
       fingerprint: 23:AF:C1:F8:ED:5F:BB:D0:85:2A:37:22:2D:DC:E0:6F:92:92:71:02:F0:12:6F:99:6A:56:23:F5:27:74:C6:90
+- package: com.tripadvisor.tripadvisor
+  signature:
+    - source: "Google Play"
+      issue: 268
+      fingerprint: E9:8D:02:21:B0:BD:46:E4:74:5A:12:8A:96:A0:18:24:74:D0:C7:48:29:E5:1D:87:A3:90:1E:FD:D1:98:C8:FE
 - package: com.x8bit.bitwarden
   signature:
     - source: Direct APK Link
