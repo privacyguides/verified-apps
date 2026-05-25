@@ -48,6 +48,11 @@
     - source: F-Droid
       issue: 47
       fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
+- package: com.eurostar.androidapp
+  signature:
+    - source: "Google Play"
+      issue: 322
+      fingerprint: F1:0B:41:49:CC:5A:9C:ED:83:02:93:E3:3A:8D:A7:D8:96:47:79:CB:65:28:F9:6C:7E:CC:79:AA:D6:CB:40:52
 - package: com.google.android.inputmethod.latin
   signature:
     - source: "Google Play"
