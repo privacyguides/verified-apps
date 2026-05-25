@@ -8,6 +8,17 @@
     - source: "Direct APK Link"
       issue: 247
       fingerprint: 48:94:E8:E6:96:36:27:EF:66:00:31:D8:59:3F:E7:72:97:F8:35:AC:B4:E2:38:10:00:3E:92:61:35:02:3B:4C
+- package: app.upryzing.clerotri
+  signature:
+    - source: "Accrescent"
+      issue: 105
+      fingerprint: 90:FD:58:2A:49:5A:7E:C5:92:82:A1:95:27:B8:0B:09:AB:3B:C9:1D:BB:82:46:12:18:32:BD:61:00:6C:A9:AE
+    - source: "F-Droid (IzzyOnDroid)"
+      issue: 105
+      fingerprint: 90:FD:58:2A:49:5A:7E:C5:92:82:A1:95:27:B8:0B:09:AB:3B:C9:1D:BB:82:46:12:18:32:BD:61:00:6C:A9:AE
+    - source: "Direct APK Link"
+      issue: 105
+      fingerprint: 90:FD:58:2A:49:5A:7E:C5:92:82:A1:95:27:B8:0B:09:AB:3B:C9:1D:BB:82:46:12:18:32:BD:61:00:6C:A9:AE
 - package: com.aurora.store
   signature:
     - source: Direct APK Link
