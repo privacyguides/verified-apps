@@ -55,6 +55,11 @@
       fingerprint: |
         7C:E8:3C:1B:71:F3:D5:72:FE:D0:4C:8D:40:C5:CB:10:FF:75:E6:D8:7D:9D:F6:FB:D5:3F:04:68:C2:90:50:53
         F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
+- package: com.momondo.flightsearch
+  signature:
+    - source: "Google Play"
+      issue: 270
+      fingerprint: 32:3D:9F:92:DA:BE:24:A4:79:14:9C:48:F7:00:0F:1B:EC:CF:FA:A9:45:49:42:F9:BF:F3:48:5B:4C:86:D6:C1
 - package: com.none.tom.exiferaser
   signature:
     - source: Accrescent
