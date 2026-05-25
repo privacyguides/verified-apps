@@ -48,6 +48,17 @@
     - source: F-Droid
       issue: 53
       fingerprint: 5E:C0:A5:31:3A:A4:35:58:EE:75:B2:0B:58:CC:D8:19:4C:DB:F0:66:DF:94:A4:3B:A2:88:D9:33:D6:0B:86:CE
+- package: it.fast4x.riplay
+  signature:
+    - source: Accrescent
+      issue: 141
+      fingerprint: 97:62:E9:AB:73:2B:0A:1C:F3:C7:21:16:84:50:53:3C:8B:19:05:AE:1C:9E:65:8F:48:8A:BB:84:DE:BE:F2:FB
+    - source: F-Droid
+      issue: 141
+      fingerprint: 97:62:E9:AB:73:2B:0A:1C:F3:C7:21:16:84:50:53:3C:8B:19:05:AE:1C:9E:65:8F:48:8A:BB:84:DE:BE:F2:FB
+    - source: Direct APK Link
+      issue: 141
+      fingerprint: 97:62:E9:AB:73:2B:0A:1C:F3:C7:21:16:84:50:53:3C:8B:19:05:AE:1C:9E:65:8F:48:8A:BB:84:DE:BE:F2:FB
 - package: net.ivpn.client
   signature:
     - source: Accrescent
