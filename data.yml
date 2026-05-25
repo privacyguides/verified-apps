@@ -63,6 +63,11 @@
     - source: Google Play
       issue: 49
       fingerprint: D9:10:86:7C:E2:CF:3D:CD:37:DB:51:85:3E:BE:F8:63:3F:D8:3A:14:2B:26:42:27:4E:D0:68:15:2F:F1:22:01
+- package: com.pleco.chinesesystem
+  signature:
+    - source: "Google Play"
+      issue: 243
+      fingerprint: 78:0A:2A:63:9A:3C:CB:65:62:1E:0C:AC:CF:18:FA:38:C9:1F:6C:BF:35:1D:45:37:42:EB:E2:A1:14:B0:96:24
 - package: com.streetwriters.notesnook
   signature:
     - source: "Direct APK Link"
