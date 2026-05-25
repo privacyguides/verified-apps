@@ -88,6 +88,14 @@
     - source: F-Droid
       issue: 53
       fingerprint: 5E:C0:A5:31:3A:A4:35:58:EE:75:B2:0B:58:CC:D8:19:4C:DB:F0:66:DF:94:A4:3B:A2:88:D9:33:D6:0B:86:CE
+- package: im.molly.app
+  signature:
+    - source: "Accrescent"
+      issue: 62
+      fingerprint: 6A:A8:0F:DF:4A:8C:C1:37:37:CF:B4:34:FC:0C:DE:48:6F:09:CF:8F:CD:A2:1A:67:BE:A5:EE:1C:A2:70:08:86
+    - source: "AppVerifier"
+      issue: 62
+      fingerprint: 6A:A8:0F:DF:4A:8C:C1:37:37:CF:B4:34:FC:0C:DE:48:6F:09:CF:8F:CD:A2:1A:67:BE:A5:EE:1C:A2:70:08:86
 - package: net.ivpn.client
   signature:
     - source: Accrescent
