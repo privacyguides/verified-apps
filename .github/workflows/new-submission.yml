@@ -755,7 +755,14 @@ jobs:
             extras+=("your direct APK link")
           fi
           if [[ ${#extras[@]} -gt 0 ]]; then
-            intro+=", $(IFS=', '; echo "${extras[*]}")"
+            extras_joined=""
+            for extra in "${extras[@]}"; do
+              if [[ -n "$extras_joined" ]]; then
+                extras_joined+=", "
+              fi
+              extras_joined+="$extra"
+            done
+            intro+=", ${extras_joined}"
           fi
           intro+=" for this app. If we found any results, they'll be in the table below:"
           echo "$intro" >> $GITHUB_STEP_SUMMARY
@@ -1072,6 +1079,14 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Download F-Droid results for PR
+        if: steps.count.outputs.matches != '0'
+        uses: actions/download-artifact@v4
+        with:
+          pattern: fdroid-result-*
+          merge-multiple: true
+          path: fdroid-results
+
       - name: Create PR
         id: create-pr
         if: steps.count.outputs.matches != '0'
@@ -1107,32 +1122,30 @@ jobs:
           label_args=()
           if [[ "$STORE_MATCHES" == "0" ]]; then
             label_args+=(--add-label "No Store Match")
-          else
-            if [[ "$ACC_FOUND" == "true" && "$ACC_EQUAL" == "true" ]]; then
-              label_args+=(--add-label "Match Accrescent")
+          fi
+          if [[ "$ACC_FOUND" == "true" && "$ACC_EQUAL" == "true" ]]; then
+            label_args+=(--add-label "Match Accrescent")
+          fi
+          if [[ "$AV_FOUND" == "true" && "$AV_EQUAL" == "true" ]]; then
+            label_args+=(--add-label "Match Appverifier")
+          fi
+          while IFS= read -r result_file; do
+            [[ -z "$result_file" ]] && continue
+            [[ "$(jq -r '.found' "$result_file")" != "true" ]] && continue
+            repo_name=$(jq -r '.repoName' "$result_file")
+            sig=$(jq -r '.signature' "$result_file")
+            if ! signatures_equal "$sig" "$USER_SIG"; then
+              continue
             fi
-            if [[ "$AV_FOUND" == "true" && "$AV_EQUAL" == "true" ]]; then
-              label_args+=(--add-label "Match Appverifier")
+            if [[ "$repo_name" == "F-Droid" ]]; then
+              label_args+=(--add-label "Match F-Droid")
             fi
-            while IFS= read -r result_file; do
-              [[ -z "$result_file" ]] && continue
-              [[ "$(jq -r '.found' "$result_file")" != "true" ]] && continue
-              repo_name=$(jq -r '.repoName' "$result_file")
-              sig=$(jq -r '.signature' "$result_file")
-              if ! signatures_equal "$sig" "$USER_SIG"; then
-                continue
-              fi
-              if [[ "$repo_name" == "F-Droid" ]]; then
-                label_args+=(--add-label "Match F-Droid")
-              elif [[ "$repo_name" == "IzzyOnDroid" ]]; then
-                label_args+=(--add-label "Match IzzyOnDroid")
-              elif [[ "$repo_name" == "Custom" ]]; then
-                label_args+=(--add-label "Match Custom F-Droid")
-              fi
-            done < <(find fdroid-results -type f -name '*.json' 2>/dev/null | sort)
-            if [[ "$GPLAY_FOUND" == "true" && "$GPLAY_EQUAL" == "true" ]]; then
-              label_args+=(--add-label "Match Play")
+            if [[ "$repo_name" == "IzzyOnDroid" ]]; then
+              label_args+=(--add-label "Match IzzyOnDroid")
             fi
+          done < <(find fdroid-results -type f -name '*.json' 2>/dev/null | sort)
+          if [[ "$GPLAY_FOUND" == "true" && "$GPLAY_EQUAL" == "true" ]]; then
+            label_args+=(--add-label "Match Play")
           fi
           if [[ ${#label_args[@]} -eq 0 ]]; then
             exit 0
