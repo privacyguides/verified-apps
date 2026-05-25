@@ -91,3 +91,11 @@
     - source: Direct APK Link
       issue: 171
       fingerprint: 01:CC:E9:31:6F:CB:77:EA:02:C6:DE:A8:1F:DE:9F:31:76:46:92:02:C0:CE:A0:51:4C:0E:03:CB:96:9B:C7:BE
+- package: ru.tech.imageresizershrinker
+  signature:
+    - source: "F-Droid"
+      issue: 208
+      fingerprint: 20:D7:68:9D:E0:87:4F:00:01:5E:A3:E3:1F:A0:67:C1:5C:03:45:7D:36:2D:41:D5:E7:93:DB:3A:86:4F:A5:34
+    - source: "Direct APK Link"
+      issue: 208
+      fingerprint: 20:D7:68:9D:E0:87:4F:00:01:5E:A3:E3:1F:A0:67:C1:5C:03:45:7D:36:2D:41:D5:E7:93:DB:3A:86:4F:A5:34
