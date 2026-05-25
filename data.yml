@@ -216,3 +216,11 @@
     - source: "Direct APK Link"
       issue: 137
       fingerprint: 3B:33:D7:8A:5B:CA:C1:B9:52:75:6B:08:FE:88:30:CE:D3:87:AB:B6:B9:56:B0:2A:47:EF:80:32:1D:4A:2B:88
+- package: org.videolan.vlc
+  signature:
+    - source: "AppVerifier"
+      issue: 406
+      fingerprint: C8:76:8D:2C:EA:0C:4B:62:2E:41:9B:4B:47:15:98:19:46:82:1E:4E:BC:03:5F:B4:17:76:CA:D3:95:A7:F6:8E
+    - source: "Direct APK Link"
+      issue: 406
+      fingerprint: C8:76:8D:2C:EA:0C:4B:62:2E:41:9B:4B:47:15:98:19:46:82:1E:4E:BC:03:5F:B4:17:76:CA:D3:95:A7:F6:8E
