@@ -45,3 +45,8 @@
     - source: Accrescent
       issue: 3
       fingerprint: 88:A6:B4:0F:C9:7F:DC:84:2F:23:1F:50:EB:12:DE:11:6F:5B:75:9E:3C:5B:38:AA:CC:AF:6A:7B:39:3C:85:BB
+- package: org.andbible.andbible
+  signature:
+    - source: Accrescent
+      issue: 90
+      fingerprint: 8B:F5:16:8A:01:94:4D:62:A4:A4:C7:B6:52:F4:73:81:84:00:0D:57:A4:8C:52:89:5A:C6:CB:83:1C:48:CF:30
