@@ -63,6 +63,11 @@
     - source: Google Play
       issue: 49
       fingerprint: D9:10:86:7C:E2:CF:3D:CD:37:DB:51:85:3E:BE:F8:63:3F:D8:3A:14:2B:26:42:27:4E:D0:68:15:2F:F1:22:01
+- package: com.paypal.android.p2pmobile
+  signature:
+    - source: "Google Play"
+      issue: 284
+      fingerprint: C7:C6:2E:A0:F6:E2:F6:EB:A8:7F:95:40:69:87:50:55:30:EF:2F:51:6E:7C:DE:59:91:D7:14:03:31:44:80:72
 - package: com.streetwriters.notesnook
   signature:
     - source: "Direct APK Link"
