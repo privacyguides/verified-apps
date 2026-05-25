@@ -101,3 +101,17 @@
     - source: Direct APK Link
       issue: 171
       fingerprint: 01:CC:E9:31:6F:CB:77:EA:02:C6:DE:A8:1F:DE:9F:31:76:46:92:02:C0:CE:A0:51:4C:0E:03:CB:96:9B:C7:BE
+- package: org.unifiedpush.distributor.sunup
+  signature:
+    - source: "Accrescent"
+      issue: 137
+      fingerprint: 3B:33:D7:8A:5B:CA:C1:B9:52:75:6B:08:FE:88:30:CE:D3:87:AB:B6:B9:56:B0:2A:47:EF:80:32:1D:4A:2B:88
+    - source: "F-Droid"
+      issue: 137
+      fingerprint: 3B:33:D7:8A:5B:CA:C1:B9:52:75:6B:08:FE:88:30:CE:D3:87:AB:B6:B9:56:B0:2A:47:EF:80:32:1D:4A:2B:88
+    - source: "F-Droid (IzzyOnDroid)"
+      issue: 137
+      fingerprint: 3B:33:D7:8A:5B:CA:C1:B9:52:75:6B:08:FE:88:30:CE:D3:87:AB:B6:B9:56:B0:2A:47:EF:80:32:1D:4A:2B:88
+    - source: "Direct APK Link"
+      issue: 137
+      fingerprint: 3B:33:D7:8A:5B:CA:C1:B9:52:75:6B:08:FE:88:30:CE:D3:87:AB:B6:B9:56:B0:2A:47:EF:80:32:1D:4A:2B:88
