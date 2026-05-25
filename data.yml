@@ -88,6 +88,11 @@
     - source: F-Droid
       issue: 53
       fingerprint: 5E:C0:A5:31:3A:A4:35:58:EE:75:B2:0B:58:CC:D8:19:4C:DB:F0:66:DF:94:A4:3B:A2:88:D9:33:D6:0B:86:CE
+- package: me.easyapps.easynotes
+  signature:
+    - source: "Accrescent"
+      issue: 120
+      fingerprint: 79:E8:5C:E8:1D:F2:F4:F2:25:C2:2F:EA:0B:2D:19:50:B3:68:62:7E:47:5F:B7:2B:73:85:D2:50:31:3B:F7:C1
 - package: net.ivpn.client
   signature:
     - source: Accrescent
