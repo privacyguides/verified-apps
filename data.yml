@@ -43,6 +43,11 @@
     - source: Google Play
       issue: 49
       fingerprint: D9:10:86:7C:E2:CF:3D:CD:37:DB:51:85:3E:BE:F8:63:3F:D8:3A:14:2B:26:42:27:4E:D0:68:15:2F:F1:22:01
+- package: com.x8bit.bitwarden
+  signature:
+    - source: Direct APK Link
+      issue: 151
+      fingerprint: DE:6E:C9:14:31:55:79:95:29:7B:F3:E6:5B:C8:03:49:BC:60:3A:04:70:81:60:61:8C:86:BC:99:94:17:1C:90
 - package: dev.soupslurpr.appverifier
   signature:
     - source: Accrescent
