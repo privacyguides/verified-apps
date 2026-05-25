@@ -16,6 +16,9 @@ outputs:
   packageSignature:
     description: Colon-separated SHA-256 certificate fingerprint
     value: ${{ steps.parse.outputs.packageSignature }}
+  apkUrl:
+    description: Optional direct HTTPS link to an APK from the issue form
+    value: ${{ steps.parse.outputs.apkUrl }}
 
 runs:
   using: composite
@@ -73,9 +76,43 @@ runs:
           exit 1
         fi
 
+        parse_issue_field() {
+          local header="$1"
+          local body="$2"
+          local value
+
+          value=$(printf '%s\n' "$body" | awk -v header="$header" '
+            $0 == "### " header { found=1; next }
+            found && /^### / { exit }
+            found { print; exit }
+          ')
+          value="${value//$'\r'/}"
+          value="${value#"${value%%[![:space:]]*}"}"
+          value="${value%"${value##*[![:space:]]}"}"
+
+          if [[ -z "$value" || "$value" == "_No response_" ]]; then
+            return 1
+          fi
+          printf '%s\n' "$value"
+        }
+
         parsed=$(parse_verification_text "$text")
         packageName=$(printf '%s\n' "$parsed" | sed -n '1p')
         packageSignature=$(printf '%s\n' "$parsed" | sed -n '2p')
 
+        apk_url=""
+        if [[ -n "$ISSUE_BODY" ]]; then
+          apk_url=$(parse_issue_field "Direct APK Link" "$ISSUE_BODY" || true)
+          if [[ -n "$apk_url" && ! "$apk_url" =~ ^https:// ]]; then
+            echo "Direct APK Link must be an https:// URL" >&2
+            exit 1
+          fi
+          if [[ -n "$apk_url" && ! "$apk_url" =~ \.apk([?#].*)?$ ]]; then
+            echo "Direct APK Link must point to an .apk file" >&2
+            exit 1
+          fi
+        fi
+
         echo "packageName=$packageName" >> "$GITHUB_OUTPUT"
         echo "packageSignature=$packageSignature" >> "$GITHUB_OUTPUT"
+        echo "apkUrl=$apk_url" >> "$GITHUB_OUTPUT"
