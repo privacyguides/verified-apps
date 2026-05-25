@@ -73,6 +73,14 @@
     - source: Direct APK Link
       issue: 151
       fingerprint: DE:6E:C9:14:31:55:79:95:29:7B:F3:E6:5B:C8:03:49:BC:60:3A:04:70:81:60:61:8C:86:BC:99:94:17:1C:90
+- package: de.danoeh.antennapod
+  signature:
+    - source: "F-Droid"
+      issue: 241
+      fingerprint: 17:94:30:56:5A:4A:04:BF:E7:82:74:83:24:30:99:BD:10:87:04:10:80:0C:D7:C4:C7:B4:8D:8D:32:26:DF:55
+    - source: "Direct APK Link"
+      issue: 241
+      fingerprint: 17:94:30:56:5A:4A:04:BF:E7:82:74:83:24:30:99:BD:10:87:04:10:80:0C:D7:C4:C7:B4:8D:8D:32:26:DF:55
 - package: dev.soupslurpr.appverifier
   signature:
     - source: Accrescent
