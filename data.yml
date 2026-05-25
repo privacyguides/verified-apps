@@ -48,6 +48,14 @@
     - source: F-Droid
       issue: 47
       fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
+- package: com.duolingo
+  signature:
+    - source: "Google Play"
+      issue: 285
+      fingerprint: 12:33:FF:6D:E4:C7:0E:F4:D7:DE:AE:54:AF:15:B1:67:FC:7C:FD:25:39:51:7B:D2:17:58:70:F3:CB:77:17:31
+    - source: "AppVerifier"
+      issue: 285
+      fingerprint: 12:33:FF:6D:E4:C7:0E:F4:D7:DE:AE:54:AF:15:B1:67:FC:7C:FD:25:39:51:7B:D2:17:58:70:F3:CB:77:17:31
 - package: com.google.android.inputmethod.latin
   signature:
     - source: "Google Play"
