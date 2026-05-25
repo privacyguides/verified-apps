@@ -3,6 +3,11 @@
     - source: Accrescent
       issue: 66
       fingerprint: 06:7A:40:C4:19:3A:AD:51:AC:87:F9:DD:FD:EB:B1:5E:24:A1:85:0B:AB:FA:48:21:C2:8C:5C:25:C3:FD:C0:71
+- package: app.comaps
+  signature:
+    - source: "Direct APK Link"
+      issue: 247
+      fingerprint: 48:94:E8:E6:96:36:27:EF:66:00:31:D8:59:3F:E7:72:97:F8:35:AC:B4:E2:38:10:00:3E:92:61:35:02:3B:4C
 - package: com.aurora.store
   signature:
     - source: Direct APK Link
