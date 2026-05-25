@@ -14,6 +14,11 @@
     - source: Google Play
       issue: 49
       fingerprint: D9:10:86:7C:E2:CF:3D:CD:37:DB:51:85:3E:BE:F8:63:3F:D8:3A:14:2B:26:42:27:4E:D0:68:15:2F:F1:22:01
+- package: com.shatteredpixel.shatteredpixeldungeon
+  signature:
+    - source: Google Play
+      issue: 76
+      fingerprint: D4:5F:76:0B:89:60:8B:4B:25:3A:3B:16:0D:C2:70:7F:1F:F4:E8:DD:8C:A4:D2:E8:E1:B8:1C:2C:72:D8:17:53
 - package: dev.soupslurpr.appverifier
   signature:
     - source: Accrescent
