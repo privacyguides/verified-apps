@@ -14,6 +14,11 @@
     - source: Google Play
       issue: 49
       fingerprint: D9:10:86:7C:E2:CF:3D:CD:37:DB:51:85:3E:BE:F8:63:3F:D8:3A:14:2B:26:42:27:4E:D0:68:15:2F:F1:22:01
+- package: com.tailscale.ipn
+  signature:
+    - source: Google Play
+      issue: 75
+      fingerprint: 5C:DB:29:55:51:BF:E1:A0:87:FE:D6:AC:DA:07:14:1C:6C:92:9F:A7:C2:9B:D2:73:A7:09:28:13:AC:C4:34:BF
 - package: dev.soupslurpr.appverifier
   signature:
     - source: Accrescent
