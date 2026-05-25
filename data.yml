@@ -53,3 +53,17 @@
     - source: Accrescent
       issue: 3
       fingerprint: 88:A6:B4:0F:C9:7F:DC:84:2F:23:1F:50:EB:12:DE:11:6F:5B:75:9E:3C:5B:38:AA:CC:AF:6A:7B:39:3C:85:BB
+- package: net.leodesouza.blitz
+  signature:
+    - source: Accrescent
+      issue: 139
+      fingerprint: 6D:7F:D2:71:5E:D2:1C:FF:64:08:6D:C5:FC:F8:82:0A:68:5A:79:3E:BD:07:D9:72:16:3D:86:17:2B:AB:BA:75
+    - source: F-Droid
+      issue: 139
+      fingerprint: 6D:7F:D2:71:5E:D2:1C:FF:64:08:6D:C5:FC:F8:82:0A:68:5A:79:3E:BD:07:D9:72:16:3D:86:17:2B:AB:BA:75
+    - source: Google Play
+      issue: 139
+      fingerprint: 6D:7F:D2:71:5E:D2:1C:FF:64:08:6D:C5:FC:F8:82:0A:68:5A:79:3E:BD:07:D9:72:16:3D:86:17:2B:AB:BA:75
+    - source: Direct APK Link
+      issue: 139
+      fingerprint: 6D:7F:D2:71:5E:D2:1C:FF:64:08:6D:C5:FC:F8:82:0A:68:5A:79:3E:BD:07:D9:72:16:3D:86:17:2B:AB:BA:75
