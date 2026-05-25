@@ -40,31 +40,51 @@ runs:
         SIGNER_KIND: ${{ inputs.signerKind }}
       run: |
         store_signed_match=false
+        store_owned=false
+        info_note=""
+
+        if [[ "$SIGNER_KIND" == "google-play-app-signing" && ! "$PACKAGE_NAME" =~ ^com\.google\. ]]; then
+          store_owned=true
+          play_match_note="Google Play: your fingerprint matches the certificate signed with **Google Play App Signing** (not a developer-owned upload key)."
+          play_mismatch_note="Google Play: this APK is signed with **Google Play App Signing**, not a developer-owned key."
+        elif [[ "$SIGNER_KIND" == "fdroid" && ! "$PACKAGE_NAME" =~ ^org\.fdroid\. ]]; then
+          store_owned=true
+          fdroid_match_note="F-Droid: your fingerprint matches the **F-Droid project key** on the store APK."
+          fdroid_mismatch_note="F-Droid: this APK is signed by the **F-Droid project key**, which usually means the app has **non-reproducible builds** on F-Droid. You should complain to the developer to add [reproducible build](https://f-droid.org/docs/Reproducible_Builds/) support."
+        fi
 
         if [[ "$STORE_SIG" == "$USER_SIG" ]]; then
-          echo "status=:white_check_mark:" >> "$GITHUB_OUTPUT"
-          echo "infoNote=" >> "$GITHUB_OUTPUT"
-          if [[ "$SIGNER_KIND" == "google-play-app-signing" && ! "$PACKAGE_NAME" =~ ^com\.google\. ]] \
-            || [[ "$SIGNER_KIND" == "fdroid" && ! "$PACKAGE_NAME" =~ ^org\.fdroid\. ]]; then
+          if [[ "$store_owned" == true ]]; then
+            echo "status=:large_blue_diamond:" >> "$GITHUB_OUTPUT"
+            if [[ "$SIGNER_KIND" == "google-play-app-signing" ]]; then
+              info_note="$play_match_note"
+            else
+              info_note="$fdroid_match_note"
+            fi
             store_signed_match=true
+          else
+            echo "status=:white_check_mark:" >> "$GITHUB_OUTPUT"
           fi
-        elif [[ "$SIGNER_KIND" == "google-play-app-signing" && ! "$PACKAGE_NAME" =~ ^com\.google\. ]]; then
-          echo "status=:information_source:" >> "$GITHUB_OUTPUT"
+        elif [[ "$store_owned" == true ]]; then
+          echo "status=:warning:" >> "$GITHUB_OUTPUT"
+          if [[ "$SIGNER_KIND" == "google-play-app-signing" ]]; then
+            info_note="$play_mismatch_note"
+          else
+            info_note="$fdroid_mismatch_note"
+          fi
+        else
+          echo "status=:x:" >> "$GITHUB_OUTPUT"
+        fi
+
+        if [[ -n "$info_note" ]]; then
           {
             echo 'infoNote<<EOF'
-            echo "Google Play: this APK is signed with **Google Play App Signing**, not a developer-owned key."
-            echo EOF
-          } >> "$GITHUB_OUTPUT"
-        elif [[ "$SIGNER_KIND" == "fdroid" && ! "$PACKAGE_NAME" =~ ^org\.fdroid\. ]]; then
-          echo "status=:information_source:" >> "$GITHUB_OUTPUT"
-          {
-            echo 'infoNote<<EOF'
-            echo "F-Droid: this APK is signed by the **F-Droid project key**, which usually means the app has **non-reproducible builds** on F-Droid. You should complain to the developer to add [reproducible build](https://f-droid.org/docs/Reproducible_Builds/) support."
+            echo "$info_note"
             echo EOF
           } >> "$GITHUB_OUTPUT"
         else
-          echo "status=:x:" >> "$GITHUB_OUTPUT"
           echo "infoNote=" >> "$GITHUB_OUTPUT"
         fi
+
         echo "packageName=$PACKAGE_NAME" >> "$GITHUB_OUTPUT"
         echo "storeSignedMatch=$store_signed_match" >> "$GITHUB_OUTPUT"
