@@ -55,6 +55,11 @@
       fingerprint: |
         7C:E8:3C:1B:71:F3:D5:72:FE:D0:4C:8D:40:C5:CB:10:FF:75:E6:D8:7D:9D:F6:FB:D5:3F:04:68:C2:90:50:53
         F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
+- package: com.mttnow.droid.easyjet
+  signature:
+    - source: "Google Play"
+      issue: 330
+      fingerprint: BA:E1:4D:59:3D:B0:DA:16:45:1B:1A:85:2B:72:C8:8F:38:5C:93:5E:12:A5:43:ED:15:28:EC:D2:4B:D6:6A:C2
 - package: com.none.tom.exiferaser
   signature:
     - source: Accrescent
