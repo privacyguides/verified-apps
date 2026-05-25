@@ -48,6 +48,11 @@
     - source: F-Droid
       issue: 47
       fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
+- package: com.geoguessr.app
+  signature:
+    - source: "Google Play"
+      issue: 353
+      fingerprint: 21:A6:DC:35:E1:BB:D5:E7:67:66:D1:EA:BC:11:92:43:F5:87:D5:2B:5B:92:29:9A:09:88:A2:67:9C:8B:A6:85
 - package: com.google.android.inputmethod.latin
   signature:
     - source: "Google Play"
