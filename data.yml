@@ -24,6 +24,11 @@
     - source: Direct APK Link
       issue: 97
       fingerprint: C5:40:53:AB:0F:10:D9:54:17:62:A3:DA:76:65:AE:3D:BA:5E:7C:74:3A:B4:F1:08:A5:34:9D:62:AC:10:6E:F5
+- package: com.deepl.mobiletranslator
+  signature:
+    - source: "Google Play"
+      issue: 266
+      fingerprint: EF:ED:F6:6E:64:29:F7:F0:C6:79:6F:64:AD:08:A6:D1:F0:55:82:BF:21:48:36:56:DE:B4:00:65:1D:1E:F5:BE
 - package: com.donnnno.arcticons
   signature:
     - source: Accrescent
