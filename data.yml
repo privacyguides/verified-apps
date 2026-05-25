@@ -6,6 +6,11 @@
     - source: Direct APK Link
       issue: 97
       fingerprint: C5:40:53:AB:0F:10:D9:54:17:62:A3:DA:76:65:AE:3D:BA:5E:7C:74:3A:B4:F1:08:A5:34:9D:62:AC:10:6E:F5
+- package: com.digibites.accubattery
+  signature:
+    - source: Google Play
+      issue: 116
+      fingerprint: 64:A5:40:DE:F3:35:EF:35:08:80:CB:66:08:C9:26:5B:B4:CB:F7:FB:DE:40:D3:D8:C0:6A:EB:99:7C:27:63:5E
 - package: com.donnnno.arcticons
   signature:
     - source: Accrescent
