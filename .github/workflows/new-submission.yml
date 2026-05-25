@@ -20,6 +20,9 @@ jobs:
 
     if: ${{ github.event.label.name == 'Unchecked' }}
 
+    permissions:
+      issues: read
+
     steps:
       - name: Download Repository
         uses: actions/checkout@v6
@@ -77,31 +80,80 @@ jobs:
           echo "packageName=$packageName" >> "$GITHUB_OUTPUT"
           echo "packageSignature=$packageSignature" >> "$GITHUB_OUTPUT"
 
-      - name: Check for duplicate in data.yml
+      - name: Check for duplicate submission
         id: duplicateCheck
         env:
           PACKAGE: ${{ steps.setOutputs.outputs.packageName }}
           SIGNATURE: ${{ steps.setOutputs.outputs.packageSignature }}
+          CURRENT_ISSUE: ${{ github.event.issue.number }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
         run: |
           echo "isDuplicate=false" >> "$GITHUB_OUTPUT"
 
-          if [[ ! -f data.yml ]] || [[ ! -s data.yml ]]; then
-            exit 0
+          export PACKAGE SIGNATURE
+
+          parse_verification_block() {
+            local text="$1"
+            local block pkg sig
+
+            block=$(printf '%s\n' "$text" | sed -n '/^### Verification Info$/,$p' | tail -n +2)
+            if printf '%s\n' "$block" | grep -q '^```'; then
+              block=$(printf '%s\n' "$block" | sed -n '/^```/,/^```/p' | sed '1d;$d')
+            fi
+            block="${block//$'\r'/}"
+
+            pkg=$(printf '%s\n' "$block" | sed -n '2p' | tr -d '[:space:]')
+            sig=$(printf '%s\n' "$block" | sed -n '3p' | tr -d '[:space:]')
+            if [[ -z "$pkg" ]]; then
+              pkg=$(printf '%s\n' "$block" | sed -n '1p' | tr -d '[:space:]')
+              sig=$(printf '%s\n' "$block" | sed -n '2p' | tr -d '[:space:]')
+            fi
+
+            if [[ -n "$pkg" && -n "$sig" ]]; then
+              printf '%s|%s\n' "$pkg" "$sig"
+            fi
+          }
+
+          duplicate_of=""
+
+          if [[ -f data.yml ]] && [[ -s data.yml ]]; then
+            duplicate_of=$(
+              yq -r '
+                .[]
+                | select(.package == strenv(PACKAGE))
+                | . as $entry
+                | $entry.signature[]
+                | select(.fingerprint == strenv(SIGNATURE))
+                | (.issue // $entry.issue)
+              ' data.yml | sort -n | head -n1
+            )
+            [[ "$duplicate_of" == "null" ]] && duplicate_of=""
           fi
 
-          export PACKAGE SIGNATURE
-          duplicate_of=$(
-            yq -r '
-              .[]
-              | select(.package == strenv(PACKAGE))
-              | . as $entry
-              | $entry.signature[]
-              | select(.fingerprint == strenv(SIGNATURE))
-              | (.issue // $entry.issue)
-            ' data.yml | sort -n | head -n1
-          )
+          if [[ -z "$duplicate_of" ]]; then
+            while IFS= read -r row; do
+              [[ -z "$row" ]] && continue
+              issue_num=$(printf '%s\n' "$row" | jq -r .number)
+              body=$(printf '%s\n' "$row" | jq -r .body)
 
-          if [[ -n "$duplicate_of" && "$duplicate_of" != "null" ]]; then
+              parsed=$(parse_verification_block "$body") || continue
+              issue_pkg="${parsed%%|*}"
+              issue_sig="${parsed#*|}"
+
+              if [[ "$issue_pkg" == "$PACKAGE" && "$issue_sig" == "$SIGNATURE" ]]; then
+                if [[ -z "$duplicate_of" || "$issue_num" -lt "$duplicate_of" ]]; then
+                  duplicate_of="$issue_num"
+                fi
+              fi
+            done < <(
+              gh issue list --repo "$GH_REPO" --state open --limit 300 --json number,body,title \
+                | jq -c --argjson cur "$CURRENT_ISSUE" \
+                  '[.[] | select(.title | startswith("[New]:")) | select(.number != $cur)] | .[]'
+            )
+          fi
+
+          if [[ -n "$duplicate_of" ]]; then
             echo "isDuplicate=true" >> "$GITHUB_OUTPUT"
             echo "duplicateOf=$duplicate_of" >> "$GITHUB_OUTPUT"
           fi
@@ -127,7 +179,7 @@ jobs:
 
           if [[ "$DUPLICATE_OF" == "$NUMBER" ]]; then
             gh issue close "$NUMBER" --repo "$GH_REPO" \
-              --comment "This package and signature are already listed in data.yml."
+              --comment "This package and signature are already tracked in an open submission or in data.yml."
           else
             gh issue close "$NUMBER" --repo "$GH_REPO" --duplicate-of "$DUPLICATE_OF"
           fi
