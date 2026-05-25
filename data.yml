@@ -1,5 +1,10 @@
 - package: dev.soupslurpr.appverifier
   issue: 1
   signature:
-  - source: Accrescent
-    fingerprint: 88:A6:B4:0F:C9:7F:DC:84:2F:23:1F:50:EB:12:DE:11:6F:5B:75:9E:3C:5B:38:AA:CC:AF:6A:7B:39:3C:85:BB
+    - source: Accrescent
+      fingerprint: 88:A6:B4:0F:C9:7F:DC:84:2F:23:1F:50:EB:12:DE:11:6F:5B:75:9E:3C:5B:38:AA:CC:AF:6A:7B:39:3C:85:BB
+- package: org.fdroid.basic
+  issue: 2
+  signature:
+    - source: F-Droid
+      fingerprint: EF:7F:82:2B:76:53:E2:01:1C:B8:C5:A7:FC:99:E8:D2:AD:E1:71:7E:53:9C:A5:6D:64:56:29:5E:3B:C0:73:12
