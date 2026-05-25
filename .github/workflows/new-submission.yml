@@ -808,6 +808,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create PR
+        id: create-pr
         if: steps.count.outputs.matches != '0'
         uses: ./.github/actions/create-submission-pr
         with:
@@ -820,6 +821,28 @@ jobs:
           gplaySignature: ${{ needs.gplay.outputs.signature }}
           appverifierSignature: ${{ needs.appverifier-db.outputs.signature }}
           directApkSignature: ${{ needs.direct-apk.outputs.signature }}
+
+      - name: Label PR by matching sources
+        if: steps.count.outputs.matches != '0' && steps.create-pr.outputs.prCreated == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          PR_URL: ${{ steps.create-pr.outputs.prUrl }}
+          ACC_EQUAL: ${{ steps.accEqual.outputs.result }}
+          FDROID_EQUAL: ${{ steps.fdroidEqual.outputs.result }}
+          GPLAY_EQUAL: ${{ steps.gplayEqual.outputs.result }}
+          AV_EQUAL: ${{ steps.appverifierEqual.outputs.result }}
+        run: |
+          set -euo pipefail
+          label_args=()
+          [[ "$ACC_EQUAL" == "true" ]] && label_args+=(--add-label "Match Accrescent")
+          [[ "$AV_EQUAL" == "true" ]] && label_args+=(--add-label "Match Appverifier")
+          [[ "$FDROID_EQUAL" == "true" ]] && label_args+=(--add-label "Match F-Droid")
+          [[ "$GPLAY_EQUAL" == "true" ]] && label_args+=(--add-label "Match Play")
+          if [[ ${#label_args[@]} -eq 0 ]]; then
+            exit 0
+          fi
+          gh pr edit "$PR_URL" --repo "$GH_REPO" "${label_args[@]}"
 
   create-pr-anyways:
     name: Create PR (PR Anyways)
