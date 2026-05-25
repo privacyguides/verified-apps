@@ -144,6 +144,11 @@ packages:
       - source: "Accrescent"
         issue: 120
         fingerprint: 79:E8:5C:E8:1D:F2:F4:F2:25:C2:2F:EA:0B:2D:19:50:B3:68:62:7E:47:5F:B7:2B:73:85:D2:50:31:3B:F7:C1
+  - package: ml.docilealligator.infinityforreddit.patreon
+    signature:
+      - source: "Direct APK Link"
+        issue: 430
+        fingerprint: C7:32:45:6D:26:23:0C:D9:86:F3:08:27:37:E7:B9:19:07:C7:88:8A:CB:02:2B:9B:19:15:C5:2F:04:55:C9:D2
   - package: net.ivpn.client
     signature:
       - source: Accrescent
