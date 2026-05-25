@@ -8,6 +8,11 @@
     - source: Direct APK Link
       issue: 132
       fingerprint: 4C:62:61:57:AD:02:BD:A3:40:1A:72:63:55:5F:68:A7:96:63:FC:3E:13:A4:D4:36:9A:12:57:09:41:AA:28:0F
+- package: com.booking
+  signature:
+    - source: "Google Play"
+      issue: 273
+      fingerprint: 6A:C8:C8:A9:E6:F3:6E:14:E5:2A:0A:05:15:A3:6B:70:66:E7:20:A1:B0:C8:A1:B0:59:E0:78:17:50:A8:71:99
 - package: com.brave.browser
   signature:
     - source: Google Play
