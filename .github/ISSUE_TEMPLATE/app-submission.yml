@@ -1,7 +1,7 @@
 name: Android App Submission
 description: Submit a new app signature to the database
 title: "[New]: "
-labels: ["Android", "Unchecked"]
+labels: ["Unchecked"]
 body:
   - type: markdown
     attributes:
