@@ -14,6 +14,11 @@
     - source: Google Play
       issue: 49
       fingerprint: D9:10:86:7C:E2:CF:3D:CD:37:DB:51:85:3E:BE:F8:63:3F:D8:3A:14:2B:26:42:27:4E:D0:68:15:2F:F1:22:01
+- package: de.westnordost.streetcomplete
+  signature:
+    - source: Google Play
+      issue: 79
+      fingerprint: 99:5C:A1:DC:02:BD:B9:E3:11:7E:29:7B:77:91:44:0A:2E:A1:DC:A5:77:6C:B9:D5:6D:79:26:92:A5:97:C8:6C
 - package: dev.soupslurpr.appverifier
   signature:
     - source: Accrescent
