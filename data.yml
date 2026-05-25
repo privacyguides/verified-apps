@@ -24,6 +24,14 @@
     - source: Direct APK Link
       issue: 97
       fingerprint: C5:40:53:AB:0F:10:D9:54:17:62:A3:DA:76:65:AE:3D:BA:5E:7C:74:3A:B4:F1:08:A5:34:9D:62:AC:10:6E:F5
+- package: com.cbouvat.android.saracroche
+  signature:
+    - source: "F-Droid"
+      issue: 210
+      fingerprint: 53:4C:A5:DD:7D:98:74:0D:70:D1:A3:E5:E1:64:AD:38:F8:4E:6B:28:E4:11:4F:B8:46:B3:10:3C:65:7A:41:0F
+    - source: "Direct APK Link"
+      issue: 210
+      fingerprint: 53:4C:A5:DD:7D:98:74:0D:70:D1:A3:E5:E1:64:AD:38:F8:4E:6B:28:E4:11:4F:B8:46:B3:10:3C:65:7A:41:0F
 - package: com.donnnno.arcticons
   signature:
     - source: Accrescent
