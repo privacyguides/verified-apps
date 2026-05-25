@@ -15,12 +15,14 @@ jobs:
     outputs:
       packageName: ${{ steps.parsed.outputs.packageName }}
       packageSignature: ${{ steps.parsed.outputs.packageSignature }}
+      apkUrl: ${{ steps.parsed.outputs.apkUrl }}
       isDuplicate: ${{ steps.duplicateCheck.outputs.isDuplicate }}
       duplicateOf: ${{ steps.duplicateCheck.outputs.duplicateOf }}
 
     if: ${{ github.event.label.name == 'Unchecked' }}
 
     permissions:
+      contents: read
       issues: read
 
     steps:
@@ -40,6 +42,7 @@ jobs:
           echo "Labels: ${{ toJSON(github.event.issue.labels) }}"
           echo "Package Name: ${{ steps.parsed.outputs.packageName }}"
           echo "Signature: ${{ steps.parsed.outputs.packageSignature }}"
+          echo "Direct APK Link: ${{ steps.parsed.outputs.apkUrl }}"
 
       - name: Validate parsed submission
         env:
@@ -48,7 +51,7 @@ jobs:
         run: |
           set -euo pipefail
           is_valid_package_name() {
-            [[ "$1" =~ ^[a-z][a-z0-9_]*(\.[a-z][a-z0-9_]+)+$ ]]
+            [[ "$1" =~ ^[a-zA-Z][a-zA-Z0-9_]*(\.[a-zA-Z][a-zA-Z0-9_]+)+$ ]]
           }
           is_valid_sha256_colon() {
             [[ "$1" =~ ^([0-9A-Fa-f]{2}:){31}[0-9A-Fa-f]{2}$ ]]
@@ -106,6 +109,8 @@ jobs:
     needs: parse
     if: needs.parse.outputs.isDuplicate != 'true'
     continue-on-error: true
+    permissions:
+      contents: read
 
     outputs:
       signature: ${{ steps.appSignature.outputs.signature }}
@@ -186,6 +191,8 @@ jobs:
     needs: parse
     if: needs.parse.outputs.isDuplicate != 'true'
     continue-on-error: true
+    permissions:
+      contents: read
 
     outputs:
       signature: ${{ steps.appSignature.outputs.signature }}
@@ -269,6 +276,8 @@ jobs:
     needs: parse
     if: needs.parse.outputs.isDuplicate != 'true'
     continue-on-error: true
+    permissions:
+      contents: read
 
     outputs:
       signature: ${{ steps.appSignature.outputs.signature }}
@@ -373,10 +382,83 @@ jobs:
           echo "$PACKAGE_NAME" >> $GITHUB_STEP_SUMMARY
           echo "$SIGNATURE" >> $GITHUB_STEP_SUMMARY
 
+  direct-apk:
+    name: Direct APK Link
+    runs-on: ubuntu-latest
+    needs: parse
+    if: needs.parse.outputs.isDuplicate != 'true' && needs.parse.outputs.apkUrl != ''
+    continue-on-error: true
+    permissions:
+      contents: read
+
+    outputs:
+      signature: ${{ steps.appSignature.outputs.signature }}
+      match: ${{ steps.matches.outputs.status }}
+      packageName: ${{ steps.matches.outputs.packageName }}
+      infoNote: ${{ steps.matches.outputs.infoNote }}
+      storeSignedMatch: ${{ steps.matches.outputs.storeSignedMatch }}
+
+    env:
+      PACKAGE_NAME: ${{ needs.parse.outputs.packageName }}
+      APK_URL: ${{ needs.parse.outputs.apkUrl }}
+
+    steps:
+      - name: Download Repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: "false"
+
+      - name: APK cache key
+        id: apkCacheKey
+        run: |
+          url_hash=$(printf '%s' "$APK_URL" | sha256sum | awk '{print $1}')
+          echo "cacheKey=direct-apk-${url_hash}" >> "$GITHUB_OUTPUT"
+
+      - name: Restore APK Cache
+        id: apkCache
+        uses: actions/cache@v5
+        with:
+          path: direct-apk.apk
+          key: ${{ steps.apkCacheKey.outputs.cacheKey }}
+
+      - name: Download APK
+        if: steps.apkCache.outputs.cache-hit != 'true'
+        run: |
+          set -euo pipefail
+          curl -fsSL --retry 3 --retry-delay 2 -o direct-apk.apk "$APK_URL"
+          file direct-apk.apk
+          if ! file direct-apk.apk | grep -qiE 'zip archive|android'; then
+            echo "Downloaded file does not look like an APK" >&2
+            exit 1
+          fi
+
+      - name: Get APK Signature
+        id: appSignature
+        uses: ./.github/actions/get-signature
+        with:
+          path: direct-apk.apk
+
+      - name: Write Summary
+        id: summary
+        env:
+          SIGNATURE: ${{ steps.appSignature.outputs.signature }}
+        run: |
+          echo "$PACKAGE_NAME" >> $GITHUB_STEP_SUMMARY
+          echo "$SIGNATURE" >> $GITHUB_STEP_SUMMARY
+
+      - name: Matches User-Provided?
+        id: matches
+        uses: ./.github/actions/match-signature
+        with:
+          packageName: ${{ env.PACKAGE_NAME }}
+          userSignature: ${{ needs.parse.outputs.packageSignature }}
+          storeSignature: ${{ steps.appSignature.outputs.signature }}
+          signerKind: ${{ steps.appSignature.outputs.signerKind }}
+
   summary:
     name: Generate Summary
     runs-on: ubuntu-latest
-    needs: [parse, accrescent, fdroid, gplay]
+    needs: [parse, accrescent, fdroid, gplay, direct-apk]
 
     if: always() && needs.parse.outputs.isDuplicate != 'true'
     permissions:
@@ -398,9 +480,18 @@ jobs:
             exit 1
           fi
 
+      - name: Download Repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: "false"
+
       - name: Create Table
         run: |
-          echo "We attempted to check Accrescent, F-Droid, and Google Play for this app. If we found any results, they'll be in the table below:" >> $GITHUB_STEP_SUMMARY
+          if [[ -n "${{ needs.parse.outputs.apkUrl }}" ]]; then
+            echo "We attempted to check Accrescent, F-Droid, Google Play, and your direct APK link for this app. If we found any results, they'll be in the table below:" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "We attempted to check Accrescent, F-Droid, and Google Play for this app. If we found any results, they'll be in the table below:" >> $GITHUB_STEP_SUMMARY
+          fi
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Source | Matches | Verification |" >> $GITHUB_STEP_SUMMARY
           echo "|---|---|---|"  >> $GITHUB_STEP_SUMMARY
@@ -408,13 +499,60 @@ jobs:
           echo "| Accrescent | ${{ needs.accrescent.outputs.match }} | ${{ needs.accrescent.outputs.packageName }}<br>${{ needs.accrescent.outputs.signature }} |" >> $GITHUB_STEP_SUMMARY
           echo "| F-Droid | ${{ needs.fdroid.outputs.match }} | ${{ needs.fdroid.outputs.packageName }}<br>${{ needs.fdroid.outputs.signature }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Google Play | ${{ needs.gplay.outputs.match }} | ${{ needs.gplay.outputs.packageName }}<br>${{ needs.gplay.outputs.signature }} |" >> $GITHUB_STEP_SUMMARY
+          if [[ -n "${{ needs.parse.outputs.apkUrl }}" ]]; then
+            echo "| Direct APK Link | ${{ needs.direct-apk.outputs.match }} | ${{ needs.direct-apk.outputs.packageName }}<br>${{ needs.direct-apk.outputs.signature }} |" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo ":exclamation: We scanned the APK file at \`${{ needs.parse.outputs.apkUrl }}\` which the submitter provided. This does not indicate its legitimacy, you must confirm this is a legitimate source." >> $GITHUB_STEP_SUMMARY
+          fi
           cat "$GITHUB_STEP_SUMMARY" > ${RUNNER_TEMP}/issueBody.md
+
+      - name: Append matching fingerprints from other packages
+        env:
+          PACKAGE: ${{ needs.parse.outputs.packageName }}
+          SIGNATURE: ${{ needs.parse.outputs.packageSignature }}
+        run: |
+          set -euo pipefail
+          issue_body="${RUNNER_TEMP}/issueBody.md"
+
+          if [[ ! -f data.yml ]] || [[ ! -s data.yml ]]; then
+            exit 0
+          fi
+
+          sig_norm=$(printf '%s' "$SIGNATURE" | tr '[:lower:]' '[:upper:]')
+          related_lines=""
+          while IFS=$'\t' read -r pkg issue fp; do
+            [[ -z "$pkg" || -z "$fp" || -z "$issue" ]] && continue
+            [[ "$pkg" == "$PACKAGE" ]] && continue
+            fp_norm=$(printf '%s' "$fp" | tr '[:lower:]' '[:upper:]')
+            [[ "$fp_norm" != "$sig_norm" ]] && continue
+            related_lines+="- ${pkg} from #${issue}"$'\n'
+          done < <(
+            yq -r '
+              .[]
+              | . as $entry
+              | $entry.signature[]
+              | [$entry.package, (.issue // $entry.issue // ""), .fingerprint] | @tsv
+            ' data.yml
+          )
+          related_lines=$(printf '%s' "$related_lines" | sort -u)
+
+          if [[ -z "$related_lines" ]]; then
+            exit 0
+          fi
+
+          {
+            echo ""
+            echo "This fingerprint matches another app already confirmed in our database! This may indicate it's from the same developer, you should check. If so, this is a stronger indication that this submission is legitimate:"
+            echo ""
+            echo "$related_lines"
+          } | tee -a "$GITHUB_STEP_SUMMARY" >> "$issue_body"
 
       - name: Append informational notes
         env:
           ACC_INFO: ${{ needs.accrescent.outputs.infoNote }}
           FDROID_INFO: ${{ needs.fdroid.outputs.infoNote }}
           GPLAY_INFO: ${{ needs.gplay.outputs.infoNote }}
+          DIRECT_INFO: ${{ needs.direct-apk.outputs.infoNote }}
         run: |
           issue_body="${RUNNER_TEMP}/issueBody.md"
           printed_file="${RUNNER_TEMP}/printed-notes.txt"
@@ -434,12 +572,20 @@ jobs:
           append_note "$ACC_INFO"
           append_note "$FDROID_INFO"
           append_note "$GPLAY_INFO"
+          append_note "$DIRECT_INFO"
 
       - name: Count Matches
         id: count
         env:
           USER_SIG: ${{ needs.parse.outputs.packageSignature }}
+          APK_URL: ${{ needs.parse.outputs.apkUrl }}
         run: |
+          sources=3
+          if [[ -n "$APK_URL" ]]; then
+            sources=4
+          fi
+          echo "sources=$sources" >> "$GITHUB_OUTPUT"
+
           i=0
           if [[ -n "${{ needs.accrescent.outputs.signature }}" && "${{ needs.accrescent.outputs.signature }}" == "$USER_SIG" ]]; then
             i=$((i + 1))
@@ -450,6 +596,9 @@ jobs:
           if [[ -n "${{ needs.gplay.outputs.signature }}" && "${{ needs.gplay.outputs.signature }}" == "$USER_SIG" ]]; then
             i=$((i + 1))
           fi
+          if [[ -n "$APK_URL" && -n "${{ needs.direct-apk.outputs.signature }}" && "${{ needs.direct-apk.outputs.signature }}" == "$USER_SIG" ]]; then
+            i=$((i + 1))
+          fi
           echo "$i"
           echo "matches=$i" >> "$GITHUB_OUTPUT"
           cat ${RUNNER_TEMP}/issueBody.md
@@ -457,23 +606,27 @@ jobs:
       - name: Add Match Count
         env:
           MATCHES: ${{ steps.count.outputs.matches }}
+          SOURCES: ${{ steps.count.outputs.sources }}
           USER_SIG: ${{ needs.parse.outputs.packageSignature }}
           ACC_SIG: ${{ needs.accrescent.outputs.signature }}
           FDROID_SIG: ${{ needs.fdroid.outputs.signature }}
           GPLAY_SIG: ${{ needs.gplay.outputs.signature }}
+          DIRECT_SIG: ${{ needs.direct-apk.outputs.signature }}
           ACC_STORE_SIGNED: ${{ needs.accrescent.outputs.storeSignedMatch }}
           FDROID_STORE_SIGNED: ${{ needs.fdroid.outputs.storeSignedMatch }}
           GPLAY_STORE_SIGNED: ${{ needs.gplay.outputs.storeSignedMatch }}
+          DIRECT_STORE_SIGNED: ${{ needs.direct-apk.outputs.storeSignedMatch }}
           ACC_INFO: ${{ needs.accrescent.outputs.infoNote }}
           FDROID_INFO: ${{ needs.fdroid.outputs.infoNote }}
           GPLAY_INFO: ${{ needs.gplay.outputs.infoNote }}
+          DIRECT_INFO: ${{ needs.direct-apk.outputs.infoNote }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
         run: |
           echo "" >> ${RUNNER_TEMP}/issueBody.md
           has_info=false
-          if [[ -n "$ACC_INFO" || -n "$FDROID_INFO" || -n "$GPLAY_INFO" ]]; then
+          if [[ -n "$ACC_INFO" || -n "$FDROID_INFO" || -n "$GPLAY_INFO" || -n "$DIRECT_INFO" ]]; then
             has_info=true
           fi
           store_signed_label=false
@@ -486,8 +639,11 @@ jobs:
           if [[ -n "$GPLAY_SIG" && "$GPLAY_SIG" == "$USER_SIG" && "$GPLAY_STORE_SIGNED" == "true" ]]; then
             store_signed_label=true
           fi
+          if [[ -n "$DIRECT_SIG" && "$DIRECT_SIG" == "$USER_SIG" && "$DIRECT_STORE_SIGNED" == "true" ]]; then
+            store_signed_label=true
+          fi
           if [[ "$MATCHES" != "0" ]]; then
-            echo "${MATCHES}/3 of our sources matched what was provided. Some mismatches between app stores can be normal." >> ${RUNNER_TEMP}/issueBody.md
+            echo "${MATCHES}/${SOURCES} of our sources matched what was provided. Some mismatches between app stores can be normal." >> ${RUNNER_TEMP}/issueBody.md
             if [[ "$store_signed_label" == true ]]; then
               gh issue edit "$NUMBER" --repo "$GH_REPO" --add-label "Store Signed" --remove-label "Unchecked"
             else
@@ -528,6 +684,7 @@ jobs:
           ACC_SIG: ${{ needs.accrescent.outputs.signature }}
           FDROID_SIG: ${{ needs.fdroid.outputs.signature }}
           GPLAY_SIG: ${{ needs.gplay.outputs.signature }}
+          DIRECT_SIG: ${{ needs.direct-apk.outputs.signature }}
         run: |
           set -euo pipefail
 
@@ -549,6 +706,9 @@ jobs:
           fi
           if [[ -n "$GPLAY_SIG" && "$GPLAY_SIG" == "$USER_SIG" ]]; then
             add_signature "Google Play" "$USER_SIG"
+          fi
+          if [[ -n "$DIRECT_SIG" && "$DIRECT_SIG" == "$USER_SIG" ]]; then
+            add_signature "Direct APK Link" "$USER_SIG"
           fi
 
           if [[ "$(yq '.signature | length' "$entry")" -eq 0 ]]; then

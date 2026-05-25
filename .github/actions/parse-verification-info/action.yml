@@ -16,6 +16,9 @@ outputs:
   packageSignature:
     description: Colon-separated SHA-256 certificate fingerprint
     value: ${{ steps.parse.outputs.packageSignature }}
+  apkUrl:
+    description: Optional direct HTTPS link to an APK from the issue form
+    value: ${{ steps.parse.outputs.apkUrl }}
 
 runs:
   using: composite
@@ -29,7 +32,7 @@ runs:
         set -euo pipefail
 
         is_valid_package_name() {
-          [[ "$1" =~ ^[a-z][a-z0-9_]*(\.[a-z][a-z0-9_]+)+$ ]]
+          [[ "$1" =~ ^[a-zA-Z][a-zA-Z0-9_]*(\.[a-zA-Z][a-zA-Z0-9_]+)+$ ]]
         }
 
         is_valid_sha256_colon() {
@@ -73,9 +76,53 @@ runs:
           exit 1
         fi
 
-        parsed=$(parse_verification_text "$text")
+        parse_issue_field() {
+          local header="$1"
+          local body="$2"
+          local value
+
+          value=$(printf '%s\n' "$body" | awk -v header="$header" '
+            $0 == "### " header { found=1; next }
+            found && /^### / { exit }
+            found && NF { print; exit }
+          ')
+          value="${value//$'\r'/}"
+          value="${value#"${value%%[![:space:]]*}"}"
+          value="${value%"${value##*[![:space:]]}"}"
+
+          if [[ -z "$value" || "$value" == "_No response_" ]]; then
+            return 1
+          fi
+          printf '%s\n' "$value"
+        }
+
+        if ! parsed=$(parse_verification_text "$text"); then
+          echo "Could not parse package name and fingerprint from Verification Info. Paste the exact AppVerifier output (package ID and SHA-256 fingerprint on separate lines)." >&2
+          exit 1
+        fi
         packageName=$(printf '%s\n' "$parsed" | sed -n '1p')
         packageSignature=$(printf '%s\n' "$parsed" | sed -n '2p')
 
+        validate_apk_url() {
+          local url="$1"
+          [[ -z "$url" ]] && return 1
+          if [[ ! "$url" =~ ^https:// ]]; then
+            echo "Ignoring Direct APK Link (not an https:// URL): $url" >&2
+            return 1
+          fi
+          if [[ ! "$url" =~ \.apk([?#].*)?$ ]]; then
+            echo "Ignoring Direct APK Link (not a direct .apk file; store pages and listings are not supported): $url" >&2
+            return 1
+          fi
+          printf '%s\n' "$url"
+        }
+
+        apk_url=""
+        if [[ -n "$ISSUE_BODY" ]]; then
+          raw_apk_url=$(parse_issue_field "Direct APK Link" "$ISSUE_BODY" || true)
+          apk_url=$(validate_apk_url "$raw_apk_url" || true)
+        fi
+
         echo "packageName=$packageName" >> "$GITHUB_OUTPUT"
         echo "packageSignature=$packageSignature" >> "$GITHUB_OUTPUT"
+        echo "apkUrl=$apk_url" >> "$GITHUB_OUTPUT"

@@ -30,12 +30,21 @@ body:
       required: true
 
   - type: input
+    id: directApkLink
+    attributes:
+      label: Direct APK Link
+      description: |
+        Optional. A direct HTTPS link to an APK file for this app (not a web page or store listing).
+        This could be from GitHub releases, for example. If provided, we will check its signature in addition to mainstream app stores.
+      placeholder: https://example.com/downloads/app.apk
+
+  - type: input
     id: devVerification
     attributes:
       label: Source
       description: |
-        Does the developer publish this key on an official website? Please link to that attestation if so, otherwise leave this blank.
-      placeholder: https://github.com/example/app...
+        Optional. Does the developer publish this key on an official website? Please link to that attestation if so, otherwise leave this blank.
+      placeholder: https://github.com/example/app/README.md
 
   - type: markdown
     attributes:
