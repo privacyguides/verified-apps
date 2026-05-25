@@ -69,6 +69,14 @@
     - source: F-Droid
       issue: 47
       fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
+- package: com.github.catfriend1.syncthingfork
+  signature:
+    - source: "F-Droid"
+      issue: 443
+      fingerprint: D3:74:B8:DE:50:57:01:31:43:C7:D1:51:5A:01:55:98:C2:DF:40:3B:E8:16:0C:AE:01:A5:8C:22:7E:6E:86:AA
+    - source: "Direct APK Link"
+      issue: 443
+      fingerprint: D3:74:B8:DE:50:57:01:31:43:C7:D1:51:5A:01:55:98:C2:DF:40:3B:E8:16:0C:AE:01:A5:8C:22:7E:6E:86:AA
 - package: com.github.lamarios.clipious
   signature:
     - source: "Accrescent"
