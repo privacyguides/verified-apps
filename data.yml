@@ -139,6 +139,11 @@ packages:
       - source: "AppVerifier"
         issue: 62
         fingerprint: 6A:A8:0F:DF:4A:8C:C1:37:37:CF:B4:34:FC:0C:DE:48:6F:09:CF:8F:CD:A2:1A:67:BE:A5:EE:1C:A2:70:08:86
+  - package: io.sanford.wormhole_william
+    signature:
+      - source: "Direct APK Link"
+        issue: 453
+        fingerprint: 4F:BD:DD:75:06:50:73:63:4B:D5:3D:26:6F:C4:3E:7C:61:6E:40:F4:A4:48:BB:DA:2F:AF:60:D7:65:EB:3A:0E
   - package: me.easyapps.easynotes
     signature:
       - source: "Accrescent"
