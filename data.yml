@@ -111,6 +111,14 @@
     - source: "AppVerifier"
       issue: 355
       fingerprint: DE:6E:C9:14:31:55:79:95:29:7B:F3:E6:5B:C8:03:49:BC:60:3A:04:70:81:60:61:8C:86:BC:99:94:17:1C:90
+- package: de.tutao.tutanota
+  signature:
+    - source: "AppVerifier"
+      issue: 410
+      fingerprint: B4:54:C1:76:F9:0A:1E:A0:57:29:87:D3:82:72:3B:5C:D7:4F:94:2A:79:37:A2:A0:B9:9A:36:80:69:14:88:50
+    - source: "Direct APK Link"
+      issue: 410
+      fingerprint: B4:54:C1:76:F9:0A:1E:A0:57:29:87:D3:82:72:3B:5C:D7:4F:94:2A:79:37:A2:A0:B9:9A:36:80:69:14:88:50
 - package: dev.soupslurpr.appverifier
   signature:
     - source: Accrescent
