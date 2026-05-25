@@ -8,6 +8,11 @@
     - source: "Direct APK Link"
       issue: 247
       fingerprint: 48:94:E8:E6:96:36:27:EF:66:00:31:D8:59:3F:E7:72:97:F8:35:AC:B4:E2:38:10:00:3E:92:61:35:02:3B:4C
+- package: app.ninesevennine.twofactorauthenticator.accrescent
+  signature:
+    - source: "Accrescent"
+      issue: 131
+      fingerprint: E5:B2:8E:A1:E0:51:C2:32:DE:A9:4C:27:C0:59:2E:2C:00:2D:17:C5:CA:81:78:8B:51:30:6D:60:8A:FE:52:C5
 - package: com.aurora.store
   signature:
     - source: Direct APK Link
