@@ -129,6 +129,11 @@
     - source: "AppVerifier"
       issue: 62
       fingerprint: 6A:A8:0F:DF:4A:8C:C1:37:37:CF:B4:34:FC:0C:DE:48:6F:09:CF:8F:CD:A2:1A:67:BE:A5:EE:1C:A2:70:08:86
+- package: me.easyapps.easynotes
+  signature:
+    - source: "Accrescent"
+      issue: 120
+      fingerprint: 79:E8:5C:E8:1D:F2:F4:F2:25:C2:2F:EA:0B:2D:19:50:B3:68:62:7E:47:5F:B7:2B:73:85:D2:50:31:3B:F7:C1
 - package: net.ivpn.client
   signature:
     - source: Accrescent
