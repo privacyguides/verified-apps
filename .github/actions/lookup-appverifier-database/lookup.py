@@ -104,11 +104,7 @@ def main() -> int:
         write_github_output("found", "false")
         write_github_output("signature", "")
         write_github_output("sources", "")
-        write_github_output(
-            "infoNote",
-            ":information_source: **AppVerifier:** this package is not in AppVerifier's "
-            "[internal verification database](https://github.com/soupslurpr/AppVerifier/blob/main/app/src/main/kotlin/dev/soupslurpr/appverifier/InternalVerificationInfoDatabase.kt).",
-        )
+        write_github_output("infoNote", "")
         return 0
 
     blocks = parse_hashes_blocks(entry)

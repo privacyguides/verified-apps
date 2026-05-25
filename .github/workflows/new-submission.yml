@@ -447,6 +447,7 @@ jobs:
       contents: read
 
     outputs:
+      found: ${{ steps.lookup.outputs.found }}
       signature: ${{ steps.lookup.outputs.signature }}
       match: ${{ steps.matches.outputs.status }}
       packageName: ${{ steps.matches.outputs.packageName }}
@@ -471,6 +472,7 @@ jobs:
 
       - name: Matches User-Provided?
         id: matches
+        if: steps.lookup.outputs.found == 'true'
         uses: ./.github/actions/match-signature
         with:
           packageName: ${{ env.PACKAGE_NAME }}
@@ -478,6 +480,7 @@ jobs:
           storeSignature: ${{ steps.lookup.outputs.signature }}
 
       - name: Combine informational notes
+        if: steps.lookup.outputs.found == 'true'
         id: combinedNote
         env:
           LOOKUP_NOTE: ${{ steps.lookup.outputs.infoNote }}
@@ -506,18 +509,14 @@ jobs:
 
       - name: Write Summary
         id: summary
+        if: steps.lookup.outputs.found == 'true'
         env:
-          FOUND: ${{ steps.lookup.outputs.found }}
           SIGNATURE: ${{ steps.lookup.outputs.signature }}
           SOURCES: ${{ steps.lookup.outputs.sources }}
         run: |
           echo "$PACKAGE_NAME" >> $GITHUB_STEP_SUMMARY
-          if [[ "$FOUND" == "true" ]]; then
-            echo "Sources in AppVerifier database: $SOURCES" >> $GITHUB_STEP_SUMMARY
-            echo "$SIGNATURE" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "Not listed in AppVerifier internal database" >> $GITHUB_STEP_SUMMARY
-          fi
+          echo "Sources in AppVerifier database: $SOURCES" >> $GITHUB_STEP_SUMMARY
+          echo "$SIGNATURE" >> $GITHUB_STEP_SUMMARY
 
   summary:
     name: Generate Summary
@@ -562,6 +561,7 @@ jobs:
           GPLAY_MATCH: ${{ needs.gplay.outputs.match }}
           GPLAY_PKG: ${{ needs.gplay.outputs.packageName }}
           GPLAY_SIG: ${{ needs.gplay.outputs.signature }}
+          AV_FOUND: ${{ needs.appverifier-db.outputs.found }}
           AV_MATCH: ${{ needs.appverifier-db.outputs.match }}
           AV_PKG: ${{ needs.appverifier-db.outputs.packageName }}
           AV_SIG: ${{ needs.appverifier-db.outputs.signature }}
@@ -577,10 +577,14 @@ jobs:
             local sig_html="${sig//$'\n'/<br>}"
             printf '%s<br>%s' "$pkg" "$sig_html"
           }
-          if [[ -n "$APK_URL" ]]; then
+          if [[ -n "$APK_URL" && "$AV_FOUND" == "true" ]]; then
             echo "We attempted to check Accrescent, F-Droid, Google Play, AppVerifier's internal database, and your direct APK link for this app. If we found any results, they'll be in the table below:" >> $GITHUB_STEP_SUMMARY
-          else
+          elif [[ -n "$APK_URL" ]]; then
+            echo "We attempted to check Accrescent, F-Droid, Google Play, and your direct APK link for this app. If we found any results, they'll be in the table below:" >> $GITHUB_STEP_SUMMARY
+          elif [[ "$AV_FOUND" == "true" ]]; then
             echo "We attempted to check Accrescent, F-Droid, Google Play, and AppVerifier's internal database for this app. If we found any results, they'll be in the table below:" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "We attempted to check Accrescent, F-Droid, and Google Play for this app. If we found any results, they'll be in the table below:" >> $GITHUB_STEP_SUMMARY
           fi
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Source | Matches | Verification |" >> $GITHUB_STEP_SUMMARY
@@ -589,7 +593,9 @@ jobs:
           echo "| Accrescent | $ACC_MATCH | $(format_sig_cell "$ACC_PKG" "$ACC_SIG") |" >> $GITHUB_STEP_SUMMARY
           echo "| F-Droid | $FDROID_MATCH | $(format_sig_cell "$FDROID_PKG" "$FDROID_SIG") |" >> $GITHUB_STEP_SUMMARY
           echo "| Google Play | $GPLAY_MATCH | $(format_sig_cell "$GPLAY_PKG" "$GPLAY_SIG") |" >> $GITHUB_STEP_SUMMARY
-          echo "| AppVerifier | $AV_MATCH | $(format_sig_cell "$AV_PKG" "$AV_SIG") |" >> $GITHUB_STEP_SUMMARY
+          if [[ "$AV_FOUND" == "true" ]]; then
+            echo "| AppVerifier | $AV_MATCH | $(format_sig_cell "$AV_PKG" "$AV_SIG") |" >> $GITHUB_STEP_SUMMARY
+          fi
           if [[ -n "$APK_URL" ]]; then
             echo "| Direct APK Link | $DIRECT_MATCH | $(format_sig_cell "$DIRECT_PKG" "$DIRECT_SIG") |" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
@@ -674,6 +680,7 @@ jobs:
 
       - name: Match AppVerifier signatures
         id: appverifierEqual
+        if: needs.appverifier-db.outputs.found == 'true'
         uses: ./.github/actions/signature-lib
         with:
           operation: signatures-equal
@@ -693,6 +700,7 @@ jobs:
         id: count
         env:
           APK_URL: ${{ needs.parse.outputs.apkUrl }}
+          AV_FOUND: ${{ needs.appverifier-db.outputs.found }}
           ACC_EQUAL: ${{ steps.accEqual.outputs.result }}
           FDROID_EQUAL: ${{ steps.fdroidEqual.outputs.result }}
           GPLAY_EQUAL: ${{ steps.gplayEqual.outputs.result }}
@@ -700,9 +708,12 @@ jobs:
           DIRECT_EQUAL: ${{ steps.directEqual.outputs.result }}
         run: |
           set -euo pipefail
-          sources=4
+          sources=3
+          if [[ "$AV_FOUND" == "true" ]]; then
+            sources=$((sources + 1))
+          fi
           if [[ -n "$APK_URL" ]]; then
-            sources=5
+            sources=$((sources + 1))
           fi
           echo "sources=$sources" >> "$GITHUB_OUTPUT"
 
@@ -710,7 +721,9 @@ jobs:
           [[ "$ACC_EQUAL" == "true" ]] && i=$((i + 1))
           [[ "$FDROID_EQUAL" == "true" ]] && i=$((i + 1))
           [[ "$GPLAY_EQUAL" == "true" ]] && i=$((i + 1))
-          [[ "$AV_EQUAL" == "true" ]] && i=$((i + 1))
+          if [[ "$AV_FOUND" == "true" && "$AV_EQUAL" == "true" ]]; then
+            i=$((i + 1))
+          fi
           if [[ -n "$APK_URL" && "$DIRECT_EQUAL" == "true" ]]; then
             i=$((i + 1))
           fi
@@ -828,6 +841,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
           PR_URL: ${{ steps.create-pr.outputs.prUrl }}
+          AV_FOUND: ${{ needs.appverifier-db.outputs.found }}
           ACC_EQUAL: ${{ steps.accEqual.outputs.result }}
           FDROID_EQUAL: ${{ steps.fdroidEqual.outputs.result }}
           GPLAY_EQUAL: ${{ steps.gplayEqual.outputs.result }}
@@ -836,7 +850,9 @@ jobs:
           set -euo pipefail
           label_args=()
           [[ "$ACC_EQUAL" == "true" ]] && label_args+=(--add-label "Match Accrescent")
-          [[ "$AV_EQUAL" == "true" ]] && label_args+=(--add-label "Match Appverifier")
+          if [[ "$AV_FOUND" == "true" && "$AV_EQUAL" == "true" ]]; then
+            label_args+=(--add-label "Match Appverifier")
+          fi
           [[ "$FDROID_EQUAL" == "true" ]] && label_args+=(--add-label "Match F-Droid")
           [[ "$GPLAY_EQUAL" == "true" ]] && label_args+=(--add-label "Match Play")
           if [[ ${#label_args[@]} -eq 0 ]]; then
