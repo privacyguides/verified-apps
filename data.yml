@@ -1,3 +1,14 @@
+- package: com.brouken.player
+  signature:
+    - source: Accrescent
+      issue: 109
+      fingerprint: 3C:B9:7D:BA:57:D3:D0:BC:19:0B:AE:5F:1F:3A:84:16:43:BC:D9:39:9B:C3:10:28:CE:25:77:5D:93:D0:10:9D
+    - source: Google Play
+      issue: 109
+      fingerprint: 3C:B9:7D:BA:57:D3:D0:BC:19:0B:AE:5F:1F:3A:84:16:43:BC:D9:39:9B:C3:10:28:CE:25:77:5D:93:D0:10:9D
+    - source: Direct APK Link
+      issue: 109
+      fingerprint: 3C:B9:7D:BA:57:D3:D0:BC:19:0B:AE:5F:1F:3A:84:16:43:BC:D9:39:9B:C3:10:28:CE:25:77:5D:93:D0:10:9D
 - package: com.cakewallet.cake_wallet
   signature:
     - source: Accrescent
