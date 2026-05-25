@@ -437,10 +437,87 @@ jobs:
           storeSignature: ${{ steps.appSignature.outputs.signature }}
           signerKind: ${{ steps.appSignature.outputs.signerKind }}
 
+  appverifier-db:
+    name: AppVerifier
+    runs-on: ubuntu-latest
+    needs: parse
+    if: needs.parse.outputs.isDuplicate != 'true' && github.event.label.name == 'Unchecked'
+    continue-on-error: true
+    permissions:
+      contents: read
+
+    outputs:
+      signature: ${{ steps.lookup.outputs.signature }}
+      match: ${{ steps.matches.outputs.status }}
+      packageName: ${{ steps.matches.outputs.packageName }}
+      infoNote: ${{ steps.combinedNote.outputs.infoNote }}
+      storeSignedMatch: ${{ steps.matches.outputs.storeSignedMatch }}
+
+    env:
+      PACKAGE_NAME: ${{ needs.parse.outputs.packageName }}
+
+    steps:
+      - name: Lookup internal database fingerprints
+        id: lookup
+        uses: ./.github/actions/lookup-appverifier-database
+        with:
+          packageName: ${{ env.PACKAGE_NAME }}
+          userSignature: ${{ needs.parse.outputs.packageSignature }}
+
+      - name: Matches User-Provided?
+        id: matches
+        uses: ./.github/actions/match-signature
+        with:
+          packageName: ${{ env.PACKAGE_NAME }}
+          userSignature: ${{ needs.parse.outputs.packageSignature }}
+          storeSignature: ${{ steps.lookup.outputs.signature }}
+
+      - name: Combine informational notes
+        id: combinedNote
+        env:
+          LOOKUP_NOTE: ${{ steps.lookup.outputs.infoNote }}
+          MATCH_NOTE: ${{ steps.matches.outputs.infoNote }}
+        run: |
+          note=""
+          if [[ -n "$LOOKUP_NOTE" ]]; then
+            note="$LOOKUP_NOTE"
+          fi
+          if [[ -n "$MATCH_NOTE" ]]; then
+            if [[ -n "$note" ]]; then
+              note+=$'\n\n'
+            fi
+            note+="$MATCH_NOTE"
+          fi
+          if [[ -n "$note" ]]; then
+            {
+              echo 'infoNote<<EOF'
+              printf '%s' "$note"
+              echo
+              echo EOF
+            } >> "$GITHUB_OUTPUT"
+          else
+            echo "infoNote=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Write Summary
+        id: summary
+        env:
+          FOUND: ${{ steps.lookup.outputs.found }}
+          SIGNATURE: ${{ steps.lookup.outputs.signature }}
+          SOURCES: ${{ steps.lookup.outputs.sources }}
+        run: |
+          echo "$PACKAGE_NAME" >> $GITHUB_STEP_SUMMARY
+          if [[ "$FOUND" == "true" ]]; then
+            echo "Sources in AppVerifier database: $SOURCES" >> $GITHUB_STEP_SUMMARY
+            echo "$SIGNATURE" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "Not listed in AppVerifier internal database" >> $GITHUB_STEP_SUMMARY
+          fi
+
   summary:
     name: Generate Summary
     runs-on: ubuntu-latest
-    needs: [parse, accrescent, fdroid, gplay, direct-apk]
+    needs: [parse, accrescent, fdroid, gplay, appverifier-db, direct-apk]
 
     if: always() && needs.parse.outputs.isDuplicate != 'true' && github.event.label.name == 'Unchecked'
     permissions:
@@ -480,6 +557,9 @@ jobs:
           GPLAY_MATCH: ${{ needs.gplay.outputs.match }}
           GPLAY_PKG: ${{ needs.gplay.outputs.packageName }}
           GPLAY_SIG: ${{ needs.gplay.outputs.signature }}
+          AV_MATCH: ${{ needs.appverifier-db.outputs.match }}
+          AV_PKG: ${{ needs.appverifier-db.outputs.packageName }}
+          AV_SIG: ${{ needs.appverifier-db.outputs.signature }}
           DIRECT_MATCH: ${{ needs.direct-apk.outputs.match }}
           DIRECT_PKG: ${{ needs.direct-apk.outputs.packageName }}
           DIRECT_SIG: ${{ needs.direct-apk.outputs.signature }}
@@ -493,9 +573,9 @@ jobs:
             printf '%s<br>%s' "$pkg" "$sig_html"
           }
           if [[ -n "$APK_URL" ]]; then
-            echo "We attempted to check Accrescent, F-Droid, Google Play, and your direct APK link for this app. If we found any results, they'll be in the table below:" >> $GITHUB_STEP_SUMMARY
+            echo "We attempted to check Accrescent, F-Droid, Google Play, AppVerifier's internal database, and your direct APK link for this app. If we found any results, they'll be in the table below:" >> $GITHUB_STEP_SUMMARY
           else
-            echo "We attempted to check Accrescent, F-Droid, and Google Play for this app. If we found any results, they'll be in the table below:" >> $GITHUB_STEP_SUMMARY
+            echo "We attempted to check Accrescent, F-Droid, Google Play, and AppVerifier's internal database for this app. If we found any results, they'll be in the table below:" >> $GITHUB_STEP_SUMMARY
           fi
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Source | Matches | Verification |" >> $GITHUB_STEP_SUMMARY
@@ -504,6 +584,7 @@ jobs:
           echo "| Accrescent | $ACC_MATCH | $(format_sig_cell "$ACC_PKG" "$ACC_SIG") |" >> $GITHUB_STEP_SUMMARY
           echo "| F-Droid | $FDROID_MATCH | $(format_sig_cell "$FDROID_PKG" "$FDROID_SIG") |" >> $GITHUB_STEP_SUMMARY
           echo "| Google Play | $GPLAY_MATCH | $(format_sig_cell "$GPLAY_PKG" "$GPLAY_SIG") |" >> $GITHUB_STEP_SUMMARY
+          echo "| AppVerifier | $AV_MATCH | $(format_sig_cell "$AV_PKG" "$AV_SIG") |" >> $GITHUB_STEP_SUMMARY
           if [[ -n "$APK_URL" ]]; then
             echo "| Direct APK Link | $DIRECT_MATCH | $(format_sig_cell "$DIRECT_PKG" "$DIRECT_SIG") |" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
@@ -538,6 +619,7 @@ jobs:
           ACC_INFO: ${{ needs.accrescent.outputs.infoNote }}
           FDROID_INFO: ${{ needs.fdroid.outputs.infoNote }}
           GPLAY_INFO: ${{ needs.gplay.outputs.infoNote }}
+          AV_INFO: ${{ needs.appverifier-db.outputs.infoNote }}
           DIRECT_INFO: ${{ needs.direct-apk.outputs.infoNote }}
         run: |
           issue_body="${RUNNER_TEMP}/issueBody.md"
@@ -558,6 +640,7 @@ jobs:
           append_note "$ACC_INFO"
           append_note "$FDROID_INFO"
           append_note "$GPLAY_INFO"
+          append_note "$AV_INFO"
           append_note "$DIRECT_INFO"
 
       - name: Match Accrescent signatures
@@ -584,6 +667,14 @@ jobs:
           signatureA: ${{ needs.gplay.outputs.signature }}
           signatureB: ${{ needs.parse.outputs.packageSignature }}
 
+      - name: Match AppVerifier signatures
+        id: appverifierEqual
+        uses: ./.github/actions/signature-lib
+        with:
+          operation: signatures-equal
+          signatureA: ${{ needs.appverifier-db.outputs.signature }}
+          signatureB: ${{ needs.parse.outputs.packageSignature }}
+
       - name: Match direct APK signatures
         id: directEqual
         if: needs.parse.outputs.apkUrl != ''
@@ -600,12 +691,13 @@ jobs:
           ACC_EQUAL: ${{ steps.accEqual.outputs.result }}
           FDROID_EQUAL: ${{ steps.fdroidEqual.outputs.result }}
           GPLAY_EQUAL: ${{ steps.gplayEqual.outputs.result }}
+          AV_EQUAL: ${{ steps.appverifierEqual.outputs.result }}
           DIRECT_EQUAL: ${{ steps.directEqual.outputs.result }}
         run: |
           set -euo pipefail
-          sources=3
+          sources=4
           if [[ -n "$APK_URL" ]]; then
-            sources=4
+            sources=5
           fi
           echo "sources=$sources" >> "$GITHUB_OUTPUT"
 
@@ -613,6 +705,7 @@ jobs:
           [[ "$ACC_EQUAL" == "true" ]] && i=$((i + 1))
           [[ "$FDROID_EQUAL" == "true" ]] && i=$((i + 1))
           [[ "$GPLAY_EQUAL" == "true" ]] && i=$((i + 1))
+          [[ "$AV_EQUAL" == "true" ]] && i=$((i + 1))
           if [[ -n "$APK_URL" && "$DIRECT_EQUAL" == "true" ]]; then
             i=$((i + 1))
           fi
@@ -627,6 +720,7 @@ jobs:
           ACC_EQUAL: ${{ steps.accEqual.outputs.result }}
           FDROID_EQUAL: ${{ steps.fdroidEqual.outputs.result }}
           GPLAY_EQUAL: ${{ steps.gplayEqual.outputs.result }}
+          AV_EQUAL: ${{ steps.appverifierEqual.outputs.result }}
           DIRECT_EQUAL: ${{ steps.directEqual.outputs.result }}
           ACC_STORE_SIGNED: ${{ needs.accrescent.outputs.storeSignedMatch }}
           FDROID_STORE_SIGNED: ${{ needs.fdroid.outputs.storeSignedMatch }}
@@ -635,6 +729,7 @@ jobs:
           ACC_INFO: ${{ needs.accrescent.outputs.infoNote }}
           FDROID_INFO: ${{ needs.fdroid.outputs.infoNote }}
           GPLAY_INFO: ${{ needs.gplay.outputs.infoNote }}
+          AV_INFO: ${{ needs.appverifier-db.outputs.infoNote }}
           DIRECT_INFO: ${{ needs.direct-apk.outputs.infoNote }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
@@ -642,7 +737,7 @@ jobs:
         run: |
           echo "" >> ${RUNNER_TEMP}/issueBody.md
           has_info=false
-          if [[ -n "$ACC_INFO" || -n "$FDROID_INFO" || -n "$GPLAY_INFO" || -n "$DIRECT_INFO" ]]; then
+          if [[ -n "$ACC_INFO" || -n "$FDROID_INFO" || -n "$GPLAY_INFO" || -n "$AV_INFO" || -n "$DIRECT_INFO" ]]; then
             has_info=true
           fi
           store_signed_label=false
@@ -718,6 +813,7 @@ jobs:
           accrescentSignature: ${{ needs.accrescent.outputs.signature }}
           fdroidSignature: ${{ needs.fdroid.outputs.signature }}
           gplaySignature: ${{ needs.gplay.outputs.signature }}
+          appverifierSignature: ${{ needs.appverifier-db.outputs.signature }}
           directApkSignature: ${{ needs.direct-apk.outputs.signature }}
 
   create-pr-anyways:

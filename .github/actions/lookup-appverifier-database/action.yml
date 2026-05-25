@@ -1,0 +1,55 @@
+name: Lookup AppVerifier internal database
+description: Fetch fingerprints for a package from AppVerifier's bundled verification database
+inputs:
+  packageName:
+    description: Android application ID
+    required: true
+  userSignature:
+    description: Optional submitter fingerprint(s) used to pick a matching signing configuration
+    required: false
+    default: ""
+  databaseUrl:
+    description: Raw URL to InternalVerificationInfoDatabase.kt
+    required: false
+    default: https://raw.githubusercontent.com/soupslurpr/AppVerifier/main/app/src/main/kotlin/dev/soupslurpr/appverifier/InternalVerificationInfoDatabase.kt
+outputs:
+  found:
+    description: Whether the package exists in AppVerifier's internal database
+    value: ${{ steps.lookup.outputs.found }}
+  signature:
+    description: Colon-separated SHA-256 fingerprint(s) from the database entry
+    value: ${{ steps.lookup.outputs.signature }}
+  sources:
+    description: Human-readable AppVerifier source labels for the matched entry
+    value: ${{ steps.lookup.outputs.sources }}
+  infoNote:
+    description: Optional note about lookup or parsing
+    value: ${{ steps.lookup.outputs.infoNote }}
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      id: lookup
+      env:
+        PACKAGE_NAME: ${{ inputs.packageName }}
+        USER_SIGNATURE: ${{ inputs.userSignature }}
+        DATABASE_URL: ${{ inputs.databaseUrl }}
+      run: |
+        set -euo pipefail
+        database_file="${RUNNER_TEMP}/InternalVerificationInfoDatabase.kt"
+        url_hash=$(printf '%s' "$DATABASE_URL" | sha256sum | awk '{print $1}')
+        cache_key="appverifier-db-${url_hash}"
+
+        cache_dir="${RUNNER_TEMP}/appverifier-db-cache"
+        mkdir -p "$cache_dir"
+        cached_file="${cache_dir}/${url_hash}.kt"
+
+        if [[ -f "$cached_file" ]]; then
+          cp "$cached_file" "$database_file"
+        else
+          curl -fsSL --retry 3 --retry-delay 2 -o "$database_file" "$DATABASE_URL"
+          cp "$database_file" "$cached_file"
+        fi
+
+        python3 "${GITHUB_ACTION_PATH}/lookup.py" "$database_file" "$PACKAGE_NAME" "$USER_SIGNATURE"
