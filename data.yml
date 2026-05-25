@@ -8,6 +8,11 @@
     - source: Direct APK Link
       issue: 132
       fingerprint: 4C:62:61:57:AD:02:BD:A3:40:1A:72:63:55:5F:68:A7:96:63:FC:3E:13:A4:D4:36:9A:12:57:09:41:AA:28:0F
+- package: com.bankid.bus
+  signature:
+    - source: "Google Play"
+      issue: 278
+      fingerprint: AD:A2:62:4B:35:FC:A3:CC:34:0E:11:89:94:54:E5:50:FB:A9:82:B4:4D:82:B9:7E:FD:16:AA:3A:7A:46:7C:16
 - package: com.brave.browser
   signature:
     - source: Google Play
