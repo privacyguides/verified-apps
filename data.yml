@@ -63,3 +63,11 @@
     - source: Accrescent
       issue: 3
       fingerprint: 88:A6:B4:0F:C9:7F:DC:84:2F:23:1F:50:EB:12:DE:11:6F:5B:75:9E:3C:5B:38:AA:CC:AF:6A:7B:39:3C:85:BB
+- package: org.mozilla.fennec_fdroid
+  signature:
+    - source: F-Droid
+      issue: 164
+      fingerprint: 06:66:53:58:EF:D8:BA:05:BE:23:6A:47:A1:2C:B0:95:8D:7D:75:DD:93:9D:77:C2:B3:1F:53:98:53:7E:BD:C5
+    - source: Direct APK Link
+      issue: 164
+      fingerprint: 06:66:53:58:EF:D8:BA:05:BE:23:6A:47:A1:2C:B0:95:8D:7D:75:DD:93:9D:77:C2:B3:1F:53:98:53:7E:BD:C5
