@@ -1,3 +1,11 @@
+- package: co.uk.exocron.android.qlango
+  signature:
+    - source: Accrescent
+      issue: 114
+      fingerprint: 5D:40:43:44:B8:E6:4C:B7:3A:96:C0:84:29:FA:DE:99:22:BC:25:69:E5:F4:91:A5:A4:1F:72:B9:72:F1:39:85
+    - source: Google Play
+      issue: 114
+      fingerprint: 5D:40:43:44:B8:E6:4C:B7:3A:96:C0:84:29:FA:DE:99:22:BC:25:69:E5:F4:91:A5:A4:1F:72:B9:72:F1:39:85
 - package: com.cakewallet.cake_wallet
   signature:
     - source: Accrescent
