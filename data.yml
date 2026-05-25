@@ -1,3 +1,8 @@
+- package: com.beemdevelopment.aegis
+  signature:
+    - source: F-Droid
+      issue: 121
+      fingerprint: 09:CF:DE:62:E2:A8:1C:80:50:D3:BE:4C:20:E3:F8:D8:DD:D0:15:31:BE:1B:47:CB:3B:0E:EC:21:3F:64:1F:89
 - package: com.cakewallet.cake_wallet
   signature:
     - source: Accrescent
