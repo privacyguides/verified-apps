@@ -3,6 +3,11 @@
     - source: Accrescent
       issue: 66
       fingerprint: 06:7A:40:C4:19:3A:AD:51:AC:87:F9:DD:FD:EB:B1:5E:24:A1:85:0B:AB:FA:48:21:C2:8C:5C:25:C3:FD:C0:71
+- package: com.amadeus.merci.client.ui
+  signature:
+    - source: "Google Play"
+      issue: 304
+      fingerprint: 8C:94:B5:19:AB:CA:6C:11:91:18:B5:9B:BF:0F:4D:1D:08:16:D3:D5:88:E2:B1:3C:A7:DD:AD:26:71:05:0E:EB
 - package: com.aurora.store
   signature:
     - source: Direct APK Link
