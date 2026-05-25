@@ -21,6 +21,7 @@ jobs:
     if: ${{ github.event.label.name == 'Unchecked' }}
 
     permissions:
+      contents: read
       issues: read
 
     steps:
@@ -106,6 +107,8 @@ jobs:
     needs: parse
     if: needs.parse.outputs.isDuplicate != 'true'
     continue-on-error: true
+    permissions:
+      contents: read
 
     outputs:
       signature: ${{ steps.appSignature.outputs.signature }}
@@ -186,6 +189,8 @@ jobs:
     needs: parse
     if: needs.parse.outputs.isDuplicate != 'true'
     continue-on-error: true
+    permissions:
+      contents: read
 
     outputs:
       signature: ${{ steps.appSignature.outputs.signature }}
@@ -269,6 +274,8 @@ jobs:
     needs: parse
     if: needs.parse.outputs.isDuplicate != 'true'
     continue-on-error: true
+    permissions:
+      contents: read
 
     outputs:
       signature: ${{ steps.appSignature.outputs.signature }}
