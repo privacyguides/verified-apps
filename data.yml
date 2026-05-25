@@ -48,6 +48,11 @@
     - source: F-Droid
       issue: 47
       fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
+- package: com.gitlab.mudlej.MjPdfReader
+  signature:
+    - source: "Direct APK Link"
+      issue: 235
+      fingerprint: AF:92:A1:A8:1B:45:B9:D6:A5:D9:F1:63:7F:D6:BE:98:FD:88:9B:48:12:8C:00:9D:A9:AF:D7:BA:0F:C2:F0:89
 - package: com.google.android.inputmethod.latin
   signature:
     - source: "Google Play"
