@@ -142,6 +142,14 @@
     - source: "Accrescent"
       issue: 120
       fingerprint: 79:E8:5C:E8:1D:F2:F4:F2:25:C2:2F:EA:0B:2D:19:50:B3:68:62:7E:47:5F:B7:2B:73:85:D2:50:31:3B:F7:C1
+- package: moe.shizuku.privileged.api
+  signature:
+    - source: "F-Droid (IzzyOnDroid)"
+      issue: 415
+      fingerprint: 26:8B:55:90:E8:68:FB:08:BA:E7:E0:AC:41:35:64:CD:1F:F8:8F:5C:CF:F7:4A:F9:DB:D0:DC:91:8E:30:DB:30
+    - source: "Direct APK Link"
+      issue: 415
+      fingerprint: 26:8B:55:90:E8:68:FB:08:BA:E7:E0:AC:41:35:64:CD:1F:F8:8F:5C:CF:F7:4A:F9:DB:D0:DC:91:8E:30:DB:30
 - package: net.ivpn.client
   signature:
     - source: Accrescent
