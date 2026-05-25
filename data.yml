@@ -83,6 +83,11 @@
     - source: F-Droid
       issue: 53
       fingerprint: 5E:C0:A5:31:3A:A4:35:58:EE:75:B2:0B:58:CC:D8:19:4C:DB:F0:66:DF:94:A4:3B:A2:88:D9:33:D6:0B:86:CE
+- package: jp.co.ana.android.tabidachi
+  signature:
+    - source: "Google Play"
+      issue: 303
+      fingerprint: D8:BE:42:57:71:A1:1F:7A:2B:12:1C:DB:21:A1:47:10:42:0F:1C:AA:16:65:EB:55:4E:9F:F5:AD:33:7C:91:FD
 - package: net.ivpn.client
   signature:
     - source: Accrescent
