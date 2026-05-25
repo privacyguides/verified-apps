@@ -3,6 +3,11 @@
     - source: Accrescent
       issue: 1
       fingerprint: 3A:04:A8:0B:2A:88:33:4C:74:74:85:F0:B2:15:16:40:A3:8B:B3:D2:D7:3A:8E:AB:81:DF:50:3E:0F:02:02:B2
+- package: helium314.keyboard
+  signature:
+    - source: F-Droid
+      issue: 53
+      fingerprint: 5E:C0:A5:31:3A:A4:35:58:EE:75:B2:0B:58:CC:D8:19:4C:DB:F0:66:DF:94:A4:3B:A2:88:D9:33:D6:0B:86:CE
 - package: net.ivpn.client
   signature:
     - source: Accrescent
