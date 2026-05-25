@@ -63,3 +63,8 @@
     - source: Accrescent
       issue: 3
       fingerprint: 88:A6:B4:0F:C9:7F:DC:84:2F:23:1F:50:EB:12:DE:11:6F:5B:75:9E:3C:5B:38:AA:CC:AF:6A:7B:39:3C:85:BB
+- package: org.cromite.cromite
+  signature:
+    - source: Direct APK Link
+      issue: 157
+      fingerprint: 63:3F:A4:1D:82:11:D6:D0:91:6A:81:9B:89:66:8C:6D:E9:2E:64:23:2D:A6:7F:9D:16:FD:81:C3:B7:E9:23:FF
