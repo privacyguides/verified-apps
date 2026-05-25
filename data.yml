@@ -3,6 +3,14 @@
     - source: Accrescent
       issue: 66
       fingerprint: 06:7A:40:C4:19:3A:AD:51:AC:87:F9:DD:FD:EB:B1:5E:24:A1:85:0B:AB:FA:48:21:C2:8C:5C:25:C3:FD:C0:71
+- package: ch.protonvpn.android
+  signature:
+    - source: "Google Play"
+      issue: 220
+      fingerprint: DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
+    - source: "Direct APK Link"
+      issue: 220
+      fingerprint: DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
 - package: com.aurora.store
   signature:
     - source: Direct APK Link
