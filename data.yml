@@ -73,6 +73,11 @@
     - source: Direct APK Link
       issue: 151
       fingerprint: DE:6E:C9:14:31:55:79:95:29:7B:F3:E6:5B:C8:03:49:BC:60:3A:04:70:81:60:61:8C:86:BC:99:94:17:1C:90
+- package: de.flixbus.app
+  signature:
+    - source: "Google Play"
+      issue: 264
+      fingerprint: 97:D8:97:D1:7F:01:9F:97:05:5E:B5:FF:AE:7B:19:5B:1F:0D:1A:5E:F2:5F:8A:6F:6B:DA:46:87:95:A7:1C:54
 - package: dev.soupslurpr.appverifier
   signature:
     - source: Accrescent
