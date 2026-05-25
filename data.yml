@@ -1,3 +1,14 @@
+- package: com.cakewallet.cupcake
+  signature:
+    - source: Accrescent
+      issue: 93
+      fingerprint: A4:77:72:07:CC:B2:44:B4:1E:D5:E9:0B:97:1B:BB:AE:D0:4B:B7:74:B2:50:A5:BE:E7:E8:94:7B:8C:A0:11:7C
+    - source: Google Play
+      issue: 93
+      fingerprint: A4:77:72:07:CC:B2:44:B4:1E:D5:E9:0B:97:1B:BB:AE:D0:4B:B7:74:B2:50:A5:BE:E7:E8:94:7B:8C:A0:11:7C
+    - source: Direct APK Link
+      issue: 93
+      fingerprint: A4:77:72:07:CC:B2:44:B4:1E:D5:E9:0B:97:1B:BB:AE:D0:4B:B7:74:B2:50:A5:BE:E7:E8:94:7B:8C:A0:11:7C
 - package: com.donnnno.arcticons
   signature:
     - source: Accrescent
