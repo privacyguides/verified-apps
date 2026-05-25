@@ -1,8 +1,21 @@
+- package: InfinityLoop1309.NewPipeEnhanced
+  signature:
+    - source: F-Droid
+      issue: 198
+      fingerprint: DE:C7:34:29:CE:25:63:27:5F:5E:D1:98:25:E4:46:52:B3:2B:36:3A:46:F3:8B:DF:F9:AD:6D:CD:E4:84:2D:88
+    - source: Direct APK Link
+      issue: 198
+      fingerprint: DE:C7:34:29:CE:25:63:27:5F:5E:D1:98:25:E4:46:52:B3:2B:36:3A:46:F3:8B:DF:F9:AD:6D:CD:E4:84:2D:88
 - package: app.accrescent.client
   signature:
     - source: Accrescent
       issue: 66
       fingerprint: 06:7A:40:C4:19:3A:AD:51:AC:87:F9:DD:FD:EB:B1:5E:24:A1:85:0B:AB:FA:48:21:C2:8C:5C:25:C3:FD:C0:71
+- package: com.aurora.store
+  signature:
+    - source: Direct APK Link
+      issue: 132
+      fingerprint: 4C:62:61:57:AD:02:BD:A3:40:1A:72:63:55:5F:68:A7:96:63:FC:3E:13:A4:D4:36:9A:12:57:09:41:AA:28:0F
 - package: com.brave.browser
   signature:
     - source: Google Play
@@ -11,11 +24,6 @@
     - source: Direct APK Link
       issue: 146
       fingerprint: 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
-- package: com.aurora.store
-  signature:
-    - source: Direct APK Link
-      issue: 132
-      fingerprint: 4C:62:61:57:AD:02:BD:A3:40:1A:72:63:55:5F:68:A7:96:63:FC:3E:13:A4:D4:36:9A:12:57:09:41:AA:28:0F
 - package: com.cakewallet.cake_wallet
   signature:
     - source: Accrescent
