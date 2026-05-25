@@ -2,7 +2,7 @@ name: Process Submission
 
 on:
   issues:
-    types: [labeled, unlabeled]
+    types: labeled
 
 concurrency:
   group: ${{ github.event.issue.number }}
@@ -15,6 +15,8 @@ jobs:
     outputs:
       packageName: ${{ steps.setOutputs.outputs.packageName }}
       packageSignature: ${{ steps.setOutputs.outputs.packageSignature }}
+
+    if: ${{ github.event.label.name == 'Unchecked' }}
 
     steps:
       - name: Download Repository
@@ -82,6 +84,7 @@ jobs:
     outputs:
       signature: ${{ steps.appSignature.outputs.signature }}
       match: ${{ steps.matches.outputs.status }}
+      packageName: ${{ steps.matches.outputs.packageName }}
 
     env:
       PACKAGE_NAME: ${{ needs.parse.outputs.packageName }}
@@ -148,6 +151,7 @@ jobs:
           else
             echo "status=:x:" >> $GITHUB_OUTPUT
           fi
+          echo "packageName=$PACKAGE_NAME" >> $GITHUB_OUTPUT
 
   fdroid:
     name: F-Droid
@@ -158,6 +162,7 @@ jobs:
     outputs:
       signature: ${{ steps.appSignature.outputs.signature }}
       match: ${{ steps.matches.outputs.status }}
+      packageName: ${{ steps.matches.outputs.packageName }}
 
     env:
       PACKAGE_NAME: ${{ needs.parse.outputs.packageName }}
@@ -227,6 +232,7 @@ jobs:
           else
             echo "status=:x:" >> $GITHUB_OUTPUT
           fi
+          echo "packageName=$PACKAGE_NAME" >> $GITHUB_OUTPUT
 
   gplay:
     name: Google Play
@@ -236,6 +242,7 @@ jobs:
     outputs:
       signature: ${{ steps.appSignature.outputs.signature }}
       match: ${{ steps.matches.outputs.status }}
+      packageName: ${{ steps.matches.outputs.packageName }}
 
     env:
       PACKAGE_NAME: ${{ needs.parse.outputs.packageName }}
@@ -324,6 +331,7 @@ jobs:
           else
             echo "status=:x:" >> $GITHUB_OUTPUT
           fi
+          echo "packageName=$PACKAGE_NAME" >> $GITHUB_OUTPUT
 
       - name: Write Summary
         id: summary
@@ -339,8 +347,24 @@ jobs:
     needs: [parse, accrescent, fdroid, gplay]
 
     if: always()
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
 
     steps:
+
+      - name: Validate
+        run: |
+          if [[ "${{ needs.parse.outputs.packageName }}" == "" ]]; then
+            exit 1
+          fi
+          if [[ "${{ needs.parse.outputs.packageSignature }}" == "" ]]; then
+            exit 1
+          fi
+          if [[ ${{ github.event.label.name }} != "Unchecked" ]]; then
+            exit 1
+          fi
 
       - name: Create Table
         run: |
@@ -349,12 +373,128 @@ jobs:
           echo "| Source | Matches | Verification |" >> $GITHUB_STEP_SUMMARY
           echo "|---|---|---|"  >> $GITHUB_STEP_SUMMARY
           echo "| User-Provided | :arrow_down: | ${{ needs.parse.outputs.packageName }}<br>${{ needs.parse.outputs.packageSignature }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Accrescent | ${{ needs.accrescent.outputs.match }} | ${{ needs.parse.outputs.packageName }}<br>${{ needs.accrescent.outputs.signature }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| F-Droid | ${{ needs.fdroid.outputs.match }} | ${{ needs.parse.outputs.packageName }}<br>${{ needs.fdroid.outputs.signature }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Google Play | ${{ needs.gplay.outputs.match }} | ${{ needs.parse.outputs.packageName }}<br>${{ needs.gplay.outputs.signature }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Accrescent | ${{ needs.accrescent.outputs.match }} | ${{ needs.accrescent.outputs.packageName }}<br>${{ needs.accrescent.outputs.signature }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| F-Droid | ${{ needs.fdroid.outputs.match }} | ${{ needs.fdroid.outputs.packageName }}<br>${{ needs.fdroid.outputs.signature }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Google Play | ${{ needs.gplay.outputs.match }} | ${{ needs.gplay.outputs.packageName }}<br>${{ needs.gplay.outputs.signature }} |" >> $GITHUB_STEP_SUMMARY
+          cat "$GITHUB_STEP_SUMMARY" > ${RUNNER_TEMP}/issueBody.md
 
-      - name: Grab Unsuccessful
-        if: needs.accrescent.result != 'success' && needs.fdroid.result != 'success' && needs.gplay.result != 'success'
+      - name: Count Matches
+        id: count
         run: |
-          echo ""
-          echo "We weren't able to grab this app from any of the mainstream sources we check. Please provide a link to exactly where you downloaded it, thanks!"
+          i=0
+          if [[ "${{ needs.accrescent.outputs.match }}" == ":white_check_mark:" ]]; then
+            i=$((i+1))
+            echo "$i"
+          fi
+          if [[ "${{ needs.fdroid.outputs.match }}" == ":white_check_mark:" ]]; then
+            i=$((i+1))
+            echo "$i"
+          fi
+          if [[ "${{ needs.gplay.outputs.match }}" == ":white_check_mark:" ]]; then
+            i=$((i+1))
+            echo "$i"
+          fi
+          echo "$i"
+          echo "matches=$i" >> $GITHUB_OUTPUT
+          cat ${RUNNER_TEMP}/issueBody.md
+
+      - name: Add Match Count
+        run: |
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [[ $MATCHES == 0 ]]; then
+            echo "We either weren't able to grab this app from stores, or no stores matched it. Please provide a link to exactly where you downloaded it, thanks!" >> ${RUNNER_TEMP}/issueBody.md
+            gh issue edit "$NUMBER" --add-label "Likely Bad" --remove-label "Unchecked"
+          else
+            echo "${MATCHES}/3 of our sources matched what you provided. Some mismatches between app stores can be normal." >> $GITHUB_STEP_SUMMARY >> ${RUNNER_TEMP}/issueBody.md
+            gh issue edit "$NUMBER" --add-label "Likely Good" --remove-label "Unchecked"
+          fi
+        env:
+          MATCHES: ${{ steps.count.outputs.matches }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+
+      - name: Comment on Issue
+        if: steps.count.outputs.matches == '0'
+        run: |
+          gh issue comment "$NUMBER" --body-file ${RUNNER_TEMP}/issueBody.md
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+
+      - name: Checkout repository
+        if: steps.count.outputs.matches != '0'
+        uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create PR
+        if: steps.count.outputs.matches != '0'
+        env:
+          PACKAGE: ${{ needs.parse.outputs.packageName }}
+          ISSUE: ${{ github.event.issue.number }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          ACC_MATCH: ${{ needs.accrescent.outputs.match }}
+          ACC_SIG: ${{ needs.accrescent.outputs.signature }}
+          FDROID_MATCH: ${{ needs.fdroid.outputs.match }}
+          FDROID_SIG: ${{ needs.fdroid.outputs.signature }}
+          GPLAY_MATCH: ${{ needs.gplay.outputs.match }}
+          GPLAY_SIG: ${{ needs.gplay.outputs.signature }}
+        run: |
+          set -euo pipefail
+
+          export PACKAGE ISSUE
+          entry="$(mktemp)"
+          yq -n '.package = strenv(PACKAGE) | .issue = env(ISSUE) | .signature = []' > "$entry"
+
+          if [[ "$ACC_MATCH" == ":white_check_mark:" && -n "$ACC_SIG" ]]; then
+            export SIG="$ACC_SIG"
+            yq -i '.signature += [{"source": "Accrescent", "fingerprint": strenv(SIG)}]' "$entry"
+          fi
+          if [[ "$FDROID_MATCH" == ":white_check_mark:" && -n "$FDROID_SIG" ]]; then
+            export SIG="$FDROID_SIG"
+            yq -i '.signature += [{"source": "F-Droid", "fingerprint": strenv(SIG)}]' "$entry"
+          fi
+          if [[ "$GPLAY_MATCH" == ":white_check_mark:" && -n "$GPLAY_SIG" ]]; then
+            export SIG="$GPLAY_SIG"
+            yq -i '.signature += [{"source": "Google Play", "fingerprint": strenv(SIG)}]' "$entry"
+          fi
+
+          if [[ "$(yq '.signature | length' "$entry")" -eq 0 ]]; then
+            echo "No matching store signatures; skipping PR." >&2
+            exit 0
+          fi
+
+          if [[ -f data.yml ]]; then
+            yq -i '[.[] | select(.package != strenv(PACKAGE))]' data.yml
+            export ENTRY="$entry"
+            yq -i '. += [load(strenv(ENTRY))]' data.yml
+          else
+            cp "$entry" data.yml
+          fi
+          yq -i 'sort_by(.package)' data.yml
+
+          branch="new/${ISSUE}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add data.yml
+          git commit -m "${PACKAGE} (${ISSUE})"
+          git push -u origin "$branch"
+          
+          echo "One or more app stores matched the signature in issue #${ISSUE}, so I've created this PR automatically." >> ${RUNNER_TEMP}/prBody.md
+          echo "These entries should now be verified manually (or additional entries can be added) before merging!" >> ${RUNNER_TEMP}/prBody.md
+          echo "" >> ${RUNNER_TEMP}/prBody.md
+          echo "Closes #${ISSUE}" >> ${RUNNER_TEMP}/prBody.md
+          echo "" >> ${RUNNER_TEMP}/prBody.md
+          echo "---" >> ${RUNNER_TEMP}/prBody.md
+          echo "" >> ${RUNNER_TEMP}/prBody.md
+          cat ${RUNNER_TEMP}/issueBody.md >> ${RUNNER_TEMP}/prBody.md
+
+          gh pr create \
+            --repo "$GH_REPO" \
+            --title "Add ${PACKAGE}" \
+            --body-file ${RUNNER_TEMP}/prBody.md \
+            --head "$branch"
