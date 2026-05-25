@@ -1,0 +1,97 @@
+name: Download app from F-Droid
+description: Download an app from a specified F-Droid repository
+inputs:
+  packageName:
+    description: Android application ID
+    required: true
+  fDroidRepoName:
+    description: Name of F-Droid repository
+    required: true
+  fDroidRepoURL:
+    description: URL to F-Droid repository
+    required: true
+outputs:
+  found:
+    description: Whether the package exists in the specified F-Droid repository
+    value: ${{ steps.download.outputs.found }}
+  apkPath:
+    description: Path to downloaded APK file
+    value: ${{ steps.download.outputs.apkPath }}
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      id: fdroidcl
+      env:
+        FDROIDCL_VERSION: v0.8.1
+      run: |
+        set -euo pipefail
+        FDROIDCL="fdroidcl_${FDROIDCL_VERSION}_linux_amd64"
+        wget -q "https://github.com/Hoverth/fdroidcl/releases/download/${FDROIDCL_VERSION}/${FDROIDCL}"
+        chmod +x "$FDROIDCL"
+        echo "bin=$FDROIDCL" >> "$GITHUB_OUTPUT"
+
+    - shell: bash
+      id: fdroidRepoCacheKey
+      env:
+        FDROID_REPO_URL: ${{ inputs.fDroidRepoURL }}
+      run: |
+        set -euo pipefail
+        url_hash=$(printf '%s' "$FDROID_REPO_URL" | sha256sum | awk '{print $1}')
+        echo "cacheKey=fDroid-${url_hash}" >> "$GITHUB_OUTPUT"
+
+    - name: Restore repo cache
+      id: fdroidRepoCache
+      uses: actions/cache@v5
+      with:
+        path: /home/runner/.cache/fdroidcl/cache-gob
+        key: ${{ steps.fdroidRepoCacheKey.outputs.cacheKey }}
+
+    - name: Restore APK cache
+      id: fDroidApkCache
+      uses: actions/cache@v5
+      with:
+        path: /home/runner/.cache/fdroidcl/apks
+        key: ${{ steps.fdroidRepoCacheKey.outputs.cacheKey }}-${{ inputs.packageName }}
+
+    - shell: bash
+      run: |
+        set -euo pipefail
+        ./${{ steps.fdroidcl.outputs.bin }} repo remove f-droid
+        ./${{ steps.fdroidcl.outputs.bin }} repo remove f-droid-archive
+
+    - shell: bash
+      env:
+        FDROID_REPO_URL: ${{ inputs.fDroidRepoURL }}
+      run: |
+        set -euo pipefail
+        ./${{ steps.fdroidcl.outputs.bin }} repo add action "$FDROID_REPO_URL"
+
+    - shell: bash
+      run: |
+        set -euo pipefail
+        ./${{ steps.fdroidcl.outputs.bin }} update
+
+    - shell: bash
+      id: download
+      env:
+        PACKAGE_NAME: ${{ inputs.packageName }}
+      run: |
+        set -euo pipefail
+        echo "found=false" >> "$GITHUB_OUTPUT"
+        echo "apkPath=" >> "$GITHUB_OUTPUT"
+
+        if ! ./${{ steps.fdroidcl.outputs.bin }} download "$PACKAGE_NAME" >/tmp/fdroid-download.log 2>&1; then
+          cat /tmp/fdroid-download.log >&2 || true
+          exit 0
+        fi
+
+        apkPath=$(grep '^APK available in ' /tmp/fdroid-download.log | sed 's/^APK available in //' | tail -n1)
+        if [[ -z "$apkPath" || ! -f "$apkPath" ]]; then
+          cat /tmp/fdroid-download.log >&2 || true
+          exit 0
+        fi
+
+        echo "found=true" >> "$GITHUB_OUTPUT"
+        echo "apkPath=$apkPath" >> "$GITHUB_OUTPUT"

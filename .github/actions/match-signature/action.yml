@@ -5,10 +5,10 @@ inputs:
     description: Android application ID
     required: true
   userSignature:
-    description: Fingerprint submitted in the issue
+    description: Fingerprint(s) submitted in the issue (newline-separated when multiple)
     required: true
   storeSignature:
-    description: Fingerprint extracted from the store APK
+    description: Fingerprint(s) extracted from the store APK
     required: true
   signerKind:
     description: Signer profile from get-signature (google-play-app-signing, fdroid, or empty)
@@ -39,6 +39,8 @@ runs:
         STORE_SIG: ${{ inputs.storeSignature }}
         SIGNER_KIND: ${{ inputs.signerKind }}
       run: |
+        source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
+
         store_signed_match=false
         store_owned=false
         info_note=""
@@ -53,7 +55,7 @@ runs:
           fdroid_mismatch_note=":warning: **F-Droid:** the APK in this store is signed by the **F-Droid project key**, which usually means the app has **non-reproducible builds** on F-Droid. You should complain to the app's developer to add [reproducible build](https://f-droid.org/docs/Reproducible_Builds/) support."
         fi
 
-        if [[ "$STORE_SIG" == "$USER_SIG" ]]; then
+        if signatures_equal "$USER_SIG" "$STORE_SIG"; then
           if [[ "$store_owned" == true ]]; then
             echo "status=:large_blue_diamond:" >> "$GITHUB_OUTPUT"
             if [[ "$SIGNER_KIND" == "google-play-app-signing" ]]; then

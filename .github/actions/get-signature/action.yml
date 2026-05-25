@@ -6,10 +6,10 @@ inputs:
     required: true
 outputs:
   signature:
-    description: APK file signature (colon-separated SHA-256)
-    value: ${{ steps.analysis.outputs.formattedSig }}
+    description: APK certificate fingerprint(s); one line or newline-separated when multiple signers
+    value: ${{ steps.analysis.outputs.signature }}
   certificateDn:
-    description: Distinguished name of the app signing certificate
+    description: Distinguished name of the first app signing certificate
     value: ${{ steps.analysis.outputs.certificateDn }}
   signerKind:
     description: Known signer profile (google-play-app-signing, fdroid, or empty)
@@ -26,6 +26,7 @@ runs:
         FDROID_SIGNER_DN: "CN=FDroid, OU=FDroid, O=fdroid.org, L=ORG, ST=ORG, C=UK"
       run: |
         set -euo pipefail
+        source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
 
         sdk_root="${ANDROID_SDK_ROOT:-${ANDROID_HOME:-}}"
         if [[ -z "$sdk_root" ]]; then
@@ -50,34 +51,55 @@ runs:
           }
         ')
 
-        sha256=$(echo "$verification" | awk '
+        mapfile -t sha256_lines < <(echo "$verification" | awk '
           /^Source Stamp Signer/ { next }
           /public key SHA-256 digest/ { next }
           /certificate SHA-256 digest:/ {
             sub(/^.*certificate SHA-256 digest: /, "")
             print
-            exit
           }
         ')
 
-        if [[ -z "$sha256" ]]; then
+        if [[ ${#sha256_lines[@]} -eq 0 ]]; then
           echo "$verification" >&2
           echo "Failed to extract app signer certificate SHA-256 digest from apksigner output" >&2
           exit 1
         fi
 
+        raw_formatted=""
+        for sha256 in "${sha256_lines[@]}"; do
+          fp=$(printf '%s' "$sha256" | tr '[:lower:]' '[:upper:]' | sed -E 's/(..)/\1:/g; s/:$//')
+          raw_formatted+="${fp}"$'\n'
+        done
+        formatted_block=$(signatures_format_block "$raw_formatted")
+
         signer_kind=""
-        if [[ -n "$cert_dn" && "$cert_dn" == "$GOOGLE_PLAY_APP_SIGNING_DN" ]]; then
-          signer_kind="google-play-app-signing"
-        elif [[ -n "$cert_dn" && "$cert_dn" == "$FDROID_SIGNER_DN" ]]; then
-          signer_kind="fdroid"
-        fi
+        while IFS= read -r dn; do
+          [[ -z "$dn" ]] && continue
+          if [[ "$dn" == "$GOOGLE_PLAY_APP_SIGNING_DN" ]]; then
+            signer_kind="google-play-app-signing"
+            break
+          fi
+          if [[ "$dn" == "$FDROID_SIGNER_DN" ]]; then
+            signer_kind="fdroid"
+            break
+          fi
+        done < <(echo "$verification" | awk '
+          /^Source Stamp Signer/ { next }
+          /certificate DN:/ {
+            sub(/^.*certificate DN: /, "")
+            print
+          }
+        ')
 
         echo "---"
         echo "Certificate DN: ${cert_dn:-unknown}"
-        echo "SHA-256: $sha256"
-        formattedSig=$(printf '%s' "$sha256" | tr '[:lower:]' '[:upper:]' | sed -E 's/(..)/\1:/g; s/:$//')
-        echo "Formatted: $formattedSig"
-        echo "formattedSig=$formattedSig" >> "$GITHUB_OUTPUT"
+        echo "SHA-256 digest(s):"
+        printf '%s\n' "$formatted_block"
+        {
+          echo 'signature<<EOF'
+          printf '%s\n' "$formatted_block"
+          echo EOF
+        } >> "$GITHUB_OUTPUT"
         echo "certificateDn=$cert_dn" >> "$GITHUB_OUTPUT"
         echo "signerKind=$signer_kind" >> "$GITHUB_OUTPUT"

@@ -39,6 +39,15 @@ body:
       placeholder: https://example.com/downloads/app.apk
 
   - type: input
+    id: customFdroidRepo
+    attributes:
+      label: Custom F-Droid Repository
+      description: |
+        Optional. HTTPS URL to a developer-run F-Droid repository.
+        If provided, we will check this repository for the app in addition to mainstream app stores.
+      placeholder: https://example.com/fdroid/repo
+
+  - type: input
     id: devVerification
     attributes:
       label: Source
