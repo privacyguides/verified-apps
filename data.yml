@@ -35,6 +35,11 @@
     - source: F-Droid
       issue: 47
       fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
+- package: com.google.android.GoogleCamera
+  signature:
+    - source: Google Play
+      issue: 148
+      fingerprint: F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
 - package: com.none.tom.exiferaser
   signature:
     - source: Accrescent
