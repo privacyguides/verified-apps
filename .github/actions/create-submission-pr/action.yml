@@ -5,7 +5,7 @@ inputs:
     description: Android application ID
     required: true
   packageSignature:
-    description: Submitter-provided colon-separated SHA-256 fingerprint
+    description: Submitter-provided SHA-256 fingerprint(s); newline-separated when multiple
     required: true
   issueNumber:
     description: Submission issue number
@@ -18,19 +18,19 @@ inputs:
     required: false
     default: ""
   accrescentSignature:
-    description: Fingerprint from Accrescent (store-match mode only)
+    description: Fingerprint(s) from Accrescent (store-match mode only)
     required: false
     default: ""
   fdroidSignature:
-    description: Fingerprint from F-Droid (store-match mode only)
+    description: Fingerprint(s) from F-Droid (store-match mode only)
     required: false
     default: ""
   gplaySignature:
-    description: Fingerprint from Google Play (store-match mode only)
+    description: Fingerprint(s) from Google Play (store-match mode only)
     required: false
     default: ""
   directApkSignature:
-    description: Fingerprint from direct APK download (store-match mode only)
+    description: Fingerprint(s) from direct APK download (store-match mode only)
     required: false
     default: ""
   submitterSource:
@@ -68,6 +68,7 @@ runs:
         GH_REPO: ${{ github.repository }}
       run: |
         set -euo pipefail
+        source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
 
         echo "prCreated=false" >> "$GITHUB_OUTPUT"
         echo "skipped=false" >> "$GITHUB_OUTPUT"
@@ -78,35 +79,39 @@ runs:
           exit 1
         fi
 
-        export PACKAGE ISSUE USER_SIG
+        user_fp_file="$(mktemp)"
+        signatures_write_file "$user_fp_file" "$(signatures_format_block "$USER_SIG")"
+
+        export PACKAGE ISSUE
         entry="$(mktemp)"
         yq -n '.package = strenv(PACKAGE) | .signature = []' > "$entry"
 
         add_signature() {
           export SIG_SOURCE="$1"
-          export SIG_FP="$2"
-          yq -i '.signature += [{"source": strenv(SIG_SOURCE), "issue": env(ISSUE), "fingerprint": strenv(SIG_FP)}]' "$entry"
+          export SIG_FP_FILE="$2"
+          yq -i '.signature += [{"source": strenv(SIG_SOURCE), "issue": (env(ISSUE) | tonumber), "fingerprint": load(strenv(SIG_FP_FILE))}]' "$entry"
         }
 
         if [[ -n "$SUBMITTER_SOURCE" ]]; then
-          add_signature "$SUBMITTER_SOURCE" "$USER_SIG"
+          add_signature "$SUBMITTER_SOURCE" "$user_fp_file"
         else
-          if [[ -n "$ACC_SIG" && "$ACC_SIG" == "$USER_SIG" ]]; then
-            add_signature "Accrescent" "$USER_SIG"
+          if [[ -n "$ACC_SIG" ]] && signatures_equal "$ACC_SIG" "$USER_SIG"; then
+            add_signature "Accrescent" "$user_fp_file"
           fi
-          if [[ -n "$FDROID_SIG" && "$FDROID_SIG" == "$USER_SIG" ]]; then
-            add_signature "F-Droid" "$USER_SIG"
+          if [[ -n "$FDROID_SIG" ]] && signatures_equal "$FDROID_SIG" "$USER_SIG"; then
+            add_signature "F-Droid" "$user_fp_file"
           fi
-          if [[ -n "$GPLAY_SIG" && "$GPLAY_SIG" == "$USER_SIG" ]]; then
-            add_signature "Google Play" "$USER_SIG"
+          if [[ -n "$GPLAY_SIG" ]] && signatures_equal "$GPLAY_SIG" "$USER_SIG"; then
+            add_signature "Google Play" "$user_fp_file"
           fi
-          if [[ -n "$DIRECT_SIG" && "$DIRECT_SIG" == "$USER_SIG" ]]; then
-            add_signature "Direct APK Link" "$USER_SIG"
+          if [[ -n "$DIRECT_SIG" ]] && signatures_equal "$DIRECT_SIG" "$USER_SIG"; then
+            add_signature "Direct APK Link" "$user_fp_file"
           fi
 
           if [[ "$(yq '.signature | length' "$entry")" -eq 0 ]]; then
-            echo "No store matched the user-provided signature; skipping PR." >&2
+            echo "No store matched the user-provided signature(s); skipping PR." >&2
             echo "skipped=true" >> "$GITHUB_OUTPUT"
+            rm -f "$user_fp_file"
             exit 0
           fi
         fi
@@ -121,6 +126,7 @@ runs:
           cp "$entry" data.yml
         fi
         yq -i 'sort_by(.package)' data.yml
+        rm -f "$user_fp_file" "$entry"
 
         branch="new/${ISSUE}"
         git config user.name "github-actions[bot]"

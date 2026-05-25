@@ -45,29 +45,11 @@ jobs:
           echo "Direct APK Link: ${{ steps.parsed.outputs.apkUrl }}"
 
       - name: Validate parsed submission
-        env:
-          PACKAGE_NAME: ${{ steps.parsed.outputs.packageName }}
-          PACKAGE_SIGNATURE: ${{ steps.parsed.outputs.packageSignature }}
-        run: |
-          set -euo pipefail
-          is_valid_package_name() {
-            [[ "$1" =~ ^[a-zA-Z][a-zA-Z0-9_]*(\.[a-zA-Z][a-zA-Z0-9_]+)+$ ]]
-          }
-          is_valid_sha256_colon() {
-            [[ "$1" =~ ^([0-9A-Fa-f]{2}:){31}[0-9A-Fa-f]{2}$ ]]
-          }
-          errors=0
-          if ! is_valid_package_name "$PACKAGE_NAME"; then
-            echo "Invalid packageName: $PACKAGE_NAME" >&2
-            errors=1
-          fi
-          if ! is_valid_sha256_colon "$PACKAGE_SIGNATURE"; then
-            echo "Invalid packageSignature: $PACKAGE_SIGNATURE" >&2
-            errors=1
-          fi
-          if (( errors )); then
-            exit 1
-          fi
+        uses: ./.github/actions/signature-lib
+        with:
+          operation: validate-submission
+          packageName: ${{ steps.parsed.outputs.packageName }}
+          packageSignature: ${{ steps.parsed.outputs.packageSignature }}
 
       - name: Check for duplicate submission
         id: duplicateCheck
@@ -487,8 +469,31 @@ jobs:
           persist-credentials: "false"
 
       - name: Create Table
+        env:
+          USER_PKG: ${{ needs.parse.outputs.packageName }}
+          USER_SIG: ${{ needs.parse.outputs.packageSignature }}
+          ACC_MATCH: ${{ needs.accrescent.outputs.match }}
+          ACC_PKG: ${{ needs.accrescent.outputs.packageName }}
+          ACC_SIG: ${{ needs.accrescent.outputs.signature }}
+          FDROID_MATCH: ${{ needs.fdroid.outputs.match }}
+          FDROID_PKG: ${{ needs.fdroid.outputs.packageName }}
+          FDROID_SIG: ${{ needs.fdroid.outputs.signature }}
+          GPLAY_MATCH: ${{ needs.gplay.outputs.match }}
+          GPLAY_PKG: ${{ needs.gplay.outputs.packageName }}
+          GPLAY_SIG: ${{ needs.gplay.outputs.signature }}
+          DIRECT_MATCH: ${{ needs.direct-apk.outputs.match }}
+          DIRECT_PKG: ${{ needs.direct-apk.outputs.packageName }}
+          DIRECT_SIG: ${{ needs.direct-apk.outputs.signature }}
+          APK_URL: ${{ needs.parse.outputs.apkUrl }}
         run: |
-          if [[ -n "${{ needs.parse.outputs.apkUrl }}" ]]; then
+          set -euo pipefail
+          format_sig_cell() {
+            local pkg="$1"
+            local sig="$2"
+            local sig_html="${sig//$'\n'/<br>}"
+            printf '%s<br>%s' "$pkg" "$sig_html"
+          }
+          if [[ -n "$APK_URL" ]]; then
             echo "We attempted to check Accrescent, F-Droid, Google Play, and your direct APK link for this app. If we found any results, they'll be in the table below:" >> $GITHUB_STEP_SUMMARY
           else
             echo "We attempted to check Accrescent, F-Droid, and Google Play for this app. If we found any results, they'll be in the table below:" >> $GITHUB_STEP_SUMMARY
@@ -496,56 +501,37 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Source | Matches | Verification |" >> $GITHUB_STEP_SUMMARY
           echo "|---|---|---|"  >> $GITHUB_STEP_SUMMARY
-          echo "| User-Provided | :arrow_down: | ${{ needs.parse.outputs.packageName }}<br>${{ needs.parse.outputs.packageSignature }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Accrescent | ${{ needs.accrescent.outputs.match }} | ${{ needs.accrescent.outputs.packageName }}<br>${{ needs.accrescent.outputs.signature }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| F-Droid | ${{ needs.fdroid.outputs.match }} | ${{ needs.fdroid.outputs.packageName }}<br>${{ needs.fdroid.outputs.signature }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Google Play | ${{ needs.gplay.outputs.match }} | ${{ needs.gplay.outputs.packageName }}<br>${{ needs.gplay.outputs.signature }} |" >> $GITHUB_STEP_SUMMARY
-          if [[ -n "${{ needs.parse.outputs.apkUrl }}" ]]; then
-            echo "| Direct APK Link | ${{ needs.direct-apk.outputs.match }} | ${{ needs.direct-apk.outputs.packageName }}<br>${{ needs.direct-apk.outputs.signature }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| User-Provided | :arrow_down: | $(format_sig_cell "$USER_PKG" "$USER_SIG") |" >> $GITHUB_STEP_SUMMARY
+          echo "| Accrescent | $ACC_MATCH | $(format_sig_cell "$ACC_PKG" "$ACC_SIG") |" >> $GITHUB_STEP_SUMMARY
+          echo "| F-Droid | $FDROID_MATCH | $(format_sig_cell "$FDROID_PKG" "$FDROID_SIG") |" >> $GITHUB_STEP_SUMMARY
+          echo "| Google Play | $GPLAY_MATCH | $(format_sig_cell "$GPLAY_PKG" "$GPLAY_SIG") |" >> $GITHUB_STEP_SUMMARY
+          if [[ -n "$APK_URL" ]]; then
+            echo "| Direct APK Link | $DIRECT_MATCH | $(format_sig_cell "$DIRECT_PKG" "$DIRECT_SIG") |" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo ":exclamation: We scanned the APK file at \`${{ needs.parse.outputs.apkUrl }}\` which the submitter provided. This does not indicate its legitimacy, you must confirm this is a legitimate source." >> $GITHUB_STEP_SUMMARY
+            echo ":exclamation: We scanned the APK file at \`${APK_URL}\` which the submitter provided. This does not indicate its legitimacy, you must confirm this is a legitimate source." >> $GITHUB_STEP_SUMMARY
           fi
           cat "$GITHUB_STEP_SUMMARY" > ${RUNNER_TEMP}/issueBody.md
 
+      - name: Find related packages in data.yml
+        id: relatedPackages
+        uses: ./.github/actions/signature-lib
+        with:
+          operation: find-related-packages
+          packageName: ${{ needs.parse.outputs.packageName }}
+          packageSignature: ${{ needs.parse.outputs.packageSignature }}
+
       - name: Append matching fingerprints from other packages
+        if: steps.relatedPackages.outputs.relatedLines != ''
         env:
-          PACKAGE: ${{ needs.parse.outputs.packageName }}
-          SIGNATURE: ${{ needs.parse.outputs.packageSignature }}
+          RELATED_LINES: ${{ steps.relatedPackages.outputs.relatedLines }}
         run: |
           set -euo pipefail
           issue_body="${RUNNER_TEMP}/issueBody.md"
-
-          if [[ ! -f data.yml ]] || [[ ! -s data.yml ]]; then
-            exit 0
-          fi
-
-          sig_norm=$(printf '%s' "$SIGNATURE" | tr '[:lower:]' '[:upper:]')
-          related_lines=""
-          while IFS=$'\t' read -r pkg issue fp; do
-            [[ -z "$pkg" || -z "$fp" || -z "$issue" ]] && continue
-            [[ "$pkg" == "$PACKAGE" ]] && continue
-            fp_norm=$(printf '%s' "$fp" | tr '[:lower:]' '[:upper:]')
-            [[ "$fp_norm" != "$sig_norm" ]] && continue
-            related_lines+="- ${pkg} from #${issue}"$'\n'
-          done < <(
-            yq -r '
-              .[]
-              | . as $entry
-              | $entry.signature[]
-              | [$entry.package, (.issue // $entry.issue // ""), .fingerprint] | @tsv
-            ' data.yml
-          )
-          related_lines=$(printf '%s' "$related_lines" | sort -u)
-
-          if [[ -z "$related_lines" ]]; then
-            exit 0
-          fi
-
           {
             echo ""
             echo "This fingerprint matches another app already confirmed in our database! This may indicate it's from the same developer, you should check. If so, this is a stronger indication that this submission is legitimate:"
             echo ""
-            echo "$related_lines"
+            echo "$RELATED_LINES"
           } | tee -a "$GITHUB_STEP_SUMMARY" >> "$issue_body"
 
       - name: Append informational notes
@@ -575,12 +561,49 @@ jobs:
           append_note "$GPLAY_INFO"
           append_note "$DIRECT_INFO"
 
+      - name: Match Accrescent signatures
+        id: accEqual
+        uses: ./.github/actions/signature-lib
+        with:
+          operation: signatures-equal
+          signatureA: ${{ needs.accrescent.outputs.signature }}
+          signatureB: ${{ needs.parse.outputs.packageSignature }}
+
+      - name: Match F-Droid signatures
+        id: fdroidEqual
+        uses: ./.github/actions/signature-lib
+        with:
+          operation: signatures-equal
+          signatureA: ${{ needs.fdroid.outputs.signature }}
+          signatureB: ${{ needs.parse.outputs.packageSignature }}
+
+      - name: Match Google Play signatures
+        id: gplayEqual
+        uses: ./.github/actions/signature-lib
+        with:
+          operation: signatures-equal
+          signatureA: ${{ needs.gplay.outputs.signature }}
+          signatureB: ${{ needs.parse.outputs.packageSignature }}
+
+      - name: Match direct APK signatures
+        id: directEqual
+        if: needs.parse.outputs.apkUrl != ''
+        uses: ./.github/actions/signature-lib
+        with:
+          operation: signatures-equal
+          signatureA: ${{ needs.direct-apk.outputs.signature }}
+          signatureB: ${{ needs.parse.outputs.packageSignature }}
+
       - name: Count Matches
         id: count
         env:
-          USER_SIG: ${{ needs.parse.outputs.packageSignature }}
           APK_URL: ${{ needs.parse.outputs.apkUrl }}
+          ACC_EQUAL: ${{ steps.accEqual.outputs.result }}
+          FDROID_EQUAL: ${{ steps.fdroidEqual.outputs.result }}
+          GPLAY_EQUAL: ${{ steps.gplayEqual.outputs.result }}
+          DIRECT_EQUAL: ${{ steps.directEqual.outputs.result }}
         run: |
+          set -euo pipefail
           sources=3
           if [[ -n "$APK_URL" ]]; then
             sources=4
@@ -588,16 +611,10 @@ jobs:
           echo "sources=$sources" >> "$GITHUB_OUTPUT"
 
           i=0
-          if [[ -n "${{ needs.accrescent.outputs.signature }}" && "${{ needs.accrescent.outputs.signature }}" == "$USER_SIG" ]]; then
-            i=$((i + 1))
-          fi
-          if [[ -n "${{ needs.fdroid.outputs.signature }}" && "${{ needs.fdroid.outputs.signature }}" == "$USER_SIG" ]]; then
-            i=$((i + 1))
-          fi
-          if [[ -n "${{ needs.gplay.outputs.signature }}" && "${{ needs.gplay.outputs.signature }}" == "$USER_SIG" ]]; then
-            i=$((i + 1))
-          fi
-          if [[ -n "$APK_URL" && -n "${{ needs.direct-apk.outputs.signature }}" && "${{ needs.direct-apk.outputs.signature }}" == "$USER_SIG" ]]; then
+          [[ "$ACC_EQUAL" == "true" ]] && i=$((i + 1))
+          [[ "$FDROID_EQUAL" == "true" ]] && i=$((i + 1))
+          [[ "$GPLAY_EQUAL" == "true" ]] && i=$((i + 1))
+          if [[ -n "$APK_URL" && "$DIRECT_EQUAL" == "true" ]]; then
             i=$((i + 1))
           fi
           echo "$i"
@@ -608,11 +625,10 @@ jobs:
         env:
           MATCHES: ${{ steps.count.outputs.matches }}
           SOURCES: ${{ steps.count.outputs.sources }}
-          USER_SIG: ${{ needs.parse.outputs.packageSignature }}
-          ACC_SIG: ${{ needs.accrescent.outputs.signature }}
-          FDROID_SIG: ${{ needs.fdroid.outputs.signature }}
-          GPLAY_SIG: ${{ needs.gplay.outputs.signature }}
-          DIRECT_SIG: ${{ needs.direct-apk.outputs.signature }}
+          ACC_EQUAL: ${{ steps.accEqual.outputs.result }}
+          FDROID_EQUAL: ${{ steps.fdroidEqual.outputs.result }}
+          GPLAY_EQUAL: ${{ steps.gplayEqual.outputs.result }}
+          DIRECT_EQUAL: ${{ steps.directEqual.outputs.result }}
           ACC_STORE_SIGNED: ${{ needs.accrescent.outputs.storeSignedMatch }}
           FDROID_STORE_SIGNED: ${{ needs.fdroid.outputs.storeSignedMatch }}
           GPLAY_STORE_SIGNED: ${{ needs.gplay.outputs.storeSignedMatch }}
@@ -631,16 +647,16 @@ jobs:
             has_info=true
           fi
           store_signed_label=false
-          if [[ -n "$ACC_SIG" && "$ACC_SIG" == "$USER_SIG" && "$ACC_STORE_SIGNED" == "true" ]]; then
+          if [[ "$ACC_EQUAL" == "true" && "$ACC_STORE_SIGNED" == "true" ]]; then
             store_signed_label=true
           fi
-          if [[ -n "$FDROID_SIG" && "$FDROID_SIG" == "$USER_SIG" && "$FDROID_STORE_SIGNED" == "true" ]]; then
+          if [[ "$FDROID_EQUAL" == "true" && "$FDROID_STORE_SIGNED" == "true" ]]; then
             store_signed_label=true
           fi
-          if [[ -n "$GPLAY_SIG" && "$GPLAY_SIG" == "$USER_SIG" && "$GPLAY_STORE_SIGNED" == "true" ]]; then
+          if [[ "$GPLAY_EQUAL" == "true" && "$GPLAY_STORE_SIGNED" == "true" ]]; then
             store_signed_label=true
           fi
-          if [[ -n "$DIRECT_SIG" && "$DIRECT_SIG" == "$USER_SIG" && "$DIRECT_STORE_SIGNED" == "true" ]]; then
+          if [[ "$DIRECT_EQUAL" == "true" && "$DIRECT_STORE_SIGNED" == "true" ]]; then
             store_signed_label=true
           fi
           if [[ "$MATCHES" != "0" ]]; then
