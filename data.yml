@@ -38,6 +38,14 @@
     - source: Google Play
       issue: 49
       fingerprint: D9:10:86:7C:E2:CF:3D:CD:37:DB:51:85:3E:BE:F8:63:3F:D8:3A:14:2B:26:42:27:4E:D0:68:15:2F:F1:22:01
+- package: deckers.thibault.aves.libre
+  signature:
+    - source: Accrescent
+      issue: 102
+      fingerprint: F4:79:47:27:E4:54:16:D8:7C:48:71:38:29:2B:70:9F:11:D1:CD:7D:AB:55:84:D8:C6:85:7D:92:E0:66:60:4B
+    - source: Direct APK Link
+      issue: 102
+      fingerprint: F4:79:47:27:E4:54:16:D8:7C:48:71:38:29:2B:70:9F:11:D1:CD:7D:AB:55:84:D8:C6:85:7D:92:E0:66:60:4B
 - package: dev.soupslurpr.appverifier
   signature:
     - source: Accrescent
