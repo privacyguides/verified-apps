@@ -1,0 +1,5 @@
+- package: org.fdroid.basic
+  issue: 2
+  signature:
+    - source: F-Droid
+      fingerprint: EF:7F:82:2B:76:53:E2:01:1C:B8:C5:A7:FC:99:E8:D2:AD:E1:71:7E:53:9C:A5:6D:64:56:29:5E:3B:C0:73:12
