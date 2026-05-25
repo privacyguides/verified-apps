@@ -68,6 +68,11 @@
     - source: "Direct APK Link"
       issue: 203
       fingerprint: 23:AF:C1:F8:ED:5F:BB:D0:85:2A:37:22:2D:DC:E0:6F:92:92:71:02:F0:12:6F:99:6A:56:23:F5:27:74:C6:90
+- package: com.tradera
+  signature:
+    - source: "Google Play"
+      issue: 294
+      fingerprint: 46:F6:D3:D0:B6:E5:66:67:CF:33:CA:9A:71:A0:AB:0E:87:DD:46:1B:7D:B3:DC:E5:CF:97:F9:9E:1C:ED:23:72
 - package: com.x8bit.bitwarden
   signature:
     - source: Direct APK Link
