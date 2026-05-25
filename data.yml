@@ -73,6 +73,14 @@
     - source: Direct APK Link
       issue: 151
       fingerprint: DE:6E:C9:14:31:55:79:95:29:7B:F3:E6:5B:C8:03:49:BC:60:3A:04:70:81:60:61:8C:86:BC:99:94:17:1C:90
+- package: dev.imranr.obtainium.fdroid
+  signature:
+    - source: "F-Droid"
+      issue: 211
+      fingerprint: B3:53:60:1F:6A:1D:5F:D6:60:3A:E2:F5:0B:E8:0C:F3:01:36:7B:86:B6:AB:8B:1F:66:24:3D:A9:6C:D5:73:62
+    - source: "Direct APK Link"
+      issue: 211
+      fingerprint: B3:53:60:1F:6A:1D:5F:D6:60:3A:E2:F5:0B:E8:0C:F3:01:36:7B:86:B6:AB:8B:1F:66:24:3D:A9:6C:D5:73:62
 - package: dev.soupslurpr.appverifier
   signature:
     - source: Accrescent
