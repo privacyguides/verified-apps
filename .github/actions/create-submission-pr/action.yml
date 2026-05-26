@@ -1,5 +1,5 @@
 name: Create submission PR
-description: Merge signatures into data.yml, push a branch, and open a pull request
+description: Merge signatures into data.yml, push a verified commit on a branch, and open a pull request
 inputs:
   packageName:
     description: Android application ID
@@ -17,7 +17,7 @@ inputs:
     description: Co-authored-by trailer for the git commit (e.g. from the user who added the label)
     required: true
   commitSuffix:
-    description: Optional suffix appended to the git commit message
+    description: Optional suffix appended to the git commit message subject line
     required: false
     default: ""
   accrescentSignature:
@@ -53,18 +53,17 @@ outputs:
     value: ${{ steps.create.outputs.prUrl }}
   skipped:
     description: Whether PR creation was skipped (no matching store signatures)
-    value: ${{ steps.create.outputs.skipped }}
+    value: ${{ steps.prepare.outputs.skipped }}
 
 runs:
   using: composite
   steps:
     - shell: bash
-      id: create
+      id: prepare
       env:
         PACKAGE: ${{ inputs.packageName }}
         USER_SIG: ${{ inputs.packageSignature }}
         ISSUE: ${{ inputs.issueNumber }}
-        PR_BODY_FILE: ${{ inputs.prBodyFile }}
         CO_AUTHOR_TRAILER: ${{ inputs.coAuthorTrailer }}
         COMMIT_SUFFIX: ${{ inputs.commitSuffix }}
         ACC_SIG: ${{ inputs.accrescentSignature }}
@@ -73,20 +72,12 @@ runs:
         APPVERIFIER_SIG: ${{ inputs.appverifierSignature }}
         DIRECT_SIG: ${{ inputs.directApkSignature }}
         SUBMITTER_SOURCE: ${{ inputs.submitterSource }}
-        GH_TOKEN: ${{ github.token }}
-        GH_REPO: ${{ github.repository }}
       run: |
         set -euo pipefail
         source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
 
-        echo "prCreated=false" >> "$GITHUB_OUTPUT"
         echo "skipped=false" >> "$GITHUB_OUTPUT"
-        echo "prUrl=" >> "$GITHUB_OUTPUT"
-
-        if [[ ! -f "$PR_BODY_FILE" ]]; then
-          echo "PR body file not found: $PR_BODY_FILE" >&2
-          exit 1
-        fi
+        echo "branch=new/${ISSUE}" >> "$GITHUB_OUTPUT"
 
         entry="$(mktemp)"
         if ! submission_build_entry_file "$entry"; then
@@ -100,22 +91,55 @@ runs:
         rm -f "$entry"
 
         branch="new/${ISSUE}"
-        git config user.name "github-actions[bot]"
-        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git checkout -b "$branch"
+
+        msg_file="${GITHUB_WORKSPACE}/.submission-commit-msg"
+        {
+          printf 'Add %s from #%s%s\n' "$PACKAGE" "$ISSUE" "$COMMIT_SUFFIX"
+          if [[ -n "$CO_AUTHOR_TRAILER" ]]; then
+            printf '\n%s\n' "$CO_AUTHOR_TRAILER"
+          fi
+        } > "$msg_file"
+
         git add data.yml
-        commit_args=(-m "Add ${PACKAGE} from #${ISSUE}${COMMIT_SUFFIX}")
-        if [[ -n "$CO_AUTHOR_TRAILER" ]]; then
-          commit_args+=(-m "$CO_AUTHOR_TRAILER")
+
+    - name: Push verified commit to branch
+      if: steps.prepare.outputs.skipped != 'true'
+      id: verified-commit
+      uses: iarekylew00t/verified-bot-commit@v2
+      with:
+        ref: ${{ steps.prepare.outputs.branch }}
+        message-file: .submission-commit-msg
+        files: |
+          data.yml
+        auto-stage: false
+
+    - shell: bash
+      id: create
+      if: steps.prepare.outputs.skipped != 'true'
+      env:
+        PACKAGE: ${{ inputs.packageName }}
+        ISSUE: ${{ inputs.issueNumber }}
+        PR_BODY_FILE: ${{ inputs.prBodyFile }}
+        BRANCH: ${{ steps.prepare.outputs.branch }}
+        GH_TOKEN: ${{ github.token }}
+        GH_REPO: ${{ github.repository }}
+      run: |
+        set -euo pipefail
+
+        echo "prCreated=false" >> "$GITHUB_OUTPUT"
+        echo "prUrl=" >> "$GITHUB_OUTPUT"
+
+        if [[ ! -f "$PR_BODY_FILE" ]]; then
+          echo "PR body file not found: $PR_BODY_FILE" >&2
+          exit 1
         fi
-        git commit "${commit_args[@]}"
-        git push -u origin "$branch"
 
         pr_url=$(gh pr create \
           --repo "$GH_REPO" \
           --title "Add ${PACKAGE}" \
           --body-file "$PR_BODY_FILE" \
-          --head "$branch")
+          --head "$BRANCH")
 
         echo "prCreated=true" >> "$GITHUB_OUTPUT"
         echo "prUrl=$pr_url" >> "$GITHUB_OUTPUT"

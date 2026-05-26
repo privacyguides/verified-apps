@@ -1,5 +1,5 @@
 name: Commit submission to main
-description: Merge store-matched signatures into data.yml and push to the default branch
+description: Merge store-matched signatures into data.yml and push a verified commit to main
 inputs:
   packageName:
     description: Android application ID
@@ -36,16 +36,16 @@ inputs:
 outputs:
   committed:
     description: Whether data.yml was updated on main
-    value: ${{ steps.commit.outputs.committed }}
+    value: ${{ steps.prepare.outputs.committed }}
   skipped:
     description: Whether commit was skipped (no matching store signatures)
-    value: ${{ steps.commit.outputs.skipped }}
+    value: ${{ steps.prepare.outputs.skipped }}
 
 runs:
   using: composite
   steps:
     - shell: bash
-      id: commit
+      id: prepare
       env:
         PACKAGE: ${{ inputs.packageName }}
         USER_SIG: ${{ inputs.packageSignature }}
@@ -56,8 +56,6 @@ runs:
         GPLAY_SIG: ${{ inputs.gplaySignature }}
         APPVERIFIER_SIG: ${{ inputs.appverifierSignature }}
         DIRECT_SIG: ${{ inputs.directApkSignature }}
-        GH_TOKEN: ${{ github.token }}
-        GH_REPO: ${{ github.repository }}
       run: |
         set -euo pipefail
         source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
@@ -76,14 +74,23 @@ runs:
         submission_merge_entry_into_data_yml "$entry"
         rm -f "$entry"
 
-        git config user.name "github-actions[bot]"
-        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add data.yml
-        commit_args=(-m "Add ${PACKAGE} from #${ISSUE}")
-        if [[ -n "$CO_AUTHOR_TRAILER" ]]; then
-          commit_args+=(-m "$CO_AUTHOR_TRAILER")
-        fi
-        git commit "${commit_args[@]}"
-        git push origin HEAD
+        msg_file="${GITHUB_WORKSPACE}/.submission-commit-msg"
+        {
+          printf 'Add %s from #%s\n' "$PACKAGE" "$ISSUE"
+          if [[ -n "$CO_AUTHOR_TRAILER" ]]; then
+            printf '\n%s\n' "$CO_AUTHOR_TRAILER"
+          fi
+        } > "$msg_file"
 
+        git add data.yml
         echo "committed=true" >> "$GITHUB_OUTPUT"
+
+    - name: Push verified commit to main
+      if: steps.prepare.outputs.committed == 'true'
+      uses: iarekylew00t/verified-bot-commit@v2
+      with:
+        ref: main
+        message-file: .submission-commit-msg
+        files: |
+          data.yml
+        auto-stage: false
