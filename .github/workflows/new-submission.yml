@@ -1065,6 +1065,7 @@ jobs:
           USER_SIG: ${{ needs.parse.outputs.packageSignature }}
           ISSUE: ${{ github.event.issue.number }}
           ACC_SIG: ${{ needs.accrescent.outputs.signature }}
+          FDROID_RESULTS_DIR: fdroid-results
           GPLAY_SIG: ${{ needs.gplay.outputs.signature }}
           APPVERIFIER_SIG: ${{ needs.appverifier-db.outputs.signature }}
           DIRECT_SIG: ${{ needs.direct-apk.outputs.signature }}
@@ -1081,13 +1082,13 @@ jobs:
             rm -f "$entry"
             exit 0
           fi
-          preview="$(submission_format_package_preview "$entry")"
+          preview="$(submission_format_package_merge_diff "$entry")"
           rm -f "$entry"
           {
             echo ""
-            echo "If committed as-is, the following would be added to \`data.yml\` (store signatures that matched the submitter's fingerprint):"
+            echo "If committed as-is, \`data.yml\` would change as follows (store signatures that matched the submitter's fingerprint):"
             echo ""
-            echo '```yaml'
+            echo '```diff'
             printf '%s\n' "$preview"
             echo '```'
             echo ""

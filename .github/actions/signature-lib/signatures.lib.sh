@@ -231,22 +231,52 @@ submission_merge_entry_into_data_yml() {
   fi
 }
 
-# Format the package stanza as it would appear under packages: in data.yml.
-submission_format_package_preview() {
-  local entry_file="$1"
-  local work_data pkg_yaml
+# Write one package stanza as it appears under packages: in data.yml.
+_submission_write_package_list_item() {
+  local data_file="$1"
+  local dest="$2"
 
+  if [[ -f "$data_file" ]] && yq -e ".packages[] | select(.package == strenv(PACKAGE))" "$data_file" >/dev/null 2>&1; then
+    yq -o=yaml ".packages[] | select(.package == strenv(PACKAGE))" "$data_file" \
+      | sed '1s/^/  - /; 2,$s/^/    /' > "$dest"
+  else
+    : > "$dest"
+  fi
+}
+
+# Unified diff (GFM ```diff) of the package entry before vs after merging store matches.
+submission_format_package_merge_diff() {
+  local entry_file="$1"
+  local before_file after_file work_data diff_out
+
+  export PACKAGE
+  PACKAGE=$(yq -r '.package' "$entry_file")
+
+  before_file="$(mktemp)"
+  after_file="$(mktemp)"
   work_data="$(mktemp)"
+
+  _submission_write_package_list_item "data.yml" "$before_file"
+
   if [[ -f data.yml ]] && [[ -s data.yml ]]; then
     cp data.yml "$work_data"
   else
     yq -n '.schema = 2 | .packages = []' > "$work_data"
   fi
   submission_merge_entry_into_data_yml "$entry_file" "$work_data"
+  _submission_write_package_list_item "$work_data" "$after_file"
 
-  export PACKAGE
-  PACKAGE=$(yq -r '.package' "$entry_file")
-  pkg_yaml="$(yq -o=yaml ".packages[] | select(.package == strenv(PACKAGE))" "$work_data")"
-  rm -f "$work_data"
-  printf '%s\n' "$pkg_yaml" | sed '1s/^/  - /; 2,$s/^/    /'
+  if diff -q "$before_file" "$after_file" >/dev/null 2>&1; then
+    rm -f "$before_file" "$after_file" "$work_data"
+    printf '%s\n' "_No changes: every matching store signature is already listed for this package in \`data.yml\`._"
+    return 0
+  fi
+
+  if [[ ! -s "$before_file" ]]; then
+    diff_out=$(diff -u --label "data.yml (current)" --label "data.yml (after commit)" /dev/null "$after_file" || true)
+  else
+    diff_out=$(diff -u --label "data.yml (current)" --label "data.yml (after commit)" "$before_file" "$after_file" || true)
+  fi
+  rm -f "$before_file" "$after_file" "$work_data"
+  printf '%s\n' "$diff_out"
 }
