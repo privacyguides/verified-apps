@@ -18,6 +18,11 @@ packages:
       - source: "AppVerifier"
         issue: 68
         fingerprint: B9:C7:AE:79:A5:A9:02:70:DF:08:A1:32:E5:36:B9:C6:66:F5:BE:F1:F5:9B:30:4F:CE:CF:86:87:86:5E:4B:5B
+  - package: at.wienerlinien.wienmobillab
+    signature:
+      - source: "Google Play"
+        issue: 395
+        fingerprint: 7A:EC:06:2E:97:ED:AC:E6:C9:87:5D:C5:88:B7:C4:19:1C:CC:D5:BC:7E:A8:8C:18:F1:53:85:83:A9:23:1B:6D
   - package: co.cape.matrix
     signature:
       - source: Accrescent
