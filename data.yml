@@ -108,6 +108,13 @@ packages:
         fingerprint: |
           7C:E8:3C:1B:71:F3:D5:72:FE:D0:4C:8D:40:C5:CB:10:FF:75:E6:D8:7D:9D:F6:FB:D5:3F:04:68:C2:90:50:53
           F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
+  - package: com.kivra.Kivra
+    signature:
+      - source: "Google Play"
+        issue: 397
+        fingerprint: |
+          EB:99:83:10:AB:C8:E2:E6:B4:A4:67:BA:07:6D:CA:73:9A:8E:34:FF:F1:AD:E1:61:C9:23:9B:03:D0:B7:79:AC
+          FE:1F:79:3B:93:46:4B:AD:14:5C:F6:E2:2B:8F:90:B5:B4:C5:3C:81:DD:FC:EE:EE:82:EB:1F:18:5B:38:F7:31
   - package: com.kunzisoft.keepass.free
     signature:
       - source: "F-Droid (IzzyOnDroid)"
