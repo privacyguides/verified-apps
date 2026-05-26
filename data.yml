@@ -290,6 +290,11 @@ packages:
       - source: Direct APK Link
         issue: 171
         fingerprint: 01:CC:E9:31:6F:CB:77:EA:02:C6:DE:A8:1F:DE:9F:31:76:46:92:02:C0:CE:A0:51:4C:0E:03:CB:96:9B:C7:BE
+  - package: org.andbible.andbible
+    signature:
+      - source: "Accrescent"
+        issue: 90
+        fingerprint: 8B:F5:16:8A:01:94:4D:62:A4:A4:C7:B6:52:F4:73:81:84:00:0D:57:A4:8C:52:89:5A:C6:CB:83:1C:48:CF:30
   - package: org.cryptomator
     signature:
       - source: "Accrescent"
