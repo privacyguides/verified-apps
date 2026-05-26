@@ -3,7 +3,7 @@
 # or sibling actions: source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
 
 is_valid_package_name() {
-  [[ "$1" =~ ^[a-zA-Z][a-zA-Z0-9_]*(\.[a-zA-Z][a-zA-Z0-9_]+)+$ ]]
+  [[ "$1" =~ ^[a-zA-Z][a-zA-Z0-9_]*(\.[a-zA-Z][a-zA-Z0-9_]*)+$ ]]
 }
 
 is_valid_sha256_colon() {
