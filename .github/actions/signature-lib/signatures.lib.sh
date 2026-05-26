@@ -141,3 +141,112 @@ signatures_write_yaml_entry() {
     fi
   } > "$path"
 }
+
+# Build a single package entry (package + signature[]) from store matches.
+# Required env: PACKAGE, ISSUE, USER_SIG (raw; formatted internally)
+# Optional env: SUBMITTER_SOURCE, ACC_SIG, FDROID_RESULTS_DIR, GPLAY_SIG, APPVERIFIER_SIG, DIRECT_SIG
+# Writes YAML object to $1. Returns 0 when at least one signature was added, 1 otherwise.
+submission_build_entry_file() {
+  local entry_file="$1"
+  local user_sig fp_block sig_piece sig_source store_sig repo_name fdroid_source
+
+  user_sig="$(signatures_format_block "$USER_SIG")"
+
+  export PACKAGE ISSUE
+  yq -n '.package = strenv(PACKAGE) | .signature = []' > "$entry_file"
+
+  _submission_add_signature() {
+    local src="$1"
+    local block="$2"
+    sig_piece="$(mktemp)"
+    signatures_write_yaml_entry "$sig_piece" "$src" "$ISSUE" "$block"
+    export SIG_PIECE="$sig_piece"
+    yq -i '.signature += [load(strenv(SIG_PIECE))]' "$entry_file"
+    rm -f "$sig_piece"
+  }
+
+  if [[ -n "${SUBMITTER_SOURCE:-}" ]]; then
+    _submission_add_signature "$SUBMITTER_SOURCE" "$user_sig"
+    return 0
+  fi
+
+  if [[ -n "${ACC_SIG:-}" ]] && signatures_equal "$ACC_SIG" "$user_sig"; then
+    _submission_add_signature "Accrescent" "$user_sig"
+  fi
+  if [[ -n "${FDROID_RESULTS_DIR:-}" && -d "$FDROID_RESULTS_DIR" ]]; then
+    while IFS= read -r result_file; do
+      [[ -z "$result_file" ]] && continue
+      [[ "$(jq -r '.found' "$result_file")" != "true" ]] && continue
+      repo_name=$(jq -r '.repoName' "$result_file")
+      store_sig=$(jq -r '.signature' "$result_file")
+      if signatures_equal "$store_sig" "$user_sig"; then
+        if [[ "$repo_name" == "F-Droid" ]]; then
+          fdroid_source="F-Droid"
+        else
+          fdroid_source="F-Droid (${repo_name})"
+        fi
+        _submission_add_signature "$fdroid_source" "$user_sig"
+      fi
+    done < <(find "$FDROID_RESULTS_DIR" -type f -name '*.json' 2>/dev/null | sort)
+  fi
+  if [[ -n "${GPLAY_SIG:-}" ]] && signatures_equal "$GPLAY_SIG" "$user_sig"; then
+    _submission_add_signature "Google Play" "$user_sig"
+  fi
+  if [[ -n "${APPVERIFIER_SIG:-}" ]] && signatures_equal "$APPVERIFIER_SIG" "$user_sig"; then
+    _submission_add_signature "AppVerifier" "$user_sig"
+  fi
+  if [[ -n "${DIRECT_SIG:-}" ]] && signatures_equal "$DIRECT_SIG" "$user_sig"; then
+    _submission_add_signature "Direct APK Link" "$user_sig"
+  fi
+
+  if [[ "$(yq '.signature | length' "$entry_file")" -eq 0 ]]; then
+    return 1
+  fi
+  return 0
+}
+
+# Merge entry file into data.yml (or alternate path in $2).
+submission_merge_entry_into_data_yml() {
+  local entry_file="$1"
+  local data_file="${2:-data.yml}"
+
+  export PACKAGE
+  PACKAGE=$(yq -r '.package' "$entry_file")
+  export ENTRY="$entry_file"
+  if [[ -f "$data_file" ]] && [[ -s "$data_file" ]]; then
+    schema=$(yq -r '.schema // 0' "$data_file")
+    if [[ "$schema" != "2" ]]; then
+      echo "Unsupported data.yml schema (expected 2): $schema" >&2
+      return 1
+    fi
+    if yq -e '.packages[] | select(.package == strenv(PACKAGE))' "$data_file" >/dev/null 2>&1; then
+      yq -i 'with(.packages[] | select(.package == strenv(PACKAGE)); .signature += load(strenv(ENTRY)).signature)' "$data_file"
+      yq -i 'with(.packages[] | select(.package == strenv(PACKAGE)); .signature |= unique_by(.source + "|" + .fingerprint))' "$data_file"
+    else
+      yq -i '.packages += [load(strenv(ENTRY))]' "$data_file"
+    fi
+    yq -i '.packages |= sort_by(.package)' "$data_file"
+  else
+    yq -n '.schema = 2 | .packages = [load(strenv(ENTRY))]' > "$data_file"
+  fi
+}
+
+# Format the package stanza as it would appear under packages: in data.yml.
+submission_format_package_preview() {
+  local entry_file="$1"
+  local work_data pkg_yaml
+
+  work_data="$(mktemp)"
+  if [[ -f data.yml ]] && [[ -s data.yml ]]; then
+    cp data.yml "$work_data"
+  else
+    yq -n '.schema = 2 | .packages = []' > "$work_data"
+  fi
+  submission_merge_entry_into_data_yml "$entry_file" "$work_data"
+
+  export PACKAGE
+  PACKAGE=$(yq -r '.package' "$entry_file")
+  pkg_yaml="$(yq -o=yaml ".packages[] | select(.package == strenv(PACKAGE))" "$work_data")"
+  rm -f "$work_data"
+  printf '%s\n' "$pkg_yaml" | sed '1s/^/  - /; 2,$s/^/    /'
+}

@@ -84,79 +84,15 @@ runs:
           exit 1
         fi
 
-        USER_SIG="$(signatures_format_block "$USER_SIG")"
-
-        export PACKAGE ISSUE
         entry="$(mktemp)"
-        yq -n '.package = strenv(PACKAGE) | .signature = []' > "$entry"
-
-        add_signature() {
-          local sig_source="$1"
-          local fp_block="$2"
-          local sig_piece
-          sig_piece="$(mktemp)"
-          signatures_write_yaml_entry "$sig_piece" "$sig_source" "$ISSUE" "$fp_block"
-          export SIG_PIECE="$sig_piece"
-          yq -i '.signature += [load(strenv(SIG_PIECE))]' "$entry"
-          rm -f "$sig_piece"
-        }
-
-        if [[ -n "$SUBMITTER_SOURCE" ]]; then
-          add_signature "$SUBMITTER_SOURCE" "$USER_SIG"
-        else
-          if [[ -n "$ACC_SIG" ]] && signatures_equal "$ACC_SIG" "$USER_SIG"; then
-            add_signature "Accrescent" "$USER_SIG"
-          fi
-          if [[ -n "$FDROID_RESULTS_DIR" && -d "$FDROID_RESULTS_DIR" ]]; then
-            while IFS= read -r result_file; do
-              [[ -z "$result_file" ]] && continue
-              [[ "$(jq -r '.found' "$result_file")" != "true" ]] && continue
-              repo_name=$(jq -r '.repoName' "$result_file")
-              store_sig=$(jq -r '.signature' "$result_file")
-              if signatures_equal "$store_sig" "$USER_SIG"; then
-                if [[ "$repo_name" == "F-Droid" ]]; then
-                  fdroid_source="F-Droid"
-                else
-                  fdroid_source="F-Droid (${repo_name})"
-                fi
-                add_signature "$fdroid_source" "$USER_SIG"
-              fi
-            done < <(find "$FDROID_RESULTS_DIR" -type f -name '*.json' 2>/dev/null | sort)
-          fi
-          if [[ -n "$GPLAY_SIG" ]] && signatures_equal "$GPLAY_SIG" "$USER_SIG"; then
-            add_signature "Google Play" "$USER_SIG"
-          fi
-          if [[ -n "$APPVERIFIER_SIG" ]] && signatures_equal "$APPVERIFIER_SIG" "$USER_SIG"; then
-            add_signature "AppVerifier" "$USER_SIG"
-          fi
-          if [[ -n "$DIRECT_SIG" ]] && signatures_equal "$DIRECT_SIG" "$USER_SIG"; then
-            add_signature "Direct APK Link" "$USER_SIG"
-          fi
-
-          if [[ "$(yq '.signature | length' "$entry")" -eq 0 ]]; then
-            echo "No store matched the user-provided signature(s); skipping PR." >&2
-            echo "skipped=true" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
+        if ! submission_build_entry_file "$entry"; then
+          echo "No store matched the user-provided signature(s); skipping PR." >&2
+          echo "skipped=true" >> "$GITHUB_OUTPUT"
+          rm -f "$entry"
+          exit 0
         fi
 
-        export ENTRY="$entry"
-        if [[ -f data.yml ]] && [[ -s data.yml ]]; then
-          schema=$(yq -r '.schema // 0' data.yml)
-          if [[ "$schema" != "2" ]]; then
-            echo "Unsupported data.yml schema (expected 2): $schema" >&2
-            exit 1
-          fi
-          if yq -e '.packages[] | select(.package == strenv(PACKAGE))' data.yml >/dev/null 2>&1; then
-            yq -i 'with(.packages[] | select(.package == strenv(PACKAGE)); .signature += load(strenv(ENTRY)).signature)' data.yml
-            yq -i 'with(.packages[] | select(.package == strenv(PACKAGE)); .signature |= unique_by(.source + "|" + .fingerprint))' data.yml
-          else
-            yq -i '.packages += [load(strenv(ENTRY))]' data.yml
-          fi
-          yq -i '.packages |= sort_by(.package)' data.yml
-        else
-          yq -n '.schema = 2 | .packages = [load(strenv(ENTRY))]' > data.yml
-        fi
+        submission_merge_entry_into_data_yml "$entry"
         rm -f "$entry"
 
         branch="new/${ISSUE}"

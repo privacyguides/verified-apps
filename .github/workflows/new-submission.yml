@@ -20,7 +20,7 @@ jobs:
       isDuplicate: ${{ steps.duplicateCheck.outputs.isDuplicate }}
       duplicateOf: ${{ steps.duplicateCheck.outputs.duplicateOf }}
 
-    if: ${{ github.event.label.name == 'Run Checks' || github.event.label.name == 'Create PR' }}
+    if: ${{ github.event.label.name == 'Run Checks' || github.event.label.name == 'Create PR' || github.event.label.name == 'Commit As-Is' }}
 
     permissions:
       contents: read
@@ -82,6 +82,7 @@ jobs:
         run: |
           gh issue edit "$NUMBER" --repo "$GH_REPO" --remove-label "Run Checks" || true
           gh issue edit "$NUMBER" --repo "$GH_REPO" --remove-label "Create PR" || true
+          gh issue edit "$NUMBER" --repo "$GH_REPO" --remove-label "Commit As-Is" || true
 
           if [[ "$DUPLICATE_OF" == "$NUMBER" ]]; then
             gh issue close "$NUMBER" --repo "$GH_REPO" \
@@ -94,7 +95,7 @@ jobs:
     name: Accrescent
     runs-on: ubuntu-latest
     needs: parse
-    if: needs.parse.outputs.isDuplicate != 'true' && (github.event.label.name == 'Run Checks' || github.event.label.name == 'Create PR')
+    if: needs.parse.outputs.isDuplicate != 'true' && (github.event.label.name == 'Run Checks' || github.event.label.name == 'Create PR' || github.event.label.name == 'Commit As-Is')
     continue-on-error: true
     permissions:
       contents: read
@@ -201,7 +202,7 @@ jobs:
     name: F-Droid
     runs-on: ubuntu-latest
     needs: parse
-    if: needs.parse.outputs.isDuplicate != 'true' && (github.event.label.name == 'Run Checks' || github.event.label.name == 'Create PR')
+    if: needs.parse.outputs.isDuplicate != 'true' && (github.event.label.name == 'Run Checks' || github.event.label.name == 'Create PR' || github.event.label.name == 'Commit As-Is')
     continue-on-error: true
     permissions:
       contents: read
@@ -303,7 +304,7 @@ jobs:
     name: Custom F-Droid Repository
     runs-on: ubuntu-latest
     needs: parse
-    if: needs.parse.outputs.isDuplicate != 'true' && (github.event.label.name == 'Run Checks' || github.event.label.name == 'Create PR') && needs.parse.outputs.customFdroidRepoUrl != ''
+    if: needs.parse.outputs.isDuplicate != 'true' && (github.event.label.name == 'Run Checks' || github.event.label.name == 'Create PR' || github.event.label.name == 'Commit As-Is') && needs.parse.outputs.customFdroidRepoUrl != ''
     continue-on-error: true
     permissions:
       contents: read
@@ -397,7 +398,7 @@ jobs:
     name: Google Play
     runs-on: ubuntu-latest
     needs: parse
-    if: needs.parse.outputs.isDuplicate != 'true' && (github.event.label.name == 'Run Checks' || github.event.label.name == 'Create PR')
+    if: needs.parse.outputs.isDuplicate != 'true' && (github.event.label.name == 'Run Checks' || github.event.label.name == 'Create PR' || github.event.label.name == 'Commit As-Is')
     continue-on-error: true
     permissions:
       contents: read
@@ -543,7 +544,7 @@ jobs:
     name: Direct APK Link
     runs-on: ubuntu-latest
     needs: parse
-    if: needs.parse.outputs.isDuplicate != 'true' && (github.event.label.name == 'Run Checks' || github.event.label.name == 'Create PR') && needs.parse.outputs.apkUrl != ''
+    if: needs.parse.outputs.isDuplicate != 'true' && (github.event.label.name == 'Run Checks' || github.event.label.name == 'Create PR' || github.event.label.name == 'Commit As-Is') && needs.parse.outputs.apkUrl != ''
     continue-on-error: true
     permissions:
       contents: read
@@ -616,7 +617,7 @@ jobs:
     name: AppVerifier
     runs-on: ubuntu-latest
     needs: parse
-    if: needs.parse.outputs.isDuplicate != 'true' && (github.event.label.name == 'Run Checks' || github.event.label.name == 'Create PR')
+    if: needs.parse.outputs.isDuplicate != 'true' && (github.event.label.name == 'Run Checks' || github.event.label.name == 'Create PR' || github.event.label.name == 'Commit As-Is')
     continue-on-error: true
     permissions:
       contents: read
@@ -1058,6 +1059,41 @@ jobs:
             fi
           fi
 
+      - name: Append as-is database preview
+        env:
+          PACKAGE: ${{ needs.parse.outputs.packageName }}
+          USER_SIG: ${{ needs.parse.outputs.packageSignature }}
+          ISSUE: ${{ github.event.issue.number }}
+          ACC_SIG: ${{ needs.accrescent.outputs.signature }}
+          GPLAY_SIG: ${{ needs.gplay.outputs.signature }}
+          APPVERIFIER_SIG: ${{ needs.appverifier-db.outputs.signature }}
+          DIRECT_SIG: ${{ needs.direct-apk.outputs.signature }}
+        run: |
+          set -euo pipefail
+          source .github/actions/signature-lib/signatures.lib.sh
+          issue_body="${RUNNER_TEMP}/issueBody.md"
+          entry="$(mktemp)"
+          if ! submission_build_entry_file "$entry"; then
+            {
+              echo ""
+              echo "We could not build a database entry from store matches alone, so there is no as-is preview. Add the **Create PR** label after review if you want to merge signatures manually."
+            } | tee -a "$issue_body" >> "$GITHUB_STEP_SUMMARY"
+            rm -f "$entry"
+            exit 0
+          fi
+          preview="$(submission_format_package_preview "$entry")"
+          rm -f "$entry"
+          {
+            echo ""
+            echo "If committed as-is, the following would be added to \`data.yml\` (store signatures that matched the submitter's fingerprint):"
+            echo ""
+            echo '```yaml'
+            printf '%s\n' "$preview"
+            echo '```'
+            echo ""
+            echo "Maintainers: add **Commit As-Is** to accept this entry on \`main\` immediately, or **Create PR** to open a pull request for manual edits first."
+          } | tee -a "$issue_body" >> "$GITHUB_STEP_SUMMARY"
+
       - name: Comment on Issue
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -1316,3 +1352,86 @@ jobs:
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
         run: gh issue edit "$NUMBER" --repo "$GH_REPO" --remove-label "Create PR" || true
+
+  commit-as-is:
+    name: Commit As-Is
+    runs-on: ubuntu-latest
+    needs: [parse, accrescent, fdroid, custom-fdroid, gplay, appverifier-db, direct-apk]
+    if: |
+      always() &&
+      !cancelled() &&
+      needs.parse.result == 'success' &&
+      needs.parse.outputs.isDuplicate != 'true' &&
+      github.event.label.name == 'Commit As-Is'
+
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - name: Validate
+        run: |
+          if [[ "${{ needs.parse.outputs.packageName }}" == "" ]]; then
+            exit 1
+          fi
+          if [[ "${{ needs.parse.outputs.packageSignature }}" == "" ]]; then
+            exit 1
+          fi
+          if [[ "${{ github.event.label.name }}" != "Commit As-Is" ]]; then
+            exit 1
+          fi
+
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main
+
+      - name: Download F-Droid results
+        uses: actions/download-artifact@v4
+        with:
+          pattern: fdroid-result-*
+          merge-multiple: true
+          path: fdroid-results
+
+      - name: Commit submission to main
+        id: commit
+        uses: ./.github/actions/commit-submission
+        with:
+          packageName: ${{ needs.parse.outputs.packageName }}
+          packageSignature: ${{ needs.parse.outputs.packageSignature }}
+          issueNumber: ${{ github.event.issue.number }}
+          accrescentSignature: ${{ needs.accrescent.outputs.signature }}
+          fdroidResultsDir: fdroid-results
+          gplaySignature: ${{ needs.gplay.outputs.signature }}
+          appverifierSignature: ${{ needs.appverifier-db.outputs.signature }}
+          directApkSignature: ${{ needs.direct-apk.outputs.signature }}
+
+      - name: Comment on success
+        if: steps.commit.outputs.committed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+          PACKAGE: ${{ needs.parse.outputs.packageName }}
+        run: |
+          gh issue comment "$NUMBER" --repo "$GH_REPO" \
+            --body "Committed \`${PACKAGE}\` to \`data.yml\` on \`main\` as submitted (store-matched signatures only)."
+
+      - name: Report skipped commit
+        if: steps.commit.outputs.skipped == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+        run: |
+          gh issue comment "$NUMBER" --repo "$GH_REPO" \
+            --body "Could not commit as-is: no store signatures matched the submission. Run **Run Checks** first, or use **Create PR** to add entries manually."
+
+      - name: Remove Commit As-Is label
+        if: always() && (steps.commit.outputs.committed == 'true' || steps.commit.outputs.skipped == 'true')
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+        run: gh issue edit "$NUMBER" --repo "$GH_REPO" --remove-label "Commit As-Is" || true
