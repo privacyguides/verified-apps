@@ -175,6 +175,11 @@ packages:
       - source: "AppVerifier"
         issue: 60
         fingerprint: 00:03:01:CC:29:1B:B9:9B:5E:BC:13:BE:89:F0:8C:46:03:80:71:27:B5:5E:21:AA:1E:69:8B:1D:E6:B8:43:46
+  - package: grit.storytel.app
+    signature:
+      - source: "Google Play"
+        issue: 401
+        fingerprint: A6:56:F3:FD:4E:4C:32:0B:FF:E0:81:EA:2A:FE:07:B0:AC:E6:14:B9:31:3A:10:D2:16:3E:91:91:BD:79:42:60
   - package: helium314.keyboard
     signature:
       - source: F-Droid
