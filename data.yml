@@ -494,6 +494,11 @@ packages:
       - source: "Direct APK Link"
         issue: 99
         fingerprint: C5:E2:91:B5:A5:71:F9:C8:CD:9A:97:99:C2:C9:4E:02:EC:97:03:94:88:93:F2:CA:75:6D:67:B9:42:04:F9:04
+  - package: org.joinmastodon.android
+    signature:
+      - source: "F-Droid (IzzyOnDroid)"
+        issue: 555
+        fingerprint: A3:F1:9B:26:DA:3F:E1:2B:02:85:68:5F:6E:CC:41:51:5E:6A:9A:DC:C5:53:0B:47:C9:5D:84:7C:DA:E4:A7:E8
   - package: org.localsend.localsend_app
     signature:
       - source: "F-Droid"
