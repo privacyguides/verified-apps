@@ -1,229 +1,284 @@
-- package: app.accrescent.client
-  signature:
-    - source: Accrescent
-      issue: 66
-      fingerprint: 06:7A:40:C4:19:3A:AD:51:AC:87:F9:DD:FD:EB:B1:5E:24:A1:85:0B:AB:FA:48:21:C2:8C:5C:25:C3:FD:C0:71
-- package: app.comaps
-  signature:
-    - source: "Direct APK Link"
-      issue: 247
-      fingerprint: 48:94:E8:E6:96:36:27:EF:66:00:31:D8:59:3F:E7:72:97:F8:35:AC:B4:E2:38:10:00:3E:92:61:35:02:3B:4C
-- package: app.organicmaps
-  signature:
-    - source: "Accrescent"
-      issue: 68
-      fingerprint: B9:C7:AE:79:A5:A9:02:70:DF:08:A1:32:E5:36:B9:C6:66:F5:BE:F1:F5:9B:30:4F:CE:CF:86:87:86:5E:4B:5B
-    - source: "AppVerifier"
-      issue: 68
-      fingerprint: B9:C7:AE:79:A5:A9:02:70:DF:08:A1:32:E5:36:B9:C6:66:F5:BE:F1:F5:9B:30:4F:CE:CF:86:87:86:5E:4B:5B
-- package: com.aurora.store
-  signature:
-    - source: Direct APK Link
-      issue: 132
-      fingerprint: 4C:62:61:57:AD:02:BD:A3:40:1A:72:63:55:5F:68:A7:96:63:FC:3E:13:A4:D4:36:9A:12:57:09:41:AA:28:0F
-- package: com.brave.browser
-  signature:
-    - source: Google Play
-      issue: 146
-      fingerprint: 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
-    - source: Direct APK Link
-      issue: 146
-      fingerprint: 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
-- package: com.cakewallet.cake_wallet
-  signature:
-    - source: Accrescent
-      issue: 97
-      fingerprint: C5:40:53:AB:0F:10:D9:54:17:62:A3:DA:76:65:AE:3D:BA:5E:7C:74:3A:B4:F1:08:A5:34:9D:62:AC:10:6E:F5
-    - source: Direct APK Link
-      issue: 97
-      fingerprint: C5:40:53:AB:0F:10:D9:54:17:62:A3:DA:76:65:AE:3D:BA:5E:7C:74:3A:B4:F1:08:A5:34:9D:62:AC:10:6E:F5
-- package: com.cyb3rko.flashdim
-  signature:
-    - source: "Accrescent"
-      issue: 126
-      fingerprint: EA:78:69:1C:BA:41:86:00:A4:56:32:89:B1:33:F9:D0:0D:3D:0C:24:A5:F5:4C:5C:59:EE:1C:95:2B:B0:E1:1D
-    - source: "Direct APK Link"
-      issue: 126
-      fingerprint: EA:78:69:1C:BA:41:86:00:A4:56:32:89:B1:33:F9:D0:0D:3D:0C:24:A5:F5:4C:5C:59:EE:1C:95:2B:B0:E1:1D
-- package: com.donnnno.arcticons
-  signature:
-    - source: Accrescent
-      issue: 87
-      fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
-    - source: F-Droid
-      issue: 87
-      fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
-- package: com.donnnno.arcticons.light
-  signature:
-    - source: Accrescent
-      issue: 72
-      fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
-    - source: F-Droid
-      issue: 72
-      fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
-- package: com.donnnno.arcticons.you
-  signature:
-    - source: Accrescent
-      issue: 47
-      fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
-    - source: F-Droid
-      issue: 47
-      fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
-- package: com.github.lamarios.clipious
-  signature:
-    - source: "Accrescent"
-      issue: 57
-      fingerprint: 19:DE:04:E5:D6:84:66:06:9D:30:EC:63:C6:BA:7D:9E:3C:F7:3B:5D:61:CB:4B:37:62:C2:B9:B2:53:EC:BD:03
-    - source: "F-Droid"
-      issue: 57
-      fingerprint: 19:DE:04:E5:D6:84:66:06:9D:30:EC:63:C6:BA:7D:9E:3C:F7:3B:5D:61:CB:4B:37:62:C2:B9:B2:53:EC:BD:03
-    - source: "AppVerifier"
-      issue: 57
-      fingerprint: 19:DE:04:E5:D6:84:66:06:9D:30:EC:63:C6:BA:7D:9E:3C:F7:3B:5D:61:CB:4B:37:62:C2:B9:B2:53:EC:BD:03
-- package: com.github.libretube
-  signature:
-    - source: "F-Droid (IzzyOnDroid)"
-      issue: 423
-      fingerprint: 72:0C:4F:CE:CF:73:8A:41:D0:33:B9:FB:E0:BE:F9:7A:C2:32:03:0C:E9:3E:27:4D:2E:0A:E2:32:E4:4E:EA:CE
-    - source: "AppVerifier"
-      issue: 423
-      fingerprint: 72:0C:4F:CE:CF:73:8A:41:D0:33:B9:FB:E0:BE:F9:7A:C2:32:03:0C:E9:3E:27:4D:2E:0A:E2:32:E4:4E:EA:CE
-    - source: "Direct APK Link"
-      issue: 423
-      fingerprint: 72:0C:4F:CE:CF:73:8A:41:D0:33:B9:FB:E0:BE:F9:7A:C2:32:03:0C:E9:3E:27:4D:2E:0A:E2:32:E4:4E:EA:CE
-- package: com.google.android.inputmethod.latin
-  signature:
-    - source: "Google Play"
-      issue: 111
-      fingerprint: |
-        7C:E8:3C:1B:71:F3:D5:72:FE:D0:4C:8D:40:C5:CB:10:FF:75:E6:D8:7D:9D:F6:FB:D5:3F:04:68:C2:90:50:53
-        F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
-- package: com.none.tom.exiferaser
-  signature:
-    - source: Accrescent
-      issue: 49
-      fingerprint: D9:10:86:7C:E2:CF:3D:CD:37:DB:51:85:3E:BE:F8:63:3F:D8:3A:14:2B:26:42:27:4E:D0:68:15:2F:F1:22:01
-    - source: Google Play
-      issue: 49
-      fingerprint: D9:10:86:7C:E2:CF:3D:CD:37:DB:51:85:3E:BE:F8:63:3F:D8:3A:14:2B:26:42:27:4E:D0:68:15:2F:F1:22:01
-- package: com.streetwriters.notesnook
-  signature:
-    - source: "Direct APK Link"
-      issue: 203
-      fingerprint: 23:AF:C1:F8:ED:5F:BB:D0:85:2A:37:22:2D:DC:E0:6F:92:92:71:02:F0:12:6F:99:6A:56:23:F5:27:74:C6:90
-- package: com.x8bit.bitwarden
-  signature:
-    - source: Direct APK Link
-      issue: 151
-      fingerprint: DE:6E:C9:14:31:55:79:95:29:7B:F3:E6:5B:C8:03:49:BC:60:3A:04:70:81:60:61:8C:86:BC:99:94:17:1C:90
-    - source: "F-Droid (Custom)"
-      issue: 355
-      fingerprint: DE:6E:C9:14:31:55:79:95:29:7B:F3:E6:5B:C8:03:49:BC:60:3A:04:70:81:60:61:8C:86:BC:99:94:17:1C:90
-    - source: "AppVerifier"
-      issue: 355
-      fingerprint: DE:6E:C9:14:31:55:79:95:29:7B:F3:E6:5B:C8:03:49:BC:60:3A:04:70:81:60:61:8C:86:BC:99:94:17:1C:90
-- package: dev.soupslurpr.appverifier
-  signature:
-    - source: Accrescent
-      issue: 1
-      fingerprint: 3A:04:A8:0B:2A:88:33:4C:74:74:85:F0:B2:15:16:40:A3:8B:B3:D2:D7:3A:8E:AB:81:DF:50:3E:0F:02:02:B2
-- package: dev.soupslurpr.beautyxt
-  signature:
-    - source: "Accrescent"
-      issue: 60
-      fingerprint: 00:03:01:CC:29:1B:B9:9B:5E:BC:13:BE:89:F0:8C:46:03:80:71:27:B5:5E:21:AA:1E:69:8B:1D:E6:B8:43:46
-    - source: "AppVerifier"
-      issue: 60
-      fingerprint: 00:03:01:CC:29:1B:B9:9B:5E:BC:13:BE:89:F0:8C:46:03:80:71:27:B5:5E:21:AA:1E:69:8B:1D:E6:B8:43:46
-- package: helium314.keyboard
-  signature:
-    - source: F-Droid
-      issue: 53
-      fingerprint: 5E:C0:A5:31:3A:A4:35:58:EE:75:B2:0B:58:CC:D8:19:4C:DB:F0:66:DF:94:A4:3B:A2:88:D9:33:D6:0B:86:CE
-- package: im.molly.app
-  signature:
-    - source: "Accrescent"
-      issue: 62
-      fingerprint: 6A:A8:0F:DF:4A:8C:C1:37:37:CF:B4:34:FC:0C:DE:48:6F:09:CF:8F:CD:A2:1A:67:BE:A5:EE:1C:A2:70:08:86
-    - source: "AppVerifier"
-      issue: 62
-      fingerprint: 6A:A8:0F:DF:4A:8C:C1:37:37:CF:B4:34:FC:0C:DE:48:6F:09:CF:8F:CD:A2:1A:67:BE:A5:EE:1C:A2:70:08:86
-- package: me.easyapps.easynotes
-  signature:
-    - source: "Accrescent"
-      issue: 120
-      fingerprint: 79:E8:5C:E8:1D:F2:F4:F2:25:C2:2F:EA:0B:2D:19:50:B3:68:62:7E:47:5F:B7:2B:73:85:D2:50:31:3B:F7:C1
-- package: net.ivpn.client
-  signature:
-    - source: Accrescent
-      issue: 3
-      fingerprint: 88:A6:B4:0F:C9:7F:DC:84:2F:23:1F:50:EB:12:DE:11:6F:5B:75:9E:3C:5B:38:AA:CC:AF:6A:7B:39:3C:85:BB
-- package: nodomain.freeyourgadget.gadgetbridge
-  signature:
-    - source: F-Droid
-      issue: 171
-      fingerprint: 01:CC:E9:31:6F:CB:77:EA:02:C6:DE:A8:1F:DE:9F:31:76:46:92:02:C0:CE:A0:51:4C:0E:03:CB:96:9B:C7:BE
-    - source: Direct APK Link
-      issue: 171
-      fingerprint: 01:CC:E9:31:6F:CB:77:EA:02:C6:DE:A8:1F:DE:9F:31:76:46:92:02:C0:CE:A0:51:4C:0E:03:CB:96:9B:C7:BE
-- package: org.cryptomator
-  signature:
-    - source: "Accrescent"
-      issue: 58
-      fingerprint: F7:C3:EC:3B:0D:58:8D:3C:B5:29:83:E9:EB:1A:74:21:C9:3D:43:39:A2:86:39:8E:71:D7:B6:51:E8:D8:EC:DD
-    - source: "F-Droid (IzzyOnDroid)"
-      issue: 58
-      fingerprint: F7:C3:EC:3B:0D:58:8D:3C:B5:29:83:E9:EB:1A:74:21:C9:3D:43:39:A2:86:39:8E:71:D7:B6:51:E8:D8:EC:DD
-    - source: "AppVerifier"
-      issue: 58
-      fingerprint: F7:C3:EC:3B:0D:58:8D:3C:B5:29:83:E9:EB:1A:74:21:C9:3D:43:39:A2:86:39:8E:71:D7:B6:51:E8:D8:EC:DD
-- package: org.fossify.gallery
-  signature:
-    - source: F-Droid
-      issue: 173
-      fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
-    - source: Google Play
-      issue: 173
-      fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
-    - source: Direct APK Link
-      issue: 173
-      fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
-- package: org.oxycblt.auxio
-  signature:
-    - source: "Accrescent"
-      issue: 65
-      fingerprint: DA:84:E2:53:4C:1A:CC:0B:6E:4F:57:DE:DB:64:0D:4D:C8:93:F5:BF:41:37:A2:E1:EC:BA:87:AD:F8:25:BA:44
-    - source: "AppVerifier"
-      issue: 65
-      fingerprint: DA:84:E2:53:4C:1A:CC:0B:6E:4F:57:DE:DB:64:0D:4D:C8:93:F5:BF:41:37:A2:E1:EC:BA:87:AD:F8:25:BA:44
-- package: org.thoughtcrime.securesms
-  signature:
-    - source: "Google Play"
-      issue: 383
-      fingerprint: |
-        29:F3:4E:5F:27:F2:11:B4:24:BC:5B:F9:D6:71:62:C0:EA:FB:A2:DA:35:AF:35:C1:64:16:FC:44:62:76:BA:26
-        4B:E4:F6:CD:5B:E8:44:08:3E:90:02:79:DC:82:2A:F6:5A:54:7F:EC:C2:6A:BA:7F:F1:F5:20:3A:45:51:8C:D8
-    - source: "AppVerifier"
-      issue: 383
-      fingerprint: |
-        29:F3:4E:5F:27:F2:11:B4:24:BC:5B:F9:D6:71:62:C0:EA:FB:A2:DA:35:AF:35:C1:64:16:FC:44:62:76:BA:26
-        4B:E4:F6:CD:5B:E8:44:08:3E:90:02:79:DC:82:2A:F6:5A:54:7F:EC:C2:6A:BA:7F:F1:F5:20:3A:45:51:8C:D8
-    - source: "Direct APK Link"
-      issue: 383
-      fingerprint: |
-        29:F3:4E:5F:27:F2:11:B4:24:BC:5B:F9:D6:71:62:C0:EA:FB:A2:DA:35:AF:35:C1:64:16:FC:44:62:76:BA:26
-        4B:E4:F6:CD:5B:E8:44:08:3E:90:02:79:DC:82:2A:F6:5A:54:7F:EC:C2:6A:BA:7F:F1:F5:20:3A:45:51:8C:D8
-- package: org.unifiedpush.distributor.sunup
-  signature:
-    - source: "Accrescent"
-      issue: 137
-      fingerprint: 3B:33:D7:8A:5B:CA:C1:B9:52:75:6B:08:FE:88:30:CE:D3:87:AB:B6:B9:56:B0:2A:47:EF:80:32:1D:4A:2B:88
-    - source: "F-Droid"
-      issue: 137
-      fingerprint: 3B:33:D7:8A:5B:CA:C1:B9:52:75:6B:08:FE:88:30:CE:D3:87:AB:B6:B9:56:B0:2A:47:EF:80:32:1D:4A:2B:88
-    - source: "F-Droid (IzzyOnDroid)"
-      issue: 137
-      fingerprint: 3B:33:D7:8A:5B:CA:C1:B9:52:75:6B:08:FE:88:30:CE:D3:87:AB:B6:B9:56:B0:2A:47:EF:80:32:1D:4A:2B:88
-    - source: "Direct APK Link"
-      issue: 137
-      fingerprint: 3B:33:D7:8A:5B:CA:C1:B9:52:75:6B:08:FE:88:30:CE:D3:87:AB:B6:B9:56:B0:2A:47:EF:80:32:1D:4A:2B:88
+schema: 2
+packages:
+  - package: app.accrescent.client
+    signature:
+      - source: Accrescent
+        issue: 66
+        fingerprint: 06:7A:40:C4:19:3A:AD:51:AC:87:F9:DD:FD:EB:B1:5E:24:A1:85:0B:AB:FA:48:21:C2:8C:5C:25:C3:FD:C0:71
+  - package: app.comaps
+    signature:
+      - source: "Direct APK Link"
+        issue: 247
+        fingerprint: 48:94:E8:E6:96:36:27:EF:66:00:31:D8:59:3F:E7:72:97:F8:35:AC:B4:E2:38:10:00:3E:92:61:35:02:3B:4C
+  - package: app.organicmaps
+    signature:
+      - source: "Accrescent"
+        issue: 68
+        fingerprint: B9:C7:AE:79:A5:A9:02:70:DF:08:A1:32:E5:36:B9:C6:66:F5:BE:F1:F5:9B:30:4F:CE:CF:86:87:86:5E:4B:5B
+      - source: "AppVerifier"
+        issue: 68
+        fingerprint: B9:C7:AE:79:A5:A9:02:70:DF:08:A1:32:E5:36:B9:C6:66:F5:BE:F1:F5:9B:30:4F:CE:CF:86:87:86:5E:4B:5B
+  - package: co.cape.matrix
+    signature:
+      - source: Accrescent
+        issue: 19
+        fingerprint: F9:30:72:E3:44:E6:91:F4:02:23:14:D3:E6:D0:D6:1B:80:0F:10:8A:3F:08:83:AE:13:0E:72:55:03:A7:91:42
+      - source: Google Play
+        issue: 19
+        fingerprint: F9:30:72:E3:44:E6:91:F4:02:23:14:D3:E6:D0:D6:1B:80:0F:10:8A:3F:08:83:AE:13:0E:72:55:03:A7:91:42
+  - package: com.aurora.store
+    signature:
+      - source: Direct APK Link
+        issue: 132
+        fingerprint: 4C:62:61:57:AD:02:BD:A3:40:1A:72:63:55:5F:68:A7:96:63:FC:3E:13:A4:D4:36:9A:12:57:09:41:AA:28:0F
+  - package: com.brave.browser
+    signature:
+      - source: Google Play
+        issue: 146
+        fingerprint: 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
+      - source: Direct APK Link
+        issue: 146
+        fingerprint: 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
+  - package: com.cakewallet.cake_wallet
+    signature:
+      - source: Accrescent
+        issue: 97
+        fingerprint: C5:40:53:AB:0F:10:D9:54:17:62:A3:DA:76:65:AE:3D:BA:5E:7C:74:3A:B4:F1:08:A5:34:9D:62:AC:10:6E:F5
+      - source: Direct APK Link
+        issue: 97
+        fingerprint: C5:40:53:AB:0F:10:D9:54:17:62:A3:DA:76:65:AE:3D:BA:5E:7C:74:3A:B4:F1:08:A5:34:9D:62:AC:10:6E:F5
+  - package: com.cyb3rko.flashdim
+    signature:
+      - source: "Accrescent"
+        issue: 126
+        fingerprint: EA:78:69:1C:BA:41:86:00:A4:56:32:89:B1:33:F9:D0:0D:3D:0C:24:A5:F5:4C:5C:59:EE:1C:95:2B:B0:E1:1D
+      - source: "Direct APK Link"
+        issue: 126
+        fingerprint: EA:78:69:1C:BA:41:86:00:A4:56:32:89:B1:33:F9:D0:0D:3D:0C:24:A5:F5:4C:5C:59:EE:1C:95:2B:B0:E1:1D
+  - package: com.donnnno.arcticons
+    signature:
+      - source: Accrescent
+        issue: 87
+        fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
+      - source: F-Droid
+        issue: 87
+        fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
+  - package: com.donnnno.arcticons.light
+    signature:
+      - source: Accrescent
+        issue: 72
+        fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
+      - source: F-Droid
+        issue: 72
+        fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
+  - package: com.donnnno.arcticons.you
+    signature:
+      - source: Accrescent
+        issue: 47
+        fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
+      - source: F-Droid
+        issue: 47
+        fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
+  - package: com.github.lamarios.clipious
+    signature:
+      - source: "Accrescent"
+        issue: 57
+        fingerprint: 19:DE:04:E5:D6:84:66:06:9D:30:EC:63:C6:BA:7D:9E:3C:F7:3B:5D:61:CB:4B:37:62:C2:B9:B2:53:EC:BD:03
+      - source: "F-Droid"
+        issue: 57
+        fingerprint: 19:DE:04:E5:D6:84:66:06:9D:30:EC:63:C6:BA:7D:9E:3C:F7:3B:5D:61:CB:4B:37:62:C2:B9:B2:53:EC:BD:03
+      - source: "AppVerifier"
+        issue: 57
+        fingerprint: 19:DE:04:E5:D6:84:66:06:9D:30:EC:63:C6:BA:7D:9E:3C:F7:3B:5D:61:CB:4B:37:62:C2:B9:B2:53:EC:BD:03
+  - package: com.github.libretube
+    signature:
+      - source: "F-Droid (IzzyOnDroid)"
+        issue: 423
+        fingerprint: 72:0C:4F:CE:CF:73:8A:41:D0:33:B9:FB:E0:BE:F9:7A:C2:32:03:0C:E9:3E:27:4D:2E:0A:E2:32:E4:4E:EA:CE
+      - source: "AppVerifier"
+        issue: 423
+        fingerprint: 72:0C:4F:CE:CF:73:8A:41:D0:33:B9:FB:E0:BE:F9:7A:C2:32:03:0C:E9:3E:27:4D:2E:0A:E2:32:E4:4E:EA:CE
+      - source: "Direct APK Link"
+        issue: 423
+        fingerprint: 72:0C:4F:CE:CF:73:8A:41:D0:33:B9:FB:E0:BE:F9:7A:C2:32:03:0C:E9:3E:27:4D:2E:0A:E2:32:E4:4E:EA:CE
+  - package: com.google.android.inputmethod.latin
+    signature:
+      - source: "Google Play"
+        issue: 111
+        fingerprint: |
+          7C:E8:3C:1B:71:F3:D5:72:FE:D0:4C:8D:40:C5:CB:10:FF:75:E6:D8:7D:9D:F6:FB:D5:3F:04:68:C2:90:50:53
+          F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
+  - package: com.none.tom.exiferaser
+    signature:
+      - source: Accrescent
+        issue: 49
+        fingerprint: D9:10:86:7C:E2:CF:3D:CD:37:DB:51:85:3E:BE:F8:63:3F:D8:3A:14:2B:26:42:27:4E:D0:68:15:2F:F1:22:01
+      - source: Google Play
+        issue: 49
+        fingerprint: D9:10:86:7C:E2:CF:3D:CD:37:DB:51:85:3E:BE:F8:63:3F:D8:3A:14:2B:26:42:27:4E:D0:68:15:2F:F1:22:01
+  - package: com.streetwriters.notesnook
+    signature:
+      - source: "Direct APK Link"
+        issue: 203
+        fingerprint: 23:AF:C1:F8:ED:5F:BB:D0:85:2A:37:22:2D:DC:E0:6F:92:92:71:02:F0:12:6F:99:6A:56:23:F5:27:74:C6:90
+  - package: com.x8bit.bitwarden
+    signature:
+      - source: Direct APK Link
+        issue: 151
+        fingerprint: DE:6E:C9:14:31:55:79:95:29:7B:F3:E6:5B:C8:03:49:BC:60:3A:04:70:81:60:61:8C:86:BC:99:94:17:1C:90
+      - source: "F-Droid (Custom)"
+        issue: 355
+        fingerprint: DE:6E:C9:14:31:55:79:95:29:7B:F3:E6:5B:C8:03:49:BC:60:3A:04:70:81:60:61:8C:86:BC:99:94:17:1C:90
+      - source: "AppVerifier"
+        issue: 355
+        fingerprint: DE:6E:C9:14:31:55:79:95:29:7B:F3:E6:5B:C8:03:49:BC:60:3A:04:70:81:60:61:8C:86:BC:99:94:17:1C:90
+  - package: de.tutao.tutanota
+    signature:
+      - source: "AppVerifier"
+        issue: 410
+        fingerprint: B4:54:C1:76:F9:0A:1E:A0:57:29:87:D3:82:72:3B:5C:D7:4F:94:2A:79:37:A2:A0:B9:9A:36:80:69:14:88:50
+      - source: "Direct APK Link"
+        issue: 410
+        fingerprint: B4:54:C1:76:F9:0A:1E:A0:57:29:87:D3:82:72:3B:5C:D7:4F:94:2A:79:37:A2:A0:B9:9A:36:80:69:14:88:50
+  - package: dev.soupslurpr.appverifier
+    signature:
+      - source: Accrescent
+        issue: 1
+        fingerprint: 3A:04:A8:0B:2A:88:33:4C:74:74:85:F0:B2:15:16:40:A3:8B:B3:D2:D7:3A:8E:AB:81:DF:50:3E:0F:02:02:B2
+  - package: dev.soupslurpr.beautyxt
+    signature:
+      - source: "Accrescent"
+        issue: 60
+        fingerprint: 00:03:01:CC:29:1B:B9:9B:5E:BC:13:BE:89:F0:8C:46:03:80:71:27:B5:5E:21:AA:1E:69:8B:1D:E6:B8:43:46
+      - source: "AppVerifier"
+        issue: 60
+        fingerprint: 00:03:01:CC:29:1B:B9:9B:5E:BC:13:BE:89:F0:8C:46:03:80:71:27:B5:5E:21:AA:1E:69:8B:1D:E6:B8:43:46
+  - package: helium314.keyboard
+    signature:
+      - source: F-Droid
+        issue: 53
+        fingerprint: 5E:C0:A5:31:3A:A4:35:58:EE:75:B2:0B:58:CC:D8:19:4C:DB:F0:66:DF:94:A4:3B:A2:88:D9:33:D6:0B:86:CE
+  - package: im.molly.app
+    signature:
+      - source: "Accrescent"
+        issue: 62
+        fingerprint: 6A:A8:0F:DF:4A:8C:C1:37:37:CF:B4:34:FC:0C:DE:48:6F:09:CF:8F:CD:A2:1A:67:BE:A5:EE:1C:A2:70:08:86
+      - source: "AppVerifier"
+        issue: 62
+        fingerprint: 6A:A8:0F:DF:4A:8C:C1:37:37:CF:B4:34:FC:0C:DE:48:6F:09:CF:8F:CD:A2:1A:67:BE:A5:EE:1C:A2:70:08:86
+  - package: me.easyapps.easynotes
+    signature:
+      - source: "Accrescent"
+        issue: 120
+        fingerprint: 79:E8:5C:E8:1D:F2:F4:F2:25:C2:2F:EA:0B:2D:19:50:B3:68:62:7E:47:5F:B7:2B:73:85:D2:50:31:3B:F7:C1
+  - package: me.proton.android.calendar
+    signature:
+      - source: "AppVerifier"
+        issue: 404
+        fingerprint: DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
+      - source: "Direct APK Link"
+        issue: 404
+        fingerprint: DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
+  - package: net.ivpn.client
+    signature:
+      - source: Accrescent
+        issue: 3
+        fingerprint: 88:A6:B4:0F:C9:7F:DC:84:2F:23:1F:50:EB:12:DE:11:6F:5B:75:9E:3C:5B:38:AA:CC:AF:6A:7B:39:3C:85:BB
+  - package: net.mullvad.mullvadvpn
+    signature:
+      - source: "AppVerifier"
+        issue: 215
+        fingerprint: 7B:E2:19:30:C3:B4:D7:39:06:B0:89:30:45:0A:1D:3A:FB:D2:2C:98:D9:D8:E9:87:DF:8C:1F:BC:2D:0C:90:BB
+      - source: "Direct APK Link"
+        issue: 215
+        fingerprint: 7B:E2:19:30:C3:B4:D7:39:06:B0:89:30:45:0A:1D:3A:FB:D2:2C:98:D9:D8:E9:87:DF:8C:1F:BC:2D:0C:90:BB
+  - package: nodomain.freeyourgadget.gadgetbridge
+    signature:
+      - source: F-Droid
+        issue: 171
+        fingerprint: 01:CC:E9:31:6F:CB:77:EA:02:C6:DE:A8:1F:DE:9F:31:76:46:92:02:C0:CE:A0:51:4C:0E:03:CB:96:9B:C7:BE
+      - source: Direct APK Link
+        issue: 171
+        fingerprint: 01:CC:E9:31:6F:CB:77:EA:02:C6:DE:A8:1F:DE:9F:31:76:46:92:02:C0:CE:A0:51:4C:0E:03:CB:96:9B:C7:BE
+  - package: org.cryptomator
+    signature:
+      - source: "Accrescent"
+        issue: 58
+        fingerprint: F7:C3:EC:3B:0D:58:8D:3C:B5:29:83:E9:EB:1A:74:21:C9:3D:43:39:A2:86:39:8E:71:D7:B6:51:E8:D8:EC:DD
+      - source: "F-Droid (IzzyOnDroid)"
+        issue: 58
+        fingerprint: F7:C3:EC:3B:0D:58:8D:3C:B5:29:83:E9:EB:1A:74:21:C9:3D:43:39:A2:86:39:8E:71:D7:B6:51:E8:D8:EC:DD
+      - source: "AppVerifier"
+        issue: 58
+        fingerprint: F7:C3:EC:3B:0D:58:8D:3C:B5:29:83:E9:EB:1A:74:21:C9:3D:43:39:A2:86:39:8E:71:D7:B6:51:E8:D8:EC:DD
+  - package: org.fossify.gallery
+    signature:
+      - source: F-Droid
+        issue: 173
+        fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
+      - source: Google Play
+        issue: 173
+        fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
+      - source: Direct APK Link
+        issue: 173
+        fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
+  - package: org.magicgrants.skylight
+    signature:
+      - source: "Direct APK Link"
+        issue: 451
+        fingerprint: 15:FA:52:78:85:F7:04:21:10:30:4D:1A:F0:08:81:07:27:09:BD:38:E9:84:2C:AF:9C:D8:9E:08:06:1C:5E:52
+  - package: org.oxycblt.auxio
+    signature:
+      - source: "Accrescent"
+        issue: 65
+        fingerprint: DA:84:E2:53:4C:1A:CC:0B:6E:4F:57:DE:DB:64:0D:4D:C8:93:F5:BF:41:37:A2:E1:EC:BA:87:AD:F8:25:BA:44
+      - source: "AppVerifier"
+        issue: 65
+        fingerprint: DA:84:E2:53:4C:1A:CC:0B:6E:4F:57:DE:DB:64:0D:4D:C8:93:F5:BF:41:37:A2:E1:EC:BA:87:AD:F8:25:BA:44
+  - package: org.thoughtcrime.securesms
+    signature:
+      - source: "Google Play"
+        issue: 383
+        fingerprint: |
+          29:F3:4E:5F:27:F2:11:B4:24:BC:5B:F9:D6:71:62:C0:EA:FB:A2:DA:35:AF:35:C1:64:16:FC:44:62:76:BA:26
+          4B:E4:F6:CD:5B:E8:44:08:3E:90:02:79:DC:82:2A:F6:5A:54:7F:EC:C2:6A:BA:7F:F1:F5:20:3A:45:51:8C:D8
+      - source: "AppVerifier"
+        issue: 383
+        fingerprint: |
+          29:F3:4E:5F:27:F2:11:B4:24:BC:5B:F9:D6:71:62:C0:EA:FB:A2:DA:35:AF:35:C1:64:16:FC:44:62:76:BA:26
+          4B:E4:F6:CD:5B:E8:44:08:3E:90:02:79:DC:82:2A:F6:5A:54:7F:EC:C2:6A:BA:7F:F1:F5:20:3A:45:51:8C:D8
+      - source: "Direct APK Link"
+        issue: 383
+        fingerprint: |
+          29:F3:4E:5F:27:F2:11:B4:24:BC:5B:F9:D6:71:62:C0:EA:FB:A2:DA:35:AF:35:C1:64:16:FC:44:62:76:BA:26
+          4B:E4:F6:CD:5B:E8:44:08:3E:90:02:79:DC:82:2A:F6:5A:54:7F:EC:C2:6A:BA:7F:F1:F5:20:3A:45:51:8C:D8
+  - package: org.torproject.torbrowser
+    signature:
+      - source: "Google Play"
+        issue: 257
+        fingerprint: 20:06:1F:04:5E:73:7C:67:37:5C:17:79:4C:FE:DB:43:6A:03:CE:C6:BA:CB:7C:B9:F9:66:42:20:5C:A2:CE:C8
+      - source: "Direct APK Link"
+        issue: 257
+        fingerprint: 20:06:1F:04:5E:73:7C:67:37:5C:17:79:4C:FE:DB:43:6A:03:CE:C6:BA:CB:7C:B9:F9:66:42:20:5C:A2:CE:C8
+  - package: org.unifiedpush.distributor.sunup
+    signature:
+      - source: "Accrescent"
+        issue: 137
+        fingerprint: 3B:33:D7:8A:5B:CA:C1:B9:52:75:6B:08:FE:88:30:CE:D3:87:AB:B6:B9:56:B0:2A:47:EF:80:32:1D:4A:2B:88
+      - source: "F-Droid"
+        issue: 137
+        fingerprint: 3B:33:D7:8A:5B:CA:C1:B9:52:75:6B:08:FE:88:30:CE:D3:87:AB:B6:B9:56:B0:2A:47:EF:80:32:1D:4A:2B:88
+      - source: "F-Droid (IzzyOnDroid)"
+        issue: 137
+        fingerprint: 3B:33:D7:8A:5B:CA:C1:B9:52:75:6B:08:FE:88:30:CE:D3:87:AB:B6:B9:56:B0:2A:47:EF:80:32:1D:4A:2B:88
+      - source: "Direct APK Link"
+        issue: 137
+        fingerprint: 3B:33:D7:8A:5B:CA:C1:B9:52:75:6B:08:FE:88:30:CE:D3:87:AB:B6:B9:56:B0:2A:47:EF:80:32:1D:4A:2B:88
+  - package: org.videolan.vlc
+    signature:
+      - source: "AppVerifier"
+        issue: 406
+        fingerprint: C8:76:8D:2C:EA:0C:4B:62:2E:41:9B:4B:47:15:98:19:46:82:1E:4E:BC:03:5F:B4:17:76:CA:D3:95:A7:F6:8E
+      - source: "Direct APK Link"
+        issue: 406
+        fingerprint: C8:76:8D:2C:EA:0C:4B:62:2E:41:9B:4B:47:15:98:19:46:82:1E:4E:BC:03:5F:B4:17:76:CA:D3:95:A7:F6:8E

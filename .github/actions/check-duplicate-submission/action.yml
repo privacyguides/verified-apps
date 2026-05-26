@@ -66,6 +66,11 @@ runs:
         duplicate_of=""
 
         if [[ -f data.yml ]] && [[ -s data.yml ]]; then
+          schema=$(yq -r '.schema // 0' data.yml)
+          if [[ "$schema" != "2" ]]; then
+            echo "Unsupported data.yml schema (expected 2): $schema" >&2
+            exit 1
+          fi
           while IFS= read -r row; do
             [[ -z "$row" ]] && continue
             issue_num=$(printf '%s\n' "$row" | jq -r '.issue')
@@ -78,7 +83,7 @@ runs:
             fi
           done < <(
             yq -r '
-              .[]
+              .packages[]
               | select(.package == strenv(PACKAGE))
               | . as $entry
               | $entry.signature[]
