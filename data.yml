@@ -194,6 +194,14 @@ packages:
       - source: "Direct APK Link"
         issue: 203
         fingerprint: 23:AF:C1:F8:ED:5F:BB:D0:85:2A:37:22:2D:DC:E0:6F:92:92:71:02:F0:12:6F:99:6A:56:23:F5:27:74:C6:90
+  - package: com.windscribe.vpn
+    signature:
+      - source: "Google Play"
+        issue: 426
+        fingerprint: 9F:B3:57:CA:2D:7F:0A:CC:7B:31:21:98:55:34:49:0D:0A:A7:0F:5D:C6:1C:A8:EC:59:3F:3D:A1:E9:CD:33:9B
+      - source: "Direct APK Link"
+        issue: 426
+        fingerprint: 9F:B3:57:CA:2D:7F:0A:CC:7B:31:21:98:55:34:49:0D:0A:A7:0F:5D:C6:1C:A8:EC:59:3F:3D:A1:E9:CD:33:9B
   - package: com.x8bit.bitwarden
     signature:
       - source: Direct APK Link
