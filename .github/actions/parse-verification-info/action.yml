@@ -19,6 +19,9 @@ outputs:
   apkUrl:
     description: Optional direct HTTPS link to an APK from the issue form
     value: ${{ steps.parse.outputs.apkUrl }}
+  customFdroidRepoUrl:
+    description: Optional HTTPS URL to a custom F-Droid repository from the issue form
+    value: ${{ steps.parse.outputs.customFdroidRepoUrl }}
 
 runs:
   using: composite
@@ -87,10 +90,27 @@ runs:
           printf '%s\n' "$url"
         }
 
+        validate_fdroid_repo_url() {
+          local url="$1"
+          [[ -z "$url" ]] && return 1
+          if [[ ! "$url" =~ ^https:// ]]; then
+            echo "Ignoring Custom F-Droid Repository (not an https:// URL): $url" >&2
+            return 1
+          fi
+          if [[ "$url" =~ \.apk([?#].*)?$ ]]; then
+            echo "Ignoring Custom F-Droid Repository (looks like a direct APK link; use Direct APK Link instead): $url" >&2
+            return 1
+          fi
+          printf '%s\n' "$url"
+        }
+
         apk_url=""
+        custom_fdroid_repo_url=""
         if [[ -n "$ISSUE_BODY" ]]; then
           raw_apk_url=$(parse_issue_field "Direct APK Link" "$ISSUE_BODY" || true)
           apk_url=$(validate_apk_url "$raw_apk_url" || true)
+          raw_custom_fdroid_repo_url=$(parse_issue_field "Custom F-Droid Repository" "$ISSUE_BODY" || true)
+          custom_fdroid_repo_url=$(validate_fdroid_repo_url "$raw_custom_fdroid_repo_url" || true)
         fi
 
         echo "packageName=$packageName" >> "$GITHUB_OUTPUT"
@@ -100,3 +120,4 @@ runs:
           echo EOF
         } >> "$GITHUB_OUTPUT"
         echo "apkUrl=$apk_url" >> "$GITHUB_OUTPUT"
+        echo "customFdroidRepoUrl=$custom_fdroid_repo_url" >> "$GITHUB_OUTPUT"

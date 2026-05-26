@@ -10,6 +10,14 @@ inputs:
   currentIssue:
     description: Issue number for the submission being checked
     required: true
+  directApkUrl:
+    description: Optional direct APK URL from the submission; skips duplicate detection when set
+    required: false
+    default: ""
+  customFdroidRepoUrl:
+    description: Optional custom F-Droid repository URL; skips duplicate detection when set
+    required: false
+    default: ""
 outputs:
   isDuplicate:
     description: Whether a duplicate was found
@@ -27,6 +35,8 @@ runs:
         PACKAGE: ${{ inputs.packageName }}
         SIGNATURE: ${{ inputs.packageSignature }}
         CURRENT_ISSUE: ${{ inputs.currentIssue }}
+        DIRECT_APK_URL: ${{ inputs.directApkUrl }}
+        CUSTOM_FDROID_REPO_URL: ${{ inputs.customFdroidRepoUrl }}
         GH_TOKEN: ${{ github.token }}
         GH_REPO: ${{ github.repository }}
       run: |
@@ -34,6 +44,12 @@ runs:
         source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
 
         echo "isDuplicate=false" >> "$GITHUB_OUTPUT"
+        echo "duplicateOf=" >> "$GITHUB_OUTPUT"
+
+        if [[ -n "$DIRECT_APK_URL" || -n "$CUSTOM_FDROID_REPO_URL" ]]; then
+          echo "Skipping duplicate check: submission includes a direct APK link and/or custom F-Droid repository." >&2
+          exit 0
+        fi
 
         parse_issue_body() {
           local body="$1"
@@ -50,6 +66,11 @@ runs:
         duplicate_of=""
 
         if [[ -f data.yml ]] && [[ -s data.yml ]]; then
+          schema=$(yq -r '.schema // 0' data.yml)
+          if [[ "$schema" != "2" ]]; then
+            echo "Unsupported data.yml schema (expected 2): $schema" >&2
+            exit 1
+          fi
           while IFS= read -r row; do
             [[ -z "$row" ]] && continue
             issue_num=$(printf '%s\n' "$row" | jq -r '.issue')
@@ -62,7 +83,7 @@ runs:
             fi
           done < <(
             yq -r '
-              .[]
+              .packages[]
               | select(.package == strenv(PACKAGE))
               | . as $entry
               | $entry.signature[]

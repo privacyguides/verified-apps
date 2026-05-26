@@ -21,8 +21,8 @@ inputs:
     description: Fingerprint(s) from Accrescent (store-match mode only)
     required: false
     default: ""
-  fdroidSignature:
-    description: Fingerprint(s) from F-Droid (store-match mode only)
+  fdroidResultsDir:
+    description: Directory of per-repo F-Droid result JSON files from the matrix job
     required: false
     default: ""
   gplaySignature:
@@ -64,7 +64,7 @@ runs:
         PR_BODY_FILE: ${{ inputs.prBodyFile }}
         COMMIT_SUFFIX: ${{ inputs.commitSuffix }}
         ACC_SIG: ${{ inputs.accrescentSignature }}
-        FDROID_SIG: ${{ inputs.fdroidSignature }}
+        FDROID_RESULTS_DIR: ${{ inputs.fdroidResultsDir }}
         GPLAY_SIG: ${{ inputs.gplaySignature }}
         APPVERIFIER_SIG: ${{ inputs.appverifierSignature }}
         DIRECT_SIG: ${{ inputs.directApkSignature }}
@@ -107,8 +107,21 @@ runs:
           if [[ -n "$ACC_SIG" ]] && signatures_equal "$ACC_SIG" "$USER_SIG"; then
             add_signature "Accrescent" "$USER_SIG"
           fi
-          if [[ -n "$FDROID_SIG" ]] && signatures_equal "$FDROID_SIG" "$USER_SIG"; then
-            add_signature "F-Droid" "$USER_SIG"
+          if [[ -n "$FDROID_RESULTS_DIR" && -d "$FDROID_RESULTS_DIR" ]]; then
+            while IFS= read -r result_file; do
+              [[ -z "$result_file" ]] && continue
+              [[ "$(jq -r '.found' "$result_file")" != "true" ]] && continue
+              repo_name=$(jq -r '.repoName' "$result_file")
+              store_sig=$(jq -r '.signature' "$result_file")
+              if signatures_equal "$store_sig" "$USER_SIG"; then
+                if [[ "$repo_name" == "F-Droid" ]]; then
+                  fdroid_source="F-Droid"
+                else
+                  fdroid_source="F-Droid (${repo_name})"
+                fi
+                add_signature "$fdroid_source" "$USER_SIG"
+              fi
+            done < <(find "$FDROID_RESULTS_DIR" -type f -name '*.json' 2>/dev/null | sort)
           fi
           if [[ -n "$GPLAY_SIG" ]] && signatures_equal "$GPLAY_SIG" "$USER_SIG"; then
             add_signature "Google Play" "$USER_SIG"
@@ -128,15 +141,22 @@ runs:
         fi
 
         export ENTRY="$entry"
-        if [[ -f data.yml ]] && [[ -s data.yml ]] && yq -e '.[] | select(.package == strenv(PACKAGE))' data.yml >/dev/null 2>&1; then
-          yq -i 'with(.[] | select(.package == strenv(PACKAGE)); .signature += load(strenv(ENTRY)).signature)' data.yml
-          yq -i 'with(.[] | select(.package == strenv(PACKAGE)); .signature |= unique_by(.source + "|" + .fingerprint))' data.yml
-        elif [[ -f data.yml ]]; then
-          yq -i '. += [load(strenv(ENTRY))]' data.yml
+        if [[ -f data.yml ]] && [[ -s data.yml ]]; then
+          schema=$(yq -r '.schema // 0' data.yml)
+          if [[ "$schema" != "2" ]]; then
+            echo "Unsupported data.yml schema (expected 2): $schema" >&2
+            exit 1
+          fi
+          if yq -e '.packages[] | select(.package == strenv(PACKAGE))' data.yml >/dev/null 2>&1; then
+            yq -i 'with(.packages[] | select(.package == strenv(PACKAGE)); .signature += load(strenv(ENTRY)).signature)' data.yml
+            yq -i 'with(.packages[] | select(.package == strenv(PACKAGE)); .signature |= unique_by(.source + "|" + .fingerprint))' data.yml
+          else
+            yq -i '.packages += [load(strenv(ENTRY))]' data.yml
+          fi
+          yq -i '.packages |= sort_by(.package)' data.yml
         else
-          cp "$entry" data.yml
+          yq -n '.schema = 2 | .packages = [load(strenv(ENTRY))]' > data.yml
         fi
-        yq -i 'sort_by(.package)' data.yml
         rm -f "$entry"
 
         branch="new/${ISSUE}"
