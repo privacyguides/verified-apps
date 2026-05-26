@@ -598,6 +598,19 @@ packages:
             apk:
               sha256: 591275a6a726d998f61f14ea721c9af497574d49a362ceb2f971726068a4533e
               link: https://releases.ironfoxoss.org/ironfox/releases/151.0/universal/ironfox-151.0-universal.apk
+  - package: org.joinmastodon.android
+    signature:
+      - fingerprint: A3:F1:9B:26:DA:3F:E1:2B:02:85:68:5F:6E:CC:41:51:5E:6A:9A:DC:C5:53:0B:47:C9:5D:84:7C:DA:E4:A7:E8
+        sources:
+          - name: Direct APK Link
+            issue: 555
+            apk:
+              sha256: 9f90ce4cc66caa62bc8b8ee3806a6fee949eb15bcaa106526606b9fb9763a882
+              link: https://github.com/mastodon/mastodon-android/releases/download/v2.12.3/mastodon-githubRelease.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 555
+            apk:
+              sha256: 5bc38f5fbbac2ae6ce05db650e44248fc046a954b3c2c3f2abb9b13c8bdf3593
   - package: org.localsend.localsend_app
     signature:
       - fingerprint: 32:20:C3:53:A7:3C:FB:D0:C2:F3:05:24:71:C4:45:32:4C:F4:52:BC:BA:26:DE:1C:47:3A:52:FE:5C:44:E1:D6
