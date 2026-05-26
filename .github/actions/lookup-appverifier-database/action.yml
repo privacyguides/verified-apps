@@ -17,8 +17,11 @@ outputs:
     description: Whether the package exists in AppVerifier's internal database
     value: ${{ steps.lookup.outputs.found }}
   signature:
-    description: Colon-separated SHA-256 fingerprint(s) from the database entry
+    description: Colon-separated SHA-256 fingerprint(s) from the matched signing configuration (for comparison)
     value: ${{ steps.lookup.outputs.signature }}
+  allFingerprints:
+    description: All colon-separated fingerprints listed for this package in AppVerifier's database
+    value: ${{ steps.lookup.outputs.allFingerprints }}
   sources:
     description: Human-readable AppVerifier source labels for the matched entry
     value: ${{ steps.lookup.outputs.sources }}

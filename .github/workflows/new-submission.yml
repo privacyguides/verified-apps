@@ -671,6 +671,7 @@ jobs:
     outputs:
       found: ${{ steps.lookup.outputs.found }}
       signature: ${{ steps.lookup.outputs.signature }}
+      allFingerprints: ${{ steps.lookup.outputs.allFingerprints }}
       match: ${{ steps.matches.outputs.status }}
       packageName: ${{ steps.matches.outputs.packageName }}
       infoNote: ${{ steps.combinedNote.outputs.infoNote }}
@@ -1102,7 +1103,7 @@ jobs:
           ACC_SIG: ${{ needs.accrescent.outputs.signature }}
           FDROID_RESULTS_DIR: fdroid-results
           GPLAY_SIG: ${{ needs.gplay.outputs.signature }}
-          APPVERIFIER_SIG: ${{ needs.appverifier-db.outputs.signature }}
+          APPVERIFIER_ALL_SIGS: ${{ needs.appverifier-db.outputs.allFingerprints }}
           DIRECT_SIG: ${{ needs.direct-apk.outputs.signature }}
         run: |
           set -euo pipefail
@@ -1306,7 +1307,7 @@ jobs:
           USER_SIG: ${{ needs.parse.outputs.packageSignature }}
           ACC_SIG: ${{ needs.accrescent.outputs.signature }}
           GPLAY_SIG: ${{ needs.gplay.outputs.signature }}
-          APPVERIFIER_SIG: ${{ needs.appverifier-db.outputs.signature }}
+          APPVERIFIER_ALL_SIGS: ${{ needs.appverifier-db.outputs.allFingerprints }}
           DIRECT_SIG: ${{ needs.direct-apk.outputs.signature }}
         run: |
           set -euo pipefail
@@ -1318,7 +1319,7 @@ jobs:
           if [[ -n "$GPLAY_SIG" ]] && signatures_equal "$GPLAY_SIG" "$USER_SIG"; then
             matched=true
           fi
-          if [[ -n "$APPVERIFIER_SIG" ]] && signatures_equal "$APPVERIFIER_SIG" "$USER_SIG"; then
+          if [[ -n "$APPVERIFIER_ALL_SIGS" ]] && signatures_overlap "$APPVERIFIER_ALL_SIGS" "$USER_SIG"; then
             matched=true
           fi
           if [[ -n "$DIRECT_SIG" ]] && signatures_equal "$DIRECT_SIG" "$USER_SIG"; then
@@ -1375,6 +1376,7 @@ jobs:
           fdroidResultsDir: fdroid-results
           gplaySignature: ${{ needs.gplay.outputs.signature }}
           appverifierSignature: ${{ needs.appverifier-db.outputs.signature }}
+          appverifierAllFingerprints: ${{ needs.appverifier-db.outputs.allFingerprints }}
           directApkSignature: ${{ needs.direct-apk.outputs.signature }}
           directApkLink: ${{ needs.parse.outputs.apkUrl }}
           directApkSha256: ${{ needs.direct-apk.outputs.apkSha256 }}
@@ -1475,6 +1477,7 @@ jobs:
           fdroidResultsDir: fdroid-results
           gplaySignature: ${{ needs.gplay.outputs.signature }}
           appverifierSignature: ${{ needs.appverifier-db.outputs.signature }}
+          appverifierAllFingerprints: ${{ needs.appverifier-db.outputs.allFingerprints }}
           directApkSignature: ${{ needs.direct-apk.outputs.signature }}
           directApkLink: ${{ needs.parse.outputs.apkUrl }}
           directApkSha256: ${{ needs.direct-apk.outputs.apkSha256 }}

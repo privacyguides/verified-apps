@@ -67,8 +67,8 @@ runs:
 
         if [[ -f data.yml ]] && [[ -s data.yml ]]; then
           schema=$(yq -r '.schema // 0' data.yml)
-          if [[ "$schema" != "2" ]]; then
-            echo "Unsupported data.yml schema (expected 2): $schema" >&2
+          if [[ "$schema" != "3" ]]; then
+            echo "Unsupported data.yml schema (expected 3): $schema" >&2
             exit 1
           fi
           while IFS= read -r row; do
@@ -85,9 +85,11 @@ runs:
             yq -r '
               .packages[]
               | select(.package == strenv(PACKAGE))
-              | . as $entry
-              | $entry.signature[]
-              | {"issue": (.issue // $entry.issue // 0), "fingerprint": .fingerprint} | @json
+              | .signature[]
+              | . as $sig
+              | ($sig.fingerprint | split("\n") | join("")) as $fp
+              | $sig.sources[]
+              | {"issue": .issue, "fingerprint": $fp} | @json
             ' data.yml
           )
         fi

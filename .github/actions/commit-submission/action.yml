@@ -26,7 +26,11 @@ inputs:
     required: false
     default: ""
   appverifierSignature:
-    description: Fingerprint(s) from AppVerifier internal database
+    description: Fingerprint(s) from the matched AppVerifier signing configuration (unused for data.yml merge)
+    required: false
+    default: ""
+  appverifierAllFingerprints:
+    description: All fingerprints listed for this package in AppVerifier's internal database
     required: false
     default: ""
   directApkSignature:
@@ -78,7 +82,7 @@ runs:
         ACC_SIG: ${{ inputs.accrescentSignature }}
         FDROID_RESULTS_DIR: ${{ inputs.fdroidResultsDir }}
         GPLAY_SIG: ${{ inputs.gplaySignature }}
-        APPVERIFIER_SIG: ${{ inputs.appverifierSignature }}
+        APPVERIFIER_ALL_SIGS: ${{ inputs.appverifierAllFingerprints }}
         DIRECT_SIG: ${{ inputs.directApkSignature }}
         DIRECT_APK_URL: ${{ inputs.directApkLink }}
         DIRECT_APK_SHA256: ${{ inputs.directApkSha256 }}

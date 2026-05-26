@@ -106,6 +106,7 @@ def main() -> int:
     if entry is None:
         write_github_output("found", "false")
         write_github_output("signature", "")
+        write_github_output("allFingerprints", "")
         write_github_output("sources", "")
         write_github_output("infoNote", "")
         return 0
@@ -114,6 +115,7 @@ def main() -> int:
     if not blocks:
         write_github_output("found", "false")
         write_github_output("signature", "")
+        write_github_output("allFingerprints", "")
         write_github_output("sources", "")
         write_github_output(
             "infoNote",
@@ -123,6 +125,9 @@ def main() -> int:
         return 0
 
     write_github_output("found", "true")
+    all_hashes = sorted({h for block in blocks for h in block["hashes"]})
+    write_github_output("allFingerprints", "\n".join(all_hashes))
+
     block = choose_block(blocks, user_signature)
     signature = "\n".join(block["hashes"])
     sources = format_sources(block["sources"])
