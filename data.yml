@@ -143,6 +143,11 @@ packages:
       - source: "Direct APK Link"
         issue: 203
         fingerprint: 23:AF:C1:F8:ED:5F:BB:D0:85:2A:37:22:2D:DC:E0:6F:92:92:71:02:F0:12:6F:99:6A:56:23:F5:27:74:C6:90
+  - package: com.trainose.android
+    signature:
+      - source: "Google Play"
+        issue: 396
+        fingerprint: 17:F1:55:9B:7F:CD:C9:37:38:06:CE:B6:64:58:B4:34:AA:A5:6A:D8:7E:AF:1B:B8:CC:31:F9:34:D5:E3:E5:4A
   - package: com.x8bit.bitwarden
     signature:
       - source: Direct APK Link
