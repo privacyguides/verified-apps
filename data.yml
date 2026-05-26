@@ -399,3 +399,11 @@ packages:
       - source: "Direct APK Link"
         issue: 406
         fingerprint: C8:76:8D:2C:EA:0C:4B:62:2E:41:9B:4B:47:15:98:19:46:82:1E:4E:BC:03:5F:B4:17:76:CA:D3:95:A7:F6:8E
+  - package: xyz.malkki.neostumbler
+    signature:
+      - source: "Accrescent"
+        issue: 143
+        fingerprint: 7F:83:9A:C7:AF:C4:FF:6F:1C:7F:B1:34:8A:C1:0D:E2:F1:7D:E8:A7:8D:0D:81:2C:1F:43:AE:83:5A:51:11:DF
+      - source: "Direct APK Link"
+        issue: 143
+        fingerprint: 7F:83:9A:C7:AF:C4:FF:6F:1C:7F:B1:34:8A:C1:0D:E2:F1:7D:E8:A7:8D:0D:81:2C:1F:43:AE:83:5A:51:11:DF
