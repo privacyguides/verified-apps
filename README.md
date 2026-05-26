@@ -4,9 +4,11 @@ Privacy Guides is building a database of Android app signing certificate hashes 
 
 **Discussions:** Please discuss anything related to this project [on the Privacy Guides forum](https://discuss.privacyguides.net/t/submit-android-apps-to-our-appverifier-database/38125).
 
-**Submissions:** We need you to submit any apps you have installed on your phone [in a new GitHub issue here](https://github.com/privacyguides/verified-apps/issues/new?template=app-submission.yml). A maintainer adds the **Run Checks** label to run automated verification; results are posted as a comment on the issue. After completing a manual review, one of our maintainers will merge your submission into the database.
+## Submissions
 
-**Contributions:** In addition to submitting new apps, submitting code reviews/approvals or :+1: reactions to open PRs to indicate the fingerprint matches what you have locally would be much appreciated. Comments in issues/PRs indicating how you came about verifying your APK locally would also be appreciated.
+We need you to submit any apps you have installed on your phone [in a new GitHub issue here](https://github.com/privacyguides/verified-apps/issues/new?template=app-submission.yml).
+
+Please submit any apps you'd like, no need to check for existing submissions. We will automatically close issues that are duplicates, but the existence of duplicate issues will help us count how many people may be vouching for a particular submission. We also expect duplicate entries for the same package, because the same package may have a different signature in different app stores.
 
 ## Automated Checks
 

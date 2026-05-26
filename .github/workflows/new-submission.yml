@@ -2,7 +2,9 @@ name: Process Submission
 
 on:
   issues:
-    types: labeled
+    types:
+      - opened
+      - labeled
 
 concurrency:
   group: ${{ github.event.issue.number }}
@@ -20,7 +22,13 @@ jobs:
       isDuplicate: ${{ steps.duplicateCheck.outputs.isDuplicate }}
       duplicateOf: ${{ steps.duplicateCheck.outputs.duplicateOf }}
 
-    if: ${{ github.event.label.name == 'Run Checks' || github.event.label.name == 'Create PR' || github.event.label.name == 'Commit As-Is' }}
+    if: >-
+      ${{
+        github.event.action == 'opened' ||
+        github.event.label.name == 'Run Checks' ||
+        github.event.label.name == 'Create PR' ||
+        github.event.label.name == 'Commit As-Is'
+      }}
 
     permissions:
       contents: read
@@ -79,10 +87,20 @@ jobs:
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
           DUPLICATE_OF: ${{ needs.parse.outputs.duplicateOf }}
+          CURRENT_AUTHOR: ${{ github.event.issue.user.login }}
         run: |
+          set -euo pipefail
+
           gh issue edit "$NUMBER" --repo "$GH_REPO" --remove-label "Run Checks" || true
           gh issue edit "$NUMBER" --repo "$GH_REPO" --remove-label "Create PR" || true
           gh issue edit "$NUMBER" --repo "$GH_REPO" --remove-label "Commit As-Is" || true
+
+          if [[ "$DUPLICATE_OF" != "$NUMBER" ]]; then
+            original_author=$(gh api "repos/${GH_REPO}/issues/${DUPLICATE_OF}" --jq '.user.login')
+            if [[ "$CURRENT_AUTHOR" != "$original_author" ]]; then
+              gh issue edit "$DUPLICATE_OF" --repo "$GH_REPO" --add-label "Duplicates Exist"
+            fi
+          fi
 
           if [[ "$DUPLICATE_OF" == "$NUMBER" ]]; then
             gh issue close "$NUMBER" --repo "$GH_REPO" \
