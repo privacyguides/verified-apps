@@ -76,7 +76,8 @@ runs:
 
         msg_file="${GITHUB_WORKSPACE}/.submission-commit-msg"
         {
-          printf 'Add %s from #%s\n' "$PACKAGE" "$ISSUE"
+          printf 'Add %s from #%s\n\n' "$PACKAGE" "$ISSUE"
+          printf 'Closes #%s\n' "$ISSUE"
           if [[ -n "$CO_AUTHOR_TRAILER" ]]; then
             printf '\n%s\n' "$CO_AUTHOR_TRAILER"
           fi
