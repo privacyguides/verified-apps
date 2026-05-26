@@ -431,15 +431,18 @@ jobs:
           distribution: 'temurin'
           java-version: '25'
 
-      - name: Download cloudscraper
-        run: pip install cloudscraper gpapi
-
       - name: Download gplay
         uses: actions/checkout@v6
         with:
           repository: alltechdev/gplay-apk-downloader
           persist-credentials: "false"
           path: gplay-apk-downloader
+
+      - name: Setup gplay-downloader
+        run: |
+          set -euo pipefail
+          python3 -m venv gplay-apk-downloader/.venv
+          gplay-apk-downloader/.venv/bin/pip install -q -r gplay-apk-downloader/requirements.txt
 
       - name: Restore Play Credentials Cache
         id: authCache
@@ -457,11 +460,16 @@ jobs:
           PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION: python
         run: |
           set -euo pipefail
-          check_json=$(./gplay-apk-downloader/gplay check-version "$PACKAGE_NAME" --json 2>&1) || true
+          gplay_err="${RUNNER_TEMP}/gplay-check-version.err"
+          check_json=$(./gplay-apk-downloader/gplay check-version "$PACKAGE_NAME" --json 2>"$gplay_err") || true
+          if [[ -s "$gplay_err" ]]; then
+            cat "$gplay_err" >&2
+          fi
           if printf '%s' "$check_json" | jq -e '.success == true' >/dev/null 2>&1; then
             echo "found=true" >> "$GITHUB_OUTPUT"
           else
             echo "found=false" >> "$GITHUB_OUTPUT"
+            echo "check-version did not report success:" >&2
             printf '%s\n' "$check_json" >&2
           fi
 
@@ -476,7 +484,7 @@ jobs:
           PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION: python
         run: |
           set -euo pipefail
-          check_json=$(./gplay-apk-downloader/gplay check-version "$PACKAGE_NAME" --json 2>&1)
+          check_json=$(./gplay-apk-downloader/gplay check-version "$PACKAGE_NAME" --json 2>/dev/null)
           version=$(printf '%s' "$check_json" | jq -r 'if .version_code then (.version_code | tostring) else .version end')
           if [[ -z "$version" || "$version" == "null" ]]; then
             version="unknown"
