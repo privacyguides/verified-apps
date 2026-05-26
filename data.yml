@@ -55,6 +55,12 @@ packages:
       - source: Direct APK Link
         issue: 132
         fingerprint: 4C:62:61:57:AD:02:BD:A3:40:1A:72:63:55:5F:68:A7:96:63:FC:3E:13:A4:D4:36:9A:12:57:09:41:AA:28:0F
+      - source: "F-Droid (IzzyOnDroid)"
+        issue: 488
+        fingerprint: 4C:62:61:57:AD:02:BD:A3:40:1A:72:63:55:5F:68:A7:96:63:FC:3E:13:A4:D4:36:9A:12:57:09:41:AA:28:0F
+      - source: "AppVerifier"
+        issue: 488
+        fingerprint: 4C:62:61:57:AD:02:BD:A3:40:1A:72:63:55:5F:68:A7:96:63:FC:3E:13:A4:D4:36:9A:12:57:09:41:AA:28:0F
   - package: com.brave.browser
     signature:
       - source: Google Play
