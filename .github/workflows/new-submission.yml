@@ -542,6 +542,10 @@ jobs:
             echo "http ${host} ${GPLAY_PROXY_PORT} ${GPLAY_PROXY_USER} ${GPLAY_PROXY_PASS}"
           } > "$proxy_conf"
 
+          rm /home/runner/.gplay-auth.json
+          proxychains4 -q -f "$proxy_conf" curl 'https://icanhazip.com'
+          proxychains4 -q -f "$proxy_conf" ./gplay-apk-downloader/gplay auth
+
           proxychains4 -q -f "$proxy_conf" ./gplay-apk-downloader/gplay download "$PACKAGE_NAME"
 
       - name: Rename APK
