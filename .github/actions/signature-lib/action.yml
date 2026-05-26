@@ -83,6 +83,11 @@ runs:
           find-related-packages)
             related_lines=""
             if [[ -f data.yml ]] && [[ -s data.yml ]]; then
+              schema=$(yq -r '.schema // 0' data.yml)
+              if [[ "$schema" != "2" ]]; then
+                echo "Unsupported data.yml schema (expected 2): $schema" >&2
+                exit 1
+              fi
               while IFS= read -r row; do
                 [[ -z "$row" ]] && continue
                 pkg=$(printf '%s\n' "$row" | jq -r '.package')
@@ -96,7 +101,7 @@ runs:
                 related_lines+="- ${pkg} from #${issue}"$'\n'
               done < <(
                 yq -r '
-                  .[]
+                  .packages[]
                   | . as $entry
                   | $entry.signature[]
                   | {"package": $entry.package, "issue": (.issue // $entry.issue // 0), "fingerprint": .fingerprint} | @json
