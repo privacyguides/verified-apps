@@ -71,6 +71,11 @@ packages:
       - source: F-Droid
         issue: 47
         fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
+  - package: com.github.gotify
+    signature:
+      - source: "Direct APK Link"
+        issue: 472
+        fingerprint: EC:87:6E:B9:60:09:1E:4F:55:8C:13:C3:BE:69:DC:E9:94:B8:A2:5F:80:21:41:3A:6D:41:23:67:A5:04:D9:A3
   - package: com.github.lamarios.clipious
     signature:
       - source: "Accrescent"
