@@ -55,6 +55,11 @@ packages:
       - source: "Direct APK Link"
         issue: 126
         fingerprint: EA:78:69:1C:BA:41:86:00:A4:56:32:89:B1:33:F9:D0:0D:3D:0C:24:A5:F5:4C:5C:59:EE:1C:95:2B:B0:E1:1D
+  - package: com.digitalextremes.warframemobile
+    signature:
+      - source: "Google Play"
+        issue: 421
+        fingerprint: CD:37:9E:48:D5:29:BD:71:EE:5E:9D:B2:B1:7F:BD:3D:72:BC:32:5F:CD:73:A6:CF:4E:7C:21:29:4B:AC:F3:AF
   - package: com.donnnno.arcticons
     signature:
       - source: Accrescent
