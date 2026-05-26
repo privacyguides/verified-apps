@@ -306,12 +306,22 @@ jobs:
         with:
           persist-credentials: "false"
 
+      - name: Resolve custom repository label
+        id: customRepo
+        env:
+          FDROID_REPO_URL: ${{ env.FDROID_REPO_URL }}
+        run: |
+          set -euo pipefail
+          source .github/actions/signature-lib/signatures.lib.sh
+          host=$(signatures_fdroid_repo_host_from_url "$FDROID_REPO_URL")
+          echo "host=$host" >> "$GITHUB_OUTPUT"
+
       - name: Download F-Droid App
         id: appDownload
         uses: ./.github/actions/download-fdroid
         with:
           packageName: ${{ env.PACKAGE_NAME }}
-          fDroidRepoName: Custom
+          fDroidRepoName: ${{ steps.customRepo.outputs.host }}
           fDroidRepoURL: ${{ env.FDROID_REPO_URL }}
 
       - name: Get APK Signature
@@ -334,7 +344,7 @@ jobs:
       - name: Write job summary
         if: steps.appDownload.outputs.found == 'true'
         env:
-          REPO_NAME: Custom
+          REPO_NAME: ${{ steps.customRepo.outputs.host }}
           SIGNATURE: ${{ steps.appSignature.outputs.signature }}
         run: |
           echo "F-Droid (${REPO_NAME})" >> $GITHUB_STEP_SUMMARY
@@ -344,7 +354,7 @@ jobs:
       - name: Write repository result
         if: always()
         env:
-          REPO_NAME: Custom
+          REPO_NAME: ${{ steps.customRepo.outputs.host }}
           FOUND: ${{ steps.appDownload.outputs.found }}
           SIGNATURE: ${{ steps.appSignature.outputs.signature }}
           APK_SHA256: ${{ steps.appSignature.outputs.apkSha256 }}
@@ -379,8 +389,8 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: fdroid-result-Custom
-          path: fdroid-result/Custom.json
+          name: fdroid-result-${{ steps.customRepo.outputs.host }}
+          path: fdroid-result/${{ steps.customRepo.outputs.host }}.json
           if-no-files-found: ignore
 
   gplay:
@@ -968,14 +978,9 @@ jobs:
           if [[ -n "$APK_URL" ]]; then
             sources=$((sources + 1))
           fi
-          if [[ -n "$CUSTOM_FDROID_REPO_URL" ]]; then
-            sources=$((sources + 1))
-          fi
           while IFS= read -r result_file; do
             [[ -z "$result_file" ]] && continue
             [[ "$(jq -r '.found' "$result_file")" != "true" ]] && continue
-            repo_name=$(jq -r '.repoName' "$result_file")
-            [[ "$repo_name" == "Custom" ]] && continue
             sources=$((sources + 1))
           done < <(find fdroid-results -type f -name '*.json' 2>/dev/null)
           echo "sources=$sources" >> "$GITHUB_OUTPUT"
@@ -1014,8 +1019,6 @@ jobs:
           while IFS= read -r result_file; do
             [[ -z "$result_file" ]] && continue
             [[ "$(jq -r '.found' "$result_file")" != "true" ]] && continue
-            repo_name=$(jq -r '.repoName' "$result_file")
-            [[ "$repo_name" == "Custom" ]] && continue
             sig=$(jq -r '.signature' "$result_file")
             if signatures_equal "$sig" "$USER_SIG"; then
               store_matches=$((store_matches + 1))
@@ -1169,11 +1172,10 @@ jobs:
             if ! signatures_equal "$sig" "$USER_SIG"; then
               continue
             fi
-            if [[ "$repo_name" == "F-Droid" ]]; then
-              label_args+=(--add-label "Match F-Droid")
-            fi
             if [[ "$repo_name" == "IzzyOnDroid" ]]; then
               label_args+=(--add-label "Match IzzyOnDroid")
+            else
+              label_args+=(--add-label "Match F-Droid")
             fi
           done < <(find fdroid-results -type f -name '*.json' 2>/dev/null | sort)
           if [[ "$GPLAY_FOUND" == "true" && "$GPLAY_EQUAL" == "true" ]]; then

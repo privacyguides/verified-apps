@@ -34,6 +34,35 @@ is_valid_sha256_colon() {
   [[ "$1" =~ ^([0-9A-Fa-f]{2}:){31}[0-9A-Fa-f]{2}$ ]]
 }
 
+# Hostname from a custom F-Droid repository URL (e.g. app.simplex.chat).
+signatures_fdroid_repo_host_from_url() {
+  local url="${1-}"
+  local host
+
+  [[ -n "$url" ]] || return 1
+  host=$(printf '%s\n' "$url" | sed -E 's#^[a-zA-Z][a-zA-Z0-9+.-]*://([^/@:/?#]+).*#\1#')
+  host="${host#www.}"
+  [[ -n "$host" ]] || return 1
+  printf '%s\n' "$host"
+}
+
+signatures_fdroid_source_label() {
+  local repo_name="$1"
+
+  if [[ "$repo_name" == "F-Droid" ]]; then
+    printf 'F-Droid\n'
+  else
+    printf 'F-Droid (%s)\n' "$repo_name"
+  fi
+}
+
+signatures_is_known_fdroid_matrix_repo() {
+  case "$1" in
+    F-Droid | IzzyOnDroid) return 0 ;;
+    *) return 1 ;;
+  esac
+}
+
 append_fingerprint_tokens() {
   local line="$1"
   local token
@@ -227,14 +256,10 @@ submission_build_entry_file() {
       if signatures_equal "$store_sig" "$user_sig"; then
         apk_link=""
         apk_repo=""
-        if [[ "$repo_name" == "F-Droid" ]]; then
-          fdroid_source="F-Droid"
-        elif [[ "$repo_name" == "Custom" ]]; then
-          fdroid_source="F-Droid (${repo_name})"
+        fdroid_source=$(signatures_fdroid_source_label "$repo_name")
+        if ! signatures_is_known_fdroid_matrix_repo "$repo_name"; then
           apk_repo="${CUSTOM_FDROID_REPO_URL:-}"
           apk_sha="${apk_sha:-${CUSTOM_FDROID_APK_SHA256:-}}"
-        else
-          fdroid_source="F-Droid (${repo_name})"
         fi
         _submission_add_signature "$fdroid_source" "$user_sig" "$apk_sha" "$apk_link" "$apk_repo"
       fi

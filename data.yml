@@ -72,7 +72,7 @@ packages:
           05:7A:C4:51:64:A2:E6:E3:1F:6D:DE:55:5A:5F:2C:CC:B4:D8:83:4C:B1:85:25:49:68:1B:00:E3:46:68:CA:F3
   - package: chat.simplex.app
     signature:
-      - source: "F-Droid (Custom)"
+      - source: "F-Droid (app.simplex.chat)"
         issue: 493
         fingerprint: 
           3C:52:C4:FD:3C:AD:1C:07:C9:B0:0A:70:80:E3:58:FA:B9:FE:FC:B8:AF:5A:EC:14:77:65:F1:6D:0F:21:AD:85
@@ -436,7 +436,7 @@ packages:
             c5bb764c551a2d1e83cf1a035ec14c68623ef0bb3806810b7cd60b78cf6b741f
           link: 
             https://github.com/bitwarden/android/releases/download/v2026.4.2-bwpm/com.x8bit.bitwarden-fdroid.apk
-      - source: "F-Droid (Custom)"
+      - source: "F-Droid (mobileapp.bitwarden.com)"
         issue: 355
         fingerprint: 
           DE:6E:C9:14:31:55:79:95:29:7B:F3:E6:5B:C8:03:49:BC:60:3A:04:70:81:60:61:8C:86:BC:99:94:17:1C:90
