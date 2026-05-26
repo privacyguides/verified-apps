@@ -1308,6 +1308,22 @@ jobs:
             echo "submitterSource=$SUBMITTER_SOURCE" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Resolve labeler co-author
+        if: steps.existingPr.outputs.url == ''
+        id: coauthor
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SENDER_LOGIN: ${{ github.event.sender.login }}
+          SENDER_ID: ${{ github.event.sender.id }}
+        run: |
+          set -euo pipefail
+          name=$(gh api "users/${SENDER_LOGIN}" --jq 'if .name then .name else .login end')
+          {
+            echo 'trailer<<EOF'
+            printf 'Co-authored-by: %s <%s+%s@users.noreply.github.com>\n' "$name" "$SENDER_ID" "$SENDER_LOGIN"
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
+
       - name: Create PR
         id: create-pr
         if: steps.existingPr.outputs.url == ''
@@ -1317,6 +1333,7 @@ jobs:
           packageSignature: ${{ needs.parse.outputs.packageSignature }}
           issueNumber: ${{ github.event.issue.number }}
           prBodyFile: ${{ runner.temp }}/prBody.md
+          coAuthorTrailer: ${{ steps.coauthor.outputs.trailer }}
           accrescentSignature: ${{ needs.accrescent.outputs.signature }}
           fdroidResultsDir: fdroid-results
           gplaySignature: ${{ needs.gplay.outputs.signature }}
@@ -1344,14 +1361,6 @@ jobs:
         run: |
           gh issue comment "$NUMBER" --repo "$GH_REPO" \
             --body "Could not open a PR: no store signatures matched the submission. Add matching store entries manually, or ensure verification was run with the **Run Checks** label first."
-
-      - name: Remove Create PR label
-        if: always() && (steps.create-pr.outputs.prCreated == 'true' || steps.existingPr.outputs.url != '')
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_REPO: ${{ github.repository }}
-          NUMBER: ${{ github.event.issue.number }}
-        run: gh issue edit "$NUMBER" --repo "$GH_REPO" --remove-label "Create PR" || true
 
   commit-as-is:
     name: Commit As-Is
@@ -1394,6 +1403,21 @@ jobs:
           merge-multiple: true
           path: fdroid-results
 
+      - name: Resolve labeler co-author
+        id: coauthor
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SENDER_LOGIN: ${{ github.event.sender.login }}
+          SENDER_ID: ${{ github.event.sender.id }}
+        run: |
+          set -euo pipefail
+          name=$(gh api "users/${SENDER_LOGIN}" --jq 'if .name then .name else .login end')
+          {
+            echo 'trailer<<EOF'
+            printf 'Co-authored-by: %s <%s+%s@users.noreply.github.com>\n' "$name" "$SENDER_ID" "$SENDER_LOGIN"
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
+
       - name: Commit submission to main
         id: commit
         uses: ./.github/actions/commit-submission
@@ -1401,6 +1425,7 @@ jobs:
           packageName: ${{ needs.parse.outputs.packageName }}
           packageSignature: ${{ needs.parse.outputs.packageSignature }}
           issueNumber: ${{ github.event.issue.number }}
+          coAuthorTrailer: ${{ steps.coauthor.outputs.trailer }}
           accrescentSignature: ${{ needs.accrescent.outputs.signature }}
           fdroidResultsDir: fdroid-results
           gplaySignature: ${{ needs.gplay.outputs.signature }}
@@ -1428,10 +1453,3 @@ jobs:
           gh issue comment "$NUMBER" --repo "$GH_REPO" \
             --body "Could not commit as-is: no store signatures matched the submission. Run **Run Checks** first, or use **Create PR** to add entries manually."
 
-      - name: Remove Commit As-Is label
-        if: always() && (steps.commit.outputs.committed == 'true' || steps.commit.outputs.skipped == 'true')
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_REPO: ${{ github.repository }}
-          NUMBER: ${{ github.event.issue.number }}
-        run: gh issue edit "$NUMBER" --repo "$GH_REPO" --remove-label "Commit As-Is" || true

@@ -10,6 +10,9 @@ inputs:
   issueNumber:
     description: Submission issue number
     required: true
+  coAuthorTrailer:
+    description: Co-authored-by trailer for the git commit (e.g. from the user who added the label)
+    required: true
   accrescentSignature:
     description: Fingerprint(s) from Accrescent
     required: false
@@ -47,6 +50,7 @@ runs:
         PACKAGE: ${{ inputs.packageName }}
         USER_SIG: ${{ inputs.packageSignature }}
         ISSUE: ${{ inputs.issueNumber }}
+        CO_AUTHOR_TRAILER: ${{ inputs.coAuthorTrailer }}
         ACC_SIG: ${{ inputs.accrescentSignature }}
         FDROID_RESULTS_DIR: ${{ inputs.fdroidResultsDir }}
         GPLAY_SIG: ${{ inputs.gplaySignature }}
@@ -75,7 +79,11 @@ runs:
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git add data.yml
-        git commit -m "Add ${PACKAGE} from #${ISSUE}"
+        commit_args=(-m "Add ${PACKAGE} from #${ISSUE}")
+        if [[ -n "$CO_AUTHOR_TRAILER" ]]; then
+          commit_args+=(-m "$CO_AUTHOR_TRAILER")
+        fi
+        git commit "${commit_args[@]}"
         git push origin HEAD
 
         echo "committed=true" >> "$GITHUB_OUTPUT"

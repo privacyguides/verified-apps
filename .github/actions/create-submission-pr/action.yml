@@ -13,6 +13,9 @@ inputs:
   prBodyFile:
     description: Path to the pull request body markdown file
     required: true
+  coAuthorTrailer:
+    description: Co-authored-by trailer for the git commit (e.g. from the user who added the label)
+    required: true
   commitSuffix:
     description: Optional suffix appended to the git commit message
     required: false
@@ -62,6 +65,7 @@ runs:
         USER_SIG: ${{ inputs.packageSignature }}
         ISSUE: ${{ inputs.issueNumber }}
         PR_BODY_FILE: ${{ inputs.prBodyFile }}
+        CO_AUTHOR_TRAILER: ${{ inputs.coAuthorTrailer }}
         COMMIT_SUFFIX: ${{ inputs.commitSuffix }}
         ACC_SIG: ${{ inputs.accrescentSignature }}
         FDROID_RESULTS_DIR: ${{ inputs.fdroidResultsDir }}
@@ -100,7 +104,11 @@ runs:
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git checkout -b "$branch"
         git add data.yml
-        git commit -m "Add ${PACKAGE} from #${ISSUE}${COMMIT_SUFFIX}"
+        commit_args=(-m "Add ${PACKAGE} from #${ISSUE}${COMMIT_SUFFIX}")
+        if [[ -n "$CO_AUTHOR_TRAILER" ]]; then
+          commit_args+=(-m "$CO_AUTHOR_TRAILER")
+        fi
+        git commit "${commit_args[@]}"
         git push -u origin "$branch"
 
         pr_url=$(gh pr create \
