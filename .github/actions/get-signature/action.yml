@@ -14,6 +14,9 @@ outputs:
   signerKind:
     description: Known signer profile (google-play-app-signing, fdroid, or empty)
     value: ${{ steps.analysis.outputs.signerKind }}
+  apkSha256:
+    description: Lowercase hex SHA-256 of the APK file bytes
+    value: ${{ steps.analysis.outputs.apkSha256 }}
 
 runs:
   using: composite
@@ -96,6 +99,8 @@ runs:
         echo "Certificate DN: ${cert_dn:-unknown}"
         echo "SHA-256 digest(s):"
         printf '%s\n' "$formatted_block"
+        apk_sha256=$(sha256sum "$APK_PATH" | awk '{print $1}')
         gha_write_multiline_output signature "$formatted_block"
         echo "certificateDn=$cert_dn" >> "$GITHUB_OUTPUT"
         echo "signerKind=$signer_kind" >> "$GITHUB_OUTPUT"
+        echo "apkSha256=$apk_sha256" >> "$GITHUB_OUTPUT"

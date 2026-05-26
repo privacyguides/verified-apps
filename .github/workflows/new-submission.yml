@@ -121,6 +121,7 @@ jobs:
     outputs:
       found: ${{ steps.availability.outputs.found }}
       signature: ${{ steps.appSignature.outputs.signature }}
+      apkSha256: ${{ steps.appSignature.outputs.apkSha256 }}
       match: ${{ steps.matches.outputs.status }}
       packageName: ${{ steps.matches.outputs.packageName }}
       infoNote: ${{ steps.matches.outputs.infoNote }}
@@ -285,6 +286,7 @@ jobs:
           REPO_NAME: ${{ matrix.fDroidRepoName }}
           FOUND: ${{ steps.appDownload.outputs.found }}
           SIGNATURE: ${{ steps.appSignature.outputs.signature }}
+          APK_SHA256: ${{ steps.appSignature.outputs.apkSha256 }}
           MATCH: ${{ steps.matches.outputs.status }}
           PKG: ${{ steps.matches.outputs.packageName }}
           INFO_NOTE: ${{ steps.matches.outputs.infoNote }}
@@ -296,6 +298,7 @@ jobs:
             --arg repoName "$REPO_NAME" \
             --arg found "$FOUND" \
             --arg signature "$SIGNATURE" \
+            --arg apkSha256 "$APK_SHA256" \
             --arg match "$MATCH" \
             --arg packageName "$PKG" \
             --arg infoNote "$INFO_NOTE" \
@@ -304,6 +307,7 @@ jobs:
               repoName: $repoName,
               found: ($found == "true"),
               signature: $signature,
+              apkSha256: $apkSha256,
               match: $match,
               packageName: $packageName,
               infoNote: $infoNote,
@@ -326,6 +330,10 @@ jobs:
     continue-on-error: true
     permissions:
       contents: read
+
+    outputs:
+      signature: ${{ steps.appSignature.outputs.signature }}
+      apkSha256: ${{ steps.appSignature.outputs.apkSha256 }}
 
     env:
       PACKAGE_NAME: ${{ needs.parse.outputs.packageName }}
@@ -379,6 +387,7 @@ jobs:
           REPO_NAME: Custom
           FOUND: ${{ steps.appDownload.outputs.found }}
           SIGNATURE: ${{ steps.appSignature.outputs.signature }}
+          APK_SHA256: ${{ steps.appSignature.outputs.apkSha256 }}
           MATCH: ${{ steps.matches.outputs.status }}
           PKG: ${{ steps.matches.outputs.packageName }}
           INFO_NOTE: ${{ steps.matches.outputs.infoNote }}
@@ -390,6 +399,7 @@ jobs:
             --arg repoName "$REPO_NAME" \
             --arg found "$FOUND" \
             --arg signature "$SIGNATURE" \
+            --arg apkSha256 "$APK_SHA256" \
             --arg match "$MATCH" \
             --arg packageName "$PKG" \
             --arg infoNote "$INFO_NOTE" \
@@ -398,6 +408,7 @@ jobs:
               repoName: $repoName,
               found: ($found == "true"),
               signature: $signature,
+              apkSha256: $apkSha256,
               match: $match,
               packageName: $packageName,
               infoNote: $infoNote,
@@ -429,6 +440,7 @@ jobs:
     outputs:
       found: ${{ steps.availability.outputs.found }}
       signature: ${{ steps.appSignature.outputs.signature }}
+      apkSha256: ${{ steps.appSignature.outputs.apkSha256 }}
       match: ${{ steps.matches.outputs.status }}
       packageName: ${{ steps.matches.outputs.packageName }}
       infoNote: ${{ steps.matches.outputs.infoNote }}
@@ -614,6 +626,7 @@ jobs:
 
     outputs:
       signature: ${{ steps.appSignature.outputs.signature }}
+      apkSha256: ${{ steps.appSignature.outputs.apkSha256 }}
       match: ${{ steps.matches.outputs.status }}
       packageName: ${{ steps.matches.outputs.packageName }}
       infoNote: ${{ steps.matches.outputs.infoNote }}
@@ -1402,7 +1415,11 @@ jobs:
           appverifierSignature: ${{ needs.appverifier-db.outputs.signature }}
           directApkSignature: ${{ needs.direct-apk.outputs.signature }}
           directApkLink: ${{ needs.parse.outputs.apkUrl }}
+          directApkSha256: ${{ needs.direct-apk.outputs.apkSha256 }}
           customFdroidRepoUrl: ${{ needs.parse.outputs.customFdroidRepoUrl }}
+          customFdroidApkSha256: ${{ needs.custom-fdroid.outputs.apkSha256 }}
+          accrescentApkSha256: ${{ needs.accrescent.outputs.apkSha256 }}
+          gplayApkSha256: ${{ needs.gplay.outputs.apkSha256 }}
           submitterSource: ${{ steps.prSignatureMode.outputs.submitterSource }}
 
       - name: Comment with PR link
@@ -1498,7 +1515,11 @@ jobs:
           appverifierSignature: ${{ needs.appverifier-db.outputs.signature }}
           directApkSignature: ${{ needs.direct-apk.outputs.signature }}
           directApkLink: ${{ needs.parse.outputs.apkUrl }}
+          directApkSha256: ${{ needs.direct-apk.outputs.apkSha256 }}
           customFdroidRepoUrl: ${{ needs.parse.outputs.customFdroidRepoUrl }}
+          customFdroidApkSha256: ${{ needs.custom-fdroid.outputs.apkSha256 }}
+          accrescentApkSha256: ${{ needs.accrescent.outputs.apkSha256 }}
+          gplayApkSha256: ${{ needs.gplay.outputs.apkSha256 }}
 
       - name: Comment on success
         if: steps.commit.outputs.committed == 'true'
