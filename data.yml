@@ -306,6 +306,20 @@ packages:
       - source: "F-Droid"
         issue: 36
         fingerprint: 9F:42:0E:41:61:46:B3:12:6D:DE:F8:8D:B9:F3:F9:8A:27:42:20:D7:F9:DC:45:C8:6C:0D:72:92:47:57:13:3B
+  - package: net.leodesouza.blitz
+    signature:
+      - source: "Accrescent"
+        issue: 139
+        fingerprint: 6D:7F:D2:71:5E:D2:1C:FF:64:08:6D:C5:FC:F8:82:0A:68:5A:79:3E:BD:07:D9:72:16:3D:86:17:2B:AB:BA:75
+      - source: "F-Droid"
+        issue: 139
+        fingerprint: 6D:7F:D2:71:5E:D2:1C:FF:64:08:6D:C5:FC:F8:82:0A:68:5A:79:3E:BD:07:D9:72:16:3D:86:17:2B:AB:BA:75
+      - source: "Google Play"
+        issue: 139
+        fingerprint: 6D:7F:D2:71:5E:D2:1C:FF:64:08:6D:C5:FC:F8:82:0A:68:5A:79:3E:BD:07:D9:72:16:3D:86:17:2B:AB:BA:75
+      - source: "Direct APK Link"
+        issue: 139
+        fingerprint: 6D:7F:D2:71:5E:D2:1C:FF:64:08:6D:C5:FC:F8:82:0A:68:5A:79:3E:BD:07:D9:72:16:3D:86:17:2B:AB:BA:75
   - package: net.mullvad.mullvadvpn
     signature:
       - source: "AppVerifier"
