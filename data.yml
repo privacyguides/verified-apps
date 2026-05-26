@@ -334,6 +334,17 @@ packages:
       - source: "Direct APK Link"
         issue: 257
         fingerprint: 20:06:1F:04:5E:73:7C:67:37:5C:17:79:4C:FE:DB:43:6A:03:CE:C6:BA:CB:7C:B9:F9:66:42:20:5C:A2:CE:C8
+  - package: org.unifiedpush.distributor.nextpush
+    signature:
+      - source: "Accrescent"
+        issue: 115
+        fingerprint: 4D:77:EB:02:F1:66:55:9E:43:B2:A3:B3:4E:86:1D:62:8C:CC:EE:CB:F7:65:3E:E1:38:70:97:1B:25:E1:75:F0
+      - source: "F-Droid (IzzyOnDroid)"
+        issue: 115
+        fingerprint: 4D:77:EB:02:F1:66:55:9E:43:B2:A3:B3:4E:86:1D:62:8C:CC:EE:CB:F7:65:3E:E1:38:70:97:1B:25:E1:75:F0
+      - source: "Direct APK Link"
+        issue: 115
+        fingerprint: 4D:77:EB:02:F1:66:55:9E:43:B2:A3:B3:4E:86:1D:62:8C:CC:EE:CB:F7:65:3E:E1:38:70:97:1B:25:E1:75:F0
   - package: org.unifiedpush.distributor.sunup
     signature:
       - source: "Accrescent"
