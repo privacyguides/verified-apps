@@ -34,6 +34,11 @@ packages:
       - source: "Direct APK Link"
         issue: 105
         fingerprint: 90:FD:58:2A:49:5A:7E:C5:92:82:A1:95:27:B8:0B:09:AB:3B:C9:1D:BB:82:46:12:18:32:BD:61:00:6C:A9:AE
+  - package: at.bitfire.davdroid
+    signature:
+      - source: "F-Droid"
+        issue: 549
+        fingerprint: 8B:48:E6:76:A6:86:49:67:79:17:83:C1:D8:D0:FC:0D:D6:D2:CE:33:E1:FB:36:78:77:93:EC:D0:86:D4:47:07
   - package: chat.fluffy.fluffychat
     signature:
       - source: "F-Droid"
