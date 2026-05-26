@@ -138,6 +138,11 @@ packages:
       - source: Google Play
         issue: 49
         fingerprint: D9:10:86:7C:E2:CF:3D:CD:37:DB:51:85:3E:BE:F8:63:3F:D8:3A:14:2B:26:42:27:4E:D0:68:15:2F:F1:22:01
+  - package: com.onepassword.android
+    signature:
+      - source: "Google Play"
+        issue: 422
+        fingerprint: B3:5B:68:D5:CE:84:50:55:7C:6A:55:FD:64:B5:1F:EA:C1:10:CB:36:D6:A3:52:1C:59:48:DB:3A:38:0A:34:A9
   - package: com.streetwriters.notesnook
     signature:
       - source: "Direct APK Link"
