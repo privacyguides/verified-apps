@@ -242,6 +242,14 @@ packages:
       - source: "AppVerifier"
         issue: 62
         fingerprint: 6A:A8:0F:DF:4A:8C:C1:37:37:CF:B4:34:FC:0C:DE:48:6F:09:CF:8F:CD:A2:1A:67:BE:A5:EE:1C:A2:70:08:86
+  - package: io.spaceapi.community.myhackerspace
+    signature:
+      - source: "Accrescent"
+        issue: 134
+        fingerprint: 4E:C5:1A:CD:06:D3:F9:E7:95:07:C9:14:EF:15:E2:C0:9A:18:24:9A:82:AF:90:64:FF:04:95:F9:26:F9:3D:D4
+      - source: "Direct APK Link"
+        issue: 134
+        fingerprint: 4E:C5:1A:CD:06:D3:F9:E7:95:07:C9:14:EF:15:E2:C0:9A:18:24:9A:82:AF:90:64:FF:04:95:F9:26:F9:3D:D4
   - package: it.fast4x.riplay
     signature:
       - source: "Accrescent"
