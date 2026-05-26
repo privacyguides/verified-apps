@@ -1105,6 +1105,12 @@ jobs:
           GPLAY_SIG: ${{ needs.gplay.outputs.signature }}
           APPVERIFIER_SIG: ${{ needs.appverifier-db.outputs.signature }}
           DIRECT_SIG: ${{ needs.direct-apk.outputs.signature }}
+          DIRECT_APK_URL: ${{ needs.parse.outputs.apkUrl }}
+          DIRECT_APK_SHA256: ${{ needs.direct-apk.outputs.apkSha256 }}
+          CUSTOM_FDROID_REPO_URL: ${{ needs.parse.outputs.customFdroidRepoUrl }}
+          CUSTOM_FDROID_APK_SHA256: ${{ needs.custom-fdroid.outputs.apkSha256 }}
+          ACC_APK_SHA256: ${{ needs.accrescent.outputs.apkSha256 }}
+          GPLAY_APK_SHA256: ${{ needs.gplay.outputs.apkSha256 }}
         run: |
           set -euo pipefail
           source .github/actions/signature-lib/signatures.lib.sh
@@ -1348,18 +1354,20 @@ jobs:
             echo "submitterSource=$SUBMITTER_SOURCE" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Resolve labeler co-author
+      - name: Resolve co-authors
         if: steps.existingPr.outputs.url == ''
         id: coauthor
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SENDER_LOGIN: ${{ github.event.sender.login }}
-          SENDER_ID: ${{ github.event.sender.id }}
+          LABELER_LOGIN: ${{ github.event.sender.login }}
+          LABELER_ID: ${{ github.event.sender.id }}
+          SUBMITTER_LOGIN: ${{ github.event.issue.user.login }}
+          SUBMITTER_ID: ${{ github.event.issue.user.id }}
         run: |
           set -euo pipefail
-          name=$(gh api "users/${SENDER_LOGIN}" --jq 'if .name then .name else .login end')
           source .github/actions/signature-lib/signatures.lib.sh
-          trailer=$(printf 'Co-authored-by: %s <%s+%s@users.noreply.github.com>' "$name" "$SENDER_ID" "$SENDER_LOGIN")
+          trailer=$(submission_resolve_coauthor_trailers \
+            "$LABELER_LOGIN" "$LABELER_ID" "$SUBMITTER_LOGIN" "$SUBMITTER_ID")
           gha_write_multiline_output trailer "$trailer"
 
       - name: Create PR
@@ -1451,17 +1459,19 @@ jobs:
           merge-multiple: true
           path: fdroid-results
 
-      - name: Resolve labeler co-author
+      - name: Resolve co-authors
         id: coauthor
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SENDER_LOGIN: ${{ github.event.sender.login }}
-          SENDER_ID: ${{ github.event.sender.id }}
+          LABELER_LOGIN: ${{ github.event.sender.login }}
+          LABELER_ID: ${{ github.event.sender.id }}
+          SUBMITTER_LOGIN: ${{ github.event.issue.user.login }}
+          SUBMITTER_ID: ${{ github.event.issue.user.id }}
         run: |
           set -euo pipefail
-          name=$(gh api "users/${SENDER_LOGIN}" --jq 'if .name then .name else .login end')
           source .github/actions/signature-lib/signatures.lib.sh
-          trailer=$(printf 'Co-authored-by: %s <%s+%s@users.noreply.github.com>' "$name" "$SENDER_ID" "$SENDER_LOGIN")
+          trailer=$(submission_resolve_coauthor_trailers \
+            "$LABELER_LOGIN" "$LABELER_ID" "$SUBMITTER_LOGIN" "$SUBMITTER_ID")
           gha_write_multiline_output trailer "$trailer"
 
       - name: Commit submission to main

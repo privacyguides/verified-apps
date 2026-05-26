@@ -26,6 +26,34 @@ gha_write_multiline_output() {
   } >> "$GITHUB_OUTPUT"
 }
 
+# GitHub noreply Co-authored-by trailer for a user (login + numeric id).
+submission_coauthor_trailer_for_user() {
+  local login="$1"
+  local user_id="$2"
+  local display_name
+
+  display_name=$(gh api "users/${login}" --jq 'if .name then .name else .login end')
+  printf 'Co-authored-by: %s <%s+%s@users.noreply.github.com>' "$display_name" "$user_id" "$login"
+}
+
+# Labeler plus issue author when they differ; prints trailers separated by newlines.
+submission_resolve_coauthor_trailers() {
+  local labeler_login="$1"
+  local labeler_id="$2"
+  local submitter_login="$3"
+  local submitter_id="$4"
+  local trailers labeler_trailer submitter_trailer
+
+  labeler_trailer=$(submission_coauthor_trailer_for_user "$labeler_login" "$labeler_id")
+  trailers="$labeler_trailer"
+  if [[ -n "$submitter_login" && -n "$submitter_id" && "$submitter_login" != "$labeler_login" ]]; then
+    submitter_trailer=$(submission_coauthor_trailer_for_user "$submitter_login" "$submitter_id")
+    trailers+=$'\n'
+    trailers+="$submitter_trailer"
+  fi
+  printf '%s' "$trailers"
+}
+
 is_valid_package_name() {
   [[ "$1" =~ ^[a-zA-Z][a-zA-Z0-9_]*(\.[a-zA-Z][a-zA-Z0-9_]*)+$ ]]
 }

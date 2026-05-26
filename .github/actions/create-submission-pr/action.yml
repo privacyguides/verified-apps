@@ -14,7 +14,7 @@ inputs:
     description: Path to the pull request body markdown file
     required: true
   coAuthorTrailer:
-    description: Co-authored-by trailer for the git commit (e.g. from the user who added the label)
+    description: Co-authored-by trailer(s) for the git commit (labeler and issue author when different)
     required: true
   commitSuffix:
     description: Optional suffix appended to the git commit message subject line
