@@ -71,6 +71,14 @@ packages:
       - source: F-Droid
         issue: 47
         fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
+  - package: com.eddyizm.degoogled.tempus
+    signature:
+      - source: "F-Droid (IzzyOnDroid)"
+        issue: 466
+        fingerprint: B7:85:01:B9:34:D0:4E:0A:CA:8D:94:AF:D6:72:6A:4D:1D:CE:65:79:7F:1D:41:71:0F:64:3C:29:00:EB:1D:1D
+      - source: "Direct APK Link"
+        issue: 466
+        fingerprint: B7:85:01:B9:34:D0:4E:0A:CA:8D:94:AF:D6:72:6A:4D:1D:CE:65:79:7F:1D:41:71:0F:64:3C:29:00:EB:1D:1D
   - package: com.github.lamarios.clipious
     signature:
       - source: "Accrescent"
