@@ -101,6 +101,11 @@ packages:
       - source: "Direct APK Link"
         issue: 423
         fingerprint: 72:0C:4F:CE:CF:73:8A:41:D0:33:B9:FB:E0:BE:F9:7A:C2:32:03:0C:E9:3E:27:4D:2E:0A:E2:32:E4:4E:EA:CE
+  - package: com.goeuro.rosie
+    signature:
+      - source: "Google Play"
+        issue: 392
+        fingerprint: BF:D9:21:53:AE:C9:F9:A2:94:4D:4C:63:D6:75:EE:0D:72:82:40:24:CC:FC:33:74:7D:2C:19:43:3D:53:B4:99
   - package: com.google.android.inputmethod.latin
     signature:
       - source: "Google Play"
