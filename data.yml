@@ -18,6 +18,14 @@ packages:
       - source: "AppVerifier"
         issue: 68
         fingerprint: B9:C7:AE:79:A5:A9:02:70:DF:08:A1:32:E5:36:B9:C6:66:F5:BE:F1:F5:9B:30:4F:CE:CF:86:87:86:5E:4B:5B
+  - package: co.cape.matrix
+    signature:
+      - source: Accrescent
+        issue: 19
+        fingerprint: F9:30:72:E3:44:E6:91:F4:02:23:14:D3:E6:D0:D6:1B:80:0F:10:8A:3F:08:83:AE:13:0E:72:55:03:A7:91:42
+      - source: Google Play
+        issue: 19
+        fingerprint: F9:30:72:E3:44:E6:91:F4:02:23:14:D3:E6:D0:D6:1B:80:0F:10:8A:3F:08:83:AE:13:0E:72:55:03:A7:91:42
   - package: com.aurora.store
     signature:
       - source: Direct APK Link
