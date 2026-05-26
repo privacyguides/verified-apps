@@ -150,6 +150,7 @@ signatures_write_yaml_entry() {
   local source="$2"
   local issue="$3"
   local fp_block="$4"
+  local link="${5-}"
 
   {
     printf 'source: "%s"\n' "$source"
@@ -163,16 +164,19 @@ signatures_write_yaml_entry() {
     else
       printf 'fingerprint: %s\n' "$fp_block"
     fi
+    if [[ -n "$link" ]]; then
+      printf 'link: "%s"\n' "$link"
+    fi
   } > "$path"
 }
 
 # Build a single package entry (package + signature[]) from store matches.
 # Required env: PACKAGE, ISSUE, USER_SIG (raw; formatted internally)
-# Optional env: SUBMITTER_SOURCE, ACC_SIG, FDROID_RESULTS_DIR, GPLAY_SIG, APPVERIFIER_SIG, DIRECT_SIG
+# Optional env: SUBMITTER_SOURCE, ACC_SIG, FDROID_RESULTS_DIR, CUSTOM_FDROID_REPO_URL, GPLAY_SIG, APPVERIFIER_SIG, DIRECT_SIG, DIRECT_APK_URL
 # Writes YAML object to $1. Returns 0 when at least one signature was added, 1 otherwise.
 submission_build_entry_file() {
   local entry_file="$1"
-  local user_sig fp_block sig_piece sig_source store_sig repo_name fdroid_source
+  local user_sig fp_block sig_piece sig_source store_sig repo_name fdroid_source sig_link
 
   user_sig="$(signatures_format_block "$USER_SIG")"
 
@@ -182,8 +186,9 @@ submission_build_entry_file() {
   _submission_add_signature() {
     local src="$1"
     local block="$2"
+    local link="${3-}"
     sig_piece="$(mktemp)"
-    signatures_write_yaml_entry "$sig_piece" "$src" "$ISSUE" "$block"
+    signatures_write_yaml_entry "$sig_piece" "$src" "$ISSUE" "$block" "$link"
     export SIG_PIECE="$sig_piece"
     yq -i '.signature += [load(strenv(SIG_PIECE))]' "$entry_file"
     rm -f "$sig_piece"
@@ -195,7 +200,7 @@ submission_build_entry_file() {
   fi
 
   if [[ -n "${ACC_SIG:-}" ]] && signatures_equal "$ACC_SIG" "$user_sig"; then
-    _submission_add_signature "Accrescent" "$user_sig"
+    _submission_add_signature "Accrescent" "$user_sig" "https://accrescent.app/app/${PACKAGE}"
   fi
   if [[ -n "${FDROID_RESULTS_DIR:-}" && -d "$FDROID_RESULTS_DIR" ]]; then
     while IFS= read -r result_file; do
@@ -204,23 +209,31 @@ submission_build_entry_file() {
       repo_name=$(jq -r '.repoName' "$result_file")
       store_sig=$(jq -r '.signature' "$result_file")
       if signatures_equal "$store_sig" "$user_sig"; then
+        sig_link=""
         if [[ "$repo_name" == "F-Droid" ]]; then
           fdroid_source="F-Droid"
+          sig_link="https://f-droid.org/packages/${PACKAGE}/"
+        elif [[ "$repo_name" == "IzzyOnDroid" ]]; then
+          fdroid_source="F-Droid (${repo_name})"
+          sig_link="https://apt.izzysoft.de/fdroid/index/apk/${PACKAGE}"
+        elif [[ "$repo_name" == "Custom" ]]; then
+          fdroid_source="F-Droid (${repo_name})"
+          sig_link="${CUSTOM_FDROID_REPO_URL:-}"
         else
           fdroid_source="F-Droid (${repo_name})"
         fi
-        _submission_add_signature "$fdroid_source" "$user_sig"
+        _submission_add_signature "$fdroid_source" "$user_sig" "$sig_link"
       fi
     done < <(find "$FDROID_RESULTS_DIR" -type f -name '*.json' 2>/dev/null | sort)
   fi
   if [[ -n "${GPLAY_SIG:-}" ]] && signatures_equal "$GPLAY_SIG" "$user_sig"; then
-    _submission_add_signature "Google Play" "$user_sig"
+    _submission_add_signature "Google Play" "$user_sig" "https://play.google.com/store/apps/details?id=${PACKAGE}"
   fi
   if [[ -n "${APPVERIFIER_SIG:-}" ]] && signatures_equal "$APPVERIFIER_SIG" "$user_sig"; then
     _submission_add_signature "AppVerifier" "$user_sig"
   fi
   if [[ -n "${DIRECT_SIG:-}" ]] && signatures_equal "$DIRECT_SIG" "$user_sig"; then
-    _submission_add_signature "Direct APK Link" "$user_sig"
+    _submission_add_signature "Direct APK Link" "$user_sig" "${DIRECT_APK_URL:-}"
   fi
 
   if [[ "$(yq '.signature | length' "$entry_file")" -eq 0 ]]; then

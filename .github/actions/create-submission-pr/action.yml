@@ -40,6 +40,14 @@ inputs:
     description: Fingerprint(s) from direct APK download (store-match mode only)
     required: false
     default: ""
+  directApkLink:
+    description: Link to the direct APK that was downloaded (when applicable)
+    required: false
+    default: ""
+  customFdroidRepoUrl:
+    description: Link to the custom F-Droid repository URL (when applicable)
+    required: false
+    default: ""
   submitterSource:
     description: When set, add the submitter fingerprint under this source and skip store matching
     required: false
@@ -71,6 +79,8 @@ runs:
         GPLAY_SIG: ${{ inputs.gplaySignature }}
         APPVERIFIER_SIG: ${{ inputs.appverifierSignature }}
         DIRECT_SIG: ${{ inputs.directApkSignature }}
+        DIRECT_APK_URL: ${{ inputs.directApkLink }}
+        CUSTOM_FDROID_REPO_URL: ${{ inputs.customFdroidRepoUrl }}
         SUBMITTER_SOURCE: ${{ inputs.submitterSource }}
       run: |
         set -euo pipefail

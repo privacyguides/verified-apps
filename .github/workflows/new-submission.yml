@@ -1401,6 +1401,8 @@ jobs:
           gplaySignature: ${{ needs.gplay.outputs.signature }}
           appverifierSignature: ${{ needs.appverifier-db.outputs.signature }}
           directApkSignature: ${{ needs.direct-apk.outputs.signature }}
+          directApkLink: ${{ needs.parse.outputs.apkUrl }}
+          customFdroidRepoUrl: ${{ needs.parse.outputs.customFdroidRepoUrl }}
           submitterSource: ${{ steps.prSignatureMode.outputs.submitterSource }}
 
       - name: Comment with PR link
@@ -1495,6 +1497,8 @@ jobs:
           gplaySignature: ${{ needs.gplay.outputs.signature }}
           appverifierSignature: ${{ needs.appverifier-db.outputs.signature }}
           directApkSignature: ${{ needs.direct-apk.outputs.signature }}
+          directApkLink: ${{ needs.parse.outputs.apkUrl }}
+          customFdroidRepoUrl: ${{ needs.parse.outputs.customFdroidRepoUrl }}
 
       - name: Comment on success
         if: steps.commit.outputs.committed == 'true'

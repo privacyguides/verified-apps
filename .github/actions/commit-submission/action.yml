@@ -33,6 +33,14 @@ inputs:
     description: Fingerprint(s) from direct APK download
     required: false
     default: ""
+  directApkLink:
+    description: Link to the direct APK that was downloaded (when applicable)
+    required: false
+    default: ""
+  customFdroidRepoUrl:
+    description: Link to the custom F-Droid repository URL (when applicable)
+    required: false
+    default: ""
 outputs:
   committed:
     description: Whether data.yml was updated on main
@@ -56,6 +64,8 @@ runs:
         GPLAY_SIG: ${{ inputs.gplaySignature }}
         APPVERIFIER_SIG: ${{ inputs.appverifierSignature }}
         DIRECT_SIG: ${{ inputs.directApkSignature }}
+        DIRECT_APK_URL: ${{ inputs.directApkLink }}
+        CUSTOM_FDROID_REPO_URL: ${{ inputs.customFdroidRepoUrl }}
       run: |
         set -euo pipefail
         source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
