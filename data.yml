@@ -411,6 +411,11 @@ packages:
       - source: "AppVerifier"
         issue: 58
         fingerprint: F7:C3:EC:3B:0D:58:8D:3C:B5:29:83:E9:EB:1A:74:21:C9:3D:43:39:A2:86:39:8E:71:D7:B6:51:E8:D8:EC:DD
+  - package: org.documentfoundation.libreoffice
+    signature:
+      - source: "F-Droid"
+        issue: 541
+        fingerprint: AF:71:BA:34:4C:AB:25:9F:A6:25:F0:79:FF:52:0F:51:1D:17:A3:72:BB:2E:8F:A2:75:32:79:1B:D5:FE:A8:CB
   - package: org.fdroid.basic
     signature:
       - source: "F-Droid"
