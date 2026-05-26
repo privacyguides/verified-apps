@@ -1,0 +1,93 @@
+name: Check for Duplicates
+
+on:
+  issues:
+    types:
+      - opened
+
+concurrency:
+  group: duplicate-on-open-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  parse:
+    name: Parse Submission
+    runs-on: ubuntu-latest
+    outputs:
+      packageName: ${{ steps.parsed.outputs.packageName }}
+      packageSignature: ${{ steps.parsed.outputs.packageSignature }}
+      apkUrl: ${{ steps.parsed.outputs.apkUrl }}
+      customFdroidRepoUrl: ${{ steps.parsed.outputs.customFdroidRepoUrl }}
+      isDuplicate: ${{ steps.duplicateCheck.outputs.isDuplicate }}
+      duplicateOf: ${{ steps.duplicateCheck.outputs.duplicateOf }}
+
+    permissions:
+      contents: read
+      issues: read
+
+    steps:
+      - name: Download Repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: "false"
+
+      - name: Parse verification info
+        id: parsed
+        uses: ./.github/actions/parse-verification-info
+        with:
+          issueBody: ${{ github.event.issue.body }}
+
+      - name: Validate parsed submission
+        uses: ./.github/actions/signature-lib
+        with:
+          operation: validate-submission
+          packageName: ${{ steps.parsed.outputs.packageName }}
+          packageSignature: ${{ steps.parsed.outputs.packageSignature }}
+
+      - name: Check for duplicate submission
+        id: duplicateCheck
+        uses: ./.github/actions/check-duplicate-submission
+        with:
+          packageName: ${{ steps.parsed.outputs.packageName }}
+          packageSignature: ${{ steps.parsed.outputs.packageSignature }}
+          currentIssue: ${{ github.event.issue.number }}
+          directApkUrl: ${{ steps.parsed.outputs.apkUrl }}
+          customFdroidRepoUrl: ${{ steps.parsed.outputs.customFdroidRepoUrl }}
+
+  close-duplicate:
+    name: Close Duplicate Submission
+    runs-on: ubuntu-latest
+    needs: parse
+    if: needs.parse.outputs.isDuplicate == 'true'
+
+    permissions:
+      issues: write
+
+    steps:
+      - name: Close issue as duplicate
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+          DUPLICATE_OF: ${{ needs.parse.outputs.duplicateOf }}
+          CURRENT_AUTHOR: ${{ github.event.issue.user.login }}
+        run: |
+          set -euo pipefail
+
+          gh issue edit "$NUMBER" --repo "$GH_REPO" --remove-label "Run Checks" || true
+          gh issue edit "$NUMBER" --repo "$GH_REPO" --remove-label "Create PR" || true
+          gh issue edit "$NUMBER" --repo "$GH_REPO" --remove-label "Commit As-Is" || true
+
+          if [[ "$DUPLICATE_OF" != "$NUMBER" ]]; then
+            original_author=$(gh api "repos/${GH_REPO}/issues/${DUPLICATE_OF}" --jq '.user.login')
+            if [[ "$CURRENT_AUTHOR" != "$original_author" ]]; then
+              gh issue edit "$DUPLICATE_OF" --repo "$GH_REPO" --add-label "Duplicates Exist"
+            fi
+          fi
+
+          if [[ "$DUPLICATE_OF" == "$NUMBER" ]]; then
+            gh issue close "$NUMBER" --repo "$GH_REPO" \
+              --comment "This package and signature are already tracked in an open submission or in data.yml."
+          else
+            gh issue close "$NUMBER" --repo "$GH_REPO" --duplicate-of "$DUPLICATE_OF"
+          fi
