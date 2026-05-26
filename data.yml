@@ -18,6 +18,17 @@ packages:
       - source: "AppVerifier"
         issue: 68
         fingerprint: B9:C7:AE:79:A5:A9:02:70:DF:08:A1:32:E5:36:B9:C6:66:F5:BE:F1:F5:9B:30:4F:CE:CF:86:87:86:5E:4B:5B
+  - package: app.upryzing.clerotri
+    signature:
+      - source: "Accrescent"
+        issue: 105
+        fingerprint: 90:FD:58:2A:49:5A:7E:C5:92:82:A1:95:27:B8:0B:09:AB:3B:C9:1D:BB:82:46:12:18:32:BD:61:00:6C:A9:AE
+      - source: "F-Droid (IzzyOnDroid)"
+        issue: 105
+        fingerprint: 90:FD:58:2A:49:5A:7E:C5:92:82:A1:95:27:B8:0B:09:AB:3B:C9:1D:BB:82:46:12:18:32:BD:61:00:6C:A9:AE
+      - source: "Direct APK Link"
+        issue: 105
+        fingerprint: 90:FD:58:2A:49:5A:7E:C5:92:82:A1:95:27:B8:0B:09:AB:3B:C9:1D:BB:82:46:12:18:32:BD:61:00:6C:A9:AE
   - package: co.cape.matrix
     signature:
       - source: Accrescent
