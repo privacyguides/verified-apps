@@ -2,15 +2,15 @@
 
 Privacy Guides is building a database of Android app signing certificate hashes for use with [AppVerifier](https://github.com/soupslurpr/AppVerifier) or [certhashviewer](https://roundsalmon4.github.io/certhashviewer) or `apksigner verify --print-certs`.
 
-**Discussions:** Please discuss anything related to this project [on the Privacy Guides forum.](https://discuss.privacyguides.net/t/submit-android-apps-to-our-appverifier-database/38125)
+**Discussions:** Please discuss anything related to this project [on the Privacy Guides forum](https://discuss.privacyguides.net/t/submit-android-apps-to-our-appverifier-database/38125).
 
-**Submissions:** We need you to submit any apps you have installed on your phone [in a new GitHub issue here.](https://github.com/privacyguides/verified-apps/issues/new?template=app-submission.yml) If your submission matches our automatic checks we will [open a PR](https://github.com/privacyguides/verified-apps/pulls), if it does not it will need manual approval. We will still manually check all automatically opened PRs, but the PRs will contain information obtained from our automated checks which will be used to guide approvals.
+**Submissions:** We need you to submit any apps you have installed on your phone [in a new GitHub issue here](https://github.com/privacyguides/verified-apps/issues/new?template=app-submission.yml). A maintainer adds the **Run Checks** label to run automated verification; results are posted as a comment on the issue. After completing a manual review, one of our maintainers will merge your submission into the database.
 
 **Contributions:** In addition to submitting new apps, submitting code reviews/approvals or :+1: reactions to open PRs to indicate the fingerprint matches what you have locally would be much appreciated. Comments in issues/PRs indicating how you came about verifying your APK locally would also be appreciated.
 
 ## Automated Checks
 
-Submitted apps are automatically checked against:
+When a maintainer is ready to review a submission, we will run automated checks to check the submission against the following mainstream app sources:
 
 - Accrescent
 - AppVerifier's Internal Database
@@ -18,14 +18,14 @@ Submitted apps are automatically checked against:
 - F-Droid IzzyOnDroid
 - Google Play
 
-If the submitted hash matches any of the above, the PR will be labeled accordingly.
+If the submitted hash matches any of the above, those results will be displayed in a new issue comment and the issue will be labeled accordingly.
 
 We will also check the following:
 
 - Link you provide to a direct APK download
 - Link you provide to a developer-run F-Droid repo
 
-We do not automatically validate the legitimacy of these sources, but they will be noted for manual review purposes.
+We can not automatically validate the *legitimacy* of these sources, but they will be noted for manual review purposes.
 
 ## Verification Process
 

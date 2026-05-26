@@ -14,7 +14,7 @@ inputs:
     description: Path to the pull request body markdown file
     required: true
   commitSuffix:
-    description: Optional suffix appended to the git commit message (e.g. " (PR Anyways)")
+    description: Optional suffix appended to the git commit message
     required: false
     default: ""
   accrescentSignature:

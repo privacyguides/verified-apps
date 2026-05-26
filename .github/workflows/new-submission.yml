@@ -20,7 +20,7 @@ jobs:
       isDuplicate: ${{ steps.duplicateCheck.outputs.isDuplicate }}
       duplicateOf: ${{ steps.duplicateCheck.outputs.duplicateOf }}
 
-    if: ${{ github.event.label.name == 'Unchecked' || github.event.label.name == 'PR Anyways' }}
+    if: ${{ github.event.label.name == 'Run Checks' || github.event.label.name == 'Create PR' }}
 
     permissions:
       contents: read
@@ -80,8 +80,8 @@ jobs:
           NUMBER: ${{ github.event.issue.number }}
           DUPLICATE_OF: ${{ needs.parse.outputs.duplicateOf }}
         run: |
-          gh issue edit "$NUMBER" --repo "$GH_REPO" --remove-label "Unchecked" || true
-          gh issue edit "$NUMBER" --repo "$GH_REPO" --remove-label "PR Anyways" || true
+          gh issue edit "$NUMBER" --repo "$GH_REPO" --remove-label "Run Checks" || true
+          gh issue edit "$NUMBER" --repo "$GH_REPO" --remove-label "Create PR" || true
 
           if [[ "$DUPLICATE_OF" == "$NUMBER" ]]; then
             gh issue close "$NUMBER" --repo "$GH_REPO" \
@@ -94,7 +94,7 @@ jobs:
     name: Accrescent
     runs-on: ubuntu-latest
     needs: parse
-    if: needs.parse.outputs.isDuplicate != 'true' && github.event.label.name == 'Unchecked'
+    if: needs.parse.outputs.isDuplicate != 'true' && (github.event.label.name == 'Run Checks' || github.event.label.name == 'Create PR')
     continue-on-error: true
     permissions:
       contents: read
@@ -201,7 +201,7 @@ jobs:
     name: F-Droid
     runs-on: ubuntu-latest
     needs: parse
-    if: needs.parse.outputs.isDuplicate != 'true' && github.event.label.name == 'Unchecked'
+    if: needs.parse.outputs.isDuplicate != 'true' && (github.event.label.name == 'Run Checks' || github.event.label.name == 'Create PR')
     continue-on-error: true
     permissions:
       contents: read
@@ -303,7 +303,7 @@ jobs:
     name: Custom F-Droid Repository
     runs-on: ubuntu-latest
     needs: parse
-    if: needs.parse.outputs.isDuplicate != 'true' && github.event.label.name == 'Unchecked' && needs.parse.outputs.customFdroidRepoUrl != ''
+    if: needs.parse.outputs.isDuplicate != 'true' && (github.event.label.name == 'Run Checks' || github.event.label.name == 'Create PR') && needs.parse.outputs.customFdroidRepoUrl != ''
     continue-on-error: true
     permissions:
       contents: read
@@ -397,7 +397,7 @@ jobs:
     name: Google Play
     runs-on: ubuntu-latest
     needs: parse
-    if: needs.parse.outputs.isDuplicate != 'true' && github.event.label.name == 'Unchecked'
+    if: needs.parse.outputs.isDuplicate != 'true' && (github.event.label.name == 'Run Checks' || github.event.label.name == 'Create PR')
     continue-on-error: true
     permissions:
       contents: read
@@ -543,7 +543,7 @@ jobs:
     name: Direct APK Link
     runs-on: ubuntu-latest
     needs: parse
-    if: needs.parse.outputs.isDuplicate != 'true' && github.event.label.name == 'Unchecked' && needs.parse.outputs.apkUrl != ''
+    if: needs.parse.outputs.isDuplicate != 'true' && (github.event.label.name == 'Run Checks' || github.event.label.name == 'Create PR') && needs.parse.outputs.apkUrl != ''
     continue-on-error: true
     permissions:
       contents: read
@@ -616,7 +616,7 @@ jobs:
     name: AppVerifier
     runs-on: ubuntu-latest
     needs: parse
-    if: needs.parse.outputs.isDuplicate != 'true' && github.event.label.name == 'Unchecked'
+    if: needs.parse.outputs.isDuplicate != 'true' && (github.event.label.name == 'Run Checks' || github.event.label.name == 'Create PR')
     continue-on-error: true
     permissions:
       contents: read
@@ -698,10 +698,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: [parse, accrescent, fdroid, custom-fdroid, gplay, appverifier-db, direct-apk]
 
-    if: always() && needs.parse.outputs.isDuplicate != 'true' && github.event.label.name == 'Unchecked'
+    if: always() && needs.parse.outputs.isDuplicate != 'true' && github.event.label.name == 'Run Checks'
     permissions:
-      contents: write
-      pull-requests: write
+      contents: read
       issues: write
 
     steps:
@@ -714,7 +713,7 @@ jobs:
           if [[ "${{ needs.parse.outputs.packageSignature }}" == "" ]]; then
             exit 1
           fi
-          if [[ ${{ github.event.label.name }} != "Unchecked" ]]; then
+          if [[ "${{ github.event.label.name }}" != "Run Checks" ]]; then
             exit 1
           fi
 
@@ -1049,9 +1048,7 @@ jobs:
           if [[ "$MATCHES" != "0" ]]; then
             echo "${MATCHES}/${SOURCES} of our sources matched what was provided. Some mismatches between app stores can be normal." >> ${RUNNER_TEMP}/issueBody.md
             if [[ "$store_signed_label" == true ]]; then
-              gh issue edit "$NUMBER" --repo "$GH_REPO" --add-label "Store Signed" --remove-label "Unchecked"
-            else
-              gh issue edit "$NUMBER" --repo "$GH_REPO" --add-label "Likely Good" --remove-label "Unchecked"
+              gh issue edit "$NUMBER" --repo "$GH_REPO" --add-label "Store Signed"
             fi
           else
             echo "We either weren't able to grab this app from stores, or no stores matched it. Please provide a link to exactly where you downloaded it, thanks!" >> ${RUNNER_TEMP}/issueBody.md
@@ -1059,11 +1056,9 @@ jobs:
               echo "" >> ${RUNNER_TEMP}/issueBody.md
               echo "None of our sources matched the fingerprint you provided exactly, but see the notes above: For example, **Google Play App Signing** or **non-reproducible F-Droid builds** can explain a mismatch without indicating a bad submission." >> ${RUNNER_TEMP}/issueBody.md
             fi
-            gh issue edit "$NUMBER" --repo "$GH_REPO" --add-label "Likely Bad" --remove-label "Unchecked"
           fi
 
       - name: Comment on Issue
-        if: steps.count.outputs.matches == '0'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
@@ -1071,59 +1066,11 @@ jobs:
         run: |
           gh issue comment "$NUMBER" --body-file ${RUNNER_TEMP}/issueBody.md
 
-      - name: Build PR body
-        if: steps.count.outputs.matches != '0'
-        env:
-          ISSUE: ${{ github.event.issue.number }}
-        run: |
-          set -euo pipefail
-          echo "**Agree with these changes? Please add a :+1: reaction to this PR!**" >> "${RUNNER_TEMP}/prBody.md"
-          echo "" >> "${RUNNER_TEMP}/prBody.md"
-          echo "One or more app stores matched the signature in issue #${ISSUE}, so I've created this PR automatically." >> "${RUNNER_TEMP}/prBody.md"
-          echo "These entries should now be verified manually (or additional entries can be added) before merging!" >> "${RUNNER_TEMP}/prBody.md"
-          echo "This PR does **not** add signatures from stores unless they also match what the submitter provided. We may need to add additional signatures to this PR if we believe the other ones are legitimate as well." >> "${RUNNER_TEMP}/prBody.md"
-          echo "" >> "${RUNNER_TEMP}/prBody.md"
-          echo "Closes #${ISSUE}" >> "${RUNNER_TEMP}/prBody.md"
-          echo "" >> "${RUNNER_TEMP}/prBody.md"
-          echo "---" >> "${RUNNER_TEMP}/prBody.md"
-          echo "" >> "${RUNNER_TEMP}/prBody.md"
-          cat "${RUNNER_TEMP}/issueBody.md" >> "${RUNNER_TEMP}/prBody.md"
-
-      - name: Checkout repository
-        if: steps.count.outputs.matches != '0'
-        uses: actions/checkout@v6
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Download F-Droid results for PR
-        if: steps.count.outputs.matches != '0'
-        uses: actions/download-artifact@v4
-        with:
-          pattern: fdroid-result-*
-          merge-multiple: true
-          path: fdroid-results
-
-      - name: Create PR
-        id: create-pr
-        if: steps.count.outputs.matches != '0'
-        uses: ./.github/actions/create-submission-pr
-        with:
-          packageName: ${{ needs.parse.outputs.packageName }}
-          packageSignature: ${{ needs.parse.outputs.packageSignature }}
-          issueNumber: ${{ github.event.issue.number }}
-          prBodyFile: ${{ runner.temp }}/prBody.md
-          accrescentSignature: ${{ needs.accrescent.outputs.signature }}
-          fdroidResultsDir: fdroid-results
-          gplaySignature: ${{ needs.gplay.outputs.signature }}
-          appverifierSignature: ${{ needs.appverifier-db.outputs.signature }}
-          directApkSignature: ${{ needs.direct-apk.outputs.signature }}
-
-      - name: Label PR by matching sources
-        if: steps.count.outputs.matches != '0' && steps.create-pr.outputs.prCreated == 'true'
+      - name: Label issue by matching sources
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
-          PR_URL: ${{ steps.create-pr.outputs.prUrl }}
+          NUMBER: ${{ github.event.issue.number }}
           STORE_MATCHES: ${{ steps.count.outputs.storeMatches }}
           ACC_FOUND: ${{ needs.accrescent.outputs.found }}
           GPLAY_FOUND: ${{ needs.gplay.outputs.found }}
@@ -1166,13 +1113,25 @@ jobs:
           if [[ ${#label_args[@]} -eq 0 ]]; then
             exit 0
           fi
-          gh pr edit "$PR_URL" --repo "$GH_REPO" "${label_args[@]}"
+          gh issue edit "$NUMBER" --repo "$GH_REPO" "${label_args[@]}"
 
-  create-pr-anyways:
-    name: Create PR (PR Anyways)
+      - name: Remove Run Checks label
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+        run: gh issue edit "$NUMBER" --repo "$GH_REPO" --remove-label "Run Checks" || true
+
+  create-pr:
+    name: Create PR
     runs-on: ubuntu-latest
-    needs: parse
-    if: needs.parse.outputs.isDuplicate != 'true' && github.event.label.name == 'PR Anyways'
+    needs: [parse, accrescent, fdroid, custom-fdroid, gplay, appverifier-db, direct-apk]
+    if: |
+      always() &&
+      !cancelled() &&
+      needs.parse.result == 'success' &&
+      needs.parse.outputs.isDuplicate != 'true' &&
+      github.event.label.name == 'Create PR'
 
     permissions:
       contents: write
@@ -1180,12 +1139,42 @@ jobs:
       issues: write
 
     steps:
-      - name: Download Repository
-        uses: actions/checkout@v6
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Validate
+        run: |
+          if [[ "${{ needs.parse.outputs.packageName }}" == "" ]]; then
+            exit 1
+          fi
+          if [[ "${{ needs.parse.outputs.packageSignature }}" == "" ]]; then
+            exit 1
+          fi
+          if [[ "${{ github.event.label.name }}" != "Create PR" ]]; then
+            exit 1
+          fi
+
+      - name: Check for existing PR
+        id: existingPr
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          ISSUE: ${{ github.event.issue.number }}
+        run: |
+          branch="new/${ISSUE}"
+          existing_pr=$(gh pr list --repo "$GH_REPO" --head "$branch" --json url -q '.[0].url' || true)
+          echo "url=$existing_pr" >> "$GITHUB_OUTPUT"
+
+      - name: Comment if PR already exists
+        if: steps.existingPr.outputs.url != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+          PR_URL: ${{ steps.existingPr.outputs.url }}
+        run: |
+          gh issue comment "$NUMBER" --repo "$GH_REPO" \
+            --body "A pull request already exists for this submission: ${PR_URL}"
 
       - name: Resolve submitter source
+        if: steps.existingPr.outputs.url == ''
         id: submitterSource
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
@@ -1204,17 +1193,6 @@ jobs:
           fi
           echo "value=$app_source" >> "$GITHUB_OUTPUT"
 
-      - name: Check for existing PR
-        id: existingPr
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_REPO: ${{ github.repository }}
-          ISSUE: ${{ github.event.issue.number }}
-        run: |
-          branch="new/${ISSUE}"
-          existing_pr=$(gh pr list --repo "$GH_REPO" --head "$branch" --json url -q '.[0].url' || true)
-          echo "url=$existing_pr" >> "$GITHUB_OUTPUT"
-
       - name: Build PR body
         if: steps.existingPr.outputs.url == ''
         env:
@@ -1224,12 +1202,75 @@ jobs:
           {
             echo "**Agree with these changes? Please add a :+1: reaction to this PR!**"
             echo ""
-            echo "A maintainer added the **PR Anyways** label to issue #${ISSUE}."
-            echo "This PR adds the package and fingerprint the submitter provided **without** requiring automatic store verification matches."
-            echo "Review the submission and any prior verification comments on the issue before merging."
+            echo "A maintainer requested this PR from issue #${ISSUE}."
+            echo "These entries should be verified manually (or additional entries can be added) before merging."
+            echo "This PR adds signatures from stores that matched what the submitter provided, when verification was run."
+            echo "See the verification comment on the issue for full details."
             echo ""
             echo "Closes #${ISSUE}"
           } > "${RUNNER_TEMP}/prBody.md"
+
+      - name: Checkout repository
+        if: steps.existingPr.outputs.url == ''
+        uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download F-Droid results
+        if: steps.existingPr.outputs.url == ''
+        uses: actions/download-artifact@v4
+        with:
+          pattern: fdroid-result-*
+          merge-multiple: true
+          path: fdroid-results
+
+      - name: Check for matching store signatures
+        if: steps.existingPr.outputs.url == ''
+        id: storeMatches
+        env:
+          USER_SIG: ${{ needs.parse.outputs.packageSignature }}
+          ACC_SIG: ${{ needs.accrescent.outputs.signature }}
+          GPLAY_SIG: ${{ needs.gplay.outputs.signature }}
+          APPVERIFIER_SIG: ${{ needs.appverifier-db.outputs.signature }}
+          DIRECT_SIG: ${{ needs.direct-apk.outputs.signature }}
+        run: |
+          set -euo pipefail
+          source .github/actions/signature-lib/signatures.lib.sh
+          matched=false
+          if [[ -n "$ACC_SIG" ]] && signatures_equal "$ACC_SIG" "$USER_SIG"; then
+            matched=true
+          fi
+          if [[ -n "$GPLAY_SIG" ]] && signatures_equal "$GPLAY_SIG" "$USER_SIG"; then
+            matched=true
+          fi
+          if [[ -n "$APPVERIFIER_SIG" ]] && signatures_equal "$APPVERIFIER_SIG" "$USER_SIG"; then
+            matched=true
+          fi
+          if [[ -n "$DIRECT_SIG" ]] && signatures_equal "$DIRECT_SIG" "$USER_SIG"; then
+            matched=true
+          fi
+          while IFS= read -r result_file; do
+            [[ -z "$result_file" ]] && continue
+            [[ "$(jq -r '.found' "$result_file")" != "true" ]] && continue
+            sig=$(jq -r '.signature' "$result_file")
+            if signatures_equal "$sig" "$USER_SIG"; then
+              matched=true
+            fi
+          done < <(find fdroid-results -type f -name '*.json' 2>/dev/null)
+          echo "matched=$matched" >> "$GITHUB_OUTPUT"
+
+      - name: Set PR signature mode
+        if: steps.existingPr.outputs.url == ''
+        id: prSignatureMode
+        env:
+          MATCHED: ${{ steps.storeMatches.outputs.matched }}
+          SUBMITTER_SOURCE: ${{ steps.submitterSource.outputs.value }}
+        run: |
+          if [[ "$MATCHED" == "true" ]]; then
+            echo "submitterSource=" >> "$GITHUB_OUTPUT"
+          else
+            echo "submitterSource=$SUBMITTER_SOURCE" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Create PR
         id: create-pr
@@ -1240,13 +1281,38 @@ jobs:
           packageSignature: ${{ needs.parse.outputs.packageSignature }}
           issueNumber: ${{ github.event.issue.number }}
           prBodyFile: ${{ runner.temp }}/prBody.md
-          commitSuffix: " (PR Anyways)"
-          submitterSource: ${{ steps.submitterSource.outputs.value }}
+          accrescentSignature: ${{ needs.accrescent.outputs.signature }}
+          fdroidResultsDir: fdroid-results
+          gplaySignature: ${{ needs.gplay.outputs.signature }}
+          appverifierSignature: ${{ needs.appverifier-db.outputs.signature }}
+          directApkSignature: ${{ needs.direct-apk.outputs.signature }}
+          submitterSource: ${{ steps.prSignatureMode.outputs.submitterSource }}
 
-      - name: Label PR
+      - name: Comment with PR link
         if: steps.create-pr.outputs.prCreated == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
           PR_URL: ${{ steps.create-pr.outputs.prUrl }}
-        run: gh pr edit "$PR_URL" --repo "$GH_REPO" --add-label "No Store Match"
+        run: |
+          gh issue comment "$NUMBER" --repo "$GH_REPO" \
+            --body "Opened pull request: ${PR_URL}"
+
+      - name: Report skipped PR
+        if: steps.existingPr.outputs.url == '' && steps.create-pr.outputs.skipped == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+        run: |
+          gh issue comment "$NUMBER" --repo "$GH_REPO" \
+            --body "Could not open a PR: no store signatures matched the submission. Add matching store entries manually, or ensure verification was run with the **Run Checks** label first."
+
+      - name: Remove Create PR label
+        if: always() && (steps.create-pr.outputs.prCreated == 'true' || steps.existingPr.outputs.url != '')
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+        run: gh issue edit "$NUMBER" --repo "$GH_REPO" --remove-label "Create PR" || true
