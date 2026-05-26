@@ -507,6 +507,14 @@ packages:
       - source: "AppVerifier"
         issue: 65
         fingerprint: DA:84:E2:53:4C:1A:CC:0B:6E:4F:57:DE:DB:64:0D:4D:C8:93:F5:BF:41:37:A2:E1:EC:BA:87:AD:F8:25:BA:44
+  - package: org.telegram.messenger
+    signature:
+      - source: "Google Play"
+        issue: 498
+        fingerprint: 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
+      - source: "AppVerifier"
+        issue: 498
+        fingerprint: 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
   - package: org.thoughtcrime.securesms
     signature:
       - source: "Google Play"
