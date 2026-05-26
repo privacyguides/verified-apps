@@ -671,6 +671,7 @@ jobs:
     outputs:
       found: ${{ steps.lookup.outputs.found }}
       signature: ${{ steps.lookup.outputs.signature }}
+      allFingerprints: ${{ steps.lookup.outputs.allFingerprints }}
       match: ${{ steps.matches.outputs.status }}
       packageName: ${{ steps.matches.outputs.packageName }}
       infoNote: ${{ steps.combinedNote.outputs.infoNote }}

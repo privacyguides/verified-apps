@@ -26,7 +26,7 @@ inputs:
     required: false
     default: ""
   appverifierSignature:
-    description: Fingerprint(s) from AppVerifier internal database
+    description: Fingerprint(s) from the matched AppVerifier signing configuration
     required: false
     default: ""
   directApkSignature:

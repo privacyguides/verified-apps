@@ -84,8 +84,8 @@ runs:
             related_lines=""
             if [[ -f data.yml ]] && [[ -s data.yml ]]; then
               schema=$(yq -r '.schema // 0' data.yml)
-              if [[ "$schema" != "2" ]]; then
-                echo "Unsupported data.yml schema (expected 2): $schema" >&2
+              if [[ "$schema" != "3" ]]; then
+                echo "Unsupported data.yml schema (expected 3): $schema" >&2
                 exit 1
               fi
               while IFS= read -r row; do
@@ -107,8 +107,10 @@ runs:
                   .packages[]
                   | . as $entry
                   | $entry.signature[]
-                  | (.fingerprint | split("\n") | join("")) as $fp
-                  | {"package": $entry.package, "issue": (.issue // $entry.issue // 0), "fingerprint": $fp} | @json
+                  | . as $sig
+                  | ($sig.fingerprint | split("\n") | join("")) as $fp
+                  | $sig.sources[]
+                  | {"package": $entry.package, "issue": .issue, "fingerprint": $fp} | @json
                 ' data.yml
               )
               related_lines=$(printf '%s' "$related_lines" | sort -u)

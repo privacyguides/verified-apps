@@ -173,43 +173,111 @@ signatures_write_file() {
   printf '%s' "$block" > "$path"
 }
 
-# Write one signature map with a literal-block fingerprint when needed.
-# Optional apk metadata: sha256 (required when apk block is written), link (Direct APK), repo (Custom F-Droid).
-signatures_write_yaml_entry() {
-  local path="$1"
-  local source="$2"
-  local issue="$3"
-  local fp_block="$4"
+# Write JSON to a temp file (used with yq -oy to produce YAML for load()).
+_submission_json_tempfile() {
+  local content="$1"
+  local path="${TMPDIR:-/tmp}/submission-$$-${RANDOM}.json"
+  printf '%s' "$content" > "$path"
+  printf '%s' "$path"
+}
+
+# yq load() on JSON assigns a JSON string scalar in YAML; convert to YAML first.
+_submission_json_to_yaml_tempfile() {
+  local content="$1"
+  local json_file yaml_file
+  json_file=$(_submission_json_tempfile "$content")
+  yaml_file="${json_file%.json}.yaml"
+  yq -oy '.' "$json_file" > "$yaml_file"
+  rm -f "$json_file"
+  printf '%s' "$yaml_file"
+}
+
+# Merge schema-3 signature arrays (grouped by fingerprint, sources deduped by name|issue).
+submission_merge_signature_arrays() {
+  local existing_json="$1"
+  local incoming_json="$2"
+  jq -s '
+    def fp_key($f):
+      ($f | if type == "string" then (split("\n") | join("") | gsub(" "; "")) else "" end);
+    .[0] as $existing | .[1] as $incoming |
+    ($existing + $incoming)
+    | group_by(fp_key(.fingerprint))
+    | map({
+        fingerprint: .[0].fingerprint,
+        sources: (
+          [.[].sources[]]
+          | unique_by(.name + "|" + ((.issue // 0) | tostring))
+        )
+      })
+  ' <<< "$(printf '%s\n%s' "$existing_json" "$incoming_json")"
+}
+
+# Append one source proposal (JSON line) to the proposals file.
+_submission_add_proposal() {
+  local proposals_file="$1"
+  local fp_block="$2"
+  local name="$3"
+  local issue="$4"
   local apk_sha256="${5-}"
   local apk_link="${6-}"
   local apk_repo="${7-}"
 
-  {
-    printf 'source: "%s"\n' "$source"
-    printf 'issue: %s\n' "$issue"
-    if [[ "$fp_block" == *$'\n'* ]]; then
-      echo 'fingerprint: |'
-      while IFS= read -r line || [[ -n "$line" ]]; do
-        [[ -z "$line" ]] && continue
-        printf '  %s\n' "$line"
-      done <<< "$fp_block"
-    else
-      printf 'fingerprint: %s\n' "$fp_block"
-    fi
-    if [[ -n "$apk_sha256" ]]; then
-      echo 'apk:'
-      printf '  sha256: %s\n' "$apk_sha256"
-      if [[ -n "$apk_link" ]]; then
-        printf '  link: "%s"\n' "$apk_link"
-      fi
-      if [[ -n "$apk_repo" ]]; then
-        printf '  repo: "%s"\n' "$apk_repo"
-      fi
-    fi
-  } > "$path"
+  jq -cn \
+    --arg fp "$fp_block" \
+    --arg name "$name" \
+    --argjson issue "$issue" \
+    --arg sha "$apk_sha256" \
+    --arg link "$apk_link" \
+    --arg repo "$apk_repo" \
+    '{
+      fingerprint: $fp,
+      name: $name,
+      issue: $issue,
+      apk: (
+        if $sha == "" and $link == "" and $repo == "" then null
+        else (
+          {}
+          | if $sha != "" then .sha256 = $sha else . end
+          | if $link != "" then .link = $link else . end
+          | if $repo != "" then .repo = $repo else . end
+        )
+        end
+      )
+    }' >> "$proposals_file"
 }
 
-# Build a single package entry (package + signature[]) from store matches.
+# Assemble schema-3 package entry YAML from JSONL proposals.
+_submission_assemble_entry_from_proposals() {
+  local proposals_file="$1"
+  local entry_file="$2"
+  local package="$3"
+  local assembled
+
+  if [[ ! -s "$proposals_file" ]]; then
+    return 1
+  fi
+
+  assembled=$(
+    jq -s '
+      group_by(.fingerprint | (split("\n") | join("") | gsub(" "; "")))
+      | map({
+          fingerprint: .[0].fingerprint,
+          sources: (
+            [.[] | {name, issue} + (if .apk then {apk: .apk} else {} end)]
+            | unique_by(.name + "|" + ((.issue // 0) | tostring))
+          )
+        })
+    ' "$proposals_file"
+  )
+
+  local entry_json
+  entry_json=$(_submission_json_tempfile "$(jq -cn --arg package "$package" --argjson signature "$assembled" \
+    '{package: $package, signature: $signature}')")
+  yq -oy '.' "$entry_json" > "$entry_file"
+  rm -f "$entry_json"
+}
+
+# Build a single package entry (schema 3: fingerprint groups with sources[]) from store matches.
 # Required env: PACKAGE, ISSUE, USER_SIG (raw; formatted internally)
 # Optional env: SUBMITTER_SOURCE, ACC_SIG, ACC_APK_SHA256, FDROID_RESULTS_DIR, CUSTOM_FDROID_REPO_URL,
 #   CUSTOM_FDROID_APK_SHA256, GPLAY_SIG, GPLAY_APK_SHA256, APPVERIFIER_SIG, DIRECT_SIG, DIRECT_APK_URL,
@@ -217,34 +285,30 @@ signatures_write_yaml_entry() {
 # Writes YAML object to $1. Returns 0 when at least one signature was added, 1 otherwise.
 submission_build_entry_file() {
   local entry_file="$1"
-  local user_sig fp_block sig_piece sig_source store_sig repo_name fdroid_source
+  local user_sig fp_block store_sig repo_name fdroid_source proposals_file
   local apk_sha apk_link apk_repo
 
   user_sig="$(signatures_format_block "$USER_SIG")"
+  proposals_file="$(mktemp)"
 
-  export PACKAGE ISSUE
-  yq -n '.package = strenv(PACKAGE) | .signature = []' > "$entry_file"
-
-  _submission_add_signature() {
-    local src="$1"
-    local block="$2"
+  _submission_add_source() {
+    local fp="$1"
+    local name="$2"
     local sha="${3-}"
     local link="${4-}"
     local repo="${5-}"
-    sig_piece="$(mktemp)"
-    signatures_write_yaml_entry "$sig_piece" "$src" "$ISSUE" "$block" "$sha" "$link" "$repo"
-    export SIG_PIECE="$sig_piece"
-    yq -i '.signature += [load(strenv(SIG_PIECE))]' "$entry_file"
-    rm -f "$sig_piece"
+    _submission_add_proposal "$proposals_file" "$fp" "$name" "$ISSUE" "$sha" "$link" "$repo"
   }
 
   if [[ -n "${SUBMITTER_SOURCE:-}" ]]; then
-    _submission_add_signature "$SUBMITTER_SOURCE" "$user_sig"
+    _submission_add_source "$user_sig" "$SUBMITTER_SOURCE"
+    _submission_assemble_entry_from_proposals "$proposals_file" "$entry_file" "$PACKAGE"
+    rm -f "$proposals_file"
     return 0
   fi
 
   if [[ -n "${ACC_SIG:-}" ]] && signatures_equal "$ACC_SIG" "$user_sig"; then
-    _submission_add_signature "Accrescent" "$user_sig" "${ACC_APK_SHA256:-}"
+    _submission_add_source "$user_sig" "Accrescent" "${ACC_APK_SHA256:-}"
   fi
   if [[ -n "${FDROID_RESULTS_DIR:-}" && -d "$FDROID_RESULTS_DIR" ]]; then
     while IFS= read -r result_file; do
@@ -261,23 +325,30 @@ submission_build_entry_file() {
           apk_repo="${CUSTOM_FDROID_REPO_URL:-}"
           apk_sha="${apk_sha:-${CUSTOM_FDROID_APK_SHA256:-}}"
         fi
-        _submission_add_signature "$fdroid_source" "$user_sig" "$apk_sha" "$apk_link" "$apk_repo"
+        fp_block="$(signatures_format_block "$store_sig")"
+        _submission_add_source "$fp_block" "$fdroid_source" "$apk_sha" "$apk_link" "$apk_repo"
       fi
     done < <(find "$FDROID_RESULTS_DIR" -type f -name '*.json' 2>/dev/null | sort)
   fi
   if [[ -n "${GPLAY_SIG:-}" ]] && signatures_equal "$GPLAY_SIG" "$user_sig"; then
-    _submission_add_signature "Google Play" "$user_sig" "${GPLAY_APK_SHA256:-}"
+    fp_block="$(signatures_format_block "$GPLAY_SIG")"
+    _submission_add_source "$fp_block" "Google Play" "${GPLAY_APK_SHA256:-}"
   fi
   if [[ -n "${APPVERIFIER_SIG:-}" ]] && signatures_equal "$APPVERIFIER_SIG" "$user_sig"; then
-    _submission_add_signature "AppVerifier" "$user_sig"
+    fp_block="$(signatures_format_block "$APPVERIFIER_SIG")"
+    _submission_add_source "$fp_block" "AppVerifier"
   fi
   if [[ -n "${DIRECT_SIG:-}" ]] && signatures_equal "$DIRECT_SIG" "$user_sig"; then
-    _submission_add_signature "Direct APK Link" "$user_sig" "${DIRECT_APK_SHA256:-}" "${DIRECT_APK_URL:-}"
+    fp_block="$(signatures_format_block "$DIRECT_SIG")"
+    _submission_add_source "$fp_block" "Direct APK Link" "${DIRECT_APK_SHA256:-}" "${DIRECT_APK_URL:-}"
   fi
 
-  if [[ "$(yq '.signature | length' "$entry_file")" -eq 0 ]]; then
+  if [[ ! -s "$proposals_file" ]]; then
+    rm -f "$proposals_file"
     return 1
   fi
+  _submission_assemble_entry_from_proposals "$proposals_file" "$entry_file" "$PACKAGE"
+  rm -f "$proposals_file"
   return 0
 }
 
@@ -285,25 +356,33 @@ submission_build_entry_file() {
 submission_merge_entry_into_data_yml() {
   local entry_file="$1"
   local data_file="${2:-data.yml}"
+  local existing_json incoming_json merged_json
 
   export PACKAGE
   PACKAGE=$(yq -r '.package' "$entry_file")
-  export ENTRY="$entry_file"
+  incoming_json=$(yq -o=json -I0 '.signature' "$entry_file")
+
   if [[ -f "$data_file" ]] && [[ -s "$data_file" ]]; then
     schema=$(yq -r '.schema // 0' "$data_file")
-    if [[ "$schema" != "2" ]]; then
-      echo "Unsupported data.yml schema (expected 2): $schema" >&2
+    if [[ "$schema" != "3" ]]; then
+      echo "Unsupported data.yml schema (expected 3): $schema" >&2
       return 1
     fi
     if yq -e '.packages[] | select(.package == strenv(PACKAGE))' "$data_file" >/dev/null 2>&1; then
-      yq -i 'with(.packages[] | select(.package == strenv(PACKAGE)); .signature += load(strenv(ENTRY)).signature)' "$data_file"
-      yq -i 'with(.packages[] | select(.package == strenv(PACKAGE)); .signature |= unique_by(.source + "|" + .fingerprint))' "$data_file"
+      existing_json=$(yq -o=json -I0 '.packages[] | select(.package == strenv(PACKAGE)) | .signature' "$data_file")
+      merged_json=$(submission_merge_signature_arrays "$existing_json" "$incoming_json")
+      merged_file=$(_submission_json_to_yaml_tempfile "$merged_json")
+      export MERGED_FILE="$merged_file"
+      yq -i 'with(.packages[] | select(.package == strenv(PACKAGE)); .signature = load(strenv(MERGED_FILE)))' "$data_file"
+      rm -f "$merged_file"
     else
+      export ENTRY="$entry_file"
       yq -i '.packages += [load(strenv(ENTRY))]' "$data_file"
     fi
     yq -i '.packages |= sort_by(.package)' "$data_file"
   else
-    yq -n '.schema = 2 | .packages = [load(strenv(ENTRY))]' > "$data_file"
+    export ENTRY="$entry_file"
+    yq -n '.schema = 3 | .packages = [load(strenv(ENTRY))]' > "$data_file"
   fi
 }
 
@@ -411,7 +490,7 @@ submission_format_package_merge_diff() {
   if [[ -f data.yml ]] && [[ -s data.yml ]]; then
     cp data.yml "$work_data"
   else
-    yq -n '.schema = 2 | .packages = []' > "$work_data"
+    yq -n '.schema = 3 | .packages = []' > "$work_data"
   fi
   submission_merge_entry_into_data_yml "$entry_file" "$work_data"
   _submission_write_package_list_item "$work_data" "$after_file"
