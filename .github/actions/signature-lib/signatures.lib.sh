@@ -244,6 +244,80 @@ _submission_write_package_list_item() {
   fi
 }
 
+# Line exists in a package list-item file (exact match).
+_submission_line_in_file() {
+  local line="$1"
+  local file="$2"
+  [[ -n "$line" ]] && grep -Fxq -- "$line" "$file" 2>/dev/null
+}
+
+# Remove the first exact occurrence of line from pool file; return 0 if one was removed.
+_submission_consume_line_from_pool() {
+  local line="$1"
+  local pool="$2"
+  local tmp found=false pool_line
+
+  tmp="$(mktemp)"
+  while IFS= read -r pool_line || [[ -n "$pool_line" ]]; do
+    if [[ "$found" == false && "$pool_line" == "$line" ]]; then
+      found=true
+      continue
+    fi
+    printf '%s\n' "$pool_line" >> "$tmp"
+  done < "$pool"
+  mv "$tmp" "$pool"
+  [[ "$found" == true ]]
+}
+
+# GFM ```diff with the full after stanza; unchanged lines use ' ', new lines use '+'.
+_submission_emit_append_only_package_diff() {
+  local before_file="$1"
+  local after_file="$2"
+  local before_pool before_count after_count line
+
+  before_count=$(wc -l < "$before_file" | tr -d '[:space:]')
+  after_count=$(wc -l < "$after_file" | tr -d '[:space:]')
+  before_pool="$(mktemp)"
+  cp "$before_file" "$before_pool"
+
+  printf '%s\n' "--- data.yml (current)" "+++ data.yml (after commit)" "@@ -1,${before_count} +1,${after_count} @@"
+  while IFS= read -r line || [[ -n "$line" ]]; do
+    if _submission_consume_line_from_pool "$line" "$before_pool"; then
+      printf ' %s\n' "$line"
+    else
+      printf '+%s\n' "$line"
+    fi
+  done < "$after_file"
+  rm -f "$before_pool"
+}
+
+# GFM ```diff for a package that is not in data.yml yet (all lines added).
+_submission_emit_new_package_diff() {
+  local after_file="$1"
+  local after_count line
+
+  after_count=$(wc -l < "$after_file" | tr -d '[:space:]')
+  printf '%s\n' "--- data.yml (current)" "+++ data.yml (after commit)" "@@ -0,0 +1,${after_count} @@"
+  while IFS= read -r line || [[ -n "$line" ]]; do
+    printf '+%s\n' "$line"
+  done < "$after_file"
+}
+
+# True when every non-empty line in before_file appears unchanged in after_file.
+_submission_before_is_subset_of_after() {
+  local before_file="$1"
+  local after_file="$2"
+  local line
+
+  while IFS= read -r line || [[ -n "$line" ]]; do
+    [[ -z "$line" ]] && continue
+    if ! _submission_line_in_file "$line" "$after_file"; then
+      return 1
+    fi
+  done < "$before_file"
+  return 0
+}
+
 # Unified diff (GFM ```diff) of the package entry before vs after merging store matches.
 submission_format_package_merge_diff() {
   local entry_file="$1"
@@ -273,9 +347,13 @@ submission_format_package_merge_diff() {
   fi
 
   if [[ ! -s "$before_file" ]]; then
-    diff_out=$(diff -u --label "data.yml (current)" --label "data.yml (after commit)" /dev/null "$after_file" || true)
+    diff_out=$(_submission_emit_new_package_diff "$after_file")
+  elif _submission_before_is_subset_of_after "$before_file" "$after_file"; then
+    diff_out=$(_submission_emit_append_only_package_diff "$before_file" "$after_file")
   else
-    diff_out=$(diff -u --label "data.yml (current)" --label "data.yml (after commit)" "$before_file" "$after_file" || true)
+    local context_lines
+    context_lines=$(wc -l < "$after_file" | tr -d '[:space:]')
+    diff_out=$(diff -u -U "$context_lines" --label "data.yml (current)" --label "data.yml (after commit)" "$before_file" "$after_file" || true)
   fi
   rm -f "$before_file" "$after_file" "$work_data"
   printf '%s\n' "$diff_out"
