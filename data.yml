@@ -304,3 +304,10 @@ packages:
       - source: "Direct APK Link"
         issue: 406
         fingerprint: C8:76:8D:2C:EA:0C:4B:62:2E:41:9B:4B:47:15:98:19:46:82:1E:4E:BC:03:5F:B4:17:76:CA:D3:95:A7:F6:8E
+  - package: se.onlinepizza
+    signature:
+      - source: "Google Play"
+        issue: 398
+        fingerprint: |
+          C5:E7:42:0C:CB:3F:73:25:92:C6:30:F9:DF:98:93:DB:28:A8:38:6A:89:A9:67:DC:68:86:E0:22:9D:C2:98:5B
+          DB:E7:28:29:D2:84:37:10:75:C7:C2:78:F5:E3:9A:E5:55:5E:96:38:F8:C7:5F:AE:9D:C7:B9:3C:50:55:75:54
