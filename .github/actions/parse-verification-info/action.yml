@@ -114,10 +114,6 @@ runs:
         fi
 
         echo "packageName=$packageName" >> "$GITHUB_OUTPUT"
-        {
-          echo 'packageSignature<<EOF'
-          printf '%s\n' "$packageSignature"
-          echo EOF
-        } >> "$GITHUB_OUTPUT"
+        gha_write_multiline_output packageSignature "$packageSignature"
         echo "apkUrl=$apk_url" >> "$GITHUB_OUTPUT"
         echo "customFdroidRepoUrl=$custom_fdroid_repo_url" >> "$GITHUB_OUTPUT"

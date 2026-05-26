@@ -79,11 +79,7 @@ runs:
         fi
 
         if [[ -n "$info_note" ]]; then
-          {
-            echo 'infoNote<<EOF'
-            echo "$info_note"
-            echo EOF
-          } >> "$GITHUB_OUTPUT"
+          gha_write_multiline_output infoNote "$info_note"
         else
           echo "infoNote=" >> "$GITHUB_OUTPUT"
         fi

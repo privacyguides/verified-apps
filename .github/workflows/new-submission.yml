@@ -718,12 +718,8 @@ jobs:
             note+="$MATCH_NOTE"
           fi
           if [[ -n "$note" ]]; then
-            {
-              echo 'infoNote<<EOF'
-              printf '%s' "$note"
-              echo
-              echo EOF
-            } >> "$GITHUB_OUTPUT"
+            source .github/actions/signature-lib/signatures.lib.sh
+            gha_write_multiline_output infoNote "$note"
           else
             echo "infoNote=" >> "$GITHUB_OUTPUT"
           fi
@@ -1368,11 +1364,9 @@ jobs:
         run: |
           set -euo pipefail
           name=$(gh api "users/${SENDER_LOGIN}" --jq 'if .name then .name else .login end')
-          {
-            echo 'trailer<<EOF'
-            printf 'Co-authored-by: %s <%s+%s@users.noreply.github.com>\n' "$name" "$SENDER_ID" "$SENDER_LOGIN"
-            echo EOF
-          } >> "$GITHUB_OUTPUT"
+          source .github/actions/signature-lib/signatures.lib.sh
+          trailer=$(printf 'Co-authored-by: %s <%s+%s@users.noreply.github.com>' "$name" "$SENDER_ID" "$SENDER_LOGIN")
+          gha_write_multiline_output trailer "$trailer"
 
       - name: Create PR
         id: create-pr
@@ -1466,11 +1460,9 @@ jobs:
         run: |
           set -euo pipefail
           name=$(gh api "users/${SENDER_LOGIN}" --jq 'if .name then .name else .login end')
-          {
-            echo 'trailer<<EOF'
-            printf 'Co-authored-by: %s <%s+%s@users.noreply.github.com>\n' "$name" "$SENDER_ID" "$SENDER_LOGIN"
-            echo EOF
-          } >> "$GITHUB_OUTPUT"
+          source .github/actions/signature-lib/signatures.lib.sh
+          trailer=$(printf 'Co-authored-by: %s <%s+%s@users.noreply.github.com>' "$name" "$SENDER_ID" "$SENDER_LOGIN")
+          gha_write_multiline_output trailer "$trailer"
 
       - name: Commit submission to main
         id: commit

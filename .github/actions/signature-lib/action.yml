@@ -90,9 +90,12 @@ runs:
               fi
               while IFS= read -r row; do
                 [[ -z "$row" ]] && continue
-                pkg=$(printf '%s\n' "$row" | jq -r '.package')
-                issue=$(printf '%s\n' "$row" | jq -r '.issue')
-                fp=$(printf '%s\n' "$row" | jq -r '.fingerprint')
+                if ! printf '%s' "$row" | jq -e . >/dev/null 2>&1; then
+                  continue
+                fi
+                pkg=$(printf '%s' "$row" | jq -r '.package')
+                issue=$(printf '%s' "$row" | jq -r '.issue')
+                fp=$(printf '%s' "$row" | jq -r '.fingerprint')
                 [[ -z "$pkg" || -z "$fp" || -z "$issue" || "$issue" == "null" ]] && continue
                 [[ "$pkg" == "$PACKAGE_NAME" ]] && continue
                 if ! signatures_overlap "$PACKAGE_SIGNATURE" "$fp"; then
@@ -104,16 +107,13 @@ runs:
                   .packages[]
                   | . as $entry
                   | $entry.signature[]
-                  | {"package": $entry.package, "issue": (.issue // $entry.issue // 0), "fingerprint": .fingerprint} | @json
+                  | (.fingerprint | split("\n") | join("")) as $fp
+                  | {"package": $entry.package, "issue": (.issue // $entry.issue // 0), "fingerprint": $fp} | @json
                 ' data.yml
               )
               related_lines=$(printf '%s' "$related_lines" | sort -u)
             fi
-            {
-              echo 'relatedLines<<EOF'
-              printf '%s' "$related_lines"
-              echo EOF
-            } >> "$GITHUB_OUTPUT"
+            gha_write_multiline_output relatedLines "$related_lines"
             ;;
           *)
             echo "Unknown operation: $OPERATION" >&2

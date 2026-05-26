@@ -96,10 +96,6 @@ runs:
         echo "Certificate DN: ${cert_dn:-unknown}"
         echo "SHA-256 digest(s):"
         printf '%s\n' "$formatted_block"
-        {
-          echo 'signature<<EOF'
-          printf '%s\n' "$formatted_block"
-          echo EOF
-        } >> "$GITHUB_OUTPUT"
+        gha_write_multiline_output signature "$formatted_block"
         echo "certificateDn=$cert_dn" >> "$GITHUB_OUTPUT"
         echo "signerKind=$signer_kind" >> "$GITHUB_OUTPUT"

@@ -48,13 +48,6 @@ runs:
         path: /home/runner/.cache/fdroidcl/cache-gob
         key: ${{ steps.fdroidRepoCacheKey.outputs.cacheKey }}
 
-    - name: Restore APK cache
-      id: fDroidApkCache
-      uses: actions/cache@v5
-      with:
-        path: /home/runner/.cache/fdroidcl/apks
-        key: ${{ steps.fdroidRepoCacheKey.outputs.cacheKey }}-${{ inputs.packageName }}
-
     - shell: bash
       run: |
         set -euo pipefail
@@ -67,11 +60,14 @@ runs:
       run: |
         set -euo pipefail
         ./${{ steps.fdroidcl.outputs.bin }} repo add action "$FDROID_REPO_URL"
-
-    - shell: bash
-      run: |
-        set -euo pipefail
         ./${{ steps.fdroidcl.outputs.bin }} update
+
+    - name: Restore APK cache
+      id: fDroidApkCache
+      uses: actions/cache@v5
+      with:
+        path: /home/runner/.cache/fdroidcl/apks
+        key: ${{ steps.fdroidRepoCacheKey.outputs.cacheKey }}-${{ inputs.packageName }}-${{ hashFiles('**/pom.xml') }}
 
     - shell: bash
       id: download

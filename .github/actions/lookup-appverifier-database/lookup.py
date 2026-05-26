@@ -57,10 +57,13 @@ def write_github_output(name: str, value: str) -> None:
     if not output_path:
         return
     with open(output_path, "a", encoding="utf-8") as handle:
-        if "\n" in value:
-            handle.write(f"{name}<<EOF\n{value}\nEOF\n")
-        else:
+        if "\n" not in value:
             handle.write(f"{name}={value}\n")
+            return
+        delimiter = "GHA_DELIM"
+        while delimiter in value:
+            delimiter = f"GHA_DELIM_{os.getpid()}_{id(value)}"
+        handle.write(f"{name}<<{delimiter}\n{value}\n{delimiter}\n")
 
 
 def normalize_signature_set(text: str) -> list[str]:

@@ -2,6 +2,30 @@
 # Sourced by composite actions: source "${GITHUB_ACTION_PATH}/signatures.lib.sh"
 # or sibling actions: source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
 
+# Write a potentially multiline value to GITHUB_OUTPUT without leaving a half-open heredoc.
+gha_write_multiline_output() {
+  local name="$1"
+  local value="${2-}"
+  local delim
+
+  [[ -n "${GITHUB_OUTPUT:-}" ]] || return 0
+
+  if [[ "$value" != *$'\n'* ]]; then
+    printf '%s=%s\n' "$name" "$value" >> "$GITHUB_OUTPUT"
+    return 0
+  fi
+
+  delim="GHA_DELIM_${RANDOM}_${RANDOM}"
+  while [[ "$value" == *"$delim"* ]]; do
+    delim="GHA_DELIM_${RANDOM}_${RANDOM}"
+  done
+  {
+    printf '%s<<%s\n' "$name" "$delim"
+    printf '%s\n' "$value"
+    printf '%s\n' "$delim"
+  } >> "$GITHUB_OUTPUT"
+}
+
 is_valid_package_name() {
   [[ "$1" =~ ^[a-zA-Z][a-zA-Z0-9_]*(\.[a-zA-Z][a-zA-Z0-9_]*)+$ ]]
 }

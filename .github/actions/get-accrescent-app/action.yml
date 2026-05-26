@@ -33,13 +33,19 @@ runs:
         PACKAGE_NAME: ${{ inputs.packageName }}
         ACTION_PATH: ${{ env.ACTION_PATH }}
       run: |
+        source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
         python3 -m pip install --disable-pip-version-check -q -r "$ACTION_PATH/requirements.txt"
         stub="$ACTION_PATH/gen/accrescent/appstore/v1/app_service_pb2_grpc.py"
         if [ ! -f "$stub" ]; then
           python3 "$ACTION_PATH/generate.py"
         fi
-        {
-          echo 'downloadInfo<<EOF'
-          python3 "$ACTION_PATH/get_app_download_info.py" "$PACKAGE_NAME"
-          echo EOF
-        } >> "$GITHUB_OUTPUT"
+        set +e
+        download_info="$(python3 "$ACTION_PATH/get_app_download_info.py" "$PACKAGE_NAME")"
+        rc=$?
+        set -e
+        if [[ "$rc" -eq 0 ]]; then
+          gha_write_multiline_output downloadInfo "$download_info"
+        else
+          echo "downloadInfo=" >> "$GITHUB_OUTPUT"
+          exit "$rc"
+        fi
