@@ -180,6 +180,11 @@ packages:
       - source: F-Droid
         issue: 53
         fingerprint: 5E:C0:A5:31:3A:A4:35:58:EE:75:B2:0B:58:CC:D8:19:4C:DB:F0:66:DF:94:A4:3B:A2:88:D9:33:D6:0B:86:CE
+  - package: hu.webvalto.bkkfutar
+    signature:
+      - source: "Google Play"
+        issue: 394
+        fingerprint: D5:F6:99:F5:5B:E2:80:47:00:FF:00:9A:9E:16:18:B4:00:23:DD:A9:73:B8:3D:DE:AD:8E:9E:C3:31:DC:3D:3C
   - package: im.molly.app
     signature:
       - source: "Accrescent"
