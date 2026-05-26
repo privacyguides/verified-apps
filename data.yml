@@ -193,6 +193,20 @@ packages:
       - source: "AppVerifier"
         issue: 62
         fingerprint: 6A:A8:0F:DF:4A:8C:C1:37:37:CF:B4:34:FC:0C:DE:48:6F:09:CF:8F:CD:A2:1A:67:BE:A5:EE:1C:A2:70:08:86
+  - package: it.fast4x.riplay
+    signature:
+      - source: "Accrescent"
+        issue: 141
+        fingerprint: 97:62:E9:AB:73:2B:0A:1C:F3:C7:21:16:84:50:53:3C:8B:19:05:AE:1C:9E:65:8F:48:8A:BB:84:DE:BE:F2:FB
+      - source: "F-Droid"
+        issue: 141
+        fingerprint: 97:62:E9:AB:73:2B:0A:1C:F3:C7:21:16:84:50:53:3C:8B:19:05:AE:1C:9E:65:8F:48:8A:BB:84:DE:BE:F2:FB
+      - source: "F-Droid (IzzyOnDroid)"
+        issue: 141
+        fingerprint: 97:62:E9:AB:73:2B:0A:1C:F3:C7:21:16:84:50:53:3C:8B:19:05:AE:1C:9E:65:8F:48:8A:BB:84:DE:BE:F2:FB
+      - source: "Direct APK Link"
+        issue: 141
+        fingerprint: 97:62:E9:AB:73:2B:0A:1C:F3:C7:21:16:84:50:53:3C:8B:19:05:AE:1C:9E:65:8F:48:8A:BB:84:DE:BE:F2:FB
   - package: me.easyapps.easynotes
     signature:
       - source: "Accrescent"
