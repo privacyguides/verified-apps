@@ -188,6 +188,8 @@ _submission_json_to_yaml_tempfile() {
   json_file=$(_submission_json_tempfile "$content")
   yaml_file="${json_file%.json}.yaml"
   yq -oy '.' "$json_file" > "$yaml_file"
+  # Force multiline fingerprints to render as literal blocks for readability.
+  yq -i '(.[] | select(.fingerprint | type == "!!str" and contains("\n")) | .fingerprint) style="literal"' "$yaml_file" 2>/dev/null || true
   rm -f "$json_file"
   printf '%s' "$yaml_file"
 }
@@ -274,6 +276,8 @@ _submission_assemble_entry_from_proposals() {
   entry_json=$(_submission_json_tempfile "$(jq -cn --arg package "$package" --argjson signature "$assembled" \
     '{package: $package, signature: $signature}')")
   yq -oy '.' "$entry_json" > "$entry_file"
+  # Force multiline fingerprints to render as literal blocks for readability.
+  yq -i '(.signature[] | select(.fingerprint | type == "!!str" and contains("\n")) | .fingerprint) style="literal"' "$entry_file" 2>/dev/null || true
   rm -f "$entry_json"
 }
 

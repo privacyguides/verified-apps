@@ -8,7 +8,7 @@ Privacy Guides is building a database of Android app signing certificate hashes 
 
 We need you to submit any apps you have installed on your phone [in a new GitHub issue here](https://github.com/privacyguides/verified-apps/issues/new?template=app-submission.yml).
 
-Please submit any apps you'd like, no need to check for existing submissions. We will automatically close issues that are duplicates, but the existence of duplicate issues will help us count how many people may be vouching for a particular submission. We also expect duplicate entries for the same package, because the same package may have a different signature in different app stores.
+Please submit any apps you'd like, no need to check for existing submissions. We will automatically close issues that are duplicates, but the existence of duplicate issues will help us count how many people may be vouching for a particular submission. We also assume we will see duplicate entries for the same package, because the same package may have a different signature in different app stores.
 
 ## Automated Checks
 
@@ -67,3 +67,81 @@ If you use this data in your app, the [MIT License](./LICENSE.txt) at minimum re
 - Providing a link to this repository in your app's about page or documentation to credit the project.
 
 You may not imply endorsement by Privacy Guides or the project for your app or project by using this data, but you are free to say "This app uses the Verified Apps database from Privacy Guides" or similar.
+
+## Schema
+
+```yaml
+schema: # Required. Current version of the data file's schema.
+packages: # Required. Contains all verification data.
+  - package: # Required. Package's Android ID (e.g. org.thoughtcrime.securesms).
+    signature: # Required.
+      - fingerprint: # Required. SHA-256 hash of the app's signing certificate. Note that this may be a multiline string for certain apps, see `com.google.android.inputmethod.latin` in data.yml for example.
+        sources:
+          - name: # Required. Name of the source we obtained the app from (see full list below).
+            issue: # Optional. Number of the GitHub issue where the app was submitted, can be used by users to find additional information about the verification.
+            apk: # Optional.
+              sha256: # Optional. SHA-256 hash of the APK *file* we verified.
+              link: # Required only for "Direct APK Link" entries. Otherwise will not be present.
+              repo: # Required only for custom F-Droid entries. Otherwise will not be present.
+```
+
+
+Each package will have a list of signing key fingerprints. Multiple fingerprints for apps is generally expected, because many apps use Google Play App Signing or are built by F-Droid without reproducible builds, meaning they are signed by the respective app store instead of directly by the developer.
+
+With each key fingerprint are the sources where we found that signing key.
+
+### Source Names
+
+We always test submissions against five mainstream app stores. If the submission matches what is found in that app store, we will list it and the `name:` value will always be one of the following:
+
+- `AppVerifier` - Signatures which are already in [AppVerifier's own internal database](https://github.com/rufusprice/AppVerifier/blob/master/app/src/main/kotlin/dev/soupslurpr/appverifier/InternalVerificationInfoDatabase.kt) (which no longer accepts submissions).
+- `Accrescent` - Signatures we checked against the APK file in Accrescent's app store repository.
+- `F-Droid` - Signatures we checked against the APK file in the **official** (default) F-Droid repository.
+- `F-Droid (IzzyOnDroid)` - Signatures we checked against the APK file in the [IzzyOnDroid](https://izzyondroid.org/) F-Droid repository.
+- `Google Play` - Signatures we checked against the APK file in Google Play.
+
+Additionally, we check direct links to APK files (e.g. GitHub Releases) and custom F-Droid repos (i.e. developer-run) when provided by the submitter. We will include the `link:` or `repo:` key respectively to assist others in finding where exactly the verification was obtained from if it was not one of the five well-known sources.
+
+Signatures we obtained from a direct APK link will currently always have the `name:` value set to `Direct APK Link`.
+
+Signatures we obtained from a custom F-Droid repo will always have a `name:` value formatted as `F-Droid (example.com)` where `example.com` is the FQDN of the custom F-Droid repository. For example, the repository `https://app.simplex.chat/fdroid/repo` will be listed under `F-Droid (app.simplex.chat)`.
+
+Finally, any other sources not described above will be named `Custom (example)` where `example` can be any ASCII printable character (including spaces).
+
+### Example
+
+```yaml
+schema: 3
+packages:
+  - package: chat.simplex.app
+    signature:
+      - fingerprint: 3C:52:C4:FD:3C:AD:1C:07:C9:B0:0A:70:80:E3:58:FA:B9:FE:FC:B8:AF:5A:EC:14:77:65:F1:6D:0F:21:AD:85
+        sources:
+          - name: AppVerifier
+            issue: 493
+          - name: Direct APK Link
+            issue: 493
+            apk:
+              sha256: 391f3560a0fad696be5a6b3efde9544a1cf4d3a42a8d6eed09f1cb8c854ccff8
+              link: https://github.com/simplex-chat/simplex-chat/releases/latest/download/simplex-aarch64.apk
+          - name: F-Droid (app.simplex.chat)
+            issue: 493
+            apk:
+              repo: https://app.simplex.chat/fdroid/repo?fingerprint=9F358FF284D1F71656A2BFAF0E005DEAE6AA14143720E089F11FF2DDCFEB01BA
+      - fingerprint: 5E:3E:DC:C2:00:FB:A8:D5:F4:88:F3:CA:4C:32:5B:05:78:C5:6A:9C:03:A1:CC:B5:92:9C:D7:5C:7E:57:E2:4D
+        sources:
+          - name: AppVerifier
+            issue: 565
+          - name: Google Play
+            issue: 565
+            apk:
+              sha256: 95e555c92391049e08df56b712cea59769e3d0ac4276c0ca649814a03e7b2671
+      - fingerprint: AE:C1:95:DC:FD:46:14:BD:3A:91:EC:26:D1:D5:14:C8:75:71:C5:CC:8D:CF:48:08:3F:92:83:14:3C:A2:B9:A6
+        sources:
+          - name: AppVerifier
+            issue: 564
+          - name: F-Droid
+            issue: 564
+            apk:
+              sha256: 6186c80da39dd7566e1c64cee096b0623d8dfb171627d50525f64dd420ed9345
+```
