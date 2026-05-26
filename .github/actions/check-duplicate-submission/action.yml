@@ -5,11 +5,19 @@ inputs:
     description: Android application ID
     required: true
   packageSignature:
-    description: Colon-separated SHA-256 certificate fingerprint
+    description: One or more colon-separated SHA-256 fingerprints (newline-separated when multiple)
     required: true
   currentIssue:
     description: Issue number for the submission being checked
     required: true
+  directApkUrl:
+    description: Optional direct APK URL from the submission; skips duplicate detection when set
+    required: false
+    default: ""
+  customFdroidRepoUrl:
+    description: Optional custom F-Droid repository URL; skips duplicate detection when set
+    required: false
+    default: ""
 outputs:
   isDuplicate:
     description: Whether a duplicate was found
@@ -27,44 +35,21 @@ runs:
         PACKAGE: ${{ inputs.packageName }}
         SIGNATURE: ${{ inputs.packageSignature }}
         CURRENT_ISSUE: ${{ inputs.currentIssue }}
+        DIRECT_APK_URL: ${{ inputs.directApkUrl }}
+        CUSTOM_FDROID_REPO_URL: ${{ inputs.customFdroidRepoUrl }}
         GH_TOKEN: ${{ github.token }}
         GH_REPO: ${{ github.repository }}
       run: |
         set -euo pipefail
+        source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
 
         echo "isDuplicate=false" >> "$GITHUB_OUTPUT"
+        echo "duplicateOf=" >> "$GITHUB_OUTPUT"
 
-        is_valid_package_name() {
-          [[ "$1" =~ ^[a-z][a-z0-9_]*(\.[a-z][a-z0-9_]+)+$ ]]
-        }
-
-        is_valid_sha256_colon() {
-          [[ "$1" =~ ^([0-9A-Fa-f]{2}:){31}[0-9A-Fa-f]{2}$ ]]
-        }
-
-        parse_verification_text() {
-          local text="$1"
-          local line pkg="" sig=""
-
-          while IFS= read -r line || [[ -n "$line" ]]; do
-            line="${line//$'\r'/}"
-            line="${line#"${line%%[![:space:]]*}"}"
-            line="${line%"${line##*[![:space:]]}"}"
-            [[ -z "$line" ]] && continue
-            [[ "$line" =~ ^\`\`\` ]] && continue
-
-            if is_valid_package_name "$line" && [[ -z "$pkg" ]]; then
-              pkg="$line"
-            elif is_valid_sha256_colon "$line" && [[ -z "$sig" ]]; then
-              sig=$(printf '%s' "$line" | tr '[:lower:]' '[:upper:]')
-            fi
-          done <<< "$text"
-
-          if [[ -z "$pkg" || -z "$sig" ]]; then
-            return 1
-          fi
-          printf '%s\n%s\n' "$pkg" "$sig"
-        }
+        if [[ -n "$DIRECT_APK_URL" || -n "$CUSTOM_FDROID_REPO_URL" ]]; then
+          echo "Skipping duplicate check: submission includes a direct APK link and/or custom F-Droid repository." >&2
+          exit 0
+        fi
 
         parse_issue_body() {
           local body="$1"
@@ -77,21 +62,34 @@ runs:
           parse_verification_text "$block"
         }
 
-        export PACKAGE SIGNATURE
+        user_sigs=$(signatures_normalize "$SIGNATURE")
         duplicate_of=""
 
         if [[ -f data.yml ]] && [[ -s data.yml ]]; then
-          duplicate_of=$(
+          schema=$(yq -r '.schema // 0' data.yml)
+          if [[ "$schema" != "2" ]]; then
+            echo "Unsupported data.yml schema (expected 2): $schema" >&2
+            exit 1
+          fi
+          while IFS= read -r row; do
+            [[ -z "$row" ]] && continue
+            issue_num=$(printf '%s\n' "$row" | jq -r '.issue')
+            stored_fp=$(printf '%s\n' "$row" | jq -r '.fingerprint')
+            [[ -z "$issue_num" || "$issue_num" == "null" || -z "$stored_fp" ]] && continue
+            if signatures_equal "$user_sigs" "$stored_fp"; then
+              if [[ -z "$duplicate_of" || "$issue_num" -lt "$duplicate_of" ]]; then
+                duplicate_of="$issue_num"
+              fi
+            fi
+          done < <(
             yq -r '
-              .[]
+              .packages[]
               | select(.package == strenv(PACKAGE))
               | . as $entry
               | $entry.signature[]
-              | select((.fingerprint | upcase) == strenv(SIGNATURE))
-              | (.issue // $entry.issue)
-            ' data.yml | sort -n | head -n1
+              | {"issue": (.issue // $entry.issue // 0), "fingerprint": .fingerprint} | @json
+            ' data.yml
           )
-          [[ "$duplicate_of" == "null" ]] && duplicate_of=""
         fi
 
         if [[ -z "$duplicate_of" ]]; then
@@ -104,9 +102,9 @@ runs:
               continue
             fi
             issue_pkg=$(printf '%s\n' "$parsed" | sed -n '1p')
-            issue_sig=$(printf '%s\n' "$parsed" | sed -n '2p')
+            issue_sigs=$(printf '%s\n' "$parsed" | tail -n +2)
 
-            if [[ "$issue_pkg" == "$PACKAGE" && "$issue_sig" == "$SIGNATURE" ]]; then
+            if [[ "$issue_pkg" == "$PACKAGE" ]] && signatures_equal "$user_sigs" "$issue_sigs"; then
               if [[ -z "$duplicate_of" || "$issue_num" -lt "$duplicate_of" ]]; then
                 duplicate_of="$issue_num"
               fi

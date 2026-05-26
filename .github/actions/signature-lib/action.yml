@@ -1,0 +1,122 @@
+name: Signature utilities
+description: Validate, compare, and format APK certificate fingerprint sets
+inputs:
+  operation:
+    description: validate-submission, signatures-equal, signatures-overlap, or find-related-packages
+    required: true
+  packageName:
+    description: Android application ID (validate-submission)
+    required: false
+    default: ""
+  packageSignature:
+    description: Fingerprint text (one or more lines)
+    required: false
+    default: ""
+  signatureA:
+    description: First fingerprint set (signatures-equal, signatures-overlap)
+    required: false
+    default: ""
+  signatureB:
+    description: Second fingerprint set (signatures-equal, signatures-overlap)
+    required: false
+    default: ""
+outputs:
+  result:
+    description: "true or false for comparison operations"
+    value: ${{ steps.run.outputs.result }}
+  relatedLines:
+    description: Markdown list of other packages sharing a fingerprint (find-related-packages)
+    value: ${{ steps.run.outputs.relatedLines }}
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      id: run
+      env:
+        OPERATION: ${{ inputs.operation }}
+        PACKAGE_NAME: ${{ inputs.packageName }}
+        PACKAGE_SIGNATURE: ${{ inputs.packageSignature }}
+        SIGNATURE_A: ${{ inputs.signatureA }}
+        SIGNATURE_B: ${{ inputs.signatureB }}
+      run: |
+        set -euo pipefail
+        source "${GITHUB_ACTION_PATH}/signatures.lib.sh"
+
+        echo "result=false" >> "$GITHUB_OUTPUT"
+
+        case "$OPERATION" in
+          validate-submission)
+            errors=0
+            if ! is_valid_package_name "$PACKAGE_NAME"; then
+              echo "Invalid packageName: $PACKAGE_NAME" >&2
+              errors=1
+            fi
+            sig_count=0
+            while IFS= read -r fp; do
+              [[ -z "$fp" ]] && continue
+              sig_count=$((sig_count + 1))
+              if ! is_valid_sha256_colon "$fp"; then
+                echo "Invalid packageSignature line: $fp" >&2
+                errors=1
+              fi
+            done < <(signatures_normalize "$PACKAGE_SIGNATURE")
+            if (( sig_count == 0 )); then
+              echo "Invalid packageSignature: no fingerprints found" >&2
+              errors=1
+            fi
+            if (( errors )); then
+              exit 1
+            fi
+            echo "result=true" >> "$GITHUB_OUTPUT"
+            ;;
+          signatures-equal)
+            if signatures_equal "$SIGNATURE_A" "$SIGNATURE_B"; then
+              echo "result=true" >> "$GITHUB_OUTPUT"
+            fi
+            ;;
+          signatures-overlap)
+            if signatures_overlap "$SIGNATURE_A" "$SIGNATURE_B"; then
+              echo "result=true" >> "$GITHUB_OUTPUT"
+            fi
+            ;;
+          find-related-packages)
+            related_lines=""
+            if [[ -f data.yml ]] && [[ -s data.yml ]]; then
+              schema=$(yq -r '.schema // 0' data.yml)
+              if [[ "$schema" != "2" ]]; then
+                echo "Unsupported data.yml schema (expected 2): $schema" >&2
+                exit 1
+              fi
+              while IFS= read -r row; do
+                [[ -z "$row" ]] && continue
+                pkg=$(printf '%s\n' "$row" | jq -r '.package')
+                issue=$(printf '%s\n' "$row" | jq -r '.issue')
+                fp=$(printf '%s\n' "$row" | jq -r '.fingerprint')
+                [[ -z "$pkg" || -z "$fp" || -z "$issue" || "$issue" == "null" ]] && continue
+                [[ "$pkg" == "$PACKAGE_NAME" ]] && continue
+                if ! signatures_overlap "$PACKAGE_SIGNATURE" "$fp"; then
+                  continue
+                fi
+                related_lines+="- ${pkg} from #${issue}"$'\n'
+              done < <(
+                yq -r '
+                  .packages[]
+                  | . as $entry
+                  | $entry.signature[]
+                  | {"package": $entry.package, "issue": (.issue // $entry.issue // 0), "fingerprint": .fingerprint} | @json
+                ' data.yml
+              )
+              related_lines=$(printf '%s' "$related_lines" | sort -u)
+            fi
+            {
+              echo 'relatedLines<<EOF'
+              printf '%s' "$related_lines"
+              echo EOF
+            } >> "$GITHUB_OUTPUT"
+            ;;
+          *)
+            echo "Unknown operation: $OPERATION" >&2
+            exit 1
+            ;;
+        esac

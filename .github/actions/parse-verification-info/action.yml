@@ -14,8 +14,14 @@ outputs:
     description: Android application ID
     value: ${{ steps.parse.outputs.packageName }}
   packageSignature:
-    description: Colon-separated SHA-256 certificate fingerprint
+    description: One or more colon-separated SHA-256 fingerprints (newline-separated when multiple)
     value: ${{ steps.parse.outputs.packageSignature }}
+  apkUrl:
+    description: Optional direct HTTPS link to an APK from the issue form
+    value: ${{ steps.parse.outputs.apkUrl }}
+  customFdroidRepoUrl:
+    description: Optional HTTPS URL to a custom F-Droid repository from the issue form
+    value: ${{ steps.parse.outputs.customFdroidRepoUrl }}
 
 runs:
   using: composite
@@ -27,38 +33,7 @@ runs:
         ISSUE_BODY: ${{ inputs.issueBody }}
       run: |
         set -euo pipefail
-
-        is_valid_package_name() {
-          [[ "$1" =~ ^[a-z][a-z0-9_]*(\.[a-z][a-z0-9_]+)+$ ]]
-        }
-
-        is_valid_sha256_colon() {
-          [[ "$1" =~ ^([0-9A-Fa-f]{2}:){31}[0-9A-Fa-f]{2}$ ]]
-        }
-
-        parse_verification_text() {
-          local text="$1"
-          local line pkg="" sig=""
-
-          while IFS= read -r line || [[ -n "$line" ]]; do
-            line="${line//$'\r'/}"
-            line="${line#"${line%%[![:space:]]*}"}"
-            line="${line%"${line##*[![:space:]]}"}"
-            [[ -z "$line" ]] && continue
-            [[ "$line" =~ ^\`\`\` ]] && continue
-
-            if is_valid_package_name "$line" && [[ -z "$pkg" ]]; then
-              pkg="$line"
-            elif is_valid_sha256_colon "$line" && [[ -z "$sig" ]]; then
-              sig=$(printf '%s' "$line" | tr '[:lower:]' '[:upper:]')
-            fi
-          done <<< "$text"
-
-          if [[ -z "$pkg" || -z "$sig" ]]; then
-            return 1
-          fi
-          printf '%s\n%s\n' "$pkg" "$sig"
-        }
+        source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
 
         text=""
         if [[ -n "$ISSUE_BODY" ]]; then
@@ -73,9 +48,76 @@ runs:
           exit 1
         fi
 
-        parsed=$(parse_verification_text "$text")
+        parse_issue_field() {
+          local header="$1"
+          local body="$2"
+          local value
+
+          value=$(printf '%s\n' "$body" | awk -v header="$header" '
+            $0 == "### " header { found=1; next }
+            found && /^### / { exit }
+            found && NF { print; exit }
+          ')
+          value="${value//$'\r'/}"
+          value="${value#"${value%%[![:space:]]*}"}"
+          value="${value%"${value##*[![:space:]]}"}"
+
+          if [[ -z "$value" || "$value" == "_No response_" ]]; then
+            return 1
+          fi
+          printf '%s\n' "$value"
+        }
+
+        if ! parsed=$(parse_verification_text "$text"); then
+          echo "Could not parse package name and fingerprint from Verification Info. Paste the exact AppVerifier output (package ID and SHA-256 fingerprint(s) on separate lines)." >&2
+          exit 1
+        fi
         packageName=$(printf '%s\n' "$parsed" | sed -n '1p')
-        packageSignature=$(printf '%s\n' "$parsed" | sed -n '2p')
+        sig_lines=$(printf '%s\n' "$parsed" | tail -n +2)
+        packageSignature=$(signatures_format_block "$sig_lines")
+
+        validate_apk_url() {
+          local url="$1"
+          [[ -z "$url" ]] && return 1
+          if [[ ! "$url" =~ ^https:// ]]; then
+            echo "Ignoring Direct APK Link (not an https:// URL): $url" >&2
+            return 1
+          fi
+          if [[ ! "$url" =~ \.apk([?#].*)?$ ]]; then
+            echo "Ignoring Direct APK Link (not a direct .apk file; store pages and listings are not supported): $url" >&2
+            return 1
+          fi
+          printf '%s\n' "$url"
+        }
+
+        validate_fdroid_repo_url() {
+          local url="$1"
+          [[ -z "$url" ]] && return 1
+          if [[ ! "$url" =~ ^https:// ]]; then
+            echo "Ignoring Custom F-Droid Repository (not an https:// URL): $url" >&2
+            return 1
+          fi
+          if [[ "$url" =~ \.apk([?#].*)?$ ]]; then
+            echo "Ignoring Custom F-Droid Repository (looks like a direct APK link; use Direct APK Link instead): $url" >&2
+            return 1
+          fi
+          printf '%s\n' "$url"
+        }
+
+        apk_url=""
+        custom_fdroid_repo_url=""
+        if [[ -n "$ISSUE_BODY" ]]; then
+          raw_apk_url=$(parse_issue_field "Direct APK Link" "$ISSUE_BODY" || true)
+          apk_url=$(validate_apk_url "$raw_apk_url" || true)
+          raw_custom_fdroid_repo_url=$(parse_issue_field "Custom F-Droid Repository" "$ISSUE_BODY" || true)
+          custom_fdroid_repo_url=$(validate_fdroid_repo_url "$raw_custom_fdroid_repo_url" || true)
+        fi
 
         echo "packageName=$packageName" >> "$GITHUB_OUTPUT"
-        echo "packageSignature=$packageSignature" >> "$GITHUB_OUTPUT"
+        {
+          echo 'packageSignature<<EOF'
+          printf '%s\n' "$packageSignature"
+          echo EOF
+        } >> "$GITHUB_OUTPUT"
+        echo "apkUrl=$apk_url" >> "$GITHUB_OUTPUT"
+        echo "customFdroidRepoUrl=$custom_fdroid_repo_url" >> "$GITHUB_OUTPUT"
