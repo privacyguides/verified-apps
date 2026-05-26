@@ -398,6 +398,11 @@ jobs:
     name: Google Play
     runs-on: ubuntu-latest
     needs: parse
+    concurrency:
+      group: gplay-downloads
+      cancel-in-progress: false
+      queue: max
+
     if: needs.parse.outputs.isDuplicate != 'true' && (github.event.label.name == 'Run Checks' || github.event.label.name == 'Create PR' || github.event.label.name == 'Commit As-Is')
     continue-on-error: true
     permissions:
@@ -542,7 +547,6 @@ jobs:
             echo "http ${host} ${GPLAY_PROXY_PORT} ${GPLAY_PROXY_USER} ${GPLAY_PROXY_PASS}"
           } > "$proxy_conf"
 
-          rm /home/runner/.gplay-auth.json
           proxychains4 -q -f "$proxy_conf" curl 'https://icanhazip.com'
           proxychains4 -q -f "$proxy_conf" ./gplay-apk-downloader/gplay auth
 
