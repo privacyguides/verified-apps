@@ -202,6 +202,17 @@ packages:
       - source: "AppVerifier"
         issue: 60
         fingerprint: 00:03:01:CC:29:1B:B9:9B:5E:BC:13:BE:89:F0:8C:46:03:80:71:27:B5:5E:21:AA:1E:69:8B:1D:E6:B8:43:46
+  - package: digital.ventral.ips
+    signature:
+      - source: "Accrescent"
+        issue: 128
+        fingerprint: 03:24:3D:0C:0D:44:B6:E0:B4:1E:3C:B2:45:B1:DC:26:9B:E4:C3:FF:E1:77:F8:43:FC:00:5B:C4:EA:0C:74:26
+      - source: "F-Droid"
+        issue: 128
+        fingerprint: 03:24:3D:0C:0D:44:B6:E0:B4:1E:3C:B2:45:B1:DC:26:9B:E4:C3:FF:E1:77:F8:43:FC:00:5B:C4:EA:0C:74:26
+      - source: "Direct APK Link"
+        issue: 128
+        fingerprint: 03:24:3D:0C:0D:44:B6:E0:B4:1E:3C:B2:45:B1:DC:26:9B:E4:C3:FF:E1:77:F8:43:FC:00:5B:C4:EA:0C:74:26
   - package: helium314.keyboard
     signature:
       - source: F-Droid
