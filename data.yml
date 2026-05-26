@@ -10,6 +10,11 @@ packages:
       - source: "Direct APK Link"
         issue: 247
         fingerprint: 48:94:E8:E6:96:36:27:EF:66:00:31:D8:59:3F:E7:72:97:F8:35:AC:B4:E2:38:10:00:3E:92:61:35:02:3B:4C
+  - package: app.crossword.yourealwaysbe.forkyz
+    signature:
+      - source: "F-Droid"
+        issue: 560
+        fingerprint: 2F:CE:C1:AF:AB:57:A7:A9:E5:33:C8:F6:9E:B1:B0:AA:61:80:D2:BE:23:2F:8A:52:95:56:40:C0:AE:7E:84:FB
   - package: app.ninesevennine.twofactorauthenticator.accrescent
     signature:
       - source: "Accrescent"
