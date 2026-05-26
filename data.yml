@@ -49,6 +49,17 @@ packages:
       - source: "F-Droid"
         issue: 558
         fingerprint: 05:7A:C4:51:64:A2:E6:E3:1F:6D:DE:55:5A:5F:2C:CC:B4:D8:83:4C:B1:85:25:49:68:1B:00:E3:46:68:CA:F3
+  - package: chat.simplex.app
+    signature:
+      - source: "F-Droid (Custom)"
+        issue: 493
+        fingerprint: 3C:52:C4:FD:3C:AD:1C:07:C9:B0:0A:70:80:E3:58:FA:B9:FE:FC:B8:AF:5A:EC:14:77:65:F1:6D:0F:21:AD:85
+      - source: "AppVerifier"
+        issue: 493
+        fingerprint: 3C:52:C4:FD:3C:AD:1C:07:C9:B0:0A:70:80:E3:58:FA:B9:FE:FC:B8:AF:5A:EC:14:77:65:F1:6D:0F:21:AD:85
+      - source: "Direct APK Link"
+        issue: 493
+        fingerprint: 3C:52:C4:FD:3C:AD:1C:07:C9:B0:0A:70:80:E3:58:FA:B9:FE:FC:B8:AF:5A:EC:14:77:65:F1:6D:0F:21:AD:85
   - package: co.cape.matrix
     signature:
       - source: Accrescent
