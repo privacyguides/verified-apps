@@ -1161,6 +1161,10 @@ jobs:
   create-pr:
     name: Create PR
     runs-on: ubuntu-latest
+    concurrency:
+      group: data-yml-writes
+      cancel-in-progress: false
+      queue: max
     needs: [parse, accrescent, fdroid, custom-fdroid, gplay, appverifier-db, direct-apk]
     if: |
       always() &&
@@ -1365,6 +1369,10 @@ jobs:
   commit-as-is:
     name: Commit As-Is
     runs-on: ubuntu-latest
+    concurrency:
+      group: data-yml-writes
+      cancel-in-progress: false
+      queue: max
     needs: [parse, accrescent, fdroid, custom-fdroid, gplay, appverifier-db, direct-apk]
     if: |
       always() &&
