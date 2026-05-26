@@ -152,6 +152,14 @@ packages:
       - source: "Accrescent"
         issue: 120
         fingerprint: 79:E8:5C:E8:1D:F2:F4:F2:25:C2:2F:EA:0B:2D:19:50:B3:68:62:7E:47:5F:B7:2B:73:85:D2:50:31:3B:F7:C1
+  - package: me.proton.android.calendar
+    signature:
+      - source: "AppVerifier"
+        issue: 404
+        fingerprint: DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
+      - source: "Direct APK Link"
+        issue: 404
+        fingerprint: DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
   - package: net.ivpn.client
     signature:
       - source: Accrescent
