@@ -75,6 +75,14 @@ packages:
             issue: 493
             apk:
               repo: https://app.simplex.chat/fdroid/repo?fingerprint=9F358FF284D1F71656A2BFAF0E005DEAE6AA14143720E089F11FF2DDCFEB01BA
+      - fingerprint: 5E:3E:DC:C2:00:FB:A8:D5:F4:88:F3:CA:4C:32:5B:05:78:C5:6A:9C:03:A1:CC:B5:92:9C:D7:5C:7E:57:E2:4D
+        sources:
+          - name: AppVerifier
+            issue: 565
+          - name: Google Play
+            issue: 565
+            apk:
+              sha256: 95e555c92391049e08df56b712cea59769e3d0ac4276c0ca649814a03e7b2671
       - fingerprint: AE:C1:95:DC:FD:46:14:BD:3A:91:EC:26:D1:D5:14:C8:75:71:C5:CC:8D:CF:48:08:3F:92:83:14:3C:A2:B9:A6
         sources:
           - name: AppVerifier
