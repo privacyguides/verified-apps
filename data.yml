@@ -157,6 +157,14 @@ packages:
       - source: Accrescent
         issue: 3
         fingerprint: 88:A6:B4:0F:C9:7F:DC:84:2F:23:1F:50:EB:12:DE:11:6F:5B:75:9E:3C:5B:38:AA:CC:AF:6A:7B:39:3C:85:BB
+  - package: net.mullvad.mullvadvpn
+    signature:
+      - source: "AppVerifier"
+        issue: 215
+        fingerprint: 7B:E2:19:30:C3:B4:D7:39:06:B0:89:30:45:0A:1D:3A:FB:D2:2C:98:D9:D8:E9:87:DF:8C:1F:BC:2D:0C:90:BB
+      - source: "Direct APK Link"
+        issue: 215
+        fingerprint: 7B:E2:19:30:C3:B4:D7:39:06:B0:89:30:45:0A:1D:3A:FB:D2:2C:98:D9:D8:E9:87:DF:8C:1F:BC:2D:0C:90:BB
   - package: nodomain.freeyourgadget.gadgetbridge
     signature:
       - source: F-Droid
