@@ -170,6 +170,17 @@ packages:
       - source: "AppVerifier"
         issue: 355
         fingerprint: DE:6E:C9:14:31:55:79:95:29:7B:F3:E6:5B:C8:03:49:BC:60:3A:04:70:81:60:61:8C:86:BC:99:94:17:1C:90
+  - package: de.quantumphysique.trale
+    signature:
+      - source: "Accrescent"
+        issue: 123
+        fingerprint: A2:6E:7B:1B:C1:9F:7F:11:81:C0:F1:5C:96:BF:B9:5E:99:9D:FD:28:4F:E0:5F:96:7D:60:45:E1:6C:41:14:38
+      - source: "F-Droid"
+        issue: 123
+        fingerprint: A2:6E:7B:1B:C1:9F:7F:11:81:C0:F1:5C:96:BF:B9:5E:99:9D:FD:28:4F:E0:5F:96:7D:60:45:E1:6C:41:14:38
+      - source: "Direct APK Link"
+        issue: 123
+        fingerprint: A2:6E:7B:1B:C1:9F:7F:11:81:C0:F1:5C:96:BF:B9:5E:99:9D:FD:28:4F:E0:5F:96:7D:60:45:E1:6C:41:14:38
   - package: de.tutao.tutanota
     signature:
       - source: "AppVerifier"
