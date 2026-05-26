@@ -504,8 +504,45 @@ jobs:
         if: steps.availability.outputs.found == 'true' && steps.apkCache.outputs.cache-hit != 'true'
         env:
           PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION: python
+          GPLAY_PROXY_HOST: ${{ secrets.GPLAY_PROXY_HOST }}
+          GPLAY_PROXY_PORT: ${{ secrets.GPLAY_PROXY_PORT }}
+          GPLAY_PROXY_USER: ${{ secrets.GPLAY_PROXY_USER }}
+          GPLAY_PROXY_PASS: ${{ secrets.GPLAY_PROXY_PASS }}
         run: |
+          set -uo pipefail
+          set +e
+
           ./gplay-apk-downloader/gplay download "$PACKAGE_NAME"
+          rc=$?
+          if [[ "$rc" -eq 0 ]]; then
+            exit 0
+          fi
+
+          echo "Google Play download failed (exit ${rc}); retrying via proxychains." >&2
+          if [[ -z "${GPLAY_PROXY_HOST:-}" ]]; then
+            echo "GPLAY_PROXY_HOST secret not set; cannot retry via proxy." >&2
+            exit "$rc"
+          fi
+
+          sudo apt-get update -y >/dev/null
+          sudo apt-get install -y proxychains4 >/dev/null
+
+          proxy_ip="$(getent ahostsv4 "${GPLAY_PROXY_HOST}" 2>/dev/null | awk 'NR==1{print $1}')"
+          if [[ -n "${proxy_ip:-}" ]]; then
+            host="$proxy_ip"
+          fi
+
+          proxy_conf="$(mktemp)"
+          {
+            echo "strict_chain"
+            echo "proxy_dns"
+            echo "tcp_read_time_out 15000"
+            echo "tcp_connect_time_out 8000"
+            echo "[ProxyList]"
+            echo "http ${host} ${GPLAY_PROXY_PORT} ${GPLAY_PROXY_USER} ${GPLAY_PROXY_PASS}"
+          } > "$proxy_conf"
+
+          proxychains4 -q -f "$proxy_conf" ./gplay-apk-downloader/gplay download "$PACKAGE_NAME"
 
       - name: Rename APK
         if: steps.availability.outputs.found == 'true' && steps.apkCache.outputs.cache-hit != 'true'
@@ -1461,4 +1498,3 @@ jobs:
         run: |
           gh issue comment "$NUMBER" --repo "$GH_REPO" \
             --body "Could not commit as-is: no store signatures matched the submission. Run **Run Checks** first, or use **Create PR** to add entries manually."
-
