@@ -266,6 +266,11 @@ packages:
       - source: "Direct APK Link"
         issue: 134
         fingerprint: 4E:C5:1A:CD:06:D3:F9:E7:95:07:C9:14:EF:15:E2:C0:9A:18:24:9A:82:AF:90:64:FF:04:95:F9:26:F9:3D:D4
+  - package: it.fast4x.rimusic
+    signature:
+      - source: "Accrescent"
+        issue: 112
+        fingerprint: A1:BA:8B:D7:4A:F8:F9:2C:B3:71:9A:07:21:13:A2:18:CF:AE:C0:2B:CE:2B:73:6A:28:0E:31:D8:CD:11:80:8C
   - package: it.fast4x.riplay
     signature:
       - source: "Accrescent"
