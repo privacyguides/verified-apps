@@ -863,6 +863,14 @@ packages:
             issue: 241
             apk:
               sha256: 8faee459f952e62e5c12be18620911b01c15b5fa0ee67768dcf8ae1e1a68b09c
+  - package: de.flixbus.app
+    signature:
+      - fingerprint: 97:D8:97:D1:7F:01:9F:97:05:5E:B5:FF:AE:7B:19:5B:1F:0D:1A:5E:F2:5F:8A:6F:6B:DA:46:87:95:A7:1C:54
+        sources:
+          - name: Google Play
+            issue: 264
+            apk:
+              sha256: 56d23169baece013a3524e15cf6a98f41ed91ec5342991456050757103f6f8cb
   - package: de.quantumphysique.trale
     signature:
       - fingerprint: A2:6E:7B:1B:C1:9F:7F:11:81:C0:F1:5C:96:BF:B9:5E:99:9D:FD:28:4F:E0:5F:96:7D:60:45:E1:6C:41:14:38
