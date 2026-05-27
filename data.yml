@@ -309,14 +309,6 @@ packages:
             apk:
               sha256: 76c2d4286ee14f4d80815e9138324b071fc1629a211447b98c2db0ab55b45269
               link: https://github.com/Kunzisoft/KeePassDX/releases/download/4.4.2/KeePassDX-4.4.2-libre.apk
-  - package: com.nextcloud.client
-    signature:
-      - fingerprint: 57:09:57:6F:9D:6C:6A:76:87:DD:5D:56:B2:69:D1:FA:5E:37:97:02:B9:1B:C8:3F:39:FD:7B:7C:59:7C:1B:83
-        sources:
-          - name: F-Droid
-            issue: 193
-            apk:
-              sha256: faaa64b5d88724a6a6461dfb01ed5938f0ffbc111fe53c456ec869d82ec50334
   - package: com.none.tom.exiferaser
     signature:
       - fingerprint: D9:10:86:7C:E2:CF:3D:CD:37:DB:51:85:3E:BE:F8:63:3F:D8:3A:14:2B:26:42:27:4E:D0:68:15:2F:F1:22:01
@@ -353,14 +345,6 @@ packages:
             apk:
               sha256: 762473e7236891fcc62e7bbc5ba7419070e99efbe22d069f99d37e701888170e
               link: https://github.com/streetwriters/notesnook/releases/download/3.3.24-android/notesnook-arm64-v8a.apk
-  - package: com.tailscale.ipn
-    signature:
-      - fingerprint: 5C:DB:29:55:51:BF:E1:A0:87:FE:D6:AC:DA:07:14:1C:6C:92:9F:A7:C2:9B:D2:73:A7:09:28:13:AC:C4:34:BF
-        sources:
-          - name: Google Play
-            issue: 75
-            apk:
-              sha256: 7ad10b100f2790b046f324fb54881968141f9c776e405e55e6aea4b0fd5f24b2
   - package: com.vivaldi.browser
     signature:
       - fingerprint: E8:A7:85:44:65:5B:A8:C0:98:17:F7:32:76:8F:56:89:B1:66:2E:C4:B2:BC:5A:0B:C0:EC:13:8D:33:CA:3D:1E
@@ -522,14 +506,6 @@ packages:
             apk:
               sha256: 9d6425d3d8d79f4b67ad563d9de7ca2c5a6cf48623581bce5a2f1ea0b43503ea
               link: https://github.com/fast4x/RiPlay/releases/download/v0.7.80/RiPlay-full-release-0.7.80.apk
-  - package: md.obsidian
-    signature:
-      - fingerprint: F6:EE:C9:88:E3:6E:ED:4E:91:65:B5:B4:BF:20:83:EC:1B:1C:F2:66:11:FA:BB:01:DB:4D:4A:A7:57:35:D9:99
-        sources:
-          - name: Google Play
-            issue: 51
-            apk:
-              sha256: d830f6772c9890b906eb30114f4890d47580ff2e4dfb4683359b43385f83497c
   - package: me.easyapps.easynotes
     signature:
       - fingerprint: 79:E8:5C:E8:1D:F2:F4:F2:25:C2:2F:EA:0B:2D:19:50:B3:68:62:7E:47:5F:B7:2B:73:85:D2:50:31:3B:F7:C1
@@ -702,6 +678,19 @@ packages:
             apk:
               sha256: 4a23949039d93617df1219a5f0f61b88a22c3c388ac54999e893eb30b39ddb30
               link: https://github.com/MAGICGrants/skylight-wallet/releases/download/v1.0.10/skylight-wallet-v1.0.10-x86_64.apk
+  - package: org.mozilla.fennec_fdroid
+    signature:
+      - fingerprint: 06:66:53:58:EF:D8:BA:05:BE:23:6A:47:A1:2C:B0:95:8D:7D:75:DD:93:9D:77:C2:B3:1F:53:98:53:7E:BD:C5
+        sources:
+          - name: Direct APK Link
+            issue: 164
+            apk:
+              sha256: 1e16e271cda8a0c18700a0305cb834ac81f7158378a72c14554d7c2543078b5f
+              link: https://f-droid.org/repo/org.mozilla.fennec_fdroid_1510020.apk
+          - name: F-Droid
+            issue: 164
+            apk:
+              sha256: 1e16e271cda8a0c18700a0305cb834ac81f7158378a72c14554d7c2543078b5f
   - package: org.oxycblt.auxio
     signature:
       - fingerprint: DA:84:E2:53:4C:1A:CC:0B:6E:4F:57:DE:DB:64:0D:4D:C8:93:F5:BF:41:37:A2:E1:EC:BA:87:AD:F8:25:BA:44
@@ -723,18 +712,6 @@ packages:
             issue: 508
             apk:
               sha256: 568e62defe4a026784284678e7667e5afdc17cc4b9ac14cca58bd4c3b2e482a1
-  - package: org.schabi.newpipe
-    signature:
-      - fingerprint: CB:84:06:9B:D6:81:16:BA:FA:E5:EE:4E:E5:B0:8A:56:7A:A6:D8:98:40:4E:7C:B1:2F:9E:75:6D:F5:CF:5C:AB
-        sources:
-          - name: F-Droid (IzzyOnDroid)
-            issue: 55
-            apk:
-              sha256: eb56aa9ae68b4d4b04e40251d7fe7ea49f97e0c4be5a8384e28d98ee36b9c5e2
-          - name: F-Droid
-            issue: 55
-            apk:
-              sha256: 12e28bdeeec5a9512ec550ba233dc890276f4e73e757ca0e787acede42dc6c1c
   - package: org.telegram.messenger
     signature:
       - fingerprint: 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
