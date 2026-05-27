@@ -751,6 +751,21 @@ packages:
             apk:
               sha256: 367109070b08a4d687467fe251ad06433b3b21219a6c89d26ebe30d993230047
               link: https://proton.me/download/calendar/android/ProtonCalendar-Android.apk
+  - package: me.proton.android.drive
+    signature:
+      - fingerprint: DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
+        sources:
+          - name: AppVerifier
+            issue: 223
+          - name: Direct APK Link
+            issue: 223
+            apk:
+              sha256: 9f9e03e7b4707db14841a250030359e4df7afb7b501f1dba579a5aa2842da960
+              link: https://proton.me/download/DriveAndroid/ProtonDrive-Android.apk
+          - name: Google Play
+            issue: 223
+            apk:
+              sha256: 5063ceb3ecdc65972606c5921ca40b4490d688e6310be7bf736b874cbad39f3a
   - package: me.proton.android.lumo
     signature:
       - fingerprint: A5:76:9B:88:D3:C5:00:F9:C5:8C:69:39:A7:B0:9D:C2:93:63:0C:8B:93:B6:9F:44:57:88:80:60:BF:1F:AA:43
