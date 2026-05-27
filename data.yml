@@ -458,6 +458,19 @@ packages:
               repo: https://mobileapp.bitwarden.com/fdroid/repo/
           - name: AppVerifier
             issue: 355
+  - package: de.danoeh.antennapod
+    signature:
+      - fingerprint: 17:94:30:56:5A:4A:04:BF:E7:82:74:83:24:30:99:BD:10:87:04:10:80:0C:D7:C4:C7:B4:8D:8D:32:26:DF:55
+        sources:
+          - name: Direct APK Link
+            issue: 241
+            apk:
+              sha256: 8faee459f952e62e5c12be18620911b01c15b5fa0ee67768dcf8ae1e1a68b09c
+              link: https://f-droid.org/repo/de.danoeh.antennapod_3110495.apk
+          - name: F-Droid
+            issue: 241
+            apk:
+              sha256: 8faee459f952e62e5c12be18620911b01c15b5fa0ee67768dcf8ae1e1a68b09c
   - package: de.quantumphysique.trale
     signature:
       - fingerprint: A2:6E:7B:1B:C1:9F:7F:11:81:C0:F1:5C:96:BF:B9:5E:99:9D:FD:28:4F:E0:5F:96:7D:60:45:E1:6C:41:14:38
