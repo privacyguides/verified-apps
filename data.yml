@@ -871,6 +871,12 @@ packages:
             issue: 241
             apk:
               sha256: 8faee459f952e62e5c12be18620911b01c15b5fa0ee67768dcf8ae1e1a68b09c
+      - fingerprint: A8:54:1B:7E:6C:69:76:B0:B7:E3:A9:0B:E8:9C:63:A6:66:BE:37:3F:1D:BB:ED:A6:71:AC:2E:17:26:5D:6A:0F
+        sources:
+          - name: Google Play
+            issue: 232
+            apk:
+              sha256: 314610ddc52887329347be7b1774638ee135fb64a0d7a1ec2a402a0ab42baa94
   - package: de.flixbus.app
     signature:
       - fingerprint: 97:D8:97:D1:7F:01:9F:97:05:5E:B5:FF:AE:7B:19:5B:1F:0D:1A:5E:F2:5F:8A:6F:6B:DA:46:87:95:A7:1C:54
