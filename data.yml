@@ -1411,6 +1411,14 @@ packages:
             issue: 293
             apk:
               sha256: cab499095fafd286e892f33668dfc53a690ed648ff26659bc75775372afa81dd
+  - package: tw.nekomimi.nekogram
+    signature:
+      - fingerprint: 5C:E9:32:B9:70:19:9F:BD:A2:AA:E7:BF:21:E1:AD:9E:70:B0:80:9A:7B:1A:C9:4C:06:99:F5:D5:AD:A8:33:13
+        sources:
+          - name: Google Play
+            issue: 569
+            apk:
+              sha256: acd8527efe721a8a4a2a75a2d516de804ff81519b2eafd7c2b8039b44c0a460e
   - package: xyz.malkki.neostumbler
     signature:
       - fingerprint: 7F:83:9A:C7:AF:C4:FF:6F:1C:7F:B1:34:8A:C1:0D:E2:F1:7D:E8:A7:8D:0D:81:2C:1F:43:AE:83:5A:51:11:DF
