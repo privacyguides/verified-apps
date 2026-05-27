@@ -708,6 +708,14 @@ packages:
             issue: 324
             apk:
               sha256: 145bf32b0e0118b455aae26ffec8aa47c6637ab161bbabd504f9c235e803a221
+  - package: com.verisec.mobile.frejaeid
+    signature:
+      - fingerprint: 1F:14:FE:04:C5:19:52:C5:E3:C8:E6:82:51:AE:8A:C3:73:B8:4C:59:76:BD:7F:24:8E:64:3A:F2:50:C8:BA:91
+        sources:
+          - name: Google Play
+            issue: 393
+            apk:
+              sha256: f84bd3e2df1ecfb398203eb7a88e87a721bf460f35204b03275690705edfdb9a
   - package: com.vietnamairlines.android.app
     signature:
       - fingerprint: A8:76:B2:9F:BB:A1:9F:5C:49:F6:E8:3F:53:8C:18:03:08:05:C8:FC:A4:3E:3D:4B:E8:83:17:3E:37:32:CC:AC
