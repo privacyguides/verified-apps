@@ -596,6 +596,23 @@ packages:
             apk:
               sha256: 82da5f3e13d9c160fe7f38521d896b883cc8d01de2c0ed158b5a11c530256096
               link: https://github.com/mullvad/mullvadvpn-app/releases/download/android%2F2026.5/MullvadVPN-2026.5.apk
+  - package: net.thunderbird.android
+    signature:
+      - fingerprint: B6:52:47:79:B3:DB:BC:5A:C1:7A:5A:C2:71:DD:B2:9D:CF:BF:72:35:78:C2:38:E0:3C:3C:21:78:11:35:6D:D1
+        sources:
+          - name: Direct APK Link
+            issue: 390
+            apk:
+              sha256: c2083ddf5882e3c3f54f2f1d42e5a108ea9a2eec4a4f9519e3ee0b59707eaa13
+              link: https://github.com/thunderbird/thunderbird-android/releases/download/THUNDERBIRD_18_0/thunderbird-18.0.apk
+          - name: F-Droid
+            issue: 390
+            apk:
+              sha256: c2083ddf5882e3c3f54f2f1d42e5a108ea9a2eec4a4f9519e3ee0b59707eaa13
+          - name: Google Play
+            issue: 390
+            apk:
+              sha256: e5febb0272b72a9290aa3237292a36fa04e070c946108939bdec5dc6dcb24218
   - package: nodomain.freeyourgadget.gadgetbridge
     signature:
       - fingerprint: 01:CC:E9:31:6F:CB:77:EA:02:C6:DE:A8:1F:DE:9F:31:76:46:92:02:C0:CE:A0:51:4C:0E:03:CB:96:9B:C7:BE
