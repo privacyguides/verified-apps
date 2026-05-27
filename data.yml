@@ -457,6 +457,14 @@ packages:
             issue: 506
             apk:
               sha256: 3ba12ceb8c5a2f028f8415e610f27570c737d5625ebbaa59bd1d9bff4e3d47e5
+  - package: com.secuso.privacyFriendlyCodeScanner
+    signature:
+      - fingerprint: 75:9D:2D:25:78:5A:6D:F4:CD:66:19:69:2B:37:F0:05:32:BA:19:B2:6D:F2:0A:4E:F5:B2:21:28:C7:F1:51:BC
+        sources:
+          - name: F-Droid
+            issue: 433
+            apk:
+              sha256: 2ca9502e0247175cc7d5bcb052a44f4222d3b977b411bad666b382148bd31eac
   - package: com.standardnotes
     signature:
       - fingerprint: 58:3F:C4:1B:49:0C:38:0B:56:FB:E9:EE:47:38:1E:B4:EF:53:E0:37:19:A5:50:3F:C1:F2:9D:CD:8E:28:90:2A
