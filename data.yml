@@ -480,6 +480,14 @@ packages:
             issue: 464
             apk:
               sha256: ed6547c3ba618304bc7fc9d7e3a29e0899c1e960cb0965d64bc5274d2021c5e7
+  - package: com.naver.labs.translator
+    signature:
+      - fingerprint: 0B:8B:85:23:BB:4A:EF:FA:34:6E:4B:DD:4F:BF:7D:19:34:50:56:9A:A1:4A:AA:D4:AD:FD:94:A3:F7:B2:27:BB
+        sources:
+          - name: Google Play
+            issue: 291
+            apk:
+              sha256: a188a9f0dc387f55b99c312254d12be208a60fd9250c9decbd9e97f17b7df48e
   - package: com.nextcloud.client
     signature:
       - fingerprint: 57:09:57:6F:9D:6C:6A:76:87:DD:5D:56:B2:69:D1:FA:5E:37:97:02:B9:1B:C8:3F:39:FD:7B:7C:59:7C:1B:83
