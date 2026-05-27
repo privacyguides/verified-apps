@@ -499,6 +499,19 @@ packages:
             apk:
               sha256: c4fbedb69a9eb682e4bf2923a8c3803b2caa140ca1468b4a440cb68c459158ae
               link: https://github.com/deckerst/aves/releases/download/v1.14.4/app-libre-x86_64-release.apk
+  - package: dev.imranr.obtainium.fdroid
+    signature:
+      - fingerprint: B3:53:60:1F:6A:1D:5F:D6:60:3A:E2:F5:0B:E8:0C:F3:01:36:7B:86:B6:AB:8B:1F:66:24:3D:A9:6C:D5:73:62
+        sources:
+          - name: Direct APK Link
+            issue: 211
+            apk:
+              sha256: 719b218bbcf4e64cdf1ff5008f81f0ab9be88fcd3563f1f3f302990432e87130
+              link: https://github.com/ImranR98/Obtainium/releases/download/v1.4.3/app-arm64-v8a-fdroid-release.apk
+          - name: F-Droid
+            issue: 211
+            apk:
+              sha256: fbab1c450c807f44e45e90f02b95ed8733866faaa6df33d54bdaae3fb59d1856
   - package: dev.soupslurpr.appverifier
     signature:
       - fingerprint: 3A:04:A8:0B:2A:88:33:4C:74:74:85:F0:B2:15:16:40:A3:8B:B3:D2:D7:3A:8E:AB:81:DF:50:3E:0F:02:02:B2
