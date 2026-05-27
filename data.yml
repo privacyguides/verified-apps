@@ -706,6 +706,19 @@ packages:
             apk:
               sha256: 82da5f3e13d9c160fe7f38521d896b883cc8d01de2c0ed158b5a11c530256096
               link: https://github.com/mullvad/mullvadvpn-app/releases/download/android%2F2026.5/MullvadVPN-2026.5.apk
+  - package: net.nymtech.nymvpn
+    signature:
+      - fingerprint: 3C:98:A0:16:AA:4F:14:A3:BA:18:5C:76:4E:D3:63:41:5C:F7:FF:3C:3D:32:8A:87:FF:FF:2F:F1:B1:40:FF:06
+        sources:
+          - name: Direct APK Link
+            issue: 492
+            apk:
+              sha256: b3ffe6efc33d4158f79b325758230a6024e85f68a673726fe3fec7af01949ee7
+              link: https://github.com/nymtech/nym-vpn-client/releases/download/nym-vpn-android-v3.4.2/nymvpn-v3.4.2-fdroid-release.apk
+          - name: F-Droid
+            issue: 492
+            apk:
+              sha256: c881430de6f3424287b3e42f945f77754a0b7d4b4965c605c20d1efa23a24fe5
   - package: net.thunderbird.android
     signature:
       - fingerprint: B6:52:47:79:B3:DB:BC:5A:C1:7A:5A:C2:71:DD:B2:9D:CF:BF:72:35:78:C2:38:E0:3C:3C:21:78:11:35:6D:D1
