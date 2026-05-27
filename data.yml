@@ -316,6 +316,16 @@ packages:
             apk:
               sha256: b70a30fd23f7b9eb29118ae028ad463d66c4b9d9cdfec586af157a7c7da4ecb5
               link: https://github.com/libre-tube/LibreTube/releases/download/v31.3/app-release.apk
+  - package: com.google.android.GoogleCamera
+    signature:
+      - fingerprint: F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
+        sources:
+          - name: AppVerifier
+            issue: 148
+          - name: Google Play
+            issue: 148
+            apk:
+              sha256: f16e110a79968c987c22fd23180ede162279a5c19837e876279b93f9136a0886
   - package: com.google.android.inputmethod.latin
     signature:
       - fingerprint: |
