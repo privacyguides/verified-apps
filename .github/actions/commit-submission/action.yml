@@ -13,6 +13,9 @@ inputs:
   coAuthorTrailer:
     description: Co-authored-by trailer(s) for the git commit (labeler and issue author when different)
     required: true
+  githubToken:
+    description: GitHub PAT
+    required: true
   accrescentSignature:
     description: Fingerprint(s) from Accrescent
     required: false
@@ -116,6 +119,11 @@ runs:
         git add data.yml
         echo "committed=true" >> "$GITHUB_OUTPUT"
 
+    - name: Provenance attestation
+      uses: actions/attest@v4
+      with:
+        subject-path: 'data.yml'
+    
     - name: Push verified commit to main
       if: steps.prepare.outputs.committed == 'true'
       uses: iarekylew00t/verified-bot-commit@v2

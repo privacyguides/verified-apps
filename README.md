@@ -10,6 +10,8 @@ We need you to submit any apps you have installed on your phone [in a new GitHub
 
 Please submit any apps you'd like, no need to check for existing submissions. We will automatically close issues that are duplicates, but the existence of duplicate issues will help us count how many people may be vouching for a particular submission. We also assume we will see duplicate entries for the same package, because the same package may have a different signature in different app stores.
 
+Currently, we will not merge any apps which cannot be checked by our automated systems (see below), notably any paid apps. In the future we may develop a process for multiple people to vouch for the validity of these apps.
+
 ## Automated Checks
 
 When a maintainer is ready to review a submission, we will run automated checks to check the submission against the following mainstream app sources:
@@ -88,7 +90,7 @@ packages: # Required. Contains all verification data.
 
 Each package will have a list of signing key fingerprints. Multiple fingerprints for apps is generally expected, because many apps use Google Play App Signing or are built by F-Droid without reproducible builds, meaning they are signed by the respective app store instead of directly by the developer.
 
-With each key fingerprint are the sources where we found that signing key.
+With each key fingerprint are the sources where we found that signing key. The source can be identified by its name (see below), and we also record the SHA-256 hash of the APK *file* we verified, and in the case of direct APK downloads and custom F-Droid repos we record the exact source. More details can always be found in the corresponding GitHub issue for a submission.
 
 ### Source Names
 

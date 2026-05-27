@@ -1430,8 +1430,12 @@ jobs:
       github.event.label.name == 'Commit As-Is'
 
     permissions:
+      id-token: write
       contents: write
       issues: write
+      attestations: write
+      packages: write
+      artifact-metadata: write
 
     steps:
       - name: Validate
@@ -1482,6 +1486,7 @@ jobs:
           packageSignature: ${{ needs.parse.outputs.packageSignature }}
           issueNumber: ${{ github.event.issue.number }}
           coAuthorTrailer: ${{ steps.coauthor.outputs.trailer }}
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
           accrescentSignature: ${{ needs.accrescent.outputs.signature }}
           fdroidResultsDir: fdroid-results
           gplaySignature: ${{ needs.gplay.outputs.signature }}

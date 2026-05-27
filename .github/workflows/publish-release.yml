@@ -1,0 +1,36 @@
+name: Publish Release
+
+on:
+  push:
+    tags:
+      - "*"
+
+permissions:
+  contents: write
+  id-token: write
+  attestations: write
+  packages: write
+  artifact-metadata: write
+
+jobs:
+  release:
+    name: Create release notes
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        id: checkout
+        uses: actions/checkout@v6
+
+      - name: Provenance attestation
+        id: attest
+        uses: actions/attest@v4
+        with:
+          subject-path: "data.yml"
+
+      - name: Create release notes
+        id: release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "data.yml,{{ $steps.attest.outputs.bundle-path }}"
+          immutableCreate: true
