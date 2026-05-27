@@ -708,6 +708,14 @@ packages:
             issue: 294
             apk:
               sha256: 04ef71623b2533e1a19df1a246bc0d83a7ddc071ff3acd9877753c4d6de4e423
+  - package: com.turkishairlines.mobile
+    signature:
+      - fingerprint: DD:85:EB:7F:24:CC:AD:39:D3:B8:30:26:12:5C:D5:16:4E:19:FD:1E:AA:26:7F:A0:B0:73:AE:72:20:D2:75:6E
+        sources:
+          - name: Google Play
+            issue: 343
+            apk:
+              sha256: 31a6dafe9180c09d1078d693104f21ee3e1f8c3da73c40b52257594c71691d5e
   - package: com.ubercab
     signature:
       - fingerprint: 40:03:23:1A:B4:2F:EB:8D:95:5E:62:FD:FA:A4:FA:D5:95:67:05:4B:9C:6B:BC:3D:95:02:99:DD:FC:26:83:92
