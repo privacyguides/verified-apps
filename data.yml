@@ -632,6 +632,14 @@ packages:
             apk:
               sha256: cd5ddf49dabbb7b9870db57441b8b8e426b09f41951853c13af1a595aed5d62d
               link: https://github.com/ente-io/ente/releases/download/photos-v1.3.44/ente-photos-v1.3.44.apk
+  - package: io.github.muntashirakon.AppManager
+    signature:
+      - fingerprint: B6:8E:93:49:10:C0:05:80:14:A0:6A:2E:14:47:29:F9:AA:11:3F:C5:D9:E0:DF:F5:29:EC:BF:1D:1F:61:2D:13
+        sources:
+          - name: F-Droid
+            issue: 127
+            apk:
+              sha256: 91b19687e389a50f13cbcb024627417716b3ec6309575007a4444c127f61e150
   - package: io.spaceapi.community.myhackerspace
     signature:
       - fingerprint: 4E:C5:1A:CD:06:D3:F9:E7:95:07:C9:14:EF:15:E2:C0:9A:18:24:9A:82:AF:90:64:FF:04:95:F9:26:F9:3D:D4
