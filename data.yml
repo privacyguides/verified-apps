@@ -1387,6 +1387,14 @@ packages:
             issue: 295
             apk:
               sha256: 94c24f8bec8c709df90e4ee5a2c6e24c971aca5d33318a1e628bb358e23f5c76
+  - package: se.malardalstrafik.malartag
+    signature:
+      - fingerprint: C2:A1:A4:10:4F:59:0F:19:08:A3:91:1F:DF:B9:CB:9F:A0:35:E0:2D:F6:54:DA:B8:F4:DB:08:9A:9D:3D:14:D4
+        sources:
+          - name: Google Play
+            issue: 309
+            apk:
+              sha256: be067845ec87458b658653e4d5c33f3ae789bc3e2e5994035748e1f9a148cd8d
   - package: se.postnord.private
     signature:
       - fingerprint: 71:33:6E:97:C6:D3:EF:FF:FA:42:38:5F:A8:33:F9:05:95:AC:8C:1C:05:D8:98:04:97:DE:2F:E1:F5:3D:97:53
