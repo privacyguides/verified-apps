@@ -534,6 +534,14 @@ packages:
             issue: 539
           - name: AppVerifier
             issue: 539
+  - package: de.westnordost.streetcomplete
+    signature:
+      - fingerprint: 99:5C:A1:DC:02:BD:B9:E3:11:7E:29:7B:77:91:44:0A:2E:A1:DC:A5:77:6C:B9:D5:6D:79:26:92:A5:97:C8:6C
+        sources:
+          - name: Google Play
+            issue: 79
+            apk:
+              sha256: 2c3c031bff243248239c54ba1cc47da615df19f240dd176d5364941550ee0ff1
   - package: deckers.thibault.aves.libre
     signature:
       - fingerprint: F4:79:47:27:E4:54:16:D8:7C:48:71:38:29:2B:70:9F:11:D1:CD:7D:AB:55:84:D8:C6:85:7D:92:E0:66:60:4B
