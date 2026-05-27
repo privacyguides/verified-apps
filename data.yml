@@ -268,6 +268,19 @@ packages:
             issue: 353
             apk:
               sha256: 9ddb180c6f322b4da7f25cb97f40d16b956e6e34c301a7db4cdf1838cebdb36e
+  - package: com.github.catfriend1.syncthingfork
+    signature:
+      - fingerprint: D3:74:B8:DE:50:57:01:31:43:C7:D1:51:5A:01:55:98:C2:DF:40:3B:E8:16:0C:AE:01:A5:8C:22:7E:6E:86:AA
+        sources:
+          - name: Direct APK Link
+            issue: 443
+            apk:
+              sha256: 676d07c34414791add2ee330321d135cd70fa9eb35d51a59df52efc11a0efa27
+              link: https://f-droid.org/repo/com.github.catfriend1.syncthingfork_2010000.apk
+          - name: F-Droid
+            issue: 443
+            apk:
+              sha256: 676d07c34414791add2ee330321d135cd70fa9eb35d51a59df52efc11a0efa27
   - package: com.github.lamarios.clipious
     signature:
       - fingerprint: 19:DE:04:E5:D6:84:66:06:9D:30:EC:63:C6:BA:7D:9E:3C:F7:3B:5D:61:CB:4B:37:62:C2:B9:B2:53:EC:BD:03
