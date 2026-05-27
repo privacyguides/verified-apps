@@ -876,6 +876,22 @@ packages:
             issue: 2
           - name: AppVerifier
             issue: 2
+  - package: org.fossify.clock
+    signature:
+      - fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: 153
+            apk:
+              sha256: 43cf9f0ec45f1f1ff2df47286622e5b8f3acedaeb07b7f7641b5243dbedca079
+          - name: F-Droid
+            issue: 153
+            apk:
+              sha256: 43cf9f0ec45f1f1ff2df47286622e5b8f3acedaeb07b7f7641b5243dbedca079
+          - name: Google Play
+            issue: 153
+            apk:
+              sha256: 5f961f86ccd6d852981dea36149cc00b7364c7c0b46bdb0eafaee8080f4417bc
   - package: org.fossify.contacts
     signature:
       - fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
