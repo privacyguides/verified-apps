@@ -1347,6 +1347,14 @@ packages:
             apk:
               sha256: 4f3c08e4ef6f66ee1f9abd27115790d6e9d160226bb7158787c7b21d3cae924f
               link: https://get.videolan.org/vlc-android/3.7.0/VLC-Android-3.7.0-arm64-v8a.apk
+  - package: se.postnord.private
+    signature:
+      - fingerprint: 71:33:6E:97:C6:D3:EF:FF:FA:42:38:5F:A8:33:F9:05:95:AC:8C:1C:05:D8:98:04:97:DE:2F:E1:F5:3D:97:53
+        sources:
+          - name: Google Play
+            issue: 293
+            apk:
+              sha256: cab499095fafd286e892f33668dfc53a690ed648ff26659bc75775372afa81dd
   - package: xyz.malkki.neostumbler
     signature:
       - fingerprint: 7F:83:9A:C7:AF:C4:FF:6F:1C:7F:B1:34:8A:C1:0D:E2:F1:7D:E8:A7:8D:0D:81:2C:1F:43:AE:83:5A:51:11:DF
