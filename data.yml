@@ -505,6 +505,18 @@ packages:
             issue: 148
             apk:
               sha256: f16e110a79968c987c22fd23180ede162279a5c19837e876279b93f9136a0886
+  - package: com.google.android.apps.maps
+    signature:
+      - fingerprint: |-
+          7C:E8:3C:1B:71:F3:D5:72:FE:D0:4C:8D:40:C5:CB:10:FF:75:E6:D8:7D:9D:F6:FB:D5:3F:04:68:C2:90:50:53
+          F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
+        sources:
+          - name: AppVerifier
+            issue: 590
+          - name: Google Play
+            issue: 590
+            apk:
+              sha256: a57cf3db81b4a01e8034a230e36b546e16358a188a95fb02fabc3d30dc907b26
   - package: com.google.android.apps.photos
     signature:
       - fingerprint: |-
