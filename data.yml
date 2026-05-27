@@ -360,6 +360,14 @@ packages:
         sources:
           - name: Google Play
             issue: 422
+  - package: com.reddit.frontpage
+    signature:
+      - fingerprint: 97:0B:91:14:38:13:B4:C9:D5:F3:63:4F:67:2C:9F:CA:A5:62:1B:4E:FA:AE:DA:FD:6C:23:5C:BB:B8:69:73:6F
+        sources:
+          - name: Google Play
+            issue: 292
+            apk:
+              sha256: 40d192e0becb2e2d9a6f4ad9d984d9eb1fe40a5f24718f43953f73dbd2211f09
   - package: com.standardnotes
     signature:
       - fingerprint: 58:3F:C4:1B:49:0C:38:0B:56:FB:E9:EE:47:38:1E:B4:EF:53:E0:37:19:A5:50:3F:C1:F2:9D:CD:8E:28:90:2A
