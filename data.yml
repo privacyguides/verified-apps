@@ -952,6 +952,14 @@ packages:
         sources:
           - name: F-Droid
             issue: 53
+  - package: hu.webvalto.bkkfutar
+    signature:
+      - fingerprint: D5:F6:99:F5:5B:E2:80:47:00:FF:00:9A:9E:16:18:B4:00:23:DD:A9:73:B8:3D:DE:AD:8E:9E:C3:31:DC:3D:3C
+        sources:
+          - name: Google Play
+            issue: 394
+            apk:
+              sha256: ed0db6705108a41e96e11df12c3b4362355d1a1e96b727c9d2065380572949cf
   - package: im.molly.app
     signature:
       - fingerprint: 6A:A8:0F:DF:4A:8C:C1:37:37:CF:B4:34:FC:0C:DE:48:6F:09:CF:8F:CD:A2:1A:67:BE:A5:EE:1C:A2:70:08:86
