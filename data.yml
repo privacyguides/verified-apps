@@ -30,6 +30,14 @@ packages:
         sources:
           - name: F-Droid
             issue: 560
+  - package: app.lawnchair.play
+    signature:
+      - fingerprint: 47:AC:92:63:1C:60:35:13:CC:8D:26:DD:9C:FF:E0:71:9A:8B:36:55:44:DC:CE:C2:09:58:24:EC:25:61:20:A7
+        sources:
+          - name: Google Play
+            issue: 176
+            apk:
+              sha256: 711f4cb32e4538054398a2ae9fa02b674b5acb8520859f7bf8ac48175acabe2f
   - package: app.ninesevennine.twofactorauthenticator.accrescent
     signature:
       - fingerprint: E5:B2:8E:A1:E0:51:C2:32:DE:A9:4C:27:C0:59:2E:2C:00:2D:17:C5:CA:81:78:8B:51:30:6D:60:8A:FE:52:C5
