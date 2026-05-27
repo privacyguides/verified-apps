@@ -208,6 +208,14 @@ packages:
             apk:
               sha256: 4010dd9b11ce3bdbcccbf5d1af7456a0b5b4a1ab2d64766fb2c847ae5d2e39b6
               link: https://github.com/cyb3rko/flashdim/releases/download/v2.4.3/FlashDim-2.4.3.apk
+  - package: com.deepl.mobiletranslator
+    signature:
+      - fingerprint: EF:ED:F6:6E:64:29:F7:F0:C6:79:6F:64:AD:08:A6:D1:F0:55:82:BF:21:48:36:56:DE:B4:00:65:1D:1E:F5:BE
+        sources:
+          - name: Google Play
+            issue: 266
+            apk:
+              sha256: dfe359b3b2c16ff23b56c02c4703a9437824469f5035d109b53b2acc09a7635e
   - package: com.digitalextremes.warframemobile
     signature:
       - fingerprint: CD:37:9E:48:D5:29:BD:71:EE:5E:9D:B2:B1:7F:BD:3D:72:BC:32:5F:CD:73:A6:CF:4E:7C:21:29:4B:AC:F3:AF
