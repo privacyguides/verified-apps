@@ -876,6 +876,22 @@ packages:
             issue: 2
           - name: AppVerifier
             issue: 2
+  - package: org.fossify.contacts
+    signature:
+      - fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: 155
+            apk:
+              sha256: 6a89be96b5ec39f5e2b11bd61dc7031f4b88261b324ab13af5743fbc62f0cddb
+          - name: F-Droid
+            issue: 155
+            apk:
+              sha256: 6a89be96b5ec39f5e2b11bd61dc7031f4b88261b324ab13af5743fbc62f0cddb
+          - name: Google Play
+            issue: 155
+            apk:
+              sha256: 9bb76a3d7220081fde75acca6e243b5f624d67f3aedeac6e968bedf04eac588c
   - package: org.fossify.gallery
     signature:
       - fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
