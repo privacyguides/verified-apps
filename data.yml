@@ -489,6 +489,14 @@ packages:
             issue: 311
             apk:
               sha256: 8a2f81942f2d72745e29095bdeab5395e0b968ce0e73097eddc6e6dd8cf610ba
+  - package: com.kakaku.tabelog.tourists
+    signature:
+      - fingerprint: 41:DF:CB:EF:4C:AE:B2:47:27:FB:3D:31:10:89:68:A4:24:12:9E:88:FF:AD:0A:E0:D7:58:A0:70:F8:EB:CA:BC
+        sources:
+          - name: Google Play
+            issue: 327
+            apk:
+              sha256: 3fcec5f3bd27321e6fc49e03bb8f7653f16d6e9046d473dfb341c6a92eedab41
   - package: com.kunzisoft.keepass.free
     signature:
       - fingerprint: 7D:55:B8:AF:21:03:81:AA:BF:96:0F:07:E1:7C:F7:85:7B:6D:2A:64:2C:A2:DA:6B:F0:BD:F1:B2:00:36:2F:04
