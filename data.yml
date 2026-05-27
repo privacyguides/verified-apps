@@ -315,6 +315,14 @@ packages:
         sources:
           - name: Developer's Website
             issue: 424
+  - package: com.flyersoft.moonreader
+    signature:
+      - fingerprint: 5A:C6:46:EB:C6:80:17:E4:CC:58:2B:11:B1:C2:AE:5D:29:B1:5D:9B:0A:C3:A5:4F:C6:09:72:41:7B:41:C9:AD
+        sources:
+          - name: Google Play
+            issue: 431
+            apk:
+              sha256: bfa5def904b0ad2b5e30aba9e6f517e0ae423c7b99965116e09bc3f69ca80557
   - package: com.geoguessr.app
     signature:
       - fingerprint: 21:A6:DC:35:E1:BB:D5:E7:67:66:D1:EA:BC:11:92:43:F5:87:D5:2B:5B:92:29:9A:09:88:A2:67:9C:8B:A6:85
