@@ -323,6 +323,19 @@ packages:
         sources:
           - name: Google Play
             issue: 422
+  - package: com.standardnotes
+    signature:
+      - fingerprint: 58:3F:C4:1B:49:0C:38:0B:56:FB:E9:EE:47:38:1E:B4:EF:53:E0:37:19:A5:50:3F:C1:F2:9D:CD:8E:28:90:2A
+        sources:
+          - name: Direct APK Link
+            issue: 523
+            apk:
+              sha256: a41fb4281df3be60cc0f439d46304ac0e4f1ba4820a09dc9f948f77f92feacc9
+              link: https://github.com/standardnotes/app/releases/download/%40standardnotes%2Fmobile%403.201.27/app-prod-release.apk
+          - name: Google Play
+            issue: 523
+            apk:
+              sha256: d2b3ad1a152524061cce0cd401943d212015f98ee19e69ba84cf9c332da53215
   - package: com.streetwriters.notesnook
     signature:
       - fingerprint: 23:AF:C1:F8:ED:5F:BB:D0:85:2A:37:22:2D:DC:E0:6F:92:92:71:02:F0:12:6F:99:6A:56:23:F5:27:74:C6:90
