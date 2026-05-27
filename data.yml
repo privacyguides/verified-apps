@@ -1690,6 +1690,14 @@ packages:
             issue: 277
             apk:
               sha256: 9e095a4cf5505e4754e412d33522eda1422390401bff16abe9d662ca31bf3eb9
+  - package: se.infospread.android.mobitime.r.vtab
+    signature:
+      - fingerprint: 4F:F9:31:A7:5E:75:A8:61:D2:90:57:94:54:CC:B7:CC:E5:CD:3D:D4:DE:BE:1B:34:DD:BF:07:9B:BE:F3:2D:29
+        sources:
+          - name: Google Play
+            issue: 583
+            apk:
+              sha256: a313f38530a04d9ab23ce0abb9314b3683362769e1f2c2dc72ad8e13c8c376f9
   - package: se.malardalstrafik.malartag
     signature:
       - fingerprint: C2:A1:A4:10:4F:59:0F:19:08:A3:91:1F:DF:B9:CB:9F:A0:35:E0:2D:F6:54:DA:B8:F4:DB:08:9A:9D:3D:14:D4
