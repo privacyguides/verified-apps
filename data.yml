@@ -594,6 +594,14 @@ packages:
             issue: 464
             apk:
               sha256: ed6547c3ba618304bc7fc9d7e3a29e0899c1e960cb0965d64bc5274d2021c5e7
+  - package: com.mobillium.airalo
+    signature:
+      - fingerprint: 03:61:DD:85:0D:D3:AB:65:D9:2D:F4:18:9A:26:41:3D:A5:3A:FF:AA:31:8F:7D:AD:91:47:94:AD:A2:C9:B4:09
+        sources:
+          - name: Google Play
+            issue: 261
+            apk:
+              sha256: e62d0c8000c7e64cc65c4fd6529baaa6d5bb48a04323227a24fdeffa0911bcfb
   - package: com.mttnow.droid.easyjet
     signature:
       - fingerprint: BA:E1:4D:59:3D:B0:DA:16:45:1B:1A:85:2B:72:C8:8F:38:5C:93:5E:12:A5:43:ED:15:28:EC:D2:4B:D6:6A:C2
