@@ -1357,6 +1357,22 @@ packages:
             issue: 386
             apk:
               sha256: 5f1ea705f577bcc0c9c022c89695233bcf3d4bbf996ed8492602c5709959bc4f
+  - package: org.fossify.phone
+    signature:
+      - fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: 217
+            apk:
+              sha256: d1ad08467034e5138a6e68f03b6e150f0bb010dfcbf490ff3d2bd4822b755728
+          - name: F-Droid
+            issue: 217
+            apk:
+              sha256: d1ad08467034e5138a6e68f03b6e150f0bb010dfcbf490ff3d2bd4822b755728
+          - name: Google Play
+            issue: 217
+            apk:
+              sha256: 56986994f84593eb35c9734efe3836c5d75a82966b54c917cec7681b0464a947
   - package: org.ironfoxoss.ironfox
     signature:
       - fingerprint: C5:E2:91:B5:A5:71:F9:C8:CD:9A:97:99:C2:C9:4E:02:EC:97:03:94:88:93:F2:CA:75:6D:67:B9:42:04:F9:04
