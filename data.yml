@@ -424,6 +424,14 @@ packages:
             issue: 353
             apk:
               sha256: 9ddb180c6f322b4da7f25cb97f40d16b956e6e34c301a7db4cdf1838cebdb36e
+  - package: com.getyourguide.android
+    signature:
+      - fingerprint: 2B:47:AC:B3:D0:BC:0C:9C:CF:CA:B5:FD:BA:91:CA:DC:D1:6E:6B:EF:14:26:D7:3B:8A:F0:2C:76:C5:FC:5A:E8
+        sources:
+          - name: Google Play
+            issue: 314
+            apk:
+              sha256: 36bc747c6b4c1042557a640d9f7bfd4533bb28fafb02f57f6fdec8f84ebc7226
   - package: com.github.catfriend1.syncthingfork
     signature:
       - fingerprint: D3:74:B8:DE:50:57:01:31:43:C7:D1:51:5A:01:55:98:C2:DF:40:3B:E8:16:0C:AE:01:A5:8C:22:7E:6E:86:AA
