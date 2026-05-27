@@ -504,6 +504,14 @@ packages:
             issue: 464
             apk:
               sha256: ed6547c3ba618304bc7fc9d7e3a29e0899c1e960cb0965d64bc5274d2021c5e7
+  - package: com.myklarnamobile
+    signature:
+      - fingerprint: B1:E3:7A:B5:C1:3D:F8:05:12:D3:67:E7:50:97:6F:96:E2:FF:A2:E6:E2:62:26:DA:37:9F:06:98:D5:89:34:EA
+        sources:
+          - name: Google Play
+            issue: 319
+            apk:
+              sha256: a3c73e651a2cf670cb64339ab3b2894b341ad1bc399425a39f0a669e5ec5b3dd
   - package: com.naver.labs.translator
     signature:
       - fingerprint: 0B:8B:85:23:BB:4A:EF:FA:34:6E:4B:DD:4F:BF:7D:19:34:50:56:9A:A1:4A:AA:D4:AD:FD:94:A3:F7:B2:27:BB
