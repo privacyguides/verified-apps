@@ -1127,6 +1127,14 @@ packages:
         sources:
           - name: F-Droid
             issue: 541
+  - package: org.eurail.railplanner
+    signature:
+      - fingerprint: 4E:93:E9:A0:C7:A5:AD:70:91:98:C3:0C:20:13:9A:43:FB:F9:3C:77:DE:79:EE:73:D1:B8:F1:1B:2C:40:FE:FC
+        sources:
+          - name: Google Play
+            issue: 307
+            apk:
+              sha256: eff8c24e315f0d54a2545bba8e3dc10121e18d173cdca4a89f3f69e7be0c4922
   - package: org.fdroid.basic
     signature:
       - fingerprint: EF:7F:82:2B:76:53:E2:01:1C:B8:C5:A7:FC:99:E8:D2:AD:E1:71:7E:53:9C:A5:6D:64:56:29:5E:3B:C0:73:12
