@@ -613,6 +613,18 @@ packages:
             apk:
               sha256: af19583a5defbfdf1c6677f24979587b100309b70fe6678e9ea047dd46e65295
               link: https://github.com/QuantumPhysique/trale/releases/download/v1.0.3/app-arm64-v8a-release.apk
+  - package: de.salomax.currencies
+    signature:
+      - fingerprint: 35:32:CE:86:50:3F:6A:9D:B1:9C:5E:05:B1:4E:51:AE:E6:CC:10:31:D5:09:BC:AC:53:3C:C2:85:A5:10:28:64
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: 489
+            apk:
+              sha256: 3358ee9e8be1e34640cbbaca2fbed78274c38aed4e93e170453eb6d24b3e0164
+          - name: Google Play
+            issue: 489
+            apk:
+              sha256: ec25bc534ec2d1f716020129561a9fea6877ca0f3677beda6293eaae7f72238c
   - package: de.tutao.tutanota
     signature:
       - fingerprint: B4:54:C1:76:F9:0A:1E:A0:57:29:87:D3:82:72:3B:5C:D7:4F:94:2A:79:37:A2:A0:B9:9A:36:80:69:14:88:50
