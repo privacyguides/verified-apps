@@ -889,6 +889,14 @@ packages:
             apk:
               sha256: 9d6425d3d8d79f4b67ad563d9de7ca2c5a6cf48623581bce5a2f1ea0b43503ea
               link: https://github.com/fast4x/RiPlay/releases/download/v0.7.80/RiPlay-full-release-0.7.80.apk
+  - package: jp.co.ana.android.tabidachi
+    signature:
+      - fingerprint: D8:BE:42:57:71:A1:1F:7A:2B:12:1C:DB:21:A1:47:10:42:0F:1C:AA:16:65:EB:55:4E:9F:F5:AD:33:7C:91:FD
+        sources:
+          - name: Google Play
+            issue: 303
+            apk:
+              sha256: ddc13a49884b4fa71a65996fcf163bca55e946e0951c5e666c24d8e89466763e
   - package: keepass2android.keepass2android
     signature:
       - fingerprint: 0B:F8:05:6D:3A:39:4E:D7:C7:71:73:C4:B4:2C:80:05:65:B4:F0:A4:29:77:56:9C:F3:47:2C:27:1C:56:29:39
