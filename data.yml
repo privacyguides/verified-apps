@@ -309,6 +309,19 @@ packages:
             apk:
               sha256: 76c2d4286ee14f4d80815e9138324b071fc1629a211447b98c2db0ab55b45269
               link: https://github.com/Kunzisoft/KeePassDX/releases/download/4.4.2/KeePassDX-4.4.2-libre.apk
+  - package: com.mcu.reolink
+    signature:
+      - fingerprint: 5D:DB:D4:CF:DD:6E:4D:49:4B:64:3B:D1:61:4A:BD:8D:6A:1A:B3:C8:A4:49:E6:DB:E6:D4:7B:ED:A2:DE:C3:44
+        sources:
+          - name: Direct APK Link
+            issue: 464
+            apk:
+              sha256: 492a3b75f224a94b029da8176426ca20297e83e471ffad4fba2c82e1946bbaac
+              link: https://home-cdn.reolink.us/wp-content/assets/app/android/reolink.apk
+          - name: Google Play
+            issue: 464
+            apk:
+              sha256: ed6547c3ba618304bc7fc9d7e3a29e0899c1e960cb0965d64bc5274d2021c5e7
   - package: com.nextcloud.client
     signature:
       - fingerprint: 57:09:57:6F:9D:6C:6A:76:87:DD:5D:56:B2:69:D1:FA:5E:37:97:02:B9:1B:C8:3F:39:FD:7B:7C:59:7C:1B:83
