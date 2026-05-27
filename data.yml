@@ -527,6 +527,14 @@ packages:
             issue: 221
             apk:
               sha256: 959c9839cf1767adb4d2929fcd77c9830816a2713ee498644904ec29268bb394
+  - package: com.google.android.apps.translate
+    signature:
+      - fingerprint: 3D:7A:12:23:01:9A:A3:9D:9E:A0:E3:43:6A:B7:C0:89:6B:FB:4F:B6:79:F4:DE:5F:E7:C2:3F:32:6C:8F:99:4A
+        sources:
+          - name: Google Play
+            issue: 589
+            apk:
+              sha256: 927309120c55db66b3b17d38a431691f9b92e2f32883cb7b00ce3afabcb806dd
   - package: com.google.android.inputmethod.latin
     signature:
       - fingerprint: |
