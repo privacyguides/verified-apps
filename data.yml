@@ -613,6 +613,17 @@ packages:
         sources:
           - name: Accrescent
             issue: 90
+  - package: org.cromite.cromite
+    signature:
+      - fingerprint: 63:3F:A4:1D:82:11:D6:D0:91:6A:81:9B:89:66:8C:6D:E9:2E:64:23:2D:A6:7F:9D:16:FD:81:C3:B7:E9:23:FF
+        sources:
+          - name: AppVerifier
+            issue: 157
+          - name: Direct APK Link
+            issue: 157
+            apk:
+              sha256: 77af7db8f0a02e8d8cd2099d1f9b5c8266d6ae4cba06924bda5c73f980dc6894
+              link: https://github.com/uazo/cromite/releases/download/v148.0.7778.168-cb3baf14f52eb4365d017f640f85310735c19b79/arm64_ChromePublic.apk
   - package: org.cryptomator
     signature:
       - fingerprint: F7:C3:EC:3B:0D:58:8D:3C:B5:29:83:E9:EB:1A:74:21:C9:3D:43:39:A2:86:39:8E:71:D7:B6:51:E8:D8:EC:DD
