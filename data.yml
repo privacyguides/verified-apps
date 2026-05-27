@@ -732,6 +732,14 @@ packages:
             issue: 324
             apk:
               sha256: 145bf32b0e0118b455aae26ffec8aa47c6637ab161bbabd504f9c235e803a221
+  - package: com.ubercab.eats
+    signature:
+      - fingerprint: 9A:8C:DC:86:87:60:49:A3:82:54:33:1A:74:45:39:14:64:C5:E3:A7:D0:5F:7C:8D:58:83:2E:94:23:11:C4:AA
+        sources:
+          - name: Google Play
+            issue: 399
+            apk:
+              sha256: 4f715443e39ecda7655e9df50f52e98b3999a26153d930e5eee0d41a0a9cdd24
   - package: com.verisec.mobile.frejaeid
     signature:
       - fingerprint: 1F:14:FE:04:C5:19:52:C5:E3:C8:E6:82:51:AE:8A:C3:73:B8:4C:59:76:BD:7F:24:8E:64:3A:F2:50:C8:BA:91
