@@ -385,6 +385,19 @@ packages:
             apk:
               sha256: 7ae8d6c5358410bf96c2b14d46eb7f210f9c173a8f1f8f82b5e3ccef1cdc46e5
               link: https://github.com/Windscribe/Android-App/releases/download/v4.0/mobile.apk
+  - package: com.wireguard.android
+    signature:
+      - fingerprint: 84:A1:3F:A2:C4:E0:06:4B:0C:11:65:4B:8A:86:57:4B:7A:9B:93:52:A3:83:4C:EE:32:45:5B:06:1C:3D:41:27
+        sources:
+          - name: Direct APK Link
+            issue: 459
+            apk:
+              sha256: f92971bc804f4c448e8845ae97e426095eab06ec09a2473a3fa2cfe7288e3298
+              link: https://download.wireguard.com/android-client/com.wireguard.android-1.0.20260315.apk
+          - name: Google Play
+            issue: 459
+            apk:
+              sha256: a0f6c8d32b3a328a46359d7b7a76ec5bbd8f1443ebc464e47a918f0d61fe887a
   - package: com.x8bit.bitwarden
     signature:
       - fingerprint: DE:6E:C9:14:31:55:79:95:29:7B:F3:E6:5B:C8:03:49:BC:60:3A:04:70:81:60:61:8C:86:BC:99:94:17:1C:90
