@@ -78,6 +78,21 @@ packages:
             issue: 225
             apk:
               sha256: 0cf94d5f9dc729e40660c0ec82e66190414400c0e25003f707a90e5361cd90d0
+  - package: ch.protonvpn.android
+    signature:
+      - fingerprint: DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
+        sources:
+          - name: AppVerifier
+            issue: 220
+          - name: Direct APK Link
+            issue: 220
+            apk:
+              sha256: 4e6d15477f96bb3a35f50bd73ffa0f8b4a7b9ab519a4239346498d53f38b978b
+              link: https://github.com/ProtonVPN/android-app/releases/download/5.18.46.0/ProtonVPN-5.18.46.0.605184600.-production-vanilla-direct-release.apk
+          - name: Google Play
+            issue: 220
+            apk:
+              sha256: 47d5fd49c40d9c5987fa1d0e637091a3a737ffc820dd70bf4e68d8a0077a2e92
   - package: chat.fluffy.fluffychat
     signature:
       - fingerprint: 05:7A:C4:51:64:A2:E6:E3:1F:6D:DE:55:5A:5F:2C:CC:B4:D8:83:4C:B1:85:25:49:68:1B:00:E3:46:68:CA:F3
