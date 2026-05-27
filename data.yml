@@ -816,6 +816,23 @@ packages:
             apk:
               sha256: 591275a6a726d998f61f14ea721c9af497574d49a362ceb2f971726068a4533e
               link: https://releases.ironfoxoss.org/ironfox/releases/151.0/universal/ironfox-151.0-universal.apk
+  - package: org.jellyfin.mobile
+    signature:
+      - fingerprint: D8:81:79:6E:D2:A6:7F:F6:EF:9F:67:68:28:72:3C:6B:1F:A1:8E:09:38:89:62:CB:A4:AB:C4:A5:94:A6:91:31
+        sources:
+          - name: Direct APK Link
+            issue: 470
+            apk:
+              sha256: ebd4ee1bdd954e81b59113e68009e9ae3cb5f0cb666f1e4b1862e6936f0adfbb
+              link: https://github.com/jellyfin/jellyfin-android/releases/download/v2.6.4/jellyfin-android-v2.6.4-libre-release.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 470
+            apk:
+              sha256: ebd4ee1bdd954e81b59113e68009e9ae3cb5f0cb666f1e4b1862e6936f0adfbb
+          - name: F-Droid
+            issue: 470
+            apk:
+              sha256: ebd4ee1bdd954e81b59113e68009e9ae3cb5f0cb666f1e4b1862e6936f0adfbb
   - package: org.joinmastodon.android
     signature:
       - fingerprint: 2D:3E:76:FC:B0:BA:31:3D:C0:5E:53:72:83:D4:CA:2F:3E:DD:B3:1B:F9:4D:0F:7E:73:33:C3:BA:63:14:5F:8A
