@@ -162,6 +162,14 @@ packages:
             issue: 439
             apk:
               sha256: af8be27f292aaa8f9739ca21f652e86e611633b68615f550464742b6f4d07e6f
+  - package: com.aegean.airlines.prod
+    signature:
+      - fingerprint: C4:5E:16:E7:DB:54:40:7E:87:43:B5:DF:45:BB:C0:40:F4:81:50:41:2C:20:D2:5D:F1:BC:63:06:6B:26:E8:DF
+        sources:
+          - name: Google Play
+            issue: 499
+            apk:
+              sha256: 6870f1f6110af5f478dd131bc1055c44fff00e0d7f4ffe29f883242317759ffc
   - package: com.akylas.documentscanner
     signature:
       - fingerprint: 85:B3:20:D6:9A:03:87:83:D2:9E:4F:DF:DE:19:06:66:DF:8B:F3:46:D7:C9:E5:5E:6A:AC:E7:5E:DA:89:F3:BA
