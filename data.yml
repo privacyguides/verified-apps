@@ -309,6 +309,14 @@ packages:
             apk:
               sha256: 76c2d4286ee14f4d80815e9138324b071fc1629a211447b98c2db0ab55b45269
               link: https://github.com/Kunzisoft/KeePassDX/releases/download/4.4.2/KeePassDX-4.4.2-libre.apk
+  - package: com.nextcloud.client
+    signature:
+      - fingerprint: 57:09:57:6F:9D:6C:6A:76:87:DD:5D:56:B2:69:D1:FA:5E:37:97:02:B9:1B:C8:3F:39:FD:7B:7C:59:7C:1B:83
+        sources:
+          - name: F-Droid
+            issue: 193
+            apk:
+              sha256: faaa64b5d88724a6a6461dfb01ed5938f0ffbc111fe53c456ec869d82ec50334
   - package: com.none.tom.exiferaser
     signature:
       - fingerprint: D9:10:86:7C:E2:CF:3D:CD:37:DB:51:85:3E:BE:F8:63:3F:D8:3A:14:2B:26:42:27:4E:D0:68:15:2F:F1:22:01
