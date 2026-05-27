@@ -1754,6 +1754,14 @@ packages:
             issue: 293
             apk:
               sha256: cab499095fafd286e892f33668dfc53a690ed648ff26659bc75775372afa81dd
+  - package: se.regiongavleborg.xtrafik.app
+    signature:
+      - fingerprint: BE:26:E2:B0:87:A5:E9:97:24:44:32:13:7C:A6:88:C1:2E:68:8C:84:5D:09:E7:FB:A7:90:73:4C:97:57:D7:DD
+        sources:
+          - name: Google Play
+            issue: 585
+            apk:
+              sha256: bc2fd0de5230eab505f6a3b550613215af47c254253be577a255302ae5f82d03
   - package: se.sj.android
     signature:
       - fingerprint: 44:D2:7F:68:AA:D1:74:12:78:28:F1:9B:8E:CE:0F:97:66:01:F8:32:FD:E4:22:AB:36:CF:FC:64:99:9A:64:B2
