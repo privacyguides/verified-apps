@@ -700,6 +700,14 @@ packages:
         sources:
           - name: Google Play
             issue: 422
+  - package: com.pal.dx
+    signature:
+      - fingerprint: AC:D4:71:6B:03:0B:7F:EB:E6:E1:83:01:18:7B:62:5C:9C:CC:86:66:07:5A:E7:0B:21:98:B7:DC:42:83:86:A7
+        sources:
+          - name: Google Play
+            issue: 592
+            apk:
+              sha256: e453ac17dbdc93ee23dd2056bf721b62d41d1ffc7886cca36bc16771e2b0af64
   - package: com.paypal.android.p2pmobile
     signature:
       - fingerprint: C7:C6:2E:A0:F6:E2:F6:EB:A8:7F:95:40:69:87:50:55:30:EF:2F:51:6E:7C:DE:59:91:D7:14:03:31:44:80:72
