@@ -260,6 +260,14 @@ packages:
         sources:
           - name: Developer's Website
             issue: 424
+  - package: com.geoguessr.app
+    signature:
+      - fingerprint: 21:A6:DC:35:E1:BB:D5:E7:67:66:D1:EA:BC:11:92:43:F5:87:D5:2B:5B:92:29:9A:09:88:A2:67:9C:8B:A6:85
+        sources:
+          - name: Google Play
+            issue: 353
+            apk:
+              sha256: 9ddb180c6f322b4da7f25cb97f40d16b956e6e34c301a7db4cdf1838cebdb36e
   - package: com.github.lamarios.clipious
     signature:
       - fingerprint: 19:DE:04:E5:D6:84:66:06:9D:30:EC:63:C6:BA:7D:9E:3C:F7:3B:5D:61:CB:4B:37:62:C2:B9:B2:53:EC:BD:03
