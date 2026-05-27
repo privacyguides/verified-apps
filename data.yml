@@ -652,15 +652,32 @@ packages:
     signature:
       - fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
         sources:
-          - name: F-Droid
-            issue: 173
-          - name: Google Play
-            issue: 173
           - name: Direct APK Link
             issue: 173
             apk:
               sha256: ae7e699599e81f70e2b82626bb1dfa883fe096cd938387133e123c116e5641d9
               link: https://f-droid.org/repo/org.fossify.gallery_28.apk
+          - name: Direct APK Link
+            issue: 386
+            apk:
+              sha256: ae7e699599e81f70e2b82626bb1dfa883fe096cd938387133e123c116e5641d9
+              link: https://github.com/FossifyOrg/Gallery/releases/download/1.13.1/gallery-28-foss-release.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 386
+            apk:
+              sha256: ae7e699599e81f70e2b82626bb1dfa883fe096cd938387133e123c116e5641d9
+          - name: F-Droid
+            issue: 173
+          - name: F-Droid
+            issue: 386
+            apk:
+              sha256: ae7e699599e81f70e2b82626bb1dfa883fe096cd938387133e123c116e5641d9
+          - name: Google Play
+            issue: 173
+          - name: Google Play
+            issue: 386
+            apk:
+              sha256: 5f1ea705f577bcc0c9c022c89695233bcf3d4bbf996ed8492602c5709959bc4f
   - package: org.ironfoxoss.ironfox
     signature:
       - fingerprint: C5:E2:91:B5:A5:71:F9:C8:CD:9A:97:99:C2:C9:4E:02:EC:97:03:94:88:93:F2:CA:75:6D:67:B9:42:04:F9:04
