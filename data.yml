@@ -225,6 +225,14 @@ packages:
             issue: 266
             apk:
               sha256: dfe359b3b2c16ff23b56c02c4703a9437824469f5035d109b53b2acc09a7635e
+  - package: com.digibites.accubattery
+    signature:
+      - fingerprint: 64:A5:40:DE:F3:35:EF:35:08:80:CB:66:08:C9:26:5B:B4:CB:F7:FB:DE:40:D3:D8:C0:6A:EB:99:7C:27:63:5E
+        sources:
+          - name: Google Play
+            issue: 116
+            apk:
+              sha256: 83895d3276c12172da1b8ab063e1507e97c0229ab4ff148271695a4ce877000c
   - package: com.digitalextremes.warframemobile
     signature:
       - fingerprint: CD:37:9E:48:D5:29:BD:71:EE:5E:9D:B2:B1:7F:BD:3D:72:BC:32:5F:CD:73:A6:CF:4E:7C:21:29:4B:AC:F3:AF
