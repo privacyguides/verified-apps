@@ -215,6 +215,14 @@ packages:
             issue: 488
           - name: AppVerifier
             issue: 488
+  - package: com.bankid.bus
+    signature:
+      - fingerprint: AD:A2:62:4B:35:FC:A3:CC:34:0E:11:89:94:54:E5:50:FB:A9:82:B4:4D:82:B9:7E:FD:16:AA:3A:7A:46:7C:16
+        sources:
+          - name: Google Play
+            issue: 278
+            apk:
+              sha256: d4a5df2222efc3d9bfd23e1947f5b26fd7f447f0f57e5460e522bc6c62902fdf
   - package: com.beemdevelopment.aegis
     signature:
       - fingerprint: 09:CF:DE:62:E2:A8:1C:80:50:D3:BE:4C:20:E3:F8:D8:DD:D0:15:31:BE:1B:47:CB:3B:0E:EC:21:3F:64:1F:89
