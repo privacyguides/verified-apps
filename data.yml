@@ -913,6 +913,21 @@ packages:
             apk:
               sha256: 741727aeb08a976e092c371db7ee7e79b2c9cd29b181858e0d40d9dac9f10848
               link: https://updates.signal.org/android/Signal-Android-website-prod-universal-release-8.10.3.apk
+  - package: org.torproject.android
+    signature:
+      - fingerprint: A4:54:B8:7A:18:47:A8:9E:D7:F5:E7:0F:BA:6B:BA:96:F3:EF:29:C2:6E:09:81:20:4F:E3:47:BF:23:1D:FD:5B
+        sources:
+          - name: AppVerifier
+            issue: 490
+          - name: Direct APK Link
+            issue: 490
+            apk:
+              sha256: 9347cbe8691aae69b26c9ee182521476bdc8a04a1c346257dad94ee8dd26bed2
+              link: https://github.com/guardianproject/orbot-android/releases/download/17.9.3-RC-1-tor-0.4.9.6/Orbot-17.9.3-RC-1-tor-0.4.9.6-1-g98e984f76-fullperm-arm64-v8a-release.apk
+          - name: Google Play
+            issue: 490
+            apk:
+              sha256: f614e59cac2f9f65e3840c5f27919c064c21e41433dd93346b310459ad6e557d
   - package: org.torproject.torbrowser
     signature:
       - fingerprint: 20:06:1F:04:5E:73:7C:67:37:5C:17:79:4C:FE:DB:43:6A:03:CE:C6:BA:CB:7C:B9:F9:66:42:20:5C:A2:CE:C8
