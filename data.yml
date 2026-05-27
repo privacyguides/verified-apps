@@ -402,6 +402,14 @@ packages:
             issue: 466
             apk:
               sha256: d573dbc7ce7a649880739eab5e8287e2418b16a7fbac90e473ab2f6658aa318a
+  - package: com.egyptianbanks.instapay
+    signature:
+      - fingerprint: 9F:21:C4:FF:30:33:E2:03:F1:CB:B5:15:90:66:E5:A0:E3:FB:4F:0A:D1:F6:80:36:20:2F:9B:F4:A4:A2:9B:55
+        sources:
+          - name: Google Play
+            issue: 537
+            apk:
+              sha256: a815c2763e0c01edb9e945e38902070175eb14675a9235c07e1b2a870bace806
   - package: com.epicgames.portal
     signature:
       - fingerprint: 67:69:9A:6B:3D:31:5D:EE:51:53:6A:67:B4:F1:C6:E7:E2:17:5F:98:4B:09:6B:C2:97:6E:51:2D:22:94:08:71
