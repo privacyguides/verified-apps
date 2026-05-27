@@ -635,6 +635,14 @@ packages:
             apk:
               sha256: 810c430a358724647921b0056a0c9f398054f6da4207757366ed44a802503c12
               link: https://github.com/spaceapi-community/my-hackerspace/releases/download/v2.3.1/MyHackerspace-2.3.1.apk
+  - package: is.xyz.mpv
+    signature:
+      - fingerprint: FA:E7:F9:D0:23:85:CC:24:D9:6E:88:43:66:03:E2:3E:A6:AE:C7:64:9A:D1:25:0A:BB:B4:83:7D:AA:B8:2F:FF
+        sources:
+          - name: Google Play
+            issue: 84
+            apk:
+              sha256: a05e2daba998bf115ed5db566e724fb0e5934713d2f567d36ea99a8b83b24290
   - package: it.fast4x.rimusic
     signature:
       - fingerprint: A1:BA:8B:D7:4A:F8:F9:2C:B3:71:9A:07:21:13:A2:18:CF:AE:C0:2B:CE:2B:73:6A:28:0E:31:D8:CD:11:80:8C
