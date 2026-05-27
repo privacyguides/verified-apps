@@ -392,6 +392,14 @@ packages:
         sources:
           - name: Developer's Website
             issue: 424
+  - package: com.finnair
+    signature:
+      - fingerprint: 63:4A:9A:6A:A1:79:F2:8F:23:06:ED:00:14:FB:28:33:CE:A0:2E:2F:47:3D:4B:7B:19:A5:39:39:D6:63:17:00
+        sources:
+          - name: Google Play
+            issue: 318
+            apk:
+              sha256: 57e8d3e023a677c118635c649dccd87ad8d41853096ebae78eddd189f6188f71
   - package: com.flyersoft.moonreader
     signature:
       - fingerprint: 5A:C6:46:EB:C6:80:17:E4:CC:58:2B:11:B1:C2:AE:5D:29:B1:5D:9B:0A:C3:A5:4F:C6:09:72:41:7B:41:C9:AD
