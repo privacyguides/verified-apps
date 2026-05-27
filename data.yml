@@ -467,6 +467,14 @@ packages:
             issue: 538
             apk:
               sha256: 88949b2d89d8ebdc69cfb203103b3a3b39f8801589aba0d6ccaa0a8b18a9f1b2
+  - package: com.lufthansa.android.lufthansa
+    signature:
+      - fingerprint: AF:75:72:3A:86:9D:50:C9:20:04:D8:B2:D5:74:46:48:DE:70:14:CA:D8:33:38:86:8E:5F:4C:AA:0B:B8:A8:8E
+        sources:
+          - name: Google Play
+            issue: 282
+            apk:
+              sha256: cd82720732a16ae642ac8c9f83738f105e6444a37da8bae287e6a0f4629e0a45
   - package: com.mcu.reolink
     signature:
       - fingerprint: 5D:DB:D4:CF:DD:6E:4D:49:4B:64:3B:D1:61:4A:BD:8D:6A:1A:B3:C8:A4:49:E6:DB:E6:D4:7B:ED:A2:DE:C3:44
