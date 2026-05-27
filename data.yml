@@ -332,6 +332,19 @@ packages:
             apk:
               sha256: 762473e7236891fcc62e7bbc5ba7419070e99efbe22d069f99d37e701888170e
               link: https://github.com/streetwriters/notesnook/releases/download/3.3.24-android/notesnook-arm64-v8a.apk
+  - package: com.vivaldi.browser
+    signature:
+      - fingerprint: E8:A7:85:44:65:5B:A8:C0:98:17:F7:32:76:8F:56:89:B1:66:2E:C4:B2:BC:5A:0B:C0:EC:13:8D:33:CA:3D:1E
+        sources:
+          - name: Direct APK Link
+            issue: 526
+            apk:
+              sha256: 15af37673c83acd1db01dc2c6e64f0ad5c1be6c72bf07379b7a8b7946cee19d9
+              link: https://downloads.vivaldi.com/stable/Vivaldi.7.9.3980.182_arm64-v8a.apk
+          - name: Google Play
+            issue: 526
+            apk:
+              sha256: cf5886cfa21088647d5812fca06241e3285c3816837af7c0f484049bef6a4e9e
   - package: com.windscribe.vpn
     signature:
       - fingerprint: 9F:B3:57:CA:2D:7F:0A:CC:7B:31:21:98:55:34:49:0D:0A:A7:0F:5D:C6:1C:A8:EC:59:3F:3D:A1:E9:CD:33:9B
