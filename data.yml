@@ -887,6 +887,14 @@ packages:
             issue: 79
             apk:
               sha256: 2c3c031bff243248239c54ba1cc47da615df19f240dd176d5364941550ee0ff1
+  - package: de.westnordost.streetmeasure
+    signature:
+      - fingerprint: 97:F9:2C:BB:78:24:72:27:4C:BD:0A:6C:52:B5:27:88:77:AE:1B:27:DE:46:C6:65:D7:25:CB:1B:79:93:CB:B5
+        sources:
+          - name: Google Play
+            issue: 567
+            apk:
+              sha256: e094ad80be5fbb69e177b394e0671de91c7eb329cb2e816986e37265d9c2bfc8
   - package: deckers.thibault.aves.libre
     signature:
       - fingerprint: F4:79:47:27:E4:54:16:D8:7C:48:71:38:29:2B:70:9F:11:D1:CD:7D:AB:55:84:D8:C6:85:7D:92:E0:66:60:4B
