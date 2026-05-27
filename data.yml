@@ -360,22 +360,6 @@ packages:
         sources:
           - name: Google Play
             issue: 422
-  - package: com.reddit.frontpage
-    signature:
-      - fingerprint: 97:0B:91:14:38:13:B4:C9:D5:F3:63:4F:67:2C:9F:CA:A5:62:1B:4E:FA:AE:DA:FD:6C:23:5C:BB:B8:69:73:6F
-        sources:
-          - name: Google Play
-            issue: 292
-            apk:
-              sha256: 40d192e0becb2e2d9a6f4ad9d984d9eb1fe40a5f24718f43953f73dbd2211f09
-  - package: com.revolut.revolut
-    signature:
-      - fingerprint: 9C:9B:E0:71:35:E9:72:78:02:82:C2:E5:D2:7D:A0:6E:CB:8E:E3:AD:FC:75:30:39:17:DD:F6:6D:6F:AA:EF:A4
-        sources:
-          - name: Google Play
-            issue: 506
-            apk:
-              sha256: 3ba12ceb8c5a2f028f8415e610f27570c737d5625ebbaa59bd1d9bff4e3d47e5
   - package: com.standardnotes
     signature:
       - fingerprint: 58:3F:C4:1B:49:0C:38:0B:56:FB:E9:EE:47:38:1E:B4:EF:53:E0:37:19:A5:50:3F:C1:F2:9D:CD:8E:28:90:2A
@@ -458,6 +442,19 @@ packages:
               repo: https://mobileapp.bitwarden.com/fdroid/repo/
           - name: AppVerifier
             issue: 355
+  - package: de.danoeh.antennapod
+    signature:
+      - fingerprint: 17:94:30:56:5A:4A:04:BF:E7:82:74:83:24:30:99:BD:10:87:04:10:80:0C:D7:C4:C7:B4:8D:8D:32:26:DF:55
+        sources:
+          - name: Direct APK Link
+            issue: 241
+            apk:
+              sha256: 8faee459f952e62e5c12be18620911b01c15b5fa0ee67768dcf8ae1e1a68b09c
+              link: https://f-droid.org/repo/de.danoeh.antennapod_3110495.apk
+          - name: F-Droid
+            issue: 241
+            apk:
+              sha256: 8faee459f952e62e5c12be18620911b01c15b5fa0ee67768dcf8ae1e1a68b09c
   - package: de.quantumphysique.trale
     signature:
       - fingerprint: A2:6E:7B:1B:C1:9F:7F:11:81:C0:F1:5C:96:BF:B9:5E:99:9D:FD:28:4F:E0:5F:96:7D:60:45:E1:6C:41:14:38
@@ -499,19 +496,6 @@ packages:
             apk:
               sha256: c4fbedb69a9eb682e4bf2923a8c3803b2caa140ca1468b4a440cb68c459158ae
               link: https://github.com/deckerst/aves/releases/download/v1.14.4/app-libre-x86_64-release.apk
-  - package: dev.imranr.obtainium.fdroid
-    signature:
-      - fingerprint: B3:53:60:1F:6A:1D:5F:D6:60:3A:E2:F5:0B:E8:0C:F3:01:36:7B:86:B6:AB:8B:1F:66:24:3D:A9:6C:D5:73:62
-        sources:
-          - name: Direct APK Link
-            issue: 211
-            apk:
-              sha256: 719b218bbcf4e64cdf1ff5008f81f0ab9be88fcd3563f1f3f302990432e87130
-              link: https://github.com/ImranR98/Obtainium/releases/download/v1.4.3/app-arm64-v8a-fdroid-release.apk
-          - name: F-Droid
-            issue: 211
-            apk:
-              sha256: fbab1c450c807f44e45e90f02b95ed8733866faaa6df33d54bdaae3fb59d1856
   - package: dev.soupslurpr.appverifier
     signature:
       - fingerprint: 3A:04:A8:0B:2A:88:33:4C:74:74:85:F0:B2:15:16:40:A3:8B:B3:D2:D7:3A:8E:AB:81:DF:50:3E:0F:02:02:B2
@@ -561,15 +545,6 @@ packages:
             issue: 494
           - name: AppVerifier
             issue: 494
-  - package: io.ente.photos.independent
-    signature:
-      - fingerprint: 35:ED:56:81:B7:0B:B3:BD:35:D9:0D:85:6A:F5:69:4C:50:4D:EF:46:AA:D8:3F:77:7B:1C:67:5C:F4:51:35:0B
-        sources:
-          - name: Direct APK Link
-            issue: 245
-            apk:
-              sha256: cd5ddf49dabbb7b9870db57441b8b8e426b09f41951853c13af1a595aed5d62d
-              link: https://github.com/ente-io/ente/releases/download/photos-v1.3.44/ente-photos-v1.3.44.apk
   - package: io.spaceapi.community.myhackerspace
     signature:
       - fingerprint: 4E:C5:1A:CD:06:D3:F9:E7:95:07:C9:14:EF:15:E2:C0:9A:18:24:9A:82:AF:90:64:FF:04:95:F9:26:F9:3D:D4
