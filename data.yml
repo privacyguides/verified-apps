@@ -146,6 +146,14 @@ packages:
             issue: 114
           - name: Google Play
             issue: 114
+  - package: com.PigeonGames.Phigros
+    signature:
+      - fingerprint: 20:CD:CB:DA:89:07:DC:18:93:FE:A5:3B:3F:D2:84:4E:EF:F9:52:7D:DA:D7:96:7C:13:65:A0:79:75:D7:57:C1
+        sources:
+          - name: Google Play
+            issue: 438
+            apk:
+              sha256: de46fe3c3f93a8fd1ca29169f0630bc52eab26a6959c33af961073404d2086f2
   - package: com.aurora.store
     signature:
       - fingerprint: 4C:62:61:57:AD:02:BD:A3:40:1A:72:63:55:5F:68:A7:96:63:FC:3E:13:A4:D4:36:9A:12:57:09:41:AA:28:0F
