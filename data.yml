@@ -660,6 +660,14 @@ packages:
             issue: 294
             apk:
               sha256: 04ef71623b2533e1a19df1a246bc0d83a7ddc071ff3acd9877753c4d6de4e423
+  - package: com.ubercab
+    signature:
+      - fingerprint: 40:03:23:1A:B4:2F:EB:8D:95:5E:62:FD:FA:A4:FA:D5:95:67:05:4B:9C:6B:BC:3D:95:02:99:DD:FC:26:83:92
+        sources:
+          - name: Google Play
+            issue: 324
+            apk:
+              sha256: 145bf32b0e0118b455aae26ffec8aa47c6637ab161bbabd504f9c235e803a221
   - package: com.vietnamairlines.android.app
     signature:
       - fingerprint: A8:76:B2:9F:BB:A1:9F:5C:49:F6:E8:3F:53:8C:18:03:08:05:C8:FC:A4:3E:3D:4B:E8:83:17:3E:37:32:CC:AC
