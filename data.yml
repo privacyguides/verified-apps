@@ -406,6 +406,14 @@ packages:
             apk:
               sha256: 762473e7236891fcc62e7bbc5ba7419070e99efbe22d069f99d37e701888170e
               link: https://github.com/streetwriters/notesnook/releases/download/3.3.24-android/notesnook-arm64-v8a.apk
+  - package: com.tailscale.ipn
+    signature:
+      - fingerprint: 5C:DB:29:55:51:BF:E1:A0:87:FE:D6:AC:DA:07:14:1C:6C:92:9F:A7:C2:9B:D2:73:A7:09:28:13:AC:C4:34:BF
+        sources:
+          - name: Google Play
+            issue: 75
+            apk:
+              sha256: 7ad10b100f2790b046f324fb54881968141f9c776e405e55e6aea4b0fd5f24b2
   - package: com.vivaldi.browser
     signature:
       - fingerprint: E8:A7:85:44:65:5B:A8:C0:98:17:F7:32:76:8F:56:89:B1:66:2E:C4:B2:BC:5A:0B:C0:EC:13:8D:33:CA:3D:1E
@@ -934,6 +942,18 @@ packages:
             issue: 508
             apk:
               sha256: 568e62defe4a026784284678e7667e5afdc17cc4b9ac14cca58bd4c3b2e482a1
+  - package: org.schabi.newpipe
+    signature:
+      - fingerprint: CB:84:06:9B:D6:81:16:BA:FA:E5:EE:4E:E5:B0:8A:56:7A:A6:D8:98:40:4E:7C:B1:2F:9E:75:6D:F5:CF:5C:AB
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: 55
+            apk:
+              sha256: eb56aa9ae68b4d4b04e40251d7fe7ea49f97e0c4be5a8384e28d98ee36b9c5e2
+          - name: F-Droid
+            issue: 55
+            apk:
+              sha256: 12e28bdeeec5a9512ec550ba233dc890276f4e73e757ca0e787acede42dc6c1c
   - package: org.telegram.messenger
     signature:
       - fingerprint: 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
