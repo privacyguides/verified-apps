@@ -610,6 +610,14 @@ packages:
             issue: 261
             apk:
               sha256: e62d0c8000c7e64cc65c4fd6529baaa6d5bb48a04323227a24fdeffa0911bcfb
+  - package: com.momondo.flightsearch
+    signature:
+      - fingerprint: 32:3D:9F:92:DA:BE:24:A4:79:14:9C:48:F7:00:0F:1B:EC:CF:FA:A9:45:49:42:F9:BF:F3:48:5B:4C:86:D6:C1
+        sources:
+          - name: Google Play
+            issue: 270
+            apk:
+              sha256: 1507a631c1a039444090b7eafa0746c6a993022c0bf05e1a86cc6338c70d8671
   - package: com.mttnow.droid.easyjet
     signature:
       - fingerprint: BA:E1:4D:59:3D:B0:DA:16:45:1B:1A:85:2B:72:C8:8F:38:5C:93:5E:12:A5:43:ED:15:28:EC:D2:4B:D6:6A:C2
