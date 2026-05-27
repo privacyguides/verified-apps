@@ -846,6 +846,14 @@ packages:
             issue: 489
             apk:
               sha256: ec25bc534ec2d1f716020129561a9fea6877ca0f3677beda6293eaae7f72238c
+  - package: de.seemoo.at_tracking_detection.release
+    signature:
+      - fingerprint: AB:83:DA:14:0D:EB:AF:C8:2E:CC:66:2A:9E:18:02:E6:F9:45:BB:74:6A:9A:AE:4F:90:CB:EF:72:BF:A9:91:8F
+        sources:
+          - name: Google Play
+            issue: 559
+            apk:
+              sha256: fdab93454ac98c7e8841815678264e4ef7ee65a3b0d9fd6928a1e7512639fe76
   - package: de.tutao.tutanota
     signature:
       - fingerprint: B4:54:C1:76:F9:0A:1E:A0:57:29:87:D3:82:72:3B:5C:D7:4F:94:2A:79:37:A2:A0:B9:9A:36:80:69:14:88:50
