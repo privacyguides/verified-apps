@@ -604,6 +604,14 @@ packages:
             issue: 71
             apk:
               sha256: e6265a57eb5ca363808488e3b01955958bed93bc0c8a0d281849b363b11027ec
+  - package: com.tradera
+    signature:
+      - fingerprint: 46:F6:D3:D0:B6:E5:66:67:CF:33:CA:9A:71:A0:AB:0E:87:DD:46:1B:7D:B3:DC:E5:CF:97:F9:9E:1C:ED:23:72
+        sources:
+          - name: Google Play
+            issue: 294
+            apk:
+              sha256: 04ef71623b2533e1a19df1a246bc0d83a7ddc071ff3acd9877753c4d6de4e423
   - package: com.vietnamairlines.android.app
     signature:
       - fingerprint: A8:76:B2:9F:BB:A1:9F:5C:49:F6:E8:3F:53:8C:18:03:08:05:C8:FC:A4:3E:3D:4B:E8:83:17:3E:37:32:CC:AC
