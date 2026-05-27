@@ -63,6 +63,21 @@ packages:
         sources:
           - name: F-Droid
             issue: 549
+  - package: ch.protonmail.android
+    signature:
+      - fingerprint: DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
+        sources:
+          - name: AppVerifier
+            issue: 225
+          - name: Direct APK Link
+            issue: 225
+            apk:
+              sha256: 451ab7427a6da381bbc9dd5c44b26c4feca100a78e02d528d4af6077a51131c5
+              link: https://github.com/ProtonMail/android-mail/releases/download/7.9.8(17077)/ProtonMail-7.9.8_17077.apk
+          - name: Google Play
+            issue: 225
+            apk:
+              sha256: 0cf94d5f9dc729e40660c0ec82e66190414400c0e25003f707a90e5361cd90d0
   - package: chat.fluffy.fluffychat
     signature:
       - fingerprint: 05:7A:C4:51:64:A2:E6:E3:1F:6D:DE:55:5A:5F:2C:CC:B4:D8:83:4C:B1:85:25:49:68:1B:00:E3:46:68:CA:F3
