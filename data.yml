@@ -392,6 +392,14 @@ packages:
         sources:
           - name: Developer's Website
             issue: 424
+  - package: com.eurostar.androidapp
+    signature:
+      - fingerprint: F1:0B:41:49:CC:5A:9C:ED:83:02:93:E3:3A:8D:A7:D8:96:47:79:CB:65:28:F9:6C:7E:CC:79:AA:D6:CB:40:52
+        sources:
+          - name: Google Play
+            issue: 322
+            apk:
+              sha256: a6f90cdd7d19692c06e047c9622778531745b97a4748408f5a054df4ad174656
   - package: com.finnair
     signature:
       - fingerprint: 63:4A:9A:6A:A1:79:F2:8F:23:06:ED:00:14:FB:28:33:CE:A0:2E:2F:47:3D:4B:7B:19:A5:39:39:D6:63:17:00
