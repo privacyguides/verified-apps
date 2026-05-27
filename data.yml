@@ -552,6 +552,14 @@ packages:
             issue: 464
             apk:
               sha256: ed6547c3ba618304bc7fc9d7e3a29e0899c1e960cb0965d64bc5274d2021c5e7
+  - package: com.mttnow.droid.easyjet
+    signature:
+      - fingerprint: BA:E1:4D:59:3D:B0:DA:16:45:1B:1A:85:2B:72:C8:8F:38:5C:93:5E:12:A5:43:ED:15:28:EC:D2:4B:D6:6A:C2
+        sources:
+          - name: Google Play
+            issue: 330
+            apk:
+              sha256: 9f853added0b832160833dc7f6c7be90856b7349da829d1a1854f7275b5e168c
   - package: com.myklarnamobile
     signature:
       - fingerprint: B1:E3:7A:B5:C1:3D:F8:05:12:D3:67:E7:50:97:6F:96:E2:FF:A2:E6:E2:62:26:DA:37:9F:06:98:D5:89:34:EA
