@@ -431,6 +431,14 @@ packages:
             issue: 75
             apk:
               sha256: 7ad10b100f2790b046f324fb54881968141f9c776e405e55e6aea4b0fd5f24b2
+  - package: com.termux
+    signature:
+      - fingerprint: 22:8F:B2:CF:E9:08:31:C1:49:9E:C3:CC:AF:61:E9:6E:8E:1C:E7:07:66:B9:47:46:72:CE:42:73:34:D4:1C:42
+        sources:
+          - name: F-Droid
+            issue: 71
+            apk:
+              sha256: e6265a57eb5ca363808488e3b01955958bed93bc0c8a0d281849b363b11027ec
   - package: com.vivaldi.browser
     signature:
       - fingerprint: E8:A7:85:44:65:5B:A8:C0:98:17:F7:32:76:8F:56:89:B1:66:2E:C4:B2:BC:5A:0B:C0:EC:13:8D:33:CA:3D:1E
