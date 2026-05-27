@@ -1010,6 +1010,16 @@ packages:
             apk:
               sha256: 45cc002843a771ed6f16de83e08a18c4a8480f32ee1382f8168999ce74f7f4be
               link: https://github.com/VentralDigital/InterProfileSharing/releases/download/v1.1/ips-1.1.apk
+  - package: fi.nordea.mobilebank
+    signature:
+      - fingerprint: |-
+          3E:46:30:6E:A8:93:00:F6:24:40:F2:03:5C:E7:AF:7B:45:D6:D0:75:4E:BB:8E:0C:13:63:D3:8F:18:34:6C:8F
+          73:B4:7A:19:85:F5:D6:7E:FB:DC:EB:86:D1:9C:38:6B:3B:8B:BB:DD:83:6A:14:38:CC:64:F2:A9:9C:E4:2A:FB
+        sources:
+          - name: Google Play
+            issue: 195
+            apk:
+              sha256: 575aac457e2229c782c13aebffe64c4ffe6eca0e4459155baaa86b8bf94ea21d
   - package: grit.storytel.app
     signature:
       - fingerprint: A6:56:F3:FD:4E:4C:32:0B:FF:E0:81:EA:2A:FE:07:B0:AC:E6:14:B9:31:3A:10:D2:16:3E:91:91:BD:79:42:60
