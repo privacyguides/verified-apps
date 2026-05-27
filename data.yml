@@ -531,6 +531,14 @@ packages:
             issue: 311
             apk:
               sha256: 8a2f81942f2d72745e29095bdeab5395e0b968ce0e73097eddc6e6dd8cf610ba
+  - package: com.jrustonapps.myauroraforecast
+    signature:
+      - fingerprint: 95:F5:5A:84:0F:1A:F3:40:08:FB:E4:A0:76:D5:6C:F9:39:C2:9E:59:E6:48:CC:FF:5E:2E:1A:CB:F7:2D:27:C6
+        sources:
+          - name: Google Play
+            issue: 187
+            apk:
+              sha256: 872f21e9c55fc7d7df54e7db8f1dbf4979b037ed70eb37c6032cc628401af93e
   - package: com.kakaku.tabelog.tourists
     signature:
       - fingerprint: 41:DF:CB:EF:4C:AE:B2:47:27:FB:3D:31:10:89:68:A4:24:12:9E:88:FF:AD:0A:E0:D7:58:A0:70:F8:EB:CA:BC
