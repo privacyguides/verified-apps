@@ -938,6 +938,14 @@ packages:
             apk:
               sha256: 45cc002843a771ed6f16de83e08a18c4a8480f32ee1382f8168999ce74f7f4be
               link: https://github.com/VentralDigital/InterProfileSharing/releases/download/v1.1/ips-1.1.apk
+  - package: grit.storytel.app
+    signature:
+      - fingerprint: A6:56:F3:FD:4E:4C:32:0B:FF:E0:81:EA:2A:FE:07:B0:AC:E6:14:B9:31:3A:10:D2:16:3E:91:91:BD:79:42:60
+        sources:
+          - name: Google Play
+            issue: 401
+            apk:
+              sha256: 646225374280743b7cf763b865dd73cd0ba3382f7f74cfbf603ccca62e959b64
   - package: helium314.keyboard
     signature:
       - fingerprint: 5E:C0:A5:31:3A:A4:35:58:EE:75:B2:0B:58:CC:D8:19:4C:DB:F0:66:DF:94:A4:3B:A2:88:D9:33:D6:0B:86:CE
