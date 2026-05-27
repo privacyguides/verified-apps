@@ -154,6 +154,14 @@ packages:
             issue: 438
             apk:
               sha256: de46fe3c3f93a8fd1ca29169f0630bc52eab26a6959c33af961073404d2086f2
+  - package: com.PigeonGames.Rizline
+    signature:
+      - fingerprint: E7:B7:18:35:4F:61:71:59:14:74:84:E6:18:6D:AB:C5:29:76:98:12:23:69:E4:73:39:B2:81:6F:ED:82:10:5A
+        sources:
+          - name: Google Play
+            issue: 439
+            apk:
+              sha256: af8be27f292aaa8f9739ca21f652e86e611633b68615f550464742b6f4d07e6f
   - package: com.aurora.store
     signature:
       - fingerprint: 4C:62:61:57:AD:02:BD:A3:40:1A:72:63:55:5F:68:A7:96:63:FC:3E:13:A4:D4:36:9A:12:57:09:41:AA:28:0F
