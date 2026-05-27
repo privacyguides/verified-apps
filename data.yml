@@ -514,6 +514,14 @@ packages:
             apk:
               sha256: 9d6425d3d8d79f4b67ad563d9de7ca2c5a6cf48623581bce5a2f1ea0b43503ea
               link: https://github.com/fast4x/RiPlay/releases/download/v0.7.80/RiPlay-full-release-0.7.80.apk
+  - package: md.obsidian
+    signature:
+      - fingerprint: F6:EE:C9:88:E3:6E:ED:4E:91:65:B5:B4:BF:20:83:EC:1B:1C:F2:66:11:FA:BB:01:DB:4D:4A:A7:57:35:D9:99
+        sources:
+          - name: Google Play
+            issue: 51
+            apk:
+              sha256: d830f6772c9890b906eb30114f4890d47580ff2e4dfb4683359b43385f83497c
   - package: me.easyapps.easynotes
     signature:
       - fingerprint: 79:E8:5C:E8:1D:F2:F4:F2:25:C2:2F:EA:0B:2D:19:50:B3:68:62:7E:47:5F:B7:2B:73:85:D2:50:31:3B:F7:C1
