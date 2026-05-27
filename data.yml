@@ -459,6 +459,14 @@ packages:
             apk:
               sha256: 76c2d4286ee14f4d80815e9138324b071fc1629a211447b98c2db0ab55b45269
               link: https://github.com/Kunzisoft/KeePassDX/releases/download/4.4.2/KeePassDX-4.4.2-libre.apk
+  - package: com.letterboxd.letterboxd
+    signature:
+      - fingerprint: 4E:A9:E6:0E:75:13:70:C1:CC:D6:D1:C1:91:96:4C:83:40:A8:91:CB:BF:CC:2D:A1:56:8B:84:31:3B:9A:4E:74
+        sources:
+          - name: Google Play
+            issue: 538
+            apk:
+              sha256: 88949b2d89d8ebdc69cfb203103b3a3b39f8801589aba0d6ccaa0a8b18a9f1b2
   - package: com.mcu.reolink
     signature:
       - fingerprint: 5D:DB:D4:CF:DD:6E:4D:49:4B:64:3B:D1:61:4A:BD:8D:6A:1A:B3:C8:A4:49:E6:DB:E6:D4:7B:ED:A2:DE:C3:44
