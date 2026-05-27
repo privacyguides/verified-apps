@@ -496,6 +496,14 @@ packages:
             issue: 291
             apk:
               sha256: a188a9f0dc387f55b99c312254d12be208a60fd9250c9decbd9e97f17b7df48e
+  - package: com.navitime.inbound.walk
+    signature:
+      - fingerprint: BC:2E:DD:D7:A9:FF:50:30:41:5F:DE:27:2D:D7:70:3C:86:C4:63:09:C0:C0:8B:46:54:B0:C1:FD:AE:99:CF:59
+        sources:
+          - name: Google Play
+            issue: 298
+            apk:
+              sha256: 40069a3eacc048590d3c286b175c42ccc1a491e273d4b5964ffe606a5d782e2d
   - package: com.nextcloud.client
     signature:
       - fingerprint: 57:09:57:6F:9D:6C:6A:76:87:DD:5D:56:B2:69:D1:FA:5E:37:97:02:B9:1B:C8:3F:39:FD:7B:7C:59:7C:1B:83
