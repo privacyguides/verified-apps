@@ -208,6 +208,14 @@ packages:
             apk:
               sha256: 4010dd9b11ce3bdbcccbf5d1af7456a0b5b4a1ab2d64766fb2c847ae5d2e39b6
               link: https://github.com/cyb3rko/flashdim/releases/download/v2.4.3/FlashDim-2.4.3.apk
+  - package: com.deepl.mobiletranslator
+    signature:
+      - fingerprint: EF:ED:F6:6E:64:29:F7:F0:C6:79:6F:64:AD:08:A6:D1:F0:55:82:BF:21:48:36:56:DE:B4:00:65:1D:1E:F5:BE
+        sources:
+          - name: Google Play
+            issue: 266
+            apk:
+              sha256: dfe359b3b2c16ff23b56c02c4703a9437824469f5035d109b53b2acc09a7635e
   - package: com.digitalextremes.warframemobile
     signature:
       - fingerprint: CD:37:9E:48:D5:29:BD:71:EE:5E:9D:B2:B1:7F:BD:3D:72:BC:32:5F:CD:73:A6:CF:4E:7C:21:29:4B:AC:F3:AF
@@ -252,6 +260,14 @@ packages:
         sources:
           - name: Developer's Website
             issue: 424
+  - package: com.geoguessr.app
+    signature:
+      - fingerprint: 21:A6:DC:35:E1:BB:D5:E7:67:66:D1:EA:BC:11:92:43:F5:87:D5:2B:5B:92:29:9A:09:88:A2:67:9C:8B:A6:85
+        sources:
+          - name: Google Play
+            issue: 353
+            apk:
+              sha256: 9ddb180c6f322b4da7f25cb97f40d16b956e6e34c301a7db4cdf1838cebdb36e
   - package: com.github.lamarios.clipious
     signature:
       - fingerprint: 19:DE:04:E5:D6:84:66:06:9D:30:EC:63:C6:BA:7D:9E:3C:F7:3B:5D:61:CB:4B:37:62:C2:B9:B2:53:EC:BD:03
@@ -309,6 +325,27 @@ packages:
             apk:
               sha256: 76c2d4286ee14f4d80815e9138324b071fc1629a211447b98c2db0ab55b45269
               link: https://github.com/Kunzisoft/KeePassDX/releases/download/4.4.2/KeePassDX-4.4.2-libre.apk
+  - package: com.mcu.reolink
+    signature:
+      - fingerprint: 5D:DB:D4:CF:DD:6E:4D:49:4B:64:3B:D1:61:4A:BD:8D:6A:1A:B3:C8:A4:49:E6:DB:E6:D4:7B:ED:A2:DE:C3:44
+        sources:
+          - name: Direct APK Link
+            issue: 464
+            apk:
+              sha256: 492a3b75f224a94b029da8176426ca20297e83e471ffad4fba2c82e1946bbaac
+              link: https://home-cdn.reolink.us/wp-content/assets/app/android/reolink.apk
+          - name: Google Play
+            issue: 464
+            apk:
+              sha256: ed6547c3ba618304bc7fc9d7e3a29e0899c1e960cb0965d64bc5274d2021c5e7
+  - package: com.nextcloud.client
+    signature:
+      - fingerprint: 57:09:57:6F:9D:6C:6A:76:87:DD:5D:56:B2:69:D1:FA:5E:37:97:02:B9:1B:C8:3F:39:FD:7B:7C:59:7C:1B:83
+        sources:
+          - name: F-Droid
+            issue: 193
+            apk:
+              sha256: faaa64b5d88724a6a6461dfb01ed5938f0ffbc111fe53c456ec869d82ec50334
   - package: com.none.tom.exiferaser
     signature:
       - fingerprint: D9:10:86:7C:E2:CF:3D:CD:37:DB:51:85:3E:BE:F8:63:3F:D8:3A:14:2B:26:42:27:4E:D0:68:15:2F:F1:22:01
@@ -323,6 +360,30 @@ packages:
         sources:
           - name: Google Play
             issue: 422
+  - package: com.paypal.android.p2pmobile
+    signature:
+      - fingerprint: C7:C6:2E:A0:F6:E2:F6:EB:A8:7F:95:40:69:87:50:55:30:EF:2F:51:6E:7C:DE:59:91:D7:14:03:31:44:80:72
+        sources:
+          - name: Google Play
+            issue: 284
+            apk:
+              sha256: 81d1759235dcd1ecda78bf0f905641babf6142741356c4e176ca866ec3a1bf00
+  - package: com.reddit.frontpage
+    signature:
+      - fingerprint: 97:0B:91:14:38:13:B4:C9:D5:F3:63:4F:67:2C:9F:CA:A5:62:1B:4E:FA:AE:DA:FD:6C:23:5C:BB:B8:69:73:6F
+        sources:
+          - name: Google Play
+            issue: 292
+            apk:
+              sha256: 40d192e0becb2e2d9a6f4ad9d984d9eb1fe40a5f24718f43953f73dbd2211f09
+  - package: com.revolut.revolut
+    signature:
+      - fingerprint: 9C:9B:E0:71:35:E9:72:78:02:82:C2:E5:D2:7D:A0:6E:CB:8E:E3:AD:FC:75:30:39:17:DD:F6:6D:6F:AA:EF:A4
+        sources:
+          - name: Google Play
+            issue: 506
+            apk:
+              sha256: 3ba12ceb8c5a2f028f8415e610f27570c737d5625ebbaa59bd1d9bff4e3d47e5
   - package: com.standardnotes
     signature:
       - fingerprint: 58:3F:C4:1B:49:0C:38:0B:56:FB:E9:EE:47:38:1E:B4:EF:53:E0:37:19:A5:50:3F:C1:F2:9D:CD:8E:28:90:2A
@@ -369,6 +430,19 @@ packages:
             apk:
               sha256: 7ae8d6c5358410bf96c2b14d46eb7f210f9c173a8f1f8f82b5e3ccef1cdc46e5
               link: https://github.com/Windscribe/Android-App/releases/download/v4.0/mobile.apk
+  - package: com.wireguard.android
+    signature:
+      - fingerprint: 84:A1:3F:A2:C4:E0:06:4B:0C:11:65:4B:8A:86:57:4B:7A:9B:93:52:A3:83:4C:EE:32:45:5B:06:1C:3D:41:27
+        sources:
+          - name: Direct APK Link
+            issue: 459
+            apk:
+              sha256: f92971bc804f4c448e8845ae97e426095eab06ec09a2473a3fa2cfe7288e3298
+              link: https://download.wireguard.com/android-client/com.wireguard.android-1.0.20260315.apk
+          - name: Google Play
+            issue: 459
+            apk:
+              sha256: a0f6c8d32b3a328a46359d7b7a76ec5bbd8f1443ebc464e47a918f0d61fe887a
   - package: com.x8bit.bitwarden
     signature:
       - fingerprint: DE:6E:C9:14:31:55:79:95:29:7B:F3:E6:5B:C8:03:49:BC:60:3A:04:70:81:60:61:8C:86:BC:99:94:17:1C:90
@@ -384,6 +458,19 @@ packages:
               repo: https://mobileapp.bitwarden.com/fdroid/repo/
           - name: AppVerifier
             issue: 355
+  - package: de.danoeh.antennapod
+    signature:
+      - fingerprint: 17:94:30:56:5A:4A:04:BF:E7:82:74:83:24:30:99:BD:10:87:04:10:80:0C:D7:C4:C7:B4:8D:8D:32:26:DF:55
+        sources:
+          - name: Direct APK Link
+            issue: 241
+            apk:
+              sha256: 8faee459f952e62e5c12be18620911b01c15b5fa0ee67768dcf8ae1e1a68b09c
+              link: https://f-droid.org/repo/de.danoeh.antennapod_3110495.apk
+          - name: F-Droid
+            issue: 241
+            apk:
+              sha256: 8faee459f952e62e5c12be18620911b01c15b5fa0ee67768dcf8ae1e1a68b09c
   - package: de.quantumphysique.trale
     signature:
       - fingerprint: A2:6E:7B:1B:C1:9F:7F:11:81:C0:F1:5C:96:BF:B9:5E:99:9D:FD:28:4F:E0:5F:96:7D:60:45:E1:6C:41:14:38
@@ -425,6 +512,19 @@ packages:
             apk:
               sha256: c4fbedb69a9eb682e4bf2923a8c3803b2caa140ca1468b4a440cb68c459158ae
               link: https://github.com/deckerst/aves/releases/download/v1.14.4/app-libre-x86_64-release.apk
+  - package: dev.imranr.obtainium.fdroid
+    signature:
+      - fingerprint: B3:53:60:1F:6A:1D:5F:D6:60:3A:E2:F5:0B:E8:0C:F3:01:36:7B:86:B6:AB:8B:1F:66:24:3D:A9:6C:D5:73:62
+        sources:
+          - name: Direct APK Link
+            issue: 211
+            apk:
+              sha256: 719b218bbcf4e64cdf1ff5008f81f0ab9be88fcd3563f1f3f302990432e87130
+              link: https://github.com/ImranR98/Obtainium/releases/download/v1.4.3/app-arm64-v8a-fdroid-release.apk
+          - name: F-Droid
+            issue: 211
+            apk:
+              sha256: fbab1c450c807f44e45e90f02b95ed8733866faaa6df33d54bdaae3fb59d1856
   - package: dev.soupslurpr.appverifier
     signature:
       - fingerprint: 3A:04:A8:0B:2A:88:33:4C:74:74:85:F0:B2:15:16:40:A3:8B:B3:D2:D7:3A:8E:AB:81:DF:50:3E:0F:02:02:B2
@@ -474,6 +574,15 @@ packages:
             issue: 494
           - name: AppVerifier
             issue: 494
+  - package: io.ente.photos.independent
+    signature:
+      - fingerprint: 35:ED:56:81:B7:0B:B3:BD:35:D9:0D:85:6A:F5:69:4C:50:4D:EF:46:AA:D8:3F:77:7B:1C:67:5C:F4:51:35:0B
+        sources:
+          - name: Direct APK Link
+            issue: 245
+            apk:
+              sha256: cd5ddf49dabbb7b9870db57441b8b8e426b09f41951853c13af1a595aed5d62d
+              link: https://github.com/ente-io/ente/releases/download/photos-v1.3.44/ente-photos-v1.3.44.apk
   - package: io.spaceapi.community.myhackerspace
     signature:
       - fingerprint: 4E:C5:1A:CD:06:D3:F9:E7:95:07:C9:14:EF:15:E2:C0:9A:18:24:9A:82:AF:90:64:FF:04:95:F9:26:F9:3D:D4
@@ -506,6 +615,27 @@ packages:
             apk:
               sha256: 9d6425d3d8d79f4b67ad563d9de7ca2c5a6cf48623581bce5a2f1ea0b43503ea
               link: https://github.com/fast4x/RiPlay/releases/download/v0.7.80/RiPlay-full-release-0.7.80.apk
+  - package: keepass2android.keepass2android
+    signature:
+      - fingerprint: 0B:F8:05:6D:3A:39:4E:D7:C7:71:73:C4:B4:2C:80:05:65:B4:F0:A4:29:77:56:9C:F3:47:2C:27:1C:56:29:39
+        sources:
+          - name: Direct APK Link
+            issue: 388
+            apk:
+              sha256: 88e9d47c8700896be6d7ae4de529f4d96f8efa1b6ff51eabf7b5988f08f370ec
+              link: https://github.com/PhilippC/keepass2android/releases/download/v1.14-r4/keepass2android.keepass2android-Signed-arm64.apk
+          - name: Google Play
+            issue: 388
+            apk:
+              sha256: 82880a8e37f71ecec9df787e5f27077c128359ac24eb4d7e4e6f4b582c5efa6a
+  - package: md.obsidian
+    signature:
+      - fingerprint: F6:EE:C9:88:E3:6E:ED:4E:91:65:B5:B4:BF:20:83:EC:1B:1C:F2:66:11:FA:BB:01:DB:4D:4A:A7:57:35:D9:99
+        sources:
+          - name: Google Play
+            issue: 51
+            apk:
+              sha256: d830f6772c9890b906eb30114f4890d47580ff2e4dfb4683359b43385f83497c
   - package: me.easyapps.easynotes
     signature:
       - fingerprint: 79:E8:5C:E8:1D:F2:F4:F2:25:C2:2F:EA:0B:2D:19:50:B3:68:62:7E:47:5F:B7:2B:73:85:D2:50:31:3B:F7:C1
@@ -536,6 +666,23 @@ packages:
             issue: 522
             apk:
               sha256: b161760381522ffc61925c8978d633a9644a6a14b8c5f391dd90461251ec5d5f
+  - package: moe.shizuku.privileged.api
+    signature:
+      - fingerprint: 26:8B:55:90:E8:68:FB:08:BA:E7:E0:AC:41:35:64:CD:1F:F8:8F:5C:CF:F7:4A:F9:DB:D0:DC:91:8E:30:DB:30
+        sources:
+          - name: Direct APK Link
+            issue: 415
+            apk:
+              sha256: 6e273ab0e991c4e79bc8b1bbb9b9dd739ccac1a8712a541a214078886b7b790f
+              link: https://github.com/RikkaApps/Shizuku/releases/download/v13.6.0/shizuku-v13.6.0.r1086.2650830c-release.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 415
+            apk:
+              sha256: 6e273ab0e991c4e79bc8b1bbb9b9dd739ccac1a8712a541a214078886b7b790f
+          - name: Google Play
+            issue: 415
+            apk:
+              sha256: 2041dc168cd7944fe796fcfe0ff1810b0d1f6125bbb58a236a283296b1de3de5
   - package: net.ivpn.client
     signature:
       - fingerprint: 88:A6:B4:0F:C9:7F:DC:84:2F:23:1F:50:EB:12:DE:11:6F:5B:75:9E:3C:5B:38:AA:CC:AF:6A:7B:39:3C:85:BB
@@ -572,6 +719,36 @@ packages:
             apk:
               sha256: 82da5f3e13d9c160fe7f38521d896b883cc8d01de2c0ed158b5a11c530256096
               link: https://github.com/mullvad/mullvadvpn-app/releases/download/android%2F2026.5/MullvadVPN-2026.5.apk
+  - package: net.nymtech.nymvpn
+    signature:
+      - fingerprint: 3C:98:A0:16:AA:4F:14:A3:BA:18:5C:76:4E:D3:63:41:5C:F7:FF:3C:3D:32:8A:87:FF:FF:2F:F1:B1:40:FF:06
+        sources:
+          - name: Direct APK Link
+            issue: 492
+            apk:
+              sha256: b3ffe6efc33d4158f79b325758230a6024e85f68a673726fe3fec7af01949ee7
+              link: https://github.com/nymtech/nym-vpn-client/releases/download/nym-vpn-android-v3.4.2/nymvpn-v3.4.2-fdroid-release.apk
+          - name: F-Droid
+            issue: 492
+            apk:
+              sha256: c881430de6f3424287b3e42f945f77754a0b7d4b4965c605c20d1efa23a24fe5
+  - package: net.thunderbird.android
+    signature:
+      - fingerprint: B6:52:47:79:B3:DB:BC:5A:C1:7A:5A:C2:71:DD:B2:9D:CF:BF:72:35:78:C2:38:E0:3C:3C:21:78:11:35:6D:D1
+        sources:
+          - name: Direct APK Link
+            issue: 390
+            apk:
+              sha256: c2083ddf5882e3c3f54f2f1d42e5a108ea9a2eec4a4f9519e3ee0b59707eaa13
+              link: https://github.com/thunderbird/thunderbird-android/releases/download/THUNDERBIRD_18_0/thunderbird-18.0.apk
+          - name: F-Droid
+            issue: 390
+            apk:
+              sha256: c2083ddf5882e3c3f54f2f1d42e5a108ea9a2eec4a4f9519e3ee0b59707eaa13
+          - name: Google Play
+            issue: 390
+            apk:
+              sha256: e5febb0272b72a9290aa3237292a36fa04e070c946108939bdec5dc6dcb24218
   - package: nodomain.freeyourgadget.gadgetbridge
     signature:
       - fingerprint: 01:CC:E9:31:6F:CB:77:EA:02:C6:DE:A8:1F:DE:9F:31:76:46:92:02:C0:CE:A0:51:4C:0E:03:CB:96:9B:C7:BE
@@ -589,6 +766,17 @@ packages:
         sources:
           - name: Accrescent
             issue: 90
+  - package: org.cromite.cromite
+    signature:
+      - fingerprint: 63:3F:A4:1D:82:11:D6:D0:91:6A:81:9B:89:66:8C:6D:E9:2E:64:23:2D:A6:7F:9D:16:FD:81:C3:B7:E9:23:FF
+        sources:
+          - name: AppVerifier
+            issue: 157
+          - name: Direct APK Link
+            issue: 157
+            apk:
+              sha256: 77af7db8f0a02e8d8cd2099d1f9b5c8266d6ae4cba06924bda5c73f980dc6894
+              link: https://github.com/uazo/cromite/releases/download/v148.0.7778.168-cb3baf14f52eb4365d017f640f85310735c19b79/arm64_ChromePublic.apk
   - package: org.cryptomator
     signature:
       - fingerprint: F7:C3:EC:3B:0D:58:8D:3C:B5:29:83:E9:EB:1A:74:21:C9:3D:43:39:A2:86:39:8E:71:D7:B6:51:E8:D8:EC:DD
@@ -617,15 +805,32 @@ packages:
     signature:
       - fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
         sources:
-          - name: F-Droid
-            issue: 173
-          - name: Google Play
-            issue: 173
           - name: Direct APK Link
             issue: 173
             apk:
               sha256: ae7e699599e81f70e2b82626bb1dfa883fe096cd938387133e123c116e5641d9
               link: https://f-droid.org/repo/org.fossify.gallery_28.apk
+          - name: Direct APK Link
+            issue: 386
+            apk:
+              sha256: ae7e699599e81f70e2b82626bb1dfa883fe096cd938387133e123c116e5641d9
+              link: https://github.com/FossifyOrg/Gallery/releases/download/1.13.1/gallery-28-foss-release.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 386
+            apk:
+              sha256: ae7e699599e81f70e2b82626bb1dfa883fe096cd938387133e123c116e5641d9
+          - name: F-Droid
+            issue: 173
+          - name: F-Droid
+            issue: 386
+            apk:
+              sha256: ae7e699599e81f70e2b82626bb1dfa883fe096cd938387133e123c116e5641d9
+          - name: Google Play
+            issue: 173
+          - name: Google Play
+            issue: 386
+            apk:
+              sha256: 5f1ea705f577bcc0c9c022c89695233bcf3d4bbf996ed8492602c5709959bc4f
   - package: org.ironfoxoss.ironfox
     signature:
       - fingerprint: C5:E2:91:B5:A5:71:F9:C8:CD:9A:97:99:C2:C9:4E:02:EC:97:03:94:88:93:F2:CA:75:6D:67:B9:42:04:F9:04
@@ -637,6 +842,23 @@ packages:
             apk:
               sha256: 591275a6a726d998f61f14ea721c9af497574d49a362ceb2f971726068a4533e
               link: https://releases.ironfoxoss.org/ironfox/releases/151.0/universal/ironfox-151.0-universal.apk
+  - package: org.jellyfin.mobile
+    signature:
+      - fingerprint: D8:81:79:6E:D2:A6:7F:F6:EF:9F:67:68:28:72:3C:6B:1F:A1:8E:09:38:89:62:CB:A4:AB:C4:A5:94:A6:91:31
+        sources:
+          - name: Direct APK Link
+            issue: 470
+            apk:
+              sha256: ebd4ee1bdd954e81b59113e68009e9ae3cb5f0cb666f1e4b1862e6936f0adfbb
+              link: https://github.com/jellyfin/jellyfin-android/releases/download/v2.6.4/jellyfin-android-v2.6.4-libre-release.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 470
+            apk:
+              sha256: ebd4ee1bdd954e81b59113e68009e9ae3cb5f0cb666f1e4b1862e6936f0adfbb
+          - name: F-Droid
+            issue: 470
+            apk:
+              sha256: ebd4ee1bdd954e81b59113e68009e9ae3cb5f0cb666f1e4b1862e6936f0adfbb
   - package: org.joinmastodon.android
     signature:
       - fingerprint: 2D:3E:76:FC:B0:BA:31:3D:C0:5E:53:72:83:D4:CA:2F:3E:DD:B3:1B:F9:4D:0F:7E:73:33:C3:BA:63:14:5F:8A
@@ -735,6 +957,21 @@ packages:
             apk:
               sha256: 741727aeb08a976e092c371db7ee7e79b2c9cd29b181858e0d40d9dac9f10848
               link: https://updates.signal.org/android/Signal-Android-website-prod-universal-release-8.10.3.apk
+  - package: org.torproject.android
+    signature:
+      - fingerprint: A4:54:B8:7A:18:47:A8:9E:D7:F5:E7:0F:BA:6B:BA:96:F3:EF:29:C2:6E:09:81:20:4F:E3:47:BF:23:1D:FD:5B
+        sources:
+          - name: AppVerifier
+            issue: 490
+          - name: Direct APK Link
+            issue: 490
+            apk:
+              sha256: 9347cbe8691aae69b26c9ee182521476bdc8a04a1c346257dad94ee8dd26bed2
+              link: https://github.com/guardianproject/orbot-android/releases/download/17.9.3-RC-1-tor-0.4.9.6/Orbot-17.9.3-RC-1-tor-0.4.9.6-1-g98e984f76-fullperm-arm64-v8a-release.apk
+          - name: Google Play
+            issue: 490
+            apk:
+              sha256: f614e59cac2f9f65e3840c5f27919c064c21e41433dd93346b310459ad6e557d
   - package: org.torproject.torbrowser
     signature:
       - fingerprint: 20:06:1F:04:5E:73:7C:67:37:5C:17:79:4C:FE:DB:43:6A:03:CE:C6:BA:CB:7C:B9:F9:66:42:20:5C:A2:CE:C8
