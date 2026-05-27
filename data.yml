@@ -561,6 +561,15 @@ packages:
             issue: 494
           - name: AppVerifier
             issue: 494
+  - package: io.ente.photos.independent
+    signature:
+      - fingerprint: 35:ED:56:81:B7:0B:B3:BD:35:D9:0D:85:6A:F5:69:4C:50:4D:EF:46:AA:D8:3F:77:7B:1C:67:5C:F4:51:35:0B
+        sources:
+          - name: Direct APK Link
+            issue: 245
+            apk:
+              sha256: cd5ddf49dabbb7b9870db57441b8b8e426b09f41951853c13af1a595aed5d62d
+              link: https://github.com/ente-io/ente/releases/download/photos-v1.3.44/ente-photos-v1.3.44.apk
   - package: io.spaceapi.community.myhackerspace
     signature:
       - fingerprint: 4E:C5:1A:CD:06:D3:F9:E7:95:07:C9:14:EF:15:E2:C0:9A:18:24:9A:82:AF:90:64:FF:04:95:F9:26:F9:3D:D4
