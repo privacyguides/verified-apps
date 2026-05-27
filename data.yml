@@ -704,6 +704,16 @@ packages:
             issue: 49
           - name: Google Play
             issue: 49
+  - package: com.nononsenseapps.feeder.play
+    signature:
+      - fingerprint: AC:75:28:54:1E:6F:FC:7D:AD:2C:C7:AA:52:51:12:31:93:C0:09:2C:5B:52:FC:26:62:9D:0F:73:76:81:9D:58
+        sources:
+          - name: AppVerifier
+            issue: 597
+          - name: Google Play
+            issue: 597
+            apk:
+              sha256: a08487a772856362bd4e7dca2e0dab9d95713f41771ddce42d46b89d6ddce342
   - package: com.onepassword.android
     signature:
       - fingerprint: B3:5B:68:D5:CE:84:50:55:7C:6A:55:FD:64:B5:1F:EA:C1:10:CB:36:D6:A3:52:1C:59:48:DB:3A:38:0A:34:A9
