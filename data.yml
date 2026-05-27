@@ -742,6 +742,14 @@ packages:
             issue: 294
             apk:
               sha256: 04ef71623b2533e1a19df1a246bc0d83a7ddc071ff3acd9877753c4d6de4e423
+  - package: com.tripadvisor.tripadvisor
+    signature:
+      - fingerprint: E9:8D:02:21:B0:BD:46:E4:74:5A:12:8A:96:A0:18:24:74:D0:C7:48:29:E5:1D:87:A3:90:1E:FD:D1:98:C8:FE
+        sources:
+          - name: Google Play
+            issue: 268
+            apk:
+              sha256: f9b8ef878f829381bf0ea6c80bb688094b168377df746d3ffc4edca1c1d9b774
   - package: com.turkishairlines.mobile
     signature:
       - fingerprint: DD:85:EB:7F:24:CC:AD:39:D3:B8:30:26:12:5C:D5:16:4E:19:FD:1E:AA:26:7F:A0:B0:73:AE:72:20:D2:75:6E
