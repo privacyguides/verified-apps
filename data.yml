@@ -571,6 +571,14 @@ packages:
             issue: 588
             apk:
               sha256: a46257e19390249f1542ba45234031bb18f894711e4da3c14ed8020ac9741c7c
+  - package: com.healthyminds
+    signature:
+      - fingerprint: DC:DB:68:52:1F:AF:50:E8:DC:D6:B5:A1:AB:83:CB:00:85:2B:D3:45:C5:AE:A5:17:2F:ED:B7:CC:2A:94:1B:B4
+        sources:
+          - name: Google Play
+            issue: 661
+            apk:
+              sha256: 54ebc1a57dc9d9ebb950606ef1fda26253da7c41cf3ef3d13f3f6aef2a032f1a
   - package: com.icelandair.mobile.app.android
     signature:
       - fingerprint: AD:29:A3:4B:6D:13:8B:15:7F:03:DE:CB:22:70:02:05:DD:89:51:C6:0E:F6:6A:E0:99:CC:D6:B6:BE:97:15:8C
