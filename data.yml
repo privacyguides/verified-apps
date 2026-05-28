@@ -740,6 +740,17 @@ packages:
             issue: 49
           - name: Google Play
             issue: 49
+  - package: com.nononsenseapps.feeder
+    signature:
+      - fingerprint: C5:EE:FF:22:48:81:35:FF:C2:58:3C:3A:43:B0:53:A1:61:CA:86:98:62:96:1A:B8:53:4F:44:C7:5F:D5:7D:97
+        sources:
+          - name: AppVerifier
+            issue: 598
+          - name: Direct APK Link
+            issue: 598
+            apk:
+              sha256: 12db8d26b6193151f31f159cf21e467e86859e935276184c8b47f69cb7b0285d
+              link: https://github.com/spacecowboy/Feeder/releases/download/2.20.0/app-fdroid-release.apk
   - package: com.nononsenseapps.feeder.play
     signature:
       - fingerprint: AC:75:28:54:1E:6F:FC:7D:AD:2C:C7:AA:52:51:12:31:93:C0:09:2C:5B:52:FC:26:62:9D:0F:73:76:81:9D:58
