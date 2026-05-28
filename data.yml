@@ -525,6 +525,16 @@ packages:
             issue: 590
             apk:
               sha256: a57cf3db81b4a01e8034a230e36b546e16358a188a95fb02fabc3d30dc907b26
+  - package: com.google.android.apps.messaging
+    signature:
+      - fingerprint: |-
+          CC:75:52:6D:6C:0F:80:AC:3B:3A:84:EB:44:83:84:40:DB:BE:6B:12:44:43:A7:C7:D7:BD:19:18:2A:C0:22:C9
+          F7:E7:3D:4E:DC:2B:7F:55:EE:CD:3F:89:8D:3C:CA:7D:A9:CB:BF:51:69:4E:BA:14:F8:16:E2:EC:CF:01:50:35
+        sources:
+          - name: Google Play
+            issue: 603
+            apk:
+              sha256: 3ce68ac93006a640685641a69c5ba9ba1b28311c8660fc78145fcddb76836e51
   - package: com.google.android.apps.photos
     signature:
       - fingerprint: |-
