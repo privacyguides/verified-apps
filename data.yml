@@ -745,9 +745,18 @@ packages:
       - fingerprint: D9:10:86:7C:E2:CF:3D:CD:37:DB:51:85:3E:BE:F8:63:3F:D8:3A:14:2B:26:42:27:4E:D0:68:15:2F:F1:22:01
         sources:
           - name: Accrescent
-            issue: 49
+            issue: 650
+            apk:
+              sha256: 94f1819cd4df7a7c4a379dfef71bd73eb3acabaae7bddb463c80d793bc9b806d
+          - name: Direct APK Link
+            issue: 650
+            apk:
+              sha256: 83be1b81e9abbb4434d020a86142c47e455a5ae35d395449472baf2de82f0558
+              link: https://github.com/Tommy-Geenexus/exif-eraser/releases/download/v6.5.0/app-release.apk
           - name: Google Play
-            issue: 49
+            issue: 650
+            apk:
+              sha256: 8b4171bbd04a15d1e470e51ee21eaa845454977f7f986366e374bd61ed5a4338
   - package: com.nononsenseapps.feeder
     signature:
       - fingerprint: A8:0D:F8:17:0D:6C:89:1E:C9:A0:55:21:1D:F6:40:A8:55:D4:51:05:23:07:BF:29:CD:CE:3F:EF:9A:FA:94:FD
