@@ -784,6 +784,14 @@ packages:
             issue: 433
             apk:
               sha256: 2ca9502e0247175cc7d5bcb052a44f4222d3b977b411bad666b382148bd31eac
+  - package: com.sennheiser.control
+    signature:
+      - fingerprint: 6E:3F:9A:9A:73:20:0D:64:A0:19:17:E0:BB:E7:26:A6:9F:5F:2A:6B:26:42:A7:77:DD:6B:69:CE:99:96:F0:69
+        sources:
+          - name: Google Play
+            issue: 608
+            apk:
+              sha256: 3fe4e3dad8a8fcbdeebe92a6bd7bf6ca3419f6e779b4711f5158734b8a07eb03
   - package: com.standardnotes
     signature:
       - fingerprint: 58:3F:C4:1B:49:0C:38:0B:56:FB:E9:EE:47:38:1E:B4:EF:53:E0:37:19:A5:50:3F:C1:F2:9D:CD:8E:28:90:2A
