@@ -1333,6 +1333,16 @@ packages:
             issue: 415
             apk:
               sha256: 2041dc168cd7944fe796fcfe0ff1810b0d1f6125bbb58a236a283296b1de3de5
+  - package: net.gsantner.markor
+    signature:
+      - fingerprint: 9C:70:03:32:37:DC:46:FE:50:52:E4:20:C6:65:70:8D:E8:B3:10:5B:89:84:28:43:81:89:81:82:6B:7E:EC:9C
+        sources:
+          - name: AppVerifier
+            issue: 545
+          - name: F-Droid
+            issue: 545
+            apk:
+              sha256: 3f9f260dc3e32a1281cb8803eea6f926eef897579f68a5d35f922523974b84b9
   - package: net.ivpn.client
     signature:
       - fingerprint: 88:A6:B4:0F:C9:7F:DC:84:2F:23:1F:50:EB:12:DE:11:6F:5B:75:9E:3C:5B:38:AA:CC:AF:6A:7B:39:3C:85:BB
