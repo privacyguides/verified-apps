@@ -1622,6 +1622,14 @@ packages:
             issue: 508
             apk:
               sha256: 568e62defe4a026784284678e7667e5afdc17cc4b9ac14cca58bd4c3b2e482a1
+  - package: org.quantumbadger.redreader
+    signature:
+      - fingerprint: D9:49:6A:86:F9:95:08:78:79:F4:11:99:98:6A:6D:36:C1:93:06:AC:90:DB:D1:E0:79:3F:3A:B1:98:1F:37:44
+        sources:
+          - name: Google Play
+            issue: 614
+            apk:
+              sha256: 02e669797b4d42a1ea4afede01ee1fcb1df1dd86a89d07a6e7bb756bd0de5817
   - package: org.schabi.newpipe
     signature:
       - fingerprint: CB:84:06:9B:D6:81:16:BA:FA:E5:EE:4E:E5:B0:8A:56:7A:A6:D8:98:40:4E:7C:B1:2F:9E:75:6D:F5:CF:5C:AB
