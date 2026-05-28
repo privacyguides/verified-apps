@@ -32,5 +32,5 @@ jobs:
         id: release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "data.yml,{{ $steps.attest.outputs.bundle-path }}"
-          immutableCreate: true
+          artifacts: "data.yml,${{ steps.attest.outputs.bundle-path }}"
+          draft: true

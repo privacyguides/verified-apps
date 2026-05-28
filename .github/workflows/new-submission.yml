@@ -276,7 +276,7 @@ jobs:
 
       - name: Upload repository result
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: fdroid-result-${{ matrix.fDroidRepoName }}
           path: fdroid-result/${{ matrix.fDroidRepoName }}.json
@@ -387,7 +387,7 @@ jobs:
 
       - name: Upload repository result
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: fdroid-result-${{ steps.customRepo.outputs.host }}
           path: fdroid-result/${{ steps.customRepo.outputs.host }}.json
@@ -458,7 +458,8 @@ jobs:
           key: gplayAuth
 
       - name: Authenticate to Google Play
-        run: ./gplay-apk-downloader/gplay auth
+        if: steps.authCache.outputs.cache-hit != 'true'
+        run: ./gplay-apk-downloader/gplay auth --dispenser "https://auroraoss.com/api/auth"
 
       - name: Check app availability
         id: availability
@@ -504,9 +505,12 @@ jobs:
         with:
           path: gplay-${{ env.PACKAGE_NAME }}.apk
           key: gplay-${{ env.PACKAGE_NAME }}-${{ steps.appVersion.outputs.version }}
+          restore-keys: |
+            gplay-${{ env.PACKAGE_NAME }}-
 
       - name: Download APK
         if: steps.availability.outputs.found == 'true' && steps.apkCache.outputs.cache-hit != 'true'
+        continue-on-error: true
         env:
           PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION: python
           GPLAY_PROXY_HOST: ${{ secrets.GPLAY_PROXY_HOST }}
@@ -548,7 +552,6 @@ jobs:
           } > "$proxy_conf"
 
           proxychains4 -q -f "$proxy_conf" curl 'https://icanhazip.com'
-          proxychains4 -q -f "$proxy_conf" ./gplay-apk-downloader/gplay auth
 
           proxychains4 -q -f "$proxy_conf" ./gplay-apk-downloader/gplay download "$PACKAGE_NAME"
 
@@ -737,10 +740,41 @@ jobs:
           echo "Sources in AppVerifier database: $SOURCES" >> $GITHUB_STEP_SUMMARY
           echo "$SIGNATURE" >> $GITHUB_STEP_SUMMARY
 
+  grapheneos-forum:
+    name: GrapheneOS Forum
+    runs-on: ubuntu-latest
+    needs: parse
+    if: needs.parse.outputs.isDuplicate != 'true' && github.event.label.name == 'Run Checks'
+    continue-on-error: true
+    permissions:
+      contents: read
+
+    outputs:
+      found: ${{ steps.lookup.outputs.found }}
+      signature: ${{ steps.lookup.outputs.signature }}
+      match: ${{ steps.lookup.outputs.match }}
+      packageName: ${{ steps.lookup.outputs.packageName }}
+      infoNote: ${{ steps.lookup.outputs.infoNote }}
+
+    steps:
+      - name: Download Repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: "false"
+
+      - name: Lookup GrapheneOS forum submissions
+        id: lookup
+        uses: ./.github/actions/lookup-grapheneos-forum
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          packageName: ${{ needs.parse.outputs.packageName }}
+          userSignature: ${{ needs.parse.outputs.packageSignature }}
+
   summary:
     name: Generate Summary
     runs-on: ubuntu-latest
-    needs: [parse, accrescent, fdroid, custom-fdroid, gplay, appverifier-db, direct-apk]
+    needs: [parse, accrescent, fdroid, custom-fdroid, gplay, appverifier-db, direct-apk, grapheneos-forum]
 
     if: always() && needs.parse.outputs.isDuplicate != 'true' && github.event.label.name == 'Run Checks'
     permissions:
@@ -792,6 +826,10 @@ jobs:
           DIRECT_MATCH: ${{ needs.direct-apk.outputs.match }}
           DIRECT_PKG: ${{ needs.direct-apk.outputs.packageName }}
           DIRECT_SIG: ${{ needs.direct-apk.outputs.signature }}
+          GO_FOUND: ${{ needs.grapheneos-forum.outputs.found }}
+          GO_MATCH: ${{ needs.grapheneos-forum.outputs.match }}
+          GO_PKG: ${{ needs.grapheneos-forum.outputs.packageName }}
+          GO_SIG: ${{ needs.grapheneos-forum.outputs.signature }}
           APK_URL: ${{ needs.parse.outputs.apkUrl }}
           CUSTOM_FDROID_REPO_URL: ${{ needs.parse.outputs.customFdroidRepoUrl }}
         run: |
@@ -806,6 +844,9 @@ jobs:
           extras=()
           if [[ "$AV_FOUND" == "true" ]]; then
             extras+=("AppVerifier's internal database")
+          fi
+          if [[ "$GO_FOUND" == "true" ]]; then
+            extras+=("the GrapheneOS forum submissions export")
           fi
           if [[ -n "$CUSTOM_FDROID_REPO_URL" ]]; then
             extras+=("your custom F-Droid repository")
@@ -848,6 +889,9 @@ jobs:
           if [[ "$AV_FOUND" == "true" ]]; then
             echo "| AppVerifier | $AV_MATCH | $(format_sig_cell "$AV_PKG" "$AV_SIG") |" >> $GITHUB_STEP_SUMMARY
           fi
+          if [[ "$GO_FOUND" == "true" ]]; then
+            echo "| GrapheneOS Forum | $GO_MATCH | $(format_sig_cell "$GO_PKG" "$GO_SIG") |" >> $GITHUB_STEP_SUMMARY
+          fi
           if [[ -n "$APK_URL" ]]; then
             echo "| Direct APK Link | $DIRECT_MATCH | $(format_sig_cell "$DIRECT_PKG" "$DIRECT_SIG") |" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
@@ -886,6 +930,7 @@ jobs:
           ACC_INFO: ${{ needs.accrescent.outputs.infoNote }}
           GPLAY_INFO: ${{ needs.gplay.outputs.infoNote }}
           AV_INFO: ${{ needs.appverifier-db.outputs.infoNote }}
+          GO_INFO: ${{ needs.grapheneos-forum.outputs.infoNote }}
           DIRECT_INFO: ${{ needs.direct-apk.outputs.infoNote }}
         run: |
           issue_body="${RUNNER_TEMP}/issueBody.md"
@@ -915,6 +960,7 @@ jobs:
             append_note "$GPLAY_INFO"
           fi
           append_note "$AV_INFO"
+          append_note "$GO_INFO"
           append_note "$DIRECT_INFO"
 
       - name: Match Accrescent signatures

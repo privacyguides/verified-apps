@@ -1,0 +1,81 @@
+name: Lookup GrapheneOS forum submissions
+description: Compare a submission against the GrapheneOS forum hashes export (informational only)
+inputs:
+  packageName:
+    description: Android application ID
+    required: true
+  userSignature:
+    description: Submitter fingerprint(s) from the issue
+    required: true
+  hashesUrl:
+    description: >-
+      URL to a grapheneos-forum-hashes-*.txt file, or "latest" to use the newest
+      nightly asset from RoundSalmon4/AppVerifier releases
+    required: false
+    default: latest
+outputs:
+  found:
+    description: Whether the package appears in the forum submissions export
+    value: ${{ steps.lookup.outputs.found }}
+  signature:
+    description: Fingerprint(s) listed for this package in the export
+    value: ${{ steps.lookup.outputs.signature }}
+  match:
+    description: Match indicator emoji for the summary table
+    value: ${{ steps.lookup.outputs.match }}
+  packageName:
+    description: Application ID passed through for job outputs
+    value: ${{ steps.lookup.outputs.packageName }}
+  infoNote:
+    description: Optional informational note about the forum lookup
+    value: ${{ steps.lookup.outputs.infoNote }}
+  sourceLabel:
+    description: Human-readable label for which export file was used
+    value: ${{ steps.lookup.outputs.sourceLabel }}
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      id: lookup
+      env:
+        PACKAGE_NAME: ${{ inputs.packageName }}
+        USER_SIGNATURE: ${{ inputs.userSignature }}
+        HASHES_URL: ${{ inputs.hashesUrl }}
+      run: |
+        set -euo pipefail
+
+        resolve_latest_hashes_url() {
+          gh api 'repos/RoundSalmon4/AppVerifier/releases?per_page=100' \
+            --jq '[.[] | select(.tag_name | startswith("nightly-"))] | sort_by(.created_at) | reverse | .[0] | {tag: .tag_name, asset: ([.assets[] | select(.name | startswith("grapheneos-forum-hashes-") and endswith(".txt"))] | .[0])} | select(.asset != null) | .asset.browser_download_url' \
+            | head -n1
+        }
+
+        hashes_url="$HASHES_URL"
+        source_label=""
+        if [[ -z "$hashes_url" || "$hashes_url" == "latest" ]]; then
+          hashes_url=$(resolve_latest_hashes_url)
+          if [[ -z "$hashes_url" ]]; then
+            echo "Could not find a grapheneos-forum-hashes-*.txt asset in RoundSalmon4/AppVerifier nightly releases." >&2
+            exit 1
+          fi
+          source_label=$(printf '%s' "$hashes_url" | sed -E 's#.*/download/([^/]+)/([^/?#]+).*#\1/\2#')
+        else
+          source_label=$(printf '%s' "$hashes_url" | sed -E 's#.*/([^/?#]+)$#\1#')
+        fi
+
+        url_hash=$(printf '%s' "$hashes_url" | sha256sum | awk '{print $1}')
+        cache_dir="${RUNNER_TEMP}/grapheneos-forum-cache"
+        mkdir -p "$cache_dir"
+        cached_file="${cache_dir}/${url_hash}.txt"
+        hashes_file="${RUNNER_TEMP}/grapheneos-forum-hashes.txt"
+
+        if [[ -f "$cached_file" ]]; then
+          cp "$cached_file" "$hashes_file"
+        else
+          curl -fsSL --retry 3 --retry-delay 2 -o "$hashes_file" "$hashes_url"
+          cp "$hashes_file" "$cached_file"
+        fi
+
+        export SOURCE_LABEL="$source_label"
+        python3 "${GITHUB_ACTION_PATH}/lookup.py" "$hashes_file" "$PACKAGE_NAME" "$USER_SIGNATURE"

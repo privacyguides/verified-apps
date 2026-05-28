@@ -31,6 +31,8 @@ We will also check the following:
 
 We can not automatically validate the *legitimacy* of these sources, but they will be noted for manual review purposes.
 
+We will also check the hashes submitted to the GrapheneOS forum and compiled by @RoundSalmon4 at <https://github.com/RoundSalmon4/AppVerifier/releases>, but this information is **not** used for any database-related purposes. Matches will only be noted in the GitHub issue for a particular submission. 
+
 ## Verification Process
 
 Currently we are checking submitted apps considering one or more of the following factors:
