@@ -222,24 +222,46 @@ _submission_json_to_yaml_tempfile() {
   printf '%s' "$yaml_file"
 }
 
-# Merge schema-3 signature arrays (grouped by fingerprint, sources deduped by name|issue).
+# jq: merge source entries with the same name (later entries override issue/apk fields).
+_submission_jq_merge_sources_by_name() {
+  cat <<'JQ'
+    def merge_sources_by_name:
+      group_by(.name)
+      | map(
+          reduce .[] as $s (null;
+            if . == null then $s
+            else
+              . as $prev |
+              $prev
+              + { issue: ($s.issue // $prev.issue) }
+              + (
+                if $s.apk then
+                  { apk: (if $prev.apk then ($prev.apk * $s.apk) else $s.apk end) }
+                else {}
+                end
+              )
+              | if .apk == null then del(.apk) else . end
+            end
+          )
+        );
+JQ
+}
+
+# Merge schema-3 signature arrays (grouped by fingerprint, sources deduped by name).
 submission_merge_signature_arrays() {
   local existing_json="$1"
   local incoming_json="$2"
-  jq -s '
-    def fp_key($f):
-      ($f | if type == "string" then (split("\n") | join("") | gsub(" "; "")) else "" end);
-    .[0] as $existing | .[1] as $incoming |
-    ($existing + $incoming)
+  jq -s "$(_submission_jq_merge_sources_by_name)
+    def fp_key(\$f):
+      (\$f | if type == \"string\" then (split(\"\\n\") | join(\"\") | gsub(\" \"; \"\")) else \"\" end);
+    .[0] as \$existing | .[1] as \$incoming |
+    (\$existing + \$incoming)
     | group_by(fp_key(.fingerprint))
     | map({
         fingerprint: .[0].fingerprint,
-        sources: (
-          [.[].sources[]]
-          | unique_by(.name + "|" + ((.issue // 0) | tostring))
-        )
+        sources: ([.[].sources[]] | merge_sources_by_name)
       })
-  ' <<< "$(printf '%s\n%s' "$existing_json" "$incoming_json")"
+  " <<< "$(printf '%s\n%s' "$existing_json" "$incoming_json")"
 }
 
 # Append one source proposal (JSON line) to the proposals file.
@@ -288,16 +310,16 @@ _submission_assemble_entry_from_proposals() {
   fi
 
   assembled=$(
-    jq -s '
-      group_by(.fingerprint | (split("\n") | join("") | gsub(" "; "")))
+    jq -s "$(_submission_jq_merge_sources_by_name)
+      group_by(.fingerprint | (split(\"\\n\") | join(\"\") | gsub(\" \"; \"\")))
       | map({
           fingerprint: .[0].fingerprint,
           sources: (
             [.[] | {name, issue} + (if .apk then {apk: .apk} else {} end)]
-            | unique_by(.name + "|" + ((.issue // 0) | tostring))
+            | merge_sources_by_name
           )
         })
-    ' "$proposals_file"
+    " "$proposals_file"
   )
 
   local entry_json
