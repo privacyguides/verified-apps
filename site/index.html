@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse verified Android app signing certificates for AppVerifier from Privacy Guides.">
+  <title>Verified Apps — AppVerifier Database</title>
+  <link rel="stylesheet" href="style.css?v=__CSS_VERSION__">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Verified Apps</h1>
+      <p class="tagline">
+        Signing certificate fingerprints for
+        <a href="https://github.com/soupslurpr/AppVerifier">AppVerifier</a>,
+        maintained by
+        <a href="https://github.com/__GITHUB_REPO__">Privacy Guides</a>.
+      </p>
+      <p class="meta">
+        Schema <strong>__SCHEMA__</strong> · __ROW_COUNT__ entries · generated __GENERATED_AT__
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+    <label class="search-label" for="search">Search</label>
+    <input
+      type="search"
+      id="search"
+      class="search-input"
+      placeholder="Package name, fingerprint, source, or APK hash…"
+      autocomplete="off"
+      spellcheck="false"
+    >
+    <p id="result-count" class="result-count" aria-live="polite"></p>
+
+    <div class="table-wrap">
+      <table id="entries">
+        <thead>
+          <tr>
+            <th scope="col">AppVerifier string</th>
+            <th scope="col">Package source</th>
+            <th scope="col">More info</th>
+            <th scope="col">Tested file SHA-256 hash</th>
+          </tr>
+        </thead>
+        <tbody>
+__ROWS__
+        </tbody>
+      </table>
+    </div>
+    <p id="no-results" class="no-results" hidden>No entries match your search.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        <a href="https://github.com/__GITHUB_REPO__">Source repository</a>
+        ·
+        <a href="https://github.com/__GITHUB_REPO__/issues/new?template=app-submission.yml">Submit an app</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const searchInput = document.getElementById("search");
+    const tbody = document.querySelector("#entries tbody");
+    const rows = Array.from(tbody.querySelectorAll("tr"));
+    const resultCount = document.getElementById("result-count");
+    const noResults = document.getElementById("no-results");
+
+    function updateFilter() {
+      const q = searchInput.value.trim().toLowerCase();
+      let visible = 0;
+      for (const row of rows) {
+        const match = !q || row.dataset.search.includes(q);
+        row.hidden = !match;
+        if (match) visible++;
+      }
+      resultCount.textContent = q
+        ? `${visible} of ${rows.length} entries`
+        : `${rows.length} entries`;
+      noResults.hidden = visible > 0;
+    }
+
+    searchInput.addEventListener("input", updateFilter);
+    updateFilter();
+
+    function selectAppverifierText(block) {
+      const pre = block.querySelector(".appverifier-text");
+      if (!pre) return;
+      const range = document.createRange();
+      range.selectNodeContents(pre);
+      const sel = window.getSelection();
+      if (!sel) return;
+      sel.removeAllRanges();
+      sel.addRange(range);
+    }
+
+    document.addEventListener("click", async (e) => {
+      const btn = e.target.closest(".copy-btn");
+      if (btn) {
+        const text = btn.parentElement.querySelector(".copy-source")?.value;
+        if (!text) return;
+        try {
+          await navigator.clipboard.writeText(text);
+          const label = btn.textContent;
+          btn.textContent = "Copied!";
+          btn.classList.add("copied");
+          setTimeout(() => {
+            btn.textContent = label;
+            btn.classList.remove("copied");
+          }, 1500);
+        } catch {
+          btn.textContent = "Failed";
+          setTimeout(() => { btn.textContent = "Copy"; }, 1500);
+        }
+        return;
+      }
+
+      const block = e.target.closest(".appverifier-block");
+      if (block) selectAppverifierText(block);
+    });
+
+    document.addEventListener("keydown", (e) => {
+      const block = e.target.closest(".appverifier-block");
+      if (!block || (e.key !== "Enter" && e.key !== " ")) return;
+      e.preventDefault();
+      selectAppverifierText(block);
+    });
+  </script>
+</body>
+</html>
