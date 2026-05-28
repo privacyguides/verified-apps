@@ -24,6 +24,21 @@
   </header>
 
   <main class="container">
+    <p>This project is a <strong>work-in-progress</strong>, provided for informational/educational purposes only.
+      Please <a href="https://discuss.privacyguides.net/t/submit-android-apps-to-our-appverifier-database/38125">discuss this project on our forum</a> if you have any questions, 
+      and <a href="https://github.com/privacyguides/verified-apps/issues/new?template=app-submission.yml">submit an app</a> if one you have is not listed!
+      For information about how we obtained this data, read our project <a href="https://github.com/privacyguides/verified-apps">README</a>.</p>
+    <ul>
+      <li><strong>AppVerifier string:</strong> This can be copied directly into AppVerifier, or used with <a href="https://roundsalmon4.github.io/certhashviewer">certhashviewer</a> 
+        or <code>apksigner verify --print-certs</code></li>
+      <li><strong>Package source:</strong> Where we found the APK which was signed with this signing key.
+        It is common for apps to use different signing keys in different app stores (Google Play and F-Droid in particular will often re-sign apps with their own keys),
+        so if you have an app installed which does not match our list, check where you got it from!</li>
+      <li><strong>More info:</strong> We keep details about where/how information was verified in our GitHub repo, as well as any user-provided notes in the comments.
+        If you want more details about why/how an app was added to this list, check there first!</li>
+      <li><strong>Tested-file SHA-256 hash:</strong> We keep this for reference to show which APK file we tested to obtain this result.
+        It is <em>very</em> unlikely the APK file you have will match this, because the file hash will change with every app update.</li>
+    </ul>
     <label class="search-label" for="search">Search</label>
     <input
       type="search"
