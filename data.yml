@@ -595,6 +595,16 @@ packages:
             issue: 327
             apk:
               sha256: 3fcec5f3bd27321e6fc49e03bb8f7653f16d6e9046d473dfb341c6a92eedab41
+  - package: com.kivra.Kivra
+    signature:
+      - fingerprint: |-
+          EB:99:83:10:AB:C8:E2:E6:B4:A4:67:BA:07:6D:CA:73:9A:8E:34:FF:F1:AD:E1:61:C9:23:9B:03:D0:B7:79:AC
+          FE:1F:79:3B:93:46:4B:AD:14:5C:F6:E2:2B:8F:90:B5:B4:C5:3C:81:DD:FC:EE:EE:82:EB:1F:18:5B:38:F7:31
+        sources:
+          - name: Google Play
+            issue: 397
+            apk:
+              sha256: 1e45223579c8bb2b5abdb7c42477f075dafe7680fdbac2719f9362ad2c01a061
   - package: com.klook
     signature:
       - fingerprint: AD:B8:11:84:1B:66:C5:B2:D4:26:47:D4:89:7D:8B:01:64:82:CA:46:31:A8:87:C6:80:5B:1E:33:BB:31:5D:14
