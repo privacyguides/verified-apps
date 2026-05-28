@@ -239,6 +239,14 @@ packages:
             issue: 278
             apk:
               sha256: d4a5df2222efc3d9bfd23e1947f5b26fd7f447f0f57e5460e522bc6c62902fdf
+  - package: com.battlelancer.seriesguide
+    signature:
+      - fingerprint: 34:06:53:F1:DF:23:9E:98:6F:D5:01:AA:6E:F8:50:85:69:7A:13:30:62:C7:42:DC:FC:8A:96:A0:45:9F:63:5D
+        sources:
+          - name: Google Play
+            issue: 611
+            apk:
+              sha256: e264330ee21b54f11442810a0f25a7be4b358877f57f2fae4e5573c48c685226
   - package: com.beemdevelopment.aegis
     signature:
       - fingerprint: 09:CF:DE:62:E2:A8:1C:80:50:D3:BE:4C:20:E3:F8:D8:DD:D0:15:31:BE:1B:47:CB:3B:0E:EC:21:3F:64:1F:89
