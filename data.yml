@@ -984,6 +984,16 @@ packages:
             issue: 687
             apk:
               sha256: 22cbdfb79c3734abd3018ac4ff815550ec65d990c9d945f847e5ca8b815adfd2
+  - package: com.microsoft.office.outlook
+    signature:
+      - fingerprint: |-
+          B9:25:13:6F:3E:A7:C0:A1:95:16:90:A1:AB:31:39:10:DA:81:F4:09:94:A8:53:42:EC:62:28:88:F1:28:70:51
+          CC:66:DE:49:6B:C6:8A:04:CF:CD:C4:DB:90:6B:60:2A:1A:3E:E9:16:AF:6C:4B:3E:77:2A:C2:75:51:90:F5:0F
+        sources:
+          - name: Google Play
+            issue: 666
+            apk:
+              sha256: 2134b9e0cb10438817b9a770cb9fb276d7447a6e8df34e33c295ae7fb02378c1
   - package: com.mobillium.airalo
     signature:
       - fingerprint: 03:61:DD:85:0D:D3:AB:65:D9:2D:F4:18:9A:26:41:3D:A5:3A:FF:AA:31:8F:7D:AD:91:47:94:AD:A2:C9:B4:09
