@@ -6,31 +6,35 @@ on:
       - "*"
 
 permissions:
-  contents: write
-  id-token: write
-  attestations: write
-  packages: write
-  artifact-metadata: write
+  contents: read
 
 jobs:
+  download:
+    uses: ./.github/workflows/create-artifact.yml
+
+  attest:
+    needs: download
+    uses: privacyguides/.github/.github/workflows/sign-artifact.yml@5c41b37a937aab5e50262f3ab672fc9b9438dbf9
+    with:
+      artifact-name: database
+      artifact-path: data.yml
+
   release:
-    name: Create release notes
+    needs: attest
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
 
     steps:
-      - name: Checkout repository
-        id: checkout
-        uses: actions/checkout@v6
-
-      - name: Provenance attestation
-        id: attest
-        uses: actions/attest@v4
+      - name: Download artifact
+        uses: actions/download-artifact@v8
         with:
-          subject-path: "data.yml"
+          name: database
 
       - name: Create release notes
         id: release
-        uses: ncipollo/release-action@v1
+        uses: ncipollo/release-action@339a81892b84b4eeb0f6e744e4574d79d0d9b8dd
         with:
-          artifacts: "data.yml,${{ steps.attest.outputs.bundle-path }}"
+          artifacts: "data.yml"
           draft: true

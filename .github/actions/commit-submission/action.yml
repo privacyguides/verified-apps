@@ -67,6 +67,9 @@ outputs:
   skipped:
     description: Whether commit was skipped (no matching store signatures)
     value: ${{ steps.prepare.outputs.skipped }}
+  commitSha:
+    description: SHA of the verified commit on main (empty when skipped)
+    value: ${{ steps.verifiedCommit.outputs.commit }}
 
 runs:
   using: composite
@@ -119,13 +122,9 @@ runs:
         git add data.yml
         echo "committed=true" >> "$GITHUB_OUTPUT"
 
-    - name: Provenance attestation
-      uses: actions/attest@v4
-      with:
-        subject-path: 'data.yml'
-    
     - name: Push verified commit to main
       if: steps.prepare.outputs.committed == 'true'
+      id: verifiedCommit
       uses: iarekylew00t/verified-bot-commit@v2
       with:
         ref: main

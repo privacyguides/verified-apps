@@ -1413,9 +1413,11 @@ jobs:
       id-token: write
       contents: write
       issues: write
-      attestations: write
-      packages: write
-      artifact-metadata: write
+
+    outputs:
+      committed: ${{ steps.commit.outputs.committed }}
+      skipped: ${{ steps.commit.outputs.skipped }}
+      commitSha: ${{ steps.commit.outputs.commitSha }}
 
     steps:
       - name: Validate
@@ -1430,11 +1432,6 @@ jobs:
             exit 1
           fi
 
-      - name: Download Repository
-        uses: actions/checkout@v6
-        with:
-          persist-credentials: "false"
-      
       - name: Check Do Not Merge label
         uses: ./.github/actions/check-do-not-merge
         with:
@@ -1497,9 +1494,10 @@ jobs:
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
           PACKAGE: ${{ needs.parse.outputs.packageName }}
+          COMMIT_SHA: ${{ steps.commit.outputs.commitSha }}
         run: |
           gh issue comment "$NUMBER" --repo "$GH_REPO" \
-            --body "Committed \`${PACKAGE}\` to \`data.yml\` on \`main\` as submitted (store-matched signatures only)."
+            --body "Committed \`${PACKAGE}\` to \`data.yml\` on \`main\` as submitted (store-matched signatures only). Commit: \`${COMMIT_SHA}\`"
 
       - name: Report skipped commit
         if: steps.commit.outputs.skipped == 'true'
@@ -1510,3 +1508,25 @@ jobs:
         run: |
           gh issue comment "$NUMBER" --repo "$GH_REPO" \
             --body "Could not commit as-is: no store signatures matched the submission. Run **Run Checks** first, or use **Create PR** to add entries manually."
+
+  commit-as-is-artifact:
+    name: Commit As-Is (artifact)
+    needs: commit-as-is
+    if: needs.commit-as-is.outputs.committed == 'true'
+    permissions:
+      contents: read
+    uses: ./.github/workflows/create-artifact.yml
+    with:
+      ref: ${{ needs.commit-as-is.outputs.commitSha }}
+
+  commit-as-is-attest:
+    name: Commit As-Is (attest)
+    needs: commit-as-is-artifact
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+    uses: privacyguides/.github/.github/workflows/sign-artifact.yml@5c41b37a937aab5e50262f3ab672fc9b9438dbf9
+    with:
+      artifact-name: database
+      artifact-path: data.yml

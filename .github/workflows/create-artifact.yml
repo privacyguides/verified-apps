@@ -1,0 +1,28 @@
+name: Create data.yml artifact
+
+on:
+  workflow_call:
+    inputs:
+      ref:
+        description: Git ref to checkout (commit SHA or branch; default is the triggering ref)
+        type: string
+        required: false
+        default: ""
+
+jobs:
+  artifact:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ inputs.ref != '' && inputs.ref || github.ref }}
+
+      - name: Upload database artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: database
+          path: data.yml
