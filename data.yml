@@ -574,6 +574,16 @@ packages:
             issue: 589
             apk:
               sha256: 927309120c55db66b3b17d38a431691f9b92e2f32883cb7b00ce3afabcb806dd
+  - package: com.google.android.googlequicksearchbox
+    signature:
+      - fingerprint: |-
+          7C:E8:3C:1B:71:F3:D5:72:FE:D0:4C:8D:40:C5:CB:10:FF:75:E6:D8:7D:9D:F6:FB:D5:3F:04:68:C2:90:50:53
+          F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
+        sources:
+          - name: Google Play
+            issue: 673
+            apk:
+              sha256: 0133c7da5f60cce0421d5104096ff82a03c345077121cd3b47e26d2372176199
   - package: com.google.android.inputmethod.latin
     signature:
       - fingerprint: |
