@@ -853,6 +853,14 @@ packages:
             issue: 506
             apk:
               sha256: 3ba12ceb8c5a2f028f8415e610f27570c737d5625ebbaa59bd1d9bff4e3d47e5
+  - package: com.ringapp
+    signature:
+      - fingerprint: C6:37:07:C9:00:14:1B:80:77:49:C6:03:8E:21:5C:9B:21:71:26:2B:0D:A9:AF:C5:75:FA:60:AB:C4:D6:8D:EB
+        sources:
+          - name: Google Play
+            issue: 674
+            apk:
+              sha256: ec0bde236aac9e5e2eb95c46ea805966ace8ecd6bf49fffa85e00ce03ec60251
   - package: com.ryanair.cheapflights
     signature:
       - fingerprint: 7B:95:CA:16:5B:9D:E6:03:8E:B9:F1:CC:77:BC:54:2C:22:33:DE:A1:43:EE:32:38:69:3A:3F:55:B8:1A:01:E9
