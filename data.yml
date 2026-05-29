@@ -2253,6 +2253,14 @@ packages:
             issue: 570
             apk:
               sha256: a8093572497436d8873181ac8f610d08c4f4f3a621fe2b447fc8bd9692064c4b
+  - package: net.sourceforge.opencamera
+    signature:
+      - fingerprint: FF:4B:85:F5:03:7A:B1:6F:53:5A:E5:A1:27:26:97:AB:CF:D9:6F:0F:AA:0E:0C:7A:C3:7B:2E:D5:C8:94:E5:88
+        sources:
+          - name: Google Play
+            issue: 491
+            apk:
+              sha256: b4df7b6c724aa8e56babae9090b28da088148b95c6c413b4efdb2c3cc4a7c952
   - package: net.sunjiao.renamer
     signature:
       - fingerprint: 72:AC:99:B3:F3:2E:89:BC:1F:D0:3E:82:12:CD:DE:4D:F3:09:EE:29:4F:D0:42:40:35:60:46:1C:BA:BA:4D:7B
