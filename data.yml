@@ -1145,6 +1145,23 @@ packages:
             issue: 540
             apk:
               sha256: 73b15967d647c685b592bc03fc4983bee7f3009d526fd69b2a743bb3dd964429
+  - package: com.omgodse.notally
+    signature:
+      - fingerprint: 80:48:26:8F:9D:CB:D1:86:53:8A:83:1C:FD:B2:12:F1:4F:2E:62:00:82:88:44:FE:60:F7:30:30:5A:E1:38:5E
+        sources:
+          - name: Direct APK Link
+            issue: 695
+            apk:
+              sha256: abb02148099be366a21b34da064184feded5cc97843ce23ffe53b16052091439
+              link: https://github.com/OmGodse/Notally/releases/download/v6.2/Notally.v6.2.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 695
+            apk:
+              sha256: abb02148099be366a21b34da064184feded5cc97843ce23ffe53b16052091439
+          - name: Google Play
+            issue: 695
+            apk:
+              sha256: 1398866382237fe77cfaba2615b794e13af02106147594db8a15e197ac89c7ac
   - package: com.onepassword.android
     signature:
       - fingerprint: B3:5B:68:D5:CE:84:50:55:7C:6A:55:FD:64:B5:1F:EA:C1:10:CB:36:D6:A3:52:1C:59:48:DB:3A:38:0A:34:A9
