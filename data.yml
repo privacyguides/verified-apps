@@ -954,6 +954,14 @@ packages:
             issue: 71
             apk:
               sha256: e6265a57eb5ca363808488e3b01955958bed93bc0c8a0d281849b363b11027ec
+  - package: com.tplink.kasa_android
+    signature:
+      - fingerprint: 58:03:7B:6C:40:8D:7F:A0:43:16:91:AE:1E:7B:79:D4:DF:15:45:ED:59:F7:05:27:86:39:10:9B:11:35:9F:75
+        sources:
+          - name: Google Play
+            issue: 672
+            apk:
+              sha256: 4ed48424e62ca99ef5e074e78e231163314ad3612eb7ae12d88fb5297b6d9c37
   - package: com.tradera
     signature:
       - fingerprint: 46:F6:D3:D0:B6:E5:66:67:CF:33:CA:9A:71:A0:AB:0E:87:DD:46:1B:7D:B3:DC:E5:CF:97:F9:9E:1C:ED:23:72
