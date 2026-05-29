@@ -1505,6 +1505,14 @@ packages:
             apk:
               sha256: 45cc002843a771ed6f16de83e08a18c4a8480f32ee1382f8168999ce74f7f4be
               link: https://github.com/VentralDigital/InterProfileSharing/releases/download/v1.1/ips-1.1.apk
+  - package: eu.toldi.infinityforlemmy
+    signature:
+      - fingerprint: 5A:B1:45:57:3E:05:D3:D5:57:E6:83:5C:A8:0D:12:69:39:FD:32:9F:08:86:FC:62:56:24:A5:24:DD:8F:84:CB
+        sources:
+          - name: F-Droid
+            issue: 615
+            apk:
+              sha256: a2fe8b7c713fc7ff62d248b2d8608299a0eeaa2fa030e2c6bfb12c6f5d229928
   - package: fi.nordea.mobilebank
     signature:
       - fingerprint: |-
