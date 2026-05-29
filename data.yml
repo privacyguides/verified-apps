@@ -352,6 +352,15 @@ packages:
             issue: 121
           - name: AppVerifier
             issue: 121
+  - package: com.best.deskclock.nightly
+    signature:
+      - fingerprint: 95:8E:CB:D2:3C:F3:DC:04:3B:0A:34:37:2C:06:8E:34:27:5A:D8:C1:F2:A1:97:4D:77:91:63:A2:22:A8:99:9E
+        sources:
+          - name: Direct APK Link
+            issue: 660
+            apk:
+              sha256: 46fbfc6df6c2f9adc737f67380a841a914e1f40f06d221eea5ad69c5eb8b5b93
+              link: https://github.com/BlackyHawky/Clock/releases/download/nightly-50/Clock_2.30-nightly-50-cb1af47.apk
   - package: com.bitchat.droid
     signature:
       - fingerprint: 3B:03:FA:66:A5:45:13:21:10:07:92:F5:B5:5A:7B:49:66:D5:C8:DC:10:C6:DA:A4:0A:A9:5E:A4:89:53:1B:CA
