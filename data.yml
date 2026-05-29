@@ -2799,6 +2799,14 @@ packages:
             issue: 585
             apk:
               sha256: bc2fd0de5230eab505f6a3b550613215af47c254253be577a255302ae5f82d03
+  - package: se.sas.android
+    signature:
+      - fingerprint: 6C:31:78:7C:79:B7:28:70:AF:DD:CD:0D:0F:77:93:E0:BE:D3:BF:20:46:71:8C:CD:5F:97:44:BE:E7:CE:6A:8B
+        sources:
+          - name: Google Play
+            issue: 341
+            apk:
+              sha256: 41a25b6e6c9f42c9a22afae858d3796fee34401f52c18a75687341f3dab754b0
   - package: se.sj.android
     signature:
       - fingerprint: 44:D2:7F:68:AA:D1:74:12:78:28:F1:9B:8E:CE:0F:97:66:01:F8:32:FD:E4:22:AB:36:CF:FC:64:99:9A:64:B2
