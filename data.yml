@@ -540,6 +540,15 @@ packages:
             issue: 431
             apk:
               sha256: bfa5def904b0ad2b5e30aba9e6f517e0ae423c7b99965116e09bc3f69ca80557
+  - package: com.futo.platformplayer
+    signature:
+      - fingerprint: EF:81:ED:A9:8F:61:7F:7F:17:07:D8:05:09:F2:8D:AE:4E:50:F5:6E:41:E0:77:EB:30:24:D9:C9:07:2D:07:4E
+        sources:
+          - name: F-Droid (app.futo.org)
+            issue: 619
+            apk:
+              sha256: bbe436bed7e3ae7b3eb00a8437d29ae91ecff8e1c2d31dce80108cb761604956
+              repo: https://app.futo.org/fdroid/repo/
   - package: com.geoguessr.app
     signature:
       - fingerprint: 21:A6:DC:35:E1:BB:D5:E7:67:66:D1:EA:BC:11:92:43:F5:87:D5:2B:5B:92:29:9A:09:88:A2:67:9C:8B:A6:85
