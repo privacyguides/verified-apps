@@ -1394,7 +1394,7 @@ jobs:
           gh issue comment "$NUMBER" --repo "$GH_REPO" \
             --body "Could not open a PR: no store signatures matched the submission. Add matching store entries manually, or ensure verification was run with the **Run Checks** label first."
 
-  commit-as-is:
+  commit_as_is:
     name: Commit As-Is
     runs-on: ubuntu-latest
     concurrency:
@@ -1517,19 +1517,19 @@ jobs:
           gh issue comment "$NUMBER" --repo "$GH_REPO" \
             --body "Could not commit as-is: no store signatures matched the submission. Run **Run Checks** first, or use **Create PR** to add entries manually."
 
-  commit-as-is-artifact:
+  commit_as_is_artifact:
     name: Commit As-Is (artifact)
-    needs: commit-as-is
-    if: needs.commit-as-is.outputs.committed == 'true'
+    needs: commit_as_is
+    if: ${{ needs.commit_as_is.outputs.committed == 'true' }}
     permissions:
       contents: read
     uses: privacyguides/verified-apps/.github/workflows/create-artifact.yml@fb4058746d264f7ef5ba1f16dc40c499aeaf5a4d
     with:
-      ref: ${{ needs.commit-as-is.outputs.commitSha }}
+      ref: ${{ needs.commit_as_is.outputs.commitSha }}
 
-  commit-as-is-attest:
+  commit_as_is_attest:
     name: Commit As-Is (attest)
-    needs: commit-as-is-artifact
+    needs: commit_as_is_artifact
     permissions:
       contents: read
       id-token: write
