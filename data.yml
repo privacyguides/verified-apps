@@ -1181,6 +1181,14 @@ packages:
             issue: 675
             apk:
               sha256: cb9b2929976846d0a55b67076ed0adb45bd8e58d476ee2e0418689f53cc39b70
+  - package: com.vayunmathur.pdf
+    signature:
+      - fingerprint: 17:6F:CB:25:25:57:3E:5B:E8:E1:CB:3A:49:6D:D9:7B:13:7E:81:CA:5B:88:7A:1D:32:CB:89:4B:4E:57:17:B4
+        sources:
+          - name: F-Droid
+            issue: 553
+            apk:
+              sha256: 3d19d7492f25e88afb166dfb5ff216fa7d1a909a4de6c62028227c2566c2461a
   - package: com.venmo
     signature:
       - fingerprint: C7:7E:26:31:AC:04:51:C0:86:F2:5F:79:AE:25:82:38:AF:A4:00:96:1E:8D:59:9D:B7:8E:25:EA:DC:DC:C9:47
