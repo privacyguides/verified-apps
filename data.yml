@@ -2010,6 +2010,19 @@ packages:
             issue: 307
             apk:
               sha256: eff8c24e315f0d54a2545bba8e3dc10121e18d173cdca4a89f3f69e7be0c4922
+  - package: org.fcitx.fcitx5.android
+    signature:
+      - fingerprint: E4:DB:1E:9E:DF:F1:36:29:D0:7D:E4:BB:F8:16:5F:E9:BD:85:57:AB:55:09:26:72:DA:8E:40:DB:E4:84:EC:D7
+        sources:
+          - name: Direct APK Link
+            issue: 229
+            apk:
+              sha256: c56a696f107291f2f82e213793718203c5aefb3a87dcc094b710deb1f10389db
+              link: https://github.com/fcitx5-android/fcitx5-android/releases/download/0.1.2/org.fcitx.fcitx5.android-0.1.2-0-g5a4870c0-arm64-v8a-release.apk
+          - name: F-Droid
+            issue: 229
+            apk:
+              sha256: 75efe7020453880e0b7771bbf86f07aebcacfb986b2fda9b85711c9c4e719281
   - package: org.fdroid.basic
     signature:
       - fingerprint: EF:7F:82:2B:76:53:E2:01:1C:B8:C5:A7:FC:99:E8:D2:AD:E1:71:7E:53:9C:A5:6D:64:56:29:5E:3B:C0:73:12
