@@ -1,0 +1,65 @@
+name: Attestation cleanup
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: List attestations that would be deleted without deleting them
+        type: boolean
+        default: true
+      max_age_days:
+        description: Delete attestations older than this many days (the newest is always kept)
+        type: number
+        default: 2
+
+concurrency:
+  group: attestation-cleanup
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    name: Prune stale attestations
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      attestations: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Prune stale attestations
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MAX_AGE_DAYS: ${{ github.event_name == 'workflow_dispatch' && inputs.max_age_days || 2 }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
+        run: |
+          set -euo pipefail
+
+          args=(
+            python3 .github/scripts/cleanup_attestations.py
+            --org privacyguides
+            --repo verified-apps
+            --max-age-days "$MAX_AGE_DAYS"
+            --report "${RUNNER_TEMP}/attestation-cleanup.json"
+            --summary "$GITHUB_STEP_SUMMARY"
+          )
+
+          if [[ "$DRY_RUN" == "true" ]]; then
+            args+=(--dry-run)
+          fi
+
+          "${args[@]}"
+
+      - name: Upload cleanup report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: attestation-cleanup-${{ github.run_id }}
+          path: ${{ runner.temp }}/attestation-cleanup.json
+          if-no-files-found: ignore

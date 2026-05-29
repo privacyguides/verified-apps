@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   download:
-    uses: ./.github/workflows/create-artifact.yml
+    uses: privacyguides/verified-apps/.github/workflows/create-artifact.yml@fb4058746d264f7ef5ba1f16dc40c499aeaf5a4d
 
   attest:
     needs: download
