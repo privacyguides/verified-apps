@@ -364,6 +364,14 @@ packages:
             apk:
               sha256: 4010dd9b11ce3bdbcccbf5d1af7456a0b5b4a1ab2d64766fb2c847ae5d2e39b6
               link: https://github.com/cyb3rko/flashdim/releases/download/v2.4.3/FlashDim-2.4.3.apk
+  - package: com.dd.doordash
+    signature:
+      - fingerprint: 93:6F:83:B9:14:21:6D:8A:87:A7:97:EF:FB:5C:A9:D4:50:0B:D2:78:D8:92:07:9F:DB:0D:5D:05:FE:F2:10:B5
+        sources:
+          - name: Google Play
+            issue: 686
+            apk:
+              sha256: 33154ad5f0aabb771b6cfac41dac810d7626b9bcb1612e3e6323e1330f93388c
   - package: com.deepl.mobiletranslator
     signature:
       - fingerprint: EF:ED:F6:6E:64:29:F7:F0:C6:79:6F:64:AD:08:A6:D1:F0:55:82:BF:21:48:36:56:DE:B4:00:65:1D:1E:F5:BE
