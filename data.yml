@@ -319,6 +319,19 @@ packages:
             issue: 561
           - name: F-Droid (IzzyOnDroid)
             issue: 561
+  - package: com.celzero.bravedns
+    signature:
+      - fingerprint: 1F:32:D4:32:E8:1A:1D:C5:C0:0A:AF:EB:0C:66:36:CD:78:19:96:5D:17:44:20:E5:9D:B9:67:5D:FF:7A:88:E9
+        sources:
+          - name: Direct APK Link
+            issue: 654
+            apk:
+              sha256: a2da069b37054c9395328139e800a291f2ee7dccae5dd3a914659aaf049b4a2c
+              link: https://github.com/celzero/rethink-app/releases/download/v0.5.5u/rethink-53.apk
+          - name: Google Play
+            issue: 654
+            apk:
+              sha256: 168f968fd64afff19c44aef88a9b21056fa0ea99b0c2755ec0a999279c5de65a
   - package: com.collabora.libreoffice
     signature:
       - fingerprint: 57:32:58:C8:4E:14:9B:5F:4D:92:99:E7:43:4B:2B:69:A8:41:03:72:92:1D:4A:E5:86:BA:91:EC:76:78:92:CC
