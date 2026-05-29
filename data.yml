@@ -258,6 +258,14 @@ packages:
             issue: 488
           - name: AppVerifier
             issue: 488
+  - package: com.azure.authenticator
+    signature:
+      - fingerprint: EE:BD:0F:16:E6:29:AF:8B:83:81:BF:ED:FD:D6:49:60:5F:E9:0F:76:3F:5C:B7:BA:47:3E:B9:EE:F9:4D:9A:F1
+        sources:
+          - name: Google Play
+            issue: 668
+            apk:
+              sha256: 44bb9396e74e09a486dd7a069bef312a411b17a0eefc983fd513ce0d92f4237e
   - package: com.bankid.bus
     signature:
       - fingerprint: AD:A2:62:4B:35:FC:A3:CC:34:0E:11:89:94:54:E5:50:FB:A9:82:B4:4D:82:B9:7E:FD:16:AA:3A:7A:46:7C:16
