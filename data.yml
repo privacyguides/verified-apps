@@ -1721,6 +1721,14 @@ packages:
             issue: 492
             apk:
               sha256: c881430de6f3424287b3e42f945f77754a0b7d4b4965c605c20d1efa23a24fe5
+  - package: net.osmand.plus
+    signature:
+      - fingerprint: 38:29:4E:AA:C9:5C:3B:B5:A9:94:69:2C:D7:75:8F:8B:CD:BF:FB:40:81:9A:F6:E8:06:EB:7F:E4:82:32:4D:CD
+        sources:
+          - name: F-Droid
+            issue: 570
+            apk:
+              sha256: a8093572497436d8873181ac8f610d08c4f4f3a621fe2b447fc8bd9692064c4b
   - package: net.sunjiao.renamer
     signature:
       - fingerprint: 72:AC:99:B3:F3:2E:89:BC:1F:D0:3E:82:12:CD:DE:4D:F3:09:EE:29:4F:D0:42:40:35:60:46:1C:BA:BA:4D:7B
