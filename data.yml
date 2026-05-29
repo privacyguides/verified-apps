@@ -1349,6 +1349,14 @@ packages:
             issue: 501
             apk:
               sha256: 3a07687ce560dc0b9c63cc344a2a484c47c8d5f53c0649d29d658e37d870d3f2
+  - package: com.zaneschepke.wireguardautotunnel
+    signature:
+      - fingerprint: 52:04:D8:2E:76:6E:8A:A1:4D:CB:B0:6D:C7:0A:EB:AE:2B:DD:81:2D:4D:62:03:CD:52:1A:8A:68:5D:7D:3D:80
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: 606
+            apk:
+              sha256: 32f217e3198f5286f6811f922930d79e82f6cdf7dd49dd96e4587f9a8bfc2c47
   - package: de.danoeh.antennapod
     signature:
       - fingerprint: 17:94:30:56:5A:4A:04:BF:E7:82:74:83:24:30:99:BD:10:87:04:10:80:0C:D7:C4:C7:B4:8D:8D:32:26:DF:55
