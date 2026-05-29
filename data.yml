@@ -2067,14 +2067,19 @@ packages:
     signature:
       - fingerprint: CB:84:06:9B:D6:81:16:BA:FA:E5:EE:4E:E5:B0:8A:56:7A:A6:D8:98:40:4E:7C:B1:2F:9E:75:6D:F5:CF:5C:AB
         sources:
+          - name: F-Droid
+            issue: 601
+            apk:
+              sha256: eb56aa9ae68b4d4b04e40251d7fe7ea49f97e0c4be5a8384e28d98ee36b9c5e2
           - name: F-Droid (IzzyOnDroid)
             issue: 55
             apk:
               sha256: eb56aa9ae68b4d4b04e40251d7fe7ea49f97e0c4be5a8384e28d98ee36b9c5e2
-          - name: F-Droid
-            issue: 55
+          - name: F-Droid (archive.newpipe.net)
+            issue: 601
             apk:
-              sha256: 12e28bdeeec5a9512ec550ba233dc890276f4e73e757ca0e787acede42dc6c1c
+              sha256: eb56aa9ae68b4d4b04e40251d7fe7ea49f97e0c4be5a8384e28d98ee36b9c5e2
+              repo: https://archive.newpipe.net/fdroid/repo/
   - package: org.telegram.messenger
     signature:
       - fingerprint: 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
