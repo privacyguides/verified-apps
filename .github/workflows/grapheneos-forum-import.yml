@@ -1,0 +1,125 @@
+name: GrapheneOS forum import
+
+on:
+  workflow_dispatch:
+    inputs:
+      hashes_url:
+        description: URL to grapheneos-forum-hashes-*.txt (ignored when use_latest_release is true)
+        type: string
+        default: https://github.com/RoundSalmon4/AppVerifierBG/releases/download/nightly-2026-05-29/grapheneos-forum-hashes-2026-05-29.txt
+      use_latest_release:
+        description: Download the newest nightly grapheneos-forum-hashes-*.txt from RoundSalmon4/AppVerifierBG
+        type: boolean
+        default: false
+      dry_run:
+        description: List missing entries and issues that would be opened, without creating issues
+        type: boolean
+        default: false
+
+concurrency:
+  group: grapheneos-forum-import
+  cancel-in-progress: false
+
+jobs:
+  compare-and-file:
+    name: Compare export and open issues
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Resolve hashes export URL
+        id: hashes
+        env:
+          HASHES_URL: ${{ inputs.hashes_url }}
+          USE_LATEST: ${{ inputs.use_latest_release }}
+        run: |
+          set -euo pipefail
+
+          if [[ "$USE_LATEST" == "true" ]]; then
+            resolved=$(gh api 'repos/RoundSalmon4/AppVerifierBG/releases?per_page=100' \
+              --jq '[.[] | select(.tag_name | startswith("nightly-"))] | sort_by(.created_at) | reverse | .[0] | {tag: .tag_name, asset: ([.assets[] | select(.name | startswith("grapheneos-forum-hashes-") and endswith(".txt"))] | .[0])} | select(.asset != null) | .asset.browser_download_url' \
+              | head -n1)
+            if [[ -z "$resolved" ]]; then
+              echo "Could not find grapheneos-forum-hashes-*.txt in AppVerifierBG nightly releases." >&2
+              exit 1
+            fi
+            echo "url=$resolved" >> "$GITHUB_OUTPUT"
+          else
+            echo "url=$HASHES_URL" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Download forum hashes export
+        env:
+          HASHES_URL: ${{ steps.hashes.outputs.url }}
+        run: |
+          set -euo pipefail
+          curl -fsSL --retry 3 --retry-delay 2 -o "${RUNNER_TEMP}/grapheneos-forum-hashes.txt" "$HASHES_URL"
+
+      - name: Install Python dependencies
+        run: pip3 install --disable-pip-version-check pyyaml
+
+      - name: Compare against data.yml
+        run: |
+          set -euo pipefail
+          python3 .github/scripts/grapheneos_forum_import.py compare \
+            --hashes-file "${RUNNER_TEMP}/grapheneos-forum-hashes.txt" \
+            --data-yml data.yml \
+            --output "${RUNNER_TEMP}/missing-entries.json"
+
+      - name: Summarize missing entries
+        run: |
+          set -euo pipefail
+          count=$(jq 'length' "${RUNNER_TEMP}/missing-entries.json")
+          echo "Missing forum submissions not yet represented in data.yml: ${count}"
+          if [[ "$count" -gt 0 ]]; then
+            jq -r '.[] | "\(.package): \(.fingerprints | length) fingerprint(s)"' \
+              "${RUNNER_TEMP}/missing-entries.json"
+          fi
+
+      - name: Ensure tracking label exists
+        if: inputs.dry_run != true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create "grapheneos-forum-import" \
+            --repo "${{ github.repository }}" \
+            --color "C5DEF5" \
+            --description "Opened automatically from the GrapheneOS forum hashes export" \
+            2>/dev/null || true
+
+      - name: Create submission issues
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HASHES_URL: ${{ steps.hashes.outputs.url }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          set -euo pipefail
+          args=(
+            python3 .github/scripts/grapheneos_forum_import.py create-issues
+            --missing-file "${RUNNER_TEMP}/missing-entries.json"
+            --repo "${{ github.repository }}"
+            --hashes-url "$HASHES_URL"
+            --report "${RUNNER_TEMP}/created-issues.json"
+          )
+          if [[ "$DRY_RUN" == "true" ]]; then
+            args+=(--dry-run)
+          fi
+          "${args[@]}"
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grapheneos-forum-import-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/missing-entries.json
+            ${{ runner.temp }}/created-issues.json
+          if-no-files-found: ignore

@@ -1,3 +1,4 @@
 gplay-apk-downloader
 _site/
 .venv/
+__pycache__

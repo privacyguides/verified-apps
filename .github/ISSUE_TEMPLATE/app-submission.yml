@@ -35,6 +35,7 @@ body:
       description: |
         Optional. A direct HTTPS link to an APK file for this app (not a web page or store listing).
         This could be from GitHub releases, for example. If provided, we will check its signature in addition to mainstream app stores.
+        Do **not** add a link to an APK from an F-Droid repo.
       placeholder: https://example.com/downloads/app.apk
 
   - type: input
