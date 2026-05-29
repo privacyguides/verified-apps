@@ -941,6 +941,17 @@ packages:
             issue: 597
             apk:
               sha256: a08487a772856362bd4e7dca2e0dab9d95713f41771ddce42d46b89d6ddce342
+      - fingerprint: C5:EE:FF:22:48:81:35:FF:C2:58:3C:3A:43:B0:53:A1:61:CA:86:98:62:96:1A:B8:53:4F:44:C7:5F:D5:7D:97
+        sources:
+          - name: Direct APK Link
+            issue: 599
+            apk:
+              sha256: 9a690abf87b0399c91294dddd2d32c4c1b32223489e35c2ed165e5771df3783e
+              link: https://github.com/spacecowboy/Feeder/releases/download/2.20.0/app-play-release.apk
+          - name: F-Droid
+            issue: 599
+            apk:
+              sha256: 9a690abf87b0399c91294dddd2d32c4c1b32223489e35c2ed165e5771df3783e
   - package: com.onepassword.android
     signature:
       - fingerprint: B3:5B:68:D5:CE:84:50:55:7C:6A:55:FD:64:B5:1F:EA:C1:10:CB:36:D6:A3:52:1C:59:48:DB:3A:38:0A:34:A9
