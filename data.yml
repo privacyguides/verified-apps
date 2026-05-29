@@ -883,6 +883,19 @@ packages:
             apk:
               sha256: 762473e7236891fcc62e7bbc5ba7419070e99efbe22d069f99d37e701888170e
               link: https://github.com/streetwriters/notesnook/releases/download/3.3.24-android/notesnook-arm64-v8a.apk
+  - package: com.stremio.one
+    signature:
+      - fingerprint: 7E:6A:97:9C:96:8F:77:1E:3F:BC:F2:C2:E8:71:8C:E6:1E:70:8D:87:CA:F9:1F:C1:3E:2D:4C:19:A8:02:2C:6B
+        sources:
+          - name: Direct APK Link
+            issue: 655
+            apk:
+              sha256: 40d26a937b4b1c919f144003ede2f91f5419f4fb9d63b24db9f43bcd76318a0e
+              link: https://dl.strem.io/android/v2.1.5-android/com.stremio.one-2.1.5-4208893-arm64-v8a.apk
+          - name: Google Play
+            issue: 655
+            apk:
+              sha256: 9712b3b0611f5f06021c55ffe8fc9401c4b778932016609c958596923b39259d
   - package: com.tailscale.ipn
     signature:
       - fingerprint: 5C:DB:29:55:51:BF:E1:A0:87:FE:D6:AC:DA:07:14:1C:6C:92:9F:A7:C2:9B:D2:73:A7:09:28:13:AC:C4:34:BF
