@@ -1726,6 +1726,15 @@ packages:
         sources:
           - name: F-Droid
             issue: 53
+  - package: host.stjin.anonaddy
+    signature:
+      - fingerprint: 12:D4:69:1B:9F:67:A7:06:D4:E5:B0:AB:DF:A2:58:6A:A4:B0:18:BE:A1:99:9E:ED:79:18:0A:73:61:CA:ED:D2
+        sources:
+          - name: Direct APK Link
+            issue: 662
+            apk:
+              sha256: 9ad852c6342454a925ceba73b7db08944c91287281573b9044d6177976d5aebc
+              link: https://github.com/anonaddy/addy-android/releases/download/v6.2.6/app-gplayless-release.apk
   - package: hu.webvalto.bkkfutar
     signature:
       - fingerprint: D5:F6:99:F5:5B:E2:80:47:00:FF:00:9A:9E:16:18:B4:00:23:DD:A9:73:B8:3D:DE:AD:8E:9E:C3:31:DC:3D:3C
