@@ -332,6 +332,14 @@ packages:
             issue: 654
             apk:
               sha256: 168f968fd64afff19c44aef88a9b21056fa0ea99b0c2755ec0a999279c5de65a
+  - package: com.centurylink.ctl_droid_wrap
+    signature:
+      - fingerprint: 63:F4:78:73:E5:68:3B:4E:9D:45:59:73:CB:5F:50:4A:1C:05:CD:7F:B5:A1:A4:60:FE:0C:3B:D3:9E:5F:B3:F4
+        sources:
+          - name: Google Play
+            issue: 676
+            apk:
+              sha256: 83b41f9359303d96efc6482284a99d25e3c96bcd65afe37dc3af6056174fd97f
   - package: com.collabora.libreoffice
     signature:
       - fingerprint: 57:32:58:C8:4E:14:9B:5F:4D:92:99:E7:43:4B:2B:69:A8:41:03:72:92:1D:4A:E5:86:BA:91:EC:76:78:92:CC
