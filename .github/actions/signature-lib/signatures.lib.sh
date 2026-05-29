@@ -62,6 +62,146 @@ is_valid_sha256_colon() {
   [[ "$1" =~ ^([0-9A-Fa-f]{2}:){31}[0-9A-Fa-f]{2}$ ]]
 }
 
+# Locate apksigner or keytool under ANDROID_SDK_ROOT / ANDROID_HOME build-tools.
+signatures_find_android_sdk_tool() {
+  local tool_name="$1"
+  local sdk_root="${2:-${ANDROID_SDK_ROOT:-${ANDROID_HOME:-}}}"
+  local tool_path
+
+  [[ -n "$sdk_root" ]] || return 1
+  tool_path=$(find "$sdk_root/build-tools" -maxdepth 2 -name "$tool_name" -type f 2>/dev/null | sort -V | tail -n1)
+  [[ -n "$tool_path" && -x "$tool_path" ]] || return 1
+  printf '%s' "$tool_path"
+}
+
+# Normalize a 64-char SHA-256 hex string (with or without colons) to uppercase colon form.
+signatures_sha256_hex_to_colon_fp() {
+  local raw="${1//:/}"
+  raw=$(printf '%s' "$raw" | tr -d '[:space:]' | tr '[:lower:]' '[:upper:]')
+  [[ ${#raw} -eq 64 ]] || return 1
+  printf '%s' "$raw" | sed -E 's/(..)/\1:/g; s/:$//'
+}
+
+# Parse certificate SHA-256 digests from apksigner verify/lineage --print-certs output.
+signatures_parse_apksigner_certificate_digests() {
+  local verification="$1"
+  printf '%s\n' "$verification" | awk '
+    /^Source Stamp Signer/ { next }
+    /public key SHA-256 digest/ { next }
+    /certificate SHA-256 digest:/ {
+      sub(/^.*certificate SHA-256 digest: /, "")
+      gsub(/[[:space:]]+$/, "")
+      print
+    }
+  '
+}
+
+# Parse SHA-256 certificate fingerprints from keytool -printcert -jarfile output.
+signatures_parse_keytool_certificate_digests() {
+  local keytool_output="$1"
+  printf '%s\n' "$keytool_output" | awk '
+    /Certificate fingerprint \(SHA-256\):/ {
+      sub(/^.*Certificate fingerprint \(SHA-256\):[[:space:]]*/, "")
+      print
+      next
+    }
+    /^[[:space:]]*SHA256:/ {
+      sub(/^.*SHA256:[[:space:]]*/, "")
+      print
+    }
+  '
+}
+
+signatures_first_certificate_dn_from_verification() {
+  local verification="$1"
+  printf '%s\n' "$verification" | awk '
+    /^Source Stamp Signer/ { next }
+    /certificate DN:/ {
+      sub(/^.*certificate DN: /, "")
+      print
+      exit
+    }
+  '
+}
+
+# Detect google-play-app-signing or fdroid signer profile from apksigner output.
+signatures_detect_signer_kind_from_verification() {
+  local verification="$1"
+  local google_play_dn="CN=Android, OU=Android, O=Google Inc., L=Mountain View, ST=California, C=US"
+  local fdroid_dn="CN=FDroid, OU=FDroid, O=fdroid.org, L=ORG, ST=ORG, C=UK"
+  local dn
+
+  while IFS= read -r dn; do
+    [[ -z "$dn" ]] && continue
+    if [[ "$dn" == "$google_play_dn" ]]; then
+      printf 'google-play-app-signing\n'
+      return 0
+    fi
+    if [[ "$dn" == "$fdroid_dn" ]]; then
+      printf 'fdroid\n'
+      return 0
+    fi
+  done < <(printf '%s\n' "$verification" | awk '
+    /^Source Stamp Signer/ { next }
+    /certificate DN:/ {
+      sub(/^.*certificate DN: /, "")
+      print
+    }
+  ')
+}
+
+# Collect every app signing certificate fingerprint from an APK (verify + lineage + JAR).
+signatures_extract_from_apk() {
+  local apk_path="$1"
+  local sdk_root="${2:-${ANDROID_SDK_ROOT:-${ANDROID_HOME:-}}}"
+  local apksigner_override="${3:-}"
+  local apksigner keytool verify_out lineage_out keytool_out digest_raw fp formatted
+
+  if [[ -n "$apksigner_override" ]]; then
+    apksigner="$apksigner_override"
+  else
+    apksigner=$(signatures_find_android_sdk_tool apksigner "$sdk_root") || {
+      echo "apksigner not found under ${sdk_root:-}/build-tools" >&2
+      return 1
+    }
+  fi
+
+  verify_out=$("$apksigner" verify --verbose --print-certs "$apk_path" 2>&1) || true
+  lineage_out=$("$apksigner" lineage --in "$apk_path" --print-certs 2>&1) || true
+
+  digest_raw=""
+  while IFS= read -r sha256; do
+    [[ -z "$sha256" ]] && continue
+    if fp=$(signatures_sha256_hex_to_colon_fp "$sha256"); then
+      digest_raw+="${fp}"$'\n'
+    fi
+  done < <(
+    {
+      signatures_parse_apksigner_certificate_digests "$verify_out"
+      signatures_parse_apksigner_certificate_digests "$lineage_out"
+    } | sort -u
+  )
+
+  keytool=$(signatures_find_android_sdk_tool keytool "$sdk_root" || command -v keytool 2>/dev/null || true)
+  if [[ -n "$keytool" ]]; then
+    keytool_out=$("$keytool" -printcert -jarfile "$apk_path" 2>&1) || true
+    while IFS= read -r sha256; do
+      [[ -z "$sha256" ]] && continue
+      if fp=$(signatures_sha256_hex_to_colon_fp "$sha256"); then
+        digest_raw+="${fp}"$'\n'
+      fi
+    done < <(signatures_parse_keytool_certificate_digests "$keytool_out" | sort -u)
+  fi
+
+  formatted=$(signatures_format_block "$digest_raw") || {
+    echo "Failed to extract signing certificate SHA-256 digest(s) from ${apk_path}" >&2
+    printf '%s\n' "$verify_out" "$lineage_out" >&2
+    return 1
+  }
+
+  printf '%s' "$formatted"
+}
+
 # Hostname from a custom F-Droid repository URL (e.g. app.simplex.chat).
 signatures_fdroid_repo_host_from_url() {
   local url="${1-}"

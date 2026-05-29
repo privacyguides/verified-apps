@@ -6,7 +6,7 @@ inputs:
     required: true
 outputs:
   signature:
-    description: APK certificate fingerprint(s); one line or newline-separated when multiple signers
+    description: APK certificate fingerprint(s); one line or newline-separated when multiple
     value: ${{ steps.analysis.outputs.signature }}
   certificateDn:
     description: Distinguished name of the first app signing certificate
@@ -25,8 +25,6 @@ runs:
       id: analysis
       env:
         APK_PATH: ${{ inputs.path }}
-        GOOGLE_PLAY_APP_SIGNING_DN: "CN=Android, OU=Android, O=Google Inc., L=Mountain View, ST=California, C=US"
-        FDROID_SIGNER_DN: "CN=FDroid, OU=FDroid, O=fdroid.org, L=ORG, ST=ORG, C=UK"
       run: |
         set -euo pipefail
         source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
@@ -37,70 +35,26 @@ runs:
           exit 1
         fi
 
-        apksigner=$(find "$sdk_root/build-tools" -maxdepth 2 -name apksigner -type f 2>/dev/null | sort -V | tail -1)
-        if [[ -z "$apksigner" || ! -x "$apksigner" ]]; then
+        apksigner=$(signatures_find_android_sdk_tool apksigner "$sdk_root") || {
           echo "apksigner not found under $sdk_root/build-tools" >&2
           exit 1
-        fi
+        }
 
-        verification=$("$apksigner" verify --print-certs "$APK_PATH" 2>&1) || true
+        verify_out=$("$apksigner" verify --verbose --print-certs "$APK_PATH" 2>&1) || true
+        lineage_out=$("$apksigner" lineage --in "$APK_PATH" --print-certs 2>&1) || true
+        combined_verification="${verify_out}"$'\n'"${lineage_out}"
 
-        cert_dn=$(echo "$verification" | awk '
-          /^Source Stamp Signer/ { next }
-          /certificate DN:/ {
-            sub(/^.*certificate DN: /, "")
-            print
-            exit
-          }
-        ')
-
-        mapfile -t sha256_lines < <(echo "$verification" | awk '
-          /^Source Stamp Signer/ { next }
-          /public key SHA-256 digest/ { next }
-          /certificate SHA-256 digest:/ {
-            sub(/^.*certificate SHA-256 digest: /, "")
-            print
-          }
-        ')
-
-        if [[ ${#sha256_lines[@]} -eq 0 ]]; then
-          echo "$verification" >&2
-          echo "Failed to extract app signer certificate SHA-256 digest from apksigner output" >&2
-          exit 1
-        fi
-
-        raw_formatted=""
-        for sha256 in "${sha256_lines[@]}"; do
-          fp=$(printf '%s' "$sha256" | tr '[:lower:]' '[:upper:]' | sed -E 's/(..)/\1:/g; s/:$//')
-          raw_formatted+="${fp}"$'\n'
-        done
-        formatted_block=$(signatures_format_block "$raw_formatted")
-
-        signer_kind=""
-        while IFS= read -r dn; do
-          [[ -z "$dn" ]] && continue
-          if [[ "$dn" == "$GOOGLE_PLAY_APP_SIGNING_DN" ]]; then
-            signer_kind="google-play-app-signing"
-            break
-          fi
-          if [[ "$dn" == "$FDROID_SIGNER_DN" ]]; then
-            signer_kind="fdroid"
-            break
-          fi
-        done < <(echo "$verification" | awk '
-          /^Source Stamp Signer/ { next }
-          /certificate DN:/ {
-            sub(/^.*certificate DN: /, "")
-            print
-          }
-        ')
+        formatted_block=$(signatures_extract_from_apk "$APK_PATH" "$sdk_root") || exit 1
+        cert_dn=$(signatures_first_certificate_dn_from_verification "$combined_verification")
+        signer_kind=$(signatures_detect_signer_kind_from_verification "$combined_verification")
 
         echo "---"
         echo "Certificate DN: ${cert_dn:-unknown}"
         echo "SHA-256 digest(s):"
         printf '%s\n' "$formatted_block"
+
         apk_sha256=$(sha256sum "$APK_PATH" | awk '{print $1}')
         gha_write_multiline_output signature "$formatted_block"
-        echo "certificateDn=$cert_dn" >> "$GITHUB_OUTPUT"
-        echo "signerKind=$signer_kind" >> "$GITHUB_OUTPUT"
+        echo "certificateDn=${cert_dn:-}" >> "$GITHUB_OUTPUT"
+        echo "signerKind=${signer_kind:-}" >> "$GITHUB_OUTPUT"
         echo "apkSha256=$apk_sha256" >> "$GITHUB_OUTPUT"

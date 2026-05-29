@@ -202,7 +202,7 @@ jobs:
         run: |
           wget "$DOWNLOAD_INFO"
 
-      - name: Get (First) APK Signature
+      - name: Get APK signature(s)
         id: appSignature
         if: steps.availability.outputs.found == 'true'
         uses: ./.github/actions/get-signature
@@ -485,7 +485,7 @@ jobs:
           GPLAY_EMAIL: ${{ secrets.GPLAY_EMAIL }}
           GPLAY_AAS_TOKEN: ${{ secrets.GPLAY_AAS_TOKEN }}
 
-      - name: Get (First) APK Signature
+      - name: Get APK signature(s)
         id: appSignature
         if: steps.appDownload.outputs.found == 'true'
         uses: ./.github/actions/get-signature
