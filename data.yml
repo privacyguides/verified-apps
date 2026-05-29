@@ -1894,6 +1894,14 @@ packages:
             issue: 615
             apk:
               sha256: a2fe8b7c713fc7ff62d248b2d8608299a0eeaa2fa030e2c6bfb12c6f5d229928
+  - package: fi.fmi.mobileweather
+    signature:
+      - fingerprint: FB:3E:71:C5:B3:83:BD:A6:11:5A:98:20:42:9B:32:58:54:57:31:01:35:CE:A9:B5:7B:D4:D9:B0:22:73:12:62
+        sources:
+          - name: Google Play
+            issue: 169
+            apk:
+              sha256: af45d8f6a0169d3c9bd4f0494cdb3d5b2ebed9acf6a7f9713b2f4f4adbb43043
   - package: fi.nordea.mobilebank
     signature:
       - fingerprint: |-
