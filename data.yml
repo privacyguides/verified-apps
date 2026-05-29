@@ -953,6 +953,14 @@ packages:
             issue: 287
             apk:
               sha256: d3424bcc6d253828cb9bfe578a65b2c99744fc1339983fcec8cb72e6b4b110fe
+  - package: com.schwab.mobile
+    signature:
+      - fingerprint: 8D:50:97:D8:59:61:88:E4:55:BF:7E:26:F3:FB:8D:20:3A:28:10:75:AD:E9:AE:EA:74:9E:9C:C1:53:10:EF:BA
+        sources:
+          - name: Google Play
+            issue: 688
+            apk:
+              sha256: 7f642741213e3add737f4bdb3c25ae137eea954ab50e559a9a710bb9630eaa30
   - package: com.screenconnect.androidclient
     signature:
       - fingerprint: F0:EF:3A:F5:A3:DD:58:E3:23:69:5D:70:B3:71:26:74:59:1A:1A:1A:BE:A6:3B:6C:73:81:07:59:CE:15:8C:3E
