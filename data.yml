@@ -372,6 +372,14 @@ packages:
             apk:
               sha256: 4010dd9b11ce3bdbcccbf5d1af7456a0b5b4a1ab2d64766fb2c847ae5d2e39b6
               link: https://github.com/cyb3rko/flashdim/releases/download/v2.4.3/FlashDim-2.4.3.apk
+  - package: com.daikincomfort.daikinonehome
+    signature:
+      - fingerprint: 71:00:31:83:B9:8B:54:1A:58:DD:40:D7:5F:68:BC:4B:D6:67:8E:A1:F0:CE:9B:E3:41:0B:CC:12:85:13:62:67
+        sources:
+          - name: Google Play
+            issue: 691
+            apk:
+              sha256: f79a68926d49f89116d3d7adf21bdeab444fb27132540f7d48f8c86fd84959dd
   - package: com.dd.doordash
     signature:
       - fingerprint: 93:6F:83:B9:14:21:6D:8A:87:A7:97:EF:FB:5C:A9:D4:50:0B:D2:78:D8:92:07:9F:DB:0D:5D:05:FE:F2:10:B5
