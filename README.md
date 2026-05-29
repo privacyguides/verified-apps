@@ -71,7 +71,34 @@ If you use this data in your app, the [MIT License](./LICENSE.txt) at minimum re
 
 You may not imply endorsement by Privacy Guides or the project for your app or project by using this data, but you are free to say "This app uses the Verified Apps database from Privacy Guides" or similar.
 
-## Schema
+### Verifying Attestations
+
+If you are downloading `data.yml` for your own purposes, we highly recommend verifying that the file you have downloaded was built by us on GitHub Actions using our automated workflows. We allow you to verify this through the use of [provenance attestations](https://docs.github.com/en/actions/how-tos/secure-your-work/use-artifact-attestations/use-artifact-attestations). A list of our *current* attestations can be found here: <https://github.com/privacyguides/verified-apps/attestations>
+
+Provenance attestations guarantee the file you have was built from a well-defined process. Attestations also allow us to revoke bad copies of the database if needed, because we can delete the attestation on our end, which will in turn cause your verification process to fail. As such, we recommend checking these attestations whenever is reasonably possible, so you are informed of revocations in a timely manner.
+
+> [!IMPORTANT]
+> We **automatically delete** (revoke) attestations in this repo after 5 days, except for the latest one (if it's older than 5 days), and any attestations related to our (unrevoked) [releases](https://github.com/privacyguides/verified-apps/releases). In this sense, copies of our database "expire" after 5 days unless they are releases. If you verify attestations in your build process automatically, we recommend always downloading the latest copy of `data.yml` each time. If you rely on verifying the provenance of our data at any time beyond 5 days, we recommend only using copies of `data.yml` from our releases as those attestations will never be deleted unless we need to revoke one due to bad data.
+
+We *especially* recommend checking this if you are incorporating this data in your own app, to strenghten your own supply-chain security when grabbing data from an upstream source (us). One example of how to do this in your GitHub workflows can be found here: <https://github.com/RoundSalmon4/AppVerifierBG/pull/12>
+
+If you download the latest copy of `data.yml` directly from this repo, you can verify its provenance using the `gh` command line tool:
+
+```
+gh attestation verify --owner privacyguides data.yml
+```
+
+If you download a copy of `data.yml` from a release, you can verify your copy matches the immutable release we've published:
+
+```
+gh release verify-asset [RELEASE] data.yml
+```
+
+For example, you'd run `gh release verify-asset 3.20260527 data.yml` to check your copy against [3.20260527](https://github.com/privacyguides/verified-apps/releases/tag/3.20260527).
+
+In addition to using the online `gh` CLI, you should be able to verify these files with any [SLSA build verifiers](https://slsa.dev/spec/v1.2/verifying-artifacts), or [verify these attestations offline](https://docs.github.com/en/actions/how-tos/secure-your-work/use-artifact-attestations/verify-attestations-offline).
+
+### Schema
 
 ```yaml
 schema: # Required. Current version of the data file's schema.
