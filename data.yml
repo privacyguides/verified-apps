@@ -984,6 +984,16 @@ packages:
             issue: 687
             apk:
               sha256: 22cbdfb79c3734abd3018ac4ff815550ec65d990c9d945f847e5ca8b815adfd2
+  - package: com.microsoft.office.onenote
+    signature:
+      - fingerprint: |-
+          1F:B4:DE:76:0F:40:F3:0E:66:D3:08:51:8A:1B:D9:D1:4E:F1:41:1B:FF:A9:D6:76:28:76:B6:02:66:1D:54:ED
+          B9:25:13:6F:3E:A7:C0:A1:95:16:90:A1:AB:31:39:10:DA:81:F4:09:94:A8:53:42:EC:62:28:88:F1:28:70:51
+        sources:
+          - name: Google Play
+            issue: 665
+            apk:
+              sha256: 39c342082a86d81884152f1e854135252528ebf816a7ba9aecc5ebd41de6a3f9
   - package: com.microsoft.office.outlook
     signature:
       - fingerprint: |-
