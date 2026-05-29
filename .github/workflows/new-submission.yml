@@ -258,10 +258,10 @@ jobs:
 
       - name: Download F-Droid App
         id: appDownload
-        uses: ./.github/actions/download-apk-apkeep
+        uses: ./.github/actions/download-fdroid
         with:
           packageName: ${{ env.PACKAGE_NAME }}
-          downloadSource: f-droid
+          fDroidRepoName: ${{ matrix.fDroidRepoName }}
           fDroidRepoURL: ${{ matrix.fDroidRepoURL }}
 
       - name: Get APK Signature
@@ -369,10 +369,10 @@ jobs:
 
       - name: Download F-Droid App
         id: appDownload
-        uses: ./.github/actions/download-apk-apkeep
+        uses: ./.github/actions/download-fdroid
         with:
           packageName: ${{ env.PACKAGE_NAME }}
-          downloadSource: f-droid
+          fDroidRepoName: ${{ steps.customRepo.outputs.host }}
           fDroidRepoURL: ${{ env.FDROID_REPO_URL }}
 
       - name: Get APK Signature
@@ -481,7 +481,6 @@ jobs:
         uses: ./.github/actions/download-apk-apkeep
         with:
           packageName: ${{ env.PACKAGE_NAME }}
-          downloadSource: google-play
         env:
           GPLAY_EMAIL: ${{ secrets.GPLAY_EMAIL }}
           GPLAY_AAS_TOKEN: ${{ secrets.GPLAY_AAS_TOKEN }}
