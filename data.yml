@@ -2273,6 +2273,14 @@ packages:
             apk:
               sha256: 4a23949039d93617df1219a5f0f61b88a22c3c388ac54999e893eb30b39ddb30
               link: https://github.com/MAGICGrants/skylight-wallet/releases/download/v1.0.10/skylight-wallet-v1.0.10-x86_64.apk
+  - package: org.moire.opensudoku
+    signature:
+      - fingerprint: A5:4C:E2:9E:BB:02:FC:B9:B4:78:62:05:72:F7:C4:DD:39:B9:03:73:6F:E6:19:96:87:47:1B:A7:29:F4:61:3A
+        sources:
+          - name: F-Droid
+            issue: 214
+            apk:
+              sha256: 790262c5f44a5988721e7c32d33f5eaa3213e75a503e569f90dd7dd4e1dcd698
   - package: org.mozilla.fennec_fdroid
     signature:
       - fingerprint: 06:66:53:58:EF:D8:BA:05:BE:23:6A:47:A1:2C:B0:95:8D:7D:75:DD:93:9D:77:C2:B3:1F:53:98:53:7E:BD:C5
