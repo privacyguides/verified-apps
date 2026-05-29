@@ -2588,6 +2588,14 @@ packages:
             apk:
               sha256: 4f3c08e4ef6f66ee1f9abd27115790d6e9d160226bb7158787c7b21d3cae924f
               link: https://get.videolan.org/vlc-android/3.7.0/VLC-Android-3.7.0-arm64-v8a.apk
+  - package: proton.android.pass.fdroid
+    signature:
+      - fingerprint: 57:2C:25:04:8E:6E:62:29:BC:03:93:61:9F:7C:64:0F:8C:BC:CF:11:D2:EB:F8:B2:FA:7B:C9:A7:63:63:B8:12
+        sources:
+          - name: F-Droid
+            issue: 602
+            apk:
+              sha256: 21d156cbcff6cc6755dde7f0eba4d58163bfd80d8ef26f22bc732697c540fc80
   - package: ru.tech.imageresizershrinker
     signature:
       - fingerprint: 20:D7:68:9D:E0:87:4F:00:01:5E:A3:E3:1F:A0:67:C1:5C:03:45:7D:36:2D:41:D5:E7:93:DB:3A:86:4F:A5:34
