@@ -1501,6 +1501,19 @@ packages:
             issue: 264
             apk:
               sha256: 56d23169baece013a3524e15cf6a98f41ed91ec5342991456050757103f6f8cb
+  - package: de.kaiserdragon.iconrequest
+    signature:
+      - fingerprint: A0:CF:A0:D1:A0:0B:98:87:A1:70:1A:69:3B:DC:3C:2A:8E:84:D3:9D:8E:3A:98:D6:81:BD:34:68:CB:81:A4:DB
+        sources:
+          - name: Direct APK Link
+            issue: 419
+            apk:
+              sha256: 2ac3a97bf5dec6bff791b6e9d29a8109a03429f9f7e6c4597895796223e3d32e
+              link: https://github.com/Kaiserdragon2/IconRequest/releases/download/v2.8.0/IconRequest-v2.8.0.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 419
+            apk:
+              sha256: 2ac3a97bf5dec6bff791b6e9d29a8109a03429f9f7e6c4597895796223e3d32e
   - package: de.quantumphysique.trale
     signature:
       - fingerprint: A2:6E:7B:1B:C1:9F:7F:11:81:C0:F1:5C:96:BF:B9:5E:99:9D:FD:28:4F:E0:5F:96:7D:60:45:E1:6C:41:14:38
