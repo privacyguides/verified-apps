@@ -1924,6 +1924,15 @@ packages:
             issue: 217
             apk:
               sha256: 56986994f84593eb35c9734efe3836c5d75a82966b54c917cec7681b0464a947
+  - package: org.futo.inputmethod.latin
+    signature:
+      - fingerprint: 74:3F:AD:58:64:AB:C4:26:50:0B:2D:C2:C4:7C:8A:D3:24:CB:CD:16:03:3F:80:16:99:48:41:35:63:74:F9:95
+        sources:
+          - name: F-Droid (app.futo.org)
+            issue: 618
+            apk:
+              sha256: 24f26459771b2ffbf11c3154d2ee595ec1079584a7a91fdf88174176aaf3cda7
+              repo: https://app.futo.org/fdroid/repo/
   - package: org.futo.voiceinput
     signature:
       - fingerprint: 74:3F:AD:58:64:AB:C4:26:50:0B:2D:C2:C4:7C:8A:D3:24:CB:CD:16:03:3F:80:16:99:48:41:35:63:74:F9:95
