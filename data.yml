@@ -570,6 +570,23 @@ packages:
             apk:
               sha256: bbe436bed7e3ae7b3eb00a8437d29ae91ecff8e1c2d31dce80108cb761604956
               repo: https://app.futo.org/fdroid/repo/
+  - package: com.geeksville.mesh
+    signature:
+      - fingerprint: A9:3B:45:65:68:C1:75:DB:08:00:A0:9F:06:77:7F:89:2D:81:24:32:AD:B8:A3:DF:73:BC:3E:7F:06:C8:0C:6D
+        sources:
+          - name: Direct APK Link
+            issue: 627
+            apk:
+              sha256: a6bdeea57ac385a0642d6856497cf1c17afb005119e569f9a046581c2f15cc20
+              link: https://github.com/meshtastic/Meshtastic-Android/releases/download/v2.7.13/app-fdroid-release.apk
+          - name: F-Droid
+            issue: 627
+            apk:
+              sha256: 1980e04348ae0855f2f5d9e85a3004dfe04e452093011b73a5d3506cd90abafc
+          - name: F-Droid (IzzyOnDroid)
+            issue: 627
+            apk:
+              sha256: dffba5518ce3cdf74227c1579e09a3844c4c27e802fed6bea9f5b71ebb8023bd
   - package: com.geoguessr.app
     signature:
       - fingerprint: 21:A6:DC:35:E1:BB:D5:E7:67:66:D1:EA:BC:11:92:43:F5:87:D5:2B:5B:92:29:9A:09:88:A2:67:9C:8B:A6:85
