@@ -1192,6 +1192,14 @@ packages:
               repo: https://mobileapp.bitwarden.com/fdroid/repo/
           - name: AppVerifier
             issue: 355
+  - package: com.xfinity.digitalhome
+    signature:
+      - fingerprint: 95:3F:5A:4C:22:E7:FD:16:AD:C3:F1:2E:B0:38:68:2A:AD:37:7F:EF:9A:18:B9:D1:2C:1A:BE:A7:89:11:C7:49
+        sources:
+          - name: Google Play
+            issue: 690
+            apk:
+              sha256: a45ec003660f4fa9b20bd992359c83f63fcff504767ff670264a2acc867c5c5c
   - package: com.yoc.swiss.swiss
     signature:
       - fingerprint: B3:EB:7E:D9:26:78:57:D5:B0:ED:23:A7:85:49:FB:65:0E:9C:94:7A:70:38:A5:21:66:3A:1E:06:94:43:F6:1D
