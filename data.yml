@@ -698,6 +698,14 @@ packages:
             issue: 661
             apk:
               sha256: 54ebc1a57dc9d9ebb950606ef1fda26253da7c41cf3ef3d13f3f6aef2a032f1a
+  - package: com.helddertierwelt.mentalmath
+    signature:
+      - fingerprint: DE:19:7B:4C:F2:B8:58:80:E0:21:11:59:B6:0B:6E:3C:39:F9:6F:F0:68:68:AE:48:39:C4:2D:8A:4D:6F:3F:E5
+        sources:
+          - name: F-Droid
+            issue: 596
+            apk:
+              sha256: 1aeae599ceb630a3a7ad6846787a192f64e47bd935e755038fdcfee48e4d93f3
   - package: com.hybridcalisthenics.app
     signature:
       - fingerprint: 16:38:CC:37:54:4C:2F:FD:4F:D2:E7:D5:BC:CA:8A:CB:D7:3E:C1:BD:9D:39:45:42:8D:3D:2E:75:E2:F5:EA:3E
