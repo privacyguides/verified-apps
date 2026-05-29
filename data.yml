@@ -787,6 +787,15 @@ packages:
             issue: 681
             apk:
               sha256: dda80c4500b21fa267f3348246b74dc3d5b65dd3868fe00911448ed4cb126840
+  - package: com.metrolist.music
+    signature:
+      - fingerprint: E3:2C:4F:2E:FD:7E:E9:54:8F:AE:E2:2E:45:A6:04:25:F7:72:8A:55:A6:10:FD:5E:8A:B9:36:4F:74:B7:BC:C9
+        sources:
+          - name: Direct APK Link
+            issue: 656
+            apk:
+              sha256: 2b764a9660dd76dae41f319e65d29ba17a38e065ec7a2ffe6e130b4977528177
+              link: https://github.com/MetrolistGroup/Metrolist/releases/download/v13.4.3/Metrolist.apk
   - package: com.michaels.michaelsstores
     signature:
       - fingerprint: |-
