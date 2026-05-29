@@ -952,6 +952,18 @@ packages:
             issue: 599
             apk:
               sha256: 9a690abf87b0399c91294dddd2d32c4c1b32223489e35c2ed165e5771df3783e
+  - package: com.nvllz.stepsy
+    signature:
+      - fingerprint: 91:E4:CD:09:9C:31:AE:AF:1B:C5:ED:40:29:46:7E:B7:18:1D:5A:7D:D8:93:FD:98:83:27:13:CE:3B:E5:88:16
+        sources:
+          - name: F-Droid
+            issue: 540
+            apk:
+              sha256: 73b15967d647c685b592bc03fc4983bee7f3009d526fd69b2a743bb3dd964429
+          - name: F-Droid (IzzyOnDroid)
+            issue: 540
+            apk:
+              sha256: 73b15967d647c685b592bc03fc4983bee7f3009d526fd69b2a743bb3dd964429
   - package: com.onepassword.android
     signature:
       - fingerprint: B3:5B:68:D5:CE:84:50:55:7C:6A:55:FD:64:B5:1F:EA:C1:10:CB:36:D6:A3:52:1C:59:48:DB:3A:38:0A:34:A9
