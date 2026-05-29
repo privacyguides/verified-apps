@@ -1145,6 +1145,14 @@ packages:
             issue: 526
             apk:
               sha256: cf5886cfa21088647d5812fca06241e3285c3816837af7c0f484049bef6a4e9e
+  - package: com.wf.wellsfargomobile
+    signature:
+      - fingerprint: 6A:2D:2B:76:89:BE:B7:59:B8:15:D4:AA:58:27:08:F6:1E:79:32:BB:1A:2B:82:13:E4:CF:1F:C3:D8:EC:4C:5E
+        sources:
+          - name: Google Play
+            issue: 693
+            apk:
+              sha256: e9ee15d7cd4b0190d81021e0f0576dc27adacbac3c2434f37e1f2e77423095ee
   - package: com.windscribe.vpn
     signature:
       - fingerprint: 9F:B3:57:CA:2D:7F:0A:CC:7B:31:21:98:55:34:49:0D:0A:A7:0F:5D:C6:1C:A8:EC:59:3F:3D:A1:E9:CD:33:9B
