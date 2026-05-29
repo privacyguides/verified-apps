@@ -2327,6 +2327,19 @@ packages:
             apk:
               sha256: eb56aa9ae68b4d4b04e40251d7fe7ea49f97e0c4be5a8384e28d98ee36b9c5e2
               repo: https://archive.newpipe.net/fdroid/repo/
+  - package: org.tasks
+    signature:
+      - fingerprint: A0:38:A0:55:BF:43:B2:65:9C:BA:F8:62:80:8A:FD:5E:44:7D:4D:0E:27:49:A1:03:91:91:00:09:CB:D8:DC:FA
+        sources:
+          - name: Direct APK Link
+            issue: 440
+            apk:
+              sha256: 83396efd7aa36886892a99b458f4efae402aa79c6b8c1171d0bd5ad6b34de728
+              link: https://f-droid.org/repo/org.tasks_150500.apk
+          - name: F-Droid
+            issue: 440
+            apk:
+              sha256: 65eec45353aebcc5186bad7efcb1c63119f8d7b224978f4ba77563fe8c69d7a5
   - package: org.telegram.messenger
     signature:
       - fingerprint: 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
