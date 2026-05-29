@@ -960,6 +960,14 @@ packages:
             issue: 399
             apk:
               sha256: 4f715443e39ecda7655e9df50f52e98b3999a26153d930e5eee0d41a0a9cdd24
+  - package: com.urbandroid.kinestop
+    signature:
+      - fingerprint: 2F:84:FB:3C:3A:39:CA:F2:01:A1:11:54:03:7B:50:D3:2C:05:A4:C1:18:B8:F1:39:F9:C7:9C:15:FB:D5:54:82
+        sources:
+          - name: Google Play
+            issue: 649
+            apk:
+              sha256: 67b613f1e30691badcb0e44867d2b6fbd50117c282c4ebdac5d8297b7610bdb9
   - package: com.verisec.mobile.frejaeid
     signature:
       - fingerprint: 1F:14:FE:04:C5:19:52:C5:E3:C8:E6:82:51:AE:8A:C3:73:B8:4C:59:76:BD:7F:24:8E:64:3A:F2:50:C8:BA:91
