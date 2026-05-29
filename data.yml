@@ -494,6 +494,23 @@ packages:
             issue: 651
             apk:
               sha256: 21db52eaeb5b842c19ff2c0adc5290b4d4d8e187dc21061175880738e4d5029e
+  - package: com.deniscerri.ytdl
+    signature:
+      - fingerprint: 26:36:45:CB:52:72:EB:29:07:59:FE:1F:59:14:9A:E2:4D:F6:CE:17:1E:9F:66:66:EE:AD:98:1D:3F:C6:4C:95
+        sources:
+          - name: Direct APK Link
+            issue: 249
+            apk:
+              sha256: 69482f3ba04e3a801832813e05cb8b0f70b2deb9d5c785962835b230d2445abc
+              link: https://github.com/deniscerri/ytdlnis/releases/download/v1.8.8/YTDLnis-1.8.8-arm64-v8a-release.apk
+          - name: F-Droid
+            issue: 249
+            apk:
+              sha256: d92f1f1a86eb5f0632f2d82746f352f9212f1d789bdcf59d929c30611d3a2c3f
+          - name: F-Droid (IzzyOnDroid)
+            issue: 249
+            apk:
+              sha256: 69482f3ba04e3a801832813e05cb8b0f70b2deb9d5c785962835b230d2445abc
   - package: com.desmos.scientific
     signature:
       - fingerprint: F8:E2:EF:7A:35:35:E3:A2:DE:70:65:46:F5:32:5F:0E:8B:74:7C:CC:88:1A:67:79:3D:BA:71:FC:B3:6E:4C:54
