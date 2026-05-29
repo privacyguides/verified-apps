@@ -600,6 +600,14 @@ packages:
             issue: 661
             apk:
               sha256: 54ebc1a57dc9d9ebb950606ef1fda26253da7c41cf3ef3d13f3f6aef2a032f1a
+  - package: com.hybridcalisthenics.app
+    signature:
+      - fingerprint: 16:38:CC:37:54:4C:2F:FD:4F:D2:E7:D5:BC:CA:8A:CB:D7:3E:C1:BD:9D:39:45:42:8D:3D:2E:75:E2:F5:EA:3E
+        sources:
+          - name: Google Play
+            issue: 659
+            apk:
+              sha256: 11759146484eb70ecff85c49b29a4f9bd5edf0613ce8e1a4596323c5d5bdbf32
   - package: com.icelandair.mobile.app.android
     signature:
       - fingerprint: AD:29:A3:4B:6D:13:8B:15:7F:03:DE:CB:22:70:02:05:DD:89:51:C6:0E:F6:6A:E0:99:CC:D6:B6:BE:97:15:8C
