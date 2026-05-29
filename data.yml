@@ -626,6 +626,14 @@ packages:
             issue: 659
             apk:
               sha256: 11759146484eb70ecff85c49b29a4f9bd5edf0613ce8e1a4596323c5d5bdbf32
+  - package: com.i4season.supanesok
+    signature:
+      - fingerprint: 57:87:09:04:C4:53:36:E5:C0:C0:EF:65:72:04:BC:EA:AA:C2:4F:88:0A:68:BE:4F:F9:0A:2A:C5:3B:8A:A3:A5
+        sources:
+          - name: Google Play
+            issue: 679
+            apk:
+              sha256: b5a92adc5b370a67ca5df2be3d1599ee861c07a41e69dab083cd91f4bb762bc2
   - package: com.icelandair.mobile.app.android
     signature:
       - fingerprint: AD:29:A3:4B:6D:13:8B:15:7F:03:DE:CB:22:70:02:05:DD:89:51:C6:0E:F6:6A:E0:99:CC:D6:B6:BE:97:15:8C
