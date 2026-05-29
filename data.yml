@@ -1808,6 +1808,14 @@ packages:
             issue: 494
           - name: AppVerifier
             issue: 494
+  - package: io.ente.auth
+    signature:
+      - fingerprint: DD:CE:AA:D6:88:F0:05:D3:40:68:94:BA:00:FC:E3:FF:82:54:13:0A:10:2B:B2:52:E6:3C:D8:EA:A9:72:B2:EF
+        sources:
+          - name: Google Play
+            issue: 571
+            apk:
+              sha256: 6d88f9e94beae7790ffbe729569d08026cd339ca3b8a6611d9608c9032624545
   - package: io.ente.photos.independent
     signature:
       - fingerprint: 35:ED:56:81:B7:0B:B3:BD:35:D9:0D:85:6A:F5:69:4C:50:4D:EF:46:AA:D8:3F:77:7B:1C:67:5C:F4:51:35:0B
