@@ -1100,6 +1100,14 @@ packages:
             issue: 675
             apk:
               sha256: cb9b2929976846d0a55b67076ed0adb45bd8e58d476ee2e0418689f53cc39b70
+  - package: com.venmo
+    signature:
+      - fingerprint: C7:7E:26:31:AC:04:51:C0:86:F2:5F:79:AE:25:82:38:AF:A4:00:96:1E:8D:59:9D:B7:8E:25:EA:DC:DC:C9:47
+        sources:
+          - name: Google Play
+            issue: 689
+            apk:
+              sha256: f8f9713c8fb7214ce0a976453ec4a8df519098d2e03c4be38b4032816b9a03f0
   - package: com.verisec.mobile.frejaeid
     signature:
       - fingerprint: 1F:14:FE:04:C5:19:52:C5:E3:C8:E6:82:51:AE:8A:C3:73:B8:4C:59:76:BD:7F:24:8E:64:3A:F2:50:C8:BA:91
