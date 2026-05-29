@@ -1520,9 +1520,7 @@ jobs:
   commitAsIsArtifact:
     name: Commit As-Is (artifact)
     needs: commitAsIs
-    if: >-
-      ${{ needs.commitAsIs.result == 'success' &&
-      needs.commitAsIs.outputs.committed == 'true' }}
+    if: always() && needs.commitAsIs.outputs.committed == 'true'
     permissions:
       contents: read
     uses: privacyguides/verified-apps/.github/workflows/create-artifact.yml@fb4058746d264f7ef5ba1f16dc40c499aeaf5a4d
@@ -1532,7 +1530,7 @@ jobs:
   commitAsIsAttest:
     name: Commit As-Is (attest)
     needs: commitAsIsArtifact
-    if: ${{ needs.commitAsIsArtifact.result == 'success' }}
+    if: always() && needs.commitAsIsArtifact.result == 'success'
     permissions:
       contents: read
       id-token: write
