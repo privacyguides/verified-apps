@@ -1729,6 +1729,23 @@ packages:
             apk:
               sha256: cd5ddf49dabbb7b9870db57441b8b8e426b09f41951853c13af1a595aed5d62d
               link: https://github.com/ente-io/ente/releases/download/photos-v1.3.44/ente-photos-v1.3.44.apk
+  - package: io.github.devhyper.openvideoeditor
+    signature:
+      - fingerprint: 84:DF:64:4C:C5:DB:D4:EA:50:60:2B:9F:23:E4:FB:F3:B2:2E:E5:CD:21:82:43:7B:EF:72:C7:C7:99:F1:2D:B6
+        sources:
+          - name: Direct APK Link
+            issue: 237
+            apk:
+              sha256: 71e33a3cce10489f70696d12a5238c37b576bc1a9acb3ac908b0323262802654
+              link: https://github.com/devhyper/open-video-editor/releases/download/v1.1.3/app-release.apk
+          - name: F-Droid
+            issue: 237
+            apk:
+              sha256: 71e33a3cce10489f70696d12a5238c37b576bc1a9acb3ac908b0323262802654
+          - name: F-Droid (IzzyOnDroid)
+            issue: 237
+            apk:
+              sha256: 71e33a3cce10489f70696d12a5238c37b576bc1a9acb3ac908b0323262802654
   - package: io.github.gonbei774.calisthenicsmemory
     signature:
       - fingerprint: 18:C0:0C:34:7E:A1:00:1A:FC:DD:87:25:88:81:D2:4D:68:40:47:BB:EB:22:C4:7F:BE:7B:51:49:95:16:AB:54
