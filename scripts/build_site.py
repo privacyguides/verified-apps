@@ -30,18 +30,6 @@ def appverifier_text(package: str, fingerprint: str) -> str:
     return "\n".join(lines)
 
 
-def collect_apk_hashes(sources: list[dict]) -> list[str]:
-    seen: set[str] = set()
-    hashes: list[str] = []
-    for source in sources:
-        apk = source.get("apk") or {}
-        sha = apk.get("sha256")
-        if sha and sha not in seen:
-            seen.add(sha)
-            hashes.append(sha)
-    return hashes
-
-
 def collect_issues(sources: list[dict]) -> list[int]:
     seen: set[int] = set()
     issues: list[int] = []
@@ -60,26 +48,29 @@ def build_rows(data: dict) -> list[dict]:
         for sig in pkg.get("signature", []):
             fingerprint = sig["fingerprint"]
             sources = sig.get("sources", [])
+            source_entries = [
+                {
+                    "name": s["name"],
+                    "sha256": (s.get("apk") or {}).get("sha256"),
+                }
+                for s in sources
+                if s["name"] != "AppVerifier"
+            ]
             rows.append(
                 {
                     "package": package,
                     "appverifier": appverifier_text(package, fingerprint),
                     "fingerprints": normalize_fingerprint(fingerprint),
-                    "sources": [
-                        s["name"]
-                        for s in sources
-                        if s["name"] != "AppVerifier"
-                    ],
+                    "source_entries": source_entries,
                     "issues": collect_issues(sources),
-                    "apk_hashes": collect_apk_hashes(sources),
                     "search": " ".join(
                         [
                             package,
                             " ".join(normalize_fingerprint(fingerprint)),
+                            " ".join(e["name"] for e in source_entries),
                             " ".join(
-                                s["name"] for s in sources if s["name"] != "AppVerifier"
+                                e["sha256"] for e in source_entries if e["sha256"]
                             ),
-                            " ".join(collect_apk_hashes(sources)),
                         ]
                     ).lower(),
                 }
@@ -94,11 +85,21 @@ def render_rows(rows: list[dict]) -> str:
         av_display = html.escape(row["appverifier"])
         copy_source = av_display
 
-        source_items = [
-            f"<li>{html.escape(name)}</li>" for name in row["sources"]
-        ]
+        source_items = []
+        for entry in row["source_entries"]:
+            name = html.escape(entry["name"])
+            sha = entry.get("sha256")
+            if sha:
+                source_items.append(
+                    f'<li><span class="source-name">{name}</span> — '
+                    f'<code class="source-hash">{html.escape(sha)}</code></li>'
+                )
+            else:
+                source_items.append(f'<li>{name}</li>')
         sources_html = (
-            "<ul>" + "".join(source_items) + "</ul>" if source_items else "—"
+            '<ul class="source-list">' + "".join(source_items) + "</ul>"
+            if source_items
+            else "—"
         )
 
         issue_items = []
@@ -109,14 +110,6 @@ def render_rows(rows: list[dict]) -> str:
             )
         issues_html = ", ".join(issue_items) if issue_items else "—"
 
-        if row["apk_hashes"]:
-            hash_items = "".join(
-                f"<li><code>{html.escape(h)}</code></li>" for h in row["apk_hashes"]
-            )
-            hashes_html = f"<ul class=\"hash-list\">{hash_items}</ul>"
-        else:
-            hashes_html = "—"
-
         parts.append(
             f"""<tr data-search="{html.escape(row["search"], quote=True)}">
   <td class="appverifier-cell">
@@ -126,9 +119,8 @@ def render_rows(rows: list[dict]) -> str:
     <textarea class="copy-source" readonly hidden aria-hidden="true">{copy_source}</textarea>
     <button type="button" class="copy-btn" aria-label="Copy AppVerifier entry for {html.escape(row["package"])}">Copy</button>
   </td>
-  <td>{sources_html}</td>
   <td class="issues-cell">{issues_html}</td>
-  <td class="hash-cell">{hashes_html}</td>
+  <td class="sources-cell">{sources_html}</td>
 </tr>"""
         )
     return "\n".join(parts)

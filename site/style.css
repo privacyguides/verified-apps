@@ -221,12 +221,23 @@ td ul li + li {
   margin-top: 0.25rem;
 }
 
-.hash-list {
+.source-list {
   list-style: none;
   padding-left: 0;
 }
 
-.hash-list code {
+.source-list li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+  align-items: baseline;
+}
+
+.source-list li + li {
+  margin-top: 0.5rem;
+}
+
+.source-hash {
   font-size: 0.78rem;
   word-break: break-all;
 }

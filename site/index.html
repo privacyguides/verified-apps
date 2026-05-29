@@ -31,13 +31,12 @@
     <ul>
       <li><strong>AppVerifier string:</strong> This can be copied directly into AppVerifier, or used with <a href="https://roundsalmon4.github.io/certhashviewer">certhashviewer</a> 
         or <code>apksigner verify --print-certs</code></li>
-      <li><strong>Package source:</strong> Where we found the APK which was signed with this signing key.
-        It is common for apps to use different signing keys in different app stores (Google Play and F-Droid in particular will often re-sign apps with their own keys),
-        so if you have an app installed which does not match our list, check where you got it from!</li>
       <li><strong>More info:</strong> We keep details about where/how information was verified in our GitHub repo, as well as any user-provided notes in the comments.
         If you want more details about why/how an app was added to this list, check there first!</li>
-      <li><strong>Tested-file SHA-256 hash:</strong> We keep this for reference to show which APK file we tested to obtain this result.
-        It is <em>very</em> unlikely the APK file you have will match this, because the file hash will change with every app update.</li>
+      <li><strong>Package source:</strong> Where we found the APK which was signed with this signing key, and the SHA-256 hash of the file we tested (when available).
+        It is common for apps to use different signing keys in different app stores (Google Play and F-Droid in particular will often re-sign apps with their own keys),
+        so if you have an app installed which does not match our list, check where you got it from!
+        It is <em>very</em> unlikely the APK file you have will match the listed hash, because the file hash changes with every app update.</li>
     </ul>
     <label class="search-label" for="search">Search</label>
     <input
@@ -55,9 +54,8 @@
         <thead>
           <tr>
             <th scope="col">AppVerifier string</th>
-            <th scope="col">Package source</th>
             <th scope="col">More info</th>
-            <th scope="col">Tested file SHA-256 hash</th>
+            <th scope="col">Package source</th>
           </tr>
         </thead>
         <tbody>
