@@ -61,6 +61,19 @@ packages:
         sources:
           - name: Accrescent
             issue: 131
+  - package: app.olauncher
+    signature:
+      - fingerprint: A2:BD:5F:24:43:FD:4B:43:A0:39:B7:3E:BE:25:4F:EB:BC:7E:B5:7A:29:93:DF:F5:41:DE:52:C5:2E:58:81:49
+        sources:
+          - name: Direct APK Link
+            issue: 657
+            apk:
+              sha256: eb110a855e0040cb08fec545017c2623eb8536211a14f372d7528ff28edf4fce
+              link: https://github.com/tanujnotes/Olauncher/releases/download/v6.4.2/Olauncher-v6.4.2.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 657
+            apk:
+              sha256: eb110a855e0040cb08fec545017c2623eb8536211a14f372d7528ff28edf4fce
   - package: app.organicmaps
     signature:
       - fingerprint: B9:C7:AE:79:A5:A9:02:70:DF:08:A1:32:E5:36:B9:C6:66:F5:BE:F1:F5:9B:30:4F:CE:CF:86:87:86:5E:4B:5B
