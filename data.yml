@@ -2343,6 +2343,23 @@ packages:
             apk:
               sha256: 4f3c08e4ef6f66ee1f9abd27115790d6e9d160226bb7158787c7b21d3cae924f
               link: https://get.videolan.org/vlc-android/3.7.0/VLC-Android-3.7.0-arm64-v8a.apk
+  - package: ru.tech.imageresizershrinker
+    signature:
+      - fingerprint: 20:D7:68:9D:E0:87:4F:00:01:5E:A3:E3:1F:A0:67:C1:5C:03:45:7D:36:2D:41:D5:E7:93:DB:3A:86:4F:A5:34
+        sources:
+          - name: Direct APK Link
+            issue: 208
+            apk:
+              sha256: 3708ebc1bf99282481029703d7a4b37053f7c127ec11393a981ca201a434a7f5
+              link: https://github.com/T8RIN/ImageToolbox/releases/download/3.9.0/image-toolbox-3.9.0-arm64-v8a.apk
+          - name: F-Droid
+            issue: 208
+            apk:
+              sha256: 2d145d6976579707cc14e12f1cd6cb808e65aefb3f44515267c7d168414c552c
+          - name: F-Droid (IzzyOnDroid)
+            issue: 208
+            apk:
+              sha256: a49862cec4e8e6b8c1ffcb065ce828fc21af070b0c6637cf809fe3f50ee554cb
   - package: se.appcorn.Blocket
     signature:
       - fingerprint: 7F:A0:4E:35:30:6B:8D:45:5C:17:BB:3F:B0:F0:C6:C3:4F:E7:92:29:09:E6:6A:AB:2F:41:A2:10:1D:23:6A:D5
