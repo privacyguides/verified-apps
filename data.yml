@@ -1493,6 +1493,19 @@ packages:
             issue: 232
             apk:
               sha256: 314610ddc52887329347be7b1774638ee135fb64a0d7a1ec2a402a0ab42baa94
+  - package: de.dennisguse.opentracks.playstore
+    signature:
+      - fingerprint: 87:2C:78:45:63:77:3B:3D:76:9E:C3:4C:EA:C4:E3:8F:1A:2F:15:EF:8E:D4:4A:61:21:4C:6D:9D:11:C8:8A:9B
+        sources:
+          - name: Direct APK Link
+            issue: 468
+            apk:
+              sha256: 5d4e1fb8d0b596d814db59465015e4ae2a57653797374c0b15fdd919afb1c871
+              link: https://f-droid.org/repo/de.dennisguse.opentracks.playstore_6653.apk
+          - name: F-Droid
+            issue: 468
+            apk:
+              sha256: 5d4e1fb8d0b596d814db59465015e4ae2a57653797374c0b15fdd919afb1c871
   - package: de.flixbus.app
     signature:
       - fingerprint: 97:D8:97:D1:7F:01:9F:97:05:5E:B5:FF:AE:7B:19:5B:1F:0D:1A:5E:F2:5F:8A:6F:6B:DA:46:87:95:A7:1C:54
