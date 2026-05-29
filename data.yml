@@ -788,6 +788,14 @@ packages:
             issue: 235
             apk:
               sha256: 313a4b1f7a0245875d4bebdd17b7aa26773e09d348a7eeb336e2ed7f8d8beb66
+  - package: com.goeuro.rosie
+    signature:
+      - fingerprint: BF:D9:21:53:AE:C9:F9:A2:94:4D:4C:63:D6:75:EE:0D:72:82:40:24:CC:FC:33:74:7D:2C:19:43:3D:53:B4:99
+        sources:
+          - name: Google Play
+            issue: 392
+            apk:
+              sha256: 48d80ef611832eb84d2c0427717e1404518a3b8e0b2c4689a4f7e08a19dc3aa0
   - package: com.google.android.GoogleCamera
     signature:
       - fingerprint: F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
