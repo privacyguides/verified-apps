@@ -14,6 +14,10 @@ jobs:
 
   attest:
     needs: download
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
     uses: privacyguides/.github/.github/workflows/sign-artifact.yml@5c41b37a937aab5e50262f3ab672fc9b9438dbf9
     with:
       artifact-name: database

@@ -131,12 +131,14 @@ def main() -> None:
         data = yaml.safe_load(f)
 
     rows = build_rows(data)
+    app_count = len({pkg["package"] for pkg in data.get("packages", [])})
     generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     css_version = datetime.now(timezone.utc).strftime("%Y%m%d%H%M")
 
     template = (SITE_SRC / "index.html").read_text(encoding="utf-8")
     html_out = (
         template.replace("__ROWS__", render_rows(rows))
+        .replace("__APP_COUNT__", str(app_count))
         .replace("__ROW_COUNT__", str(len(rows)))
         .replace("__SCHEMA__", str(data.get("schema", "")))
         .replace("__GENERATED_AT__", generated_at)
@@ -153,6 +155,7 @@ def main() -> None:
     meta = {
         "schema": data.get("schema"),
         "generated_at": generated_at,
+        "app_count": app_count,
         "row_count": len(rows),
     }
     (SITE_OUT / "meta.json").write_text(

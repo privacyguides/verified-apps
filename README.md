@@ -8,7 +8,8 @@ Privacy Guides is building a database of Android app signing certificate hashes 
 
 We need you to submit any apps you have installed on your phone [in a new GitHub issue here](https://github.com/privacyguides/verified-apps/issues/new?template=app-submission.yml).
 
-Please submit any apps you'd like, no need to check for existing submissions. We will automatically close issues that are duplicates, but the existence of duplicate issues will help us count how many people may be vouching for a particular submission. We also assume we will see duplicate entries for the same package, because the same package may have a different signature in different app stores.
+> [!TIP]
+> Please submit any apps you'd like, no need to check for existing submissions. We will automatically close issues that are duplicates, but the existence of duplicate issues will help us count how many people may be vouching for a particular submission. We also assume we will see duplicate entries for the same package, because the same package may have a different signature in different app stores.
 
 Currently, we will not merge any apps which cannot be checked by our automated systems (see below), notably any paid apps. In the future we may develop a process for multiple people to vouch for the validity of these apps.
 
@@ -46,7 +47,7 @@ Currently we are checking submitted apps considering one or more of the followin
   - This could be from a previous submission of the same app from a different source (e.g. the app from Accrescent is currently listed, and we now are confirming the app from F-Droid matches)
   - This could also be from a previous submission of a different app by the same developer, if the developer uses the same signing key for multiple apps.
 
-Information about the data used for verification can be found in the submission's associated issue **and** pull request. We record the issue number in data.yml for future reference, please read both the issue and the linked PR for information.
+Information about the data used for verification can be found in the submission's associated issue. We record the issue number in data.yml for future reference, please read both the issue and any linked PR (if applicable) for information.
 
 ## Roadmap
 
@@ -69,7 +70,8 @@ If you use this data in your app, the [MIT License](./LICENSE.txt) at minimum re
 - Informing your users that new apps can be submitted to our issue tracker, so that we can expand our database and make it more useful for everyone.
 - Providing a link to this repository in your app's about page or documentation to credit the project.
 
-You may not imply endorsement by Privacy Guides or the project for your app or project by using this data, but you are free to say "This app uses the Verified Apps database from Privacy Guides" or similar.
+> [!NOTE]
+> You may not imply endorsement by Privacy Guides or the project for your app or project by using this data, but you are free to say "This app uses the Verified Apps database from Privacy Guides" or similar.
 
 ### Verifying Attestations
 
@@ -96,7 +98,8 @@ gh release verify-asset [RELEASE] data.yml
 
 For example, you'd run `gh release verify-asset 3.20260527 data.yml` to check your copy against [3.20260527](https://github.com/privacyguides/verified-apps/releases/tag/3.20260527).
 
-In addition to using the online `gh` CLI, you should be able to verify these files with any [SLSA build verifiers](https://slsa.dev/spec/v1.2/verifying-artifacts), or [verify these attestations offline](https://docs.github.com/en/actions/how-tos/secure-your-work/use-artifact-attestations/verify-attestations-offline).
+> [!TIP]
+> In addition to using the online `gh` CLI, you should be able to verify these files with any [SLSA build verifiers](https://slsa.dev/spec/v1.2/verifying-artifacts), or [verify these attestations offline](https://docs.github.com/en/actions/how-tos/secure-your-work/use-artifact-attestations/verify-attestations-offline).
 
 ### Schema
 
@@ -120,7 +123,7 @@ Each package will have a list of signing key fingerprints. Multiple fingerprints
 
 With each key fingerprint are the sources where we found that signing key. The source can be identified by its name (see below), and we also record the SHA-256 hash of the APK *file* we verified, and in the case of direct APK downloads and custom F-Droid repos we record the exact source. More details can always be found in the corresponding GitHub issue for a submission.
 
-### Source Names
+#### Source Names
 
 We always test submissions against five mainstream app stores. If the submission matches what is found in that app store, we will list it and the `name:` value will always be one of the following:
 
@@ -138,7 +141,7 @@ Signatures we obtained from a custom F-Droid repo will always have a `name:` val
 
 Finally, any other sources not described above will be named `Custom (example)` where `example` can be any ASCII printable character (including spaces).
 
-### Example
+#### Example
 
 ```yaml
 schema: 3
