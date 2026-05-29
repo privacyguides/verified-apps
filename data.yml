@@ -763,6 +763,14 @@ packages:
             issue: 464
             apk:
               sha256: ed6547c3ba618304bc7fc9d7e3a29e0899c1e960cb0965d64bc5274d2021c5e7
+  - package: com.menards.mobile
+    signature:
+      - fingerprint: F4:58:C7:8C:C4:61:20:5B:E2:C8:0B:94:8D:A9:E3:0A:1E:5E:A2:0A:7E:B4:2B:E5:79:9D:0C:D1:10:05:AE:64
+        sources:
+          - name: Google Play
+            issue: 681
+            apk:
+              sha256: dda80c4500b21fa267f3348246b74dc3d5b65dd3868fe00911448ed4cb126840
   - package: com.michaels.michaelsstores
     signature:
       - fingerprint: |-
