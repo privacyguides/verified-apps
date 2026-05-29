@@ -21,7 +21,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  compare-and-file:
+  compareAndFile:
     name: Compare export and open issues
     runs-on: ubuntu-latest
 

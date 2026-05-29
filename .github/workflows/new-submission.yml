@@ -69,7 +69,7 @@ jobs:
           directApkUrl: ${{ steps.parsed.outputs.apkUrl }}
           customFdroidRepoUrl: ${{ steps.parsed.outputs.customFdroidRepoUrl }}
 
-  close-duplicate:
+  closeDuplicate:
     name: Close Duplicate Submission
     runs-on: ubuntu-latest
     needs: parse
@@ -97,7 +97,7 @@ jobs:
           currentIssue: ${{ github.event.issue.number }}
           currentAuthor: ${{ github.event.issue.user.login }}
 
-  label-user-specified-download:
+  labelUserSpecifiedDownload:
     name: Label User-Specified Download
     runs-on: ubuntu-latest
     needs: parse
@@ -333,7 +333,7 @@ jobs:
           path: fdroid-result/${{ matrix.fDroidRepoName }}.json
           if-no-files-found: ignore
 
-  custom-fdroid:
+  customFdroid:
     name: Custom F-Droid Repository
     runs-on: ubuntu-latest
     needs: parse
@@ -511,7 +511,7 @@ jobs:
           echo "$PACKAGE_NAME" >> $GITHUB_STEP_SUMMARY
           echo "$SIGNATURE" >> $GITHUB_STEP_SUMMARY
 
-  direct-apk:
+  directApk:
     name: Direct APK Link
     runs-on: ubuntu-latest
     needs: parse
@@ -585,7 +585,7 @@ jobs:
           storeSignature: ${{ steps.appSignature.outputs.signature }}
           signerKind: ${{ steps.appSignature.outputs.signerKind }}
 
-  appverifier-db:
+  appverifierDb:
     name: AppVerifier
     runs-on: ubuntu-latest
     needs: parse
@@ -663,7 +663,7 @@ jobs:
           echo "Sources in AppVerifier database: $SOURCES" >> $GITHUB_STEP_SUMMARY
           echo "$SIGNATURE" >> $GITHUB_STEP_SUMMARY
 
-  grapheneos-forum:
+  grapheneosForum:
     name: GrapheneOS Forum
     runs-on: ubuntu-latest
     needs: parse
@@ -697,7 +697,7 @@ jobs:
   summary:
     name: Generate Summary
     runs-on: ubuntu-latest
-    needs: [parse, accrescent, fdroid, custom-fdroid, gplay, appverifier-db, direct-apk, grapheneos-forum]
+    needs: [parse, accrescent, fdroid, customFdroid, gplay, appverifierDb, directApk, grapheneosForum]
 
     if: always() && needs.parse.outputs.isDuplicate != 'true' && github.event.label.name == 'Run Checks'
     permissions:
@@ -742,17 +742,17 @@ jobs:
           GPLAY_MATCH: ${{ needs.gplay.outputs.match }}
           GPLAY_PKG: ${{ needs.gplay.outputs.packageName }}
           GPLAY_SIG: ${{ needs.gplay.outputs.signature }}
-          AV_FOUND: ${{ needs.appverifier-db.outputs.found }}
-          AV_MATCH: ${{ needs.appverifier-db.outputs.match }}
-          AV_PKG: ${{ needs.appverifier-db.outputs.packageName }}
-          AV_SIG: ${{ needs.appverifier-db.outputs.signature }}
-          DIRECT_MATCH: ${{ needs.direct-apk.outputs.match }}
-          DIRECT_PKG: ${{ needs.direct-apk.outputs.packageName }}
-          DIRECT_SIG: ${{ needs.direct-apk.outputs.signature }}
-          GO_FOUND: ${{ needs.grapheneos-forum.outputs.found }}
-          GO_MATCH: ${{ needs.grapheneos-forum.outputs.match }}
-          GO_PKG: ${{ needs.grapheneos-forum.outputs.packageName }}
-          GO_SIG: ${{ needs.grapheneos-forum.outputs.signature }}
+          AV_FOUND: ${{ needs.appverifierDb.outputs.found }}
+          AV_MATCH: ${{ needs.appverifierDb.outputs.match }}
+          AV_PKG: ${{ needs.appverifierDb.outputs.packageName }}
+          AV_SIG: ${{ needs.appverifierDb.outputs.signature }}
+          DIRECT_MATCH: ${{ needs.directApk.outputs.match }}
+          DIRECT_PKG: ${{ needs.directApk.outputs.packageName }}
+          DIRECT_SIG: ${{ needs.directApk.outputs.signature }}
+          GO_FOUND: ${{ needs.grapheneosForum.outputs.found }}
+          GO_MATCH: ${{ needs.grapheneosForum.outputs.match }}
+          GO_PKG: ${{ needs.grapheneosForum.outputs.packageName }}
+          GO_SIG: ${{ needs.grapheneosForum.outputs.signature }}
           APK_URL: ${{ needs.parse.outputs.apkUrl }}
           CUSTOM_FDROID_REPO_URL: ${{ needs.parse.outputs.customFdroidRepoUrl }}
         run: |
@@ -852,9 +852,9 @@ jobs:
         env:
           ACC_INFO: ${{ needs.accrescent.outputs.infoNote }}
           GPLAY_INFO: ${{ needs.gplay.outputs.infoNote }}
-          AV_INFO: ${{ needs.appverifier-db.outputs.infoNote }}
-          GO_INFO: ${{ needs.grapheneos-forum.outputs.infoNote }}
-          DIRECT_INFO: ${{ needs.direct-apk.outputs.infoNote }}
+          AV_INFO: ${{ needs.appverifierDb.outputs.infoNote }}
+          GO_INFO: ${{ needs.grapheneosForum.outputs.infoNote }}
+          DIRECT_INFO: ${{ needs.directApk.outputs.infoNote }}
         run: |
           issue_body="${RUNNER_TEMP}/issueBody.md"
           printed_file="${RUNNER_TEMP}/printed-notes.txt"
@@ -906,11 +906,11 @@ jobs:
 
       - name: Match AppVerifier signatures
         id: appverifierEqual
-        if: needs.appverifier-db.outputs.found == 'true'
+        if: needs.appverifierDb.outputs.found == 'true'
         uses: ./.github/actions/signature-lib
         with:
           operation: signatures-equal
-          signatureA: ${{ needs.appverifier-db.outputs.signature }}
+          signatureA: ${{ needs.appverifierDb.outputs.signature }}
           signatureB: ${{ needs.parse.outputs.packageSignature }}
 
       - name: Match direct APK signatures
@@ -919,7 +919,7 @@ jobs:
         uses: ./.github/actions/signature-lib
         with:
           operation: signatures-equal
-          signatureA: ${{ needs.direct-apk.outputs.signature }}
+          signatureA: ${{ needs.directApk.outputs.signature }}
           signatureB: ${{ needs.parse.outputs.packageSignature }}
 
       - name: Count Matches
@@ -930,7 +930,7 @@ jobs:
           CUSTOM_FDROID_REPO_URL: ${{ needs.parse.outputs.customFdroidRepoUrl }}
           ACC_FOUND: ${{ needs.accrescent.outputs.found }}
           GPLAY_FOUND: ${{ needs.gplay.outputs.found }}
-          AV_FOUND: ${{ needs.appverifier-db.outputs.found }}
+          AV_FOUND: ${{ needs.appverifierDb.outputs.found }}
           ACC_EQUAL: ${{ steps.accEqual.outputs.result }}
           GPLAY_EQUAL: ${{ steps.gplayEqual.outputs.result }}
           AV_EQUAL: ${{ steps.appverifierEqual.outputs.result }}
@@ -1010,11 +1010,11 @@ jobs:
           DIRECT_EQUAL: ${{ steps.directEqual.outputs.result }}
           ACC_STORE_SIGNED: ${{ needs.accrescent.outputs.storeSignedMatch }}
           GPLAY_STORE_SIGNED: ${{ needs.gplay.outputs.storeSignedMatch }}
-          DIRECT_STORE_SIGNED: ${{ needs.direct-apk.outputs.storeSignedMatch }}
+          DIRECT_STORE_SIGNED: ${{ needs.directApk.outputs.storeSignedMatch }}
           ACC_INFO: ${{ needs.accrescent.outputs.infoNote }}
           GPLAY_INFO: ${{ needs.gplay.outputs.infoNote }}
-          AV_INFO: ${{ needs.appverifier-db.outputs.infoNote }}
-          DIRECT_INFO: ${{ needs.direct-apk.outputs.infoNote }}
+          AV_INFO: ${{ needs.appverifierDb.outputs.infoNote }}
+          DIRECT_INFO: ${{ needs.directApk.outputs.infoNote }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
@@ -1072,12 +1072,12 @@ jobs:
           ACC_SIG: ${{ needs.accrescent.outputs.signature }}
           FDROID_RESULTS_DIR: fdroid-results
           GPLAY_SIG: ${{ needs.gplay.outputs.signature }}
-          APPVERIFIER_SIG: ${{ needs.appverifier-db.outputs.signature }}
-          DIRECT_SIG: ${{ needs.direct-apk.outputs.signature }}
+          APPVERIFIER_SIG: ${{ needs.appverifierDb.outputs.signature }}
+          DIRECT_SIG: ${{ needs.directApk.outputs.signature }}
           DIRECT_APK_URL: ${{ needs.parse.outputs.apkUrl }}
-          DIRECT_APK_SHA256: ${{ needs.direct-apk.outputs.apkSha256 }}
+          DIRECT_APK_SHA256: ${{ needs.directApk.outputs.apkSha256 }}
           CUSTOM_FDROID_REPO_URL: ${{ needs.parse.outputs.customFdroidRepoUrl }}
-          CUSTOM_FDROID_APK_SHA256: ${{ needs.custom-fdroid.outputs.apkSha256 }}
+          CUSTOM_FDROID_APK_SHA256: ${{ needs.customFdroid.outputs.apkSha256 }}
           ACC_APK_SHA256: ${{ needs.accrescent.outputs.apkSha256 }}
           GPLAY_APK_SHA256: ${{ needs.gplay.outputs.apkSha256 }}
         run: |
@@ -1122,7 +1122,7 @@ jobs:
           STORE_MATCHES: ${{ steps.count.outputs.storeMatches }}
           ACC_FOUND: ${{ needs.accrescent.outputs.found }}
           GPLAY_FOUND: ${{ needs.gplay.outputs.found }}
-          AV_FOUND: ${{ needs.appverifier-db.outputs.found }}
+          AV_FOUND: ${{ needs.appverifierDb.outputs.found }}
           USER_SIG: ${{ needs.parse.outputs.packageSignature }}
           ACC_EQUAL: ${{ steps.accEqual.outputs.result }}
           GPLAY_EQUAL: ${{ steps.gplayEqual.outputs.result }}
@@ -1169,14 +1169,14 @@ jobs:
           NUMBER: ${{ github.event.issue.number }}
         run: gh issue edit "$NUMBER" --repo "$GH_REPO" --remove-label "Run Checks" || true
 
-  create-pr:
+  createPr:
     name: Create PR
     runs-on: ubuntu-latest
     concurrency:
       group: data-yml-writes
       cancel-in-progress: false
       queue: max
-    needs: [parse, accrescent, fdroid, custom-fdroid, gplay, appverifier-db, direct-apk]
+    needs: [parse, accrescent, fdroid, customFdroid, gplay, appverifierDb, directApk]
     if: |
       always() &&
       !cancelled() &&
@@ -1293,8 +1293,8 @@ jobs:
           USER_SIG: ${{ needs.parse.outputs.packageSignature }}
           ACC_SIG: ${{ needs.accrescent.outputs.signature }}
           GPLAY_SIG: ${{ needs.gplay.outputs.signature }}
-          APPVERIFIER_SIG: ${{ needs.appverifier-db.outputs.signature }}
-          DIRECT_SIG: ${{ needs.direct-apk.outputs.signature }}
+          APPVERIFIER_SIG: ${{ needs.appverifierDb.outputs.signature }}
+          DIRECT_SIG: ${{ needs.directApk.outputs.signature }}
         run: |
           set -euo pipefail
           source .github/actions/signature-lib/signatures.lib.sh
@@ -1351,7 +1351,7 @@ jobs:
           gha_write_multiline_output trailer "$trailer"
 
       - name: Create PR
-        id: create-pr
+        id: createPr
         if: steps.existingPr.outputs.url == ''
         uses: ./.github/actions/create-submission-pr
         with:
@@ -1363,29 +1363,29 @@ jobs:
           accrescentSignature: ${{ needs.accrescent.outputs.signature }}
           fdroidResultsDir: fdroid-results
           gplaySignature: ${{ needs.gplay.outputs.signature }}
-          appverifierSignature: ${{ needs.appverifier-db.outputs.signature }}
-          directApkSignature: ${{ needs.direct-apk.outputs.signature }}
+          appverifierSignature: ${{ needs.appverifierDb.outputs.signature }}
+          directApkSignature: ${{ needs.directApk.outputs.signature }}
           directApkLink: ${{ needs.parse.outputs.apkUrl }}
-          directApkSha256: ${{ needs.direct-apk.outputs.apkSha256 }}
+          directApkSha256: ${{ needs.directApk.outputs.apkSha256 }}
           customFdroidRepoUrl: ${{ needs.parse.outputs.customFdroidRepoUrl }}
-          customFdroidApkSha256: ${{ needs.custom-fdroid.outputs.apkSha256 }}
+          customFdroidApkSha256: ${{ needs.customFdroid.outputs.apkSha256 }}
           accrescentApkSha256: ${{ needs.accrescent.outputs.apkSha256 }}
           gplayApkSha256: ${{ needs.gplay.outputs.apkSha256 }}
           submitterSource: ${{ steps.prSignatureMode.outputs.submitterSource }}
 
       - name: Comment with PR link
-        if: steps.create-pr.outputs.prCreated == 'true'
+        if: steps.createPr.outputs.prCreated == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
-          PR_URL: ${{ steps.create-pr.outputs.prUrl }}
+          PR_URL: ${{ steps.createPr.outputs.prUrl }}
         run: |
           gh issue comment "$NUMBER" --repo "$GH_REPO" \
             --body "Opened pull request: ${PR_URL}"
 
       - name: Report skipped PR
-        if: steps.existingPr.outputs.url == '' && steps.create-pr.outputs.skipped == 'true'
+        if: steps.existingPr.outputs.url == '' && steps.createPr.outputs.skipped == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
@@ -1394,14 +1394,14 @@ jobs:
           gh issue comment "$NUMBER" --repo "$GH_REPO" \
             --body "Could not open a PR: no store signatures matched the submission. Add matching store entries manually, or ensure verification was run with the **Run Checks** label first."
 
-  commit-as-is:
+  commitAsIs:
     name: Commit As-Is
     runs-on: ubuntu-latest
     concurrency:
       group: data-yml-writes
       cancel-in-progress: false
       queue: max
-    needs: [parse, accrescent, fdroid, custom-fdroid, gplay, appverifier-db, direct-apk]
+    needs: [parse, accrescent, fdroid, customFdroid, gplay, appverifierDb, directApk]
     if: |
       always() &&
       !cancelled() &&
@@ -1478,12 +1478,12 @@ jobs:
           accrescentSignature: ${{ needs.accrescent.outputs.signature }}
           fdroidResultsDir: fdroid-results
           gplaySignature: ${{ needs.gplay.outputs.signature }}
-          appverifierSignature: ${{ needs.appverifier-db.outputs.signature }}
-          directApkSignature: ${{ needs.direct-apk.outputs.signature }}
+          appverifierSignature: ${{ needs.appverifierDb.outputs.signature }}
+          directApkSignature: ${{ needs.directApk.outputs.signature }}
           directApkLink: ${{ needs.parse.outputs.apkUrl }}
-          directApkSha256: ${{ needs.direct-apk.outputs.apkSha256 }}
+          directApkSha256: ${{ needs.directApk.outputs.apkSha256 }}
           customFdroidRepoUrl: ${{ needs.parse.outputs.customFdroidRepoUrl }}
-          customFdroidApkSha256: ${{ needs.custom-fdroid.outputs.apkSha256 }}
+          customFdroidApkSha256: ${{ needs.customFdroid.outputs.apkSha256 }}
           accrescentApkSha256: ${{ needs.accrescent.outputs.apkSha256 }}
           gplayApkSha256: ${{ needs.gplay.outputs.apkSha256 }}
 
@@ -1517,18 +1517,22 @@ jobs:
           gh issue comment "$NUMBER" --repo "$GH_REPO" \
             --body "Could not commit as-is: no store signatures matched the submission. Run **Run Checks** first, or use **Create PR** to add entries manually."
 
-  commit-as-is-artifact:
+  commitAsIsArtifact:
     name: Commit As-Is (artifact)
-    needs: commit-as-is
+    needs: commitAsIs
+    if: >-
+      ${{ needs.commitAsIs.result == 'success' &&
+      needs.commitAsIs.outputs.committed == 'true' }}
     permissions:
       contents: read
     uses: privacyguides/verified-apps/.github/workflows/create-artifact.yml@fb4058746d264f7ef5ba1f16dc40c499aeaf5a4d
     with:
-      ref: ${{ needs.commit-as-is.outputs.commitSha }}
+      ref: ${{ needs.commitAsIs.outputs.commitSha }}
 
-  commit-as-is-attest:
+  commitAsIsAttest:
     name: Commit As-Is (attest)
-    needs: commit-as-is-artifact
+    needs: commitAsIsArtifact
+    if: ${{ needs.commitAsIsArtifact.result == 'success' }}
     permissions:
       contents: read
       id-token: write

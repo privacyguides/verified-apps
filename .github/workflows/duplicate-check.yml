@@ -54,7 +54,7 @@ jobs:
           directApkUrl: ${{ steps.parsed.outputs.apkUrl }}
           customFdroidRepoUrl: ${{ steps.parsed.outputs.customFdroidRepoUrl }}
 
-  close-duplicate:
+  closeDuplicate:
     name: Close Duplicate Submission
     runs-on: ubuntu-latest
     needs: parse
