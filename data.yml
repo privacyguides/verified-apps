@@ -1867,6 +1867,19 @@ packages:
             issue: 206
             apk:
               sha256: 637c4cc5bb76bd1ce076bd3a5044ccfda313eedeca0a79a8c2cf46837a0c0300
+  - package: io.homeassistant.companion.android
+    signature:
+      - fingerprint: 11:19:4B:A8:09:B4:2D:DF:0E:1A:7D:EC:68:42:A5:9C:7F:F1:11:9C:54:82:E9:5F:EB:FF:D5:C6:01:4D:AA:5A
+        sources:
+          - name: Direct APK Link
+            issue: 625
+            apk:
+              sha256: 7a28c04fe593ac598b80de9772ae41c719b0858c747091ac5a450c634df1f9fa
+              link: https://github.com/home-assistant/android/releases/download/2026.4.4/app-full-release.apk
+          - name: Google Play
+            issue: 625
+            apk:
+              sha256: 5972ccd84245d588319d0afc0a7bc2cb95971e2b1f5866b999bd3af1e35014c9
   - package: io.spaceapi.community.myhackerspace
     signature:
       - fingerprint: 4E:C5:1A:CD:06:D3:F9:E7:95:07:C9:14:EF:15:E2:C0:9A:18:24:9A:82:AF:90:64:FF:04:95:F9:26:F9:3D:D4
