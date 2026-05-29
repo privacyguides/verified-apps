@@ -249,6 +249,14 @@ packages:
             issue: 683
             apk:
               sha256: ed8a428a3e6c27abc43a5f8e27d0f5029a315c7446af27d880d8fc4f9e781697
+  - package: com.appmindlab.nano
+    signature:
+      - fingerprint: 46:F0:5E:C2:09:B7:D5:17:91:56:71:61:96:DF:BB:F3:24:2D:0F:3F:73:A7:A7:7A:A9:BF:36:9B:FA:D6:D9:DA
+        sources:
+          - name: F-Droid
+            issue: 190
+            apk:
+              sha256: 17e6a4cf59123095aad29e94bfacbc01df6bcb8ae1f2c2cf730b3ec373ff873e
   - package: com.audiobookshelf.app
     signature:
       - fingerprint: 36:48:29:26:56:96:6C:63:D1:B5:7D:93:EA:00:E3:5C:7D:97:51:1E:1F:5B:06:78:A7:17:DA:E7:73:79:39:56
