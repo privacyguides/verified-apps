@@ -1002,6 +1002,14 @@ packages:
             issue: 649
             apk:
               sha256: 67b613f1e30691badcb0e44867d2b6fbd50117c282c4ebdac5d8297b7610bdb9
+  - package: com.uvnv.mintsim
+    signature:
+      - fingerprint: B1:FC:C0:1C:13:BF:7C:BF:51:69:DA:2D:4A:A1:82:86:96:DA:CD:51:D5:D4:C7:0A:62:2F:4C:F1:CF:5F:45:3C
+        sources:
+          - name: Google Play
+            issue: 675
+            apk:
+              sha256: cb9b2929976846d0a55b67076ed0adb45bd8e58d476ee2e0418689f53cc39b70
   - package: com.verisec.mobile.frejaeid
     signature:
       - fingerprint: 1F:14:FE:04:C5:19:52:C5:E3:C8:E6:82:51:AE:8A:C3:73:B8:4C:59:76:BD:7F:24:8E:64:3A:F2:50:C8:BA:91
