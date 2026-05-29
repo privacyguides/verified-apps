@@ -1967,6 +1967,14 @@ packages:
             issue: 62
           - name: AppVerifier
             issue: 62
+  - package: info.zverev.ilya.every_door
+    signature:
+      - fingerprint: 9F:FC:A7:0F:77:A8:5E:F6:82:90:27:66:02:BB:5B:4C:92:A6:54:67:C5:4F:F6:FB:89:C4:B2:02:39:50:62:03
+        sources:
+          - name: Google Play
+            issue: 81
+            apk:
+              sha256: fd2b4c974deddd9b89d9693764e6962cd89d3f676cceb8e0ac97c4049b5f1b86
   - package: io.element.android.x
     signature:
       - fingerprint: 6A:2F:DC:31:48:04:9C:E0:D5:C6:E8:50:10:72:3B:83:FB:20:7D:20:C7:47:7F:5C:22:AC:53:C8:77:E9:2D:47
