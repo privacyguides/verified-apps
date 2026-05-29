@@ -1289,6 +1289,14 @@ packages:
             issue: 690
             apk:
               sha256: a45ec003660f4fa9b20bd992359c83f63fcff504767ff670264a2acc867c5c5c
+  - package: com.xtreak.notificationdictionary
+    signature:
+      - fingerprint: B2:9E:63:84:95:FD:F5:82:E6:86:83:56:4C:C3:DE:F7:9A:D9:09:18:EB:80:79:94:4D:54:70:BA:3F:F9:5B:A9
+        sources:
+          - name: F-Droid
+            issue: 550
+            apk:
+              sha256: 8b0f5469708b6ebc71779d862a3cca2641256e680761f42f2026ece5e74af3fa
   - package: com.yoc.swiss.swiss
     signature:
       - fingerprint: B3:EB:7E:D9:26:78:57:D5:B0:ED:23:A7:85:49:FB:65:0E:9C:94:7A:70:38:A5:21:66:3A:1E:06:94:43:F6:1D
