@@ -1141,6 +1141,18 @@ packages:
         sources:
           - name: Google Play
             issue: 422
+  - package: com.orgzlyrevived
+    signature:
+      - fingerprint: 6F:C9:C2:E2:2D:07:D2:5C:E7:7E:2E:96:34:55:05:3C:38:B8:31:8A:1A:24:91:B3:ED:95:D5:0C:BA:85:49:3D
+        sources:
+          - name: F-Droid
+            issue: 696
+            apk:
+              sha256: 7aed4f4042f81ea5f2576b256d084e7fad9cfc44b39f0e05ac26a198f5191b63
+          - name: F-Droid (IzzyOnDroid)
+            issue: 696
+            apk:
+              sha256: 7aed4f4042f81ea5f2576b256d084e7fad9cfc44b39f0e05ac26a198f5191b63
   - package: com.pal.dx
     signature:
       - fingerprint: AC:D4:71:6B:03:0B:7F:EB:E6:E1:83:01:18:7B:62:5C:9C:CC:86:66:07:5A:E7:0B:21:98:B7:DC:42:83:86:A7
