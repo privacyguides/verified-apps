@@ -218,6 +218,14 @@ packages:
             issue: 304
             apk:
               sha256: 8ad600f2ad835ffd3502819c3925c7aa7444d53240102f76950a1231f1c0bbdd
+  - package: com.amazon.dee.app
+    signature:
+      - fingerprint: 2F:19:AD:EB:28:4E:B3:6F:7F:07:78:61:52:B9:A1:D1:4B:21:65:32:03:AD:0B:04:EB:BF:9C:73:AB:6D:76:25
+        sources:
+          - name: Google Play
+            issue: 683
+            apk:
+              sha256: ed8a428a3e6c27abc43a5f8e27d0f5029a315c7446af27d880d8fc4f9e781697
   - package: com.aurora.store
     signature:
       - fingerprint: 4C:62:61:57:AD:02:BD:A3:40:1A:72:63:55:5F:68:A7:96:63:FC:3E:13:A4:D4:36:9A:12:57:09:41:AA:28:0F
