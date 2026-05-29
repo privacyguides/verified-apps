@@ -1997,6 +1997,14 @@ packages:
             issue: 303
             apk:
               sha256: ddc13a49884b4fa71a65996fcf163bca55e946e0951c5e666c24d8e89466763e
+  - package: jp.co.jal.dom
+    signature:
+      - fingerprint: 00:65:8A:4F:77:3E:FC:FE:13:E0:1D:7E:C3:9C:35:F6:A5:29:CD:56:2F:43:B7:C8:EB:DE:76:FE:B2:34:FB:C9
+        sources:
+          - name: Google Play
+            issue: 300
+            apk:
+              sha256: 9f5b4e7e6733e67b6a69f484fe7656035db19b99ae37a48f51203deb4d47f000
   - package: keepass2android.keepass2android
     signature:
       - fingerprint: 0B:F8:05:6D:3A:39:4E:D7:C7:71:73:C4:B4:2C:80:05:65:B4:F0:A4:29:77:56:9C:F3:47:2C:27:1C:56:29:39
