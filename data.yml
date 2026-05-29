@@ -1459,6 +1459,23 @@ packages:
             apk:
               sha256: cd5ddf49dabbb7b9870db57441b8b8e426b09f41951853c13af1a595aed5d62d
               link: https://github.com/ente-io/ente/releases/download/photos-v1.3.44/ente-photos-v1.3.44.apk
+  - package: io.github.gonbei774.calisthenicsmemory
+    signature:
+      - fingerprint: 18:C0:0C:34:7E:A1:00:1A:FC:DD:87:25:88:81:D2:4D:68:40:47:BB:EB:22:C4:7F:BE:7B:51:49:95:16:AB:54
+        sources:
+          - name: Direct APK Link
+            issue: 653
+            apk:
+              sha256: e9de9981dc1f0ae611be838637ea6e3c56dc2ad90bab50a2c2ee3eb3c3430f8d
+              link: https://codeberg.org/Gonbei774/CalisthenicsMemory/releases/download/v1.22.0/app-release.apk
+          - name: F-Droid
+            issue: 653
+            apk:
+              sha256: e9de9981dc1f0ae611be838637ea6e3c56dc2ad90bab50a2c2ee3eb3c3430f8d
+          - name: F-Droid (IzzyOnDroid)
+            issue: 653
+            apk:
+              sha256: e9de9981dc1f0ae611be838637ea6e3c56dc2ad90bab50a2c2ee3eb3c3430f8d
   - package: io.github.muntashirakon.AppManager
     signature:
       - fingerprint: B6:8E:93:49:10:C0:05:80:14:A0:6A:2E:14:47:29:F9:AA:11:3F:C5:D9:E0:DF:F5:29:EC:BF:1D:1F:61:2D:13
