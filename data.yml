@@ -667,6 +667,19 @@ packages:
             apk:
               sha256: b70a30fd23f7b9eb29118ae028ad463d66c4b9d9cdfec586af157a7c7da4ecb5
               link: https://github.com/libre-tube/LibreTube/releases/download/v31.3/app-release.apk
+  - package: com.gitlab.mudlej.MjPdfReader
+    signature:
+      - fingerprint: AF:92:A1:A8:1B:45:B9:D6:A5:D9:F1:63:7F:D6:BE:98:FD:88:9B:48:12:8C:00:9D:A9:AF:D7:BA:0F:C2:F0:89
+        sources:
+          - name: Direct APK Link
+            issue: 235
+            apk:
+              sha256: 313a4b1f7a0245875d4bebdd17b7aa26773e09d348a7eeb336e2ed7f8d8beb66
+              link: https://gitlab.com/mudlej_android/mj_pdf_reader/uploads/61d28d2434f42c02e8dca9000a21e8a9/mj-pdf-2.2.1.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 235
+            apk:
+              sha256: 313a4b1f7a0245875d4bebdd17b7aa26773e09d348a7eeb336e2ed7f8d8beb66
   - package: com.google.android.GoogleCamera
     signature:
       - fingerprint: F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
