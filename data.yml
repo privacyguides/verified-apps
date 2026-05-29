@@ -2807,6 +2807,16 @@ packages:
             issue: 309
             apk:
               sha256: be067845ec87458b658653e4d5c33f3ae789bc3e2e5994035748e1f9a148cd8d
+  - package: se.onlinepizza
+    signature:
+      - fingerprint: |-
+          C5:E7:42:0C:CB:3F:73:25:92:C6:30:F9:DF:98:93:DB:28:A8:38:6A:89:A9:67:DC:68:86:E0:22:9D:C2:98:5B
+          DB:E7:28:29:D2:84:37:10:75:C7:C2:78:F5:E3:9A:E5:55:5E:96:38:F8:C7:5F:AE:9D:C7:B9:3C:50:55:75:54
+        sources:
+          - name: Google Play
+            issue: 398
+            apk:
+              sha256: 4eff47ffb524233a6966886f14d97bac5573574ade7c30df93e09a18db730665
   - package: se.postnord.private
     signature:
       - fingerprint: 71:33:6E:97:C6:D3:EF:FF:FA:42:38:5F:A8:33:F9:05:95:AC:8C:1C:05:D8:98:04:97:DE:2F:E1:F5:3D:97:53
