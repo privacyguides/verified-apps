@@ -1799,6 +1799,19 @@ packages:
             issue: 415
             apk:
               sha256: 2041dc168cd7944fe796fcfe0ff1810b0d1f6125bbb58a236a283296b1de3de5
+  - package: net.christianbeier.droidvnc_ng
+    signature:
+      - fingerprint: F8:EF:C0:A7:D5:F9:D8:BA:88:ED:F0:82:F2:DC:2C:21:31:B7:54:BA:8F:ED:B4:91:6A:C2:EB:2A:CC:52:19:0D
+        sources:
+          - name: Direct APK Link
+            issue: 161
+            apk:
+              sha256: f00f9b28499fad07916524b72085913628fe591b9de77ba8a44b5dd80bc577ea
+              link: https://f-droid.org/repo/net.christianbeier.droidvnc_ng_59.apk
+          - name: F-Droid
+            issue: 161
+            apk:
+              sha256: f00f9b28499fad07916524b72085913628fe591b9de77ba8a44b5dd80bc577ea
   - package: net.gsantner.markor
     signature:
       - fingerprint: 9C:70:03:32:37:DC:46:FE:50:52:E4:20:C6:65:70:8D:E8:B3:10:5B:89:84:28:43:81:89:81:82:6B:7E:EC:9C
