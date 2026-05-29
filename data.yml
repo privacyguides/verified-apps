@@ -1424,6 +1424,18 @@ packages:
             apk:
               sha256: c4fbedb69a9eb682e4bf2923a8c3803b2caa140ca1468b4a440cb68c459158ae
               link: https://github.com/deckerst/aves/releases/download/v1.14.4/app-libre-x86_64-release.apk
+  - package: dev.clombardo.dnsnet
+    signature:
+      - fingerprint: D7:6F:62:07:D8:18:2C:DC:1E:E2:DC:BF:E7:4D:B2:ED:F3:7F:36:B8:2D:08:4B:01:7F:79:FE:9F:06:71:21:E4
+        sources:
+          - name: Accrescent
+            issue: 542
+            apk:
+              sha256: f00a339ad6c47230316a20bf6b9f1028d3e54639bb8f52e55882da98bdb0b025
+          - name: F-Droid
+            issue: 542
+            apk:
+              sha256: 8532183018801665d9d6e6957805450a58ecade97bf866924a49329cf48f467d
   - package: dev.imranr.obtainium.fdroid
     signature:
       - fingerprint: B3:53:60:1F:6A:1D:5F:D6:60:3A:E2:F5:0B:E8:0C:F3:01:36:7B:86:B6:AB:8B:1F:66:24:3D:A9:6C:D5:73:62
