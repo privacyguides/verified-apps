@@ -2305,6 +2305,14 @@ packages:
             issue: 583
             apk:
               sha256: a313f38530a04d9ab23ce0abb9314b3683362769e1f2c2dc72ad8e13c8c376f9
+  - package: se.lublin.mumla
+    signature:
+      - fingerprint: 14:96:D2:90:5A:A8:D5:E9:8C:CC:DB:DB:D5:EC:4A:9B:63:8E:52:58:77:66:F1:82:DB:07:34:46:6A:B1:B7:AE
+        sources:
+          - name: F-Droid
+            issue: 620
+            apk:
+              sha256: d6c650a96897709cdacc2c71dbcf81d57d8d4ada1799466606fda72cda2595f0
   - package: se.malardalstrafik.malartag
     signature:
       - fingerprint: C2:A1:A4:10:4F:59:0F:19:08:A3:91:1F:DF:B9:CB:9F:A0:35:E0:2D:F6:54:DA:B8:F4:DB:08:9A:9D:3D:14:D4
