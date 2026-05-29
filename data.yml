@@ -648,6 +648,14 @@ packages:
             issue: 537
             apk:
               sha256: a815c2763e0c01edb9e945e38902070175eb14675a9235c07e1b2a870bace806
+  - package: com.emirates.ek.android
+    signature:
+      - fingerprint: 04:E4:8B:97:C2:75:7E:BE:EE:D9:4D:8A:1C:5E:F3:F0:05:E5:43:7E:1E:76:5C:5F:7B:61:11:4E:D4:60:11:BE
+        sources:
+          - name: Google Play
+            issue: 346
+            apk:
+              sha256: 385217b2b6c58694f54d81986f3e4eb703fce8d50efe46b3b1e17e86b1886b04
   - package: com.epicgames.portal
     signature:
       - fingerprint: 67:69:9A:6B:3D:31:5D:EE:51:53:6A:67:B4:F1:C6:E7:E2:17:5F:98:4B:09:6B:C2:97:6E:51:2D:22:94:08:71
