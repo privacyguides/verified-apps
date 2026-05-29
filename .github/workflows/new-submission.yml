@@ -1415,9 +1415,9 @@ jobs:
       issues: write
 
     outputs:
-      committed: ${{ steps.commit.outputs.committed }}
-      skipped: ${{ steps.commit.outputs.skipped }}
-      commitSha: ${{ steps.commit.outputs.commitSha }}
+      committed: ${{ steps.commit_meta.outputs.committed }}
+      skipped: ${{ steps.commit_meta.outputs.skipped }}
+      commitSha: ${{ steps.commit_meta.outputs.commitSha }}
 
     steps:
       - name: Validate
@@ -1487,20 +1487,28 @@ jobs:
           accrescentApkSha256: ${{ needs.accrescent.outputs.apkSha256 }}
           gplayApkSha256: ${{ needs.gplay.outputs.apkSha256 }}
 
+      - name: Export commit metadata
+        id: commit_meta
+        if: always()
+        run: |
+          echo "committed=${{ steps.commit.outputs.committed }}" >> "$GITHUB_OUTPUT"
+          echo "commitSha=${{ steps.commit.outputs.commitSha }}" >> "$GITHUB_OUTPUT"
+          echo "skipped=${{ steps.commit.outputs.skipped }}" >> "$GITHUB_OUTPUT"
+
       - name: Comment on success
-        if: steps.commit.outputs.committed == 'true'
+        if: steps.commit_meta.outputs.committed == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
           PACKAGE: ${{ needs.parse.outputs.packageName }}
-          COMMIT_SHA: ${{ steps.commit.outputs.commitSha }}
+          COMMIT_SHA: ${{ steps.commit_meta.outputs.commitSha }}
         run: |
           gh issue comment "$NUMBER" --repo "$GH_REPO" \
             --body "Committed \`${PACKAGE}\` to \`data.yml\` on \`main\` as submitted (store-matched signatures only). Commit: \`${COMMIT_SHA}\`"
 
       - name: Report skipped commit
-        if: steps.commit.outputs.skipped == 'true'
+        if: steps.commit_meta.outputs.skipped == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}

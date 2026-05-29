@@ -12,7 +12,7 @@ on:
       max_age_days:
         description: Delete attestations older than this many days (the newest is always kept)
         type: number
-        default: 2
+        default: 5
 
 concurrency:
   group: attestation-cleanup
@@ -36,7 +36,7 @@ jobs:
       - name: Prune stale attestations
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MAX_AGE_DAYS: ${{ github.event_name == 'workflow_dispatch' && inputs.max_age_days || 2 }}
+          MAX_AGE_DAYS: ${{ github.event_name == 'workflow_dispatch' && inputs.max_age_days || 5 }}
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
         run: |
           set -euo pipefail
