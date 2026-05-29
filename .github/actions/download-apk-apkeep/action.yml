@@ -12,7 +12,7 @@ inputs:
     required: false
     default: ""
   apkeepVersion:
-    description: apkeep release version to install from GitHub
+    description: apkeep crate version to install with cargo
     required: false
     default: "1.0.0"
 outputs:
@@ -26,44 +26,81 @@ outputs:
 runs:
   using: composite
   steps:
+    - name: Install Rust toolchain
+      uses: actions-rust-lang/setup-rust-toolchain@v1
+      with:
+        # Do not set -D warnings; it can break third-party crate builds during cargo install.
+        rustflags: ''
+        cache-shared-key: apkeep-${{ inputs.apkeepVersion }}
+
     - shell: bash
       id: apkeep
       env:
         APKEEP_VERSION: ${{ inputs.apkeepVersion }}
       run: |
         set -euo pipefail
-        bin="${RUNNER_TEMP}/apkeep"
-        asset="apkeep-x86_64-unknown-linux-gnu"
-        url="https://github.com/EFForg/apkeep/releases/download/${APKEEP_VERSION}/${asset}"
-        curl -fsSL --retry 3 --retry-delay 2 -o "$bin" "$url"
-        chmod +x "$bin"
-        echo "bin=$bin" >> "$GITHUB_OUTPUT"
+        if ! "${HOME}/.cargo/bin/apkeep" --version 2>/dev/null | grep -qF "${APKEEP_VERSION}"; then
+          cargo install apkeep --version "${APKEEP_VERSION}" --locked --force
+        fi
+        apkeep --version
+        echo "bin=${HOME}/.cargo/bin/apkeep" >> "$GITHUB_OUTPUT"
 
     - shell: bash
-      id: cacheKey
+      id: apkCacheKey
+      if: inputs.downloadSource == 'f-droid'
       env:
         PACKAGE_NAME: ${{ inputs.packageName }}
-        DOWNLOAD_SOURCE: ${{ inputs.downloadSource }}
         FDROID_REPO_URL: ${{ inputs.fDroidRepoURL }}
       run: |
         set -euo pipefail
-        scope="${DOWNLOAD_SOURCE}"
-        if [[ "$DOWNLOAD_SOURCE" == "f-droid" ]]; then
-          repo_hash=$(printf '%s' "${FDROID_REPO_URL:-https://f-droid.org/repo}" | sha256sum | awk '{print $1}')
-          scope="${DOWNLOAD_SOURCE}-${repo_hash}"
-        fi
-        echo "cacheKey=apkeep-${scope}-${PACKAGE_NAME}" >> "$GITHUB_OUTPUT"
+        # shellcheck disable=SC1091
+        source "${{ github.action_path }}/lib.sh"
+        repo_url="${FDROID_REPO_URL:-https://f-droid.org/repo}"
+        repo_hash=$(apkeep_fdroid_repo_hash "$repo_url")
+        echo "cacheKey=apkeep-apk-${repo_hash}-${PACKAGE_NAME}" >> "$GITHUB_OUTPUT"
 
     - name: Restore APK cache
+      if: inputs.downloadSource == 'f-droid'
       id: apkCache
       uses: actions/cache@v5
       with:
         path: ${{ runner.temp }}/apkeep-apk-cache
-        key: ${{ steps.cacheKey.outputs.cacheKey }}
+        key: ${{ steps.apkCacheKey.outputs.cacheKey }}
+
+    - shell: bash
+      id: indexEtag
+      if: inputs.downloadSource == 'f-droid'
+      env:
+        FDROID_REPO_URL: ${{ inputs.fDroidRepoURL }}
+      run: |
+        set -euo pipefail
+        # shellcheck disable=SC1091
+        source "${{ github.action_path }}/lib.sh"
+        repo_url="${FDROID_REPO_URL:-https://f-droid.org/repo}"
+        repo_hash=$(apkeep_fdroid_repo_hash "$repo_url")
+        index_cache_key=$(apkeep_fdroid_index_cache_key "$repo_url")
+
+        echo "repoHash=$repo_hash" >> "$GITHUB_OUTPUT"
+        echo "indexCacheKey=$index_cache_key" >> "$GITHUB_OUTPUT"
+        if [[ "$index_cache_key" != *-unknown ]]; then
+          echo "indexCacheKnown=true" >> "$GITHUB_OUTPUT"
+        else
+          echo "indexCacheKnown=false" >> "$GITHUB_OUTPUT"
+        fi
+
+    - name: Restore F-Droid index cache
+      if: inputs.downloadSource == 'f-droid' && steps.indexEtag.outputs.indexCacheKnown == 'true'
+      uses: actions/cache/restore@v5
+      with:
+        path: ${{ runner.temp }}/apkeep-index-config
+        key: ${{ steps.indexEtag.outputs.indexCacheKey }}
+        restore-keys: |
+          apkeep-index-${{ steps.indexEtag.outputs.repoHash }}-
 
     - shell: bash
       id: download
       env:
+        ACTION_PATH: ${{ github.action_path }}
         PACKAGE_NAME: ${{ inputs.packageName }}
         DOWNLOAD_SOURCE: ${{ inputs.downloadSource }}
         FDROID_REPO_URL: ${{ inputs.fDroidRepoURL }}
@@ -75,57 +112,50 @@ runs:
         set -euo pipefail
         echo "found=false" >> "$GITHUB_OUTPUT"
         echo "apkPath=" >> "$GITHUB_OUTPUT"
+        echo "indexCacheSave=false" >> "$GITHUB_OUTPUT"
+        echo "indexCacheKey=" >> "$GITHUB_OUTPUT"
 
-        cache_dir="${RUNNER_TEMP}/apkeep-apk-cache"
-        mkdir -p "$cache_dir"
-
-        if [[ "$CACHE_HIT" == "true" ]]; then
-          apkPath=$(find "$cache_dir" -type f -name '*.apk' | head -n1)
-          if [[ -n "$apkPath" && -f "$apkPath" ]]; then
-            echo "found=true" >> "$GITHUB_OUTPUT"
-            echo "apkPath=$apkPath" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
+        if [[ "$DOWNLOAD_SOURCE" == "f-droid" ]]; then
+          export ACTION_PATH
+          bash "${ACTION_PATH}/download-fdroid.sh"
+          exit 0
         fi
-
-        work_dir="${RUNNER_TEMP}/apkeep-download"
-        rm -rf "$work_dir"
-        mkdir -p "$work_dir"
-
-        apkeep_args=(-a "$PACKAGE_NAME" -d "$DOWNLOAD_SOURCE")
 
         if [[ "$DOWNLOAD_SOURCE" == "google-play" ]]; then
           if [[ -z "${GPLAY_EMAIL:-}" || -z "${GPLAY_AAS_TOKEN:-}" ]]; then
             echo "GPLAY_EMAIL and GPLAY_AAS_TOKEN must be set for Google Play downloads." >&2
             exit 1
           fi
-          apkeep_args+=(-e "$GPLAY_EMAIL" -t "$GPLAY_AAS_TOKEN")
-        elif [[ "$DOWNLOAD_SOURCE" == "f-droid" ]]; then
-          repo_url="${FDROID_REPO_URL:-https://f-droid.org/repo}"
-          apkeep_args+=(-o "repo=${repo_url}")
-        else
-          echo "Unsupported downloadSource: $DOWNLOAD_SOURCE" >&2
-          exit 1
-        fi
 
-        download_log="${RUNNER_TEMP}/apkeep-download.log"
-        if ! "$APKEEP_BIN" "${apkeep_args[@]}" "$work_dir" >"$download_log" 2>&1; then
-          cat "$download_log" >&2 || true
+          work_dir="${RUNNER_TEMP}/apkeep-download"
+          rm -rf "$work_dir"
+          mkdir -p "$work_dir"
+          download_log="${RUNNER_TEMP}/apkeep-download.log"
+
+          if ! "$APKEEP_BIN" -a "$PACKAGE_NAME" -d google-play \
+            -e "$GPLAY_EMAIL" -t "$GPLAY_AAS_TOKEN" \
+            "$work_dir" >"$download_log" 2>&1; then
+            cat "$download_log" >&2 || true
+            exit 0
+          fi
+
+          # shellcheck disable=SC1091
+          source "${ACTION_PATH}/lib.sh"
+          if apkPath=$(apkeep_find_apk "$work_dir"); then
+            echo "found=true" >> "$GITHUB_OUTPUT"
+            echo "apkPath=$apkPath" >> "$GITHUB_OUTPUT"
+          else
+            cat "$download_log" >&2 || true
+          fi
           exit 0
         fi
 
-        apkPath=$(find "$work_dir" -type f -name '*.apk' ! -name '*config*' | head -n1)
-        if [[ -z "$apkPath" ]]; then
-          apkPath=$(find "$work_dir" -type f -name '*.apk' | head -n1)
-        fi
-        if [[ -z "$apkPath" || ! -f "$apkPath" ]]; then
-          cat "$download_log" >&2 || true
-          exit 0
-        fi
+        echo "Unsupported downloadSource: $DOWNLOAD_SOURCE" >&2
+        exit 1
 
-        rm -f "$cache_dir"/*.apk 2>/dev/null || true
-        cp "$apkPath" "$cache_dir/$(basename "$apkPath")"
-        apkPath="$cache_dir/$(basename "$apkPath")"
-
-        echo "found=true" >> "$GITHUB_OUTPUT"
-        echo "apkPath=$apkPath" >> "$GITHUB_OUTPUT"
+    - name: Save F-Droid index cache
+      if: inputs.downloadSource == 'f-droid' && steps.download.outputs.indexCacheSave == 'true'
+      uses: actions/cache/save@v5
+      with:
+        path: ${{ runner.temp }}/apkeep-index-config
+        key: ${{ steps.download.outputs.indexCacheKey }}

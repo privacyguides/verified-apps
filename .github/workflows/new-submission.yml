@@ -97,6 +97,29 @@ jobs:
           currentIssue: ${{ github.event.issue.number }}
           currentAuthor: ${{ github.event.issue.user.login }}
 
+  label-user-specified-download:
+    name: Label User-Specified Download
+    runs-on: ubuntu-latest
+    needs: parse
+    if: >-
+      needs.parse.outputs.isDuplicate != 'true' &&
+      github.event.label.name == 'Run Checks' &&
+      (
+        needs.parse.outputs.apkUrl != '' ||
+        needs.parse.outputs.customFdroidRepoUrl != ''
+      )
+
+    permissions:
+      issues: write
+
+    steps:
+      - name: Add User-Specified Download label
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+        run: gh issue edit "$NUMBER" --repo "$GH_REPO" --add-label "User-Specified Download"
+
   accrescent:
     name: Accrescent
     runs-on: ubuntu-latest
