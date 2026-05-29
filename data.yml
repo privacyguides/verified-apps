@@ -913,6 +913,14 @@ packages:
             issue: 592
             apk:
               sha256: e453ac17dbdc93ee23dd2056bf721b62d41d1ffc7886cca36bc16771e2b0af64
+  - package: com.papajohns.android
+    signature:
+      - fingerprint: 74:1F:D3:0F:10:A0:7A:09:B5:2C:DF:37:F1:77:F0:22:8E:B1:DE:13:06:E8:63:06:95:41:1E:A8:29:E9:E6:CD
+        sources:
+          - name: Google Play
+            issue: 692
+            apk:
+              sha256: 5dd2244f59c7caca80a4067f41433efcdb7298dea32cddfacd469cf26f38359e
   - package: com.paypal.android.p2pmobile
     signature:
       - fingerprint: C7:C6:2E:A0:F6:E2:F6:EB:A8:7F:95:40:69:87:50:55:30:EF:2F:51:6E:7C:DE:59:91:D7:14:03:31:44:80:72
