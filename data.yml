@@ -638,6 +638,14 @@ packages:
             issue: 322
             apk:
               sha256: a6f90cdd7d19692c06e047c9622778531745b97a4748408f5a054df4ad174656
+  - package: com.expedia.bookings
+    signature:
+      - fingerprint: 8E:41:EC:3B:8E:F3:18:5B:BB:FE:D4:21:27:11:7C:E6:0B:3D:A4:1C:4B:49:B7:E2:99:CD:31:23:73:41:EE:6B
+        sources:
+          - name: Google Play
+            issue: 290
+            apk:
+              sha256: c39352b73edc91c5e3e44386f0a3e15731f24cfceba5372b6ad67cf290c190cb
   - package: com.finnair
     signature:
       - fingerprint: 63:4A:9A:6A:A1:79:F2:8F:23:06:ED:00:14:FB:28:33:CE:A0:2E:2F:47:3D:4B:7B:19:A5:39:39:D6:63:17:00
