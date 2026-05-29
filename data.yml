@@ -404,6 +404,15 @@ packages:
             issue: 671
             apk:
               sha256: 2cdeeb8db38b02d22adc6e27e443aed7b4968e1b994e0ec8f8dce33cd2cc403a
+  - package: com.demizo.daily_you
+    signature:
+      - fingerprint: B9:A1:E2:B7:DD:63:05:03:0E:D3:A7:70:12:D6:01:7F:31:DF:24:B4:0E:95:8F:6D:10:5F:32:A6:E5:1A:2C:DE
+        sources:
+          - name: Direct APK Link
+            issue: 651
+            apk:
+              sha256: 21db52eaeb5b842c19ff2c0adc5290b4d4d8e187dc21061175880738e4d5029e
+              link: https://github.com/Demizo/Daily_You/releases/download/v2.23.0/daily-you-arm64-v8a-v2.23.0.apk
   - package: com.desmos.scientific
     signature:
       - fingerprint: F8:E2:EF:7A:35:35:E3:A2:DE:70:65:46:F5:32:5F:0E:8B:74:7C:CC:88:1A:67:79:3D:BA:71:FC:B3:6E:4C:54
