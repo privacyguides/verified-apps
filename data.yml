@@ -1239,6 +1239,14 @@ packages:
             issue: 284
             apk:
               sha256: 81d1759235dcd1ecda78bf0f905641babf6142741356c4e176ca866ec3a1bf00
+  - package: com.pleco.chinesesystem
+    signature:
+      - fingerprint: 78:0A:2A:63:9A:3C:CB:65:62:1E:0C:AC:CF:18:FA:38:C9:1F:6C:BF:35:1D:45:37:42:EB:E2:A1:14:B0:96:24
+        sources:
+          - name: Google Play
+            issue: 243
+            apk:
+              sha256: 774e894d5e0e631df01e6e37b5f2fb1bf9d955c1a43323923cce32d1281bd564
   - package: com.reddit.frontpage
     signature:
       - fingerprint: 97:0B:91:14:38:13:B4:C9:D5:F3:63:4F:67:2C:9F:CA:A5:62:1B:4E:FA:AE:DA:FD:6C:23:5C:BB:B8:69:73:6F
