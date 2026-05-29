@@ -600,6 +600,14 @@ packages:
         sources:
           - name: Google Play
             issue: 111
+  - package: com.google.ar.lens
+    signature:
+      - fingerprint: DE:BA:CC:A8:0B:C7:1A:A7:DF:5F:0F:FB:76:9F:36:20:7E:A0:AE:36:18:01:97:B6:1D:26:67:E9:B9:8B:4B:8E
+        sources:
+          - name: Google Play
+            issue: 680
+            apk:
+              sha256: 7dabd6079493dbde35e71e706acb261030f5ad4f7b29904eb3de5ce86760da70
   - package: com.google.earth
     signature:
       - fingerprint: |-
