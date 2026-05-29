@@ -874,6 +874,19 @@ packages:
             issue: 311
             apk:
               sha256: 8a2f81942f2d72745e29095bdeab5395e0b968ce0e73097eddc6e6dd8cf610ba
+  - package: com.ichi2.anki
+    signature:
+      - fingerprint: 20:71:53:4F:0F:4B:5E:54:AE:95:2D:D2:75:D7:0D:A6:E3:45:9E:E6:99:09:D2:AB:1B:48:43:C4:C5:B2:1A:45
+        sources:
+          - name: Direct APK Link
+            issue: 239
+            apk:
+              sha256: 7f498e77b372344ec3f2da98590be1c476c40e706b88d27cac0a45bd734489f8
+              link: https://github.com/ankidroid/Anki-Android/releases/download/v2.24.0/AnkiDroid-2.24.0-arm64-v8a.apk
+          - name: Google Play
+            issue: 239
+            apk:
+              sha256: 27e83f4ed50d0ff5fe57e22353ddafa79704ef6ba97e36d6af70756669e793c5
   - package: com.innovatise.cityofminnetonka
     signature:
       - fingerprint: E7:C9:C3:EB:DB:3B:52:C1:34:C1:AC:F9:11:6A:7E:E2:18:4E:49:9F:E5:4A:2A:01:99:3C:D3:9E:D8:4B:41:FF
