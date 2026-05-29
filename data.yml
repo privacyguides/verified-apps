@@ -834,6 +834,14 @@ packages:
             issue: 588
             apk:
               sha256: a46257e19390249f1542ba45234031bb18f894711e4da3c14ed8020ac9741c7c
+  - package: com.hcom.android
+    signature:
+      - fingerprint: 67:89:E6:13:40:28:F3:A8:01:D2:9C:A5:C2:C4:7B:B9:CA:EE:A7:9C:84:8F:C9:0C:89:29:90:A5:98:63:94:2E
+        sources:
+          - name: Google Play
+            issue: 259
+            apk:
+              sha256: 4cbac4e3601e5ce9f462b9b100415cc33cf965d95839467234e15b0b568dbde0
   - package: com.healthyminds
     signature:
       - fingerprint: DC:DB:68:52:1F:AF:50:E8:DC:D6:B5:A1:AB:83:CB:00:85:2B:D3:45:C5:AE:A5:17:2F:ED:B7:CC:2A:94:1B:B4
