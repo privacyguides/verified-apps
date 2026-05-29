@@ -240,6 +240,14 @@ packages:
             issue: 326
             apk:
               sha256: 36b3f935dec1944dd3746329255359ebc032ab10382e92680cf993c40a3b84b5
+  - package: com.aircanada
+    signature:
+      - fingerprint: 39:09:4C:C7:95:A9:86:B6:45:D1:F6:59:F1:5A:5B:8E:5C:8C:63:F7:80:37:F9:95:E7:E7:1B:62:FE:93:D2:E9
+        sources:
+          - name: Google Play
+            issue: 344
+            apk:
+              sha256: 7c7bf3b66ebc0495be9e35103e9e2c04b5e07edc999412b80aee9aadef69f66c
   - package: com.akylas.documentscanner
     signature:
       - fingerprint: 0D:10:AA:10:E0:3A:7E:76:97:22:BE:43:88:BE:63:BD:15:7A:7B:7B:F1:96:FB:3C:EB:AB:87:37:F9:6C:A8:71
