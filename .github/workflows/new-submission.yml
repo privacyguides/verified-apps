@@ -724,7 +724,7 @@ jobs:
           persist-credentials: "false"
 
       - name: Download F-Droid results
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           pattern: fdroid-result-*
           merge-multiple: true
@@ -1280,7 +1280,7 @@ jobs:
 
       - name: Download F-Droid results
         if: steps.existingPr.outputs.url == ''
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           pattern: fdroid-result-*
           merge-multiple: true
@@ -1394,7 +1394,7 @@ jobs:
           gh issue comment "$NUMBER" --repo "$GH_REPO" \
             --body "Could not open a PR: no store signatures matched the submission. Add matching store entries manually, or ensure verification was run with the **Run Checks** label first."
 
-  commit_as_is:
+  commit-as-is:
     name: Commit As-Is
     runs-on: ubuntu-latest
     concurrency:
@@ -1445,7 +1445,7 @@ jobs:
           actionDescription: Commit As-Is
 
       - name: Download F-Droid results
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           pattern: fdroid-result-*
           merge-multiple: true
@@ -1517,19 +1517,18 @@ jobs:
           gh issue comment "$NUMBER" --repo "$GH_REPO" \
             --body "Could not commit as-is: no store signatures matched the submission. Run **Run Checks** first, or use **Create PR** to add entries manually."
 
-  commit_as_is_artifact:
+  commit-as-is-artifact:
     name: Commit As-Is (artifact)
-    needs: commit_as_is
-    if: ${{ needs.commit_as_is.outputs.committed == 'true' }}
+    needs: commit-as-is
     permissions:
       contents: read
     uses: privacyguides/verified-apps/.github/workflows/create-artifact.yml@fb4058746d264f7ef5ba1f16dc40c499aeaf5a4d
     with:
-      ref: ${{ needs.commit_as_is.outputs.commitSha }}
+      ref: ${{ needs.commit-as-is.outputs.commitSha }}
 
-  commit_as_is_attest:
+  commit-as-is-attest:
     name: Commit As-Is (attest)
-    needs: commit_as_is_artifact
+    needs: commit-as-is-artifact
     permissions:
       contents: read
       id-token: write
