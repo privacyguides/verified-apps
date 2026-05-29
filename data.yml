@@ -413,6 +413,14 @@ packages:
             apk:
               sha256: 21db52eaeb5b842c19ff2c0adc5290b4d4d8e187dc21061175880738e4d5029e
               link: https://github.com/Demizo/Daily_You/releases/download/v2.23.0/daily-you-arm64-v8a-v2.23.0.apk
+          - name: F-Droid
+            issue: 651
+            apk:
+              sha256: fb5b58cfeb260e6408bc0509f52c04cc7d71c63cfaf35ed50114e279476ca200
+          - name: F-Droid (IzzyOnDroid)
+            issue: 651
+            apk:
+              sha256: 21db52eaeb5b842c19ff2c0adc5290b4d4d8e187dc21061175880738e4d5029e
   - package: com.desmos.scientific
     signature:
       - fingerprint: F8:E2:EF:7A:35:35:E3:A2:DE:70:65:46:F5:32:5F:0E:8B:74:7C:CC:88:1A:67:79:3D:BA:71:FC:B3:6E:4C:54
