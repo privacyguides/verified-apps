@@ -14,10 +14,9 @@ Currently, we will not merge any apps which cannot be checked by our automated s
 
 ## Automated Checks
 
-When a maintainer is ready to review a submission, we will run automated checks to check the submission against the following mainstream app sources:
+When a maintainer is ready to review a submission, we will run automated checks to check the submission against AppVerifier's legacy internal database and the following mainstream app sources:
 
 - Accrescent
-- AppVerifier's Internal Database
 - F-Droid Official
 - F-Droid IzzyOnDroid
 - Google Play
@@ -29,9 +28,9 @@ We will also check the following:
 - Link you provide to a direct APK download
 - Link you provide to a developer-run F-Droid repo
 
-We can not automatically validate the *legitimacy* of these sources, but they will be noted for manual review purposes.
+We can not automatically validate the *legitimacy* of these sources, but they will be noted for manual review purposes. If we believe the direct sources are legitimate, we will add them to the database alongside any app store releases.
 
-We will also check the hashes submitted to the GrapheneOS forum and compiled by @RoundSalmon4 at <https://github.com/RoundSalmon4/AppVerifier/releases>, but this information is **not** used for any database-related purposes. Matches will only be noted in the GitHub issue for a particular submission. 
+We will also check submissions against the hashes [submitted to the GrapheneOS forum](https://discuss.grapheneos.org/d/15368-lets-compare-hashes-for-apps-not-in-appverifiers-database) and compiled by @RoundSalmon4 at <https://github.com/RoundSalmon4/AppVerifier/releases>. This information is **not** used for any database-related purposes (**not** added to data.yml), because the comments in that thread are unverified user-submissions. However, they can act as an additional data point that someone is vouching for that submission. Therefore, matches will merely be noted in the GitHub issue here for a particular submission. 
 
 ## Verification Process
 

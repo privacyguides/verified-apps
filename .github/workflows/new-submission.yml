@@ -1202,6 +1202,12 @@ jobs:
             exit 1
           fi
 
+      - name: Check Do Not Merge label
+        uses: ./.github/actions/check-do-not-merge
+        with:
+          issueNumber: ${{ github.event.issue.number }}
+          actionDescription: Create PR
+
       - name: Check for existing PR
         id: existingPr
         env:
@@ -1418,6 +1424,12 @@ jobs:
           if [[ "${{ github.event.label.name }}" != "Commit As-Is" ]]; then
             exit 1
           fi
+
+      - name: Check Do Not Merge label
+        uses: ./.github/actions/check-do-not-merge
+        with:
+          issueNumber: ${{ github.event.issue.number }}
+          actionDescription: Commit As-Is
 
       - name: Checkout repository
         uses: actions/checkout@v6

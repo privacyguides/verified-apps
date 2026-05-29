@@ -1,0 +1,30 @@
+name: Check Do Not Merge label
+description: Fail when the submission issue has the Do Not Merge label
+inputs:
+  issueNumber:
+    description: Submission issue number
+    required: true
+  actionDescription:
+    description: Short description of the blocked action (e.g. "Create PR")
+    required: false
+    default: "this workflow"
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
+        GH_REPO: ${{ github.repository }}
+        NUMBER: ${{ inputs.issueNumber }}
+        ACTION: ${{ inputs.actionDescription }}
+      run: |
+        set -euo pipefail
+
+        if gh issue view "$NUMBER" --repo "$GH_REPO" --json labels -q '.labels[].name' \
+          | grep -qxF 'Do Not Merge'; then
+          gh issue comment "$NUMBER" --repo "$GH_REPO" \
+            --body "Cannot run **${ACTION}**: this issue has the **Do Not Merge** label. Remove that label before retrying."
+          echo "::error::Issue #${NUMBER} has the Do Not Merge label; refusing to proceed."
+          exit 1
+        fi
