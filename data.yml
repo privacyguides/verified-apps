@@ -1426,6 +1426,14 @@ packages:
             issue: 655
             apk:
               sha256: 9712b3b0611f5f06021c55ffe8fc9401c4b778932016609c958596923b39259d
+  - package: com.swordfish.lemuroid
+    signature:
+      - fingerprint: 66:30:F8:6D:FC:E5:E0:19:B3:21:AD:62:BC:F9:3E:96:8A:C6:DB:C1:5F:C5:B1:BA:12:EB:B8:C0:5F:B2:79:F1
+        sources:
+          - name: Google Play
+            issue: 445
+            apk:
+              sha256: 1e888c9b565aa9839680d9aefe6b411c4dc4e9608eabfa928a5fd7ee80440d38
   - package: com.tailscale.ipn
     signature:
       - fingerprint: 5C:DB:29:55:51:BF:E1:A0:87:FE:D6:AC:DA:07:14:1C:6C:92:9F:A7:C2:9B:D2:73:A7:09:28:13:AC:C4:34:BF
