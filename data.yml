@@ -1378,6 +1378,15 @@ packages:
             issue: 287
             apk:
               sha256: d3424bcc6d253828cb9bfe578a65b2c99744fc1339983fcec8cb72e6b4b110fe
+  - package: com.sadellie.unitto
+    signature:
+      - fingerprint: B2:D9:93:8C:97:FA:77:DF:78:14:2C:31:1D:23:4A:AE:9E:70:6F:10:CC:BA:16:7F:2A:2A:3E:33:52:8C:1D:CF
+        sources:
+          - name: Direct APK Link
+            issue: 658
+            apk:
+              sha256: 704cbe156d602cb01663242c0b25052910342ee00796de5893a9ee19c28569bd
+              link: https://github.com/sadellie/unitto/releases/download/76/androidApp-release.apk
   - package: com.saily.android
     signature:
       - fingerprint: 0C:75:9D:2C:84:F0:F0:21:31:F7:9E:4A:23:FF:97:8F:BB:0D:8A:43:F8:05:EF:4E:BF:4F:66:EB:D5:E6:84:1A
