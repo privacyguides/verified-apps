@@ -954,6 +954,14 @@ packages:
             issue: 75
             apk:
               sha256: 7ad10b100f2790b046f324fb54881968141f9c776e405e55e6aea4b0fd5f24b2
+  - package: com.target.ui
+    signature:
+      - fingerprint: C2:0F:71:D4:25:62:53:57:F0:C0:52:3A:E1:C2:20:C5:9E:22:E4:9A:94:BC:9F:26:6F:9C:97:77:36:89:A0:9B
+        sources:
+          - name: Google Play
+            issue: 678
+            apk:
+              sha256: 5750da2ca8df5c0590876e06f5f5fbca5729b7935773772b21948071013a547d
   - package: com.termux
     signature:
       - fingerprint: 22:8F:B2:CF:E9:08:31:C1:49:9E:C3:CC:AF:61:E9:6E:8E:1C:E7:07:66:B9:47:46:72:CE:42:73:34:D4:1C:42
