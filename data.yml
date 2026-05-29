@@ -364,6 +364,14 @@ packages:
             issue: 266
             apk:
               sha256: dfe359b3b2c16ff23b56c02c4703a9437824469f5035d109b53b2acc09a7635e
+  - package: com.delta.mobile.android
+    signature:
+      - fingerprint: DC:BE:F3:76:6B:C1:AA:52:28:EB:75:AC:A9:C7:AE:02:3C:FE:BB:43:83:90:CB:73:75:85:28:0A:26:DE:AA:11
+        sources:
+          - name: Google Play
+            issue: 671
+            apk:
+              sha256: 2cdeeb8db38b02d22adc6e27e443aed7b4968e1b994e0ec8f8dce33cd2cc403a
   - package: com.desmos.scientific
     signature:
       - fingerprint: F8:E2:EF:7A:35:35:E3:A2:DE:70:65:46:F5:32:5F:0E:8B:74:7C:CC:88:1A:67:79:3D:BA:71:FC:B3:6E:4C:54
