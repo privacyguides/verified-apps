@@ -1304,6 +1304,14 @@ packages:
             issue: 195
             apk:
               sha256: 575aac457e2229c782c13aebffe64c4ffe6eca0e4459155baaa86b8bf94ea21d
+  - package: gov.dhs.cbp.pspd.mpc
+    signature:
+      - fingerprint: 1D:AA:4C:59:14:D2:3B:70:FE:10:A6:31:F0:3A:A0:F9:66:A6:DD:4E:8F:5E:FD:DF:A0:20:F9:96:22:E4:69:DE
+        sources:
+          - name: Google Play
+            issue: 684
+            apk:
+              sha256: c6d5862877bcb43f1990bcd58ce77c872665e50239fecdbf0ac2acc34563b47d
   - package: grit.storytel.app
     signature:
       - fingerprint: A6:56:F3:FD:4E:4C:32:0B:FF:E0:81:EA:2A:FE:07:B0:AC:E6:14:B9:31:3A:10:D2:16:3E:91:91:BD:79:42:60
