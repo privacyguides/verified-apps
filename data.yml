@@ -1242,6 +1242,14 @@ packages:
             issue: 506
             apk:
               sha256: 3ba12ceb8c5a2f028f8415e610f27570c737d5625ebbaa59bd1d9bff4e3d47e5
+  - package: com.reworewo.prayertimes
+    signature:
+      - fingerprint: CD:1F:0D:9A:62:D0:47:9C:4B:71:BB:C4:D5:19:69:82:69:D6:DC:49:9D:39:53:DE:75:28:08:7E:51:5A:19:68
+        sources:
+          - name: Google Play
+            issue: 554
+            apk:
+              sha256: 4e77df2480866adf7935710df92fa43e2474dfff05e3fc94896d0e20b82e8d5f
   - package: com.ringapp
     signature:
       - fingerprint: C6:37:07:C9:00:14:1B:80:77:49:C6:03:8E:21:5C:9B:21:71:26:2B:0D:A9:AF:C5:75:FA:60:AB:C4:D6:8D:EB
