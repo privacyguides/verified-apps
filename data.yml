@@ -1,5 +1,22 @@
 schema: 3
 packages:
+  - package: InfinityLoop1309.NewPipeEnhanced
+    signature:
+      - fingerprint: DE:C7:34:29:CE:25:63:27:5F:5E:D1:98:25:E4:46:52:B3:2B:36:3A:46:F3:8B:DF:F9:AD:6D:CD:E4:84:2D:88
+        sources:
+          - name: Direct APK Link
+            issue: 198
+            apk:
+              sha256: 4a894277ba9157ac4ea42a583d2860d5ed795091c61e2ae5620e0e0384f7037a
+              link: https://github.com/InfinityLoop1308/PipePipe/releases/download/v5.1.0/PipePipe_5.1.0-arm64-v8a-release.apk
+          - name: F-Droid
+            issue: 198
+            apk:
+              sha256: 4a894277ba9157ac4ea42a583d2860d5ed795091c61e2ae5620e0e0384f7037a
+          - name: F-Droid (IzzyOnDroid)
+            issue: 198
+            apk:
+              sha256: 56b3ddc154322975a721290fc89f401fc368a70a522057fbba754198e942f60e
   - package: app.accrescent.client
     signature:
       - fingerprint: 06:7A:40:C4:19:3A:AD:51:AC:87:F9:DD:FD:EB:B1:5E:24:A1:85:0B:AB:FA:48:21:C2:8C:5C:25:C3:FD:C0:71
