@@ -101,6 +101,14 @@ packages:
         sources:
           - name: F-Droid
             issue: 549
+  - package: at.wienerlinien.wienmobillab
+    signature:
+      - fingerprint: 7A:EC:06:2E:97:ED:AC:E6:C9:87:5D:C5:88:B7:C4:19:1C:CC:D5:BC:7E:A8:8C:18:F1:53:85:83:A9:23:1B:6D
+        sources:
+          - name: Google Play
+            issue: 395
+            apk:
+              sha256: f03bd7f92dadee073f9dbd706ac1aeafe7ac0763950aea83b49c53262dc02bfa
   - package: au.com.qantas.qantas
     signature:
       - fingerprint: 85:DB:DE:85:4E:B1:EA:5A:05:4E:43:4B:D3:FF:8F:2A:C3:EF:78:B6:8A:A9:13:EA:F4:72:27:14:D8:FB:42:60
