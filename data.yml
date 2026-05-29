@@ -232,6 +232,19 @@ packages:
             issue: 683
             apk:
               sha256: ed8a428a3e6c27abc43a5f8e27d0f5029a315c7446af27d880d8fc4f9e781697
+  - package: com.audiobookshelf.app
+    signature:
+      - fingerprint: 36:48:29:26:56:96:6C:63:D1:B5:7D:93:EA:00:E3:5C:7D:97:51:1E:1F:5B:06:78:A7:17:DA:E7:73:79:39:56
+        sources:
+          - name: Direct APK Link
+            issue: 623
+            apk:
+              sha256: 41fee742fadfbeeb6e8da08a3429fc53b75f1687e3eeac22a937a580671d1a61
+              link: https://github.com/advplyr/audiobookshelf-app/releases/download/v0.13.0-beta/app-release.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 623
+            apk:
+              sha256: 41fee742fadfbeeb6e8da08a3429fc53b75f1687e3eeac22a937a580671d1a61
   - package: com.aurora.store
     signature:
       - fingerprint: 4C:62:61:57:AD:02:BD:A3:40:1A:72:63:55:5F:68:A7:96:63:FC:3E:13:A4:D4:36:9A:12:57:09:41:AA:28:0F
