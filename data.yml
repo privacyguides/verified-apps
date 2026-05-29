@@ -1327,6 +1327,14 @@ packages:
             issue: 608
             apk:
               sha256: 3fe4e3dad8a8fcbdeebe92a6bd7bf6ca3419f6e779b4711f5158734b8a07eb03
+  - package: com.sl.SLBiljetter
+    signature:
+      - fingerprint: CB:5E:04:4D:55:D3:C1:60:7F:C7:C6:23:57:95:43:BD:2B:3A:9E:86:70:A6:57:30:A2:3C:79:18:C7:D8:E0:67
+        sources:
+          - name: Google Play
+            issue: 332
+            apk:
+              sha256: 9f01c3e0ce984b9f8cadc01328e9d3d6bbd168e701a3992d3fd7b1b4de43de00
   - package: com.standardnotes
     signature:
       - fingerprint: 58:3F:C4:1B:49:0C:38:0B:56:FB:E9:EE:47:38:1E:B4:EF:53:E0:37:19:A5:50:3F:C1:F2:9D:CD:8E:28:90:2A
