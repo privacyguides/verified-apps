@@ -375,6 +375,14 @@ packages:
             issue: 676
             apk:
               sha256: 83b41f9359303d96efc6482284a99d25e3c96bcd65afe37dc3af6056174fd97f
+  - package: com.cisco.wx2.android
+    signature:
+      - fingerprint: B0:78:4C:13:1B:03:08:6D:A3:76:D3:23:0E:9C:F8:4B:39:AE:E7:69:70:9F:FB:56:2C:3B:A6:CD:BC:86:9B:8D
+        sources:
+          - name: Google Play
+            issue: 663
+            apk:
+              sha256: ba08ed98d29950385208442d0ce3cbe06065ade155703f6df1065db44fdb32a1
   - package: com.collabora.libreoffice
     signature:
       - fingerprint: 57:32:58:C8:4E:14:9B:5F:4D:92:99:E7:43:4B:2B:69:A8:41:03:72:92:1D:4A:E5:86:BA:91:EC:76:78:92:CC
