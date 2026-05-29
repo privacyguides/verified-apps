@@ -881,6 +881,14 @@ packages:
             issue: 681
             apk:
               sha256: dda80c4500b21fa267f3348246b74dc3d5b65dd3868fe00911448ed4cb126840
+  - package: com.meraki.Dashboard
+    signature:
+      - fingerprint: EE:4D:C3:EC:F5:DD:BA:D2:36:6B:1A:DB:4C:33:AA:4B:99:6E:E5:D5:26:DE:60:E0:D5:FF:83:D3:BD:80:06:BD
+        sources:
+          - name: Google Play
+            issue: 664
+            apk:
+              sha256: d1273746f03733ea2a410f2ac97b02039330e80033e77a5a79d359abc8c6b48e
   - package: com.metrolist.music
     signature:
       - fingerprint: E3:2C:4F:2E:FD:7E:E9:54:8F:AE:E2:2E:45:A6:04:25:F7:72:8A:55:A6:10:FD:5E:8A:B9:36:4F:74:B7:BC:C9
