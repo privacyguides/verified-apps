@@ -296,6 +296,14 @@ packages:
             issue: 488
           - name: AppVerifier
             issue: 488
+  - package: com.austrian.connector.android
+    signature:
+      - fingerprint: 18:CA:8D:A7:D9:24:CA:17:A9:DB:D4:CB:C7:AD:90:59:41:24:B2:45:F1:10:12:DF:73:FE:CC:DB:B9:36:75:F8
+        sources:
+          - name: Google Play
+            issue: 317
+            apk:
+              sha256: 7bee1bf2c9c3fe2aaa3c84b367788b0b121f644ff3441ecd96d857048477db83
   - package: com.azure.authenticator
     signature:
       - fingerprint: EE:BD:0F:16:E6:29:AF:8B:83:81:BF:ED:FD:D6:49:60:5F:E9:0F:76:3F:5C:B7:BA:47:3E:B9:EE:F9:4D:9A:F1
