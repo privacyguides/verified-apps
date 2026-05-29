@@ -1,0 +1,43 @@
+name: Close duplicate submission issue
+description: Close the current issue as a duplicate of an existing submission or data.yml entry
+inputs:
+  duplicateOf:
+    description: Issue number of the original submission or data.yml entry
+    required: true
+  currentIssue:
+    description: Issue number being closed
+    required: true
+  currentAuthor:
+    description: Login of the issue author
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
+        GH_REPO: ${{ github.repository }}
+        NUMBER: ${{ inputs.currentIssue }}
+        DUPLICATE_OF: ${{ inputs.duplicateOf }}
+        CURRENT_AUTHOR: ${{ inputs.currentAuthor }}
+      run: |
+        set -euo pipefail
+
+        gh issue edit "$NUMBER" --repo "$GH_REPO" --remove-label "Run Checks" || true
+        gh issue edit "$NUMBER" --repo "$GH_REPO" --remove-label "Create PR" || true
+        gh issue edit "$NUMBER" --repo "$GH_REPO" --remove-label "Commit As-Is" || true
+
+        if [[ "$DUPLICATE_OF" != "$NUMBER" ]]; then
+          original_author=$(gh api "repos/${GH_REPO}/issues/${DUPLICATE_OF}" --jq '.user.login')
+          if [[ "$CURRENT_AUTHOR" != "$original_author" ]]; then
+            gh issue edit "$DUPLICATE_OF" --repo "$GH_REPO" --add-label "Duplicates Exist"
+          fi
+        fi
+
+        if [[ "$DUPLICATE_OF" == "$NUMBER" ]]; then
+          gh issue close "$NUMBER" --repo "$GH_REPO" \
+            --comment "This package and signature are already tracked in an open submission or in data.yml."
+        else
+          gh issue close "$NUMBER" --repo "$GH_REPO" --duplicate-of "$DUPLICATE_OF"
+        fi

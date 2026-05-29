@@ -86,10 +86,10 @@ runs:
               .packages[]
               | select(.package == strenv(PACKAGE))
               | .signature[]
-              | . as $sig
-              | ($sig.fingerprint | split("\n") | join("")) as $fp
-              | $sig.sources[]
-              | {"issue": .issue, "fingerprint": $fp} | @json
+              | .fingerprint as $fp
+              | .sources[]
+              | {"issue": .issue, "fingerprint": $fp}
+              | @json
             ' data.yml
           )
         fi

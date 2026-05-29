@@ -69,6 +69,34 @@ jobs:
           directApkUrl: ${{ steps.parsed.outputs.apkUrl }}
           customFdroidRepoUrl: ${{ steps.parsed.outputs.customFdroidRepoUrl }}
 
+  close-duplicate:
+    name: Close Duplicate Submission
+    runs-on: ubuntu-latest
+    needs: parse
+    if: >-
+      needs.parse.outputs.isDuplicate == 'true' &&
+      (
+        github.event.label.name == 'Run Checks' ||
+        github.event.label.name == 'Create PR' ||
+        github.event.label.name == 'Commit As-Is'
+      )
+
+    permissions:
+      issues: write
+
+    steps:
+      - name: Download Repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: "false"
+          
+      - name: Close issue as duplicate
+        uses: ./.github/actions/close-duplicate-submission
+        with:
+          duplicateOf: ${{ needs.parse.outputs.duplicateOf }}
+          currentIssue: ${{ github.event.issue.number }}
+          currentAuthor: ${{ github.event.issue.user.login }}
+
   accrescent:
     name: Accrescent
     runs-on: ubuntu-latest

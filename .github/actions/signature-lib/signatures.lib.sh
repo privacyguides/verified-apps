@@ -222,28 +222,47 @@ _submission_json_to_yaml_tempfile() {
   printf '%s' "$yaml_file"
 }
 
-# jq: merge source entries with the same name (later entries override issue/apk fields).
+# jq: merge sources by name (existing first). Update issue only when apk metadata changes.
 _submission_jq_merge_sources_by_name() {
   cat <<'JQ'
+    def apk_field_changed($base_val; $over_val):
+      ($over_val // "") != "" and ($base_val // "") != ($over_val // "");
+
+    def apk_has_changes($base_apk; $over):
+      if $over.apk == null then false
+      elif $base_apk == null then
+        (($over.apk.sha256 // "") != "")
+        or (($over.apk.link // "") != "")
+        or (($over.apk.repo // "") != "")
+      else
+        apk_field_changed($base_apk.sha256; $over.apk.sha256)
+        or apk_field_changed($base_apk.link; $over.apk.link)
+        or apk_field_changed($base_apk.repo; $over.apk.repo)
+      end;
+
+    def apk_apply_changes($base_apk; $over_apk):
+      if $over_apk == null then $base_apk
+      elif $base_apk == null then $over_apk
+      else
+        $base_apk
+        | if (($over_apk.sha256 // "") != "") then .sha256 = $over_apk.sha256 else . end
+        | if (($over_apk.link // "") != "") then .link = $over_apk.link else . end
+        | if (($over_apk.repo // "") != "") then .repo = $over_apk.repo else . end
+      end;
+
+    def merge_one_source($base; $over):
+      if apk_has_changes($base.apk; $over) then
+        $base
+        | (if (($over.issue // null) != null) then .issue = $over.issue else . end)
+        | .apk = apk_apply_changes($base.apk; $over.apk)
+        | if .apk == null then del(.apk) else . end
+      else
+        $base
+      end;
+
     def merge_sources_by_name:
       group_by(.name)
-      | map(
-          reduce .[] as $s (null;
-            if . == null then $s
-            else
-              . as $prev |
-              $prev
-              + { issue: ($s.issue // $prev.issue) }
-              + (
-                if $s.apk then
-                  { apk: (if $prev.apk then ($prev.apk * $s.apk) else $s.apk end) }
-                else {}
-                end
-              )
-              | if .apk == null then del(.apk) else . end
-            end
-          )
-        );
+      | map(reduce .[] as $s (.[0]; merge_one_source(.; $s)));
 JQ
 }
 
