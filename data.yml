@@ -540,6 +540,14 @@ packages:
             issue: 431
             apk:
               sha256: bfa5def904b0ad2b5e30aba9e6f517e0ae423c7b99965116e09bc3f69ca80557
+  - package: com.foobnix.pro.pdf.reader
+    signature:
+      - fingerprint: EA:0D:90:DF:4D:DE:7B:9A:9E:8E:AE:BE:2E:8A:A4:7E:D1:3F:4D:F9:D7:7A:A6:4B:C9:9C:7E:D3:09:D2:A8:4D
+        sources:
+          - name: F-Droid
+            issue: 579
+            apk:
+              sha256: c97ebafa99bafd75628d25883287499e35907dc3d525111e267f0615d4fc6c83
   - package: com.futo.platformplayer
     signature:
       - fingerprint: EF:81:ED:A9:8F:61:7F:7F:17:07:D8:05:09:F2:8D:AE:4E:50:F5:6E:41:E0:77:EB:30:24:D9:C9:07:2D:07:4E
