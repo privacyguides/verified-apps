@@ -2095,6 +2095,19 @@ packages:
             issue: 522
             apk:
               sha256: b161760381522ffc61925c8978d633a9644a6a14b8c5f391dd90461251ec5d5f
+  - package: ml.docilealligator.infinityforreddit.plus
+    signature:
+      - fingerprint: 6F:1C:31:23:D9:B4:E9:F4:24:F8:D1:43:6E:58:F1:A4:C1:8E:CA:A9:A7:E8:FA:C2:91:89:28:34:8E:76:5D:C0
+        sources:
+          - name: Direct APK Link
+            issue: 432
+            apk:
+              sha256: c1ce80c7d42d0c7c032789cd8c8f826f27f9793bbd4ed4ecd796add20ee01e49
+              link: https://github.com/Docile-Alligator/Infinity-For-Reddit/releases/download/v8.2.1/Infinity+-v8.2.1.apk
+          - name: Google Play
+            issue: 432
+            apk:
+              sha256: ea64927a061675bedf099ab9d2e15e1cd840d93856c708583d9ad31098ed8e13
   - package: moe.shizuku.privileged.api
     signature:
       - fingerprint: 26:8B:55:90:E8:68:FB:08:BA:E7:E0:AC:41:35:64:CD:1F:F8:8F:5C:CF:F7:4A:F9:DB:D0:DC:91:8E:30:DB:30
