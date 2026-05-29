@@ -1694,6 +1694,17 @@ packages:
         sources:
           - name: Accrescent
             issue: 90
+  - package: org.breezyweather
+    signature:
+      - fingerprint: 29:D4:35:F7:0A:A9:AE:C3:C1:FA:FF:7F:7F:FA:6E:15:78:50:88:D8:7F:06:EC:FC:AB:9C:3C:C6:2D:C2:69:D8
+        sources:
+          - name: AppVerifier
+            issue: 652
+          - name: Direct APK Link
+            issue: 652
+            apk:
+              sha256: bfde995e9119e8a11df483c826df831a80b6a077c048930eb9cae928f4de02e4
+              link: https://github.com/breezy-weather/breezy-weather/releases/download/v6.2.0/breezy-weather-v6.2.0_standard.apk
   - package: org.cromite.cromite
     signature:
       - fingerprint: 63:3F:A4:1D:82:11:D6:D0:91:6A:81:9B:89:66:8C:6D:E9:2E:64:23:2D:A6:7F:9D:16:FD:81:C3:B7:E9:23:FF
