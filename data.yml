@@ -3063,6 +3063,15 @@ packages:
             issue: 782
             apk:
               sha256: ebc5138b6f713f0f73b5467a1a8a4ac3ccfcb2e82135372665b6811a8947641f
+  - package: ml.docilealligator.infinityforreddit.patreon
+    signature:
+      - fingerprint: C7:32:45:6D:26:23:0C:D9:86:F3:08:27:37:E7:B9:19:07:C7:88:8A:CB:02:2B:9B:19:15:C5:2F:04:55:C9:D2
+        sources:
+          - name: Direct APK Link
+            issue: 430
+            apk:
+              sha256: 1987f810b4d887dd464a9dc77bea15d38521bdb930fe385a6ff2106d54e0e30f
+              link: https://github.com/Docile-Alligator/Infinity-For-Reddit/releases/download/v8.2.1/Infinity-Patreon-v8.2.1.apk
   - package: ml.docilealligator.infinityforreddit.plus
     signature:
       - fingerprint: 6F:1C:31:23:D9:B4:E9:F4:24:F8:D1:43:6E:58:F1:A4:C1:8E:CA:A9:A7:E8:FA:C2:91:89:28:34:8E:76:5D:C0
