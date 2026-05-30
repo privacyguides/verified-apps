@@ -2533,6 +2533,14 @@ packages:
             issue: 570
             apk:
               sha256: a8093572497436d8873181ac8f610d08c4f4f3a621fe2b447fc8bd9692064c4b
+  - package: net.osmtracker
+    signature:
+      - fingerprint: 49:40:34:51:E1:E2:2A:79:32:89:A6:0E:B3:4D:68:6B:C7:97:21:42:AD:DB:A0:61:74:7A:07:67:4B:02:3E:AB
+        sources:
+          - name: Google Play
+            issue: 711
+            apk:
+              sha256: dd4409210f511ebea1e5d9c0e746bf3561ea6b197e5343740a697dc763e0251c
   - package: net.sourceforge.opencamera
     signature:
       - fingerprint: FF:4B:85:F5:03:7A:B1:6F:53:5A:E5:A1:27:26:97:AB:CF:D9:6F:0F:AA:0E:0C:7A:C3:7B:2E:D5:C8:94:E5:88
