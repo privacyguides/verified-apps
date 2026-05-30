@@ -1907,6 +1907,19 @@ packages:
             issue: 559
             apk:
               sha256: fdab93454ac98c7e8841815678264e4ef7ee65a3b0d9fd6928a1e7512639fe76
+  - package: de.tutao.calendar
+    signature:
+      - fingerprint: B4:54:C1:76:F9:0A:1E:A0:57:29:87:D3:82:72:3B:5C:D7:4F:94:2A:79:37:A2:A0:B9:9A:36:80:69:14:88:50
+        sources:
+          - name: Direct APK Link
+            issue: 699
+            apk:
+              sha256: b220afbecc207040a3d1157eafa5971083cabaa32eebf760e2f93a8db9260d0f
+              link: https://github.com/tutao/tutanota/releases/download/tuta-calendar-android-release-348.260519.0/calendar-tutao-release-348.260519.0.apk
+          - name: Google Play
+            issue: 699
+            apk:
+              sha256: 833c8868a73dca768d6d0405e577b763492336487d5cce9dcabfab72dcc473bc
   - package: de.tutao.tutanota
     signature:
       - fingerprint: B4:54:C1:76:F9:0A:1E:A0:57:29:87:D3:82:72:3B:5C:D7:4F:94:2A:79:37:A2:A0:B9:9A:36:80:69:14:88:50
