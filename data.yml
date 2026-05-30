@@ -2837,6 +2837,14 @@ packages:
             issue: 606
             apk:
               sha256: 32f217e3198f5286f6811f922930d79e82f6cdf7dd49dd96e4587f9a8bfc2c47
+  - package: com.zillow.android.zillowmap
+    signature:
+      - fingerprint: FB:CC:B2:E4:36:05:9A:AE:B8:30:9B:E3:B1:8C:D0:91:CD:E3:8D:C7:A2:DE:4D:80:A5:F0:1E:7B:47:70:D2:38
+        sources:
+          - name: Google Play
+            issue: 918
+            apk:
+              sha256: 8693bd3eb2c2f450524c660146a906995759a730c84e3ebfe1b92ba1226e4964
   - package: de.danoeh.antennapod
     signature:
       - fingerprint: 17:94:30:56:5A:4A:04:BF:E7:82:74:83:24:30:99:BD:10:87:04:10:80:0C:D7:C4:C7:B4:8D:8D:32:26:DF:55
