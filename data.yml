@@ -1869,8 +1869,18 @@ packages:
               sha256: 32c4db9e557c99858d3f32b57911970cfe3e804f7c8b18e4ff0d170a819b0052
   - package: com.x8bit.bitwarden
     signature:
+      - fingerprint: 24:E0:6C:04:C2:08:04:8F:19:F1:C9:93:B4:DD:A4:43:0E:A8:B0:6D:B8:37:5E:A0:E3:7B:83:46:96:B9:AC:3A
+        sources:
+          - name: AppVerifier
+            issue: 732
+          - name: Google Play
+            issue: 732
+            apk:
+              sha256: 121bd27cb5a5dfc4005954ba75f44bca45f02053201b5c03f923b75c5175207d
       - fingerprint: DE:6E:C9:14:31:55:79:95:29:7B:F3:E6:5B:C8:03:49:BC:60:3A:04:70:81:60:61:8C:86:BC:99:94:17:1C:90
         sources:
+          - name: AppVerifier
+            issue: 355
           - name: Direct APK Link
             issue: 151
             apk:
@@ -1880,8 +1890,6 @@ packages:
             issue: 355
             apk:
               repo: https://mobileapp.bitwarden.com/fdroid/repo/
-          - name: AppVerifier
-            issue: 355
   - package: com.xfinity.digitalhome
     signature:
       - fingerprint: 95:3F:5A:4C:22:E7:FD:16:AD:C3:F1:2E:B0:38:68:2A:AD:37:7F:EF:9A:18:B9:D1:2C:1A:BE:A7:89:11:C7:49
