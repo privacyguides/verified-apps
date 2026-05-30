@@ -2791,6 +2791,17 @@ packages:
             issue: 51
             apk:
               sha256: d830f6772c9890b906eb30114f4890d47580ff2e4dfb4683359b43385f83497c
+  - package: me.ash.reader
+    signature:
+      - fingerprint: |-
+          71:56:96:91:4A:35:36:6D:98:FA:45:31:2A:F9:68:11:F7:E6:DE:40:85:B5:E4:70:9F:4C:1E:74:F8:BD:E4:D0
+          72:1E:40:43:C4:39:BD:70:C9:0F:46:AE:16:6D:DC:23:3F:C7:5C:12:35:BF:8C:B2:7B:99:A4:DF:09:CC:3B:99
+        sources:
+          - name: Direct APK Link
+            issue: 428
+            apk:
+              sha256: 7317ba353b0eb0710d128f51add271cd916bb818cc64d16c5c677c46045c8dca
+              link: https://github.com/ReadYouApp/ReadYou/releases/download/0.16.1/ReadYou-0.16.1-19d49733-signed.apk
   - package: me.easyapps.easynotes
     signature:
       - fingerprint: 79:E8:5C:E8:1D:F2:F4:F2:25:C2:2F:EA:0B:2D:19:50:B3:68:62:7E:47:5F:B7:2B:73:85:D2:50:31:3B:F7:C1
