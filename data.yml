@@ -2889,6 +2889,23 @@ packages:
             issue: 703
             apk:
               sha256: fecd151cc13f2dbdc5a5ee469164c399faf4532ab7196ddd95201cbacc2494b9
+  - package: org.traccar.manager
+    signature:
+      - fingerprint: 4E:E4:1F:0E:EF:8C:C6:E6:30:E0:F7:34:46:85:BD:FE:55:55:7B:D4:50:E3:E7:77:82:69:93:CB:1D:7C:61:A6
+        sources:
+          - name: Direct APK Link
+            issue: 704
+            apk:
+              sha256: 3b242661e81f654bdf7d8e9e6fc28adc89a206c0f0c3ec9585898f525502c1ac
+              link: https://github.com/traccar/traccar-manager/releases/download/v6.0.5/app-release.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 704
+            apk:
+              sha256: 92eddf28cfdeaa8eb4854954cbf4ef480c7c3c9330d70476bee3373c3131ca26
+          - name: Google Play
+            issue: 704
+            apk:
+              sha256: fa573c1903ad9a09dccd07be7f311e4585639aa1f5832ec377f4407814391ac4
   - package: org.unifiedpush.distributor.nextpush
     signature:
       - fingerprint: 4D:77:EB:02:F1:66:55:9E:43:B2:A3:B3:4E:86:1D:62:8C:CC:EE:CB:F7:65:3E:E1:38:70:97:1B:25:E1:75:F0
