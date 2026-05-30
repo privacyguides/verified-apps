@@ -1459,6 +1459,14 @@ packages:
             issue: 981
             apk:
               sha256: 1272358c6eb7f0ffb3ceb7eb34cfc009607a935eb6bde2901f59323a578744a3
+  - package: com.google.android.apps.youtube.producer
+    signature:
+      - fingerprint: 5F:AE:AB:91:98:73:0E:9E:F1:F2:31:2F:74:2D:66:09:56:32:BF:FA:7C:C7:4F:5D:5C:82:80:CB:0B:18:4E:9D
+        sources:
+          - name: Google Play
+            issue: 988
+            apk:
+              sha256: 1e79ae19db7dea7f35493d451af1368a75b414e97896abaf8945740d06b1871a
   - package: com.google.android.contactkeys
     signature:
       - fingerprint: D9:E1:73:5B:2A:39:51:27:3A:87:35:B7:66:9E:F1:9E:F5:3A:F1:C1:27:5C:BA:31:39:3C:18:40:8B:03:79:D0
