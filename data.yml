@@ -2718,6 +2718,14 @@ packages:
             issue: 550
             apk:
               sha256: 8b0f5469708b6ebc71779d862a3cca2641256e680761f42f2026ece5e74af3fa
+  - package: com.yahoo.mobile.client.android.finance
+    signature:
+      - fingerprint: D3:F1:FB:1B:2C:81:E0:96:E3:F5:80:9A:50:3A:FD:A0:CF:AF:56:B9:D3:9D:ED:C6:56:EE:26:60:AC:EF:61:4C
+        sources:
+          - name: Google Play
+            issue: 846
+            apk:
+              sha256: a7b34f4b44bc7dd78c82e8b59940c26c545abc9bc7c2eaab68177bd91952c9ac
   - package: com.yoc.swiss.swiss
     signature:
       - fingerprint: B3:EB:7E:D9:26:78:57:D5:B0:ED:23:A7:85:49:FB:65:0E:9C:94:7A:70:38:A5:21:66:3A:1E:06:94:43:F6:1D
