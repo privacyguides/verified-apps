@@ -931,6 +931,14 @@ packages:
             issue: 159
             apk:
               sha256: f538f891e5d29bc8481cbd6329efb5b4ed7eda9a9c375b94aded2ac708c33b85
+  - package: com.discourse
+    signature:
+      - fingerprint: 7C:01:A2:90:5B:FD:7F:A6:53:A3:51:35:6B:81:2F:E7:24:D0:18:3D:EF:AF:32:D7:50:C4:7D:75:D3:66:61:94
+        sources:
+          - name: Google Play
+            issue: 927
+            apk:
+              sha256: fae5fead49929f8733791c5016de40252c825be69a209077ab4fbbe95a7bd4dc
   - package: com.donnnno.arcticons
     signature:
       - fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
