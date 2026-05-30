@@ -612,6 +612,14 @@ packages:
             apk:
               sha256: 46fbfc6df6c2f9adc737f67380a841a914e1f40f06d221eea5ad69c5eb8b5b93
               link: https://github.com/BlackyHawky/Clock/releases/download/nightly-50/Clock_2.30-nightly-50-cb1af47.apk
+  - package: com.bestbuy.android
+    signature:
+      - fingerprint: 83:E0:E9:06:D7:F0:6F:4E:2E:D1:1F:7F:CF:51:96:2A:72:54:3D:1A:F4:18:99:FE:AD:87:F5:46:AF:CC:CE:9B
+        sources:
+          - name: Google Play
+            issue: 937
+            apk:
+              sha256: dfd0432527f6c5d9cfa525e246209f7869b5d9b908d711a6fbcf7bea909d236b
   - package: com.bitchat.droid
     signature:
       - fingerprint: 3B:03:FA:66:A5:45:13:21:10:07:92:F5:B5:5A:7B:49:66:D5:C8:DC:10:C6:DA:A4:0A:A9:5E:A4:89:53:1B:CA
