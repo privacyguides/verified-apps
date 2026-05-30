@@ -1039,6 +1039,14 @@ packages:
             issue: 752
             apk:
               sha256: 6ebe5c150cadcc255e497af7fa162ca1d1930f4942ad60e8aea515314ed59d02
+  - package: com.fidelity.android
+    signature:
+      - fingerprint: 45:49:19:9D:C9:17:A0:15:78:8B:28:AE:B6:FE:84:AA:2E:0F:50:AA:1C:37:47:45:F5:AA:05:B0:9A:2E:CA:48
+        sources:
+          - name: Google Play
+            issue: 913
+            apk:
+              sha256: 37590c7d88a2d8c3a8900307dbcf98c010f0cba69b806b1753f39e0577491275
   - package: com.finnair
     signature:
       - fingerprint: 63:4A:9A:6A:A1:79:F2:8F:23:06:ED:00:14:FB:28:33:CE:A0:2E:2F:47:3D:4B:7B:19:A5:39:39:D6:63:17:00
