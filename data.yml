@@ -4065,6 +4065,18 @@ packages:
             issue: 390
             apk:
               sha256: e5febb0272b72a9290aa3237292a36fa04e070c946108939bdec5dc6dcb24218
+  - package: net.thunderbird.android.beta
+    signature:
+      - fingerprint: 05:6B:FA:FB:45:02:49:50:2F:D9:22:62:28:70:4C:25:29:E1:B8:22:DA:06:76:0D:47:A8:5C:95:57:74:1F:BD
+        sources:
+          - name: F-Droid
+            issue: 984
+            apk:
+              sha256: 2f5a5946f8aa1cfb2280fcbb49cc35af96208bdc76cc35edd10eb06a47bae26e
+          - name: Google Play
+            issue: 984
+            apk:
+              sha256: d01492218e64ddbb284e4bde71ecd28d261e975d345090642661af94da512801
   - package: nl.appyhapps.healthsync
     signature:
       - fingerprint: F7:BB:BD:D2:F3:A3:FE:CA:52:2D:C7:CA:B7:0C:62:0F:C1:17:A1:67:68:C1:AF:64:41:34:F6:DA:C0:F9:E7:BC
