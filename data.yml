@@ -264,6 +264,14 @@ packages:
             issue: 439
             apk:
               sha256: af8be27f292aaa8f9739ca21f652e86e611633b68615f550464742b6f4d07e6f
+  - package: com.TrainHeroic.TrainHeroic
+    signature:
+      - fingerprint: EB:94:E7:8E:50:A7:B2:16:27:1E:EA:55:2C:25:25:41:03:A0:5B:CE:AA:77:6F:EF:32:0F:5F:98:24:B3:8D:92
+        sources:
+          - name: Google Play
+            issue: 755
+            apk:
+              sha256: a48f1f8338ed9ccb2b3d9d7685b0e752c370537c5107f9f93d1a8589b832e499
   - package: com.aa.android
     signature:
       - fingerprint: 33:20:91:B2:22:D7:08:6E:0F:8B:19:3E:8F:A1:37:FB:58:2B:CE:0C:E6:E6:0D:69:6A:59:83:BC:39:37:1F:22
