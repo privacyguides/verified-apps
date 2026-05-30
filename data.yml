@@ -2167,6 +2167,15 @@ packages:
             issue: 778
             apk:
               sha256: 21af82e61972c2e63ec9876da847c011bff524f81b9ed4fa18a08949652f6889
+  - package: com.unicornsonlsd.finamp
+    signature:
+      - fingerprint: 20:61:C5:C9:28:9C:00:02:08:81:B7:E5:33:4D:93:A0:2D:FA:4B:E9:80:AF:20:C0:5D:B4:E5:29:C8:DA:5B:54
+        sources:
+          - name: Direct APK Link
+            issue: 609
+            apk:
+              sha256: 2e764b893f4faaeb85fcc519da7caabcf28bcd51579583884bd90cd259a6ed61
+              link: https://github.com/UnicornsOnLSD/finamp/releases/download/0.6.27/app-release.apk
   - package: com.united.mobile.android
     signature:
       - fingerprint: E8:33:17:1F:D6:02:25:5F:03:0E:D2:51:C6:4A:99:89:C7:EA:BC:4E:BE:1C:3D:7B:09:7A:E0:F9:AE:A8:F9:46
