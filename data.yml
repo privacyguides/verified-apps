@@ -2869,6 +2869,18 @@ packages:
             issue: 489
             apk:
               sha256: ec25bc534ec2d1f716020129561a9fea6877ca0f3677beda6293eaae7f72238c
+  - package: de.schildbach.oeffi
+    signature:
+      - fingerprint: BA:61:B8:8F:0F:43:64:00:6F:A6:DB:84:B2:B9:2F:A6:19:12:A0:27:71:65:9B:20:7C:41:27:21:04:C2:E5:C4
+        sources:
+          - name: F-Droid
+            issue: 853
+            apk:
+              sha256: 11f2656b336b11b1f3e1b422dfec68605abce6591a91236749a50905fc9e9448
+          - name: Google Play
+            issue: 853
+            apk:
+              sha256: 8fa68638aeb80f277eaf23181ea628c6ceaeff4f35358b40bee71d99f7b11eaa
   - package: de.seemoo.at_tracking_detection.release
     signature:
       - fingerprint: AB:83:DA:14:0D:EB:AF:C8:2E:CC:66:2A:9E:18:02:E6:F9:45:BB:74:6A:9A:AE:4F:90:CB:EF:72:BF:A9:91:8F
