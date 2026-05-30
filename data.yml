@@ -483,6 +483,14 @@ packages:
             issue: 760
             apk:
               sha256: 996aa9095aafc7c066084089a712c0485d63800aae33e9e0c387a87bd3f800c7
+  - package: com.bancodebogota.bancamovil
+    signature:
+      - fingerprint: FC:6B:24:9E:4F:75:A8:1B:51:85:33:6F:F5:A1:11:7A:5B:46:6E:C2:DC:E6:52:A9:49:45:E7:0C:2E:EC:26:10
+        sources:
+          - name: Google Play
+            issue: 780
+            apk:
+              sha256: d21653d938f72eee20244fa36c65ac915b6698c3a0b9be3cc6277e4e0fe6d045
   - package: com.bankid.bus
     signature:
       - fingerprint: AD:A2:62:4B:35:FC:A3:CC:34:0E:11:89:94:54:E5:50:FB:A9:82:B4:4D:82:B9:7E:FD:16:AA:3A:7A:46:7C:16
