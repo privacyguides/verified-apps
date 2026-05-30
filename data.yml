@@ -2854,6 +2854,14 @@ packages:
             issue: 161
             apk:
               sha256: f00f9b28499fad07916524b72085913628fe591b9de77ba8a44b5dd80bc577ea
+  - package: net.cozic.joplin
+    signature:
+      - fingerprint: 48:A1:CF:92:01:B9:07:9A:6E:0D:5B:33:69:3E:49:6D:B3:C5:CB:EC:64:A8:5A:FC:CD:75:E1:6D:7A:6C:D5:4D
+        sources:
+          - name: F-Droid
+            issue: 546
+            apk:
+              sha256: 774ab07eca97c05d1a33f416e0ff330f20ba84ec6012f5f4248673c31a284032
   - package: net.gsantner.markor
     signature:
       - fingerprint: 9C:70:03:32:37:DC:46:FE:50:52:E4:20:C6:65:70:8D:E8:B3:10:5B:89:84:28:43:81:89:81:82:6B:7E:EC:9C
