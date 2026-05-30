@@ -1723,6 +1723,14 @@ packages:
             issue: 76
             apk:
               sha256: 122f17f6bcaf42248cf3fd2b769ae4483aaf7f147857263cfed6043e5af2e9ec
+  - package: com.simplepractice.video
+    signature:
+      - fingerprint: 21:E1:56:78:30:77:33:7D:F5:13:65:75:31:6C:3A:D7:FA:E3:4F:19:7F:61:DD:C0:25:87:0F:B6:F7:0F:C2:99
+        sources:
+          - name: Google Play
+            issue: 762
+            apk:
+              sha256: 55aae2e08e439a42afc2ac6464e31bfdba34caf23505a7581caa7720eb4db126
   - package: com.sl.SLBiljetter
     signature:
       - fingerprint: CB:5E:04:4D:55:D3:C1:60:7F:C7:C6:23:57:95:43:BD:2B:3A:9E:86:70:A6:57:30:A2:3C:79:18:C7:D8:E0:67
