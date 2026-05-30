@@ -1476,6 +1476,18 @@ packages:
             issue: 327
             apk:
               sha256: 3fcec5f3bd27321e6fc49e03bb8f7653f16d6e9046d473dfb341c6a92eedab41
+  - package: com.kin.easynotes
+    signature:
+      - fingerprint: FC:E8:7D:A9:7F:79:13:01:DF:39:0B:FA:47:E8:16:85:19:11:67:CA:B5:DB:D5:55:DB:82:87:54:1F:78:6E:28
+        sources:
+          - name: F-Droid
+            issue: 817
+            apk:
+              sha256: 6d652bdf7c72127fa651b5a83594ba2810edef3e08fbc62ddefe4a92b3de0fd1
+          - name: F-Droid (IzzyOnDroid)
+            issue: 817
+            apk:
+              sha256: 6d652bdf7c72127fa651b5a83594ba2810edef3e08fbc62ddefe4a92b3de0fd1
   - package: com.kivra.Kivra
     signature:
       - fingerprint: |-
