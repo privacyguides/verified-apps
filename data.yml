@@ -489,6 +489,14 @@ packages:
             issue: 742
             apk:
               sha256: 39ea7ec2164940835eeb388b057b923bab822727c256b546f3b9d8ff14eb429b
+  - package: com.apple.android.music
+    signature:
+      - fingerprint: 88:BA:59:0E:C2:E1:EA:33:C4:45:8D:AF:59:48:9F:AE:E2:CE:F2:97:A9:B4:07:1E:18:CF:82:EF:53:11:00:AA
+        sources:
+          - name: Google Play
+            issue: 934
+            apk:
+              sha256: a9b8589c52b92b210f2abf2c35844fc930b10370b5228a819b0842718f22f944
   - package: com.appmindlab.nano
     signature:
       - fingerprint: 46:F0:5E:C2:09:B7:D5:17:91:56:71:61:96:DF:BB:F3:24:2D:0F:3F:73:A7:A7:7A:A9:BF:36:9B:FA:D6:D9:DA
