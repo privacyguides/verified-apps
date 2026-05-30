@@ -1530,6 +1530,14 @@ packages:
             issue: 327
             apk:
               sha256: 3fcec5f3bd27321e6fc49e03bb8f7653f16d6e9046d473dfb341c6a92eedab41
+  - package: com.ketchapp.stack
+    signature:
+      - fingerprint: 9F:E9:CA:4B:85:42:41:96:AB:D9:53:37:7B:88:AA:A2:E8:9D:86:DA:81:7E:FD:06:CA:7C:CE:58:FE:B0:45:C1
+        sources:
+          - name: Google Play
+            issue: 948
+            apk:
+              sha256: becd7fcf3859bc8bec82df8378c6b04d1847469c6a6a40ff0e05e6bcf1a3eb4e
   - package: com.kin.easynotes
     signature:
       - fingerprint: FC:E8:7D:A9:7F:79:13:01:DF:39:0B:FA:47:E8:16:85:19:11:67:CA:B5:DB:D5:55:DB:82:87:54:1F:78:6E:28
