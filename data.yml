@@ -4437,6 +4437,14 @@ packages:
             issue: 893
             apk:
               sha256: 1b897cb0e89c80f5e0ee903a9b4301de3602e35949875e4c5e6f52654b8885e4
+  - package: peergos.android
+    signature:
+      - fingerprint: 2C:5B:61:53:7D:0B:18:C8:E8:58:CC:F3:F4:85:A8:B0:FA:34:50:B6:17:C6:21:1D:18:50:77:78:1F:26:F0:30
+        sources:
+          - name: Google Play
+            issue: 896
+            apk:
+              sha256: 060ee62638739451f1ab8c21ecfb5e4b5340c653fc5a66460d4ce86dbff37eb9
   - package: proton.android.pass.fdroid
     signature:
       - fingerprint: 57:2C:25:04:8E:6E:62:29:BC:03:93:61:9F:7C:64:0F:8C:BC:CF:11:D2:EB:F8:B2:FA:7B:C9:A7:63:63:B8:12
