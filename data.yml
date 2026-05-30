@@ -1596,6 +1596,14 @@ packages:
             issue: 282
             apk:
               sha256: cd82720732a16ae642ac8c9f83738f105e6444a37da8bae287e6a0f4629e0a45
+  - package: com.maltaisn.notes.sync
+    signature:
+      - fingerprint: 2F:57:9D:5E:09:89:55:94:B1:EF:C5:64:58:DD:2B:AE:F9:00:B0:A0:9E:6C:7E:8A:F6:48:83:44:A9:22:A7:D0
+        sources:
+          - name: Google Play
+            issue: 821
+            apk:
+              sha256: f82c83849ec3754cefa1764bb9d7fdc6536f5253be671074500e55d18891a00d
   - package: com.mapillary.app
     signature:
       - fingerprint: DC:E7:1C:BF:92:B7:7E:CE:9F:E1:33:04:66:A4:0C:68:43:CE:8B:6E:86:D4:74:5C:45:36:A2:32:12:DF:6D:58
