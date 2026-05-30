@@ -1790,6 +1790,16 @@ packages:
             issue: 675
             apk:
               sha256: cb9b2929976846d0a55b67076ed0adb45bd8e58d476ee2e0418689f53cc39b70
+  - package: com.valvesoftware.android.steam.community
+    signature:
+      - fingerprint: 5D:FF:6B:05:76:14:47:A5:BD:F9:19:EA:88:FC:6F:DF:20:D3:01:E3:0B:23:15:41:5C:4D:36:8E:C0:FB:DA:45
+        sources:
+          - name: AppVerifier
+            issue: 734
+          - name: Google Play
+            issue: 734
+            apk:
+              sha256: fba58cb89543dc6a43f13f85c8a04dadbed22152c4e2f1f8821ab944a15cdf35
   - package: com.vayunmathur.pdf
     signature:
       - fingerprint: 17:6F:CB:25:25:57:3E:5B:E8:E1:CB:3A:49:6D:D9:7B:13:7E:81:CA:5B:88:7A:1D:32:CB:89:4B:4E:57:17:B4
