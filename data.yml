@@ -2045,6 +2045,15 @@ packages:
             issue: 655
             apk:
               sha256: 9712b3b0611f5f06021c55ffe8fc9401c4b778932016609c958596923b39259d
+  - package: com.superproductivity.superproductivity
+    signature:
+      - fingerprint: 16:3C:87:6B:91:7D:76:20:A3:92:92:CC:9D:7C:3C:DF:0C:3C:65:93:24:AB:45:9D:5D:AF:D9:B9:97:11:17:AA
+        sources:
+          - name: Direct APK Link
+            issue: 621
+            apk:
+              sha256: 79ee0a6c5cc8b7fc7c9ff3e2c4a858f4961ae127641c4efd5d21847b1968f9b8
+              link: https://github.com/super-productivity/super-productivity/releases/download/v18.7.0/app-play-release.apk
   - package: com.swordfish.lemuroid
     signature:
       - fingerprint: 66:30:F8:6D:FC:E5:E0:19:B3:21:AD:62:BC:F9:3E:96:8A:C6:DB:C1:5F:C5:B1:BA:12:EB:B8:C0:5F:B2:79:F1
