@@ -2969,6 +2969,19 @@ packages:
             issue: 522
             apk:
               sha256: b161760381522ffc61925c8978d633a9644a6a14b8c5f391dd90461251ec5d5f
+  - package: me.zhanghai.android.files
+    signature:
+      - fingerprint: 9C:22:A7:42:FA:20:0C:85:BA:FB:C9:92:4A:02:DD:C8:F3:A0:B9:75:D4:D7:B5:A8:DA:21:D7:CF:34:CE:2B:20
+        sources:
+          - name: Direct APK Link
+            issue: 782
+            apk:
+              sha256: ebc5138b6f713f0f73b5467a1a8a4ac3ccfcb2e82135372665b6811a8947641f
+              link: https://github.com/zhanghai/MaterialFiles/releases/download/v1.7.4/app-release-fdroid.apk
+          - name: F-Droid
+            issue: 782
+            apk:
+              sha256: ebc5138b6f713f0f73b5467a1a8a4ac3ccfcb2e82135372665b6811a8947641f
   - package: ml.docilealligator.infinityforreddit.plus
     signature:
       - fingerprint: 6F:1C:31:23:D9:B4:E9:F4:24:F8:D1:43:6E:58:F1:A4:C1:8E:CA:A9:A7:E8:FA:C2:91:89:28:34:8E:76:5D:C0
