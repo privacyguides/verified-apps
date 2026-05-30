@@ -413,6 +413,19 @@ packages:
             apk:
               sha256: 8a888cac1062397a82de782847e07ce63b025f0c35b53857cbbdce2cca44e1e4
               link: https://github.com/brave/brave-browser/releases/download/v1.90.124/Bravearm64Universal.apk
+  - package: com.brave.browser_beta
+    signature:
+      - fingerprint: 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
+        sources:
+          - name: Direct APK Link
+            issue: 525
+            apk:
+              sha256: b3a23d0de6fab0ac040a3e5262b88734d6f571adc56f9b2eff26ee6902e86ed3
+              link: https://github.com/brave/brave-browser/releases/download/v1.91.162/Bravearm64Universal.apk
+          - name: Google Play
+            issue: 525
+            apk:
+              sha256: a9e80cec287b1b89b79642677872aa7621a3a220da1a78388408f1040efb4a77
   - package: com.bring.sporing.controller
     signature:
       - fingerprint: E6:3E:4F:74:98:DA:04:92:36:D7:27:A8:E2:F1:58:E5:1B:7D:A7:26:5B:48:5C:94:4E:64:55:1C:CA:7A:8C:6A
