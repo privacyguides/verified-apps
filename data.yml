@@ -838,6 +838,14 @@ packages:
             issue: 290
             apk:
               sha256: c39352b73edc91c5e3e44386f0a3e15731f24cfceba5372b6ad67cf290c190cb
+  - package: com.facebook.katana
+    signature:
+      - fingerprint: E3:F9:E1:E0:CF:99:D0:E5:6A:05:5B:A6:5E:24:1B:33:99:F7:CE:A5:24:32:6B:0C:DD:6E:C1:32:7E:D0:FD:C1
+        sources:
+          - name: Google Play
+            issue: 752
+            apk:
+              sha256: 6ebe5c150cadcc255e497af7fa162ca1d1930f4942ad60e8aea515314ed59d02
   - package: com.finnair
     signature:
       - fingerprint: 63:4A:9A:6A:A1:79:F2:8F:23:06:ED:00:14:FB:28:33:CE:A0:2E:2F:47:3D:4B:7B:19:A5:39:39:D6:63:17:00
