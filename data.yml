@@ -3336,6 +3336,14 @@ packages:
             issue: 533
             apk:
               sha256: 745f5e9f571488ff149e18b92d960f6bda4dd9466dc1561240200511986093cb
+  - package: io.yuka.android
+    signature:
+      - fingerprint: A7:E3:C4:A6:12:68:01:86:93:7B:02:E7:B8:95:74:D5:FD:62:79:8B:8C:B6:68:97:39:92:FA:89:F6:19:8F:CB
+        sources:
+          - name: Google Play
+            issue: 870
+            apk:
+              sha256: 7cc5cb78483c0c95270cb25181f353339a77f0a0df4417628b2be01dfe8a73e5
   - package: is.xyz.mpv
     signature:
       - fingerprint: FA:E7:F9:D0:23:85:CC:24:D9:6E:88:43:66:03:E2:3E:A6:AE:C7:64:9A:D1:25:0A:BB:B4:83:7D:AA:B8:2F:FF
