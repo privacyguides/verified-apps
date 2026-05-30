@@ -132,7 +132,7 @@ def main() -> None:
 
     rows = build_rows(data)
     app_count = len({pkg["package"] for pkg in data.get("packages", [])})
-    generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     css_version = datetime.now(timezone.utc).strftime("%Y%m%d%H%M")
 
     template = (SITE_SRC / "index.html").read_text(encoding="utf-8")
