@@ -1707,6 +1707,14 @@ packages:
             issue: 339
             apk:
               sha256: fab294097217c323584dcc32631991c4b5d2b0c9185bccab377504c1e49b3621
+  - package: com.wolt.android
+    signature:
+      - fingerprint: 16:E0:AA:B4:BD:52:D9:99:8E:59:87:CA:20:7F:71:6B:CE:82:07:B7:47:4D:44:DE:51:F0:6D:FD:3D:C9:54:B7
+        sources:
+          - name: Google Play
+            issue: 400
+            apk:
+              sha256: 32c4db9e557c99858d3f32b57911970cfe3e804f7c8b18e4ff0d170a819b0052
   - package: com.x8bit.bitwarden
     signature:
       - fingerprint: DE:6E:C9:14:31:55:79:95:29:7B:F3:E6:5B:C8:03:49:BC:60:3A:04:70:81:60:61:8C:86:BC:99:94:17:1C:90
