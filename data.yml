@@ -1735,6 +1735,15 @@ packages:
             issue: 695
             apk:
               sha256: 1398866382237fe77cfaba2615b794e13af02106147594db8a15e197ac89c7ac
+  - package: com.ominous.quickweather
+    signature:
+      - fingerprint: 70:E5:D5:10:94:18:E8:30:A1:CB:BC:56:8D:5C:BE:6D:01:13:2D:A8:BA:99:05:59:6C:5C:5E:6F:B8:42:A4:DD
+        sources:
+          - name: Direct APK Link
+            issue: 613
+            apk:
+              sha256: 22715cf7b923baa73cfe21379ebe58e44da5f792bf353b53b49f725ba9d943d7
+              link: https://github.com/TylerWilliamson/QuickWeather/releases/download/2.8.7/QuickWeather-2.8.7.apk
   - package: com.onepassword.android
     signature:
       - fingerprint: B3:5B:68:D5:CE:84:50:55:7C:6A:55:FD:64:B5:1F:EA:C1:10:CB:36:D6:A3:52:1C:59:48:DB:3A:38:0A:34:A9
