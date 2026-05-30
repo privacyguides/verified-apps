@@ -2278,6 +2278,14 @@ packages:
             issue: 332
             apk:
               sha256: 9f01c3e0ce984b9f8cadc01328e9d3d6bbd168e701a3992d3fd7b1b4de43de00
+  - package: com.sony.songpal.mdr
+    signature:
+      - fingerprint: 42:76:91:96:80:F4:AB:A6:D4:19:24:03:1C:20:AC:26:24:FE:EA:5E:8E:C6:8A:36:52:9B:2A:CB:66:4D:91:1E
+        sources:
+          - name: Google Play
+            issue: 835
+            apk:
+              sha256: b63b611ba3e05da1234e317761a3151e5941056e780ab85b6248faa177787423
   - package: com.standardnotes
     signature:
       - fingerprint: 58:3F:C4:1B:49:0C:38:0B:56:FB:E9:EE:47:38:1E:B4:EF:53:E0:37:19:A5:50:3F:C1:F2:9D:CD:8E:28:90:2A
