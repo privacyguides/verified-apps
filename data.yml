@@ -2145,6 +2145,18 @@ packages:
             issue: 830
             apk:
               sha256: 03f7bfb32f35234adecc7b32978a0e45e19ce14ff20c773e8ae633c2af179151
+  - package: com.rk.xededitor
+    signature:
+      - fingerprint: 8A:D6:B5:93:B0:77:2C:96:F9:D0:5E:92:3B:61:0F:16:AE:D2:79:2C:66:4F:0C:D9:1F:0D:FD:62:70:98:34:6F
+        sources:
+          - name: F-Droid
+            issue: 831
+            apk:
+              sha256: 2a45a45b85d6edbda7dd564648d8a32608bdd0b81d0c43bdc63fbe7276379f3c
+          - name: F-Droid (IzzyOnDroid)
+            issue: 831
+            apk:
+              sha256: 2a45a45b85d6edbda7dd564648d8a32608bdd0b81d0c43bdc63fbe7276379f3c
   - package: com.ryanair.cheapflights
     signature:
       - fingerprint: 7B:95:CA:16:5B:9D:E6:03:8E:B9:F1:CC:77:BC:54:2C:22:33:DE:A1:43:EE:32:38:69:3A:3F:55:B8:1A:01:E9
