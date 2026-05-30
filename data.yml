@@ -4415,6 +4415,14 @@ packages:
             issue: 744
             apk:
               sha256: 29767d603ba25c2be7c369c42d9a0c983268f29deda3e60ba4574b211a63e3d0
+  - package: org.zotero.android
+    signature:
+      - fingerprint: 37:B6:F1:19:C3:D4:5D:C2:5E:70:69:95:C5:30:F4:44:CF:B2:4C:A6:E7:AF:31:6D:6D:0F:D2:62:47:45:0A:8F
+        sources:
+          - name: Google Play
+            issue: 893
+            apk:
+              sha256: 1b897cb0e89c80f5e0ee903a9b4301de3602e35949875e4c5e6f52654b8885e4
   - package: proton.android.pass.fdroid
     signature:
       - fingerprint: 57:2C:25:04:8E:6E:62:29:BC:03:93:61:9F:7C:64:0F:8C:BC:CF:11:D2:EB:F8:B2:FA:7B:C9:A7:63:63:B8:12
