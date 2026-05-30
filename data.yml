@@ -216,6 +216,14 @@ packages:
             issue: 19
           - name: Google Play
             issue: 19
+  - package: co.com.bancolombia.personas.superapp
+    signature:
+      - fingerprint: A9:0E:16:98:5B:0D:0A:D2:25:F6:E7:A2:38:46:82:99:88:08:DD:71:22:3F:0A:22:25:26:99:96:20:67:8C:46
+        sources:
+          - name: Google Play
+            issue: 741
+            apk:
+              sha256: 042f160b2f73d037079852b36e9d99259afd5867932b0d7d1fe79398dc092b85
   - package: co.uk.exocron.android.qlango
     signature:
       - fingerprint: 5D:40:43:44:B8:E6:4C:B7:3A:96:C0:84:29:FA:DE:99:22:BC:25:69:E5:F4:91:A5:A4:1F:72:B9:72:F1:39:85
