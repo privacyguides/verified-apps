@@ -1116,6 +1116,14 @@ packages:
             issue: 596
             apk:
               sha256: 1aeae599ceb630a3a7ad6846787a192f64e47bd935e755038fdcfee48e4d93f3
+  - package: com.hushed.release
+    signature:
+      - fingerprint: 8D:7F:DF:E7:FE:0A:09:0A:88:CB:BC:8A:97:BD:90:69:DE:55:A7:90:E6:54:F0:30:7D:29:17:48:25:43:1E:ED
+        sources:
+          - name: Google Play
+            issue: 751
+            apk:
+              sha256: fad4c6b9f45db6c3103e976351a883a877c8242f61aa137a4d271b112a1197e7
   - package: com.hybridcalisthenics.app
     signature:
       - fingerprint: 16:38:CC:37:54:4C:2F:FD:4F:D2:E7:D5:BC:CA:8A:CB:D7:3E:C1:BD:9D:39:45:42:8D:3D:2E:75:E2:F5:EA:3E
