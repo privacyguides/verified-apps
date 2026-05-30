@@ -1461,6 +1461,14 @@ packages:
             issue: 262
             apk:
               sha256: a78a2ad0742046ba06b7aebb19145fa318bc520cb0c0a8cf13ef1a30157dbe10
+  - package: com.scee.psxandroid
+    signature:
+      - fingerprint: DB:4C:38:96:42:CD:DC:76:2F:6C:72:B8:67:B8:FC:D9:39:E5:B5:DA:E4:AC:37:63:DB:CD:F6:23:27:D3:82:F7
+        sources:
+          - name: Google Play
+            issue: 566
+            apk:
+              sha256: ecd2921e037de6529fbf5689f3027e5cdf2e364ed58897231ed8b94ae94f1249
   - package: com.schwab.mobile
     signature:
       - fingerprint: 8D:50:97:D8:59:61:88:E4:55:BF:7E:26:F3:FB:8D:20:3A:28:10:75:AD:E9:AE:EA:74:9E:9C:C1:53:10:EF:BA
