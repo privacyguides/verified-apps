@@ -870,6 +870,14 @@ packages:
             apk:
               sha256: 761eefbb71aabb788843bffa4deb046f89e910e30896be1cc8ab522460a8da5c
               link: https://www.collaboraoffice.com/downloads/Collabora-Office-Android-Release/collabora-office-mobile-25-04-release-arm64-v8a-2026-03-03.apk
+  - package: com.collegehumor.chdropout
+    signature:
+      - fingerprint: FF:5D:DC:C4:B7:B8:1F:70:89:64:98:38:C5:36:0B:6C:DA:CE:E6:27:1E:FC:4A:55:32:05:0B:9D:F6:30:91:58
+        sources:
+          - name: Google Play
+            issue: 993
+            apk:
+              sha256: af34d79db686fc7e3b54070973948f7b0ec057c6f9d39de2c044398efa8bb695
   - package: com.cyb3rko.flashdim
     signature:
       - fingerprint: EA:78:69:1C:BA:41:86:00:A4:56:32:89:B1:33:F9:D0:0D:3D:0C:24:A5:F5:4C:5C:59:EE:1C:95:2B:B0:E1:1D
