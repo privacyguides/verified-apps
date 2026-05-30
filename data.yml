@@ -1588,6 +1588,23 @@ packages:
             issue: 540
             apk:
               sha256: 73b15967d647c685b592bc03fc4983bee7f3009d526fd69b2a743bb3dd964429
+  - package: com.om1cael.hidroly
+    signature:
+      - fingerprint: EC:D9:3B:0E:94:44:D2:F2:AD:98:5D:35:03:1B:A0:C9:AB:2B:17:08:DC:9B:4E:6A:E7:39:15:13:59:45:EF:A0
+        sources:
+          - name: Direct APK Link
+            issue: 511
+            apk:
+              sha256: e9243fbbf4ba1f2e960791c110b3dd84b560b7f93fc894f930804dce24ec4b48
+              link: https://github.com/om1cael/Hidroly/releases/download/v2.0.5/app-arm64-v8a-fdroid-release.apk
+          - name: F-Droid
+            issue: 511
+            apk:
+              sha256: 54bbf26a17ec8a9a7bf536219032eccb92c9b76ce6dce73fe19f11c98fbf8202
+          - name: F-Droid (IzzyOnDroid)
+            issue: 511
+            apk:
+              sha256: 9f80d14b888f0b39df85843c5fcf8f8b61e878377b375275cd89e05e17278cfa
   - package: com.omgodse.notally
     signature:
       - fingerprint: 80:48:26:8F:9D:CB:D1:86:53:8A:83:1C:FD:B2:12:F1:4F:2E:62:00:82:88:44:FE:60:F7:30:30:5A:E1:38:5E
