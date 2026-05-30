@@ -2535,6 +2535,14 @@ packages:
             issue: 500
             apk:
               sha256: 889b36a202b40088afab38b868ad1b77144fa685e06dfe9910671a554e3c0f52
+  - package: com.viewer.comicscreen
+    signature:
+      - fingerprint: DA:B3:D2:40:F3:67:96:6F:2E:30:26:CB:41:7B:75:10:45:14:45:62:66:43:2D:2A:BC:41:71:90:1A:ED:87:E0
+        sources:
+          - name: Google Play
+            issue: 841
+            apk:
+              sha256: 09d1a31494b82a242d2d573da53df59797d82c641869817ca337575e49d6e002
   - package: com.vivaldi.browser
     signature:
       - fingerprint: E8:A7:85:44:65:5B:A8:C0:98:17:F7:32:76:8F:56:89:B1:66:2E:C4:B2:BC:5A:0B:C0:EC:13:8D:33:CA:3D:1E
