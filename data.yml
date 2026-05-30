@@ -1697,6 +1697,14 @@ packages:
             issue: 687
             apk:
               sha256: 22cbdfb79c3734abd3018ac4ff815550ec65d990c9d945f847e5ca8b815adfd2
+  - package: com.microblink.photomath
+    signature:
+      - fingerprint: 60:64:BC:C9:5B:B6:ED:52:01:C3:4E:96:AF:45:4A:6C:36:52:56:89:89:18:F5:40:BE:4B:D1:7E:7D:24:A5:F1
+        sources:
+          - name: Google Play
+            issue: 822
+            apk:
+              sha256: 84fe28e381333a43166cb8ae11e457c3605e9271badb5bc33cf8dcdc40110d96
   - package: com.microsoft.office.onenote
     signature:
       - fingerprint: |-
