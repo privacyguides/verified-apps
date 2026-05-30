@@ -2277,6 +2277,14 @@ packages:
             issue: 832
             apk:
               sha256: acd7513ba9b70ac314d620c14b989995a04f461094753708a10fa528f8dd79f7
+  - package: com.samsung.android.app.watchmanager
+    signature:
+      - fingerprint: 34:DF:0E:7A:9F:1C:F1:89:2E:45:C0:56:B4:97:3C:D8:1C:CF:14:8A:40:50:D1:1A:EA:4A:C5:A6:5F:90:0A:42
+        sources:
+          - name: Google Play
+            issue: 925
+            apk:
+              sha256: acb94bec97629dccf0a66dad8fb701867cb89cdf1d73e728f63facbd33fee4ff
   - package: com.samsung.sree
     signature:
       - fingerprint: 58:E0:F9:8B:98:5D:45:36:6E:F5:DE:09:63:D2:68:D2:10:7F:52:3C:DD:05:91:1B:39:65:72:43:D3:84:19:DD
