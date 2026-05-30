@@ -972,6 +972,14 @@ packages:
             issue: 392
             apk:
               sha256: 48d80ef611832eb84d2c0427717e1404518a3b8e0b2c4689a4f7e08a19dc3aa0
+  - package: com.google.ai.edge.gallery
+    signature:
+      - fingerprint: B3:3F:19:26:A5:4C:12:AB:CD:5B:85:4E:CB:59:16:29:38:55:AB:C2:58:0E:CB:6E:06:6C:14:D9:24:14:13:CE
+        sources:
+          - name: Google Play
+            issue: 767
+            apk:
+              sha256: 9b085066eee2ccc62388e1c0cd2ecdbb1457fdfd844c1fbbdffc2649032c3386
   - package: com.google.android.GoogleCamera
     signature:
       - fingerprint: F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
