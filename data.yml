@@ -1352,6 +1352,14 @@ packages:
             issue: 298
             apk:
               sha256: 40069a3eacc048590d3c286b175c42ccc1a491e273d4b5964ffe606a5d782e2d
+  - package: com.nequi.MobileApp
+    signature:
+      - fingerprint: 55:E0:DD:DE:F5:F5:C9:0D:94:9C:F8:8F:79:D3:90:23:A9:7F:19:AB:88:41:42:92:9C:E1:69:AF:70:F9:3D:B4
+        sources:
+          - name: Google Play
+            issue: 748
+            apk:
+              sha256: 04b79689e49d93a7cb990c0f5ec4a9139e733737758987584f05fb2521aaa4df
   - package: com.nextcloud.client
     signature:
       - fingerprint: 57:09:57:6F:9D:6C:6A:76:87:DD:5D:56:B2:69:D1:FA:5E:37:97:02:B9:1B:C8:3F:39:FD:7B:7C:59:7C:1B:83
