@@ -3271,6 +3271,14 @@ packages:
             issue: 195
             apk:
               sha256: 575aac457e2229c782c13aebffe64c4ffe6eca0e4459155baaa86b8bf94ea21d
+  - package: flipboard.app
+    signature:
+      - fingerprint: A6:78:5F:A9:B3:DA:2A:1D:A4:AC:1A:6F:70:65:60:46:DD:7C:DD:A0:A4:42:E9:F1:B5:0D:97:07:69:05:FC:A5
+        sources:
+          - name: Google Play
+            issue: 931
+            apk:
+              sha256: eef73a49ae186487ee5d4f17c5633a2545afc268de66471e4d4a4a6e17c42e2d
   - package: gov.dhs.cbp.pspd.mpc
     signature:
       - fingerprint: 1D:AA:4C:59:14:D2:3B:70:FE:10:A6:31:F0:3A:A0:F9:66:A6:DD:4E:8F:5E:FD:DF:A0:20:F9:96:22:E4:69:DE
