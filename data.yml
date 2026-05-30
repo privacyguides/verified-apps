@@ -1258,6 +1258,14 @@ packages:
             issue: 282
             apk:
               sha256: cd82720732a16ae642ac8c9f83738f105e6444a37da8bae287e6a0f4629e0a45
+  - package: com.mapillary.app
+    signature:
+      - fingerprint: DC:E7:1C:BF:92:B7:7E:CE:9F:E1:33:04:66:A4:0C:68:43:CE:8B:6E:86:D4:74:5C:45:36:A2:32:12:DF:6D:58
+        sources:
+          - name: Google Play
+            issue: 766
+            apk:
+              sha256: ff12e539b2a2420a4fcb54b0d839bbff2827ab3b5c2bc6a91a1fb97cb501714b
   - package: com.mcu.reolink
     signature:
       - fingerprint: 5D:DB:D4:CF:DD:6E:4D:49:4B:64:3B:D1:61:4A:BD:8D:6A:1A:B3:C8:A4:49:E6:DB:E6:D4:7B:ED:A2:DE:C3:44
