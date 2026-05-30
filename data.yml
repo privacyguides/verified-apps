@@ -1132,6 +1132,14 @@ packages:
             issue: 314
             apk:
               sha256: 36bc747c6b4c1042557a640d9f7bfd4533bb28fafb02f57f6fdec8f84ebc7226
+  - package: com.github.android
+    signature:
+      - fingerprint: DF:08:C9:F2:D8:09:18:9D:9D:50:64:97:C1:57:45:A7:39:5A:41:53:6E:FB:43:3E:3A:EE:1A:ED:BE:11:B2:61
+        sources:
+          - name: Google Play
+            issue: 807
+            apk:
+              sha256: e6ac0e638c84346ec9df78b7e5dca1ecc015d7b39cb5bb25b2604fe68f3d385e
   - package: com.github.catfriend1.syncthingfork
     signature:
       - fingerprint: D3:74:B8:DE:50:57:01:31:43:C7:D1:51:5A:01:55:98:C2:DF:40:3B:E8:16:0C:AE:01:A5:8C:22:7E:6E:86:AA
