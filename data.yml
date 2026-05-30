@@ -872,6 +872,14 @@ packages:
             issue: 627
             apk:
               sha256: dffba5518ce3cdf74227c1579e09a3844c4c27e802fed6bea9f5b71ebb8023bd
+  - package: com.generalmagic.magicearth
+    signature:
+      - fingerprint: FA:91:BD:3A:8B:FA:2B:03:BD:A4:84:22:B2:38:D5:84:F2:39:21:15:4A:52:79:E7:21:F2:F9:0A:74:D3:88:06
+        sources:
+          - name: Google Play
+            issue: 754
+            apk:
+              sha256: 2eef7be72186e9c8ceba0cf07ff7fad2017baeaf7ab0c25718d55c8444aa4017
   - package: com.geoguessr.app
     signature:
       - fingerprint: 21:A6:DC:35:E1:BB:D5:E7:67:66:D1:EA:BC:11:92:43:F5:87:D5:2B:5B:92:29:9A:09:88:A2:67:9C:8B:A6:85
