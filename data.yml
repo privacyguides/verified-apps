@@ -2237,6 +2237,14 @@ packages:
             issue: 832
             apk:
               sha256: acd7513ba9b70ac314d620c14b989995a04f461094753708a10fa528f8dd79f7
+  - package: com.samsung.sree
+    signature:
+      - fingerprint: 58:E0:F9:8B:98:5D:45:36:6E:F5:DE:09:63:D2:68:D2:10:7F:52:3C:DD:05:91:1B:39:65:72:43:D3:84:19:DD
+        sources:
+          - name: Google Play
+            issue: 919
+            apk:
+              sha256: 97c68a488d1067ba97369a5180ffc983f0dea0fe7ef82d6ee700b9a762ad35f1
   - package: com.scee.psxandroid
     signature:
       - fingerprint: DB:4C:38:96:42:CD:DC:76:2F:6C:72:B8:67:B8:FC:D9:39:E5:B5:DA:E4:AC:37:63:DB:CD:F6:23:27:D3:82:F7
