@@ -377,6 +377,14 @@ packages:
             issue: 503
             apk:
               sha256: fa5ef32e3318d55123a2f208c90dab27ec5cc244bbd6afdcd7cae87bb407e2f5
+  - package: com.acmeaom.android.myradar
+    signature:
+      - fingerprint: 0E:6D:4F:E8:56:6D:24:E5:3A:D5:BB:5A:0B:9D:3D:47:C5:D7:80:A5:99:96:70:A0:90:24:25:40:5F:04:6E:7B
+        sources:
+          - name: Google Play
+            issue: 793
+            apk:
+              sha256: 6faf58dae01287869f7bb85717359e6929a366ea5f9ec6eb1325e0dcdd0e70d1
   - package: com.aegean.airlines.prod
     signature:
       - fingerprint: C4:5E:16:E7:DB:54:40:7E:87:43:B5:DF:45:BB:C0:40:F4:81:50:41:2C:20:D2:5D:F1:BC:63:06:6B:26:E8:DF
