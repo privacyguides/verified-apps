@@ -1349,6 +1349,14 @@ packages:
             issue: 648
           - name: Custom (GrapheneOS App Store)
             issue: 648
+  - package: com.google.android.stardroid
+    signature:
+      - fingerprint: 6E:7E:3A:74:A4:D7:C7:7A:E4:B9:81:42:6E:D0:A0:7E:78:E1:17:64:69:8C:DC:9B:DA:9B:74:0E:A2:BE:23:98
+        sources:
+          - name: Google Play
+            issue: 813
+            apk:
+              sha256: e48e64a62136bd1751f9efc0f879183879390868f8275ef85b2bd89754d72ac7
   - package: com.google.ar.lens
     signature:
       - fingerprint: DE:BA:CC:A8:0B:C7:1A:A7:DF:5F:0F:FB:76:9F:36:20:7E:A0:AE:36:18:01:97:B6:1D:26:67:E9:B9:8B:4B:8E
