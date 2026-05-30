@@ -801,6 +801,18 @@ packages:
             issue: 691
             apk:
               sha256: f79a68926d49f89116d3d7adf21bdeab444fb27132540f7d48f8c86fd84959dd
+  - package: com.danefinlay.ttsutil
+    signature:
+      - fingerprint: 23:AD:7A:69:53:F6:E6:AB:74:25:1F:53:4E:0D:E8:1E:7B:EB:18:F8:37:C7:AA:65:E7:F3:5B:D7:0F:77:8B:3D
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: 800
+            apk:
+              sha256: 8be38fc20797fcf698d7245a75f5e484450bd29b46a14781d091fc6592cd9461
+          - name: Google Play
+            issue: 800
+            apk:
+              sha256: 7f4e8fc087031cf7058d4066f3ba24406f559a2d3da5fa0f9f99dc45e88d96c2
   - package: com.davivienda.daviviendaapp
     signature:
       - fingerprint: 88:C3:6E:43:F6:E1:6F:A4:F5:08:DA:C7:CD:43:1D:B3:EA:82:C0:2D:E2:87:75:99:F7:4C:AD:68:4A:63:D5:F7
