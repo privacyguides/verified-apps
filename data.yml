@@ -3867,6 +3867,15 @@ packages:
             issue: 333
             apk:
               sha256: 5f3dcabcd67ec50461f8ae859729858aa1501837abb4d5ec05bedb259e2a1b93
+  - package: software.mdev.bookstracker
+    signature:
+      - fingerprint: DB:86:04:18:D6:1F:D4:C6:76:42:49:7F:2F:1E:06:27:76:77:9E:C2:69:F1:64:42:C3:20:10:E1:BF:12:92:64
+        sources:
+          - name: Direct APK Link
+            issue: 605
+            apk:
+              sha256: d07b9a00c6f43da49812ad6a237c97418e519cf17f1c384443562c858a49f1b2
+              link: https://github.com/mateusz-bak/openreads/releases/download/v2.11.0/openreads-v2.11.0-release.apk
   - package: tw.nekomimi.nekogram
     signature:
       - fingerprint: 5C:E9:32:B9:70:19:9F:BD:A2:AA:E7:BF:21:E1:AD:9E:70:B0:80:9A:7B:1A:C9:4C:06:99:F5:D5:AD:A8:33:13
