@@ -95,6 +95,15 @@ packages:
             issue: 528
             apk:
               sha256: 3895123ffeb1b29e5bc51522c93eee757cf9e2e510f5929ec6eb8e7f50c33361
+  - package: app.mihon
+    signature:
+      - fingerprint: 9A:DD:65:5A:78:E9:6C:4E:C7:A5:3E:F8:9D:CC:B5:57:CB:5D:76:74:89:FA:C5:E7:85:D6:71:A5:A7:5D:4D:A2
+        sources:
+          - name: Direct APK Link
+            issue: 253
+            apk:
+              sha256: db99d15ccb0744a771d6538f14cdb97ec204394c4f6be0f7f2fbf6ebbcab17b6
+              link: https://github.com/mihonapp/mihon/releases/download/v0.19.9/mihon-v0.19.9.apk
   - package: app.morphe.manager
     signature:
       - fingerprint: 0B:6C:95:15:AF:B1:95:FA:C5:96:01:69:6B:A0:A7:90:7A:0B:21:7C:CF:72:0B:43:14:84:27:CC:F6:43:43:E7
