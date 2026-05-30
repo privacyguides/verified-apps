@@ -2951,6 +2951,15 @@ packages:
         sources:
           - name: Accrescent
             issue: 90
+  - package: org.azahar_emu.azahar
+    signature:
+      - fingerprint: 5B:A2:56:3E:0D:13:FA:E2:AB:A0:67:D1:C2:30:CD:1C:86:3A:93:00:5C:10:D6:48:CE:5B:33:17:92:AA:0A:F1
+        sources:
+          - name: Direct APK Link
+            issue: 701
+            apk:
+              sha256: 0fcc8ac73eb1307783799d8c9090d8bbe9be39d659463e2166dadfa3deabcd64
+              link: https://github.com/azahar-emu/azahar/releases/download/2125.1.2/azahar-android-vanilla-2125.1.2.apk
   - package: org.breezyweather
     signature:
       - fingerprint: 29:D4:35:F7:0A:A9:AE:C3:C1:FA:FF:7F:7F:FA:6E:15:78:50:88:D8:7F:06:EC:FC:AB:9C:3C:C6:2D:C2:69:D8
