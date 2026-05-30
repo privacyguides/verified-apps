@@ -611,6 +611,14 @@ packages:
             issue: 691
             apk:
               sha256: f79a68926d49f89116d3d7adf21bdeab444fb27132540f7d48f8c86fd84959dd
+  - package: com.davivienda.daviviendaapp
+    signature:
+      - fingerprint: 88:C3:6E:43:F6:E1:6F:A4:F5:08:DA:C7:CD:43:1D:B3:EA:82:C0:2D:E2:87:75:99:F7:4C:AD:68:4A:63:D5:F7
+        sources:
+          - name: Google Play
+            issue: 747
+            apk:
+              sha256: 8a1163a0e4219ee9df4adb075c233592753b01465c7f85245b879e09f1ae45fa
   - package: com.dd.doordash
     signature:
       - fingerprint: 93:6F:83:B9:14:21:6D:8A:87:A7:97:EF:FB:5C:A9:D4:50:0B:D2:78:D8:92:07:9F:DB:0D:5D:05:FE:F2:10:B5
