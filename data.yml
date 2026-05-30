@@ -82,6 +82,19 @@ packages:
             issue: 176
             apk:
               sha256: 711f4cb32e4538054398a2ae9fa02b674b5acb8520859f7bf8ac48175acabe2f
+  - package: app.marlboroadvance.mpvex
+    signature:
+      - fingerprint: 68:69:06:54:E3:EE:46:D7:08:95:A1:24:45:DF:A9:8D:8C:96:3D:13:E2:DE:0F:8A:AA:20:97:65:CC:2C:41:5E
+        sources:
+          - name: Direct APK Link
+            issue: 528
+            apk:
+              sha256: 3895123ffeb1b29e5bc51522c93eee757cf9e2e510f5929ec6eb8e7f50c33361
+              link: https://github.com/marlboro-advance/mpvEx/releases/download/v1.2.9/mpvEx-fdroid-v1.2.9.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 528
+            apk:
+              sha256: 3895123ffeb1b29e5bc51522c93eee757cf9e2e510f5929ec6eb8e7f50c33361
   - package: app.ninesevennine.twofactorauthenticator.accrescent
     signature:
       - fingerprint: E5:B2:8E:A1:E0:51:C2:32:DE:A9:4C:27:C0:59:2E:2C:00:2D:17:C5:CA:81:78:8B:51:30:6D:60:8A:FE:52:C5
