@@ -3153,6 +3153,14 @@ packages:
             issue: 62
           - name: AppVerifier
             issue: 62
+  - package: im.vector.app
+    signature:
+      - fingerprint: F3:FF:38:D2:E5:A6:38:84:86:4A:4E:0D:45:C5:3B:19:8E:7E:39:C0:50:5B:D9:63:F5:55:D6:53:2D:EA:BF:5F
+        sources:
+          - name: Google Play
+            issue: 865
+            apk:
+              sha256: b26cb2f48caaeaa6d5a5e8747440ea9a85689b476fe30776fd1de155ba370407
   - package: info.zverev.ilya.every_door
     signature:
       - fingerprint: 9F:FC:A7:0F:77:A8:5E:F6:82:90:27:66:02:BB:5B:4C:92:A6:54:67:C5:4F:F6:FB:89:C4:B2:02:39:50:62:03
