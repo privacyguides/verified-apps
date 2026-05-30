@@ -1810,6 +1810,14 @@ packages:
             issue: 264
             apk:
               sha256: 56d23169baece013a3524e15cf6a98f41ed91ec5342991456050757103f6f8cb
+  - package: de.ingdiba.bankingapp
+    signature:
+      - fingerprint: CB:74:26:85:E4:8B:8F:F9:59:64:A6:81:39:AB:16:43:91:A1:6C:F2:A4:54:39:BA:59:8E:C0:BF:CB:0E:FB:FC
+        sources:
+          - name: Google Play
+            issue: 521
+            apk:
+              sha256: 06f917b44c543dcc922df10768f9e4211fc244a9e99db60b01c36fb263508254
   - package: de.kaiserdragon.iconrequest
     signature:
       - fingerprint: A0:CF:A0:D1:A0:0B:98:87:A1:70:1A:69:3B:DC:3C:2A:8E:84:D3:9D:8E:3A:98:D6:81:BD:34:68:CB:81:A4:DB
