@@ -101,6 +101,14 @@ packages:
         sources:
           - name: F-Droid
             issue: 549
+  - package: at.saltyy.switchly
+    signature:
+      - fingerprint: 3C:51:F6:11:92:0B:15:F9:4E:E8:B3:19:1A:8D:26:2B:41:1A:06:42:42:0C:FA:E0:CA:EB:A9:75:2E:15:83:06
+        sources:
+          - name: Google Play
+            issue: 529
+            apk:
+              sha256: 4e158793f02ad616a80558e512adf320ed694ab2cc912671c24f963e6d3a4027
   - package: at.wienerlinien.wienmobillab
     signature:
       - fingerprint: 7A:EC:06:2E:97:ED:AC:E6:C9:87:5D:C5:88:B7:C4:19:1C:CC:D5:BC:7E:A8:8C:18:F1:53:85:83:A9:23:1B:6D
