@@ -1234,6 +1234,14 @@ packages:
             issue: 720
             apk:
               sha256: 177263b1a3d1999677fe77168f31ba8da6a80ea1a3840989e6ce727ac969e95e
+  - package: com.linkedin.android
+    signature:
+      - fingerprint: 3B:6A:40:3C:A9:1D:56:AB:85:45:17:72:02:03:17:66:40:81:6D:3F:92:3F:92:CC:A1:61:38:F5:CC:3D:07:27
+        sources:
+          - name: Google Play
+            issue: 753
+            apk:
+              sha256: 195f854ab1449eded5f53413fdc87692d44f4481c02f3d6d3e463c778deed2c6
   - package: com.lufthansa.android.lufthansa
     signature:
       - fingerprint: AF:75:72:3A:86:9D:50:C9:20:04:D8:B2:D5:74:46:48:DE:70:14:CA:D8:33:38:86:8E:5F:4C:AA:0B:B8:A8:8E
