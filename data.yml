@@ -122,6 +122,15 @@ packages:
             issue: 68
           - name: AppVerifier
             issue: 68
+  - package: app.revanced.manager.flutter
+    signature:
+      - fingerprint: B6:36:2C:6E:A7:88:8E:FD:15:C0:80:0F:48:07:86:AD:0F:5B:13:3B:4F:84:E1:2D:46:AF:BA:5F:9E:AC:12:23
+        sources:
+          - name: Direct APK Link
+            issue: 516
+            apk:
+              sha256: cba4c461553ea74eb25a7b2e1842419c7f4f40adc619b10d518c114204b7e846
+              link: https://github.com/ReVanced/revanced-manager/releases/download/v2.6.0/revanced-manager-2.6.0.apk
   - package: app.upryzing.clerotri
     signature:
       - fingerprint: 90:FD:58:2A:49:5A:7E:C5:92:82:A1:95:27:B8:0B:09:AB:3B:C9:1D:BB:82:46:12:18:32:BD:61:00:6C:A9:AE
