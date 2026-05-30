@@ -3783,6 +3783,14 @@ packages:
             apk:
               sha256: c3a60925984d9f4cb967a6d9b4a4ce43b86409aa30cfc8900ec0955302020998
               link: https://github.com/rafaelvcaetano/melonDS-android/releases/download/nightly-release/app-gitHub-nightly-release.apk
+  - package: me.nanoleaf.nanoleaf
+    signature:
+      - fingerprint: 93:5C:70:4E:4B:FA:CF:48:58:AF:80:FB:FB:5D:06:1A:29:D3:0B:71:A2:BC:C2:5A:2F:6B:45:F1:13:DE:7F:81
+        sources:
+          - name: Google Play
+            issue: 971
+            apk:
+              sha256: 9d83d3ad2f3e84f3d61379ba49196633c14585eb3358467b5fbd46dde28a6380
   - package: me.ocv.partyup_dbg
     signature:
       - fingerprint: CA:8D:3B:0D:DA:29:61:D8:93:05:40:A0:3C:41:9B:A5:4A:76:25:7F:B2:08:C9:B4:85:94:42:BE:16:29:65:D8
