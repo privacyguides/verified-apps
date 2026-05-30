@@ -605,6 +605,18 @@ packages:
             apk:
               sha256: 787e8c2a9ca2ed1423e179964508071ec871d777bb3e15208615b94b752347db
               link: https://github.com/permissionlesstech/bitchat-android/releases/download/1.7.2/bitchat-arm64-v8a-release.apk
+  - package: com.bnyro.translate
+    signature:
+      - fingerprint: B3:BC:73:B1:17:DF:5D:FE:38:13:0C:6C:2B:94:68:52:AE:70:88:55:7F:E8:E4:33:F0:D9:98:3A:6B:55:CC:95
+        sources:
+          - name: F-Droid
+            issue: 794
+            apk:
+              sha256: 3a0ba6cc59d63865c22a71f0794d92b4de44353f0ec39d8aca875bf33fed96cf
+          - name: F-Droid (IzzyOnDroid)
+            issue: 794
+            apk:
+              sha256: 3a0ba6cc59d63865c22a71f0794d92b4de44353f0ec39d8aca875bf33fed96cf
   - package: com.booking
     signature:
       - fingerprint: 6A:C8:C8:A9:E6:F3:6E:14:E5:2A:0A:05:15:A3:6B:70:66:E7:20:A1:B0:C8:A1:B0:59:E0:78:17:50:A8:71:99
