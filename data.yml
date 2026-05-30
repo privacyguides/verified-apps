@@ -2154,6 +2154,16 @@ packages:
             apk:
               sha256: 468769d315aa0bbe9ccc1c5993f8d58b5ff973b02a4f5d13b9dde8c570bf5cc2
               link: https://www.whatsapp.com/android/7/WhatsApp.apk
+      - fingerprint: |-
+          39:87:D0:43:D1:0A:EF:AF:5A:87:10:B3:67:14:18:FE:57:E0:E1:9B:65:3C:9D:F8:25:58:FE:B5:FF:CE:5D:44
+          FB:92:0D:38:1B:EE:1B:20:93:F2:7D:C8:F1:3D:99:4D:A6:29:DC:91:88:7D:05:29:B3:5C:9A:2D:C4:F4:A6:C2
+        sources:
+          - name: AppVerifier
+            issue: 779
+          - name: Google Play
+            issue: 779
+            apk:
+              sha256: 27faf4cc0b5556034c2be5eeb14239a5924891e03d9e6d457ac217294832ea13
   - package: com.windscribe.vpn
     signature:
       - fingerprint: 9F:B3:57:CA:2D:7F:0A:CC:7B:31:21:98:55:34:49:0D:0A:A7:0F:5D:C6:1C:A8:EC:59:3F:3D:A1:E9:CD:33:9B
