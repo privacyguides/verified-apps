@@ -1958,6 +1958,14 @@ packages:
         sources:
           - name: Google Play
             issue: 422
+  - package: com.onlyoffice.documents
+    signature:
+      - fingerprint: E1:A8:B9:3D:A6:BD:E8:52:A2:F6:F5:A5:E6:7C:04:10:C8:4F:E1:D2:A2:F2:0B:42:D3:BB:5C:36:39:DF:9D:C2
+        sources:
+          - name: Google Play
+            issue: 826
+            apk:
+              sha256: 7c300e1a333c6701694f579812a8210f36bda172191d4147782d1cc1001b3407
   - package: com.orange.mobinilandme
     signature:
       - fingerprint: |-
