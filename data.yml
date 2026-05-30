@@ -1313,6 +1313,16 @@ packages:
             issue: 589
             apk:
               sha256: 927309120c55db66b3b17d38a431691f9b92e2f32883cb7b00ce3afabcb806dd
+  - package: com.google.android.apps.walletnfcrel
+    signature:
+      - fingerprint: |-
+          1D:47:E5:1F:53:EB:11:C3:8B:69:94:00:F5:18:BD:B6:D6:D2:7A:1D:61:CC:51:E2:A6:9E:A8:28:C3:A2:DB:E8
+          77:BD:89:7C:29:73:02:03:A5:48:D5:91:A0:78:3E:08:62:6C:2A:54:BC:22:C8:0E:A4:7E:D8:86:36:97:38:0C
+        sources:
+          - name: Google Play
+            issue: 812
+            apk:
+              sha256: 8c4a4c4218692458334646fbec0a74014ff2f5175edb2700ef578d56c00e3c7a
   - package: com.google.android.googlequicksearchbox
     signature:
       - fingerprint: |-
