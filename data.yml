@@ -1956,6 +1956,14 @@ packages:
             issue: 71
             apk:
               sha256: e6265a57eb5ca363808488e3b01955958bed93bc0c8a0d281849b363b11027ec
+  - package: com.termux.styling
+    signature:
+      - fingerprint: 22:8F:B2:CF:E9:08:31:C1:49:9E:C3:CC:AF:61:E9:6E:8E:1C:E7:07:66:B9:47:46:72:CE:42:73:34:D4:1C:42
+        sources:
+          - name: F-Droid
+            issue: 708
+            apk:
+              sha256: 799a53f096c28e2aafae918f5ab91de500526bc5461030dbceea4e89bf56b68f
   - package: com.tinder
     signature:
       - fingerprint: 8A:B1:4F:D7:50:B8:20:57:4D:20:C3:54:41:EA:14:A9:B5:D1:95:9A:31:04:0C:EC:12:B4:6B:B2:90:F4:DA:1B
