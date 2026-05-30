@@ -4598,6 +4598,12 @@ packages:
               sha256: 5f3dcabcd67ec50461f8ae859729858aa1501837abb4d5ec05bedb259e2a1b93
   - package: software.mdev.bookstracker
     signature:
+      - fingerprint: 98:15:6C:9C:CB:52:8E:18:2A:58:85:40:CF:6C:16:EC:45:57:7C:FD:B9:B6:85:A5:BB:6F:79:97:03:DE:F3:7D
+        sources:
+          - name: Google Play
+            issue: 900
+            apk:
+              sha256: b0f53dc7d1424b24251dbb918dec7b6635bf34e2fa837ee4b59c9062c95fc361
       - fingerprint: DB:86:04:18:D6:1F:D4:C6:76:42:49:7F:2F:1E:06:27:76:77:9E:C2:69:F1:64:42:C3:20:10:E1:BF:12:92:64
         sources:
           - name: Direct APK Link
