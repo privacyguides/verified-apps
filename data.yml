@@ -1893,6 +1893,14 @@ packages:
             issue: 400
             apk:
               sha256: 32c4db9e557c99858d3f32b57911970cfe3e804f7c8b18e4ff0d170a819b0052
+  - package: com.wordwebsoftware.android.wordweb
+    signature:
+      - fingerprint: F0:F7:29:8D:C1:E8:EA:E0:DC:2D:51:DF:6E:06:1F:96:2B:0F:25:F0:18:E1:A2:CC:5A:EE:2F:FE:66:A3:11:23
+        sources:
+          - name: Google Play
+            issue: 736
+            apk:
+              sha256: 105c11042da5f2404c92731c3ff070151db37174cab71b20abfc3ba3156a1fc3
   - package: com.x8bit.bitwarden
     signature:
       - fingerprint: 24:E0:6C:04:C2:08:04:8F:19:F1:C9:93:B4:DD:A4:43:0E:A8:B0:6D:B8:37:5E:A0:E3:7B:83:46:96:B9:AC:3A
