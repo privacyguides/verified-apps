@@ -1588,6 +1588,15 @@ packages:
             issue: 753
             apk:
               sha256: 195f854ab1449eded5f53413fdc87692d44f4481c02f3d6d3e463c778deed2c6
+  - package: com.logseq.app
+    signature:
+      - fingerprint: E2:EA:95:DF:B0:1D:FD:B8:CD:DC:8A:63:B4:1D:97:66:E5:3D:68:B2:CE:85:1E:C7:A7:E5:FD:F3:D1:66:D2:35
+        sources:
+          - name: Direct APK Link
+            issue: 916
+            apk:
+              sha256: 3c67b3d0385887bde72530484927913b8a71bacfd31a35ab6cbfbfdb56ab71e8
+              link: https://github.com/logseq/logseq/releases/download/0.10.15/Logseq-android-0.10.15.apk
   - package: com.lufthansa.android.lufthansa
     signature:
       - fingerprint: AF:75:72:3A:86:9D:50:C9:20:04:D8:B2:D5:74:46:48:DE:70:14:CA:D8:33:38:86:8E:5F:4C:AA:0B:B8:A8:8E
