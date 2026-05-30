@@ -883,6 +883,13 @@ packages:
               sha256: bfa5def904b0ad2b5e30aba9e6f517e0ae423c7b99965116e09bc3f69ca80557
   - package: com.foobnix.pro.pdf.reader
     signature:
+      - fingerprint: CD:F4:E1:C3:1C:41:A5:5E:D7:28:96:BF:44:3C:E5:6D:50:FB:34:BB:93:3E:31:89:B3:DD:C2:60:9C:90:D8:F9
+        sources:
+          - name: Direct APK Link
+            issue: 580
+            apk:
+              sha256: ded262aec1c4002eab4c4b90d3a4f1d3e5f6dafbb4464dfb113c7f66bde82217
+              link: https://github.com/foobnix/LibreraReader/releases/download/9.4.8/Librera.Pro-9.4.8-arm64.apk
       - fingerprint: EA:0D:90:DF:4D:DE:7B:9A:9E:8E:AE:BE:2E:8A:A4:7E:D1:3F:4D:F9:D7:7A:A6:4B:C9:9C:7E:D3:09:D2:A8:4D
         sources:
           - name: F-Droid
