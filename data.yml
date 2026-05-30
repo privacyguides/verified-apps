@@ -2471,6 +2471,14 @@ packages:
             issue: 722
             apk:
               sha256: 0cffd7035c8b6370ac8a4e60831d2ac9b01b37eb8a9551ce680c96777cce7c26
+  - package: mv.com.dhiraagu.app
+    signature:
+      - fingerprint: E5:D4:82:50:69:76:C8:D9:20:7D:2F:DB:7A:6A:E2:80:D5:61:7D:B3:C3:41:95:4B:2C:C1:AB:6C:5E:DB:3F:B6
+        sources:
+          - name: Google Play
+            issue: 718
+            apk:
+              sha256: 8d53ba04642cc90d402bb7d5c39f902c2fc7ced8d7d7fd44a980832c0d5704aa
   - package: ncit.gov.efaasblue
     signature:
       - fingerprint: 92:76:E3:A8:17:4E:EB:81:5C:79:F6:9A:7C:CD:34:37:42:6A:DA:A3:79:E7:ED:83:3A:D9:60:5E:69:40:33:D5
