@@ -344,6 +344,14 @@ packages:
             issue: 714
             apk:
               sha256: a23fb58ac8a427949bed12b15923e479e06b359ce526da9c148234e130309c39
+  - package: com.apiture.xpressmobile.tabut.sub
+    signature:
+      - fingerprint: E0:85:00:80:44:B1:CA:2C:35:F8:54:1B:0E:08:28:08:78:EF:19:65:87:2E:D4:24:6C:A2:B7:1B:08:D8:ED:11
+        sources:
+          - name: Google Play
+            issue: 742
+            apk:
+              sha256: 39ea7ec2164940835eeb388b057b923bab822727c256b546f3b9d8ff14eb429b
   - package: com.appmindlab.nano
     signature:
       - fingerprint: 46:F0:5E:C2:09:B7:D5:17:91:56:71:61:96:DF:BB:F3:24:2D:0F:3F:73:A7:A7:7A:A9:BF:36:9B:FA:D6:D9:DA
