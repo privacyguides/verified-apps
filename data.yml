@@ -2501,6 +2501,14 @@ packages:
             issue: 649
             apk:
               sha256: 67b613f1e30691badcb0e44867d2b6fbd50117c282c4ebdac5d8297b7610bdb9
+  - package: com.urik.keyboard
+    signature:
+      - fingerprint: 1C:11:6F:87:9C:3B:87:25:31:B4:65:30:78:C9:A7:BD:67:8C:F0:4D:32:96:AE:CA:5D:2A:C5:F3:81:07:0E:80
+        sources:
+          - name: F-Droid
+            issue: 840
+            apk:
+              sha256: ee0f5e600bb0eef55f6a9c681f78ce4477aa898aabd0bf892d33f3718cbbeb5c
   - package: com.uvnv.mintsim
     signature:
       - fingerprint: B1:FC:C0:1C:13:BF:7C:BF:51:69:DA:2D:4A:A1:82:86:96:DA:CD:51:D5:D4:C7:0A:62:2F:4C:F1:CF:5F:45:3C
