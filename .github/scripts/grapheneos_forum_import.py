@@ -173,10 +173,20 @@ def create_issues(
     *,
     hashes_url: str,
     dry_run: bool,
+    max_issues: int = 0,
 ) -> list[dict[str, object]]:
     created: list[dict[str, object]] = []
+    filed = 0
 
     for entry in entries:
+        if max_issues > 0 and filed >= max_issues:
+            print(
+                f"Reached --max-issues limit ({max_issues}); "
+                "remaining packages were not filed.",
+                file=sys.stderr,
+            )
+            break
+
         package_name = str(entry["package"])
         fingerprints = [str(fp) for fp in entry["fingerprints"]]
         if submission_already_open(repo, package_name, fingerprints):
@@ -201,6 +211,7 @@ def create_issues(
                     "dry_run": True,
                 }
             )
+            filed += 1
             continue
 
         with tempfile.NamedTemporaryFile(
@@ -225,7 +236,7 @@ def create_issues(
                     "--body-file",
                     body_path,
                     "--label",
-                    "grapheneos-forum-import",
+                    "GOS Import",
                 ],
                 text=True,
             ).strip()
@@ -241,6 +252,8 @@ def create_issues(
                 "url": url,
             }
         )
+
+        filed += 1
 
     return created
 
@@ -274,6 +287,7 @@ def cmd_create_issues(args: argparse.Namespace) -> int:
         entries,
         hashes_url=args.hashes_url,
         dry_run=args.dry_run,
+        max_issues=args.max_issues,
     )
     if args.report:
         Path(args.report).write_text(
@@ -297,6 +311,15 @@ def main() -> int:
     create.add_argument("--repo", required=True)
     create.add_argument("--hashes-url", required=True)
     create.add_argument("--dry-run", action="store_true")
+    create.add_argument(
+        "--max-issues",
+        type=int,
+        default=0,
+        help=(
+            "Stop after filing this many eligible packages (0 = no limit). "
+            "Packages skipped because an open issue already exists do not count."
+        ),
+    )
     create.add_argument("--report")
     create.set_defaults(func=cmd_create_issues)
 

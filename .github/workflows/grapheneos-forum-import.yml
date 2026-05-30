@@ -15,6 +15,10 @@ on:
         description: List missing entries and issues that would be opened, without creating issues
         type: boolean
         default: false
+      max_issues:
+        description: Maximum issues to create (0 = no limit). Only counts eligible packages; skips already-open duplicates.
+        type: number
+        default: 0
 
 concurrency:
   group: grapheneos-forum-import
@@ -38,6 +42,7 @@ jobs:
       - name: Resolve hashes export URL
         id: hashes
         env:
+          GH_TOKEN: ${{ github.token }}
           HASHES_URL: ${{ inputs.hashes_url }}
           USE_LATEST: ${{ inputs.use_latest_release }}
         run: |
@@ -89,7 +94,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh label create "grapheneos-forum-import" \
+          gh label create "GOS Import" \
             --repo "${{ github.repository }}" \
             --color "C5DEF5" \
             --description "Opened automatically from the GrapheneOS forum hashes export" \
@@ -100,6 +105,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           HASHES_URL: ${{ steps.hashes.outputs.url }}
           DRY_RUN: ${{ inputs.dry_run }}
+          MAX_ISSUES: ${{ inputs.max_issues }}
         run: |
           set -euo pipefail
           args=(
@@ -112,6 +118,7 @@ jobs:
           if [[ "$DRY_RUN" == "true" ]]; then
             args+=(--dry-run)
           fi
+          args+=(--max-issues "${MAX_ISSUES%.*}")
           "${args[@]}"
 
       - name: Upload reports
