@@ -63,6 +63,17 @@ packages:
         sources:
           - name: F-Droid
             issue: 560
+  - package: app.grapheneos.apps
+    signature:
+      - fingerprint: 33:84:C3:1F:CE:4A:7C:00:8A:8F:7B:26:52:BC:48:CC:43:21:F1:D2:C8:77:B1:8E:30:A4:ED:61:9A:F1:2F:6B
+        sources:
+          - name: AppVerifier
+            issue: 739
+          - name: Direct APK Link
+            issue: 739
+            apk:
+              sha256: 0247e7ad3f244cf7d79a00b1bc5780cbf195da6484ad6545b4940223ddb24e52
+              link: https://github.com/GrapheneOS/AppStore/releases/download/36/AppStore-36.apk
   - package: app.lawnchair.play
     signature:
       - fingerprint: 47:AC:92:63:1C:60:35:13:CC:8D:26:DD:9C:FF:E0:71:9A:8B:36:55:44:DC:CE:C2:09:58:24:EC:25:61:20:A7
