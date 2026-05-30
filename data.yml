@@ -553,6 +553,14 @@ packages:
             apk:
               sha256: 52bda2653b0f21c2c82b61f0935a068e7eb7a8300a66e659929e68adc227b9b4
               link: https://github.com/moneytoo/Player/releases/download/v0.211/Just.Player.v0.211.apk
+  - package: com.bumble.app
+    signature:
+      - fingerprint: E2:9E:74:1A:F1:ED:08:9E:8B:A1:89:FE:55:B3:EE:E7:68:30:82:17:50:2B:8E:CF:E3:A5:C2:16:A5:1D:C3:BF
+        sources:
+          - name: Google Play
+            issue: 770
+            apk:
+              sha256: 7d2f6ada55ba05741acd09be55a4022d4e49ccfc51105a41815b06470e961fad
   - package: com.cakewallet.cake_wallet
     signature:
       - fingerprint: C5:40:53:AB:0F:10:D9:54:17:62:A3:DA:76:65:AE:3D:BA:5E:7C:74:3A:B4:F1:08:A5:34:9D:62:AC:10:6E:F5
