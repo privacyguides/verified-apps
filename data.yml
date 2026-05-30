@@ -2453,6 +2453,14 @@ packages:
             issue: 415
             apk:
               sha256: 2041dc168cd7944fe796fcfe0ff1810b0d1f6125bbb58a236a283296b1de3de5
+  - package: mv.com.bml.mib
+    signature:
+      - fingerprint: B5:61:EE:21:02:40:1A:16:26:35:43:C1:95:D5:AF:00:91:81:6B:87:9B:31:AA:FE:7C:6A:5F:B0:25:62:74:59
+        sources:
+          - name: Google Play
+            issue: 722
+            apk:
+              sha256: 0cffd7035c8b6370ac8a4e60831d2ac9b01b37eb8a9551ce680c96777cce7c26
   - package: net.christianbeier.droidvnc_ng
     signature:
       - fingerprint: F8:EF:C0:A7:D5:F9:D8:BA:88:ED:F0:82:F2:DC:2C:21:31:B7:54:BA:8F:ED:B4:91:6A:C2:EB:2A:CC:52:19:0D
