@@ -841,6 +841,14 @@ packages:
             issue: 663
             apk:
               sha256: ba08ed98d29950385208442d0ce3cbe06065ade155703f6df1065db44fdb32a1
+  - package: com.coinbase.android
+    signature:
+      - fingerprint: 41:6A:E0:CE:11:21:E9:C6:A6:B0:B7:C6:B5:D1:D9:BA:2B:9B:23:A1:4F:4F:1B:9A:87:E0:3B:49:8E:20:CF:3B
+        sources:
+          - name: Google Play
+            issue: 985
+            apk:
+              sha256: 40d83b3491f46363e666ac4565fdcbb2a9aa011e80c62d9289d2db9ec979defb
   - package: com.collabora.libreoffice
     signature:
       - fingerprint: 57:32:58:C8:4E:14:9B:5F:4D:92:99:E7:43:4B:2B:69:A8:41:03:72:92:1D:4A:E5:86:BA:91:EC:76:78:92:CC
