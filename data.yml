@@ -2728,6 +2728,15 @@ packages:
             issue: 653
             apk:
               sha256: e9de9981dc1f0ae611be838637ea6e3c56dc2ad90bab50a2c2ee3eb3c3430f8d
+  - package: io.github.lime3ds.android
+    signature:
+      - fingerprint: 5B:A2:56:3E:0D:13:FA:E2:AB:A0:67:D1:C2:30:CD:1C:86:3A:93:00:5C:10:D6:48:CE:5B:33:17:92:AA:0A:F1
+        sources:
+          - name: Direct APK Link
+            issue: 702
+            apk:
+              sha256: a23123578232276b70d1802906d3297f55e2a41f41e2ac16648a8b0ead4f90d4
+              link: https://github.com/azahar-emu/azahar/releases/download/2125.1.2/azahar-android-googleplay-2125.1.2.apk
   - package: io.github.muntashirakon.AppManager
     signature:
       - fingerprint: B6:8E:93:49:10:C0:05:80:14:A0:6A:2E:14:47:29:F9:AA:11:3F:C5:D9:E0:DF:F5:29:EC:BF:1D:1F:61:2D:13
