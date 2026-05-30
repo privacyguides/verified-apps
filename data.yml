@@ -1480,6 +1480,14 @@ packages:
             issue: 523
             apk:
               sha256: d2b3ad1a152524061cce0cd401943d212015f98ee19e69ba84cf9c332da53215
+  - package: com.starfinanz.mobile.android.pushtan
+    signature:
+      - fingerprint: 48:53:EB:52:4C:DF:4A:22:EB:41:94:7B:0D:3F:49:F0:2F:9C:F3:00:42:88:0E:F6:29:85:47:92:2E:3A:E9:DD
+        sources:
+          - name: Google Play
+            issue: 519
+            apk:
+              sha256: dcd20af1ec351bda4d46a9c6353c24fcce05fd17de75d54103249a3b9d076342
   - package: com.streetwriters.notesnook
     signature:
       - fingerprint: 23:AF:C1:F8:ED:5F:BB:D0:85:2A:37:22:2D:DC:E0:6F:92:92:71:02:F0:12:6F:99:6A:56:23:F5:27:74:C6:90
