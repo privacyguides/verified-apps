@@ -680,6 +680,12 @@ packages:
               sha256: 7d2f6ada55ba05741acd09be55a4022d4e49ccfc51105a41815b06470e961fad
   - package: com.cakewallet.cake_wallet
     signature:
+      - fingerprint: 09:C7:C4:F9:6B:5F:3A:75:99:8E:CF:53:78:E6:39:19:0E:02:3E:26:75:02:6D:26:21:E4:AC:78:1C:94:88:FC
+        sources:
+          - name: Google Play
+            issue: 908
+            apk:
+              sha256: bd8f9e3f222eb1c204d9bc2697c53208cafcd6e0e184672de5028461e2367523
       - fingerprint: C5:40:53:AB:0F:10:D9:54:17:62:A3:DA:76:65:AE:3D:BA:5E:7C:74:3A:B4:F1:08:A5:34:9D:62:AC:10:6E:F5
         sources:
           - name: Accrescent
