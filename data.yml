@@ -2868,6 +2868,15 @@ packages:
         sources:
           - name: Accrescent
             issue: 120
+  - package: me.lucky.clipeus
+    signature:
+      - fingerprint: 00:6A:FF:63:E6:03:9B:1B:A2:B6:80:2A:3A:E1:5D:C4:A5:55:4D:5C:2D:BF:66:DD:DB:C0:38:60:25:18:F5:F5
+        sources:
+          - name: Direct APK Link
+            issue: 515
+            apk:
+              sha256: e8b8bd89351aae11876435df8265b9e300227f3bfec2640022a9a52d5d160439
+              link: https://github.com/x13a/Clipeus/releases/download/v1.1.1/app-release.apk
   - package: me.lyft.android
     signature:
       - fingerprint: FA:9A:37:54:36:34:35:7B:E0:88:EE:7E:4F:8C:FD:D1:3B:59:07:B2:2E:92:1A:3D:47:45:3E:66:C4:5F:3E:04
