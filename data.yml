@@ -4513,6 +4513,18 @@ packages:
             issue: 535
             apk:
               sha256: 3f0b43eede8097ea859b830ce7d1c7ffd7e7b1a5f41554aa11e8fd20654075d0
+  - package: rkr.simplekeyboard.inputmethod
+    signature:
+      - fingerprint: 12:F0:75:0B:F1:60:74:69:76:4F:8A:CF:0D:B6:7A:E1:CE:F3:A6:A5:E1:F0:97:50:4E:64:2E:6E:DB:D1:0E:4E
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: 898
+            apk:
+              sha256: 21490b6f1f2cbc324b1cb9dbc78a10069a0799aa4bdfbca4276c2edce32b9725
+          - name: Google Play
+            issue: 898
+            apk:
+              sha256: e530a697818961778eb7c5aec98a790067208384918cc48cb541fb33d6378b82
   - package: ru.tech.imageresizershrinker
     signature:
       - fingerprint: 20:D7:68:9D:E0:87:4F:00:01:5E:A3:E3:1F:A0:67:C1:5C:03:45:7D:36:2D:41:D5:E7:93:DB:3A:86:4F:A5:34
