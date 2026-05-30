@@ -2609,6 +2609,14 @@ packages:
             issue: 928
             apk:
               sha256: 3f239700a85284ca3974ccaf490374d292f65b34ea9859902636bc629ca57011
+  - package: com.ubnt.unifi.protect
+    signature:
+      - fingerprint: 96:04:09:50:7B:18:B3:94:4B:19:12:63:4F:F9:67:AC:DE:F2:A3:D1:CF:E0:2B:F9:B4:FB:27:D3:08:AF:53:67
+        sources:
+          - name: Google Play
+            issue: 951
+            apk:
+              sha256: 5da786e1703628dbd401949fc24931450bd1b4ca83284810705771f7da2cb650
   - package: com.unciv.app
     signature:
       - fingerprint: CD:16:E3:86:46:9F:23:98:8F:C9:CD:EC:A0:1B:FE:FB:D0:DE:AE:D1:3A:49:07:BC:E7:6E:91:AC:C9:66:2C:68
