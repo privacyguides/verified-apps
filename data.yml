@@ -2072,6 +2072,14 @@ packages:
             issue: 745
             apk:
               sha256: 8926043a529c441c791142695e65f4ef5bfffdbe6ce0edc205b52e2038ab5126
+  - package: com.privateinternetaccess.android
+    signature:
+      - fingerprint: 8B:6A:E2:B9:B0:6F:4D:18:17:FD:3F:84:6F:88:E4:40:DD:43:1A:3F:46:62:0B:DD:4A:15:2B:70:FC:90:89:A2
+        sources:
+          - name: Google Play
+            issue: 829
+            apk:
+              sha256: 03bcde51ac127fdbd5fe6f01c6e321a5ffe7e909bf218c783d471710659fa26f
   - package: com.qnbalahli.bebasata
     signature:
       - fingerprint: 02:F0:A1:4B:84:5D:32:65:6F:7F:8B:2D:7A:2B:32:77:F7:CC:D4:E9:2B:D8:10:4C:F7:8B:FB:0A:77:C3:20:9A
