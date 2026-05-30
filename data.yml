@@ -2838,6 +2838,14 @@ packages:
             issue: 555
             apk:
               sha256: 5bc38f5fbbac2ae6ce05db650e44248fc046a954b3c2c3f2abb9b13c8bdf3593
+  - package: org.kde.kdeconnect_tp
+    signature:
+      - fingerprint: 25:32:94:C6:84:D4:C2:31:C4:5A:2B:92:11:DF:AA:01:10:45:62:73:8B:62:A0:9D:BF:B7:14:50:B8:A6:66:F4
+        sources:
+          - name: Google Play
+            issue: 706
+            apk:
+              sha256: e3a8494992d075bef08e57f687b26e6d2c792ac51d5564cdc26a0e02076d678f
   - package: org.lichess.mobileV2
     signature:
       - fingerprint: 5B:62:4B:BF:9D:72:D3:18:EA:4F:9E:E3:E2:DA:EB:A7:72:19:E5:97:11:6C:B5:93:12:30:7A:AD:18:44:94:5E
