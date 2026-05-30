@@ -1646,6 +1646,14 @@ packages:
             issue: 71
             apk:
               sha256: e6265a57eb5ca363808488e3b01955958bed93bc0c8a0d281849b363b11027ec
+  - package: com.tinder
+    signature:
+      - fingerprint: 8A:B1:4F:D7:50:B8:20:57:4D:20:C3:54:41:EA:14:A9:B5:D1:95:9A:31:04:0C:EC:12:B4:6B:B2:90:F4:DA:1B
+        sources:
+          - name: Google Play
+            issue: 750
+            apk:
+              sha256: 11a9d9f263468dcb891b01202e017497e0f7889372f866edd69b0aa730407630
   - package: com.tplink.kasa_android
     signature:
       - fingerprint: 58:03:7B:6C:40:8D:7F:A0:43:16:91:AE:1E:7B:79:D4:DF:15:45:ED:59:F7:05:27:86:39:10:9B:11:35:9F:75

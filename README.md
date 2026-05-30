@@ -84,19 +84,29 @@ Provenance attestations guarantee the file you have was built from a well-define
 
 We *especially* recommend checking this if you are incorporating this data in your own app, to strenghten your own supply-chain security when grabbing data from an upstream source (us). One example of how to do this in your GitHub workflows can be found here: <https://github.com/RoundSalmon4/AppVerifierBG/pull/12>
 
+#### Verifying data.yml in main branch
+
 If you download the latest copy of `data.yml` directly from this repo, you can verify its provenance using the `gh` command line tool:
 
 ```
 gh attestation verify --owner privacyguides data.yml
 ```
 
-If you download a copy of `data.yml` from a release, you can verify your copy matches the immutable release we've published:
+An even more robust check can be done by verifying the signature was made with our organization-wide signing workflow:
+
+```
+gh attestation verify -R privacyguides/verified-apps --cert-identity-regex 'https://github.com/privacyguides/.github/.github/workflows/sign-artifact.yml*' data.yml
+```
+
+#### Verifying data.yml in a tagged release
+
+If you clone this repository and checkout a tagged release, you can verify your copy matches the immutable release we've published:
 
 ```
 gh release verify-asset [RELEASE] data.yml
 ```
 
-For example, you'd run `gh release verify-asset 3.20260527 data.yml` to check your copy against [3.20260527](https://github.com/privacyguides/verified-apps/releases/tag/3.20260527).
+For example, you'd run `gh release verify-asset 3.20260527 data.yml` inside this repo to check your copy against [3.20260527](https://github.com/privacyguides/verified-apps/releases/tag/3.20260527).
 
 > [!TIP]
 > In addition to using the online `gh` CLI, you should be able to verify these files with any [SLSA build verifiers](https://slsa.dev/spec/v1.2/verifying-artifacts), or [verify these attestations offline](https://docs.github.com/en/actions/how-tos/secure-your-work/use-artifact-attestations/verify-attestations-offline).
