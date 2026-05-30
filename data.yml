@@ -417,6 +417,16 @@ packages:
             issue: 344
             apk:
               sha256: 7c7bf3b66ebc0495be9e35103e9e2c04b5e07edc999412b80aee9aadef69f66c
+  - package: com.airfrance.android.dinamoprd
+    signature:
+      - fingerprint: |-
+          6F:FD:60:27:9A:0B:F0:14:B4:58:F4:09:3C:F2:EB:D0:00:B0:1B:5E:47:B8:0C:CB:41:DD:6E:0F:6A:2E:52:29
+          71:FC:82:99:65:00:5A:49:B1:D3:3E:85:1E:2C:18:1E:6A:8D:D4:3E:E1:96:CD:BB:F7:AD:4D:B3:0C:48:84:22
+        sources:
+          - name: Google Play
+            issue: 956
+            apk:
+              sha256: 8ed9642fb6aef4ac5878d564a7f89363255266afc98f7cbe9341a1a6260c5618
   - package: com.airtm.android
     signature:
       - fingerprint: BB:30:0E:E3:6D:B3:C1:49:40:BB:48:70:F9:4A:40:10:5E:CD:73:9F:E8:6C:8E:23:79:31:B2:B2:D0:15:52:A7
