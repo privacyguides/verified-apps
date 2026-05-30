@@ -2702,6 +2702,14 @@ packages:
             issue: 840
             apk:
               sha256: ee0f5e600bb0eef55f6a9c681f78ce4477aa898aabd0bf892d33f3718cbbeb5c
+  - package: com.usaa.mobile.android.usaa
+    signature:
+      - fingerprint: 28:8C:B7:0D:CF:14:7E:1E:A6:D0:AD:F6:70:F9:3F:17:82:58:42:25:A8:E2:00:73:D2:7A:6C:38:F4:16:DE:1B
+        sources:
+          - name: Google Play
+            issue: 961
+            apk:
+              sha256: b0cf93237f5a028d71c626d3c2495d9f36974726236f9727c69a268691f5f9e2
   - package: com.usmobile.dashboard
     signature:
       - fingerprint: 34:25:D5:1C:A1:A8:DB:37:CA:E7:96:68:D0:FC:B8:3F:BA:05:62:3C:35:7D:9F:BD:30:4F:F3:71:D9:26:E2:A1
