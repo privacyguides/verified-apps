@@ -2869,6 +2869,19 @@ packages:
             issue: 419
             apk:
               sha256: 2ac3a97bf5dec6bff791b6e9d29a8109a03429f9f7e6c4597895796223e3d32e
+  - package: de.markusfisch.android.binaryeye
+    signature:
+      - fingerprint: DD:A9:21:96:50:57:4B:2D:70:2F:DF:2D:F9:0F:61:9B:D4:E2:D0:F3:A6:6E:26:BB:03:2F:2F:01:88:40:CF:8E
+        sources:
+          - name: Direct APK Link
+            issue: 972
+            apk:
+              sha256: a85d9e58157350988a79786c5280a76e7c1d3ceb04674b876ffbcbd46a70b2e0
+              link: https://github.com/markusfisch/BinaryEye/releases/download/1.73.1/app-release.apk
+          - name: Google Play
+            issue: 972
+            apk:
+              sha256: d55c27526117362d0d5be00638e81ad61308478d81673de0cf988cc408f18757
   - package: de.nulide.findmydevice
     signature:
       - fingerprint: 87:A6:C1:36:F5:49:9D:B2:55:C9:3F:4D:38:4C:B1:A5:D3:14:F6:90:8F:2B:F1:97:E0:EC:07:ED:58:BB:58:72
