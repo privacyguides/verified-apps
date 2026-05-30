@@ -1563,6 +1563,14 @@ packages:
             issue: 669
             apk:
               sha256: 9ef13e7fc84c27cc9245e861915b4573ed32ba87d8b1dacca601aa70ee66f870
+  - package: com.scsoft.maldivesrtl
+    signature:
+      - fingerprint: EE:F5:10:F9:70:E4:D1:6A:E3:3C:C1:CA:B4:9A:17:3D:00:7D:4A:47:0D:CC:F0:A0:09:A9:3C:68:92:AB:58:C4
+        sources:
+          - name: Google Play
+            issue: 723
+            apk:
+              sha256: 84a3e189087608cde684cdeeae9af8c4a579d2b527ebcbab027b14b50ef1aa18
   - package: com.secuso.privacyFriendlyCodeScanner
     signature:
       - fingerprint: 75:9D:2D:25:78:5A:6D:F4:CD:66:19:69:2B:37:F0:05:32:BA:19:B2:6D:F2:0A:4E:F5:B2:21:28:C7:F1:51:BC
