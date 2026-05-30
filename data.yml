@@ -2246,6 +2246,14 @@ packages:
             issue: 76
             apk:
               sha256: 122f17f6bcaf42248cf3fd2b769ae4483aaf7f147857263cfed6043e5af2e9ec
+  - package: com.shifthackz.aisdv1.app.foss
+    signature:
+      - fingerprint: 89:74:EF:C8:53:E2:D5:E9:3E:B2:9D:D8:09:FC:57:CA:E7:41:1F:CF:AC:A0:3D:E3:F7:C1:52:F4:41:A9:00:64
+        sources:
+          - name: F-Droid
+            issue: 833
+            apk:
+              sha256: 9b910433145a208c5a3cb56538fdbf917ed661ff0ac5821109ebd8849629527a
   - package: com.simplepractice.video
     signature:
       - fingerprint: 21:E1:56:78:30:77:33:7D:F5:13:65:75:31:6C:3A:D7:FA:E3:4F:19:7F:61:DD:C0:25:87:0F:B6:F7:0F:C2:99
