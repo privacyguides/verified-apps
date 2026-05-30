@@ -3358,6 +3358,15 @@ packages:
             issue: 307
             apk:
               sha256: eff8c24e315f0d54a2545bba8e3dc10121e18d173cdca4a89f3f69e7be0c4922
+  - package: org.fairscan.app
+    signature:
+      - fingerprint: 82:07:10:96:13:28:E1:83:4B:CB:81:58:09:2E:6B:6C:5B:51:9F:CD:3B:DB:2E:53:19:EB:DA:F0:8F:9E:A1:E8
+        sources:
+          - name: Direct APK Link
+            issue: 610
+            apk:
+              sha256: 54ca6534a4e6e8b1715dbf4a23ff8292a979d7183e2e5e0847d8b1e360d0a8d5
+              link: https://github.com/pynicolas/FairScan/releases/download/v1.22.1/FairScan-1.22.1-arm64-v8a.apk
   - package: org.fcitx.fcitx5.android
     signature:
       - fingerprint: E4:DB:1E:9E:DF:F1:36:29:D0:7D:E4:BB:F8:16:5F:E9:BD:85:57:AB:55:09:26:72:DA:8E:40:DB:E4:84:EC:D7
