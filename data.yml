@@ -2975,6 +2975,14 @@ packages:
             issue: 509
             apk:
               sha256: 7c72c47b2b05c83d3764cbc2e970f03651c76232da8544996f2762dbbe0c8ddc
+  - package: deckers.thibault.aves
+    signature:
+      - fingerprint: 12:54:B3:37:CD:99:15:75:57:FA:C4:75:9D:03:69:51:53:34:38:24:05:0E:C1:C9:3B:2D:26:42:C6:66:E4:E2
+        sources:
+          - name: Google Play
+            issue: 856
+            apk:
+              sha256: 6114982f794ce92da8cf52c6f8f026344a4a24e20aab0bec567223c99d33cd8b
   - package: deckers.thibault.aves.libre
     signature:
       - fingerprint: F4:79:47:27:E4:54:16:D8:7C:48:71:38:29:2B:70:9F:11:D1:CD:7D:AB:55:84:D8:C6:85:7D:92:E0:66:60:4B
