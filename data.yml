@@ -95,6 +95,15 @@ packages:
             issue: 528
             apk:
               sha256: 3895123ffeb1b29e5bc51522c93eee757cf9e2e510f5929ec6eb8e7f50c33361
+  - package: app.morphe.manager
+    signature:
+      - fingerprint: 0B:6C:95:15:AF:B1:95:FA:C5:96:01:69:6B:A0:A7:90:7A:0B:21:7C:CF:72:0B:43:14:84:27:CC:F6:43:43:E7
+        sources:
+          - name: Direct APK Link
+            issue: 184
+            apk:
+              sha256: 79a753d1c9c2b66c35eaa22e4205b5d31f88911ef8fff902cd10c3ae92ae1d08
+              link: https://github.com/MorpheApp/morphe-manager/releases/download/v1.18.0/morphe-manager-1.18.0.apk
   - package: app.ninesevennine.twofactorauthenticator.accrescent
     signature:
       - fingerprint: E5:B2:8E:A1:E0:51:C2:32:DE:A9:4C:27:C0:59:2E:2C:00:2D:17:C5:CA:81:78:8B:51:30:6D:60:8A:FE:52:C5
