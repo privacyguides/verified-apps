@@ -887,6 +887,14 @@ packages:
             issue: 647
             apk:
               sha256: e02b988e3f72901b623b77f768ea38e82c5e1204f379360a1c73a04dff6346f1
+  - package: com.devhd.feedly
+    signature:
+      - fingerprint: B4:EF:58:DB:C0:76:3C:0B:F3:EE:D7:B1:5C:96:11:AE:A8:03:1E:97:36:0E:B9:85:D5:2E:DA:CC:2C:63:77:5E
+        sources:
+          - name: Google Play
+            issue: 802
+            apk:
+              sha256: c394abbbbf65422b0b1bf062ce2c63ccbf238f32a77ba01578c4416b0d9d69ff
   - package: com.digibites.accubattery
     signature:
       - fingerprint: 64:A5:40:DE:F3:35:EF:35:08:80:CB:66:08:C9:26:5B:B4:CB:F7:FB:DE:40:D3:D8:C0:6A:EB:99:7C:27:63:5E
