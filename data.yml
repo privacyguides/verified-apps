@@ -547,6 +547,14 @@ packages:
             issue: 317
             apk:
               sha256: 7bee1bf2c9c3fe2aaa3c84b367788b0b121f644ff3441ecd96d857048477db83
+  - package: com.auxbrain.egginc
+    signature:
+      - fingerprint: 26:86:C4:26:C9:1A:35:D5:4F:9A:48:BE:3A:9F:17:AE:1C:A5:DE:68:23:E0:30:90:F4:BE:B5:8F:C7:87:F2:4B
+        sources:
+          - name: Google Play
+            issue: 957
+            apk:
+              sha256: 5f17b9b988a6dbbf3523a1ec798c1b4b865192ee46cf70618e9a1259499ef8c6
   - package: com.azure.authenticator
     signature:
       - fingerprint: EE:BD:0F:16:E6:29:AF:8B:83:81:BF:ED:FD:D6:49:60:5F:E9:0F:76:3F:5C:B7:BA:47:3E:B9:EE:F9:4D:9A:F1
