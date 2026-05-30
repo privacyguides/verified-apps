@@ -2807,6 +2807,23 @@ packages:
             issue: 468
             apk:
               sha256: 5d4e1fb8d0b596d814db59465015e4ae2a57653797374c0b15fdd919afb1c871
+  - package: de.felixnuesse.extract
+    signature:
+      - fingerprint: 1F:1E:E8:3B:8C:11:74:A6:1D:0D:18:F0:9F:F1:21:5D:59:E5:E6:3E:0B:01:A4:DA:69:5B:8E:B5:2D:16:BF:E9
+        sources:
+          - name: Direct APK Link
+            issue: 905
+            apk:
+              sha256: ee5600672bea58262a64fd964541e10f10fae8808a6219d56a9fc9c0ac4a1b3e
+              link: https://github.com/newhinton/Round-Sync/releases/download/v2.5.6/roundsync_v2.5.6-oss-arm64-v8a-release.apk
+          - name: F-Droid
+            issue: 905
+            apk:
+              sha256: 7c5017cc065a888fcaa872a83f24df6452cf28948703ff524566c7bf248f738e
+          - name: F-Droid (IzzyOnDroid)
+            issue: 905
+            apk:
+              sha256: 2bf3bafe3f0bd3904e016b655129438fac8412e7e49acfedd661b6f8a0b7ee0d
   - package: de.fiduciagad.securego.vr
     signature:
       - fingerprint: 53:A6:AF:A8:F0:D2:19:BB:A2:FE:84:15:4F:25:6E:CE:C8:5B:34:17:5F:FE:E5:B7:38:7F:DA:0A:FC:C1:26:05
