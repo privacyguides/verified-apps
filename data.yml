@@ -3532,6 +3532,15 @@ packages:
             issue: 707
             apk:
               sha256: 8438d17705b6d6e2d0dabeb1d6908ef4079d7b54939019609c82e636c03d234f
+  - package: org.primftpd
+    signature:
+      - fingerprint: 71:51:AE:6D:56:F1:56:E6:72:24:E7:CA:3F:9C:00:DA:6F:70:30:B6:6C:C8:44:3F:3B:B4:D3:F8:4E:EB:5C:95
+        sources:
+          - name: Direct APK Link
+            issue: 697
+            apk:
+              sha256: b71f87c5077ed13210ac6ac3d05d8932355b07be9b0aa9015400dab549fdac62
+              link: https://github.com/wolpi/prim-ftpd/releases/download/prim-ftpd-8.1/primitiveFTPd-8.1.apk
   - package: org.proninyaroslav.libretorrent
     signature:
       - fingerprint: B0:88:D4:72:A9:80:18:64:5C:DE:EF:8E:93:33:8D:58:B3:F2:38:92:18:7F:DF:63:F7:39:58:38:1E:27:E5:83
