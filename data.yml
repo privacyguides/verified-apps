@@ -442,6 +442,14 @@ packages:
             issue: 668
             apk:
               sha256: 44bb9396e74e09a486dd7a069bef312a411b17a0eefc983fd513ce0d92f4237e
+  - package: com.badoo.mobile
+    signature:
+      - fingerprint: 54:80:4A:91:1A:6A:E3:EE:64:C3:18:A4:28:3D:DF:3C:A2:A9:45:A4:16:A9:A7:AA:11:DA:86:B7:80:2E:B7:75
+        sources:
+          - name: Google Play
+            issue: 760
+            apk:
+              sha256: 996aa9095aafc7c066084089a712c0485d63800aae33e9e0c387a87bd3f800c7
   - package: com.bankid.bus
     signature:
       - fingerprint: AD:A2:62:4B:35:FC:A3:CC:34:0E:11:89:94:54:E5:50:FB:A9:82:B4:4D:82:B9:7E:FD:16:AA:3A:7A:46:7C:16
