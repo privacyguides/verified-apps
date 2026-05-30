@@ -4239,6 +4239,14 @@ packages:
             issue: 776
             apk:
               sha256: 6c43c5200d2795aadbd1c7db11eac70bc52027985f3afb849b9b0329c4a417f8
+  - package: org.outline.android.client
+    signature:
+      - fingerprint: F7:86:8B:84:26:94:A7:93:D2:AF:E4:71:CE:10:79:77:3C:9C:7C:52:8A:51:85:CB:41:5C:8D:CC:BF:1B:78:4D
+        sources:
+          - name: Google Play
+            issue: 906
+            apk:
+              sha256: 821ae8cdec30397120c3c49c14de9c568b1a6a12bbde8e6149acddcb2f6ff324
   - package: org.oxycblt.auxio
     signature:
       - fingerprint: DA:84:E2:53:4C:1A:CC:0B:6E:4F:57:DE:DB:64:0D:4D:C8:93:F5:BF:41:37:A2:E1:EC:BA:87:AD:F8:25:BA:44
