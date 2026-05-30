@@ -360,6 +360,14 @@ packages:
             issue: 611
             apk:
               sha256: e264330ee21b54f11442810a0f25a7be4b358877f57f2fae4e5573c48c685226
+  - package: com.beToken
+    signature:
+      - fingerprint: F0:4E:48:28:92:5B:10:79:D3:20:D0:64:A7:CE:78:69:C0:44:C1:29:6F:F5:5F:48:06:4E:1E:0E:F0:82:78:6C
+        sources:
+          - name: Google Play
+            issue: 536
+            apk:
+              sha256: b4be67875caad1e1c276759052154778f8aec52326d826e2a84b8e7f69859264
   - package: com.beemdevelopment.aegis
     signature:
       - fingerprint: 09:CF:DE:62:E2:A8:1C:80:50:D3:BE:4C:20:E3:F8:D8:DD:D0:15:31:BE:1B:47:CB:3B:0E:EC:21:3F:64:1F:89
