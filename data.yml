@@ -252,6 +252,14 @@ packages:
             issue: 220
             apk:
               sha256: 47d5fd49c40d9c5987fa1d0e637091a3a737ffc820dd70bf4e68d8a0077a2e92
+  - package: ch.threema.app.libre
+    signature:
+      - fingerprint: 05:08:B5:3F:F1:02:B5:38:91:9C:83:4E:9E:6B:6A:FB:A0:46:ED:F6:7E:17:CA:4D:1C:E7:A4:B9:C3:82:37:41
+        sources:
+          - name: F-Droid
+            issue: 790
+            apk:
+              sha256: ab032232e50886bce9ffeec278dd726b561ea513661b23467b2528fa5a734967
   - package: chat.fluffy.fluffychat
     signature:
       - fingerprint: 05:7A:C4:51:64:A2:E6:E3:1F:6D:DE:55:5A:5F:2C:CC:B4:D8:83:4C:B1:85:25:49:68:1B:00:E3:46:68:CA:F3
