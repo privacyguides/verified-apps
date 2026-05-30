@@ -2415,6 +2415,14 @@ packages:
             issue: 723
             apk:
               sha256: 84a3e189087608cde684cdeeae9af8c4a579d2b527ebcbab027b14b50ef1aa18
+  - package: com.sec.android.app.shealth
+    signature:
+      - fingerprint: B9:A4:2D:D5:FC:4E:05:48:89:AE:41:27:A6:27:4C:EC:64:E7:5C:41:73:3D:42:F5:99:1E:70:19:F9:EA:5C:AF
+        sources:
+          - name: Google Play
+            issue: 969
+            apk:
+              sha256: 5ad7f78682a1236abce1558f3f78a5f7b2f13057e91d2e07d428fb3a25f572be
   - package: com.secuso.privacyFriendlyCodeScanner
     signature:
       - fingerprint: 75:9D:2D:25:78:5A:6D:F4:CD:66:19:69:2B:37:F0:05:32:BA:19:B2:6D:F2:0A:4E:F5:B2:21:28:C7:F1:51:BC
