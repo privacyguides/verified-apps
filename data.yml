@@ -3114,6 +3114,14 @@ packages:
             issue: 684
             apk:
               sha256: c6d5862877bcb43f1990bcd58ce77c872665e50239fecdbf0ac2acc34563b47d
+  - package: gr.nikolasspyr.integritycheck
+    signature:
+      - fingerprint: 17:95:2B:5C:F8:67:05:BA:DE:87:74:3F:5A:33:1E:FE:4C:98:2B:FB:4D:A0:D2:FD:5D:70:BF:C2:35:CF:79:E3
+        sources:
+          - name: Google Play
+            issue: 863
+            apk:
+              sha256: ee209793ebd4c7c8215f2202b5b18ced412e451cbae82a9d01291c0d824a13a9
   - package: grit.storytel.app
     signature:
       - fingerprint: A6:56:F3:FD:4E:4C:32:0B:FF:E0:81:EA:2A:FE:07:B0:AC:E6:14:B9:31:3A:10:D2:16:3E:91:91:BD:79:42:60
