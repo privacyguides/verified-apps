@@ -1550,6 +1550,14 @@ packages:
             issue: 294
             apk:
               sha256: 04ef71623b2533e1a19df1a246bc0d83a7ddc071ff3acd9877753c4d6de4e423
+  - package: com.tradingview.tradingviewapp
+    signature:
+      - fingerprint: 44:F0:47:FC:6B:34:B0:BA:0C:49:1F:82:5B:B4:E4:37:70:D2:BC:94:12:20:D2:90:A7:0F:3A:84:67:AE:D6:01
+        sources:
+          - name: Google Play
+            issue: 512
+            apk:
+              sha256: 0cdf0176449b0f03e0d91d46c8d0d17576482e36f5b4ebd24700937ced1e70d0
   - package: com.trainose.android
     signature:
       - fingerprint: 17:F1:55:9B:7F:CD:C9:37:38:06:CE:B6:64:58:B4:34:AA:A5:6A:D8:7E:AF:1B:B8:CC:31:F9:34:D5:E3:E5:4A
