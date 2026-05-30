@@ -2313,6 +2313,14 @@ packages:
             issue: 571
             apk:
               sha256: 6d88f9e94beae7790ffbe729569d08026cd339ca3b8a6611d9608c9032624545
+  - package: io.ente.photos
+    signature:
+      - fingerprint: 37:D4:0B:10:3B:BF:86:43:EB:AE:23:B3:BB:73:F8:65:B4:E9:3A:BF:65:45:EF:37:12:8A:4C:EA:5B:C2:7E:2E
+        sources:
+          - name: Google Play
+            issue: 740
+            apk:
+              sha256: 3e88d31c7f861b4de800f5e13a16d9ddaa4a9cef6329c2b644ac55eb97a4289d
   - package: io.ente.photos.independent
     signature:
       - fingerprint: 35:ED:56:81:B7:0B:B3:BD:35:D9:0D:85:6A:F5:69:4C:50:4D:EF:46:AA:D8:3F:77:7B:1C:67:5C:F4:51:35:0B
