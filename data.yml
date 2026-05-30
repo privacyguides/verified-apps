@@ -1161,6 +1161,14 @@ packages:
             issue: 805
             apk:
               sha256: 76cd759101a19ba34e84ffe920ae2dd726b53b2952dda497f4a533cf10a7d669
+  - package: com.floatplane.floatplane
+    signature:
+      - fingerprint: 33:43:3E:E6:A8:96:1C:D6:A1:22:6C:FB:B7:C8:C2:2C:90:F8:2D:69:F6:5D:5D:1E:99:3E:92:5C:A9:C8:28:44
+        sources:
+          - name: Google Play
+            issue: 983
+            apk:
+              sha256: 3e7e5786399373552fc3e1b0284b1c6ee772bd564ff47b6b2f64306d15d70856
   - package: com.flyersoft.moonreader
     signature:
       - fingerprint: 5A:C6:46:EB:C6:80:17:E4:CC:58:2B:11:B1:C2:AE:5D:29:B1:5D:9B:0A:C3:A5:4F:C6:09:72:41:7B:41:C9:AD
