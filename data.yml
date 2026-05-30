@@ -1041,6 +1041,14 @@ packages:
             issue: 318
             apk:
               sha256: 57e8d3e023a677c118635c649dccd87ad8d41853096ebae78eddd189f6188f71
+  - package: com.firebirdberlin.nightdream.noGms
+    signature:
+      - fingerprint: 06:9A:8E:C4:45:7A:DC:29:81:D4:11:F8:9D:9E:E0:98:53:3D:6D:0B:64:00:3D:7E:72:8D:F5:9A:54:8E:DF:47
+        sources:
+          - name: F-Droid
+            issue: 805
+            apk:
+              sha256: 76cd759101a19ba34e84ffe920ae2dd726b53b2952dda497f4a533cf10a7d669
   - package: com.flyersoft.moonreader
     signature:
       - fingerprint: 5A:C6:46:EB:C6:80:17:E4:CC:58:2B:11:B1:C2:AE:5D:29:B1:5D:9B:0A:C3:A5:4F:C6:09:72:41:7B:41:C9:AD
