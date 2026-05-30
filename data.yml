@@ -2354,6 +2354,14 @@ packages:
             issue: 519
             apk:
               sha256: dcd20af1ec351bda4d46a9c6353c24fcce05fd17de75d54103249a3b9d076342
+  - package: com.starlink.mobile
+    signature:
+      - fingerprint: CD:FB:A7:80:57:6F:7A:48:00:E2:A6:09:72:6F:83:F0:53:B5:1B:AE:6A:23:90:03:AB:C1:6B:7F:75:E9:F5:88
+        sources:
+          - name: Google Play
+            issue: 912
+            apk:
+              sha256: 00fc3f8d7dd8e6fb85efcf698fba50d05e37fe698f918a19ba0296f4a0d7c29e
   - package: com.streetwriters.notesnook
     signature:
       - fingerprint: 23:AF:C1:F8:ED:5F:BB:D0:85:2A:37:22:2D:DC:E0:6F:92:92:71:02:F0:12:6F:99:6A:56:23:F5:27:74:C6:90
