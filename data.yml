@@ -1629,6 +1629,18 @@ packages:
             issue: 692
             apk:
               sha256: 5dd2244f59c7caca80a4067f41433efcdb7298dea32cddfacd469cf26f38359e
+  - package: com.paperknifeplus.app
+    signature:
+      - fingerprint: 6B:AD:1D:71:9A:8B:B9:7C:73:FA:60:AA:08:B2:B0:D7:33:C7:75:3B:0F:C6:74:A1:30:6F:CD:94:62:23:8A:F8
+        sources:
+          - name: F-Droid
+            issue: 705
+            apk:
+              sha256: 23dc88fc08549d8794d8f4db0bbff2b7920e5fb8a277a72de15223350c521fb0
+          - name: F-Droid (IzzyOnDroid)
+            issue: 705
+            apk:
+              sha256: 23dc88fc08549d8794d8f4db0bbff2b7920e5fb8a277a72de15223350c521fb0
   - package: com.paypal.android.p2pmobile
     signature:
       - fingerprint: C7:C6:2E:A0:F6:E2:F6:EB:A8:7F:95:40:69:87:50:55:30:EF:2F:51:6E:7C:DE:59:91:D7:14:03:31:44:80:72
