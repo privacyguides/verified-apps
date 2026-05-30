@@ -40,6 +40,14 @@ packages:
             issue: 737
             apk:
               sha256: 7315a17f7027467cb77fa34b84ad81094b44aee464d760fefa8d393deb83ce99
+  - package: app.bumpy.android
+    signature:
+      - fingerprint: 5A:AF:64:5E:C6:04:5B:CD:B2:27:CB:B0:62:DB:FA:18:EE:B9:09:B8:42:66:83:A3:29:29:24:29:3D:4F:A2:2A
+        sources:
+          - name: Google Play
+            issue: 765
+            apk:
+              sha256: 3983db549a59e681473446be319bdcbd65b2a1f10a745a8ab4e30188b678f59a
   - package: app.comaps
     signature:
       - fingerprint: 48:94:E8:E6:96:36:27:EF:66:00:31:D8:59:3F:E7:72:97:F8:35:AC:B4:E2:38:10:00:3E:92:61:35:02:3B:4C
