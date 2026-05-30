@@ -2220,6 +2220,14 @@ packages:
             apk:
               sha256: 810c430a358724647921b0056a0c9f398054f6da4207757366ed44a802503c12
               link: https://github.com/spaceapi-community/my-hackerspace/releases/download/v2.3.1/MyHackerspace-2.3.1.apk
+  - package: io.telda.app
+    signature:
+      - fingerprint: 05:97:53:D6:54:64:EA:AB:D6:95:E3:40:9E:E6:DD:25:7D:72:E2:B4:AC:24:B8:23:49:05:22:F1:2E:7F:12:1E
+        sources:
+          - name: Google Play
+            issue: 533
+            apk:
+              sha256: 745f5e9f571488ff149e18b92d960f6bda4dd9466dc1561240200511986093cb
   - package: is.xyz.mpv
     signature:
       - fingerprint: FA:E7:F9:D0:23:85:CC:24:D9:6E:88:43:66:03:E2:3E:A6:AE:C7:64:9A:D1:25:0A:BB:B4:83:7D:AA:B8:2F:FF
