@@ -2087,6 +2087,14 @@ packages:
             issue: 243
             apk:
               sha256: 774e894d5e0e631df01e6e37b5f2fb1bf9d955c1a43323923cce32d1281bd564
+  - package: com.plexapp.android
+    signature:
+      - fingerprint: 82:2C:D1:24:68:84:BE:96:0E:0F:26:67:EB:8A:FC:5F:7D:F0:89:20:36:3C:2F:16:74:29:33:BF:EB:57:17:C6
+        sources:
+          - name: Google Play
+            issue: 917
+            apk:
+              sha256: 0448cf0086e1670e6ff2bb31901f33597acfd5bb45758c70540d8e01ef623069
   - package: com.poupa.vinylmusicplayer
     signature:
       - fingerprint: 5B:FF:14:F9:B3:BD:BC:B3:B2:F3:7D:B6:23:CF:32:1F:D2:B4:80:03:5B:54:08:BB:81:82:C9:3F:C4:F8:ED:A2
