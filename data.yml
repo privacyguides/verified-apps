@@ -1200,6 +1200,14 @@ packages:
             issue: 579
             apk:
               sha256: c97ebafa99bafd75628d25883287499e35907dc3d525111e267f0615d4fc6c83
+  - package: com.forem.android
+    signature:
+      - fingerprint: ED:60:31:EA:8D:32:5A:D5:03:3C:34:73:EB:35:A0:5E:96:22:5D:D2:9D:E3:2A:B0:DF:35:37:FA:4E:F4:CD:2A
+        sources:
+          - name: Google Play
+            issue: 994
+            apk:
+              sha256: 0e5a8fbfb03ab5e7196b6c1388a3dc04ffd84739a81bfc395c8edeaa895051fb
   - package: com.fsck.k9
     signature:
       - fingerprint: 55:C8:A5:23:B9:73:35:F5:BF:60:DF:E8:A9:F3:E1:DD:E7:44:51:6D:93:57:E8:0A:92:5B:7B:22:E4:F5:55:24
