@@ -2651,6 +2651,14 @@ packages:
             issue: 842
             apk:
               sha256: 1bef8f7b7d9c1b4c4a287c7628721c1f8999e5e02a4d154fd625671aa64f6756
+  - package: com.vzw.hss.myverizon
+    signature:
+      - fingerprint: AE:23:A0:34:36:DF:07:B0:CD:70:FE:88:1C:DA:2E:C1:D2:12:15:D7:B7:B0:CC:68:E6:7B:67:F5:DF:89:52:6A
+        sources:
+          - name: Google Play
+            issue: 920
+            apk:
+              sha256: 6497891c7dcf7b0bf59cf168a4474e836d5f406f0fa93278b3877a836ebab809
   - package: com.walmart.android
     signature:
       - fingerprint: F3:CF:E9:B2:7C:F7:7A:41:40:51:73:4B:6A:07:42:2E:D8:B8:ED:71:DE:02:E0:D1:E8:A3:69:94:C1:5A:17:A2
