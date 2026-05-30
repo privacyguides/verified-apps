@@ -677,6 +677,14 @@ packages:
             issue: 676
             apk:
               sha256: 83b41f9359303d96efc6482284a99d25e3c96bcd65afe37dc3af6056174fd97f
+  - package: com.cheogram.android
+    signature:
+      - fingerprint: 51:F6:B6:65:F6:6C:CE:94:A7:F7:AF:5F:10:B5:F2:CE:13:55:DB:13:82:6E:C7:D8:D9:8C:58:EA:84:2E:2E:94
+        sources:
+          - name: F-Droid
+            issue: 781
+            apk:
+              sha256: 44f657427d83e6bdc976d034b5b91e34ea9359edba6f9e6c48cc0baf518bf7c3
   - package: com.cisco.wx2.android
     signature:
       - fingerprint: B0:78:4C:13:1B:03:08:6D:A3:76:D3:23:0E:9C:F8:4B:39:AE:E7:69:70:9F:FB:56:2C:3B:A6:CD:BC:86:9B:8D
