@@ -1081,6 +1081,19 @@ packages:
             issue: 538
             apk:
               sha256: 88949b2d89d8ebdc69cfb203103b3a3b39f8801589aba0d6ccaa0a8b18a9f1b2
+  - package: com.limelight
+    signature:
+      - fingerprint: D6:CE:3A:4D:F1:50:60:FE:48:8F:E5:24:41:A5:49:DE:E4:BA:19:9B:36:E2:CB:1E:D9:08:5C:CA:8B:FA:1A:CA
+        sources:
+          - name: Direct APK Link
+            issue: 720
+            apk:
+              sha256: 87012ee6949cd51f211d029ee1194d0daa03adc6ed3fc9448afa92b1dc43cd9f
+              link: https://github.com/moonlight-stream/moonlight-android/releases/download/v12.1/app-nonRoot-release.apk
+          - name: Google Play
+            issue: 720
+            apk:
+              sha256: 177263b1a3d1999677fe77168f31ba8da6a80ea1a3840989e6ce727ac969e95e
   - package: com.lufthansa.android.lufthansa
     signature:
       - fingerprint: AF:75:72:3A:86:9D:50:C9:20:04:D8:B2:D5:74:46:48:DE:70:14:CA:D8:33:38:86:8E:5F:4C:AA:0B:B8:A8:8E
