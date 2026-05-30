@@ -1150,6 +1150,12 @@ packages:
               sha256: 676d07c34414791add2ee330321d135cd70fa9eb35d51a59df52efc11a0efa27
   - package: com.github.gotify
     signature:
+      - fingerprint: 7A:4C:46:88:B9:24:21:8A:BC:A2:41:9A:6A:73:AA:F3:1A:F6:B9:D4:45:5A:4B:02:47:06:5E:33:F6:7A:8F:75
+        sources:
+          - name: Google Play
+            issue: 809
+            apk:
+              sha256: aee6d101fe752aa6f11d32cb462aad8e31b8662c4e9fa54c5282b4af361a4449
       - fingerprint: EC:87:6E:B9:60:09:1E:4F:55:8C:13:C3:BE:69:DC:E9:94:B8:A2:5F:80:21:41:3A:6D:41:23:67:A5:04:D9:A3
         sources:
           - name: Direct APK Link
