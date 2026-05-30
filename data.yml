@@ -3857,6 +3857,14 @@ packages:
         sources:
           - name: F-Droid
             issue: 541
+  - package: org.dsandler.apps.markers
+    signature:
+      - fingerprint: A8:0B:0D:4E:08:04:13:2B:93:5E:0A:01:1A:BF:34:57:F7:B4:1B:AE:B4:E5:65:E4:EC:E8:6A:96:D9:00:F3:90
+        sources:
+          - name: Google Play
+            issue: 880
+            apk:
+              sha256: 8fb75ef82b2bb2ef0e052825ff5ef86db5b7a8bc41a409c4370e125bfd47d02c
   - package: org.eurail.railplanner
     signature:
       - fingerprint: 4E:93:E9:A0:C7:A5:AD:70:91:98:C3:0C:20:13:9A:43:FB:F9:3C:77:DE:79:EE:73:D1:B8:F1:1B:2C:40:FE:FC
