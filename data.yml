@@ -3653,6 +3653,14 @@ packages:
             issue: 569
             apk:
               sha256: acd8527efe721a8a4a2a75a2d516de804ff81519b2eafd7c2b8039b44c0a460e
+  - package: us.spotco.maps
+    signature:
+      - fingerprint: 9F:7F:36:6E:7E:5C:A6:59:A0:ED:56:A0:55:7F:9E:59:BD:3F:50:E9:72:AD:91:E5:FA:6B:E1:EF:AA:DA:DA:B7
+        sources:
+          - name: F-Droid
+            issue: 773
+            apk:
+              sha256: 9790b3c0f168013a1baf455abb48a2b555c29ad33cc421d2a581b6c411b2a095
   - package: ws.xsoh.etar
     signature:
       - fingerprint: 3F:31:76:C3:CE:18:9C:98:05:4F:F9:E1:D3:2D:AE:CF:00:A4:15:72:F4:C7:BD:2B:2F:80:60:72:52:DD:B0:6E
