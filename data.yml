@@ -278,6 +278,14 @@ packages:
             issue: 442
             apk:
               sha256: 0841e4499f107107aed25e0244c3b5b45f0ee7e57d97aa21f3de2489ff83fd96
+  - package: com.alibaba.aliexpresshd
+    signature:
+      - fingerprint: 4F:C3:B2:67:39:3E:A2:35:1C:47:16:B3:7E:69:10:51:7F:19:7E:B4:79:BC:43:D9:C9:A5:A4:6D:49:DD:70:0E
+        sources:
+          - name: Google Play
+            issue: 713
+            apk:
+              sha256: 036e33c2e0862d526045b57f5aeb69250e96cd47435c64d45a0ae95eab4e0a64
   - package: com.amadeus.merci.client.ui
     signature:
       - fingerprint: 8C:94:B5:19:AB:CA:6C:11:91:18:B5:9B:BF:0F:4D:1D:08:16:D3:D5:88:E2:B1:3C:A7:DD:AD:26:71:05:0E:EB
