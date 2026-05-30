@@ -384,6 +384,14 @@ packages:
             issue: 190
             apk:
               sha256: 17e6a4cf59123095aad29e94bfacbc01df6bcb8ae1f2c2cf730b3ec373ff873e
+  - package: com.artifex.mupdf.viewer.app
+    signature:
+      - fingerprint: A0:B9:A1:FA:8F:17:1F:EE:79:70:C4:A3:F5:0F:D1:19:57:F8:3D:F7:B4:89:ED:46:96:C7:12:60:9E:DA:53:4F
+        sources:
+          - name: Google Play
+            issue: 759
+            apk:
+              sha256: a2b21e1683bd25b922be07bba9ee6c31125408e49d48b416310ff130fe10fe6e
   - package: com.audiobookshelf.app
     signature:
       - fingerprint: 36:48:29:26:56:96:6C:63:D1:B5:7D:93:EA:00:E3:5C:7D:97:51:1E:1F:5B:06:78:A7:17:DA:E7:73:79:39:56
