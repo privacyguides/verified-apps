@@ -2814,6 +2814,14 @@ packages:
             issue: 521
             apk:
               sha256: 06f917b44c543dcc922df10768f9e4211fc244a9e99db60b01c36fb263508254
+  - package: de.jrpie.android.launcher.accrescent
+    signature:
+      - fingerprint: FA:B0:CF:11:32:91:4F:AD:12:A2:53:61:6B:9B:B6:CC:AB:87:B2:07:97:D2:58:95:0E:28:EE:AB:E4:21:0C:B1
+        sources:
+          - name: Accrescent
+            issue: 849
+            apk:
+              sha256: 019e5b21c62c54424f0e38d77017e6086123fd3748261e809b35a65caaf45917
   - package: de.kaiserdragon.iconrequest
     signature:
       - fingerprint: A0:CF:A0:D1:A0:0B:98:87:A1:70:1A:69:3B:DC:3C:2A:8E:84:D3:9D:8E:3A:98:D6:81:BD:34:68:CB:81:A4:DB
