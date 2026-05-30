@@ -1924,6 +1924,14 @@ packages:
             issue: 540
             apk:
               sha256: 73b15967d647c685b592bc03fc4983bee7f3009d526fd69b2a743bb3dd964429
+  - package: com.nytimes.crossword
+    signature:
+      - fingerprint: 4D:DC:7C:55:44:9E:05:F2:51:89:61:FC:D5:F2:19:76:3A:01:60:C4:C0:4C:6E:44:3F:9B:86:4C:10:E2:FB:26
+        sources:
+          - name: Google Play
+            issue: 907
+            apk:
+              sha256: 67c26a617e38e7c34b92fb0d8f2f2f8a0854b95b42ece42e22559c62a6995a80
   - package: com.om1cael.hidroly
     signature:
       - fingerprint: EC:D9:3B:0E:94:44:D2:F2:AD:98:5D:35:03:1B:A0:C9:AB:2B:17:08:DC:9B:4E:6A:E7:39:15:13:59:45:EF:A0
