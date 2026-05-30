@@ -3298,6 +3298,12 @@ packages:
             issue: 706
             apk:
               sha256: e3a8494992d075bef08e57f687b26e6d2c792ac51d5564cdc26a0e02076d678f
+      - fingerprint: 79:B5:00:31:48:67:46:DF:FB:C7:46:F4:8F:B0:EB:62:FC:7B:B0:AE:7B:97:6E:7D:65:07:B2:C0:78:84:0D:92
+        sources:
+          - name: F-Droid
+            issue: 547
+            apk:
+              sha256: 77f61f9ba58d5f6402d5b7ad6a2b2f8904e82ccdd038dbb86b6ab693bb470c4e
   - package: org.khanacademy.android
     signature:
       - fingerprint: EF:FC:FE:21:10:60:12:61:7B:D6:3D:EB:9D:FD:B8:35:4D:1D:57:4D:1D:67:C5:66:4A:5D:02:E6:69:B2:4E:CB
