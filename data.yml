@@ -176,6 +176,12 @@ packages:
         sources:
           - name: F-Droid
             issue: 549
+      - fingerprint: B3:9E:7B:77:EC:85:34:83:64:6B:21:B4:A3:E3:CA:54:0B:A0:94:EF:8D:AA:18:E8:7E:0B:E1:FA:46:38:D3:21
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: 786
+            apk:
+              sha256: 9b628ad48471a6e2dff9ee02d97a4cb118209863d5050d84172005a09c239bd7
   - package: at.saltyy.switchly
     signature:
       - fingerprint: 3C:51:F6:11:92:0B:15:F9:4E:E8:B3:19:1A:8D:26:2B:41:1A:06:42:42:0C:FA:E0:CA:EB:A9:75:2E:15:83:06
