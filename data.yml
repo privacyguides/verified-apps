@@ -32,6 +32,14 @@ packages:
             apk:
               sha256: 62b9163f821073d8b71768a067bd10d51270d4017a264192179fdfb032597c98
               link: https://github.com/immich-app/immich/releases/download/v2.7.5/app-arm64-v8a-release.apk
+  - package: app.attestation.auditor.play
+    signature:
+      - fingerprint: 07:53:35:BD:7B:54:C9:65:22:2B:52:84:D2:A1:FD:EF:11:98:AE:45:EC:7B:09:A4:93:42:87:A0:E3:A2:43:C7
+        sources:
+          - name: Google Play
+            issue: 914
+            apk:
+              sha256: 3fc379f01945037bf0032e372005aaa4aea71c794c29a8372bea8e489685542f
   - package: app.avas.rider
     signature:
       - fingerprint: 4E:B3:C4:7E:B2:E8:98:9E:B6:B2:FD:EC:43:76:EF:2A:FD:13:29:33:A5:F2:2D:41:46:4B:75:D6:84:5B:27:CD
