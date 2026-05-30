@@ -1295,8 +1295,6 @@ packages:
     signature:
       - fingerprint: 7D:55:B8:AF:21:03:81:AA:BF:96:0F:07:E1:7C:F7:85:7B:6D:2A:64:2C:A2:DA:6B:F0:BD:F1:B2:00:36:2F:04
         sources:
-          - name: F-Droid (IzzyOnDroid)
-            issue: 447
           - name: AppVerifier
             issue: 447
           - name: Direct APK Link
@@ -1304,6 +1302,10 @@ packages:
             apk:
               sha256: 76c2d4286ee14f4d80815e9138324b071fc1629a211447b98c2db0ab55b45269
               link: https://github.com/Kunzisoft/KeePassDX/releases/download/4.4.2/KeePassDX-4.4.2-libre.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 495
+            apk:
+              sha256: b38cc6da003aa00089735fce26b002906f0c0d720d8f59ab6aaf9ed6e6078c22
   - package: com.letterboxd.letterboxd
     signature:
       - fingerprint: 4E:A9:E6:0E:75:13:70:C1:CC:D6:D1:C1:91:96:4C:83:40:A8:91:CB:BF:CC:2D:A1:56:8B:84:31:3B:9A:4E:74
