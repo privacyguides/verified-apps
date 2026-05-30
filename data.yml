@@ -2529,6 +2529,14 @@ packages:
             issue: 399
             apk:
               sha256: 4f715443e39ecda7655e9df50f52e98b3999a26153d930e5eee0d41a0a9cdd24
+  - package: com.ubnt.easyunifi
+    signature:
+      - fingerprint: 80:44:78:34:E7:4D:A0:C4:E1:ED:AB:11:65:18:C1:05:8E:C5:52:C2:0C:40:5E:F3:EE:E5:B5:45:67:4B:08:F4
+        sources:
+          - name: Google Play
+            issue: 928
+            apk:
+              sha256: 3f239700a85284ca3974ccaf490374d292f65b34ea9859902636bc629ca57011
   - package: com.unciv.app
     signature:
       - fingerprint: CD:16:E3:86:46:9F:23:98:8F:C9:CD:EC:A0:1B:FE:FB:D0:DE:AE:D1:3A:49:07:BC:E7:6E:91:AC:C9:66:2C:68
