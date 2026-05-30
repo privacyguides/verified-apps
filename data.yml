@@ -2905,6 +2905,14 @@ packages:
             issue: 65
           - name: AppVerifier
             issue: 65
+  - package: org.ppsspp.ppsspp
+    signature:
+      - fingerprint: D1:76:6D:6A:91:72:68:41:E9:18:2A:D5:04:17:C3:F5:E4:93:CE:E4:B1:B7:E3:E6:75:14:7B:30:59:62:9D:EF
+        sources:
+          - name: Google Play
+            issue: 707
+            apk:
+              sha256: 8438d17705b6d6e2d0dabeb1d6908ef4079d7b54939019609c82e636c03d234f
   - package: org.proninyaroslav.libretorrent
     signature:
       - fingerprint: B0:88:D4:72:A9:80:18:64:5C:DE:EF:8E:93:33:8D:58:B3:F2:38:92:18:7F:DF:63:F7:39:58:38:1E:27:E5:83
