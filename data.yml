@@ -2251,10 +2251,18 @@ packages:
     signature:
       - fingerprint: 6A:2F:DC:31:48:04:9C:E0:D5:C6:E8:50:10:72:3B:83:FB:20:7D:20:C7:47:7F:5C:22:AC:53:C8:77:E9:2D:47
         sources:
-          - name: F-Droid
-            issue: 494
           - name: AppVerifier
             issue: 494
+          - name: F-Droid
+            issue: 494
+      - fingerprint: C6:DB:9B:9C:8C:BD:D6:5D:16:E8:EC:8C:8B:91:C8:31:B9:EF:C9:5C:BF:98:AE:41:F6:A9:D8:35:15:1A:7E:16
+        sources:
+          - name: AppVerifier
+            issue: 730
+          - name: Google Play
+            issue: 730
+            apk:
+              sha256: b96367f7c2011bf0181474fe23df2055f86eee40776909bb0f7fd0bd94102cb6
   - package: io.ente.auth
     signature:
       - fingerprint: DD:CE:AA:D6:88:F0:05:D3:40:68:94:BA:00:FC:E3:FF:82:54:13:0A:10:2B:B2:52:E6:3C:D8:EA:A9:72:B2:EF
