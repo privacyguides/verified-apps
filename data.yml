@@ -1525,10 +1525,16 @@ packages:
               link: https://gitlab.com/kunzisoft/android-hardware-key-driver/-/jobs/13280834018/artifacts/raw/app/build/outputs/apk/debug/app-debug.apk
   - package: com.kunzisoft.keepass.free
     signature:
+      - fingerprint: 46:D5:15:D5:F4:15:72:42:0C:EF:30:C0:7B:52:6B:F2:C4:0F:C4:A1:13:EF:19:1F:4F:9D:F9:01:2E:09:1F:35
+        sources:
+          - name: AppVerifier
+            issue: 818
+          - name: Google Play
+            issue: 818
+            apk:
+              sha256: 2964281fa7276f9aa67e17626d1812fa2a01791b96041185aae301bb1b181cd5
       - fingerprint: 7D:55:B8:AF:21:03:81:AA:BF:96:0F:07:E1:7C:F7:85:7B:6D:2A:64:2C:A2:DA:6B:F0:BD:F1:B2:00:36:2F:04
         sources:
-          - name: F-Droid (IzzyOnDroid)
-            issue: 449
           - name: AppVerifier
             issue: 449
           - name: Direct APK Link
@@ -1536,6 +1542,8 @@ packages:
             apk:
               sha256: ee958f1a6a8e123a31783524cb5c5ea26ec514a753f403442aedf14bfaf51e2c
               link: https://github.com/Kunzisoft/KeePassDX/releases/download/4.4.2/KeePassDX-4.4.2-free.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 449
   - package: com.kunzisoft.keepass.libre
     signature:
       - fingerprint: 7D:55:B8:AF:21:03:81:AA:BF:96:0F:07:E1:7C:F7:85:7B:6D:2A:64:2C:A2:DA:6B:F0:BD:F1:B2:00:36:2F:04
