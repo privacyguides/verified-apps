@@ -1369,6 +1369,14 @@ packages:
             issue: 811
             apk:
               sha256: d8717153fbced7b61b496f5f3b81fe56dd2b4e729292afb30a2321065d7c4796
+  - package: com.google.android.apps.healthdata
+    signature:
+      - fingerprint: B2:C0:A8:0E:48:59:34:BF:B0:8F:90:2C:A2:75:05:81:3D:F3:15:9E:4E:6D:D4:A4:DF:07:8D:66:CB:1C:20:03
+        sources:
+          - name: Google Play
+            issue: 979
+            apk:
+              sha256: cc1adee7ece736bdfa195e814714a1f88007303cc0312f1257715aeb2b1c808c
   - package: com.google.android.apps.maps
     signature:
       - fingerprint: |-
