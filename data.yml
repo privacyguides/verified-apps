@@ -1831,6 +1831,23 @@ packages:
             issue: 419
             apk:
               sha256: 2ac3a97bf5dec6bff791b6e9d29a8109a03429f9f7e6c4597895796223e3d32e
+  - package: de.ph1b.audiobook
+    signature:
+      - fingerprint: 11:A4:CA:EE:0B:A3:EB:5A:35:2D:11:25:AB:D3:29:25:20:9E:89:60:15:A5:D9:CA:0F:D9:F8:2D:AE:20:4F:AA
+        sources:
+          - name: Direct APK Link
+            issue: 513
+            apk:
+              sha256: 7f1368ab946f98b0f2a1b5bf9fcef7ff0a0d1be6889d516d90f3571afde5a683
+              link: https://github.com/PaulWoitaschek/Voice/releases/download/26.4.5-5404005/app-github-release.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 513
+            apk:
+              sha256: 7f1368ab946f98b0f2a1b5bf9fcef7ff0a0d1be6889d516d90f3571afde5a683
+          - name: Google Play
+            issue: 513
+            apk:
+              sha256: 37b15f34ceab1251b93024ef449907020707f91436c442a0cab7997e6ec6a109
   - package: de.quantumphysique.trale
     signature:
       - fingerprint: A2:6E:7B:1B:C1:9F:7F:11:81:C0:F1:5C:96:BF:B9:5E:99:9D:FD:28:4F:E0:5F:96:7D:60:45:E1:6C:41:14:38
