@@ -4641,6 +4641,14 @@ packages:
             apk:
               sha256: d07b9a00c6f43da49812ad6a237c97418e519cf17f1c384443562c858a49f1b2
               link: https://github.com/mateusz-bak/openreads/releases/download/v2.11.0/openreads-v2.11.0-release.apk
+  - package: tv.trakt.trakt
+    signature:
+      - fingerprint: 2A:FF:40:C6:A3:68:82:31:0C:6B:D1:B3:9F:F1:0D:A0:4A:DD:FB:D2:D1:00:1B:8C:29:3C:9B:CF:5C:40:F5:8B
+        sources:
+          - name: Google Play
+            issue: 901
+            apk:
+              sha256: a4ace1208482c5f26170fb0fb17d4c0c77e99e2b3031c587e3dec5849fbeec96
   - package: tw.nekomimi.nekogram
     signature:
       - fingerprint: 5C:E9:32:B9:70:19:9F:BD:A2:AA:E7:BF:21:E1:AD:9E:70:B0:80:9A:7B:1A:C9:4C:06:99:F5:D5:AD:A8:33:13
