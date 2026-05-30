@@ -2819,6 +2819,14 @@ packages:
             issue: 419
             apk:
               sha256: 2ac3a97bf5dec6bff791b6e9d29a8109a03429f9f7e6c4597895796223e3d32e
+  - package: de.nulide.findmydevice
+    signature:
+      - fingerprint: 87:A6:C1:36:F5:49:9D:B2:55:C9:3F:4D:38:4C:B1:A5:D3:14:F6:90:8F:2B:F1:97:E0:EC:07:ED:58:BB:58:72
+        sources:
+          - name: F-Droid
+            issue: 852
+            apk:
+              sha256: 10fb92b0e4e5ed9e99d67be992d0009eb17b76184aef86b9256944c438ba3bb4
   - package: de.ph1b.audiobook
     signature:
       - fingerprint: 11:A4:CA:EE:0B:A3:EB:5A:35:2D:11:25:AB:D3:29:25:20:9E:89:60:15:A5:D9:CA:0F:D9:F8:2D:AE:20:4F:AA
