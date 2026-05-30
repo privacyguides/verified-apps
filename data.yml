@@ -3042,6 +3042,14 @@ packages:
             issue: 164
             apk:
               sha256: 1e16e271cda8a0c18700a0305cb834ac81f7158378a72c14554d7c2543078b5f
+  - package: org.mozilla.firefox
+    signature:
+      - fingerprint: A7:8B:62:A5:16:5B:44:94:B2:FE:AD:9E:76:A2:80:D2:2D:93:7F:EE:62:51:AE:CE:59:94:46:B2:EA:31:9B:04
+        sources:
+          - name: Google Play
+            issue: 735
+            apk:
+              sha256: e7ff8c52186e47d01812fb8564300d7591b4b7e575f8e64de1742ac6838f502f
   - package: org.oxycblt.auxio
     signature:
       - fingerprint: DA:84:E2:53:4C:1A:CC:0B:6E:4F:57:DE:DB:64:0D:4D:C8:93:F5:BF:41:37:A2:E1:EC:BA:87:AD:F8:25:BA:44
