@@ -302,6 +302,16 @@ packages:
             issue: 683
             apk:
               sha256: ed8a428a3e6c27abc43a5f8e27d0f5029a315c7446af27d880d8fc4f9e781697
+  - package: com.amazon.mShop.android.shopping
+    signature:
+      - fingerprint: 2F:19:AD:EB:28:4E:B3:6F:7F:07:78:61:52:B9:A1:D1:4B:21:65:32:03:AD:0B:04:EB:BF:9C:73:AB:6D:76:25
+        sources:
+          - name: AppVerifier
+            issue: 712
+          - name: Google Play
+            issue: 712
+            apk:
+              sha256: bb72034c6133de936e4cc64f57dd15f86c4220c63adb5fe3d13f55c80025bcca
   - package: com.appmindlab.nano
     signature:
       - fingerprint: 46:F0:5E:C2:09:B7:D5:17:91:56:71:61:96:DF:BB:F3:24:2D:0F:3F:73:A7:A7:7A:A9:BF:36:9B:FA:D6:D9:DA
