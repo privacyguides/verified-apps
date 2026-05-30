@@ -2058,6 +2058,16 @@ packages:
             issue: 399
             apk:
               sha256: 4f715443e39ecda7655e9df50f52e98b3999a26153d930e5eee0d41a0a9cdd24
+  - package: com.unciv.app
+    signature:
+      - fingerprint: CD:16:E3:86:46:9F:23:98:8F:C9:CD:EC:A0:1B:FE:FB:D0:DE:AE:D1:3A:49:07:BC:E7:6E:91:AC:C9:66:2C:68
+        sources:
+          - name: AppVerifier
+            issue: 778
+          - name: F-Droid
+            issue: 778
+            apk:
+              sha256: 21af82e61972c2e63ec9876da847c011bff524f81b9ed4fa18a08949652f6889
   - package: com.united.mobile.android
     signature:
       - fingerprint: E8:33:17:1F:D6:02:25:5F:03:0E:D2:51:C6:4A:99:89:C7:EA:BC:4E:BE:1C:3D:7B:09:7A:E0:F9:AE:A8:F9:46
