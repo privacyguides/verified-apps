@@ -3867,6 +3867,12 @@ packages:
               sha256: eff8c24e315f0d54a2545bba8e3dc10121e18d173cdca4a89f3f69e7be0c4922
   - package: org.fairscan.app
     signature:
+      - fingerprint: 07:21:32:72:55:5F:E9:8E:3E:2B:EA:35:E3:CA:9C:92:16:65:05:62:5F:2F:EA:1F:47:67:E5:AD:21:E7:9D:A6
+        sources:
+          - name: Google Play
+            issue: 881
+            apk:
+              sha256: 36f98f84da870eaf4d5304fcc6008848c5f0a92c556f04cab9e57c9662ab7d8b
       - fingerprint: 82:07:10:96:13:28:E1:83:4B:CB:81:58:09:2E:6B:6C:5B:51:9F:CD:3B:DB:2E:53:19:EB:DA:F0:8F:9E:A1:E8
         sources:
           - name: Direct APK Link
