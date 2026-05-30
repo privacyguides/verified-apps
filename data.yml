@@ -2137,6 +2137,14 @@ packages:
             issue: 674
             apk:
               sha256: ec0bde236aac9e5e2eb95c46ea805966ace8ecd6bf49fffa85e00ce03ec60251
+  - package: com.riteshsahu.SMSBackupRestore
+    signature:
+      - fingerprint: F4:47:DC:11:66:22:7B:E1:BC:E3:44:1F:38:D8:CD:FA:79:9A:4F:7D:14:58:DA:15:AE:33:C3:F7:7C:38:ED:0A
+        sources:
+          - name: Google Play
+            issue: 830
+            apk:
+              sha256: 03f7bfb32f35234adecc7b32978a0e45e19ce14ff20c773e8ae633c2af179151
   - package: com.ryanair.cheapflights
     signature:
       - fingerprint: 7B:95:CA:16:5B:9D:E6:03:8E:B9:F1:CC:77:BC:54:2C:22:33:DE:A1:43:EE:32:38:69:3A:3F:55:B8:1A:01:E9
