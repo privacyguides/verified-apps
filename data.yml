@@ -1298,6 +1298,14 @@ packages:
             issue: 769
             apk:
               sha256: 63f859b825856e49b69c7b387758699a4d16a187722aa4837d31889f95be1e70
+  - package: com.mattermost.rn
+    signature:
+      - fingerprint: 5C:A7:32:AB:1F:65:7D:D9:E4:BE:FF:08:40:A8:B9:D1:9C:59:C3:0D:E3:AD:CF:4B:E6:A2:92:72:26:C1:1F:4F
+        sources:
+          - name: Google Play
+            issue: 761
+            apk:
+              sha256: 8a2d2b38dfbac371ff5276e6554fee86898bf60c573f05d23434195e5e221b82
   - package: com.mcu.reolink
     signature:
       - fingerprint: 5D:DB:D4:CF:DD:6E:4D:49:4B:64:3B:D1:61:4A:BD:8D:6A:1A:B3:C8:A4:49:E6:DB:E6:D4:7B:ED:A2:DE:C3:44
