@@ -3435,6 +3435,16 @@ packages:
         sources:
           - name: Accrescent
             issue: 120
+  - package: me.hackerchick.catima
+    signature:
+      - fingerprint: 75:FD:99:1B:AC:EA:84:8E:5A:BF:F1:4A:01:D9:60:9B:76:50:CF:03:06:B3:7A:60:ED:56:15:67:8C:B3:64:07
+        sources:
+          - name: AppVerifier
+            issue: 872
+          - name: Google Play
+            issue: 872
+            apk:
+              sha256: 0bc5f7d067ec30aae78cf9cba2223e5effe53f0322c5927f56c18c095b32a001
   - package: me.lucky.clipeus
     signature:
       - fingerprint: 00:6A:FF:63:E6:03:9B:1B:A2:B6:80:2A:3A:E1:5D:C4:A5:55:4D:5C:2D:BF:66:DD:DB:C0:38:60:25:18:F5:F5
