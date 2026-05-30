@@ -2921,6 +2921,15 @@ packages:
             issue: 682
             apk:
               sha256: 9f49cc6a9db375187cf0491159de8a38761277fcbabd4ad7520d7858658caf49
+  - package: me.magnum.melonds
+    signature:
+      - fingerprint: 04:93:BB:87:49:28:9F:03:04:CC:86:84:89:DD:68:B9:30:C1:9C:CC:4D:CE:2D:A8:76:BF:E6:B9:BD:BA:BE:BC
+        sources:
+          - name: Direct APK Link
+            issue: 417
+            apk:
+              sha256: 646eb4564c71b0817ace6474e92c169da16630d58826c43e0fe648896311ec94
+              link: https://github.com/rafaelvcaetano/melonDS-android/releases/download/2.0.1/app-gitHub-prod-release.apk
   - package: me.magnum.melonds.nightly
     signature:
       - fingerprint: 04:93:BB:87:49:28:9F:03:04:CC:86:84:89:DD:68:B9:30:C1:9C:CC:4D:CE:2D:A8:76:BF:E6:B9:BD:BA:BE:BC
