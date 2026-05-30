@@ -2887,6 +2887,15 @@ packages:
             issue: 682
             apk:
               sha256: 9f49cc6a9db375187cf0491159de8a38761277fcbabd4ad7520d7858658caf49
+  - package: me.magnum.melonds.nightly
+    signature:
+      - fingerprint: 04:93:BB:87:49:28:9F:03:04:CC:86:84:89:DD:68:B9:30:C1:9C:CC:4D:CE:2D:A8:76:BF:E6:B9:BD:BA:BE:BC
+        sources:
+          - name: Direct APK Link
+            issue: 624
+            apk:
+              sha256: c3a60925984d9f4cb967a6d9b4a4ce43b86409aa30cfc8900ec0955302020998
+              link: https://github.com/rafaelvcaetano/melonDS-android/releases/download/nightly-release/app-gitHub-nightly-release.apk
   - package: me.ocv.partyup_dbg
     signature:
       - fingerprint: CA:8D:3B:0D:DA:29:61:D8:93:05:40:A0:3C:41:9B:A5:4A:76:25:7F:B2:08:C9:B4:85:94:42:BE:16:29:65:D8
