@@ -1356,6 +1356,19 @@ packages:
             issue: 769
             apk:
               sha256: 63f859b825856e49b69c7b387758699a4d16a187722aa4837d31889f95be1e70
+  - package: com.mateusrodcosta.apps.share2storage
+    signature:
+      - fingerprint: 2A:0B:90:54:1C:F2:E4:83:B7:2F:E1:F4:01:AC:DF:20:2F:EE:FA:D9:0B:33:5A:31:D6:DB:AC:3B:A0:E0:60:87
+        sources:
+          - name: Direct APK Link
+            issue: 524
+            apk:
+              sha256: 9e1fe44b177e6ba163ee7b7d44773a277acae05715f524c4f5b9cc237ec7166a
+              link: https://github.com/MateusRodCosta/SaveLocally/releases/download/v2.1.0/SaveLocally-v2.1.0.apk
+          - name: F-Droid
+            issue: 524
+            apk:
+              sha256: 9e1fe44b177e6ba163ee7b7d44773a277acae05715f524c4f5b9cc237ec7166a
   - package: com.mattermost.rn
     signature:
       - fingerprint: 5C:A7:32:AB:1F:65:7D:D9:E4:BE:FF:08:40:A8:B9:D1:9C:59:C3:0D:E3:AD:CF:4B:E6:A2:92:72:26:C1:1F:4F
