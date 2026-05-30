@@ -896,6 +896,15 @@ packages:
             issue: 322
             apk:
               sha256: a6f90cdd7d19692c06e047c9622778531745b97a4748408f5a054df4ad174656
+  - package: com.example.deeplviewer
+    signature:
+      - fingerprint: 9D:4A:B3:C7:FD:F9:F6:E9:EE:1C:2A:4E:62:EE:80:7D:0E:74:39:01:F4:8C:B9:93:AB:D0:FA:06:A2:00:3F:49
+        sources:
+          - name: Direct APK Link
+            issue: 255
+            apk:
+              sha256: 486d5ca96d603fa134c8626b6953b8de90aca9a4eabf872b43c663b8d351922d
+              link: https://github.com/sakusaku3939/DeepLAndroid/releases/download/v9.4/DeepLAndroid.apk
   - package: com.expedia.bookings
     signature:
       - fingerprint: 8E:41:EC:3B:8E:F3:18:5B:BB:FE:D4:21:27:11:7C:E6:0B:3D:A4:1C:4B:49:B7:E2:99:CD:31:23:73:41:EE:6B
