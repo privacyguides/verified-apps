@@ -878,6 +878,14 @@ packages:
             issue: 148
             apk:
               sha256: f16e110a79968c987c22fd23180ede162279a5c19837e876279b93f9136a0886
+  - package: com.google.android.apps.docs
+    signature:
+      - fingerprint: F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
+        sources:
+          - name: Google Play
+            issue: 726
+            apk:
+              sha256: 1d7711d1d01f7dd4574c967596cb7ed5128e96d35ef097c597f3a28507634e35
   - package: com.google.android.apps.docs.editors.slides
     signature:
       - fingerprint: |-
