@@ -2588,6 +2588,14 @@ packages:
             issue: 842
             apk:
               sha256: 1bef8f7b7d9c1b4c4a287c7628721c1f8999e5e02a4d154fd625671aa64f6756
+  - package: com.walmart.android
+    signature:
+      - fingerprint: F3:CF:E9:B2:7C:F7:7A:41:40:51:73:4B:6A:07:42:2E:D8:B8:ED:71:DE:02:E0:D1:E8:A3:69:94:C1:5A:17:A2
+        sources:
+          - name: Google Play
+            issue: 843
+            apk:
+              sha256: 26d26764682f361fade5e73087fe40acd0ba40ef0260627fb47bcd1674b99e0f
   - package: com.weawow
     signature:
       - fingerprint: 70:3B:0F:C8:DC:E8:8D:21:56:64:B0:97:CA:A1:2A:66:B7:E1:31:FE:43:19:AC:57:6B:3A:36:FA:3B:03:67:4D
