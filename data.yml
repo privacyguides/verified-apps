@@ -3927,6 +3927,14 @@ packages:
             issue: 390
             apk:
               sha256: e5febb0272b72a9290aa3237292a36fa04e070c946108939bdec5dc6dcb24218
+  - package: nl.appyhapps.healthsync
+    signature:
+      - fingerprint: F7:BB:BD:D2:F3:A3:FE:CA:52:2D:C7:CA:B7:0C:62:0F:C1:17:A1:67:68:C1:AF:64:41:34:F6:DA:C0:F9:E7:BC
+        sources:
+          - name: Google Play
+            issue: 943
+            apk:
+              sha256: f3aa7c82f31e7e56b34aa11d4f88c6ba85f47784d0b913928d54d1754c2571d6
   - package: nodomain.freeyourgadget.gadgetbridge
     signature:
       - fingerprint: 01:CC:E9:31:6F:CB:77:EA:02:C6:DE:A8:1F:DE:9F:31:76:46:92:02:C0:CE:A0:51:4C:0E:03:CB:96:9B:C7:BE
