@@ -1377,6 +1377,14 @@ packages:
             issue: 812
             apk:
               sha256: 8c4a4c4218692458334646fbec0a74014ff2f5175edb2700ef578d56c00e3c7a
+  - package: com.google.android.contactkeys
+    signature:
+      - fingerprint: D9:E1:73:5B:2A:39:51:27:3A:87:35:B7:66:9E:F1:9E:F5:3A:F1:C1:27:5C:BA:31:39:3C:18:40:8B:03:79:D0
+        sources:
+          - name: Google Play
+            issue: 944
+            apk:
+              sha256: cdc5c9f211b42de364d2c15bf6e5a00f5cf8afe8841947ea9a4cb1ee0ddf9f12
   - package: com.google.android.googlequicksearchbox
     signature:
       - fingerprint: |-
