@@ -2734,6 +2734,14 @@ packages:
             issue: 501
             apk:
               sha256: 3a07687ce560dc0b9c63cc344a2a484c47c8d5f53c0649d29d658e37d870d3f2
+  - package: com.youneedabudget.evergreen.app
+    signature:
+      - fingerprint: 1A:9D:B5:68:EE:A7:A3:C7:AD:C6:46:21:11:FE:1A:51:8A:AC:C5:DF:8A:47:A6:C3:EB:BC:4F:63:8A:5C:CB:1C
+        sources:
+          - name: Google Play
+            issue: 847
+            apk:
+              sha256: d0764c6787ce7f1be0c98d454491c7cd7eb549e0b4ea1f1741733b7172833952
   - package: com.yubico.yubioath
     signature:
       - fingerprint: 3E:21:DA:5A:CA:A8:D4:9C:E5:15:B1:C6:D2:A1:90:3B:AE:29:8D:09:11:43:2C:55:E7:5A:19:61:99:F2:B9:A0
