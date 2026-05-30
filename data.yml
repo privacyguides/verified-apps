@@ -2485,6 +2485,14 @@ packages:
             issue: 349
             apk:
               sha256: 163651fc4514e9bf15fa1eed8f36c7e97da571c3200f726e1a8dd472603275cc
+  - package: com.upside.consumer.android
+    signature:
+      - fingerprint: ED:99:88:71:D7:9D:5E:91:A4:FF:BB:75:71:5B:1B:FD:DB:4B:06:8D:80:EF:C3:75:5F:AA:F0:3F:C5:87:D8:B2
+        sources:
+          - name: Google Play
+            issue: 839
+            apk:
+              sha256: 966b9cb22be34da65371e3f9893a9831f3fe246e1d5f5f6055cf775d43098a2a
   - package: com.urbandroid.kinestop
     signature:
       - fingerprint: 2F:84:FB:3C:3A:39:CA:F2:01:A1:11:54:03:7B:50:D3:2C:05:A4:C1:18:B8:F1:39:F9:C7:9C:15:FB:D5:54:82
