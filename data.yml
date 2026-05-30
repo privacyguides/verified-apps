@@ -216,6 +216,14 @@ packages:
             issue: 19
           - name: Google Play
             issue: 19
+  - package: co.com.bancofalabella.mobile.omc
+    signature:
+      - fingerprint: 1B:FE:A0:89:D7:F5:B4:90:CB:B2:03:90:AD:BC:2F:81:1F:50:D8:7C:14:AB:87:74:D6:3C:01:84:AA:ED:A8:7F
+        sources:
+          - name: Google Play
+            issue: 746
+            apk:
+              sha256: 86891df1d1f2dd5af9bf3ffd5efd5e43f1455a93576a773ec17f9a8bc1056a8a
   - package: co.com.bancolombia.personas.superapp
     signature:
       - fingerprint: A9:0E:16:98:5B:0D:0A:D2:25:F6:E7:A2:38:46:82:99:88:08:DD:71:22:3F:0A:22:25:26:99:96:20:67:8C:46
