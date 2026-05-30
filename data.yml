@@ -2713,6 +2713,15 @@ packages:
             issue: 571
             apk:
               sha256: 6d88f9e94beae7790ffbe729569d08026cd339ca3b8a6611d9608c9032624545
+  - package: io.ente.auth.independent
+    signature:
+      - fingerprint: BA:8B:F0:32:98:62:70:05:ED:DF:F6:B1:D6:0B:3B:FA:A1:4E:E8:BD:C7:61:4F:FB:3B:B1:1C:58:8D:9E:3A:D7
+        sources:
+          - name: Direct APK Link
+            issue: 189
+            apk:
+              sha256: 4e0e56d97d1f28a256ab2cffe16ad62fbb24fd3ebb049c35ba6e7f2316169c8a
+              link: https://github.com/ente-io/ente/releases/download/auth-v4.4.22/ente-auth-v4.4.22.apk
   - package: io.ente.photos
     signature:
       - fingerprint: 37:D4:0B:10:3B:BF:86:43:EB:AE:23:B3:BB:73:F8:65:B4:E9:3A:BF:65:45:EF:37:12:8A:4C:EA:5B:C2:7E:2E
