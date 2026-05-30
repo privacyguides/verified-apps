@@ -3348,6 +3348,11 @@ packages:
     signature:
       - fingerprint: 74:3F:AD:58:64:AB:C4:26:50:0B:2D:C2:C4:7C:8A:D3:24:CB:CD:16:03:3F:80:16:99:48:41:35:63:74:F9:95
         sources:
+          - name: Direct APK Link
+            issue: 201
+            apk:
+              sha256: 24f26459771b2ffbf11c3154d2ee595ec1079584a7a91fdf88174176aaf3cda7
+              link: https://github.com/futo-org/android-keyboard/releases/download/0.1.28/keyboard-0.1.28.apk
           - name: F-Droid (app.futo.org)
             issue: 618
             apk:
