@@ -3053,6 +3053,14 @@ packages:
             apk:
               sha256: 591275a6a726d998f61f14ea721c9af497574d49a362ceb2f971726068a4533e
               link: https://releases.ironfoxoss.org/ironfox/releases/151.0/universal/ironfox-151.0-universal.apk
+  - package: org.isoron.uhabits
+    signature:
+      - fingerprint: B2:F2:FA:6F:86:8B:1E:0A:A0:3F:B8:08:4F:BC:1B:0F:FC:35:3D:9C:F9:82:6C:8B:40:CF:FF:0E:D0:80:4B:0A
+        sources:
+          - name: Google Play
+            issue: 764
+            apk:
+              sha256: 86cc5a2d4cf4c61897297a09fef579c787ddb8d8f6ef80daccb6274425ee202a
   - package: org.jellyfin.mobile
     signature:
       - fingerprint: D8:81:79:6E:D2:A6:7F:F6:EF:9F:67:68:28:72:3C:6B:1F:A1:8E:09:38:89:62:CB:A4:AB:C4:A5:94:A6:91:31
