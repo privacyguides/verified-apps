@@ -2346,6 +2346,14 @@ packages:
             issue: 445
             apk:
               sha256: 1e888c9b565aa9839680d9aefe6b411c4dc4e9608eabfa928a5fd7ee80440d38
+  - package: com.synology.dsdrive
+    signature:
+      - fingerprint: F2:45:DB:5C:F9:FB:6C:4E:F6:9F:1C:24:8C:0E:8D:78:AA:24:0C:A5:78:99:19:F8:1B:26:E2:EA:46:92:86:22
+        sources:
+          - name: Google Play
+            issue: 836
+            apk:
+              sha256: 4c4b97b4ff55c2ddde451d341d15b4ec1d52289d31d57f2b63518980952a81ae
   - package: com.tailscale.ipn
     signature:
       - fingerprint: 5C:DB:29:55:51:BF:E1:A0:87:FE:D6:AC:DA:07:14:1C:6C:92:9F:A7:C2:9B:D2:73:A7:09:28:13:AC:C4:34:BF
