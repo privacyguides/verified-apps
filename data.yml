@@ -2396,6 +2396,23 @@ packages:
             issue: 211
             apk:
               sha256: fbab1c450c807f44e45e90f02b95ed8733866faaa6df33d54bdaae3fb59d1856
+  - package: dev.jdtech.jellyfin
+    signature:
+      - fingerprint: EC:C1:20:86:DB:DD:B5:FA:A3:E1:B6:50:D1:61:FB:62:3F:5F:24:18:89:92:C1:17:33:39:CD:5A:8B:2F:86:89
+        sources:
+          - name: Direct APK Link
+            issue: 698
+            apk:
+              sha256: b203e55e0a197ef56195740fc843a9e8aca1e686a8dbacf7e19c7cf494510155
+              link: https://github.com/jarnedemeulemeester/findroid/releases/download/v1.0.2/findroid-v1.0.2-libre-arm64-v8a.apk
+          - name: F-Droid
+            issue: 698
+            apk:
+              sha256: b203e55e0a197ef56195740fc843a9e8aca1e686a8dbacf7e19c7cf494510155
+          - name: F-Droid (IzzyOnDroid)
+            issue: 698
+            apk:
+              sha256: 49f863a01cd412ec1faf46e278847d7bee42dd477b07dbf08048c145a97c5e54
   - package: dev.soupslurpr.appverifier
     signature:
       - fingerprint: 3A:04:A8:0B:2A:88:33:4C:74:74:85:F0:B2:15:16:40:A3:8B:B3:D2:D7:3A:8E:AB:81:DF:50:3E:0F:02:02:B2
