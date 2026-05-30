@@ -4123,6 +4123,16 @@ packages:
             issue: 2
           - name: AppVerifier
             issue: 2
+  - package: org.fdroid.fdroid
+    signature:
+      - fingerprint: 43:23:8D:51:2C:1E:5E:B2:D6:56:9F:4A:3A:FB:F5:52:34:18:B8:2E:0A:3E:D1:55:27:70:AB:B9:A9:C9:CC:AB
+        sources:
+          - name: AppVerifier
+            issue: 950
+          - name: F-Droid
+            issue: 950
+            apk:
+              sha256: 985f5181d48bb6bafd54083a048b391271e0ab28385881cc41294fb01a222762
   - package: org.fossify.calendar
     signature:
       - fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
