@@ -6,7 +6,8 @@ from __future__ import annotations
 import html
 import json
 import shutil
-from datetime import datetime, timezone
+import subprocess
+import sys
 from pathlib import Path
 
 import yaml
@@ -126,14 +127,42 @@ def render_rows(rows: list[dict]) -> str:
     return "\n".join(parts)
 
 
+def git_value(repo_root: Path, *args: str) -> str:
+    result = subprocess.run(
+        ["git", *args],
+        cwd=repo_root,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if result.returncode != 0:
+        sys.exit(
+            "error: git is required to build a reproducible site "
+            f"({' '.join(args)} failed: {result.stderr.strip()})"
+        )
+    value = result.stdout.strip()
+    if not value:
+        sys.exit(f"error: git returned no output for {' '.join(args)}")
+    return value
+
+
+def git_commit_date(repo_root: Path) -> str:
+    # %cs is the committer date as YYYY-MM-DD (UTC), stable across machines.
+    return git_value(repo_root, "log", "-1", "--format=%cs")
+
+
+def git_commit_sha(repo_root: Path) -> str:
+    return git_value(repo_root, "rev-parse", "HEAD")
+
+
 def main() -> None:
     with DATA_FILE.open(encoding="utf-8") as f:
         data = yaml.safe_load(f)
 
     rows = build_rows(data)
     app_count = len({pkg["package"] for pkg in data.get("packages", [])})
-    generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    css_version = datetime.now(timezone.utc).strftime("%Y%m%d%H%M")
+    generated_at = git_commit_date(ROOT)
+    css_version = git_commit_sha(ROOT)
 
     template = (SITE_SRC / "index.html").read_text(encoding="utf-8")
     html_out = (
@@ -150,7 +179,7 @@ def main() -> None:
         shutil.rmtree(SITE_OUT)
     SITE_OUT.mkdir(parents=True)
     (SITE_OUT / "index.html").write_text(html_out, encoding="utf-8")
-    shutil.copy2(SITE_SRC / "style.css", SITE_OUT / "style.css")
+    shutil.copy(SITE_SRC / "style.css", SITE_OUT / "style.css")
 
     meta = {
         "schema": data.get("schema"),
