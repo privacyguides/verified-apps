@@ -268,6 +268,14 @@ packages:
             issue: 790
             apk:
               sha256: ab032232e50886bce9ffeec278dd726b561ea513661b23467b2528fa5a734967
+  - package: chat.delta
+    signature:
+      - fingerprint: 35:5B:E2:C3:8E:C6:73:83:C1:02:FB:E0:3E:84:C4:BC:3E:6F:89:06:F8:D3:66:91:4F:84:52:82:08:13:2A:EE
+        sources:
+          - name: Google Play
+            issue: 987
+            apk:
+              sha256: ff952c37fbf0f669db43516533f19ceee4938a47940bbe32f7080f5cfc29e36f
   - package: chat.fluffy.fluffychat
     signature:
       - fingerprint: 05:7A:C4:51:64:A2:E6:E3:1F:6D:DE:55:5A:5F:2C:CC:B4:D8:83:4C:B1:85:25:49:68:1B:00:E3:46:68:CA:F3
