@@ -1290,6 +1290,14 @@ packages:
             issue: 766
             apk:
               sha256: ff12e539b2a2420a4fcb54b0d839bbff2827ab3b5c2bc6a91a1fb97cb501714b
+  - package: com.match.android.matchmobile
+    signature:
+      - fingerprint: AF:9B:6B:D4:20:C2:03:3B:2E:EC:8F:69:44:25:AC:DE:D3:C3:06:29:A9:FA:81:89:07:04:EC:D7:57:00:C4:22
+        sources:
+          - name: Google Play
+            issue: 769
+            apk:
+              sha256: 63f859b825856e49b69c7b387758699a4d16a187722aa4837d31889f95be1e70
   - package: com.mcu.reolink
     signature:
       - fingerprint: 5D:DB:D4:CF:DD:6E:4D:49:4B:64:3B:D1:61:4A:BD:8D:6A:1A:B3:C8:A4:49:E6:DB:E6:D4:7B:ED:A2:DE:C3:44
