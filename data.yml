@@ -2461,6 +2461,14 @@ packages:
             issue: 722
             apk:
               sha256: 0cffd7035c8b6370ac8a4e60831d2ac9b01b37eb8a9551ce680c96777cce7c26
+  - package: ncit.gov.efaasblue
+    signature:
+      - fingerprint: 92:76:E3:A8:17:4E:EB:81:5C:79:F6:9A:7C:CD:34:37:42:6A:DA:A3:79:E7:ED:83:3A:D9:60:5E:69:40:33:D5
+        sources:
+          - name: Google Play
+            issue: 724
+            apk:
+              sha256: a0326caebd3a6839e24188d5e9152904b9c7861936df8b7425286ec1c32b7474
   - package: net.christianbeier.droidvnc_ng
     signature:
       - fingerprint: F8:EF:C0:A7:D5:F9:D8:BA:88:ED:F0:82:F2:DC:2C:21:31:B7:54:BA:8F:ED:B4:91:6A:C2:EB:2A:CC:52:19:0D
