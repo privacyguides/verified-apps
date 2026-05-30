@@ -4308,6 +4308,14 @@ packages:
             apk:
               sha256: 741727aeb08a976e092c371db7ee7e79b2c9cd29b181858e0d40d9dac9f10848
               link: https://updates.signal.org/android/Signal-Android-website-prod-universal-release-8.10.3.apk
+  - package: org.thunderdog.challegram
+    signature:
+      - fingerprint: EB:80:1A:30:32:94:BA:02:A8:4D:03:0E:BB:12:16:C4:38:AC:98:5A:D4:B8:92:08:E3:2D:7A:71:90:DC:DD:33
+        sources:
+          - name: Google Play
+            issue: 889
+            apk:
+              sha256: 5e70acfb0fbcd7cbf8da889bde9ec7cc6a6328f71497f90497a5ed310631d15d
   - package: org.torproject.android
     signature:
       - fingerprint: A4:54:B8:7A:18:47:A8:9E:D7:F5:E7:0F:BA:6B:BA:96:F3:EF:29:C2:6E:09:81:20:4F:E3:47:BF:23:1D:FD:5B
