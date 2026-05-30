@@ -2876,6 +2876,15 @@ packages:
             issue: 682
             apk:
               sha256: 9f49cc6a9db375187cf0491159de8a38761277fcbabd4ad7520d7858658caf49
+  - package: me.ocv.partyup_dbg
+    signature:
+      - fingerprint: CA:8D:3B:0D:DA:29:61:D8:93:05:40:A0:3C:41:9B:A5:4A:76:25:7F:B2:08:C9:B4:85:94:42:BE:16:29:65:D8
+        sources:
+          - name: Direct APK Link
+            issue: 700
+            apk:
+              sha256: 7b4268c4691b36284e50fe9fce55c139d7d444e0aba69c9370d4d728930d352d
+              link: https://github.com/9001/party-up/releases/download/v1.9.0/party-up-1.9.0.apk
   - package: me.proton.android.calendar
     signature:
       - fingerprint: DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
