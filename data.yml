@@ -2040,6 +2040,14 @@ packages:
             issue: 199
             apk:
               sha256: 82b3f50dde94ed9cf4cc3183fa72b53261154637538c01f935f03c6baec34f9f
+  - package: com.planetfitness
+    signature:
+      - fingerprint: 2C:87:7B:4C:C0:43:2E:E6:F3:DD:66:53:55:D7:53:4B:B6:BA:A6:56:75:C7:ED:B2:8C:8E:E8:51:9A:CB:5C:90
+        sources:
+          - name: Google Play
+            issue: 827
+            apk:
+              sha256: a3e4a99668290a696aefe648947918f4a4dcf600a36945ea26144bdab864f4ba
   - package: com.pleco.chinesesystem
     signature:
       - fingerprint: 78:0A:2A:63:9A:3C:CB:65:62:1E:0C:AC:CF:18:FA:38:C9:1F:6C:BF:35:1D:45:37:42:EB:E2:A1:14:B0:96:24
