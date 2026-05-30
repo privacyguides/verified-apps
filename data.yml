@@ -1290,6 +1290,14 @@ packages:
             issue: 766
             apk:
               sha256: ff12e539b2a2420a4fcb54b0d839bbff2827ab3b5c2bc6a91a1fb97cb501714b
+  - package: com.masarat.salati
+    signature:
+      - fingerprint: 82:06:BF:C4:05:AB:72:3D:21:87:C4:E1:2E:E1:3F:57:2B:D7:81:E9:47:23:EC:2D:74:32:C6:28:85:E0:7B:6F
+        sources:
+          - name: Google Play
+            issue: 725
+            apk:
+              sha256: 7a26b3f70bc4777d3aebec0f64d4f4e913260f0d0b7fd3fab54fc5244a3ceab2
   - package: com.match.android.matchmobile
     signature:
       - fingerprint: AF:9B:6B:D4:20:C2:03:3B:2E:EC:8F:69:44:25:AC:DE:D3:C3:06:29:A9:FA:81:89:07:04:EC:D7:57:00:C4:22
