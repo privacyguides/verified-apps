@@ -1680,6 +1680,15 @@ packages:
             issue: 194
             apk:
               sha256: b40b42a67e647746bd5c77465e305e4f13772ca5bbe17fa9a8ea5ac60f289992
+  - package: com.nuvio.app
+    signature:
+      - fingerprint: 1C:BA:06:FB:DF:97:8D:0E:3F:9A:D5:8D:E6:BA:3D:69:E2:4A:94:83:84:AD:DE:3A:ED:95:45:1E:83:0E:52:10
+        sources:
+          - name: Direct APK Link
+            issue: 413
+            apk:
+              sha256: 7880bc2187ff8d4e5dc2562941354b0598686b5a62420994c168252a09382528
+              link: https://github.com/NuvioMedia/NuvioMobile/releases/download/0.1.24/composeApp-full-release.apk
   - package: com.nvllz.stepsy
     signature:
       - fingerprint: 91:E4:CD:09:9C:31:AE:AF:1B:C5:ED:40:29:46:7E:B7:18:1D:5A:7D:D8:93:FD:98:83:27:13:CE:3B:E5:88:16
