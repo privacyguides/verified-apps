@@ -1458,6 +1458,14 @@ packages:
             issue: 532
             apk:
               sha256: aab59f4908f4e862c5c6454fb03e9e2ab63e7db00b7fe224ef3c34c0ad287715
+  - package: com.queue.queuebee
+    signature:
+      - fingerprint: 84:81:D6:D5:5E:EA:B3:05:E2:3A:D1:CF:F5:47:44:04:CD:D1:EB:3C:16:19:7E:D5:30:6A:37:14:82:E8:C1:0F
+        sources:
+          - name: Google Play
+            issue: 719
+            apk:
+              sha256: 8cea7e978441f85772705898e85e5d703542d0b340fe687a6826347ffd8da869
   - package: com.reddit.frontpage
     signature:
       - fingerprint: 97:0B:91:14:38:13:B4:C9:D5:F3:63:4F:67:2C:9F:CA:A5:62:1B:4E:FA:AE:DA:FD:6C:23:5C:BB:B8:69:73:6F
