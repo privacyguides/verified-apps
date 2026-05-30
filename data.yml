@@ -206,6 +206,14 @@ packages:
             issue: 301
             apk:
               sha256: 37ddf092d1e4b2cf9a61c77609b0f8eea26872d7f32ca4ad4c43fccf278d995d
+  - package: au.com.shiftyjelly.pocketcasts
+    signature:
+      - fingerprint: CE:08:25:F4:CA:78:56:76:D9:0D:3A:F6:0F:54:FE:43:B8:42:7A:FE:9E:1B:B6:77:AD:D7:58:DA:C1:29:18:20
+        sources:
+          - name: Google Play
+            issue: 787
+            apk:
+              sha256: 29c0190fd7524f2b77121c302d4114a7504dcb2ba0152a8835b17a445a2dd9ab
   - package: cc.narumi.chaldea
     signature:
       - fingerprint: 32:3A:BD:30:AE:C1:C0:15:EF:AF:AA:3C:B1:49:DF:74:26:57:86:30:1B:D6:A9:D9:8A:40:62:A7:A5:A6:1E:99
