@@ -1452,6 +1452,14 @@ packages:
             issue: 677
             apk:
               sha256: 8cc65dcaf4c1b82bfb9afd3e29194ec27563bdcc9533787381e70d9710d1f945
+  - package: com.jmstudios.redmoon
+    signature:
+      - fingerprint: 66:85:06:F3:98:AF:7C:EF:CC:AB:8C:21:C2:F1:40:9A:9D:00:51:CD:2D:9D:4A:B3:22:19:6B:67:EE:5B:34:47
+        sources:
+          - name: F-Droid
+            issue: 814
+            apk:
+              sha256: c207ebf2533d50f13ba909c7a320be0e655154a91530efebc8f7dc5c27d5b52d
   - package: com.jrustonapps.myauroraforecast
     signature:
       - fingerprint: 95:F5:5A:84:0F:1A:F3:40:08:FB:E4:A0:76:D5:6C:F9:39:C2:9E:59:E6:48:CC:FF:5E:2E:1A:CB:F7:2D:27:C6
