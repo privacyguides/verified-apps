@@ -232,6 +232,14 @@ packages:
             issue: 741
             apk:
               sha256: 042f160b2f73d037079852b36e9d99259afd5867932b0d7d1fe79398dc092b85
+  - package: co.hinge.app
+    signature:
+      - fingerprint: 3C:9E:97:5E:34:B9:9E:AA:B1:E6:CE:09:55:BD:B7:F5:49:9E:36:CB:BA:56:61:9C:1E:EE:D1:96:C5:63:5E:5F
+        sources:
+          - name: Google Play
+            issue: 749
+            apk:
+              sha256: ff34857e5a53a7b60a4338ac0639b0a6b4ab9132c92f5c1ab977cf729af10727
   - package: co.uk.exocron.android.qlango
     signature:
       - fingerprint: 5D:40:43:44:B8:E6:4C:B7:3A:96:C0:84:29:FA:DE:99:22:BC:25:69:E5:F4:91:A5:A4:1F:72:B9:72:F1:39:85
