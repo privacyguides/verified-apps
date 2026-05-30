@@ -2420,6 +2420,15 @@ packages:
             issue: 698
             apk:
               sha256: 49f863a01cd412ec1faf46e278847d7bee42dd477b07dbf08048c145a97c5e54
+  - package: dev.octoshrimpy.quik
+    signature:
+      - fingerprint: 52:8B:89:A6:7E:25:86:35:BE:21:29:A7:4E:27:44:F9:02:0B:0B:12:27:08:F8:09:1B:5F:D3:CA:0C:1D:2D:DF
+        sources:
+          - name: Direct APK Link
+            issue: 575
+            apk:
+              sha256: 4b96925f1fa7362949b81a3f008dd03e21be3ff57feaa11073bd753b65ce0f45
+              link: https://github.com/quik-sms/quik/releases/download/v4.3.6/QUIK-v4.3.6-release.apk
   - package: dev.soupslurpr.appverifier
     signature:
       - fingerprint: 3A:04:A8:0B:2A:88:33:4C:74:74:85:F0:B2:15:16:40:A3:8B:B3:D2:D7:3A:8E:AB:81:DF:50:3E:0F:02:02:B2
