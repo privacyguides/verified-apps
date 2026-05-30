@@ -1294,6 +1294,15 @@ packages:
             issue: 502
             apk:
               sha256: 71473e75dba55442713b867cff13004e77efe0e9002b079bf35f924cd62ce549
+  - package: com.kunzisoft.hardware.key
+    signature:
+      - fingerprint: F6:97:96:A3:61:3B:C4:B4:F9:F5:4A:6F:E2:44:A0:AE:65:A7:D2:20:2B:53:C7:AE:7E:EE:F1:19:6A:CE:E8:F8
+        sources:
+          - name: Direct APK Link
+            issue: 507
+            apk:
+              sha256: 5d761e77d3d7eec031fd87a20293e8fd8ec66b3d3524af76cd6ffe845af8aad8
+              link: https://gitlab.com/kunzisoft/android-hardware-key-driver/-/jobs/13280834018/artifacts/raw/app/build/outputs/apk/debug/app-debug.apk
   - package: com.kunzisoft.keepass.free
     signature:
       - fingerprint: 7D:55:B8:AF:21:03:81:AA:BF:96:0F:07:E1:7C:F7:85:7B:6D:2A:64:2C:A2:DA:6B:F0:BD:F1:B2:00:36:2F:04
