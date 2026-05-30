@@ -2335,6 +2335,14 @@ packages:
             issue: 925
             apk:
               sha256: acb94bec97629dccf0a66dad8fb701867cb89cdf1d73e728f63facbd33fee4ff
+  - package: com.samsung.android.oneconnect
+    signature:
+      - fingerprint: 34:DF:0E:7A:9F:1C:F1:89:2E:45:C0:56:B4:97:3C:D8:1C:CF:14:8A:40:50:D1:1A:EA:4A:C5:A6:5F:90:0A:42
+        sources:
+          - name: Google Play
+            issue: 962
+            apk:
+              sha256: c175a22b0847aec1ae9fcdf9783924a09dc2169c859224d8a1a7c59717bb43c5
   - package: com.samsung.ecomm
     signature:
       - fingerprint: D1:94:D3:1E:D8:48:EF:19:F3:1D:4D:B4:C1:A6:4B:7B:47:BE:0B:55:E4:E1:18:84:EC:02:D1:29:E0:0E:28:BD
