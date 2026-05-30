@@ -809,6 +809,14 @@ packages:
             issue: 676
             apk:
               sha256: 83b41f9359303d96efc6482284a99d25e3c96bcd65afe37dc3af6056174fd97f
+  - package: com.chase.sig.android
+    signature:
+      - fingerprint: 73:F0:D9:50:8A:25:72:C1:10:07:7C:FF:1C:AD:4E:D9:2C:00:F0:20:4F:AF:ED:BA:C8:43:4B:D7:6B:C4:AC:D1
+        sources:
+          - name: Google Play
+            issue: 960
+            apk:
+              sha256: bc093a94acd871083316a31e6e6519a28663c6f1d96276ad056051f135dae81c
   - package: com.cheogram.android
     signature:
       - fingerprint: 51:F6:B6:65:F6:6C:CE:94:A7:F7:AF:5F:10:B5:F2:CE:13:55:DB:13:82:6E:C7:D8:D9:8C:58:EA:84:2E:2E:94
