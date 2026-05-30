@@ -1010,6 +1010,15 @@ packages:
             issue: 443
             apk:
               sha256: 676d07c34414791add2ee330321d135cd70fa9eb35d51a59df52efc11a0efa27
+  - package: com.github.gotify
+    signature:
+      - fingerprint: EC:87:6E:B9:60:09:1E:4F:55:8C:13:C3:BE:69:DC:E9:94:B8:A2:5F:80:21:41:3A:6D:41:23:67:A5:04:D9:A3
+        sources:
+          - name: Direct APK Link
+            issue: 472
+            apk:
+              sha256: 27f05933185f0944817a148dc1dbab1e0748ddf8a10155a25bf0f862884dd53f
+              link: https://github.com/gotify/android/releases/download/v2.10.0/Gotify.apk
   - package: com.github.lamarios.clipious
     signature:
       - fingerprint: 19:DE:04:E5:D6:84:66:06:9D:30:EC:63:C6:BA:7D:9E:3C:F7:3B:5D:61:CB:4B:37:62:C2:B9:B2:53:EC:BD:03
