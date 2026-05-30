@@ -1310,6 +1310,16 @@ packages:
         sources:
           - name: Google Play
             issue: 422
+  - package: com.orange.mobinilandme
+    signature:
+      - fingerprint: |-
+          89:17:9D:D6:74:1F:7B:08:2C:CC:6D:D9:52:59:76:6A:E4:EF:04:02:CC:9D:F6:18:A9:2B:7F:39:3A:E1:33:09
+          B6:7A:FF:CD:A8:9E:31:93:B1:59:50:36:D7:C6:CD:BE:22:BE:5C:A2:4C:9F:6C:F9:3F:C6:B4:8F:91:D7:31:0D
+        sources:
+          - name: Google Play
+            issue: 530
+            apk:
+              sha256: 5652d4146576f8ac47fb3a05408548793eefdb9e9c8cbf6f9f22fcea5c1b11d6
   - package: com.orgzlyrevived
     signature:
       - fingerprint: 6F:C9:C2:E2:2D:07:D2:5C:E7:7E:2E:96:34:55:05:3C:38:B8:31:8A:1A:24:91:B3:ED:95:D5:0C:BA:85:49:3D
