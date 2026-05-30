@@ -2108,6 +2108,14 @@ packages:
             issue: 501
             apk:
               sha256: 3a07687ce560dc0b9c63cc344a2a484c47c8d5f53c0649d29d658e37d870d3f2
+  - package: com.yubico.yubioath
+    signature:
+      - fingerprint: 3E:21:DA:5A:CA:A8:D4:9C:E5:15:B1:C6:D2:A1:90:3B:AE:29:8D:09:11:43:2C:55:E7:5A:19:61:99:F2:B9:A0
+        sources:
+          - name: Google Play
+            issue: 768
+            apk:
+              sha256: a316bac2a81571558c03cf76b0306c9079ba462769d90096057a260eb2f56a5b
   - package: com.zaneschepke.wireguardautotunnel
     signature:
       - fingerprint: 52:04:D8:2E:76:6E:8A:A1:4D:CB:B0:6D:C7:0A:EB:AE:2B:DD:81:2D:4D:62:03:CD:52:1A:8A:68:5D:7D:3D:80
