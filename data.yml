@@ -1330,6 +1330,22 @@ packages:
             issue: 284
             apk:
               sha256: 81d1759235dcd1ecda78bf0f905641babf6142741356c4e176ca866ec3a1bf00
+  - package: com.philkes.notallyx
+    signature:
+      - fingerprint: D2:14:B6:05:7B:79:F8:25:09:DD:CD:1E:35:19:65:B3:C6:EC:C4:B2:A3:89:6E:5C:DF:88:5A:70:A0:B6:1D:FD
+        sources:
+          - name: F-Droid
+            issue: 199
+            apk:
+              sha256: 1264b8c6af5a5cb5b06597b4b6a7727a3436abe6287b2190ad2b261bec96e7bc
+          - name: F-Droid (IzzyOnDroid)
+            issue: 199
+            apk:
+              sha256: 1264b8c6af5a5cb5b06597b4b6a7727a3436abe6287b2190ad2b261bec96e7bc
+          - name: Google Play
+            issue: 199
+            apk:
+              sha256: 82b3f50dde94ed9cf4cc3183fa72b53261154637538c01f935f03c6baec34f9f
   - package: com.pleco.chinesesystem
     signature:
       - fingerprint: 78:0A:2A:63:9A:3C:CB:65:62:1E:0C:AC:CF:18:FA:38:C9:1F:6C:BF:35:1D:45:37:42:EB:E2:A1:14:B0:96:24
