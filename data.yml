@@ -1408,6 +1408,14 @@ packages:
             issue: 330
             apk:
               sha256: 9f853added0b832160833dc7f6c7be90856b7349da829d1a1854f7275b5e168c
+  - package: com.myfitnesspal.android
+    signature:
+      - fingerprint: E2:F3:91:85:31:50:95:61:1B:23:F9:60:2C:EF:63:32:A8:9D:B8:96:0E:E7:6A:45:FB:41:EE:EF:49:75:D9:5D
+        sources:
+          - name: Google Play
+            issue: 763
+            apk:
+              sha256: 5eca4a776fe35b8a7a52ef8b8a516c2b1789a6fd8088ad7258c2772c05f63851
   - package: com.myklarnamobile
     signature:
       - fingerprint: B1:E3:7A:B5:C1:3D:F8:05:12:D3:67:E7:50:97:6F:96:E2:FF:A2:E6:E2:62:26:DA:37:9F:06:98:D5:89:34:EA
