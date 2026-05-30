@@ -3153,6 +3153,14 @@ packages:
             issue: 394
             apk:
               sha256: ed0db6705108a41e96e11df12c3b4362355d1a1e96b727c9d2065380572949cf
+  - package: im.cwtch.flwtch
+    signature:
+      - fingerprint: 82:0B:2C:24:A1:C3:D3:BB:99:87:BB:5D:DD:D0:DF:E1:F8:89:3C:0C:0A:7C:C1:A3:A7:53:7C:DA:2C:29:CC:77
+        sources:
+          - name: Google Play
+            issue: 864
+            apk:
+              sha256: dd1734dba6e13c9e7c4b50dd5b232abfcee0ac81fc24a4e6507abfd536428e20
   - package: im.molly.app
     signature:
       - fingerprint: 6A:A8:0F:DF:4A:8C:C1:37:37:CF:B4:34:FC:0C:DE:48:6F:09:CF:8F:CD:A2:1A:67:BE:A5:EE:1C:A2:70:08:86
