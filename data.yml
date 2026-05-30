@@ -626,6 +626,15 @@ packages:
             issue: 561
           - name: F-Droid (IzzyOnDroid)
             issue: 561
+  - package: com.carriez.flutter_hbb
+    signature:
+      - fingerprint: E9:2D:44:BA:9B:65:00:3C:73:40:68:3B:0A:92:34:F6:17:C1:B2:3A:1D:D9:0E:89:F7:D0:41:70:B7:2B:FC:86
+        sources:
+          - name: Direct APK Link
+            issue: 775
+            apk:
+              sha256: b317296f0f4d615e4d41d52a41e59a248c9631a95f782f9a10a7e047d320df77
+              link: https://github.com/rustdesk/rustdesk/releases/download/1.4.6/rustdesk-1.4.6-aarch64-signed.apk
   - package: com.cbouvat.android.saracroche
     signature:
       - fingerprint: 53:4C:A5:DD:7D:98:74:0D:70:D1:A3:E5:E1:64:AD:38:F8:4E:6B:28:E4:11:4F:B8:46:B3:10:3C:65:7A:41:0F
