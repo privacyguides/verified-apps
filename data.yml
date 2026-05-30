@@ -2413,6 +2413,14 @@ packages:
             issue: 835
             apk:
               sha256: b63b611ba3e05da1234e317761a3151e5941056e780ab85b6248faa177787423
+  - package: com.spotify.music
+    signature:
+      - fingerprint: 65:05:B1:81:93:33:44:F9:38:93:D5:86:E3:99:B9:46:16:18:3F:04:34:9C:B5:72:A9:E8:1A:33:35:E2:8F:FD
+        sources:
+          - name: Google Play
+            issue: 952
+            apk:
+              sha256: 9c9e75b65b8e56f867456f737cdf240727cf6b65a52b056bed866d9dfc8f7e7c
   - package: com.standardnotes
     signature:
       - fingerprint: 58:3F:C4:1B:49:0C:38:0B:56:FB:E9:EE:47:38:1E:B4:EF:53:E0:37:19:A5:50:3F:C1:F2:9D:CD:8E:28:90:2A
