@@ -337,6 +337,14 @@ packages:
             issue: 114
           - name: Google Play
             issue: 114
+  - package: code.name.monkey.retromusic
+    signature:
+      - fingerprint: B1:F1:41:22:9A:C4:2E:28:33:15:49:86:33:65:A6:0A:74:25:40:8C:A0:8C:E9:61:99:26:BE:BC:18:71:E3:42
+        sources:
+          - name: Google Play
+            issue: 791
+            apk:
+              sha256: 7f6f826651dc28d3bc93f19748e5d23d1771bb8322c6c979941cb2771878376e
   - package: com.PigeonGames.Phigros
     signature:
       - fingerprint: 20:CD:CB:DA:89:07:DC:18:93:FE:A5:3B:3F:D2:84:4E:EF:F9:52:7D:DA:D7:96:7C:13:65:A0:79:75:D7:57:C1
