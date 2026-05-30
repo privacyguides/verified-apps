@@ -140,6 +140,14 @@ packages:
             issue: 68
           - name: AppVerifier
             issue: 68
+      - fingerprint: E2:16:FC:38:6C:32:7E:C8:8D:05:60:26:F1:DE:A2:7B:E2:BC:3F:9D:7E:E9:56:E4:36:1C:4B:64:EC:45:9F:E9
+        sources:
+          - name: AppVerifier
+            issue: 783
+          - name: F-Droid
+            issue: 783
+            apk:
+              sha256: 252e2e5af42475709117da33fb46fb965dd0f5323dd3042d563323469027dbe6
   - package: app.revanced.manager.flutter
     signature:
       - fingerprint: B6:36:2C:6E:A7:88:8E:FD:15:C0:80:0F:48:07:86:AD:0F:5B:13:3B:4F:84:E1:2D:46:AF:BA:5F:9E:AC:12:23
