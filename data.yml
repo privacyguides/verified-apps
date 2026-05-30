@@ -473,6 +473,14 @@ packages:
             issue: 712
             apk:
               sha256: bb72034c6133de936e4cc64f57dd15f86c4220c63adb5fe3d13f55c80025bcca
+  - package: com.amc
+    signature:
+      - fingerprint: A3:85:95:CB:9F:EF:41:D2:89:7C:C5:B6:C3:CC:EB:00:E8:97:5B:C6:7D:09:2E:28:99:2D:51:58:8D:07:7C:D1
+        sources:
+          - name: Google Play
+            issue: 959
+            apk:
+              sha256: f03d48bf6fbd68128bf0e91e1354c06847b68fe43c59a8d78230f2ae795c3048
   - package: com.aniplex.fategrandorder.en
     signature:
       - fingerprint: CF:E4:13:B1:07:55:61:DD:F4:24:0C:5B:B4:0C:F9:4C:39:7C:AC:F5:7A:2B:DF:07:21:51:65:DD:41:D5:D6:84
