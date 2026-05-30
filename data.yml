@@ -2868,6 +2868,19 @@ packages:
             apk:
               sha256: 79a6627c546cdbc8b1890cd241bb85f251fc287cfddba76293846a08dd562d23
               link: https://dist.torproject.org/torbrowser/15.0.14/tor-browser-android-aarch64-15.0.14.apk
+  - package: org.traccar.client
+    signature:
+      - fingerprint: 4E:E4:1F:0E:EF:8C:C6:E6:30:E0:F7:34:46:85:BD:FE:55:55:7B:D4:50:E3:E7:77:82:69:93:CB:1D:7C:61:A6
+        sources:
+          - name: Direct APK Link
+            issue: 703
+            apk:
+              sha256: c84fa39061e52756c6ebc20f109ec85a235588a59b290b999adf09eb01782a14
+              link: https://github.com/traccar/traccar-client/releases/download/v9.7.20/app-release.apk
+          - name: Google Play
+            issue: 703
+            apk:
+              sha256: fecd151cc13f2dbdc5a5ee469164c399faf4532ab7196ddd95201cbacc2494b9
   - package: org.unifiedpush.distributor.nextpush
     signature:
       - fingerprint: 4D:77:EB:02:F1:66:55:9E:43:B2:A3:B3:4E:86:1D:62:8C:CC:EE:CB:F7:65:3E:E1:38:70:97:1B:25:E1:75:F0
