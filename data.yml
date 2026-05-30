@@ -3024,6 +3024,14 @@ packages:
             issue: 602
             apk:
               sha256: 21d156cbcff6cc6755dde7f0eba4d58163bfd80d8ef26f22bc732697c540fc80
+  - package: rk.android.app.lockscreen
+    signature:
+      - fingerprint: 5B:13:ED:BA:E9:61:E4:FB:32:A7:E4:91:F1:A3:C5:45:C8:CD:F9:7E:70:41:F3:39:D9:F9:0C:02:77:51:BF:03
+        sources:
+          - name: Google Play
+            issue: 535
+            apk:
+              sha256: 3f0b43eede8097ea859b830ce7d1c7ffd7e7b1a5f41554aa11e8fd20654075d0
   - package: ru.tech.imageresizershrinker
     signature:
       - fingerprint: 20:D7:68:9D:E0:87:4F:00:01:5E:A3:E3:1F:A0:67:C1:5C:03:45:7D:36:2D:41:D5:E7:93:DB:3A:86:4F:A5:34
