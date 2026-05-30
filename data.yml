@@ -1072,6 +1072,16 @@ packages:
             issue: 579
             apk:
               sha256: c97ebafa99bafd75628d25883287499e35907dc3d525111e267f0615d4fc6c83
+  - package: com.fsck.k9
+    signature:
+      - fingerprint: 55:C8:A5:23:B9:73:35:F5:BF:60:DF:E8:A9:F3:E1:DD:E7:44:51:6D:93:57:E8:0A:92:5B:7B:22:E4:F5:55:24
+        sources:
+          - name: AppVerifier
+            issue: 806
+          - name: Google Play
+            issue: 806
+            apk:
+              sha256: 560eb2bd589905dd908c44599919ebb0ce7b3196b4b8c3789704efedec8f55bd
   - package: com.futo.platformplayer
     signature:
       - fingerprint: EF:81:ED:A9:8F:61:7F:7F:17:07:D8:05:09:F2:8D:AE:4E:50:F5:6E:41:E0:77:EB:30:24:D9:C9:07:2D:07:4E
