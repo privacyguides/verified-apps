@@ -2768,6 +2768,15 @@ packages:
             issue: 625
             apk:
               sha256: 5972ccd84245d588319d0afc0a7bc2cb95971e2b1f5866b999bd3af1e35014c9
+  - package: io.sanford.wormhole_william
+    signature:
+      - fingerprint: 4F:BD:DD:75:06:50:73:63:4B:D5:3D:26:6F:C4:3E:7C:61:6E:40:F4:A4:48:BB:DA:2F:AF:60:D7:65:EB:3A:0E
+        sources:
+          - name: Direct APK Link
+            issue: 453
+            apk:
+              sha256: a1ef0017bb495e331738e984a65f1d3f5f8dc4785e1afa018972035dcb4135cd
+              link: https://github.com/psanford/wormhole-william-mobile/releases/download/v2.1.0/wormhole-william.release.apk
   - package: io.spaceapi.community.myhackerspace
     signature:
       - fingerprint: 4E:C5:1A:CD:06:D3:F9:E7:95:07:C9:14:EF:15:E2:C0:9A:18:24:9A:82:AF:90:64:FF:04:95:F9:26:F9:3D:D4
