@@ -4292,6 +4292,14 @@ packages:
             issue: 731
             apk:
               sha256: 4ac7d24400bb22778fcb48e7e3326b1c402814a5d52d9fd980a066694e7700ba
+  - package: org.kiwix.kiwixmobile
+    signature:
+      - fingerprint: 6D:FB:FC:62:E1:65:87:A7:8A:A2:D9:58:5A:E9:BB:7F:69:73:C2:BF:84:03:4B:7B:90:10:1A:40:14:09:F5:AA
+        sources:
+          - name: Google Play
+            issue: 940
+            apk:
+              sha256: 3a62bca42576edeac7ea66ce8fdf7191e04738315c5049b1974bb5ea0b50d085
   - package: org.lichess.mobileV2
     signature:
       - fingerprint: 5B:62:4B:BF:9D:72:D3:18:EA:4F:9E:E3:E2:DA:EB:A7:72:19:E5:97:11:6C:B5:93:12:30:7A:AD:18:44:94:5E
