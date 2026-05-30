@@ -957,6 +957,14 @@ packages:
             issue: 285
           - name: AppVerifier
             issue: 285
+  - package: com.eckey.vizpin.dm
+    signature:
+      - fingerprint: 43:F6:D7:1E:13:EA:F0:62:BB:9F:D3:4A:0C:6C:D5:B3:BA:A8:AD:14:DE:DC:87:99:23:7F:2F:F9:33:FD:53:DC
+        sources:
+          - name: Google Play
+            issue: 804
+            apk:
+              sha256: c542d996d9cff44ceb17489d9689c8e3ab19429c51fa37018cc3149ae7a70552
   - package: com.eddyizm.degoogled.tempus
     signature:
       - fingerprint: B7:85:01:B9:34:D0:4E:0A:CA:8D:94:AF:D6:72:6A:4D:1D:CE:65:79:7F:1D:41:71:0F:64:3C:29:00:EB:1D:1D
