@@ -939,6 +939,14 @@ packages:
             issue: 927
             apk:
               sha256: fae5fead49929f8733791c5016de40252c825be69a209077ab4fbbe95a7bd4dc
+  - package: com.discoverfinancial.mobile
+    signature:
+      - fingerprint: 0C:88:8B:F6:67:3D:D8:6C:4C:DF:44:30:18:90:BA:93:65:B7:09:6D:E3:5B:03:50:FF:90:F1:95:CB:58:29:8D
+        sources:
+          - name: Google Play
+            issue: 933
+            apk:
+              sha256: 727a8243ecf2421e5cca3e450d5284a5b709b568698ee91debc4f091654e3c41
   - package: com.donnnno.arcticons
     signature:
       - fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
