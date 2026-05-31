@@ -1826,6 +1826,18 @@ packages:
             issue: 648
           - name: Custom (GrapheneOS App Store)
             issue: 648
+  - package: com.google.android.safetycore
+    signature:
+      - fingerprint: 13:3E:19:25:A9:B9:92:D3:27:FA:1F:6C:4B:A8:D5:7C:3B:2E:BD:1F:1D:A4:DE:6B:0B:FA:0B:D0:41:1A:7C:A4
+        sources:
+          - name: Custom (APKPure)
+            issue: 1117
+            apk:
+              sha256: 65021d079ba6d1675fbeb7fc308013c1ee487c50b4d298801e99854187d5b75a
+          - name: Google Play
+            issue: 1117
+            apk:
+              sha256: 9ab60f5c13553b1a595154afaaa126214c53a3be48ac7234cbe9d7ee7423ecf8
   - package: com.google.android.stardroid
     signature:
       - fingerprint: 6E:7E:3A:74:A4:D7:C7:7A:E4:B9:81:42:6E:D0:A0:7E:78:E1:17:64:69:8C:DC:9B:DA:9B:74:0E:A2:BE:23:98
