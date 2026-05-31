@@ -6507,6 +6507,15 @@ packages:
             issue: 1105
             apk:
               sha256: dc52a9f48b0c50579323dc94b41a2664beb7e3e8d978ce45079186455c324bec
+      - fingerprint: DC:28:10:10:FD:AC:57:C7:C4:D3:9C:74:CB:8C:8B:2F:CC:A9:42:8D:16:4E:43:8F:71:57:B5:E2:06:6C:11:A3
+        sources:
+          - name: AppVerifier
+            issue: 1104
+          - name: Direct APK Link
+            issue: 1104
+            apk:
+              sha256: 883f205e15b2793a872de0d24b6c33c3ef48794d0afb04f3643337fea4e8c65c
+              link: https://github.com/CypherpunkArmory/UserLAnd/releases/download/v2.8.3/app-release.apk
   - package: tv.trakt.trakt
     signature:
       - fingerprint: 2A:FF:40:C6:A3:68:82:31:0C:6B:D1:B3:9F:F1:0D:A0:4A:DD:FB:D2:D1:00:1B:8C:29:3C:9B:CF:5C:40:F5:8B
