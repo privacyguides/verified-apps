@@ -1564,6 +1564,14 @@ packages:
             issue: 1037
             apk:
               sha256: fdb0f7d6f3ec455477a84aa8cc86d1f2d580cb180d69a0c780240975c2efd288
+      - fingerprint: ED:6B:F5:A8:DA:10:F1:DF:B1:03:84:F3:9B:D5:85:9C:06:61:7C:9B:F3:5E:24:B3:86:90:2E:50:92:CB:09:EA
+        sources:
+          - name: AppVerifier
+            issue: 1036
+          - name: Google Play
+            issue: 1036
+            apk:
+              sha256: 88289dfff4227f54a00ee1343ea2b5c4debebe97917874a2b2f3b4bd07ed7e0a
   - package: com.gitlab.mudlej.MjPdfReader
     signature:
       - fingerprint: AF:92:A1:A8:1B:45:B9:D6:A5:D9:F1:63:7F:D6:BE:98:FD:88:9B:48:12:8C:00:9D:A9:AF:D7:BA:0F:C2:F0:89
