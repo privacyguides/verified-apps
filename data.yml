@@ -3407,6 +3407,16 @@ packages:
             issue: 857
             apk:
               sha256: c0f03515dedf62c4a38d96397111c59e8e04646a2d1877200008c56a0ab80c45
+  - package: dev.imranr.obtainium
+    signature:
+      - fingerprint: B3:53:60:1F:6A:1D:5F:D6:60:3A:E2:F5:0B:E8:0C:F3:01:36:7B:86:B6:AB:8B:1F:66:24:3D:A9:6C:D5:73:62
+        sources:
+          - name: AppVerifier
+            issue: 858
+          - name: F-Droid (IzzyOnDroid)
+            issue: 858
+            apk:
+              sha256: 25419574125636f09130027b08e431973efba6d384521abae0f57818d448320a
   - package: dev.imranr.obtainium.fdroid
     signature:
       - fingerprint: B3:53:60:1F:6A:1D:5F:D6:60:3A:E2:F5:0B:E8:0C:F3:01:36:7B:86:B6:AB:8B:1F:66:24:3D:A9:6C:D5:73:62
