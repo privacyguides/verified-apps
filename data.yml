@@ -2192,6 +2192,19 @@ packages:
             issue: 1049
             apk:
               sha256: f9c648df9efe82aa2a70d89e6591a73dfdaa864ac60916ed4668ce8bd6a99695
+      - fingerprint: ED:88:59:C5:5A:F3:11:16:26:58:B9:4A:F9:82:B9:F0:91:DC:D2:76:28:D4:DE:34:86:D1:21:7E:BF:3C:99:35
+        sources:
+          - name: AppVerifier
+            issue: 1048
+          - name: Direct APK Link
+            issue: 1048
+            apk:
+              sha256: ca46b96cbadba42d126caebf94136c1aa6de05440fb38cd4937a64652362313d
+              link: https://github.com/Droid-ify/client/releases/download/v0.7.1/app-release.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 1048
+            apk:
+              sha256: ca46b96cbadba42d126caebf94136c1aa6de05440fb38cd4937a64652362313d
   - package: com.lufthansa.android.lufthansa
     signature:
       - fingerprint: AF:75:72:3A:86:9D:50:C9:20:04:D8:B2:D5:74:46:48:DE:70:14:CA:D8:33:38:86:8E:5F:4C:AA:0B:B8:A8:8E
