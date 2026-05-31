@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Compare GrapheneOS forum hash exports against data.yml and file missing submissions."""
+"""Compare AppVerifier internal database entries against data.yml and file missing submissions."""
 
 from __future__ import annotations
 
@@ -11,14 +11,9 @@ import sys
 import tempfile
 from pathlib import Path
 
-# Reuse parsing and fingerprint helpers from the submission lookup action.
 _LOOKUP_DIR = Path(__file__).resolve().parents[1] / "actions" / "lookup-grapheneos-forum"
 sys.path.insert(0, str(_LOOKUP_DIR))
-from lookup import (  # noqa: E402
-    parse_forum_hashes,
-    signatures_equal,
-    signatures_overlap,
-)
+from lookup import signatures_equal, signatures_overlap  # noqa: E402
 
 try:
     import yaml
@@ -28,11 +23,50 @@ except ImportError as exc:  # pragma: no cover
 VERIFICATION_HEADER = "### Verification Info"
 FULL_HASH_RE = re.compile(r"^([0-9A-Fa-f]{2}(?::[0-9A-Fa-f]{2}){31})$")
 PACKAGE_RE = re.compile(r"^[a-zA-Z][a-zA-Z0-9_]*(\.[a-zA-Z][a-zA-Z0-9_]*)+$")
+AV_PACKAGE_RE = re.compile(r'^\s*"([a-zA-Z][a-zA-Z0-9_.]+)"\s*,', re.MULTILINE)
+AV_HASH_RE = re.compile(r'"([0-9A-Fa-f]{2}(?::[0-9A-Fa-f]{2}){31})"')
+AV_SOURCE_RE = re.compile(r"Source\.(\w+)")
+
+SOURCE_TO_APP_SOURCE = {
+    "GOOGLE_PLAY_STORE": "Google Play / Aurora Store",
+    "GOOGLE_PIXEL_OS": "Other",
+    "GITHUB": "GitHub",
+    "ACCRESCENT": "Accrescent",
+    "CODEBERG": "Codeberg",
+    "FDROID": "F-Droid",
+    "APP_FDROID_REPO": "F-Droid",
+    "WEBSITE": "Developer's Website",
+    "GITLAB": "GitLab",
+}
+
+SOURCE_DISPLAY = {
+    "GOOGLE_PLAY_STORE": "Google Play Store",
+    "GOOGLE_PIXEL_OS": "Google Pixel OS",
+    "GITHUB": "GitHub",
+    "ACCRESCENT": "Accrescent",
+    "CODEBERG": "Codeberg",
+    "FDROID": "F-Droid",
+    "APP_FDROID_REPO": "App F-Droid repo",
+    "WEBSITE": "App website",
+    "GITLAB": "GitLab",
+}
+
+APP_SOURCE_PRIORITY = (
+    "GOOGLE_PLAY_STORE",
+    "FDROID",
+    "APP_FDROID_REPO",
+    "GITHUB",
+    "GITLAB",
+    "CODEBERG",
+    "ACCRESCENT",
+    "WEBSITE",
+    "GOOGLE_PIXEL_OS",
+)
 
 
-def fingerprint_covered(forum_fp: str, data_fingerprint: str) -> bool:
-    return signatures_equal(forum_fp, data_fingerprint) or signatures_overlap(
-        forum_fp, data_fingerprint
+def fingerprint_covered(proposed_block: str, data_fingerprint: str) -> bool:
+    return signatures_equal(proposed_block, data_fingerprint) or signatures_overlap(
+        proposed_block, data_fingerprint
     )
 
 
@@ -52,42 +86,115 @@ def load_data_yml_fingerprints(path: Path) -> dict[str, list[str]]:
     return packages
 
 
+def parse_appverifier_database(text: str) -> dict[str, list[dict[str, object]]]:
+    packages: dict[str, list[dict[str, object]]] = {}
+
+    for chunk in text.split("InternalDatabaseVerificationInfo(")[1:]:
+        package_match = AV_PACKAGE_RE.search(chunk)
+        if not package_match:
+            continue
+        package_name = package_match.group(1)
+        configs: list[dict[str, object]] = []
+        pos = 0
+
+        while True:
+            marker = chunk.find("Hashes(", pos)
+            if marker < 0:
+                break
+
+            depth = 0
+            index = marker
+            while index < len(chunk):
+                char = chunk[index]
+                if char == "(":
+                    depth += 1
+                elif char == ")":
+                    depth -= 1
+                    if depth == 0:
+                        block = chunk[marker : index + 1]
+                        pos = index + 1
+                        break
+                index += 1
+            else:
+                break
+
+            fingerprints = AV_HASH_RE.findall(block)
+            sources = AV_SOURCE_RE.findall(block)
+            if not fingerprints:
+                continue
+            configs.append(
+                {
+                    "fingerprints": [fp.upper() for fp in fingerprints],
+                    "sources": sources,
+                }
+            )
+
+        if configs:
+            packages[package_name] = configs
+
+    return packages
+
+
+def pick_app_source(sources: list[str]) -> str:
+    for key in APP_SOURCE_PRIORITY:
+        if key in sources:
+            return SOURCE_TO_APP_SOURCE[key]
+    return "Other"
+
+
+def format_sources_line(sources: list[str]) -> str:
+    labels = [SOURCE_DISPLAY.get(source, source) for source in sources]
+    return ", ".join(labels) if labels else "Unknown"
+
+
 def find_missing_entries(
-    forum_packages: dict[str, list[str]],
+    appverifier_packages: dict[str, list[dict[str, object]]],
     data_packages: dict[str, list[str]],
 ) -> list[dict[str, object]]:
     missing: list[dict[str, object]] = []
 
-    for package_name in sorted(forum_packages):
-        forum_fps = forum_packages[package_name]
-        data_blocks = data_packages.get(package_name, [])
-        uncovered: list[str] = []
+    for package_name in sorted(appverifier_packages):
+        for config in appverifier_packages[package_name]:
+            fingerprints = [str(fp) for fp in config["fingerprints"]]
+            proposed_block = "\n".join(fingerprints)
+            data_blocks = data_packages.get(package_name, [])
 
-        for forum_fp in forum_fps:
-            if any(fingerprint_covered(forum_fp, block) for block in data_blocks):
+            if any(
+                fingerprint_covered(proposed_block, block) for block in data_blocks
+            ):
                 continue
-            uncovered.append(forum_fp)
 
-        if uncovered:
-            missing.append({"package": package_name, "fingerprints": uncovered})
+            missing.append(
+                {
+                    "package": package_name,
+                    "fingerprints": fingerprints,
+                    "sources": [str(source) for source in config.get("sources", [])],
+                }
+            )
 
     return missing
 
 
-def format_issue_title(package_name: str) -> str:
+def format_issue_title(package_name: str, sources: list[str]) -> str:
     leaf = package_name.rsplit(".", 1)[-1]
     if not leaf:
         leaf = package_name
-    return f"[New]: {leaf[0].upper()}{leaf[1:]}"
+    title = f"[New]: {leaf[0].upper()}{leaf[1:]}"
+    if sources:
+        title += f" ({format_sources_line(sources)})"
+    return title
 
 
 def format_issue_body(
     package_name: str,
     fingerprints: list[str],
     *,
-    hashes_url: str,
+    database_url: str,
+    sources: list[str],
 ) -> str:
     verification = "\n".join([package_name, *fingerprints])
+    sources_line = format_sources_line(sources)
+    app_source = pick_app_source(sources)
     return (
         f"{VERIFICATION_HEADER}\n\n"
         f"```text\n{verification}\n```\n\n"
@@ -96,9 +203,10 @@ def format_issue_body(
         "### Custom F-Droid Repository\n\n"
         "_No response_\n\n"
         "### Source\n\n"
-        f"GrapheneOS forum submissions export: {hashes_url}\n\n"
+        f"AppVerifier internal database ({database_url}). "
+        f"Signing configuration sources in AppVerifier: {sources_line}.\n\n"
         "### App Source\n\n"
-        "Other\n\n"
+        f"{app_source}\n\n"
         "### AppVerifier Source\n\n"
         "Other\n"
     )
@@ -171,7 +279,7 @@ def create_issues(
     repo: str,
     entries: list[dict[str, object]],
     *,
-    hashes_url: str,
+    database_url: str,
     dry_run: bool,
     max_issues: int = 0,
 ) -> list[dict[str, object]]:
@@ -182,13 +290,15 @@ def create_issues(
         if max_issues > 0 and filed >= max_issues:
             print(
                 f"Reached --max-issues limit ({max_issues}); "
-                "remaining packages were not filed.",
+                "remaining entries were not filed.",
                 file=sys.stderr,
             )
             break
 
         package_name = str(entry["package"])
         fingerprints = [str(fp) for fp in entry["fingerprints"]]
+        sources = [str(source) for source in entry.get("sources", [])]
+
         if submission_already_open(repo, package_name, fingerprints):
             print(
                 f"skip {package_name}: open issue already lists the same fingerprint(s)",
@@ -196,9 +306,12 @@ def create_issues(
             )
             continue
 
-        title = format_issue_title(package_name)
+        title = format_issue_title(package_name, sources)
         body = format_issue_body(
-            package_name, fingerprints, hashes_url=hashes_url
+            package_name,
+            fingerprints,
+            database_url=database_url,
+            sources=sources,
         )
 
         if dry_run:
@@ -207,6 +320,7 @@ def create_issues(
                 {
                     "package": package_name,
                     "fingerprints": fingerprints,
+                    "sources": sources,
                     "title": title,
                     "dry_run": True,
                 }
@@ -236,7 +350,7 @@ def create_issues(
                     "--body-file",
                     body_path,
                     "--label",
-                    "Import GOS",
+                    "Import AppVerifier",
                 ],
                 text=True,
             ).strip()
@@ -248,27 +362,31 @@ def create_issues(
             {
                 "package": package_name,
                 "fingerprints": fingerprints,
+                "sources": sources,
                 "title": title,
                 "url": url,
             }
         )
-
         filed += 1
 
     return created
 
 
 def cmd_compare(args: argparse.Namespace) -> int:
-    forum_text = Path(args.hashes_file).read_text(encoding="utf-8")
-    forum_packages = parse_forum_hashes(forum_text)
+    database_text = Path(args.database_file).read_text(encoding="utf-8")
+    appverifier_packages = parse_appverifier_database(database_text)
     data_packages = load_data_yml_fingerprints(Path(args.data_yml))
-    missing = find_missing_entries(forum_packages, data_packages)
+    missing = find_missing_entries(appverifier_packages, data_packages)
 
     Path(args.output).write_text(
         json.dumps(missing, indent=2) + "\n", encoding="utf-8"
     )
+    package_count = len(appverifier_packages)
+    config_count = sum(len(configs) for configs in appverifier_packages.values())
     print(
-        f"forum packages: {len(forum_packages)}, missing submissions: {len(missing)}",
+        "appverifier packages: "
+        f"{package_count}, signing configs: {config_count}, "
+        f"missing submissions: {len(missing)}",
         file=sys.stderr,
     )
     return 0
@@ -285,7 +403,7 @@ def cmd_create_issues(args: argparse.Namespace) -> int:
     created = create_issues(
         args.repo,
         entries,
-        hashes_url=args.hashes_url,
+        database_url=args.database_url,
         dry_run=args.dry_run,
         max_issues=args.max_issues,
     )
@@ -301,7 +419,7 @@ def main() -> int:
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     compare = subparsers.add_parser("compare")
-    compare.add_argument("--hashes-file", required=True)
+    compare.add_argument("--database-file", required=True)
     compare.add_argument("--data-yml", required=True)
     compare.add_argument("--output", required=True)
     compare.set_defaults(func=cmd_compare)
@@ -309,15 +427,15 @@ def main() -> int:
     create = subparsers.add_parser("create-issues")
     create.add_argument("--missing-file", required=True)
     create.add_argument("--repo", required=True)
-    create.add_argument("--hashes-url", required=True)
+    create.add_argument("--database-url", required=True)
     create.add_argument("--dry-run", action="store_true")
     create.add_argument(
         "--max-issues",
         type=int,
         default=0,
         help=(
-            "Stop after filing this many eligible packages (0 = no limit). "
-            "Packages skipped because an open issue already exists do not count."
+            "Stop after filing this many eligible entries (0 = no limit). "
+            "Entries skipped because an open issue already exists do not count."
         ),
     )
     create.add_argument("--report")
