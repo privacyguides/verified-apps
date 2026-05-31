@@ -4984,6 +4984,15 @@ packages:
             issue: 508
             apk:
               sha256: 568e62defe4a026784284678e7667e5afdc17cc4b9ac14cca58bd4c3b2e482a1
+  - package: org.purplei2p.i2pd
+    signature:
+      - fingerprint: FC:C3:C7:34:9E:22:6A:77:B3:70:46:BB:00:FD:04:BB:A5:30:32:21:01:F8:62:F3:6D:8C:3D:B0:EB:B6:35:20
+        sources:
+          - name: Direct APK Link
+            issue: 885
+            apk:
+              sha256: 503278425091602030cc02455ef13d660810b04a8577a39d4b090b8a330485bc
+              link: https://github.com/PurpleI2P/i2pd-android/releases/download/2.60.0/i2pd-2.60.0-arm64-v8a-release.apk
   - package: org.quantumbadger.redreader
     signature:
       - fingerprint: D9:49:6A:86:F9:95:08:78:79:F4:11:99:98:6A:6D:36:C1:93:06:AC:90:DB:D1:E0:79:3F:3A:B1:98:1F:37:44
