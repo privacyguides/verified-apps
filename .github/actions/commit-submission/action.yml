@@ -60,6 +60,14 @@ inputs:
     description: SHA-256 of the Google Play APK (when applicable)
     required: false
     default: ""
+  apkpureSignature:
+    description: Fingerprint(s) from APKPure
+    required: false
+    default: ""
+  apkpureApkSha256:
+    description: SHA-256 of the APKPure APK (when applicable)
+    required: false
+    default: ""
 outputs:
   committed:
     description: Whether data.yml was updated on main
@@ -92,6 +100,8 @@ runs:
         CUSTOM_FDROID_APK_SHA256: ${{ inputs.customFdroidApkSha256 }}
         ACC_APK_SHA256: ${{ inputs.accrescentApkSha256 }}
         GPLAY_APK_SHA256: ${{ inputs.gplayApkSha256 }}
+        APKPURE_SIG: ${{ inputs.apkpureSignature }}
+        APKPURE_APK_SHA256: ${{ inputs.apkpureApkSha256 }}
       run: |
         set -euo pipefail
         source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"

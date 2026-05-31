@@ -535,7 +535,11 @@ jobs:
 
     if: >-
       needs.parse.outputs.isDuplicate != 'true' &&
-      github.event.label.name == 'Run Checks' &&
+      (
+        github.event.label.name == 'Run Checks' ||
+        github.event.label.name == 'Create PR' ||
+        github.event.label.name == 'Commit As-Is'
+      ) &&
       needs.parse.outputs.checkApkpure == 'true'
     continue-on-error: true
     permissions:
@@ -1287,7 +1291,7 @@ jobs:
             label_args+=(--add-label "Match Play")
           fi
           if [[ "$CHECK_APKPURE" == "true" && "$APKPURE_FOUND" == "true" && "$APKPURE_EQUAL" == "true" ]]; then
-            label_args+=(--add-label "Matches APKPure")
+            label_args+=(--add-label "Match APKPure")
           fi
           if [[ ${#label_args[@]} -eq 0 ]]; then
             exit 0
@@ -1308,7 +1312,7 @@ jobs:
       group: data-yml-writes
       cancel-in-progress: false
       queue: max
-    needs: [parse, accrescent, fdroid, customFdroid, gplay, appverifierDb, directApk]
+    needs: [parse, accrescent, fdroid, customFdroid, gplay, apkpure, appverifierDb, directApk]
     if: |
       always() &&
       !cancelled() &&
@@ -1425,6 +1429,7 @@ jobs:
           USER_SIG: ${{ needs.parse.outputs.packageSignature }}
           ACC_SIG: ${{ needs.accrescent.outputs.signature }}
           GPLAY_SIG: ${{ needs.gplay.outputs.signature }}
+          APKPURE_SIG: ${{ needs.apkpure.outputs.signature }}
           APPVERIFIER_SIG: ${{ needs.appverifierDb.outputs.signature }}
           DIRECT_SIG: ${{ needs.directApk.outputs.signature }}
         run: |
@@ -1435,6 +1440,9 @@ jobs:
             matched=true
           fi
           if [[ -n "$GPLAY_SIG" ]] && signatures_equal "$GPLAY_SIG" "$USER_SIG"; then
+            matched=true
+          fi
+          if [[ -n "$APKPURE_SIG" ]] && signatures_equal "$APKPURE_SIG" "$USER_SIG"; then
             matched=true
           fi
           if [[ -n "$APPVERIFIER_SIG" ]] && signatures_equal "$APPVERIFIER_SIG" "$USER_SIG"; then
@@ -1495,6 +1503,7 @@ jobs:
           accrescentSignature: ${{ needs.accrescent.outputs.signature }}
           fdroidResultsDir: fdroid-results
           gplaySignature: ${{ needs.gplay.outputs.signature }}
+          apkpureSignature: ${{ needs.apkpure.outputs.signature }}
           appverifierSignature: ${{ needs.appverifierDb.outputs.signature }}
           directApkSignature: ${{ needs.directApk.outputs.signature }}
           directApkLink: ${{ needs.parse.outputs.apkUrl }}
@@ -1503,6 +1512,7 @@ jobs:
           customFdroidApkSha256: ${{ needs.customFdroid.outputs.apkSha256 }}
           accrescentApkSha256: ${{ needs.accrescent.outputs.apkSha256 }}
           gplayApkSha256: ${{ needs.gplay.outputs.apkSha256 }}
+          apkpureApkSha256: ${{ needs.apkpure.outputs.apkSha256 }}
           submitterSource: ${{ steps.prSignatureMode.outputs.submitterSource }}
 
       - name: Comment with PR link
@@ -1533,7 +1543,7 @@ jobs:
       group: data-yml-writes
       cancel-in-progress: false
       queue: max
-    needs: [parse, accrescent, fdroid, customFdroid, gplay, appverifierDb, directApk]
+    needs: [parse, accrescent, fdroid, customFdroid, gplay, apkpure, appverifierDb, directApk]
     if: |
       always() &&
       !cancelled() &&
@@ -1610,6 +1620,7 @@ jobs:
           accrescentSignature: ${{ needs.accrescent.outputs.signature }}
           fdroidResultsDir: fdroid-results
           gplaySignature: ${{ needs.gplay.outputs.signature }}
+          apkpureSignature: ${{ needs.apkpure.outputs.signature }}
           appverifierSignature: ${{ needs.appverifierDb.outputs.signature }}
           directApkSignature: ${{ needs.directApk.outputs.signature }}
           directApkLink: ${{ needs.parse.outputs.apkUrl }}
@@ -1618,6 +1629,7 @@ jobs:
           customFdroidApkSha256: ${{ needs.customFdroid.outputs.apkSha256 }}
           accrescentApkSha256: ${{ needs.accrescent.outputs.apkSha256 }}
           gplayApkSha256: ${{ needs.gplay.outputs.apkSha256 }}
+          apkpureApkSha256: ${{ needs.apkpure.outputs.apkSha256 }}
 
       - name: Export commit metadata
         id: commit_meta

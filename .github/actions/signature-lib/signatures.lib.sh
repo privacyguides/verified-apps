@@ -550,7 +550,7 @@ submission_build_entry_file() {
   fi
   if [[ -n "${APKPURE_SIG:-}" ]] && signatures_equal "$APKPURE_SIG" "$user_sig"; then
     fp_block="$(signatures_format_block "$APKPURE_SIG")"
-    _submission_add_source "$fp_block" "APKPure" "${APKPURE_APK_SHA256:-}"
+    _submission_add_source "$fp_block" "Custom (APKPure)" "${APKPURE_APK_SHA256:-}"
   fi
   if [[ -n "${APPVERIFIER_SIG:-}" ]] && signatures_equal "$APPVERIFIER_SIG" "$user_sig"; then
     fp_block="$(signatures_format_block "$APPVERIFIER_SIG")"
