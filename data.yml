@@ -3994,6 +3994,16 @@ packages:
             issue: 337
             apk:
               sha256: 3ccbb551cdc986939339f11195c294d43b132587d0d59e80f12985b54a7384aa
+  - package: eu.depau.etchdroid
+    signature:
+      - fingerprint: B2:42:E9:89:E4:01:36:6D:0E:92:4B:15:C9:BC:66:76:7D:A7:4A:B3:08:FF:21:B0:BA:50:33:02:81:59:A6:AE
+        sources:
+          - name: AppVerifier
+            issue: 1070
+          - name: Google Play
+            issue: 1070
+            apk:
+              sha256: 61942151964e41fe7b82f167eaa18c3851e9319c207263d24df722b5cbe0562b
   - package: eu.siacs.conversations
     signature:
       - fingerprint: C7:5A:BE:78:59:36:43:AE:7C:AC:52:73:27:CD:21:93:48:2D:B0:67:40:4A:88:B8:C1:3F:7A:07:01:94:61:87
