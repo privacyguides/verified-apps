@@ -945,6 +945,19 @@ packages:
             issue: 800
             apk:
               sha256: 7f4e8fc087031cf7058d4066f3ba24406f559a2d3da5fa0f9f99dc45e88d96c2
+  - package: com.darkempire78.opencalculator
+    signature:
+      - fingerprint: 21:05:0F:D6:D3:67:98:D9:75:8B:6C:A5:20:2A:EB:50:A5:BB:BD:C7:56:14:1D:94:E3:6F:6C:8C:16:8C:09:59
+        sources:
+          - name: Direct APK Link
+            issue: 801
+            apk:
+              sha256: 43b6befd1fecc686ba1611bbda18896cc26d966047e788be995def569a4510f3
+              link: https://github.com/clementwzk/OpenCalc/releases/download/v3.2.1/OpenCalc.v3.2.1.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 801
+            apk:
+              sha256: 43b6befd1fecc686ba1611bbda18896cc26d966047e788be995def569a4510f3
   - package: com.davivienda.daviviendaapp
     signature:
       - fingerprint: 88:C3:6E:43:F6:E1:6F:A4:F5:08:DA:C7:CD:43:1D:B3:EA:82:C0:2D:E2:87:75:99:F7:4C:AD:68:4A:63:D5:F7
