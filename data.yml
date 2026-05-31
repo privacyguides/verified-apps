@@ -2585,6 +2585,8 @@ packages:
             issue: 929
             apk:
               sha256: 5a48ea197d8da4c72b43ad45d8b28bb4c5806ec81cadaa18b580622ad4d881d6
+          - name: Custom (Samsung)
+            issue: 929
   - package: com.samsung.android.app.notes
     signature:
       - fingerprint: 34:DF:0E:7A:9F:1C:F1:89:2E:45:C0:56:B4:97:3C:D8:1C:CF:14:8A:40:50:D1:1A:EA:4A:C5:A6:5F:90:0A:42
@@ -2605,6 +2607,8 @@ packages:
             issue: 978
             apk:
               sha256: ed42d599e84048816edb77c7a9bd928c8236250f799c9d5a97fe21d1b0a380c8
+          - name: Custom (Samsung)
+            issue: 978
   - package: com.samsung.android.app.tips
     signature:
       - fingerprint: 34:DF:0E:7A:9F:1C:F1:89:2E:45:C0:56:B4:97:3C:D8:1C:CF:14:8A:40:50:D1:1A:EA:4A:C5:A6:5F:90:0A:42
@@ -2613,6 +2617,8 @@ packages:
             issue: 930
             apk:
               sha256: e3e5d10ba4c09f7cd0f25bd7c3801bc8896d704ca34ccf159d8b1a0efc7b6eb4
+          - name: Custom (Samsung)
+            issue: 930
   - package: com.samsung.android.app.watchmanager
     signature:
       - fingerprint: 34:DF:0E:7A:9F:1C:F1:89:2E:45:C0:56:B4:97:3C:D8:1C:CF:14:8A:40:50:D1:1A:EA:4A:C5:A6:5F:90:0A:42
@@ -2647,6 +2653,8 @@ packages:
             issue: 923
             apk:
               sha256: 2d6cc2b6931c08f72fff9f69d0bfa068709e044de3cf3e34069e2f0db399657a
+          - name: Custom (Samsung)
+            issue: 923
   - package: com.samsung.android.nmt.apps.t2t.languagepack.enesus
     signature:
       - fingerprint: 34:DF:0E:7A:9F:1C:F1:89:2E:45:C0:56:B4:97:3C:D8:1C:CF:14:8A:40:50:D1:1A:EA:4A:C5:A6:5F:90:0A:42
@@ -2669,6 +2677,8 @@ packages:
             issue: 974
             apk:
               sha256: 19b728d56096a0131337f87afe2a597f7aade252c799943d81765fde28426ddd
+          - name: Custom (Samsung)
+            issue: 974
   - package: com.samsung.android.tvplus
     signature:
       - fingerprint: 34:DF:0E:7A:9F:1C:F1:89:2E:45:C0:56:B4:97:3C:D8:1C:CF:14:8A:40:50:D1:1A:EA:4A:C5:A6:5F:90:0A:42
@@ -2677,6 +2687,8 @@ packages:
             issue: 976
             apk:
               sha256: 7efd52780bea19ea49d38d1ada4b6114365ba42dc31ea686db0ede83f2a82b87
+          - name: Custom (Samsung)
+            issue: 976
   - package: com.samsung.android.voc
     signature:
       - fingerprint: 34:DF:0E:7A:9F:1C:F1:89:2E:45:C0:56:B4:97:3C:D8:1C:CF:14:8A:40:50:D1:1A:EA:4A:C5:A6:5F:90:0A:42
@@ -2685,6 +2697,8 @@ packages:
             issue: 968
             apk:
               sha256: 84c31e57faf63538678f8ba4ebad56812f5eb648cc22c04b4bff82f4e8708ec9
+          - name: Custom (Samsung)
+            issue: 968
   - package: com.samsung.ecomm
     signature:
       - fingerprint: D1:94:D3:1E:D8:48:EF:19:F3:1D:4D:B4:C1:A6:4B:7B:47:BE:0B:55:E4:E1:18:84:EC:02:D1:29:E0:0E:28:BD
@@ -2741,6 +2755,8 @@ packages:
             issue: 942
             apk:
               sha256: 71acc130d3b7c2e97d66e8c112a84728331fbafe0cf7e8ebc2b4f284aa05ba14
+          - name: Custom (Samsung)
+            issue: 942
   - package: com.sec.android.app.kidshome
     signature:
       - fingerprint: 34:DF:0E:7A:9F:1C:F1:89:2E:45:C0:56:B4:97:3C:D8:1C:CF:14:8A:40:50:D1:1A:EA:4A:C5:A6:5F:90:0A:42
@@ -2749,6 +2765,8 @@ packages:
             issue: 973
             apk:
               sha256: 2aedf592da76b4478de51ce3b04a352e3ce146dcf27a84feac13ea2a46472586
+          - name: Custom (Samsung)
+            issue: 973
   - package: com.sec.android.app.popupcalculator
     signature:
       - fingerprint: B9:A4:2D:D5:FC:4E:05:48:89:AE:41:27:A6:27:4C:EC:64:E7:5C:41:73:3D:42:F5:99:1E:70:19:F9:EA:5C:AF
@@ -2773,6 +2791,8 @@ packages:
             issue: 922
             apk:
               sha256: 713a44923c5dbe5479a211ba02669d7c5369dcfb83370a1641233743af85480b
+          - name: Custom (Samsung)
+            issue: 922
   - package: com.secuso.privacyFriendlyCodeScanner
     signature:
       - fingerprint: 75:9D:2D:25:78:5A:6D:F4:CD:66:19:69:2B:37:F0:05:32:BA:19:B2:6D:F2:0A:4E:F5:B2:21:28:C7:F1:51:BC
