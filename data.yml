@@ -4514,6 +4514,11 @@ packages:
     signature:
       - fingerprint: B2:F2:FA:6F:86:8B:1E:0A:A0:3F:B8:08:4F:BC:1B:0F:FC:35:3D:9C:F9:82:6C:8B:40:CF:FF:0E:D0:80:4B:0A
         sources:
+          - name: Direct APK Link
+            issue: 1006
+            apk:
+              sha256: e3da224511dc61cda2e8d55f400ea4be51f58afceba832717a833a143832bc1a
+              link: https://github.com/iSoron/uhabits/releases/download/v2.3.1/loop-2.3.1-release.apk
           - name: Google Play
             issue: 764
             apk:
