@@ -579,6 +579,15 @@ packages:
             issue: 623
             apk:
               sha256: 41fee742fadfbeeb6e8da08a3429fc53b75f1687e3eeac22a937a580671d1a61
+  - package: com.aurora.authenticator
+    signature:
+      - fingerprint: 4C:62:61:57:AD:02:BD:A3:40:1A:72:63:55:5F:68:A7:96:63:FC:3E:13:A4:D4:36:9A:12:57:09:41:AA:28:0F
+        sources:
+          - name: Direct APK Link
+            issue: 936
+            apk:
+              sha256: 1c6aad766736169e9933814997081e26ea1d1619b6d8bcc66ee7c919e4f61032
+              link: https://github.com/whyorean/Authenticator/releases/download/1.0.2/Authenticator_v1.0.2.apk
   - package: com.aurora.store
     signature:
       - fingerprint: 4C:62:61:57:AD:02:BD:A3:40:1A:72:63:55:5F:68:A7:96:63:FC:3E:13:A4:D4:36:9A:12:57:09:41:AA:28:0F
