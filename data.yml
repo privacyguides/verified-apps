@@ -584,6 +584,16 @@ packages:
             issue: 190
             apk:
               sha256: 17e6a4cf59123095aad29e94bfacbc01df6bcb8ae1f2c2cf730b3ec373ff873e
+  - package: com.apps.adrcotfas.goodtime
+    signature:
+      - fingerprint: F9:56:D7:C5:FD:49:90:AA:43:D4:F2:FF:25:4C:70:F6:3D:6E:38:23:68:4D:35:A7:50:32:80:A5:97:48:B0:7C
+        sources:
+          - name: AppVerifier
+            issue: 1021
+          - name: Google Play
+            issue: 1021
+            apk:
+              sha256: d6ac4a0d3137d9882719091edca78f935c8fafdf76ddd0d3fc5ab475216d05ca
   - package: com.artifex.mupdf.viewer.app
     signature:
       - fingerprint: A0:B9:A1:FA:8F:17:1F:EE:79:70:C4:A3:F5:0F:D1:19:57:F8:3D:F7:B4:89:ED:46:96:C7:12:60:9E:DA:53:4F
