@@ -586,6 +586,14 @@ packages:
               sha256: 17e6a4cf59123095aad29e94bfacbc01df6bcb8ae1f2c2cf730b3ec373ff873e
   - package: com.apps.adrcotfas.goodtime
     signature:
+      - fingerprint: 5F:72:28:01:44:59:51:76:B6:64:F4:8D:0F:80:E4:8B:6F:30:0B:F7:60:98:8C:E6:60:79:B1:88:44:F2:4E:90
+        sources:
+          - name: AppVerifier
+            issue: 1022
+          - name: F-Droid
+            issue: 1022
+            apk:
+              sha256: 98f52a2f67def1dee9a35089831c918a6b43dc99ead191194fa61c4e5df6a628
       - fingerprint: F9:56:D7:C5:FD:49:90:AA:43:D4:F2:FF:25:4C:70:F6:3D:6E:38:23:68:4D:35:A7:50:32:80:A5:97:48:B0:7C
         sources:
           - name: AppVerifier
