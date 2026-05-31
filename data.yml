@@ -4271,6 +4271,14 @@ packages:
             issue: 718
             apk:
               sha256: 8d53ba04642cc90d402bb7d5c39f902c2fc7ced8d7d7fd44a980832c0d5704aa
+  - package: mv.edu.dhivehiacademy.radheef
+    signature:
+      - fingerprint: 8A:66:68:0C:DD:B0:32:07:59:1E:C6:CA:AF:9F:89:B5:BD:08:D1:A3:9D:78:3A:5C:D9:99:22:A6:CB:C2:78:4A
+        sources:
+          - name: Custom (APKPure)
+            issue: 1012
+            apk:
+              sha256: 86c50add2a359cda0dee350011e2b8bbdc0218531fc6dd824aeb7672ab88d005
   - package: ncit.gov.efaasblue
     signature:
       - fingerprint: 92:76:E3:A8:17:4E:EB:81:5C:79:F6:9A:7C:CD:34:37:42:6A:DA:A3:79:E7:ED:83:3A:D9:60:5E:69:40:33:D5
