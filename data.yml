@@ -2485,6 +2485,14 @@ packages:
             issue: 925
             apk:
               sha256: acb94bec97629dccf0a66dad8fb701867cb89cdf1d73e728f63facbd33fee4ff
+  - package: com.samsung.android.game.gamehome
+    signature:
+      - fingerprint: 34:DF:0E:7A:9F:1C:F1:89:2E:45:C0:56:B4:97:3C:D8:1C:CF:14:8A:40:50:D1:1A:EA:4A:C5:A6:5F:90:0A:42
+        sources:
+          - name: Custom (APKPure)
+            issue: 923
+            apk:
+              sha256: 2d6cc2b6931c08f72fff9f69d0bfa068709e044de3cf3e34069e2f0db399657a
   - package: com.samsung.android.oneconnect
     signature:
       - fingerprint: 34:DF:0E:7A:9F:1C:F1:89:2E:45:C0:56:B4:97:3C:D8:1C:CF:14:8A:40:50:D1:1A:EA:4A:C5:A6:5F:90:0A:42
