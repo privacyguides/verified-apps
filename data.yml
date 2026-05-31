@@ -156,6 +156,17 @@ packages:
             issue: 783
             apk:
               sha256: 252e2e5af42475709117da33fb46fb965dd0f5323dd3042d563323469027dbe6
+  - package: app.organicmaps.web
+    signature:
+      - fingerprint: B9:C7:AE:79:A5:A9:02:70:DF:08:A1:32:E5:36:B9:C6:66:F5:BE:F1:F5:9B:30:4F:CE:CF:86:87:86:5E:4B:5B
+        sources:
+          - name: AppVerifier
+            issue: 784
+          - name: Direct APK Link
+            issue: 784
+            apk:
+              sha256: ba28ca92f5a09ab19cdf490f054f1bcf7b311b0a64007077b3c31fcec2bbfd60
+              link: https://github.com/organicmaps/organicmaps/releases/download/2026.05.27-11-android/OrganicMaps-26052711-web-release.apk
   - package: app.revanced.manager.flutter
     signature:
       - fingerprint: B6:36:2C:6E:A7:88:8E:FD:15:C0:80:0F:48:07:86:AD:0F:5B:13:3B:4F:84:E1:2D:46:AF:BA:5F:9E:AC:12:23
