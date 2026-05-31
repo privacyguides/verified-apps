@@ -3705,6 +3705,14 @@ packages:
             issue: 127
             apk:
               sha256: 91b19687e389a50f13cbcb024627417716b3ec6309575007a4444c127f61e150
+  - package: io.github.muntashirakon.Music
+    signature:
+      - fingerprint: E2:40:9F:8C:F2:C1:6F:2A:4E:79:74:A2:F0:F5:BE:44:E1:D3:92:EC:55:76:19:B9:04:F7:4E:F6:00:E1:06:AA
+        sources:
+          - name: F-Droid
+            issue: 868
+            apk:
+              sha256: 8af44ab270b9a75d88b0933af5d508311858d02c7df41bf39c7c8b52f582f556
   - package: io.heckel.ntfy
     signature:
       - fingerprint: 76:E9:4D:8E:04:70:6C:5B:99:06:4C:23:21:0D:8C:A9:91:06:08:AB:AE:8F:3E:97:2B:41:E3:88:39:16:46:E0
