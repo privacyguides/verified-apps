@@ -5878,6 +5878,19 @@ packages:
             apk:
               sha256: 9b24378a3c9b260a28dffe3d9b08d58f69975053a453f824f9cf171273f67d54
               repo: https://app.futo.org/fdroid/repo/
+  - package: org.gateshipone.malp
+    signature:
+      - fingerprint: E3:40:FD:7A:5F:E9:FA:4D:8D:9F:7B:76:C2:17:1E:5A:A5:C8:FC:B2:43:0E:3A:20:59:FF:E8:BD:90:A1:24:C8
+        sources:
+          - name: Direct APK Link
+            issue: 1120
+            apk:
+              sha256: f270d1296c424e1e4b5a79bc23334c897483d9e60e7874aab96f46f343975f9e
+              link: https://gitlab.com/-/project/6578193/uploads/04ac22ae4453c58d793b74b0e7ba211e/malp-1.3.2.apk
+          - name: Google Play
+            issue: 1120
+            apk:
+              sha256: e9a0fad6d25bcb552394edc224f65b0bbb031600c3440c837c33b5a5198513e9
   - package: org.handmadeideas.floccus
     signature:
       - fingerprint: FF:ED:27:78:FF:07:37:1E:63:67:B6:DC:F5:D7:C1:32:7C:57:FF:71:58:B8:44:40:29:18:2A:9A:A2:DD:70:85
