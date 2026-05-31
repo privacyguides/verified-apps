@@ -2958,6 +2958,16 @@ packages:
             issue: 952
             apk:
               sha256: 9c9e75b65b8e56f867456f737cdf240727cf6b65a52b056bed866d9dfc8f7e7c
+  - package: com.squareup.cash
+    signature:
+      - fingerprint: 21:A7:46:75:96:C1:68:65:0F:D7:B6:31:B6:54:22:EB:56:3E:1D:21:AF:F2:2D:DE:73:89:BA:0D:5D:73:87:48
+        sources:
+          - name: AppVerifier
+            issue: 1056
+          - name: Google Play
+            issue: 1056
+            apk:
+              sha256: a7e882b96690c705a2f29f51cd5a065bea4496e2a99a298614f90309e15b4227
   - package: com.standardnotes
     signature:
       - fingerprint: 58:3F:C4:1B:49:0C:38:0B:56:FB:E9:EE:47:38:1E:B4:EF:53:E0:37:19:A5:50:3F:C1:F2:9D:CD:8E:28:90:2A
