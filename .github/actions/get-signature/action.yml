@@ -4,7 +4,13 @@ inputs:
   path:
     description: Path to APK file
     required: true
+  packageName:
+    description: Expected Android application ID; must match the APK manifest package from aapt dump badging
+    required: true
 outputs:
+  apkPackageName:
+    description: Application ID read from the APK via aapt dump badging
+    value: ${{ steps.analysis.outputs.apkPackageName }}
   signature:
     description: APK certificate fingerprint(s); one line or newline-separated when multiple
     value: ${{ steps.analysis.outputs.signature }}
@@ -25,6 +31,7 @@ runs:
       id: analysis
       env:
         APK_PATH: ${{ inputs.path }}
+        PACKAGE_NAME: ${{ inputs.packageName }}
       run: |
         set -euo pipefail
         source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
@@ -34,6 +41,10 @@ runs:
           echo "ANDROID_SDK_ROOT is not set" >&2
           exit 1
         fi
+
+        apk_package=$(signatures_verify_apk_package "$PACKAGE_NAME" "$APK_PATH" "$sdk_root")
+        echo "apkPackageName=$apk_package" >> "$GITHUB_OUTPUT"
+        echo "APK package: $apk_package" >&2
 
         apksigner=$(signatures_find_android_sdk_tool apksigner "$sdk_root") || {
           echo "apksigner not found under $sdk_root/build-tools" >&2

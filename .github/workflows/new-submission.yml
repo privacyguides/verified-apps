@@ -221,6 +221,7 @@ jobs:
         uses: ./.github/actions/get-signature
         with:
           path: ${{ steps.accrescentInfo.outputs.apkName }}
+          packageName: ${{ env.PACKAGE_NAME }}
 
       - name: Write Summary
         if: steps.availability.outputs.found == 'true'
@@ -283,6 +284,7 @@ jobs:
         uses: ./.github/actions/get-signature
         with:
           path: ${{ steps.appDownload.outputs.apkPath }}
+          packageName: ${{ env.PACKAGE_NAME }}
 
       - name: Matches User-Provided?
         id: matches
@@ -394,6 +396,7 @@ jobs:
         uses: ./.github/actions/get-signature
         with:
           path: ${{ steps.appDownload.outputs.apkPath }}
+          packageName: ${{ env.PACKAGE_NAME }}
 
       - name: Matches User-Provided?
         id: matches
@@ -504,6 +507,7 @@ jobs:
         uses: ./.github/actions/get-signature
         with:
           path: ${{ steps.appDownload.outputs.apkPath }}
+          packageName: ${{ env.PACKAGE_NAME }}
 
       - name: Matches User-Provided?
         id: matches
@@ -576,6 +580,7 @@ jobs:
         uses: ./.github/actions/get-signature
         with:
           path: ${{ steps.appDownload.outputs.apkPath }}
+          packageName: ${{ env.PACKAGE_NAME }}
 
       - name: Matches User-Provided?
         id: matches
@@ -651,6 +656,7 @@ jobs:
         uses: ./.github/actions/get-signature
         with:
           path: direct-apk.apk
+          packageName: ${{ env.PACKAGE_NAME }}
 
       - name: Write Summary
         id: summary

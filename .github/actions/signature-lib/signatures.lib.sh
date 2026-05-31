@@ -74,6 +74,58 @@ signatures_find_android_sdk_tool() {
   printf '%s' "$tool_path"
 }
 
+# Read the application package name from aapt/aapt2 dump badging output.
+signatures_package_name_from_badging() {
+  local badging="$1"
+  local pkg
+
+  pkg=$(printf '%s\n' "$badging" | awk -F"'" '/^package: name=/ { print $2; exit }')
+  [[ -n "$pkg" ]] || return 1
+  printf '%s' "$pkg"
+}
+
+# Extract package name from an APK via aapt dump badging (falls back to aapt2).
+signatures_apk_package_name() {
+  local apk_path="$1"
+  local sdk_root="${2:-${ANDROID_SDK_ROOT:-${ANDROID_HOME:-}}}"
+  local tool badging pkg
+
+  [[ -f "$apk_path" ]] || return 1
+
+  for tool in aapt aapt2; do
+    local tool_path
+    tool_path=$(signatures_find_android_sdk_tool "$tool" "$sdk_root") || continue
+    badging=$("$tool_path" dump badging "$apk_path" 2>/dev/null) || badging=""
+    if pkg=$(signatures_package_name_from_badging "$badging"); then
+      printf '%s' "$pkg"
+      return 0
+    fi
+  done
+
+  echo "Could not read package name from APK (aapt dump badging failed): ${apk_path}" >&2
+  return 1
+}
+
+# Fail unless the APK manifest package matches the submitted application ID.
+signatures_verify_apk_package() {
+  local expected="$1"
+  local apk_path="$2"
+  local sdk_root="${3:-${ANDROID_SDK_ROOT:-${ANDROID_HOME:-}}}"
+  local actual
+
+  if ! is_valid_package_name "$expected"; then
+    echo "Invalid expected package name: ${expected}" >&2
+    return 1
+  fi
+
+  actual=$(signatures_apk_package_name "$apk_path" "$sdk_root") || return 1
+  if [[ "$actual" != "$expected" ]]; then
+    echo "APK package name mismatch: expected ${expected}, APK contains ${actual}" >&2
+    return 1
+  fi
+  printf '%s' "$actual"
+}
+
 # Normalize a 64-char SHA-256 hex string (with or without colons) to uppercase colon form.
 signatures_sha256_hex_to_colon_fp() {
   local raw="${1//:/}"
