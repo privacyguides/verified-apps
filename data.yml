@@ -3399,6 +3399,14 @@ packages:
             issue: 542
             apk:
               sha256: 8532183018801665d9d6e6957805450a58ecade97bf866924a49329cf48f467d
+  - package: dev.davidv.translator
+    signature:
+      - fingerprint: 2B:38:06:E7:45:D8:09:01:8A:51:BE:58:D0:63:5F:FC:74:CC:97:33:43:94:07:AB:1E:D0:42:4A:4D:B3:E1:FB
+        sources:
+          - name: F-Droid
+            issue: 857
+            apk:
+              sha256: c0f03515dedf62c4a38d96397111c59e8e04646a2d1877200008c56a0ab80c45
   - package: dev.imranr.obtainium.fdroid
     signature:
       - fingerprint: B3:53:60:1F:6A:1D:5F:D6:60:3A:E2:F5:0B:E8:0C:F3:01:36:7B:86:B6:AB:8B:1F:66:24:3D:A9:6C:D5:73:62
