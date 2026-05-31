@@ -1673,7 +1673,7 @@ jobs:
     if: always() && needs.commitAsIs.outputs.committed == 'true'
     permissions:
       contents: read
-    uses: privacyguides/verified-apps/.github/workflows/create-artifact.yml@fb4058746d264f7ef5ba1f16dc40c499aeaf5a4d
+    uses: privacyguides/verified-apps/.github/workflows/create-artifact.yml@0ebf0cf83129f6065a7a0201ec7ed733bccdd83a
     with:
       ref: ${{ needs.commitAsIs.outputs.commitSha }}
 
