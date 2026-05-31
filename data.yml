@@ -3904,6 +3904,19 @@ packages:
             issue: 868
             apk:
               sha256: 8af44ab270b9a75d88b0933af5d508311858d02c7df41bf39c7c8b52f582f556
+  - package: io.github.ratul.topactivity
+    signature:
+      - fingerprint: 09:25:2C:35:33:C4:37:89:57:D2:2E:AD:91:65:DB:D9:1F:B2:52:11:9E:7F:CE:7E:B5:95:DC:CA:6C:4B:67:48
+        sources:
+          - name: Direct APK Link
+            issue: 869
+            apk:
+              sha256: c8916f9832c75017aa89745b119669feb25357ef5c22abac86ab23e37b294fb3
+              link: https://github.com/codehasan/Current-Activity/releases/download/v2.2.0/curent-activity_global_v2.2.0.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 869
+            apk:
+              sha256: c8916f9832c75017aa89745b119669feb25357ef5c22abac86ab23e37b294fb3
   - package: io.heckel.ntfy
     signature:
       - fingerprint: 76:E9:4D:8E:04:70:6C:5B:99:06:4C:23:21:0D:8C:A9:91:06:08:AB:AE:8F:3E:97:2B:41:E3:88:39:16:46:E0
