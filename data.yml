@@ -4914,6 +4914,19 @@ packages:
             issue: 872
             apk:
               sha256: 0bc5f7d067ec30aae78cf9cba2223e5effe53f0322c5927f56c18c095b32a001
+      - fingerprint: D4:05:CD:69:ED:E4:C2:20:74:C3:28:FB:82:56:89:A8:4A:B3:FC:A4:B3:FD:F0:B6:CC:13:33:AF:62:C6:7E:B3
+        sources:
+          - name: AppVerifier
+            issue: 1084
+          - name: Direct APK Link
+            issue: 1084
+            apk:
+              sha256: bd6ca8ec343ccbd974cf9f0719cff55a9d1001106c7190a6bab42dff9f77c536
+              link: https://github.com/CatimaLoyalty/Android/releases/download/v2.42.1/app-foss-release.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 1084
+            apk:
+              sha256: bd6ca8ec343ccbd974cf9f0719cff55a9d1001106c7190a6bab42dff9f77c536
   - package: me.lucky.clipeus
     signature:
       - fingerprint: 00:6A:FF:63:E6:03:9B:1B:A2:B6:80:2A:3A:E1:5D:C4:A5:55:4D:5C:2D:BF:66:DD:DB:C0:38:60:25:18:F5:F5
