@@ -3490,6 +3490,13 @@ packages:
               sha256: 8fa68638aeb80f277eaf23181ea628c6ceaeff4f35358b40bee71d99f7b11eaa
   - package: de.seemoo.at_tracking_detection.release
     signature:
+      - fingerprint: 98:B9:E1:89:18:DB:BB:BB:83:81:DC:F3:59:F4:47:37:2D:E7:06:FD:94:87:39:6D:1E:F3:8F:20:39:30:41:48
+        sources:
+          - name: Direct APK Link
+            issue: 854
+            apk:
+              sha256: d0d3e2f003ac28290661cc0b2e3ecce9d492ead7c75f8b84f7bf50d2d939c0b8
+              link: https://github.com/seemoo-lab/AirGuard/releases/download/3.0.2/AirGuard.3.0.2.Github.apk
       - fingerprint: AB:83:DA:14:0D:EB:AF:C8:2E:CC:66:2A:9E:18:02:E6:F9:45:BB:74:6A:9A:AE:4F:90:CB:EF:72:BF:A9:91:8F
         sources:
           - name: Google Play
