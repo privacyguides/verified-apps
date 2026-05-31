@@ -2031,6 +2031,14 @@ packages:
             issue: 1042
             apk:
               sha256: fd99ade4e776c4c1adae3083e5832551e209d649d7f1f191ff3f072ea16b8a9b
+      - fingerprint: AF:A3:19:DC:E2:2C:6A:8F:B3:E4:D8:52:A2:C0:DF:6C:07:CF:99:5D:AB:2F:78:33:1E:4B:C5:B5:DD:48:BF:AF
+        sources:
+          - name: AppVerifier
+            issue: 1043
+          - name: F-Droid
+            issue: 1043
+            apk:
+              sha256: 472d91912d5aa41fa1758db972398ace27bfa6d3f798aa8d9d69efb6903de4c0
   - package: com.kylecorry.trail_sense.github
     signature:
       - fingerprint: D3:B7:CB:BC:63:3F:7C:1B:E2:CA:A2:F7:5F:B0:72:EE:9B:40:FD:10:FA:AF:96:42:69:2B:27:C4:AF:5E:C4:A7
