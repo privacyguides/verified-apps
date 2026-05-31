@@ -3821,6 +3821,15 @@ packages:
             issue: 81
             apk:
               sha256: fd2b4c974deddd9b89d9693764e6962cd89d3f676cceb8e0ac97c4049b5f1b86
+  - package: io.anytype.app
+    signature:
+      - fingerprint: 89:0B:65:C4:06:E8:CF:2F:73:F6:D0:BF:D1:D2:97:83:B8:C1:4D:26:1A:92:A3:5F:34:2B:08:65:26:D7:E3:DB
+        sources:
+          - name: Direct APK Link
+            issue: 866
+            apk:
+              sha256: a0c802fed67251d0846af31269df15e916f731f861bd2ace8c08d6b8e94f3fac
+              link: https://github.com/anyproto/anytype-kotlin/releases/download/0.46.12/anytype-0.46.12-arm64-v8a.apk
   - package: io.element.android.x
     signature:
       - fingerprint: 6A:2F:DC:31:48:04:9C:E0:D5:C6:E8:50:10:72:3B:83:FB:20:7D:20:C7:47:7F:5C:22:AC:53:C8:77:E9:2D:47
