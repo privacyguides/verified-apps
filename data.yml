@@ -4639,6 +4639,14 @@ packages:
             issue: 653
             apk:
               sha256: e9de9981dc1f0ae611be838637ea6e3c56dc2ad90bab50a2c2ee3eb3c3430f8d
+  - package: io.github.kennethchoinfosec.haven
+    signature:
+      - fingerprint: 23:27:F8:DC:CF:21:A2:1E:7D:40:C1:21:14:C9:FB:BA:92:5B:D7:E6:4D:56:F1:15:D5:44:B5:74:35:AD:DB:C1
+        sources:
+          - name: F-Droid
+            issue: 1116
+            apk:
+              sha256: ca60fa7522dd57f9ed88de8f6f3ec72722cf413511773067de48803c749008da
   - package: io.github.lime3ds.android
     signature:
       - fingerprint: 5B:A2:56:3E:0D:13:FA:E2:AB:A0:67:D1:C2:30:CD:1C:86:3A:93:00:5C:10:D6:48:CE:5B:33:17:92:AA:0A:F1
