@@ -2597,6 +2597,14 @@ packages:
             issue: 723
             apk:
               sha256: 84a3e189087608cde684cdeeae9af8c4a579d2b527ebcbab027b14b50ef1aa18
+  - package: com.sec.android.app.clockpackage
+    signature:
+      - fingerprint: 34:DF:0E:7A:9F:1C:F1:89:2E:45:C0:56:B4:97:3C:D8:1C:CF:14:8A:40:50:D1:1A:EA:4A:C5:A6:5F:90:0A:42
+        sources:
+          - name: Custom (APKPure)
+            issue: 942
+            apk:
+              sha256: 71acc130d3b7c2e97d66e8c112a84728331fbafe0cf7e8ebc2b4f284aa05ba14
   - package: com.sec.android.app.kidshome
     signature:
       - fingerprint: 34:DF:0E:7A:9F:1C:F1:89:2E:45:C0:56:B4:97:3C:D8:1C:CF:14:8A:40:50:D1:1A:EA:4A:C5:A6:5F:90:0A:42
