@@ -3574,6 +3574,16 @@ packages:
             issue: 606
             apk:
               sha256: 32f217e3198f5286f6811f922930d79e82f6cdf7dd49dd96e4587f9a8bfc2c47
+  - package: com.zhiliaoapp.musically
+    signature:
+      - fingerprint: 90:41:80:3E:91:BC:B8:14:B4:B4:39:9F:B5:C8:5A:91:64:0B:75:5E:5E:8B:A7:68:13:81:4B:F4:CF:2A:B5:BA
+        sources:
+          - name: AppVerifier
+            issue: 1063
+          - name: Google Play
+            issue: 1063
+            apk:
+              sha256: 7a3ac11d5e691fd2aab800124ecd3f2ecee540bcc0fafb0a24b6d6705dba3f5e
   - package: com.zillow.android.zillowmap
     signature:
       - fingerprint: FB:CC:B2:E4:36:05:9A:AE:B8:30:9B:E3:B1:8C:D0:91:CD:E3:8D:C7:A2:DE:4D:80:A5:F0:1E:7B:47:70:D2:38
