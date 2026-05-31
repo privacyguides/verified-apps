@@ -2589,6 +2589,14 @@ packages:
             issue: 723
             apk:
               sha256: 84a3e189087608cde684cdeeae9af8c4a579d2b527ebcbab027b14b50ef1aa18
+  - package: com.sec.android.app.kidshome
+    signature:
+      - fingerprint: 34:DF:0E:7A:9F:1C:F1:89:2E:45:C0:56:B4:97:3C:D8:1C:CF:14:8A:40:50:D1:1A:EA:4A:C5:A6:5F:90:0A:42
+        sources:
+          - name: Custom (APKPure)
+            issue: 973
+            apk:
+              sha256: 2aedf592da76b4478de51ce3b04a352e3ce146dcf27a84feac13ea2a46472586
   - package: com.sec.android.app.shealth
     signature:
       - fingerprint: B9:A4:2D:D5:FC:4E:05:48:89:AE:41:27:A6:27:4C:EC:64:E7:5C:41:73:3D:42:F5:99:1E:70:19:F9:EA:5C:AF
