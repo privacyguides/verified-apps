@@ -4195,6 +4195,11 @@ packages:
         sources:
           - name: AppVerifier
             issue: 858
+          - name: Direct APK Link
+            issue: 1118
+            apk:
+              sha256: 25419574125636f09130027b08e431973efba6d384521abae0f57818d448320a
+              link: https://github.com/ImranR98/Obtainium/releases/download/v1.4.3/app-arm64-v8a-release.apk
           - name: F-Droid (IzzyOnDroid)
             issue: 858
             apk:
