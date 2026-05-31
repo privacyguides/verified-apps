@@ -4056,6 +4056,19 @@ packages:
             issue: 1067
             apk:
               sha256: 6ff2549f7e9d1bf38fb0abf989d43d14cfce313877faf9de072f295f612391d3
+      - fingerprint: EB:CD:A4:06:40:F9:99:76:23:C5:54:A7:B9:8D:5A:53:1E:62:5A:A1:35:DE:BB:CC:65:8A:CA:11:D6:7F:D5:82
+        sources:
+          - name: AppVerifier
+            issue: 1066
+          - name: Direct APK Link
+            issue: 1066
+            apk:
+              sha256: b100a6d0333d53f68f23f58209c9618f936f2eb5ef4bbf283ae89a3acb1021b3
+              link: https://codeberg.org/qwerty287/ftpclient/releases/download/3.0.1/release.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 1066
+            apk:
+              sha256: b100a6d0333d53f68f23f58209c9618f936f2eb5ef4bbf283ae89a3acb1021b3
   - package: de.salomax.currencies
     signature:
       - fingerprint: 35:32:CE:86:50:3F:6A:9D:B1:9C:5E:05:B1:4E:51:AE:E6:CC:10:31:D5:09:BC:AC:53:3C:C2:85:A5:10:28:64
