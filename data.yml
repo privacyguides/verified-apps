@@ -6372,6 +6372,19 @@ packages:
             apk:
               sha256: d07b9a00c6f43da49812ad6a237c97418e519cf17f1c384443562c858a49f1b2
               link: https://github.com/mateusz-bak/openreads/releases/download/v2.11.0/openreads-v2.11.0-release.apk
+  - package: tech.lolli.toolbox
+    signature:
+      - fingerprint: 5E:8B:24:51:85:AA:A5:37:36:F9:32:10:6A:23:64:A9:94:8A:C3:C2:C2:D9:72:AB:D1:0F:B0:A8:68:F4:2D:5D
+        sources:
+          - name: Direct APK Link
+            issue: 1111
+            apk:
+              sha256: 4fafc6d037d4bfe11dda686976bbc368c191b982cb0bc59e5cc837e67e3bce7f
+              link: https://github.com/lollipopkit/flutter_server_box/releases/download/v1.0.1409/ServerBox_v1.0.1409_arm64.apk
+          - name: F-Droid
+            issue: 1111
+            apk:
+              sha256: 3dde10ba22cb0d0c240551c0b60e1245f5bfe1cfaed5df8ab486e491857e2ffd
   - package: tech.ula
     signature:
       - fingerprint: 3A:19:DD:7D:23:81:C9:41:4F:70:64:5C:F0:BA:AB:EB:CB:0A:74:3F:1E:EE:07:0D:61:9B:0C:A1:79:73:3F:9F
