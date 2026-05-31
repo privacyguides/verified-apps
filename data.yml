@@ -2356,6 +2356,15 @@ packages:
             issue: 917
             apk:
               sha256: 0448cf0086e1670e6ff2bb31901f33597acfd5bb45758c70540d8e01ef623069
+  - package: com.pocketpalai
+    signature:
+      - fingerprint: F5:5A:CA:CB:10:15:5B:EA:11:6E:1D:BA:48:7C:F2:BF:B8:BC:E2:B6:54:39:BC:62:BC:23:70:A6:B2:23:96:14
+        sources:
+          - name: Direct APK Link
+            issue: 828
+            apk:
+              sha256: a71532d37273ea5d9bd0cb0e1e91ac894e3fd34e3ac2917e7c792425d7a8ca0c
+              link: https://github.com/a-ghorbani/pocketpal-ai/releases/download/v1.15.1/app-prod-release.apk
   - package: com.poupa.vinylmusicplayer
     signature:
       - fingerprint: 5B:FF:14:F9:B3:BD:BC:B3:B2:F3:7D:B6:23:CF:32:1F:D2:B4:80:03:5B:54:08:BB:81:82:C9:3F:C4:F8:ED:A2
