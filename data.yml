@@ -3870,6 +3870,16 @@ packages:
             apk:
               sha256: af19583a5defbfdf1c6677f24979587b100309b70fe6678e9ea047dd46e65295
               link: https://github.com/QuantumPhysique/trale/releases/download/v1.0.3/app-arm64-v8a-release.apk
+  - package: de.qwerty287.ftpclient
+    signature:
+      - fingerprint: 94:2B:8B:8D:A8:46:38:41:18:FF:DB:43:1E:2A:8D:B1:AF:41:DE:30:A3:9B:C9:F2:40:EC:7B:D9:B4:48:FE:3D
+        sources:
+          - name: AppVerifier
+            issue: 1067
+          - name: F-Droid
+            issue: 1067
+            apk:
+              sha256: 6ff2549f7e9d1bf38fb0abf989d43d14cfce313877faf9de072f295f612391d3
   - package: de.salomax.currencies
     signature:
       - fingerprint: 35:32:CE:86:50:3F:6A:9D:B1:9C:5E:05:B1:4E:51:AE:E6:CC:10:31:D5:09:BC:AC:53:3C:C2:85:A5:10:28:64
