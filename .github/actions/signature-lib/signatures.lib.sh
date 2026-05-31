@@ -493,7 +493,8 @@ _submission_assemble_entry_from_proposals() {
 # Build a single package entry (schema 3: fingerprint groups with sources[]) from store matches.
 # Required env: PACKAGE, ISSUE, USER_SIG (raw; formatted internally)
 # Optional env: SUBMITTER_SOURCE, ACC_SIG, ACC_APK_SHA256, FDROID_RESULTS_DIR, CUSTOM_FDROID_REPO_URL,
-#   CUSTOM_FDROID_APK_SHA256, GPLAY_SIG, GPLAY_APK_SHA256, APPVERIFIER_SIG, DIRECT_SIG, DIRECT_APK_URL,
+#   CUSTOM_FDROID_APK_SHA256, GPLAY_SIG, GPLAY_APK_SHA256, APKPURE_SIG, APKPURE_APK_SHA256,
+#   APPVERIFIER_SIG, DIRECT_SIG, DIRECT_APK_URL,
 #   DIRECT_APK_SHA256
 # Writes YAML object to $1. Returns 0 when at least one signature was added, 1 otherwise.
 submission_build_entry_file() {
@@ -546,6 +547,10 @@ submission_build_entry_file() {
   if [[ -n "${GPLAY_SIG:-}" ]] && signatures_equal "$GPLAY_SIG" "$user_sig"; then
     fp_block="$(signatures_format_block "$GPLAY_SIG")"
     _submission_add_source "$fp_block" "Google Play" "${GPLAY_APK_SHA256:-}"
+  fi
+  if [[ -n "${APKPURE_SIG:-}" ]] && signatures_equal "$APKPURE_SIG" "$user_sig"; then
+    fp_block="$(signatures_format_block "$APKPURE_SIG")"
+    _submission_add_source "$fp_block" "APKPure" "${APKPURE_APK_SHA256:-}"
   fi
   if [[ -n "${APPVERIFIER_SIG:-}" ]] && signatures_equal "$APPVERIFIER_SIG" "$user_sig"; then
     fp_block="$(signatures_format_block "$APPVERIFIER_SIG")"

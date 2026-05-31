@@ -1,16 +1,20 @@
-name: Download APK from Google Play
-description: Download an APK from Google Play using EFF apkeep
+name: Download APK with apkeep
+description: Download an APK from Google Play or APKPure using EFF apkeep
 inputs:
   packageName:
     description: Android application ID
     required: true
+  source:
+    description: apkeep download source (google-play or apk-pure)
+    required: false
+    default: google-play
   apkeepVersion:
     description: apkeep crate version to install with cargo
     required: false
     default: "1.0.0"
 outputs:
   found:
-    description: Whether the package could be resolved on Google Play
+    description: Whether the package could be resolved on the chosen source
     value: ${{ steps.download.outputs.found }}
   apkPath:
     description: Path to the downloaded APK file
@@ -41,24 +45,26 @@ runs:
       id: cacheKey
       env:
         PACKAGE_NAME: ${{ inputs.packageName }}
+        APKEEP_SOURCE: ${{ inputs.source }}
       run: |
         set -euo pipefail
-        echo "cacheKey=apkeep-gplay-${PACKAGE_NAME}" >> "$GITHUB_OUTPUT"
+        echo "cacheKey=apkeep-${APKEEP_SOURCE}-${PACKAGE_NAME}" >> "$GITHUB_OUTPUT"
 
     - name: Restore APK cache
       id: apkCache
       uses: actions/cache@v5
       with:
-        path: ${{ runner.temp }}/apkeep-gplay-apk-cache
+        path: ${{ runner.temp }}/apkeep-${{ inputs.source }}-apk-cache
         key: ${{ steps.cacheKey.outputs.cacheKey }}
         restore-keys: |
-          apkeep-gplay-${{ inputs.packageName }}-
+          apkeep-${{ inputs.source }}-${{ inputs.packageName }}-
 
     - shell: bash
       id: download
       env:
         PACKAGE_NAME: ${{ inputs.packageName }}
         APKEEP_BIN: ${{ steps.apkeep.outputs.bin }}
+        APKEEP_SOURCE: ${{ inputs.source }}
         GPLAY_EMAIL: ${{ env.GPLAY_EMAIL }}
         GPLAY_AAS_TOKEN: ${{ env.GPLAY_AAS_TOKEN }}
         CACHE_HIT: ${{ steps.apkCache.outputs.cache-hit }}
@@ -67,7 +73,7 @@ runs:
         echo "found=false" >> "$GITHUB_OUTPUT"
         echo "apkPath=" >> "$GITHUB_OUTPUT"
 
-        cache_dir="${RUNNER_TEMP}/apkeep-gplay-apk-cache"
+        cache_dir="${RUNNER_TEMP}/apkeep-${APKEEP_SOURCE}-apk-cache"
         mkdir -p "$cache_dir"
 
         if [[ "$CACHE_HIT" == "true" ]]; then
@@ -79,22 +85,36 @@ runs:
           fi
         fi
 
-        if [[ -z "${GPLAY_EMAIL:-}" || -z "${GPLAY_AAS_TOKEN:-}" ]]; then
-          echo "GPLAY_EMAIL and GPLAY_AAS_TOKEN must be set for Google Play downloads." >&2
-          exit 1
-        fi
-
         work_dir="${RUNNER_TEMP}/apkeep-download"
         rm -rf "$work_dir"
         mkdir -p "$work_dir"
         download_log="${RUNNER_TEMP}/apkeep-download.log"
 
-        if ! "$APKEEP_BIN" -a "$PACKAGE_NAME" -d google-play \
-          -e "$GPLAY_EMAIL" -t "$GPLAY_AAS_TOKEN" \
-          "$work_dir" >"$download_log" 2>&1; then
-          cat "$download_log" >&2 || true
-          exit 0
-        fi
+        case "$APKEEP_SOURCE" in
+          google-play)
+            if [[ -z "${GPLAY_EMAIL:-}" || -z "${GPLAY_AAS_TOKEN:-}" ]]; then
+              echo "GPLAY_EMAIL and GPLAY_AAS_TOKEN must be set for Google Play downloads." >&2
+              exit 1
+            fi
+            if ! "$APKEEP_BIN" -a "$PACKAGE_NAME" -d google-play \
+              -e "$GPLAY_EMAIL" -t "$GPLAY_AAS_TOKEN" \
+              "$work_dir" >"$download_log" 2>&1; then
+              cat "$download_log" >&2 || true
+              exit 0
+            fi
+            ;;
+          apk-pure)
+            if ! "$APKEEP_BIN" -a "$PACKAGE_NAME" -d apk-pure \
+              "$work_dir" >"$download_log" 2>&1; then
+              cat "$download_log" >&2 || true
+              exit 0
+            fi
+            ;;
+          *)
+            echo "Unsupported apkeep source: ${APKEEP_SOURCE}" >&2
+            exit 1
+            ;;
+        esac
 
         apkPath=$(find "$work_dir" -type f -name '*.apk' ! -name '*config*' | head -n1)
         if [[ -z "$apkPath" ]]; then

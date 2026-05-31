@@ -20,6 +20,7 @@ jobs:
       customFdroidRepoUrl: ${{ steps.parsed.outputs.customFdroidRepoUrl }}
       isDuplicate: ${{ steps.duplicateCheck.outputs.isDuplicate }}
       duplicateOf: ${{ steps.duplicateCheck.outputs.duplicateOf }}
+      checkApkpure: ${{ steps.checkLabels.outputs.checkApkpure }}
 
     if: >-
       ${{
@@ -68,6 +69,18 @@ jobs:
           currentIssue: ${{ github.event.issue.number }}
           directApkUrl: ${{ steps.parsed.outputs.apkUrl }}
           customFdroidRepoUrl: ${{ steps.parsed.outputs.customFdroidRepoUrl }}
+
+      - name: Detect Check APKPure label
+        id: checkLabels
+        run: |
+          set -euo pipefail
+          check_apkpure=false
+          while IFS= read -r name; do
+            if [[ "$name" == "Check APKPure" ]]; then
+              check_apkpure=true
+            fi
+          done < <(echo '${{ toJSON(github.event.issue.labels) }}' | jq -r '.[].name')
+          echo "checkApkpure=${check_apkpure}" >> "$GITHUB_OUTPUT"
 
   closeDuplicate:
     name: Close Duplicate Submission
@@ -511,6 +524,73 @@ jobs:
           echo "$PACKAGE_NAME" >> $GITHUB_STEP_SUMMARY
           echo "$SIGNATURE" >> $GITHUB_STEP_SUMMARY
 
+  apkpure:
+    name: APKPure
+    runs-on: ubuntu-latest
+    needs: parse
+    concurrency:
+      group: apkpure-downloads
+      cancel-in-progress: false
+      queue: max
+
+    if: >-
+      needs.parse.outputs.isDuplicate != 'true' &&
+      github.event.label.name == 'Run Checks' &&
+      needs.parse.outputs.checkApkpure == 'true'
+    continue-on-error: true
+    permissions:
+      contents: read
+
+    outputs:
+      found: ${{ steps.appDownload.outputs.found }}
+      signature: ${{ steps.appSignature.outputs.signature }}
+      apkSha256: ${{ steps.appSignature.outputs.apkSha256 }}
+      match: ${{ steps.matches.outputs.status }}
+      packageName: ${{ steps.matches.outputs.packageName }}
+      infoNote: ${{ steps.matches.outputs.infoNote }}
+      storeSignedMatch: ${{ steps.matches.outputs.storeSignedMatch }}
+
+    env:
+      PACKAGE_NAME: ${{ needs.parse.outputs.packageName }}
+
+    steps:
+      - name: Download Repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: "false"
+
+      - name: Download from APKPure
+        id: appDownload
+        uses: ./.github/actions/download-apk-apkeep
+        with:
+          packageName: ${{ env.PACKAGE_NAME }}
+          source: apk-pure
+
+      - name: Get APK signature(s)
+        id: appSignature
+        if: steps.appDownload.outputs.found == 'true'
+        uses: ./.github/actions/get-signature
+        with:
+          path: ${{ steps.appDownload.outputs.apkPath }}
+
+      - name: Matches User-Provided?
+        id: matches
+        if: steps.appDownload.outputs.found == 'true'
+        uses: ./.github/actions/match-signature
+        with:
+          packageName: ${{ env.PACKAGE_NAME }}
+          userSignature: ${{ needs.parse.outputs.packageSignature }}
+          storeSignature: ${{ steps.appSignature.outputs.signature }}
+          signerKind: ${{ steps.appSignature.outputs.signerKind }}
+
+      - name: Write Summary
+        if: steps.appDownload.outputs.found == 'true'
+        env:
+          SIGNATURE: ${{ steps.appSignature.outputs.signature }}
+        run: |
+          echo "$PACKAGE_NAME" >> $GITHUB_STEP_SUMMARY
+          echo "$SIGNATURE" >> $GITHUB_STEP_SUMMARY
+
   directApk:
     name: Direct APK Link
     runs-on: ubuntu-latest
@@ -697,7 +777,7 @@ jobs:
   summary:
     name: Generate Summary
     runs-on: ubuntu-latest
-    needs: [parse, accrescent, fdroid, customFdroid, gplay, appverifierDb, directApk, grapheneosForum]
+    needs: [parse, accrescent, fdroid, customFdroid, gplay, apkpure, appverifierDb, directApk, grapheneosForum]
 
     if: always() && needs.parse.outputs.isDuplicate != 'true' && github.event.label.name == 'Run Checks'
     permissions:
@@ -742,6 +822,11 @@ jobs:
           GPLAY_MATCH: ${{ needs.gplay.outputs.match }}
           GPLAY_PKG: ${{ needs.gplay.outputs.packageName }}
           GPLAY_SIG: ${{ needs.gplay.outputs.signature }}
+          CHECK_APKPURE: ${{ needs.parse.outputs.checkApkpure }}
+          APKPURE_FOUND: ${{ needs.apkpure.outputs.found }}
+          APKPURE_MATCH: ${{ needs.apkpure.outputs.match }}
+          APKPURE_PKG: ${{ needs.apkpure.outputs.packageName }}
+          APKPURE_SIG: ${{ needs.apkpure.outputs.signature }}
           AV_FOUND: ${{ needs.appverifierDb.outputs.found }}
           AV_MATCH: ${{ needs.appverifierDb.outputs.match }}
           AV_PKG: ${{ needs.appverifierDb.outputs.packageName }}
@@ -777,6 +862,9 @@ jobs:
           if [[ -n "$APK_URL" ]]; then
             extras+=("your direct APK link")
           fi
+          if [[ "$CHECK_APKPURE" == "true" ]]; then
+            extras+=("APKPure")
+          fi
           if [[ ${#extras[@]} -gt 0 ]]; then
             extras_joined=""
             for extra in "${extras[@]}"; do
@@ -808,6 +896,9 @@ jobs:
           done < <(find fdroid-results -type f -name '*.json' 2>/dev/null | sort)
           if [[ "$GPLAY_FOUND" == "true" ]]; then
             echo "| Google Play | $GPLAY_MATCH | $(format_sig_cell "$GPLAY_PKG" "$GPLAY_SIG") |" >> $GITHUB_STEP_SUMMARY
+          fi
+          if [[ "$CHECK_APKPURE" == "true" && "$APKPURE_FOUND" == "true" ]]; then
+            echo "| APKPure | $APKPURE_MATCH | $(format_sig_cell "$APKPURE_PKG" "$APKPURE_SIG") |" >> $GITHUB_STEP_SUMMARY
           fi
           if [[ "$AV_FOUND" == "true" ]]; then
             echo "| AppVerifier | $AV_MATCH | $(format_sig_cell "$AV_PKG" "$AV_SIG") |" >> $GITHUB_STEP_SUMMARY
@@ -852,6 +943,7 @@ jobs:
         env:
           ACC_INFO: ${{ needs.accrescent.outputs.infoNote }}
           GPLAY_INFO: ${{ needs.gplay.outputs.infoNote }}
+          APKPURE_INFO: ${{ needs.apkpure.outputs.infoNote }}
           AV_INFO: ${{ needs.appverifierDb.outputs.infoNote }}
           GO_INFO: ${{ needs.grapheneosForum.outputs.infoNote }}
           DIRECT_INFO: ${{ needs.directApk.outputs.infoNote }}
@@ -882,6 +974,9 @@ jobs:
           if [[ "${{ needs.gplay.outputs.found }}" == "true" ]]; then
             append_note "$GPLAY_INFO"
           fi
+          if [[ "${{ needs.parse.outputs.checkApkpure }}" == "true" && "${{ needs.apkpure.outputs.found }}" == "true" ]]; then
+            append_note "$APKPURE_INFO"
+          fi
           append_note "$AV_INFO"
           append_note "$GO_INFO"
           append_note "$DIRECT_INFO"
@@ -902,6 +997,15 @@ jobs:
         with:
           operation: signatures-equal
           signatureA: ${{ needs.gplay.outputs.signature }}
+          signatureB: ${{ needs.parse.outputs.packageSignature }}
+
+      - name: Match APKPure signatures
+        id: apkpureEqual
+        if: needs.parse.outputs.checkApkpure == 'true' && needs.apkpure.outputs.found == 'true'
+        uses: ./.github/actions/signature-lib
+        with:
+          operation: signatures-equal
+          signatureA: ${{ needs.apkpure.outputs.signature }}
           signatureB: ${{ needs.parse.outputs.packageSignature }}
 
       - name: Match AppVerifier signatures
@@ -928,11 +1032,14 @@ jobs:
           USER_SIG: ${{ needs.parse.outputs.packageSignature }}
           APK_URL: ${{ needs.parse.outputs.apkUrl }}
           CUSTOM_FDROID_REPO_URL: ${{ needs.parse.outputs.customFdroidRepoUrl }}
+          CHECK_APKPURE: ${{ needs.parse.outputs.checkApkpure }}
           ACC_FOUND: ${{ needs.accrescent.outputs.found }}
           GPLAY_FOUND: ${{ needs.gplay.outputs.found }}
+          APKPURE_FOUND: ${{ needs.apkpure.outputs.found }}
           AV_FOUND: ${{ needs.appverifierDb.outputs.found }}
           ACC_EQUAL: ${{ steps.accEqual.outputs.result }}
           GPLAY_EQUAL: ${{ steps.gplayEqual.outputs.result }}
+          APKPURE_EQUAL: ${{ steps.apkpureEqual.outputs.result }}
           AV_EQUAL: ${{ steps.appverifierEqual.outputs.result }}
           DIRECT_EQUAL: ${{ steps.directEqual.outputs.result }}
         run: |
@@ -942,6 +1049,9 @@ jobs:
           sources=0
           [[ "$ACC_FOUND" == "true" ]] && sources=$((sources + 1))
           [[ "$GPLAY_FOUND" == "true" ]] && sources=$((sources + 1))
+          if [[ "$CHECK_APKPURE" == "true" && "$APKPURE_FOUND" == "true" ]]; then
+            sources=$((sources + 1))
+          fi
           if [[ "$AV_FOUND" == "true" ]]; then
             sources=$((sources + 1))
           fi
@@ -960,6 +1070,9 @@ jobs:
             i=$((i + 1))
           fi
           if [[ "$GPLAY_FOUND" == "true" && "$GPLAY_EQUAL" == "true" ]]; then
+            i=$((i + 1))
+          fi
+          if [[ "$CHECK_APKPURE" == "true" && "$APKPURE_FOUND" == "true" && "$APKPURE_EQUAL" == "true" ]]; then
             i=$((i + 1))
           fi
           while IFS= read -r result_file; do
@@ -986,6 +1099,9 @@ jobs:
           if [[ "$GPLAY_FOUND" == "true" && "$GPLAY_EQUAL" == "true" ]]; then
             store_matches=$((store_matches + 1))
           fi
+          if [[ "$CHECK_APKPURE" == "true" && "$APKPURE_FOUND" == "true" && "$APKPURE_EQUAL" == "true" ]]; then
+            store_matches=$((store_matches + 1))
+          fi
           while IFS= read -r result_file; do
             [[ -z "$result_file" ]] && continue
             [[ "$(jq -r '.found' "$result_file")" != "true" ]] && continue
@@ -1003,16 +1119,21 @@ jobs:
           SOURCES: ${{ steps.count.outputs.sources }}
           USER_SIG: ${{ needs.parse.outputs.packageSignature }}
           ACC_FOUND: ${{ needs.accrescent.outputs.found }}
+          CHECK_APKPURE: ${{ needs.parse.outputs.checkApkpure }}
           GPLAY_FOUND: ${{ needs.gplay.outputs.found }}
+          APKPURE_FOUND: ${{ needs.apkpure.outputs.found }}
           ACC_EQUAL: ${{ steps.accEqual.outputs.result }}
           GPLAY_EQUAL: ${{ steps.gplayEqual.outputs.result }}
+          APKPURE_EQUAL: ${{ steps.apkpureEqual.outputs.result }}
           AV_EQUAL: ${{ steps.appverifierEqual.outputs.result }}
           DIRECT_EQUAL: ${{ steps.directEqual.outputs.result }}
           ACC_STORE_SIGNED: ${{ needs.accrescent.outputs.storeSignedMatch }}
           GPLAY_STORE_SIGNED: ${{ needs.gplay.outputs.storeSignedMatch }}
+          APKPURE_STORE_SIGNED: ${{ needs.apkpure.outputs.storeSignedMatch }}
           DIRECT_STORE_SIGNED: ${{ needs.directApk.outputs.storeSignedMatch }}
           ACC_INFO: ${{ needs.accrescent.outputs.infoNote }}
           GPLAY_INFO: ${{ needs.gplay.outputs.infoNote }}
+          APKPURE_INFO: ${{ needs.apkpure.outputs.infoNote }}
           AV_INFO: ${{ needs.appverifierDb.outputs.infoNote }}
           DIRECT_INFO: ${{ needs.directApk.outputs.infoNote }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -1029,7 +1150,7 @@ jobs:
 
           echo "" >> ${RUNNER_TEMP}/issueBody.md
           has_info=false
-          if [[ ( "$ACC_FOUND" == "true" && -n "$ACC_INFO" ) || ( "$GPLAY_FOUND" == "true" && -n "$GPLAY_INFO" ) || -n "$AV_INFO" || -n "$DIRECT_INFO" || "$fdroid_has_info" == true ]]; then
+          if [[ ( "$ACC_FOUND" == "true" && -n "$ACC_INFO" ) || ( "$GPLAY_FOUND" == "true" && -n "$GPLAY_INFO" ) || ( "$CHECK_APKPURE" == "true" && "$APKPURE_FOUND" == "true" && -n "$APKPURE_INFO" ) || -n "$AV_INFO" || -n "$DIRECT_INFO" || "$fdroid_has_info" == true ]]; then
             has_info=true
           fi
           store_signed_label=false
@@ -1046,6 +1167,9 @@ jobs:
             fi
           done < <(find fdroid-results -type f -name '*.json' 2>/dev/null)
           if [[ "$GPLAY_FOUND" == "true" && "$GPLAY_EQUAL" == "true" && "$GPLAY_STORE_SIGNED" == "true" ]]; then
+            store_signed_label=true
+          fi
+          if [[ "$CHECK_APKPURE" == "true" && "$APKPURE_FOUND" == "true" && "$APKPURE_EQUAL" == "true" && "$APKPURE_STORE_SIGNED" == "true" ]]; then
             store_signed_label=true
           fi
           if [[ "$DIRECT_EQUAL" == "true" && "$DIRECT_STORE_SIGNED" == "true" ]]; then
@@ -1072,6 +1196,7 @@ jobs:
           ACC_SIG: ${{ needs.accrescent.outputs.signature }}
           FDROID_RESULTS_DIR: fdroid-results
           GPLAY_SIG: ${{ needs.gplay.outputs.signature }}
+          APKPURE_SIG: ${{ needs.apkpure.outputs.signature }}
           APPVERIFIER_SIG: ${{ needs.appverifierDb.outputs.signature }}
           DIRECT_SIG: ${{ needs.directApk.outputs.signature }}
           DIRECT_APK_URL: ${{ needs.parse.outputs.apkUrl }}
@@ -1080,6 +1205,7 @@ jobs:
           CUSTOM_FDROID_APK_SHA256: ${{ needs.customFdroid.outputs.apkSha256 }}
           ACC_APK_SHA256: ${{ needs.accrescent.outputs.apkSha256 }}
           GPLAY_APK_SHA256: ${{ needs.gplay.outputs.apkSha256 }}
+          APKPURE_APK_SHA256: ${{ needs.apkpure.outputs.apkSha256 }}
         run: |
           set -euo pipefail
           source .github/actions/signature-lib/signatures.lib.sh
@@ -1121,11 +1247,14 @@ jobs:
           NUMBER: ${{ github.event.issue.number }}
           STORE_MATCHES: ${{ steps.count.outputs.storeMatches }}
           ACC_FOUND: ${{ needs.accrescent.outputs.found }}
+          CHECK_APKPURE: ${{ needs.parse.outputs.checkApkpure }}
           GPLAY_FOUND: ${{ needs.gplay.outputs.found }}
+          APKPURE_FOUND: ${{ needs.apkpure.outputs.found }}
           AV_FOUND: ${{ needs.appverifierDb.outputs.found }}
           USER_SIG: ${{ needs.parse.outputs.packageSignature }}
           ACC_EQUAL: ${{ steps.accEqual.outputs.result }}
           GPLAY_EQUAL: ${{ steps.gplayEqual.outputs.result }}
+          APKPURE_EQUAL: ${{ steps.apkpureEqual.outputs.result }}
           AV_EQUAL: ${{ steps.appverifierEqual.outputs.result }}
         run: |
           set -euo pipefail
@@ -1156,6 +1285,9 @@ jobs:
           done < <(find fdroid-results -type f -name '*.json' 2>/dev/null | sort)
           if [[ "$GPLAY_FOUND" == "true" && "$GPLAY_EQUAL" == "true" ]]; then
             label_args+=(--add-label "Match Play")
+          fi
+          if [[ "$CHECK_APKPURE" == "true" && "$APKPURE_FOUND" == "true" && "$APKPURE_EQUAL" == "true" ]]; then
+            label_args+=(--add-label "Matches APKPure")
           fi
           if [[ ${#label_args[@]} -eq 0 ]]; then
             exit 0
