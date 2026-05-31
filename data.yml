@@ -3371,6 +3371,19 @@ packages:
             issue: 264
             apk:
               sha256: 56d23169baece013a3524e15cf6a98f41ed91ec5342991456050757103f6f8cb
+  - package: de.grobox.liberario
+    signature:
+      - fingerprint: 39:BD:8E:0F:54:C8:AB:87:AC:21:C0:7A:15:B3:0F:C9:5C:DF:F1:D2:5D:75:DF:02:9D:52:3B:18:DF:86:4B:79
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: 848
+            apk:
+              sha256: 59c3e8bd977bf8f5af80c2092c00b9cd435e82ad1098bae332f4c2ad43592822
+          - name: F-Droid (grobox.de)
+            issue: 848
+            apk:
+              sha256: 59c3e8bd977bf8f5af80c2092c00b9cd435e82ad1098bae332f4c2ad43592822
+              repo: https://grobox.de/fdroid/repo?fingerprint=28e14fb3b280bce8ff1e0f8e82726ff46923662cecff2a0689108ce19e8b347c
   - package: de.ingdiba.bankingapp
     signature:
       - fingerprint: CB:74:26:85:E4:8B:8F:F9:59:64:A6:81:39:AB:16:43:91:A1:6C:F2:A4:54:39:BA:59:8E:C0:BF:CB:0E:FB:FC
