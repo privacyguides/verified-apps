@@ -2541,6 +2541,14 @@ packages:
             issue: 976
             apk:
               sha256: 7efd52780bea19ea49d38d1ada4b6114365ba42dc31ea686db0ede83f2a82b87
+  - package: com.samsung.android.voc
+    signature:
+      - fingerprint: 34:DF:0E:7A:9F:1C:F1:89:2E:45:C0:56:B4:97:3C:D8:1C:CF:14:8A:40:50:D1:1A:EA:4A:C5:A6:5F:90:0A:42
+        sources:
+          - name: Custom (APKPure)
+            issue: 968
+            apk:
+              sha256: 84c31e57faf63538678f8ba4ebad56812f5eb648cc22c04b4bff82f4e8708ec9
   - package: com.samsung.ecomm
     signature:
       - fingerprint: D1:94:D3:1E:D8:48:EF:19:F3:1D:4D:B4:C1:A6:4B:7B:47:BE:0B:55:E4:E1:18:84:EC:02:D1:29:E0:0E:28:BD
