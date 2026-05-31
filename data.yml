@@ -1139,6 +1139,16 @@ packages:
             issue: 933
             apk:
               sha256: 727a8243ecf2421e5cca3e450d5284a5b709b568698ee91debc4f091654e3c41
+  - package: com.dominospizza
+    signature:
+      - fingerprint: 97:59:E1:5B:C7:AD:25:FB:A0:5D:43:36:16:E5:1C:E5:04:09:2E:F0:4F:63:C3:61:36:5C:FD:FE:DA:DD:3B:FC
+        sources:
+          - name: AppVerifier
+            issue: 1026
+          - name: Google Play
+            issue: 1026
+            apk:
+              sha256: 28995bbc32935af2cbede47e72de47a4de6e6367e312d5df4d401169f85e389d
   - package: com.donnnno.arcticons
     signature:
       - fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
