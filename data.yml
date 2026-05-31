@@ -5968,6 +5968,16 @@ packages:
             issue: 897
             apk:
               sha256: 922ed4a4c420e34a14c4d9c5d70ff36e364c7c24022c12cd35149d450ae3ed9e
+  - package: proton.android.pass
+    signature:
+      - fingerprint: DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
+        sources:
+          - name: AppVerifier
+            issue: 1102
+          - name: Google Play
+            issue: 1102
+            apk:
+              sha256: 71e820347ac95f660f16192260869940eb604763ccf77c43ca7ff99ba37b29db
   - package: proton.android.pass.fdroid
     signature:
       - fingerprint: 57:2C:25:04:8E:6E:62:29:BC:03:93:61:9F:7C:64:0F:8C:BC:CF:11:D2:EB:F8:B2:FA:7B:C9:A7:63:63:B8:12
