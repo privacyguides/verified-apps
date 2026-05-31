@@ -5485,3 +5485,12 @@ packages:
             apk:
               sha256: bf3321db5ab5371563b0b2ccb4bcbcfe35da08c45390d7a49c6cfe1b4399aa0e
               link: https://github.com/mjaakko/NeoStumbler/releases/download/2.3.4/app-full-default-universal-release.apk
+  - package: xyz.nextalone.nagram
+    signature:
+      - fingerprint: 88:A8:AF:E3:CC:BE:E0:80:C1:3B:73:83:2A:AB:8C:98:A9:F1:9D:1C:65:F3:BC:FD:50:B8:D0:1C:0B:C8:0E:9E
+        sources:
+          - name: Direct APK Link
+            issue: 904
+            apk:
+              sha256: 75d9804c39287f11b3f71805765f6781c96326b3eef7a43a9682bb83b40b0106
+              link: https://github.com/NextAlone/Nagram/releases/download/1236/Nagram-v12.6.4.1236-arm64-v8a.apk
