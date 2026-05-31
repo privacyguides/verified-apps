@@ -5085,6 +5085,14 @@ packages:
             apk:
               sha256: 79a6627c546cdbc8b1890cd241bb85f251fc287cfddba76293846a08dd562d23
               link: https://dist.torproject.org/torbrowser/15.0.14/tor-browser-android-aarch64-15.0.14.apk
+  - package: org.torproject.vpn
+    signature:
+      - fingerprint: 77:C3:CA:03:39:B2:10:64:59:48:67:FB:95:23:66:0D:7C:74:B2:60:1C:19:31:25:05:16:D5:F2:B3:4C:F5:E2
+        sources:
+          - name: Google Play
+            issue: 890
+            apk:
+              sha256: 5d7052c956c3683e8194b82435e282c27b52c9df823d03d5ad82cfaae7208f0d
   - package: org.toshi
     signature:
       - fingerprint: 10:03:96:C0:E4:00:06:1B:10:5D:D9:60:1A:2E:61:04:E6:9D:C7:B4:D8:E9:95:FF:0A:A2:65:A6:8C:5F:D6:19
