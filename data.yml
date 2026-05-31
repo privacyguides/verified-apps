@@ -4203,6 +4203,21 @@ packages:
             issue: 698
             apk:
               sha256: 49f863a01cd412ec1faf46e278847d7bee42dd477b07dbf08048c145a97c5e54
+  - package: dev.lbeernaert.youhavemail
+    signature:
+      - fingerprint: 1B:B4:B3:43:AA:70:5F:49:B7:3B:3E:F4:89:C9:87:DD:2E:2F:68:4C:C1:B6:EB:49:F6:25:BC:BF:6C:8F:01:EE
+        sources:
+          - name: AppVerifier
+            issue: 1068
+          - name: Direct APK Link
+            issue: 1068
+            apk:
+              sha256: ae2ea48aa4ee8f937dd44d265e6543f327c273b5e4871cff0f34cd44e7fdbd20
+              link: https://codeberg.org/angrypixel/you-have-mail/releases/download/v0.23.6/you-have-mail-v0.23.6.apk
+          - name: F-Droid
+            issue: 1068
+            apk:
+              sha256: ae2ea48aa4ee8f937dd44d265e6543f327c273b5e4871cff0f34cd44e7fdbd20
   - package: dev.leonlatsch.photok
     signature:
       - fingerprint: B7:04:A2:D2:D5:8A:37:E9:5A:B2:34:96:C3:9A:81:91:35:B8:7A:03:B9:B3:F4:C1:4D:3F:ED:CC:E9:CC:2C:9A
