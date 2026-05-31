@@ -5225,6 +5225,34 @@ packages:
             issue: 652
             apk:
               sha256: bfde995e9119e8a11df483c826df831a80b6a077c048930eb9cae928f4de02e4
+  - package: org.briarproject.briar.android
+    signature:
+      - fingerprint: 50:1D:DF:14:A6:EC:F9:04:FB:20:28:5C:56:A5:65:CB:98:7A:86:7F:91:57:2E:E3:3C:2D:43:77:1C:CA:4E:37
+        sources:
+          - name: AppVerifier
+            issue: 1089
+          - name: Custom (APKPure)
+            issue: 1089
+            apk:
+              sha256: 8cc8f18d0c603f9e3fc982a293db9165f8968359d2bc5f1d81f47b36bd76b719
+          - name: Direct APK Link
+            issue: 1089
+            apk:
+              sha256: 8cc8f18d0c603f9e3fc982a293db9165f8968359d2bc5f1d81f47b36bd76b719
+              link: https://briarproject.org/apk/briar.apk
+          - name: F-Droid
+            issue: 1089
+            apk:
+              sha256: 8cc8f18d0c603f9e3fc982a293db9165f8968359d2bc5f1d81f47b36bd76b719
+          - name: F-Droid (briarproject.org)
+            issue: 1089
+            apk:
+              sha256: 8cc8f18d0c603f9e3fc982a293db9165f8968359d2bc5f1d81f47b36bd76b719
+              repo: https://briarproject.org/fdroid/repo/
+          - name: Google Play
+            issue: 1089
+            apk:
+              sha256: 2d56cb9c5a0b6113616027494951f7064691dfd7a07257eb21c8f9bd56a54049
   - package: org.briarproject.mailbox
     signature:
       - fingerprint: AC:C4:DB:A4:8B:EA:4C:14:DF:80:36:1A:68:E5:60:7C:0B:DB:E4:DD:FA:FF:F6:0C:F5:CA:6C:09:19:0F:6B:83
