@@ -5039,6 +5039,15 @@ packages:
               sha256: 774ab07eca97c05d1a33f416e0ff330f20ba84ec6012f5f4248673c31a284032
   - package: net.gsantner.markor
     signature:
+      - fingerprint: 57:D1:06:D0:CF:A8:76:34:42:B3:64:5E:F2:74:1C:38:BB:82:0B:D5:6F:D4:61:2B:F4:0A:23:B6:D9:98:BE:5E
+        sources:
+          - name: AppVerifier
+            issue: 1086
+          - name: Direct APK Link
+            issue: 1086
+            apk:
+              sha256: e88cdcced7aa3dca25e6b9c7a9bdcfad3e3988ee545be951f42bf9441b5e46bf
+              link: https://github.com/gsantner/markor/releases/download/v2.16.1/net.gsantner.markor-v163-2.16.1-flavorDefault-release.apk
       - fingerprint: 9C:70:03:32:37:DC:46:FE:50:52:E4:20:C6:65:70:8D:E8:B3:10:5B:89:84:28:43:81:89:81:82:6B:7E:EC:9C
         sources:
           - name: AppVerifier
