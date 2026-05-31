@@ -4803,6 +4803,12 @@ packages:
               link: https://github.com/wolpi/prim-ftpd/releases/download/prim-ftpd-8.1/primitiveFTPd-8.1.apk
   - package: org.proninyaroslav.libretorrent
     signature:
+      - fingerprint: 1A:96:ED:44:27:98:2C:52:E0:67:09:C9:41:A8:F3:9B:2A:BA:68:BC:CA:E8:6B:6C:86:F9:F0:30:BD:95:99:EA
+        sources:
+          - name: F-Droid
+            issue: 884
+            apk:
+              sha256: 65ee8ef88d848931ecfda9f3462bb745e9e524ab7916d7a66ef679a2edee450e
       - fingerprint: B0:88:D4:72:A9:80:18:64:5C:DE:EF:8E:93:33:8D:58:B3:F2:38:92:18:7F:DF:63:F7:39:58:38:1E:27:E5:83
         sources:
           - name: Direct APK Link
