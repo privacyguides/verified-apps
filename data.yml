@@ -2685,6 +2685,15 @@ packages:
             issue: 71
             apk:
               sha256: e6265a57eb5ca363808488e3b01955958bed93bc0c8a0d281849b363b11027ec
+  - package: com.termux.api
+    signature:
+      - fingerprint: B6:DA:01:48:0E:EF:D5:FB:F2:CD:37:71:B8:D1:02:1E:C7:91:30:4B:DD:6C:4B:F4:1D:3F:AA:BA:D4:8E:E5:E1
+        sources:
+          - name: Direct APK Link
+            issue: 1007
+            apk:
+              sha256: ecf916ff80ae751e65c092f51c055cce4de417ebeea8e449cd0f294afdbde39a
+              link: https://github.com/termux/termux-api/releases/download/v0.53.0/termux-api-app_v0.53.0+github.debug.apk
   - package: com.termux.styling
     signature:
       - fingerprint: 22:8F:B2:CF:E9:08:31:C1:49:9E:C3:CC:AF:61:E9:6E:8E:1C:E7:07:66:B9:47:46:72:CE:42:73:34:D4:1C:42
