@@ -2118,6 +2118,14 @@ packages:
             issue: 599
             apk:
               sha256: 9a690abf87b0399c91294dddd2d32c4c1b32223489e35c2ed165e5771df3783e
+  - package: com.noodlecake.reallybadchess
+    signature:
+      - fingerprint: 08:C7:34:8B:F7:FA:61:75:FD:B0:EC:52:13:64:63:58:2E:B0:91:50:A7:C5:81:84:10:38:9D:1A:D8:D9:97:33
+        sources:
+          - name: Google Play
+            issue: 909
+            apk:
+              sha256: 139f6af42361ea44066bcd5f20431204c2d9295f255969866023e3e2a54b3b34
   - package: com.nordea.mobiletoken
     signature:
       - fingerprint: 3E:46:30:6E:A8:93:00:F6:24:40:F2:03:5C:E7:AF:7B:45:D6:D0:75:4E:BB:8E:0C:13:63:D3:8F:18:34:6C:8F
