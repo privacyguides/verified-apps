@@ -3426,6 +3426,15 @@ packages:
             issue: 850
             apk:
               sha256: c54115da817d70906f60bcd652a1883f6b493de407f1474a9c129ada1b1da162
+  - package: de.nucleus.foss_warn
+    signature:
+      - fingerprint: 69:72:4A:B4:62:25:A5:52:A7:EE:21:1C:D4:D7:2F:B8:74:88:9A:76:99:C5:83:6A:CA:1B:D8:DF:47:D3:CB:D2
+        sources:
+          - name: Direct APK Link
+            issue: 851
+            apk:
+              sha256: f99834285d25364fe2ec1a33639b4761ffb4baacc1e92e3e22cb941954dd7a2f
+              link: https://github.com/nucleus-ffm/foss_warn/releases/download/1.0.1/FOSSWarn-1.0.1-general-release.apk
   - package: de.nulide.findmydevice
     signature:
       - fingerprint: 87:A6:C1:36:F5:49:9D:B2:55:C9:3F:4D:38:4C:B1:A5:D3:14:F6:90:8F:2B:F1:97:E0:EC:07:ED:58:BB:58:72
