@@ -2693,6 +2693,15 @@ packages:
             issue: 708
             apk:
               sha256: 799a53f096c28e2aafae918f5ab91de500526bc5461030dbceea4e89bf56b68f
+  - package: com.termux.tasker
+    signature:
+      - fingerprint: B6:DA:01:48:0E:EF:D5:FB:F2:CD:37:71:B8:D1:02:1E:C7:91:30:4B:DD:6C:4B:F4:1D:3F:AA:BA:D4:8E:E5:E1
+        sources:
+          - name: Direct APK Link
+            issue: 1009
+            apk:
+              sha256: 4dd14de5f18791b3594256a9ead6bfddafa0434f11e0d39c3b551dda53db2fff
+              link: https://github.com/termux/termux-tasker/releases/download/v0.9.0/termux-tasker-app_v0.9.0+github.debug.apk
   - package: com.tinder
     signature:
       - fingerprint: 8A:B1:4F:D7:50:B8:20:57:4D:20:C3:54:41:EA:14:A9:B5:D1:95:9A:31:04:0C:EC:12:B4:6B:B2:90:F4:DA:1B
