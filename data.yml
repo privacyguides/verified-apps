@@ -3630,6 +3630,19 @@ packages:
             issue: 698
             apk:
               sha256: 49f863a01cd412ec1faf46e278847d7bee42dd477b07dbf08048c145a97c5e54
+  - package: dev.leonlatsch.photok
+    signature:
+      - fingerprint: B7:04:A2:D2:D5:8A:37:E9:5A:B2:34:96:C3:9A:81:91:35:B8:7A:03:B9:B3:F4:C1:4D:3F:ED:CC:E9:CC:2C:9A
+        sources:
+          - name: Direct APK Link
+            issue: 859
+            apk:
+              sha256: b396950174430aa8b72d111416f25339fabed46e1dc7af2d037e83418df1b3f9
+              link: https://github.com/leonlatsch/Photok/releases/download/2.8.0/photok-2.8.0-foss.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 859
+            apk:
+              sha256: b396950174430aa8b72d111416f25339fabed46e1dc7af2d037e83418df1b3f9
   - package: dev.octoshrimpy.quik
     signature:
       - fingerprint: 52:8B:89:A6:7E:25:86:35:BE:21:29:A7:4E:27:44:F9:02:0B:0B:12:27:08:F8:09:1B:5F:D3:CA:0C:1D:2D:DF
