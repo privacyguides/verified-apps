@@ -1714,6 +1714,18 @@ packages:
             issue: 813
             apk:
               sha256: e48e64a62136bd1751f9efc0f879183879390868f8275ef85b2bd89754d72ac7
+  - package: com.google.android.youtube
+    signature:
+      - fingerprint: |-
+          3D:7A:12:23:01:9A:A3:9D:9E:A0:E3:43:6A:B7:C0:89:6B:FB:4F:B6:79:F4:DE:5F:E7:C2:3F:32:6C:8F:99:4A
+          5A:AD:2B:EE:6D:B9:5D:17:E0:5A:08:D7:D1:E6:4C:10:A1:51:18:79:15:44:83:91:6B:6A:E6:C7:FD:9C:B0:C6
+        sources:
+          - name: AppVerifier
+            issue: 1040
+          - name: Google Play
+            issue: 1040
+            apk:
+              sha256: ca4496c0e8e196234267eb33bb4e043f8e1302ce16d4c0d4bd20e9b9ec82c88f
   - package: com.google.ar.lens
     signature:
       - fingerprint: DE:BA:CC:A8:0B:C7:1A:A7:DF:5F:0F:FB:76:9F:36:20:7E:A0:AE:36:18:01:97:B6:1D:26:67:E9:B9:8B:4B:8E
