@@ -4265,6 +4265,15 @@ packages:
               sha256: eef73a49ae186487ee5d4f17c5633a2545afc268de66471e4d4a4a6e17c42e2d
   - package: fr.emersion.goguma
     signature:
+      - fingerprint: 2D:39:E6:25:CD:51:45:F5:40:97:50:CD:D1:B6:38:A6:0E:82:67:AE:92:35:BF:36:2B:08:21:2B:DE:2B:A6:25
+        sources:
+          - name: AppVerifier
+            issue: 1074
+          - name: F-Droid (fdroid.emersion.fr)
+            issue: 1074
+            apk:
+              sha256: c973119ab8216f0d747ccaaeee526b5c60027c5575d07e8403b94c8375cb94eb
+              repo: https://fdroid.emersion.fr/goguma-nightly/repo/?fingerprint=ACC8CFEDDF58C590D021FCF37534A54F5919E026D7A8333AA01C1ABB3D34E68D
       - fingerprint: BD:43:1B:EE:F8:37:80:00:75:68:BF:C0:3C:32:EC:96:10:1A:D6:DD:6A:8B:8E:5A:05:24:5E:C4:D9:79:4B:BE
         sources:
           - name: AppVerifier
