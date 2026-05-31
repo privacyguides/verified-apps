@@ -4921,6 +4921,14 @@ packages:
             issue: 1087
             apk:
               sha256: 7fe0a94d0f3d28068168ef548aab93c297237f002483e08096a9e9f3094fa9b8
+      - fingerprint: E1:B6:6A:F1:AC:48:69:A3:3B:09:1F:81:DC:BD:57:7B:F8:DC:FE:91:25:DD:DE:33:81:BF:FF:91:81:33:31:EC
+        sources:
+          - name: AppVerifier
+            issue: 1088
+          - name: F-Droid
+            issue: 1088
+            apk:
+              sha256: 5d155028661c3d7090b791304a9a1db2dc1e34bda2ab0da49e580246e2d0b171
   - package: net.nymtech.nymvpn
     signature:
       - fingerprint: 3C:98:A0:16:AA:4F:14:A3:BA:18:5C:76:4E:D3:63:41:5C:F7:FF:3C:3D:32:8A:87:FF:FF:2F:F1:B1:40:FF:06
