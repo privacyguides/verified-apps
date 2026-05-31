@@ -729,10 +729,31 @@ packages:
     signature:
       - fingerprint: 09:CF:DE:62:E2:A8:1C:80:50:D3:BE:4C:20:E3:F8:D8:DD:D0:15:31:BE:1B:47:CB:3B:0E:EC:21:3F:64:1F:89
         sources:
-          - name: F-Droid
-            issue: 121
           - name: AppVerifier
             issue: 121
+          - name: F-Droid
+            issue: 121
+      - fingerprint: C6:DB:80:A8:E1:4E:52:30:C1:DE:84:15:EF:82:0D:13:DC:90:1D:8F:E3:3C:F3:AC:B5:7B:68:62:D8:58:A8:23
+        sources:
+          - name: AppVerifier
+            issue: 1025
+          - name: Custom (APKPure)
+            issue: 1025
+            apk:
+              sha256: 1eaa6aa5381266ac58c7d22b8c12c3d0e2e51fb6aa59cc13ae2aeae67f3e795a
+          - name: Direct APK Link
+            issue: 1025
+            apk:
+              sha256: 5b9d496d21c5938bdd733b01583516d27cd556db0749357f58baa648ef8ef804
+              link: https://github.com/beemdevelopment/Aegis/releases/download/v3.4.2/aegis-v3.4.2.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 1025
+            apk:
+              sha256: 5b9d496d21c5938bdd733b01583516d27cd556db0749357f58baa648ef8ef804
+          - name: Google Play
+            issue: 1025
+            apk:
+              sha256: f06945f1fed619c3a4494b8ffbc17fb41e8fe2e51fdae99f8b025a965231116f
   - package: com.best.deskclock.nightly
     signature:
       - fingerprint: 95:8E:CB:D2:3C:F3:DC:04:3B:0A:34:37:2C:06:8E:34:27:5A:D8:C1:F2:A1:97:4D:77:91:63:A2:22:A8:99:9E
