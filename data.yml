@@ -2720,6 +2720,15 @@ packages:
             apk:
               sha256: 780ae459be479bedef2146eb00f7bc79f2a4f89dba2bffa7b55c470165bc66ed
               link: https://github.com/termux/termux-widget/releases/download/v0.15.0/termux-widget-app_v0.15.0+github.debug.apk
+  - package: com.termux.window
+    signature:
+      - fingerprint: B6:DA:01:48:0E:EF:D5:FB:F2:CD:37:71:B8:D1:02:1E:C7:91:30:4B:DD:6C:4B:F4:1D:3F:AA:BA:D4:8E:E5:E1
+        sources:
+          - name: Direct APK Link
+            issue: 1008
+            apk:
+              sha256: e0eaacfd91288fcc50b7226a8256d57dc85f955649653ffc686d28e2c0c85d13
+              link: https://github.com/termux/termux-float/releases/download/v0.17.0/termux-float-app_v0.17.0+github.debug.apk
   - package: com.tinder
     signature:
       - fingerprint: 8A:B1:4F:D7:50:B8:20:57:4D:20:C3:54:41:EA:14:A9:B5:D1:95:9A:31:04:0C:EC:12:B4:6B:B2:90:F4:DA:1B
