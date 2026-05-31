@@ -1307,6 +1307,16 @@ packages:
             issue: 805
             apk:
               sha256: 76cd759101a19ba34e84ffe920ae2dd726b53b2952dda497f4a533cf10a7d669
+  - package: com.flauschcode.broccoli
+    signature:
+      - fingerprint: BF:A3:F7:DA:10:9F:7D:33:07:10:6E:C4:86:28:15:DF:82:E8:A4:EB:CA:74:0D:38:45:ED:57:97:50:11:2A:F6
+        sources:
+          - name: AppVerifier
+            issue: 1028
+          - name: Google Play
+            issue: 1028
+            apk:
+              sha256: 05fd25be2d75ec05aadf46abb88e565a432040de144c4005abcdb093745f900e
   - package: com.floatplane.floatplane
     signature:
       - fingerprint: 33:43:3E:E6:A8:96:1C:D6:A1:22:6C:FB:B7:C8:C2:2C:90:F8:2D:69:F6:5D:5D:1E:99:3E:92:5C:A9:C8:28:44
