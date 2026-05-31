@@ -4114,6 +4114,14 @@ packages:
             issue: 1070
             apk:
               sha256: 61942151964e41fe7b82f167eaa18c3851e9319c207263d24df722b5cbe0562b
+      - fingerprint: BB:B3:C5:88:55:98:00:54:DF:31:5B:F5:1C:04:5F:F2:B5:01:C5:87:06:51:14:59:FC:34:53:27:DF:BF:3E:CE
+        sources:
+          - name: AppVerifier
+            issue: 1071
+          - name: F-Droid
+            issue: 1071
+            apk:
+              sha256: 4a9a2eba1c0c8d477b49cab3e65e206889e94f1fae34deaf5507d0e4f4cd47a4
   - package: eu.siacs.conversations
     signature:
       - fingerprint: C7:5A:BE:78:59:36:43:AE:7C:AC:52:73:27:CD:21:93:48:2D:B0:67:40:4A:88:B8:C1:3F:7A:07:01:94:61:87
