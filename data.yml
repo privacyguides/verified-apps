@@ -5131,6 +5131,26 @@ packages:
             issue: 652
             apk:
               sha256: bfde995e9119e8a11df483c826df831a80b6a077c048930eb9cae928f4de02e4
+  - package: org.briarproject.mailbox
+    signature:
+      - fingerprint: AC:C4:DB:A4:8B:EA:4C:14:DF:80:36:1A:68:E5:60:7C:0B:DB:E4:DD:FA:FF:F6:0C:F5:CA:6C:09:19:0F:6B:83
+        sources:
+          - name: AppVerifier
+            issue: 1090
+          - name: Direct APK Link
+            issue: 1090
+            apk:
+              sha256: 6251ab38cf7c79b3b8e970686e39e0a41078d6a0ecbce32000f3d4d0b5596245
+              link: https://briarproject.org/apk/mailbox.apk
+          - name: F-Droid
+            issue: 1090
+            apk:
+              sha256: 6251ab38cf7c79b3b8e970686e39e0a41078d6a0ecbce32000f3d4d0b5596245
+          - name: F-Droid (briarproject.org)
+            issue: 1090
+            apk:
+              sha256: 6251ab38cf7c79b3b8e970686e39e0a41078d6a0ecbce32000f3d4d0b5596245
+              repo: https://briarproject.org/fdroid/repo/
   - package: org.connectbot
     signature:
       - fingerprint: 08:78:9B:AD:18:CE:8E:C7:B6:63:7B:5E:70:24:5A:76:3A:E5:02:4F:4D:49:AC:85:32:40:47:FB:06:B5:DA:8A
