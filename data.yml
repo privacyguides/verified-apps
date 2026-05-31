@@ -4629,6 +4629,14 @@ packages:
             issue: 120
   - package: me.hackerchick.catima
     signature:
+      - fingerprint: 62:86:4D:B7:87:CC:31:92:8D:C2:C1:14:67:3C:DB:B0:17:BE:AB:B1:3B:A6:DF:6A:E5:25:6E:73:8B:B9:53:AE
+        sources:
+          - name: AppVerifier
+            issue: 1085
+          - name: F-Droid
+            issue: 1085
+            apk:
+              sha256: 4105e0f1f8e53893d6294729c39f974ee9248f3a8caede5b6e1192d475888a17
       - fingerprint: 75:FD:99:1B:AC:EA:84:8E:5A:BF:F1:4A:01:D9:60:9B:76:50:CF:03:06:B3:7A:60:ED:56:15:67:8C:B3:64:07
         sources:
           - name: AppVerifier
