@@ -2459,6 +2459,21 @@ packages:
             issue: 194
             apk:
               sha256: b40b42a67e647746bd5c77465e305e4f13772ca5bbe17fa9a8ea5ac60f289992
+  - package: com.nutomic.syncthingandroid
+    signature:
+      - fingerprint: 03:E7:17:F5:B7:50:C9:AD:44:BC:06:5E:7E:52:50:81:77:6E:73:8B:4F:91:74:F7:D0:55:35:5A:BC:5A:56:4B
+        sources:
+          - name: AppVerifier
+            issue: 1054
+          - name: Custom (APKPure)
+            issue: 1054
+            apk:
+              sha256: 2e1a0a5c2c93f225b8d0f9800e70eee05cce11f9e0520726f38f52a72351eadd
+          - name: Direct APK Link
+            issue: 1054
+            apk:
+              sha256: 742984454612f382fb6ba7f7f6fc5f309161cc05a1f4692945d70644cf0a9324
+              link: https://github.com/syncthing/syncthing-android/releases/download/1.28.1/app-release.apk
   - package: com.nuvio.app
     signature:
       - fingerprint: 1C:BA:06:FB:DF:97:8D:0E:3F:9A:D5:8D:E6:BA:3D:69:E2:4A:94:83:84:AD:DE:3A:ED:95:45:1E:83:0E:52:10
