@@ -5224,6 +5224,15 @@ packages:
             issue: 924
             apk:
               sha256: 0601791915605f494d4d4c7736e14c24a41d9bc1ec041189c1fb8c703da72057
+  - package: oss.krtirtho.spotube
+    signature:
+      - fingerprint: 38:DA:7C:14:27:90:C4:46:AF:A3:50:24:D5:8B:DC:FD:57:2B:B7:3F:83:D3:38:18:4D:EA:02:EA:C4:34:47:11
+        sources:
+          - name: Direct APK Link
+            issue: 894
+            apk:
+              sha256: bee57062ad28e7609ddf9d362ffb5a6fe95a78b96bdd39676a82975b11b0fd57
+              link: https://github.com/KRTirtho/spotube/releases/latest/download/Spotube-android-all-arch.apk
   - package: page.ooooo.geoshare
     signature:
       - fingerprint: 1B:27:B1:7A:9D:F0:53:21:A9:3A:47:DF:31:ED:0D:66:45:EB:E5:5D:0E:89:90:81:57:D7:1C:10:32:D1:7C:10
