@@ -5228,6 +5228,18 @@ packages:
             issue: 569
             apk:
               sha256: acd8527efe721a8a4a2a75a2d516de804ff81519b2eafd7c2b8039b44c0a460e
+  - package: ua.acclorite.book_story
+    signature:
+      - fingerprint: A6:61:A0:C8:1F:13:8E:53:DF:F3:2F:8F:DC:1D:D1:9F:81:30:52:39:14:02:7E:2C:02:96:FE:24:51:31:A7:D4
+        sources:
+          - name: F-Droid
+            issue: 902
+            apk:
+              sha256: b0b6ace124be6461c83f4f4124833b13fe42b4cd7461aaef465f67baa4b4719d
+          - name: F-Droid (IzzyOnDroid)
+            issue: 902
+            apk:
+              sha256: b0b6ace124be6461c83f4f4124833b13fe42b4cd7461aaef465f67baa4b4719d
   - package: us.spotco.maps
     signature:
       - fingerprint: 9F:7F:36:6E:7E:5C:A6:59:A0:ED:56:A0:55:7F:9E:59:BD:3F:50:E9:72:AD:91:E5:FA:6B:E1:EF:AA:DA:DA:B7
