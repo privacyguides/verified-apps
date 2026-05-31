@@ -1818,6 +1818,15 @@ packages:
             issue: 495
             apk:
               sha256: b38cc6da003aa00089735fce26b002906f0c0d720d8f59ab6aaf9ed6e6078c22
+  - package: com.kylecorry.trail_sense.github
+    signature:
+      - fingerprint: D3:B7:CB:BC:63:3F:7C:1B:E2:CA:A2:F7:5F:B0:72:EE:9B:40:FD:10:FA:AF:96:42:69:2B:27:C4:AF:5E:C4:A7
+        sources:
+          - name: Direct APK Link
+            issue: 819
+            apk:
+              sha256: c5d9021641a3546423223e4f926b7bb35c514786a6e43d99de911cb6fa914350
+              link: https://github.com/kylecorry31/Trail-Sense/releases/download/8.0.1/Trail-Sense-8.0.1-release.apk
   - package: com.letterboxd.letterboxd
     signature:
       - fingerprint: 4E:A9:E6:0E:75:13:70:C1:CC:D6:D1:C1:91:96:4C:83:40:A8:91:CB:BF:CC:2D:A1:56:8B:84:31:3B:9A:4E:74
