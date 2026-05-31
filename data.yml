@@ -349,6 +349,21 @@ packages:
             issue: 564
             apk:
               sha256: 6186c80da39dd7566e1c64cee096b0623d8dfb171627d50525f64dd420ed9345
+  - package: cloud.pablos.overload
+    signature:
+      - fingerprint: BD:39:CA:B0:CB:22:4D:4A:E0:97:95:11:F3:24:1E:D8:85:8D:1A:F8:69:37:B7:C6:39:7B:E4:BA:7E:C1:A2:B4
+        sources:
+          - name: AppVerifier
+            issue: 1018
+          - name: Custom (APKPure)
+            issue: 1018
+            apk:
+              sha256: 35442eeaae94468d247e01856ef22c4bb4a8d5f66aa125861261d5b918115d2a
+          - name: Direct APK Link
+            issue: 1018
+            apk:
+              sha256: b5ca3cae04991b5ff2117f60fd138bc9ca451774a5d46a2da1293ca064b1dc3a
+              link: https://github.com/pablo03v/Overload/releases/download/v.0.17.2/app-release.apk
   - package: co.cape.matrix
     signature:
       - fingerprint: F9:30:72:E3:44:E6:91:F4:02:23:14:D3:E6:D0:D6:1B:80:0F:10:8A:3F:08:83:AE:13:0E:72:55:03:A7:91:42
