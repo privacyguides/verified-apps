@@ -2485,6 +2485,14 @@ packages:
             issue: 929
             apk:
               sha256: 5a48ea197d8da4c72b43ad45d8b28bb4c5806ec81cadaa18b580622ad4d881d6
+  - package: com.samsung.android.app.tips
+    signature:
+      - fingerprint: 34:DF:0E:7A:9F:1C:F1:89:2E:45:C0:56:B4:97:3C:D8:1C:CF:14:8A:40:50:D1:1A:EA:4A:C5:A6:5F:90:0A:42
+        sources:
+          - name: Custom (APKPure)
+            issue: 930
+            apk:
+              sha256: e3e5d10ba4c09f7cd0f25bd7c3801bc8896d704ca34ccf159d8b1a0efc7b6eb4
   - package: com.samsung.android.app.watchmanager
     signature:
       - fingerprint: 34:DF:0E:7A:9F:1C:F1:89:2E:45:C0:56:B4:97:3C:D8:1C:CF:14:8A:40:50:D1:1A:EA:4A:C5:A6:5F:90:0A:42
