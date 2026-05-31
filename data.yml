@@ -3718,6 +3718,16 @@ packages:
             apk:
               sha256: a1ef0017bb495e331738e984a65f1d3f5f8dc4785e1afa018972035dcb4135cd
               link: https://github.com/psanford/wormhole-william-mobile/releases/download/v2.1.0/wormhole-william.release.apk
+  - package: io.simplelogin.android
+    signature:
+      - fingerprint: F2:02:30:63:37:BB:3B:C6:69:F7:E8:1D:10:2F:D1:10:C4:8C:67:2A:E4:56:3F:63:B9:7A:53:59:1D:F8:E8:CC
+        sources:
+          - name: AppVerifier
+            issue: 996
+          - name: Google Play
+            issue: 996
+            apk:
+              sha256: e47eee4c2089163d23f5015b2c7e5a4e66c6c06bb414636a637eeeef5ee11097
   - package: io.spaceapi.community.myhackerspace
     signature:
       - fingerprint: 4E:C5:1A:CD:06:D3:F9:E7:95:07:C9:14:EF:15:E2:C0:9A:18:24:9A:82:AF:90:64:FF:04:95:F9:26:F9:3D:D4
