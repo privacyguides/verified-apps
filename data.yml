@@ -2368,6 +2368,16 @@ packages:
             issue: 504
             apk:
               sha256: 08860526d336d4fafc17d8d0a46ed8e66a7f6b5e73884296f8ed13f195018d81
+  - package: com.noahjutz.gymroutines
+    signature:
+      - fingerprint: C5:0C:37:9B:64:63:43:CF:83:85:F4:21:E9:DE:27:BC:BA:DB:29:05:4F:81:67:52:52:37:B7:AB:F4:A2:8E:31
+        sources:
+          - name: AppVerifier
+            issue: 1053
+          - name: F-Droid
+            issue: 1053
+            apk:
+              sha256: a4d762c72cec6f9fcf898df5efbc27bde7fb00817c1d454b2a26d9dbea4e13f7
   - package: com.none.tom.exiferaser
     signature:
       - fingerprint: D9:10:86:7C:E2:CF:3D:CD:37:DB:51:85:3E:BE:F8:63:3F:D8:3A:14:2B:26:42:27:4E:D0:68:15:2F:F1:22:01
