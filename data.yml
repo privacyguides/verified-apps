@@ -3156,6 +3156,16 @@ packages:
             issue: 915
             apk:
               sha256: 0fc4db76c46a0072ee0ee37d61338b29d985aa109db5974d1100651ca5a3ef19
+  - package: com.trianguloy.urlchecker
+    signature:
+      - fingerprint: F9:A2:D8:D8:94:FA:FE:A1:4C:F6:05:C4:D7:22:AF:D0:49:4D:69:41:1F:60:6A:AA:0B:B1:F2:85:E7:A9:A6:60
+        sources:
+          - name: AppVerifier
+            issue: 1057
+          - name: Google Play
+            issue: 1057
+            apk:
+              sha256: 857886974a556c7759816b68b585766b0e24564f124d2aa9ec8dc11e1840710a
   - package: com.tripadvisor.tripadvisor
     signature:
       - fingerprint: E9:8D:02:21:B0:BD:46:E4:74:5A:12:8A:96:A0:18:24:74:D0:C7:48:29:E5:1D:87:A3:90:1E:FD:D1:98:C8:FE
