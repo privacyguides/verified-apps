@@ -6080,6 +6080,14 @@ packages:
               link: https://github.com/mateusz-bak/openreads/releases/download/v2.11.0/openreads-v2.11.0-release.apk
   - package: tech.ula
     signature:
+      - fingerprint: 3A:19:DD:7D:23:81:C9:41:4F:70:64:5C:F0:BA:AB:EB:CB:0A:74:3F:1E:EE:07:0D:61:9B:0C:A1:79:73:3F:9F
+        sources:
+          - name: AppVerifier
+            issue: 1106
+          - name: F-Droid
+            issue: 1106
+            apk:
+              sha256: 18e8d94bbd225f7892b31d6c9fc978e08a4b245be9a4831928b8aa3ea0678ec2
       - fingerprint: 92:83:2A:E7:79:56:ED:9A:FC:E3:DB:0A:DE:44:AB:88:DD:02:BE:84:DE:9A:F7:C3:3B:94:98:29:EB:EE:4C:74
         sources:
           - name: AppVerifier
