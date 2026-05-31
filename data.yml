@@ -2605,6 +2605,14 @@ packages:
             issue: 973
             apk:
               sha256: 2aedf592da76b4478de51ce3b04a352e3ce146dcf27a84feac13ea2a46472586
+  - package: com.sec.android.app.popupcalculator
+    signature:
+      - fingerprint: B9:A4:2D:D5:FC:4E:05:48:89:AE:41:27:A6:27:4C:EC:64:E7:5C:41:73:3D:42:F5:99:1E:70:19:F9:EA:5C:AF
+        sources:
+          - name: Custom (APKPure)
+            issue: 964
+            apk:
+              sha256: ee41d15a2d19c5332b2cb9243dbf63313fa8d072a4ee5f9d40cbb1f3ff4757dc
   - package: com.sec.android.app.shealth
     signature:
       - fingerprint: B9:A4:2D:D5:FC:4E:05:48:89:AE:41:27:A6:27:4C:EC:64:E7:5C:41:73:3D:42:F5:99:1E:70:19:F9:EA:5C:AF
