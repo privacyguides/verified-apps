@@ -3461,6 +3461,15 @@ packages:
               sha256: 5da786e1703628dbd401949fc24931450bd1b4ca83284810705771f7da2cb650
   - package: com.unciv.app
     signature:
+      - fingerprint: 7D:6E:6B:EA:76:81:61:C3:D8:DA:8B:3F:B0:0D:EF:53:77:EF:FE:65:DC:72:68:48:2F:8F:77:9B:B4:FC:6E:2E
+        sources:
+          - name: AppVerifier
+            issue: 1060
+          - name: Direct APK Link
+            issue: 1060
+            apk:
+              sha256: 7d5208fb6b40e75d1309a92e049a1b82de6a676304632d0be8ecd0544df7707c
+              link: https://github.com/yairm210/Unciv/releases/download/4.20.10/Unciv-signed.apk
       - fingerprint: B9:39:32:67:BA:C3:37:79:49:23:68:EF:24:19:D5:8E:94:C5:7C:D2:5F:D1:F0:A2:4F:DD:90:09:98:66:0C:0F
         sources:
           - name: AppVerifier
