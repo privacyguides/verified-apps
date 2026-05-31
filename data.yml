@@ -4165,6 +4165,16 @@ packages:
             issue: 931
             apk:
               sha256: eef73a49ae186487ee5d4f17c5633a2545afc268de66471e4d4a4a6e17c42e2d
+  - package: fr.emersion.goguma
+    signature:
+      - fingerprint: BD:43:1B:EE:F8:37:80:00:75:68:BF:C0:3C:32:EC:96:10:1A:D6:DD:6A:8B:8E:5A:05:24:5E:C4:D9:79:4B:BE
+        sources:
+          - name: AppVerifier
+            issue: 1075
+          - name: F-Droid
+            issue: 1075
+            apk:
+              sha256: 18b51b12a99ca639df7009cfb9943dca3662ba918c2f045422c9919837417c00
   - package: fr.emersion.goguma.play
     signature:
       - fingerprint: CE:58:F4:DA:7C:70:5B:FA:A2:E5:D9:CF:D7:5C:63:07:C9:A6:AE:AA:D0:09:CF:38:97:15:8A:3F:E4:96:30:F6
