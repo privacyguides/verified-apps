@@ -1333,6 +1333,16 @@ packages:
             issue: 431
             apk:
               sha256: bfa5def904b0ad2b5e30aba9e6f517e0ae423c7b99965116e09bc3f69ca80557
+  - package: com.fmsys.snapdrop
+    signature:
+      - fingerprint: 0C:97:DF:80:2B:A6:F9:93:CB:0E:DA:C2:EC:86:B6:63:40:E6:58:4E:AE:7F:98:39:10:98:DD:3B:1D:D5:72:7E
+        sources:
+          - name: AppVerifier
+            issue: 1030
+          - name: Google Play
+            issue: 1030
+            apk:
+              sha256: 36718cb4dfb464a0570c67c7a21307f5b6b0469e9aaf73d5bdcb8a6ccf2b2410
   - package: com.foobnix.pro.pdf.reader
     signature:
       - fingerprint: CD:F4:E1:C3:1C:41:A5:5E:D7:28:96:BF:44:3C:E5:6D:50:FB:34:BB:93:3E:31:89:B3:DD:C2:60:9C:90:D8:F9
