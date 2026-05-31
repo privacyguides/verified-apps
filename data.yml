@@ -5540,6 +5540,14 @@ packages:
               sha256: 22bb29481b88ec0b5956d2db3ae08e0c10461b535fd2395035b00752087d3882
   - package: org.futo.voiceinput
     signature:
+      - fingerprint: 0F:C8:4A:BB:FB:37:10:88:2E:0D:32:98:35:E7:B3:C1:6B:2D:B8:36:88:2C:94:D3:B2:B8:A0:BC:5B:84:A9:43
+        sources:
+          - name: AppVerifier
+            issue: 1097
+          - name: Google Play
+            issue: 1097
+            apk:
+              sha256: 544d5cf420c32fe7520e17c70ad4636763d40a1a45e7b85ea0ccffb423c8705e
       - fingerprint: 74:3F:AD:58:64:AB:C4:26:50:0B:2D:C2:C4:7C:8A:D3:24:CB:CD:16:03:3F:80:16:99:48:41:35:63:74:F9:95
         sources:
           - name: AppVerifier
