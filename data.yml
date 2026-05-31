@@ -4359,6 +4359,15 @@ packages:
             issue: 1070
             apk:
               sha256: 61942151964e41fe7b82f167eaa18c3851e9319c207263d24df722b5cbe0562b
+      - fingerprint: B4:F8:85:40:B9:2C:42:15:1F:0F:8A:66:97:7D:1E:32:54:37:9F:4E:97:45:A4:9E:0C:85:B0:F6:44:B1:82:81
+        sources:
+          - name: AppVerifier
+            issue: 1069
+          - name: Direct APK Link
+            issue: 1069
+            apk:
+              sha256: cca2506c6c2430fb3778f9004de0e47eb5fec5e69fc481a6652c2f81f9cb97dc
+              link: https://github.com/etchdroid/etchdroid/releases/download/v1.9.rc3/app-foss-release.apk
       - fingerprint: BB:B3:C5:88:55:98:00:54:DF:31:5B:F5:1C:04:5F:F2:B5:01:C5:87:06:51:14:59:FC:34:53:27:DF:BF:3E:CE
         sources:
           - name: AppVerifier
