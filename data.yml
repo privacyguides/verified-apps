@@ -2549,6 +2549,14 @@ packages:
             issue: 969
             apk:
               sha256: 5ad7f78682a1236abce1558f3f78a5f7b2f13057e91d2e07d428fb3a25f572be
+  - package: com.sec.android.app.voicenote
+    signature:
+      - fingerprint: 34:DF:0E:7A:9F:1C:F1:89:2E:45:C0:56:B4:97:3C:D8:1C:CF:14:8A:40:50:D1:1A:EA:4A:C5:A6:5F:90:0A:42
+        sources:
+          - name: Custom (APKPure)
+            issue: 922
+            apk:
+              sha256: 713a44923c5dbe5479a211ba02669d7c5369dcfb83370a1641233743af85480b
   - package: com.secuso.privacyFriendlyCodeScanner
     signature:
       - fingerprint: 75:9D:2D:25:78:5A:6D:F4:CD:66:19:69:2B:37:F0:05:32:BA:19:B2:6D:F2:0A:4E:F5:B2:21:28:C7:F1:51:BC
