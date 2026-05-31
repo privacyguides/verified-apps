@@ -2525,6 +2525,14 @@ packages:
             issue: 962
             apk:
               sha256: c175a22b0847aec1ae9fcdf9783924a09dc2169c859224d8a1a7c59717bb43c5
+  - package: com.samsung.android.spay
+    signature:
+      - fingerprint: 34:DF:0E:7A:9F:1C:F1:89:2E:45:C0:56:B4:97:3C:D8:1C:CF:14:8A:40:50:D1:1A:EA:4A:C5:A6:5F:90:0A:42
+        sources:
+          - name: Custom (APKPure)
+            issue: 974
+            apk:
+              sha256: 19b728d56096a0131337f87afe2a597f7aade252c799943d81765fde28426ddd
   - package: com.samsung.android.tvplus
     signature:
       - fingerprint: 34:DF:0E:7A:9F:1C:F1:89:2E:45:C0:56:B4:97:3C:D8:1C:CF:14:8A:40:50:D1:1A:EA:4A:C5:A6:5F:90:0A:42
