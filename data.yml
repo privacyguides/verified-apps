@@ -2152,6 +2152,17 @@ packages:
             issue: 1046
             apk:
               sha256: b85ae2ed1963104b03e1e29581f4bccd4163818208dbcbcb427b5168b495efaf
+  - package: com.limbo.emu.main.arm
+    signature:
+      - fingerprint: E9:48:6A:3C:94:F5:1F:63:97:62:0B:04:AE:41:BD:68:26:DB:B4:D1:11:C4:98:6A:39:63:1A:44:65:C2:18:C2
+        sources:
+          - name: AppVerifier
+            issue: 1047
+          - name: Direct APK Link
+            issue: 1047
+            apk:
+              sha256: ae22305b5f79815f738b752a6cfa0b00e6bdd80334ff3df8fb986ed4c1d1442b
+              link: https://github.com/limboemu/limbo/releases/download/v6.0.1-LimboEmulator/limbo-android-arm-6.0.1-qemu-5.1.0.apk
   - package: com.limelight
     signature:
       - fingerprint: D6:CE:3A:4D:F1:50:60:FE:48:8F:E5:24:41:A5:49:DE:E4:BA:19:9B:36:E2:CB:1E:D9:08:5C:CA:8B:FA:1A:CA
