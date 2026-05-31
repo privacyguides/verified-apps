@@ -636,6 +636,8 @@ packages:
     signature:
       - fingerprint: 4C:62:61:57:AD:02:BD:A3:40:1A:72:63:55:5F:68:A7:96:63:FC:3E:13:A4:D4:36:9A:12:57:09:41:AA:28:0F
         sources:
+          - name: AppVerifier
+            issue: 488
           - name: Direct APK Link
             issue: 132
             apk:
@@ -643,8 +645,14 @@ packages:
               link: https://gitlab.com/-/project/6922885/uploads/b9f5d827145461a2195699660545160a/AuroraStore-4.8.3.apk
           - name: F-Droid (IzzyOnDroid)
             issue: 488
+      - fingerprint: 5C:83:C7:67:2B:92:99:55:DC:0A:1D:B8:9A:5E:6A:E4:38:9E:2E:AE:7E:C9:39:95:60:41:69:4E:58:15:F5:32
+        sources:
           - name: AppVerifier
-            issue: 488
+            issue: 1023
+          - name: F-Droid
+            issue: 1023
+            apk:
+              sha256: c4ce0df0bbb0e82be4e4bd7d8a3e000f08e04457187d560fe2ca3ae52941bf49
   - package: com.austrian.connector.android
     signature:
       - fingerprint: 18:CA:8D:A7:D9:24:CA:17:A9:DB:D4:CB:C7:AD:90:59:41:24:B2:45:F1:10:12:DF:73:FE:CC:DB:B9:36:75:F8
