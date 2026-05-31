@@ -6194,6 +6194,16 @@ packages:
             issue: 902
             apk:
               sha256: b0b6ace124be6461c83f4f4124833b13fe42b4cd7461aaef465f67baa4b4719d
+  - package: us.spotco.malwarescanner
+    signature:
+      - fingerprint: 79:36:60:51:6B:62:AE:8D:EB:A6:6D:5E:5E:42:44:E0:93:17:49:AB:9F:48:57:5B:50:12:44:CE:EA:85:8A:84
+        sources:
+          - name: AppVerifier
+            issue: 1108
+          - name: F-Droid
+            issue: 1108
+            apk:
+              sha256: 7262cf1f76a04c91f187b958658aa588d7a313534f5522daa5a9d159297b21da
   - package: us.spotco.maps
     signature:
       - fingerprint: 9F:7F:36:6E:7E:5C:A6:59:A0:ED:56:A0:55:7F:9E:59:BD:3F:50:E9:72:AD:91:E5:FA:6B:E1:EF:AA:DA:DA:B7
