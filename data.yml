@@ -4182,6 +4182,27 @@ packages:
             apk:
               sha256: c4fbedb69a9eb682e4bf2923a8c3803b2caa140ca1468b4a440cb68c459158ae
               link: https://github.com/deckerst/aves/releases/download/v1.14.4/app-libre-x86_64-release.apk
+  - package: dev.bartuzen.qbitcontroller
+    signature:
+      - fingerprint: 36:60:38:E5:1E:E4:10:78:A2:3A:37:FD:92:12:23:8E:BA:D0:3F:1D:E0:73:E8:1C:73:8B:B6:F0:7B:11:43:39
+        sources:
+          - name: Direct APK Link
+            issue: 1112
+            apk:
+              sha256: 70b8c02e6b6daf886d630ac95172aaecc402aeeb52bf86c9003b63323750377e
+              link: https://github.com/Bartuzen/qBitController/releases/download/v2.2.0/qbitcontroller-2.2.0-android.apk
+          - name: F-Droid
+            issue: 1112
+            apk:
+              sha256: 70b8c02e6b6daf886d630ac95172aaecc402aeeb52bf86c9003b63323750377e
+          - name: F-Droid (IzzyOnDroid)
+            issue: 1112
+            apk:
+              sha256: 70b8c02e6b6daf886d630ac95172aaecc402aeeb52bf86c9003b63323750377e
+          - name: Google Play
+            issue: 1112
+            apk:
+              sha256: 22a4d7e5e16f7128093f62fe2b76754e6c760e872cbfa83e37b052a7d0db928c
   - package: dev.clombardo.dnsnet
     signature:
       - fingerprint: D7:6F:62:07:D8:18:2C:DC:1E:E2:DC:BF:E7:4D:B2:ED:F3:7F:36:B8:2D:08:4B:01:7F:79:FE:9F:06:71:21:E4
