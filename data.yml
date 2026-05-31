@@ -4711,6 +4711,14 @@ packages:
             apk:
               sha256: 82da5f3e13d9c160fe7f38521d896b883cc8d01de2c0ed158b5a11c530256096
               link: https://github.com/mullvad/mullvadvpn-app/releases/download/android%2F2026.5/MullvadVPN-2026.5.apk
+      - fingerprint: D7:4C:E0:E0:B2:9F:4D:1D:57:AB:F5:EF:7F:9A:37:57:E7:87:CC:A7:A6:25:9B:9C:32:BB:5B:B1:8E:34:63:BD
+        sources:
+          - name: AppVerifier
+            issue: 1087
+          - name: Google Play
+            issue: 1087
+            apk:
+              sha256: 7fe0a94d0f3d28068168ef548aab93c297237f002483e08096a9e9f3094fa9b8
   - package: net.nymtech.nymvpn
     signature:
       - fingerprint: 3C:98:A0:16:AA:4F:14:A3:BA:18:5C:76:4E:D3:63:41:5C:F7:FF:3C:3D:32:8A:87:FF:FF:2F:F1:B1:40:FF:06
