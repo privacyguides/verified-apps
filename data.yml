@@ -4784,6 +4784,18 @@ packages:
             issue: 65
           - name: AppVerifier
             issue: 65
+  - package: org.polymorphicshade.tubular
+    signature:
+      - fingerprint: 8A:D7:02:5A:8C:91:14:54:E2:A7:B4:51:5E:36:0C:52:CA:63:EC:04:10:A0:42:FF:46:E9:AD:05:B5:09:E1:87
+        sources:
+          - name: F-Droid
+            issue: 883
+            apk:
+              sha256: b362605d9a7a3383262622d016a069221726a60a1288be1b8fade4b563e499f1
+          - name: F-Droid (IzzyOnDroid)
+            issue: 883
+            apk:
+              sha256: b362605d9a7a3383262622d016a069221726a60a1288be1b8fade4b563e499f1
   - package: org.ppsspp.ppsspp
     signature:
       - fingerprint: D1:76:6D:6A:91:72:68:41:E9:18:2A:D5:04:17:C3:F5:E4:93:CE:E4:B1:B7:E3:E6:75:14:7B:30:59:62:9D:EF
