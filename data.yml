@@ -5457,6 +5457,17 @@ packages:
             issue: 880
             apk:
               sha256: 8fb75ef82b2bb2ef0e052825ff5ef86db5b7a8bc41a409c4370e125bfd47d02c
+  - package: org.dslul.openboard.inputmethod.latin
+    signature:
+      - fingerprint: B7:A3:48:D9:01:70:D3:5F:05:6A:A1:C9:9B:49:08:7F:17:52:56:0A:28:AF:67:56:B1:7E:E1:12:C4:CA:1D:89
+        sources:
+          - name: AppVerifier
+            issue: 1095
+          - name: Direct APK Link
+            issue: 1095
+            apk:
+              sha256: 554fdf79852087503fb2b5517b94c9e7b605234e2ae188fcb56811a91352796e
+              link: https://github.com/openboard-team/openboard/releases/download/v1.4.5/app-release.apk
   - package: org.eurail.railplanner
     signature:
       - fingerprint: 4E:93:E9:A0:C7:A5:AD:70:91:98:C3:0C:20:13:9A:43:FB:F9:3C:77:DE:79:EE:73:D1:B8:F1:1B:2C:40:FE:FC
