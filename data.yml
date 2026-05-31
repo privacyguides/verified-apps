@@ -1753,6 +1753,20 @@ packages:
             issue: 812
             apk:
               sha256: 8c4a4c4218692458334646fbec0a74014ff2f5175edb2700ef578d56c00e3c7a
+  - package: com.google.android.apps.work.clouddpc
+    signature:
+      - fingerprint: |-
+          23:96:2F:4B:43:B9:85:76:38:EA:66:F4:D4:19:51:8E:AE:28:24:91:AC:DA:4B:94:70:7B:D5:90:03:C4:5E:58
+          80:27:D9:6F:AC:79:48:A0:4B:4C:D0:FD:87:F3:AB:D7:7A:ED:0D:50:C8:2A:15:3C:AD:BF:6F:37:93:8C:E2:3B
+        sources:
+          - name: Custom (APKPure)
+            issue: 1115
+            apk:
+              sha256: e9dec3efea3e567412f291f07022de0000626c6392a7f6c365904e703e1820ac
+          - name: Google Play
+            issue: 1115
+            apk:
+              sha256: 148862ee15479f501dad40656a18242ff58128c30324a722f040757df184542a
   - package: com.google.android.apps.youtube.creator
     signature:
       - fingerprint: 3D:7A:12:23:01:9A:A3:9D:9E:A0:E3:43:6A:B7:C0:89:6B:FB:4F:B6:79:F4:DE:5F:E7:C2:3F:32:6C:8F:99:4A
