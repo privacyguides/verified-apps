@@ -1400,6 +1400,14 @@ packages:
             issue: 806
             apk:
               sha256: 560eb2bd589905dd908c44599919ebb0ce7b3196b4b8c3789704efedec8f55bd
+      - fingerprint: C4:30:66:5E:36:62:25:3B:20:78:DC:DA:35:0C:2C:6C:E4:4D:91:5A:3D:8A:14:7B:63:CE:D6:19:BB:9E:85:76
+        sources:
+          - name: AppVerifier
+            issue: 1032
+          - name: F-Droid
+            issue: 1032
+            apk:
+              sha256: f4117fa4aee8d6b55a37737436cfbfc644366a45aa45d38151222c3ee4b75085
   - package: com.fundrise.android
     signature:
       - fingerprint: FF:4B:21:E4:BB:0F:1F:AF:33:75:2D:9E:15:8E:0A:B0:ED:F1:E1:A8:2A:81:E0:C4:8F:29:40:23:55:82:B1:8B
