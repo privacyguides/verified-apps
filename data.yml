@@ -5052,6 +5052,18 @@ packages:
             issue: 924
             apk:
               sha256: 0601791915605f494d4d4c7736e14c24a41d9bc1ec041189c1fb8c703da72057
+  - package: page.ooooo.geoshare
+    signature:
+      - fingerprint: 1B:27:B1:7A:9D:F0:53:21:A9:3A:47:DF:31:ED:0D:66:45:EB:E5:5D:0E:89:90:81:57:D7:1C:10:32:D1:7C:10
+        sources:
+          - name: F-Droid
+            issue: 895
+            apk:
+              sha256: 42e5566e3742c17e2810f9607d652692cbaf0bf4fd7042454e9e7e95f65d4869
+          - name: F-Droid (IzzyOnDroid)
+            issue: 895
+            apk:
+              sha256: 42e5566e3742c17e2810f9607d652692cbaf0bf4fd7042454e9e7e95f65d4869
   - package: peergos.android
     signature:
       - fingerprint: 2C:5B:61:53:7D:0B:18:C8:E8:58:CC:F3:F4:85:A8:B0:FA:34:50:B6:17:C6:21:1D:18:50:77:78:1F:26:F0:30
