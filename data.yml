@@ -3716,6 +3716,15 @@ packages:
             issue: 615
             apk:
               sha256: a2fe8b7c713fc7ff62d248b2d8608299a0eeaa2fa030e2c6bfb12c6f5d229928
+  - package: fe.linksheet.nightly
+    signature:
+      - fingerprint: 3F:CF:76:75:BC:90:E2:39:89:2C:72:62:49:9D:CC:9F:8C:E6:A5:2B:7E:58:D0:2B:56:AA:60:CA:66:9D:67:01
+        sources:
+          - name: Direct APK Link
+            issue: 862
+            apk:
+              sha256: b32bedbe1d1121821f4565250f33435035021dd1e5c7cea444543bbdddec74eb
+              link: https://github.com/LinkSheet/nightly/releases/download/nightly-2026052502/LinkSheet-2026-05-25T12_11_02-nightly-2026052502-foss-nightly.apk
   - package: fi.fmi.mobileweather
     signature:
       - fingerprint: FB:3E:71:C5:B3:83:BD:A6:11:5A:98:20:42:9B:32:58:54:57:31:01:35:CE:A9:B5:7B:D4:D9:B0:22:73:12:62
