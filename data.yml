@@ -4839,6 +4839,14 @@ packages:
             apk:
               sha256: eb56aa9ae68b4d4b04e40251d7fe7ea49f97e0c4be5a8384e28d98ee36b9c5e2
               repo: https://archive.newpipe.net/fdroid/repo/
+  - package: org.sufficientlysecure.keychain
+    signature:
+      - fingerprint: 28:05:A6:F4:65:AC:B9:23:10:3A:2A:B3:A1:45:E1:A9:7A:74:C4:4A:CF:75:12:50:B5:88:EB:C3:F8:8A:0C:C9
+        sources:
+          - name: F-Droid
+            issue: 886
+            apk:
+              sha256: f88374b9113aa9ddba865258bd989eb3ac2ca1577d92e59d6e84228e080674ce
   - package: org.tasks
     signature:
       - fingerprint: 9F:78:EE:B2:7C:90:2A:98:1B:3B:FB:51:F6:FE:78:90:49:A0:0C:C1:AA:F0:83:B4:ED:16:B9:85:4B:3D:28:83
