@@ -412,6 +412,19 @@ packages:
             issue: 791
             apk:
               sha256: 7f6f826651dc28d3bc93f19748e5d23d1771bb8322c6c979941cb2771878376e
+  - package: com.KaraWilson.JellyBook
+    signature:
+      - fingerprint: 82:9C:56:9D:05:27:20:86:80:76:49:23:6B:65:44:11:33:88:FC:3B:1E:BE:3F:34:95:75:51:F4:AB:38:FB:3B
+        sources:
+          - name: Direct APK Link
+            issue: 1124
+            apk:
+              sha256: d7cf647df1bbdf6e54ab08649901ba7bcbcd00c652a9bcf1a594f81ed9ce1fcb
+              link: https://github.com/JellyBookOrg/JellyBook/releases/download/v1.3.2/JellyBook-Release-arm64.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 1124
+            apk:
+              sha256: d7cf647df1bbdf6e54ab08649901ba7bcbcd00c652a9bcf1a594f81ed9ce1fcb
   - package: com.PigeonGames.Phigros
     signature:
       - fingerprint: 20:CD:CB:DA:89:07:DC:18:93:FE:A5:3B:3F:D2:84:4E:EF:F9:52:7D:DA:D7:96:7C:13:65:A0:79:75:D7:57:C1
