@@ -2070,6 +2070,16 @@ packages:
             issue: 282
             apk:
               sha256: cd82720732a16ae642ac8c9f83738f105e6444a37da8bae287e6a0f4629e0a45
+  - package: com.machiav3lli.fdroid
+    signature:
+      - fingerprint: 6D:8F:A0:E2:D8:F4:C1:D8:11:B8:5C:C7:33:E8:7D:5D:AC:66:67:40:C5:D7:32:38:E2:37:5B:81:A1:17:61:B5
+        sources:
+          - name: AppVerifier
+            issue: 1051
+          - name: F-Droid
+            issue: 1051
+            apk:
+              sha256: cd4fb86aacb5533fba8154799b93a070718a71b5f1560dbe79b4deb35dcf48c8
   - package: com.maltaisn.notes.sync
     signature:
       - fingerprint: 2F:57:9D:5E:09:89:55:94:B1:EF:C5:64:58:DD:2B:AE:F9:00:B0:A0:9E:6C:7E:8A:F6:48:83:44:A9:22:A7:D0
