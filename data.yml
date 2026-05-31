@@ -4760,6 +4760,15 @@ packages:
               link: https://github.com/psanford/wormhole-william-mobile/releases/download/v2.1.0/wormhole-william.release.apk
   - package: io.simplelogin.android
     signature:
+      - fingerprint: 3E:A1:BE:55:8A:BA:9D:0C:8C:AA:AA:75:EA:91:7A:DB:A4:6A:5E:8B:BF:82:BC:7E:69:48:6B:EB:7C:54:C0:01
+        sources:
+          - name: AppVerifier
+            issue: 1080
+          - name: Direct APK Link
+            issue: 1080
+            apk:
+              sha256: 35f1265f9a12004ff414f2b0ed6583b7ce3b252c621c0c199fb81701a9b59e3f
+              link: https://github.com/simple-login/Simple-Login-Android/releases/download/1.22.0/simplelogin-playstore-1.22.0.apk
       - fingerprint: F2:02:30:63:37:BB:3B:C6:69:F7:E8:1D:10:2F:D1:10:C4:8C:67:2A:E4:56:3F:63:B9:7A:53:59:1D:F8:E8:CC
         sources:
           - name: AppVerifier
