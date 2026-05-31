@@ -6572,6 +6572,15 @@ packages:
               sha256: 507ff8a1a02cfcdbeca1fedcb1d90f162ca315a1fb5fc40d52f3504e1099d73c
   - package: xyz.blueskyweb.app
     signature:
+      - fingerprint: 40:05:8E:C6:8A:35:55:21:D0:8D:F2:49:98:CF:99:A7:14:91:33:5C:65:D7:58:85:03:9E:80:C0:25:AA:DD:FF
+        sources:
+          - name: AppVerifier
+            issue: 1110
+          - name: Direct APK Link
+            issue: 1110
+            apk:
+              sha256: f5a9379c3a770931d91576e82f8226e142384dda4271d443b1e4c71d0466200e
+              link: https://github.com/bluesky-social/social-app/releases/download/1.122.0/Bluesky-1.122.0.apk
       - fingerprint: C1:4D:3C:6B:B5:D6:D9:AE:CF:C5:0B:BC:C1:9B:29:6D:D4:E6:87:46:36:D5:4C:1A:64:1C:14:08:BF:7E:F9:62
         sources:
           - name: AppVerifier
