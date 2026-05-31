@@ -2210,6 +2210,19 @@ packages:
             issue: 1051
             apk:
               sha256: cd4fb86aacb5533fba8154799b93a070718a71b5f1560dbe79b4deb35dcf48c8
+      - fingerprint: C5:86:01:46:13:8B:77:99:BB:9D:06:17:C3:98:C1:E5:24:15:50:F5:58:25:2A:3F:97:B2:A5:1F:15:26:3E:F7
+        sources:
+          - name: AppVerifier
+            issue: 1050
+          - name: Direct APK Link
+            issue: 1050
+            apk:
+              sha256: ba0f8c361c35bc07f291a9403d53dec430013afcbd14190ab0c323f752421ee5
+              link: https://github.com/NeoApplications/Neo-Store/releases/download/1.2.6/Neo_Store_1.2.6_release.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 1050
+            apk:
+              sha256: ba0f8c361c35bc07f291a9403d53dec430013afcbd14190ab0c323f752421ee5
   - package: com.maltaisn.notes.sync
     signature:
       - fingerprint: 2F:57:9D:5E:09:89:55:94:B1:EF:C5:64:58:DD:2B:AE:F9:00:B0:A0:9E:6C:7E:8A:F6:48:83:44:A9:22:A7:D0
