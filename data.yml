@@ -5892,6 +5892,16 @@ packages:
             apk:
               sha256: d07b9a00c6f43da49812ad6a237c97418e519cf17f1c384443562c858a49f1b2
               link: https://github.com/mateusz-bak/openreads/releases/download/v2.11.0/openreads-v2.11.0-release.apk
+  - package: tech.ula
+    signature:
+      - fingerprint: 92:83:2A:E7:79:56:ED:9A:FC:E3:DB:0A:DE:44:AB:88:DD:02:BE:84:DE:9A:F7:C3:3B:94:98:29:EB:EE:4C:74
+        sources:
+          - name: AppVerifier
+            issue: 1105
+          - name: Google Play
+            issue: 1105
+            apk:
+              sha256: dc52a9f48b0c50579323dc94b41a2664beb7e3e8d978ce45079186455c324bec
   - package: tv.trakt.trakt
     signature:
       - fingerprint: 2A:FF:40:C6:A3:68:82:31:0C:6B:D1:B3:9F:F1:0D:A0:4A:DD:FB:D2:D1:00:1B:8C:29:3C:9B:CF:5C:40:F5:8B
