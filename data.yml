@@ -3634,6 +3634,21 @@ packages:
             issue: 459
             apk:
               sha256: a0f6c8d32b3a328a46359d7b7a76ec5bbd8f1443ebc464e47a918f0d61fe887a
+  - package: com.wirelessalien.zipxtract
+    signature:
+      - fingerprint: FF:F2:AC:2B:BF:EA:ED:30:30:51:CA:F1:38:C1:4F:CD:98:0A:92:6F:56:29:65:43:DF:05:C2:55:FD:89:A6:B7
+        sources:
+          - name: AppVerifier
+            issue: 1062
+          - name: Direct APK Link
+            issue: 1062
+            apk:
+              sha256: 88b5506f3e33fa018b8859ac602cf1e31c212144adb3a0a198efa3928ab1dbf7
+              link: https://github.com/WirelessAlien/ZipXtract/releases/download/v7.1/zipxtract-v7.1.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 1062
+            apk:
+              sha256: 88b5506f3e33fa018b8859ac602cf1e31c212144adb3a0a198efa3928ab1dbf7
   - package: com.wizzair.WizzAirApp
     signature:
       - fingerprint: 71:39:71:8A:9C:7A:50:3A:F9:7D:38:78:31:4E:C0:9A:6F:EF:E6:27:7E:A7:16:30:56:E0:22:73:F3:55:31:02
