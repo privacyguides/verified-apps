@@ -2400,6 +2400,14 @@ packages:
             issue: 831
             apk:
               sha256: 2a45a45b85d6edbda7dd564648d8a32608bdd0b81d0c43bdc63fbe7276379f3c
+  - package: com.robinhood.android
+    signature:
+      - fingerprint: 82:59:FA:51:3C:FD:54:A6:AA:8D:93:43:50:1B:FA:13:45:8C:55:D2:5E:27:C5:8F:8D:CA:03:EF:E2:F0:02:E5
+        sources:
+          - name: Google Play
+            issue: 989
+            apk:
+              sha256: 1e166381f60601081c57eddca017e0c6aceea2d09b01e14dcd4883b0dbc67e0a
   - package: com.ryanair.cheapflights
     signature:
       - fingerprint: 7B:95:CA:16:5B:9D:E6:03:8E:B9:F1:CC:77:BC:54:2C:22:33:DE:A1:43:EE:32:38:69:3A:3F:55:B8:1A:01:E9
