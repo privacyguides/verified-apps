@@ -3403,6 +3403,19 @@ packages:
             issue: 1058
             apk:
               sha256: ddcbf344519bff30db9550d16f37104150b816ed401f95370d551f183a9e5520
+      - fingerprint: BF:1B:69:C1:4D:A2:42:0C:A7:20:11:F7:2C:F4:83:74:58:EC:5D:3C:C4:B5:38:24:34:37:BC:17:C1:92:01:C6
+        sources:
+          - name: AppVerifier
+            issue: 1059
+          - name: Direct APK Link
+            issue: 1059
+            apk:
+              sha256: 2a37f06e78cb7046f578449fe0f725a06b94bc02327bba9a1a369497b23daf79
+              link: https://github.com/TrianguloY/URLCheck/releases/download/v3.5/URLCheck-3.5.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 1059
+            apk:
+              sha256: 2a37f06e78cb7046f578449fe0f725a06b94bc02327bba9a1a369497b23daf79
       - fingerprint: F9:A2:D8:D8:94:FA:FE:A1:4C:F6:05:C4:D7:22:AF:D0:49:4D:69:41:1F:60:6A:AA:0B:B1:F2:85:E7:A9:A6:60
         sources:
           - name: AppVerifier
