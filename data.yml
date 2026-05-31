@@ -4517,6 +4517,16 @@ packages:
             issue: 996
             apk:
               sha256: e47eee4c2089163d23f5015b2c7e5a4e66c6c06bb414636a637eeeef5ee11097
+  - package: io.simplelogin.android.fdroid
+    signature:
+      - fingerprint: C9:FB:E0:95:83:03:D6:B9:6C:3F:C8:A1:FA:0A:78:21:1C:71:85:18:97:BC:07:86:33:93:E7:6B:D8:4C:3B:F7
+        sources:
+          - name: AppVerifier
+            issue: 1082
+          - name: F-Droid
+            issue: 1082
+            apk:
+              sha256: 2910e300a29f655377a3c2b06b8fa2e49b2b18a2470968dec8e5b0c5c71daa7e
   - package: io.spaceapi.community.myhackerspace
     signature:
       - fingerprint: 4E:C5:1A:CD:06:D3:F9:E7:95:07:C9:14:EF:15:E2:C0:9A:18:24:9A:82:AF:90:64:FF:04:95:F9:26:F9:3D:D4
