@@ -3216,6 +3216,14 @@ packages:
               sha256: 5da786e1703628dbd401949fc24931450bd1b4ca83284810705771f7da2cb650
   - package: com.unciv.app
     signature:
+      - fingerprint: B9:39:32:67:BA:C3:37:79:49:23:68:EF:24:19:D5:8E:94:C5:7C:D2:5F:D1:F0:A2:4F:DD:90:09:98:66:0C:0F
+        sources:
+          - name: AppVerifier
+            issue: 1061
+          - name: Google Play
+            issue: 1061
+            apk:
+              sha256: 18069f5b7e4eb7ae736cfcf50809b51cd5898ebbfd1067b28a04063100e31eeb
       - fingerprint: CD:16:E3:86:46:9F:23:98:8F:C9:CD:EC:A0:1B:FE:FB:D0:DE:AE:D1:3A:49:07:BC:E7:6E:91:AC:C9:66:2C:68
         sources:
           - name: AppVerifier
