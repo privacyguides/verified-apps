@@ -3871,6 +3871,15 @@ packages:
             apk:
               sha256: cd5ddf49dabbb7b9870db57441b8b8e426b09f41951853c13af1a595aed5d62d
               link: https://github.com/ente-io/ente/releases/download/photos-v1.3.44/ente-photos-v1.3.44.apk
+  - package: io.filen.app
+    signature:
+      - fingerprint: 5B:DD:27:47:B7:CF:A9:8D:62:9E:4D:44:41:01:A9:CE:DC:E3:32:AD:6A:7F:2A:0B:14:F4:69:ED:93:7F:13:27
+        sources:
+          - name: Direct APK Link
+            issue: 867
+            apk:
+              sha256: bbe462cd7f0dff94e906c0aba0024c4db36c526fb0d7f30a10d4a499c2dc7b5b
+              link: https://github.com/FilenCloudDienste/filen-mobile/releases/download/v3.0.35/app-release.apk
   - package: io.github.devhyper.openvideoeditor
     signature:
       - fingerprint: 84:DF:64:4C:C5:DB:D4:EA:50:60:2B:9F:23:E4:FB:F3:B2:2E:E5:CD:21:82:43:7B:EF:72:C7:C7:99:F1:2D:B6
