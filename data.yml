@@ -5072,6 +5072,14 @@ packages:
             issue: 896
             apk:
               sha256: 060ee62638739451f1ab8c21ecfb5e4b5340c653fc5a66460d4ce86dbff37eb9
+  - package: pl.lebihan.authnkey
+    signature:
+      - fingerprint: BB:F5:D7:BE:D8:2B:5B:9B:9F:8D:98:25:E6:20:46:4C:8A:28:ED:6C:7A:1E:B0:98:DF:C1:F9:72:DF:9C:58:0B
+        sources:
+          - name: F-Droid
+            issue: 897
+            apk:
+              sha256: 922ed4a4c420e34a14c4d9c5d70ff36e364c7c24022c12cd35149d450ae3ed9e
   - package: proton.android.pass.fdroid
     signature:
       - fingerprint: 57:2C:25:04:8E:6E:62:29:BC:03:93:61:9F:7C:64:0F:8C:BC:CF:11:D2:EB:F8:B2:FA:7B:C9:A7:63:63:B8:12
