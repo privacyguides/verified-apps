@@ -4075,6 +4075,16 @@ packages:
             issue: 931
             apk:
               sha256: eef73a49ae186487ee5d4f17c5633a2545afc268de66471e4d4a4a6e17c42e2d
+  - package: fr.emersion.goguma.play
+    signature:
+      - fingerprint: CE:58:F4:DA:7C:70:5B:FA:A2:E5:D9:CF:D7:5C:63:07:C9:A6:AE:AA:D0:09:CF:38:97:15:8A:3F:E4:96:30:F6
+        sources:
+          - name: AppVerifier
+            issue: 1076
+          - name: Google Play
+            issue: 1076
+            apk:
+              sha256: f31e4bc0a9e7c9d3feb27455b0941bd7e48fcac0ec376468f80f154698623183
   - package: gov.dhs.cbp.pspd.mpc
     signature:
       - fingerprint: 1D:AA:4C:59:14:D2:3B:70:FE:10:A6:31:F0:3A:A0:F9:66:A6:DD:4E:8F:5E:FD:DF:A0:20:F9:96:22:E4:69:DE
