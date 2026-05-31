@@ -3413,6 +3413,19 @@ packages:
             issue: 972
             apk:
               sha256: d55c27526117362d0d5be00638e81ad61308478d81673de0cf988cc408f18757
+  - package: de.mm20.launcher2.release
+    signature:
+      - fingerprint: BF:65:BB:D6:17:99:73:97:80:0D:02:E0:AC:2E:45:CE:E1:53:15:15:18:54:5C:23:EF:66:B3:CB:2C:FD:F7:BC
+        sources:
+          - name: Direct APK Link
+            issue: 850
+            apk:
+              sha256: c54115da817d70906f60bcd652a1883f6b493de407f1474a9c129ada1b1da162
+              link: https://github.com/MM2-0/Kvaesitso/releases/download/v1.40.1/de.mm20.launcher2.release-v1.40.1.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 850
+            apk:
+              sha256: c54115da817d70906f60bcd652a1883f6b493de407f1474a9c129ada1b1da162
   - package: de.nulide.findmydevice
     signature:
       - fingerprint: 87:A6:C1:36:F5:49:9D:B2:55:C9:3F:4D:38:4C:B1:A5:D3:14:F6:90:8F:2B:F1:97:E0:EC:07:ED:58:BB:58:72
