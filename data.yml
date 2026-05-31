@@ -802,6 +802,15 @@ packages:
             apk:
               sha256: 9f2527fa0716dcf5f14dd5f3ab4954f228361efd81da277ccf1d1f1410d2626c
               link: https://github.com/cake-tech/cupcake/releases/download/v1.1.0/Cupcake_v1.1.0_10.apk
+  - package: com.cappielloantonio.tempo
+    signature:
+      - fingerprint: 8E:52:6B:64:42:C1:7E:4A:D9:CB:36:54:C7:A1:FC:E3:24:5B:0C:BD:22:D9:A4:01:5C:E9:23:CE:6B:83:0E:24
+        sources:
+          - name: Direct APK Link
+            issue: 797
+            apk:
+              sha256: 7b5326614c47266c5cd1bf0dcf0db1601fcde3f12330e31b311fdecbe8441b14
+              link: https://github.com/CappielloAntonio/tempo/releases/download/3.9.0/app-tempo-release.apk
   - package: com.capyreader.app
     signature:
       - fingerprint: 67:43:73:75:A1:61:F4:20:21:9D:DF:F1:F2:81:DF:29:2C:CB:5F:05:7A:A0:CA:F5:65:68:A7:82:B2:81:64:65
