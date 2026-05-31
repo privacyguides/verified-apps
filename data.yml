@@ -5800,6 +5800,14 @@ packages:
             issue: 728
             apk:
               sha256: 4e33b51398205362775c4f3d22d329cab7fa715f23efe6be9a487e62119286b7
+      - fingerprint: 80:53:5B:E6:1E:ED:B9:A0:3B:04:76:A6:F4:93:D4:96:C3:49:87:70:40:43:39:EA:7A:80:00:F5:E6:1D:22:C0
+        sources:
+          - name: AppVerifier
+            issue: 1101
+          - name: F-Droid
+            issue: 1101
+            apk:
+              sha256: 4a9144fadfd8606cc5c0e9db892fd24846b7b2efeb1630db5377955d1612b119
       - fingerprint: C8:76:8D:2C:EA:0C:4B:62:2E:41:9B:4B:47:15:98:19:46:82:1E:4E:BC:03:5F:B4:17:76:CA:D3:95:A7:F6:8E
         sources:
           - name: AppVerifier
