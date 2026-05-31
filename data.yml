@@ -2830,6 +2830,13 @@ packages:
             issue: 71
             apk:
               sha256: e6265a57eb5ca363808488e3b01955958bed93bc0c8a0d281849b363b11027ec
+      - fingerprint: B6:DA:01:48:0E:EF:D5:FB:F2:CD:37:71:B8:D1:02:1E:C7:91:30:4B:DD:6C:4B:F4:1D:3F:AA:BA:D4:8E:E5:E1
+        sources:
+          - name: Direct APK Link
+            issue: 837
+            apk:
+              sha256: 72fdb596045116bf5ba1b5bdf5b26fddb9acc0bd074ad9f2da9eb0ae85e83a4e
+              link: https://github.com/termux/termux-app/releases/download/v0.118.3/termux-app_v0.118.3+github-debug_arm64-v8a.apk
   - package: com.termux.api
     signature:
       - fingerprint: B6:DA:01:48:0E:EF:D5:FB:F2:CD:37:71:B8:D1:02:1E:C7:91:30:4B:DD:6C:4B:F4:1D:3F:AA:BA:D4:8E:E5:E1
