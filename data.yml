@@ -5552,6 +5552,14 @@ packages:
               sha256: 821ae8cdec30397120c3c49c14de9c568b1a6a12bbde8e6149acddcb2f6ff324
   - package: org.oxycblt.auxio
     signature:
+      - fingerprint: 65:B3:E6:2A:2B:57:BF:73:23:5B:E6:D2:D4:2A:E5:46:FC:B0:2F:D1:7F:62:CD:14:50:0D:1C:41:2A:28:59:72
+        sources:
+          - name: AppVerifier
+            issue: 1099
+          - name: F-Droid
+            issue: 1099
+            apk:
+              sha256: 71291e0bb4ca4580702223182ae6ab2f91402b8fff37cf766dd4b6eeaf0913bc
       - fingerprint: DA:84:E2:53:4C:1A:CC:0B:6E:4F:57:DE:DB:64:0D:4D:C8:93:F5:BF:41:37:A2:E1:EC:BA:87:AD:F8:25:BA:44
         sources:
           - name: Accrescent
