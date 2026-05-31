@@ -1953,6 +1953,16 @@ packages:
             issue: 495
             apk:
               sha256: b38cc6da003aa00089735fce26b002906f0c0d720d8f59ab6aaf9ed6e6078c22
+  - package: com.kylecorry.trail_sense
+    signature:
+      - fingerprint: 8A:0A:C4:74:32:1E:FD:27:8E:E1:05:BF:35:F6:7A:26:4B:94:3F:C4:D0:38:71:A0:1C:95:71:7A:D5:24:A2:62
+        sources:
+          - name: AppVerifier
+            issue: 1042
+          - name: Google Play
+            issue: 1042
+            apk:
+              sha256: fd99ade4e776c4c1adae3083e5832551e209d649d7f1f191ff3f072ea16b8a9b
   - package: com.kylecorry.trail_sense.github
     signature:
       - fingerprint: D3:B7:CB:BC:63:3F:7C:1B:E2:CA:A2:F7:5F:B0:72:EE:9B:40:FD:10:FA:AF:96:42:69:2B:27:C4:AF:5E:C4:A7
