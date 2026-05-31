@@ -142,6 +142,14 @@ packages:
               sha256: eb110a855e0040cb08fec545017c2623eb8536211a14f372d7528ff28edf4fce
   - package: app.organicmaps
     signature:
+      - fingerprint: 9D:5A:95:65:8F:EC:4E:A2:FD:C1:E0:A6:96:E3:69:E5:B9:38:D2:E3:0A:28:ED:FF:50:AE:99:BD:A2:7E:8F:A3
+        sources:
+          - name: AppVerifier
+            issue: 1016
+          - name: Google Play
+            issue: 1016
+            apk:
+              sha256: 160f30194ffd747789ae4c182c03ab7b8fea6cb7ca099e0e8109fbcc13316672
       - fingerprint: B9:C7:AE:79:A5:A9:02:70:DF:08:A1:32:E5:36:B9:C6:66:F5:BE:F1:F5:9B:30:4F:CE:CF:86:87:86:5E:4B:5B
         sources:
           - name: Accrescent
