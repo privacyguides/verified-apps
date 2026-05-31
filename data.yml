@@ -5946,6 +5946,16 @@ packages:
             issue: 551
             apk:
               sha256: 507ff8a1a02cfcdbeca1fedcb1d90f162ca315a1fb5fc40d52f3504e1099d73c
+  - package: xyz.blueskyweb.app
+    signature:
+      - fingerprint: C1:4D:3C:6B:B5:D6:D9:AE:CF:C5:0B:BC:C1:9B:29:6D:D4:E6:87:46:36:D5:4C:1A:64:1C:14:08:BF:7E:F9:62
+        sources:
+          - name: AppVerifier
+            issue: 1109
+          - name: Google Play
+            issue: 1109
+            apk:
+              sha256: 7e12a655bd7868e89e9d96774d5d74e7bd93a665e3a75c385aef99698b5581ca
   - package: xyz.malkki.neostumbler
     signature:
       - fingerprint: 7F:83:9A:C7:AF:C4:FF:6F:1C:7F:B1:34:8A:C1:0D:E2:F1:7D:E8:A7:8D:0D:81:2C:1F:43:AE:83:5A:51:11:DF
