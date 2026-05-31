@@ -2048,6 +2048,16 @@ packages:
             issue: 538
             apk:
               sha256: 88949b2d89d8ebdc69cfb203103b3a3b39f8801589aba0d6ccaa0a8b18a9f1b2
+  - package: com.limbo.emu.main
+    signature:
+      - fingerprint: F7:8B:31:E0:F5:B8:2F:06:0B:44:17:E7:E2:7A:E5:1B:CE:DE:42:77:B6:F2:7A:7F:42:43:EB:74:2C:C5:4A:A2
+        sources:
+          - name: AppVerifier
+            issue: 1046
+          - name: F-Droid
+            issue: 1046
+            apk:
+              sha256: b85ae2ed1963104b03e1e29581f4bccd4163818208dbcbcb427b5168b495efaf
   - package: com.limelight
     signature:
       - fingerprint: D6:CE:3A:4D:F1:50:60:FE:48:8F:E5:24:41:A5:49:DE:E4:BA:19:9B:36:E2:CB:1E:D9:08:5C:CA:8B:FA:1A:CA
