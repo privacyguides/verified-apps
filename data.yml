@@ -1603,6 +1603,15 @@ packages:
             issue: 1035
             apk:
               sha256: 60987fe5eabd839203f791c032570460808690445d1f0666b12602772638b909
+      - fingerprint: 90:43:1B:46:5B:44:03:31:14:5C:76:9C:40:D8:72:B0:79:BE:15:40:50:88:22:CD:FC:3A:2A:C3:97:D4:6C:AE
+        sources:
+          - name: AppVerifier
+            issue: 1034
+          - name: Direct APK Link
+            issue: 1034
+            apk:
+              sha256: 0550c9bce3efa245b7100635924f0f7ac49732e2522ef28410b7f72d674b2dac
+              link: https://github.com/mueller-ma/Coffee/releases/download/2.26/coffee.apk
   - package: com.github.olga_yakovleva.rhvoice.android
     signature:
       - fingerprint: 10:79:02:73:B7:C5:68:B3:C3:11:35:4D:47:3D:4B:83:B4:82:07:12:E1:F5:95:E3:24:C4:DD:B9:67:2B:D2:3A
