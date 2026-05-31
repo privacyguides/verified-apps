@@ -5767,6 +5767,16 @@ packages:
             issue: 709
             apk:
               sha256: 8fa4495a270c74a15f356767fc13c7b851e99851ee946ae49fcfcb612bd32020
+  - package: ru.zdevs.zugate
+    signature:
+      - fingerprint: 74:DD:42:51:7D:0A:30:DB:4E:13:1D:C3:FF:D1:CF:11:D0:FD:95:75:3C:7D:27:C3:EB:33:2A:E0:59:92:DD:0E
+        sources:
+          - name: AppVerifier
+            issue: 1103
+          - name: Google Play
+            issue: 1103
+            apk:
+              sha256: 93fb811d3b5d9e49ecc888f5e4e0a5e95ff799efaa9420f15df583ea18783cbf
   - package: s1m.hwfido2provider
     signature:
       - fingerprint: 94:BD:36:BA:46:48:D3:86:97:CD:FC:F3:38:5B:6C:00:88:FF:3D:55:1C:E9:FC:16:05:0E:E0:80:B9:55:3E:C5
