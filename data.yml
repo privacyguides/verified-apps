@@ -3338,6 +3338,12 @@ packages:
             issue: 539
   - package: de.westnordost.streetcomplete
     signature:
+      - fingerprint: 7B:DA:B5:77:0B:DB:DC:7A:38:00:24:30:A0:B5:6A:DF:63:1F:14:45:BA:47:8B:A2:A8:FB:16:8D:5C:08:75:13
+        sources:
+          - name: F-Droid
+            issue: 855
+            apk:
+              sha256: 310f128bd5d81b374b9e7d1341574a7689b924c1cd1aa85ef3ceb22ee201153c
       - fingerprint: 99:5C:A1:DC:02:BD:B9:E3:11:7E:29:7B:77:91:44:0A:2E:A1:DC:A5:77:6C:B9:D5:6D:79:26:92:A5:97:C8:6C
         sources:
           - name: Google Play
