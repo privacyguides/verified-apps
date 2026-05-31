@@ -1,5 +1,5 @@
-name: Check Do Not Merge label
-description: Fail when the submission issue has the Do Not Merge label
+name: Check merge-blocking labels
+description: Fail when the submission issue has Do Not Merge or Needs a +1
 inputs:
   issueNumber:
     description: Submission issue number
@@ -21,10 +21,18 @@ runs:
       run: |
         set -euo pipefail
 
-        if gh issue view "$NUMBER" --repo "$GH_REPO" --json labels -q '.labels[].name' \
-          | grep -qxF 'Do Not Merge'; then
+        labels=$(gh issue view "$NUMBER" --repo "$GH_REPO" --json labels -q '.labels[].name')
+
+        blocked=""
+        if printf '%s\n' "$labels" | grep -qxF 'Do Not Merge'; then
+          blocked="Do Not Merge"
+        elif printf '%s\n' "$labels" | grep -qxF 'Needs a +1'; then
+          blocked="Needs a +1"
+        fi
+
+        if [[ -n "$blocked" ]]; then
           gh issue comment "$NUMBER" --repo "$GH_REPO" \
-            --body "Cannot run **${ACTION}**: this issue has the **Do Not Merge** label. Remove that label before retrying."
-          echo "::error::Issue #${NUMBER} has the Do Not Merge label; refusing to proceed."
+            --body "Cannot run **${ACTION}**: this issue has the **${blocked}** label. Remove that label before retrying."
+          echo "::error::Issue #${NUMBER} has the ${blocked} label; refusing to proceed."
           exit 1
         fi
