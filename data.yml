@@ -507,6 +507,14 @@ packages:
             issue: 986
             apk:
               sha256: eb69deac0c1105750caba22f328a66937eb12c015e4e4ef50993e65e756b62b6
+  - package: com.ancestry.android.apps.ancestry
+    signature:
+      - fingerprint: D0:38:92:9C:BA:FD:96:6E:51:A6:35:DB:8C:FF:9E:D8:39:ED:CB:03:16:4E:A1:D0:97:DE:CD:9F:50:87:85:37
+        sources:
+          - name: Google Play
+            issue: 975
+            apk:
+              sha256: d32d9da15d88abfc1b9fd69a172e9342807e53c31ae77673acf4536cc99921bf
   - package: com.aniplex.fategrandorder.en
     signature:
       - fingerprint: CF:E4:13:B1:07:55:61:DD:F4:24:0C:5B:B4:0C:F9:4C:39:7C:AC:F5:7A:2B:DF:07:21:51:65:DD:41:D5:D6:84
