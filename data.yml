@@ -869,6 +869,13 @@ packages:
             issue: 781
             apk:
               sha256: 44f657427d83e6bdc976d034b5b91e34ea9359edba6f9e6c48cc0baf518bf7c3
+      - fingerprint: CC:F5:2D:C9:11:63:F1:6A:BA:9E:5B:15:0D:81:6C:36:97:B2:C9:7D:A0:56:71:3B:AC:1E:C4:26:EC:7E:FE:B2
+        sources:
+          - name: Direct APK Link
+            issue: 798
+            apk:
+              sha256: 1c8e358da1aba5743b557732c6ba96c1196be521fb7c4becd7dfcb184ef69c0e
+              link: https://s3.sr.ht/builds.sr.ht/artifacts/~singpolyma/1760046/f08d30c91e9328a7/cheogram.apk
   - package: com.chess
     signature:
       - fingerprint: AA:8C:9F:F9:3E:FB:DC:42:26:A1:13:E4:9F:C9:64:5B:2C:02:09:2A:31:43:05:DA:2D:76:BE:6C:DF:8A:BF:C3
