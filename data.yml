@@ -4312,6 +4312,23 @@ packages:
             issue: 1073
             apk:
               sha256: 530eb4ba85620577d2b6be09b7e5638058c9ce2f72fae9812442a671f10aa960
+      - fingerprint: E0:20:67:24:9F:5A:35:0E:0E:C7:03:FE:9D:F4:DD:68:2E:02:91:A0:9F:0C:2E:04:10:50:BB:E7:C0:64:F5:C9
+        sources:
+          - name: AppVerifier
+            issue: 1072
+          - name: Direct APK Link
+            issue: 1072
+            apk:
+              sha256: a6fa490d2d4b4f9784458d3902f4bafd7e0ffe90c348951248569d74f2b7b60a
+              link: https://github.com/M66B/FairEmail/releases/download/1.2318/FairEmail-v1.2318a-github-release.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 1072
+            apk:
+              sha256: a6fa490d2d4b4f9784458d3902f4bafd7e0ffe90c348951248569d74f2b7b60a
+          - name: Google Play
+            issue: 1072
+            apk:
+              sha256: 95527b05a417ec2a438eba17c739b9019832d3e2d4caa63019a4d84975b6029d
   - package: eu.siacs.conversations
     signature:
       - fingerprint: C7:5A:BE:78:59:36:43:AE:7C:AC:52:73:27:CD:21:93:48:2D:B0:67:40:4A:88:B8:C1:3F:7A:07:01:94:61:87
