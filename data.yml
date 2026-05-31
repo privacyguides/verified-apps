@@ -396,6 +396,15 @@ packages:
             issue: 755
             apk:
               sha256: a48f1f8338ed9ccb2b3d9d7685b0e752c370537c5107f9f93d1a8589b832e499
+  - package: com.Vali98.ChatterUI
+    signature:
+      - fingerprint: 1B:4B:4A:C9:9A:24:CB:95:69:BD:BC:37:CF:BD:E9:16:A4:F5:38:DE:55:C1:F8:02:FA:19:BC:99:E3:3B:7E:3B
+        sources:
+          - name: Direct APK Link
+            issue: 792
+            apk:
+              sha256: 000db515b62787e0205544773f26f26643daa041cd3c0ac88c146d796b9c5b74
+              link: https://github.com/Vali-98/ChatterUI/releases/download/v0.9.0/ChatterUI_v0.9.0.apk
   - package: com.aa.android
     signature:
       - fingerprint: 33:20:91:B2:22:D7:08:6E:0F:8B:19:3E:8F:A1:37:FB:58:2B:CE:0C:E6:E6:0D:69:6A:59:83:BC:39:37:1F:22
