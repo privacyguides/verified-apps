@@ -167,6 +167,15 @@ packages:
             apk:
               sha256: ba28ca92f5a09ab19cdf490f054f1bcf7b311b0a64007077b3c31fcec2bbfd60
               link: https://github.com/organicmaps/organicmaps/releases/download/2026.05.27-11-android/OrganicMaps-26052711-web-release.apk
+  - package: app.paralino.android
+    signature:
+      - fingerprint: 7C:36:87:CA:81:BC:A2:0C:32:09:5E:CE:AD:18:29:09:DC:50:87:03:6A:37:F0:77:2B:2D:9E:5D:85:91:41:DC
+        sources:
+          - name: Direct APK Link
+            issue: 785
+            apk:
+              sha256: 751c9dd83d86f93a21bfb696fbbfd4afc1084b3f839bb2ec3a70c6b81d414bd0
+              link: https://static.paralino.com/downloads/ParalinoAndroidDirect.apk
   - package: app.revanced.manager.flutter
     signature:
       - fingerprint: B6:36:2C:6E:A7:88:8E:FD:15:C0:80:0F:48:07:86:AD:0F:5B:13:3B:4F:84:E1:2D:46:AF:BA:5F:9E:AC:12:23
