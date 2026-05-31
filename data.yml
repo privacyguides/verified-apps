@@ -3310,6 +3310,14 @@ packages:
               sha256: 0fc4db76c46a0072ee0ee37d61338b29d985aa109db5974d1100651ca5a3ef19
   - package: com.trianguloy.urlchecker
     signature:
+      - fingerprint: 93:D7:9B:1E:72:D5:A6:B0:BC:68:11:B9:BC:0A:83:18:1C:35:10:D5:8C:11:57:11:40:FF:3F:8A:63:F2:21:74
+        sources:
+          - name: AppVerifier
+            issue: 1058
+          - name: F-Droid
+            issue: 1058
+            apk:
+              sha256: ddcbf344519bff30db9550d16f37104150b816ed401f95370d551f183a9e5520
       - fingerprint: F9:A2:D8:D8:94:FA:FE:A1:4C:F6:05:C4:D7:22:AF:D0:49:4D:69:41:1F:60:6A:AA:0B:B1:F2:85:E7:A9:A6:60
         sources:
           - name: AppVerifier
