@@ -2078,6 +2078,16 @@ packages:
             apk:
               sha256: 3c67b3d0385887bde72530484927913b8a71bacfd31a35ab6cbfbfdb56ab71e8
               link: https://github.com/logseq/logseq/releases/download/0.10.15/Logseq-android-0.10.15.apk
+  - package: com.looker.droidify
+    signature:
+      - fingerprint: B4:F1:C8:A8:1E:4B:9F:6E:02:63:8E:93:BE:AD:56:65:65:02:C2:1F:B9:5C:8D:3E:C9:3D:0C:DD:1F:6E:0D:3F
+        sources:
+          - name: AppVerifier
+            issue: 1049
+          - name: F-Droid
+            issue: 1049
+            apk:
+              sha256: f9c648df9efe82aa2a70d89e6591a73dfdaa864ac60916ed4668ce8bd6a99695
   - package: com.lufthansa.android.lufthansa
     signature:
       - fingerprint: AF:75:72:3A:86:9D:50:C9:20:04:D8:B2:D5:74:46:48:DE:70:14:CA:D8:33:38:86:8E:5F:4C:AA:0B:B8:A8:8E
