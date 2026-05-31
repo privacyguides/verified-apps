@@ -4981,6 +4981,23 @@ packages:
             apk:
               sha256: 9b24378a3c9b260a28dffe3d9b08d58f69975053a453f824f9cf171273f67d54
               repo: https://app.futo.org/fdroid/repo/
+  - package: org.handmadeideas.floccus
+    signature:
+      - fingerprint: FF:ED:27:78:FF:07:37:1E:63:67:B6:DC:F5:D7:C1:32:7C:57:FF:71:58:B8:44:40:29:18:2A:9A:A2:DD:70:85
+        sources:
+          - name: Direct APK Link
+            issue: 1014
+            apk:
+              sha256: 093b4db2d8c0e156fa61f0fa495f6354871235bfcf5406e1f57b6b746f923750
+              link: https://github.com/floccusaddon/floccus/releases/download/v5.9.1/floccus-build-v5.9.1.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: 1014
+            apk:
+              sha256: 093b4db2d8c0e156fa61f0fa495f6354871235bfcf5406e1f57b6b746f923750
+          - name: Google Play
+            issue: 1014
+            apk:
+              sha256: cb5b7e3bca2a25ca0328ca9bb313060a359ace437044a4278c08d203b80e68d9
   - package: org.ironfoxoss.ironfox
     signature:
       - fingerprint: C5:E2:91:B5:A5:71:F9:C8:CD:9A:97:99:C2:C9:4E:02:EC:97:03:94:88:93:F2:CA:75:6D:67:B9:42:04:F9:04
