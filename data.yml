@@ -3761,6 +3761,17 @@ packages:
             issue: 1064
             apk:
               sha256: e5e51772ec2cd9f1474bc6d8cc6a180f6a286a690dc21226d974eac1c1c6b201
+  - package: de.dennisguse.opentracks.nightly
+    signature:
+      - fingerprint: 71:C1:27:B4:2F:EF:A3:37:2E:ED:95:44:AA:25:97:C8:FA:C4:E1:A4:79:17:1B:E3:BC:B4:81:DE:2D:95:AC:D2
+        sources:
+          - name: AppVerifier
+            issue: 1065
+          - name: F-Droid (fdroid.storchp.de)
+            issue: 1065
+            apk:
+              sha256: dcf3183b9bc197eed3de2f00402bca47504c857e6624005aee4b9bdf0079b26d
+              repo: https://fdroid.storchp.de/fdroid/repo?fingerprint=99985A7E73DCB0B16C9BDDCE7A0B4996F88068AE7C771ED53E217E69CD1FF196
   - package: de.dennisguse.opentracks.playstore
     signature:
       - fingerprint: 87:2C:78:45:63:77:3B:3D:76:9E:C3:4C:EA:C4:E3:8F:1A:2F:15:EF:8E:D4:4A:61:21:4C:6D:9D:11:C8:8A:9B
