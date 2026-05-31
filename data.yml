@@ -1512,6 +1512,16 @@ packages:
             apk:
               sha256: b70a30fd23f7b9eb29118ae028ad463d66c4b9d9cdfec586af157a7c7da4ecb5
               link: https://github.com/libre-tube/LibreTube/releases/download/v31.3/app-release.apk
+  - package: com.github.muellerma.coffee
+    signature:
+      - fingerprint: 70:B1:60:C0:F6:57:4E:BE:9F:FE:B0:F3:AE:93:48:71:41:52:22:4A:BE:7D:DC:48:1C:CB:84:3E:84:F6:99:12
+        sources:
+          - name: AppVerifier
+            issue: 1035
+          - name: F-Droid
+            issue: 1035
+            apk:
+              sha256: 60987fe5eabd839203f791c032570460808690445d1f0666b12602772638b909
   - package: com.gitlab.mudlej.MjPdfReader
     signature:
       - fingerprint: AF:92:A1:A8:1B:45:B9:D6:A5:D9:F1:63:7F:D6:BE:98:FD:88:9B:48:12:8C:00:9D:A9:AF:D7:BA:0F:C2:F0:89
