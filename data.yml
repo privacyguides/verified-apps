@@ -4287,6 +4287,15 @@ packages:
             issue: 724
             apk:
               sha256: a0326caebd3a6839e24188d5e9152904b9c7861936df8b7425286ec1c32b7474
+  - package: net.aliasvault.app
+    signature:
+      - fingerprint: 7A:65:D1:CC:85:68:80:3D:E2:E8:70:B2:DF:85:B4:E2:F5:6D:E9:48:D5:FB:B0:A0:29:8B:46:C0:1A:F8:45:09
+        sources:
+          - name: Direct APK Link
+            issue: 873
+            apk:
+              sha256: 5015c770a42782f0fea17e7623ec5aadbe086316056963baa906a530f6be22eb
+              link: https://github.com/aliasvault/aliasvault/releases/download/0.29.2/aliasvault-0.29.2-android.apk
   - package: net.bible.android.activity
     signature:
       - fingerprint: 8B:F5:16:8A:01:94:4D:62:A4:A4:C7:B6:52:F4:73:81:84:00:0D:57:A4:8C:52:89:5A:C6:CB:83:1C:48:CF:30
