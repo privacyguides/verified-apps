@@ -5079,6 +5079,19 @@ packages:
             apk:
               sha256: c3a60925984d9f4cb967a6d9b4a4ce43b86409aa30cfc8900ec0955302020998
               link: https://github.com/rafaelvcaetano/melonDS-android/releases/download/nightly-release/app-gitHub-nightly-release.apk
+  - package: me.mudkip.moememos
+    signature:
+      - fingerprint: FA:36:F1:CA:84:9F:D0:C5:3C:30:11:EC:26:83:B4:8C:60:E6:17:35:A4:35:F7:6C:5D:93:D8:66:9B:77:64:2F
+        sources:
+          - name: Direct APK Link
+            issue: 1122
+            apk:
+              sha256: b19a00a22f872d2292dd3bb245c0aa917d9155f5d00277db6ef21183a4154ec7
+              link: https://github.com/mudkipme/MoeMemosAndroid/releases/download/2.0.3/moememos-v2.0.3.apk
+          - name: F-Droid
+            issue: 1122
+            apk:
+              sha256: b19a00a22f872d2292dd3bb245c0aa917d9155f5d00277db6ef21183a4154ec7
   - package: me.nanoleaf.nanoleaf
     signature:
       - fingerprint: 93:5C:70:4E:4B:FA:CF:48:58:AF:80:FB:FB:5D:06:1A:29:D3:0B:71:A2:BC:C2:5A:2F:6B:45:F1:13:DE:7F:81
