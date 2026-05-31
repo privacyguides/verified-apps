@@ -5407,6 +5407,15 @@ packages:
             issue: 1092
             apk:
               sha256: 5519314f9b38e6ac96ce5778e046ebd5b935a04687d1c7dbba0e5fc355c85261
+      - fingerprint: AA:43:74:6A:46:12:78:42:16:9F:81:76:41:2A:1F:4B:1B:1E:2F:8A:D9:E1:5A:BA:21:7C:38:22:DB:EB:2D:5F
+        sources:
+          - name: AppVerifier
+            issue: 1091
+          - name: Direct APK Link
+            issue: 1091
+            apk:
+              sha256: 41ffc0fd35c217120fab45645b857f6da31d68c192508673bea076351db705ef
+              link: https://github.com/connectbot/connectbot/releases/download/v1.10.7/ConnectBot-v1.10.7-oss.apk
   - package: org.cromite.cromite
     signature:
       - fingerprint: 63:3F:A4:1D:82:11:D6:D0:91:6A:81:9B:89:66:8C:6D:E9:2E:64:23:2D:A6:7F:9D:16:FD:81:C3:B7:E9:23:FF
