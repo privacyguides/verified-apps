@@ -3832,6 +3832,19 @@ packages:
             issue: 918
             apk:
               sha256: 8693bd3eb2c2f450524c660146a906995759a730c84e3ebfe1b92ba1226e4964
+  - package: de.astubenbord.paperless_mobile
+    signature:
+      - fingerprint: 55:B1:8F:9C:A4:08:9F:BA:70:C2:E5:7C:E5:09:F2:40:B8:12:94:EF:69:1B:0D:D1:B1:9D:44:1E:57:64:02:A8
+        sources:
+          - name: Direct APK Link
+            issue: 1113
+            apk:
+              sha256: 50f3f7d525c0dc1206b5b833cd3fc62094453e6378fb4e50aac04a9b389fef90
+              link: https://github.com/astubenbord/paperless-mobile/releases/download/v4.5.0/app-arm64-v8a-release.apk
+          - name: F-Droid
+            issue: 1113
+            apk:
+              sha256: 2bce2f2c32e97b89ede5bd0ee95f482a358015e9dd11584a7016b8b822710f2c
   - package: de.danoeh.antennapod
     signature:
       - fingerprint: 17:94:30:56:5A:4A:04:BF:E7:82:74:83:24:30:99:BD:10:87:04:10:80:0C:D7:C4:C7:B4:8D:8D:32:26:DF:55
