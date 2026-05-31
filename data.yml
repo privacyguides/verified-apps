@@ -1097,6 +1097,14 @@ packages:
             issue: 803
             apk:
               sha256: 4f2195ada0d94e7ca34e54bef998c591af09813bc6213084645860de84ac76dc
+  - package: com.dsemu.drastic
+    signature:
+      - fingerprint: 81:FB:B6:04:02:BA:CF:84:DD:55:BD:BA:40:9A:34:CB:F1:E1:01:C3:CB:12:4D:3F:CD:84:51:28:57:B5:BF:80
+        sources:
+          - name: Custom (APKPure)
+            issue: 1013
+            apk:
+              sha256: 14c0ad30b7e692d0ca57fe83f60be885982f98cbf676f9b9ad36ea8b23dbf84b
   - package: com.duolingo
     signature:
       - fingerprint: 12:33:FF:6D:E4:C7:0E:F4:D7:DE:AE:54:AF:15:B1:67:FC:7C:FD:25:39:51:7B:D2:17:58:70:F3:CB:77:17:31
