@@ -1226,6 +1226,16 @@ packages:
             issue: 537
             apk:
               sha256: a815c2763e0c01edb9e945e38902070175eb14675a9235c07e1b2a870bace806
+  - package: com.einnovation.temu
+    signature:
+      - fingerprint: 8A:DE:FE:CE:37:49:DC:F2:3C:3C:EB:3A:8B:BB:C9:A1:D8:80:91:B6:76:30:05:88:91:1B:B5:8B:85:97:0B:AF
+        sources:
+          - name: AppVerifier
+            issue: 1027
+          - name: Google Play
+            issue: 1027
+            apk:
+              sha256: 42e65665cbe26e134a0a0b9ff81756d269f97e566287e03e4f9a46b7281bdf5a
   - package: com.emirates.ek.android
     signature:
       - fingerprint: 04:E4:8B:97:C2:75:7E:BE:EE:D9:4D:8A:1C:5E:F3:F0:05:E5:43:7E:1E:76:5C:5F:7B:61:11:4E:D4:60:11:BE
