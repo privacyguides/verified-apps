@@ -124,8 +124,8 @@ packages: # Required. Contains all verification data.
             issue: # Optional. Number of the GitHub issue where the app was submitted, can be used by users to find additional information about the verification.
             apk: # Optional.
               sha256: # Optional. SHA-256 hash of the APK *file* we verified.
-              link: # Required only for "Direct APK Link" entries. Otherwise will not be present.
-              repo: # Required only for custom F-Droid entries. Otherwise will not be present.
+              link: # Optional. Link to download the APK file we verified.
+              repo: # Optional. Link to F-Droid repo we tested, if applicable (and not F-Droid Official or IzzyOnDroid).
 ```
 
 

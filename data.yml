@@ -5552,6 +5552,12 @@ packages:
             apk:
               sha256: 6251ab38cf7c79b3b8e970686e39e0a41078d6a0ecbce32000f3d4d0b5596245
               repo: https://briarproject.org/fdroid/repo/
+  - package: org.chromium.chrome
+    signature:
+      - fingerprint: 32:A2:FC:74:D7:31:10:58:59:E5:A8:5D:F1:6D:95:F1:02:D8:5B:22:09:9B:80:64:C5:D8:91:5C:61:DA:D1:E0
+        sources:
+          - name: Direct APK Link
+            issue: 879
   - package: org.connectbot
     signature:
       - fingerprint: 08:78:9B:AD:18:CE:8E:C7:B6:63:7B:5E:70:24:5A:76:3A:E5:02:4F:4D:49:AC:85:32:40:47:FB:06:B5:DA:8A
