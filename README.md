@@ -137,7 +137,7 @@ With each key fingerprint are the sources where we found that signing key. The s
 
 We always test submissions against five mainstream app stores. If the submission matches what is found in that app store, we will list it and the `name:` value will always be one of the following:
 
-- `AppVerifier` - Signatures which are already in [AppVerifier's own internal database](https://github.com/rufusprice/AppVerifier/blob/master/app/src/main/kotlin/dev/soupslurpr/appverifier/InternalVerificationInfoDatabase.kt) (which no longer accepts submissions).
+- `AppVerifier` - Signatures which are already in [AppVerifier's own internal database](https://github.com/soupslurpr/AppVerifier/blob/main/app/src/main/kotlin/dev/soupslurpr/appverifier/InternalVerificationInfoDatabase.kt) (which no longer accepts submissions).
 - `Accrescent` - Signatures we checked against the APK file in Accrescent's app store repository.
 - `F-Droid` - Signatures we checked against the APK file in the **official** (default) F-Droid repository.
 - `F-Droid (IzzyOnDroid)` - Signatures we checked against the APK file in the [IzzyOnDroid](https://izzyondroid.org/) F-Droid repository.
