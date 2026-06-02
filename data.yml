@@ -646,6 +646,19 @@ packages:
             issue: 759
             apk:
               sha256: a2b21e1683bd25b922be07bba9ee6c31125408e49d48b416310ff130fe10fe6e
+  - package: com.aryan.reader.oss
+    signature:
+      - fingerprint: 4D:77:F5:57:45:74:9B:04:FC:BE:9A:60:E1:A2:ED:CA:5D:D0:CF:BB:D7:2B:B5:8C:E0:DD:15:6C:B1:B8:14:C9
+        sources:
+          - name: Direct APK Link
+            issue: 1129
+            apk:
+              sha256: f14537b7be516a90bac46dba160a11a6df77ffe013effa90dc3e8d0463d5bb77
+              link: https://github.com/Aryan-Raj3112/episteme/releases/download/v1.0.49-oss/Episteme-oss-v1.0.49-oss-releaseOffline.apk
+          - name: F-Droid
+            issue: 1129
+            apk:
+              sha256: 020f9e2cb13c1321bf99663fe6b5418049fcc1a9819f7c8f8424e72761598655
   - package: com.audiobookshelf.app
     signature:
       - fingerprint: 36:48:29:26:56:96:6C:63:D1:B5:7D:93:EA:00:E3:5C:7D:97:51:1E:1F:5B:06:78:A7:17:DA:E7:73:79:39:56
