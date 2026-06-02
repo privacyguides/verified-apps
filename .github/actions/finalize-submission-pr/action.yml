@@ -1,0 +1,98 @@
+name: Finalize submission PR commit
+description: Replace a submission PR branch with one verified commit containing the PR data.yml tree
+inputs:
+  pullRequestNumber:
+    description: Pull request number
+    required: true
+  headRef:
+    description: Pull request head branch name
+    required: true
+  headSha:
+    description: Pull request head commit SHA (source of data.yml)
+    required: true
+  issueNumber:
+    description: Linked submission issue number
+    required: true
+  commitSubject:
+    description: First line subject for the git commit (typically the PR title)
+    required: true
+  coAuthorTrailer:
+    description: Co-authored-by trailer(s) for the git commit
+    required: true
+outputs:
+  committed:
+    description: Whether a verified commit was pushed to the PR branch
+    value: ${{ steps.verifiedCommit.outputs.commit != '' }}
+  commitSha:
+    description: SHA of the verified commit on the PR branch
+    value: ${{ steps.verifiedCommit.outputs.commit }}
+  skipped:
+    description: Whether finalization was skipped (no data.yml changes)
+    value: ${{ steps.prepare.outputs.skipped }}
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      id: prepare
+      env:
+        PR_NUMBER: ${{ inputs.pullRequestNumber }}
+        HEAD_REF: ${{ inputs.headRef }}
+        HEAD_SHA: ${{ inputs.headSha }}
+        ISSUE: ${{ inputs.issueNumber }}
+        COMMIT_SUBJECT: ${{ inputs.commitSubject }}
+        CO_AUTHOR_TRAILER: ${{ inputs.coAuthorTrailer }}
+      run: |
+        set -euo pipefail
+        source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
+
+        echo "skipped=false" >> "$GITHUB_OUTPUT"
+
+        git fetch origin main
+        git fetch origin "$HEAD_REF"
+
+        if ! git cat-file -e "${HEAD_SHA}:data.yml" 2>/dev/null; then
+          echo "Pull request head does not contain data.yml" >&2
+          exit 1
+        fi
+
+        git show "${HEAD_SHA}:data.yml" > "${RUNNER_TEMP}/submission-data.yml"
+
+        schema=$(yq -r '.schema // 0' "${RUNNER_TEMP}/submission-data.yml")
+        if [[ "$schema" != "3" ]]; then
+          echo "Unsupported data.yml schema in PR (expected 3): ${schema}" >&2
+          exit 1
+        fi
+
+        if git cat-file -e "origin/main:data.yml" 2>/dev/null; then
+          git show "origin/main:data.yml" > "${RUNNER_TEMP}/main-data.yml"
+          if cmp -s "${RUNNER_TEMP}/main-data.yml" "${RUNNER_TEMP}/submission-data.yml"; then
+            echo "PR data.yml matches main; nothing to commit." >&2
+            echo "skipped=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+        fi
+
+        git checkout -B "$HEAD_REF" origin/main
+        cp "${RUNNER_TEMP}/submission-data.yml" data.yml
+        git add data.yml
+
+        msg_file="${GITHUB_WORKSPACE}/.submission-commit-msg"
+        {
+          printf '%s from #%s\n\n' "$COMMIT_SUBJECT" "$ISSUE"
+          printf 'Closes #%s\n' "$ISSUE"
+          if [[ -n "$CO_AUTHOR_TRAILER" ]]; then
+            printf '\n%s\n' "$CO_AUTHOR_TRAILER"
+          fi
+        } > "$msg_file"
+
+    - name: Push verified commit to PR branch
+      if: steps.prepare.outputs.skipped != 'true'
+      id: verifiedCommit
+      uses: iarekylew00t/verified-bot-commit@v2
+      with:
+        ref: ${{ inputs.headRef }}
+        message-file: .submission-commit-msg
+        files: |
+          data.yml
+        auto-stage: false

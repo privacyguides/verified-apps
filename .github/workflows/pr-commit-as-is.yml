@@ -1,0 +1,181 @@
+name: Commit PR As-Is
+
+on:
+  pull_request:
+    types:
+      - labeled
+
+concurrency:
+  group: data-yml-writes
+  cancel-in-progress: false
+
+jobs:
+  finalize:
+    name: Finalize PR commit
+    runs-on: ubuntu-latest
+    if: >-
+      github.event.label.name == 'Commit As-Is' &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      startsWith(github.event.pull_request.head.ref, 'new/')
+
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+
+    outputs:
+      committed: ${{ steps.meta.outputs.committed }}
+      skipped: ${{ steps.meta.outputs.skipped }}
+      commitSha: ${{ steps.meta.outputs.commitSha }}
+      issueNumber: ${{ steps.meta.outputs.issueNumber }}
+
+    steps:
+      - name: Validate pull request
+        id: prMeta
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          set -euo pipefail
+
+          if [[ "${{ github.event.pull_request.state }}" != "open" ]]; then
+            echo "Pull request is not open." >&2
+            exit 1
+          fi
+
+          issue="${HEAD_REF#new/}"
+          if [[ "$issue" == "$HEAD_REF" || ! "$issue" =~ ^[0-9]+$ ]]; then
+            echo "Expected head branch new/<issue>, got: ${HEAD_REF}" >&2
+            exit 1
+          fi
+          echo "issueNumber=$issue" >> "$GITHUB_OUTPUT"
+
+          files=$(gh pr view "$PR_NUMBER" --repo "$GH_REPO" --json files -q '.files[].path')
+          unexpected=$(printf '%s\n' "$files" | grep -vxF 'data.yml' || true)
+          if [[ -n "$unexpected" ]]; then
+            echo "This workflow only supports pull requests that change data.yml." >&2
+            printf '%s\n' "$unexpected" >&2
+            exit 1
+          fi
+
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Check merge-blocking labels
+        uses: ./.github/actions/check-do-not-merge
+        with:
+          issueNumber: ${{ steps.prMeta.outputs.issueNumber }}
+          pullRequestNumber: ${{ github.event.pull_request.number }}
+          actionDescription: Commit As-Is
+
+      - name: Resolve co-authors
+        id: coauthor
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LABELER_LOGIN: ${{ github.event.sender.login }}
+          LABELER_ID: ${{ github.event.sender.id }}
+          SUBMITTER_LOGIN: ${{ github.event.pull_request.user.login }}
+          SUBMITTER_ID: ${{ github.event.pull_request.user.id }}
+        run: |
+          set -euo pipefail
+          source .github/actions/signature-lib/signatures.lib.sh
+          trailer=$(submission_resolve_coauthor_trailers \
+            "$LABELER_LOGIN" "$LABELER_ID" "$SUBMITTER_LOGIN" "$SUBMITTER_ID")
+          gha_write_multiline_output trailer "$trailer"
+
+      - name: Replace PR commit with verified commit
+        id: finalize
+        uses: ./.github/actions/finalize-submission-pr
+        with:
+          pullRequestNumber: ${{ github.event.pull_request.number }}
+          headRef: ${{ github.event.pull_request.head.ref }}
+          headSha: ${{ github.event.pull_request.head.sha }}
+          issueNumber: ${{ steps.prMeta.outputs.issueNumber }}
+          commitSubject: ${{ github.event.pull_request.title }}
+          coAuthorTrailer: ${{ steps.coauthor.outputs.trailer }}
+
+      - name: Export metadata
+        id: meta
+        if: always()
+        run: |
+          echo "committed=${{ steps.finalize.outputs.committed }}" >> "$GITHUB_OUTPUT"
+          echo "skipped=${{ steps.finalize.outputs.skipped }}" >> "$GITHUB_OUTPUT"
+          echo "commitSha=${{ steps.finalize.outputs.commitSha }}" >> "$GITHUB_OUTPUT"
+          echo "issueNumber=${{ steps.prMeta.outputs.issueNumber }}" >> "$GITHUB_OUTPUT"
+
+      - name: Comment when skipped
+        if: steps.meta.outputs.skipped == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          gh pr comment "$PR_NUMBER" --repo "$GH_REPO" \
+            --body "Could not commit PR as-is: \`data.yml\` on this branch already matches \`main\`."
+
+  finalizeArtifact:
+    name: Finalize PR (artifact)
+    needs: finalize
+    if: always() && needs.finalize.outputs.committed == 'true'
+    permissions:
+      contents: read
+    uses: ./.github/workflows/create-artifact.yml
+    with:
+      ref: ${{ needs.finalize.outputs.commitSha }}
+
+  finalizeAttest:
+    name: Finalize PR (attest)
+    needs: finalizeArtifact
+    if: always() && needs.finalizeArtifact.result == 'success'
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+    uses: privacyguides/.github/.github/workflows/sign-artifact.yml@5c41b37a937aab5e50262f3ab672fc9b9438dbf9
+    with:
+      artifact-name: database
+      artifact-path: data.yml
+
+  merge:
+    name: Merge attested PR
+    runs-on: ubuntu-latest
+    needs: [finalize, finalizeAttest]
+    if: >-
+      always() &&
+      needs.finalize.outputs.committed == 'true' &&
+      needs.finalizeAttest.result == 'success'
+
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+
+    steps:
+      - name: Merge pull request
+        id: merge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          COMMIT_SHA: ${{ needs.finalize.outputs.commitSha }}
+          ISSUE: ${{ needs.finalize.outputs.issueNumber }}
+        run: |
+          set -euo pipefail
+          gh pr merge "$PR_NUMBER" --repo "$GH_REPO" --merge --admin
+          gh pr comment "$PR_NUMBER" --repo "$GH_REPO" \
+            --body "Merged with verified commit \`${COMMIT_SHA}\` (attested \`data.yml\`)."
+          gh issue comment "$ISSUE" --repo "$GH_REPO" \
+            --body "Merged submission PR #${PR_NUMBER} to \`main\` with verified commit \`${COMMIT_SHA}\`."
+
+      - name: Remove Commit As-Is label
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: gh pr edit "$PR_NUMBER" --repo "$GH_REPO" --remove-label "Commit As-Is" || true
