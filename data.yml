@@ -2010,6 +2010,15 @@ packages:
             issue: 677
             apk:
               sha256: 8cc65dcaf4c1b82bfb9afd3e29194ec27563bdcc9533787381e70d9710d1f945
+  - package: com.jgeek00.adguard_home_manager
+    signature:
+      - fingerprint: 6E:60:C8:16:4F:7F:32:2B:93:B4:7D:1E:F2:86:AF:F9:B8:D1:64:24:DB:5E:18:B8:69:95:D3:76:87:06:29:26
+        sources:
+          - name: Direct APK Link
+            issue: 1131
+            apk:
+              sha256: 79a0f5c7383f463b33a5f3c5fedfeb06f3733abcb74b3816917594a3771487ae
+              link: https://github.com/JGeek00/adguard-home-manager/releases/download/2.22.0_(154)/AdGuardHome_2.22.0_Android.apk
   - package: com.jmstudios.redmoon
     signature:
       - fingerprint: 66:85:06:F3:98:AF:7C:EF:CC:AB:8C:21:C2:F1:40:9A:9D:00:51:CD:2D:9D:4A:B3:22:19:6B:67:EE:5B:34:47
