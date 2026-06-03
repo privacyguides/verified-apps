@@ -140,12 +140,55 @@ signatures_parse_apksigner_certificate_digests() {
   printf '%s\n' "$verification" | awk '
     /^Source Stamp Signer/ { next }
     /public key SHA-256 digest/ { next }
+    /does not contain a valid lineage/ { next }
+    /^DOES NOT VERIFY/ { next }
+    /^ERROR:/ { next }
     /certificate SHA-256 digest:/ {
       sub(/^.*certificate SHA-256 digest: /, "")
       gsub(/[[:space:]]+$/, "")
+      if ($0 != "") {
+        print
+      }
+      next
+    }
+    /^([0-9A-Fa-f]{2}:){31}[0-9A-Fa-f]{2}$/ {
       print
     }
   '
+}
+
+# Run apksigner verify and lineage; store output in caller vars (pass two variable names).
+# Internal capture names must differ from typical caller names (verify_out / lineage_out) so
+# printf -v does not assign into a function-local shadow of the caller variable.
+signatures_gather_apksigner() {
+  local apk_path="$1"
+  local sdk_root="${2:-${ANDROID_SDK_ROOT:-${ANDROID_HOME:-}}}"
+  local verify_name="$3"
+  local lineage_name="$4"
+  local apksigner _captured_verify _captured_lineage
+
+  [[ -f "$apk_path" ]] || return 1
+  apksigner=$(signatures_find_android_sdk_tool apksigner "$sdk_root") || return 1
+
+  # Active signing certificates on the APK (including rotation targets by SDK range).
+  _captured_verify=$("$apksigner" verify --print-certs "$apk_path" 2>&1) || true
+
+  # Full rotation lineage when present; -v prints every certificate in the chain.
+  # APKs without lineage (e.g. com.google.android.gsf) print an error here — verify output still applies.
+  _captured_lineage=$("$apksigner" lineage --in "$apk_path" --print-certs -v 2>&1) || true
+
+  printf -v "$verify_name" '%s' "$_captured_verify"
+  printf -v "$lineage_name" '%s' "$_captured_lineage"
+}
+
+# Merge verify + lineage digests (hex) from apksigner output; one entry per certificate.
+signatures_digests_from_apksigner_outputs() {
+  local verify_out="$1"
+  local lineage_out="$2"
+  {
+    signatures_parse_apksigner_certificate_digests "$verify_out"
+    signatures_parse_apksigner_certificate_digests "$lineage_out"
+  } | awk 'NF' | sort -u
 }
 
 # Parse SHA-256 certificate fingerprints from keytool -printcert -jarfile output.
@@ -202,54 +245,62 @@ signatures_detect_signer_kind_from_verification() {
   ')
 }
 
+# Build newline-separated colon fingerprints from apksigner output (and optional keytool).
+signatures_colon_digests_from_outputs() {
+  local apk_path="${1:-}"
+  local sdk_root="${2:-${ANDROID_SDK_ROOT:-${ANDROID_HOME:-}}}"
+  local verify_out="$3"
+  local lineage_out="$4"
+  local apksigner_override="${5:-}"
+  local keytool keytool_out fp sha256 colon_fps
+
+  colon_fps=""
+  while IFS= read -r sha256; do
+    [[ -z "$sha256" ]] && continue
+    fp=$(signatures_sha256_hex_to_colon_fp "$sha256") || continue
+    colon_fps+="${fp}"$'\n'
+  done < <(signatures_digests_from_apksigner_outputs "$verify_out" "$lineage_out")
+
+  if [[ -n "$apk_path" && -f "$apk_path" ]]; then
+    keytool=$(signatures_find_android_sdk_tool keytool "$sdk_root" || command -v keytool 2>/dev/null || true)
+    if [[ -n "$keytool" ]]; then
+      keytool_out=$("$keytool" -printcert -jarfile "$apk_path" 2>&1) || true
+      while IFS= read -r sha256; do
+        [[ -z "$sha256" ]] && continue
+        fp=$(signatures_sha256_hex_to_colon_fp "$sha256") || continue
+        colon_fps+="${fp}"$'\n'
+      done < <(signatures_parse_keytool_certificate_digests "$keytool_out" | sort -u)
+    fi
+  fi
+
+  signatures_format_block "$colon_fps" || return 1
+}
+
 # Collect every app signing certificate fingerprint from an APK (verify + lineage + JAR).
 signatures_extract_from_apk() {
   local apk_path="$1"
   local sdk_root="${2:-${ANDROID_SDK_ROOT:-${ANDROID_HOME:-}}}"
   local apksigner_override="${3:-}"
-  local apksigner keytool verify_out lineage_out keytool_out digest_raw fp formatted
+  local verify_out="${4:-}"
+  local lineage_out="${5:-}"
+  local digest_raw formatted
 
-  if [[ -n "$apksigner_override" ]]; then
-    apksigner="$apksigner_override"
-  else
-    apksigner=$(signatures_find_android_sdk_tool apksigner "$sdk_root") || {
-      echo "apksigner not found under ${sdk_root:-}/build-tools" >&2
+  if [[ -z "$verify_out" ]]; then
+    if [[ -n "$apksigner_override" ]]; then
+      verify_out=$("$apksigner_override" verify --print-certs "$apk_path" 2>&1) || true
+      lineage_out=$("$apksigner_override" lineage --in "$apk_path" --print-certs -v 2>&1) || true
+    elif ! signatures_gather_apksigner "$apk_path" "$sdk_root" verify_out lineage_out; then
       return 1
-    }
-  fi
-
-  verify_out=$("$apksigner" verify --verbose --print-certs "$apk_path" 2>&1) || true
-  lineage_out=$("$apksigner" lineage --in "$apk_path" --print-certs 2>&1) || true
-
-  digest_raw=""
-  while IFS= read -r sha256; do
-    [[ -z "$sha256" ]] && continue
-    if fp=$(signatures_sha256_hex_to_colon_fp "$sha256"); then
-      digest_raw+="${fp}"$'\n'
     fi
-  done < <(
-    {
-      signatures_parse_apksigner_certificate_digests "$verify_out"
-      signatures_parse_apksigner_certificate_digests "$lineage_out"
-    } | sort -u
-  )
-
-  keytool=$(signatures_find_android_sdk_tool keytool "$sdk_root" || command -v keytool 2>/dev/null || true)
-  if [[ -n "$keytool" ]]; then
-    keytool_out=$("$keytool" -printcert -jarfile "$apk_path" 2>&1) || true
-    while IFS= read -r sha256; do
-      [[ -z "$sha256" ]] && continue
-      if fp=$(signatures_sha256_hex_to_colon_fp "$sha256"); then
-        digest_raw+="${fp}"$'\n'
-      fi
-    done < <(signatures_parse_keytool_certificate_digests "$keytool_out" | sort -u)
   fi
 
-  formatted=$(signatures_format_block "$digest_raw") || {
+  if ! formatted=$(signatures_colon_digests_from_outputs \
+    "$apk_path" "$sdk_root" "$verify_out" "$lineage_out" "$apksigner_override"); then
     echo "Failed to extract signing certificate SHA-256 digest(s) from ${apk_path}" >&2
-    printf '%s\n' "$verify_out" "$lineage_out" >&2
+    printf '%s\n' "--- apksigner verify --print-certs ---" "$verify_out" >&2
+    printf '%s\n' "--- apksigner lineage --print-certs -v ---" "$lineage_out" >&2
     return 1
-  }
+  fi
 
   printf '%s' "$formatted"
 }

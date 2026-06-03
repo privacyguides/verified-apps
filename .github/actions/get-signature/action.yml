@@ -46,16 +46,16 @@ runs:
         echo "apkPackageName=$apk_package" >> "$GITHUB_OUTPUT"
         echo "APK package: $apk_package" >&2
 
-        apksigner=$(signatures_find_android_sdk_tool apksigner "$sdk_root") || {
+        verify_out=""
+        lineage_out=""
+        if ! signatures_gather_apksigner "$APK_PATH" "$sdk_root" verify_out lineage_out; then
           echo "apksigner not found under $sdk_root/build-tools" >&2
           exit 1
-        }
-
-        verify_out=$("$apksigner" verify --verbose --print-certs "$APK_PATH" 2>&1) || true
-        lineage_out=$("$apksigner" lineage --in "$APK_PATH" --print-certs 2>&1) || true
+        fi
         combined_verification="${verify_out}"$'\n'"${lineage_out}"
 
-        formatted_block=$(signatures_extract_from_apk "$APK_PATH" "$sdk_root") || exit 1
+        formatted_block=$(signatures_extract_from_apk \
+          "$APK_PATH" "$sdk_root" "" "$verify_out" "$lineage_out") || exit 1
         cert_dn=$(signatures_first_certificate_dn_from_verification "$combined_verification")
         signer_kind=$(signatures_detect_signer_kind_from_verification "$combined_verification")
 
