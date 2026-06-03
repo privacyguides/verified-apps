@@ -6,16 +6,33 @@ on:
       - opened
       - closed
       - reopened
+  workflow_call:
+    inputs:
+      issueNumber:
+        description: GitHub issue number linked to the Codeberg issue
+        required: true
+        type: string
+      issueAction:
+        description: GitHub issue action to mirror (opened, closed, or reopened)
+        required: true
+        type: string
+      issueBody:
+        description: GitHub issue body (fetched when empty)
+        required: false
+        type: string
+        default: ""
 
 concurrency:
-  group: codeberg-issue-state-${{ github.event.issue.number }}
+  group: codeberg-issue-state-${{ github.event_name == 'workflow_call' && inputs.issueNumber || github.event.issue.number }}
   cancel-in-progress: true
 
 jobs:
   sync:
     name: Sync open/close to Codeberg
     runs-on: ubuntu-latest
-    if: contains(github.event.issue.labels.*.name, 'Import Codeberg')
+    if: >-
+      github.event_name == 'workflow_call' ||
+      contains(github.event.issue.labels.*.name, 'Import Codeberg')
 
     permissions:
       issues: read
@@ -32,8 +49,11 @@ jobs:
       - name: Sync Codeberg issue state
         env:
           CB_SYNC_TOKEN: ${{ secrets.CB_SYNC_TOKEN }}
-          ISSUE_BODY: ${{ github.event.issue.body }}
-          ISSUE_ACTION: ${{ github.event.action }}
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          ISSUE_NUMBER: ${{ github.event_name == 'workflow_call' && inputs.issueNumber || github.event.issue.number }}
+          ISSUE_BODY: ${{ github.event_name == 'workflow_call' && inputs.issueBody || github.event.issue.body }}
+          ISSUE_ACTION: ${{ github.event_name == 'workflow_call' && inputs.issueAction || github.event.action }}
         run: |
           set -euo pipefail
           source .github/actions/signature-lib/signatures.lib.sh
@@ -43,7 +63,12 @@ jobs:
             exit 1
           fi
 
+          issue_body="$ISSUE_BODY"
+          if [[ -z "$issue_body" ]]; then
+            issue_body=$(gh issue view "$ISSUE_NUMBER" --repo "$GH_REPO" --json body -q .body)
+          fi
+
           signatures_sync_codeberg_issue_state \
             "$CB_SYNC_TOKEN" \
-            "$ISSUE_BODY" \
+            "$issue_body" \
             "$ISSUE_ACTION"

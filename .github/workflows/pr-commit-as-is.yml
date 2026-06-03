@@ -252,3 +252,44 @@ jobs:
           GH_REPO: ${{ github.repository }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: gh pr edit "$PR_NUMBER" --repo "$GH_REPO" --remove-label "Commit As-Is" || true
+
+  checkImportCodeberg:
+    name: Check Import Codeberg label
+    needs: [prepare, merge]
+    if: needs.merge.result == 'success'
+    runs-on: ubuntu-latest
+    outputs:
+      importFromCodeberg: ${{ steps.check.outputs.import }}
+    permissions:
+      issues: read
+    steps:
+      - name: Detect Import Codeberg label
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          ISSUE: ${{ needs.prepare.outputs.issueNumber }}
+        run: |
+          set -euo pipefail
+          if gh issue view "$ISSUE" --repo "$GH_REPO" --json labels --jq '.labels[].name' | grep -qxF 'Import Codeberg'; then
+            echo "import=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "import=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  syncMirrorsAfterMerge:
+    name: Sync mirrors (commit as-is PR)
+    needs: merge
+    if: needs.merge.result == 'success'
+    uses: ./.github/workflows/sync-repo-to-mirrors.yml
+    secrets: inherit
+
+  syncCodebergAfterMerge:
+    name: Sync Codeberg issue state (commit as-is PR)
+    needs: [prepare, checkImportCodeberg]
+    if: needs.checkImportCodeberg.outputs.importFromCodeberg == 'true'
+    uses: ./.github/workflows/sync-codeberg-issue-state.yml
+    secrets: inherit
+    with:
+      issueNumber: ${{ needs.prepare.outputs.issueNumber }}
+      issueAction: closed

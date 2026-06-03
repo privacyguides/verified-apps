@@ -1756,3 +1756,23 @@ jobs:
           body: "Committed `${{ needs.parse.outputs.packageName }}` to `data.yml` on `main` as submitted (attested before push). Commit: ${{ steps.push_meta.outputs.commitSha }}"
           issueBody: ${{ github.event.issue.body }}
           codebergToken: ${{ secrets.CB_SYNC_TOKEN }}
+
+  syncMirrorsAfterCommitAsIs:
+    name: Sync mirrors (commit as-is)
+    needs: commitAsIsPush
+    if: needs.commitAsIsPush.outputs.committed == 'true'
+    uses: ./.github/workflows/sync-repo-to-mirrors.yml
+    secrets: inherit
+
+  syncCodebergAfterCommitAsIs:
+    name: Sync Codeberg issue state (commit as-is)
+    needs: commitAsIsPush
+    if: |
+      needs.commitAsIsPush.outputs.committed == 'true' &&
+      contains(github.event.issue.labels.*.name, 'Import Codeberg')
+    uses: ./.github/workflows/sync-codeberg-issue-state.yml
+    secrets: inherit
+    with:
+      issueNumber: ${{ github.event.issue.number }}
+      issueBody: ${{ github.event.issue.body }}
+      issueAction: closed
