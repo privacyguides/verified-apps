@@ -84,9 +84,6 @@ Provenance attestations guarantee the file you have was built from a well-define
 
 We *especially* recommend checking this if you are incorporating this data in your own app, to strenghten your own supply-chain security when grabbing data from an upstream source (us). One example of how to do this in your GitHub workflows can be found here: <https://github.com/RoundSalmon4/AppVerifierBG/pull/12>
 
-> [!NOTE]
-> If you download the latest copy of `data.yml` from the main branch immediately after it is updated, and perform a verification on that file, you may see a failed verification as the attestation process occurs immediately *after* the new data is committed. If this happens, please wait a few minutes and try again. Alternatively, only rely on published releases, as those attestations will always be immediately valid.
-
 #### Verifying data.yml in main branch
 
 If you download the latest copy of `data.yml` directly from this repo, you can verify its provenance using the `gh` command line tool:

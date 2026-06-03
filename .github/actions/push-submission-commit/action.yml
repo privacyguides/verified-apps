@@ -1,0 +1,32 @@
+name: Push prepared submission commit
+description: Push a staged data.yml with a prepared commit message via verified-bot-commit
+inputs:
+  ref:
+    description: Branch or ref to push to
+    required: true
+  messageFile:
+    description: Path to the prepared commit message file
+    required: false
+    default: .submission-commit-msg
+outputs:
+  commitSha:
+    description: SHA of the verified commit
+    value: ${{ steps.verifiedCommit.outputs.commit }}
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: |
+        set -euo pipefail
+        git add data.yml
+
+    - name: Push verified commit
+      id: verifiedCommit
+      uses: iarekylew00t/verified-bot-commit@v2
+      with:
+        ref: ${{ inputs.ref }}
+        message-file: ${{ inputs.messageFile }}
+        files: |
+          data.yml
+        auto-stage: false

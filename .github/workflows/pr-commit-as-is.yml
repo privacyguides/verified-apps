@@ -8,10 +8,11 @@ on:
 concurrency:
   group: data-yml-writes
   cancel-in-progress: false
+  queue: max
 
 jobs:
-  finalize:
-    name: Finalize PR commit
+  prepare:
+    name: Finalize PR (prepare)
     runs-on: ubuntu-latest
     if: >-
       github.event.label.name == 'Commit As-Is' &&
@@ -22,12 +23,11 @@ jobs:
       contents: write
       pull-requests: write
       issues: write
-      id-token: write
 
     outputs:
-      committed: ${{ steps.meta.outputs.committed }}
+      prepared: ${{ steps.meta.outputs.prepared }}
       skipped: ${{ steps.meta.outputs.skipped }}
-      commitSha: ${{ steps.meta.outputs.commitSha }}
+      headRef: ${{ steps.meta.outputs.headRef }}
       issueNumber: ${{ steps.meta.outputs.issueNumber }}
 
     steps:
@@ -89,10 +89,11 @@ jobs:
             "$LABELER_LOGIN" "$LABELER_ID" "$SUBMITTER_LOGIN" "$SUBMITTER_ID")
           gha_write_multiline_output trailer "$trailer"
 
-      - name: Replace PR commit with verified commit
+      - name: Prepare submission data.yml
         id: finalize
         uses: ./.github/actions/finalize-submission-pr
         with:
+          pushToBranch: "false"
           pullRequestNumber: ${{ github.event.pull_request.number }}
           headRef: ${{ github.event.pull_request.head.ref }}
           headSha: ${{ github.event.pull_request.head.sha }}
@@ -104,10 +105,24 @@ jobs:
         id: meta
         if: always()
         run: |
-          echo "committed=${{ steps.finalize.outputs.committed }}" >> "$GITHUB_OUTPUT"
+          echo "prepared=${{ steps.finalize.outputs.prepared }}" >> "$GITHUB_OUTPUT"
           echo "skipped=${{ steps.finalize.outputs.skipped }}" >> "$GITHUB_OUTPUT"
-          echo "commitSha=${{ steps.finalize.outputs.commitSha }}" >> "$GITHUB_OUTPUT"
+          echo "headRef=${{ github.event.pull_request.head.ref }}" >> "$GITHUB_OUTPUT"
           echo "issueNumber=${{ steps.prMeta.outputs.issueNumber }}" >> "$GITHUB_OUTPUT"
+
+      - name: Upload data.yml for attestation
+        if: steps.meta.outputs.prepared == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: database
+          path: data.yml
+
+      - name: Upload commit message
+        if: steps.meta.outputs.prepared == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: submission-commit-msg
+          path: .submission-commit-msg
 
       - name: Comment when skipped
         if: steps.meta.outputs.skipped == 'true'
@@ -119,20 +134,10 @@ jobs:
           gh pr comment "$PR_NUMBER" --repo "$GH_REPO" \
             --body "Could not commit PR as-is: \`data.yml\` on this branch already matches \`main\`."
 
-  finalizeArtifact:
-    name: Finalize PR (artifact)
-    needs: finalize
-    if: always() && needs.finalize.outputs.committed == 'true'
-    permissions:
-      contents: read
-    uses: ./.github/workflows/create-artifact.yml
-    with:
-      ref: ${{ needs.finalize.outputs.commitSha }}
-
-  finalizeAttest:
+  attest:
     name: Finalize PR (attest)
-    needs: finalizeArtifact
-    if: always() && needs.finalizeArtifact.result == 'success'
+    needs: prepare
+    if: always() && needs.prepare.outputs.prepared == 'true'
     permissions:
       contents: read
       id-token: write
@@ -142,14 +147,76 @@ jobs:
       artifact-name: database
       artifact-path: data.yml
 
+  push:
+    name: Finalize PR (push)
+    runs-on: ubuntu-latest
+    concurrency:
+      group: data-yml-writes
+      cancel-in-progress: false
+      queue: max
+    needs: [prepare, attest]
+    if: >-
+      always() &&
+      needs.prepare.outputs.prepared == 'true' &&
+      needs.attest.result == 'success'
+
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+
+    outputs:
+      commitSha: ${{ steps.push_meta.outputs.commitSha }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Prepare PR branch from main
+        env:
+          HEAD_REF: ${{ needs.prepare.outputs.headRef }}
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B "$HEAD_REF" origin/main
+
+      - name: Download attested data.yml
+        uses: actions/download-artifact@v8
+        with:
+          name: database
+          path: .
+
+      - name: Download commit message
+        uses: actions/download-artifact@v8
+        with:
+          name: submission-commit-msg
+          path: .
+
+      - name: Push verified commit to PR branch
+        id: verified
+        uses: ./.github/actions/push-submission-commit
+        with:
+          ref: ${{ needs.prepare.outputs.headRef }}
+
+      - name: Export push metadata
+        id: push_meta
+        if: always()
+        run: |
+          echo "commitSha=${{ steps.verified.outputs.commitSha }}" >> "$GITHUB_OUTPUT"
+
   merge:
     name: Merge attested PR
     runs-on: ubuntu-latest
-    needs: [finalize, finalizeAttest]
+    needs: [prepare, attest, push]
     if: >-
       always() &&
-      needs.finalize.outputs.committed == 'true' &&
-      needs.finalizeAttest.result == 'success'
+      needs.prepare.outputs.prepared == 'true' &&
+      needs.attest.result == 'success' &&
+      needs.push.outputs.commitSha != ''
 
     permissions:
       contents: write
@@ -163,13 +230,13 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
-          COMMIT_SHA: ${{ needs.finalize.outputs.commitSha }}
-          ISSUE: ${{ needs.finalize.outputs.issueNumber }}
+          COMMIT_SHA: ${{ needs.push.outputs.commitSha }}
+          ISSUE: ${{ needs.prepare.outputs.issueNumber }}
         run: |
           set -euo pipefail
           gh pr merge "$PR_NUMBER" --repo "$GH_REPO" --merge --admin
           gh pr comment "$PR_NUMBER" --repo "$GH_REPO" \
-            --body "Merged with verified commit \`${COMMIT_SHA}\` (attested \`data.yml\`)."
+            --body "Merged with verified commit \`${COMMIT_SHA}\` (attested before push)."
           gh issue comment "$ISSUE" --repo "$GH_REPO" \
             --body "Merged submission PR #${PR_NUMBER} to \`main\` with verified commit \`${COMMIT_SHA}\`."
 

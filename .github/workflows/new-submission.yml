@@ -1542,8 +1542,8 @@ jobs:
           gh issue comment "$NUMBER" --repo "$GH_REPO" \
             --body "Could not open a PR: no store signatures matched the submission. Add matching store entries manually, or ensure verification was run with the **Run Checks** label first."
 
-  commitAsIs:
-    name: Commit As-Is
+  commitAsIsPrepare:
+    name: Commit As-Is (prepare)
     runs-on: ubuntu-latest
     concurrency:
       group: data-yml-writes
@@ -1558,14 +1558,12 @@ jobs:
       github.event.label.name == 'Commit As-Is'
 
     permissions:
-      id-token: write
       contents: write
       issues: write
 
     outputs:
-      committed: ${{ steps.commit_meta.outputs.committed }}
-      skipped: ${{ steps.commit_meta.outputs.skipped }}
-      commitSha: ${{ steps.commit_meta.outputs.commitSha }}
+      prepared: ${{ steps.prepare_meta.outputs.prepared }}
+      skipped: ${{ steps.prepare_meta.outputs.skipped }}
 
     steps:
       - name: Validate
@@ -1614,10 +1612,11 @@ jobs:
             "$LABELER_LOGIN" "$LABELER_ID" "$SUBMITTER_LOGIN" "$SUBMITTER_ID")
           gha_write_multiline_output trailer "$trailer"
 
-      - name: Commit submission to main
+      - name: Prepare submission data.yml
         id: commit
         uses: ./.github/actions/commit-submission
         with:
+          pushToMain: "false"
           packageName: ${{ needs.parse.outputs.packageName }}
           packageSignature: ${{ needs.parse.outputs.packageSignature }}
           issueNumber: ${{ github.event.issue.number }}
@@ -1637,28 +1636,29 @@ jobs:
           gplayApkSha256: ${{ needs.gplay.outputs.apkSha256 }}
           apkpureApkSha256: ${{ needs.apkpure.outputs.apkSha256 }}
 
-      - name: Export commit metadata
-        id: commit_meta
+      - name: Export prepare metadata
+        id: prepare_meta
         if: always()
         run: |
-          echo "committed=${{ steps.commit.outputs.committed }}" >> "$GITHUB_OUTPUT"
-          echo "commitSha=${{ steps.commit.outputs.commitSha }}" >> "$GITHUB_OUTPUT"
+          echo "prepared=${{ steps.commit.outputs.prepared }}" >> "$GITHUB_OUTPUT"
           echo "skipped=${{ steps.commit.outputs.skipped }}" >> "$GITHUB_OUTPUT"
 
-      - name: Comment on success
-        if: steps.commit_meta.outputs.committed == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_REPO: ${{ github.repository }}
-          NUMBER: ${{ github.event.issue.number }}
-          PACKAGE: ${{ needs.parse.outputs.packageName }}
-          COMMIT_SHA: ${{ steps.commit_meta.outputs.commitSha }}
-        run: |
-          gh issue comment "$NUMBER" --repo "$GH_REPO" \
-            --body "Committed \`${PACKAGE}\` to \`data.yml\` on \`main\` as submitted (store-matched signatures only). Commit: \`${COMMIT_SHA}\`"
+      - name: Upload data.yml for attestation
+        if: steps.prepare_meta.outputs.prepared == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: database
+          path: data.yml
+
+      - name: Upload commit message
+        if: steps.prepare_meta.outputs.prepared == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: submission-commit-msg
+          path: .submission-commit-msg
 
       - name: Report skipped commit
-        if: steps.commit_meta.outputs.skipped == 'true'
+        if: steps.prepare_meta.outputs.skipped == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
@@ -1667,20 +1667,10 @@ jobs:
           gh issue comment "$NUMBER" --repo "$GH_REPO" \
             --body "Could not commit as-is: no store signatures matched the submission. Run **Run Checks** first, or use **Create PR** to add entries manually."
 
-  commitAsIsArtifact:
-    name: Commit As-Is (artifact)
-    needs: commitAsIs
-    if: always() && needs.commitAsIs.outputs.committed == 'true'
-    permissions:
-      contents: read
-    uses: privacyguides/verified-apps/.github/workflows/create-artifact.yml@fb4058746d264f7ef5ba1f16dc40c499aeaf5a4d
-    with:
-      ref: ${{ needs.commitAsIs.outputs.commitSha }}
-
   commitAsIsAttest:
     name: Commit As-Is (attest)
-    needs: commitAsIsArtifact
-    if: always() && needs.commitAsIsArtifact.result == 'success'
+    needs: commitAsIsPrepare
+    if: always() && needs.commitAsIsPrepare.outputs.prepared == 'true'
     permissions:
       contents: read
       id-token: write
@@ -1689,3 +1679,74 @@ jobs:
     with:
       artifact-name: database
       artifact-path: data.yml
+
+  commitAsIsPush:
+    name: Commit As-Is (push)
+    runs-on: ubuntu-latest
+    concurrency:
+      group: data-yml-writes
+      cancel-in-progress: false
+      queue: max
+    needs: [commitAsIsPrepare, commitAsIsAttest, parse]
+    if: |
+      always() &&
+      needs.commitAsIsPrepare.outputs.prepared == 'true' &&
+      needs.commitAsIsAttest.result == 'success'
+
+    permissions:
+      id-token: write
+      contents: write
+      issues: write
+
+    outputs:
+      committed: ${{ steps.push_meta.outputs.committed }}
+      commitSha: ${{ steps.push_meta.outputs.commitSha }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main
+
+      - name: Download attested data.yml
+        uses: actions/download-artifact@v8
+        with:
+          name: database
+          path: .
+
+      - name: Download commit message
+        uses: actions/download-artifact@v8
+        with:
+          name: submission-commit-msg
+          path: .
+
+      - name: Push verified commit to main
+        id: push
+        uses: ./.github/actions/push-submission-commit
+        with:
+          ref: main
+
+      - name: Export push metadata
+        id: push_meta
+        if: always()
+        run: |
+          if [[ -n "${{ steps.push.outputs.commitSha }}" ]]; then
+            echo "committed=true" >> "$GITHUB_OUTPUT"
+            echo "commitSha=${{ steps.push.outputs.commitSha }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "committed=false" >> "$GITHUB_OUTPUT"
+            echo "commitSha=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Comment on success
+        if: steps.push_meta.outputs.committed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+          PACKAGE: ${{ needs.parse.outputs.packageName }}
+          COMMIT_SHA: ${{ steps.push_meta.outputs.commitSha }}
+        run: |
+          gh issue comment "$NUMBER" --repo "$GH_REPO" \
+            --body "Committed \`${PACKAGE}\` to \`data.yml\` on \`main\` as submitted (attested before push). Commit: \`${COMMIT_SHA}\`"

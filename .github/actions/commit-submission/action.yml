@@ -68,15 +68,22 @@ inputs:
     description: SHA-256 of the APKPure APK (when applicable)
     required: false
     default: ""
+  pushToMain:
+    description: When false, prepare data.yml and commit message only (no push)
+    required: false
+    default: "true"
 outputs:
+  prepared:
+    description: Whether data.yml was prepared for commit
+    value: ${{ steps.prepare.outputs.prepared }}
   committed:
-    description: Whether data.yml was updated on main
-    value: ${{ steps.prepare.outputs.committed }}
+    description: Whether data.yml was pushed to main
+    value: ${{ steps.verifiedCommit.outputs.commit != '' }}
   skipped:
     description: Whether commit was skipped (no matching store signatures)
     value: ${{ steps.prepare.outputs.skipped }}
   commitSha:
-    description: SHA of the verified commit on main (empty when skipped)
+    description: SHA of the verified commit on main (empty when not pushed)
     value: ${{ steps.verifiedCommit.outputs.commit }}
 
 runs:
@@ -102,11 +109,12 @@ runs:
         GPLAY_APK_SHA256: ${{ inputs.gplayApkSha256 }}
         APKPURE_SIG: ${{ inputs.apkpureSignature }}
         APKPURE_APK_SHA256: ${{ inputs.apkpureApkSha256 }}
+        PUSH_TO_MAIN: ${{ inputs.pushToMain }}
       run: |
         set -euo pipefail
         source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
 
-        echo "committed=false" >> "$GITHUB_OUTPUT"
+        echo "prepared=false" >> "$GITHUB_OUTPUT"
         echo "skipped=false" >> "$GITHUB_OUTPUT"
 
         entry="$(mktemp)"
@@ -130,10 +138,10 @@ runs:
         } > "$msg_file"
 
         git add data.yml
-        echo "committed=true" >> "$GITHUB_OUTPUT"
+        echo "prepared=true" >> "$GITHUB_OUTPUT"
 
     - name: Push verified commit to main
-      if: steps.prepare.outputs.committed == 'true'
+      if: steps.prepare.outputs.prepared == 'true' && inputs.pushToMain == 'true'
       id: verifiedCommit
       uses: iarekylew00t/verified-bot-commit@v2
       with:

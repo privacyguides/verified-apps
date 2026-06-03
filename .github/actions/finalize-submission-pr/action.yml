@@ -19,7 +19,14 @@ inputs:
   coAuthorTrailer:
     description: Co-authored-by trailer(s) for the git commit
     required: true
+  pushToBranch:
+    description: When false, prepare data.yml and commit message only (no push)
+    required: false
+    default: "true"
 outputs:
+  prepared:
+    description: Whether data.yml was prepared for commit
+    value: ${{ steps.prepare.outputs.prepared }}
   committed:
     description: Whether a verified commit was pushed to the PR branch
     value: ${{ steps.verifiedCommit.outputs.commit != '' }}
@@ -29,6 +36,9 @@ outputs:
   skipped:
     description: Whether finalization was skipped (no data.yml changes)
     value: ${{ steps.prepare.outputs.skipped }}
+  headRef:
+    description: Pull request head branch name
+    value: ${{ inputs.headRef }}
 
 runs:
   using: composite
@@ -47,6 +57,7 @@ runs:
         source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
 
         echo "skipped=false" >> "$GITHUB_OUTPUT"
+        echo "prepared=false" >> "$GITHUB_OUTPUT"
 
         git fetch origin main
         git fetch origin "$HEAD_REF"
@@ -86,8 +97,10 @@ runs:
           fi
         } > "$msg_file"
 
+        echo "prepared=true" >> "$GITHUB_OUTPUT"
+
     - name: Push verified commit to PR branch
-      if: steps.prepare.outputs.skipped != 'true'
+      if: steps.prepare.outputs.prepared == 'true' && inputs.pushToBranch == 'true'
       id: verifiedCommit
       uses: iarekylew00t/verified-bot-commit@v2
       with:
