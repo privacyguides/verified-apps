@@ -73,6 +73,7 @@ jobs:
           issueNumber: ${{ steps.prMeta.outputs.issueNumber }}
           pullRequestNumber: ${{ github.event.pull_request.number }}
           actionDescription: Commit As-Is
+          codebergToken: ${{ secrets.CB_SYNC_TOKEN }}
 
       - name: Resolve co-authors
         id: coauthor
@@ -232,14 +233,18 @@ jobs:
           GH_REPO: ${{ github.repository }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
           COMMIT_SHA: ${{ needs.push.outputs.commitSha }}
-          ISSUE: ${{ needs.prepare.outputs.issueNumber }}
         run: |
           set -euo pipefail
           gh pr merge "$PR_NUMBER" --repo "$GH_REPO" --merge --admin
           gh pr comment "$PR_NUMBER" --repo "$GH_REPO" \
             --body "Merged with verified commit \`${COMMIT_SHA}\` (attested before push)."
-          gh issue comment "$ISSUE" --repo "$GH_REPO" \
-            --body "Merged submission PR GH-${PR_NUMBER} to \`main\` with verified commit \`${COMMIT_SHA}\`."
+
+      - name: Comment on linked issue
+        uses: ./.github/actions/issue-comment
+        with:
+          issueNumber: ${{ needs.prepare.outputs.issueNumber }}
+          body: "Merged submission PR GH-${{ github.event.pull_request.number }} to `main` with verified commit ${{ needs.push.outputs.commitSha }}."
+          codebergToken: ${{ secrets.CB_SYNC_TOKEN }}
 
       - name: Remove Commit As-Is label
         env:

@@ -112,6 +112,8 @@ jobs:
           duplicateOf: ${{ needs.parse.outputs.duplicateOf }}
           currentIssue: ${{ github.event.issue.number }}
           currentAuthor: ${{ github.event.issue.user.login }}
+          issueBody: ${{ github.event.issue.body }}
+          codebergToken: ${{ secrets.CB_SYNC_TOKEN }}
 
   labelUserSpecifiedDownload:
     name: Label User-Specified Download
@@ -1247,12 +1249,12 @@ jobs:
           } | tee -a "$issue_body" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Comment on Issue
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_REPO: ${{ github.repository }}
-          NUMBER: ${{ github.event.issue.number }}
-        run: |
-          gh issue comment "$NUMBER" --body-file ${RUNNER_TEMP}/issueBody.md
+        uses: ./.github/actions/issue-comment
+        with:
+          issueNumber: ${{ github.event.issue.number }}
+          bodyFile: ${{ runner.temp }}/issueBody.md
+          issueBody: ${{ github.event.issue.body }}
+          codebergToken: ${{ secrets.CB_SYNC_TOKEN }}
 
       - name: Label issue by matching sources
         env:
@@ -1358,6 +1360,8 @@ jobs:
         with:
           issueNumber: ${{ github.event.issue.number }}
           actionDescription: Create PR
+          issueBody: ${{ github.event.issue.body }}
+          codebergToken: ${{ secrets.CB_SYNC_TOKEN }}
 
       - name: Check for existing PR
         id: existingPr
@@ -1372,14 +1376,12 @@ jobs:
 
       - name: Comment if PR already exists
         if: steps.existingPr.outputs.url != ''
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_REPO: ${{ github.repository }}
-          NUMBER: ${{ github.event.issue.number }}
-          PR_URL: ${{ steps.existingPr.outputs.url }}
-        run: |
-          gh issue comment "$NUMBER" --repo "$GH_REPO" \
-            --body "A pull request already exists for this submission: ${PR_URL}"
+        uses: ./.github/actions/issue-comment
+        with:
+          issueNumber: ${{ github.event.issue.number }}
+          body: "A pull request already exists for this submission: ${{ steps.existingPr.outputs.url }}"
+          issueBody: ${{ github.event.issue.body }}
+          codebergToken: ${{ secrets.CB_SYNC_TOKEN }}
 
       - name: Resolve submitter source
         if: steps.existingPr.outputs.url == ''
@@ -1530,24 +1532,21 @@ jobs:
 
       - name: Comment with PR link
         if: steps.createPr.outputs.prCreated == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_REPO: ${{ github.repository }}
-          NUMBER: ${{ github.event.issue.number }}
-          PR_URL: ${{ steps.createPr.outputs.prUrl }}
-        run: |
-          gh issue comment "$NUMBER" --repo "$GH_REPO" \
-            --body "Opened pull request: ${PR_URL}"
+        uses: ./.github/actions/issue-comment
+        with:
+          issueNumber: ${{ github.event.issue.number }}
+          body: "Opened pull request: ${{ steps.createPr.outputs.prUrl }}"
+          issueBody: ${{ github.event.issue.body }}
+          codebergToken: ${{ secrets.CB_SYNC_TOKEN }}
 
       - name: Report skipped PR
         if: steps.existingPr.outputs.url == '' && steps.createPr.outputs.skipped == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_REPO: ${{ github.repository }}
-          NUMBER: ${{ github.event.issue.number }}
-        run: |
-          gh issue comment "$NUMBER" --repo "$GH_REPO" \
-            --body "Could not open a PR: no store signatures matched the submission. Add matching store entries manually, or ensure verification was run with the **Run Checks** label first."
+        uses: ./.github/actions/issue-comment
+        with:
+          issueNumber: ${{ github.event.issue.number }}
+          body: "Could not open a PR: no store signatures matched the submission. Add matching store entries manually, or ensure verification was run with the **Run Checks** label first."
+          issueBody: ${{ github.event.issue.body }}
+          codebergToken: ${{ secrets.CB_SYNC_TOKEN }}
 
   commitAsIsPrepare:
     name: Commit As-Is (prepare)
@@ -1596,6 +1595,8 @@ jobs:
         with:
           issueNumber: ${{ github.event.issue.number }}
           actionDescription: Commit As-Is
+          issueBody: ${{ github.event.issue.body }}
+          codebergToken: ${{ secrets.CB_SYNC_TOKEN }}
 
       - name: Download F-Droid results
         uses: actions/download-artifact@v8
@@ -1668,13 +1669,12 @@ jobs:
 
       - name: Report skipped commit
         if: steps.prepare_meta.outputs.skipped == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_REPO: ${{ github.repository }}
-          NUMBER: ${{ github.event.issue.number }}
-        run: |
-          gh issue comment "$NUMBER" --repo "$GH_REPO" \
-            --body "Could not commit as-is: no store signatures matched the submission. Run **Run Checks** first, or use **Create PR** to add entries manually."
+        uses: ./.github/actions/issue-comment
+        with:
+          issueNumber: ${{ github.event.issue.number }}
+          body: "Could not commit as-is: no store signatures matched the submission. Run **Run Checks** first, or use **Create PR** to add entries manually."
+          issueBody: ${{ github.event.issue.body }}
+          codebergToken: ${{ secrets.CB_SYNC_TOKEN }}
 
   commitAsIsAttest:
     name: Commit As-Is (attest)
@@ -1750,12 +1750,9 @@ jobs:
 
       - name: Comment on success
         if: steps.push_meta.outputs.committed == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_REPO: ${{ github.repository }}
-          NUMBER: ${{ github.event.issue.number }}
-          PACKAGE: ${{ needs.parse.outputs.packageName }}
-          COMMIT_SHA: ${{ steps.push_meta.outputs.commitSha }}
-        run: |
-          gh issue comment "$NUMBER" --repo "$GH_REPO" \
-            --body "Committed \`${PACKAGE}\` to \`data.yml\` on \`main\` as submitted (attested before push). Commit: \`${COMMIT_SHA}\`"
+        uses: ./.github/actions/issue-comment
+        with:
+          issueNumber: ${{ github.event.issue.number }}
+          body: "Committed `${{ needs.parse.outputs.packageName }}` to `data.yml` on `main` as submitted (attested before push). Commit: ${{ steps.push_meta.outputs.commitSha }}"
+          issueBody: ${{ github.event.issue.body }}
+          codebergToken: ${{ secrets.CB_SYNC_TOKEN }}

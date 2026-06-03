@@ -127,6 +127,63 @@ signatures_submission_issue_ref() {
   signatures_github_issue_ref "$github_issue_number"
 }
 
+# Post a comment on a Codeberg issue via the Forgejo API.
+codeberg_post_issue_comment() {
+  local token="$1"
+  local owner="$2"
+  local repo="$3"
+  local issue_index="$4"
+  local body="$5"
+  local api_base="${CODEBERG_API_BASE:-https://codeberg.org/api/v1}"
+  local payload_file response http_code response_body
+
+  [[ -n "$token" && "$issue_index" =~ ^[0-9]+$ ]] || return 1
+
+  payload_file=$(mktemp)
+  jq -n --arg body "$body" '{body: $body}' > "$payload_file"
+
+  response=$(curl -sS -w '\n%{http_code}' -X POST \
+    -H "Authorization: token ${token}" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    "${api_base}/repos/${owner}/${repo}/issues/${issue_index}/comments" \
+    --data-binary @"$payload_file")
+  rm -f "$payload_file"
+
+  http_code=$(printf '%s' "$response" | tail -n 1)
+  response_body=$(printf '%s' "$response" | sed '$d')
+
+  if [[ "$http_code" != "201" ]]; then
+    echo "Codeberg issue comment failed (HTTP ${http_code}):" >&2
+    printf '%s\n' "$response_body" >&2
+    return 1
+  fi
+}
+
+# Mirror a GitHub issue comment to the linked Codeberg issue when External: CB-N is set.
+signatures_mirror_issue_comment_to_codeberg() {
+  local token="$1"
+  local github_issue_body="$2"
+  local comment_body="$3"
+  local owner="${CODEBERG_REPO_OWNER:-privacyguides}"
+  local repo="${CODEBERG_REPO_NAME:-verified-apps}"
+  local cb_issue_num
+
+  [[ -n "$token" ]] || return 0
+
+  if ! signatures_parse_submission_source "$github_issue_body"; then
+    return 0
+  fi
+
+  if ! cb_issue_num=$(signatures_codeberg_issue_number "$SUBMISSION_EXTERNAL_REF"); then
+    return 0
+  fi
+
+  if ! codeberg_post_issue_comment "$token" "$owner" "$repo" "$cb_issue_num" "$comment_body"; then
+    echo "::warning::Could not mirror comment to ${SUBMISSION_EXTERNAL_REF} on Codeberg." >&2
+  fi
+}
+
 # Write a submission commit message; always closes the synced GitHub issue (GH-N).
 submission_write_commit_message_file() {
   local msg_file="$1"

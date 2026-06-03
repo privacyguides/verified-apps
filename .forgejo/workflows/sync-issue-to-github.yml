@@ -1,7 +1,8 @@
 # Mirrors new Codeberg issues to the canonical GitHub repository.
 #
-# Required repository secret on Codeberg:
-#   GH_SYNC_TOKEN — GitHub PAT with `issues: write` on privacyguides/verified-apps
+# Required repository secrets:
+#   On Codeberg: GH_SYNC_TOKEN — GitHub PAT with `issues: write` on privacyguides/verified-apps
+#   On GitHub: CB_SYNC_TOKEN — Codeberg PAT with issue comment access on privacyguides/verified-apps
 name: Sync issue to GitHub
 
 on:

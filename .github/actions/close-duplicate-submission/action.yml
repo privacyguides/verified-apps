@@ -10,6 +10,14 @@ inputs:
   currentAuthor:
     description: Login of the issue author
     required: true
+  issueBody:
+    description: Full GitHub issue body (fetched when empty, for Codeberg mirroring)
+    required: false
+    default: ""
+  codebergToken:
+    description: Codeberg personal access token for mirroring comments
+    required: false
+    default: ""
 
 runs:
   using: composite
@@ -21,8 +29,16 @@ runs:
         NUMBER: ${{ inputs.currentIssue }}
         DUPLICATE_OF: ${{ inputs.duplicateOf }}
         CURRENT_AUTHOR: ${{ inputs.currentAuthor }}
+        ISSUE_BODY: ${{ inputs.issueBody }}
+        CODEBERG_TOKEN: ${{ inputs.codebergToken }}
       run: |
         set -euo pipefail
+        source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
+
+        issue_body="$ISSUE_BODY"
+        if [[ -z "$issue_body" ]]; then
+          issue_body=$(gh issue view "$NUMBER" --repo "$GH_REPO" --json body -q .body)
+        fi
 
         gh issue edit "$NUMBER" --repo "$GH_REPO" --remove-label "Run Checks" || true
         gh issue edit "$NUMBER" --repo "$GH_REPO" --remove-label "Create PR" || true
@@ -36,8 +52,14 @@ runs:
         fi
 
         if [[ "$DUPLICATE_OF" == "$NUMBER" ]]; then
-          gh issue close "$NUMBER" --repo "$GH_REPO" \
-            --comment "This package and signature are already tracked in an open submission or in data.yml."
+          close_comment="This package and signature are already tracked in an open submission or in data.yml."
+          gh issue close "$NUMBER" --repo "$GH_REPO" --comment "$close_comment"
         else
+          close_comment="Duplicate of GH-${DUPLICATE_OF}."
           gh issue close "$NUMBER" --repo "$GH_REPO" --duplicate-of "$DUPLICATE_OF"
         fi
+
+        signatures_mirror_issue_comment_to_codeberg \
+          "$CODEBERG_TOKEN" \
+          "$issue_body" \
+          "$close_comment"

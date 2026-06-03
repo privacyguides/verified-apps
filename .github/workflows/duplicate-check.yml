@@ -75,3 +75,5 @@ jobs:
           duplicateOf: ${{ needs.parse.outputs.duplicateOf }}
           currentIssue: ${{ github.event.issue.number }}
           currentAuthor: ${{ github.event.issue.user.login }}
+          issueBody: ${{ github.event.issue.body }}
+          codebergToken: ${{ secrets.CB_SYNC_TOKEN }}

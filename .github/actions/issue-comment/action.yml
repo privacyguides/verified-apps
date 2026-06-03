@@ -1,0 +1,68 @@
+name: Comment on submission issue
+description: Post a comment on a GitHub submission issue and mirror it to Codeberg when applicable
+inputs:
+  issueNumber:
+    description: GitHub issue number
+    required: true
+  body:
+    description: Comment body (use bodyFile for large comments)
+    required: false
+    default: ""
+  bodyFile:
+    description: Path to a file containing the comment body
+    required: false
+    default: ""
+  issueBody:
+    description: Full GitHub issue body (fetched when empty, for External parsing)
+    required: false
+    default: ""
+  codebergToken:
+    description: Codeberg personal access token for mirroring comments
+    required: false
+    default: ""
+  githubToken:
+    description: GitHub token for posting the issue comment
+    required: false
+    default: ${{ github.token }}
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.githubToken }}
+        GH_REPO: ${{ github.repository }}
+        ISSUE_NUMBER: ${{ inputs.issueNumber }}
+        COMMENT_BODY: ${{ inputs.body }}
+        COMMENT_BODY_FILE: ${{ inputs.bodyFile }}
+        ISSUE_BODY: ${{ inputs.issueBody }}
+        CODEBERG_TOKEN: ${{ inputs.codebergToken }}
+      run: |
+        set -euo pipefail
+        source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
+
+        comment_body=""
+        if [[ -n "$COMMENT_BODY_FILE" ]]; then
+          if [[ ! -f "$COMMENT_BODY_FILE" ]]; then
+            echo "Comment body file not found: ${COMMENT_BODY_FILE}" >&2
+            exit 1
+          fi
+          comment_body=$(cat "$COMMENT_BODY_FILE")
+        elif [[ -n "$COMMENT_BODY" ]]; then
+          comment_body="$COMMENT_BODY"
+        else
+          echo "Either body or bodyFile is required." >&2
+          exit 1
+        fi
+
+        gh issue comment "$ISSUE_NUMBER" --repo "$GH_REPO" --body "$comment_body"
+
+        issue_body="$ISSUE_BODY"
+        if [[ -z "$issue_body" ]]; then
+          issue_body=$(gh issue view "$ISSUE_NUMBER" --repo "$GH_REPO" --json body -q .body)
+        fi
+
+        signatures_mirror_issue_comment_to_codeberg \
+          "$CODEBERG_TOKEN" \
+          "$issue_body" \
+          "$comment_body"
