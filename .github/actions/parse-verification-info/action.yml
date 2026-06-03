@@ -9,6 +9,10 @@ inputs:
     description: Full GitHub issue body (uses the Verification Info section)
     required: false
     default: ""
+  issueNumber:
+    description: GitHub issue number (required with issueBody for submission source parsing)
+    required: false
+    default: ""
 outputs:
   packageName:
     description: Android application ID
@@ -22,6 +26,9 @@ outputs:
   customFdroidRepoUrl:
     description: Optional HTTPS URL to a custom F-Droid repository from the issue form
     value: ${{ steps.parse.outputs.customFdroidRepoUrl }}
+  submissionIssueRef:
+    description: Tracker-prefixed submission reference (CB-N or GH-N)
+    value: ${{ steps.parse.outputs.submissionIssueRef }}
 
 runs:
   using: composite
@@ -31,6 +38,7 @@ runs:
       env:
         VERIFICATION_INFO: ${{ inputs.verificationInfo }}
         ISSUE_BODY: ${{ inputs.issueBody }}
+        ISSUE_NUMBER: ${{ inputs.issueNumber }}
       run: |
         set -euo pipefail
         source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
@@ -117,3 +125,10 @@ runs:
         gha_write_multiline_output packageSignature "$packageSignature"
         echo "apkUrl=$apk_url" >> "$GITHUB_OUTPUT"
         echo "customFdroidRepoUrl=$custom_fdroid_repo_url" >> "$GITHUB_OUTPUT"
+
+        if [[ -n "$ISSUE_BODY" && -n "$ISSUE_NUMBER" ]]; then
+          submission_issue_ref=$(signatures_submission_issue_ref "$ISSUE_NUMBER" "$ISSUE_BODY")
+          echo "submissionIssueRef=$submission_issue_ref" >> "$GITHUB_OUTPUT"
+        else
+          echo "submissionIssueRef=" >> "$GITHUB_OUTPUT"
+        fi

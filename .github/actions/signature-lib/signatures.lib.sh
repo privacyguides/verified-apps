@@ -70,6 +70,79 @@ signatures_data_schema_supported() {
   esac
 }
 
+# Canonical Codeberg issue ref for data.yml and commit messages (CB-123).
+signatures_codeberg_issue_ref() {
+  local number="$1"
+  [[ "$number" =~ ^[0-9]+$ ]] || return 1
+  printf 'CB-%s' "$number"
+}
+
+# Parse Codeberg issue number from CB-123 (or legacy bare 123).
+signatures_codeberg_issue_number() {
+  local ref="$1"
+  if [[ "$ref" =~ ^CB-([0-9]+)$ ]]; then
+    printf '%s' "${BASH_REMATCH[1]}"
+  else
+    return 1
+  fi
+}
+
+# Parse ### Submission Source from a GitHub issue body.
+# Sets SUBMISSION_EXTERNAL_REF (e.g. CB-123) on success.
+signatures_parse_submission_source() {
+  local body="$1"
+  local section line external
+
+  section=$(printf '%s\n' "$body" | awk '
+    $0 == "### Submission Source" { found=1; next }
+    found && /^### / { exit }
+    found { print }
+  ')
+
+  external=""
+  while IFS= read -r line; do
+    [[ -z "$line" ]] && continue
+    if [[ "$line" =~ ^[Ee]xternal:[[:space:]]*(.+)$ ]]; then
+      external="${BASH_REMATCH[1]}"
+      break
+    fi
+  done <<< "$section"
+
+  external=$(printf '%s' "$external" | sed -E 's/^[[:space:]]+//; s/[[:space:]]+$//')
+  [[ "$external" =~ ^CB-[0-9]+$ ]] || return 1
+  SUBMISSION_EXTERNAL_REF="$external"
+  return 0
+}
+
+# Issue ref for data.yml / "from …" lines: External ref when present, else GH-N.
+signatures_submission_issue_ref() {
+  local github_issue_number="$1"
+  local issue_body="$2"
+
+  if signatures_parse_submission_source "$issue_body"; then
+    printf '%s' "$SUBMISSION_EXTERNAL_REF"
+    return 0
+  fi
+
+  signatures_github_issue_ref "$github_issue_number"
+}
+
+# Write a submission commit message; always closes the synced GitHub issue (GH-N).
+submission_write_commit_message_file() {
+  local msg_file="$1"
+  local first_line="$2"
+  local github_issue_number="$3"
+  local co_author_trailer="${4:-}"
+
+  {
+    printf '%s\n\n' "$first_line"
+    printf 'Closes %s\n' "$(signatures_github_issue_ref "$github_issue_number")"
+    if [[ -n "$co_author_trailer" ]]; then
+      printf '\n%s\n' "$co_author_trailer"
+    fi
+  } > "$msg_file"
+}
+
 # GitHub noreply Co-authored-by trailer for a user (login + numeric id).
 submission_coauthor_trailer_for_user() {
   local login="$1"
@@ -580,8 +653,8 @@ _submission_add_proposal() {
   local apk_link="${6-}"
   local apk_repo="${7-}"
 
-  local issue_ref
-  issue_ref=$(signatures_github_issue_ref "$issue") || return 1
+  local issue_ref="$4"
+  issue_ref=$(printf '%s' "$issue_ref")
 
   jq -cn \
     --arg fp "$fp_block" \
@@ -650,10 +723,16 @@ _submission_assemble_entry_from_proposals() {
 submission_build_entry_file() {
   local entry_file="$1"
   local user_sig fp_block store_sig repo_name fdroid_source proposals_file
-  local apk_sha apk_link apk_repo
+  local apk_sha apk_link apk_repo submission_issue_ref
 
   user_sig="$(signatures_format_block "$USER_SIG")"
   proposals_file="$(mktemp)"
+
+  if [[ -n "${SUBMISSION_ISSUE_REF:-}" ]]; then
+    submission_issue_ref="$SUBMISSION_ISSUE_REF"
+  else
+    submission_issue_ref=$(signatures_github_issue_ref "$ISSUE")
+  fi
 
   _submission_add_source() {
     local fp="$1"
@@ -661,7 +740,7 @@ submission_build_entry_file() {
     local sha="${3-}"
     local link="${4-}"
     local repo="${5-}"
-    _submission_add_proposal "$proposals_file" "$fp" "$name" "$ISSUE" "$sha" "$link" "$repo"
+    _submission_add_proposal "$proposals_file" "$fp" "$name" "$submission_issue_ref" "$sha" "$link" "$repo"
   }
 
   if [[ -n "${SUBMITTER_SOURCE:-}" ]]; then

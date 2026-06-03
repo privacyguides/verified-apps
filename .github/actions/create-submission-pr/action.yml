@@ -10,6 +10,10 @@ inputs:
   issueNumber:
     description: Submission issue number
     required: true
+  issueBody:
+    description: Full GitHub issue body (for Submission Source parsing)
+    required: false
+    default: ""
   prBodyFile:
     description: Path to the pull request body markdown file
     required: true
@@ -96,6 +100,7 @@ runs:
         PACKAGE: ${{ inputs.packageName }}
         USER_SIG: ${{ inputs.packageSignature }}
         ISSUE: ${{ inputs.issueNumber }}
+        ISSUE_BODY: ${{ inputs.issueBody }}
         CO_AUTHOR_TRAILER: ${{ inputs.coAuthorTrailer }}
         COMMIT_SUFFIX: ${{ inputs.commitSuffix }}
         ACC_SIG: ${{ inputs.accrescentSignature }}
@@ -119,6 +124,9 @@ runs:
         echo "skipped=false" >> "$GITHUB_OUTPUT"
         echo "branch=new/${ISSUE}" >> "$GITHUB_OUTPUT"
 
+        SUBMISSION_ISSUE_REF=$(signatures_submission_issue_ref "$ISSUE" "$ISSUE_BODY")
+        export SUBMISSION_ISSUE_REF
+
         entry="$(mktemp)"
         if ! submission_build_entry_file "$entry"; then
           echo "No store matched the user-provided signature(s); skipping PR." >&2
@@ -134,13 +142,11 @@ runs:
         git checkout -b "$branch"
 
         msg_file="${GITHUB_WORKSPACE}/submission-commit-msg"
-        {
-          printf 'Add %s from %s%s\n\n' "$PACKAGE" "$(signatures_format_github_ref "$ISSUE")" "$COMMIT_SUFFIX"
-          printf 'Closes %s\n' "$(signatures_format_github_ref "$ISSUE")"
-          if [[ -n "$CO_AUTHOR_TRAILER" ]]; then
-            printf '\n%s\n' "$CO_AUTHOR_TRAILER"
-          fi
-        } > "$msg_file"
+        submission_write_commit_message_file \
+          "$msg_file" \
+          "Add ${PACKAGE} from ${SUBMISSION_ISSUE_REF}${COMMIT_SUFFIX}" \
+          "$ISSUE" \
+          "$CO_AUTHOR_TRAILER"
 
         git add data.yml
 

@@ -10,7 +10,7 @@ on:
 
 jobs:
   sync:
-    runs-on: codeberg-tiny
+    runs-on: codeberg-tiny-lazy
     steps:
       - name: Open matching issue on GitHub
         env:
@@ -38,7 +38,6 @@ jobs:
           issue_title=$(jq -r '.issue.title' "$event_path")
           issue_body=$(jq -r '.issue.body // ""' "$event_path")
           issue_number=$(jq -r '.issue.number' "$event_path")
-          issue_user=$(jq -r '.issue.user.login' "$event_path")
 
           body_file=$(mktemp)
           payload_file=$(mktemp)
@@ -49,9 +48,7 @@ jobs:
               printf '%s\n\n' "$issue_body"
             fi
             printf '%s\n\n' '### Submission Source'
-            printf '%s\n' 'Tracker: Codeberg'
-            printf 'Number: %s\n' "$issue_number"
-            printf 'User: %s\n' "$issue_user"
+            printf 'External: CB-%s\n' "$issue_number"
           } > "$body_file"
 
           jq -n \

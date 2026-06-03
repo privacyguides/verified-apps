@@ -13,6 +13,10 @@ inputs:
   issueNumber:
     description: Linked submission issue number
     required: true
+  issueBody:
+    description: Full GitHub issue body (for Submission Source parsing)
+    required: false
+    default: ""
   commitSubject:
     description: First line subject for the git commit (typically the PR title)
     required: true
@@ -50,11 +54,20 @@ runs:
         HEAD_REF: ${{ inputs.headRef }}
         HEAD_SHA: ${{ inputs.headSha }}
         ISSUE: ${{ inputs.issueNumber }}
+        ISSUE_BODY: ${{ inputs.issueBody }}
         COMMIT_SUBJECT: ${{ inputs.commitSubject }}
         CO_AUTHOR_TRAILER: ${{ inputs.coAuthorTrailer }}
+        GH_REPO: ${{ github.repository }}
+        GH_TOKEN: ${{ github.token }}
       run: |
         set -euo pipefail
         source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
+
+        if [[ -z "$ISSUE_BODY" ]]; then
+          ISSUE_BODY=$(gh issue view "$ISSUE" --repo "$GH_REPO" --json body -q .body)
+        fi
+
+        SUBMISSION_ISSUE_REF=$(signatures_submission_issue_ref "$ISSUE" "$ISSUE_BODY")
 
         echo "skipped=false" >> "$GITHUB_OUTPUT"
         echo "prepared=false" >> "$GITHUB_OUTPUT"
@@ -89,13 +102,11 @@ runs:
         git add data.yml
 
         msg_file="${GITHUB_WORKSPACE}/submission-commit-msg"
-        {
-          printf '%s from %s\n\n' "$COMMIT_SUBJECT" "$(signatures_format_github_ref "$ISSUE")"
-          printf 'Closes %s\n' "$(signatures_format_github_ref "$ISSUE")"
-          if [[ -n "$CO_AUTHOR_TRAILER" ]]; then
-            printf '\n%s\n' "$CO_AUTHOR_TRAILER"
-          fi
-        } > "$msg_file"
+        submission_write_commit_message_file \
+          "$msg_file" \
+          "${COMMIT_SUBJECT} from ${SUBMISSION_ISSUE_REF}" \
+          "$ISSUE" \
+          "$CO_AUTHOR_TRAILER"
 
         echo "prepared=true" >> "$GITHUB_OUTPUT"
 

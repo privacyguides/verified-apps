@@ -17,8 +17,11 @@ DATA_FILE = ROOT / "data.yml"
 SITE_SRC = ROOT / "site"
 SITE_OUT = ROOT / "_site"
 GITHUB_REPO = "privacyguides/verified-apps"
+CODEBERG_REPO = "privacyguides/verified-apps"
 GITHUB_ISSUE_REF_PREFIX = "GH-"
-ISSUE_URL = f"https://github.com/{GITHUB_REPO}/issues/{{issue}}"
+CODEBERG_ISSUE_REF_PREFIX = "CB-"
+GITHUB_ISSUE_URL = f"https://github.com/{GITHUB_REPO}/issues/{{issue}}"
+CODEBERG_ISSUE_URL = f"https://codeberg.org/{CODEBERG_REPO}/issues/{{issue}}"
 
 
 def normalize_fingerprint(fp: str) -> list[str]:
@@ -33,23 +36,32 @@ def appverifier_text(package: str, fingerprint: str) -> str:
 
 
 def normalize_issue_ref(issue: int | str) -> str:
-    """Return canonical tracker-prefixed issue ref for display (e.g. GH-123)."""
+    """Return canonical tracker-prefixed issue ref for display (e.g. GH-123, CB-456)."""
     if isinstance(issue, int):
         return f"{GITHUB_ISSUE_REF_PREFIX}{issue}"
     if isinstance(issue, str):
-        if issue.startswith(GITHUB_ISSUE_REF_PREFIX):
+        if issue.startswith((GITHUB_ISSUE_REF_PREFIX, CODEBERG_ISSUE_REF_PREFIX)):
             return issue
         if issue.isdigit():
             return f"{GITHUB_ISSUE_REF_PREFIX}{issue}"
     raise ValueError(f"unsupported issue ref: {issue!r}")
 
 
+def _issue_number(issue_ref: str, prefix: str) -> str | None:
+    if not issue_ref.startswith(prefix):
+        return None
+    number = issue_ref[len(prefix) :]
+    return number if number.isdigit() else None
+
+
 def github_issue_number(issue_ref: str) -> str | None:
     """Return GitHub issue number when ref uses the GH- prefix."""
-    if not issue_ref.startswith(GITHUB_ISSUE_REF_PREFIX):
-        return None
-    number = issue_ref[len(GITHUB_ISSUE_REF_PREFIX) :]
-    return number if number.isdigit() else None
+    return _issue_number(issue_ref, GITHUB_ISSUE_REF_PREFIX)
+
+
+def codeberg_issue_number(issue_ref: str) -> str | None:
+    """Return Codeberg issue number when ref uses the CB- prefix."""
+    return _issue_number(issue_ref, CODEBERG_ISSUE_REF_PREFIX)
 
 
 def collect_issues(sources: list[dict]) -> list[str]:
@@ -130,9 +142,17 @@ def render_rows(rows: list[dict]) -> str:
         issue_items = []
         for issue_ref in row["issues"]:
             label = html.escape(issue_ref)
-            number = github_issue_number(issue_ref)
-            if number:
-                url = html.escape(ISSUE_URL.format(issue=number), quote=True)
+            gh_number = github_issue_number(issue_ref)
+            cb_number = codeberg_issue_number(issue_ref)
+            if gh_number:
+                url = html.escape(GITHUB_ISSUE_URL.format(issue=gh_number), quote=True)
+            elif cb_number:
+                url = html.escape(
+                    CODEBERG_ISSUE_URL.format(issue=cb_number), quote=True
+                )
+            else:
+                url = None
+            if url:
                 issue_items.append(
                     f'<a href="{url}" rel="noopener noreferrer">{label}</a>'
                 )

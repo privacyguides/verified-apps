@@ -101,7 +101,11 @@ runs:
                 if ! signatures_overlap "$PACKAGE_SIGNATURE" "$fp"; then
                   continue
                 fi
-                related_lines+="- ${pkg} from $(signatures_normalize_github_issue_ref "$issue")"$'\n'
+                display_ref="$issue"
+                if [[ "$issue" =~ ^[0-9]+$ ]]; then
+                  display_ref=$(signatures_github_issue_ref "$issue")
+                fi
+                related_lines+="- ${pkg} from ${display_ref}"$'\n'
               done < <(
                 yq -r '
                   .packages[]

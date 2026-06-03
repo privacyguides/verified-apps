@@ -10,6 +10,10 @@ inputs:
   issueNumber:
     description: Submission issue number
     required: true
+  issueBody:
+    description: Full GitHub issue body (for Submission Source parsing)
+    required: false
+    default: ""
   coAuthorTrailer:
     description: Co-authored-by trailer(s) for the git commit (labeler and issue author when different)
     required: true
@@ -95,6 +99,7 @@ runs:
         PACKAGE: ${{ inputs.packageName }}
         USER_SIG: ${{ inputs.packageSignature }}
         ISSUE: ${{ inputs.issueNumber }}
+        ISSUE_BODY: ${{ inputs.issueBody }}
         CO_AUTHOR_TRAILER: ${{ inputs.coAuthorTrailer }}
         ACC_SIG: ${{ inputs.accrescentSignature }}
         FDROID_RESULTS_DIR: ${{ inputs.fdroidResultsDir }}
@@ -117,6 +122,9 @@ runs:
         echo "prepared=false" >> "$GITHUB_OUTPUT"
         echo "skipped=false" >> "$GITHUB_OUTPUT"
 
+        SUBMISSION_ISSUE_REF=$(signatures_submission_issue_ref "$ISSUE" "$ISSUE_BODY")
+        export SUBMISSION_ISSUE_REF
+
         entry="$(mktemp)"
         if ! submission_build_entry_file "$entry"; then
           echo "No store matched the user-provided signature(s); skipping commit." >&2
@@ -129,13 +137,11 @@ runs:
         rm -f "$entry"
 
         msg_file="${GITHUB_WORKSPACE}/submission-commit-msg"
-        {
-          printf 'Add %s from %s\n\n' "$PACKAGE" "$(signatures_format_github_ref "$ISSUE")"
-          printf 'Closes %s\n' "$(signatures_format_github_ref "$ISSUE")"
-          if [[ -n "$CO_AUTHOR_TRAILER" ]]; then
-            printf '\n%s\n' "$CO_AUTHOR_TRAILER"
-          fi
-        } > "$msg_file"
+        submission_write_commit_message_file \
+          "$msg_file" \
+          "Add ${PACKAGE} from ${SUBMISSION_ISSUE_REF}" \
+          "$ISSUE" \
+          "$CO_AUTHOR_TRAILER"
 
         git add data.yml
         echo "prepared=true" >> "$GITHUB_OUTPUT"

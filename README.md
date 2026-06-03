@@ -121,7 +121,7 @@ packages: # Required. Contains all verification data.
       - fingerprint: # Required. SHA-256 hash of the app's signing certificate. Note that this may be a multiline string for certain apps, see `com.google.android.inputmethod.latin` in data.yml for example.
         sources:
           - name: # Required. Name of the source we obtained the app from (see full list below).
-            issue: # Optional. Tracker-prefixed submission reference (e.g. GH-493 for a GitHub issue). Used to link users to verification details.
+            issue: # Optional. Tracker-prefixed submission reference (e.g. GH-493 for a GitHub issue, CB-12 for a Codeberg issue). Used to link users to verification details.
             apk: # Optional.
               sha256: # Optional. SHA-256 hash of the APK *file* we verified.
               link: # Optional. Link to download the APK file we verified.
