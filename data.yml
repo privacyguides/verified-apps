@@ -1409,6 +1409,14 @@ packages:
             issue: GH-805
             apk:
               sha256: 76cd759101a19ba34e84ffe920ae2dd726b53b2952dda497f4a533cf10a7d669
+  - package: com.firewalla.chancellor
+    signature:
+      - fingerprint: 26:31:2B:03:E0:66:C8:C1:1C:AC:3E:87:CE:80:4A:01:5F:D3:DE:AC:72:79:F7:77:18:FF:F7:0E:F3:23:0A:6C
+        sources:
+          - name: Google Play
+            issue: CB-3
+            apk:
+              sha256: 3bc37e619307bace32ab54433874fef34ad2a5a9343289d2f9b62eedc1466b86
   - package: com.flauschcode.broccoli
     signature:
       - fingerprint: 73:8E:4F:5A:7C:A8:28:E8:00:C0:22:AB:44:AB:51:72:8E:66:00:1E:61:D3:50:E2:7C:E7:D9:DF:CF:0F:6B:99
