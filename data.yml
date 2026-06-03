@@ -3115,6 +3115,15 @@ packages:
             issue: 919
             apk:
               sha256: 97c68a488d1067ba97369a5180ffc983f0dea0fe7ef82d6ee700b9a762ad35f1
+  - package: com.savvasdalkitsis.uhuruphotos
+    signature:
+      - fingerprint: FC:A4:79:E1:7B:75:FB:AD:87:81:64:6C:55:E1:40:0D:F3:01:24:9F:7A:09:72:F8:A3:E8:4C:0B:DB:3C:24:A0
+        sources:
+          - name: Direct APK Link
+            issue: 1123
+            apk:
+              sha256: 37ad242b86aa6200317a9c382ae4e919bfeeac5aaa8aa14915b229dadbe5d7e0
+              link: https://github.com/savvasdalkitsis/uhuruphotos-android/releases/download/v0.0.259/app-release.apk
   - package: com.scee.psxandroid
     signature:
       - fingerprint: DB:4C:38:96:42:CD:DC:76:2F:6C:72:B8:67:B8:FC:D9:39:E5:B5:DA:E4:AC:37:63:DB:CD:F6:23:27:D3:82:F7
