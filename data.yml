@@ -5481,6 +5481,15 @@ packages:
             issue: 943
             apk:
               sha256: f3aa7c82f31e7e56b34aa11d4f88c6ba85f47784d0b913928d54d1754c2571d6
+  - package: nl.moeilijkedingen.jellyfinaudioplayer
+    signature:
+      - fingerprint: BF:6B:4D:07:C8:62:42:CE:91:D3:4B:47:6E:10:EE:C6:27:BB:4E:61:04:68:CB:2A:98:D4:5B:12:76:62:57:33
+        sources:
+          - name: Direct APK Link
+            issue: 1121
+            apk:
+              sha256: 60f878f4d705dd97f26950b82069e6ccc54794cfe4ef28b26eb6eedf8864426f
+              link: https://github.com/leinelissen/jellyfin-audio-player/releases/download/v2.4.6/fintunes-v2.4.6.apk
   - package: nodomain.freeyourgadget.gadgetbridge
     signature:
       - fingerprint: 01:CC:E9:31:6F:CB:77:EA:02:C6:DE:A8:1F:DE:9F:31:76:46:92:02:C0:CE:A0:51:4C:0E:03:CB:96:9B:C7:BE
