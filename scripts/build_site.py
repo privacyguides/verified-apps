@@ -17,6 +17,7 @@ DATA_FILE = ROOT / "data.yml"
 SITE_SRC = ROOT / "site"
 SITE_OUT = ROOT / "_site"
 GITHUB_REPO = "privacyguides/verified-apps"
+GITHUB_ISSUE_REF_PREFIX = "GH-"
 ISSUE_URL = f"https://github.com/{GITHUB_REPO}/issues/{{issue}}"
 
 
@@ -31,18 +32,37 @@ def appverifier_text(package: str, fingerprint: str) -> str:
     return "\n".join(lines)
 
 
-def format_github_ref(number: int) -> str:
-    return f"GH-{number}"
+def normalize_issue_ref(issue: int | str) -> str:
+    """Return canonical tracker-prefixed issue ref for display (e.g. GH-123)."""
+    if isinstance(issue, int):
+        return f"{GITHUB_ISSUE_REF_PREFIX}{issue}"
+    if isinstance(issue, str):
+        if issue.startswith(GITHUB_ISSUE_REF_PREFIX):
+            return issue
+        if issue.isdigit():
+            return f"{GITHUB_ISSUE_REF_PREFIX}{issue}"
+    raise ValueError(f"unsupported issue ref: {issue!r}")
 
 
-def collect_issues(sources: list[dict]) -> list[int]:
-    seen: set[int] = set()
-    issues: list[int] = []
+def github_issue_number(issue_ref: str) -> str | None:
+    """Return GitHub issue number when ref uses the GH- prefix."""
+    if not issue_ref.startswith(GITHUB_ISSUE_REF_PREFIX):
+        return None
+    number = issue_ref[len(GITHUB_ISSUE_REF_PREFIX) :]
+    return number if number.isdigit() else None
+
+
+def collect_issues(sources: list[dict]) -> list[str]:
+    seen: set[str] = set()
+    issues: list[str] = []
     for source in sources:
         issue = source.get("issue")
-        if issue is not None and issue not in seen:
-            seen.add(issue)
-            issues.append(int(issue))
+        if issue is None:
+            continue
+        ref = normalize_issue_ref(issue)
+        if ref not in seen:
+            seen.add(ref)
+            issues.append(ref)
     return issues
 
 
@@ -108,11 +128,16 @@ def render_rows(rows: list[dict]) -> str:
         )
 
         issue_items = []
-        for issue in row["issues"]:
-            url = html.escape(ISSUE_URL.format(issue=issue), quote=True)
-            issue_items.append(
-                f'<a href="{url}" rel="noopener noreferrer">{html.escape(format_github_ref(issue))}</a>'
-            )
+        for issue_ref in row["issues"]:
+            label = html.escape(issue_ref)
+            number = github_issue_number(issue_ref)
+            if number:
+                url = html.escape(ISSUE_URL.format(issue=number), quote=True)
+                issue_items.append(
+                    f'<a href="{url}" rel="noopener noreferrer">{label}</a>'
+                )
+            else:
+                issue_items.append(f'<span class="issue-ref">{label}</span>')
         issues_html = ", ".join(issue_items) if issue_items else "—"
 
         parts.append(

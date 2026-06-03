@@ -70,8 +70,8 @@ runs:
         git show "${HEAD_SHA}:data.yml" > "${RUNNER_TEMP}/submission-data.yml"
 
         schema=$(yq -r '.schema // 0' "${RUNNER_TEMP}/submission-data.yml")
-        if [[ "$schema" != "3" ]]; then
-          echo "Unsupported data.yml schema in PR (expected 3): ${schema}" >&2
+        if ! signatures_data_schema_supported "$schema"; then
+          echo "Unsupported data.yml schema in PR (expected 3 or 4): ${schema}" >&2
           exit 1
         fi
 

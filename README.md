@@ -121,7 +121,7 @@ packages: # Required. Contains all verification data.
       - fingerprint: # Required. SHA-256 hash of the app's signing certificate. Note that this may be a multiline string for certain apps, see `com.google.android.inputmethod.latin` in data.yml for example.
         sources:
           - name: # Required. Name of the source we obtained the app from (see full list below).
-            issue: # Optional. Number of the GitHub issue where the app was submitted, can be used by users to find additional information about the verification.
+            issue: # Optional. Tracker-prefixed submission reference (e.g. GH-493 for a GitHub issue). Used to link users to verification details.
             apk: # Optional.
               sha256: # Optional. SHA-256 hash of the APK *file* we verified.
               link: # Optional. Link to download the APK file we verified.
@@ -154,37 +154,37 @@ Finally, any other sources not described above will be named `Custom (example)` 
 #### Example
 
 ```yaml
-schema: 3
+schema: 4
 packages:
   - package: chat.simplex.app
     signature:
       - fingerprint: 3C:52:C4:FD:3C:AD:1C:07:C9:B0:0A:70:80:E3:58:FA:B9:FE:FC:B8:AF:5A:EC:14:77:65:F1:6D:0F:21:AD:85
         sources:
           - name: AppVerifier
-            issue: 493
+            issue: GH-493
           - name: Direct APK Link
-            issue: 493
+            issue: GH-493
             apk:
               sha256: 391f3560a0fad696be5a6b3efde9544a1cf4d3a42a8d6eed09f1cb8c854ccff8
               link: https://github.com/simplex-chat/simplex-chat/releases/latest/download/simplex-aarch64.apk
           - name: F-Droid (app.simplex.chat)
-            issue: 493
+            issue: GH-493
             apk:
               repo: https://app.simplex.chat/fdroid/repo?fingerprint=9F358FF284D1F71656A2BFAF0E005DEAE6AA14143720E089F11FF2DDCFEB01BA
       - fingerprint: 5E:3E:DC:C2:00:FB:A8:D5:F4:88:F3:CA:4C:32:5B:05:78:C5:6A:9C:03:A1:CC:B5:92:9C:D7:5C:7E:57:E2:4D
         sources:
           - name: AppVerifier
-            issue: 565
+            issue: GH-565
           - name: Google Play
-            issue: 565
+            issue: GH-565
             apk:
               sha256: 95e555c92391049e08df56b712cea59769e3d0ac4276c0ca649814a03e7b2671
       - fingerprint: AE:C1:95:DC:FD:46:14:BD:3A:91:EC:26:D1:D5:14:C8:75:71:C5:CC:8D:CF:48:08:3F:92:83:14:3C:A2:B9:A6
         sources:
           - name: AppVerifier
-            issue: 564
+            issue: GH-564
           - name: F-Droid
-            issue: 564
+            issue: GH-564
             apk:
               sha256: 6186c80da39dd7566e1c64cee096b0623d8dfb171627d50525f64dd420ed9345
 ```

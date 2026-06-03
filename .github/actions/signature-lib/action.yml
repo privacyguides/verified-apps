@@ -84,8 +84,8 @@ runs:
             related_lines=""
             if [[ -f data.yml ]] && [[ -s data.yml ]]; then
               schema=$(yq -r '.schema // 0' data.yml)
-              if [[ "$schema" != "3" ]]; then
-                echo "Unsupported data.yml schema (expected 3): $schema" >&2
+              if ! signatures_data_schema_supported "$schema"; then
+                echo "Unsupported data.yml schema (expected 3 or 4): $schema" >&2
                 exit 1
               fi
               while IFS= read -r row; do
@@ -101,7 +101,7 @@ runs:
                 if ! signatures_overlap "$PACKAGE_SIGNATURE" "$fp"; then
                   continue
                 fi
-                related_lines+="- ${pkg} from $(signatures_format_github_ref "$issue")"$'\n'
+                related_lines+="- ${pkg} from $(signatures_normalize_github_issue_ref "$issue")"$'\n'
               done < <(
                 yq -r '
                   .packages[]

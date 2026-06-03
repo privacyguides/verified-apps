@@ -28,7 +28,46 @@ gha_write_multiline_output() {
 
 # Format a GitHub issue or pull request reference (GH-123, not #123).
 signatures_format_github_ref() {
-  printf 'GH-%s' "$1"
+  signatures_normalize_github_issue_ref "$1"
+}
+
+# Canonical data.yml issue ref for a GitHub issue number (GH-123).
+signatures_github_issue_ref() {
+  local number="$1"
+  [[ "$number" =~ ^[0-9]+$ ]] || return 1
+  printf 'GH-%s' "$number"
+}
+
+# Parse a GitHub issue number from a ref (GH-123 or legacy bare 123).
+signatures_github_issue_number() {
+  local ref="$1"
+  if [[ "$ref" =~ ^GH-([0-9]+)$ ]]; then
+    printf '%s' "${BASH_REMATCH[1]}"
+  elif [[ "$ref" =~ ^[0-9]+$ ]]; then
+    printf '%s' "$ref"
+  else
+    return 1
+  fi
+}
+
+# Normalize legacy or canonical GitHub issue refs to GH-123 for storage/display.
+signatures_normalize_github_issue_ref() {
+  local ref="$1"
+  if [[ "$ref" =~ ^GH-[0-9]+$ ]]; then
+    printf '%s' "$ref"
+  elif [[ "$ref" =~ ^[0-9]+$ ]]; then
+    signatures_github_issue_ref "$ref"
+  else
+    return 1
+  fi
+}
+
+# True when data.yml uses a supported schema version.
+signatures_data_schema_supported() {
+  case "$1" in
+    3|4) return 0 ;;
+    *) return 1 ;;
+  esac
 }
 
 # GitHub noreply Co-authored-by trailer for a user (login + numeric id).
@@ -541,10 +580,13 @@ _submission_add_proposal() {
   local apk_link="${6-}"
   local apk_repo="${7-}"
 
+  local issue_ref
+  issue_ref=$(signatures_github_issue_ref "$issue") || return 1
+
   jq -cn \
     --arg fp "$fp_block" \
     --arg name "$name" \
-    --argjson issue "$issue" \
+    --arg issue "$issue_ref" \
     --arg sha "$apk_sha256" \
     --arg link "$apk_link" \
     --arg repo "$apk_repo" \
@@ -598,7 +640,7 @@ _submission_assemble_entry_from_proposals() {
   rm -f "$entry_json"
 }
 
-# Build a single package entry (schema 3: fingerprint groups with sources[]) from store matches.
+# Build a single package entry (schema 4: fingerprint groups with sources[]) from store matches.
 # Required env: PACKAGE, ISSUE, USER_SIG (raw; formatted internally)
 # Optional env: SUBMITTER_SOURCE, ACC_SIG, ACC_APK_SHA256, FDROID_RESULTS_DIR, CUSTOM_FDROID_REPO_URL,
 #   CUSTOM_FDROID_APK_SHA256, GPLAY_SIG, GPLAY_APK_SHA256, APKPURE_SIG, APKPURE_APK_SHA256,
@@ -690,8 +732,8 @@ submission_merge_entry_into_data_yml() {
 
   if [[ -f "$data_file" ]] && [[ -s "$data_file" ]]; then
     schema=$(yq -r '.schema // 0' "$data_file")
-    if [[ "$schema" != "3" ]]; then
-      echo "Unsupported data.yml schema (expected 3): $schema" >&2
+    if ! signatures_data_schema_supported "$schema"; then
+      echo "Unsupported data.yml schema (expected 3 or 4): $schema" >&2
       return 1
     fi
     if yq -e '.packages[] | select(.package == strenv(PACKAGE))' "$data_file" >/dev/null 2>&1; then
@@ -708,7 +750,7 @@ submission_merge_entry_into_data_yml() {
     yq -i '.packages |= sort_by(.package)' "$data_file"
   else
     export ENTRY="$entry_file"
-    yq -n '.schema = 3 | .packages = [load(strenv(ENTRY))]' > "$data_file"
+    yq -n '.schema = 4 | .packages = [load(strenv(ENTRY))]' > "$data_file"
   fi
 }
 
@@ -816,7 +858,7 @@ submission_format_package_merge_diff() {
   if [[ -f data.yml ]] && [[ -s data.yml ]]; then
     cp data.yml "$work_data"
   else
-    yq -n '.schema = 3 | .packages = []' > "$work_data"
+    yq -n '.schema = 4 | .packages = []' > "$work_data"
   fi
   submission_merge_entry_into_data_yml "$entry_file" "$work_data"
   _submission_write_package_list_item "$work_data" "$after_file"
