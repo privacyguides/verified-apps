@@ -184,6 +184,78 @@ signatures_mirror_issue_comment_to_codeberg() {
   fi
 }
 
+# Set a Codeberg issue state via the Forgejo API (open or closed).
+codeberg_set_issue_state() {
+  local token="$1"
+  local owner="$2"
+  local repo="$3"
+  local issue_index="$4"
+  local state="$5"
+  local api_base="${CODEBERG_API_BASE:-https://codeberg.org/api/v1}"
+  local payload_file response http_code response_body
+
+  [[ -n "$token" && "$issue_index" =~ ^[0-9]+$ ]] || return 1
+  case "$state" in
+    open|closed) ;;
+    *) return 1 ;;
+  esac
+
+  payload_file=$(mktemp)
+  jq -n --arg state "$state" '{state: $state}' > "$payload_file"
+
+  response=$(curl -sS -w '\n%{http_code}' -X PATCH \
+    -H "Authorization: token ${token}" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    "${api_base}/repos/${owner}/${repo}/issues/${issue_index}" \
+    --data-binary @"$payload_file")
+  rm -f "$payload_file"
+
+  http_code=$(printf '%s' "$response" | tail -n 1)
+  response_body=$(printf '%s' "$response" | sed '$d')
+
+  if [[ "$http_code" != "201" && "$http_code" != "200" ]]; then
+    echo "Codeberg issue state update failed (HTTP ${http_code}):" >&2
+    printf '%s\n' "$response_body" >&2
+    return 1
+  fi
+}
+
+# Sync Codeberg issue open/closed state from a GitHub issue event action.
+signatures_sync_codeberg_issue_state() {
+  local token="$1"
+  local github_issue_body="$2"
+  local github_action="$3"
+  local owner="${CODEBERG_REPO_OWNER:-privacyguides}"
+  local repo="${CODEBERG_REPO_NAME:-verified-apps}"
+  local cb_issue_num target_state
+
+  [[ -n "$token" ]] || return 0
+
+  case "$github_action" in
+    opened|reopened) target_state="open" ;;
+    closed) target_state="closed" ;;
+    *) return 0 ;;
+  esac
+
+  if ! signatures_parse_submission_source "$github_issue_body"; then
+    echo "Could not parse External issue ref from GitHub issue body." >&2
+    return 1
+  fi
+
+  if ! cb_issue_num=$(signatures_codeberg_issue_number "$SUBMISSION_EXTERNAL_REF"); then
+    echo "Invalid External issue ref: ${SUBMISSION_EXTERNAL_REF}" >&2
+    return 1
+  fi
+
+  if ! codeberg_set_issue_state "$token" "$owner" "$repo" "$cb_issue_num" "$target_state"; then
+    echo "::warning::Could not set ${SUBMISSION_EXTERNAL_REF} to ${target_state} on Codeberg." >&2
+    return 1
+  fi
+
+  echo "Set ${SUBMISSION_EXTERNAL_REF} to ${target_state} on Codeberg."
+}
+
 # Write a submission commit message; always closes the synced GitHub issue (GH-N).
 submission_write_commit_message_file() {
   local msg_file="$1"

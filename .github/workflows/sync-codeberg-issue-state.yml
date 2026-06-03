@@ -1,0 +1,49 @@
+name: Sync Codeberg Issue State
+
+on:
+  issues:
+    types:
+      - opened
+      - closed
+      - reopened
+
+concurrency:
+  group: codeberg-issue-state-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    name: Sync open/close to Codeberg
+    runs-on: ubuntu-latest
+    if: contains(github.event.issue.labels.*.name, 'Import Codeberg')
+
+    permissions:
+      issues: read
+
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: "false"
+          sparse-checkout: |
+            .github/actions/signature-lib
+          sparse-checkout-cone-mode: false
+
+      - name: Sync Codeberg issue state
+        env:
+          CB_SYNC_TOKEN: ${{ secrets.CB_SYNC_TOKEN }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_ACTION: ${{ github.event.action }}
+        run: |
+          set -euo pipefail
+          source .github/actions/signature-lib/signatures.lib.sh
+
+          if [[ -z "${CB_SYNC_TOKEN:-}" ]]; then
+            echo "CB_SYNC_TOKEN is not configured." >&2
+            exit 1
+          fi
+
+          signatures_sync_codeberg_issue_state \
+            "$CB_SYNC_TOKEN" \
+            "$ISSUE_BODY" \
+            "$ISSUE_ACTION"

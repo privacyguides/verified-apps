@@ -2,7 +2,7 @@
 #
 # Required repository secrets:
 #   On Codeberg: GH_SYNC_TOKEN — GitHub PAT with `issues: write` on privacyguides/verified-apps
-#   On GitHub: CB_SYNC_TOKEN — Codeberg PAT with issue comment access on privacyguides/verified-apps
+#   On GitHub: CB_SYNC_TOKEN — Codeberg PAT with issue read/write on privacyguides/verified-apps
 name: Sync issue to GitHub
 
 on:
@@ -55,7 +55,7 @@ jobs:
           jq -n \
             --arg title "$issue_title" \
             --rawfile body "$body_file" \
-            '{title: $title, body: $body}' > "$payload_file"
+            '{title: $title, body: $body, labels: ["Import Codeberg"]}' > "$payload_file"
 
           response=$(curl -sS -w '\n%{http_code}' -X POST \
             -H "Authorization: Bearer ${GH_SYNC_TOKEN}" \
