@@ -258,6 +258,14 @@ packages:
             issue: GH-729
             apk:
               sha256: 9a1cf2516c0f63118008258e6dcfd1de814fc597636c939b7547e9f1b5b4ffb8
+  - package: ch.coredump.watertemp.zh
+    signature:
+      - fingerprint: B9:A5:BC:C0:8A:FA:69:20:0A:A6:AA:84:B4:A0:3B:AC:8F:3A:63:C9:8C:86:A2:D4:CB:C8:26:A0:F7:3D:19:71
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: CB-1
+            apk:
+              sha256: 322ec20b57f7d9679b7b665ad725ef7de6f29380596cdf1fd7a742e7de28f5db
   - package: ch.protonmail.android
     signature:
       - fingerprint: DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
