@@ -7,7 +7,7 @@ inputs:
   messageFile:
     description: Path to the prepared commit message file
     required: false
-    default: .submission-commit-msg
+    default: submission-commit-msg
 outputs:
   commitSha:
     description: SHA of the verified commit

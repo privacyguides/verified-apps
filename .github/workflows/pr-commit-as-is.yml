@@ -122,7 +122,8 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: submission-commit-msg
-          path: .submission-commit-msg
+          path: submission-commit-msg
+          if-no-files-found: error
 
       - name: Comment when skipped
         if: steps.meta.outputs.skipped == 'true'

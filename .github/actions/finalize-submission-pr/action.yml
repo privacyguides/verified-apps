@@ -88,7 +88,7 @@ runs:
         cp "${RUNNER_TEMP}/submission-data.yml" data.yml
         git add data.yml
 
-        msg_file="${GITHUB_WORKSPACE}/.submission-commit-msg"
+        msg_file="${GITHUB_WORKSPACE}/submission-commit-msg"
         {
           printf '%s from #%s\n\n' "$COMMIT_SUBJECT" "$ISSUE"
           printf 'Closes #%s\n' "$ISSUE"
@@ -105,7 +105,7 @@ runs:
       uses: iarekylew00t/verified-bot-commit@v2
       with:
         ref: ${{ inputs.headRef }}
-        message-file: .submission-commit-msg
+        message-file: submission-commit-msg
         files: |
           data.yml
         auto-stage: false

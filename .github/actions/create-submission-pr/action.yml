@@ -133,7 +133,7 @@ runs:
         branch="new/${ISSUE}"
         git checkout -b "$branch"
 
-        msg_file="${GITHUB_WORKSPACE}/.submission-commit-msg"
+        msg_file="${GITHUB_WORKSPACE}/submission-commit-msg"
         {
           printf 'Add %s from #%s%s\n\n' "$PACKAGE" "$ISSUE" "$COMMIT_SUFFIX"
           printf 'Closes #%s\n' "$ISSUE"
@@ -169,7 +169,7 @@ runs:
       uses: iarekylew00t/verified-bot-commit@v2
       with:
         ref: ${{ steps.prepare.outputs.branch }}
-        message-file: .submission-commit-msg
+        message-file: submission-commit-msg
         files: |
           data.yml
         auto-stage: false
