@@ -1406,12 +1406,12 @@ jobs:
           {
             echo "**Agree with these changes? Please add a :+1: reaction to this PR!**"
             echo ""
-            echo "A maintainer requested this PR from issue #${ISSUE}."
+            echo "A maintainer requested this PR from issue GH-${ISSUE}."
             echo "These entries should be verified manually (or additional entries can be added) before merging."
             echo "This PR adds signatures from stores that matched what the submitter provided, when verification was run."
             echo "See the verification comment on the issue for full details."
             echo ""
-            echo "Closes #${ISSUE}"
+            echo "Closes GH-${ISSUE}"
           } > "${RUNNER_TEMP}/prBody.md"
 
       - name: Checkout repository

@@ -39,10 +39,10 @@ runs:
           labels=$(gh issue view "$ISSUE_NUMBER" --repo "$GH_REPO" --json labels -q '.labels[].name')
           if printf '%s\n' "$labels" | grep -qxF 'Do Not Merge'; then
             blocked_label="Do Not Merge"
-            blocked_on="issue #${ISSUE_NUMBER}"
+            blocked_on="issue GH-${ISSUE_NUMBER}"
           elif printf '%s\n' "$labels" | grep -qxF 'Needs a +1'; then
             blocked_label="Needs a +1"
-            blocked_on="issue #${ISSUE_NUMBER}"
+            blocked_on="issue GH-${ISSUE_NUMBER}"
           fi
         fi
 
@@ -50,10 +50,10 @@ runs:
           labels=$(gh pr view "$PR_NUMBER" --repo "$GH_REPO" --json labels -q '.labels[].name')
           if printf '%s\n' "$labels" | grep -qxF 'Do Not Merge'; then
             blocked_label="Do Not Merge"
-            blocked_on="pull request #${PR_NUMBER}"
+            blocked_on="pull request GH-${PR_NUMBER}"
           elif printf '%s\n' "$labels" | grep -qxF 'Needs a +1'; then
             blocked_label="Needs a +1"
-            blocked_on="pull request #${PR_NUMBER}"
+            blocked_on="pull request GH-${PR_NUMBER}"
           fi
         fi
 

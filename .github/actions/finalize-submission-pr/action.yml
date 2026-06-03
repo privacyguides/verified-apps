@@ -90,8 +90,8 @@ runs:
 
         msg_file="${GITHUB_WORKSPACE}/submission-commit-msg"
         {
-          printf '%s from #%s\n\n' "$COMMIT_SUBJECT" "$ISSUE"
-          printf 'Closes #%s\n' "$ISSUE"
+          printf '%s from %s\n\n' "$COMMIT_SUBJECT" "$(signatures_format_github_ref "$ISSUE")"
+          printf 'Closes %s\n' "$(signatures_format_github_ref "$ISSUE")"
           if [[ -n "$CO_AUTHOR_TRAILER" ]]; then
             printf '\n%s\n' "$CO_AUTHOR_TRAILER"
           fi

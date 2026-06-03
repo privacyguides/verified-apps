@@ -26,6 +26,11 @@ gha_write_multiline_output() {
   } >> "$GITHUB_OUTPUT"
 }
 
+# Format a GitHub issue or pull request reference (GH-123, not #123).
+signatures_format_github_ref() {
+  printf 'GH-%s' "$1"
+}
+
 # GitHub noreply Co-authored-by trailer for a user (login + numeric id).
 submission_coauthor_trailer_for_user() {
   local login="$1"

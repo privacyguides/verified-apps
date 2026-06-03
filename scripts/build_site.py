@@ -31,6 +31,10 @@ def appverifier_text(package: str, fingerprint: str) -> str:
     return "\n".join(lines)
 
 
+def format_github_ref(number: int) -> str:
+    return f"GH-{number}"
+
+
 def collect_issues(sources: list[dict]) -> list[int]:
     seen: set[int] = set()
     issues: list[int] = []
@@ -107,7 +111,7 @@ def render_rows(rows: list[dict]) -> str:
         for issue in row["issues"]:
             url = html.escape(ISSUE_URL.format(issue=issue), quote=True)
             issue_items.append(
-                f'<a href="{url}" rel="noopener noreferrer">#{issue}</a>'
+                f'<a href="{url}" rel="noopener noreferrer">{html.escape(format_github_ref(issue))}</a>'
             )
         issues_html = ", ".join(issue_items) if issue_items else "—"
 
