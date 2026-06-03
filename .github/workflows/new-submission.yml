@@ -1760,7 +1760,10 @@ jobs:
   syncMirrorsAfterCommitAsIs:
     name: Sync mirrors (commit as-is)
     needs: commitAsIsPush
-    if: needs.commitAsIsPush.outputs.committed == 'true'
+    if: |
+      always() &&
+      !cancelled() &&
+      needs.commitAsIsPush.result == 'success'
     uses: ./.github/workflows/sync-repo-to-mirrors.yml
     secrets: inherit
 
@@ -1768,7 +1771,9 @@ jobs:
     name: Sync Codeberg issue state (commit as-is)
     needs: commitAsIsPush
     if: |
-      needs.commitAsIsPush.outputs.committed == 'true' &&
+      always() &&
+      !cancelled() &&
+      needs.commitAsIsPush.result == 'success' &&
       contains(github.event.issue.labels.*.name, 'Import Codeberg')
     uses: ./.github/workflows/sync-codeberg-issue-state.yml
     secrets: inherit

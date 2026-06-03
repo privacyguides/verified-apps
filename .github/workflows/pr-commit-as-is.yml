@@ -280,14 +280,21 @@ jobs:
   syncMirrorsAfterMerge:
     name: Sync mirrors (commit as-is PR)
     needs: merge
-    if: needs.merge.result == 'success'
+    if: |
+      always() &&
+      !cancelled() &&
+      needs.merge.result == 'success'
     uses: ./.github/workflows/sync-repo-to-mirrors.yml
     secrets: inherit
 
   syncCodebergAfterMerge:
     name: Sync Codeberg issue state (commit as-is PR)
-    needs: [prepare, checkImportCodeberg]
-    if: needs.checkImportCodeberg.outputs.importFromCodeberg == 'true'
+    needs: [prepare, merge, checkImportCodeberg]
+    if: |
+      always() &&
+      !cancelled() &&
+      needs.merge.result == 'success' &&
+      needs.checkImportCodeberg.outputs.importFromCodeberg == 'true'
     uses: ./.github/workflows/sync-codeberg-issue-state.yml
     secrets: inherit
     with:
