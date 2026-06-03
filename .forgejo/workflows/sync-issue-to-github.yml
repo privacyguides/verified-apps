@@ -1,0 +1,80 @@
+# Mirrors new Codeberg issues to the canonical GitHub repository.
+#
+# Required repository secret on Codeberg:
+#   GH_SYNC_TOKEN — GitHub PAT with `issues: write` on privacyguides/verified-apps
+name: Sync issue to GitHub
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  sync:
+    runs-on: codeberg-tiny
+    steps:
+      - name: Open matching issue on GitHub
+        env:
+          GH_SYNC_TOKEN: ${{ secrets.GH_SYNC_TOKEN }}
+          GH_SYNC_REPO: privacyguides/verified-apps
+        run: |
+          set -euo pipefail
+
+          event_path="${GITHUB_EVENT_PATH:-${FORGEJO_EVENT_PATH:-}}"
+          if [[ -z "$event_path" || ! -f "$event_path" ]]; then
+            echo "Event payload file not found (GITHUB_EVENT_PATH / FORGEJO_EVENT_PATH)." >&2
+            exit 1
+          fi
+
+          if jq -e '.issue.pull_request' "$event_path" >/dev/null 2>&1; then
+            echo "Skipping pull request; only plain issues are mirrored."
+            exit 0
+          fi
+
+          if [[ -z "${GH_SYNC_TOKEN:-}" ]]; then
+            echo "GH_SYNC_TOKEN is not configured on this repository." >&2
+            exit 1
+          fi
+
+          issue_title=$(jq -r '.issue.title' "$event_path")
+          issue_body=$(jq -r '.issue.body // ""' "$event_path")
+          issue_number=$(jq -r '.issue.number' "$event_path")
+          issue_user=$(jq -r '.issue.user.login' "$event_path")
+
+          body_file=$(mktemp)
+          payload_file=$(mktemp)
+          trap 'rm -f "$body_file" "$payload_file"' EXIT
+
+          {
+            if [[ -n "$issue_body" ]]; then
+              printf '%s\n\n' "$issue_body"
+            fi
+            printf '%s\n\n' '### Submission Source'
+            printf '%s\n' 'Tracker: Codeberg'
+            printf 'Number: %s\n' "$issue_number"
+            printf 'User: %s\n' "$issue_user"
+          } > "$body_file"
+
+          jq -n \
+            --arg title "$issue_title" \
+            --rawfile body "$body_file" \
+            '{title: $title, body: $body}' > "$payload_file"
+
+          response=$(curl -sS -w '\n%{http_code}' -X POST \
+            -H "Authorization: Bearer ${GH_SYNC_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${GH_SYNC_REPO}/issues" \
+            --data-binary @"$payload_file")
+
+          http_code=$(printf '%s' "$response" | tail -n 1)
+          response_body=$(printf '%s' "$response" | sed '$d')
+
+          if [[ "$http_code" != "201" ]]; then
+            echo "GitHub issue creation failed (HTTP ${http_code}):" >&2
+            printf '%s\n' "$response_body" >&2
+            exit 1
+          fi
+
+          github_issue_url=$(printf '%s' "$response_body" | jq -r '.html_url')
+          github_issue_number=$(printf '%s' "$response_body" | jq -r '.number')
+          echo "Created GitHub issue #${github_issue_number}: ${github_issue_url}"
