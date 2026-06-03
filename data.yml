@@ -1552,6 +1552,14 @@ packages:
             issue: GH-754
             apk:
               sha256: 2eef7be72186e9c8ceba0cf07ff7fad2017baeaf7ab0c25718d55c8444aa4017
+  - package: com.genius.android
+    signature:
+      - fingerprint: 8C:DE:06:14:7A:50:84:F1:AE:C9:89:29:8E:78:85:74:D6:A3:41:BB:46:AD:10:8C:0E:D5:16:72:91:04:5C:55
+        sources:
+          - name: Google Play
+            issue: CB-4
+            apk:
+              sha256: ff256ce40277e3438f0bbc75c6893700194bc8521ee6f66ba79d9a1061e75a8d
   - package: com.geoguessr.app
     signature:
       - fingerprint: 21:A6:DC:35:E1:BB:D5:E7:67:66:D1:EA:BC:11:92:43:F5:87:D5:2B:5B:92:29:9A:09:88:A2:67:9C:8B:A6:85
