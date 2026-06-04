@@ -4191,6 +4191,14 @@ packages:
             issue: GH-852
             apk:
               sha256: 10fb92b0e4e5ed9e99d67be992d0009eb17b76184aef86b9256944c438ba3bb4
+  - package: de.onedigital.buythedip.customer
+    signature:
+      - fingerprint: 60:9A:3C:62:95:F7:EF:58:F5:37:99:32:AA:D6:0E:2C:7E:DF:47:E8:22:58:9B:CD:F4:79:B3:39:2A:C6:EC:66
+        sources:
+          - name: Google Play
+            issue: GH-1145
+            apk:
+              sha256: 45bb64c121dcfba988649b6267b0aace0311749c20935391a425065906066fc7
   - package: de.ph1b.audiobook
     signature:
       - fingerprint: 11:A4:CA:EE:0B:A3:EB:5A:35:2D:11:25:AB:D3:29:25:20:9E:89:60:15:A5:D9:CA:0F:D9:F8:2D:AE:20:4F:AA
