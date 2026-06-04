@@ -4599,6 +4599,23 @@ packages:
             issue: GH-1072
             apk:
               sha256: 95527b05a417ec2a438eba17c739b9019832d3e2d4caa63019a4d84975b6029d
+  - package: eu.heili.wormhole
+    signature:
+      - fingerprint: 57:F6:F8:E7:72:92:E1:61:5D:E2:3D:43:49:7F:00:7E:25:68:5A:B1:54:69:6D:31:BD:10:32:96:ED:65:35:18
+        sources:
+          - name: Direct APK Link
+            issue: CB-7
+            apk:
+              sha256: 82ebc961c6e4058be1447754061fdf3ca98eeaaacf2e1d8c2f81f6b5a317f946
+              link: https://github.com/wormhole-app/wormhole/releases/download/1.1.9/wormhole-1.1.9-android-fdroid-arm64-v8a.apk
+          - name: F-Droid
+            issue: CB-7
+            apk:
+              sha256: 82ebc961c6e4058be1447754061fdf3ca98eeaaacf2e1d8c2f81f6b5a317f946
+          - name: F-Droid (IzzyOnDroid)
+            issue: CB-7
+            apk:
+              sha256: 82ebc961c6e4058be1447754061fdf3ca98eeaaacf2e1d8c2f81f6b5a317f946
   - package: eu.siacs.conversations
     signature:
       - fingerprint: C7:5A:BE:78:59:36:43:AE:7C:AC:52:73:27:CD:21:93:48:2D:B0:67:40:4A:88:B8:C1:3F:7A:07:01:94:61:87
