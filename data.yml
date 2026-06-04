@@ -3320,6 +3320,23 @@ packages:
             issue: GH-835
             apk:
               sha256: b63b611ba3e05da1234e317761a3151e5941056e780ab85b6248faa177787423
+  - package: com.sosauce.cutecalc
+    signature:
+      - fingerprint: FD:2D:95:CD:B3:48:B2:F1:AE:BE:DB:AB:87:9C:ED:73:73:85:EE:13:C3:05:A1:39:D6:58:0D:4C:F2:C0:D6:5A
+        sources:
+          - name: Direct APK Link
+            issue: CB-8
+            apk:
+              sha256: a2dd80e8e08c996392382c9d0acdd1092ebc6c960c518c3da793fd773d3e67a4
+              link: https://github.com/sosauce/Vanilla/releases/download/v4.1.0/Vanilla_4.1.0.apk
+          - name: F-Droid
+            issue: CB-8
+            apk:
+              sha256: a2dd80e8e08c996392382c9d0acdd1092ebc6c960c518c3da793fd773d3e67a4
+          - name: F-Droid (IzzyOnDroid)
+            issue: CB-8
+            apk:
+              sha256: a2dd80e8e08c996392382c9d0acdd1092ebc6c960c518c3da793fd773d3e67a4
   - package: com.spotify.music
     signature:
       - fingerprint: 65:05:B1:81:93:33:44:F9:38:93:D5:86:E3:99:B9:46:16:18:3F:04:34:9C:B5:72:A9:E8:1A:33:35:E2:8F:FD
