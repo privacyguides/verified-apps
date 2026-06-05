@@ -1,5 +1,9 @@
 schema: 1
 domains:
+  - domain: appverifier.roundsalmon4.com
+    method: dns
+    issue: GH-1333
+    checked: "2026-06-05T22:42:34Z"
   - domain: privacyguides.org
     method: dns
     issue: GH-1329
