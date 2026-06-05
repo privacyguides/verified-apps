@@ -789,10 +789,40 @@ jobs:
           packageName: ${{ needs.parse.outputs.packageName }}
           userSignature: ${{ needs.parse.outputs.packageSignature }}
 
+  domainCheck:
+    name: Verified Domain
+    runs-on: ubuntu-latest
+    needs: parse
+    if: needs.parse.outputs.isDuplicate != 'true' && (github.event.label.name == 'Run Checks' || github.event.label.name == 'Create PR' || github.event.label.name == 'Commit As-Is')
+    continue-on-error: true
+    permissions:
+      contents: read
+
+    outputs:
+      found: ${{ steps.domain.outputs.found }}
+      method: ${{ steps.domain.outputs.method }}
+      domain: ${{ steps.domain.outputs.domain }}
+      status: ${{ steps.domain.outputs.status }}
+      tableRow: ${{ steps.domain.outputs.tableRow }}
+      revokedWarning: ${{ steps.domain.outputs.revokedWarning }}
+
+    steps:
+      - name: Download Repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: "false"
+
+      - name: Check verified domain
+        id: domain
+        uses: ./.github/actions/domain-verify
+        with:
+          packageName: ${{ needs.parse.outputs.packageName }}
+          packageSignature: ${{ needs.parse.outputs.packageSignature }}
+
   summary:
     name: Generate Summary
     runs-on: ubuntu-latest
-    needs: [parse, accrescent, fdroid, customFdroid, gplay, apkpure, appverifierDb, directApk, grapheneosForum]
+    needs: [parse, accrescent, fdroid, customFdroid, gplay, apkpure, appverifierDb, directApk, grapheneosForum, domainCheck]
 
     if: always() && needs.parse.outputs.isDuplicate != 'true' && github.event.label.name == 'Run Checks'
     permissions:
@@ -855,6 +885,10 @@ jobs:
           GO_SIG: ${{ needs.grapheneosForum.outputs.signature }}
           APK_URL: ${{ needs.parse.outputs.apkUrl }}
           CUSTOM_FDROID_REPO_URL: ${{ needs.parse.outputs.customFdroidRepoUrl }}
+          DOMAIN_FOUND: ${{ needs.domainCheck.outputs.found }}
+          DOMAIN_STATUS: ${{ needs.domainCheck.outputs.status }}
+          DOMAIN_TABLE_ROW: ${{ needs.domainCheck.outputs.tableRow }}
+          DOMAIN_REVOKED_WARNING: ${{ needs.domainCheck.outputs.revokedWarning }}
         run: |
           set -euo pipefail
           format_sig_cell() {
@@ -863,6 +897,9 @@ jobs:
             local sig_html="${sig//$'\n'/<br>}"
             printf '%s<br>%s' "$pkg" "$sig_html"
           }
+          if [[ -n "$DOMAIN_REVOKED_WARNING" ]]; then
+            printf '%s\n\n' "$DOMAIN_REVOKED_WARNING" >> $GITHUB_STEP_SUMMARY
+          fi
           intro="We attempted to check Accrescent, F-Droid (F-Droid and IzzyOnDroid), Google Play"
           extras=()
           if [[ "$AV_FOUND" == "true" ]]; then
@@ -879,6 +916,9 @@ jobs:
           fi
           if [[ "$CHECK_APKPURE" == "true" ]]; then
             extras+=("APKPure")
+          fi
+          if [[ "$DOMAIN_FOUND" == "true" ]]; then
+            extras+=("your app's verified domain")
           fi
           if [[ ${#extras[@]} -gt 0 ]]; then
             extras_joined=""
@@ -920,6 +960,9 @@ jobs:
           fi
           if [[ "$GO_FOUND" == "true" ]]; then
             echo "| GrapheneOS Forum | $GO_MATCH | $(format_sig_cell "$GO_PKG" "$GO_SIG") |" >> $GITHUB_STEP_SUMMARY
+          fi
+          if [[ "$DOMAIN_FOUND" == "true" && -n "$DOMAIN_TABLE_ROW" ]]; then
+            printf '%s\n' "$DOMAIN_TABLE_ROW" >> $GITHUB_STEP_SUMMARY
           fi
           if [[ -n "$APK_URL" ]]; then
             echo "| Direct APK Link | $DIRECT_MATCH | $(format_sig_cell "$DIRECT_PKG" "$DIRECT_SIG") |" >> $GITHUB_STEP_SUMMARY
@@ -1209,6 +1252,7 @@ jobs:
           USER_SIG: ${{ needs.parse.outputs.packageSignature }}
           ISSUE: ${{ github.event.issue.number }}
           SUBMISSION_ISSUE_REF: ${{ needs.parse.outputs.submissionIssueRef }}
+          DOMAIN_VERIFIED_SIG: ${{ needs.domainCheck.outputs.status == 'allowed' && needs.parse.outputs.packageSignature || '' }}
           ACC_SIG: ${{ needs.accrescent.outputs.signature }}
           FDROID_RESULTS_DIR: fdroid-results
           GPLAY_SIG: ${{ needs.gplay.outputs.signature }}
@@ -1555,7 +1599,7 @@ jobs:
       group: data-yml-writes
       cancel-in-progress: false
       queue: max
-    needs: [parse, accrescent, fdroid, customFdroid, gplay, apkpure, appverifierDb, directApk]
+    needs: [parse, accrescent, fdroid, customFdroid, gplay, apkpure, appverifierDb, directApk, domainCheck]
     if: |
       always() &&
       !cancelled() &&
@@ -1570,6 +1614,7 @@ jobs:
     outputs:
       prepared: ${{ steps.prepare_meta.outputs.prepared }}
       skipped: ${{ steps.prepare_meta.outputs.skipped }}
+      domainFileChanged: ${{ steps.prepare_meta.outputs.domainFileChanged }}
 
     steps:
       - name: Validate
@@ -1644,6 +1689,9 @@ jobs:
           accrescentApkSha256: ${{ needs.accrescent.outputs.apkSha256 }}
           gplayApkSha256: ${{ needs.gplay.outputs.apkSha256 }}
           apkpureApkSha256: ${{ needs.apkpure.outputs.apkSha256 }}
+          domainVerifiedSig: ${{ needs.domainCheck.outputs.status == 'allowed' && needs.parse.outputs.packageSignature || '' }}
+          domain: ${{ needs.domainCheck.outputs.domain }}
+          domainMethod: ${{ needs.domainCheck.outputs.method }}
 
       - name: Export prepare metadata
         id: prepare_meta
@@ -1651,6 +1699,7 @@ jobs:
         run: |
           echo "prepared=${{ steps.commit.outputs.prepared }}" >> "$GITHUB_OUTPUT"
           echo "skipped=${{ steps.commit.outputs.skipped }}" >> "$GITHUB_OUTPUT"
+          echo "domainFileChanged=${{ steps.commit.outputs.domainFileChanged }}" >> "$GITHUB_OUTPUT"
 
       - name: Upload data.yml for attestation
         if: steps.prepare_meta.outputs.prepared == 'true'
@@ -1658,6 +1707,14 @@ jobs:
         with:
           name: database
           path: data.yml
+
+      - name: Upload verified domains file
+        if: steps.prepare_meta.outputs.prepared == 'true' && steps.prepare_meta.outputs.domainFileChanged == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: database-domains
+          path: data-verified-domains.yml
+          if-no-files-found: error
 
       - name: Upload commit message
         if: steps.prepare_meta.outputs.prepared == 'true'
@@ -1672,7 +1729,7 @@ jobs:
         uses: ./.github/actions/issue-comment
         with:
           issueNumber: ${{ github.event.issue.number }}
-          body: "Could not commit as-is: no store signatures matched the submission. Run **Run Checks** first, or use **Create PR** to add entries manually."
+          body: "Could not commit as-is: no store signatures or verified domain matched the submission. Run **Run Checks** first, or use **Create PR** to add entries manually."
           issueBody: ${{ github.event.issue.body }}
           codebergToken: ${{ secrets.CB_SYNC_TOKEN }}
 
@@ -1730,11 +1787,21 @@ jobs:
           name: submission-commit-msg
           path: .
 
+      - name: Download verified domains file
+        if: needs.commitAsIsPrepare.outputs.domainFileChanged == 'true'
+        uses: actions/download-artifact@v8
+        with:
+          name: database-domains
+          path: .
+
       - name: Push verified commit to main
         id: push
         uses: ./.github/actions/push-submission-commit
         with:
           ref: main
+          files: |
+            data.yml
+            data-verified-domains.yml
 
       - name: Export push metadata
         id: push_meta

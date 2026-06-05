@@ -1,5 +1,5 @@
 name: Push prepared submission commit
-description: Push a staged data.yml with a prepared commit message via verified-bot-commit
+description: Push staged file(s) with a prepared commit message via verified-bot-commit
 inputs:
   ref:
     description: Branch or ref to push to
@@ -8,6 +8,10 @@ inputs:
     description: Path to the prepared commit message file
     required: false
     default: submission-commit-msg
+  files:
+    description: Newline-separated list of files to stage and commit
+    required: false
+    default: data.yml
 outputs:
   commitSha:
     description: SHA of the verified commit
@@ -17,9 +21,14 @@ runs:
   using: composite
   steps:
     - shell: bash
+      env:
+        FILES: ${{ inputs.files }}
       run: |
         set -euo pipefail
-        git add data.yml
+        while IFS= read -r f; do
+          [[ -z "$f" ]] && continue
+          git add "$f"
+        done <<< "$FILES"
 
     - name: Push verified commit
       id: verifiedCommit
@@ -27,6 +36,5 @@ runs:
       with:
         ref: ${{ inputs.ref }}
         message-file: ${{ inputs.messageFile }}
-        files: |
-          data.yml
+        files: ${{ inputs.files }}
         auto-stage: false

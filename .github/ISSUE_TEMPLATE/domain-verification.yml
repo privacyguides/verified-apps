@@ -1,6 +1,8 @@
 name: Domain Verification
 description: "App developers: verify your domain name"
 title: "[Verify]: "
+labels:
+  - Domain Request
 body:
   - type: markdown
     attributes:
@@ -12,7 +14,7 @@ body:
       value: |
         ## Verification
 
-        This form is for any **developers** of an Android app to fill out. The verification process will require creating a `/.well-known/org.privacyguides.verified-apps.json` file on an HTTPS server on your domain.
+        This form is for any **developers** of an Android app to fill out. The verification process will require creating either a DNS record or a `/.well-known/org.privacyguides.verified-apps.json` file on an HTTPS server on your domain.
 
   - type: input
     id: domainName

@@ -1,0 +1,437 @@
+name: Domain Verification
+
+on:
+  issues:
+    types:
+      - labeled
+  issue_comment:
+    types:
+      - created
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+jobs:
+  instructions:
+    name: Post setup instructions
+    runs-on: ubuntu-latest
+    if: >-
+      github.event_name == 'issues' &&
+      github.event.label.name == 'Domain Request'
+    concurrency:
+      group: domain-instructions-${{ github.event.issue.number }}
+      cancel-in-progress: true
+    permissions:
+      contents: read
+      issues: write
+
+    steps:
+      - name: Download Repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: "false"
+
+      - name: Build instructions
+        id: build
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: |
+          set -euo pipefail
+          source .github/actions/domain-verify/domains.lib.sh
+
+          body_file="${RUNNER_TEMP}/instructions.md"
+
+          if ! domain=$(domain_parse_domain_name "$ISSUE_BODY"); then
+            {
+              echo "We couldn't read a **Domain Name** from this request. Please edit the issue and add the domain you'd like to verify, then re-apply the \`Domain Request\` label."
+            } > "$body_file"
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+            echo "bodyFile=$body_file" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          keys=$(domain_parse_signing_keys "$ISSUE_BODY")
+          if [[ "$(jq 'length' <<< "$keys")" -eq 0 ]]; then
+            {
+              echo "We couldn't read any **Signing Key** from this request for \`${domain}\`. Please edit the issue and add at least one SHA-256 signing certificate fingerprint, then re-apply the \`Domain Request\` label."
+            } > "$body_file"
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+            echo "bodyFile=$body_file" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          domain_render_instructions "$domain" "$keys" > "$body_file"
+          echo "ready=true" >> "$GITHUB_OUTPUT"
+          echo "bodyFile=$body_file" >> "$GITHUB_OUTPUT"
+
+      - name: Comment instructions
+        if: steps.build.outputs.ready == 'true'
+        uses: ./.github/actions/issue-comment
+        with:
+          issueNumber: ${{ github.event.issue.number }}
+          bodyFile: ${{ steps.build.outputs.bodyFile }}
+          issueBody: ${{ github.event.issue.body }}
+          codebergToken: ${{ secrets.CB_SYNC_TOKEN }}
+
+  validate:
+    name: Validate domain requests
+    runs-on: ubuntu-latest
+    if: >-
+      (
+        github.event_name == 'issue_comment' &&
+        contains(github.event.issue.labels.*.name, 'Domain Request') &&
+        github.event.comment.user.login != 'github-actions[bot]'
+      ) ||
+      github.event_name == 'schedule' ||
+      github.event_name == 'workflow_dispatch'
+    concurrency:
+      group: data-yml-writes
+      cancel-in-progress: false
+      queue: max
+    permissions:
+      contents: read
+      issues: write
+
+    outputs:
+      hasChanges: ${{ steps.validate.outputs.hasChanges }}
+
+    steps:
+      - name: Download Repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: "false"
+
+      - name: Validate
+        id: validate
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          EVENT_NAME: ${{ github.event_name }}
+          COMMENT_ISSUE: ${{ github.event.issue.number }}
+          CB_TOKEN: ${{ secrets.CB_SYNC_TOKEN }}
+        run: |
+          set -euo pipefail
+          source .github/actions/domain-verify/domains.lib.sh
+
+          echo "hasChanges=false" >> "$GITHUB_OUTPUT"
+
+          # --- Determine target issues -------------------------------------
+          targets="${RUNNER_TEMP}/targets.txt"
+          if [[ "$EVENT_NAME" == "issue_comment" ]]; then
+            printf '%s\n' "$COMMENT_ISSUE" > "$targets"
+          else
+            gh issue list --repo "$GH_REPO" --label "Domain Request" --state open \
+              --limit 300 --json number -q '.[].number' > "$targets"
+          fi
+          echo "Target issues:"; cat "$targets" || true
+
+          verified_dir="${RUNNER_TEMP}/verified"
+          mkdir -p "$verified_dir"
+          closes_file="${RUNNER_TEMP}/closes.txt"; : > "$closes_file"
+          trailers_file="${RUNNER_TEMP}/trailers.txt"; : > "$trailers_file"
+          verified_count=0
+          only_domain=""; only_ref=""
+
+          post_comment() {
+            # $1 issue number, $2 comment body
+            local num="$1" cbody="$2" ibody
+            gh issue comment "$num" --repo "$GH_REPO" --body "$cbody"
+            ibody=$(gh issue view "$num" --repo "$GH_REPO" --json body -q .body)
+            signatures_mirror_issue_comment_to_codeberg "$CB_TOKEN" "$ibody" "$cbody" || true
+          }
+
+          while IFS= read -r num; do
+            [[ -z "$num" ]] && continue
+            echo "::group::Issue ${num}"
+            body=$(gh issue view "$num" --repo "$GH_REPO" --json body -q .body)
+
+            if ! domain=$(domain_parse_domain_name "$body"); then
+              echo "No domain in issue ${num}; skipping."; echo "::endgroup::"; continue
+            fi
+            keys=$(domain_parse_signing_keys "$body")
+            if [[ "$(jq 'length' <<< "$keys")" -eq 0 ]]; then
+              echo "No signing keys in issue ${num}; skipping."; echo "::endgroup::"; continue
+            fi
+
+            # --- Discover a record and classify the submitted keys ----------
+            rec=""; method=""; state="pending"
+            allowed_keys="[]"
+            if rec=$(domain_find_record_for_domain "$domain"); then
+              method=$(jq -r '.method' <<< "$rec")
+              kc=$(jq 'length' <<< "$keys")
+              has_allowed=false; has_revoked=false
+              for ((ki = 0; ki < kc; ki++)); do
+                key=$(jq -r ".[$ki]" <<< "$keys")
+                st=$(domain_key_status "$rec" "$key")
+                if [[ "$st" == "allowed" ]]; then
+                  has_allowed=true
+                  allowed_keys=$(jq -c --arg k "$key" '. + [$k]' <<< "$allowed_keys")
+                elif [[ "$st" == "revoked" ]]; then
+                  has_revoked=true
+                fi
+              done
+              if [[ "$has_allowed" == "true" ]]; then state="verified"
+              elif [[ "$has_revoked" == "true" ]]; then state="revoked"
+              else state="pending"; fi
+            fi
+            echo "Issue ${num}: domain=${domain} method=${method:-none} state=${state}"
+
+            # --- Decide whether to comment / commit -------------------------
+            last_state=""
+            if [[ "$EVENT_NAME" != "issue_comment" ]]; then
+              last_state=$(gh issue view "$num" --repo "$GH_REPO" --json comments \
+                -q '.comments[].body' | domain_last_state_from_comments || true)
+            fi
+
+            if [[ "$state" == "verified" ]]; then
+              if [[ "$EVENT_NAME" == "issue_comment" || "$last_state" != "verified" ]]; then
+                # Accumulate file changes; the push job comments + closes after the commit lands.
+                dv_before=$(mktemp)
+                if [[ -f "$DOMAIN_VERIFIED_FILE" ]]; then cp "$DOMAIN_VERIFIED_FILE" "$dv_before"; else : > "$dv_before"; fi
+                issue_ref=$(signatures_submission_issue_ref "$num" "$body")
+                checked=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+                allowed_json=$(jq -c '.allowed' <<< "$rec")
+                domain_verified_upsert "$DOMAIN_VERIFIED_FILE" "$domain" "$method" "$issue_ref" "$checked"
+                domain_annotate_data_yml "data.yml" "$domain" "$allowed_json" "$issue_ref"
+                annotated="${DOMAIN_ANNOTATE_CHANGED:-0}"
+                diff_out=$(domain_verified_diff "$dv_before" "$DOMAIN_VERIFIED_FILE")
+                rm -f "$dv_before"
+
+                jq -n \
+                  --arg number "$num" \
+                  --arg domain "$domain" \
+                  --arg method "$method" \
+                  --arg issueRef "$issue_ref" \
+                  --arg diff "$diff_out" \
+                  --arg annotated "$annotated" \
+                  --argjson allowedKeys "$allowed_keys" \
+                  '{number: $number, domain: $domain, method: $method, issueRef: $issueRef, diff: $diff, annotated: ($annotated == "1"), allowedKeys: $allowedKeys}' \
+                  > "${verified_dir}/${num}.json"
+
+                printf '%s\n' "$num" >> "$closes_file"
+                login=$(gh issue view "$num" --repo "$GH_REPO" --json author -q .author.login)
+                if [[ -n "$login" && "$login" != "null" ]]; then
+                  uid=$(gh api "users/${login}" -q .id 2>/dev/null || true)
+                  if [[ -n "$uid" ]]; then
+                    submission_coauthor_trailer_for_user "$login" "$uid" >> "$trailers_file" || true
+                    printf '\n' >> "$trailers_file"
+                  fi
+                fi
+                verified_count=$((verified_count + 1))
+                only_domain="$domain"; only_ref="$issue_ref"
+              else
+                echo "Issue ${num} already verified (no state change); skipping."
+              fi
+            elif [[ "$state" == "revoked" ]]; then
+              if [[ "$EVENT_NAME" == "issue_comment" || "$last_state" != "revoked" ]]; then
+                warn=$(domain_revoked_warning "$rec" "$(jq -r '.[0]' <<< "$keys")")
+                comment=$(printf '%s\n\n%s\n\n%s' \
+                  "We checked \`${domain}\` and found a submitted signing key in the **revoked** list of your verification record. We will not record this domain while the key is revoked." \
+                  "${warn}" \
+                  "$(domain_state_marker revoked)")
+                post_comment "$num" "$comment"
+              else
+                echo "Issue ${num} already warned about revocation; skipping."
+              fi
+            else
+              # pending: only reply to an explicit comment, never on the sweep
+              if [[ "$EVENT_NAME" == "issue_comment" ]]; then
+                pending_tips=$'- If you just created the record, DNS or CDN propagation can take a little while — reply again to re-check.\n- Make sure the file/record contents exactly match the instructions above (the key set must match what you submitted).'
+                comment=$(printf '%s\n\n%s\n\n%s' \
+                  "We checked \`${domain}\` over HTTPS (\`/${DOMAIN_WELLKNOWN_PATH}\`) and DNS (\`${DOMAIN_DNS_PREFIX}.${domain}\`) but couldn't confirm a matching record yet." \
+                  "$pending_tips" \
+                  "$(domain_state_marker pending)")
+                post_comment "$num" "$comment"
+              fi
+            fi
+            echo "::endgroup::"
+          done < "$targets"
+
+          # --- Build the combined commit (only if anything verified) -------
+          if [[ "$verified_count" -gt 0 ]]; then
+            if git diff --quiet -- data.yml "$DOMAIN_VERIFIED_FILE"; then
+              echo "Verified ${verified_count} issue(s) but no file changes were produced."
+            else
+              if [[ "$verified_count" -eq 1 ]]; then
+                first_line="Verify domain ${only_domain} from ${only_ref}"
+              else
+                first_line="Verify ${verified_count} domains via domain verification"
+              fi
+              msg_file="${GITHUB_WORKSPACE}/domain-commit-msg"
+              {
+                printf '%s\n\n' "$first_line"
+                while IFS= read -r n; do
+                  [[ -z "$n" ]] && continue
+                  printf 'Closes %s\n' "$(signatures_github_issue_ref "$n")"
+                done < "$closes_file"
+                trailers=$(sort -u "$trailers_file" | sed '/^$/d')
+                if [[ -n "$trailers" ]]; then
+                  printf '\n%s\n' "$trailers"
+                fi
+              } > "$msg_file"
+              echo "--- commit message ---"; cat "$msg_file"
+              echo "hasChanges=true" >> "$GITHUB_OUTPUT"
+            fi
+          fi
+
+      - name: Upload data.yml for attestation
+        if: steps.validate.outputs.hasChanges == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: database
+          path: data.yml
+
+      - name: Upload domain verification files
+        if: steps.validate.outputs.hasChanges == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: domain-verification-files
+          path: |
+            data-verified-domains.yml
+            domain-commit-msg
+          if-no-files-found: error
+
+      - name: Upload verified results
+        if: steps.validate.outputs.hasChanges == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: domain-verification-results
+          path: ${{ runner.temp }}/verified
+          if-no-files-found: error
+
+  attest:
+    name: Attest data.yml
+    needs: validate
+    if: always() && needs.validate.outputs.hasChanges == 'true'
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+    uses: privacyguides/.github/.github/workflows/sign-artifact.yml@5c41b37a937aab5e50262f3ab672fc9b9438dbf9
+    with:
+      artifact-name: database
+      artifact-path: data.yml
+
+  push:
+    name: Commit verified domains
+    runs-on: ubuntu-latest
+    needs: [validate, attest]
+    if: |
+      always() &&
+      needs.validate.outputs.hasChanges == 'true' &&
+      needs.attest.result == 'success'
+    concurrency:
+      group: data-yml-writes
+      cancel-in-progress: false
+      queue: max
+    permissions:
+      id-token: write
+      contents: write
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main
+
+      - name: Download attested data.yml
+        uses: actions/download-artifact@v8
+        with:
+          name: database
+          path: .
+
+      - name: Download domain verification files
+        uses: actions/download-artifact@v8
+        with:
+          name: domain-verification-files
+          path: .
+
+      - name: Download verified results
+        uses: actions/download-artifact@v8
+        with:
+          name: domain-verification-results
+          path: verified-results
+
+      - name: Push verified commit to main
+        id: push
+        uses: ./.github/actions/push-submission-commit
+        with:
+          ref: main
+          messageFile: domain-commit-msg
+          files: |
+            data.yml
+            data-verified-domains.yml
+
+      - name: Comment, label and close verified issues
+        if: steps.push.outputs.commitSha != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          CB_TOKEN: ${{ secrets.CB_SYNC_TOKEN }}
+          COMMIT_SHA: ${{ steps.push.outputs.commitSha }}
+        run: |
+          set -euo pipefail
+          source .github/actions/domain-verify/domains.lib.sh
+
+          shopt -s nullglob
+          for result in verified-results/*.json; do
+            num=$(jq -r '.number' "$result")
+            domain=$(jq -r '.domain' "$result")
+            method=$(jq -r '.method' "$result")
+            annotated=$(jq -r '.annotated' "$result")
+            diff_out=$(jq -r '.diff' "$result")
+
+            method_label=$(domain_method_label "$method")
+            table=$'| Verified signing key |\n|---|\n'
+            while IFS= read -r key; do
+              [[ -z "$key" ]] && continue
+              table+="| \`${key//$'\n'/\`<br>\`}\` |"$'\n'
+            done < <(jq -r '.allowedKeys[]' "$result")
+
+            annotate_note=""
+            if [[ "$annotated" == "true" ]]; then
+              annotate_note="We also added a \`Verified Domain\` source to matching entries in \`data.yml\`."
+            fi
+
+            body_file="${RUNNER_TEMP}/verified-${num}.md"
+            {
+              echo "## :white_check_mark: Domain verified: \`${domain}\`"
+              echo ""
+              echo "We confirmed your verification record for \`${domain}\` via **${method_label}** and recorded it in \`data-verified-domains.yml\`."
+              echo ""
+              printf '%s\n' "$table"
+              echo "\`data-verified-domains.yml\` was updated as follows (commit \`${COMMIT_SHA}\`):"
+              echo ""
+              echo '```diff'
+              printf '%s\n' "$diff_out"
+              echo '```'
+              if [[ -n "$annotate_note" ]]; then
+                echo ""
+                echo "$annotate_note"
+              fi
+              echo ""
+              echo "Thanks for verifying your domain!"
+              echo ""
+              printf '%s\n' "$(domain_state_marker verified)"
+            } > "$body_file"
+
+            comment_body=$(cat "$body_file")
+            gh issue comment "$num" --repo "$GH_REPO" --body "$comment_body"
+            ibody=$(gh issue view "$num" --repo "$GH_REPO" --json body -q .body)
+            signatures_mirror_issue_comment_to_codeberg "$CB_TOKEN" "$ibody" "$comment_body" || true
+
+            gh issue edit "$num" --repo "$GH_REPO" --add-label "Domain Verified" || true
+            gh issue close "$num" --repo "$GH_REPO" --reason completed || true
+          done
+
+  syncMirrorsAfterDomainVerify:
+    name: Sync mirrors (domain verify)
+    needs: push
+    if: |
+      always() &&
+      !cancelled() &&
+      needs.push.result == 'success'
+    uses: ./.github/workflows/sync-repo-to-mirrors.yml
+    secrets: inherit

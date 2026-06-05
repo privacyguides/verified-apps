@@ -1,0 +1,77 @@
+name: Domain verification check
+description: Live-check a package's domain (HTTPS .well-known + DNS) and report the submitted key's status
+inputs:
+  packageName:
+    description: Android application ID (its namespace is reversed to derive candidate domains)
+    required: true
+  packageSignature:
+    description: Submitter-provided SHA-256 fingerprint(s) to look up in the record
+    required: true
+outputs:
+  found:
+    description: "true when a verification record was located for the package's domain"
+    value: ${{ steps.check.outputs.found }}
+  method:
+    description: Method the record was found via (https or dns)
+    value: ${{ steps.check.outputs.method }}
+  domain:
+    description: Domain the record was found on
+    value: ${{ steps.check.outputs.domain }}
+  status:
+    description: Submitted key status against the record (allowed, revoked, or none)
+    value: ${{ steps.check.outputs.status }}
+  recordJson:
+    description: Normalized record JSON ({found, method, domain, source, allowed, revoked})
+    value: ${{ steps.check.outputs.recordJson }}
+  tableRow:
+    description: Markdown table row (| Source | Matches | Verification |) for the record
+    value: ${{ steps.check.outputs.tableRow }}
+  revokedWarning:
+    description: Prominent caution block when the submitted key is revoked (empty otherwise)
+    value: ${{ steps.check.outputs.revokedWarning }}
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      id: check
+      env:
+        PACKAGE_NAME: ${{ inputs.packageName }}
+        PACKAGE_SIGNATURE: ${{ inputs.packageSignature }}
+      run: |
+        set -euo pipefail
+        source "${GITHUB_ACTION_PATH}/domains.lib.sh"
+
+        echo "found=false" >> "$GITHUB_OUTPUT"
+        echo "method=" >> "$GITHUB_OUTPUT"
+        echo "domain=" >> "$GITHUB_OUTPUT"
+        echo "status=none" >> "$GITHUB_OUTPUT"
+        echo "recordJson=" >> "$GITHUB_OUTPUT"
+        echo "tableRow=" >> "$GITHUB_OUTPUT"
+        echo "revokedWarning=" >> "$GITHUB_OUTPUT"
+
+        if ! is_valid_package_name "$PACKAGE_NAME"; then
+          echo "Invalid package name, skipping domain check: $PACKAGE_NAME" >&2
+          exit 0
+        fi
+
+        rec=""
+        if ! rec=$(domain_find_record_for_package "$PACKAGE_NAME"); then
+          echo "No verification record found for any candidate domain of ${PACKAGE_NAME}."
+          exit 0
+        fi
+
+        method=$(jq -r '.method' <<< "$rec")
+        domain=$(jq -r '.domain' <<< "$rec")
+        status=$(domain_key_status "$rec" "$PACKAGE_SIGNATURE")
+        echo "Found ${method} verification record on ${domain}; submitted key status: ${status}"
+
+        {
+          echo "found=true"
+          echo "method=${method}"
+          echo "domain=${domain}"
+          echo "status=${status}"
+        } >> "$GITHUB_OUTPUT"
+        gha_write_multiline_output recordJson "$rec"
+        gha_write_multiline_output tableRow "$(domain_table_row "$rec" "$PACKAGE_SIGNATURE")"
+        gha_write_multiline_output revokedWarning "$(domain_revoked_warning "$rec" "$PACKAGE_SIGNATURE")"

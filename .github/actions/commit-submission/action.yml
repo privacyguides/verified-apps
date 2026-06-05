@@ -76,10 +76,25 @@ inputs:
     description: When false, prepare data.yml and commit message only (no push)
     required: false
     default: "true"
+  domainVerifiedSig:
+    description: Submitter signature when it is allowed by the package's verified domain (adds a Verified Domain source)
+    required: false
+    default: ""
+  domain:
+    description: Verified domain to record in data-verified-domains.yml (when domainVerifiedSig is set)
+    required: false
+    default: ""
+  domainMethod:
+    description: Method the verification record was found via (https or dns)
+    required: false
+    default: ""
 outputs:
   prepared:
     description: Whether data.yml was prepared for commit
     value: ${{ steps.prepare.outputs.prepared }}
+  domainFileChanged:
+    description: Whether data-verified-domains.yml was changed and staged
+    value: ${{ steps.prepare.outputs.domainFileChanged }}
   committed:
     description: Whether data.yml was pushed to main
     value: ${{ steps.verifiedCommit.outputs.commit != '' }}
@@ -115,12 +130,17 @@ runs:
         APKPURE_SIG: ${{ inputs.apkpureSignature }}
         APKPURE_APK_SHA256: ${{ inputs.apkpureApkSha256 }}
         PUSH_TO_MAIN: ${{ inputs.pushToMain }}
+        DOMAIN_VERIFIED_SIG: ${{ inputs.domainVerifiedSig }}
+        DV_DOMAIN: ${{ inputs.domain }}
+        DV_METHOD: ${{ inputs.domainMethod }}
       run: |
         set -euo pipefail
         source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
+        source "${GITHUB_ACTION_PATH}/../domain-verify/domains.lib.sh"
 
         echo "prepared=false" >> "$GITHUB_OUTPUT"
         echo "skipped=false" >> "$GITHUB_OUTPUT"
+        echo "domainFileChanged=false" >> "$GITHUB_OUTPUT"
 
         SUBMISSION_ISSUE_REF=$(signatures_submission_issue_ref "$ISSUE" "$ISSUE_BODY")
         export SUBMISSION_ISSUE_REF
@@ -135,6 +155,16 @@ runs:
 
         submission_merge_entry_into_data_yml "$entry"
         rm -f "$entry"
+
+        # Record the domain in data-verified-domains.yml when the submitted key is allowed by it.
+        if [[ -n "${DOMAIN_VERIFIED_SIG:-}" && -n "${DV_DOMAIN:-}" ]]; then
+          checked=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          domain_verified_upsert "$DOMAIN_VERIFIED_FILE" "$DV_DOMAIN" "${DV_METHOD:-https}" "$SUBMISSION_ISSUE_REF" "$checked"
+          if ! git diff --quiet -- "$DOMAIN_VERIFIED_FILE"; then
+            git add "$DOMAIN_VERIFIED_FILE"
+            echo "domainFileChanged=true" >> "$GITHUB_OUTPUT"
+          fi
+        fi
 
         msg_file="${GITHUB_WORKSPACE}/submission-commit-msg"
         submission_write_commit_message_file \
