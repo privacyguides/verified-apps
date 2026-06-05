@@ -1339,7 +1339,7 @@ jobs:
             fi
             if [[ "$repo_name" == "IzzyOnDroid" ]]; then
               label_args+=(--add-label "Match IzzyOnDroid")
-            else
+            elif [[ "$repo_name" == "F-Droid" ]]; then
               label_args+=(--add-label "Match F-Droid")
             fi
           done < <(find fdroid-results -type f -name '*.json' 2>/dev/null | sort)
