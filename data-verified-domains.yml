@@ -1,2 +1,6 @@
 schema: 1
-domains: []
+domains:
+  - domain: privacyguides.org
+    method: dns
+    issue: GH-1321
+    checked: "2026-06-05T22:01:51Z"
