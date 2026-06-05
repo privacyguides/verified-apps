@@ -2,5 +2,5 @@ schema: 1
 domains:
   - domain: privacyguides.org
     method: dns
-    issue: GH-1321
-    checked: "2026-06-05T22:01:51Z"
+    issue: GH-1329
+    checked: "2026-06-05T22:21:57Z"

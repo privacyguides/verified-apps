@@ -6267,6 +6267,22 @@ packages:
             apk:
               sha256: b71f87c5077ed13210ac6ac3d05d8932355b07be9b0aa9015400dab549fdac62
               link: https://github.com/wolpi/prim-ftpd/releases/download/prim-ftpd-8.1/primitiveFTPd-8.1.apk
+  - package: org.privacyguides.verifiedapps
+    signature:
+      - fingerprint: 40:5C:6B:D2:CA:7C:3A:AE:8F:46:3C:6F:8B:55:BC:F0:DD:AC:43:1C:5E:D8:EA:FF:65:D1:06:C9:81:7A:20:7F
+        sources:
+          - name: Direct APK Link
+            issue: GH-1329
+            apk:
+              sha256: 61f01b08224c8bed18ba53dbe87734a1e1357071901ca25e6483f51be7472d2b
+              link: https://github.com/privacyguides/verified-apps-android/releases/download/26.6.2/VerifiedApps-26.6.2.apk
+          - name: F-Droid (privacyguides.github.io)
+            issue: GH-1329
+            apk:
+              sha256: 61f01b08224c8bed18ba53dbe87734a1e1357071901ca25e6483f51be7472d2b
+              repo: https://privacyguides.github.io/fdroid/repo/
+          - name: Verified Domain
+            issue: GH-1329
   - package: org.proninyaroslav.libretorrent
     signature:
       - fingerprint: 1A:96:ED:44:27:98:2C:52:E0:67:09:C9:41:A8:F3:9B:2A:BA:68:BC:CA:E8:6B:6C:86:F9:F0:30:BD:95:99:EA
