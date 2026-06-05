@@ -918,6 +918,11 @@ submission_build_entry_file() {
     fp_block="$(signatures_format_block "$DIRECT_SIG")"
     _submission_add_source "$fp_block" "Direct APK Link" "${DIRECT_APK_SHA256:-}" "${DIRECT_APK_URL:-}"
   fi
+  # A signing key vouched for by the package's own verified domain qualifies on its own,
+  # even when no app store matched the submission.
+  if [[ -n "${DOMAIN_VERIFIED_SIG:-}" ]] && signatures_equal "$DOMAIN_VERIFIED_SIG" "$user_sig"; then
+    _submission_add_source "$user_sig" "Verified Domain"
+  fi
 
   if [[ ! -s "$proposals_file" ]]; then
     rm -f "$proposals_file"
