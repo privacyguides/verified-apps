@@ -1,0 +1,81 @@
+name: Domain Verification
+description: "App developers: verify your domain name"
+title: "[Verify]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to verify your domain name matches your package ID! Please make sure you edit the title above to include the app's name.
+ 
+  - type: markdown
+    attributes:
+      value: |
+        ## Verification
+
+        This form is for any **developers** of an Android app to fill out. The verification process will require creating a `/.well-known/org.privacyguides.verified-apps.json` file on an HTTPS server on your domain.
+
+  - type: input
+    id: domainName
+    attributes:
+      label: Domain Name
+      description: |
+        Enter the domain name you'd like to verify (not in package ID format). For example, if your Android app is `org.privacyguides.verifiedapps`, you could enter `verifiedapps.privacyguides.org`.
+
+        When we look for validation data, we will check for the file path starting from the specific subdomain matching your package ID up to the domain's root. For example, for the Android app `org.privacyguides.verifiedapps` we could enter `privacyguides.org` to verify that app and other apps in the `privacyguides.org` namespace. Alternatiely, we could enter `verifiedapps.privacyguides.org` to only create a verification record for that specific app.
+      placeholder: |
+        verifiedapps.privacyguides.org
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Signing Key(s)
+
+        Please list your signing certificate's SHA-256 digest. You can find it with our app or an app like AppVerifier, or with `apksigner verify --print-certs your-app.apk`.
+
+        It is possible your app could have multiple versions with different keys. For example, you may release your app on GitHub with your own signing key, but your app is released on Google Play using Play App Signing. We have entries for you to enter any/every combination you'd like to verify, but you do not need to fill out all the fields below.
+
+        In some rarer cases you may have multiple certificate hashes on a single app, maybe due to key rotations, different keys for different SDK versions, etc. You can find this data with `appsigner`, but our app or AppVerifier will always show the hashes in the exact format we expect.
+
+  - type: textarea
+    id: signingKey1
+    attributes:
+      label: Signing Key
+      placeholder: |
+        40:5C:6B:D2:CA:7C:3A:AE:8F:46:3C:6F:8B:55:BC:F0:DD:AC:43:1C:5E:D8:EA:FF:65:D1:06:C9:81:7A:20:7F
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: signingKey2
+    attributes:
+      label: Signing Key 2
+      placeholder: |
+        6F:FD:60:27:9A:0B:F0:14:B4:58:F4:09:3C:F2:EB:D0:00:B0:1B:5E:47:B8:0C:CB:41:DD:6E:0F:6A:2E:52:29
+        71:FC:82:99:65:00:5A:49:B1:D3:3E:85:1E:2C:18:1E:6A:8D:D4:3E:E1:96:CD:BB:F7:AD:4D:B3:0C:48:84:22
+      render: text
+    validations:
+      required: false
+    
+  - type: textarea
+    id: signingKey3
+    attributes:
+      label: Signing Key 3
+      placeholder: |
+        7C:E8:3C:1B:71:F3:D5:72:FE:D0:4C:8D:40:C5:CB:10:FF:75:E6:D8:7D:9D:F6:FB:D5:3F:04:68:C2:90:50:53
+        F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
+      render: text
+    validations:
+      required: false
+
+  - type: textarea
+    id: signingKey4
+    attributes:
+      label: Signing Key 4
+      placeholder: |
+        F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
+      render: text
+    validations:
+      required: false
