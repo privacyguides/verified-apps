@@ -8,6 +8,8 @@ Privacy Guides is building a database of Android app signing certificate hashes 
 
 We need you to submit any apps you have installed on your phone [in a new GitHub issue here](https://github.com/privacyguides/verified-apps/issues/new?template=app-submission.yml).
 
+The easiest way to submit new apps is via our fork of AppVerifier, [Verified Apps for Android](https://github.com/privacyguides/verified-apps-android), which will give you a "Submit on GitHub" button that automatically fills out our submission form for any apps you have installed that we don't already have in our database. Visit our [verified-apps-android](https://github.com/privacyguides/verified-apps-android/tree/main/fastlane/metadata/android/en-US/phoneScreenshots) repo to learn more.
+
 > [!TIP]
 > Please submit any apps you'd like, no need to check for existing submissions. We will automatically close issues that are duplicates, but the existence of duplicate issues will help us count how many people may be vouching for a particular submission. We also assume we will see duplicate entries for the same package, because the same package may have a different signature in different app stores.
 

@@ -23,7 +23,7 @@ on:
         default: ""
 
 concurrency:
-  group: codeberg-issue-state-${{ github.event_name == 'workflow_call' && inputs.issueNumber || github.event.issue.number }}
+  group: codeberg-issue-state-${{ inputs.issueNumber || github.event.issue.number }}
   cancel-in-progress: true
 
 jobs:
@@ -51,9 +51,9 @@ jobs:
           CB_SYNC_TOKEN: ${{ secrets.CB_SYNC_TOKEN }}
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
-          ISSUE_NUMBER: ${{ github.event_name == 'workflow_call' && inputs.issueNumber || github.event.issue.number }}
-          ISSUE_BODY: ${{ github.event_name == 'workflow_call' && inputs.issueBody || github.event.issue.body }}
-          ISSUE_ACTION: ${{ github.event_name == 'workflow_call' && inputs.issueAction || github.event.action }}
+          ISSUE_NUMBER: ${{ inputs.issueNumber || github.event.issue.number }}
+          ISSUE_BODY: ${{ inputs.issueBody || github.event.issue.body }}
+          ISSUE_ACTION: ${{ inputs.issueAction || github.event.action }}
         run: |
           set -euo pipefail
           source .github/actions/signature-lib/signatures.lib.sh
