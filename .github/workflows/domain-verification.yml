@@ -399,10 +399,10 @@ jobs:
             {
               echo "## :white_check_mark: Domain verified: \`${domain}\`"
               echo ""
-              echo "We confirmed your verification record for \`${domain}\` via **${method_label}** and recorded it in \`data-verified-domains.yml\`."
+              echo "We confirmed your verification record for \`${domain}\` via **${method_label}**."
               echo ""
               printf '%s\n' "$table"
-              echo "\`data-verified-domains.yml\` was updated as follows (commit \`${COMMIT_SHA}\`):"
+              echo "\`data-verified-domains.yml\` was updated as follows (${COMMIT_SHA}):"
               echo ""
               echo '```diff'
               printf '%s\n' "$diff_out"
