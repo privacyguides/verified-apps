@@ -326,6 +326,13 @@ packages:
         sources:
           - name: F-Droid
             issue: GH-558
+      - fingerprint: 5E:DB:5C:43:95:B2:F2:D9:BA:68:2F:6A:1D:27:51:70:CC:E5:36:5A:6F:A2:7D:22:20:EA:8D:52:A6:D9:5F:07
+        sources:
+          - name: Direct APK Link
+            issue: CB-6
+            apk:
+              sha256: 5d3662328f51d04630445e1dc998a94431ac9c4e668680357a81fd698eaaac6d
+              link: https://github.com/krille-chan/fluffychat/releases/download/v2.6.0/fluffychat.apk
   - package: chat.simplex.app
     signature:
       - fingerprint: 3C:52:C4:FD:3C:AD:1C:07:C9:B0:0A:70:80:E3:58:FA:B9:FE:FC:B8:AF:5A:EC:14:77:65:F1:6D:0F:21:AD:85
