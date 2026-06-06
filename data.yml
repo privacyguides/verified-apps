@@ -6952,6 +6952,14 @@ packages:
             apk:
               sha256: eb56aa9ae68b4d4b04e40251d7fe7ea49f97e0c4be5a8384e28d98ee36b9c5e2
               repo: https://archive.newpipe.net/fdroid/repo/
+  - package: org.secuso.privacyfriendlynotes
+    signature:
+      - fingerprint: 9B:E7:5E:46:FA:FA:2D:66:E9:B8:DB:B7:EA:6A:34:CC:09:6A:96:B2:D9:39:65:69:CF:F5:A7:F9:8F:6D:09:3D
+        sources:
+          - name: F-Droid
+            issue: CB-82
+            apk:
+              sha256: 742c53eac1e9dda4715514c37e3b7941b853d32054456154939f3489ab0d01f6
   - package: org.sufficientlysecure.keychain
     signature:
       - fingerprint: 28:05:A6:F4:65:AC:B9:23:10:3A:2A:B3:A1:45:E1:A9:7A:74:C4:4A:CF:75:12:50:B5:88:EB:C3:F8:8A:0C:C9
