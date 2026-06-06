@@ -1966,6 +1966,16 @@ packages:
             issue: GH-221
             apk:
               sha256: 959c9839cf1767adb4d2929fcd77c9830816a2713ee498644904ec29268bb394
+  - package: com.google.android.apps.tasks
+    signature:
+      - fingerprint: |-
+          57:07:6D:EC:15:DC:F1:0A:5B:55:9D:E3:D6:47:AF:43:CC:AB:F1:35:CE:3C:92:2B:4E:F6:2C:45:35:59:ED:7A
+          99:F6:CC:53:08:E6:F3:31:8A:3B:F1:68:BF:10:6D:5B:5D:EF:E2:B4:B9:C5:61:E5:DD:D7:92:4A:7A:2B:A1:E2
+        sources:
+          - name: Google Play
+            issue: GH-1331
+            apk:
+              sha256: 8753433959b67733271cf9ad9d097636ae7d4cdfa61d8f843b549433b3829bfe
   - package: com.google.android.apps.translate
     signature:
       - fingerprint: 3D:7A:12:23:01:9A:A3:9D:9E:A0:E3:43:6A:B7:C0:89:6B:FB:4F:B6:79:F4:DE:5F:E7:C2:3F:32:6C:8F:99:4A
