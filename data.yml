@@ -3156,6 +3156,14 @@ packages:
             apk:
               sha256: 704cbe156d602cb01663242c0b25052910342ee00796de5893a9ee19c28569bd
               link: https://github.com/sadellie/unitto/releases/download/76/androidApp-release.apk
+  - package: com.saf.aranetCube.android
+    signature:
+      - fingerprint: 95:08:81:F5:11:82:15:D2:D2:74:5A:D3:6D:08:8A:7C:A1:48:E8:04:33:A0:A2:0C:14:B3:CE:FF:D5:B3:4E:55
+        sources:
+          - name: Google Play
+            issue: GH-1264
+            apk:
+              sha256: 275af7bb8723cbd01917169851a7c212e4b53686029e957eaee3e01176f9484a
   - package: com.saily.android
     signature:
       - fingerprint: 0C:75:9D:2C:84:F0:F0:21:31:F7:9E:4A:23:FF:97:8F:BB:0D:8A:43:F8:05:EF:4E:BF:4F:66:EB:D5:E6:84:1A
