@@ -15,6 +15,8 @@ The easiest way to submit new apps is via our fork of AppVerifier, [Verified App
 
 Currently, we will not merge any apps which cannot be checked by our automated systems (see below), notably any paid apps. In the future we may develop a process for multiple people to vouch for the validity of these apps.
 
+App developers are encouraged to [verify the domain name](#domain-verification) used in their app's package ID.
+
 ## Automated Checks
 
 When a maintainer is ready to review a submission, we will run automated checks to check the submission against AppVerifier's legacy internal database and the following mainstream app sources:
@@ -137,13 +139,14 @@ With each key fingerprint are the sources where we found that signing key. The s
 
 #### Source Names
 
-We always test submissions against five mainstream app stores. If the submission matches what is found in that app store, we will list it and the `name:` value will always be one of the following:
+The values for the source `name` can be one of the following:
 
 - `AppVerifier` - Signatures which are already in [AppVerifier's own internal database](https://github.com/soupslurpr/AppVerifier/blob/main/app/src/main/kotlin/dev/soupslurpr/appverifier/InternalVerificationInfoDatabase.kt) (which no longer accepts submissions).
 - `Accrescent` - Signatures we checked against the APK file in Accrescent's app store repository.
 - `F-Droid` - Signatures we checked against the APK file in the **official** (default) F-Droid repository.
 - `F-Droid (IzzyOnDroid)` - Signatures we checked against the APK file in the [IzzyOnDroid](https://izzyondroid.org/) F-Droid repository.
 - `Google Play` - Signatures we checked against the APK file in Google Play.
+- `Verified Domain` - Signatures we checked against the developer's [verified domain](#domain-verification).
 
 Additionally, we check direct links to APK files (e.g. GitHub Releases) and custom F-Droid repos (i.e. developer-run) when provided by the submitter. We will include the `link:` or `repo:` key respectively to assist others in finding where exactly the verification was obtained from if it was not one of the five well-known sources.
 
@@ -189,4 +192,85 @@ packages:
             issue: GH-564
             apk:
               sha256: 6186c80da39dd7566e1c64cee096b0623d8dfb171627d50525f64dd420ed9345
+```
+
+## Domain Verification
+
+App developers, please consider verifying the domain used in your app's package ID. 
+
+To verify your domain, you can [follow the steps in this walkthrough](https://github.com/privacyguides/verified-apps/issues/new?template=domain-verification.yml), or you can follow these instructions manually. You will be required to place a file on your web server or create a DNS record.
+
+You must choose one verification method, [HTTPS `.well-known` verification](#https-verification), or [DNS verification](#dns-verification). We strongly recommend using HTTPS verification whenever possible, because it has stronger security properties than DNS, and allows for explicit key revocation.
+
+### HTTPS Verification
+
+Create a file `/.well-known/org.privacyguides.verified-apps.json` on the web server for the domain you are verifying. For the package ID `com.example.appname.fdroid` there would be three valid locations for you to place this file:
+
+- `https://fdroid.appname.example.com/.well-known/org.privacyguides.verified-apps.json` - would apply this data to an app ID'd `com.example.appname.fdroid` or any apps with an ID starting with `com.example.appname.fdroid.`
+- `https://appname.example.com/.well-known/org.privacyguides.verified-apps.json` - would apply this data to an app ID'd `com.example.appname` or any apps with an ID starting with `com.example.appname.`
+- `https://example.com/.well-known/org.privacyguides.verified-apps.json` - would apply this data to an app ID's `com.example` or any apps with an ID starting with `com.example.`
+
+As you can see, when we look for validation data, we will check for the file path starting from the specific subdomain matching your package ID, going up to the domain's root if a record isn't found. For example, for the Android app `com.example.appname` you could enter `example.com` to verify that app *and* other apps in the `example.com` namespace. This can be useful to verify multiple apps published by you or your organization which use the same signing key.
+
+The file should look like this:
+
+```
+{
+    "version": 1,
+    "signingkeys": {
+        "allowed": [],
+        "revoked": []
+    }
+}
+```
+
+The `version` number is required and must be set to 1. The `signingkeys` section is required. The `allowed` array in that section is required, while the `revoked` array is optional.
+
+`allowed` and `revoked` are arrays of strings containing signing certificate key hashes. You can get yours using the AppVerifier app or the [Verified Apps](https://github.com/privacyguides/verified-apps-android) app on Android. In some cases, your app may show a multi-line collection of two or more hashes. In this case, separate hashes with a `\n` newline character.
+
+In many cases, you will only have one allowed key, so your entry will look similar to `["40:5C:6B:D2:CA:7C:3A:AE:8F:46:3C:6F:8B:55:BC:F0:DD:AC:43:1C:5E:D8:EA:FF:65:D1:06:C9:81:7A:20:7F"]`. However, there are cases where two or more keys may be valid for your app. For example, if your app is signed by Play App Signing or F-Droid's build keys on those app stores in addition to your own key for your app being distributed on GitHub, you could easily have 3 different keys for the same app.
+
+Example (with two allowed key hashes, and one revoked key hash):
+
+```
+{
+    "version": 1,
+    "signingkeys": {
+        "allowed": [
+            "1E:76:F1:A1:5C:BE:20:1F:0F:E2:6A:F2:7A:12:D9:1D:0D:34:81:FE:7D:CC:7D:89:E9:D2:05:69:30:F6:D5:A9",
+            "6F:FD:60:27:9A:0B:F0:14:B4:58:F4:09:3C:F2:EB:D0:00:B0:1B:5E:47:B8:0C:CB:41:DD:6E:0F:6A:2E:52:29\n71:FC:82:99:65:00:5A:49:B1:D3:3E:85:1E:2C:18:1E:6A:8D:D4:3E:E1:96:CD:BB:F7:AD:4D:B3:0C:48:84:22"
+        ],
+        "revoked": [
+            "40:5C:6B:D2:CA:7C:3A:AE:8F:46:3C:6F:8B:55:BC:F0:DD:AC:43:1C:5E:D8:EA:FF:65:D1:06:C9:81:7A:20:7F"
+        ]
+    }
+}
+```
+
+### DNS Verification
+
+Create a `TXT` record with the name `_pgappverify` on the domain or subdomain you are verifying. For the package ID `com.example.appname.fdroid` there would be three valid locations for you to create this DNS record:
+
+- `_pgappverify.fdroid.appname.example.com` - would apply this data to an app ID'd `com.example.appname.fdroid` or any apps with an ID starting with `com.example.appname.fdroid.`
+- `_pgappverify.appname.example.com` - would apply this data to an app ID'd `com.example.appname` or any apps with an ID starting with `com.example.appname.`
+- `_pgappverify.example.com` - would apply this data to an app ID's `com.example` or any apps with an ID starting with `com.example.`
+
+The value of your TXT record should be your signing key hash. You can get yours using the AppVerifier app or the [Verified Apps](https://github.com/privacyguides/verified-apps-android) app on Android. Example:
+
+```
+_pgappverify.fdroid.appname.example.com.   IN   TXT   "1E:76:F1:A1:5C:BE:20:1F:0F:E2:6A:F2:7A:12:D9:1D:0D:34:81:FE:7D:CC:7D:89:E9:D2:05:69:30:F6:D5:A9"
+```
+
+In some cases, your app may show a multi-line collection of two or more hashes. In this case, put both hashes in the record separated with a space. Example:
+
+```
+_pgappverify.fdroid.appname.example.com.   IN   TXT   "6F:FD:60:27:9A:0B:F0:14:B4:58:F4:09:3C:F2:EB:D0:00:B0:1B:5E:47:B8:0C:CB:41:DD:6E:0F:6A:2E:52:29 71:FC:82:99:65:00:5A:49:B1:D3:3E:85:1E:2C:18:1E:6A:8D:D4:3E:E1:96:CD:BB:F7:AD:4D:B3:0C:48:84:22"
+```
+
+In many cases, you will only have one allowed key. However, there are cases where two or more keys may be valid for your app. For example, if your app is signed by Play App Signing or F-Droid's build keys on those app stores in addition to your own key for your app being distributed on GitHub, you could easily have 3 different keys for the same app. In this case, simply add multiple `_pgappverify` records. Example (with three allowed signatures):
+
+```
+_pgappverify.fdroid.appname.example.com.   IN   TXT   "1E:76:F1:A1:5C:BE:20:1F:0F:E2:6A:F2:7A:12:D9:1D:0D:34:81:FE:7D:CC:7D:89:E9:D2:05:69:30:F6:D5:A9"
+_pgappverify.fdroid.appname.example.com.   IN   TXT   "6F:FD:60:27:9A:0B:F0:14:B4:58:F4:09:3C:F2:EB:D0:00:B0:1B:5E:47:B8:0C:CB:41:DD:6E:0F:6A:2E:52:29 71:FC:82:99:65:00:5A:49:B1:D3:3E:85:1E:2C:18:1E:6A:8D:D4:3E:E1:96:CD:BB:F7:AD:4D:B3:0C:48:84:22"
+_pgappverify.fdroid.appname.example.com.   IN   TXT   "82:59:FA:51:3C:FD:54:A6:AA:8D:93:43:50:1B:FA:13:45:8C:55:D2:5E:27:C5:8F:8D:CA:03:EF:E2:F0:02:E5"
 ```

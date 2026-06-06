@@ -803,6 +803,7 @@ jobs:
       method: ${{ steps.domain.outputs.method }}
       domain: ${{ steps.domain.outputs.domain }}
       status: ${{ steps.domain.outputs.status }}
+      dnssec: ${{ steps.domain.outputs.dnssec }}
       tableRow: ${{ steps.domain.outputs.tableRow }}
       revokedWarning: ${{ steps.domain.outputs.revokedWarning }}
 
@@ -1692,6 +1693,7 @@ jobs:
           domainVerifiedSig: ${{ needs.domainCheck.outputs.status == 'allowed' && needs.parse.outputs.packageSignature || '' }}
           domain: ${{ needs.domainCheck.outputs.domain }}
           domainMethod: ${{ needs.domainCheck.outputs.method }}
+          domainDnssec: ${{ needs.domainCheck.outputs.dnssec }}
 
       - name: Export prepare metadata
         id: prepare_meta

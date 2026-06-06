@@ -19,6 +19,11 @@ DOMAIN_DNS_PREFIX="_pgappverify"
 DOMAIN_VERIFIED_FILE="data-verified-domains.yml"
 DOMAIN_VERIFIED_SCHEMA=1
 DOMAIN_SOURCE_NAME="Verified Domain"
+# DNS-over-HTTPS query helper (RFC 8484 wire format via curl/HTTP2) and interpreter.
+# The list of resolvers it queries is controlled by the DOH_RESOLVERS env var, set
+# (hard-coded) in the calling workflows; all of them must agree on the TXT record.
+DOMAIN_PYTHON="${DOMAIN_PYTHON:-python3}"
+DOMAIN_DOH_HELPER="${DOMAIN_DOH_HELPER:-${_DOMAIN_LIB_DIR}/doh_query.py}"
 
 # --- Namespace helpers --------------------------------------------------------
 
@@ -195,28 +200,74 @@ domain_fetch_https_record() {
   _domain_record_from_json "$body" "https" "$domain" "$url"
 }
 
-# Concatenate dig +short TXT character-strings and drop quoting.
-_domain_dns_txt_unquote() {
-  printf '%s' "$1" | sed 's/" "//g; s/"//g'
+# Validate DNSSEC for a name back to the hard-coded ICANN root trust anchor using delv.
+# The anchor is supplied via DOMAIN_DNSSEC_ANCHOR (file path) or ICANN_ROOT_TRUST_ANCHOR
+# (inline trust-anchors{} content, written to a temp file). delv is lazily installed on
+# CI runners when missing. Echoes "true" only when delv reports the record fully validated
+# to the anchor; otherwise "false" (unsigned, bogus, or tooling unavailable).
+domain_dnssec_status() {
+  local name="$1"
+  local anchor_file="${DOMAIN_DNSSEC_ANCHOR:-}"
+  local resolver="${DOMAIN_DNSSEC_RESOLVER:-1.1.1.1}"
+
+  if [[ -z "$anchor_file" ]]; then
+    if [[ -n "${ICANN_ROOT_TRUST_ANCHOR:-}" ]]; then
+      anchor_file="${TMPDIR:-/tmp}/icann-root-anchor.$$.conf"
+      printf '%s\n' "$ICANN_ROOT_TRUST_ANCHOR" > "$anchor_file"
+    else
+      echo "DNSSEC: no trust anchor configured (ICANN_ROOT_TRUST_ANCHOR unset); recording dnssec=false" >&2
+      printf 'false'; return 0
+    fi
+  fi
+
+  if ! command -v delv >/dev/null 2>&1 && command -v apt-get >/dev/null 2>&1; then
+    sudo apt-get install -y -q bind9-dnsutils >/dev/null 2>&1 \
+      || sudo apt-get install -y -q dnsutils >/dev/null 2>&1 || true
+  fi
+  if ! command -v delv >/dev/null 2>&1; then
+    echo "DNSSEC: delv unavailable; recording dnssec=false for ${name}" >&2
+    printf 'false'; return 0
+  fi
+
+  local out
+  out=$(delv -a "$anchor_file" @"$resolver" "$name" TXT +rtrace 2>&1) || true
+  if printf '%s\n' "$out" | grep -q '; fully validated'; then
+    printf 'true'
+  else
+    echo "DNSSEC: ${name} not fully validated to ICANN root (recording dnssec=false)" >&2
+    printf 'false'
+  fi
 }
 
-# Fetch and normalize DNS TXT records at _pgappverify.<domain> (allowed only).
+# Fetch DNS verification records at _pgappverify.<domain> over DNS-over-HTTPS, requiring
+# every configured resolver to agree, then attach a DNSSEC validation status. allowed only.
 domain_fetch_dns_record() {
   local domain="$1"
   local name="${DOMAIN_DNS_PREFIX}.${domain}"
-  local txt line cleaned norm allowed="[]" count
-  txt=$(dig +short TXT "$name" 2>/dev/null) || return 1
-  [[ -n "$txt" ]] || return 1
-  while IFS= read -r line; do
-    [[ -z "$line" ]] && continue
-    cleaned=$(_domain_dns_txt_unquote "$line")
-    norm=$(signatures_format_block "$cleaned") || continue
+  local result agree n i rec norm allowed="[]" count dnssec
+
+  result=$("$DOMAIN_PYTHON" "$DOMAIN_DOH_HELPER" "$name" 2>/dev/null) || {
+    echo "DNS: DoH query failed or resolvers disagreed for ${name}" >&2
+    return 1
+  }
+  agree=$(jq -r '.agree' <<< "$result")
+  if [[ "$agree" != "true" ]]; then
+    echo "DNS: resolvers did not agree for ${name}: $(jq -r '.reason // "unknown"' <<< "$result")" >&2
+    return 1
+  fi
+
+  n=$(jq -r '.records | length' <<< "$result")
+  for ((i = 0; i < n; i++)); do
+    rec=$(jq -r ".records[$i]" <<< "$result")
+    norm=$(signatures_format_block "$rec") || continue
     allowed=$(jq -c --arg n "$norm" '. + [$n]' <<< "$allowed")
-  done <<< "$txt"
+  done
   count=$(jq 'length' <<< "$allowed")
   [[ "$count" -gt 0 ]] || return 1
-  jq -n --arg domain "$domain" --arg source "$name" --argjson allowed "$allowed" \
-    '{found: true, method: "dns", domain: $domain, source: $source, allowed: $allowed, revoked: []}'
+
+  dnssec=$(domain_dnssec_status "$name")
+  jq -n --arg domain "$domain" --arg source "$name" --arg dnssec "$dnssec" --argjson allowed "$allowed" \
+    '{found: true, method: "dns", domain: $domain, source: $source, allowed: $allowed, revoked: [], dnssec: ($dnssec == "true")}'
 }
 
 # Probe a single explicit domain (HTTPS first, then DNS). Echoes the record JSON.
@@ -268,12 +319,27 @@ domain_method_label() {
   esac
 }
 
+# Method label including DNSSEC status for DNS records (e.g. "DNS TXT, DNSSEC :lock:").
+domain_method_display() {
+  local rec="$1" method ds
+  method=$(jq -r '.method' <<< "$rec")
+  if [[ "$method" == "dns" ]]; then
+    ds=$(jq -r '.dnssec // false' <<< "$rec")
+    if [[ "$ds" == "true" ]]; then
+      printf 'DNS TXT, DNSSEC :lock:'
+    else
+      printf 'DNS TXT, no DNSSEC'
+    fi
+  else
+    domain_method_label "$method"
+  fi
+}
+
 # A single markdown table row (| Source | Matches | Verification |) for a record + signature.
 domain_table_row() {
   local rec="$1" sig="$2"
-  local domain method status mark sig_html
+  local domain status mark sig_html
   domain=$(jq -r '.domain' <<< "$rec")
-  method=$(jq -r '.method' <<< "$rec")
   status=$(domain_key_status "$rec" "$sig")
   case "$status" in
     allowed) mark=":white_check_mark:" ;;
@@ -282,7 +348,7 @@ domain_table_row() {
   esac
   sig_html="${sig//$'\n'/<br>}"
   printf '| Verified Domain (`%s` via %s) | %s | %s |\n' \
-    "$domain" "$(domain_method_label "$method")" "$mark" "$sig_html"
+    "$domain" "$(domain_method_display "$rec")" "$mark" "$sig_html"
 }
 
 # Prominent revoked warning (empty output when the key is not revoked).
@@ -301,23 +367,28 @@ EOF
 # --- data-verified-domains.yml (schema 1) ------------------------------------
 
 # Insert or update a domain row (by domain), refreshing method/issue/checked; keep sorted.
+# Optional 6th arg dnssec ("true"/"false") records a .dnssec boolean (used for DNS records).
 domain_verified_upsert() {
-  local file="$1" domain="$2" method="$3" issue="$4" checked="$5"
+  local file="$1" domain="$2" method="$3" issue="$4" checked="$5" dnssec="${6:-}"
   export DV_DOMAIN="$domain" DV_METHOD="$method" DV_ISSUE="$issue" DV_CHECKED="$checked"
   if [[ ! -f "$file" || ! -s "$file" ]]; then
-    yq -n '.schema = 1 | .domains = [{"domain": strenv(DV_DOMAIN), "method": strenv(DV_METHOD), "issue": strenv(DV_ISSUE), "checked": strenv(DV_CHECKED)}]' > "$file"
-    return 0
-  fi
-  local schema
-  schema=$(yq -r '.schema // 0' "$file")
-  if [[ "$schema" != "$DOMAIN_VERIFIED_SCHEMA" ]]; then
-    echo "Unsupported ${DOMAIN_VERIFIED_FILE} schema (expected ${DOMAIN_VERIFIED_SCHEMA}): $schema" >&2
-    return 1
-  fi
-  if yq -e '.domains[] | select(.domain == strenv(DV_DOMAIN))' "$file" >/dev/null 2>&1; then
-    yq -i 'with(.domains[] | select(.domain == strenv(DV_DOMAIN)); .method = strenv(DV_METHOD) | .issue = strenv(DV_ISSUE) | .checked = strenv(DV_CHECKED))' "$file"
+    yq -n '.schema = '"$DOMAIN_VERIFIED_SCHEMA"' | .domains = [{"domain": strenv(DV_DOMAIN), "method": strenv(DV_METHOD), "issue": strenv(DV_ISSUE), "checked": strenv(DV_CHECKED)}]' > "$file"
   else
-    yq -i '.domains += [{"domain": strenv(DV_DOMAIN), "method": strenv(DV_METHOD), "issue": strenv(DV_ISSUE), "checked": strenv(DV_CHECKED)}]' "$file"
+    local schema
+    schema=$(yq -r '.schema // 0' "$file")
+    if [[ "$schema" != "$DOMAIN_VERIFIED_SCHEMA" ]]; then
+      echo "Unsupported ${DOMAIN_VERIFIED_FILE} schema (expected ${DOMAIN_VERIFIED_SCHEMA}): $schema" >&2
+      return 1
+    fi
+    if yq -e '.domains[] | select(.domain == strenv(DV_DOMAIN))' "$file" >/dev/null 2>&1; then
+      yq -i 'with(.domains[] | select(.domain == strenv(DV_DOMAIN)); .method = strenv(DV_METHOD) | .issue = strenv(DV_ISSUE) | .checked = strenv(DV_CHECKED))' "$file"
+    else
+      yq -i '.domains += [{"domain": strenv(DV_DOMAIN), "method": strenv(DV_METHOD), "issue": strenv(DV_ISSUE), "checked": strenv(DV_CHECKED)}]' "$file"
+    fi
+  fi
+  if [[ -n "$dnssec" ]]; then
+    export DV_DNSSEC="$dnssec"
+    yq -i 'with(.domains[] | select(.domain == strenv(DV_DOMAIN)); .dnssec = (strenv(DV_DNSSEC) == "true"))' "$file"
   fi
   yq -i '.domains |= sort_by(.domain)' "$file"
 }
