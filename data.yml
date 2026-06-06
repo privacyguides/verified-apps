@@ -2608,6 +2608,14 @@ packages:
             issue: GH-748
             apk:
               sha256: 04b79689e49d93a7cb990c0f5ec4a9139e733737758987584f05fb2521aaa4df
+  - package: com.newsblur
+    signature:
+      - fingerprint: 5C:5E:93:50:3C:6A:C4:89:88:6A:29:BE:0C:28:6B:A6:04:82:E2:C2:5A:A6:D6:EF:56:84:FD:6E:8F:D7:C3:19
+        sources:
+          - name: Google Play
+            issue: GH-1240
+            apk:
+              sha256: 0b64dc8318950983eb648809c6f78777f02032902407b3b85a275e47691c78b1
   - package: com.nextcloud.client
     signature:
       - fingerprint: 57:09:57:6F:9D:6C:6A:76:87:DD:5D:56:B2:69:D1:FA:5E:37:97:02:B9:1B:C8:3F:39:FD:7B:7C:59:7C:1B:83
