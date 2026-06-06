@@ -4358,6 +4358,12 @@ packages:
             issue: GH-419
             apk:
               sha256: 2ac3a97bf5dec6bff791b6e9d29a8109a03429f9f7e6c4597895796223e3d32e
+      - fingerprint: AE:54:A7:63:06:68:07:BB:72:06:19:DF:83:AA:85:44:5C:F3:1C:1D:AB:AB:07:98:19:87:40:7F:62:31:04:27
+        sources:
+          - name: Google Play
+            issue: GH-1225
+            apk:
+              sha256: b801504d9629ced0c9609e51c76655aee5e0f0135e78c00a421c15e6430c9103
   - package: de.markusfisch.android.binaryeye
     signature:
       - fingerprint: DD:A9:21:96:50:57:4B:2D:70:2F:DF:2D:F9:0F:61:9B:D4:E2:D0:F3:A6:6E:26:BB:03:2F:2F:01:88:40:CF:8E
