@@ -6457,6 +6457,14 @@ packages:
             issue: GH-470
             apk:
               sha256: ebd4ee1bdd954e81b59113e68009e9ae3cb5f0cb666f1e4b1862e6936f0adfbb
+  - package: org.jitsi.meet
+    signature:
+      - fingerprint: 41:60:53:93:B4:A0:87:FE:B2:5D:13:E9:1F:42:1C:7D:1A:1A:91:46:25:1F:C2:BE:99:2F:C1:B3:0B:31:81:F6
+        sources:
+          - name: F-Droid
+            issue: CB-70
+            apk:
+              sha256: 72aab4912b08431a2340fc1fb1f181be3a07e8b7ac607e0bb9e4c3814c2e4248
   - package: org.joinmastodon.android
     signature:
       - fingerprint: 2D:3E:76:FC:B0:BA:31:3D:C0:5E:53:72:83:D4:CA:2F:3E:DD:B3:1B:F9:4D:0F:7E:73:33:C3:BA:63:14:5F:8A
