@@ -4975,6 +4975,19 @@ packages:
             issue: GH-337
             apk:
               sha256: 3ccbb551cdc986939339f11195c294d43b132587d0d59e80f12985b54a7384aa
+  - package: eu.auct.twitter2nitter
+    signature:
+      - fingerprint: 26:E0:02:F6:0D:0F:D6:C6:41:A5:8F:84:36:23:AC:2D:5A:A9:0A:80:F6:25:65:F5:20:61:83:62:7B:C2:96:85
+        sources:
+          - name: Direct APK Link
+            issue: GH-1193
+            apk:
+              sha256: b594bc1ac098c9ceb8b01afd4c68d3a7960d539bdc74f52c99fbeab49f0acf26
+              link: https://github.com/AucT/twitter2nitter/releases/download/v1.9/twitter2nitter.v1.9.apk
+          - name: F-Droid
+            issue: GH-1193
+            apk:
+              sha256: b594bc1ac098c9ceb8b01afd4c68d3a7960d539bdc74f52c99fbeab49f0acf26
   - package: eu.depau.etchdroid
     signature:
       - fingerprint: B2:42:E9:89:E4:01:36:6D:0E:92:4B:15:C9:BC:66:76:7D:A7:4A:B3:08:FF:21:B0:BA:50:33:02:81:59:A6:AE
