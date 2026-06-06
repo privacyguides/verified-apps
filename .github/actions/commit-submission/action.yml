@@ -92,6 +92,10 @@ inputs:
     description: "DNSSEC status to record for a DNS-method domain: true, false, or empty"
     required: false
     default: ""
+  domainRecordJson:
+    description: Normalized verification record JSON (its .allowed/.revoked sets are recorded in data-verified-domains.yml)
+    required: false
+    default: ""
 outputs:
   prepared:
     description: Whether data.yml was prepared for commit
@@ -138,6 +142,7 @@ runs:
         DV_DOMAIN: ${{ inputs.domain }}
         DV_METHOD: ${{ inputs.domainMethod }}
         DV_DNSSEC: ${{ inputs.domainDnssec }}
+        DV_RECORD_JSON: ${{ inputs.domainRecordJson }}
       run: |
         set -euo pipefail
         source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
@@ -164,7 +169,12 @@ runs:
         # Record the domain in data-verified-domains.yml when the submitted key is allowed by it.
         if [[ -n "${DOMAIN_VERIFIED_SIG:-}" && -n "${DV_DOMAIN:-}" ]]; then
           checked=$(date -u +%Y-%m-%dT%H:%M:%SZ)
-          domain_verified_upsert "$DOMAIN_VERIFIED_FILE" "$DV_DOMAIN" "${DV_METHOD:-https}" "$SUBMISSION_ISSUE_REF" "$checked" "${DV_DNSSEC:-}"
+          dv_allowed="[]"; dv_revoked="[]"
+          if [[ -n "${DV_RECORD_JSON:-}" ]]; then
+            dv_allowed=$(jq -c '.allowed // []' <<< "$DV_RECORD_JSON")
+            dv_revoked=$(jq -c '.revoked // []' <<< "$DV_RECORD_JSON")
+          fi
+          domain_verified_upsert "$DOMAIN_VERIFIED_FILE" "$DV_DOMAIN" "${DV_METHOD:-https}" "$SUBMISSION_ISSUE_REF" "$checked" "${DV_DNSSEC:-}" "$dv_allowed" "$dv_revoked"
           if ! git diff --quiet -- "$DOMAIN_VERIFIED_FILE"; then
             git add "$DOMAIN_VERIFIED_FILE"
             echo "domainFileChanged=true" >> "$GITHUB_OUTPUT"

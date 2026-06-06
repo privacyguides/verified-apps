@@ -804,6 +804,7 @@ jobs:
       domain: ${{ steps.domain.outputs.domain }}
       status: ${{ steps.domain.outputs.status }}
       dnssec: ${{ steps.domain.outputs.dnssec }}
+      recordJson: ${{ steps.domain.outputs.recordJson }}
       tableRow: ${{ steps.domain.outputs.tableRow }}
       revokedWarning: ${{ steps.domain.outputs.revokedWarning }}
 
@@ -1694,6 +1695,7 @@ jobs:
           domain: ${{ needs.domainCheck.outputs.domain }}
           domainMethod: ${{ needs.domainCheck.outputs.method }}
           domainDnssec: ${{ needs.domainCheck.outputs.dnssec }}
+          domainRecordJson: ${{ needs.domainCheck.outputs.recordJson }}
 
       - name: Export prepare metadata
         id: prepare_meta

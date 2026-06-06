@@ -208,8 +208,9 @@ jobs:
                 issue_ref=$(signatures_submission_issue_ref "$num" "$body")
                 checked=$(date -u +%Y-%m-%dT%H:%M:%SZ)
                 allowed_json=$(jq -c '.allowed' <<< "$rec")
+                revoked_json=$(jq -c '.revoked // []' <<< "$rec")
                 dnssec=$(jq -r 'if .method == "dns" then (.dnssec | tostring) else "" end' <<< "$rec")
-                domain_verified_upsert "$DOMAIN_VERIFIED_FILE" "$domain" "$method" "$issue_ref" "$checked" "$dnssec"
+                domain_verified_upsert "$DOMAIN_VERIFIED_FILE" "$domain" "$method" "$issue_ref" "$checked" "$dnssec" "$allowed_json" "$revoked_json"
                 domain_annotate_data_yml "data.yml" "$domain" "$allowed_json" "$issue_ref"
                 annotated="${DOMAIN_ANNOTATE_CHANGED:-0}"
                 diff_out=$(domain_verified_diff "$dv_before" "$DOMAIN_VERIFIED_FILE")
