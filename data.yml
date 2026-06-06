@@ -577,6 +577,23 @@ packages:
             issue: GH-442
             apk:
               sha256: 0841e4499f107107aed25e0244c3b5b45f0ee7e57d97aa21f3de2489ff83fd96
+  - package: com.akylas.weather
+    signature:
+      - fingerprint: 68:70:80:D4:CF:6F:CF:FE:8D:82:FD:1D:78:3C:90:C2:95:94:80:AA:13:C3:8A:D8:D0:4E:C3:40:66:FC:13:F1
+        sources:
+          - name: Direct APK Link
+            issue: GH-1351
+            apk:
+              sha256: 029d97ae29353c36de29db2a5fbff27bcb3d3e8f2be0346cdcfbdaace065b964
+              link: https://github.com/ossappscollective/oss-weather/releases/download/android%2Fgithub%2F3.02.3%2F180/app-arm64-v8a-release.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1351
+            apk:
+              sha256: 029d97ae29353c36de29db2a5fbff27bcb3d3e8f2be0346cdcfbdaace065b964
+          - name: Google Play
+            issue: GH-1351
+            apk:
+              sha256: 7c0aee33e8b643fd0d139232b8c616f96625adbd9e0f49caa788167af65cdba7
   - package: com.alibaba.aliexpresshd
     signature:
       - fingerprint: 4F:C3:B2:67:39:3E:A2:35:1C:47:16:B3:7E:69:10:51:7F:19:7E:B4:79:BC:43:D9:C9:A5:A4:6D:49:DD:70:0E
