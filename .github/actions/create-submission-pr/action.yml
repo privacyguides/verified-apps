@@ -18,7 +18,10 @@ inputs:
     description: Path to the pull request body markdown file
     required: true
   coAuthorTrailer:
-    description: Co-authored-by trailer(s) for the git commit (labeler and issue author when different)
+    description: Co-authored-by trailer(s) for the git commit (reviewer and GitHub Actions)
+    required: true
+  author:
+    description: 'Commit author identity "Name <email>" (the submission''s submitter)'
     required: true
   sshSigningKey:
     description: SSH private key used for commit signing (from secrets.ACTIONS_SSH_KEY)
@@ -159,6 +162,7 @@ runs:
       uses: ./.github/actions/bot-commit
       with:
         ref: ${{ steps.prepare.outputs.branch }}
+        author: ${{ inputs.author }}
         messageFile: submission-commit-msg
         files: |
           data.yml

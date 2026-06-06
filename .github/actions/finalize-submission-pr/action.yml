@@ -23,6 +23,10 @@ inputs:
   coAuthorTrailer:
     description: Co-authored-by trailer(s) for the git commit
     required: true
+  author:
+    description: 'Commit author identity "Name <email>" (the submission''s submitter)'
+    required: false
+    default: ""
   sshSigningKey:
     description: SSH private key used for commit signing (from secrets.ACTIONS_SSH_KEY)
     required: false
@@ -111,6 +115,7 @@ runs:
       uses: ./.github/actions/bot-commit
       with:
         ref: ${{ inputs.headRef }}
+        author: ${{ inputs.author }}
         messageFile: submission-commit-msg
         files: |
           data.yml

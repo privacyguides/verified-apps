@@ -415,39 +415,65 @@ submission_coauthor_trailer_for_user() {
   printf 'Co-authored-by: %s <%s+%s@users.noreply.github.com>' "$display_name" "$user_id" "$login"
 }
 
-# Codeberg noreply Co-authored-by trailer for a Codeberg username.
-submission_codeberg_coauthor_trailer_for_user() {
-  local username="$1"
-  [[ -n "$username" ]] || return 1
-  printf 'Co-authored-by: %s <%s@noreply.codeberg.org>' "$username" "$username"
+# GitHub noreply author identity ("Name <id+login@users.noreply.github.com>") for a user.
+submission_author_identity_for_user() {
+  local login="$1"
+  local user_id="$2"
+  local display_name
+
+  display_name=$(gh api "users/${login}" --jq 'if .name then .name else .login end')
+  printf '%s <%s+%s@users.noreply.github.com>' "$display_name" "$user_id" "$login"
 }
 
-# Labeler plus the submitter; prints trailers separated by newlines. When a Codeberg author
-# ($5) is given (resolved live for submissions mirrored from Codeberg), it takes the submitter
-# slot via the codeberg.org noreply address and the GitHub submitter (the sync bot) is dropped;
-# otherwise the GitHub issue author is credited as before.
+# Codeberg noreply author identity for a Codeberg username.
+submission_codeberg_author_identity_for_user() {
+  local username="$1"
+  [[ -n "$username" ]] || return 1
+  printf '%s <%s@noreply.codeberg.org>' "$username" "$username"
+}
+
+# Co-authored-by trailer crediting the GitHub Actions bot.
+submission_github_actions_coauthor_trailer() {
+  printf 'Co-authored-by: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>'
+}
+
+# Commit author identity (the submitter). A Codeberg author ($3) wins when present (submissions
+# mirrored from Codeberg, where the GitHub submitter is the sync bot); otherwise the GitHub issue
+# author is used.
+submission_resolve_commit_author() {
+  local submitter_login="$1"
+  local submitter_id="$2"
+  local codeberg_author="${3:-}"
+
+  if [[ -n "$codeberg_author" ]]; then
+    submission_codeberg_author_identity_for_user "$codeberg_author"
+  else
+    submission_author_identity_for_user "$submitter_login" "$submitter_id"
+  fi
+}
+
+# Co-author trailers for a submission commit whose author is the submitter: the reviewer
+# (labeler) first, then the GitHub Actions bot. The labeler trailer is omitted when the labeler
+# is also the submitter (already credited as the commit author). For Codeberg-mirrored
+# submissions the author is the Codeberg user, so the GitHub labeler is always a distinct
+# co-author. The submitter arguments ($3/$4) are kept for the labeler==submitter check.
 submission_resolve_coauthor_trailers() {
   local labeler_login="$1"
   local labeler_id="$2"
   local submitter_login="$3"
   local submitter_id="$4"
   local codeberg_author="${5:-}"
-  local trailers labeler_trailer submitter_trailer
+  local trailers=""
 
-  labeler_trailer=$(submission_coauthor_trailer_for_user "$labeler_login" "$labeler_id")
-  trailers="$labeler_trailer"
-
-  if [[ -n "$codeberg_author" ]]; then
-    submitter_trailer=$(submission_codeberg_coauthor_trailer_for_user "$codeberg_author")
-    if [[ "$submitter_trailer" != "$labeler_trailer" ]]; then
-      trailers+=$'\n'
-      trailers+="$submitter_trailer"
-    fi
-  elif [[ -n "$submitter_login" && -n "$submitter_id" && "$submitter_login" != "$labeler_login" ]]; then
-    submitter_trailer=$(submission_coauthor_trailer_for_user "$submitter_login" "$submitter_id")
-    trailers+=$'\n'
-    trailers+="$submitter_trailer"
+  if [[ -n "$codeberg_author" || "$labeler_login" != "$submitter_login" ]]; then
+    trailers=$(submission_coauthor_trailer_for_user "$labeler_login" "$labeler_id")
   fi
+
+  if [[ -n "$trailers" ]]; then
+    trailers+=$'\n'
+  fi
+  trailers+=$(submission_github_actions_coauthor_trailer)
+
   printf '%s' "$trailers"
 }
 

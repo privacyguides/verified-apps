@@ -375,6 +375,9 @@ jobs:
         uses: ./.github/actions/push-submission-commit
         with:
           ref: main
+          # Batch verification of many issues has no single submitter; the GitHub Actions bot
+          # is the author. Domain-issue submitters remain Co-authored-by trailers in the message.
+          author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
           sshSigningKey: ${{ secrets.ACTIONS_SSH_KEY }}
           messageFile: domain-commit-msg
           files: |
