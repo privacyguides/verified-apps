@@ -3904,6 +3904,16 @@ packages:
             issue: GH-779
             apk:
               sha256: 27faf4cc0b5556034c2be5eeb14239a5924891e03d9e6d457ac217294832ea13
+  - package: com.whatsapp.w4b
+    signature:
+      - fingerprint: |-
+          39:87:D0:43:D1:0A:EF:AF:5A:87:10:B3:67:14:18:FE:57:E0:E1:9B:65:3C:9D:F8:25:58:FE:B5:FF:CE:5D:44
+          FB:92:0D:38:1B:EE:1B:20:93:F2:7D:C8:F1:3D:99:4D:A6:29:DC:91:88:7D:05:29:B3:5C:9A:2D:C4:F4:A6:C2
+        sources:
+          - name: Google Play
+            issue: GH-1250
+            apk:
+              sha256: d8c58d4340196e50437bd204c04265f2751460b2851c21a1481b9798e92b745c
   - package: com.windscribe.vpn
     signature:
       - fingerprint: 9F:B3:57:CA:2D:7F:0A:CC:7B:31:21:98:55:34:49:0D:0A:A7:0F:5D:C6:1C:A8:EC:59:3F:3D:A1:E9:CD:33:9B
@@ -5028,14 +5038,6 @@ packages:
             apk:
               sha256: 7ecb5576de71d3e9e5b555f5d2ef41c20e06477e02a6179dddb32fcaaba5f49a
               link: https://github.com/home-assistant/android/releases/download/2026.4.4/app-minimal-release.apk
-  - package: io.raindrop.raindropio
-    signature:
-      - fingerprint: DD:D7:5C:66:57:86:54:D0:85:42:48:04:CB:27:C7:B6:E0:4F:D3:66:16:04:5B:FE:E1:40:D9:75:6F:FC:A5:63
-        sources:
-          - name: Google Play
-            issue: GH-1243
-            apk:
-              sha256: 6d45d1aac5ef57c1fc6dc836c896f38a04f3d5863eba04404419b22dccecfed7
   - package: io.sanford.wormhole_william
     signature:
       - fingerprint: 4F:BD:DD:75:06:50:73:63:4B:D5:3D:26:6F:C4:3E:7C:61:6E:40:F4:A4:48:BB:DA:2F:AF:60:D7:65:EB:3A:0E
