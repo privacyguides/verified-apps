@@ -2331,6 +2331,13 @@ packages:
             issue: GH-1043
             apk:
               sha256: 472d91912d5aa41fa1758db972398ace27bfa6d3f798aa8d9d69efb6903de4c0
+      - fingerprint: D3:B7:CB:BC:63:3F:7C:1B:E2:CA:A2:F7:5F:B0:72:EE:9B:40:FD:10:FA:AF:96:42:69:2B:27:C4:AF:5E:C4:A7
+        sources:
+          - name: Direct APK Link
+            issue: GH-1258
+            apk:
+              sha256: 284260e04128fe42dec18fcfe535f86abc25b4e27cec60cc319e4cf1e2d56c18
+              link: https://github.com/kylecorry31/Trail-Sense/releases/download/8.0.2/Trail-Sense-8.0.2-release.apk
   - package: com.letterboxd.letterboxd
     signature:
       - fingerprint: 4E:A9:E6:0E:75:13:70:C1:CC:D6:D1:C1:91:96:4C:83:40:A8:91:CB:BF:CC:2D:A1:56:8B:84:31:3B:9A:4E:74
