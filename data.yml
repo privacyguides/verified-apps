@@ -1036,6 +1036,14 @@ packages:
             issue: GH-654
             apk:
               sha256: 168f968fd64afff19c44aef88a9b21056fa0ea99b0c2755ec0a999279c5de65a
+  - package: com.centrevillebank.imobile
+    signature:
+      - fingerprint: 5C:0A:1A:43:AA:B2:DD:67:5A:CB:DF:8A:1F:19:DE:80:D4:A9:34:C7:52:07:DC:93:F6:E8:33:DE:DE:41:28:CE
+        sources:
+          - name: Google Play
+            issue: GH-1271
+            apk:
+              sha256: d115a471899cdb710e09c5db7f387161dbb73eb5cd9fc3d6b13263999a8b8cef
   - package: com.centurylink.ctl_droid_wrap
     signature:
       - fingerprint: 63:F4:78:73:E5:68:3B:4E:9D:45:59:73:CB:5F:50:4A:1C:05:CD:7F:B5:A1:A4:60:FE:0C:3B:D3:9E:5F:B3:F4
@@ -1967,14 +1975,6 @@ packages:
             issue: GH-673
             apk:
               sha256: 0133c7da5f60cce0421d5104096ff82a03c345077121cd3b47e26d2372176199
-  - package: com.google.android.ims
-    signature:
-      - fingerprint: C2:5D:5A:FA:CB:67:83:10:9D:61:36:D7:93:53:FA:D4:F6:54:1C:35:45:D2:52:28:A1:87:03:D0:43:CA:78:3F
-        sources:
-          - name: Google Play
-            issue: GH-1270
-            apk:
-              sha256: 9072f0f010132757f0efa5ad759269667ed2c982633204c01ba4e48c71eecee4
   - package: com.google.android.inputmethod.latin
     signature:
       - fingerprint: |
@@ -2214,14 +2214,6 @@ packages:
             issue: GH-274
             apk:
               sha256: 95c0e8775be5365428d5e3fecdac0b0c5735213ed896c6e920f6fb0c22b37727
-  - package: com.konylabs.capitalone
-    signature:
-      - fingerprint: 8A:84:61:F8:B7:C7:66:46:CF:FB:19:4C:8E:4D:3A:81:1C:78:41:CF:9B:C0:78:6F:53:12:E3:92:55:98:08:45
-        sources:
-          - name: Google Play
-            issue: GH-1269
-            apk:
-              sha256: 4efda1e04c54a1f206fccd009f6ea67c252468bc7e8bb73ced80f6be672fe76b
   - package: com.koreanair.passenger
     signature:
       - fingerprint: 41:70:AA:43:15:24:69:FB:E7:93:48:8B:5A:17:7E:D8:3B:25:58:73:C5:44:F2:EC:51:32:92:63:2A:27:CA:11
@@ -3975,6 +3967,14 @@ packages:
             issue: GH-843
             apk:
               sha256: 26d26764682f361fade5e73087fe40acd0ba40ef0260627fb47bcd1674b99e0f
+  - package: com.waze
+    signature:
+      - fingerprint: 03:63:7F:6C:5D:8F:60:4E:6F:DB:79:A6:FF:BF:A5:78:DE:4E:31:8F:8D:A2:2F:C6:10:66:65:24:7F:88:07:D7
+        sources:
+          - name: Google Play
+            issue: GH-1332
+            apk:
+              sha256: df7d2850680035f84b7fdbcb5518837605e5e991af7cfd5cef3639a03c8e1f08
   - package: com.wbd.stream
     signature:
       - fingerprint: 61:9C:BB:02:7B:71:55:60:B8:43:D1:5A:55:99:F9:00:48:5A:F1:CD:42:94:09:78:11:A7:76:09:BC:82:73:A8
