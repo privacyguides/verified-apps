@@ -2564,6 +2564,14 @@ packages:
             issue: GH-821
             apk:
               sha256: f82c83849ec3754cefa1764bb9d7fdc6536f5253be671074500e55d18891a00d
+  - package: com.mango.android
+    signature:
+      - fingerprint: 8A:C3:B7:78:3B:A6:EE:47:53:A9:C2:00:B6:BE:C3:31:31:08:1F:F7:E6:A9:E5:79:34:E0:A4:F8:7A:74:E7:E9
+        sources:
+          - name: Google Play
+            issue: GH-1190
+            apk:
+              sha256: 8f14853c3c47cf37e869eaf7633a6871709a0088d4a8a1bbf13f7d7f6cd021cb
   - package: com.mapillary.app
     signature:
       - fingerprint: DC:E7:1C:BF:92:B7:7E:CE:9F:E1:33:04:66:A4:0C:68:43:CE:8B:6E:86:D4:74:5C:45:36:A2:32:12:DF:6D:58
