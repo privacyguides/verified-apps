@@ -1047,6 +1047,14 @@ packages:
             issue: GH-663
             apk:
               sha256: ba08ed98d29950385208442d0ce3cbe06065ade155703f6df1065db44fdb32a1
+  - package: com.cloudflare.onedotonedotonedotone
+    signature:
+      - fingerprint: 27:3A:3A:5E:09:DC:72:0D:3B:39:45:16:2E:72:4D:9A:69:B2:1F:C5:42:BE:D7:45:7F:11:59:66:B1:45:E8:BC
+        sources:
+          - name: Google Play
+            issue: GH-1173
+            apk:
+              sha256: 2d4ace2877eaa42fea365c3a31165e4cf0d13be1dbff593e1c0ae8ff3e29c0eb
   - package: com.coinbase.android
     signature:
       - fingerprint: 41:6A:E0:CE:11:21:E9:C6:A6:B0:B7:C6:B5:D1:D9:BA:2B:9B:23:A1:4F:4F:1B:9A:87:E0:3B:49:8E:20:CF:3B
