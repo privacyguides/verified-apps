@@ -4423,6 +4423,14 @@ packages:
             issue: GH-918
             apk:
               sha256: 8693bd3eb2c2f450524c660146a906995759a730c84e3ebfe1b92ba1226e4964
+  - package: com.zorinos.zorin_connect
+    signature:
+      - fingerprint: 59:03:68:B1:E3:29:90:14:EE:14:88:E1:28:C0:C7:71:4E:67:20:A2:62:D6:9B:80:7F:19:44:DF:A5:9C:63:9B
+        sources:
+          - name: F-Droid
+            issue: CB-88
+            apk:
+              sha256: b5320fb923002ebcb8ef9efcbbecf8bcb37cb442190ccc6d962bcfd1d2b5d471
   - package: de.astubenbord.paperless_mobile
     signature:
       - fingerprint: 55:B1:8F:9C:A4:08:9F:BA:70:C2:E5:7C:E5:09:F2:40:B8:12:94:EF:69:1B:0D:D1:B1:9D:44:1E:57:64:02:A8
