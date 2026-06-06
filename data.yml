@@ -505,6 +505,14 @@ packages:
             issue: GH-793
             apk:
               sha256: 6faf58dae01287869f7bb85717359e6929a366ea5f9ec6eb1325e0dcdd0e70d1
+  - package: com.adobe.reader
+    signature:
+      - fingerprint: B6:DD:05:62:25:64:87:FC:D6:C9:8C:DE:13:78:58:EF:50:D9:AD:B9:F9:CD:2F:1C:A5:8C:53:57:EF:DF:0F:AF
+        sources:
+          - name: Google Play
+            issue: GH-1283
+            apk:
+              sha256: 28bc5e5fb5fd72d66ddf223a4bef2becd8e062d906355e59f28ff953a8597041
   - package: com.aegean.airlines.prod
     signature:
       - fingerprint: C4:5E:16:E7:DB:54:40:7E:87:43:B5:DF:45:BB:C0:40:F4:81:50:41:2C:20:D2:5D:F1:BC:63:06:6B:26:E8:DF
