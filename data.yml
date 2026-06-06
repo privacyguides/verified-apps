@@ -1133,6 +1133,14 @@ packages:
             issue: GH-993
             apk:
               sha256: af34d79db686fc7e3b54070973948f7b0ec057c6f9d39de2c044398efa8bb695
+  - package: com.contactoffice.mailfence
+    signature:
+      - fingerprint: 97:FE:5D:AA:04:8D:40:D3:CC:F0:A1:09:8F:47:FC:99:D1:A0:36:FA:BA:AF:B9:80:1F:51:E5:63:69:59:14:38
+        sources:
+          - name: Google Play
+            issue: GH-1210
+            apk:
+              sha256: 842de04407732a3b2fed24f5fc43a64487e868b1c37bd9d88a1f376795b007c6
   - package: com.costco.app.android
     signature:
       - fingerprint: CE:C0:85:37:BE:51:51:90:57:59:A0:E0:30:16:69:58:2E:FF:8E:6B:98:B6:67:6B:BD:0A:65:4A:53:52:45:FC
