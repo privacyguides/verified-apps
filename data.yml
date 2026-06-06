@@ -5998,6 +5998,12 @@ packages:
               sha256: d5cb6c0bb40b5a82fe4ea5689599aa871bb725c25f0d6d1bde44120b696073b9
   - package: org.documentfoundation.libreoffice
     signature:
+      - fingerprint: 54:D3:57:33:E9:64:DC:B6:5F:51:1E:50:25:B8:3F:9B:D7:B5:73:31:14:34:AB:79:A7:CD:09:F8:27:BC:45:50
+        sources:
+          - name: Google Play
+            issue: GH-1257
+            apk:
+              sha256: 366b56477993618de85459c13a93a5775d8e42aa6183f192ee3b2a88b4ace820
       - fingerprint: AF:71:BA:34:4C:AB:25:9F:A6:25:F0:79:FF:52:0F:51:1D:17:A3:72:BB:2E:8F:A2:75:32:79:1B:D5:FE:A8:CB
         sources:
           - name: F-Droid
