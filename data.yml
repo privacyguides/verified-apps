@@ -2312,6 +2312,14 @@ packages:
             issue: GH-677
             apk:
               sha256: 8cc65dcaf4c1b82bfb9afd3e29194ec27563bdcc9533787381e70d9710d1f945
+  - package: com.jarsilio.android.scrambledeggsif
+    signature:
+      - fingerprint: 3C:DF:16:22:C3:7D:21:2B:E5:86:B2:29:28:F2:8C:CA:DB:D7:CB:95:4F:10:05:FC:E1:3E:81:85:0B:EB:1D:73
+        sources:
+          - name: F-Droid
+            issue: CB-85
+            apk:
+              sha256: b5edea35c0b3cb22675aa79fa0f920e17e2c35d31e19d8121d7e0e68c9c0e5d8
   - package: com.jgeek00.adguard_home_manager
     signature:
       - fingerprint: 6E:60:C8:16:4F:7F:32:2B:93:B4:7D:1E:F2:86:AF:F9:B8:D1:64:24:DB:5E:18:B8:69:95:D3:76:87:06:29:26
