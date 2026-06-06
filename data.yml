@@ -1437,6 +1437,14 @@ packages:
             issue: CB-3
             apk:
               sha256: 3bc37e619307bace32ab54433874fef34ad2a5a9343289d2f9b62eedc1466b86
+  - package: com.firsty.app
+    signature:
+      - fingerprint: EC:C7:12:8F:D0:81:50:E3:FB:D5:75:F2:98:B5:08:E8:58:D4:F2:60:7F:78:FA:05:3F:84:48:8F:CD:4C:89:A8
+        sources:
+          - name: Google Play
+            issue: GH-1235
+            apk:
+              sha256: 0191c9796019dbfc342f93d75fecd18e64962fe614920d0e3ec3140c5b3237ed
   - package: com.flauschcode.broccoli
     signature:
       - fingerprint: 73:8E:4F:5A:7C:A8:28:E8:00:C0:22:AB:44:AB:51:72:8E:66:00:1E:61:D3:50:E2:7C:E7:D9:DF:CF:0F:6B:99
