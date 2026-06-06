@@ -915,6 +915,16 @@ packages:
             issue: GH-794
             apk:
               sha256: 3a0ba6cc59d63865c22a71f0794d92b4de44353f0ec39d8aca875bf33fed96cf
+  - package: com.bookfunnel.bookfunnel
+    signature:
+      - fingerprint: |-
+          79:43:7C:14:48:16:45:7B:D1:1B:6E:D0:C3:32:69:D9:7D:02:30:6B:E6:20:4F:16:CA:2C:41:93:51:D1:E1:9A
+          99:0F:4C:C5:BE:D9:01:E3:F0:84:5E:8E:E6:9B:F5:86:53:16:6B:4D:AA:77:D4:F2:EB:4E:05:BF:40:24:96:A0
+        sources:
+          - name: Google Play
+            issue: GH-1267
+            apk:
+              sha256: 14a9d978d2809fd05437f9d9084eb4e910cf10bc653d67fd23ef179713324808
   - package: com.booking
     signature:
       - fingerprint: 6A:C8:C8:A9:E6:F3:6E:14:E5:2A:0A:05:15:A3:6B:70:66:E7:20:A1:B0:C8:A1:B0:59:E0:78:17:50:A8:71:99
