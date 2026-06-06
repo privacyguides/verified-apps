@@ -3199,6 +3199,14 @@ packages:
             issue: GH-284
             apk:
               sha256: 81d1759235dcd1ecda78bf0f905641babf6142741356c4e176ca866ec3a1bf00
+  - package: com.philips.lighting.hue2
+    signature:
+      - fingerprint: 1B:4B:51:67:E1:6F:D0:29:47:4B:C2:B2:94:79:02:AC:F9:EE:1E:20:E4:7C:F8:5A:B4:38:B6:2C:DE:A8:16:4A
+        sources:
+          - name: Google Play
+            issue: CB-67
+            apk:
+              sha256: a170fde0b4afef1fd34bbc771b1087b191bf52bb09d52f279f892c5ac5d82017
   - package: com.philkes.notallyx
     signature:
       - fingerprint: D2:14:B6:05:7B:79:F8:25:09:DD:CD:1E:35:19:65:B3:C6:EC:C4:B2:A3:89:6E:5C:DF:88:5A:70:A0:B6:1D:FD
