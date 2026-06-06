@@ -4407,14 +4407,6 @@ packages:
             issue: GH-419
             apk:
               sha256: 2ac3a97bf5dec6bff791b6e9d29a8109a03429f9f7e6c4597895796223e3d32e
-  - package: de.lukasneugebauer.nextcloudcookbook
-    signature:
-      - fingerprint: 76:C2:9D:9A:87:91:FF:D9:36:38:36:96:89:60:FD:6D:63:B3:D4:41:FE:96:95:F3:66:8A:DB:E3:84:E3:64:74
-        sources:
-          - name: F-Droid
-            issue: CB-77
-            apk:
-              sha256: 8af1b4ed2e15867aafee1e481aec4f8e35013e3eb704959572c82de857f63b9c
   - package: de.markusfisch.android.binaryeye
     signature:
       - fingerprint: DD:A9:21:96:50:57:4B:2D:70:2F:DF:2D:F9:0F:61:9B:D4:E2:D0:F3:A6:6E:26:BB:03:2F:2F:01:88:40:CF:8E
@@ -6641,6 +6633,14 @@ packages:
             apk:
               sha256: eb56aa9ae68b4d4b04e40251d7fe7ea49f97e0c4be5a8384e28d98ee36b9c5e2
               repo: https://archive.newpipe.net/fdroid/repo/
+  - package: org.secuso.privacyfriendlynotes
+    signature:
+      - fingerprint: 9B:E7:5E:46:FA:FA:2D:66:E9:B8:DB:B7:EA:6A:34:CC:09:6A:96:B2:D9:39:65:69:CF:F5:A7:F9:8F:6D:09:3D
+        sources:
+          - name: F-Droid
+            issue: CB-82
+            apk:
+              sha256: 742c53eac1e9dda4715514c37e3b7941b853d32054456154939f3489ab0d01f6
   - package: org.sufficientlysecure.keychain
     signature:
       - fingerprint: 28:05:A6:F4:65:AC:B9:23:10:3A:2A:B3:A1:45:E1:A9:7A:74:C4:4A:CF:75:12:50:B5:88:EB:C3:F8:8A:0C:C9
