@@ -1561,6 +1561,14 @@ packages:
             issue: GH-346
             apk:
               sha256: 385217b2b6c58694f54d81986f3e4eb703fce8d50efe46b3b1e17e86b1886b04
+  - package: com.enphaseenergy.myenlighten
+    signature:
+      - fingerprint: F6:6D:80:CA:D4:96:AC:6E:02:FD:85:2A:04:69:02:9F:7F:7B:16:3D:CF:39:09:76:63:D7:7F:F0:F3:00:B2:4B
+        sources:
+          - name: Google Play
+            issue: CB-43
+            apk:
+              sha256: 2d695383a41ed5071a81b44e6e92a12c967dcf7a32bfbcaec4bd4f4ea6ba885e
   - package: com.epicgames.portal
     signature:
       - fingerprint: 67:69:9A:6B:3D:31:5D:EE:51:53:6A:67:B4:F1:C6:E7:E2:17:5F:98:4B:09:6B:C2:97:6E:51:2D:22:94:08:71
