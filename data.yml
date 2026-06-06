@@ -2022,6 +2022,14 @@ packages:
             issue: GH-963
             apk:
               sha256: e4058b4aadebda0ca9a192cea3a5383effd4755336ccc8a7d48ba6a42b7c4936
+  - package: com.hassaneltantawy.hisnelmoslem
+    signature:
+      - fingerprint: C4:65:5F:DE:AC:77:E5:10:E7:1E:73:8D:23:B8:E2:32:21:CF:6B:BA:C8:D8:95:88:C8:55:65:A6:F0:B1:59:38
+        sources:
+          - name: Google Play
+            issue: GH-1251
+            apk:
+              sha256: 4430fff589b3ee3dfb0244aeaac3c95390f9418230270dc54a009b4fcce5464a
   - package: com.hcom.android
     signature:
       - fingerprint: 67:89:E6:13:40:28:F3:A8:01:D2:9C:A5:C2:C4:7B:B9:CA:EE:A7:9C:84:8F:C9:0C:89:29:90:A5:98:63:94:2E
