@@ -2910,6 +2910,14 @@ packages:
             issue: GH-696
             apk:
               sha256: 7aed4f4042f81ea5f2576b256d084e7fad9cfc44b39f0e05ac26a198f5191b63
+  - package: com.ourfamilywizard
+    signature:
+      - fingerprint: 9B:CC:23:2D:34:BE:A2:26:94:C4:E7:8C:5E:B8:84:35:B7:3B:35:6D:59:2F:4B:BB:11:F5:E7:45:37:D5:B3:2D
+        sources:
+          - name: Google Play
+            issue: GH-1208
+            apk:
+              sha256: 1f4a132ef527334d968379c46f529ff76e597c350f90a121d3c06fdcea4434fb
   - package: com.pal.dx
     signature:
       - fingerprint: AC:D4:71:6B:03:0B:7F:EB:E6:E1:83:01:18:7B:62:5C:9C:CC:86:66:07:5A:E7:0B:21:98:B7:DC:42:83:86:A7
