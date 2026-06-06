@@ -366,13 +366,22 @@ EOF
 
 # --- data-verified-domains.yml (schema 1) ------------------------------------
 
-# Insert or update a domain row (by domain), refreshing method/issue/checked; keep sorted.
-# Optional 6th arg dnssec ("true"/"false") records a .dnssec boolean (used for DNS records).
+# Insert or update a domain row (by domain), keeping the file sorted by domain.
+#   $1 file  $2 domain  $3 method  $4 issue_ref  $5 checked (ISO8601)
+#   $6 dnssec   ("true"/"false"/"" — records a .dnssec boolean for DNS records)
+#   $7 allowed  (JSON array of normalized key sets seen at this check; default [])
+#   $8 revoked  (JSON array of normalized revoked key sets; default [])
+# The .issue field is a *list*: a new issue_ref is appended (deduped) rather than
+# overwriting prior ones, so every request that proved/refreshed the domain is kept.
+# .allowed / .revoked record the key sets as of the most recent check (.revoked is
+# omitted when empty, e.g. for DNS records which carry no revocation list).
 domain_verified_upsert() {
   local file="$1" domain="$2" method="$3" issue="$4" checked="$5" dnssec="${6:-}"
+  local allowed_json="${7:-[]}" revoked_json="${8:-[]}"
   export DV_DOMAIN="$domain" DV_METHOD="$method" DV_ISSUE="$issue" DV_CHECKED="$checked"
+  export DV_ALLOWED="$allowed_json" DV_REVOKED="$revoked_json"
   if [[ ! -f "$file" || ! -s "$file" ]]; then
-    yq -n '.schema = '"$DOMAIN_VERIFIED_SCHEMA"' | .domains = [{"domain": strenv(DV_DOMAIN), "method": strenv(DV_METHOD), "issue": strenv(DV_ISSUE), "checked": strenv(DV_CHECKED)}]' > "$file"
+    yq -n '.schema = '"$DOMAIN_VERIFIED_SCHEMA"' | .domains = [{"domain": strenv(DV_DOMAIN), "method": strenv(DV_METHOD), "issue": [strenv(DV_ISSUE)], "checked": strenv(DV_CHECKED)}]' > "$file"
   else
     local schema
     schema=$(yq -r '.schema // 0' "$file")
@@ -381,10 +390,19 @@ domain_verified_upsert() {
       return 1
     fi
     if yq -e '.domains[] | select(.domain == strenv(DV_DOMAIN))' "$file" >/dev/null 2>&1; then
-      yq -i 'with(.domains[] | select(.domain == strenv(DV_DOMAIN)); .method = strenv(DV_METHOD) | .issue = strenv(DV_ISSUE) | .checked = strenv(DV_CHECKED))' "$file"
+      yq -i 'with(.domains[] | select(.domain == strenv(DV_DOMAIN)); .method = strenv(DV_METHOD) | .issue = ((.issue // []) + [strenv(DV_ISSUE)] | unique) | .checked = strenv(DV_CHECKED))' "$file"
     else
-      yq -i '.domains += [{"domain": strenv(DV_DOMAIN), "method": strenv(DV_METHOD), "issue": strenv(DV_ISSUE), "checked": strenv(DV_CHECKED)}]' "$file"
+      yq -i '.domains += [{"domain": strenv(DV_DOMAIN), "method": strenv(DV_METHOD), "issue": [strenv(DV_ISSUE)], "checked": strenv(DV_CHECKED)}]' "$file"
     fi
+  fi
+  # Record allowed key sets as observed at this check (block style; multi-cert sets as
+  # literal block scalars so they read like the rest of the file).
+  yq -i 'with(.domains[] | select(.domain == strenv(DV_DOMAIN)); .allowed = (strenv(DV_ALLOWED) | from_json) | .allowed style="" | .allowed[] style="")' "$file"
+  # Record revoked key sets when present, otherwise drop the field.
+  if [[ "$(jq 'length' <<< "$revoked_json")" -gt 0 ]]; then
+    yq -i 'with(.domains[] | select(.domain == strenv(DV_DOMAIN)); .revoked = (strenv(DV_REVOKED) | from_json) | .revoked style="" | .revoked[] style="")' "$file"
+  else
+    yq -i 'with(.domains[] | select(.domain == strenv(DV_DOMAIN)); del(.revoked))' "$file"
   fi
   if [[ -n "$dnssec" ]]; then
     export DV_DNSSEC="$dnssec"
