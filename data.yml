@@ -6040,6 +6040,15 @@ packages:
             issue: GH-984
             apk:
               sha256: d01492218e64ddbb284e4bde71ecd28d261e975d345090642661af94da512801
+  - package: net.typeblog.shelter
+    signature:
+      - fingerprint: D7:3D:3C:71:5B:DE:7F:C8:6C:1C:15:6F:F3:D5:73:CF:8B:9C:67:0F:5A:1F:3C:5E:F8:23:BE:40:E6:05:29:8A
+        sources:
+          - name: F-Droid (fdroid.typeblog.net)
+            issue: GH-1330
+            apk:
+              sha256: 629a7ca09a11a156040fd2f9cb2a062baecd13c35e052595d86c4c1b085c950a
+              repo: https://fdroid.typeblog.net/repo
   - package: nl.appyhapps.healthsync
     signature:
       - fingerprint: F7:BB:BD:D2:F3:A3:FE:CA:52:2D:C7:CA:B7:0C:62:0F:C1:17:A1:67:68:C1:AF:64:41:34:F6:DA:C0:F9:E7:BC
