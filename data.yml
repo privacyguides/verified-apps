@@ -2295,6 +2295,14 @@ packages:
             issue: GH-274
             apk:
               sha256: 95c0e8775be5365428d5e3fecdac0b0c5735213ed896c6e920f6fb0c22b37727
+  - package: com.konylabs.capitalone
+    signature:
+      - fingerprint: 8A:84:61:F8:B7:C7:66:46:CF:FB:19:4C:8E:4D:3A:81:1C:78:41:CF:9B:C0:78:6F:53:12:E3:92:55:98:08:45
+        sources:
+          - name: Google Play
+            issue: GH-1269
+            apk:
+              sha256: 4efda1e04c54a1f206fccd009f6ea67c252468bc7e8bb73ced80f6be672fe76b
   - package: com.koreanair.passenger
     signature:
       - fingerprint: 41:70:AA:43:15:24:69:FB:E7:93:48:8B:5A:17:7E:D8:3B:25:58:73:C5:44:F2:EC:51:32:92:63:2A:27:CA:11
