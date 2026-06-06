@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Mirror to Codeberg
-        uses: wearerequired/git-mirror-action@v1
+        uses: wearerequired/git-mirror-action@c44c68aebe42de49a80a8dfd557416b6a0cafdad # v1.2.0
         env:
           SSH_PRIVATE_KEY: ${{ secrets.ACTIONS_SSH_KEY }}
         with:

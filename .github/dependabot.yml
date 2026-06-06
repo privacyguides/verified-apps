@@ -1,24 +1,46 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
-
 version: 2
 updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
-    labels: [ ]
+    open-pull-requests-limit: 10
+    labels: []
+    groups:
+      all-actions:
+        patterns:
+          - "*"
+    ignore:
+      # privacyguides/.github has no release tags; SHA bumped manually
+      - dependency-name: "privacyguides/.github/.github/workflows/sign-artifact.yml"
+      # privacyguides/verified-apps uses date-based tags, not semver; SHA bumped manually
+      - dependency-name: "privacyguides/verified-apps/.github/workflows/create-artifact.yml"
 
   - package-ecosystem: "pip"
     directory: "/.github/actions/get-accrescent-app"
     schedule:
       interval: "weekly"
-    labels: [ ]
+    open-pull-requests-limit: 10
+    labels: []
+    groups:
+      grpc:
+        patterns:
+          - "grpcio*"
 
   - package-ecosystem: "pip"
     directory: "/scripts"
     schedule:
       interval: "weekly"
-    labels: [ ]
+    open-pull-requests-limit: 10
+    labels: []
+
+  - package-ecosystem: "pip"
+    directory: "/gplay-apk-downloader"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    labels: []
+    groups:
+      flask:
+        patterns:
+          - "flask*"
