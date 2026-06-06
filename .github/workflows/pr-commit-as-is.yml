@@ -81,6 +81,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
           ISSUE_NUMBER: ${{ steps.prMeta.outputs.issueNumber }}
+          CB_SYNC_TOKEN: ${{ secrets.CB_SYNC_TOKEN }}
           LABELER_LOGIN: ${{ github.event.sender.login }}
           LABELER_ID: ${{ github.event.sender.id }}
           SUBMITTER_LOGIN: ${{ github.event.pull_request.user.login }}
@@ -89,8 +90,11 @@ jobs:
           set -euo pipefail
           source .github/actions/signature-lib/signatures.lib.sh
           issue_body=$(gh issue view "$ISSUE_NUMBER" --repo "$GH_REPO" --json body -q .body)
+          # For Codeberg-mirrored submissions, credit the Codeberg user (fetched live, never
+          # stored on the issue) instead of the GitHub sync bot.
+          cb_author=$(signatures_codeberg_submission_author "${CB_SYNC_TOKEN:-}" "$issue_body" || true)
           trailer=$(submission_resolve_coauthor_trailers \
-            "$LABELER_LOGIN" "$LABELER_ID" "$SUBMITTER_LOGIN" "$SUBMITTER_ID" "$issue_body")
+            "$LABELER_LOGIN" "$LABELER_ID" "$SUBMITTER_LOGIN" "$SUBMITTER_ID" "$cb_author")
           gha_write_multiline_output trailer "$trailer"
 
       - name: Prepare submission data.yml
