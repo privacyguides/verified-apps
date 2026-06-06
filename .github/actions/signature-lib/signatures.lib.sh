@@ -83,10 +83,11 @@ signatures_codeberg_issue_number() {
 }
 
 # Parse ### Submission Source from a GitHub issue body.
-# Sets SUBMISSION_EXTERNAL_REF (e.g. CB-123) on success.
+# Sets SUBMISSION_EXTERNAL_REF (e.g. CB-123) on success, plus SUBMISSION_EXTERNAL_AUTHOR
+# (the originating Codeberg username) when an "External Author:" line is present.
 signatures_parse_submission_source() {
   local body="$1"
-  local section line external
+  local section line external author
 
   section=$(printf '%s\n' "$body" | awk '
     $0 == "### Submission Source" { found=1; next }
@@ -95,18 +96,31 @@ signatures_parse_submission_source() {
   ')
 
   external=""
+  author=""
   while IFS= read -r line; do
     [[ -z "$line" ]] && continue
-    if [[ "$line" =~ ^[Ee]xternal:[[:space:]]*(.+)$ ]]; then
+    if [[ -z "$external" && "$line" =~ ^[Ee]xternal:[[:space:]]*(.+)$ ]]; then
       external="${BASH_REMATCH[1]}"
-      break
+    elif [[ -z "$author" && "$line" =~ ^[Ee]xternal[[:space:]]+[Aa]uthor:[[:space:]]*(.+)$ ]]; then
+      author="${BASH_REMATCH[1]}"
     fi
   done <<< "$section"
 
   external=$(printf '%s' "$external" | sed -E 's/^[[:space:]]+//; s/[[:space:]]+$//')
+  author=$(printf '%s' "$author" | sed -E 's/^[[:space:]]+//; s/[[:space:]]+$//')
   [[ "$external" =~ ^CB-[0-9]+$ ]] || return 1
   SUBMISSION_EXTERNAL_REF="$external"
+  SUBMISSION_EXTERNAL_AUTHOR="$author"
   return 0
+}
+
+# Codeberg author username recorded as "External Author: <user>" in a GitHub issue body's
+# ### Submission Source section. Succeeds only for a Codeberg submission with a valid username.
+signatures_codeberg_submission_author() {
+  local body="$1"
+  signatures_parse_submission_source "$body" || return 1
+  [[ "${SUBMISSION_EXTERNAL_AUTHOR:-}" =~ ^[A-Za-z0-9][A-Za-z0-9._-]*$ ]] || return 1
+  printf '%s' "$SUBMISSION_EXTERNAL_AUTHOR"
 }
 
 # Issue ref for data.yml / "from …" lines: External ref when present, else GH-N.
@@ -251,6 +265,103 @@ signatures_sync_codeberg_issue_state() {
   echo "Set ${SUBMISSION_EXTERNAL_REF} to ${target_state} on Codeberg."
 }
 
+# Fetch every label on a Codeberg repo as a compact name->id JSON map ({"Name": id, ...}).
+codeberg_fetch_label_id_map() {
+  local token="$1"
+  local owner="$2"
+  local repo="$3"
+  local api_base="${CODEBERG_API_BASE:-https://codeberg.org/api/v1}"
+  local page=1 limit=50 page_json count combined='[]'
+
+  while :; do
+    page_json=$(curl -sS \
+      -H "Authorization: token ${token}" \
+      -H "Accept: application/json" \
+      "${api_base}/repos/${owner}/${repo}/labels?limit=${limit}&page=${page}") || return 1
+    jq -e 'type == "array"' >/dev/null 2>&1 <<< "$page_json" || return 1
+    count=$(jq 'length' <<< "$page_json")
+    (( count > 0 )) || break
+    combined=$(jq -c --argjson acc "$combined" '$acc + .' <<< "$page_json")
+    (( count < limit )) && break
+    page=$((page + 1))
+  done
+
+  jq -c 'reduce .[] as $l ({}; .[$l.name] = $l.id)' <<< "$combined"
+}
+
+# Replace all labels on a Codeberg issue to match the given label names (JSON array).
+# Names that do not exist on the Codeberg repo are skipped; an empty array clears all labels.
+codeberg_set_issue_labels() {
+  local token="$1"
+  local owner="$2"
+  local repo="$3"
+  local issue_index="$4"
+  local names_json="$5"
+  local api_base="${CODEBERG_API_BASE:-https://codeberg.org/api/v1}"
+  local id_map ids payload_file response http_code response_body
+
+  [[ -n "$token" && "$issue_index" =~ ^[0-9]+$ ]] || return 1
+
+  id_map=$(codeberg_fetch_label_id_map "$token" "$owner" "$repo") || return 1
+  ids=$(jq -c --argjson map "$id_map" '[ .[] | $map[.] // empty ]' <<< "$names_json")
+
+  payload_file=$(mktemp)
+  jq -n --argjson labels "$ids" '{labels: $labels}' > "$payload_file"
+
+  response=$(curl -sS -w '\n%{http_code}' -X PUT \
+    -H "Authorization: token ${token}" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    "${api_base}/repos/${owner}/${repo}/issues/${issue_index}/labels" \
+    --data-binary @"$payload_file")
+  rm -f "$payload_file"
+
+  http_code=$(printf '%s' "$response" | tail -n 1)
+  response_body=$(printf '%s' "$response" | sed '$d')
+
+  if [[ "$http_code" != "200" ]]; then
+    echo "Codeberg issue label update failed (HTTP ${http_code}):" >&2
+    printf '%s\n' "$response_body" >&2
+    return 1
+  fi
+}
+
+# Mirror a GitHub issue's labels to the linked Codeberg issue (### Submission Source:
+# External: CB-N). GitHub-only automation/marker labels are dropped. labels_json is a JSON
+# array of the GitHub issue's current label names.
+signatures_sync_codeberg_issue_labels() {
+  local token="$1"
+  local github_issue_body="$2"
+  local labels_json="$3"
+  local owner="${CODEBERG_REPO_OWNER:-privacyguides}"
+  local repo="${CODEBERG_REPO_NAME:-verified-apps}"
+  local cb_issue_num filtered
+
+  [[ -n "$token" ]] || return 0
+
+  if ! signatures_parse_submission_source "$github_issue_body"; then
+    return 0
+  fi
+  if ! cb_issue_num=$(signatures_codeberg_issue_number "$SUBMISSION_EXTERNAL_REF"); then
+    return 0
+  fi
+
+  # GitHub-only automation triggers and the Codeberg provenance marker do not belong on Codeberg.
+  filtered=$(jq -c '
+    [ .[] | select(
+      . as $n
+      | (["Import Codeberg", "Run Checks", "Create PR", "Commit As-Is", "Check APKPure"] | index($n)) | not
+    ) ]
+  ' <<< "$labels_json")
+
+  if ! codeberg_set_issue_labels "$token" "$owner" "$repo" "$cb_issue_num" "$filtered"; then
+    echo "::warning::Could not sync labels to ${SUBMISSION_EXTERNAL_REF} on Codeberg." >&2
+    return 1
+  fi
+
+  echo "Synced labels to ${SUBMISSION_EXTERNAL_REF} on Codeberg."
+}
+
 # Write a submission commit message; always closes the synced GitHub issue (GH-N).
 submission_write_commit_message_file() {
   local msg_file="$1"
@@ -277,17 +388,35 @@ submission_coauthor_trailer_for_user() {
   printf 'Co-authored-by: %s <%s+%s@users.noreply.github.com>' "$display_name" "$user_id" "$login"
 }
 
-# Labeler plus issue author when they differ; prints trailers separated by newlines.
+# Codeberg noreply Co-authored-by trailer for a Codeberg username.
+submission_codeberg_coauthor_trailer_for_user() {
+  local username="$1"
+  [[ -n "$username" ]] || return 1
+  printf 'Co-authored-by: %s <%s@noreply.codeberg.org>' "$username" "$username"
+}
+
+# Labeler plus the submitter; prints trailers separated by newlines. The submitter is the
+# GitHub issue author, or — when the submission was mirrored from Codeberg (### Submission
+# Source: External: CB-N) — the original Codeberg user via their codeberg.org noreply address,
+# since the GitHub-side author is the sync bot. Pass the GitHub issue body as $5 to enable this.
 submission_resolve_coauthor_trailers() {
   local labeler_login="$1"
   local labeler_id="$2"
   local submitter_login="$3"
   local submitter_id="$4"
-  local trailers labeler_trailer submitter_trailer
+  local issue_body="${5:-}"
+  local trailers labeler_trailer submitter_trailer cb_author
 
   labeler_trailer=$(submission_coauthor_trailer_for_user "$labeler_login" "$labeler_id")
   trailers="$labeler_trailer"
-  if [[ -n "$submitter_login" && -n "$submitter_id" && "$submitter_login" != "$labeler_login" ]]; then
+
+  if cb_author=$(signatures_codeberg_submission_author "$issue_body"); then
+    submitter_trailer=$(submission_codeberg_coauthor_trailer_for_user "$cb_author")
+    if [[ "$submitter_trailer" != "$labeler_trailer" ]]; then
+      trailers+=$'\n'
+      trailers+="$submitter_trailer"
+    fi
+  elif [[ -n "$submitter_login" && -n "$submitter_id" && "$submitter_login" != "$labeler_login" ]]; then
     submitter_trailer=$(submission_coauthor_trailer_for_user "$submitter_login" "$submitter_id")
     trailers+=$'\n'
     trailers+="$submitter_trailer"
@@ -842,12 +971,6 @@ _submission_assemble_entry_from_proposals() {
 }
 
 # Build a single package entry (schema 4: fingerprint groups with sources[]) from store matches.
-# Required env: PACKAGE, ISSUE, USER_SIG (raw; formatted internally)
-# Optional env: SUBMITTER_SOURCE, ACC_SIG, ACC_APK_SHA256, FDROID_RESULTS_DIR, CUSTOM_FDROID_REPO_URL,
-#   CUSTOM_FDROID_APK_SHA256, GPLAY_SIG, GPLAY_APK_SHA256, APKPURE_SIG, APKPURE_APK_SHA256,
-#   APPVERIFIER_SIG, DIRECT_SIG, DIRECT_APK_URL,
-#   DIRECT_APK_SHA256
-# Writes YAML object to $1. Returns 0 when at least one signature was added, 1 otherwise.
 submission_build_entry_file() {
   local entry_file="$1"
   local user_sig fp_block store_sig repo_name fdroid_source proposals_file

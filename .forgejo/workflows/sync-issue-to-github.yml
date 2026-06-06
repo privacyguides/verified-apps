@@ -39,6 +39,7 @@ jobs:
           issue_title=$(jq -r '.issue.title' "$event_path")
           issue_body=$(jq -r '.issue.body // ""' "$event_path")
           issue_number=$(jq -r '.issue.number' "$event_path")
+          issue_author=$(jq -r '.issue.user.login // .issue.user.username // ""' "$event_path")
 
           body_file=$(mktemp)
           payload_file=$(mktemp)
@@ -50,6 +51,9 @@ jobs:
             fi
             printf '%s\n\n' '### Submission Source'
             printf 'External: CB-%s\n' "$issue_number"
+            if [[ -n "$issue_author" ]]; then
+              printf 'External Author: %s\n' "$issue_author"
+            fi
           } > "$body_file"
 
           jq -n \
