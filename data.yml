@@ -5678,6 +5678,14 @@ packages:
             issue: GH-1230
             apk:
               sha256: b5fd8064cb38bd0c6eb98b66b3a8bfa816dfc659d24aa5412cff112e9ed5da0b
+  - package: luci.sixsixsix.powerampache2.fdroid
+    signature:
+      - fingerprint: BA:F0:B1:5A:78:40:D7:78:2C:05:E4:BD:8B:99:D3:A6:C5:37:51:97:65:A9:36:88:FD:77:45:31:27:E1:E6:51
+        sources:
+          - name: F-Droid
+            issue: CB-84
+            apk:
+              sha256: 661400f4bfd6f18df48d559b2d9ac3384678076b420f8ff32efdf715c364fecc
   - package: md.obsidian
     signature:
       - fingerprint: F6:EE:C9:88:E3:6E:ED:4E:91:65:B5:B4:BF:20:83:EC:1B:1C:F2:66:11:FA:BB:01:DB:4D:4A:A7:57:35:D9:99
