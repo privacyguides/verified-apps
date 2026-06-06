@@ -2515,6 +2515,14 @@ packages:
             issue: GH-270
             apk:
               sha256: 1507a631c1a039444090b7eafa0746c6a993022c0bf05e1a86cc6338c70d8671
+  - package: com.monero.app
+    signature:
+      - fingerprint: EA:C7:62:C6:D4:E9:7D:5A:BB:5F:0D:02:36:EA:32:CE:C4:B1:67:1F:9E:AA:FB:D1:25:5F:36:B4:D3:97:20:A9
+        sources:
+          - name: Google Play
+            issue: GH-1238
+            apk:
+              sha256: c983268a65408620c14c24633a668c954000e797902c450174529efbaafaba2d
   - package: com.mrsep.musicrecognizer
     signature:
       - fingerprint: A5:A1:DC:1D:78:D7:F0:3A:95:36:51:B2:7D:3A:07:C2:5E:3A:F0:13:27:F4:5C:DF:86:19:A2:23:B7:03:57:D0
