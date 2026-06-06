@@ -3666,6 +3666,14 @@ packages:
             issue: GH-915
             apk:
               sha256: 0fc4db76c46a0072ee0ee37d61338b29d985aa109db5974d1100651ca5a3ef19
+  - package: com.tranzmate
+    signature:
+      - fingerprint: C4:2F:90:60:27:4B:C6:22:DD:53:D1:AC:25:DC:1C:01:67:C3:02:3E:C3:D8:76:49:C3:C9:EC:10:E3:AD:7D:B0
+        sources:
+          - name: Google Play
+            issue: GH-1239
+            apk:
+              sha256: 6e79c6eb681666ad56ba7e4da6f3d4dda19da66b619397c16845759b1c9e328f
   - package: com.trianguloy.urlchecker
     signature:
       - fingerprint: 93:D7:9B:1E:72:D5:A6:B0:BC:68:11:B9:BC:0A:83:18:1C:35:10:D5:8C:11:57:11:40:FF:3F:8A:63:F2:21:74
