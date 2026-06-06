@@ -1392,6 +1392,14 @@ packages:
             issue: GH-752
             apk:
               sha256: 6ebe5c150cadcc255e497af7fa162ca1d1930f4942ad60e8aea515314ed59d02
+  - package: com.ferrarid.converterpro
+    signature:
+      - fingerprint: E3:28:EA:94:6E:19:41:C5:8B:0E:F0:63:15:A8:64:5C:10:20:DD:90:30:C9:6F:EF:9F:81:52:77:F4:C6:0A:B6
+        sources:
+          - name: Google Play
+            issue: GH-1172
+            apk:
+              sha256: 20149dcda4ff8855115bb86666c32b4010508f029437e84439bb6d1d9cff300c
   - package: com.fidelity.android
     signature:
       - fingerprint: 45:49:19:9D:C9:17:A0:15:78:8B:28:AE:B6:FE:84:AA:2E:0F:50:AA:1C:37:47:45:F5:AA:05:B0:9A:2E:CA:48
