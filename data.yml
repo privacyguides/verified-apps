@@ -890,6 +890,18 @@ packages:
             issue: GH-794
             apk:
               sha256: 3a0ba6cc59d63865c22a71f0794d92b4de44353f0ec39d8aca875bf33fed96cf
+  - package: com.bnyro.wallpaper
+    signature:
+      - fingerprint: B3:BC:73:B1:17:DF:5D:FE:38:13:0C:6C:2B:94:68:52:AE:70:88:55:7F:E8:E4:33:F0:D9:98:3A:6B:55:CC:95
+        sources:
+          - name: F-Droid
+            issue: GH-1249
+            apk:
+              sha256: 252614c39e02d1abb53f1ee5e700770bb9f51d1b84f8bb8b76978488cc776bbe
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1249
+            apk:
+              sha256: 252614c39e02d1abb53f1ee5e700770bb9f51d1b84f8bb8b76978488cc776bbe
   - package: com.bookfunnel.bookfunnel
     signature:
       - fingerprint: |-
