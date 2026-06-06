@@ -2197,6 +2197,14 @@ packages:
             issue: GH-677
             apk:
               sha256: 8cc65dcaf4c1b82bfb9afd3e29194ec27563bdcc9533787381e70d9710d1f945
+  - package: com.jarsilio.android.scrambledeggsif
+    signature:
+      - fingerprint: 3C:DF:16:22:C3:7D:21:2B:E5:86:B2:29:28:F2:8C:CA:DB:D7:CB:95:4F:10:05:FC:E1:3E:81:85:0B:EB:1D:73
+        sources:
+          - name: F-Droid
+            issue: CB-85
+            apk:
+              sha256: b5edea35c0b3cb22675aa79fa0f920e17e2c35d31e19d8121d7e0e68c9c0e5d8
   - package: com.jgeek00.adguard_home_manager
     signature:
       - fingerprint: 6E:60:C8:16:4F:7F:32:2B:93:B4:7D:1E:F2:86:AF:F9:B8:D1:64:24:DB:5E:18:B8:69:95:D3:76:87:06:29:26
@@ -2247,14 +2255,6 @@ packages:
             issue: GH-948
             apk:
               sha256: becd7fcf3859bc8bec82df8378c6b04d1847469c6a6a40ff0e05e6bcf1a3eb4e
-  - package: com.keylesspalace.tusky
-    signature:
-      - fingerprint: E9:46:90:1F:12:BD:49:C6:4D:E7:02:A5:32:11:4E:58:C3:AB:2A:6F:18:D1:CD:9B:78:63:2B:AA:D4:44:54:E3
-        sources:
-          - name: F-Droid
-            issue: CB-86
-            apk:
-              sha256: 3e8fcc49a80d4c30ab6f6037e51402c77e2694d27ec19ae5b8a93cd08b6caffa
   - package: com.kin.easynotes
     signature:
       - fingerprint: FC:E8:7D:A9:7F:79:13:01:DF:39:0B:FA:47:E8:16:85:19:11:67:CA:B5:DB:D5:55:DB:82:87:54:1F:78:6E:28
@@ -3456,6 +3456,14 @@ packages:
             issue: GH-76
             apk:
               sha256: 122f17f6bcaf42248cf3fd2b769ae4483aaf7f147857263cfed6043e5af2e9ec
+  - package: com.shazam.android
+    signature:
+      - fingerprint: BF:FE:B1:49:03:FB:C9:2F:FF:E6:40:4A:36:54:09:8A:3F:85:C8:1A:35:13:AF:D5:DC:EA:C1:21:CD:67:8D:1C
+        sources:
+          - name: Google Play
+            issue: CB-59
+            apk:
+              sha256: 38a2b048a3a17ae924148d313fa992ffadd2f790e177ef0ab739bbbfb08bef2a
   - package: com.shifthackz.aisdv1.app.foss
     signature:
       - fingerprint: 89:74:EF:C8:53:E2:D5:E9:3E:B2:9D:D8:09:FC:57:CA:E7:41:1F:CF:AC:A0:3D:E3:F7:C1:52:F4:41:A9:00:64
@@ -6222,27 +6230,6 @@ packages:
             issue: GH-180
             apk:
               sha256: 3f5074b61c35e344b68c6f5ad014891da58d3eca9a541bb382de5f80de6c3577
-  - package: org.fossify.notes
-    signature:
-      - fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
-        sources:
-          - name: Direct APK Link
-            issue: GH-1355
-            apk:
-              sha256: 5a56e0e39cc488e1f3b947d3801006d3b7450ec73c67f03195c64c5fd3b6bced
-              link: https://github.com/FossifyOrg/Notes/releases/download/1.7.0/notes-13-foss-release.apk
-          - name: F-Droid
-            issue: GH-1355
-            apk:
-              sha256: 5a56e0e39cc488e1f3b947d3801006d3b7450ec73c67f03195c64c5fd3b6bced
-          - name: F-Droid (IzzyOnDroid)
-            issue: GH-1355
-            apk:
-              sha256: 5a56e0e39cc488e1f3b947d3801006d3b7450ec73c67f03195c64c5fd3b6bced
-          - name: Google Play
-            issue: GH-1355
-            apk:
-              sha256: 01dcc7afab13c02e5beafb548ad0c7d2e0f9c91df6be1b05c6acc45d3f644315
   - package: org.fossify.phone
     signature:
       - fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
