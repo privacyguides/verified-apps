@@ -744,6 +744,12 @@ packages:
             issue: GH-759
             apk:
               sha256: a2b21e1683bd25b922be07bba9ee6c31125408e49d48b416310ff130fe10fe6e
+      - fingerprint: F7:DE:67:63:F6:6A:3C:6E:7B:0C:8B:78:E5:28:CB:1C:1F:5D:D3:B3:B0:E2:85:9E:36:E4:99:88:D7:FA:DC:CE
+        sources:
+          - name: F-Droid
+            issue: CB-80
+            apk:
+              sha256: 102b12e9933927e3aef0cec7cfe0d20e125ebffc62ac9d5271c25b5160c097cd
   - package: com.aryan.reader.oss
     signature:
       - fingerprint: 4D:77:F5:57:45:74:9B:04:FC:BE:9A:60:E1:A2:ED:CA:5D:D0:CF:BB:D7:2B:B5:8C:E0:DD:15:6C:B1:B8:14:C9
