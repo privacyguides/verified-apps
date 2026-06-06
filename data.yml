@@ -595,14 +595,6 @@ packages:
             issue: GH-986
             apk:
               sha256: eb69deac0c1105750caba22f328a66937eb12c015e4e4ef50993e65e756b62b6
-  - package: com.amtrak.rider
-    signature:
-      - fingerprint: B2:CF:72:BB:EF:F5:BC:CB:1A:0A:D7:FE:52:ED:49:77:5C:B9:C1:30:0E:65:7C:0F:FB:4F:A5:81:52:91:C4:10
-        sources:
-          - name: Google Play
-            issue: GH-1194
-            apk:
-              sha256: bd721a785edd1028e33bf720d951ae993a14577f6e06341ed5471cef2154e9ae
   - package: com.ancestry.android.apps.ancestry
     signature:
       - fingerprint: D0:38:92:9C:BA:FD:96:6E:51:A6:35:DB:8C:FF:9E:D8:39:ED:CB:03:16:4E:A1:D0:97:DE:CD:9F:50:87:85:37
@@ -4267,6 +4259,12 @@ packages:
             issue: GH-419
             apk:
               sha256: 2ac3a97bf5dec6bff791b6e9d29a8109a03429f9f7e6c4597895796223e3d32e
+      - fingerprint: AE:54:A7:63:06:68:07:BB:72:06:19:DF:83:AA:85:44:5C:F3:1C:1D:AB:AB:07:98:19:87:40:7F:62:31:04:27
+        sources:
+          - name: Google Play
+            issue: GH-1225
+            apk:
+              sha256: b801504d9629ced0c9609e51c76655aee5e0f0135e78c00a421c15e6430c9103
   - package: de.markusfisch.android.binaryeye
     signature:
       - fingerprint: DD:A9:21:96:50:57:4B:2D:70:2F:DF:2D:F9:0F:61:9B:D4:E2:D0:F3:A6:6E:26:BB:03:2F:2F:01:88:40:CF:8E
@@ -5859,12 +5857,6 @@ packages:
               sha256: d5cb6c0bb40b5a82fe4ea5689599aa871bb725c25f0d6d1bde44120b696073b9
   - package: org.documentfoundation.libreoffice
     signature:
-      - fingerprint: 54:D3:57:33:E9:64:DC:B6:5F:51:1E:50:25:B8:3F:9B:D7:B5:73:31:14:34:AB:79:A7:CD:09:F8:27:BC:45:50
-        sources:
-          - name: Google Play
-            issue: GH-1257
-            apk:
-              sha256: 366b56477993618de85459c13a93a5775d8e42aa6183f192ee3b2a88b4ace820
       - fingerprint: AF:71:BA:34:4C:AB:25:9F:A6:25:F0:79:FF:52:0F:51:1D:17:A3:72:BB:2E:8F:A2:75:32:79:1B:D5:FE:A8:CB
         sources:
           - name: F-Droid
@@ -7004,6 +6996,14 @@ packages:
             issue: GH-902
             apk:
               sha256: b0b6ace124be6461c83f4f4124833b13fe42b4cd7461aaef465f67baa4b4719d
+  - package: uk.gov.hmrc.ptcalc
+    signature:
+      - fingerprint: 0B:75:D3:CA:1D:D1:2D:D9:AD:16:ED:80:E9:C5:B3:7B:D4:79:72:A8:7A:9D:DF:24:96:F6:F1:EC:9A:46:B1:DE
+        sources:
+          - name: Google Play
+            issue: GH-1212
+            apk:
+              sha256: 2924fb2424f2787602c7712bcc41b8339d15da60cdb253cec6db19b09381cfc0
   - package: us.spotco.malwarescanner
     signature:
       - fingerprint: 26:0E:0A:49:67:8C:78:B7:0C:02:D6:53:7A:DD:3B:6D:C0:A1:71:71:BB:DE:8C:E7:5F:D4:02:6A:8A:3E:18:D2
