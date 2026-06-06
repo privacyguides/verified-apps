@@ -4649,6 +4649,14 @@ packages:
             issue: GH-1225
             apk:
               sha256: b801504d9629ced0c9609e51c76655aee5e0f0135e78c00a421c15e6430c9103
+  - package: de.lukasneugebauer.nextcloudcookbook
+    signature:
+      - fingerprint: 76:C2:9D:9A:87:91:FF:D9:36:38:36:96:89:60:FD:6D:63:B3:D4:41:FE:96:95:F3:66:8A:DB:E3:84:E3:64:74
+        sources:
+          - name: F-Droid
+            issue: CB-77
+            apk:
+              sha256: 8af1b4ed2e15867aafee1e481aec4f8e35013e3eb704959572c82de857f63b9c
   - package: de.markusfisch.android.binaryeye
     signature:
       - fingerprint: DD:A9:21:96:50:57:4B:2D:70:2F:DF:2D:F9:0F:61:9B:D4:E2:D0:F3:A6:6E:26:BB:03:2F:2F:01:88:40:CF:8E
