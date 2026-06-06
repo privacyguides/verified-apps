@@ -2938,6 +2938,14 @@ packages:
             issue: GH-719
             apk:
               sha256: 8cea7e978441f85772705898e85e5d703542d0b340fe687a6826347ffd8da869
+  - package: com.quran.labs.androidquran.warsh
+    signature:
+      - fingerprint: 80:77:37:43:B5:EE:06:DA:DD:54:D6:4D:66:0A:B6:F9:78:12:F8:18:46:E7:55:25:06:9E:68:9C:D9:C3:E9:9D
+        sources:
+          - name: Google Play
+            issue: GH-1242
+            apk:
+              sha256: 9c7a0657d50953813677ae487d6b46a8e5e5ac63b32223aff96cacdb964eab64
   - package: com.reddit.frontpage
     signature:
       - fingerprint: 97:0B:91:14:38:13:B4:C9:D5:F3:63:4F:67:2C:9F:CA:A5:62:1B:4E:FA:AE:DA:FD:6C:23:5C:BB:B8:69:73:6F
@@ -4456,14 +4464,6 @@ packages:
             issue: GH-857
             apk:
               sha256: c0f03515dedf62c4a38d96397111c59e8e04646a2d1877200008c56a0ab80c45
-  - package: dev.goodwy.contacts
-    signature:
-      - fingerprint: F0:57:35:AE:2C:02:CD:43:70:E4:BB:E6:0F:28:65:2E:D5:F0:3A:82:BB:2F:17:D2:B1:FE:A2:52:6B:EB:BD:E8
-        sources:
-          - name: Google Play
-            issue: GH-1234
-            apk:
-              sha256: 1aa7285999119cf38e221fed3fe307513cc5b469a47632e48d84d820241833dd
   - package: dev.imranr.obtainium
     signature:
       - fingerprint: B3:53:60:1F:6A:1D:5F:D6:60:3A:E2:F5:0B:E8:0C:F3:01:36:7B:86:B6:AB:8B:1F:66:24:3D:A9:6C:D5:73:62
