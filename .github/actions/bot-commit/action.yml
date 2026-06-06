@@ -1,0 +1,73 @@
+name: Bot commit
+description: Create an SSH-signed commit authored by the Privacy Guides bot and push it to a branch
+inputs:
+  ref:
+    description: Branch to push the commit to
+    required: true
+  messageFile:
+    description: Path to the prepared commit message file
+    required: true
+  files:
+    description: Newline-separated list of files to stage before committing
+    required: false
+    default: ""
+  sshKey:
+    description: SSH private key used for commit signing (from secrets.ACTIONS_SSH_KEY)
+    required: true
+  force:
+    description: Force-push the ref (only when replacing a submission PR branch; never for main)
+    required: false
+    default: "false"
+outputs:
+  commit:
+    description: SHA of the created commit
+    value: ${{ steps.commit.outputs.commit }}
+
+runs:
+  using: composite
+  steps:
+    - name: Commit and push as Privacy Guides bot
+      id: commit
+      shell: bash
+      env:
+        REF: ${{ inputs.ref }}
+        MESSAGE_FILE: ${{ inputs.messageFile }}
+        FILES: ${{ inputs.files }}
+        SSH_KEY: ${{ inputs.sshKey }}
+        FORCE: ${{ inputs.force }}
+      run: |
+        set -euo pipefail
+
+        # Author and committer identity. The committer email must be a verified email on the
+        # GitHub account that holds the SSH signing key for the commit to read "Verified".
+        git config user.name "Privacy Guides [bot]"
+        git config user.email "github-bot@privacyguides.net"
+
+        # SSH commit signing using the key from secrets.ACTIONS_SSH_KEY.
+        key_file="$(mktemp)"
+        printf '%s\n' "$SSH_KEY" > "$key_file"
+        chmod 600 "$key_file"
+        git config gpg.format ssh
+        git config user.signingkey "$key_file"
+        git config commit.gpgsign true
+        trap 'rm -f "$key_file"' EXIT
+
+        if [[ -n "$FILES" ]]; then
+          while IFS= read -r f; do
+            [[ -z "$f" ]] && continue
+            [[ -e "$f" ]] && git add "$f"
+          done <<< "$FILES"
+        fi
+
+        # github-actions[bot] is credited as the first co-author (trailer.where=start places it
+        # ahead of the reviewer/submitter trailers already present in the message file).
+        git -c trailer.where=start commit -F "$MESSAGE_FILE" \
+          --trailer "Co-authored-by: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+
+        if [[ "$FORCE" == "true" ]]; then
+          git push --force origin "HEAD:${REF}"
+        else
+          git push origin "HEAD:${REF}"
+        fi
+
+        echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"

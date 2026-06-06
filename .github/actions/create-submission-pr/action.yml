@@ -20,6 +20,9 @@ inputs:
   coAuthorTrailer:
     description: Co-authored-by trailer(s) for the git commit (labeler and issue author when different)
     required: true
+  sshSigningKey:
+    description: SSH private key used for commit signing (from secrets.ACTIONS_SSH_KEY)
+    required: true
   commitSuffix:
     description: Optional suffix appended to the git commit message subject line
     required: false
@@ -150,35 +153,16 @@ runs:
 
         git add data.yml
 
-    - name: Ensure remote branch exists
-      if: steps.prepare.outputs.skipped != 'true'
-      shell: bash
-      env:
-        GH_TOKEN: ${{ github.token }}
-        GH_REPO: ${{ github.repository }}
-        BRANCH: ${{ steps.prepare.outputs.branch }}
-      run: |
-        set -euo pipefail
-
-        # `verified-bot-commit` updates an existing remote ref; create it if missing.
-        if ! gh api "repos/${GH_REPO}/git/ref/heads/${BRANCH}" >/dev/null 2>&1; then
-          base_sha=$(gh api "repos/${GH_REPO}/git/ref/heads/main" --jq '.object.sha')
-          gh api -X POST "repos/${GH_REPO}/git/refs" \
-            -f "ref=refs/heads/${BRANCH}" \
-            -f "sha=${base_sha}" \
-            >/dev/null
-        fi
-
     - name: Push verified commit to branch
       if: steps.prepare.outputs.skipped != 'true'
       id: verified-commit
-      uses: iarekylew00t/verified-bot-commit@v2
+      uses: ./.github/actions/bot-commit
       with:
         ref: ${{ steps.prepare.outputs.branch }}
-        message-file: submission-commit-msg
+        messageFile: submission-commit-msg
         files: |
           data.yml
-        auto-stage: false
+        sshKey: ${{ inputs.sshSigningKey }}
 
     - shell: bash
       id: create

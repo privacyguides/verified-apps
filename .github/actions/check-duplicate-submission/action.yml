@@ -11,11 +11,11 @@ inputs:
     description: Issue number for the submission being checked
     required: true
   directApkUrl:
-    description: Optional direct APK URL from the submission; skips duplicate detection when set
+    description: Optional direct APK URL from the submission; only matches candidates with the same APK URL
     required: false
     default: ""
   customFdroidRepoUrl:
-    description: Optional custom F-Droid repository URL; skips duplicate detection when set
+    description: Optional custom F-Droid repository URL; only matches candidates with the same repository URL
     required: false
     default: ""
 outputs:
@@ -46,13 +46,44 @@ runs:
         echo "isDuplicate=false" >> "$GITHUB_OUTPUT"
         echo "duplicateOf=" >> "$GITHUB_OUTPUT"
 
-        if [[ -n "$DIRECT_APK_URL" || -n "$CUSTOM_FDROID_REPO_URL" ]]; then
-          echo "Skipping duplicate check: submission includes a direct APK link and/or custom F-Droid repository." >&2
-          exit 0
-        fi
-
         parse_issue_body() {
           parse_verification_text "$(signatures_extract_verification_block "$1")"
+        }
+
+        # Read the first non-empty value under a "### <header>" section of an issue body.
+        # Mirrors parse-verification-info; returns empty for absent / "_No response_" fields.
+        parse_issue_field() {
+          local header="$1"
+          local body="$2"
+          local value
+
+          value=$(printf '%s\n' "$body" | awk -v header="$header" '
+            $0 == "### " header { found=1; next }
+            found && /^### / { exit }
+            found && NF { print; exit }
+          ')
+          value="${value//$'\r'/}"
+          value="${value#"${value%%[![:space:]]*}"}"
+          value="${value%"${value##*[![:space:]]}"}"
+
+          [[ -z "$value" || "$value" == "_No response_" ]] && return 0
+          printf '%s' "$value"
+        }
+
+        # A candidate is only a duplicate when it shares the submission's download source:
+        # when this submission specifies a direct APK URL and/or custom F-Droid repository,
+        # the candidate must point at the same URL(s). A submission without either matches on
+        # package + fingerprint alone (store-based, original behavior).
+        download_source_matches() {
+          local cand_link="$1"
+          local cand_repo="$2"
+          if [[ -n "$DIRECT_APK_URL" && "$cand_link" != "$DIRECT_APK_URL" ]]; then
+            return 1
+          fi
+          if [[ -n "$CUSTOM_FDROID_REPO_URL" && "$cand_repo" != "$CUSTOM_FDROID_REPO_URL" ]]; then
+            return 1
+          fi
+          return 0
         }
 
         user_sigs=$(signatures_normalize "$SIGNATURE")
@@ -68,11 +99,13 @@ runs:
             [[ -z "$row" ]] && continue
             issue_ref=$(printf '%s\n' "$row" | jq -r '.issue')
             stored_fp=$(printf '%s\n' "$row" | jq -r '.fingerprint')
+            stored_link=$(printf '%s\n' "$row" | jq -r '.link')
+            stored_repo=$(printf '%s\n' "$row" | jq -r '.repo')
             [[ -z "$issue_ref" || "$issue_ref" == "null" || -z "$stored_fp" ]] && continue
             if ! issue_num=$(signatures_github_issue_number "$issue_ref"); then
               continue
             fi
-            if signatures_equal "$user_sigs" "$stored_fp"; then
+            if signatures_equal "$user_sigs" "$stored_fp" && download_source_matches "$stored_link" "$stored_repo"; then
               if [[ -z "$duplicate_of" || "$issue_num" -lt "$duplicate_of" ]]; then
                 duplicate_of="$issue_num"
               fi
@@ -84,7 +117,7 @@ runs:
               | .signature[]
               | .fingerprint as $fp
               | .sources[]
-              | {"issue": .issue, "fingerprint": $fp}
+              | {"issue": .issue, "fingerprint": $fp, "link": (.apk.link // ""), "repo": (.apk.repo // "")}
               | @json
             ' data.yml
           )
@@ -101,8 +134,11 @@ runs:
             fi
             issue_pkg=$(printf '%s\n' "$parsed" | sed -n '1p')
             issue_sigs=$(printf '%s\n' "$parsed" | tail -n +2)
+            cand_link=$(parse_issue_field "Direct APK Link" "$body")
+            cand_repo=$(parse_issue_field "Custom F-Droid Repository" "$body")
 
-            if [[ "$issue_pkg" == "$PACKAGE" ]] && signatures_equal "$user_sigs" "$issue_sigs"; then
+            if [[ "$issue_pkg" == "$PACKAGE" ]] && signatures_equal "$user_sigs" "$issue_sigs" \
+              && download_source_matches "$cand_link" "$cand_repo"; then
               if [[ -z "$duplicate_of" || "$issue_num" -lt "$duplicate_of" ]]; then
                 duplicate_of="$issue_num"
               fi

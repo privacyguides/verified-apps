@@ -108,6 +108,7 @@ jobs:
           issueNumber: ${{ steps.prMeta.outputs.issueNumber }}
           commitSubject: ${{ github.event.pull_request.title }}
           coAuthorTrailer: ${{ steps.coauthor.outputs.trailer }}
+          sshSigningKey: ${{ secrets.ACTIONS_SSH_KEY }}
 
       - name: Export metadata
         id: meta
@@ -210,6 +211,8 @@ jobs:
         uses: ./.github/actions/push-submission-commit
         with:
           ref: ${{ needs.prepare.outputs.headRef }}
+          sshSigningKey: ${{ secrets.ACTIONS_SSH_KEY }}
+          force: "true"
 
   merge:
     name: Merge attested PR
