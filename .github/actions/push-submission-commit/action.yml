@@ -1,5 +1,5 @@
 name: Push prepared submission commit
-description: Push staged file(s) with a prepared commit message via verified-bot-commit
+description: Push staged file(s) with a prepared commit message as an SSH-signed Privacy Guides bot commit
 inputs:
   ref:
     description: Branch or ref to push to
@@ -12,6 +12,13 @@ inputs:
     description: Newline-separated list of files to stage and commit
     required: false
     default: data.yml
+  sshSigningKey:
+    description: SSH private key used for commit signing (from secrets.ACTIONS_SSH_KEY)
+    required: true
+  force:
+    description: Force-push the ref (only when replacing a submission PR branch; never for main)
+    required: false
+    default: "false"
 outputs:
   commitSha:
     description: SHA of the verified commit
@@ -20,21 +27,12 @@ outputs:
 runs:
   using: composite
   steps:
-    - shell: bash
-      env:
-        FILES: ${{ inputs.files }}
-      run: |
-        set -euo pipefail
-        while IFS= read -r f; do
-          [[ -z "$f" ]] && continue
-          git add "$f"
-        done <<< "$FILES"
-
     - name: Push verified commit
       id: verifiedCommit
-      uses: iarekylew00t/verified-bot-commit@v2
+      uses: ./.github/actions/bot-commit
       with:
         ref: ${{ inputs.ref }}
-        message-file: ${{ inputs.messageFile }}
+        messageFile: ${{ inputs.messageFile }}
         files: ${{ inputs.files }}
-        auto-stage: false
+        sshKey: ${{ inputs.sshSigningKey }}
+        force: ${{ inputs.force }}

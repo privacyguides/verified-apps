@@ -375,6 +375,7 @@ jobs:
         uses: ./.github/actions/push-submission-commit
         with:
           ref: main
+          sshSigningKey: ${{ secrets.ACTIONS_SSH_KEY }}
           messageFile: domain-commit-msg
           files: |
             data.yml

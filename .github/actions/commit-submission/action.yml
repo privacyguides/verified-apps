@@ -20,6 +20,9 @@ inputs:
   githubToken:
     description: GitHub PAT
     required: true
+  sshSigningKey:
+    description: SSH private key used for commit signing (from secrets.ACTIONS_SSH_KEY)
+    required: true
   accrescentSignature:
     description: Fingerprint(s) from Accrescent
     required: false
@@ -188,10 +191,10 @@ runs:
     - name: Push verified commit to main
       if: steps.prepare.outputs.prepared == 'true' && inputs.pushToMain == 'true'
       id: verifiedCommit
-      uses: iarekylew00t/verified-bot-commit@v2
+      uses: ./.github/actions/bot-commit
       with:
         ref: main
-        message-file: submission-commit-msg
+        messageFile: submission-commit-msg
         files: |
           data.yml
-        auto-stage: false
+        sshKey: ${{ inputs.sshSigningKey }}

@@ -23,6 +23,10 @@ inputs:
   coAuthorTrailer:
     description: Co-authored-by trailer(s) for the git commit
     required: true
+  sshSigningKey:
+    description: SSH private key used for commit signing (from secrets.ACTIONS_SSH_KEY)
+    required: false
+    default: ""
   pushToBranch:
     description: When false, prepare data.yml and commit message only (no push)
     required: false
@@ -104,10 +108,11 @@ runs:
     - name: Push verified commit to PR branch
       if: steps.prepare.outputs.prepared == 'true' && inputs.pushToBranch == 'true'
       id: verifiedCommit
-      uses: iarekylew00t/verified-bot-commit@v2
+      uses: ./.github/actions/bot-commit
       with:
         ref: ${{ inputs.headRef }}
-        message-file: submission-commit-msg
+        messageFile: submission-commit-msg
         files: |
           data.yml
-        auto-stage: false
+        sshKey: ${{ inputs.sshSigningKey }}
+        force: "true"

@@ -1564,6 +1564,7 @@ jobs:
           issueBody: ${{ github.event.issue.body }}
           prBodyFile: ${{ runner.temp }}/prBody.md
           coAuthorTrailer: ${{ steps.coauthor.outputs.trailer }}
+          sshSigningKey: ${{ secrets.ACTIONS_SSH_KEY }}
           accrescentSignature: ${{ needs.accrescent.outputs.signature }}
           fdroidResultsDir: fdroid-results
           gplaySignature: ${{ needs.gplay.outputs.signature }}
@@ -1686,6 +1687,7 @@ jobs:
           issueBody: ${{ github.event.issue.body }}
           coAuthorTrailer: ${{ steps.coauthor.outputs.trailer }}
           githubToken: ${{ secrets.GITHUB_TOKEN }}
+          sshSigningKey: ${{ secrets.ACTIONS_SSH_KEY }}
           accrescentSignature: ${{ needs.accrescent.outputs.signature }}
           fdroidResultsDir: fdroid-results
           gplaySignature: ${{ needs.gplay.outputs.signature }}
@@ -1799,6 +1801,7 @@ jobs:
         uses: ./.github/actions/push-submission-commit
         with:
           ref: main
+          sshSigningKey: ${{ secrets.ACTIONS_SSH_KEY }}
           files: |
             data.yml
             data-verified-domains.yml
