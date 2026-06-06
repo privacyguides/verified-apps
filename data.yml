@@ -2362,6 +2362,14 @@ packages:
             issue: GH-948
             apk:
               sha256: becd7fcf3859bc8bec82df8378c6b04d1847469c6a6a40ff0e05e6bcf1a3eb4e
+  - package: com.keylesspalace.tusky
+    signature:
+      - fingerprint: E9:46:90:1F:12:BD:49:C6:4D:E7:02:A5:32:11:4E:58:C3:AB:2A:6F:18:D1:CD:9B:78:63:2B:AA:D4:44:54:E3
+        sources:
+          - name: F-Droid
+            issue: CB-86
+            apk:
+              sha256: 3e8fcc49a80d4c30ab6f6037e51402c77e2694d27ec19ae5b8a93cd08b6caffa
   - package: com.kin.easynotes
     signature:
       - fingerprint: FC:E8:7D:A9:7F:79:13:01:DF:39:0B:FA:47:E8:16:85:19:11:67:CA:B5:DB:D5:55:DB:82:87:54:1F:78:6E:28
