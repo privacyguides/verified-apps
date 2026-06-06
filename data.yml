@@ -222,6 +222,14 @@ packages:
             apk:
               sha256: fc1f32cef8107c7de2508b5801d486b08bcd569fa1588e08c31668a90856d73f
               link: https://github.com/upryzing/clerotri/releases/download/v0.14.1/Clerotri-v0.14.1-arm64-v8a.apk
+  - package: app.vger.voyager
+    signature:
+      - fingerprint: 8B:4D:5C:F6:9E:AF:14:7C:D9:A8:68:C7:40:D3:7D:5F:E1:47:1A:2F:62:C6:7D:53:60:38:BC:DB:D9:BC:7A:DE
+        sources:
+          - name: F-Droid
+            issue: CB-87
+            apk:
+              sha256: 03cd6c64c5cb33653c6d250ba98ce3c84c0fa7eea96c9df6f214c131d14c7523
   - package: at.bitfire.davdroid
     signature:
       - fingerprint: 8B:48:E6:76:A6:86:49:67:79:17:83:C1:D8:D0:FC:0D:D6:D2:CE:33:E1:FB:36:78:77:93:EC:D0:86:D4:47:07
