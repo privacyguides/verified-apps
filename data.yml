@@ -5138,6 +5138,19 @@ packages:
             issue: GH-388
             apk:
               sha256: 82880a8e37f71ecec9df787e5f27077c128359ac24eb4d7e4e6f4b582c5efa6a
+  - package: keepass2android.keepass2android_nonet
+    signature:
+      - fingerprint: 0B:F8:05:6D:3A:39:4E:D7:C7:71:73:C4:B4:2C:80:05:65:B4:F0:A4:29:77:56:9C:F3:47:2C:27:1C:56:29:39
+        sources:
+          - name: Direct APK Link
+            issue: GH-1230
+            apk:
+              sha256: e5ae917cb818f5877fefedfcb95db8a19226df0a787f9b639f7d5e44c8e680ef
+              link: https://github.com/PhilippC/keepass2android/releases/download/v1.15-r2/keepass2android.keepass2android_nonet-Signed-arm64.apk
+          - name: Google Play
+            issue: GH-1230
+            apk:
+              sha256: b5fd8064cb38bd0c6eb98b66b3a8bfa816dfc659d24aa5412cff112e9ed5da0b
   - package: md.obsidian
     signature:
       - fingerprint: F6:EE:C9:88:E3:6E:ED:4E:91:65:B5:B4:BF:20:83:EC:1B:1C:F2:66:11:FA:BB:01:DB:4D:4A:A7:57:35:D9:99
