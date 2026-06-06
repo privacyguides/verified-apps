@@ -1032,6 +1032,14 @@ packages:
             issue: GH-1268
             apk:
               sha256: 1d267eba85aee1978ed6f0d9324c9fbcb70de0967f057bd80779cd7310c7ffdf
+  - package: com.bose.bosemusic
+    signature:
+      - fingerprint: 84:C7:A8:9E:72:61:85:60:89:08:C5:23:41:9E:6A:4B:88:9D:DC:84:AA:80:4F:0E:D4:96:4B:48:9B:B2:14:51
+        sources:
+          - name: Google Play
+            issue: CB-68
+            apk:
+              sha256: 5eaca1cce3132138aa44ba5f90724e35af99c2b48c1076ac333230b126087c6a
   - package: com.brave.browser
     signature:
       - fingerprint: 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
