@@ -7075,6 +7075,12 @@ packages:
               sha256: e530a697818961778eb7c5aec98a790067208384918cc48cb541fb33d6378b82
   - package: ru.tech.imageresizershrinker
     signature:
+      - fingerprint: 20:C1:FA:01:28:41:42:36:06:AB:C9:C9:2E:1F:92:DB:98:23:3C:3C:1D:AA:52:E3:38:BD:82:8B:FB:FD:F6:27
+        sources:
+          - name: Google Play
+            issue: GH-1184
+            apk:
+              sha256: 72fc3587f42c0744367c52d768c4e5b68a4be7b9eeb4749c79cdf382351d3ee0
       - fingerprint: 20:D7:68:9D:E0:87:4F:00:01:5E:A3:E3:1F:A0:67:C1:5C:03:45:7D:36:2D:41:D5:E7:93:DB:3A:86:4F:A5:34
         sources:
           - name: Direct APK Link
