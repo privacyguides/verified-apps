@@ -5347,6 +5347,14 @@ packages:
             issue: GH-782
             apk:
               sha256: ebc5138b6f713f0f73b5467a1a8a4ac3ccfcb2e82135372665b6811a8947641f
+  - package: mega.privacy.android.app
+    signature:
+      - fingerprint: B7:F9:37:2B:64:9F:4C:9D:03:F4:CB:C7:4C:37:B2:18:E9:4B:03:CD:F9:5F:D8:14:2D:76:22:5F:E6:23:93:D9
+        sources:
+          - name: Google Play
+            issue: GH-1237
+            apk:
+              sha256: ce3c1954039b645f36692cd128b23eb0fe9ce924c32aee664e5f0c2f59a90f45
   - package: ml.docilealligator.infinityforreddit.patreon
     signature:
       - fingerprint: C7:32:45:6D:26:23:0C:D9:86:F3:08:27:37:E7:B9:19:07:C7:88:8A:CB:02:2B:9B:19:15:C5:2F:04:55:C9:D2
