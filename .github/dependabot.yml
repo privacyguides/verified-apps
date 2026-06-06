@@ -12,7 +12,13 @@ updates:
     labels: [ ]
 
   - package-ecosystem: "pip"
-    directory: "/"
+    directory: "/.github/actions/get-accrescent-app"
+    schedule:
+      interval: "weekly"
+    labels: [ ]
+
+  - package-ecosystem: "pip"
+    directory: "/scripts"
     schedule:
       interval: "weekly"
     labels: [ ]
