@@ -5131,6 +5131,14 @@ packages:
             apk:
               sha256: 7ecb5576de71d3e9e5b555f5d2ef41c20e06477e02a6179dddb32fcaaba5f49a
               link: https://github.com/home-assistant/android/releases/download/2026.4.4/app-minimal-release.apk
+  - package: io.raindrop.raindropio
+    signature:
+      - fingerprint: DD:D7:5C:66:57:86:54:D0:85:42:48:04:CB:27:C7:B6:E0:4F:D3:66:16:04:5B:FE:E1:40:D9:75:6F:FC:A5:63
+        sources:
+          - name: Google Play
+            issue: GH-1243
+            apk:
+              sha256: 6d45d1aac5ef57c1fc6dc836c896f38a04f3d5863eba04404419b22dccecfed7
   - package: io.sanford.wormhole_william
     signature:
       - fingerprint: 4F:BD:DD:75:06:50:73:63:4B:D5:3D:26:6F:C4:3E:7C:61:6E:40:F4:A4:48:BB:DA:2F:AF:60:D7:65:EB:3A:0E
