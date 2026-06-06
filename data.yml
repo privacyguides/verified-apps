@@ -2293,6 +2293,14 @@ packages:
             issue: GH-502
             apk:
               sha256: 71473e75dba55442713b867cff13004e77efe0e9002b079bf35f924cd62ce549
+  - package: com.kraken.invest.app
+    signature:
+      - fingerprint: 40:AB:4B:44:11:60:00:25:83:A3:62:45:FE:36:11:7D:2A:BF:CF:12:D1:E3:CC:F8:9D:A5:D6:F4:95:19:7B:0E
+        sources:
+          - name: Google Play
+            issue: CB-45
+            apk:
+              sha256: aa820a76a12a2443d7c092736fa24a7e1fc5ce00d86e164296431fa9be9a59a4
   - package: com.kunzisoft.hardware.key
     signature:
       - fingerprint: F6:97:96:A3:61:3B:C4:B4:F9:F5:4A:6F:E2:44:A0:AE:65:A7:D2:20:2B:53:C7:AE:7E:EE:F1:19:6A:CE:E8:F8
