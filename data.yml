@@ -937,14 +937,6 @@ packages:
             issue: GH-273
             apk:
               sha256: b9a8b3f656de37c1e8b249b91d9ff5613e6091a0c46cbffd917cf009267dd119
-  - package: com.bose.bosemusic
-    signature:
-      - fingerprint: 84:C7:A8:9E:72:61:85:60:89:08:C5:23:41:9E:6A:4B:88:9D:DC:84:AA:80:4F:0E:D4:96:4B:48:9B:B2:14:51
-        sources:
-          - name: Google Play
-            issue: CB-68
-            apk:
-              sha256: 5eaca1cce3132138aa44ba5f90724e35af99c2b48c1076ac333230b126087c6a
   - package: com.brave.browser
     signature:
       - fingerprint: 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
@@ -1458,6 +1450,14 @@ packages:
             issue: GH-346
             apk:
               sha256: 385217b2b6c58694f54d81986f3e4eb703fce8d50efe46b3b1e17e86b1886b04
+  - package: com.enphaseenergy.myenlighten
+    signature:
+      - fingerprint: F6:6D:80:CA:D4:96:AC:6E:02:FD:85:2A:04:69:02:9F:7F:7B:16:3D:CF:39:09:76:63:D7:7F:F0:F3:00:B2:4B
+        sources:
+          - name: Google Play
+            issue: CB-43
+            apk:
+              sha256: 2d695383a41ed5071a81b44e6e92a12c967dcf7a32bfbcaec4bd4f4ea6ba885e
   - package: com.epicgames.portal
     signature:
       - fingerprint: 67:69:9A:6B:3D:31:5D:EE:51:53:6A:67:B4:F1:C6:E7:E2:17:5F:98:4B:09:6B:C2:97:6E:51:2D:22:94:08:71
@@ -2301,14 +2301,6 @@ packages:
             issue: GH-502
             apk:
               sha256: 71473e75dba55442713b867cff13004e77efe0e9002b079bf35f924cd62ce549
-  - package: com.kraken.invest.app
-    signature:
-      - fingerprint: 40:AB:4B:44:11:60:00:25:83:A3:62:45:FE:36:11:7D:2A:BF:CF:12:D1:E3:CC:F8:9D:A5:D6:F4:95:19:7B:0E
-        sources:
-          - name: Google Play
-            issue: CB-45
-            apk:
-              sha256: aa820a76a12a2443d7c092736fa24a7e1fc5ce00d86e164296431fa9be9a59a4
   - package: com.kunzisoft.hardware.key
     signature:
       - fingerprint: F6:97:96:A3:61:3B:C4:B4:F9:F5:4A:6F:E2:44:A0:AE:65:A7:D2:20:2B:53:C7:AE:7E:EE:F1:19:6A:CE:E8:F8
@@ -5739,6 +5731,17 @@ packages:
             issue: GH-546
             apk:
               sha256: 774ab07eca97c05d1a33f416e0ff330f20ba84ec6012f5f4248673c31a284032
+      - fingerprint: 55:F2:5C:FD:1E:C9:E4:DE:A2:C2:ED:79:A6:1E:97:28:81:50:96:C7:4B:3D:2C:8F:0F:A2:18:A6:ED:68:32:6D
+        sources:
+          - name: Direct APK Link
+            issue: GH-1174
+            apk:
+              sha256: ab5079fb4452d0386e75f1e99e5915236e7d9dd6ccd48176ac9812eaa8e8d0c9
+              link: https://github.com/laurent22/joplin-android/releases/download/android-v3.6.20/joplin-v3.6.20.apk
+          - name: Google Play
+            issue: GH-1174
+            apk:
+              sha256: 0fb01abf46c66d496e29de283494a8221b46329edf480c48c30ae40aeaccbc1f
   - package: net.gsantner.markor
     signature:
       - fingerprint: 57:D1:06:D0:CF:A8:76:34:42:B3:64:5E:F2:74:1C:38:BB:82:0B:D5:6F:D4:61:2B:F4:0A:23:B6:D9:98:BE:5E
