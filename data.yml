@@ -900,14 +900,6 @@ packages:
             issue: GH-273
             apk:
               sha256: b9a8b3f656de37c1e8b249b91d9ff5613e6091a0c46cbffd917cf009267dd119
-  - package: com.bose.app.android.brussels
-    signature:
-      - fingerprint: DD:51:4B:64:D4:B2:43:4F:22:EB:E1:20:D9:73:FB:E8:5F:E3:04:D9:42:7E:C6:9A:3B:BD:DC:58:41:58:97:39
-        sources:
-          - name: Google Play
-            issue: GH-1268
-            apk:
-              sha256: 1d267eba85aee1978ed6f0d9324c9fbcb70de0967f057bd80779cd7310c7ffdf
   - package: com.brave.browser
     signature:
       - fingerprint: 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
@@ -6848,6 +6840,12 @@ packages:
               sha256: e530a697818961778eb7c5aec98a790067208384918cc48cb541fb33d6378b82
   - package: ru.tech.imageresizershrinker
     signature:
+      - fingerprint: 20:C1:FA:01:28:41:42:36:06:AB:C9:C9:2E:1F:92:DB:98:23:3C:3C:1D:AA:52:E3:38:BD:82:8B:FB:FD:F6:27
+        sources:
+          - name: Google Play
+            issue: GH-1184
+            apk:
+              sha256: 72fc3587f42c0744367c52d768c4e5b68a4be7b9eeb4749c79cdf382351d3ee0
       - fingerprint: 20:D7:68:9D:E0:87:4F:00:01:5E:A3:E3:1F:A0:67:C1:5C:03:45:7D:36:2D:41:D5:E7:93:DB:3A:86:4F:A5:34
         sources:
           - name: Direct APK Link
