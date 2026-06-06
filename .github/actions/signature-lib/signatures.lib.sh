@@ -26,11 +26,6 @@ gha_write_multiline_output() {
   } >> "$GITHUB_OUTPUT"
 }
 
-# Format a GitHub issue or pull request reference (GH-123, not #123).
-signatures_format_github_ref() {
-  signatures_normalize_github_issue_ref "$1"
-}
-
 # Canonical data.yml issue ref for a GitHub issue number (GH-123).
 signatures_github_issue_ref() {
   local number="$1"
@@ -651,6 +646,19 @@ signatures_overlap() {
   return 1
 }
 
+# Extract the "### Verification Info" section from an issue body, unwrapping a
+# fenced code block when present. Emits the raw block for parse_verification_text.
+signatures_extract_verification_block() {
+  local body="$1"
+  local block
+
+  block=$(printf '%s\n' "$body" | sed -n '/^### Verification Info$/,$p' | tail -n +2)
+  if printf '%s\n' "$block" | grep -q '^```'; then
+    block=$(printf '%s\n' "$block" | sed -n '/^```/,/^```/p' | sed '1d;$d')
+  fi
+  printf '%s\n' "$block"
+}
+
 parse_verification_text() {
   local text="$1"
   local line pkg="" sigs=()
@@ -682,12 +690,6 @@ parse_verification_text() {
 
   printf '%s\n' "$pkg"
   printf '%s\n' "${sigs[@]}" | sort -u
-}
-
-signatures_write_file() {
-  local path="$1"
-  local block="$2"
-  printf '%s' "$block" > "$path"
 }
 
 # Write JSON to a temp file (used with yq -oy to produce YAML for load()).
@@ -777,13 +779,10 @@ _submission_add_proposal() {
   local proposals_file="$1"
   local fp_block="$2"
   local name="$3"
-  local issue="$4"
+  local issue_ref="$4"
   local apk_sha256="${5-}"
   local apk_link="${6-}"
   local apk_repo="${7-}"
-
-  local issue_ref="$4"
-  issue_ref=$(printf '%s' "$issue_ref")
 
   jq -cn \
     --arg fp "$fp_block" \

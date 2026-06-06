@@ -103,15 +103,9 @@ outputs:
   domainFileChanged:
     description: Whether data-verified-domains.yml was changed and staged
     value: ${{ steps.prepare.outputs.domainFileChanged }}
-  committed:
-    description: Whether data.yml was pushed to main
-    value: ${{ steps.verifiedCommit.outputs.commit != '' }}
   skipped:
     description: Whether commit was skipped (no matching store signatures)
     value: ${{ steps.prepare.outputs.skipped }}
-  commitSha:
-    description: SHA of the verified commit on main (empty when not pushed)
-    value: ${{ steps.verifiedCommit.outputs.commit }}
 
 runs:
   using: composite

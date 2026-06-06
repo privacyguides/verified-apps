@@ -31,18 +31,9 @@ outputs:
   prepared:
     description: Whether data.yml was prepared for commit
     value: ${{ steps.prepare.outputs.prepared }}
-  committed:
-    description: Whether a verified commit was pushed to the PR branch
-    value: ${{ steps.verifiedCommit.outputs.commit != '' }}
-  commitSha:
-    description: SHA of the verified commit on the PR branch
-    value: ${{ steps.verifiedCommit.outputs.commit }}
   skipped:
     description: Whether finalization was skipped (no data.yml changes)
     value: ${{ steps.prepare.outputs.skipped }}
-  headRef:
-    description: Pull request head branch name
-    value: ${{ inputs.headRef }}
 
 runs:
   using: composite

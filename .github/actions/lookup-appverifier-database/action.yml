@@ -42,7 +42,6 @@ runs:
         set -euo pipefail
         database_file="${RUNNER_TEMP}/InternalVerificationInfoDatabase.kt"
         url_hash=$(printf '%s' "$DATABASE_URL" | sha256sum | awk '{print $1}')
-        cache_key="appverifier-db-${url_hash}"
 
         cache_dir="${RUNNER_TEMP}/appverifier-db-cache"
         mkdir -p "$cache_dir"

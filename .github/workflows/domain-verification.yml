@@ -62,7 +62,6 @@ jobs:
             {
               echo "We couldn't read a **Domain Name** from this request. Please edit the issue and add the domain you'd like to verify, then re-apply the \`Domain Request\` label."
             } > "$body_file"
-            echo "ready=true" >> "$GITHUB_OUTPUT"
             echo "bodyFile=$body_file" >> "$GITHUB_OUTPUT"
             exit 0
           fi
@@ -72,17 +71,14 @@ jobs:
             {
               echo "We couldn't read any **Signing Key** from this request for \`${domain}\`. Please edit the issue and add at least one SHA-256 signing certificate fingerprint, then re-apply the \`Domain Request\` label."
             } > "$body_file"
-            echo "ready=true" >> "$GITHUB_OUTPUT"
             echo "bodyFile=$body_file" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
           domain_render_instructions "$domain" "$keys" > "$body_file"
-          echo "ready=true" >> "$GITHUB_OUTPUT"
           echo "bodyFile=$body_file" >> "$GITHUB_OUTPUT"
 
       - name: Comment instructions
-        if: steps.build.outputs.ready == 'true'
         uses: ./.github/actions/issue-comment
         with:
           issueNumber: ${{ github.event.issue.number }}

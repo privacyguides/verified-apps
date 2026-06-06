@@ -41,23 +41,12 @@ runs:
         apkeep --version
         echo "bin=${HOME}/.cargo/bin/apkeep" >> "$GITHUB_OUTPUT"
 
-    - shell: bash
-      id: cacheKey
-      env:
-        PACKAGE_NAME: ${{ inputs.packageName }}
-        APKEEP_SOURCE: ${{ inputs.source }}
-      run: |
-        set -euo pipefail
-        echo "cacheKey=apkeep-${APKEEP_SOURCE}-${PACKAGE_NAME}" >> "$GITHUB_OUTPUT"
-
     - name: Restore APK cache
       id: apkCache
       uses: actions/cache@v5
       with:
         path: ${{ runner.temp }}/apkeep-${{ inputs.source }}-apk-cache
-        key: ${{ steps.cacheKey.outputs.cacheKey }}
-        restore-keys: |
-          apkeep-${{ inputs.source }}-${{ inputs.packageName }}-
+        key: apkeep-${{ inputs.source }}-${{ inputs.packageName }}
 
     - shell: bash
       id: download

@@ -52,14 +52,7 @@ runs:
         fi
 
         parse_issue_body() {
-          local body="$1"
-          local block
-
-          block=$(printf '%s\n' "$body" | sed -n '/^### Verification Info$/,$p' | tail -n +2)
-          if printf '%s\n' "$block" | grep -q '^```'; then
-            block=$(printf '%s\n' "$block" | sed -n '/^```/,/^```/p' | sed '1d;$d')
-          fi
-          parse_verification_text "$block"
+          parse_verification_text "$(signatures_extract_verification_block "$1")"
         }
 
         user_sigs=$(signatures_normalize "$SIGNATURE")

@@ -169,7 +169,7 @@ jobs:
       id-token: write
 
     outputs:
-      commitSha: ${{ steps.push_meta.outputs.commitSha }}
+      commitSha: ${{ steps.verified.outputs.commitSha }}
 
     steps:
       - name: Checkout repository
@@ -203,12 +203,6 @@ jobs:
         uses: ./.github/actions/push-submission-commit
         with:
           ref: ${{ needs.prepare.outputs.headRef }}
-
-      - name: Export push metadata
-        id: push_meta
-        if: always()
-        run: |
-          echo "commitSha=${{ steps.verified.outputs.commitSha }}" >> "$GITHUB_OUTPUT"
 
   merge:
     name: Merge attested PR

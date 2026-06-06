@@ -77,13 +77,11 @@ jobs:
         id: checkLabels
         run: |
           set -euo pipefail
-          check_apkpure=false
-          while IFS= read -r name; do
-            if [[ "$name" == "Check APKPure" ]]; then
-              check_apkpure=true
-            fi
-          done < <(echo '${{ toJSON(github.event.issue.labels) }}' | jq -r '.[].name')
-          echo "checkApkpure=${check_apkpure}" >> "$GITHUB_OUTPUT"
+          if jq -e 'any(.[]; .name == "Check APKPure")' <<< '${{ toJSON(github.event.issue.labels) }}' > /dev/null; then
+            echo "checkApkpure=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "checkApkpure=false" >> "$GITHUB_OUTPUT"
+          fi
 
   closeDuplicate:
     name: Close Duplicate Submission
@@ -1614,9 +1612,9 @@ jobs:
       issues: write
 
     outputs:
-      prepared: ${{ steps.prepare_meta.outputs.prepared }}
-      skipped: ${{ steps.prepare_meta.outputs.skipped }}
-      domainFileChanged: ${{ steps.prepare_meta.outputs.domainFileChanged }}
+      prepared: ${{ steps.commit.outputs.prepared }}
+      skipped: ${{ steps.commit.outputs.skipped }}
+      domainFileChanged: ${{ steps.commit.outputs.domainFileChanged }}
 
     steps:
       - name: Validate
@@ -1697,23 +1695,15 @@ jobs:
           domainDnssec: ${{ needs.domainCheck.outputs.dnssec }}
           domainRecordJson: ${{ needs.domainCheck.outputs.recordJson }}
 
-      - name: Export prepare metadata
-        id: prepare_meta
-        if: always()
-        run: |
-          echo "prepared=${{ steps.commit.outputs.prepared }}" >> "$GITHUB_OUTPUT"
-          echo "skipped=${{ steps.commit.outputs.skipped }}" >> "$GITHUB_OUTPUT"
-          echo "domainFileChanged=${{ steps.commit.outputs.domainFileChanged }}" >> "$GITHUB_OUTPUT"
-
       - name: Upload data.yml for attestation
-        if: steps.prepare_meta.outputs.prepared == 'true'
+        if: steps.commit.outputs.prepared == 'true'
         uses: actions/upload-artifact@v7
         with:
           name: database
           path: data.yml
 
       - name: Upload verified domains file
-        if: steps.prepare_meta.outputs.prepared == 'true' && steps.prepare_meta.outputs.domainFileChanged == 'true'
+        if: steps.commit.outputs.prepared == 'true' && steps.commit.outputs.domainFileChanged == 'true'
         uses: actions/upload-artifact@v7
         with:
           name: database-domains
@@ -1721,7 +1711,7 @@ jobs:
           if-no-files-found: error
 
       - name: Upload commit message
-        if: steps.prepare_meta.outputs.prepared == 'true'
+        if: steps.commit.outputs.prepared == 'true'
         uses: actions/upload-artifact@v7
         with:
           name: submission-commit-msg
@@ -1729,7 +1719,7 @@ jobs:
           if-no-files-found: error
 
       - name: Report skipped commit
-        if: steps.prepare_meta.outputs.skipped == 'true'
+        if: steps.commit.outputs.skipped == 'true'
         uses: ./.github/actions/issue-comment
         with:
           issueNumber: ${{ github.event.issue.number }}
@@ -1768,10 +1758,6 @@ jobs:
       contents: write
       issues: write
 
-    outputs:
-      committed: ${{ steps.push_meta.outputs.committed }}
-      commitSha: ${{ steps.push_meta.outputs.commitSha }}
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -1807,24 +1793,12 @@ jobs:
             data.yml
             data-verified-domains.yml
 
-      - name: Export push metadata
-        id: push_meta
-        if: always()
-        run: |
-          if [[ -n "${{ steps.push.outputs.commitSha }}" ]]; then
-            echo "committed=true" >> "$GITHUB_OUTPUT"
-            echo "commitSha=${{ steps.push.outputs.commitSha }}" >> "$GITHUB_OUTPUT"
-          else
-            echo "committed=false" >> "$GITHUB_OUTPUT"
-            echo "commitSha=" >> "$GITHUB_OUTPUT"
-          fi
-
       - name: Comment on success
-        if: steps.push_meta.outputs.committed == 'true'
+        if: steps.push.outputs.commitSha != ''
         uses: ./.github/actions/issue-comment
         with:
           issueNumber: ${{ github.event.issue.number }}
-          body: "Committed `${{ needs.parse.outputs.packageName }}` to `data.yml` on `main` as submitted (attested before push). Commit: ${{ steps.push_meta.outputs.commitSha }}"
+          body: "Committed `${{ needs.parse.outputs.packageName }}` to `data.yml` on `main` as submitted (attested before push). Commit: ${{ steps.push.outputs.commitSha }}"
           issueBody: ${{ github.event.issue.body }}
           codebergToken: ${{ secrets.CB_SYNC_TOKEN }}
 
