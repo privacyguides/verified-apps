@@ -1424,6 +1424,14 @@ packages:
             issue: CB-3
             apk:
               sha256: 3bc37e619307bace32ab54433874fef34ad2a5a9343289d2f9b62eedc1466b86
+  - package: com.firsty.app
+    signature:
+      - fingerprint: EC:C7:12:8F:D0:81:50:E3:FB:D5:75:F2:98:B5:08:E8:58:D4:F2:60:7F:78:FA:05:3F:84:48:8F:CD:4C:89:A8
+        sources:
+          - name: Google Play
+            issue: GH-1235
+            apk:
+              sha256: 0191c9796019dbfc342f93d75fecd18e64962fe614920d0e3ec3140c5b3237ed
   - package: com.flauschcode.broccoli
     signature:
       - fingerprint: 73:8E:4F:5A:7C:A8:28:E8:00:C0:22:AB:44:AB:51:72:8E:66:00:1E:61:D3:50:E2:7C:E7:D9:DF:CF:0F:6B:99
@@ -3405,12 +3413,6 @@ packages:
             apk:
               sha256: 762473e7236891fcc62e7bbc5ba7419070e99efbe22d069f99d37e701888170e
               link: https://github.com/streetwriters/notesnook/releases/download/3.3.24-android/notesnook-arm64-v8a.apk
-      - fingerprint: C1:0C:44:CD:AD:B5:E3:C1:DD:0F:61:91:BC:12:F0:CA:2C:75:21:F2:D6:2A:67:2F:4A:F1:CF:CA:97:15:21:3E
-        sources:
-          - name: Google Play
-            issue: GH-1231
-            apk:
-              sha256: 113623ab584b3752b7c971c169fc812761a3c87904842faac3261c8c0b645211
   - package: com.stremio.one
     signature:
       - fingerprint: 7E:6A:97:9C:96:8F:77:1E:3F:BC:F2:C2:E8:71:8C:E6:1E:70:8D:87:CA:F9:1F:C1:3E:2D:4C:19:A8:02:2C:6B
@@ -3786,14 +3788,6 @@ packages:
             issue: GH-393
             apk:
               sha256: f84bd3e2df1ecfb398203eb7a88e87a721bf460f35204b03275690705edfdb9a
-  - package: com.viber.voip
-    signature:
-      - fingerprint: 6E:98:57:86:5C:0D:45:68:E0:2E:F7:6D:C8:38:ED:28:2A:3D:24:B1:2C:70:27:B3:92:61:90:D9:9B:42:FE:09
-        sources:
-          - name: Google Play
-            issue: GH-1228
-            apk:
-              sha256: ff182bd877285800f1ded21c5c8ca774bb51f594fa0013de618a7e60294c969c
   - package: com.vietnamairlines.android.app
     signature:
       - fingerprint: A8:76:B2:9F:BB:A1:9F:5C:49:F6:E8:3F:53:8C:18:03:08:05:C8:FC:A4:3E:3D:4B:E8:83:17:3E:37:32:CC:AC
@@ -4462,6 +4456,14 @@ packages:
             issue: GH-857
             apk:
               sha256: c0f03515dedf62c4a38d96397111c59e8e04646a2d1877200008c56a0ab80c45
+  - package: dev.goodwy.contacts
+    signature:
+      - fingerprint: F0:57:35:AE:2C:02:CD:43:70:E4:BB:E6:0F:28:65:2E:D5:F0:3A:82:BB:2F:17:D2:B1:FE:A2:52:6B:EB:BD:E8
+        sources:
+          - name: Google Play
+            issue: GH-1234
+            apk:
+              sha256: 1aa7285999119cf38e221fed3fe307513cc5b469a47632e48d84d820241833dd
   - package: dev.imranr.obtainium
     signature:
       - fingerprint: B3:53:60:1F:6A:1D:5F:D6:60:3A:E2:F5:0B:E8:0C:F3:01:36:7B:86:B6:AB:8B:1F:66:24:3D:A9:6C:D5:73:62
