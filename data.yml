@@ -840,6 +840,14 @@ packages:
             issue: GH-937
             apk:
               sha256: dfd0432527f6c5d9cfa525e246209f7869b5d9b908d711a6fbcf7bea909d236b
+  - package: com.bibliocommons.sonoma
+    signature:
+      - fingerprint: FC:78:6A:C8:44:1B:A8:C7:9C:EF:CE:6C:9A:B3:3F:28:0B:21:A7:46:43:61:67:EF:EF:92:CF:0A:6B:2B:BC:CD
+        sources:
+          - name: Google Play
+            issue: GH-1204
+            apk:
+              sha256: 5cff10df62fc1360964851a4d08b80d156a1bec8b22ad74bb1c44dc6facb7b66
   - package: com.bitchat.droid
     signature:
       - fingerprint: 3B:03:FA:66:A5:45:13:21:10:07:92:F5:B5:5A:7B:49:66:D5:C8:DC:10:C6:DA:A4:0A:A9:5E:A4:89:53:1B:CA
