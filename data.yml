@@ -7111,6 +7111,14 @@ packages:
             issue: GH-897
             apk:
               sha256: 922ed4a4c420e34a14c4d9c5d70ff36e364c7c24022c12cd35149d450ae3ed9e
+  - package: proton.android.meet
+    signature:
+      - fingerprint: DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
+        sources:
+          - name: Google Play
+            issue: CB-89
+            apk:
+              sha256: f841cf067af1373abe7a73e6d41a374a2e558b54c080e19153e411d0153bb965
   - package: proton.android.pass
     signature:
       - fingerprint: DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
