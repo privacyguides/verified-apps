@@ -3468,6 +3468,14 @@ packages:
             issue: GH-1056
             apk:
               sha256: a7e882b96690c705a2f29f51cd5a065bea4496e2a99a298614f90309e15b4227
+  - package: com.srtc.source
+    signature:
+      - fingerprint: 80:40:9F:9F:6F:E1:D2:A3:B4:88:08:78:B6:5B:FD:C1:1C:06:6F:27:AA:41:33:16:5D:F4:25:3B:D7:41:90:6D
+        sources:
+          - name: Google Play
+            issue: GH-1150
+            apk:
+              sha256: acea56d92ae26f3d6e4a0cf0001fa02aaa4cdee36317d275691d300f0481e02f
   - package: com.standardnotes
     signature:
       - fingerprint: 58:3F:C4:1B:49:0C:38:0B:56:FB:E9:EE:47:38:1E:B4:EF:53:E0:37:19:A5:50:3F:C1:F2:9D:CD:8E:28:90:2A
