@@ -2032,6 +2032,14 @@ packages:
             issue: GH-673
             apk:
               sha256: 0133c7da5f60cce0421d5104096ff82a03c345077121cd3b47e26d2372176199
+  - package: com.google.android.ims
+    signature:
+      - fingerprint: C2:5D:5A:FA:CB:67:83:10:9D:61:36:D7:93:53:FA:D4:F6:54:1C:35:45:D2:52:28:A1:87:03:D0:43:CA:78:3F
+        sources:
+          - name: Google Play
+            issue: GH-1270
+            apk:
+              sha256: 9072f0f010132757f0efa5ad759269667ed2c982633204c01ba4e48c71eecee4
   - package: com.google.android.inputmethod.latin
     signature:
       - fingerprint: |
