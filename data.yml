@@ -2759,6 +2759,14 @@ packages:
             issue: GH-907
             apk:
               sha256: 67c26a617e38e7c34b92fb0d8f2f2f8a0854b95b42ece42e22559c62a6995a80
+  - package: com.oceanwing.soundcore
+    signature:
+      - fingerprint: EA:B2:B0:AE:8A:49:0A:58:A5:ED:1F:CA:E8:1F:50:3D:F0:01:89:2F:0B:26:55:FF:C0:31:51:1A:F5:A3:86:7F
+        sources:
+          - name: Google Play
+            issue: GH-1246
+            apk:
+              sha256: 439e1ffdd9c814e5510b684c54b3aefc73cb6b13f128cde2d78508900e4e541a
   - package: com.om1cael.hidroly
     signature:
       - fingerprint: EC:D9:3B:0E:94:44:D2:F2:AD:98:5D:35:03:1B:A0:C9:AB:2B:17:08:DC:9B:4E:6A:E7:39:15:13:59:45:EF:A0
