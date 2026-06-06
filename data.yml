@@ -1658,6 +1658,14 @@ packages:
             issue: GH-1033
             apk:
               sha256: 80878a8fc2aa22ec9383f5176b0f5376116d04911bb72cbf606c0d8ee2a4c947
+  - package: com.github.meypod.al_azan
+    signature:
+      - fingerprint: F8:78:9B:90:87:29:A9:DA:FC:79:A1:C1:C6:D5:83:22:A6:5E:D0:62:30:0D:85:AA:CA:96:8C:F7:2A:52:55:E3
+        sources:
+          - name: Google Play
+            issue: GH-1232
+            apk:
+              sha256: 3f90d02bde588865039b297ea0c2cdb2072786024865cb0a95e96ad6206ac5ee
   - package: com.github.muellerma.coffee
     signature:
       - fingerprint: 70:B1:60:C0:F6:57:4E:BE:9F:FE:B0:F3:AE:93:48:71:41:52:22:4A:BE:7D:DC:48:1C:CB:84:3E:84:F6:99:12
