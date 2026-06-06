@@ -38,12 +38,15 @@ runs:
       run: |
         set -euo pipefail
 
-        # Author and committer identity. The committer email must be a verified email on the
-        # GitHub account that holds the SSH signing key for the commit to read "Verified".
+        # Committer identity is the Privacy Guides bot (this identity signs the commit); the
+        # author is overridden to the GitHub Actions bot on the commit below. Reviewer and
+        # submitter remain Co-authored-by trailers already present in the message file.
         git config user.name "Privacy Guides [bot]"
         git config user.email "github-bot@privacyguides.net"
 
-        # SSH commit signing using the key from secrets.ACTIONS_SSH_KEY.
+        # SSH commit signing using the key from secrets.ACTIONS_SSH_KEY. The committer email
+        # must be a verified email on the GitHub account holding this signing key to read
+        # "Verified".
         key_file="$(mktemp)"
         printf '%s\n' "$SSH_KEY" > "$key_file"
         chmod 600 "$key_file"
@@ -59,10 +62,9 @@ runs:
           done <<< "$FILES"
         fi
 
-        # github-actions[bot] is credited as the first co-author (trailer.where=start places it
-        # ahead of the reviewer/submitter trailers already present in the message file).
-        git -c trailer.where=start commit -F "$MESSAGE_FILE" \
-          --trailer "Co-authored-by: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+        # Authored by the GitHub Actions bot; committed and signed by the Privacy Guides bot above.
+        git commit -F "$MESSAGE_FILE" \
+          --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
 
         if [[ "$FORCE" == "true" ]]; then
           git push --force origin "HEAD:${REF}"
