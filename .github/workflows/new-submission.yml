@@ -1537,6 +1537,7 @@ jobs:
         id: coauthor
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CB_SYNC_TOKEN: ${{ secrets.CB_SYNC_TOKEN }}
           LABELER_LOGIN: ${{ github.event.sender.login }}
           LABELER_ID: ${{ github.event.sender.id }}
           SUBMITTER_LOGIN: ${{ github.event.issue.user.login }}
@@ -1545,8 +1546,11 @@ jobs:
         run: |
           set -euo pipefail
           source .github/actions/signature-lib/signatures.lib.sh
+          # For Codeberg-mirrored submissions, credit the Codeberg user (fetched live, never
+          # stored on the issue) instead of the GitHub sync bot.
+          cb_author=$(signatures_codeberg_submission_author "${CB_SYNC_TOKEN:-}" "$ISSUE_BODY" || true)
           trailer=$(submission_resolve_coauthor_trailers \
-            "$LABELER_LOGIN" "$LABELER_ID" "$SUBMITTER_LOGIN" "$SUBMITTER_ID" "$ISSUE_BODY")
+            "$LABELER_LOGIN" "$LABELER_ID" "$SUBMITTER_LOGIN" "$SUBMITTER_ID" "$cb_author")
           gha_write_multiline_output trailer "$trailer"
 
       - name: Create PR
@@ -1655,6 +1659,7 @@ jobs:
         id: coauthor
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CB_SYNC_TOKEN: ${{ secrets.CB_SYNC_TOKEN }}
           LABELER_LOGIN: ${{ github.event.sender.login }}
           LABELER_ID: ${{ github.event.sender.id }}
           SUBMITTER_LOGIN: ${{ github.event.issue.user.login }}
@@ -1663,8 +1668,11 @@ jobs:
         run: |
           set -euo pipefail
           source .github/actions/signature-lib/signatures.lib.sh
+          # For Codeberg-mirrored submissions, credit the Codeberg user (fetched live, never
+          # stored on the issue) instead of the GitHub sync bot.
+          cb_author=$(signatures_codeberg_submission_author "${CB_SYNC_TOKEN:-}" "$ISSUE_BODY" || true)
           trailer=$(submission_resolve_coauthor_trailers \
-            "$LABELER_LOGIN" "$LABELER_ID" "$SUBMITTER_LOGIN" "$SUBMITTER_ID" "$ISSUE_BODY")
+            "$LABELER_LOGIN" "$LABELER_ID" "$SUBMITTER_LOGIN" "$SUBMITTER_ID" "$cb_author")
           gha_write_multiline_output trailer "$trailer"
 
       - name: Prepare submission data.yml

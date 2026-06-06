@@ -83,11 +83,10 @@ signatures_codeberg_issue_number() {
 }
 
 # Parse ### Submission Source from a GitHub issue body.
-# Sets SUBMISSION_EXTERNAL_REF (e.g. CB-123) on success, plus SUBMISSION_EXTERNAL_AUTHOR
-# (the originating Codeberg username) when an "External Author:" line is present.
+# Sets SUBMISSION_EXTERNAL_REF (e.g. CB-123) on success.
 signatures_parse_submission_source() {
   local body="$1"
-  local section line external author
+  local section line external
 
   section=$(printf '%s\n' "$body" | awk '
     $0 == "### Submission Source" { found=1; next }
@@ -96,31 +95,18 @@ signatures_parse_submission_source() {
   ')
 
   external=""
-  author=""
   while IFS= read -r line; do
     [[ -z "$line" ]] && continue
-    if [[ -z "$external" && "$line" =~ ^[Ee]xternal:[[:space:]]*(.+)$ ]]; then
+    if [[ "$line" =~ ^[Ee]xternal:[[:space:]]*(.+)$ ]]; then
       external="${BASH_REMATCH[1]}"
-    elif [[ -z "$author" && "$line" =~ ^[Ee]xternal[[:space:]]+[Aa]uthor:[[:space:]]*(.+)$ ]]; then
-      author="${BASH_REMATCH[1]}"
+      break
     fi
   done <<< "$section"
 
   external=$(printf '%s' "$external" | sed -E 's/^[[:space:]]+//; s/[[:space:]]+$//')
-  author=$(printf '%s' "$author" | sed -E 's/^[[:space:]]+//; s/[[:space:]]+$//')
   [[ "$external" =~ ^CB-[0-9]+$ ]] || return 1
   SUBMISSION_EXTERNAL_REF="$external"
-  SUBMISSION_EXTERNAL_AUTHOR="$author"
   return 0
-}
-
-# Codeberg author username recorded as "External Author: <user>" in a GitHub issue body's
-# ### Submission Source section. Succeeds only for a Codeberg submission with a valid username.
-signatures_codeberg_submission_author() {
-  local body="$1"
-  signatures_parse_submission_source "$body" || return 1
-  [[ "${SUBMISSION_EXTERNAL_AUTHOR:-}" =~ ^[A-Za-z0-9][A-Za-z0-9._-]*$ ]] || return 1
-  printf '%s' "$SUBMISSION_EXTERNAL_AUTHOR"
 }
 
 # Issue ref for data.yml / "from …" lines: External ref when present, else GH-N.
@@ -134,6 +120,47 @@ signatures_submission_issue_ref() {
   fi
 
   signatures_github_issue_ref "$github_issue_number"
+}
+
+# Author login of a Codeberg issue via the Forgejo API.
+codeberg_get_issue_author() {
+  local token="$1"
+  local owner="$2"
+  local repo="$3"
+  local issue_index="$4"
+  local api_base="${CODEBERG_API_BASE:-https://codeberg.org/api/v1}"
+  local response http_code response_body login
+
+  [[ -n "$token" && "$issue_index" =~ ^[0-9]+$ ]] || return 1
+
+  response=$(curl -sS -w '\n%{http_code}' \
+    -H "Authorization: token ${token}" \
+    -H "Accept: application/json" \
+    "${api_base}/repos/${owner}/${repo}/issues/${issue_index}") || return 1
+
+  http_code=$(printf '%s' "$response" | tail -n 1)
+  response_body=$(printf '%s' "$response" | sed '$d')
+  [[ "$http_code" == "200" ]] || return 1
+
+  login=$(jq -r '.user.login // .user.username // empty' <<< "$response_body")
+  [[ "$login" =~ ^[A-Za-z0-9][A-Za-z0-9._-]*$ ]] || return 1
+  printf '%s' "$login"
+}
+
+# Codeberg submitter login for a GitHub issue mirrored from Codeberg (### Submission Source:
+# External: CB-N), resolved live via the Forgejo API so it is never stored on the GitHub issue.
+# Fails (non-zero, no output) when the submission is not from Codeberg or the lookup fails.
+signatures_codeberg_submission_author() {
+  local token="$1"
+  local github_issue_body="$2"
+  local owner="${CODEBERG_REPO_OWNER:-privacyguides}"
+  local repo="${CODEBERG_REPO_NAME:-verified-apps}"
+  local cb_issue_num
+
+  [[ -n "$token" ]] || return 1
+  signatures_parse_submission_source "$github_issue_body" || return 1
+  cb_issue_num=$(signatures_codeberg_issue_number "$SUBMISSION_EXTERNAL_REF") || return 1
+  codeberg_get_issue_author "$token" "$owner" "$repo" "$cb_issue_num"
 }
 
 # Post a comment on a Codeberg issue via the Forgejo API.
@@ -395,23 +422,23 @@ submission_codeberg_coauthor_trailer_for_user() {
   printf 'Co-authored-by: %s <%s@noreply.codeberg.org>' "$username" "$username"
 }
 
-# Labeler plus the submitter; prints trailers separated by newlines. The submitter is the
-# GitHub issue author, or — when the submission was mirrored from Codeberg (### Submission
-# Source: External: CB-N) — the original Codeberg user via their codeberg.org noreply address,
-# since the GitHub-side author is the sync bot. Pass the GitHub issue body as $5 to enable this.
+# Labeler plus the submitter; prints trailers separated by newlines. When a Codeberg author
+# ($5) is given (resolved live for submissions mirrored from Codeberg), it takes the submitter
+# slot via the codeberg.org noreply address and the GitHub submitter (the sync bot) is dropped;
+# otherwise the GitHub issue author is credited as before.
 submission_resolve_coauthor_trailers() {
   local labeler_login="$1"
   local labeler_id="$2"
   local submitter_login="$3"
   local submitter_id="$4"
-  local issue_body="${5:-}"
-  local trailers labeler_trailer submitter_trailer cb_author
+  local codeberg_author="${5:-}"
+  local trailers labeler_trailer submitter_trailer
 
   labeler_trailer=$(submission_coauthor_trailer_for_user "$labeler_login" "$labeler_id")
   trailers="$labeler_trailer"
 
-  if cb_author=$(signatures_codeberg_submission_author "$issue_body"); then
-    submitter_trailer=$(submission_codeberg_coauthor_trailer_for_user "$cb_author")
+  if [[ -n "$codeberg_author" ]]; then
+    submitter_trailer=$(submission_codeberg_coauthor_trailer_for_user "$codeberg_author")
     if [[ "$submitter_trailer" != "$labeler_trailer" ]]; then
       trailers+=$'\n'
       trailers+="$submitter_trailer"
