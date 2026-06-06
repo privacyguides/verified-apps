@@ -923,6 +923,14 @@ packages:
             issue: GH-794
             apk:
               sha256: 3a0ba6cc59d63865c22a71f0794d92b4de44353f0ec39d8aca875bf33fed96cf
+  - package: com.bolindadigital.BorrowBoxLibrary
+    signature:
+      - fingerprint: A6:7D:FE:44:7C:B3:49:B7:7A:57:BF:A9:35:AD:42:F5:1E:2C:69:56:A0:CE:4C:9F:65:F2:06:FC:B6:11:81:D5
+        sources:
+          - name: Google Play
+            issue: GH-1327
+            apk:
+              sha256: 7241c9bf01138c5e2d0e0b6d58f0f166eba25d441b7010e3d87a38c83abce085
   - package: com.bookfunnel.bookfunnel
     signature:
       - fingerprint: |-
