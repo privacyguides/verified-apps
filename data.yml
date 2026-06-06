@@ -3288,6 +3288,14 @@ packages:
             issue: GH-829
             apk:
               sha256: 03bcde51ac127fdbd5fe6f01c6e321a5ffe7e909bf218c783d471710659fa26f
+  - package: com.q2e.pawtucket5040android.pcumobile.uwnmobile
+    signature:
+      - fingerprint: 2C:0A:A9:4C:64:24:91:D7:D3:A9:F8:57:F9:9E:D4:1C:00:8B:B4:28:F0:D0:E8:5B:4F:08:9A:E1:3E:E6:AD:41
+        sources:
+          - name: Google Play
+            issue: CB-40
+            apk:
+              sha256: 24de1e8679aeb7e335bb79a7297c791e729f8328fc42858ef725a912019cf310
   - package: com.qnbalahli.bebasata
     signature:
       - fingerprint: 02:F0:A1:4B:84:5D:32:65:6F:7F:8B:2D:7A:2B:32:77:F7:CC:D4:E9:2B:D8:10:4C:F7:8B:FB:0A:77:C3:20:9A
