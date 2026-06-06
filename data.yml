@@ -4568,6 +4568,19 @@ packages:
             issue: GH-468
             apk:
               sha256: 5d4e1fb8d0b596d814db59465015e4ae2a57653797374c0b15fdd919afb1c871
+  - package: de.deutschlandradio.dlf24
+    signature:
+      - fingerprint: 57:86:23:B8:67:82:45:60:56:42:96:1F:B5:4D:F3:E1:99:A6:B5:70:6B:98:54:AC:83:B9:98:2B:A8:ED:B0:D9
+        sources:
+          - name: Direct APK Link
+            issue: CB-74
+            apk:
+              sha256: 9f02a25cd967e353402d5b623e4f9e80168b022d1048c5ec74bb8df1a38b2cda
+              link: https://bilder.deutschlandfunk.de/96/0b/de/bc/960bdebc-df0b-414b-9900-dff1e839cb97/dlf-nachrichten-apk-100.apk
+          - name: Google Play
+            issue: CB-74
+            apk:
+              sha256: fc44909ff8dd36be964804aa32cefdd13e81347a49d3ad704745214d40cc1eb1
   - package: de.felixnuesse.extract
     signature:
       - fingerprint: 1F:1E:E8:3B:8C:11:74:A6:1D:0D:18:F0:9F:F1:21:5D:59:E5:E6:3E:0B:01:A4:DA:69:5B:8E:B5:2D:16:BF:E9
