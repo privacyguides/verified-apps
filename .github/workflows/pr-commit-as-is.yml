@@ -29,6 +29,7 @@ jobs:
       skipped: ${{ steps.meta.outputs.skipped }}
       headRef: ${{ steps.meta.outputs.headRef }}
       issueNumber: ${{ steps.meta.outputs.issueNumber }}
+      author: ${{ steps.coauthor.outputs.author }}
 
     steps:
       - name: Validate pull request
@@ -93,8 +94,12 @@ jobs:
           # For Codeberg-mirrored submissions, credit the Codeberg user (fetched live, never
           # stored on the issue) instead of the GitHub sync bot.
           cb_author=$(signatures_codeberg_submission_author "${CB_SYNC_TOKEN:-}" "$issue_body" || true)
+          # Author is the submitter; co-authors are the reviewer (labeler) then GitHub Actions.
+          author=$(submission_resolve_commit_author \
+            "$SUBMITTER_LOGIN" "$SUBMITTER_ID" "$cb_author")
           trailer=$(submission_resolve_coauthor_trailers \
             "$LABELER_LOGIN" "$LABELER_ID" "$SUBMITTER_LOGIN" "$SUBMITTER_ID" "$cb_author")
+          gha_write_multiline_output author "$author"
           gha_write_multiline_output trailer "$trailer"
 
       - name: Prepare submission data.yml
@@ -108,6 +113,7 @@ jobs:
           issueNumber: ${{ steps.prMeta.outputs.issueNumber }}
           commitSubject: ${{ github.event.pull_request.title }}
           coAuthorTrailer: ${{ steps.coauthor.outputs.trailer }}
+          author: ${{ steps.coauthor.outputs.author }}
           sshSigningKey: ${{ secrets.ACTIONS_SSH_KEY }}
 
       - name: Export metadata
@@ -211,6 +217,7 @@ jobs:
         uses: ./.github/actions/push-submission-commit
         with:
           ref: ${{ needs.prepare.outputs.headRef }}
+          author: ${{ needs.prepare.outputs.author }}
           sshSigningKey: ${{ secrets.ACTIONS_SSH_KEY }}
           force: "true"
 

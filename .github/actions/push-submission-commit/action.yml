@@ -4,6 +4,9 @@ inputs:
   ref:
     description: Branch or ref to push to
     required: true
+  author:
+    description: 'Commit author identity "Name <email>" (the submission''s submitter)'
+    required: true
   messageFile:
     description: Path to the prepared commit message file
     required: false
@@ -32,6 +35,7 @@ runs:
       uses: ./.github/actions/bot-commit
       with:
         ref: ${{ inputs.ref }}
+        author: ${{ inputs.author }}
         messageFile: ${{ inputs.messageFile }}
         files: ${{ inputs.files }}
         sshKey: ${{ inputs.sshSigningKey }}

@@ -1,8 +1,11 @@
 name: Bot commit
-description: Create an SSH-signed commit authored by the Privacy Guides bot and push it to a branch
+description: Create an SSH-signed commit from the Privacy Guides bot and push it to a branch
 inputs:
   ref:
     description: Branch to push the commit to
+    required: true
+  author:
+    description: 'Commit author identity "Name <email>" (the submission''s submitter)'
     required: true
   messageFile:
     description: Path to the prepared commit message file
@@ -31,6 +34,7 @@ runs:
       shell: bash
       env:
         REF: ${{ inputs.ref }}
+        AUTHOR: ${{ inputs.author }}
         MESSAGE_FILE: ${{ inputs.messageFile }}
         FILES: ${{ inputs.files }}
         SSH_KEY: ${{ inputs.sshKey }}
@@ -39,8 +43,8 @@ runs:
         set -euo pipefail
 
         # Committer identity is the Privacy Guides bot (this identity signs the commit); the
-        # author is overridden to the GitHub Actions bot on the commit below. Reviewer and
-        # submitter remain Co-authored-by trailers already present in the message file.
+        # author is overridden to the submitter on the commit below. The reviewer and the
+        # GitHub Actions bot remain Co-authored-by trailers already present in the message file.
         git config user.name "Privacy Guides [bot]"
         git config user.email "github-bot@privacyguides.net"
 
@@ -62,9 +66,8 @@ runs:
           done <<< "$FILES"
         fi
 
-        # Authored by the GitHub Actions bot; committed and signed by the Privacy Guides bot above.
-        git commit -F "$MESSAGE_FILE" \
-          --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+        # Authored by the submitter; committed and signed by the Privacy Guides bot above.
+        git commit -F "$MESSAGE_FILE" --author="$AUTHOR"
 
         if [[ "$FORCE" == "true" ]]; then
           git push --force origin "HEAD:${REF}"

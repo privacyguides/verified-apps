@@ -1549,8 +1549,12 @@ jobs:
           # For Codeberg-mirrored submissions, credit the Codeberg user (fetched live, never
           # stored on the issue) instead of the GitHub sync bot.
           cb_author=$(signatures_codeberg_submission_author "${CB_SYNC_TOKEN:-}" "$ISSUE_BODY" || true)
+          # Author is the submitter; co-authors are the reviewer (labeler) then GitHub Actions.
+          author=$(submission_resolve_commit_author \
+            "$SUBMITTER_LOGIN" "$SUBMITTER_ID" "$cb_author")
           trailer=$(submission_resolve_coauthor_trailers \
             "$LABELER_LOGIN" "$LABELER_ID" "$SUBMITTER_LOGIN" "$SUBMITTER_ID" "$cb_author")
+          gha_write_multiline_output author "$author"
           gha_write_multiline_output trailer "$trailer"
 
       - name: Create PR
@@ -1564,6 +1568,7 @@ jobs:
           issueBody: ${{ github.event.issue.body }}
           prBodyFile: ${{ runner.temp }}/prBody.md
           coAuthorTrailer: ${{ steps.coauthor.outputs.trailer }}
+          author: ${{ steps.coauthor.outputs.author }}
           sshSigningKey: ${{ secrets.ACTIONS_SSH_KEY }}
           accrescentSignature: ${{ needs.accrescent.outputs.signature }}
           fdroidResultsDir: fdroid-results
@@ -1621,6 +1626,7 @@ jobs:
       prepared: ${{ steps.commit.outputs.prepared }}
       skipped: ${{ steps.commit.outputs.skipped }}
       domainFileChanged: ${{ steps.commit.outputs.domainFileChanged }}
+      author: ${{ steps.coauthor.outputs.author }}
 
     steps:
       - name: Validate
@@ -1672,8 +1678,12 @@ jobs:
           # For Codeberg-mirrored submissions, credit the Codeberg user (fetched live, never
           # stored on the issue) instead of the GitHub sync bot.
           cb_author=$(signatures_codeberg_submission_author "${CB_SYNC_TOKEN:-}" "$ISSUE_BODY" || true)
+          # Author is the submitter; co-authors are the reviewer (labeler) then GitHub Actions.
+          author=$(submission_resolve_commit_author \
+            "$SUBMITTER_LOGIN" "$SUBMITTER_ID" "$cb_author")
           trailer=$(submission_resolve_coauthor_trailers \
             "$LABELER_LOGIN" "$LABELER_ID" "$SUBMITTER_LOGIN" "$SUBMITTER_ID" "$cb_author")
+          gha_write_multiline_output author "$author"
           gha_write_multiline_output trailer "$trailer"
 
       - name: Prepare submission data.yml
@@ -1687,6 +1697,7 @@ jobs:
           issueBody: ${{ github.event.issue.body }}
           coAuthorTrailer: ${{ steps.coauthor.outputs.trailer }}
           githubToken: ${{ secrets.GITHUB_TOKEN }}
+          author: ${{ steps.coauthor.outputs.author }}
           sshSigningKey: ${{ secrets.ACTIONS_SSH_KEY }}
           accrescentSignature: ${{ needs.accrescent.outputs.signature }}
           fdroidResultsDir: fdroid-results
@@ -1801,6 +1812,7 @@ jobs:
         uses: ./.github/actions/push-submission-commit
         with:
           ref: main
+          author: ${{ needs.commitAsIsPrepare.outputs.author }}
           sshSigningKey: ${{ secrets.ACTIONS_SSH_KEY }}
           files: |
             data.yml
