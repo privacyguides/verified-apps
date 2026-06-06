@@ -209,6 +209,14 @@ packages:
             apk:
               sha256: cba4c461553ea74eb25a7b2e1842419c7f4f40adc619b10d518c114204b7e846
               link: https://github.com/ReVanced/revanced-manager/releases/download/v2.6.0/revanced-manager-2.6.0.apk
+  - package: app.udderance
+    signature:
+      - fingerprint: 33:2C:41:70:E0:4D:5D:D0:E7:D1:C4:E7:19:3C:E9:95:91:24:13:46:38:8A:B3:CD:02:0A:D2:9F:6F:03:D3:13
+        sources:
+          - name: F-Droid
+            issue: CB-79
+            apk:
+              sha256: 2074fc55fb7884a4368fb6774e6acb576b99ad1bd1247c513c5d8aac5ec8c288
   - package: app.upryzing.clerotri
     signature:
       - fingerprint: 90:FD:58:2A:49:5A:7E:C5:92:82:A1:95:27:B8:0B:09:AB:3B:C9:1D:BB:82:46:12:18:32:BD:61:00:6C:A9:AE
