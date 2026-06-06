@@ -12,6 +12,16 @@ on:
         description: Existing GitHub release tag to mirror to Codeberg
         required: true
         type: string
+  workflow_call:
+    inputs:
+      tag:
+        description: Existing GitHub release tag to mirror to Codeberg
+        required: true
+        type: string
+    secrets:
+      CB_SYNC_TOKEN:
+        description: Codeberg (Forgejo) API token used to create the release and upload assets
+        required: true
 
 permissions:
   contents: read
@@ -24,9 +34,8 @@ jobs:
   sync:
     name: Mirror release to Codeberg
     runs-on: ubuntu-latest
-    # Drafts stay GitHub-only; only mirror real (published) releases.
     if: >-
-      github.event_name == 'workflow_dispatch' ||
+      github.event_name != 'release' ||
       github.event.release.draft == false
 
     steps:
