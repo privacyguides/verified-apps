@@ -827,14 +827,6 @@ packages:
             issue: GH-937
             apk:
               sha256: dfd0432527f6c5d9cfa525e246209f7869b5d9b908d711a6fbcf7bea909d236b
-  - package: com.bibliocommons.sonoma
-    signature:
-      - fingerprint: FC:78:6A:C8:44:1B:A8:C7:9C:EF:CE:6C:9A:B3:3F:28:0B:21:A7:46:43:61:67:EF:EF:92:CF:0A:6B:2B:BC:CD
-        sources:
-          - name: Google Play
-            issue: GH-1204
-            apk:
-              sha256: 5cff10df62fc1360964851a4d08b80d156a1bec8b22ad74bb1c44dc6facb7b66
   - package: com.bitchat.droid
     signature:
       - fingerprint: 3B:03:FA:66:A5:45:13:21:10:07:92:F5:B5:5A:7B:49:66:D5:C8:DC:10:C6:DA:A4:0A:A9:5E:A4:89:53:1B:CA
@@ -2082,6 +2074,14 @@ packages:
             issue: GH-239
             apk:
               sha256: 27e83f4ed50d0ff5fe57e22353ddafa79704ef6ba97e36d6af70756669e793c5
+  - package: com.innersloth.spacemafia
+    signature:
+      - fingerprint: 67:A4:DF:80:B1:D9:A4:88:FF:DB:10:07:54:84:1F:D8:3F:90:9C:7C:73:DF:16:E2:46:8C:EC:75:AB:81:C5:8A
+        sources:
+          - name: Google Play
+            issue: GH-1195
+            apk:
+              sha256: cd86b5cb53061ee4675a7785f1f8c90addfafd757f63bfc6fbd3f1474a4aa2fd
   - package: com.innovatise.cityofminnetonka
     signature:
       - fingerprint: E7:C9:C3:EB:DB:3B:52:C1:34:C1:AC:F9:11:6A:7E:E2:18:4E:49:9F:E5:4A:2A:01:99:3C:D3:9E:D8:4B:41:FF
