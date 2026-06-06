@@ -3845,6 +3845,14 @@ packages:
             issue: GH-675
             apk:
               sha256: cb9b2929976846d0a55b67076ed0adb45bd8e58d476ee2e0418689f53cc39b70
+  - package: com.vakifkatilim.mobil
+    signature:
+      - fingerprint: C1:3A:ED:85:91:45:C3:C7:33:BA:CA:E2:50:53:A7:9C:4D:8A:21:FA:8A:B2:71:F3:DB:F9:48:8A:79:C0:09:2D
+        sources:
+          - name: Google Play
+            issue: GH-1247
+            apk:
+              sha256: 3a2b06defdf027502a2f3564ec629d9be4cd450dca8720fde89fd550aa850192
   - package: com.valvesoftware.android.steam.community
     signature:
       - fingerprint: 5D:FF:6B:05:76:14:47:A5:BD:F9:19:EA:88:FC:6F:DF:20:D3:01:E3:0B:23:15:41:5C:4D:36:8E:C0:FB:DA:45
