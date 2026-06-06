@@ -3426,6 +3426,12 @@ packages:
             apk:
               sha256: 762473e7236891fcc62e7bbc5ba7419070e99efbe22d069f99d37e701888170e
               link: https://github.com/streetwriters/notesnook/releases/download/3.3.24-android/notesnook-arm64-v8a.apk
+      - fingerprint: C1:0C:44:CD:AD:B5:E3:C1:DD:0F:61:91:BC:12:F0:CA:2C:75:21:F2:D6:2A:67:2F:4A:F1:CF:CA:97:15:21:3E
+        sources:
+          - name: Google Play
+            issue: GH-1231
+            apk:
+              sha256: 113623ab584b3752b7c971c169fc812761a3c87904842faac3261c8c0b645211
   - package: com.stremio.one
     signature:
       - fingerprint: 7E:6A:97:9C:96:8F:77:1E:3F:BC:F2:C2:E8:71:8C:E6:1E:70:8D:87:CA:F9:1F:C1:3E:2D:4C:19:A8:02:2C:6B
