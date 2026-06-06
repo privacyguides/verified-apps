@@ -3329,6 +3329,18 @@ packages:
             issue: GH-833
             apk:
               sha256: 9b910433145a208c5a3cb56538fdbf917ed661ff0ac5821109ebd8849629527a
+  - package: com.shub39.grit
+    signature:
+      - fingerprint: 0F:E1:B9:F4:4A:4D:B9:7E:C5:09:48:F5:18:9F:6B:43:00:71:6C:C6:D4:84:3F:56:98:D6:14:A2:15:2E:21:88
+        sources:
+          - name: F-Droid
+            issue: GH-1236
+            apk:
+              sha256: f6d7808050f6000aa750cab008315f25c4982c6dcacc85d99ea02cab57ff5102
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1236
+            apk:
+              sha256: b41e5d867a39a1623127c5d881cfe02f980711d204c562f81b2ab2bfee83b018
   - package: com.simplepractice.video
     signature:
       - fingerprint: 21:E1:56:78:30:77:33:7D:F5:13:65:75:31:6C:3A:D7:FA:E3:4F:19:7F:61:DD:C0:25:87:0F:B6:F7:0F:C2:99
