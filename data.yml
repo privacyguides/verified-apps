@@ -2882,6 +2882,14 @@ packages:
             issue: GH-705
             apk:
               sha256: 23dc88fc08549d8794d8f4db0bbff2b7920e5fb8a277a72de15223350c521fb0
+  - package: com.paranoid.privacylock
+    signature:
+      - fingerprint: 3F:C8:DA:10:D3:94:C5:75:8C:71:3F:9A:D8:E1:FB:68:0D:84:8F:A7:D6:21:87:62:E1:58:3D:09:69:BB:FC:46
+        sources:
+          - name: Google Play
+            issue: GH-1241
+            apk:
+              sha256: 823b8186bc7f33bfdd1d7ec9b6aea7f567f9fda05d79cc33bbf3551224d31ac6
   - package: com.paypal.android.p2pmobile
     signature:
       - fingerprint: C7:C6:2E:A0:F6:E2:F6:EB:A8:7F:95:40:69:87:50:55:30:EF:2F:51:6E:7C:DE:59:91:D7:14:03:31:44:80:72
