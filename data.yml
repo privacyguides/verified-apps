@@ -1991,6 +1991,16 @@ packages:
             issue: GH-648
           - name: Custom (GrapheneOS App Store)
             issue: GH-648
+  - package: com.google.android.projection.gearhead
+    signature:
+      - fingerprint: |-
+          1C:A8:DC:C0:BE:D3:CB:D8:72:D2:CB:79:12:00:C0:29:2C:A9:97:57:68:A8:2D:67:6B:8B:42:4F:B6:5B:52:95
+          FD:B0:0C:43:DB:DE:8B:51:CB:31:2A:A8:1D:3B:5F:A1:77:13:AD:B9:4B:28:F5:98:D7:7F:8E:B8:9D:AC:EE:DF
+        sources:
+          - name: Google Play
+            issue: GH-1328
+            apk:
+              sha256: 1ca63613bbe3fd5173fe4e22ba614f79fd363d25b54d36f8bf19f15f847fdea7
   - package: com.google.android.safetycore
     signature:
       - fingerprint: 13:3E:19:25:A9:B9:92:D3:27:FA:1F:6C:4B:A8:D5:7C:3B:2E:BD:1F:1D:A4:DE:6B:0B:FA:0B:D0:41:1A:7C:A4
@@ -3967,14 +3977,6 @@ packages:
             issue: GH-843
             apk:
               sha256: 26d26764682f361fade5e73087fe40acd0ba40ef0260627fb47bcd1674b99e0f
-  - package: com.waze
-    signature:
-      - fingerprint: 03:63:7F:6C:5D:8F:60:4E:6F:DB:79:A6:FF:BF:A5:78:DE:4E:31:8F:8D:A2:2F:C6:10:66:65:24:7F:88:07:D7
-        sources:
-          - name: Google Play
-            issue: GH-1332
-            apk:
-              sha256: df7d2850680035f84b7fdbcb5518837605e5e991af7cfd5cef3639a03c8e1f08
   - package: com.wbd.stream
     signature:
       - fingerprint: 61:9C:BB:02:7B:71:55:60:B8:43:D1:5A:55:99:F9:00:48:5A:F1:CD:42:94:09:78:11:A7:76:09:BC:82:73:A8
