@@ -1916,6 +1916,14 @@ packages:
             issue: GH-810
             apk:
               sha256: 7271c40dfeeeb86045f48ba0e914aa79a6e8af44f5466abe50885810771fd71e
+  - package: com.google.android.apps.bard
+    signature:
+      - fingerprint: 99:7C:9C:5D:63:E8:4A:50:24:F3:08:A6:15:C4:E4:A8:77:73:A5:20:73:B0:E1:54:7A:4D:3B:8B:10:81:EF:A7
+        sources:
+          - name: Google Play
+            issue: GH-1344
+            apk:
+              sha256: 9f548f1f6a11d89f48fcbc3042b653c20b2b6849f8abf3f0125602689366260a
   - package: com.google.android.apps.docs
     signature:
       - fingerprint: F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
