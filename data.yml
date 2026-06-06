@@ -1499,6 +1499,12 @@ packages:
               sha256: 6ebe5c150cadcc255e497af7fa162ca1d1930f4942ad60e8aea515314ed59d02
   - package: com.ferrarid.converterpro
     signature:
+      - fingerprint: A8:9D:74:3A:06:77:45:83:0D:8F:BE:C0:B9:49:02:1B:5E:5F:CC:0A:6B:EA:D3:2C:A7:A3:0E:0F:B6:2B:E9:EC
+        sources:
+          - name: F-Droid
+            issue: CB-73
+            apk:
+              sha256: 5ef151e194ab78c6fb1ef282954b10a2783a3d00a6dcdc51413021d8d4683783
       - fingerprint: E3:28:EA:94:6E:19:41:C5:8B:0E:F0:63:15:A8:64:5C:10:20:DD:90:30:C9:6F:EF:9F:81:52:77:F4:C6:0A:B6
         sources:
           - name: Google Play
