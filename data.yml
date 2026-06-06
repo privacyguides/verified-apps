@@ -1231,6 +1231,14 @@ packages:
             issue: GH-663
             apk:
               sha256: ba08ed98d29950385208442d0ce3cbe06065ade155703f6df1065db44fdb32a1
+  - package: com.citi.citimobile
+    signature:
+      - fingerprint: 37:1C:73:36:09:2E:52:98:C9:69:E5:CA:1F:AE:A3:F9:C2:8A:61:A4:32:C4:19:92:0E:F8:0C:44:03:AC:C1:AE
+        sources:
+          - name: Google Play
+            issue: CB-39
+            apk:
+              sha256: dfc9370570633bc09f721184c20b9b396c8345f6d2419c07b6647d13a94a4b51
   - package: com.cloudflare.onedotonedotonedotone
     signature:
       - fingerprint: 27:3A:3A:5E:09:DC:72:0D:3B:39:45:16:2E:72:4D:9A:69:B2:1F:C5:42:BE:D7:45:7F:11:59:66:B1:45:E8:BC
