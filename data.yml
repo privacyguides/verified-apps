@@ -7434,6 +7434,12 @@ packages:
               sha256: 5f3dcabcd67ec50461f8ae859729858aa1501837abb4d5ec05bedb259e2a1b93
   - package: software.mdev.bookstracker
     signature:
+      - fingerprint: 3C:22:99:61:23:D7:F3:B1:6F:11:E6:D0:67:D1:29:CC:E2:85:D2:17:B2:31:F5:C4:DE:EF:76:E4:F7:5B:B4:F2
+        sources:
+          - name: F-Droid
+            issue: CB-83
+            apk:
+              sha256: fe84634a230858910b660fd460773444bdb081719f22426bef6d0886cef4ed7d
       - fingerprint: 98:15:6C:9C:CB:52:8E:18:2A:58:85:40:CF:6C:16:EC:45:57:7C:FD:B9:B6:85:A5:BB:6F:79:97:03:DE:F3:7D
         sources:
           - name: Google Play
