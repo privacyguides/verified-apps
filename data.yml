@@ -17,6 +17,14 @@ packages:
             issue: GH-198
             apk:
               sha256: 56b3ddc154322975a721290fc89f401fc368a70a522057fbba754198e942f60e
+  - package: app.aawireless
+    signature:
+      - fingerprint: 47:A3:74:83:9C:2A:EF:FC:3E:EB:F1:17:2B:8F:F7:D9:90:A9:84:E3:7B:FE:48:E6:8B:49:92:F8:65:B8:DF:DF
+        sources:
+          - name: Google Play
+            issue: GH-1259
+            apk:
+              sha256: 6b53357b2264bb4d5884b31208a26167cc068a218d38e59754bb5ac742777ff8
   - package: app.accrescent.client
     signature:
       - fingerprint: 06:7A:40:C4:19:3A:AD:51:AC:87:F9:DD:FD:EB:B1:5E:24:A1:85:0B:AB:FA:48:21:C2:8C:5C:25:C3:FD:C0:71
