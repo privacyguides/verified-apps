@@ -783,6 +783,14 @@ packages:
             issue: GH-780
             apk:
               sha256: d21653d938f72eee20244fa36c65ac915b6698c3a0b9be3cc6277e4e0fe6d045
+  - package: com.bandcamp.android
+    signature:
+      - fingerprint: BF:B8:97:AA:4F:7B:EC:59:ED:10:0B:8B:94:FA:2D:BD:9B:96:52:F0:B5:83:89:F8:0A:AE:2F:0F:21:55:71:E7
+        sources:
+          - name: Google Play
+            issue: GH-1265
+            apk:
+              sha256: 10d7626c76c59886c9190abd6cae2e552a3d053bbdb60c4c383fb79d40801e44
   - package: com.bankid.bus
     signature:
       - fingerprint: AD:A2:62:4B:35:FC:A3:CC:34:0E:11:89:94:54:E5:50:FB:A9:82:B4:4D:82:B9:7E:FD:16:AA:3A:7A:46:7C:16
