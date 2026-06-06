@@ -561,6 +561,16 @@ packages:
             issue: GH-713
             apk:
               sha256: 036e33c2e0862d526045b57f5aeb69250e96cd47435c64d45a0ae95eab4e0a64
+  - package: com.ally.MobileBanking
+    signature:
+      - fingerprint: |-
+          41:CC:EB:55:66:B5:79:82:53:1D:25:9F:B9:10:9B:7A:E8:C8:3D:BD:34:26:37:E3:69:2A:8D:D3:56:D5:50:B4
+          F7:13:2D:0A:42:C9:6E:C8:8F:02:9B:CD:36:B3:F8:80:CC:D3:1F:CC:A7:DE:AB:A0:9D:AD:CB:D0:E2:B9:70:61
+        sources:
+          - name: Google Play
+            issue: GH-1263
+            apk:
+              sha256: aea71fa0daafdb13c97b1df839c80648c93792a7facbe8b0133d97841409b8df
   - package: com.amadeus.merci.client.ui
     signature:
       - fingerprint: 8C:94:B5:19:AB:CA:6C:11:91:18:B5:9B:BF:0F:4D:1D:08:16:D3:D5:88:E2:B1:3C:A7:DD:AD:26:71:05:0E:EB
