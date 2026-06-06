@@ -481,6 +481,14 @@ packages:
             issue: GH-503
             apk:
               sha256: fa5ef32e3318d55123a2f208c90dab27ec5cc244bbd6afdcd7cae87bb407e2f5
+  - package: com.acehardware.rewards
+    signature:
+      - fingerprint: 37:F9:BE:EC:83:94:80:36:4D:F6:1A:49:27:ED:58:DB:06:10:F9:F1:FB:4A:AA:E4:BC:A0:3C:EA:13:17:2C:F7
+        sources:
+          - name: Google Play
+            issue: GH-1261
+            apk:
+              sha256: 1c7eb4a843cb98ac887063b836e6030ddf0dda17c26198b820040563976f0101
   - package: com.acmeaom.android.myradar
     signature:
       - fingerprint: 0E:6D:4F:E8:56:6D:24:E5:3A:D5:BB:5A:0B:9D:3D:47:C5:D7:80:A5:99:96:70:A0:90:24:25:40:5F:04:6E:7B
