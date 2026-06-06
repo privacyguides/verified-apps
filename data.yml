@@ -1036,6 +1036,14 @@ packages:
             issue: GH-654
             apk:
               sha256: 168f968fd64afff19c44aef88a9b21056fa0ea99b0c2755ec0a999279c5de65a
+  - package: com.centrevillebank.imobile
+    signature:
+      - fingerprint: 5C:0A:1A:43:AA:B2:DD:67:5A:CB:DF:8A:1F:19:DE:80:D4:A9:34:C7:52:07:DC:93:F6:E8:33:DE:DE:41:28:CE
+        sources:
+          - name: Google Play
+            issue: GH-1271
+            apk:
+              sha256: d115a471899cdb710e09c5db7f387161dbb73eb5cd9fc3d6b13263999a8b8cef
   - package: com.centurylink.ctl_droid_wrap
     signature:
       - fingerprint: 63:F4:78:73:E5:68:3B:4E:9D:45:59:73:CB:5F:50:4A:1C:05:CD:7F:B5:A1:A4:60:FE:0C:3B:D3:9E:5F:B3:F4
@@ -1967,14 +1975,6 @@ packages:
             issue: GH-673
             apk:
               sha256: 0133c7da5f60cce0421d5104096ff82a03c345077121cd3b47e26d2372176199
-  - package: com.google.android.ims
-    signature:
-      - fingerprint: C2:5D:5A:FA:CB:67:83:10:9D:61:36:D7:93:53:FA:D4:F6:54:1C:35:45:D2:52:28:A1:87:03:D0:43:CA:78:3F
-        sources:
-          - name: Google Play
-            issue: GH-1270
-            apk:
-              sha256: 9072f0f010132757f0efa5ad759269667ed2c982633204c01ba4e48c71eecee4
   - package: com.google.android.inputmethod.latin
     signature:
       - fingerprint: |
