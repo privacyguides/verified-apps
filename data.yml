@@ -4948,6 +4948,13 @@ packages:
               sha256: c8916f9832c75017aa89745b119669feb25357ef5c22abac86ab23e37b294fb3
   - package: io.heckel.ntfy
     signature:
+      - fingerprint: 6E:14:5D:7A:E6:85:EF:F7:54:68:E5:06:7E:03:A6:C3:64:54:53:34:3E:4E:18:1D:AC:8B:6B:17:FF:67:48:9D
+        sources:
+          - name: Direct APK Link
+            issue: GH-1229
+            apk:
+              sha256: 609f2c93b9bbdac5c17218b32d1e0de1b0022e71c96665edf4eefe16ff4a196d
+              link: https://github.com/binwiederhier/ntfy-android/releases/download/v1.24.0/ntfy-1.24.0-fdroid-release.apk
       - fingerprint: 76:E9:4D:8E:04:70:6C:5B:99:06:4C:23:21:0D:8C:A9:91:06:08:AB:AE:8F:3E:97:2B:41:E3:88:39:16:46:E0
         sources:
           - name: F-Droid
