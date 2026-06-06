@@ -6045,6 +6045,17 @@ packages:
             issue: GH-546
             apk:
               sha256: 774ab07eca97c05d1a33f416e0ff330f20ba84ec6012f5f4248673c31a284032
+      - fingerprint: 55:F2:5C:FD:1E:C9:E4:DE:A2:C2:ED:79:A6:1E:97:28:81:50:96:C7:4B:3D:2C:8F:0F:A2:18:A6:ED:68:32:6D
+        sources:
+          - name: Direct APK Link
+            issue: GH-1174
+            apk:
+              sha256: ab5079fb4452d0386e75f1e99e5915236e7d9dd6ccd48176ac9812eaa8e8d0c9
+              link: https://github.com/laurent22/joplin-android/releases/download/android-v3.6.20/joplin-v3.6.20.apk
+          - name: Google Play
+            issue: GH-1174
+            apk:
+              sha256: 0fb01abf46c66d496e29de283494a8221b46329edf480c48c30ae40aeaccbc1f
   - package: net.gsantner.markor
     signature:
       - fingerprint: 57:D1:06:D0:CF:A8:76:34:42:B3:64:5E:F2:74:1C:38:BB:82:0B:D5:6F:D4:61:2B:F4:0A:23:B6:D9:98:BE:5E
