@@ -2064,6 +2064,16 @@ packages:
             issue: GH-648
           - name: Custom (GrapheneOS App Store)
             issue: GH-648
+  - package: com.google.android.projection.gearhead
+    signature:
+      - fingerprint: |-
+          1C:A8:DC:C0:BE:D3:CB:D8:72:D2:CB:79:12:00:C0:29:2C:A9:97:57:68:A8:2D:67:6B:8B:42:4F:B6:5B:52:95
+          FD:B0:0C:43:DB:DE:8B:51:CB:31:2A:A8:1D:3B:5F:A1:77:13:AD:B9:4B:28:F5:98:D7:7F:8E:B8:9D:AC:EE:DF
+        sources:
+          - name: Google Play
+            issue: GH-1328
+            apk:
+              sha256: 1ca63613bbe3fd5173fe4e22ba614f79fd363d25b54d36f8bf19f15f847fdea7
   - package: com.google.android.safetycore
     signature:
       - fingerprint: 13:3E:19:25:A9:B9:92:D3:27:FA:1F:6C:4B:A8:D5:7C:3B:2E:BD:1F:1D:A4:DE:6B:0B:FA:0B:D0:41:1A:7C:A4
