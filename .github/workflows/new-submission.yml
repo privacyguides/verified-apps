@@ -1541,11 +1541,12 @@ jobs:
           LABELER_ID: ${{ github.event.sender.id }}
           SUBMITTER_LOGIN: ${{ github.event.issue.user.login }}
           SUBMITTER_ID: ${{ github.event.issue.user.id }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
         run: |
           set -euo pipefail
           source .github/actions/signature-lib/signatures.lib.sh
           trailer=$(submission_resolve_coauthor_trailers \
-            "$LABELER_LOGIN" "$LABELER_ID" "$SUBMITTER_LOGIN" "$SUBMITTER_ID")
+            "$LABELER_LOGIN" "$LABELER_ID" "$SUBMITTER_LOGIN" "$SUBMITTER_ID" "$ISSUE_BODY")
           gha_write_multiline_output trailer "$trailer"
 
       - name: Create PR
@@ -1658,11 +1659,12 @@ jobs:
           LABELER_ID: ${{ github.event.sender.id }}
           SUBMITTER_LOGIN: ${{ github.event.issue.user.login }}
           SUBMITTER_ID: ${{ github.event.issue.user.id }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
         run: |
           set -euo pipefail
           source .github/actions/signature-lib/signatures.lib.sh
           trailer=$(submission_resolve_coauthor_trailers \
-            "$LABELER_LOGIN" "$LABELER_ID" "$SUBMITTER_LOGIN" "$SUBMITTER_ID")
+            "$LABELER_LOGIN" "$LABELER_ID" "$SUBMITTER_LOGIN" "$SUBMITTER_ID" "$ISSUE_BODY")
           gha_write_multiline_output trailer "$trailer"
 
       - name: Prepare submission data.yml

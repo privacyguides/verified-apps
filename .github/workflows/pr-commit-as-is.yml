@@ -79,6 +79,8 @@ jobs:
         id: coauthor
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          ISSUE_NUMBER: ${{ steps.prMeta.outputs.issueNumber }}
           LABELER_LOGIN: ${{ github.event.sender.login }}
           LABELER_ID: ${{ github.event.sender.id }}
           SUBMITTER_LOGIN: ${{ github.event.pull_request.user.login }}
@@ -86,8 +88,9 @@ jobs:
         run: |
           set -euo pipefail
           source .github/actions/signature-lib/signatures.lib.sh
+          issue_body=$(gh issue view "$ISSUE_NUMBER" --repo "$GH_REPO" --json body -q .body)
           trailer=$(submission_resolve_coauthor_trailers \
-            "$LABELER_LOGIN" "$LABELER_ID" "$SUBMITTER_LOGIN" "$SUBMITTER_ID")
+            "$LABELER_LOGIN" "$LABELER_ID" "$SUBMITTER_LOGIN" "$SUBMITTER_ID" "$issue_body")
           gha_write_multiline_output trailer "$trailer"
 
       - name: Prepare submission data.yml
