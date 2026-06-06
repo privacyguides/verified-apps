@@ -595,6 +595,14 @@ packages:
             issue: GH-986
             apk:
               sha256: eb69deac0c1105750caba22f328a66937eb12c015e4e4ef50993e65e756b62b6
+  - package: com.amtrak.rider
+    signature:
+      - fingerprint: B2:CF:72:BB:EF:F5:BC:CB:1A:0A:D7:FE:52:ED:49:77:5C:B9:C1:30:0E:65:7C:0F:FB:4F:A5:81:52:91:C4:10
+        sources:
+          - name: Google Play
+            issue: GH-1194
+            apk:
+              sha256: bd721a785edd1028e33bf720d951ae993a14577f6e06341ed5471cef2154e9ae
   - package: com.ancestry.android.apps.ancestry
     signature:
       - fingerprint: D0:38:92:9C:BA:FD:96:6E:51:A6:35:DB:8C:FF:9E:D8:39:ED:CB:03:16:4E:A1:D0:97:DE:CD:9F:50:87:85:37
