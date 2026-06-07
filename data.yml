@@ -282,6 +282,14 @@ packages:
             issue: GH-787
             apk:
               sha256: 29c0190fd7524f2b77121c302d4114a7504dcb2ba0152a8835b17a445a2dd9ab
+  - package: btools.routingapp
+    signature:
+      - fingerprint: D1:9E:79:3B:A6:9A:73:6A:A6:ED:88:0B:DC:48:C8:31:FA:0B:58:0E:ED:D9:59:D0:49:75:6D:3B:BE:58:7D:43
+        sources:
+          - name: F-Droid
+            issue: CB-46
+            apk:
+              sha256: ef0f40be1b947752e8441fe106ecb15e3705ab5aa52a9726c5e9a04a3a499038
   - package: cc.narumi.chaldea
     signature:
       - fingerprint: 32:3A:BD:30:AE:C1:C0:15:EF:AF:AA:3C:B1:49:DF:74:26:57:86:30:1B:D6:A9:D9:8A:40:62:A7:A5:A6:1E:99
