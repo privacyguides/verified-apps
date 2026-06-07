@@ -3118,6 +3118,14 @@ packages:
             issue: GH-907
             apk:
               sha256: 67c26a617e38e7c34b92fb0d8f2f2f8a0854b95b42ece42e22559c62a6995a80
+  - package: com.oF2pks.classyshark3xodus
+    signature:
+      - fingerprint: C2:C5:7B:A0:9D:4B:BE:E7:7F:F3:DE:86:0B:C4:50:80:16:75:E3:CA:C2:E1:10:92:AF:1C:58:59:D9:D4:70:F7
+        sources:
+          - name: F-Droid
+            issue: GH-1207
+            apk:
+              sha256: 8819bfe633faa7affce5b035ad5f553fb5c68368ecaa1d2cdee02dd205773512
   - package: com.oceanwing.soundcore
     signature:
       - fingerprint: EA:B2:B0:AE:8A:49:0A:58:A5:ED:1F:CA:E8:1F:50:3D:F0:01:89:2F:0B:26:55:FF:C0:31:51:1A:F5:A3:86:7F
