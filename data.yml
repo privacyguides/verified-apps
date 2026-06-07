@@ -2140,6 +2140,14 @@ packages:
             issue: GH-588
             apk:
               sha256: a46257e19390249f1542ba45234031bb18f894711e4da3c14ed8020ac9741c7c
+  - package: com.gpl.rpg.AndorsTrail
+    signature:
+      - fingerprint: 39:16:CB:37:00:F0:AB:8E:79:01:44:48:D0:00:42:9B:82:6A:59:E0:B4:36:4B:96:C9:4D:90:5A:65:59:D2:43
+        sources:
+          - name: F-Droid
+            issue: GH-1358
+            apk:
+              sha256: 25c437912d62ce4926dc6b3ddf15622eac13b3fa6b8e305e927c681e1a069d47
   - package: com.grindrapp.android
     signature:
       - fingerprint: 6E:21:A5:F9:66:A7:25:26:28:CD:8F:59:82:D9:30:86:A0:FC:F7:6C:09:ED:B9:D7:73:19:64:BB:1C:84:28:97
