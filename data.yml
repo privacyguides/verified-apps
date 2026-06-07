@@ -6229,6 +6229,12 @@ packages:
               sha256: dd4409210f511ebea1e5d9c0e746bf3561ea6b197e5343740a697dc763e0251c
   - package: net.sourceforge.opencamera
     signature:
+      - fingerprint: 43:89:91:C9:68:E8:D3:08:CA:34:07:8D:37:51:1C:90:C5:02:D5:96:BA:F9:F0:D0:C5:FB:D1:C9:BF:67:DF:6D
+        sources:
+          - name: F-Droid
+            issue: GH-1192
+            apk:
+              sha256: bdc0010bf3e238bb235284bf3bbf3b8db11a4c5e90f82986c3ec780fdf3fc779
       - fingerprint: FF:4B:85:F5:03:7A:B1:6F:53:5A:E5:A1:27:26:97:AB:CF:D9:6F:0F:AA:0E:0C:7A:C3:7B:2E:D5:C8:94:E5:88
         sources:
           - name: Google Play
