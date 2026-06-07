@@ -150,7 +150,7 @@ jobs:
             local num="$1" cbody="$2" ibody
             gh issue comment "$num" --repo "$GH_REPO" --body "$cbody"
             ibody=$(gh issue view "$num" --repo "$GH_REPO" --json body -q .body)
-            signatures_mirror_issue_comment_to_codeberg "$CB_TOKEN" "$ibody" "$cbody" || true
+            signatures_mirror_issue_comment_to_codeberg "$CB_TOKEN" "$num" "$ibody" || true
           }
 
           while IFS= read -r num; do
@@ -448,7 +448,7 @@ jobs:
             comment_body=$(cat "$body_file")
             gh issue comment "$num" --repo "$GH_REPO" --body "$comment_body"
             ibody=$(gh issue view "$num" --repo "$GH_REPO" --json body -q .body)
-            signatures_mirror_issue_comment_to_codeberg "$CB_TOKEN" "$ibody" "$comment_body" || true
+            signatures_mirror_issue_comment_to_codeberg "$CB_TOKEN" "$num" "$ibody" || true
 
             gh issue edit "$num" --repo "$GH_REPO" --add-label "Domain Verified" || true
             gh issue close "$num" --repo "$GH_REPO" --reason completed || true

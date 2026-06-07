@@ -1,0 +1,126 @@
+name: Reconcile Codeberg Mirror
+
+# Periodically (and on demand) bring every GitHub submission issue mirrored from Codeberg
+# back into sync with its linked Codeberg issue:
+#   - labels  (also fixes issues created before label-sync existed)
+#   - open/closed state
+#   - the single rolling status comment (creates it when missing, edits it otherwise)
+#
+# This is the safety net for the comment-mirror rate limit: anything an inline mirror failed
+# to post (HTTP 429 "posted N comments in 10 minutes") is backfilled here. The rolling comment
+# body is derived deterministically from the GitHub issue's bot comments, so re-running is
+# idempotent. Codeberg's create limit is absorbed by codeberg_api_call's Retry-After backoff;
+# CODEBERG_RETRY_CAP is raised below so backfill creates patiently wait out a saturated window.
+
+on:
+  schedule:
+    - cron: "17 4 * * *" # daily at 04:17 UTC
+  workflow_dispatch:
+    inputs:
+      issue:
+        description: Reconcile a single GitHub issue number (blank = all Import Codeberg issues)
+        required: false
+        default: ""
+      limit:
+        description: Max issues to scan when reconciling all
+        required: false
+        default: "300"
+
+concurrency:
+  group: reconcile-codeberg
+  cancel-in-progress: false
+
+jobs:
+  reconcile:
+    name: Reconcile labels, state, and comments
+    runs-on: ubuntu-latest
+
+    permissions:
+      issues: read
+
+    steps:
+      - name: Download repository
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: "false"
+          sparse-checkout: |
+            .github/actions/signature-lib
+          sparse-checkout-cone-mode: false
+
+      - name: Reconcile linked Codeberg issues
+        env:
+          CB_SYNC_TOKEN: ${{ secrets.CB_SYNC_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          ISSUE: ${{ github.event.inputs.issue }}
+          LIMIT: ${{ github.event.inputs.limit || '300' }}
+          # Backfill creates may need to wait out Codeberg's ~10 min comment-create window;
+          # be more patient here than the interactive submission jobs (defaults: 60s / 5).
+          CODEBERG_RETRY_CAP: "600"
+          CODEBERG_MAX_RETRIES: "8"
+        run: |
+          set -euo pipefail
+          source .github/actions/signature-lib/signatures.lib.sh
+
+          if [[ -z "${CB_SYNC_TOKEN:-}" ]]; then
+            echo "CB_SYNC_TOKEN is not configured." >&2
+            exit 1
+          fi
+
+          issues_json="${RUNNER_TEMP}/issues.json"
+          if [[ -n "${ISSUE:-}" ]]; then
+            gh issue view "$ISSUE" --repo "$GH_REPO" --json number,state,body,labels \
+              | jq -s '.' > "$issues_json"
+          else
+            gh issue list --repo "$GH_REPO" --label "Import Codeberg" --state all \
+              --limit "$LIMIT" --json number,state,body,labels > "$issues_json"
+          fi
+
+          total=$(jq 'length' "$issues_json")
+          echo "Reconciling ${total} issue(s)."
+
+          ok=0; skipped=0; failed=0
+          for ((i = 0; i < total; i++)); do
+            num=$(jq -r ".[$i].number" "$issues_json")
+            state=$(jq -r ".[$i].state" "$issues_json" | tr '[:upper:]' '[:lower:]')
+            body=$(jq -r ".[$i].body // \"\"" "$issues_json")
+            labels=$(jq -c "[.[$i].labels[].name]" "$issues_json")
+
+            echo "::group::Issue GH-${num}"
+
+            if ! signatures_parse_submission_source "$body"; then
+              echo "Not a Codeberg-mirrored issue; skipping."
+              skipped=$((skipped + 1)); echo "::endgroup::"; continue
+            fi
+            echo "Linked to ${SUBMISSION_EXTERNAL_REF}."
+
+            issue_ok=true
+
+            # Labels (also repairs issues predating the label-sync workflow).
+            signatures_sync_codeberg_issue_labels "$CB_SYNC_TOKEN" "$body" "$labels" || issue_ok=false
+
+            # Open/closed state.
+            case "$state" in
+              open) state_action="opened" ;;
+              closed) state_action="closed" ;;
+              *) state_action="" ;;
+            esac
+            if [[ -n "$state_action" ]]; then
+              signatures_sync_codeberg_issue_state "$CB_SYNC_TOKEN" "$body" "$state_action" || issue_ok=false
+            fi
+
+            # Rolling status comment (create if missing, edit otherwise).
+            signatures_mirror_issue_comment_to_codeberg "$CB_SYNC_TOKEN" "$num" "$body" || issue_ok=false
+
+            if [[ "$issue_ok" == "true" ]]; then
+              ok=$((ok + 1))
+            else
+              failed=$((failed + 1))
+              echo "::warning::Reconcile incomplete for GH-${num} (${SUBMISSION_EXTERNAL_REF}); will retry next run."
+            fi
+
+            sleep 2
+            echo "::endgroup::"
+          done
+
+          echo "Reconcile complete: ${ok} ok, ${skipped} skipped, ${failed} incomplete (of ${total})."
