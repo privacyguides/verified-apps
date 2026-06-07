@@ -6486,6 +6486,12 @@ packages:
             issue: GH-881
             apk:
               sha256: 36f98f84da870eaf4d5304fcc6008848c5f0a92c556f04cab9e57c9662ab7d8b
+      - fingerprint: 44:61:22:FC:28:B6:44:D3:0B:73:89:41:34:34:2D:2F:20:6B:61:D9:69:98:BD:9A:FF:5E:88:1F:8E:9D:96:BA
+        sources:
+          - name: F-Droid
+            issue: CB-36
+            apk:
+              sha256: f58928e0ca79d4688b76d63b09019f50407de26c5bb6ee890322a6bf90d771d5
       - fingerprint: 82:07:10:96:13:28:E1:83:4B:CB:81:58:09:2E:6B:6C:5B:51:9F:CD:3B:DB:2E:53:19:EB:DA:F0:8F:9E:A1:E8
         sources:
           - name: Direct APK Link
