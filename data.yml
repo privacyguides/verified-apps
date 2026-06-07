@@ -1233,6 +1233,12 @@ packages:
             issue: GH-801
             apk:
               sha256: 43b6befd1fecc686ba1611bbda18896cc26d966047e788be995def569a4510f3
+      - fingerprint: 8C:66:55:88:44:7D:26:AE:B1:50:E7:F3:FD:C8:41:7C:0F:44:BF:E3:0B:C1:65:DA:FD:4C:61:76:05:5D:C5:4D
+        sources:
+          - name: F-Droid
+            issue: GH-1198
+            apk:
+              sha256: 2642613868a8a80f0ce963a4863bc153e7281b97b3bbdf36ca92a99dded7134a
   - package: com.davivienda.daviviendaapp
     signature:
       - fingerprint: 88:C3:6E:43:F6:E1:6F:A4:F5:08:DA:C7:CD:43:1D:B3:EA:82:C0:2D:E2:87:75:99:F7:4C:AD:68:4A:63:D5:F7
@@ -2939,6 +2945,12 @@ packages:
             apk:
               sha256: 22715cf7b923baa73cfe21379ebe58e44da5f792bf353b53b49f725ba9d943d7
               link: https://github.com/TylerWilliamson/QuickWeather/releases/download/2.8.7/QuickWeather-2.8.7.apk
+      - fingerprint: 96:AA:C6:5A:0E:9E:98:25:54:CB:26:74:32:52:26:42:46:13:30:F3:1C:86:AF:77:CA:21:92:3D:6D:82:37:9B
+        sources:
+          - name: F-Droid
+            issue: GH-1197
+            apk:
+              sha256: cdc7f35cf835c1199d6353a4fc484dde833dd26abbba2790badd77f843ea9fc7
   - package: com.onepassword.android
     signature:
       - fingerprint: B3:5B:68:D5:CE:84:50:55:7C:6A:55:FD:64:B5:1F:EA:C1:10:CB:36:D6:A3:52:1C:59:48:DB:3A:38:0A:34:A9
@@ -3084,14 +3096,6 @@ packages:
             issue: GH-774
             apk:
               sha256: e387f130f269d64334882bc71a4c8610124cf53f8312b91568b0a92cc073cae3
-  - package: com.presley.flexify
-    signature:
-      - fingerprint: 01:1E:E1:A6:E4:E5:EC:D6:75:F6:7F:BF:3D:78:AD:82:61:4A:7A:7A:3F:24:ED:71:CC:9C:41:71:54:A0:F0:FD
-        sources:
-          - name: F-Droid
-            issue: GH-1171
-            apk:
-              sha256: cf1cde77fd40c9faeec6f21031e1d7379e31823ada58ee7ce836fce1f84b44f9
   - package: com.privacy.pay
     signature:
       - fingerprint: 47:0B:62:E4:E4:6C:81:FF:E3:3B:59:AB:14:6D:92:26:B3:BB:30:6F:D1:FE:40:B2:8A:E8:C5:61:0A:2B:96:5E
@@ -5893,12 +5897,6 @@ packages:
               sha256: dd4409210f511ebea1e5d9c0e746bf3561ea6b197e5343740a697dc763e0251c
   - package: net.sourceforge.opencamera
     signature:
-      - fingerprint: 43:89:91:C9:68:E8:D3:08:CA:34:07:8D:37:51:1C:90:C5:02:D5:96:BA:F9:F0:D0:C5:FB:D1:C9:BF:67:DF:6D
-        sources:
-          - name: F-Droid
-            issue: GH-1192
-            apk:
-              sha256: bdc0010bf3e238bb235284bf3bbf3b8db11a4c5e90f82986c3ec780fdf3fc779
       - fingerprint: FF:4B:85:F5:03:7A:B1:6F:53:5A:E5:A1:27:26:97:AB:CF:D9:6F:0F:AA:0E:0C:7A:C3:7B:2E:D5:C8:94:E5:88
         sources:
           - name: Google Play
