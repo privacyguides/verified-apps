@@ -73,6 +73,14 @@ packages:
             apk:
               sha256: 5731fab450af68400373c9256bf215cc95a62ec7b6703926fb865588c1427119
               link: https://codeberg.org/comaps/comaps/releases/download/v2026.05.06-11/CoMaps-26050611-main-release.apk
+  - package: app.comaps.fdroid
+    signature:
+      - fingerprint: CA:51:80:DA:AC:F1:F2:6A:18:F9:8F:F4:BC:E2:D6:2B:BA:AA:39:36:1C:99:8B:22:67:CE:D1:BC:0D:2F:93:2B
+        sources:
+          - name: F-Droid
+            issue: CB-35
+            apk:
+              sha256: 20d441e9ab6cf49e55224532ba6c93e1937322eb9094fe2c3f52db920583ccca
   - package: app.comaps.google
     signature:
       - fingerprint: 8C:3D:DE:72:D3:B1:D5:98:41:AF:B4:F2:80:67:A7:D7:BC:86:B5:1C:C7:AD:F4:85:B6:C8:11:49:F9:FA:AC:19
