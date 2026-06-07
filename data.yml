@@ -5376,6 +5376,12 @@ packages:
             apk:
               sha256: 9ad852c6342454a925ceba73b7db08944c91287281573b9044d6177976d5aebc
               link: https://github.com/anonaddy/addy-android/releases/download/v6.2.6/app-gplayless-release.apk
+      - fingerprint: 16:6B:31:4E:E0:AD:E8:EB:D9:55:B0:9B:63:31:2C:1D:CA:A6:2C:C9:DA:32:B6:AA:34:1D:FD:20:26:FD:20:F7
+        sources:
+          - name: F-Droid
+            issue: GH-1151
+            apk:
+              sha256: 7e6d1232a01ab43b46840db31bc3272e0c0c7d8b22944addbbf1caa3400ec70c
   - package: hu.webvalto.bkkfutar
     signature:
       - fingerprint: D5:F6:99:F5:5B:E2:80:47:00:FF:00:9A:9E:16:18:B4:00:23:DD:A9:73:B8:3D:DE:AD:8E:9E:C3:31:DC:3D:3C
