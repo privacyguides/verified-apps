@@ -4947,6 +4947,14 @@ packages:
             issue: GH-567
             apk:
               sha256: e094ad80be5fbb69e177b394e0671de91c7eb329cb2e816986e37265d9c2bfc8
+  - package: de.wger.flutter
+    signature:
+      - fingerprint: 43:A0:6F:0A:62:22:C3:60:D8:20:DF:B5:0B:E5:B5:E6:72:20:D5:8C:A6:45:23:DC:3B:69:7A:9E:0C:02:9E:75
+        sources:
+          - name: F-Droid
+            issue: GH-1169
+            apk:
+              sha256: 7f2334e6ac741841bc2dea0f0516a7193b0de10cfa507a4a0be16af2bd9ec6ea
   - package: de.xcom.flatex.ptan
     signature:
       - fingerprint: 5F:8A:00:8A:83:28:A2:8F:FB:D7:FB:E0:A8:51:15:34:D7:F9:9B:DF:45:E2:29:0D:A6:6D:AF:29:C4:D5:FA:AB
