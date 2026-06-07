@@ -3318,6 +3318,14 @@ packages:
             issue: GH-774
             apk:
               sha256: e387f130f269d64334882bc71a4c8610124cf53f8312b91568b0a92cc073cae3
+  - package: com.presley.flexify
+    signature:
+      - fingerprint: 01:1E:E1:A6:E4:E5:EC:D6:75:F6:7F:BF:3D:78:AD:82:61:4A:7A:7A:3F:24:ED:71:CC:9C:41:71:54:A0:F0:FD
+        sources:
+          - name: F-Droid
+            issue: GH-1171
+            apk:
+              sha256: cf1cde77fd40c9faeec6f21031e1d7379e31823ada58ee7ce836fce1f84b44f9
   - package: com.privacy.pay
     signature:
       - fingerprint: 47:0B:62:E4:E4:6C:81:FF:E3:3B:59:AB:14:6D:92:26:B3:BB:30:6F:D1:FE:40:B2:8A:E8:C5:61:0A:2B:96:5E
