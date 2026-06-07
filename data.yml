@@ -4681,6 +4681,12 @@ packages:
             apk:
               sha256: 59c3e8bd977bf8f5af80c2092c00b9cd435e82ad1098bae332f4c2ad43592822
               repo: https://grobox.de/fdroid/repo?fingerprint=28e14fb3b280bce8ff1e0f8e82726ff46923662cecff2a0689108ce19e8b347c
+      - fingerprint: 66:37:43:A0:E4:D5:63:EA:B4:AE:5B:4B:87:47:8A:8A:35:92:85:C1:5A:D8:95:7E:E1:78:15:98:C6:0D:97:8F
+        sources:
+          - name: F-Droid
+            issue: CB-38
+            apk:
+              sha256: 00ebcff767b548c1a836e2ca270a80cc04f7cab22ca5ae76a349b42856fb06f6
   - package: de.ingdiba.bankingapp
     signature:
       - fingerprint: CB:74:26:85:E4:8B:8F:F9:59:64:A6:81:39:AB:16:43:91:A1:6C:F2:A4:54:39:BA:59:8E:C0:BF:CB:0E:FB:FC
