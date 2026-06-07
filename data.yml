@@ -7270,6 +7270,14 @@ packages:
             issue: GH-744
             apk:
               sha256: 29767d603ba25c2be7c369c42d9a0c983268f29deda3e60ba4574b211a63e3d0
+  - package: org.woheller69.whobird
+    signature:
+      - fingerprint: 31:9B:21:56:69:54:4B:FB:67:85:5B:D6:98:19:0D:6B:94:08:9D:93:B2:26:78:0E:62:BE:37:FC:56:E9:60:95
+        sources:
+          - name: F-Droid
+            issue: CB-64
+            apk:
+              sha256: 2a4e851911cfb2199dedd6eba6594c940ee122f705c30daeaf9e0281b02756f8
   - package: org.y20k.stayput
     signature:
       - fingerprint: 61:05:14:5F:84:E5:CB:D6:97:F0:F6:E1:2C:97:77:04:2E:9B:2D:B6:67:A7:FF:0D:A4:12:F6:74:35:31:6D:D8
