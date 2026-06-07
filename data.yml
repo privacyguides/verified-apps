@@ -1360,6 +1360,12 @@ packages:
             issue: GH-801
             apk:
               sha256: 43b6befd1fecc686ba1611bbda18896cc26d966047e788be995def569a4510f3
+      - fingerprint: 8C:66:55:88:44:7D:26:AE:B1:50:E7:F3:FD:C8:41:7C:0F:44:BF:E3:0B:C1:65:DA:FD:4C:61:76:05:5D:C5:4D
+        sources:
+          - name: F-Droid
+            issue: GH-1198
+            apk:
+              sha256: 2642613868a8a80f0ce963a4863bc153e7281b97b3bbdf36ca92a99dded7134a
   - package: com.davivienda.daviviendaapp
     signature:
       - fingerprint: 88:C3:6E:43:F6:E1:6F:A4:F5:08:DA:C7:CD:43:1D:B3:EA:82:C0:2D:E2:87:75:99:F7:4C:AD:68:4A:63:D5:F7
