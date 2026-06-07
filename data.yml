@@ -65,14 +65,6 @@ packages:
             apk:
               sha256: 5731fab450af68400373c9256bf215cc95a62ec7b6703926fb865588c1427119
               link: https://codeberg.org/comaps/comaps/releases/download/v2026.05.06-11/CoMaps-26050611-main-release.apk
-  - package: app.comaps.fdroid
-    signature:
-      - fingerprint: CA:51:80:DA:AC:F1:F2:6A:18:F9:8F:F4:BC:E2:D6:2B:BA:AA:39:36:1C:99:8B:22:67:CE:D1:BC:0D:2F:93:2B
-        sources:
-          - name: F-Droid
-            issue: CB-35
-            apk:
-              sha256: 20d441e9ab6cf49e55224532ba6c93e1937322eb9094fe2c3f52db920583ccca
   - package: app.comaps.google
     signature:
       - fingerprint: 8C:3D:DE:72:D3:B1:D5:98:41:AF:B4:F2:80:67:A7:D7:BC:86:B5:1C:C7:AD:F4:85:B6:C8:11:49:F9:FA:AC:19
@@ -4681,14 +4673,6 @@ packages:
             issue: GH-567
             apk:
               sha256: e094ad80be5fbb69e177b394e0671de91c7eb329cb2e816986e37265d9c2bfc8
-  - package: de.wger.flutter
-    signature:
-      - fingerprint: 43:A0:6F:0A:62:22:C3:60:D8:20:DF:B5:0B:E5:B5:E6:72:20:D5:8C:A6:45:23:DC:3B:69:7A:9E:0C:02:9E:75
-        sources:
-          - name: F-Droid
-            issue: GH-1169
-            apk:
-              sha256: 7f2334e6ac741841bc2dea0f0516a7193b0de10cfa507a4a0be16af2bd9ec6ea
   - package: de.xcom.flatex.ptan
     signature:
       - fingerprint: 5F:8A:00:8A:83:28:A2:8F:FB:D7:FB:E0:A8:51:15:34:D7:F9:9B:DF:45:E2:29:0D:A6:6D:AF:29:C4:D5:FA:AB
@@ -5085,6 +5069,12 @@ packages:
             apk:
               sha256: 9ad852c6342454a925ceba73b7db08944c91287281573b9044d6177976d5aebc
               link: https://github.com/anonaddy/addy-android/releases/download/v6.2.6/app-gplayless-release.apk
+      - fingerprint: 16:6B:31:4E:E0:AD:E8:EB:D9:55:B0:9B:63:31:2C:1D:CA:A6:2C:C9:DA:32:B6:AA:34:1D:FD:20:26:FD:20:F7
+        sources:
+          - name: F-Droid
+            issue: GH-1151
+            apk:
+              sha256: 7e6d1232a01ab43b46840db31bc3272e0c0c7d8b22944addbbf1caa3400ec70c
   - package: hu.webvalto.bkkfutar
     signature:
       - fingerprint: D5:F6:99:F5:5B:E2:80:47:00:FF:00:9A:9E:16:18:B4:00:23:DD:A9:73:B8:3D:DE:AD:8E:9E:C3:31:DC:3D:3C
@@ -6180,6 +6170,12 @@ packages:
             issue: GH-881
             apk:
               sha256: 36f98f84da870eaf4d5304fcc6008848c5f0a92c556f04cab9e57c9662ab7d8b
+      - fingerprint: 44:61:22:FC:28:B6:44:D3:0B:73:89:41:34:34:2D:2F:20:6B:61:D9:69:98:BD:9A:FF:5E:88:1F:8E:9D:96:BA
+        sources:
+          - name: F-Droid
+            issue: CB-36
+            apk:
+              sha256: f58928e0ca79d4688b76d63b09019f50407de26c5bb6ee890322a6bf90d771d5
       - fingerprint: 82:07:10:96:13:28:E1:83:4B:CB:81:58:09:2E:6B:6C:5B:51:9F:CD:3B:DB:2E:53:19:EB:DA:F0:8F:9E:A1:E8
         sources:
           - name: Direct APK Link
