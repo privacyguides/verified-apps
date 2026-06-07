@@ -6929,6 +6929,23 @@ packages:
             issue: GH-555
             apk:
               sha256: 5bc38f5fbbac2ae6ce05db650e44248fc046a954b3c2c3f2abb9b13c8bdf3593
+  - package: org.joinmastodon.android.moshinda
+    signature:
+      - fingerprint: 1D:D4:D6:DB:71:38:33:58:34:E3:92:7C:C7:45:AD:48:23:6A:BC:52:25:2B:BB:83:69:E9:6B:8B:BA:77:77:20
+        sources:
+          - name: Direct APK Link
+            issue: CB-51
+            apk:
+              sha256: 1651df0d655e26dc19bcbf2ed09424976f5c0bb9bcef28fb1d352b3eea379667
+              link: https://github.com/LucasGGamerM/moshidon/releases/download/2.3.0%2Bfork.110.moshinda/moshidon-fdroidRelease.apk
+          - name: F-Droid
+            issue: CB-51
+            apk:
+              sha256: 1651df0d655e26dc19bcbf2ed09424976f5c0bb9bcef28fb1d352b3eea379667
+          - name: F-Droid (IzzyOnDroid)
+            issue: CB-51
+            apk:
+              sha256: 1651df0d655e26dc19bcbf2ed09424976f5c0bb9bcef28fb1d352b3eea379667
   - package: org.kde.kdeconnect_tp
     signature:
       - fingerprint: 25:32:94:C6:84:D4:C2:31:C4:5A:2B:92:11:DF:AA:01:10:45:62:73:8B:62:A0:9D:BF:B7:14:50:B8:A6:66:F4
