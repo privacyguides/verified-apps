@@ -2257,6 +2257,12 @@ packages:
               sha256: 9ab60f5c13553b1a595154afaaa126214c53a3be48ac7234cbe9d7ee7423ecf8
   - package: com.google.android.stardroid
     signature:
+      - fingerprint: 06:6B:05:D0:1E:A5:B4:99:80:74:CE:AB:1C:CC:A5:BF:42:71:19:95:ED:C6:AE:DB:FA:31:1E:56:20:F1:E4:42
+        sources:
+          - name: F-Droid
+            issue: GH-1201
+            apk:
+              sha256: 4e094b48abc7b062e0adad73858d438a10d85603bc1330792c006e5b1d9b0eaf
       - fingerprint: 6E:7E:3A:74:A4:D7:C7:7A:E4:B9:81:42:6E:D0:A0:7E:78:E1:17:64:69:8C:DC:9B:DA:9B:74:0E:A2:BE:23:98
         sources:
           - name: Google Play
