@@ -4732,6 +4732,12 @@ packages:
               sha256: 8af1b4ed2e15867aafee1e481aec4f8e35013e3eb704959572c82de857f63b9c
   - package: de.markusfisch.android.binaryeye
     signature:
+      - fingerprint: 9E:CD:BF:06:77:DD:50:60:9C:76:C2:BA:05:DB:E3:62:23:23:27:B1:0A:1C:37:CD:58:72:29:93:D9:FE:5D:57
+        sources:
+          - name: F-Droid
+            issue: CB-33
+            apk:
+              sha256: cc8406457d7087a5e8ee267a02d7cc4bba86688984ca8201249abf09dbd24f53
       - fingerprint: DD:A9:21:96:50:57:4B:2D:70:2F:DF:2D:F9:0F:61:9B:D4:E2:D0:F3:A6:6E:26:BB:03:2F:2F:01:88:40:CF:8E
         sources:
           - name: Direct APK Link
