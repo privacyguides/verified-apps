@@ -82,8 +82,8 @@ runs:
             fi
             signatures_mirror_issue_comment_to_codeberg \
               "$CODEBERG_TOKEN" \
-              "$issue_body" \
-              "$body"
+              "$ISSUE_NUMBER" \
+              "$issue_body"
           fi
           echo "::error::${blocked_on} has the ${blocked_label} label; refusing to proceed."
           exit 1

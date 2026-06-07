@@ -163,6 +163,137 @@ signatures_codeberg_submission_author() {
   codeberg_get_issue_author "$token" "$owner" "$repo" "$cb_issue_num"
 }
 
+# Hidden marker identifying the single bot-managed "rolling status" comment on a Codeberg
+# issue. HTML comments are stripped by the Forgejo markdown renderer, so it is invisible to
+# readers but lets us find (and edit) our comment without knowing the bot's login.
+codeberg_status_marker() { printf '<!-- pg-mirror:v1 -->'; }
+
+# Perform a Codeberg/Forgejo API request with retry + backoff on rate-limit (HTTP 429),
+# transient server errors (5xx) and network failures. Honors the Retry-After response
+# header when present, otherwise backs off exponentially (2,4,8…s). Each sleep is capped at
+# CODEBERG_RETRY_CAP (default 60s) so a job never blocks on the full rate-limit window; once
+# CODEBERG_MAX_RETRIES (default 5) is exhausted the last response is returned and the caller
+# decides how to report it (the daily reconciliation backfills anything still missing).
+# Usage: codeberg_api_call <token> <method> <url> [data_file]
+# Echoes the response body followed by a final line containing the HTTP status code, matching
+# the curl `-w '\n%{http_code}'` contract used by the callers (tail -n1 = code, sed '$d' = body).
+codeberg_api_call() {
+  local token="$1"
+  local method="$2"
+  local url="$3"
+  local data_file="${4:-}"
+  local max_retries="${CODEBERG_MAX_RETRIES:-5}"
+  local retry_cap="${CODEBERG_RETRY_CAP:-60}"
+  local attempt=0 http_code response_body header_file response retry_after delay
+  local curl_args
+
+  while :; do
+    header_file=$(mktemp)
+    curl_args=(-sS -D "$header_file" -w '\n%{http_code}' -X "$method"
+      -H "Authorization: token ${token}"
+      -H "Accept: application/json")
+    if [[ -n "$data_file" ]]; then
+      curl_args+=(-H "Content-Type: application/json" --data-binary @"$data_file")
+    fi
+
+    if response=$(curl "${curl_args[@]}" "$url"); then
+      http_code=$(printf '%s' "$response" | tail -n 1)
+      response_body=$(printf '%s' "$response" | sed '$d')
+    else
+      http_code="000"
+      response_body=""
+    fi
+
+    if [[ "$http_code" == "429" || "$http_code" == "000" || "$http_code" =~ ^5[0-9][0-9]$ ]] \
+       && (( attempt < max_retries )); then
+      retry_after=$(grep -i '^Retry-After:' "$header_file" 2>/dev/null | tail -n 1 | tr -dc '0-9')
+      if [[ "$retry_after" =~ ^[0-9]+$ ]] && (( retry_after > 0 )); then
+        delay="$retry_after"
+      else
+        delay=$(( 2 ** attempt ))
+        (( delay < 2 )) && delay=2
+      fi
+      (( delay > retry_cap )) && delay="$retry_cap"
+      rm -f "$header_file"
+      attempt=$((attempt + 1))
+      echo "Codeberg API ${method} ${url##*/} -> HTTP ${http_code}; retry ${attempt}/${max_retries} in ${delay}s" >&2
+      sleep "$delay"
+      continue
+    fi
+
+    rm -f "$header_file"
+    printf '%s\n%s' "$response_body" "$http_code"
+    return 0
+  done
+}
+
+# List every comment on a Codeberg issue (paginated) as a single JSON array.
+codeberg_list_issue_comments() {
+  local token="$1"
+  local owner="$2"
+  local repo="$3"
+  local issue_index="$4"
+  local api_base="${CODEBERG_API_BASE:-https://codeberg.org/api/v1}"
+  local page=1 limit=50 response http_code page_json count combined='[]'
+
+  [[ -n "$token" && "$issue_index" =~ ^[0-9]+$ ]] || return 1
+
+  while :; do
+    response=$(codeberg_api_call "$token" GET \
+      "${api_base}/repos/${owner}/${repo}/issues/${issue_index}/comments?limit=${limit}&page=${page}")
+    http_code=$(printf '%s' "$response" | tail -n 1)
+    page_json=$(printf '%s' "$response" | sed '$d')
+    [[ "$http_code" == "200" ]] || return 1
+    jq -e 'type == "array"' >/dev/null 2>&1 <<< "$page_json" || return 1
+    count=$(jq 'length' <<< "$page_json")
+    (( count > 0 )) || break
+    combined=$(jq -c --argjson acc "$combined" '$acc + .' <<< "$page_json")
+    (( count < limit )) && break
+    page=$((page + 1))
+  done
+
+  printf '%s' "$combined"
+}
+
+# Id of the bot-managed rolling status comment (marker match) in a comments JSON array, or
+# empty when none exists yet.
+codeberg_find_status_comment_id() {
+  local comments_json="$1"
+  local marker
+  marker=$(codeberg_status_marker)
+  jq -r --arg m "$marker" \
+    'map(select((.body // "") | contains($m))) | (.[0].id // empty)' <<< "$comments_json"
+}
+
+# Edit an existing Codeberg issue comment via the Forgejo API (not rate-limited like creates).
+codeberg_edit_issue_comment() {
+  local token="$1"
+  local owner="$2"
+  local repo="$3"
+  local comment_id="$4"
+  local body="$5"
+  local api_base="${CODEBERG_API_BASE:-https://codeberg.org/api/v1}"
+  local payload_file response http_code response_body
+
+  [[ -n "$token" && "$comment_id" =~ ^[0-9]+$ ]] || return 1
+
+  payload_file=$(mktemp)
+  jq -n --arg body "$body" '{body: $body}' > "$payload_file"
+
+  response=$(codeberg_api_call "$token" PATCH \
+    "${api_base}/repos/${owner}/${repo}/issues/comments/${comment_id}" "$payload_file")
+  rm -f "$payload_file"
+
+  http_code=$(printf '%s' "$response" | tail -n 1)
+  response_body=$(printf '%s' "$response" | sed '$d')
+
+  if [[ "$http_code" != "200" ]]; then
+    echo "Codeberg issue comment edit failed (HTTP ${http_code}):" >&2
+    printf '%s\n' "$response_body" >&2
+    return 1
+  fi
+}
+
 # Post a comment on a Codeberg issue via the Forgejo API.
 codeberg_post_issue_comment() {
   local token="$1"
@@ -178,12 +309,8 @@ codeberg_post_issue_comment() {
   payload_file=$(mktemp)
   jq -n --arg body "$body" '{body: $body}' > "$payload_file"
 
-  response=$(curl -sS -w '\n%{http_code}' -X POST \
-    -H "Authorization: token ${token}" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
-    "${api_base}/repos/${owner}/${repo}/issues/${issue_index}/comments" \
-    --data-binary @"$payload_file")
+  response=$(codeberg_api_call "$token" POST \
+    "${api_base}/repos/${owner}/${repo}/issues/${issue_index}/comments" "$payload_file")
   rm -f "$payload_file"
 
   http_code=$(printf '%s' "$response" | tail -n 1)
@@ -196,27 +323,83 @@ codeberg_post_issue_comment() {
   fi
 }
 
-# Mirror a GitHub issue comment to the linked Codeberg issue when External: CB-N is set.
+# Build the canonical body for the rolling Codeberg status comment, derived deterministically
+# from the GitHub issue's bot-authored (github-actions[bot]) comments in chronological order.
+# Requires GH_REPO (and a logged-in gh). Fails (non-zero) when there is nothing to mirror yet,
+# so callers can skip cleanly. Both the live mirror and the reconciliation job use this, which
+# is what makes the mirror idempotent and self-healing.
+signatures_build_status_comment_body() {
+  local issue_number="$1"
+  local gh_repo="${GH_REPO:-}"
+  local marker pages combined body
+
+  [[ "$issue_number" =~ ^[0-9]+$ ]] || return 1
+  [[ -n "$gh_repo" ]] || return 1
+  marker=$(codeberg_status_marker)
+
+  pages=$(gh api --paginate "repos/${gh_repo}/issues/${issue_number}/comments") || return 1
+  combined=$(jq -s 'add // []' <<< "$pages") || return 1
+
+  body=$(jq -rn --arg marker "$marker" --argjson comments "$combined" '
+    ($comments
+      | map(select(.user.login == "github-actions[bot]"))
+      | map(.body // "")
+    ) as $bodies
+    | if ($bodies | length) == 0 then empty
+      else $marker + "\n\n" + ($bodies | join("\n\n---\n\n"))
+      end
+  ') || return 1
+
+  [[ -n "$body" ]] || return 1
+  printf '%s' "$body"
+}
+
+# Mirror a GitHub submission issue's status updates to the linked Codeberg issue (### Submission
+# Source: External: CB-N) as a SINGLE rolling comment that is edited in place. Forgejo rate-limits
+# comment *creation* (HTTP 429: "posted N comments in 10 minutes"), so we create the managed
+# comment at most once per issue and PATCH it thereafter. No-op (return 0) when the issue is not
+# from Codeberg or there is nothing to mirror yet.
+# Usage: signatures_mirror_issue_comment_to_codeberg <cb_token> <github_issue_number> [github_issue_body]
 signatures_mirror_issue_comment_to_codeberg() {
   local token="$1"
-  local github_issue_body="$2"
-  local comment_body="$3"
+  local github_issue_number="$2"
+  local github_issue_body="${3:-}"
   local owner="${CODEBERG_REPO_OWNER:-privacyguides}"
   local repo="${CODEBERG_REPO_NAME:-verified-apps}"
-  local cb_issue_num
+  local gh_repo="${GH_REPO:-}"
+  local cb_issue_num body comments_json comment_id
 
   [[ -n "$token" ]] || return 0
+  [[ "$github_issue_number" =~ ^[0-9]+$ ]] || return 0
+
+  if [[ -z "$github_issue_body" ]]; then
+    github_issue_body=$(gh issue view "$github_issue_number" --repo "$gh_repo" --json body -q .body) || return 0
+  fi
 
   if ! signatures_parse_submission_source "$github_issue_body"; then
     return 0
   fi
-
   if ! cb_issue_num=$(signatures_codeberg_issue_number "$SUBMISSION_EXTERNAL_REF"); then
     return 0
   fi
 
-  if ! codeberg_post_issue_comment "$token" "$owner" "$repo" "$cb_issue_num" "$comment_body"; then
+  # Nothing to mirror yet (no bot comments) — skip quietly.
+  body=$(signatures_build_status_comment_body "$github_issue_number") || return 0
+
+  if ! comments_json=$(codeberg_list_issue_comments "$token" "$owner" "$repo" "$cb_issue_num"); then
     echo "::warning::Could not mirror comment to ${SUBMISSION_EXTERNAL_REF} on Codeberg." >&2
+    return 0
+  fi
+  comment_id=$(codeberg_find_status_comment_id "$comments_json")
+
+  if [[ -n "$comment_id" ]]; then
+    if ! codeberg_edit_issue_comment "$token" "$owner" "$repo" "$comment_id" "$body"; then
+      echo "::warning::Could not mirror comment to ${SUBMISSION_EXTERNAL_REF} on Codeberg." >&2
+    fi
+  else
+    if ! codeberg_post_issue_comment "$token" "$owner" "$repo" "$cb_issue_num" "$body"; then
+      echo "::warning::Could not mirror comment to ${SUBMISSION_EXTERNAL_REF} on Codeberg." >&2
+    fi
   fi
 }
 
@@ -239,12 +422,8 @@ codeberg_set_issue_state() {
   payload_file=$(mktemp)
   jq -n --arg state "$state" '{state: $state}' > "$payload_file"
 
-  response=$(curl -sS -w '\n%{http_code}' -X PATCH \
-    -H "Authorization: token ${token}" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
-    "${api_base}/repos/${owner}/${repo}/issues/${issue_index}" \
-    --data-binary @"$payload_file")
+  response=$(codeberg_api_call "$token" PATCH \
+    "${api_base}/repos/${owner}/${repo}/issues/${issue_index}" "$payload_file")
   rm -f "$payload_file"
 
   http_code=$(printf '%s' "$response" | tail -n 1)
@@ -298,13 +477,14 @@ codeberg_fetch_label_id_map() {
   local owner="$2"
   local repo="$3"
   local api_base="${CODEBERG_API_BASE:-https://codeberg.org/api/v1}"
-  local page=1 limit=50 page_json count combined='[]'
+  local page=1 limit=50 response http_code page_json count combined='[]'
 
   while :; do
-    page_json=$(curl -sS \
-      -H "Authorization: token ${token}" \
-      -H "Accept: application/json" \
-      "${api_base}/repos/${owner}/${repo}/labels?limit=${limit}&page=${page}") || return 1
+    response=$(codeberg_api_call "$token" GET \
+      "${api_base}/repos/${owner}/${repo}/labels?limit=${limit}&page=${page}")
+    http_code=$(printf '%s' "$response" | tail -n 1)
+    page_json=$(printf '%s' "$response" | sed '$d')
+    [[ "$http_code" == "200" ]] || return 1
     jq -e 'type == "array"' >/dev/null 2>&1 <<< "$page_json" || return 1
     count=$(jq 'length' <<< "$page_json")
     (( count > 0 )) || break
@@ -335,12 +515,8 @@ codeberg_set_issue_labels() {
   payload_file=$(mktemp)
   jq -n --argjson labels "$ids" '{labels: $labels}' > "$payload_file"
 
-  response=$(curl -sS -w '\n%{http_code}' -X PUT \
-    -H "Authorization: token ${token}" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
-    "${api_base}/repos/${owner}/${repo}/issues/${issue_index}/labels" \
-    --data-binary @"$payload_file")
+  response=$(codeberg_api_call "$token" PUT \
+    "${api_base}/repos/${owner}/${repo}/issues/${issue_index}/labels" "$payload_file")
   rm -f "$payload_file"
 
   http_code=$(printf '%s' "$response" | tail -n 1)

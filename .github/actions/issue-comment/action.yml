@@ -62,7 +62,8 @@ runs:
           issue_body=$(gh issue view "$ISSUE_NUMBER" --repo "$GH_REPO" --json body -q .body)
         fi
 
+        # Mirror to the linked Codeberg issue as a single rolling comment (edited in place).
         signatures_mirror_issue_comment_to_codeberg \
           "$CODEBERG_TOKEN" \
-          "$issue_body" \
-          "$comment_body"
+          "$ISSUE_NUMBER" \
+          "$issue_body"

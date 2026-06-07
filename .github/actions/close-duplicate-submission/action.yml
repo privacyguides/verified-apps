@@ -57,9 +57,13 @@ runs:
         else
           close_comment="Duplicate of GH-${DUPLICATE_OF}."
           gh issue close "$NUMBER" --repo "$GH_REPO" --duplicate-of "$DUPLICATE_OF"
+          # --duplicate-of records a timeline reference but no comment; post one explicitly so
+          # the Codeberg mirror (derived from the issue's bot comments) reflects the closure.
+          gh issue comment "$NUMBER" --repo "$GH_REPO" --body "$close_comment"
         fi
 
+        # Mirror to the linked Codeberg issue as a single rolling comment (edited in place).
         signatures_mirror_issue_comment_to_codeberg \
           "$CODEBERG_TOKEN" \
-          "$issue_body" \
-          "$close_comment"
+          "$NUMBER" \
+          "$issue_body"
