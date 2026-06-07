@@ -1638,6 +1638,14 @@ packages:
             issue: GH-752
             apk:
               sha256: 6ebe5c150cadcc255e497af7fa162ca1d1930f4942ad60e8aea515314ed59d02
+  - package: com.fauxx.full
+    signature:
+      - fingerprint: 1B:E8:F7:9B:20:F2:64:E8:24:2D:A5:EC:A6:95:F8:D0:96:1A:D0:98:71:9A:7C:6E:4A:1F:F7:5A:33:AE:A2:76
+        sources:
+          - name: F-Droid
+            issue: GH-1203
+            apk:
+              sha256: 6ca1881877c8b2f68ed41ef82e479df058e28401c3403a71122bdece5825f335
   - package: com.ferrarid.converterpro
     signature:
       - fingerprint: A8:9D:74:3A:06:77:45:83:0D:8F:BE:C0:B9:49:02:1B:5E:5F:CC:0A:6B:EA:D3:2C:A7:A3:0E:0F:B6:2B:E9:EC
