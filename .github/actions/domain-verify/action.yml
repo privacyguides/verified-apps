@@ -12,19 +12,19 @@ outputs:
     description: "true when a verification record was located for the package's domain"
     value: ${{ steps.check.outputs.found }}
   method:
-    description: Method the record was found via (https or dns)
+    description: Method the authoritative record was found via (https or dns)
     value: ${{ steps.check.outputs.method }}
   domain:
-    description: Domain the record was found on
+    description: Domain the authoritative record was found on (most specific candidate with a record)
     value: ${{ steps.check.outputs.domain }}
   status:
-    description: Submitted key status against the record (allowed, revoked, or none)
+    description: Submitted key status against the authoritative record (allowed, revoked, or none)
     value: ${{ steps.check.outputs.status }}
   recordJson:
-    description: Normalized record JSON ({found, method, domain, source, allowed, revoked})
+    description: Normalized authoritative record JSON ({found, method, domain, source, allowed, revoked})
     value: ${{ steps.check.outputs.recordJson }}
   tableRow:
-    description: Markdown table row (| Source | Matches | Verification |) for the record
+    description: Markdown table row(s) (| Source | Matches | Verification |), one per record found; records on less specific domains are marked superseded
     value: ${{ steps.check.outputs.tableRow }}
   revokedWarning:
     description: Prominent caution block when the submitted key is revoked (empty otherwise)
@@ -74,16 +74,22 @@ runs:
           exit 0
         fi
 
-        rec=""
-        if ! rec=$(domain_find_record_for_package "$PACKAGE_NAME"); then
+        recs=""
+        if ! recs=$(domain_find_records_for_package "$PACKAGE_NAME"); then
           echo "No verification record found for any candidate domain of ${PACKAGE_NAME}."
           exit 0
         fi
 
+        # The most specific domain with a record is authoritative; any records found on
+        # less specific (parent) domains are shadowed and only reported in the table.
+        rec=$(jq -c '.[0]' <<< "$recs")
         method=$(jq -r '.method' <<< "$rec")
         domain=$(jq -r '.domain' <<< "$rec")
         status=$(domain_key_status "$rec" "$PACKAGE_SIGNATURE")
         echo "Found ${method} verification record on ${domain}; submitted key status: ${status}"
+        if [[ "$(jq 'length' <<< "$recs")" -gt 1 ]]; then
+          echo "Superseded records also found on: $(jq -r '.[1:] | map(.source) | join(", ")' <<< "$recs")"
+        fi
 
         dnssec=$(jq -r 'if .method == "dns" then (.dnssec | tostring) else "" end' <<< "$rec")
 
@@ -95,5 +101,5 @@ runs:
           echo "dnssec=${dnssec}"
         } >> "$GITHUB_OUTPUT"
         gha_write_multiline_output recordJson "$rec"
-        gha_write_multiline_output tableRow "$(domain_table_row "$rec" "$PACKAGE_SIGNATURE")"
+        gha_write_multiline_output tableRow "$(domain_table_rows "$recs" "$PACKAGE_SIGNATURE")"
         gha_write_multiline_output revokedWarning "$(domain_revoked_warning "$rec" "$PACKAGE_SIGNATURE")"

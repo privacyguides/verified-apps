@@ -278,14 +278,20 @@ domain_find_record_for_domain() {
   return 1
 }
 
-# Probe every candidate domain for a package, most specific first. Echoes the record JSON.
-domain_find_record_for_package() {
-  local pkg="$1" domain rec
+# Probe every candidate domain for a package, most specific first, collecting every
+# record found. Echoes a JSON array ordered most specific first; the FIRST element is
+# the authoritative record — a record on a more specific domain shadows its parents,
+# so later elements are reported in the summary table but never used for matching.
+# Returns 1 when no candidate domain has a record.
+domain_find_records_for_package() {
+  local pkg="$1" domain rec records="[]"
   while IFS= read -r domain; do
     [[ -z "$domain" ]] && continue
-    if rec=$(domain_find_record_for_domain "$domain"); then printf '%s' "$rec"; return 0; fi
+    rec=$(domain_find_record_for_domain "$domain") || continue
+    records=$(jq -c --argjson r "$rec" '. + [$r]' <<< "$records")
   done < <(domain_candidates_from_package "$pkg")
-  return 1
+  [[ "$(jq 'length' <<< "$records")" -gt 0 ]] || return 1
+  printf '%s' "$records"
 }
 
 # --- Key status / rendering ---------------------------------------------------
@@ -335,20 +341,64 @@ domain_method_display() {
   fi
 }
 
+# All key sets actually present in a record, as one <br>-joined HTML table cell.
+# Revoked sets are annotated so they can't be mistaken for allowed keys.
+_domain_record_keys_html() {
+  local rec="$1" out="" entry count i
+  count=$(jq '.allowed | length' <<< "$rec")
+  for ((i = 0; i < count; i++)); do
+    entry=$(jq -r ".allowed[$i]" <<< "$rec")
+    [[ -n "$out" ]] && out+="<br>"
+    out+="${entry//$'\n'/<br>}"
+  done
+  count=$(jq '.revoked // [] | length' <<< "$rec")
+  for ((i = 0; i < count; i++)); do
+    entry=$(jq -r ".revoked[$i]" <<< "$rec")
+    [[ -n "$out" ]] && out+="<br>"
+    out+="${entry//$'\n'/<br>} (revoked)"
+  done
+  printf '%s' "$out"
+}
+
 # A single markdown table row (| Source | Matches | Verification |) for a record + signature.
+# The Verification column lists where the record was actually found (the DNS name or
+# well-known URL, which may be on a more specific domain than the package's root) above
+# the keys it contains; the Matches column reports whether the submitted signature is
+# among them. An optional third argument overrides the Matches mark (used for records
+# shadowed by a more specific domain).
 domain_table_row() {
-  local rec="$1" sig="$2"
-  local domain status mark sig_html
+  local rec="$1" sig="$2" mark="${3:-}"
+  local domain source status
   domain=$(jq -r '.domain' <<< "$rec")
-  status=$(domain_key_status "$rec" "$sig")
-  case "$status" in
-    allowed) mark=":white_check_mark:" ;;
-    revoked) mark=":rotating_light: revoked" ;;
-    *) mark=":heavy_minus_sign:" ;;
-  esac
-  sig_html="${sig//$'\n'/<br>}"
-  printf '| Verified Domain (`%s` via %s) | %s | %s |\n' \
-    "$domain" "$(domain_method_display "$rec")" "$mark" "$sig_html"
+  source=$(jq -r '.source' <<< "$rec")
+  if [[ -z "$mark" ]]; then
+    status=$(domain_key_status "$rec" "$sig")
+    case "$status" in
+      allowed) mark=":white_check_mark:" ;;
+      revoked) mark=":rotating_light: revoked" ;;
+      *) mark=":x:" ;;
+    esac
+  fi
+  printf '| Verified Domain (`%s` via %s) | %s | `%s`<br>%s |\n' \
+    "$domain" "$(domain_method_display "$rec")" "$mark" "$source" "$(_domain_record_keys_html "$rec")"
+}
+
+# Markdown table rows for every record found for a package, most specific first. Only
+# the first record decides the Matches verdict; rows for records on less specific
+# domains are marked superseded, since a more specific record shadows them even when
+# they contain the submitted key.
+domain_table_rows() {
+  local records="$1" sig="$2"
+  local count i rec
+  count=$(jq 'length' <<< "$records")
+  for ((i = 0; i < count; i++)); do
+    rec=$(jq -c ".[$i]" <<< "$records")
+    if ((i == 0)); then
+      domain_table_row "$rec" "$sig"
+    else
+      domain_table_row "$rec" "$sig" ":heavy_minus_sign: superseded"
+    fi
+  done
 }
 
 # Prominent revoked warning (empty output when the key is not revoked).
