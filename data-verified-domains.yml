@@ -2,14 +2,22 @@ schema: 1
 domains:
   - domain: appverifier.roundsalmon4.com
     method: dns
-    issue: 
+    issue:
       - GH-1333
     checked: "2026-06-05T22:42:34Z"
     allowed:
       - 1E:76:F1:A1:5C:BE:20:1F:0F:E2:6A:F2:7A:12:D9:1D:0D:34:81:FE:7D:CC:7D:89:E9:D2:05:69:30:F6:D5:A9
+  - domain: play.verifiedapps.privacyguides.org
+    method: dns
+    issue:
+      - GH-1627
+    checked: "2026-06-13T00:59:10Z"
+    allowed:
+      - E8:58:37:5B:7C:45:CF:C1:D4:E4:F5:1B:4A:D6:59:73:5B:38:2C:82:4F:E2:24:48:36:A8:14:AD:7A:F3:00:61
+    dnssec: true
   - domain: privacyguides.org
     method: dns
-    issue: 
+    issue:
       - GH-1321
       - GH-1329
     checked: "2026-06-05T22:21:57Z"

@@ -7120,6 +7120,12 @@ packages:
               repo: https://privacyguides.github.io/fdroid/repo/
           - name: Verified Domain
             issue: GH-1329
+  - package: org.privacyguides.verifiedapps.play
+    signature:
+      - fingerprint: E8:58:37:5B:7C:45:CF:C1:D4:E4:F5:1B:4A:D6:59:73:5B:38:2C:82:4F:E2:24:48:36:A8:14:AD:7A:F3:00:61
+        sources:
+          - name: Verified Domain
+            issue: GH-1627
   - package: org.proninyaroslav.libretorrent
     signature:
       - fingerprint: 1A:96:ED:44:27:98:2C:52:E0:67:09:C9:41:A8:F3:9B:2A:BA:68:BC:CA:E8:6B:6C:86:F9:F0:30:BD:95:99:EA
