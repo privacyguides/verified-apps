@@ -7,6 +7,14 @@ domains:
     checked: "2026-06-05T22:42:34Z"
     allowed:
       - 1E:76:F1:A1:5C:BE:20:1F:0F:E2:6A:F2:7A:12:D9:1D:0D:34:81:FE:7D:CC:7D:89:E9:D2:05:69:30:F6:D5:A9
+  - domain: magicgrants.org
+    method: dns
+    issue:
+      - GH-1791
+    checked: "2026-06-15T02:36:34Z"
+    allowed:
+      - 15:FA:52:78:85:F7:04:21:10:30:4D:1A:F0:08:81:07:27:09:BD:38:E9:84:2C:AF:9C:D8:9E:08:06:1C:5E:52
+    dnssec: true
   - domain: play.verifiedapps.privacyguides.org
     method: dns
     issue:
