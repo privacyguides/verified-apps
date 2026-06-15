@@ -6648,6 +6648,8 @@ packages:
             apk:
               sha256: 4a23949039d93617df1219a5f0f61b88a22c3c388ac54999e893eb30b39ddb30
               link: https://github.com/MAGICGrants/skylight-wallet/releases/download/v1.0.10/skylight-wallet-v1.0.10-x86_64.apk
+          - name: Verified Domain
+            issue: GH-1791
   - package: org.moire.opensudoku
     signature:
       - fingerprint: A5:4C:E2:9E:BB:02:FC:B9:B4:78:62:05:72:F7:C4:DD:39:B9:03:73:6F:E6:19:96:87:47:1B:A7:29:F4:61:3A
