@@ -670,6 +670,14 @@ packages:
             issue: GH-975
             apk:
               sha256: d32d9da15d88abfc1b9fd69a172e9342807e53c31ae77673acf4536cc99921bf
+  - package: com.android.chrome
+    signature:
+      - fingerprint: F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
+        sources:
+          - name: Google Play
+            issue: GH-1814
+            apk:
+              sha256: a518e903106aca3c6044883a37ab03387dbc62b5e7990f9140f69a8b0b5e62ca
   - package: com.aniplex.fategrandorder.en
     signature:
       - fingerprint: CF:E4:13:B1:07:55:61:DD:F4:24:0C:5B:B4:0C:F9:4C:39:7C:AC:F5:7A:2B:DF:07:21:51:65:DD:41:D5:D6:84
@@ -1541,14 +1549,6 @@ packages:
             issue: GH-913
             apk:
               sha256: 37590c7d88a2d8c3a8900307dbcf98c010f0cba69b806b1753f39e0577491275
-  - package: com.fingersoft.hillclimb
-    signature:
-      - fingerprint: AA:16:9A:97:53:E2:FF:66:76:AC:26:E4:AF:35:73:FB:38:7F:05:C6:6D:E8:0D:C3:52:CE:33:24:BD:9A:B0:8F
-        sources:
-          - name: Google Play
-            issue: GH-1820
-            apk:
-              sha256: 6dbc5d041b9261e7587e0e2716bbf57522a023d4f6fc393fa9bdc2dc544664c4
   - package: com.finnair
     signature:
       - fingerprint: 63:4A:9A:6A:A1:79:F2:8F:23:06:ED:00:14:FB:28:33:CE:A0:2E:2F:47:3D:4B:7B:19:A5:39:39:D6:63:17:00
@@ -6390,6 +6390,22 @@ packages:
             issue: GH-180
             apk:
               sha256: 3f5074b61c35e344b68c6f5ad014891da58d3eca9a541bb382de5f80de6c3577
+  - package: org.fossify.notes
+    signature:
+      - fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
+        sources:
+          - name: F-Droid
+            issue: CB-19
+            apk:
+              sha256: 5a56e0e39cc488e1f3b947d3801006d3b7450ec73c67f03195c64c5fd3b6bced
+          - name: F-Droid (IzzyOnDroid)
+            issue: CB-19
+            apk:
+              sha256: 5a56e0e39cc488e1f3b947d3801006d3b7450ec73c67f03195c64c5fd3b6bced
+          - name: Google Play
+            issue: CB-19
+            apk:
+              sha256: 01dcc7afab13c02e5beafb548ad0c7d2e0f9c91df6be1b05c6acc45d3f644315
   - package: org.fossify.phone
     signature:
       - fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
