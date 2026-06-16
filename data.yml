@@ -702,6 +702,14 @@ packages:
             issue: GH-975
             apk:
               sha256: d32d9da15d88abfc1b9fd69a172e9342807e53c31ae77673acf4536cc99921bf
+  - package: com.android.chrome
+    signature:
+      - fingerprint: F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
+        sources:
+          - name: Google Play
+            issue: GH-1814
+            apk:
+              sha256: a518e903106aca3c6044883a37ab03387dbc62b5e7990f9140f69a8b0b5e62ca
   - package: com.aniplex.fategrandorder.en
     signature:
       - fingerprint: CF:E4:13:B1:07:55:61:DD:F4:24:0C:5B:B4:0C:F9:4C:39:7C:AC:F5:7A:2B:DF:07:21:51:65:DD:41:D5:D6:84
