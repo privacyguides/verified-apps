@@ -1676,6 +1676,14 @@ packages:
             issue: GH-913
             apk:
               sha256: 37590c7d88a2d8c3a8900307dbcf98c010f0cba69b806b1753f39e0577491275
+      - fingerprint: |-
+          45:49:19:9D:C9:17:A0:15:78:8B:28:AE:B6:FE:84:AA:2E:0F:50:AA:1C:37:47:45:F5:AA:05:B0:9A:2E:CA:48
+          90:7B:9D:47:C4:3B:33:1E:ED:B5:D1:5C:04:FC:CA:6B:8D:2B:AA:D3:AA:E4:00:AE:C3:4E:B2:71:A0:67:32:97
+        sources:
+          - name: Google Play
+            issue: GH-1668
+            apk:
+              sha256: 2f18db74a05ad29455ebfe7161228dd0bb50f66b00d0048563b7bbd410aecb13
   - package: com.fingersoft.hillclimb
     signature:
       - fingerprint: AA:16:9A:97:53:E2:FF:66:76:AC:26:E4:AF:35:73:FB:38:7F:05:C6:6D:E8:0D:C3:52:CE:33:24:BD:9A:B0:8F
