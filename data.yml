@@ -2331,6 +2331,14 @@ packages:
             issue: GH-963
             apk:
               sha256: e4058b4aadebda0ca9a192cea3a5383effd4755336ccc8a7d48ba6a42b7c4936
+  - package: com.guavahealth.app
+    signature:
+      - fingerprint: C2:9F:44:0D:6B:32:FF:86:4D:27:4F:D3:A2:CC:AE:F8:38:53:48:4B:E9:A1:05:A5:57:3B:99:4A:F4:6D:D0:E5
+        sources:
+          - name: Google Play
+            issue: GH-1828
+            apk:
+              sha256: 8f32e518459d974b3c31860c60baf83b92e7bef1ff17d9e16c5be621ff848664
   - package: com.hassaneltantawy.hisnelmoslem
     signature:
       - fingerprint: C4:65:5F:DE:AC:77:E5:10:E7:1E:73:8D:23:B8:E2:32:21:CF:6B:BA:C8:D8:95:88:C8:55:65:A6:F0:B1:59:38
