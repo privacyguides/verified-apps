@@ -3351,6 +3351,14 @@ packages:
             issue: GH-199
             apk:
               sha256: 82b3f50dde94ed9cf4cc3183fa72b53261154637538c01f935f03c6baec34f9f
+  - package: com.pittvandewitt.wavelet
+    signature:
+      - fingerprint: 68:92:26:16:82:81:AB:24:22:C9:EB:50:6C:BD:2C:3A:6C:3A:9A:5F:51:AE:C1:23:C9:41:93:D1:C5:87:E0:49
+        sources:
+          - name: Google Play
+            issue: CB-30
+            apk:
+              sha256: 3b43b82fb9a3601186736148fc362aba9cc4ac1787246097ef4a0074a3b8dcec
   - package: com.planetfitness
     signature:
       - fingerprint: 2C:87:7B:4C:C0:43:2E:E6:F3:DD:66:53:55:D7:53:4B:B6:BA:A6:56:75:C7:ED:B2:8C:8E:E8:51:9A:CB:5C:90
