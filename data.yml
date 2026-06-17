@@ -4763,6 +4763,14 @@ packages:
             issue: GH-842
             apk:
               sha256: 1bef8f7b7d9c1b4c4a287c7628721c1f8999e5e02a4d154fd625671aa64f6756
+  - package: com.vrem.wifianalyzer
+    signature:
+      - fingerprint: 17:EA:63:A0:60:1C:E9:E2:46:F4:25:58:0D:81:2E:7F:5D:41:5B:76:85:D4:97:10:3B:B3:82:AF:52:D3:5D:59
+        sources:
+          - name: Google Play
+            issue: GH-1616
+            apk:
+              sha256: 54a41f8df49aea21d37981c06c6e432780a90d87dca5abc33f77b1697014effa
   - package: com.vzw.hss.myverizon
     signature:
       - fingerprint: AE:23:A0:34:36:DF:07:B0:CD:70:FE:88:1C:DA:2E:C1:D2:12:15:D7:B7:B0:CC:68:E6:7B:67:F5:DF:89:52:6A
