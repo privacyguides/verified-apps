@@ -4899,6 +4899,8 @@ packages:
             issue: GH-1332
             apk:
               sha256: df7d2850680035f84b7fdbcb5518837605e5e991af7cfd5cef3639a03c8e1f08
+          - name: HTTPS Verified Domain
+            issue: GH-1456
   - package: com.wbd.stream
     signature:
       - fingerprint: 61:9C:BB:02:7B:71:55:60:B8:43:D1:5A:55:99:F9:00:48:5A:F1:CD:42:94:09:78:11:A7:76:09:BC:82:73:A8
