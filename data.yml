@@ -3073,6 +3073,14 @@ packages:
             issue: GH-587
             apk:
               sha256: 6a8b9a5a4ee709975f0936eff9a1936c07a40ecf6cfbc29b404a7396e5c245fc
+  - package: com.mm.android.DMSS
+    signature:
+      - fingerprint: 7A:7D:89:BC:2C:DA:B8:23:0F:A3:DC:5C:9D:1F:AA:F0:01:4A:F8:64:D5:75:ED:7A:FF:77:4C:71:78:89:9E:AF
+        sources:
+          - name: Google Play
+            issue: GH-1425
+            apk:
+              sha256: d518ce166e638dcd416c185699734c149ec1d867ed129dbdbd2c88d376219a49
   - package: com.mobillium.airalo
     signature:
       - fingerprint: 03:61:DD:85:0D:D3:AB:65:D9:2D:F4:18:9A:26:41:3D:A5:3A:FF:AA:31:8F:7D:AD:91:47:94:AD:A2:C9:B4:09
