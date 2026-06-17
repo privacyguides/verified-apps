@@ -5119,6 +5119,14 @@ packages:
             issue: GH-195
             apk:
               sha256: 575aac457e2229c782c13aebffe64c4ffe6eca0e4459155baaa86b8bf94ea21d
+  - package: flar2.devcheck
+    signature:
+      - fingerprint: F8:16:AA:5F:F7:22:63:D1:A9:A6:AF:B8:1E:4C:25:E7:2F:BF:90:02:44:4F:80:A6:E0:43:F0:80:C7:01:09:90
+        sources:
+          - name: Google Play
+            issue: GH-1638
+            apk:
+              sha256: 750db1171194ba11fbc1260c6380ddc045eceeee62321a4d5bd170650e071a32
   - package: flipboard.app
     signature:
       - fingerprint: A6:78:5F:A9:B3:DA:2A:1D:A4:AC:1A:6F:70:65:60:46:DD:7C:DD:A0:A4:42:E9:F1:B5:0D:97:07:69:05:FC:A5
@@ -6132,14 +6140,6 @@ packages:
             apk:
               sha256: 504eb88c5a90031dcb146e24390aafea0685e9678165dc7cf70e369a9409e004
               link: https://f-droid.org/repo/nodomain.freeyourgadget.gadgetbridge_248_01cce93.apk
-  - package: nz.eloque.foss_wallet
-    signature:
-      - fingerprint: CE:3C:E7:92:A7:65:42:7E:E0:6A:D6:BC:33:28:75:E5:0D:32:E2:26:A5:79:14:75:76:1D:D3:86:C7:F3:47:5D
-        sources:
-          - name: Google Play
-            issue: GH-1639
-            apk:
-              sha256: 46da4b9e2a4b9c791b9d20f33c45f45a76049703b71ef4579254a124e4da226c
   - package: org.andbible.andbible
     signature:
       - fingerprint: 8B:F5:16:8A:01:94:4D:62:A4:A4:C7:B6:52:F4:73:81:84:00:0D:57:A4:8C:52:89:5A:C6:CB:83:1C:48:CF:30
