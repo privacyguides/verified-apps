@@ -1174,6 +1174,16 @@ packages:
             issue: GH-663
             apk:
               sha256: ba08ed98d29950385208442d0ce3cbe06065ade155703f6df1065db44fdb32a1
+  - package: com.citymapper.app.release
+    signature:
+      - fingerprint: BE:8A:28:01:CA:E3:F4:4B:49:1A:8E:CC:A2:8C:3A:C2:23:B3:BD:57:10:9A:71:A5:F2:0B:45:A6:96:D1:7E:5D
+        sources:
+          - name: Google Play
+            issue: GH-1885
+            apk:
+              sha256: c179d234cf9d622551085557777c7feaff369ee45d6ab2751dde88ec2c9ebd93
+          - name: HTTPS Verified Domain
+            issue: GH-1885
   - package: com.cloudflare.onedotonedotonedotone
     signature:
       - fingerprint: 27:3A:3A:5E:09:DC:72:0D:3B:39:45:16:2E:72:4D:9A:69:B2:1F:C5:42:BE:D7:45:7F:11:59:66:B1:45:E8:BC
@@ -4392,14 +4402,6 @@ packages:
             issue: GH-690
             apk:
               sha256: a45ec003660f4fa9b20bd992359c83f63fcff504767ff670264a2acc867c5c5c
-  - package: com.xodo.pdf.reader
-    signature:
-      - fingerprint: 4B:64:FF:7B:9E:AB:D6:88:75:43:09:E1:91:67:B3:DB:49:CD:32:75:77:F3:70:81:C9:BC:BF:19:DE:AB:10:A3
-        sources:
-          - name: Google Play
-            issue: GH-1458
-            apk:
-              sha256: 31b0244482807005e4f818e5f0dcdace7e234eebb34a9f65f9253954f1418339
   - package: com.xtreak.notificationdictionary
     signature:
       - fingerprint: B2:9E:63:84:95:FD:F5:82:E6:86:83:56:4C:C3:DE:F7:9A:D9:09:18:EB:80:79:94:4D:54:70:BA:3F:F9:5B:A9
