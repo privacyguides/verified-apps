@@ -3547,6 +3547,14 @@ packages:
             issue: GH-674
             apk:
               sha256: ec0bde236aac9e5e2eb95c46ea805966ace8ecd6bf49fffa85e00ce03ec60251
+  - package: com.riotgames.league.wildrift
+    signature:
+      - fingerprint: 93:1D:96:95:02:F3:DE:01:A4:C2:39:E4:19:92:11:EB:DC:57:BB:9A:75:26:39:4B:9E:3E:2D:1C:C0:79:FF:0C
+        sources:
+          - name: Google Play
+            issue: GH-1837
+            apk:
+              sha256: 41b12a3eacdf7bff6b6d6f4372bc6f4ba3392599c6832f874edd6eb93708fef9
   - package: com.riteshsahu.SMSBackupRestore
     signature:
       - fingerprint: F4:47:DC:11:66:22:7B:E1:BC:E3:44:1F:38:D8:CD:FA:79:9A:4F:7D:14:58:DA:15:AE:33:C3:F7:7C:38:ED:0A
