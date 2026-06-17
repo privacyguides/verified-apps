@@ -1136,6 +1136,14 @@ packages:
             issue: GH-329
             apk:
               sha256: a8109deeef0bd2a4999d4379c3273bb2b3a8b07cb7ccca4c387b56dce8b2a211
+  - package: com.brother.printservice
+    signature:
+      - fingerprint: 3B:53:F5:3B:91:B5:D0:53:5A:A3:D6:A6:5B:C1:42:69:86:52:2A:C9:DE:28:D8:71:57:2D:D5:11:7F:7D:4D:14
+        sources:
+          - name: Google Play
+            issue: GH-1415
+            apk:
+              sha256: 30892c174b1e554a3e16542c7adcce8056b5b1ee87edc7de6530015f655e82f8
   - package: com.brouken.player
     signature:
       - fingerprint: 3C:B9:7D:BA:57:D3:D0:BC:19:0B:AE:5F:1F:3A:84:16:43:BC:D9:39:9B:C3:10:28:CE:25:77:5D:93:D0:10:9D
