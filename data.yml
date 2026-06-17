@@ -2630,6 +2630,14 @@ packages:
             issue: CB-86
             apk:
               sha256: 3e8fcc49a80d4c30ab6f6037e51402c77e2694d27ec19ae5b8a93cd08b6caffa
+  - package: com.kgurgul.cpuinfo
+    signature:
+      - fingerprint: AF:24:23:BE:B5:89:E5:5F:DF:95:1F:DE:2F:23:ED:AA:78:5F:57:C7:14:76:4A:FB:BD:D1:5A:85:F1:AE:D3:3C
+        sources:
+          - name: Google Play
+            issue: GH-1421
+            apk:
+              sha256: 2732b960f86df985b2a99d6cc1a03fdb71cf58e153f5774af48937c96f665cf8
   - package: com.kin.easynotes
     signature:
       - fingerprint: FC:E8:7D:A9:7F:79:13:01:DF:39:0B:FA:47:E8:16:85:19:11:67:CA:B5:DB:D5:55:DB:82:87:54:1F:78:6E:28
