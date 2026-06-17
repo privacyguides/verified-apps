@@ -3491,6 +3491,14 @@ packages:
             issue: GH-1186
             apk:
               sha256: 5a4ac7bb526e5e03e09666dae35191086048c7609e786a5bcd4851688b91c67b
+  - package: com.overlook.android.fing
+    signature:
+      - fingerprint: 93:77:50:E2:32:9D:AE:F6:91:DB:2F:C5:C4:F8:E5:01:27:45:4E:60:07:3A:8F:22:CF:D9:4E:03:8F:B7:FA:4A
+        sources:
+          - name: Google Play
+            issue: GH-1432
+            apk:
+              sha256: 92b2bc5c7e1c1f6b82ed5f5cb5040de099e6df7bf8a08dc8e9357240e8803c09
   - package: com.pal.dx
     signature:
       - fingerprint: AC:D4:71:6B:03:0B:7F:EB:E6:E1:83:01:18:7B:62:5C:9C:CC:86:66:07:5A:E7:0B:21:98:B7:DC:42:83:86:A7
