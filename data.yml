@@ -214,14 +214,6 @@ packages:
             apk:
               sha256: fc1f32cef8107c7de2508b5801d486b08bcd569fa1588e08c31668a90856d73f
               link: https://github.com/upryzing/clerotri/releases/download/v0.14.1/Clerotri-v0.14.1-arm64-v8a.apk
-  - package: appinventor.ai_ondraaudy.ADSBFT
-    signature:
-      - fingerprint: AA:66:5C:0F:41:D2:86:F8:08:23:17:4C:DB:3C:EE:F4:12:D7:20:B5:B2:31:8C:A7:46:FB:BF:08:EF:65:93:28
-        sources:
-          - name: Google Play
-            issue: GH-1761
-            apk:
-              sha256: d4cbc6719a11e322f8fb1e24bc0c0d3fd8fc82c0be39eb4b76a59dbfb02c4646
   - package: at.bitfire.davdroid
     signature:
       - fingerprint: 8B:48:E6:76:A6:86:49:67:79:17:83:C1:D8:D0:FC:0D:D6:D2:CE:33:E1:FB:36:78:77:93:EC:D0:86:D4:47:07
@@ -5116,6 +5108,18 @@ packages:
             issue: GH-615
             apk:
               sha256: a2fe8b7c713fc7ff62d248b2d8608299a0eeaa2fa030e2c6bfb12c6f5d229928
+  - package: exa.lnx.a
+    signature:
+      - fingerprint: 50:7C:1F:58:38:AD:8D:90:B7:75:E3:DE:31:21:42:C3:8A:63:BF:BB:67:E8:D9:C4:CA:86:1C:67:0E:13:98:49
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1730
+            apk:
+              sha256: 137cd14897f7a75da5201cc417456bdb9c277a5e58bfa2a1d79947497866f9e6
+          - name: Google Play
+            issue: GH-1730
+            apk:
+              sha256: ba3739e348d1ddcc28dec583ded5ffff1f6740af9322a903c5c049d2a9232811
   - package: fe.linksheet.nightly
     signature:
       - fingerprint: 3F:CF:76:75:BC:90:E2:39:89:2C:72:62:49:9D:CC:9F:8C:E6:A5:2B:7E:58:D0:2B:56:AA:60:CA:66:9D:67:01
