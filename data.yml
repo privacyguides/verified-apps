@@ -7464,6 +7464,14 @@ packages:
             issue: CB-51
             apk:
               sha256: 1651df0d655e26dc19bcbf2ed09424976f5c0bb9bcef28fb1d352b3eea379667
+  - package: org.jw.jwlibrary.mobile
+    signature:
+      - fingerprint: 7E:A7:4C:8E:1E:69:F2:35:D6:0A:23:F2:91:7A:4E:C1:9A:0D:1C:BC:73:EB:E4:67:0C:2C:E1:BA:E1:01:4E:5D
+        sources:
+          - name: Google Play
+            issue: CB-112
+            apk:
+              sha256: d9e751c23b6b37d6d0e6a04cb13dd734995f8724f89ccaee507d039d14059338
   - package: org.kde.kdeconnect_tp
     signature:
       - fingerprint: 25:32:94:C6:84:D4:C2:31:C4:5A:2B:92:11:DF:AA:01:10:45:62:73:8B:62:A0:9D:BF:B7:14:50:B8:A6:66:F4
