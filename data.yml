@@ -266,16 +266,6 @@ packages:
             issue: CB-46
             apk:
               sha256: ef0f40be1b947752e8441fe106ecb15e3705ab5aa52a9726c5e9a04a3a499038
-  - package: cc.dict.dictcc
-    signature:
-      - fingerprint: 85:32:C2:A9:14:09:8F:33:A1:F6:FF:10:0D:E7:8E:06:2A:84:59:44:B5:5F:16:96:B8:9E:21:4F:95:15:EF:90
-        sources:
-          - name: Google Play
-            issue: GH-1498
-            apk:
-              sha256: 1730236a2f8e31fadad249347f232da01e85eae6d727dc5acd1dd1f9ec548193
-          - name: HTTPS Verified Domain
-            issue: GH-1498
   - package: cc.narumi.chaldea
     signature:
       - fingerprint: 32:3A:BD:30:AE:C1:C0:15:EF:AF:AA:3C:B1:49:DF:74:26:57:86:30:1B:D6:A9:D9:8A:40:62:A7:A5:A6:1E:99
@@ -1631,6 +1621,14 @@ packages:
             issue: GH-983
             apk:
               sha256: 3e7e5786399373552fc3e1b0284b1c6ee772bd564ff47b6b2f64306d15d70856
+  - package: com.floraincognita.app.floraincognita
+    signature:
+      - fingerprint: F4:CA:67:14:53:F3:F2:A2:7E:41:1E:A1:15:08:AC:3F:BB:C7:EA:E0:68:B4:10:D3:64:B2:D9:DD:AD:89:F8:BC
+        sources:
+          - name: Google Play
+            issue: GH-1543
+            apk:
+              sha256: e2a052195e18b0c58722ca3a9615c6ee78bd43b231e1b169f5be3d0f02f9f86c
   - package: com.flyersoft.moonreader
     signature:
       - fingerprint: 5A:C6:46:EB:C6:80:17:E4:CC:58:2B:11:B1:C2:AE:5D:29:B1:5D:9B:0A:C3:A5:4F:C6:09:72:41:7B:41:C9:AD
@@ -2556,14 +2554,6 @@ packages:
             apk:
               sha256: 3c67b3d0385887bde72530484927913b8a71bacfd31a35ab6cbfbfdb56ab71e8
               link: https://github.com/logseq/logseq/releases/download/0.10.15/Logseq-android-0.10.15.apk
-  - package: com.lonelycatgames.Xplore
-    signature:
-      - fingerprint: D4:6C:D5:FA:44:AE:52:14:13:46:DA:0E:2C:21:D0:CE:A7:C6:E0:58:7B:1E:E5:AD:12:1D:90:90:31:EF:EC:57
-        sources:
-          - name: Google Play
-            issue: GH-1457
-            apk:
-              sha256: fe6fcf912f5480cda0078c1f11aa898a0733e3f6c0e3897f7964793655c0a85c
   - package: com.looker.droidify
     signature:
       - fingerprint: B4:F1:C8:A8:1E:4B:9F:6E:02:63:8E:93:BE:AD:56:65:65:02:C2:1F:B9:5C:8D:3E:C9:3D:0C:DD:1F:6E:0D:3F
@@ -4265,6 +4255,16 @@ packages:
             issue: GH-843
             apk:
               sha256: 26d26764682f361fade5e73087fe40acd0ba40ef0260627fb47bcd1674b99e0f
+  - package: com.waze
+    signature:
+      - fingerprint: 03:63:7F:6C:5D:8F:60:4E:6F:DB:79:A6:FF:BF:A5:78:DE:4E:31:8F:8D:A2:2F:C6:10:66:65:24:7F:88:07:D7
+        sources:
+          - name: Google Play
+            issue: GH-1456
+            apk:
+              sha256: df7d2850680035f84b7fdbcb5518837605e5e991af7cfd5cef3639a03c8e1f08
+          - name: HTTPS Verified Domain
+            issue: GH-1456
   - package: com.wbd.stream
     signature:
       - fingerprint: 61:9C:BB:02:7B:71:55:60:B8:43:D1:5A:55:99:F9:00:48:5A:F1:CD:42:94:09:78:11:A7:76:09:BC:82:73:A8
@@ -5293,6 +5293,14 @@ packages:
             issue: GH-81
             apk:
               sha256: fd2b4c974deddd9b89d9693764e6962cd89d3f676cceb8e0ac97c4049b5f1b86
+  - package: io.anuke.mindustry
+    signature:
+      - fingerprint: 87:E2:CB:A3:85:05:2D:3F:71:46:B0:91:A9:BA:B1:47:7D:4A:2A:57:BF:CE:E4:CC:B9:2C:A9:9B:6D:03:2B:F3
+        sources:
+          - name: Google Play
+            issue: GH-1887
+            apk:
+              sha256: cd82516f5d7fec0a433eabc961691f9ac04686d0b894d65f95bdf1219c1b4eee
   - package: io.anytype.app
     signature:
       - fingerprint: 89:0B:65:C4:06:E8:CF:2F:73:F6:D0:BF:D1:D2:97:83:B8:C1:4D:26:1A:92:A3:5F:34:2B:08:65:26:D7:E3:DB
@@ -7008,14 +7016,6 @@ packages:
             issue: GH-886
             apk:
               sha256: f88374b9113aa9ddba865258bd989eb3ac2ca1577d92e59d6e84228e080674ce
-      - fingerprint: |-
-          59:AA:11:A4:BF:97:58:34:FF:06:2D:40:8F:EE:25:23:C2:26:0C:BB:2C:C8:C0:1F:CD:A0:3E:AD:21:8A:90:7D
-          81:EA:CA:46:84:F2:73:D8:97:E9:6E:6E:89:4A:B7:73:46:8C:FA:B0:0A:25:AA:0A:2C:AF:0E:5F:01:D5:A5:00
-        sources:
-          - name: Google Play
-            issue: GH-1511
-            apk:
-              sha256: 140d70c8432c55f18c7cfefc8df8ae8cfc85d4f72dccff52d1ea1d2fd09c0654
   - package: org.tasks
     signature:
       - fingerprint: 9F:78:EE:B2:7C:90:2A:98:1B:3B:FB:51:F6:FE:78:90:49:A0:0C:C1:AA:F0:83:B4:ED:16:B9:85:4B:3D:28:83
