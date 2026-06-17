@@ -776,6 +776,12 @@ packages:
             issue: GH-623
             apk:
               sha256: 41fee742fadfbeeb6e8da08a3429fc53b75f1687e3eeac22a937a580671d1a61
+      - fingerprint: EF:BD:77:48:0A:60:88:48:99:30:88:75:35:CC:6F:B2:78:94:35:80:2F:95:49:46:9B:AE:3A:24:F8:B8:DD:F7
+        sources:
+          - name: Google Play
+            issue: GH-1473
+            apk:
+              sha256: 29dca0029a6b2790c170ba6cb16d9968f1b1bc92c8d78c7dda166e3800f36728
   - package: com.aurora.authenticator
     signature:
       - fingerprint: 4C:62:61:57:AD:02:BD:A3:40:1A:72:63:55:5F:68:A7:96:63:FC:3E:13:A4:D4:36:9A:12:57:09:41:AA:28:0F
@@ -1174,16 +1180,6 @@ packages:
             issue: GH-663
             apk:
               sha256: ba08ed98d29950385208442d0ce3cbe06065ade155703f6df1065db44fdb32a1
-  - package: com.citymapper.app.release
-    signature:
-      - fingerprint: BE:8A:28:01:CA:E3:F4:4B:49:1A:8E:CC:A2:8C:3A:C2:23:B3:BD:57:10:9A:71:A5:F2:0B:45:A6:96:D1:7E:5D
-        sources:
-          - name: Google Play
-            issue: GH-1885
-            apk:
-              sha256: c179d234cf9d622551085557777c7feaff369ee45d6ab2751dde88ec2c9ebd93
-          - name: HTTPS Verified Domain
-            issue: GH-1885
   - package: com.cloudflare.onedotonedotonedotone
     signature:
       - fingerprint: 27:3A:3A:5E:09:DC:72:0D:3B:39:45:16:2E:72:4D:9A:69:B2:1F:C5:42:BE:D7:45:7F:11:59:66:B1:45:E8:BC
