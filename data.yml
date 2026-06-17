@@ -3809,6 +3809,14 @@ packages:
             issue: GH-989
             apk:
               sha256: 1e166381f60601081c57eddca017e0c6aceea2d09b01e14dcd4883b0dbc67e0a
+  - package: com.rode.rodecentralmobile
+    signature:
+      - fingerprint: 80:76:3F:94:79:A1:2F:8F:DB:D7:9C:D0:48:F5:22:58:8C:1C:2A:39:8D:DF:A0:33:04:D4:7C:B5:28:F8:95:B1
+        sources:
+          - name: Google Play
+            issue: GH-1592
+            apk:
+              sha256: 365c41eac2c9c93316cad77a647d868cabb7f10374cb779ddd4851e00ebdfec8
   - package: com.rode.rodereporter
     signature:
       - fingerprint: 31:41:14:CD:4A:A6:3D:69:58:7B:B9:5B:69:CB:1A:AC:D4:24:7E:70:41:BE:86:5A:7F:D7:4A:E8:DA:C4:8A:4E
