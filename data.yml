@@ -755,14 +755,6 @@ packages:
             issue: GH-1129
             apk:
               sha256: 020f9e2cb13c1321bf99663fe6b5418049fcc1a9819f7c8f8424e72761598655
-  - package: com.astrapaging.vff
-    signature:
-      - fingerprint: D2:4B:40:DE:53:0C:D6:22:A6:04:74:0C:9D:D0:36:47:5E:E6:AC:FB:32:6D:29:E3:4A:06:AD:CD:1F:6C:6A:1F
-        sources:
-          - name: Google Play
-            issue: GH-1454
-            apk:
-              sha256: d846f31f74c5816ba32a69d7f9cb8b0f77f0755a0cac39c7a7c5d6faea28b904
   - package: com.audiobookshelf.app
     signature:
       - fingerprint: 36:48:29:26:56:96:6C:63:D1:B5:7D:93:EA:00:E3:5C:7D:97:51:1E:1F:5B:06:78:A7:17:DA:E7:73:79:39:56
@@ -1686,6 +1678,14 @@ packages:
             issue: GH-1434
             apk:
               sha256: 043d7cbcc85c6828e6c8ce26d58c838c9c5b7364bb6f3b40e2ac053ca6548707
+  - package: com.fronius.solarweb
+    signature:
+      - fingerprint: 5A:6A:DE:A2:F3:F8:49:65:8E:8D:3E:8B:05:4A:75:A4:86:D7:5B:E6:1A:BC:B7:60:8B:09:4B:62:DA:85:51:3E
+        sources:
+          - name: Google Play
+            issue: GH-1449
+            apk:
+              sha256: c538680e2102486747f5d03e929f0cd4bd566df21ba717e05d86215b4334992a
   - package: com.fsck.k9
     signature:
       - fingerprint: 55:C8:A5:23:B9:73:35:F5:BF:60:DF:E8:A9:F3:E1:DD:E7:44:51:6D:93:57:E8:0A:92:5B:7B:22:E4:F5:55:24
@@ -2546,6 +2546,14 @@ packages:
             apk:
               sha256: 3c67b3d0385887bde72530484927913b8a71bacfd31a35ab6cbfbfdb56ab71e8
               link: https://github.com/logseq/logseq/releases/download/0.10.15/Logseq-android-0.10.15.apk
+  - package: com.lonelycatgames.Xplore
+    signature:
+      - fingerprint: D4:6C:D5:FA:44:AE:52:14:13:46:DA:0E:2C:21:D0:CE:A7:C6:E0:58:7B:1E:E5:AD:12:1D:90:90:31:EF:EC:57
+        sources:
+          - name: Google Play
+            issue: GH-1457
+            apk:
+              sha256: fe6fcf912f5480cda0078c1f11aa898a0733e3f6c0e3897f7964793655c0a85c
   - package: com.looker.droidify
     signature:
       - fingerprint: B4:F1:C8:A8:1E:4B:9F:6E:02:63:8E:93:BE:AD:56:65:65:02:C2:1F:B9:5C:8D:3E:C9:3D:0C:DD:1F:6E:0D:3F
@@ -4028,14 +4036,6 @@ packages:
             issue: GH-343
             apk:
               sha256: 31a6dafe9180c09d1078d693104f21ee3e1f8c3da73c40b52257594c71691d5e
-  - package: com.tuya.smart
-    signature:
-      - fingerprint: 93:21:9F:C2:73:E2:20:0F:4A:DE:E5:F7:19:1D:C6:56:BA:2A:2D:7B:2F:F5:D2:4C:D5:5C:4B:61:55:00:1E:40
-        sources:
-          - name: Google Play
-            issue: GH-1452
-            apk:
-              sha256: d8f61f0ae358402b15f6f7ee1e9557973d751ea822e4a78a6c7fe59cf9d3fcef
   - package: com.ubercab
     signature:
       - fingerprint: 40:03:23:1A:B4:2F:EB:8D:95:5E:62:FD:FA:A4:FA:D5:95:67:05:4B:9C:6B:BC:3D:95:02:99:DD:FC:26:83:92
@@ -5275,14 +5275,6 @@ packages:
             issue: GH-865
             apk:
               sha256: b26cb2f48caaeaa6d5a5e8747440ea9a85689b476fe30776fd1de155ba370407
-  - package: image.to.text.ocr
-    signature:
-      - fingerprint: 10:FF:42:11:D3:60:F1:02:01:0A:BD:52:62:5D:D9:D3:21:4E:B4:C0:28:0B:89:DA:61:13:45:31:91:62:E1:C2
-        sources:
-          - name: Google Play
-            issue: GH-1451
-            apk:
-              sha256: cd0a4e1a51e47425351e747c658503f257fa1b484a491be3ed1491fe3b428889
   - package: info.zverev.ilya.every_door
     signature:
       - fingerprint: 9F:FC:A7:0F:77:A8:5E:F6:82:90:27:66:02:BB:5B:4C:92:A6:54:67:C5:4F:F6:FB:89:C4:B2:02:39:50:62:03
@@ -7006,6 +6998,14 @@ packages:
             issue: GH-886
             apk:
               sha256: f88374b9113aa9ddba865258bd989eb3ac2ca1577d92e59d6e84228e080674ce
+      - fingerprint: |-
+          59:AA:11:A4:BF:97:58:34:FF:06:2D:40:8F:EE:25:23:C2:26:0C:BB:2C:C8:C0:1F:CD:A0:3E:AD:21:8A:90:7D
+          81:EA:CA:46:84:F2:73:D8:97:E9:6E:6E:89:4A:B7:73:46:8C:FA:B0:0A:25:AA:0A:2C:AF:0E:5F:01:D5:A5:00
+        sources:
+          - name: Google Play
+            issue: GH-1511
+            apk:
+              sha256: 140d70c8432c55f18c7cfefc8df8ae8cfc85d4f72dccff52d1ea1d2fd09c0654
   - package: org.tasks
     signature:
       - fingerprint: 9F:78:EE:B2:7C:90:2A:98:1B:3B:FB:51:F6:FE:78:90:49:A0:0C:C1:AA:F0:83:B4:ED:16:B9:85:4B:3D:28:83
