@@ -818,6 +818,17 @@ jobs:
           packageName: ${{ needs.parse.outputs.packageName }}
           packageSignature: ${{ needs.parse.outputs.packageSignature }}
 
+      - name: Write job summary
+        if: steps.domain.outputs.found == 'true'
+        env:
+          DOMAIN_TABLE_ROW: ${{ steps.domain.outputs.tableRow }}
+        run: |
+          {
+            echo "| Source | Matches | Verification |"
+            echo "|---|---|---|"
+            printf '%s\n' "$DOMAIN_TABLE_ROW"
+          } >> "$GITHUB_STEP_SUMMARY"
+
   summary:
     name: Generate Summary
     runs-on: ubuntu-latest
