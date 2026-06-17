@@ -129,6 +129,22 @@ packages:
             apk:
               sha256: 79a753d1c9c2b66c35eaa22e4205b5d31f88911ef8fff902cd10c3ae92ae1d08
               link: https://github.com/MorpheApp/morphe-manager/releases/download/v1.18.0/morphe-manager-1.18.0.apk
+  - package: app.murinelauncher
+    signature:
+      - fingerprint: 4E:E0:45:48:9A:40:C3:07:2D:CA:4A:D7:C5:0E:30:96:1C:62:56:18:25:11:36:8C:53:A5:6A:5A:CC:07:E2:E5
+        sources:
+          - name: F-Droid
+            issue: CB-109
+            apk:
+              sha256: 65fe4e159e501b06db7f39f1c849007b6141096020e9446ba6d7fac3fa199585
+          - name: F-Droid (IzzyOnDroid)
+            issue: CB-109
+            apk:
+              sha256: 65fe4e159e501b06db7f39f1c849007b6141096020e9446ba6d7fac3fa199585
+          - name: Google Play
+            issue: CB-109
+            apk:
+              sha256: af0f9133178872bfaa459758d2e42686a6047c91ad36cb5b4f28e5be964ec1d5
   - package: app.ninesevennine.twofactorauthenticator.accrescent
     signature:
       - fingerprint: E5:B2:8E:A1:E0:51:C2:32:DE:A9:4C:27:C0:59:2E:2C:00:2D:17:C5:CA:81:78:8B:51:30:6D:60:8A:FE:52:C5
@@ -3307,6 +3323,14 @@ packages:
             issue: GH-989
             apk:
               sha256: 1e166381f60601081c57eddca017e0c6aceea2d09b01e14dcd4883b0dbc67e0a
+  - package: com.rode.rodereporter
+    signature:
+      - fingerprint: 31:41:14:CD:4A:A6:3D:69:58:7B:B9:5B:69:CB:1A:AC:D4:24:7E:70:41:BE:86:5A:7F:D7:4A:E8:DA:C4:8A:4E
+        sources:
+          - name: Google Play
+            issue: GH-1588
+            apk:
+              sha256: d052bef24cedb6f6286013129e3b46ed0058f835b3dc57b071637b2e8d14b09f
   - package: com.roundsalmon4.appverifier
     signature:
       - fingerprint: 1E:76:F1:A1:5C:BE:20:1F:0F:E2:6A:F2:7A:12:D9:1D:0D:34:81:FE:7D:CC:7D:89:E9:D2:05:69:30:F6:D5:A9
@@ -3326,14 +3350,6 @@ packages:
             issue: GH-287
             apk:
               sha256: d3424bcc6d253828cb9bfe578a65b2c99744fc1339983fcec8cb72e6b4b110fe
-  - package: com.ryde_android
-    signature:
-      - fingerprint: 2F:A2:63:91:05:5F:24:B6:0D:94:8A:03:23:A2:93:83:0A:C6:0F:45:38:DE:F1:E8:BC:2B:FA:7E:42:88:13:D9
-        sources:
-          - name: Google Play
-            issue: GH-1404
-            apk:
-              sha256: b1a631ce3771586bc9826cfff8ee5d88df01f6166f54c400a0693930bec726e3
   - package: com.sadellie.unitto
     signature:
       - fingerprint: B2:D9:93:8C:97:FA:77:DF:78:14:2C:31:1D:23:4A:AE:9E:70:6F:10:CC:BA:16:7F:2A:2A:3E:33:52:8C:1D:CF
