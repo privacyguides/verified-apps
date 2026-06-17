@@ -2171,6 +2171,16 @@ packages:
             issue: GH-979
             apk:
               sha256: cc1adee7ece736bdfa195e814714a1f88007303cc0312f1257715aeb2b1c808c
+  - package: com.google.android.apps.kids.familylink
+    signature:
+      - fingerprint: |-
+          5F:18:DD:CA:47:42:08:41:32:5E:D5:4D:1A:F9:48:4A:F9:2F:65:AA:C7:0A:3B:62:3C:4E:86:7F:4E:F7:1E:20
+          6B:58:BB:84:C1:C6:D0:81:D9:50:44:8F:F5:C0:51:A3:47:69:D7:FD:8D:41:54:52:C8:6E:FE:B8:08:71:6C:0E
+        sources:
+          - name: Google Play
+            issue: GH-1429
+            apk:
+              sha256: 95ac29578676300887a8e8e8dc04af9edc687dd88a279cf99c967a09f0363e69
   - package: com.google.android.apps.maps
     signature:
       - fingerprint: |-
