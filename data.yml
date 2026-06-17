@@ -2385,6 +2385,12 @@ packages:
               sha256: 71473e75dba55442713b867cff13004e77efe0e9002b079bf35f924cd62ce549
   - package: com.kunzisoft.hardware.key
     signature:
+      - fingerprint: 39:62:A9:67:2F:DB:E0:48:65:38:58:CD:67:50:15:B5:BC:21:7E:82:51:5A:15:9C:BE:EA:E5:58:FC:0F:5A:22
+        sources:
+          - name: Google Play
+            issue: GH-1735
+            apk:
+              sha256: a566c503df17f8a3a78da19524985996002d1718f390a1ef5f7f6d1a96da788d
       - fingerprint: F6:97:96:A3:61:3B:C4:B4:F9:F5:4A:6F:E2:44:A0:AE:65:A7:D2:20:2B:53:C7:AE:7E:EE:F1:19:6A:CE:E8:F8
         sources:
           - name: Direct APK Link
@@ -2721,14 +2727,6 @@ packages:
             issue: GH-587
             apk:
               sha256: 6a8b9a5a4ee709975f0936eff9a1936c07a40ecf6cfbc29b404a7396e5c245fc
-  - package: com.minrax.sofiabus
-    signature:
-      - fingerprint: 07:F3:22:4D:AB:06:C9:7E:91:DD:B5:72:26:A2:E1:55:9D:A0:EF:72:C3:17:C8:ED:3C:61:1A:3A:09:ED:D6:C7
-        sources:
-          - name: Google Play
-            issue: GH-1644
-            apk:
-              sha256: 28e147d16af2b53f50451385e28a65f65ef673aa0fb9b776ba9ada4695417591
   - package: com.mobillium.airalo
     signature:
       - fingerprint: 03:61:DD:85:0D:D3:AB:65:D9:2D:F4:18:9A:26:41:3D:A5:3A:FF:AA:31:8F:7D:AD:91:47:94:AD:A2:C9:B4:09
