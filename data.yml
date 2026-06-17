@@ -513,6 +513,14 @@ packages:
             issue: GH-793
             apk:
               sha256: 6faf58dae01287869f7bb85717359e6929a366ea5f9ec6eb1325e0dcdd0e70d1
+  - package: com.activision.callofduty.shooter
+    signature:
+      - fingerprint: 79:AF:5C:28:6E:D6:54:BA:73:44:2D:E7:66:68:BD:4F:A7:FC:92:EC:C3:00:31:67:8B:EC:A8:7C:7F:61:00:70
+        sources:
+          - name: Google Play
+            issue: GH-1841
+            apk:
+              sha256: 46f70bd5496023e02c4fa6be76af30c3c551d7f805441c70b539b17be0415ab3
   - package: com.adobe.reader
     signature:
       - fingerprint: B6:DD:05:62:25:64:87:FC:D6:C9:8C:DE:13:78:58:EF:50:D9:AD:B9:F9:CD:2F:1C:A5:8C:53:57:EF:DF:0F:AF
@@ -686,6 +694,14 @@ packages:
             issue: GH-714
             apk:
               sha256: a23fb58ac8a427949bed12b15923e479e06b359ce526da9c148234e130309c39
+  - package: com.anthropic.claude
+    signature:
+      - fingerprint: 30:5A:1E:8A:43:2E:5E:C0:C6:12:B2:46:53:59:C3:B8:8E:3C:95:D6:25:35:99:AC:60:88:56:2B:81:8B:64:A0
+        sources:
+          - name: Google Play
+            issue: GH-1417
+            apk:
+              sha256: fc0a40e202c4bb0d7576ff49a7ca69ea9cc3349475ffb41d07bf93ac396c44f1
   - package: com.apiture.xpressmobile.tabut.sub
     signature:
       - fingerprint: E0:85:00:80:44:B1:CA:2C:35:F8:54:1B:0E:08:28:08:78:EF:19:65:87:2E:D4:24:6C:A2:B7:1B:08:D8:ED:11
@@ -953,14 +969,6 @@ packages:
             issue: GH-273
             apk:
               sha256: b9a8b3f656de37c1e8b249b91d9ff5613e6091a0c46cbffd917cf009267dd119
-  - package: com.box.android
-    signature:
-      - fingerprint: 5E:6E:4B:82:82:99:CA:01:D7:A4:92:21:1F:CC:88:FA:68:05:0B:AA:A2:5A:50:EA:69:59:6F:D2:A3:E6:B3:66
-        sources:
-          - name: Google Play
-            issue: GH-1414
-            apk:
-              sha256: 5913347fd78fdbdd7727fb99252a60ff3db2cce94541a053ad8d1c575bc7f4b9
   - package: com.brave.browser
     signature:
       - fingerprint: 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
@@ -993,14 +1001,6 @@ packages:
             issue: GH-329
             apk:
               sha256: a8109deeef0bd2a4999d4379c3273bb2b3a8b07cb7ccca4c387b56dce8b2a211
-  - package: com.brother.printservice
-    signature:
-      - fingerprint: 3B:53:F5:3B:91:B5:D0:53:5A:A3:D6:A6:5B:C1:42:69:86:52:2A:C9:DE:28:D8:71:57:2D:D5:11:7F:7D:4D:14
-        sources:
-          - name: Google Play
-            issue: GH-1415
-            apk:
-              sha256: 30892c174b1e554a3e16542c7adcce8056b5b1ee87edc7de6530015f655e82f8
   - package: com.brouken.player
     signature:
       - fingerprint: 3C:B9:7D:BA:57:D3:D0:BC:19:0B:AE:5F:1F:3A:84:16:43:BC:D9:39:9B:C3:10:28:CE:25:77:5D:93:D0:10:9D
@@ -2257,6 +2257,14 @@ packages:
             issue: GH-1845
             apk:
               sha256: a8bcc87c33eaa1acd05b4d77cccc75aa0960514dd898fb68994025f35dc3d05c
+  - package: com.infomaniak.mail
+    signature:
+      - fingerprint: 54:CE:26:CB:66:CB:12:EE:E6:FF:51:04:C9:5A:C4:1C:F1:93:9D:B9:C1:83:13:13:AA:52:3D:41:D7:29:EC:C2
+        sources:
+          - name: Google Play
+            issue: GH-1851
+            apk:
+              sha256: 4a91e5240c3b369ff8a0b0d5879081c04a320e7e4044d25d70a2ca3ee2c52b17
   - package: com.innersloth.spacemafia
     signature:
       - fingerprint: 67:A4:DF:80:B1:D9:A4:88:FF:DB:10:07:54:84:1F:D8:3F:90:9C:7C:73:DF:16:E2:46:8C:EC:75:AB:81:C5:8A
@@ -2576,6 +2584,14 @@ packages:
             issue: GH-766
             apk:
               sha256: ff12e539b2a2420a4fcb54b0d839bbff2827ab3b5c2bc6a91a1fb97cb501714b
+  - package: com.marc.files
+    signature:
+      - fingerprint: BD:B9:3E:91:A2:D7:FE:BF:AA:EB:4A:33:7D:99:4C:52:9F:F7:3B:D8:34:6A:5D:95:95:93:6A:43:05:AF:0C:8C
+        sources:
+          - name: Google Play
+            issue: GH-1847
+            apk:
+              sha256: d5b9c156fd2fa3f3bce47365e950b66393b077ab5cb8cbeafa8e3a2ba9d78590
   - package: com.masarat.salati
     signature:
       - fingerprint: 82:06:BF:C4:05:AB:72:3D:21:87:C4:E1:2E:E1:3F:57:2B:D7:81:E9:47:23:EC:2D:74:32:C6:28:85:E0:7B:6F
@@ -2950,14 +2966,6 @@ packages:
             issue: GH-1207
             apk:
               sha256: 8819bfe633faa7affce5b035ad5f553fb5c68368ecaa1d2cdee02dd205773512
-  - package: com.oceanwing.battery.cam
-    signature:
-      - fingerprint: 16:6C:23:45:57:B7:76:CA:D8:AC:94:C9:79:37:9E:48:DF:38:7D:4D:8F:96:A3:43:DF:40:FC:D9:05:BF:F6:86
-        sources:
-          - name: Google Play
-            issue: GH-1844
-            apk:
-              sha256: 02022254f83f9393be47d54cba370fd3c77034c9c3c6e8d32706224650b1d3d2
   - package: com.oceanwing.soundcore
     signature:
       - fingerprint: EA:B2:B0:AE:8A:49:0A:58:A5:ED:1F:CA:E8:1F:50:3D:F0:01:89:2F:0B:26:55:FF:C0:31:51:1A:F5:A3:86:7F
@@ -3249,14 +3257,6 @@ packages:
             issue: GH-674
             apk:
               sha256: ec0bde236aac9e5e2eb95c46ea805966ace8ecd6bf49fffa85e00ce03ec60251
-  - package: com.riotgames.league.wildrift
-    signature:
-      - fingerprint: 93:1D:96:95:02:F3:DE:01:A4:C2:39:E4:19:92:11:EB:DC:57:BB:9A:75:26:39:4B:9E:3E:2D:1C:C0:79:FF:0C
-        sources:
-          - name: Google Play
-            issue: GH-1837
-            apk:
-              sha256: 41b12a3eacdf7bff6b6d6f4372bc6f4ba3392599c6832f874edd6eb93708fef9
   - package: com.riteshsahu.SMSBackupRestore
     signature:
       - fingerprint: F4:47:DC:11:66:22:7B:E1:BC:E3:44:1F:38:D8:CD:FA:79:9A:4F:7D:14:58:DA:15:AE:33:C3:F7:7C:38:ED:0A
@@ -3771,6 +3771,14 @@ packages:
             issue: GH-836
             apk:
               sha256: 4c4b97b4ff55c2ddde451d341d15b4ec1d52289d31d57f2b63518980952a81ae
+  - package: com.syz.mprint
+    signature:
+      - fingerprint: BA:8B:B4:65:A0:77:03:9C:8F:38:74:45:C6:14:85:5C:F7:53:9E:AA:E7:DF:F4:1B:F2:F7:E6:CA:E5:9C:31:45
+        sources:
+          - name: Google Play
+            issue: GH-1855
+            apk:
+              sha256: f7eadc12eab6bfdb0459edf109c631a0e91d3ee715259a5100b071d022cb39c1
   - package: com.tailscale.ipn
     signature:
       - fingerprint: 5C:DB:29:55:51:BF:E1:A0:87:FE:D6:AC:DA:07:14:1C:6C:92:9F:A7:C2:9B:D2:73:A7:09:28:13:AC:C4:34:BF
@@ -3855,22 +3863,6 @@ packages:
             apk:
               sha256: e0eaacfd91288fcc50b7226a8256d57dc85f955649653ffc686d28e2c0c85d13
               link: https://github.com/termux/termux-float/releases/download/v0.17.0/termux-float-app_v0.17.0+github.debug.apk
-  - package: com.teslacoilsw.launcher
-    signature:
-      - fingerprint: 47:F8:42:30:82:F3:90:61:6C:18:09:26:2A:A6:DF:3A:11:44:9A:7B:D0:58:00:CE:DC:3D:A6:77:4B:D4:EE:9B
-        sources:
-          - name: Google Play
-            issue: GH-1856
-            apk:
-              sha256: 6b2b42499b145a81cda61c8b85551d4455593f1e82ea54e0bb6a45c4348d1631
-  - package: com.thetransitapp.droid
-    signature:
-      - fingerprint: A0:55:A8:6A:4F:75:38:D3:EE:2D:57:5C:06:74:32:81:B8:13:05:23:73:DE:A5:BF:F1:0D:20:15:81:55:13:41
-        sources:
-          - name: Google Play
-            issue: GH-1832
-            apk:
-              sha256: b3cd440ef1a4d3bcf9e74bc77b98bb791a64a23cd4846ada4c2f055ac0497483
   - package: com.tinder
     signature:
       - fingerprint: 8A:B1:4F:D7:50:B8:20:57:4D:20:C3:54:41:EA:14:A9:B5:D1:95:9A:31:04:0C:EC:12:B4:6B:B2:90:F4:DA:1B
@@ -6774,6 +6766,14 @@ packages:
             issue: GH-735
             apk:
               sha256: e7ff8c52186e47d01812fb8564300d7591b4b7e575f8e64de1742ac6838f502f
+  - package: org.mozilla.firefox_beta
+    signature:
+      - fingerprint: A7:8B:62:A5:16:5B:44:94:B2:FE:AD:9E:76:A2:80:D2:2D:93:7F:EE:62:51:AE:CE:59:94:46:B2:EA:31:9B:04
+        sources:
+          - name: Google Play
+            issue: GH-1433
+            apk:
+              sha256: 9c1ec068c4e6aed1f40c8489082653fd31b5cd6a5269314191da3606a1074c38
   - package: org.openobservatory.ooniprobe
     signature:
       - fingerprint: BF:7D:A8:2A:7C:77:87:EB:67:56:41:48:23:4B:6D:40:F0:EC:66:4B:F2:92:BC:7A:8F:15:47:FE:7F:E7:5E:84
