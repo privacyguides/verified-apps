@@ -129,22 +129,6 @@ packages:
             apk:
               sha256: 79a753d1c9c2b66c35eaa22e4205b5d31f88911ef8fff902cd10c3ae92ae1d08
               link: https://github.com/MorpheApp/morphe-manager/releases/download/v1.18.0/morphe-manager-1.18.0.apk
-  - package: app.murinelauncher
-    signature:
-      - fingerprint: 4E:E0:45:48:9A:40:C3:07:2D:CA:4A:D7:C5:0E:30:96:1C:62:56:18:25:11:36:8C:53:A5:6A:5A:CC:07:E2:E5
-        sources:
-          - name: F-Droid
-            issue: CB-109
-            apk:
-              sha256: 65fe4e159e501b06db7f39f1c849007b6141096020e9446ba6d7fac3fa199585
-          - name: F-Droid (IzzyOnDroid)
-            issue: CB-109
-            apk:
-              sha256: 65fe4e159e501b06db7f39f1c849007b6141096020e9446ba6d7fac3fa199585
-          - name: Google Play
-            issue: CB-109
-            apk:
-              sha256: af0f9133178872bfaa459758d2e42686a6047c91ad36cb5b4f28e5be964ec1d5
   - package: app.ninesevennine.twofactorauthenticator.accrescent
     signature:
       - fingerprint: E5:B2:8E:A1:E0:51:C2:32:DE:A9:4C:27:C0:59:2E:2C:00:2D:17:C5:CA:81:78:8B:51:30:6D:60:8A:FE:52:C5
@@ -358,6 +342,12 @@ packages:
         sources:
           - name: F-Droid
             issue: GH-558
+      - fingerprint: 21:64:41:F3:2F:AD:2A:60:64:71:23:F8:08:DD:D1:E9:C2:D2:D7:74:37:1E:26:E1:C9:D2:1F:E3:28:D9:54:F8
+        sources:
+          - name: Google Play
+            issue: GH-1630
+            apk:
+              sha256: acb2d2952ae8b5f83356045c7eaf37a5c23ee42b3363f2cd84723fb3e8a92fa9
       - fingerprint: 5E:DB:5C:43:95:B2:F2:D9:BA:68:2F:6A:1D:27:51:70:CC:E5:36:5A:6F:A2:7D:22:20:EA:8D:52:A6:D9:5F:07
         sources:
           - name: Direct APK Link
@@ -3323,14 +3313,6 @@ packages:
             issue: GH-989
             apk:
               sha256: 1e166381f60601081c57eddca017e0c6aceea2d09b01e14dcd4883b0dbc67e0a
-  - package: com.rode.rodecentralmobile
-    signature:
-      - fingerprint: 80:76:3F:94:79:A1:2F:8F:DB:D7:9C:D0:48:F5:22:58:8C:1C:2A:39:8D:DF:A0:33:04:D4:7C:B5:28:F8:95:B1
-        sources:
-          - name: Google Play
-            issue: GH-1592
-            apk:
-              sha256: 365c41eac2c9c93316cad77a647d868cabb7f10374cb779ddd4851e00ebdfec8
   - package: com.rode.rodereporter
     signature:
       - fingerprint: 31:41:14:CD:4A:A6:3D:69:58:7B:B9:5B:69:CB:1A:AC:D4:24:7E:70:41:BE:86:5A:7F:D7:4A:E8:DA:C4:8A:4E
@@ -5706,6 +5688,12 @@ packages:
             apk:
               sha256: e8b8bd89351aae11876435df8265b9e300227f3bfec2640022a9a52d5d160439
               link: https://github.com/x13a/Clipeus/releases/download/v1.1.1/app-release.apk
+      - fingerprint: 92:19:4A:00:76:56:98:05:06:6E:DF:1D:AB:F1:2F:AF:03:6E:3C:57:80:4C:0D:E8:C8:0F:D0:C9:83:6C:43:C6
+        sources:
+          - name: Google Play
+            issue: GH-1629
+            apk:
+              sha256: e559af68d75d946ab20b381971a442fbda4a91c59f5bfeb14bb41d9295dc2fec
   - package: me.lyft.android
     signature:
       - fingerprint: FA:9A:37:54:36:34:35:7B:E0:88:EE:7E:4F:8C:FD:D1:3B:59:07:B2:2E:92:1A:3D:47:45:3E:66:C4:5F:3E:04
