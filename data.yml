@@ -5029,6 +5029,14 @@ packages:
             issue: GH-1113
             apk:
               sha256: 2bce2f2c32e97b89ede5bd0ee95f482a358015e9dd11584a7016b8b822710f2c
+  - package: de.commerzbanking.mobil
+    signature:
+      - fingerprint: F0:95:66:8A:4F:CC:79:C2:15:3E:15:42:8B:7C:0E:CC:FB:65:4F:5F:D3:B3:66:BD:4E:E0:7E:67:E8:1B:50:94
+        sources:
+          - name: Google Play
+            issue: GH-1636
+            apk:
+              sha256: e2ababc9eef975f2e842f280c280aac0164d45d1e21d90e1d615b6d39672ba2f
   - package: de.danoeh.antennapod
     signature:
       - fingerprint: 17:94:30:56:5A:4A:04:BF:E7:82:74:83:24:30:99:BD:10:87:04:10:80:0C:D7:C4:C7:B4:8D:8D:32:26:DF:55
