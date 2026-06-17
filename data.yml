@@ -1048,6 +1048,12 @@ packages:
             apk:
               sha256: 787e8c2a9ca2ed1423e179964508071ec871d777bb3e15208615b94b752347db
               link: https://github.com/permissionlesstech/bitchat-android/releases/download/1.7.2/bitchat-arm64-v8a-release.apk
+      - fingerprint: 5E:65:1D:D0:C8:0D:1F:57:F2:61:79:64:95:50:85:E2:89:49:DD:04:AD:DA:C7:B5:3F:E9:D2:F1:1E:17:2A:A2
+        sources:
+          - name: Google Play
+            issue: GH-1694
+            apk:
+              sha256: 0ae7fb2839cfa0afea9bda59cceadc9beda1c33f4fb50632399056b50fffeb85
   - package: com.bitdefender.antivirus
     signature:
       - fingerprint: 31:F4:FF:2E:D0:44:8C:6D:E8:56:1A:1B:53:58:B2:5E:32:F3:82:7C:2C:D9:16:3B:06:1B:62:CF:B4:F1:ED:18
