@@ -5024,6 +5024,14 @@ packages:
             issue: GH-918
             apk:
               sha256: 8693bd3eb2c2f450524c660146a906995759a730c84e3ebfe1b92ba1226e4964
+  - package: com.zing.zalo
+    signature:
+      - fingerprint: D8:6E:FE:15:1E:09:BF:4C:A8:44:0C:B3:BF:A0:A8:1B:E2:54:4F:70:C7:85:87:DA:F0:26:6D:FC:A2:FA:25:DF
+        sources:
+          - name: Google Play
+            issue: GH-1665
+            apk:
+              sha256: ddf8cd9f4e6cb52e302c2fe34060b3f666c6636b72dd239e07e2f6f825b9c712
   - package: com.zorinos.zorin_connect
     signature:
       - fingerprint: 59:03:68:B1:E3:29:90:14:EE:14:88:E1:28:C0:C7:71:4E:67:20:A2:62:D6:9B:80:7F:19:44:DF:A5:9C:63:9B
