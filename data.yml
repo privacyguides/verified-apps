@@ -1664,6 +1664,14 @@ packages:
             issue: GH-1013
             apk:
               sha256: 14c0ad30b7e692d0ca57fe83f60be885982f98cbf676f9b9ad36ea8b23dbf84b
+  - package: com.duckduckgo.mobile.android
+    signature:
+      - fingerprint: BB:7B:B3:1C:57:3C:46:A1:DA:7F:C5:C5:28:A6:AC:F4:32:10:84:56:FE:EC:50:81:0C:7F:33:69:4E:B3:D2:D4
+        sources:
+          - name: Google Play
+            issue: GH-1732
+            apk:
+              sha256: 3e0c51fe01ed765b636da89cb504a821579f9c2808512d58ce3c83c825c48ec9
   - package: com.duolingo
     signature:
       - fingerprint: 12:33:FF:6D:E4:C7:0E:F4:D7:DE:AE:54:AF:15:B1:67:FC:7C:FD:25:39:51:7B:D2:17:58:70:F3:CB:77:17:31
