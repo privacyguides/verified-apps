@@ -2660,6 +2660,14 @@ packages:
             issue: GH-274
             apk:
               sha256: 95c0e8775be5365428d5e3fecdac0b0c5735213ed896c6e920f6fb0c22b37727
+  - package: com.kollectivemobile.euki
+    signature:
+      - fingerprint: EA:52:2B:12:5F:40:1A:12:98:3F:D5:76:1D:A3:AF:18:52:21:66:20:ED:31:E6:03:52:5C:D5:9F:2D:03:41:57
+        sources:
+          - name: Google Play
+            issue: CB-98
+            apk:
+              sha256: ca2a472f7383ab09f4e5baa56bd2caeb56eea0b1ff873df034a72756cefe547f
   - package: com.konylabs.capitalone
     signature:
       - fingerprint: 8A:84:61:F8:B7:C7:66:46:CF:FB:19:4C:8E:4D:3A:81:1C:78:41:CF:9B:C0:78:6F:53:12:E3:92:55:98:08:45
