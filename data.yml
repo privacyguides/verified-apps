@@ -1084,12 +1084,6 @@ packages:
             issue: GH-210
             apk:
               sha256: a4eaff36210d881c55499ff4aa6d83e626d3720c8716183eab5dd40432415d8c
-      - fingerprint: BB:0F:40:59:27:2E:CF:68:C6:AA:4F:B9:F7:A4:65:A5:07:93:E6:02:67:23:DE:FA:AD:FE:C7:B9:40:CC:63:E8
-        sources:
-          - name: Google Play
-            issue: GH-1835
-            apk:
-              sha256: b94d1306467acb02e0d202d790f3ebcc612ed3f4ea02ff2f34d9066715abb9fa
   - package: com.celzero.bravedns
     signature:
       - fingerprint: 1F:32:D4:32:E8:1A:1D:C5:C0:0A:AF:EB:0C:66:36:CD:78:19:96:5D:17:44:20:E5:9D:B9:67:5D:FF:7A:88:E9
@@ -4194,6 +4188,14 @@ packages:
             issue: GH-779
             apk:
               sha256: 27faf4cc0b5556034c2be5eeb14239a5924891e03d9e6d457ac217294832ea13
+  - package: com.widex.pa
+    signature:
+      - fingerprint: 5D:05:07:70:98:09:A6:94:06:42:31:01:C2:72:13:65:8A:93:6F:A2:C5:EE:33:C4:8F:9D:34:B0:09:37:63:23
+        sources:
+          - name: Google Play
+            issue: GH-1830
+            apk:
+              sha256: b34a2589c89eafaab177595e0dad300acd4cd933699b162f7ddf4863e0a6ef95
   - package: com.windscribe.vpn
     signature:
       - fingerprint: 9F:B3:57:CA:2D:7F:0A:CC:7B:31:21:98:55:34:49:0D:0A:A7:0F:5D:C6:1C:A8:EC:59:3F:3D:A1:E9:CD:33:9B
