@@ -4691,6 +4691,14 @@ packages:
             issue: GH-1062
             apk:
               sha256: 88b5506f3e33fa018b8859ac602cf1e31c212144adb3a0a198efa3928ab1dbf7
+  - package: com.wizards.mtga
+    signature:
+      - fingerprint: F3:1D:80:83:6A:33:E7:2A:37:82:B0:FE:0A:91:64:30:4C:25:61:AC:B0:78:97:15:38:90:E9:BB:44:52:A4:61
+        sources:
+          - name: Google Play
+            issue: GH-1852
+            apk:
+              sha256: 0dccbf55017ae8542b5a9322fd0e2c1814b2cb86e6bb822f82ac347aaf11dc9a
   - package: com.wizzair.WizzAirApp
     signature:
       - fingerprint: 71:39:71:8A:9C:7A:50:3A:F9:7D:38:78:31:4E:C0:9A:6F:EF:E6:27:7E:A7:16:30:56:E0:22:73:F3:55:31:02
