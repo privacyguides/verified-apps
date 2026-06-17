@@ -7895,6 +7895,14 @@ packages:
             issue: GH-886
             apk:
               sha256: f88374b9113aa9ddba865258bd989eb3ac2ca1577d92e59d6e84228e080674ce
+      - fingerprint: |-
+          59:AA:11:A4:BF:97:58:34:FF:06:2D:40:8F:EE:25:23:C2:26:0C:BB:2C:C8:C0:1F:CD:A0:3E:AD:21:8A:90:7D
+          81:EA:CA:46:84:F2:73:D8:97:E9:6E:6E:89:4A:B7:73:46:8C:FA:B0:0A:25:AA:0A:2C:AF:0E:5F:01:D5:A5:00
+        sources:
+          - name: Google Play
+            issue: GH-1511
+            apk:
+              sha256: 140d70c8432c55f18c7cfefc8df8ae8cfc85d4f72dccff52d1ea1d2fd09c0654
   - package: org.tasks
     signature:
       - fingerprint: 9F:78:EE:B2:7C:90:2A:98:1B:3B:FB:51:F6:FE:78:90:49:A0:0C:C1:AA:F0:83:B4:ED:16:B9:85:4B:3D:28:83
