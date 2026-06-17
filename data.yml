@@ -1918,6 +1918,16 @@ packages:
             issue: GH-1235
             apk:
               sha256: 0191c9796019dbfc342f93d75fecd18e64962fe614920d0e3ec3140c5b3237ed
+  - package: com.fitbit.FitbitMobile
+    signature:
+      - fingerprint: |-
+          2C:C9:14:DA:5A:84:94:26:C1:B5:91:E1:2F:0A:8A:DB:04:2F:A2:FE:AD:E3:A4:76:28:45:CE:6B:FA:DC:F3:13
+          FA:6A:19:88:03:AA:C1:93:9F:ED:6B:AB:92:95:E5:18:4C:00:96:6B:F9:12:F8:C5:FA:FF:26:57:6C:C7:70:FF
+        sources:
+          - name: Google Play
+            issue: GH-1884
+            apk:
+              sha256: 82bba1f939305db1c4e455df2c8a44306ed2f096346288252be1c5ce456728bb
   - package: com.flauschcode.broccoli
     signature:
       - fingerprint: 73:8E:4F:5A:7C:A8:28:E8:00:C0:22:AB:44:AB:51:72:8E:66:00:1E:61:D3:50:E2:7C:E7:D9:DF:CF:0F:6B:99
