@@ -2721,6 +2721,14 @@ packages:
             issue: GH-587
             apk:
               sha256: 6a8b9a5a4ee709975f0936eff9a1936c07a40ecf6cfbc29b404a7396e5c245fc
+  - package: com.minrax.sofiabus
+    signature:
+      - fingerprint: 07:F3:22:4D:AB:06:C9:7E:91:DD:B5:72:26:A2:E1:55:9D:A0:EF:72:C3:17:C8:ED:3C:61:1A:3A:09:ED:D6:C7
+        sources:
+          - name: Google Play
+            issue: GH-1644
+            apk:
+              sha256: 28e147d16af2b53f50451385e28a65f65ef673aa0fb9b776ba9ada4695417591
   - package: com.mobillium.airalo
     signature:
       - fingerprint: 03:61:DD:85:0D:D3:AB:65:D9:2D:F4:18:9A:26:41:3D:A5:3A:FF:AA:31:8F:7D:AD:91:47:94:AD:A2:C9:B4:09
@@ -4086,14 +4094,6 @@ packages:
             issue: GH-839
             apk:
               sha256: 966b9cb22be34da65371e3f9893a9831f3fe246e1d5f5f6055cf775d43098a2a
-  - package: com.urbandroid.dontkillmyapp
-    signature:
-      - fingerprint: 2F:84:FB:3C:3A:39:CA:F2:01:A1:11:54:03:7B:50:D3:2C:05:A4:C1:18:B8:F1:39:F9:C7:9C:15:FB:D5:54:82
-        sources:
-          - name: Google Play
-            issue: GH-1655
-            apk:
-              sha256: 100dfa034900e92e91ed3cc22eefbc2993e65b7ea2b116e2e754fa5d44e9c923
   - package: com.urbandroid.kinestop
     signature:
       - fingerprint: 2F:84:FB:3C:3A:39:CA:F2:01:A1:11:54:03:7B:50:D3:2C:05:A4:C1:18:B8:F1:39:F9:C7:9C:15:FB:D5:54:82
