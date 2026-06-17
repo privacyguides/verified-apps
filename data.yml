@@ -2493,6 +2493,16 @@ packages:
             issue: GH-813
             apk:
               sha256: e48e64a62136bd1751f9efc0f879183879390868f8275ef85b2bd89754d72ac7
+  - package: com.google.android.tts
+    signature:
+      - fingerprint: |-
+          7C:E8:3C:1B:71:F3:D5:72:FE:D0:4C:8D:40:C5:CB:10:FF:75:E6:D8:7D:9D:F6:FB:D5:3F:04:68:C2:90:50:53
+          F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
+        sources:
+          - name: Google Play
+            issue: GH-1403
+            apk:
+              sha256: 8226aaf797cf914da38d200fd2d2974e2827c39288a4abd98f6e4cf5630bda11
   - package: com.google.android.youtube
     signature:
       - fingerprint: |-
