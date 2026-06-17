@@ -694,14 +694,6 @@ packages:
             issue: GH-714
             apk:
               sha256: a23fb58ac8a427949bed12b15923e479e06b359ce526da9c148234e130309c39
-  - package: com.anthropic.claude
-    signature:
-      - fingerprint: 30:5A:1E:8A:43:2E:5E:C0:C6:12:B2:46:53:59:C3:B8:8E:3C:95:D6:25:35:99:AC:60:88:56:2B:81:8B:64:A0
-        sources:
-          - name: Google Play
-            issue: GH-1417
-            apk:
-              sha256: fc0a40e202c4bb0d7576ff49a7ca69ea9cc3349475ffb41d07bf93ac396c44f1
   - package: com.apiture.xpressmobile.tabut.sub
     signature:
       - fingerprint: E0:85:00:80:44:B1:CA:2C:35:F8:54:1B:0E:08:28:08:78:EF:19:65:87:2E:D4:24:6C:A2:B7:1B:08:D8:ED:11
@@ -1441,6 +1433,14 @@ packages:
             issue: GH-285
           - name: AppVerifier
             issue: GH-285
+  - package: com.ebay.mobile
+    signature:
+      - fingerprint: 85:B4:01:54:97:15:4D:FA:89:DE:30:87:71:A9:FC:61:A6:4B:19:AF:1A:3F:B0:32:56:E8:CC:3A:79:55:67:E5
+        sources:
+          - name: Google Play
+            issue: GH-1426
+            apk:
+              sha256: 60cc799aace0ab88ed026f820845572e32c17987855ac33a0dfe566cc656465a
   - package: com.eckey.vizpin.dm
     signature:
       - fingerprint: 43:F6:D7:1E:13:EA:F0:62:BB:9F:D3:4A:0C:6C:D5:B3:BA:A8:AD:14:DE:DC:87:99:23:7F:2F:F9:33:FD:53:DC
