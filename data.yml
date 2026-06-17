@@ -3617,6 +3617,12 @@ packages:
               sha256: 0448cf0086e1670e6ff2bb31901f33597acfd5bb45758c70540d8e01ef623069
   - package: com.pocketpalai
     signature:
+      - fingerprint: 69:65:4D:9C:9C:B7:BE:AA:D2:24:A4:00:02:76:56:F7:DC:BE:39:B3:42:4F:E8:C5:96:69:1A:32:D7:E8:37:37
+        sources:
+          - name: Google Play
+            issue: GH-1779
+            apk:
+              sha256: b7f39108173c8056337c0b2cad290d6442607bd7a48baca2a41f0e9a36dd19e9
       - fingerprint: F5:5A:CA:CB:10:15:5B:EA:11:6E:1D:BA:48:7C:F2:BF:B8:BC:E2:B6:54:39:BC:62:BC:23:70:A6:B2:23:96:14
         sources:
           - name: Direct APK Link
