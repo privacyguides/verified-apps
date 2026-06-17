@@ -3814,6 +3814,14 @@ packages:
             issue: GH-287
             apk:
               sha256: d3424bcc6d253828cb9bfe578a65b2c99744fc1339983fcec8cb72e6b4b110fe
+  - package: com.ryde_android
+    signature:
+      - fingerprint: 2F:A2:63:91:05:5F:24:B6:0D:94:8A:03:23:A2:93:83:0A:C6:0F:45:38:DE:F1:E8:BC:2B:FA:7E:42:88:13:D9
+        sources:
+          - name: Google Play
+            issue: GH-1404
+            apk:
+              sha256: b1a631ce3771586bc9826cfff8ee5d88df01f6166f54c400a0693930bec726e3
   - package: com.sadellie.unitto
     signature:
       - fingerprint: B2:D9:93:8C:97:FA:77:DF:78:14:2C:31:1D:23:4A:AE:9E:70:6F:10:CC:BA:16:7F:2A:2A:3E:33:52:8C:1D:CF
