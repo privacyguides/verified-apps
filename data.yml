@@ -6036,6 +6036,14 @@ packages:
             issue: GH-865
             apk:
               sha256: b26cb2f48caaeaa6d5a5e8747440ea9a85689b476fe30776fd1de155ba370407
+  - package: image.to.text.ocr
+    signature:
+      - fingerprint: 10:FF:42:11:D3:60:F1:02:01:0A:BD:52:62:5D:D9:D3:21:4E:B4:C0:28:0B:89:DA:61:13:45:31:91:62:E1:C2
+        sources:
+          - name: Google Play
+            issue: GH-1451
+            apk:
+              sha256: cd0a4e1a51e47425351e747c658503f257fa1b484a491be3ed1491fe3b428889
   - package: info.zverev.ilya.every_door
     signature:
       - fingerprint: 9F:FC:A7:0F:77:A8:5E:F6:82:90:27:66:02:BB:5B:4C:92:A6:54:67:C5:4F:F6:FB:89:C4:B2:02:39:50:62:03
