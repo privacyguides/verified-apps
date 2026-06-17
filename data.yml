@@ -2548,6 +2548,14 @@ packages:
             issue: GH-948
             apk:
               sha256: becd7fcf3859bc8bec82df8378c6b04d1847469c6a6a40ff0e05e6bcf1a3eb4e
+  - package: com.kevinforeman.nzb360
+    signature:
+      - fingerprint: 73:41:1E:C1:9C:17:CF:AF:4E:6B:57:70:37:00:1F:E1:67:71:D2:9C:C1:8C:E3:6C:B7:34:06:98:1A:ED:98:E4
+        sources:
+          - name: Google Play
+            issue: GH-1858
+            apk:
+              sha256: 5dd9fcdbdeb9ca6f8a393a9181714058775dd6cd446ea7a119b0a6cfb2d55bf1
   - package: com.keylesspalace.tusky
     signature:
       - fingerprint: E9:46:90:1F:12:BD:49:C6:4D:E7:02:A5:32:11:4E:58:C3:AB:2A:6F:18:D1:CD:9B:78:63:2B:AA:D4:44:54:E3
