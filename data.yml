@@ -3213,6 +3213,14 @@ packages:
             issue: GH-504
             apk:
               sha256: 08860526d336d4fafc17d8d0a46ed8e66a7f6b5e73884296f8ed13f195018d81
+  - package: com.nintendo.zaka
+    signature:
+      - fingerprint: EC:F5:2A:0F:F5:00:37:4D:AE:75:55:A5:0B:4B:08:52:28:30:4A:F5:DE:AB:01:3A:BF:43:7F:E4:AB:03:C9:26
+        sources:
+          - name: Google Play
+            issue: GH-1853
+            apk:
+              sha256: a2fd303c9b54672478d81011b0b2fdd595c5327ffe453e2aeb6c789a5ba07c52
   - package: com.noahjutz.gymroutines
     signature:
       - fingerprint: C5:0C:37:9B:64:63:43:CF:83:85:F4:21:E9:DE:27:BC:BA:DB:29:05:4F:81:67:52:52:37:B7:AB:F4:A2:8E:31
