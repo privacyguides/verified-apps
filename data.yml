@@ -1541,6 +1541,16 @@ packages:
             issue: GH-752
             apk:
               sha256: 6ebe5c150cadcc255e497af7fa162ca1d1930f4942ad60e8aea515314ed59d02
+  - package: com.fastmail.app
+    signature:
+      - fingerprint: C9:2C:5E:E8:F6:BA:CB:E9:3C:A6:C0:8A:E9:6E:F4:7D:09:91:80:63:F5:71:64:78:BF:90:E6:86:09:C9:0D:1D
+        sources:
+          - name: Google Play
+            issue: GH-1535
+            apk:
+              sha256: 8718abdc82dc4c3b960e0766081d4abcd1c50fbb5d7e9f677a95b4f6b5b8ab52
+          - name: HTTPS Verified Domain
+            issue: GH-1535
   - package: com.fauxx.full
     signature:
       - fingerprint: 1B:E8:F7:9B:20:F2:64:E8:24:2D:A5:EC:A6:95:F8:D0:96:1A:D0:98:71:9A:7C:6E:4A:1F:F7:5A:33:AE:A2:76
@@ -5476,12 +5486,6 @@ packages:
             issue: GH-869
             apk:
               sha256: c8916f9832c75017aa89745b119669feb25357ef5c22abac86ab23e37b294fb3
-      - fingerprint: 69:EF:2B:B1:59:8D:FC:DA:37:99:F6:B7:24:0D:5B:B8:F5:08:4B:5A:39:54:68:39:A2:CA:F6:F2:3F:4A:89:72
-        sources:
-          - name: Google Play
-            issue: GH-1895
-            apk:
-              sha256: eabf6e05df9992a35fb50e6f61bbf3ee91d4e507806c023da0d9d89d36a861ac
   - package: io.heckel.ntfy
     signature:
       - fingerprint: 76:E9:4D:8E:04:70:6C:5B:99:06:4C:23:21:0D:8C:A9:91:06:08:AB:AE:8F:3E:97:2B:41:E3:88:39:16:46:E0
