@@ -2216,6 +2216,16 @@ packages:
             issue: GH-944
             apk:
               sha256: cdc5c9f211b42de364d2c15bf6e5a00f5cf8afe8841947ea9a4cb1ee0ddf9f12
+  - package: com.google.android.deskclock
+    signature:
+      - fingerprint: |-
+          7C:E8:3C:1B:71:F3:D5:72:FE:D0:4C:8D:40:C5:CB:10:FF:75:E6:D8:7D:9D:F6:FB:D5:3F:04:68:C2:90:50:53
+          F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
+        sources:
+          - name: Google Play
+            issue: GH-1850
+            apk:
+              sha256: 5e2160adac2dc1a885aafd3cc540e420d442fe98927a7a0c8a4373521b61d399
   - package: com.google.android.gms
     signature:
       - fingerprint: |-
