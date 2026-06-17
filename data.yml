@@ -1606,6 +1606,14 @@ packages:
             issue: GH-285
           - name: AppVerifier
             issue: GH-285
+  - package: com.ebay.mobile
+    signature:
+      - fingerprint: 85:B4:01:54:97:15:4D:FA:89:DE:30:87:71:A9:FC:61:A6:4B:19:AF:1A:3F:B0:32:56:E8:CC:3A:79:55:67:E5
+        sources:
+          - name: Google Play
+            issue: GH-1426
+            apk:
+              sha256: 60cc799aace0ab88ed026f820845572e32c17987855ac33a0dfe566cc656465a
   - package: com.eckey.vizpin.dm
     signature:
       - fingerprint: 43:F6:D7:1E:13:EA:F0:62:BB:9F:D3:4A:0C:6C:D5:B3:BA:A8:AD:14:DE:DC:87:99:23:7F:2F:F9:33:FD:53:DC
