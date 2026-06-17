@@ -6838,6 +6838,16 @@ packages:
             issue: GH-874
             apk:
               sha256: a01cbaf17a64ee3aa3f35499edd0a6402af078412e94783ef75d1c3688742d77
+  - package: net.blip.android
+    signature:
+      - fingerprint: 01:35:2E:DE:0D:91:D7:AA:11:70:12:6A:2E:A9:18:9C:E1:DC:C2:21:E1:D1:44:44:9F:13:26:BA:BA:7F:2D:48
+        sources:
+          - name: Google Play
+            issue: GH-1525
+            apk:
+              sha256: 0186e1dd556141e7a02236d50272866903406ce66fca20e1966703703d5dcf26
+          - name: HTTPS Verified Domain
+            issue: GH-1525
   - package: net.christianbeier.droidvnc_ng
     signature:
       - fingerprint: F8:EF:C0:A7:D5:F9:D8:BA:88:ED:F0:82:F2:DC:2C:21:31:B7:54:BA:8F:ED:B4:91:6A:C2:EB:2A:CC:52:19:0D
