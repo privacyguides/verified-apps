@@ -390,6 +390,12 @@ packages:
         sources:
           - name: F-Droid
             issue: GH-558
+      - fingerprint: 21:64:41:F3:2F:AD:2A:60:64:71:23:F8:08:DD:D1:E9:C2:D2:D7:74:37:1E:26:E1:C9:D2:1F:E3:28:D9:54:F8
+        sources:
+          - name: Google Play
+            issue: GH-1630
+            apk:
+              sha256: acb2d2952ae8b5f83356045c7eaf37a5c23ee42b3363f2cd84723fb3e8a92fa9
       - fingerprint: 5E:DB:5C:43:95:B2:F2:D9:BA:68:2F:6A:1D:27:51:70:CC:E5:36:5A:6F:A2:7D:22:20:EA:8D:52:A6:D9:5F:07
         sources:
           - name: Direct APK Link
