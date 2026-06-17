@@ -8221,6 +8221,16 @@ packages:
             issue: GH-744
             apk:
               sha256: 29767d603ba25c2be7c369c42d9a0c983268f29deda3e60ba4574b211a63e3d0
+  - package: org.wikipedia
+    signature:
+      - fingerprint: F5:40:E9:37:41:9A:1F:E3:08:E3:35:31:35:9C:23:CE:19:DF:D8:4A:66:01:E2:EF:85:C2:17:C8:23:A7:08:7F
+        sources:
+          - name: Google Play
+            issue: GH-1886
+            apk:
+              sha256: 23c1d44a281ab093d4c1396849428cc28afd43749d6a9d719a9f8741833bb3de
+          - name: HTTPS Verified Domain
+            issue: GH-1886
   - package: org.woheller69.whobird
     signature:
       - fingerprint: 31:9B:21:56:69:54:4B:FB:67:85:5B:D6:98:19:0D:6B:94:08:9D:93:B2:26:78:0E:62:BE:37:FC:56:E9:60:95
