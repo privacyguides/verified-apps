@@ -139,7 +139,7 @@ With each key fingerprint are the sources where we found that signing key. The s
 
 #### Source Names
 
-The values for the source `name` can be one of the following:
+Common values for the source `name` include:
 
 - `AppVerifier` - Signatures which are already in [AppVerifier's own internal database](https://github.com/soupslurpr/AppVerifier/blob/main/app/src/main/kotlin/dev/soupslurpr/appverifier/InternalVerificationInfoDatabase.kt) (which no longer accepts submissions).
 - `Accrescent` - Signatures we checked against the APK file in Accrescent's app store repository.
@@ -154,8 +154,6 @@ Additionally, we check direct links to APK files (e.g. GitHub Releases) and cust
 Signatures we obtained from a direct APK link will currently always have the `name:` value set to `Direct APK Link`.
 
 Signatures we obtained from a custom F-Droid repo will always have a `name:` value formatted as `F-Droid (example.com)` where `example.com` is the FQDN of the custom F-Droid repository. For example, the repository `https://app.simplex.chat/fdroid/repo` will be listed under `F-Droid (app.simplex.chat)`.
-
-Finally, any other sources not described above will be named `Custom (example)` where `example` can be any ASCII printable character (including spaces).
 
 #### Example
 
