@@ -1718,6 +1718,14 @@ packages:
             issue: GH-982
             apk:
               sha256: fee64d9c24ac4bf78c6b4b4ed477a21f04bd2deb7262fbc33e0b8af9961cc307
+  - package: com.fundriven.breath_ball
+    signature:
+      - fingerprint: 12:E3:00:21:DA:68:B8:A4:5F:1A:3B:C0:28:CF:C8:87:7D:18:3F:52:DF:50:5D:C6:59:F4:37:70:46:36:B9:60
+        sources:
+          - name: Google Play
+            issue: GH-1527
+            apk:
+              sha256: 68ceaaa080904311ad726fc6628eac32dcf118f56825e287fa8febc4af1a19fd
   - package: com.futo.platformplayer
     signature:
       - fingerprint: EF:81:ED:A9:8F:61:7F:7F:17:07:D8:05:09:F2:8D:AE:4E:50:F5:6E:41:E0:77:EB:30:24:D9:C9:07:2D:07:4E
@@ -2093,14 +2101,6 @@ packages:
             issue: GH-944
             apk:
               sha256: cdc5c9f211b42de364d2c15bf6e5a00f5cf8afe8841947ea9a4cb1ee0ddf9f12
-  - package: com.google.android.dialer
-    signature:
-      - fingerprint: E2:D0:49:F3:A0:11:92:F6:20:B1:24:06:15:FA:8C:13:BA:DC:55:3C:22:BC:6F:DD:FC:A4:5C:84:D8:FC:54:5D
-        sources:
-          - name: Google Play
-            issue: GH-1883
-            apk:
-              sha256: 812678d5b46940e3e3578bbd127d60fc9650d057cd44e5de5e8560a67aab80e8
   - package: com.google.android.gms
     signature:
       - fingerprint: |-
