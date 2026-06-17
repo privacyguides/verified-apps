@@ -2145,6 +2145,18 @@ packages:
             issue: GH-443
             apk:
               sha256: 676d07c34414791add2ee330321d135cd70fa9eb35d51a59df52efc11a0efa27
+  - package: com.github.cvzi.screenshottile
+    signature:
+      - fingerprint: C1:FC:88:6A:91:28:99:95:56:B4:CC:C9:5B:03:05:8C:EE:72:DF:A4:5F:33:D9:94:43:E5:B4:81:DD:E7:88:0D
+        sources:
+          - name: F-Droid
+            issue: GH-1446
+            apk:
+              sha256: 2329d96f4a4454de7ca1e6fdfe1ad6265f109668f33dbaee86ac32020c98bf5d
+          - name: Google Play
+            issue: GH-1446
+            apk:
+              sha256: ba990648e44739d9b0171ddafebfe215e626a0e832cd3bc795f699a1537e6590
   - package: com.github.gotify
     signature:
       - fingerprint: 7A:4C:46:88:B9:24:21:8A:BC:A2:41:9A:6A:73:AA:F3:1A:F6:B9:D4:45:5A:4B:02:47:06:5E:33:F6:7A:8F:75
