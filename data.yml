@@ -862,6 +862,14 @@ packages:
             issue: GH-957
             apk:
               sha256: 5f17b9b988a6dbbf3523a1ec798c1b4b865192ee46cf70618e9a1259499ef8c6
+  - package: com.axlebolt.standoff2
+    signature:
+      - fingerprint: CD:29:02:A2:CF:38:54:91:75:95:13:A1:01:74:CC:71:98:F8:E0:8B:6D:B7:75:6E:1F:8A:E2:E3:A1:B2:06:3D
+        sources:
+          - name: Google Play
+            issue: GH-1863
+            apk:
+              sha256: 85ee0324b043f3bf093bdaa6617886b77df9cfa079ffbd4d50d406d86097f0ce
   - package: com.azure.authenticator
     signature:
       - fingerprint: EE:BD:0F:16:E6:29:AF:8B:83:81:BF:ED:FD:D6:49:60:5F:E9:0F:76:3F:5C:B7:BA:47:3E:B9:EE:F9:4D:9A:F1
