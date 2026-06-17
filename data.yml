@@ -342,12 +342,6 @@ packages:
         sources:
           - name: F-Droid
             issue: GH-558
-      - fingerprint: 21:64:41:F3:2F:AD:2A:60:64:71:23:F8:08:DD:D1:E9:C2:D2:D7:74:37:1E:26:E1:C9:D2:1F:E3:28:D9:54:F8
-        sources:
-          - name: Google Play
-            issue: GH-1630
-            apk:
-              sha256: acb2d2952ae8b5f83356045c7eaf37a5c23ee42b3363f2cd84723fb3e8a92fa9
       - fingerprint: 5E:DB:5C:43:95:B2:F2:D9:BA:68:2F:6A:1D:27:51:70:CC:E5:36:5A:6F:A2:7D:22:20:EA:8D:52:A6:D9:5F:07
         sources:
           - name: Direct APK Link
@@ -1213,6 +1207,12 @@ packages:
               sha256: 68705ee7655987728124e045a54d8bcd68e7c66f5b19d491a25ae22af77e47aa
   - package: com.cyb3rko.flashdim
     signature:
+      - fingerprint: 4B:05:58:FA:9D:2E:32:B0:1C:D0:00:7B:13:66:35:B5:AC:67:B5:CA:63:FF:C2:EF:E2:58:9A:80:20:E8:CA:4F
+        sources:
+          - name: Google Play
+            issue: GH-1628
+            apk:
+              sha256: 6b78f551c16fc1b120edda5e111e9f56e126a3c2f6625bc9d755868003035cf0
       - fingerprint: EA:78:69:1C:BA:41:86:00:A4:56:32:89:B1:33:F9:D0:0D:3D:0C:24:A5:F5:4C:5C:59:EE:1C:95:2B:B0:E1:1D
         sources:
           - name: Accrescent
@@ -3313,14 +3313,6 @@ packages:
             issue: GH-989
             apk:
               sha256: 1e166381f60601081c57eddca017e0c6aceea2d09b01e14dcd4883b0dbc67e0a
-  - package: com.rode.rodereporter
-    signature:
-      - fingerprint: 31:41:14:CD:4A:A6:3D:69:58:7B:B9:5B:69:CB:1A:AC:D4:24:7E:70:41:BE:86:5A:7F:D7:4A:E8:DA:C4:8A:4E
-        sources:
-          - name: Google Play
-            issue: GH-1588
-            apk:
-              sha256: d052bef24cedb6f6286013129e3b46ed0058f835b3dc57b071637b2e8d14b09f
   - package: com.roundsalmon4.appverifier
     signature:
       - fingerprint: 1E:76:F1:A1:5C:BE:20:1F:0F:E2:6A:F2:7A:12:D9:1D:0D:34:81:FE:7D:CC:7D:89:E9:D2:05:69:30:F6:D5:A9
@@ -3340,6 +3332,14 @@ packages:
             issue: GH-287
             apk:
               sha256: d3424bcc6d253828cb9bfe578a65b2c99744fc1339983fcec8cb72e6b4b110fe
+  - package: com.ryde_android
+    signature:
+      - fingerprint: 2F:A2:63:91:05:5F:24:B6:0D:94:8A:03:23:A2:93:83:0A:C6:0F:45:38:DE:F1:E8:BC:2B:FA:7E:42:88:13:D9
+        sources:
+          - name: Google Play
+            issue: GH-1404
+            apk:
+              sha256: b1a631ce3771586bc9826cfff8ee5d88df01f6166f54c400a0693930bec726e3
   - package: com.sadellie.unitto
     signature:
       - fingerprint: B2:D9:93:8C:97:FA:77:DF:78:14:2C:31:1D:23:4A:AE:9E:70:6F:10:CC:BA:16:7F:2A:2A:3E:33:52:8C:1D:CF
@@ -4205,6 +4205,14 @@ packages:
             issue: GH-842
             apk:
               sha256: 1bef8f7b7d9c1b4c4a287c7628721c1f8999e5e02a4d154fd625671aa64f6756
+  - package: com.vrem.wifianalyzer
+    signature:
+      - fingerprint: 17:EA:63:A0:60:1C:E9:E2:46:F4:25:58:0D:81:2E:7F:5D:41:5B:76:85:D4:97:10:3B:B3:82:AF:52:D3:5D:59
+        sources:
+          - name: Google Play
+            issue: GH-1616
+            apk:
+              sha256: 54a41f8df49aea21d37981c06c6e432780a90d87dca5abc33f77b1697014effa
   - package: com.vzw.hss.myverizon
     signature:
       - fingerprint: AE:23:A0:34:36:DF:07:B0:CD:70:FE:88:1C:DA:2E:C1:D2:12:15:D7:B7:B0:CC:68:E6:7B:67:F5:DF:89:52:6A
@@ -5688,12 +5696,6 @@ packages:
             apk:
               sha256: e8b8bd89351aae11876435df8265b9e300227f3bfec2640022a9a52d5d160439
               link: https://github.com/x13a/Clipeus/releases/download/v1.1.1/app-release.apk
-      - fingerprint: 92:19:4A:00:76:56:98:05:06:6E:DF:1D:AB:F1:2F:AF:03:6E:3C:57:80:4C:0D:E8:C8:0F:D0:C9:83:6C:43:C6
-        sources:
-          - name: Google Play
-            issue: GH-1629
-            apk:
-              sha256: e559af68d75d946ab20b381971a442fbda4a91c59f5bfeb14bb41d9295dc2fec
   - package: me.lyft.android
     signature:
       - fingerprint: FA:9A:37:54:36:34:35:7B:E0:88:EE:7E:4F:8C:FD:D1:3B:59:07:B2:2E:92:1A:3D:47:45:3E:66:C4:5F:3E:04
@@ -5789,12 +5791,6 @@ packages:
             issue: GH-522
             apk:
               sha256: b161760381522ffc61925c8978d633a9644a6a14b8c5f391dd90461251ec5d5f
-      - fingerprint: A7:47:EA:EE:28:61:1E:25:21:7B:79:3C:07:BF:30:22:34:40:5C:FD:1E:19:06:81:62:55:6C:79:E5:BF:04:F0
-        sources:
-          - name: Google Play
-            issue: GH-1648
-            apk:
-              sha256: 463f78fdd0e52d104f50173ed2fa6777c5e639df01e65c1b96336d1c9e4a16b1
   - package: me.zhanghai.android.files
     signature:
       - fingerprint: 9C:22:A7:42:FA:20:0C:85:BA:FB:C9:92:4A:02:DD:C8:F3:A0:B9:75:D4:D7:B5:A8:DA:21:D7:CF:34:CE:2B:20
@@ -6727,6 +6723,14 @@ packages:
             issue: CB-51
             apk:
               sha256: 1651df0d655e26dc19bcbf2ed09424976f5c0bb9bcef28fb1d352b3eea379667
+  - package: org.jw.jwlibrary.mobile
+    signature:
+      - fingerprint: 7E:A7:4C:8E:1E:69:F2:35:D6:0A:23:F2:91:7A:4E:C1:9A:0D:1C:BC:73:EB:E4:67:0C:2C:E1:BA:E1:01:4E:5D
+        sources:
+          - name: Google Play
+            issue: CB-112
+            apk:
+              sha256: d9e751c23b6b37d6d0e6a04cb13dd734995f8724f89ccaee507d039d14059338
   - package: org.kde.kdeconnect_tp
     signature:
       - fingerprint: 25:32:94:C6:84:D4:C2:31:C4:5A:2B:92:11:DF:AA:01:10:45:62:73:8B:62:A0:9D:BF:B7:14:50:B8:A6:66:F4
