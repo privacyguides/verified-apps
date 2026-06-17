@@ -5429,6 +5429,14 @@ packages:
             issue: CB-7
             apk:
               sha256: 82ebc961c6e4058be1447754061fdf3ca98eeaaacf2e1d8c2f81f6b5a317f946
+  - package: eu.opencloud.android
+    signature:
+      - fingerprint: 0A:1E:55:60:92:9F:6A:DE:6A:EF:6B:44:67:11:E1:4B:0D:2A:90:8E:4D:EB:37:45:37:22:EF:51:C2:DC:A0:37
+        sources:
+          - name: Google Play
+            issue: GH-1860
+            apk:
+              sha256: 682f827da2bd335fccee1d0d462eb7cfefc021044cd017bcd1d6338ae9aa9b0b
   - package: eu.siacs.conversations
     signature:
       - fingerprint: C7:5A:BE:78:59:36:43:AE:7C:AC:52:73:27:CD:21:93:48:2D:B0:67:40:4A:88:B8:C1:3F:7A:07:01:94:61:87
