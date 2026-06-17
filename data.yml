@@ -2458,6 +2458,14 @@ packages:
             issue: GH-1850
             apk:
               sha256: 5e2160adac2dc1a885aafd3cc540e420d442fe98927a7a0c8a4373521b61d399
+  - package: com.google.android.dialer
+    signature:
+      - fingerprint: E2:D0:49:F3:A0:11:92:F6:20:B1:24:06:15:FA:8C:13:BA:DC:55:3C:22:BC:6F:DD:FC:A4:5C:84:D8:FC:54:5D
+        sources:
+          - name: Google Play
+            issue: GH-1883
+            apk:
+              sha256: 812678d5b46940e3e3578bbd127d60fc9650d057cd44e5de5e8560a67aab80e8
   - package: com.google.android.gms
     signature:
       - fingerprint: |-
