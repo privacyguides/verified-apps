@@ -98,14 +98,6 @@ packages:
             issue: GH-176
             apk:
               sha256: 711f4cb32e4538054398a2ae9fa02b674b5acb8520859f7bf8ac48175acabe2f
-  - package: app.linkwarden
-    signature:
-      - fingerprint: B3:7D:19:10:FB:C5:A7:43:08:A7:B9:13:15:1B:80:A3:FC:0F:50:9D:B6:AB:5A:F2:DD:C5:55:B5:41:61:80:CD
-        sources:
-          - name: Google Play
-            issue: GH-1439
-            apk:
-              sha256: 1d5c58a684b67a98b906af5e524fb83c8dfb94ee37ee58906e3a7b9feb6289a7
   - package: app.marlboroadvance.mpvex
     signature:
       - fingerprint: 68:69:06:54:E3:EE:46:D7:08:95:A1:24:45:DF:A9:8D:8C:96:3D:13:E2:DE:0F:8A:AA:20:97:65:CC:2C:41:5E
@@ -2321,6 +2313,16 @@ packages:
             issue: GH-677
             apk:
               sha256: 8cc65dcaf4c1b82bfb9afd3e29194ec27563bdcc9533787381e70d9710d1f945
+  - package: com.iudesk.android.photo.editor
+    signature:
+      - fingerprint: |-
+          4D:BF:93:A4:B5:E7:DC:59:D2:16:60:9D:7F:22:8E:AD:88:15:86:08:68:52:AD:4B:42:21:40:DD:18:90:5C:B0
+          82:FA:C9:72:33:B2:18:83:81:D8:6F:7A:8A:38:D6:AE:0B:B2:0A:90:B6:34:52:DF:16:BE:3F:43:80:78:80:84
+        sources:
+          - name: Google Play
+            issue: GH-1444
+            apk:
+              sha256: e2da6978c346e7a7805d52186eefecc25d93d9fb8dec3054bdf509e2e596d6e5
   - package: com.jarsilio.android.scrambledeggsif
     signature:
       - fingerprint: 3C:DF:16:22:C3:7D:21:2B:E5:86:B2:29:28:F2:8C:CA:DB:D7:CB:95:4F:10:05:FC:E1:3E:81:85:0B:EB:1D:73
