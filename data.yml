@@ -1967,6 +1967,14 @@ packages:
             issue: GH-1434
             apk:
               sha256: 043d7cbcc85c6828e6c8ce26d58c838c9c5b7364bb6f3b40e2ac053ca6548707
+  - package: com.fronius.solarweb
+    signature:
+      - fingerprint: 5A:6A:DE:A2:F3:F8:49:65:8E:8D:3E:8B:05:4A:75:A4:86:D7:5B:E6:1A:BC:B7:60:8B:09:4B:62:DA:85:51:3E
+        sources:
+          - name: Google Play
+            issue: GH-1449
+            apk:
+              sha256: c538680e2102486747f5d03e929f0cd4bd566df21ba717e05d86215b4334992a
   - package: com.fsck.k9
     signature:
       - fingerprint: 55:C8:A5:23:B9:73:35:F5:BF:60:DF:E8:A9:F3:E1:DD:E7:44:51:6D:93:57:E8:0A:92:5B:7B:22:E4:F5:55:24
