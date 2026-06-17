@@ -919,6 +919,14 @@ packages:
             apk:
               sha256: 787e8c2a9ca2ed1423e179964508071ec871d777bb3e15208615b94b752347db
               link: https://github.com/permissionlesstech/bitchat-android/releases/download/1.7.2/bitchat-arm64-v8a-release.apk
+  - package: com.bitdefender.antivirus
+    signature:
+      - fingerprint: 31:F4:FF:2E:D0:44:8C:6D:E8:56:1A:1B:53:58:B2:5E:32:F3:82:7C:2C:D9:16:3B:06:1B:62:CF:B4:F1:ED:18
+        sources:
+          - name: Google Play
+            issue: GH-1634
+            apk:
+              sha256: 3976e39a5967186cee549c2cee8acae6a22abd34d8c222661ad930fb3113ab1c
   - package: com.bnyro.translate
     signature:
       - fingerprint: B3:BC:73:B1:17:DF:5D:FE:38:13:0C:6C:2B:94:68:52:AE:70:88:55:7F:E8:E4:33:F0:D9:98:3A:6B:55:CC:95
@@ -4445,14 +4453,6 @@ packages:
             issue: GH-1113
             apk:
               sha256: 2bce2f2c32e97b89ede5bd0ee95f482a358015e9dd11584a7016b8b822710f2c
-  - package: de.commerzbanking.mobil
-    signature:
-      - fingerprint: F0:95:66:8A:4F:CC:79:C2:15:3E:15:42:8B:7C:0E:CC:FB:65:4F:5F:D3:B3:66:BD:4E:E0:7E:67:E8:1B:50:94
-        sources:
-          - name: Google Play
-            issue: GH-1636
-            apk:
-              sha256: e2ababc9eef975f2e842f280c280aac0164d45d1e21d90e1d615b6d39672ba2f
   - package: de.danoeh.antennapod
     signature:
       - fingerprint: 17:94:30:56:5A:4A:04:BF:E7:82:74:83:24:30:99:BD:10:87:04:10:80:0C:D7:C4:C7:B4:8D:8D:32:26:DF:55
