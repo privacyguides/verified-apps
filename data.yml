@@ -6353,6 +6353,12 @@ packages:
             issue: GH-869
             apk:
               sha256: c8916f9832c75017aa89745b119669feb25357ef5c22abac86ab23e37b294fb3
+      - fingerprint: 69:EF:2B:B1:59:8D:FC:DA:37:99:F6:B7:24:0D:5B:B8:F5:08:4B:5A:39:54:68:39:A2:CA:F6:F2:3F:4A:89:72
+        sources:
+          - name: Google Play
+            issue: GH-1895
+            apk:
+              sha256: eabf6e05df9992a35fb50e6f61bbf3ee91d4e507806c023da0d9d89d36a861ac
   - package: io.heckel.ntfy
     signature:
       - fingerprint: 6E:14:5D:7A:E6:85:EF:F7:54:68:E5:06:7E:03:A6:C3:64:54:53:34:3E:4E:18:1D:AC:8B:6B:17:FF:67:48:9D
