@@ -513,6 +513,14 @@ packages:
             issue: GH-793
             apk:
               sha256: 6faf58dae01287869f7bb85717359e6929a366ea5f9ec6eb1325e0dcdd0e70d1
+  - package: com.activision.callofduty.shooter
+    signature:
+      - fingerprint: 79:AF:5C:28:6E:D6:54:BA:73:44:2D:E7:66:68:BD:4F:A7:FC:92:EC:C3:00:31:67:8B:EC:A8:7C:7F:61:00:70
+        sources:
+          - name: Google Play
+            issue: GH-1841
+            apk:
+              sha256: 46f70bd5496023e02c4fa6be76af30c3c551d7f805441c70b539b17be0415ab3
   - package: com.adobe.reader
     signature:
       - fingerprint: B6:DD:05:62:25:64:87:FC:D6:C9:8C:DE:13:78:58:EF:50:D9:AD:B9:F9:CD:2F:1C:A5:8C:53:57:EF:DF:0F:AF
@@ -2241,6 +2249,14 @@ packages:
             issue: GH-1845
             apk:
               sha256: a8bcc87c33eaa1acd05b4d77cccc75aa0960514dd898fb68994025f35dc3d05c
+  - package: com.infomaniak.mail
+    signature:
+      - fingerprint: 54:CE:26:CB:66:CB:12:EE:E6:FF:51:04:C9:5A:C4:1C:F1:93:9D:B9:C1:83:13:13:AA:52:3D:41:D7:29:EC:C2
+        sources:
+          - name: Google Play
+            issue: GH-1851
+            apk:
+              sha256: 4a91e5240c3b369ff8a0b0d5879081c04a320e7e4044d25d70a2ca3ee2c52b17
   - package: com.innersloth.spacemafia
     signature:
       - fingerprint: 67:A4:DF:80:B1:D9:A4:88:FF:DB:10:07:54:84:1F:D8:3F:90:9C:7C:73:DF:16:E2:46:8C:EC:75:AB:81:C5:8A
@@ -2560,6 +2576,14 @@ packages:
             issue: GH-766
             apk:
               sha256: ff12e539b2a2420a4fcb54b0d839bbff2827ab3b5c2bc6a91a1fb97cb501714b
+  - package: com.marc.files
+    signature:
+      - fingerprint: BD:B9:3E:91:A2:D7:FE:BF:AA:EB:4A:33:7D:99:4C:52:9F:F7:3B:D8:34:6A:5D:95:95:93:6A:43:05:AF:0C:8C
+        sources:
+          - name: Google Play
+            issue: GH-1847
+            apk:
+              sha256: d5b9c156fd2fa3f3bce47365e950b66393b077ab5cb8cbeafa8e3a2ba9d78590
   - package: com.masarat.salati
     signature:
       - fingerprint: 82:06:BF:C4:05:AB:72:3D:21:87:C4:E1:2E:E1:3F:57:2B:D7:81:E9:47:23:EC:2D:74:32:C6:28:85:E0:7B:6F
@@ -2934,14 +2958,6 @@ packages:
             issue: GH-1207
             apk:
               sha256: 8819bfe633faa7affce5b035ad5f553fb5c68368ecaa1d2cdee02dd205773512
-  - package: com.oceanwing.battery.cam
-    signature:
-      - fingerprint: 16:6C:23:45:57:B7:76:CA:D8:AC:94:C9:79:37:9E:48:DF:38:7D:4D:8F:96:A3:43:DF:40:FC:D9:05:BF:F6:86
-        sources:
-          - name: Google Play
-            issue: GH-1844
-            apk:
-              sha256: 02022254f83f9393be47d54cba370fd3c77034c9c3c6e8d32706224650b1d3d2
   - package: com.oceanwing.soundcore
     signature:
       - fingerprint: EA:B2:B0:AE:8A:49:0A:58:A5:ED:1F:CA:E8:1F:50:3D:F0:01:89:2F:0B:26:55:FF:C0:31:51:1A:F5:A3:86:7F
@@ -3233,14 +3249,6 @@ packages:
             issue: GH-674
             apk:
               sha256: ec0bde236aac9e5e2eb95c46ea805966ace8ecd6bf49fffa85e00ce03ec60251
-  - package: com.riotgames.league.wildrift
-    signature:
-      - fingerprint: 93:1D:96:95:02:F3:DE:01:A4:C2:39:E4:19:92:11:EB:DC:57:BB:9A:75:26:39:4B:9E:3E:2D:1C:C0:79:FF:0C
-        sources:
-          - name: Google Play
-            issue: GH-1837
-            apk:
-              sha256: 41b12a3eacdf7bff6b6d6f4372bc6f4ba3392599c6832f874edd6eb93708fef9
   - package: com.riteshsahu.SMSBackupRestore
     signature:
       - fingerprint: F4:47:DC:11:66:22:7B:E1:BC:E3:44:1F:38:D8:CD:FA:79:9A:4F:7D:14:58:DA:15:AE:33:C3:F7:7C:38:ED:0A
@@ -3839,14 +3847,6 @@ packages:
             apk:
               sha256: e0eaacfd91288fcc50b7226a8256d57dc85f955649653ffc686d28e2c0c85d13
               link: https://github.com/termux/termux-float/releases/download/v0.17.0/termux-float-app_v0.17.0+github.debug.apk
-  - package: com.thetransitapp.droid
-    signature:
-      - fingerprint: A0:55:A8:6A:4F:75:38:D3:EE:2D:57:5C:06:74:32:81:B8:13:05:23:73:DE:A5:BF:F1:0D:20:15:81:55:13:41
-        sources:
-          - name: Google Play
-            issue: GH-1832
-            apk:
-              sha256: b3cd440ef1a4d3bcf9e74bc77b98bb791a64a23cd4846ada4c2f055ac0497483
   - package: com.tinder
     signature:
       - fingerprint: 8A:B1:4F:D7:50:B8:20:57:4D:20:C3:54:41:EA:14:A9:B5:D1:95:9A:31:04:0C:EC:12:B4:6B:B2:90:F4:DA:1B
