@@ -919,14 +919,6 @@ packages:
             apk:
               sha256: 787e8c2a9ca2ed1423e179964508071ec871d777bb3e15208615b94b752347db
               link: https://github.com/permissionlesstech/bitchat-android/releases/download/1.7.2/bitchat-arm64-v8a-release.apk
-  - package: com.bitdefender.antivirus
-    signature:
-      - fingerprint: 31:F4:FF:2E:D0:44:8C:6D:E8:56:1A:1B:53:58:B2:5E:32:F3:82:7C:2C:D9:16:3B:06:1B:62:CF:B4:F1:ED:18
-        sources:
-          - name: Google Play
-            issue: GH-1634
-            apk:
-              sha256: 3976e39a5967186cee549c2cee8acae6a22abd34d8c222661ad930fb3113ab1c
   - package: com.bnyro.translate
     signature:
       - fingerprint: B3:BC:73:B1:17:DF:5D:FE:38:13:0C:6C:2B:94:68:52:AE:70:88:55:7F:E8:E4:33:F0:D9:98:3A:6B:55:CC:95
@@ -4213,6 +4205,14 @@ packages:
             issue: GH-842
             apk:
               sha256: 1bef8f7b7d9c1b4c4a287c7628721c1f8999e5e02a4d154fd625671aa64f6756
+  - package: com.vrem.wifianalyzer
+    signature:
+      - fingerprint: 17:EA:63:A0:60:1C:E9:E2:46:F4:25:58:0D:81:2E:7F:5D:41:5B:76:85:D4:97:10:3B:B3:82:AF:52:D3:5D:59
+        sources:
+          - name: Google Play
+            issue: GH-1616
+            apk:
+              sha256: 54a41f8df49aea21d37981c06c6e432780a90d87dca5abc33f77b1697014effa
   - package: com.vzw.hss.myverizon
     signature:
       - fingerprint: AE:23:A0:34:36:DF:07:B0:CD:70:FE:88:1C:DA:2E:C1:D2:12:15:D7:B7:B0:CC:68:E6:7B:67:F5:DF:89:52:6A
