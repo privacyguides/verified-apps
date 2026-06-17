@@ -3025,6 +3025,14 @@ packages:
             issue: GH-822
             apk:
               sha256: 84fe28e381333a43166cb8ae11e457c3605e9271badb5bc33cf8dcdc40110d96
+  - package: com.microsoft.copilot
+    signature:
+      - fingerprint: 7A:F4:8E:E5:0F:6E:3A:54:19:A8:9B:82:34:08:0C:37:A6:B9:84:8C:6F:8E:4D:E7:EC:71:C5:79:4D:11:84:E2
+        sources:
+          - name: Google Play
+            issue: GH-1420
+            apk:
+              sha256: cc846adb0357538e02a2e106bfb80174aaf18c9a896f25399bdf97acecbfa947
   - package: com.microsoft.office.excel
     signature:
       - fingerprint: |-
