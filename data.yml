@@ -1059,14 +1059,6 @@ packages:
             apk:
               sha256: 9f2527fa0716dcf5f14dd5f3ab4954f228361efd81da277ccf1d1f1410d2626c
               link: https://github.com/cake-tech/cupcake/releases/download/v1.1.0/Cupcake_v1.1.0_10.apk
-  - package: com.camerasideas.trimmer
-    signature:
-      - fingerprint: 09:20:A1:04:84:A7:52:8E:B2:0E:86:62:B9:1C:01:F7:26:3C:BF:72:5A:06:DC:50:7C:99:E3:26:7E:B3:8D:74
-        sources:
-          - name: Google Play
-            issue: GH-1460
-            apk:
-              sha256: 55822a55d95278d3843707165f3a58ed9ffba1e5c78af6319b1a0b3415848cf4
   - package: com.cappielloantonio.tempo
     signature:
       - fingerprint: 8E:52:6B:64:42:C1:7E:4A:D9:CB:36:54:C7:A1:FC:E3:24:5B:0C:BD:22:D9:A4:01:5C:E9:23:CE:6B:83:0E:24
@@ -2755,6 +2747,14 @@ packages:
             issue: GH-587
             apk:
               sha256: 6a8b9a5a4ee709975f0936eff9a1936c07a40ecf6cfbc29b404a7396e5c245fc
+  - package: com.midea.ai.overseas
+    signature:
+      - fingerprint: D9:97:0B:32:C7:02:B8:E4:B2:3C:51:62:63:5F:FC:16:23:B5:18:23:B5:A5:8A:3E:4B:8C:9B:AC:97:4C:9C:B3
+        sources:
+          - name: Google Play
+            issue: GH-1447
+            apk:
+              sha256: 09f8f43f282bfdc876b3ed633b44c904e9819c3e01f44a7919d11e151e891a9e
   - package: com.mobillium.airalo
     signature:
       - fingerprint: 03:61:DD:85:0D:D3:AB:65:D9:2D:F4:18:9A:26:41:3D:A5:3A:FF:AA:31:8F:7D:AD:91:47:94:AD:A2:C9:B4:09
