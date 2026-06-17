@@ -4129,6 +4129,14 @@ packages:
             issue: GH-836
             apk:
               sha256: 4c4b97b4ff55c2ddde451d341d15b4ec1d52289d31d57f2b63518980952a81ae
+  - package: com.syz.mprint
+    signature:
+      - fingerprint: BA:8B:B4:65:A0:77:03:9C:8F:38:74:45:C6:14:85:5C:F7:53:9E:AA:E7:DF:F4:1B:F2:F7:E6:CA:E5:9C:31:45
+        sources:
+          - name: Google Play
+            issue: GH-1855
+            apk:
+              sha256: f7eadc12eab6bfdb0459edf109c631a0e91d3ee715259a5100b071d022cb39c1
   - package: com.tailscale.ipn
     signature:
       - fingerprint: 5C:DB:29:55:51:BF:E1:A0:87:FE:D6:AC:DA:07:14:1C:6C:92:9F:A7:C2:9B:D2:73:A7:09:28:13:AC:C4:34:BF
