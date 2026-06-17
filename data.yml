@@ -3337,6 +3337,14 @@ packages:
             issue: GH-504
             apk:
               sha256: 08860526d336d4fafc17d8d0a46ed8e66a7f6b5e73884296f8ed13f195018d81
+  - package: com.niksoftware.snapseed
+    signature:
+      - fingerprint: 3D:12:CC:11:F4:C4:BE:82:23:5F:70:F9:04:69:BE:0B:9C:96:29:AE:C5:FC:B9:49:CB:32:B1:FA:37:5B:FC:3E
+        sources:
+          - name: Google Play
+            issue: GH-1448
+            apk:
+              sha256: 562c00c88ccff19e3d53fca7d7ec0f1c3d2469b83e265f9b88a61a02995467f2
   - package: com.nintendo.zaka
     signature:
       - fingerprint: EC:F5:2A:0F:F5:00:37:4D:AE:75:55:A5:0B:4B:08:52:28:30:4A:F5:DE:AB:01:3A:BF:43:7F:E4:AB:03:C9:26
