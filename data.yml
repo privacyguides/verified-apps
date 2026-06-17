@@ -3525,6 +3525,14 @@ packages:
             issue: GH-1861
             apk:
               sha256: 4321dfa1ca55bf7d55e0d4514484967e5bc49a6582a9ff0f08360eb393d352cd
+  - package: com.performance.meshview
+    signature:
+      - fingerprint: 92:5C:7B:1D:F5:68:9F:EF:23:71:E1:F6:E7:1E:98:A3:95:62:95:DF:95:22:1B:AA:06:14:52:22:AA:89:F7:69
+        sources:
+          - name: Google Play
+            issue: GH-1430
+            apk:
+              sha256: 56a3a6f89272d1def7dc7d275ea7d1203e1ae5a413899916f663d42a75fc34d3
   - package: com.philips.lighting.hue2
     signature:
       - fingerprint: 1B:4B:51:67:E1:6F:D0:29:47:4B:C2:B2:94:79:02:AC:F9:EE:1E:20:E4:7C:F8:5A:B4:38:B6:2C:DE:A8:16:4A
