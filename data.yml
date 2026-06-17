@@ -1088,6 +1088,14 @@ packages:
             issue: CB-68
             apk:
               sha256: 5eaca1cce3132138aa44ba5f90724e35af99c2b48c1076ac333230b126087c6a
+  - package: com.box.android
+    signature:
+      - fingerprint: 5E:6E:4B:82:82:99:CA:01:D7:A4:92:21:1F:CC:88:FA:68:05:0B:AA:A2:5A:50:EA:69:59:6F:D2:A3:E6:B3:66
+        sources:
+          - name: Google Play
+            issue: GH-1414
+            apk:
+              sha256: 5913347fd78fdbdd7727fb99252a60ff3db2cce94541a053ad8d1c575bc7f4b9
   - package: com.brave.browser
     signature:
       - fingerprint: 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
