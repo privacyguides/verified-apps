@@ -1621,14 +1621,6 @@ packages:
             issue: GH-983
             apk:
               sha256: 3e7e5786399373552fc3e1b0284b1c6ee772bd564ff47b6b2f64306d15d70856
-  - package: com.floraincognita.app.floraincognita
-    signature:
-      - fingerprint: F4:CA:67:14:53:F3:F2:A2:7E:41:1E:A1:15:08:AC:3F:BB:C7:EA:E0:68:B4:10:D3:64:B2:D9:DD:AD:89:F8:BC
-        sources:
-          - name: Google Play
-            issue: GH-1543
-            apk:
-              sha256: e2a052195e18b0c58722ca3a9615c6ee78bd43b231e1b169f5be3d0f02f9f86c
   - package: com.flyersoft.moonreader
     signature:
       - fingerprint: 5A:C6:46:EB:C6:80:17:E4:CC:58:2B:11:B1:C2:AE:5D:29:B1:5D:9B:0A:C3:A5:4F:C6:09:72:41:7B:41:C9:AD
@@ -4476,6 +4468,14 @@ packages:
             issue: CB-88
             apk:
               sha256: b5320fb923002ebcb8ef9efcbbecf8bcb37cb442190ccc6d962bcfd1d2b5d471
+  - package: coredevices.coreapp
+    signature:
+      - fingerprint: E1:62:46:18:4F:6F:C8:F7:A3:F2:73:14:A4:3C:30:08:54:55:6D:11:AC:F5:95:60:08:A4:DF:4F:FE:61:C3:9D
+        sources:
+          - name: Google Play
+            issue: GH-1882
+            apk:
+              sha256: ddea7baf2e114277c5d4aea038fc31294877b0fe538178a399f186bc7cdc39c6
   - package: de.astubenbord.paperless_mobile
     signature:
       - fingerprint: 55:B1:8F:9C:A4:08:9F:BA:70:C2:E5:7C:E5:09:F2:40:B8:12:94:EF:69:1B:0D:D1:B1:9D:44:1E:57:64:02:A8
