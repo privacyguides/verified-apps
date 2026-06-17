@@ -1656,6 +1656,14 @@ packages:
             issue: GH-47
           - name: F-Droid
             issue: GH-47
+  - package: com.dontgetflocked.flockhopper
+    signature:
+      - fingerprint: 25:CB:56:0E:7B:E4:7B:20:18:63:B5:6D:5E:1F:DF:C8:74:D9:E6:27:85:C6:9C:E9:54:07:A1:E3:C0:0B:BF:EA
+        sources:
+          - name: Google Play
+            issue: GH-1374
+            apk:
+              sha256: f6350ff9af1f0413cc5cd2fcc8e0eccdfdc1132d2dc293414b3116e8bd2f591e
   - package: com.dot.gallery
     signature:
       - fingerprint: 78:46:05:DD:50:75:BE:05:82:78:A5:42:5C:BD:E5:21:31:62:CB:B4:59:1B:44:28:F4:4E:75:E0:8C:C6:43:8A
