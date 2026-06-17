@@ -4200,6 +4200,14 @@ packages:
             issue: GH-332
             apk:
               sha256: 9f01c3e0ce984b9f8cadc01328e9d3d6bbd168e701a3992d3fd7b1b4de43de00
+  - package: com.sonova.chb.control
+    signature:
+      - fingerprint: 62:51:D6:78:41:32:F6:E0:47:75:8D:3E:7F:60:31:7F:04:9A:E4:A5:03:A0:0A:39:63:F9:60:CF:60:C0:CC:FA
+        sources:
+          - name: Google Play
+            issue: GH-1603
+            apk:
+              sha256: e33e883b31d27d0a78f6aea16595c4bf001391b0d32d729dedcdc34a66b70c32
   - package: com.sony.songpal.mdr
     signature:
       - fingerprint: 42:76:91:96:80:F4:AB:A6:D4:19:24:03:1C:20:AC:26:24:FE:EA:5E:8E:C6:8A:36:52:9B:2A:CB:66:4D:91:1E
