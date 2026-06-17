@@ -2249,14 +2249,6 @@ packages:
             issue: GH-1845
             apk:
               sha256: a8bcc87c33eaa1acd05b4d77cccc75aa0960514dd898fb68994025f35dc3d05c
-  - package: com.infomaniak.mail
-    signature:
-      - fingerprint: 54:CE:26:CB:66:CB:12:EE:E6:FF:51:04:C9:5A:C4:1C:F1:93:9D:B9:C1:83:13:13:AA:52:3D:41:D7:29:EC:C2
-        sources:
-          - name: Google Play
-            issue: GH-1851
-            apk:
-              sha256: 4a91e5240c3b369ff8a0b0d5879081c04a320e7e4044d25d70a2ca3ee2c52b17
   - package: com.innersloth.spacemafia
     signature:
       - fingerprint: 67:A4:DF:80:B1:D9:A4:88:FF:DB:10:07:54:84:1F:D8:3F:90:9C:7C:73:DF:16:E2:46:8C:EC:75:AB:81:C5:8A
@@ -2669,6 +2661,16 @@ packages:
             issue: GH-822
             apk:
               sha256: 84fe28e381333a43166cb8ae11e457c3605e9271badb5bc33cf8dcdc40110d96
+  - package: com.microsoft.office.excel
+    signature:
+      - fingerprint: |-
+          1F:B4:DE:76:0F:40:F3:0E:66:D3:08:51:8A:1B:D9:D1:4E:F1:41:1B:FF:A9:D6:76:28:76:B6:02:66:1D:54:ED
+          B9:25:13:6F:3E:A7:C0:A1:95:16:90:A1:AB:31:39:10:DA:81:F4:09:94:A8:53:42:EC:62:28:88:F1:28:70:51
+        sources:
+          - name: Google Play
+            issue: GH-1846
+            apk:
+              sha256: 4dfa0b49bf846f1bdc8b5fb04f32adaa21e63c7bd538bb73b65e3829a11d2e34
   - package: com.microsoft.office.onenote
     signature:
       - fingerprint: |-
