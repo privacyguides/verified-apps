@@ -5773,6 +5773,14 @@ packages:
             apk:
               sha256: a0c802fed67251d0846af31269df15e916f731f861bd2ace8c08d6b8e94f3fac
               link: https://github.com/anyproto/anytype-kotlin/releases/download/0.46.12/anytype-0.46.12-arm64-v8a.apk
+  - package: io.appflowy.appflowy
+    signature:
+      - fingerprint: 19:13:85:33:DB:B3:A2:FD:65:2F:61:D7:F2:35:95:79:FE:6E:CC:B5:AC:94:AA:02:9E:BE:E7:0E:02:6B:45:FF
+        sources:
+          - name: Google Play
+            issue: GH-1412
+            apk:
+              sha256: cca674ba96e065d3ed9290c0b9478c8e2b7e57d1685610cee19e6272d8c26148
   - package: io.element.android.x
     signature:
       - fingerprint: 6A:2F:DC:31:48:04:9C:E0:D5:C6:E8:50:10:72:3B:83:FB:20:7D:20:C7:47:7F:5C:22:AC:53:C8:77:E9:2D:47
