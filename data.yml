@@ -5080,6 +5080,14 @@ packages:
             issue: GH-690
             apk:
               sha256: a45ec003660f4fa9b20bd992359c83f63fcff504767ff670264a2acc867c5c5c
+  - package: com.xodo.pdf.reader
+    signature:
+      - fingerprint: 4B:64:FF:7B:9E:AB:D6:88:75:43:09:E1:91:67:B3:DB:49:CD:32:75:77:F3:70:81:C9:BC:BF:19:DE:AB:10:A3
+        sources:
+          - name: Google Play
+            issue: GH-1458
+            apk:
+              sha256: 31b0244482807005e4f818e5f0dcdace7e234eebb34a9f65f9253954f1418339
   - package: com.xtreak.notificationdictionary
     signature:
       - fingerprint: B2:9E:63:84:95:FD:F5:82:E6:86:83:56:4C:C3:DE:F7:9A:D9:09:18:EB:80:79:94:4D:54:70:BA:3F:F9:5B:A9
