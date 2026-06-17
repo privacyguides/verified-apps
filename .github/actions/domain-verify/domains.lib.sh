@@ -194,31 +194,89 @@ EOF
 
 # --- Record discovery ---------------------------------------------------------
 
+# Fetch an HTTPS resource for Digital Asset Links and echo its body only on a hard HTTP 200.
+# The DAL spec requires statement files to be served with a 200 response: redirects are NOT
+# followed (no curl -L) and any non-200 status fails. Only https URLs are allowed, the body
+# size is capped, and transient errors (timeouts/5xx) are retried. Returns 1 on any failure.
+_domain_https_fetch_200() {
+  local url="$1" tmp code
+  [[ "$url" == https://* ]] || return 1
+  tmp=$(mktemp)
+  code=$(curl -sS --max-time 20 --max-filesize 1048576 --retry 2 --retry-delay 1 \
+    -o "$tmp" -w '%{http_code}' "$url" 2>/dev/null) || { rm -f "$tmp"; return 1; }
+  if [[ "$code" != "200" ]]; then
+    echo "HTTPS: ${url} returned HTTP ${code} (Digital Asset Links requires 200; redirects are not followed)" >&2
+    rm -f "$tmp"
+    return 1
+  fi
+  cat "$tmp"
+  rm -f "$tmp"
+}
+
 # Fetch and parse the HTTPS Digital Asset Links record for a package on a domain. Collects
 # the sha256_cert_fingerprints of every android_app statement whose package_name matches
 # the app being verified (relation is ignored), normalized to uppercase colon form. The
 # resulting .allowed array is a flat list of individual certificate fingerprints the domain
-# vouches for this package. Returns 1 when no matching statement carries a valid fingerprint.
+# vouches for this package.
+#
+# `include` statements ({"include": "https://.../other.json"}) are followed: the referenced
+# statement list is fetched (also 200-only) and its matching statements are merged in. Follows
+# are bounded (DOMAIN_HTTPS_MAX_DOCS documents) and de-duplicated to guard against cycles and
+# runaway chains; an include that is unreachable or non-200 is skipped, but the top-level
+# well-known file must itself return a usable 200. Returns 1 when the top-level file is
+# missing/unusable or no matching statement carries a valid fingerprint.
 domain_fetch_https_record() {
   local domain="$1" package="$2"
   local url="https://${domain}/${DOMAIN_WELLKNOWN_PATH}"
-  local body fps allowed="[]" count i raw norm
-  body=$(curl -fsSL --max-time 20 --retry 2 --retry-delay 1 "$url" 2>/dev/null) || return 1
-  jq -e 'type == "array"' >/dev/null 2>&1 <<< "$body" || return 1
-  fps=$(jq -c --arg pkg "$package" '
-    [ .[]
-      | select(type == "object")
-      | select((.target.namespace // "") == "android_app")
-      | select((.target.package_name // "") == $pkg)
-      | (.target.sha256_cert_fingerprints // [])[]
-      | select(type == "string")
-    ]' <<< "$body" 2>/dev/null) || return 1
-  count=$(jq 'length' <<< "$fps")
-  for ((i = 0; i < count; i++)); do
-    raw=$(jq -r ".[$i]" <<< "$fps")
-    norm=$(signatures_sha256_hex_to_colon_fp "$raw") || continue
-    allowed=$(jq -c --arg n "$norm" '. + [$n]' <<< "$allowed")
+  local max_docs="${DOMAIN_HTTPS_MAX_DOCS:-10}"
+  local allowed="[]" visited="" found_top=0 docs=0 head=0
+  local -a queue=("$url")
+  local cur body norm_body matching includes inc count i raw norm
+
+  while [[ "$head" -lt "${#queue[@]}" && "$docs" -lt "$max_docs" ]]; do
+    cur="${queue[$head]}"
+    head=$((head + 1))
+    printf '%s\n' "$visited" | grep -Fxq "$cur" && continue
+    visited+="${cur}"$'\n'
+
+    if ! body=$(_domain_https_fetch_200 "$cur"); then
+      # The top-level well-known file must exist; a missing/non-200 include is just skipped.
+      [[ "$cur" == "$url" ]] && return 1
+      continue
+    fi
+    docs=$((docs + 1))
+
+    # A statement list is a JSON array; tolerate a bare {"include": ...} / statement object.
+    norm_body=$(jq -c 'if type == "array" then . elif type == "object" then [.] else empty end' <<< "$body" 2>/dev/null) || continue
+    [[ -n "$norm_body" ]] || continue
+    [[ "$cur" == "$url" ]] && found_top=1
+
+    matching=$(jq -c --arg pkg "$package" '
+      [ .[]
+        | select(type == "object")
+        | select((.target.namespace // "") == "android_app")
+        | select((.target.package_name // "") == $pkg)
+        | (.target.sha256_cert_fingerprints // [])[]
+        | select(type == "string")
+      ]' <<< "$norm_body" 2>/dev/null) || matching="[]"
+    count=$(jq 'length' <<< "$matching")
+    for ((i = 0; i < count; i++)); do
+      raw=$(jq -r ".[$i]" <<< "$matching")
+      norm=$(signatures_sha256_hex_to_colon_fp "$raw") || continue
+      allowed=$(jq -c --arg n "$norm" '. + [$n]' <<< "$allowed")
+    done
+
+    # Queue any include targets (https only) for fetching.
+    includes=$(jq -c '[ .[] | select(type == "object") | .include // empty | select(type == "string") ]' <<< "$norm_body" 2>/dev/null) || includes="[]"
+    count=$(jq 'length' <<< "$includes")
+    for ((i = 0; i < count; i++)); do
+      inc=$(jq -r ".[$i]" <<< "$includes")
+      [[ "$inc" == https://* ]] || continue
+      queue+=("$inc")
+    done
   done
+
+  [[ "$found_top" -eq 1 ]] || return 1
   allowed=$(jq -c 'unique' <<< "$allowed")
   [[ "$(jq 'length' <<< "$allowed")" -gt 0 ]] || return 1
   jq -n --arg method "https" --arg domain "$domain" --arg source "$url" --arg pkg "$package" \
