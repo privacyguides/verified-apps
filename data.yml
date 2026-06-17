@@ -6120,6 +6120,14 @@ packages:
             issue: GH-81
             apk:
               sha256: fd2b4c974deddd9b89d9693764e6962cd89d3f676cceb8e0ac97c4049b5f1b86
+  - package: io.anuke.mindustry
+    signature:
+      - fingerprint: 87:E2:CB:A3:85:05:2D:3F:71:46:B0:91:A9:BA:B1:47:7D:4A:2A:57:BF:CE:E4:CC:B9:2C:A9:9B:6D:03:2B:F3
+        sources:
+          - name: Google Play
+            issue: GH-1887
+            apk:
+              sha256: cd82516f5d7fec0a433eabc961691f9ac04686d0b894d65f95bdf1219c1b4eee
   - package: io.anytype.app
     signature:
       - fingerprint: 89:0B:65:C4:06:E8:CF:2F:73:F6:D0:BF:D1:D2:97:83:B8:C1:4D:26:1A:92:A3:5F:34:2B:08:65:26:D7:E3:DB
