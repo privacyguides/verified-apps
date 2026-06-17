@@ -670,14 +670,6 @@ packages:
             issue: GH-975
             apk:
               sha256: d32d9da15d88abfc1b9fd69a172e9342807e53c31ae77673acf4536cc99921bf
-  - package: com.andoku.three.gp
-    signature:
-      - fingerprint: EF:B3:C2:A3:E3:BA:8B:95:7F:EA:31:6A:80:CF:5A:2D:9C:2B:52:4F:D3:41:0E:F0:DB:76:88:20:39:D3:93:C8
-        sources:
-          - name: Google Play
-            issue: GH-1811
-            apk:
-              sha256: 817c3ee36321fe41e09988d01de87b072edd877c8138572252b1b9e4c7582a79
   - package: com.android.chrome
     signature:
       - fingerprint: F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
@@ -1664,6 +1656,14 @@ packages:
             issue: GH-994
             apk:
               sha256: 0e5a8fbfb03ab5e7196b6c1388a3dc04ffd84739a81bfc395c8edeaa895051fb
+  - package: com.foxit.mobile.pdf.lite
+    signature:
+      - fingerprint: 1A:D0:DE:1D:95:54:C5:3F:6C:45:3A:4B:7A:89:1F:11:EF:DE:F0:9B:74:93:C3:8D:BF:A7:3E:4C:4F:94:FC:8F
+        sources:
+          - name: Google Play
+            issue: GH-1434
+            apk:
+              sha256: 043d7cbcc85c6828e6c8ce26d58c838c9c5b7364bb6f3b40e2ac053ca6548707
   - package: com.fsck.k9
     signature:
       - fingerprint: 55:C8:A5:23:B9:73:35:F5:BF:60:DF:E8:A9:F3:E1:DD:E7:44:51:6D:93:57:E8:0A:92:5B:7B:22:E4:F5:55:24
@@ -5845,6 +5845,14 @@ packages:
             issue: GH-1012
             apk:
               sha256: 86c50add2a359cda0dee350011e2b8bbdc0218531fc6dd824aeb7672ab88d005
+  - package: mv.mtcc.TaxiApp
+    signature:
+      - fingerprint: 8B:77:B7:6E:34:AA:0A:A0:8C:D6:A8:1B:C0:AE:1E:BB:B1:D9:B4:48:F4:9A:82:D7:E7:3D:C5:EC:2B:71:74:DF
+        sources:
+          - name: Google Play
+            issue: GH-1797
+            apk:
+              sha256: 20d39348af1cee7ee027b5777998cf60be86c74d73d3b18c5dd7846f3f8808a4
   - package: ncit.gov.efaasblue
     signature:
       - fingerprint: 92:76:E3:A8:17:4E:EB:81:5C:79:F6:9A:7C:CD:34:37:42:6A:DA:A3:79:E7:ED:83:3A:D9:60:5E:69:40:33:D5
