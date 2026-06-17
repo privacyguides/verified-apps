@@ -2049,6 +2049,16 @@ packages:
             issue: GH-944
             apk:
               sha256: cdc5c9f211b42de364d2c15bf6e5a00f5cf8afe8841947ea9a4cb1ee0ddf9f12
+  - package: com.google.android.deskclock
+    signature:
+      - fingerprint: |-
+          7C:E8:3C:1B:71:F3:D5:72:FE:D0:4C:8D:40:C5:CB:10:FF:75:E6:D8:7D:9D:F6:FB:D5:3F:04:68:C2:90:50:53
+          F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
+        sources:
+          - name: Google Play
+            issue: GH-1850
+            apk:
+              sha256: 5e2160adac2dc1a885aafd3cc540e420d442fe98927a7a0c8a4373521b61d399
   - package: com.google.android.gms
     signature:
       - fingerprint: |-
@@ -2934,14 +2944,6 @@ packages:
             issue: GH-1207
             apk:
               sha256: 8819bfe633faa7affce5b035ad5f553fb5c68368ecaa1d2cdee02dd205773512
-  - package: com.oceanwing.battery.cam
-    signature:
-      - fingerprint: 16:6C:23:45:57:B7:76:CA:D8:AC:94:C9:79:37:9E:48:DF:38:7D:4D:8F:96:A3:43:DF:40:FC:D9:05:BF:F6:86
-        sources:
-          - name: Google Play
-            issue: GH-1844
-            apk:
-              sha256: 02022254f83f9393be47d54cba370fd3c77034c9c3c6e8d32706224650b1d3d2
   - package: com.oceanwing.soundcore
     signature:
       - fingerprint: EA:B2:B0:AE:8A:49:0A:58:A5:ED:1F:CA:E8:1F:50:3D:F0:01:89:2F:0B:26:55:FF:C0:31:51:1A:F5:A3:86:7F
