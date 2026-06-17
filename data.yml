@@ -1840,6 +1840,16 @@ packages:
             issue: GH-752
             apk:
               sha256: 6ebe5c150cadcc255e497af7fa162ca1d1930f4942ad60e8aea515314ed59d02
+  - package: com.fastmail.app
+    signature:
+      - fingerprint: C9:2C:5E:E8:F6:BA:CB:E9:3C:A6:C0:8A:E9:6E:F4:7D:09:91:80:63:F5:71:64:78:BF:90:E6:86:09:C9:0D:1D
+        sources:
+          - name: Google Play
+            issue: GH-1535
+            apk:
+              sha256: 8718abdc82dc4c3b960e0766081d4abcd1c50fbb5d7e9f677a95b4f6b5b8ab52
+          - name: HTTPS Verified Domain
+            issue: GH-1535
   - package: com.fauxx.full
     signature:
       - fingerprint: 1B:E8:F7:9B:20:F2:64:E8:24:2D:A5:EC:A6:95:F8:D0:96:1A:D0:98:71:9A:7C:6E:4A:1F:F7:5A:33:AE:A2:76
