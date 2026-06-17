@@ -3051,14 +3051,6 @@ packages:
             issue: GH-696
             apk:
               sha256: 7aed4f4042f81ea5f2576b256d084e7fad9cfc44b39f0e05ac26a198f5191b63
-  - package: com.overlook.android.fing
-    signature:
-      - fingerprint: 93:77:50:E2:32:9D:AE:F6:91:DB:2F:C5:C4:F8:E5:01:27:45:4E:60:07:3A:8F:22:CF:D9:4E:03:8F:B7:FA:4A
-        sources:
-          - name: Google Play
-            issue: GH-1432
-            apk:
-              sha256: 92b2bc5c7e1c1f6b82ed5f5cb5040de099e6df7bf8a08dc8e9357240e8803c09
   - package: com.pal.dx
     signature:
       - fingerprint: AC:D4:71:6B:03:0B:7F:EB:E6:E1:83:01:18:7B:62:5C:9C:CC:86:66:07:5A:E7:0B:21:98:B7:DC:42:83:86:A7
@@ -6073,6 +6065,14 @@ packages:
             apk:
               sha256: 60f878f4d705dd97f26950b82069e6ccc54794cfe4ef28b26eb6eedf8864426f
               link: https://github.com/leinelissen/jellyfin-audio-player/releases/download/v2.4.6/fintunes-v2.4.6.apk
+  - package: nl.rijksoverheid.digid.pub
+    signature:
+      - fingerprint: 3B:90:85:EB:09:26:B0:11:1D:4E:62:2D:5A:5F:81:9F:6F:55:30:F4:F8:F7:84:9E:05:94:B2:CD:3C:AF:F1:7A
+        sources:
+          - name: Google Play
+            issue: GH-1793
+            apk:
+              sha256: 4098314cced5ffe6b6b92888cb7e003493ac01c36fbf46ba4e9025a8cd29d1da
   - package: nodomain.freeyourgadget.gadgetbridge
     signature:
       - fingerprint: 01:CC:E9:31:6F:CB:77:EA:02:C6:DE:A8:1F:DE:9F:31:76:46:92:02:C0:CE:A0:51:4C:0E:03:CB:96:9B:C7:BE
