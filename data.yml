@@ -7395,6 +7395,14 @@ packages:
             issue: GH-735
             apk:
               sha256: e7ff8c52186e47d01812fb8564300d7591b4b7e575f8e64de1742ac6838f502f
+  - package: org.mozilla.firefox_beta
+    signature:
+      - fingerprint: A7:8B:62:A5:16:5B:44:94:B2:FE:AD:9E:76:A2:80:D2:2D:93:7F:EE:62:51:AE:CE:59:94:46:B2:EA:31:9B:04
+        sources:
+          - name: Google Play
+            issue: GH-1433
+            apk:
+              sha256: 9c1ec068c4e6aed1f40c8489082653fd31b5cd6a5269314191da3606a1074c38
   - package: org.openobservatory.ooniprobe
     signature:
       - fingerprint: BF:7D:A8:2A:7C:77:87:EB:67:56:41:48:23:4B:6D:40:F0:EC:66:4B:F2:92:BC:7A:8F:15:47:FE:7F:E7:5E:84
