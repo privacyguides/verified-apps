@@ -7591,6 +7591,22 @@ packages:
             issue: GH-1355
             apk:
               sha256: 01dcc7afab13c02e5beafb548ad0c7d2e0f9c91df6be1b05c6acc45d3f644315
+  - package: org.fossify.paint
+    signature:
+      - fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
+        sources:
+          - name: F-Droid
+            issue: GH-1443
+            apk:
+              sha256: b949ad0a1eafce616e9e6c6f5fa5b265e4b8ad426303a245be921a6e0c0def5e
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1443
+            apk:
+              sha256: b949ad0a1eafce616e9e6c6f5fa5b265e4b8ad426303a245be921a6e0c0def5e
+          - name: Google Play
+            issue: GH-1443
+            apk:
+              sha256: c1c1e9c5ce69a3a9240a6f4b21d43269cc6381e5b9fc498264c4ecfe089e4c11
   - package: org.fossify.phone
     signature:
       - fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
