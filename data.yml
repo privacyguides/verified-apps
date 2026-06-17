@@ -4648,6 +4648,14 @@ packages:
             issue: GH-343
             apk:
               sha256: 31a6dafe9180c09d1078d693104f21ee3e1f8c3da73c40b52257594c71691d5e
+  - package: com.tuya.smart
+    signature:
+      - fingerprint: 93:21:9F:C2:73:E2:20:0F:4A:DE:E5:F7:19:1D:C6:56:BA:2A:2D:7B:2F:F5:D2:4C:D5:5C:4B:61:55:00:1E:40
+        sources:
+          - name: Google Play
+            issue: GH-1452
+            apk:
+              sha256: d8f61f0ae358402b15f6f7ee1e9557973d751ea822e4a78a6c7fe59cf9d3fcef
   - package: com.ubercab
     signature:
       - fingerprint: 40:03:23:1A:B4:2F:EB:8D:95:5E:62:FD:FA:A4:FA:D5:95:67:05:4B:9C:6B:BC:3D:95:02:99:DD:FC:26:83:92
