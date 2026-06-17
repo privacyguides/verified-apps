@@ -8119,6 +8119,12 @@ packages:
             issue: GH-551
             apk:
               sha256: 507ff8a1a02cfcdbeca1fedcb1d90f162ca315a1fb5fc40d52f3504e1099d73c
+      - fingerprint: 9C:8F:22:BC:28:89:2E:C7:AD:51:62:A0:53:CE:1E:A6:95:F0:F7:E9:B8:FA:3E:16:A5:10:98:95:CD:62:04:D3
+        sources:
+          - name: Google Play
+            issue: GH-1428
+            apk:
+              sha256: d17c55a0ae869ca51fbbc9356e718f5329762be85582af4ea0f38e0d986ca7d5
   - package: xyz.blueskyweb.app
     signature:
       - fingerprint: 40:05:8E:C6:8A:35:55:21:D0:8D:F2:49:98:CF:99:A7:14:91:33:5C:65:D7:58:85:03:9E:80:C0:25:AA:DD:FF
