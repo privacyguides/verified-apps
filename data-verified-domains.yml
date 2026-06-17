@@ -37,3 +37,13 @@ domains:
       - package: org.privacyguides.verifiedapps
         fingerprints:
           - 40:5C:6B:D2:CA:7C:3A:AE:8F:46:3C:6F:8B:55:BC:F0:DD:AC:43:1C:5E:D8:EA:FF:65:D1:06:C9:81:7A:20:7F
+  - domain: waze.com
+    method: https
+    issue:
+      - GH-1456
+    checked: "2026-06-17T20:22:09Z"
+    packages:
+      - package: com.waze
+        fingerprints:
+          - 03:63:7F:6C:5D:8F:60:4E:6F:DB:79:A6:FF:BF:A5:78:DE:4E:31:8F:8D:A2:2F:C6:10:66:65:24:7F:88:07:D7
+          - 7F:D2:CE:A3:0C:3A:60:22:EB:29:41:9C:E8:F6:F9:2C:E8:A4:BD:35:B0:CC:87:9E:D3:CC:A6:CB:F5:E9:99:2D
