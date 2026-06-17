@@ -6491,6 +6491,12 @@ packages:
             issue: GH-522
             apk:
               sha256: b161760381522ffc61925c8978d633a9644a6a14b8c5f391dd90461251ec5d5f
+      - fingerprint: A7:47:EA:EE:28:61:1E:25:21:7B:79:3C:07:BF:30:22:34:40:5C:FD:1E:19:06:81:62:55:6C:79:E5:BF:04:F0
+        sources:
+          - name: Google Play
+            issue: GH-1648
+            apk:
+              sha256: 463f78fdd0e52d104f50173ed2fa6777c5e639df01e65c1b96336d1c9e4a16b1
   - package: me.zhanghai.android.files
     signature:
       - fingerprint: 9C:22:A7:42:FA:20:0C:85:BA:FB:C9:92:4A:02:DD:C8:F3:A0:B9:75:D4:D7:B5:A8:DA:21:D7:CF:34:CE:2B:20
