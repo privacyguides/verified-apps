@@ -545,6 +545,14 @@ packages:
             issue: GH-326
             apk:
               sha256: 36b3f935dec1944dd3746329255359ebc032ab10382e92680cf993c40a3b84b5
+  - package: com.airbnb.android
+    signature:
+      - fingerprint: 43:7B:7C:9A:94:6C:3C:E9:F2:49:A4:30:86:14:F5:42:C1:4D:7C:7A:3B:C9:77:89:98:4E:02:47:CD:23:01:FB
+        sources:
+          - name: Google Play
+            issue: GH-1839
+            apk:
+              sha256: c048bc3dbb8486f3f9218cca09d261415aba917765cba2abd3e69700e1675973
   - package: com.aircanada
     signature:
       - fingerprint: 39:09:4C:C7:95:A9:86:B6:45:D1:F6:59:F1:5A:5B:8E:5C:8C:63:F7:80:37:F9:95:E7:E7:1B:62:FE:93:D2:E9
@@ -1279,6 +1287,14 @@ packages:
             issue: GH-266
             apk:
               sha256: dfe359b3b2c16ff23b56c02c4703a9437824469f5035d109b53b2acc09a7635e
+  - package: com.defend3dapp
+    signature:
+      - fingerprint: 28:AF:3A:50:E0:83:74:18:95:92:49:1A:8E:EF:63:59:B4:B5:8E:E7:BC:A5:BF:08:C7:3E:7B:F2:4B:48:18:DA
+        sources:
+          - name: Google Play
+            issue: GH-1410
+            apk:
+              sha256: b677b39772926321a1d118947cfa63e1f6c23ee2bd4d12724d8a140e48272b0f
   - package: com.delta.mobile.android
     signature:
       - fingerprint: DC:BE:F3:76:6B:C1:AA:52:28:EB:75:AC:A9:C7:AE:02:3C:FE:BB:43:83:90:CB:73:75:85:28:0A:26:DE:AA:11
@@ -4243,14 +4259,6 @@ packages:
             issue: GH-1062
             apk:
               sha256: 88b5506f3e33fa018b8859ac602cf1e31c212144adb3a0a198efa3928ab1dbf7
-  - package: com.wizards.mtga
-    signature:
-      - fingerprint: F3:1D:80:83:6A:33:E7:2A:37:82:B0:FE:0A:91:64:30:4C:25:61:AC:B0:78:97:15:38:90:E9:BB:44:52:A4:61
-        sources:
-          - name: Google Play
-            issue: GH-1852
-            apk:
-              sha256: 0dccbf55017ae8542b5a9322fd0e2c1814b2cb86e6bb822f82ac347aaf11dc9a
   - package: com.wizzair.WizzAirApp
     signature:
       - fingerprint: 71:39:71:8A:9C:7A:50:3A:F9:7D:38:78:31:4E:C0:9A:6F:EF:E6:27:7E:A7:16:30:56:E0:22:73:F3:55:31:02
@@ -5410,14 +5418,6 @@ packages:
             apk:
               sha256: 7ecb5576de71d3e9e5b555f5d2ef41c20e06477e02a6179dddb32fcaaba5f49a
               link: https://github.com/home-assistant/android/releases/download/2026.4.4/app-minimal-release.apk
-  - package: io.safepal.wallet
-    signature:
-      - fingerprint: B5:9B:F8:07:63:AD:0D:0A:A3:B2:85:79:8B:CB:F6:5E:11:1D:ED:41:35:C4:B3:43:BB:4C:EC:2A:EA:C2:FC:62
-        sources:
-          - name: Google Play
-            issue: GH-1862
-            apk:
-              sha256: d470f3c118b414ae4850a2649117a50589fd40223686fd2b4a2ece95f677f801
   - package: io.sanford.wormhole_william
     signature:
       - fingerprint: 4F:BD:DD:75:06:50:73:63:4B:D5:3D:26:6F:C4:3E:7C:61:6E:40:F4:A4:48:BB:DA:2F:AF:60:D7:65:EB:3A:0E
