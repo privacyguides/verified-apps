@@ -1205,14 +1205,6 @@ packages:
             issue: CB-2
             apk:
               sha256: 68705ee7655987728124e045a54d8bcd68e7c66f5b19d491a25ae22af77e47aa
-  - package: com.cxinventor.file.explorer
-    signature:
-      - fingerprint: 26:A4:15:39:86:2A:72:19:06:EF:C2:9D:78:6C:FD:B3:EE:BE:D7:34:9D:34:9F:97:C3:87:1E:0E:74:8C:90:6D
-        sources:
-          - name: Google Play
-            issue: GH-1422
-            apk:
-              sha256: e164a87881cbe470f883ad5507dfd3e29fbde8ff1838f3d825aa377aa61ebc62
   - package: com.cyb3rko.flashdim
     signature:
       - fingerprint: EA:78:69:1C:BA:41:86:00:A4:56:32:89:B1:33:F9:D0:0D:3D:0C:24:A5:F5:4C:5C:59:EE:1C:95:2B:B0:E1:1D
@@ -2379,6 +2371,14 @@ packages:
             issue: GH-274
             apk:
               sha256: 95c0e8775be5365428d5e3fecdac0b0c5735213ed896c6e920f6fb0c22b37727
+  - package: com.kollectivemobile.euki
+    signature:
+      - fingerprint: EA:52:2B:12:5F:40:1A:12:98:3F:D5:76:1D:A3:AF:18:52:21:66:20:ED:31:E6:03:52:5C:D5:9F:2D:03:41:57
+        sources:
+          - name: Google Play
+            issue: CB-98
+            apk:
+              sha256: ca2a472f7383ab09f4e5baa56bd2caeb56eea0b1ff873df034a72756cefe547f
   - package: com.koreanair.passenger
     signature:
       - fingerprint: 41:70:AA:43:15:24:69:FB:E7:93:48:8B:5A:17:7E:D8:3B:25:58:73:C5:44:F2:EC:51:32:92:63:2A:27:CA:11
