@@ -8149,6 +8149,14 @@ packages:
             issue: GH-398
             apk:
               sha256: 4eff47ffb524233a6966886f14d97bac5573574ade7c30df93e09a18db730665
+  - package: se.parkster.client.android
+    signature:
+      - fingerprint: 8B:7D:7C:E3:43:90:34:D3:26:34:05:5F:46:BD:C4:7F:4D:94:D5:9D:A2:7D:D6:25:D5:A3:DC:E4:4F:1B:67:5D
+        sources:
+          - name: Google Play
+            issue: GH-1642
+            apk:
+              sha256: 7769dfc2ac9405a2e598960d625f89e47254fcf2b353389252681dd25251e6e1
   - package: se.postnord.private
     signature:
       - fingerprint: 71:33:6E:97:C6:D3:EF:FF:FA:42:38:5F:A8:33:F9:05:95:AC:8C:1C:05:D8:98:04:97:DE:2F:E1:F5:3D:97:53
