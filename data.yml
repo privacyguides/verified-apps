@@ -1428,6 +1428,14 @@ packages:
             issue: GH-266
             apk:
               sha256: dfe359b3b2c16ff23b56c02c4703a9437824469f5035d109b53b2acc09a7635e
+  - package: com.defend3dapp
+    signature:
+      - fingerprint: 28:AF:3A:50:E0:83:74:18:95:92:49:1A:8E:EF:63:59:B4:B5:8E:E7:BC:A5:BF:08:C7:3E:7B:F2:4B:48:18:DA
+        sources:
+          - name: Google Play
+            issue: GH-1410
+            apk:
+              sha256: b677b39772926321a1d118947cfa63e1f6c23ee2bd4d12724d8a140e48272b0f
   - package: com.delta.mobile.android
     signature:
       - fingerprint: DC:BE:F3:76:6B:C1:AA:52:28:EB:75:AC:A9:C7:AE:02:3C:FE:BB:43:83:90:CB:73:75:85:28:0A:26:DE:AA:11
