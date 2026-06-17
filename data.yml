@@ -694,14 +694,6 @@ packages:
             issue: GH-714
             apk:
               sha256: a23fb58ac8a427949bed12b15923e479e06b359ce526da9c148234e130309c39
-  - package: com.anthropic.claude
-    signature:
-      - fingerprint: 30:5A:1E:8A:43:2E:5E:C0:C6:12:B2:46:53:59:C3:B8:8E:3C:95:D6:25:35:99:AC:60:88:56:2B:81:8B:64:A0
-        sources:
-          - name: Google Play
-            issue: GH-1417
-            apk:
-              sha256: fc0a40e202c4bb0d7576ff49a7ca69ea9cc3349475ffb41d07bf93ac396c44f1
   - package: com.apiture.xpressmobile.tabut.sub
     signature:
       - fingerprint: E0:85:00:80:44:B1:CA:2C:35:F8:54:1B:0E:08:28:08:78:EF:19:65:87:2E:D4:24:6C:A2:B7:1B:08:D8:ED:11
@@ -1441,6 +1433,14 @@ packages:
             issue: GH-285
           - name: AppVerifier
             issue: GH-285
+  - package: com.ebay.mobile
+    signature:
+      - fingerprint: 85:B4:01:54:97:15:4D:FA:89:DE:30:87:71:A9:FC:61:A6:4B:19:AF:1A:3F:B0:32:56:E8:CC:3A:79:55:67:E5
+        sources:
+          - name: Google Play
+            issue: GH-1426
+            apk:
+              sha256: 60cc799aace0ab88ed026f820845572e32c17987855ac33a0dfe566cc656465a
   - package: com.eckey.vizpin.dm
     signature:
       - fingerprint: 43:F6:D7:1E:13:EA:F0:62:BB:9F:D3:4A:0C:6C:D5:B3:BA:A8:AD:14:DE:DC:87:99:23:7F:2F:F9:33:FD:53:DC
@@ -3103,6 +3103,14 @@ packages:
             issue: GH-284
             apk:
               sha256: 81d1759235dcd1ecda78bf0f905641babf6142741356c4e176ca866ec3a1bf00
+  - package: com.performance.meshview
+    signature:
+      - fingerprint: 92:5C:7B:1D:F5:68:9F:EF:23:71:E1:F6:E7:1E:98:A3:95:62:95:DF:95:22:1B:AA:06:14:52:22:AA:89:F7:69
+        sources:
+          - name: Google Play
+            issue: GH-1430
+            apk:
+              sha256: 56a3a6f89272d1def7dc7d275ea7d1203e1ae5a413899916f663d42a75fc34d3
   - package: com.philips.lighting.hue2
     signature:
       - fingerprint: 1B:4B:51:67:E1:6F:D0:29:47:4B:C2:B2:94:79:02:AC:F9:EE:1E:20:E4:7C:F8:5A:B4:38:B6:2C:DE:A8:16:4A
@@ -6766,14 +6774,6 @@ packages:
             issue: GH-735
             apk:
               sha256: e7ff8c52186e47d01812fb8564300d7591b4b7e575f8e64de1742ac6838f502f
-  - package: org.mozilla.firefox_beta
-    signature:
-      - fingerprint: A7:8B:62:A5:16:5B:44:94:B2:FE:AD:9E:76:A2:80:D2:2D:93:7F:EE:62:51:AE:CE:59:94:46:B2:EA:31:9B:04
-        sources:
-          - name: Google Play
-            issue: GH-1433
-            apk:
-              sha256: 9c1ec068c4e6aed1f40c8489082653fd31b5cd6a5269314191da3606a1074c38
   - package: org.openobservatory.ooniprobe
     signature:
       - fingerprint: BF:7D:A8:2A:7C:77:87:EB:67:56:41:48:23:4B:6D:40:F0:EC:66:4B:F2:92:BC:7A:8F:15:47:FE:7F:E7:5E:84
