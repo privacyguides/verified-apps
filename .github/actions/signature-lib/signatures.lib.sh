@@ -65,6 +65,20 @@ signatures_data_schema_supported() {
   esac
 }
 
+# data.yml source names for a key vouched for by the package's verified domain. The
+# method (https/dns) determines the label so the database records how the domain was
+# proven. Defined here (the lower-level lib) so both domains.lib.sh and the submission
+# entry builder can reach them without a circular source.
+DOMAIN_SOURCE_NAME_HTTPS="HTTPS Verified Domain"
+DOMAIN_SOURCE_NAME_DNS="DNS Verified Domain"
+domain_source_name() {
+  case "$1" in
+    https) printf '%s' "$DOMAIN_SOURCE_NAME_HTTPS" ;;
+    dns) printf '%s' "$DOMAIN_SOURCE_NAME_DNS" ;;
+    *) printf 'Verified Domain' ;;
+  esac
+}
+
 # Canonical Codeberg issue ref for data.yml and commit messages (CB-123).
 signatures_codeberg_issue_ref() {
   local number="$1"
@@ -1270,9 +1284,10 @@ submission_build_entry_file() {
     _submission_add_source "$fp_block" "Direct APK Link" "${DIRECT_APK_SHA256:-}" "${DIRECT_APK_URL:-}"
   fi
   # A signing key vouched for by the package's own verified domain qualifies on its own,
-  # even when no app store matched the submission.
+  # even when no app store matched the submission. DOMAIN_VERIFIED_METHOD (https/dns)
+  # selects the method-specific source label.
   if [[ -n "${DOMAIN_VERIFIED_SIG:-}" ]] && signatures_equal "$DOMAIN_VERIFIED_SIG" "$user_sig"; then
-    _submission_add_source "$user_sig" "Verified Domain"
+    _submission_add_source "$user_sig" "$(domain_source_name "${DOMAIN_VERIFIED_METHOD:-https}")"
   fi
 
   if [[ ! -s "$proposals_file" ]]; then

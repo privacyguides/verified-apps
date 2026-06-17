@@ -86,7 +86,7 @@ Provenance attestations guarantee the file you have was built from a well-define
 > [!IMPORTANT]
 > We **automatically delete** (revoke) attestations in this repo after 5 days, except for the latest one (if it's older than 5 days), and any attestations related to our (unrevoked) [releases](https://github.com/privacyguides/verified-apps/releases). In this sense, copies of our database "expire" after 5 days unless they are releases. If you verify attestations in your build process automatically, we recommend always downloading the latest copy of `data.yml` each time. If you rely on verifying the provenance of our data at any time beyond 5 days, we recommend only using copies of `data.yml` from our releases as those attestations will never be deleted unless we need to revoke one due to bad data.
 
-We *especially* recommend checking this if you are incorporating this data in your own app, to strenghten your own supply-chain security when grabbing data from an upstream source (us). One example of how to do this in your GitHub workflows can be found here: <https://github.com/RoundSalmon4/AppVerifierBG/pull/12>
+We *especially* recommend checking this if you are incorporating this data in your own app, to strengthen your own supply-chain security when grabbing data from an upstream source (us). One example of how to do this in your GitHub workflows can be found here: <https://github.com/RoundSalmon4/AppVerifierBG/pull/12>
 
 #### Verifying data.yml in main branch
 
@@ -146,7 +146,8 @@ The values for the source `name` can be one of the following:
 - `F-Droid` - Signatures we checked against the APK file in the **official** (default) F-Droid repository.
 - `F-Droid (IzzyOnDroid)` - Signatures we checked against the APK file in the [IzzyOnDroid](https://izzyondroid.org/) F-Droid repository.
 - `Google Play` - Signatures we checked against the APK file in Google Play.
-- `Verified Domain` - Signatures we checked against the developer's [verified domain](#domain-verification).
+- `HTTPS Verified Domain` - Signatures we checked against the developer's [verified domain](#domain-verification) using a [Digital Asset Links](#https-verification) (`assetlinks.json`) file.
+- `DNS Verified Domain` - Signatures we checked against the developer's [verified domain](#domain-verification) using a [DNS TXT record](#dns-verification).
 
 Additionally, we check direct links to APK files (e.g. GitHub Releases) and custom F-Droid repos (i.e. developer-run) when provided by the submitter. We will include the `link:` or `repo:` key respectively to assist others in finding where exactly the verification was obtained from if it was not one of the five well-known sources.
 
@@ -200,51 +201,44 @@ App developers, please consider verifying the domain used in your app's package 
 
 To verify your domain, you can [follow the steps in this walkthrough](https://github.com/privacyguides/verified-apps/issues/new?template=domain-verification.yml), or you can follow these instructions manually. You will be required to place a file on your web server or create a DNS record.
 
-You must choose one verification method, [HTTPS `.well-known` verification](#https-verification), or [DNS verification](#dns-verification). We strongly recommend using HTTPS verification whenever possible, because it has stronger security properties than DNS, and allows for explicit key revocation.
+You must choose one verification method, [HTTPS Digital Asset Links verification](#https-verification), or [DNS verification](#dns-verification). We recommend using HTTPS verification whenever possible, because it has stronger security properties than DNS.
+
+In both cases, we look for your verification record starting from the specific subdomain matching your package ID, going up to the domain's root if a record isn't found. For the package ID `com.example.appname.fdroid` we would check `fdroid.appname.example.com`, then `appname.example.com`, then `example.com`. Publishing at a less specific domain (e.g. `example.com`) covers that app *and* other apps in the `example.com` namespace, which is useful for verifying multiple apps published by you or your organization.
 
 ### HTTPS Verification
 
-Create a file `/.well-known/org.privacyguides.verified-apps.json` on the web server for the domain you are verifying. For the package ID `com.example.appname.fdroid` there would be three valid locations for you to place this file:
+Publish a standard [Digital Asset Links](https://developers.google.com/digital-asset-links/v1/getting-started) file at `/.well-known/assetlinks.json` on the web server for the domain you are verifying. For the package ID `com.example.appname.fdroid` there would be three valid locations for you to place this file:
 
-- `https://fdroid.appname.example.com/.well-known/org.privacyguides.verified-apps.json` - would apply this data to an app ID'd `com.example.appname.fdroid` or any apps with an ID starting with `com.example.appname.fdroid.`
-- `https://appname.example.com/.well-known/org.privacyguides.verified-apps.json` - would apply this data to an app ID'd `com.example.appname` or any apps with an ID starting with `com.example.appname.`
-- `https://example.com/.well-known/org.privacyguides.verified-apps.json` - would apply this data to an app ID's `com.example` or any apps with an ID starting with `com.example.`
+- `https://fdroid.appname.example.com/.well-known/assetlinks.json`
+- `https://appname.example.com/.well-known/assetlinks.json`
+- `https://example.com/.well-known/assetlinks.json`
 
-As you can see, when we look for validation data, we will check for the file path starting from the specific subdomain matching your package ID, going up to the domain's root if a record isn't found. For example, for the Android app `com.example.appname` you could enter `example.com` to verify that app *and* other apps in the `example.com` namespace. This can be useful to verify multiple apps published by you or your organization which use the same signing key.
+`assetlinks.json` is a JSON array of statements. Add a statement whose `target` declares your app. We require:
 
-The file should look like this:
+- `target.namespace` to be `android_app`,
+- `target.package_name` to match the app's package ID, and
+- `target.sha256_cert_fingerprints` to contain your app's signing certificate hash(es).
 
-```
-{
-    "version": 1,
-    "signingkeys": {
-        "allowed": [],
-        "revoked": []
+We accept **any** `relation`. The example below uses `delegate_permission/common.handle_all_urls`, the standard predefined relation. Note this also grants your app [Android App Links](https://developer.android.com/training/app-links/verify-android-applinks) URL handling for the domain. If you don't want to publish Google's predefined relation, you can use the inert custom relation `delegate_permission/org.privacyguides.verifiedapps` instead (the spec permits custom Java-scoped detail strings matching `[a-z0-9_.]+`), it verifies the same way but has no other effect.
+
+You can get your signing certificate hashes using the AppVerifier app or the [Verified Apps](https://github.com/privacyguides/verified-apps-android) app on Android, or with `apksigner verify --print-certs your-app.apk`. List each one as a separate string in `sha256_cert_fingerprints`. If your app has more than one valid signing key (for example, your own key on GitHub plus Play App Signing or F-Droid's build key), list every fingerprint you want to verify.
+
+The same file is used by Android App Links, so if you already publish one you can simply add your fingerprint(s) to the existing statement (or add another statement to the array). A minimal file looks like this:
+
+```json
+[
+    {
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.example.appname",
+            "sha256_cert_fingerprints": [
+                "1E:76:F1:A1:5C:BE:20:1F:0F:E2:6A:F2:7A:12:D9:1D:0D:34:81:FE:7D:CC:7D:89:E9:D2:05:69:30:F6:D5:A9",
+                "6F:FD:60:27:9A:0B:F0:14:B4:58:F4:09:3C:F2:EB:D0:00:B0:1B:5E:47:B8:0C:CB:41:DD:6E:0F:6A:2E:52:29"
+            ]
+        }
     }
-}
-```
-
-The `version` number is required and must be set to 1. The `signingkeys` section is required. The `allowed` array in that section is required, while the `revoked` array is optional.
-
-`allowed` and `revoked` are arrays of strings containing signing certificate key hashes. You can get yours using the AppVerifier app or the [Verified Apps](https://github.com/privacyguides/verified-apps-android) app on Android. In some cases, your app may show a multi-line collection of two or more hashes. In this case, separate hashes with a `\n` newline character.
-
-In many cases, you will only have one allowed key, so your entry will look similar to `["40:5C:6B:D2:CA:7C:3A:AE:8F:46:3C:6F:8B:55:BC:F0:DD:AC:43:1C:5E:D8:EA:FF:65:D1:06:C9:81:7A:20:7F"]`. However, there are cases where two or more keys may be valid for your app. For example, if your app is signed by Play App Signing or F-Droid's build keys on those app stores in addition to your own key for your app being distributed on GitHub, you could easily have 3 different keys for the same app.
-
-Example (with two allowed key hashes, and one revoked key hash):
-
-```
-{
-    "version": 1,
-    "signingkeys": {
-        "allowed": [
-            "1E:76:F1:A1:5C:BE:20:1F:0F:E2:6A:F2:7A:12:D9:1D:0D:34:81:FE:7D:CC:7D:89:E9:D2:05:69:30:F6:D5:A9",
-            "6F:FD:60:27:9A:0B:F0:14:B4:58:F4:09:3C:F2:EB:D0:00:B0:1B:5E:47:B8:0C:CB:41:DD:6E:0F:6A:2E:52:29\n71:FC:82:99:65:00:5A:49:B1:D3:3E:85:1E:2C:18:1E:6A:8D:D4:3E:E1:96:CD:BB:F7:AD:4D:B3:0C:48:84:22"
-        ],
-        "revoked": [
-            "40:5C:6B:D2:CA:7C:3A:AE:8F:46:3C:6F:8B:55:BC:F0:DD:AC:43:1C:5E:D8:EA:FF:65:D1:06:C9:81:7A:20:7F"
-        ]
-    }
-}
+]
 ```
 
 ### DNS Verification

@@ -83,7 +83,7 @@ inputs:
     required: false
     default: "true"
   domainVerifiedSig:
-    description: Submitter signature when it is allowed by the package's verified domain (adds a Verified Domain source)
+    description: Submitter signature when it is allowed by the package's verified domain (adds an HTTPS/DNS Verified Domain source)
     required: false
     default: ""
   domain:
@@ -99,7 +99,7 @@ inputs:
     required: false
     default: ""
   domainRecordJson:
-    description: Normalized verification record JSON (its .allowed/.revoked sets are recorded in data-verified-domains.yml)
+    description: Normalized verification record JSON (its .allowed fingerprints are recorded under the package in data-verified-domains.yml)
     required: false
     default: ""
 outputs:
@@ -139,6 +139,7 @@ runs:
         APKPURE_APK_SHA256: ${{ inputs.apkpureApkSha256 }}
         PUSH_TO_MAIN: ${{ inputs.pushToMain }}
         DOMAIN_VERIFIED_SIG: ${{ inputs.domainVerifiedSig }}
+        DOMAIN_VERIFIED_METHOD: ${{ inputs.domainMethod }}
         DV_DOMAIN: ${{ inputs.domain }}
         DV_METHOD: ${{ inputs.domainMethod }}
         DV_DNSSEC: ${{ inputs.domainDnssec }}
@@ -166,15 +167,15 @@ runs:
         submission_merge_entry_into_data_yml "$entry"
         rm -f "$entry"
 
-        # Record the domain in data-verified-domains.yml when the submitted key is allowed by it.
+        # Record the domain (and the verified package's fingerprints) in
+        # data-verified-domains.yml when the submitted key is allowed by it.
         if [[ -n "${DOMAIN_VERIFIED_SIG:-}" && -n "${DV_DOMAIN:-}" ]]; then
           checked=$(date -u +%Y-%m-%dT%H:%M:%SZ)
-          dv_allowed="[]"; dv_revoked="[]"
+          dv_fps="[]"
           if [[ -n "${DV_RECORD_JSON:-}" ]]; then
-            dv_allowed=$(jq -c '.allowed // []' <<< "$DV_RECORD_JSON")
-            dv_revoked=$(jq -c '.revoked // []' <<< "$DV_RECORD_JSON")
+            dv_fps=$(jq -c '.allowed // []' <<< "$DV_RECORD_JSON")
           fi
-          domain_verified_upsert "$DOMAIN_VERIFIED_FILE" "$DV_DOMAIN" "${DV_METHOD:-https}" "$SUBMISSION_ISSUE_REF" "$checked" "${DV_DNSSEC:-}" "$dv_allowed" "$dv_revoked"
+          domain_verified_upsert "$DOMAIN_VERIFIED_FILE" "$DV_DOMAIN" "${DV_METHOD:-https}" "$PACKAGE" "$SUBMISSION_ISSUE_REF" "$checked" "${DV_DNSSEC:-}" "$dv_fps"
           if ! git diff --quiet -- "$DOMAIN_VERIFIED_FILE"; then
             git add "$DOMAIN_VERIFIED_FILE"
             echo "domainFileChanged=true" >> "$GITHUB_OUTPUT"

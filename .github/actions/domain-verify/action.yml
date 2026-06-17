@@ -1,5 +1,5 @@
 name: Domain verification check
-description: Live-check a package's domain (HTTPS .well-known + DNS) and report the submitted key's status
+description: Live-check a package's domain (HTTPS assetlinks.json + DNS) and report the submitted key's status
 inputs:
   packageName:
     description: Android application ID (its namespace is reversed to derive candidate domains)
@@ -18,17 +18,14 @@ outputs:
     description: Domain the authoritative record was found on (most specific candidate with a record)
     value: ${{ steps.check.outputs.domain }}
   status:
-    description: Submitted key status against the authoritative record (allowed, revoked, or none)
+    description: Submitted key status against the authoritative record (allowed or none)
     value: ${{ steps.check.outputs.status }}
   recordJson:
-    description: Normalized authoritative record JSON ({found, method, domain, source, allowed, revoked})
+    description: Normalized authoritative record JSON ({found, method, domain, source, package, allowed})
     value: ${{ steps.check.outputs.recordJson }}
   tableRow:
     description: Markdown table row(s) (| Source | Matches | Verification |), one per record found; records on less specific domains are marked superseded
     value: ${{ steps.check.outputs.tableRow }}
-  revokedWarning:
-    description: Prominent caution block when the submitted key is revoked (empty otherwise)
-    value: ${{ steps.check.outputs.revokedWarning }}
   dnssec:
     description: "DNSSEC status for DNS-method records: true, false, or empty (HTTPS method)"
     value: ${{ steps.check.outputs.dnssec }}
@@ -66,7 +63,6 @@ runs:
         echo "status=none" >> "$GITHUB_OUTPUT"
         echo "recordJson=" >> "$GITHUB_OUTPUT"
         echo "tableRow=" >> "$GITHUB_OUTPUT"
-        echo "revokedWarning=" >> "$GITHUB_OUTPUT"
         echo "dnssec=" >> "$GITHUB_OUTPUT"
 
         if ! is_valid_package_name "$PACKAGE_NAME"; then
@@ -102,4 +98,3 @@ runs:
         } >> "$GITHUB_OUTPUT"
         gha_write_multiline_output recordJson "$rec"
         gha_write_multiline_output tableRow "$(domain_table_rows "$recs" "$PACKAGE_SIGNATURE")"
-        gha_write_multiline_output revokedWarning "$(domain_revoked_warning "$rec" "$PACKAGE_SIGNATURE")"

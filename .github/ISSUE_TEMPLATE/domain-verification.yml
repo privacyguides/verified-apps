@@ -14,18 +14,18 @@ body:
       value: |
         ## Verification
 
-        This form is for any **developers** of an Android app to fill out. The verification process will require creating either a DNS record or a `/.well-known/org.privacyguides.verified-apps.json` file on an HTTPS server on your domain.
+        This form is for any **developers** of an Android app to fill out. The verification process will require publishing either a standard Digital Asset Links file (`/.well-known/assetlinks.json`) on an HTTPS server on your domain, or a DNS TXT record. Once you submit, we'll reply with exact instructions tailored to your package.
 
   - type: input
-    id: domainName
+    id: packageName
     attributes:
-      label: Domain Name
+      label: Package Name
       description: |
-        Enter the domain name you'd like to verify (not in package ID format). For example, if your Android app is `org.privacyguides.verifiedapps`, you could enter `verifiedapps.privacyguides.org`.
+        Enter your app's package ID (application ID), e.g. `org.privacyguides.verifiedapps`.
 
-        When we look for validation data, we will check for the file path starting from the specific subdomain matching your package ID up to the domain's root. For example, for the Android app `org.privacyguides.verifiedapps` we could enter `privacyguides.org` to verify that app and other apps in the `privacyguides.org` namespace. Alternatively, we could enter `verifiedapps.privacyguides.org` to only create a verification record for that specific app.
+        We derive the domain(s) to check from your package ID by reversing the labels, starting at the most specific subdomain and walking up to the root. For the Android app `org.privacyguides.verifiedapps` we would look at `verifiedapps.privacyguides.org` and then `privacyguides.org`, so you can publish your verification record at whichever of those you control (the root covers every app in that namespace).
       placeholder: |
-        verifiedapps.privacyguides.org
+        org.privacyguides.verifiedapps
     validations:
       required: true
 

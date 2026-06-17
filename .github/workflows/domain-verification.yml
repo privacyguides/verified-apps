@@ -58,9 +58,9 @@ jobs:
 
           body_file="${RUNNER_TEMP}/instructions.md"
 
-          if ! domain=$(domain_parse_domain_name "$ISSUE_BODY"); then
+          if ! package=$(domain_parse_package_name "$ISSUE_BODY"); then
             {
-              echo "We couldn't read a **Domain Name** from this request. Please edit the issue and add the domain you'd like to verify, then re-apply the \`Domain Request\` label."
+              echo "We couldn't read a valid **Package Name** (your app's package ID, e.g. \`com.example.app\`) from this request. Please edit the issue and add it, then re-apply the \`Domain Request\` label."
             } > "$body_file"
             echo "bodyFile=$body_file" >> "$GITHUB_OUTPUT"
             exit 0
@@ -69,13 +69,13 @@ jobs:
           keys=$(domain_parse_signing_keys "$ISSUE_BODY")
           if [[ "$(jq 'length' <<< "$keys")" -eq 0 ]]; then
             {
-              echo "We couldn't read any **Signing Key** from this request for \`${domain}\`. Please edit the issue and add at least one SHA-256 signing certificate fingerprint, then re-apply the \`Domain Request\` label."
+              echo "We couldn't read any **Signing Key** from this request for \`${package}\`. Please edit the issue and add at least one SHA-256 signing certificate fingerprint, then re-apply the \`Domain Request\` label."
             } > "$body_file"
             echo "bodyFile=$body_file" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
-          domain_render_instructions "$domain" "$keys" > "$body_file"
+          domain_render_instructions "$package" "$keys" > "$body_file"
           echo "bodyFile=$body_file" >> "$GITHUB_OUTPUT"
 
       - name: Comment instructions
@@ -158,36 +158,35 @@ jobs:
             echo "::group::Issue ${num}"
             body=$(gh issue view "$num" --repo "$GH_REPO" --json body -q .body)
 
-            if ! domain=$(domain_parse_domain_name "$body"); then
-              echo "No domain in issue ${num}; skipping."; echo "::endgroup::"; continue
+            if ! package=$(domain_parse_package_name "$body"); then
+              echo "No valid package name in issue ${num}; skipping."; echo "::endgroup::"; continue
             fi
             keys=$(domain_parse_signing_keys "$body")
             if [[ "$(jq 'length' <<< "$keys")" -eq 0 ]]; then
               echo "No signing keys in issue ${num}; skipping."; echo "::endgroup::"; continue
             fi
 
-            # --- Discover a record and classify the submitted keys ----------
-            rec=""; method=""; state="pending"
+            # --- Discover a record for the package and classify the submitted keys ---
+            # Candidate domains are derived from the package ID, most specific first; the
+            # most specific domain with a record is authoritative.
+            rec=""; method=""; domain=""; state="pending"
             allowed_keys="[]"
-            if rec=$(domain_find_record_for_domain "$domain"); then
+            if recs=$(domain_find_records_for_package "$package"); then
+              rec=$(jq -c '.[0]' <<< "$recs")
               method=$(jq -r '.method' <<< "$rec")
+              domain=$(jq -r '.domain' <<< "$rec")
               kc=$(jq 'length' <<< "$keys")
-              has_allowed=false; has_revoked=false
+              has_allowed=false
               for ((ki = 0; ki < kc; ki++)); do
                 key=$(jq -r ".[$ki]" <<< "$keys")
-                st=$(domain_key_status "$rec" "$key")
-                if [[ "$st" == "allowed" ]]; then
+                if [[ "$(domain_key_status "$rec" "$key")" == "allowed" ]]; then
                   has_allowed=true
                   allowed_keys=$(jq -c --arg k "$key" '. + [$k]' <<< "$allowed_keys")
-                elif [[ "$st" == "revoked" ]]; then
-                  has_revoked=true
                 fi
               done
-              if [[ "$has_allowed" == "true" ]]; then state="verified"
-              elif [[ "$has_revoked" == "true" ]]; then state="revoked"
-              else state="pending"; fi
+              [[ "$has_allowed" == "true" ]] && state="verified"
             fi
-            echo "Issue ${num}: domain=${domain} method=${method:-none} state=${state}"
+            echo "Issue ${num}: package=${package} domain=${domain:-none} method=${method:-none} state=${state}"
 
             # --- Decide whether to comment / commit -------------------------
             last_state=""
@@ -203,17 +202,17 @@ jobs:
                 if [[ -f "$DOMAIN_VERIFIED_FILE" ]]; then cp "$DOMAIN_VERIFIED_FILE" "$dv_before"; else : > "$dv_before"; fi
                 issue_ref=$(signatures_submission_issue_ref "$num" "$body")
                 checked=$(date -u +%Y-%m-%dT%H:%M:%SZ)
-                allowed_json=$(jq -c '.allowed' <<< "$rec")
-                revoked_json=$(jq -c '.revoked // []' <<< "$rec")
+                fps_json=$(jq -c '.allowed' <<< "$rec")
                 dnssec=$(jq -r 'if .method == "dns" then (.dnssec | tostring) else "" end' <<< "$rec")
-                domain_verified_upsert "$DOMAIN_VERIFIED_FILE" "$domain" "$method" "$issue_ref" "$checked" "$dnssec" "$allowed_json" "$revoked_json"
-                domain_annotate_data_yml "data.yml" "$domain" "$allowed_json" "$issue_ref"
+                domain_verified_upsert "$DOMAIN_VERIFIED_FILE" "$domain" "$method" "$package" "$issue_ref" "$checked" "$dnssec" "$fps_json"
+                domain_annotate_data_yml "data.yml" "$package" "$rec" "$issue_ref"
                 annotated="${DOMAIN_ANNOTATE_CHANGED:-0}"
                 diff_out=$(domain_verified_diff "$dv_before" "$DOMAIN_VERIFIED_FILE")
                 rm -f "$dv_before"
 
                 jq -n \
                   --arg number "$num" \
+                  --arg package "$package" \
                   --arg domain "$domain" \
                   --arg method "$method" \
                   --arg dnssec "$dnssec" \
@@ -221,7 +220,7 @@ jobs:
                   --arg diff "$diff_out" \
                   --arg annotated "$annotated" \
                   --argjson allowedKeys "$allowed_keys" \
-                  '{number: $number, domain: $domain, method: $method, dnssec: $dnssec, issueRef: $issueRef, diff: $diff, annotated: ($annotated == "1"), allowedKeys: $allowedKeys}' \
+                  '{number: $number, package: $package, domain: $domain, method: $method, dnssec: $dnssec, issueRef: $issueRef, diff: $diff, annotated: ($annotated == "1"), allowedKeys: $allowedKeys}' \
                   > "${verified_dir}/${num}.json"
 
                 printf '%s\n' "$num" >> "$closes_file"
@@ -238,23 +237,12 @@ jobs:
               else
                 echo "Issue ${num} already verified (no state change); skipping."
               fi
-            elif [[ "$state" == "revoked" ]]; then
-              if [[ "$EVENT_NAME" == "issue_comment" || "$last_state" != "revoked" ]]; then
-                warn=$(domain_revoked_warning "$rec" "$(jq -r '.[0]' <<< "$keys")")
-                comment=$(printf '%s\n\n%s\n\n%s' \
-                  "We checked \`${domain}\` and found a submitted signing key in the **revoked** list of your verification record. We will not record this domain while the key is revoked." \
-                  "${warn}" \
-                  "$(domain_state_marker revoked)")
-                post_comment "$num" "$comment"
-              else
-                echo "Issue ${num} already warned about revocation; skipping."
-              fi
             else
               # pending: only reply to an explicit comment, never on the sweep
               if [[ "$EVENT_NAME" == "issue_comment" ]]; then
                 pending_tips=$'- If you just created the record, DNS or CDN propagation can take a little while — reply again to re-check.\n- Make sure the file/record contents exactly match the instructions above (the key set must match what you submitted).'
                 comment=$(printf '%s\n\n%s\n\n%s' \
-                  "We checked \`${domain}\` over HTTPS (\`/${DOMAIN_WELLKNOWN_PATH}\`) and DNS (\`${DOMAIN_DNS_PREFIX}.${domain}\`) but couldn't confirm a matching record yet." \
+                  "We checked the domain(s) derived from \`${package}\` over HTTPS (\`/${DOMAIN_WELLKNOWN_PATH}\`) and DNS (\`${DOMAIN_DNS_PREFIX}.<domain>\`) but couldn't confirm a matching record yet." \
                   "$pending_tips" \
                   "$(domain_state_marker pending)")
                 post_comment "$num" "$comment"
@@ -398,6 +386,7 @@ jobs:
           shopt -s nullglob
           for result in verified-results/*.json; do
             num=$(jq -r '.number' "$result")
+            package=$(jq -r '.package // ""' "$result")
             domain=$(jq -r '.domain' "$result")
             method=$(jq -r '.method' "$result")
             dnssec=$(jq -r '.dnssec // ""' "$result")
@@ -418,16 +407,17 @@ jobs:
               table+="| \`${key//$'\n'/\`<br>\`}\` |"$'\n'
             done < <(jq -r '.allowedKeys[]' "$result")
 
+            source_name=$(domain_source_name "$method")
             annotate_note=""
             if [[ "$annotated" == "true" ]]; then
-              annotate_note="We also added a \`Verified Domain\` source to matching entries in \`data.yml\`."
+              annotate_note="We also added a \`${source_name}\` source to matching entries in \`data.yml\`."
             fi
 
             body_file="${RUNNER_TEMP}/verified-${num}.md"
             {
-              echo "## :white_check_mark: Domain verified: \`${domain}\`"
+              echo "## :white_check_mark: Domain verified for \`${package}\`: \`${domain}\`"
               echo ""
-              echo "We confirmed your verification record for \`${domain}\` via **${method_label}**."
+              echo "We confirmed your verification record for \`${package}\` on \`${domain}\` via **${method_label}**."
               echo ""
               printf '%s\n' "$table"
               echo "\`data-verified-domains.yml\` was updated as follows (${COMMIT_SHA}):"
