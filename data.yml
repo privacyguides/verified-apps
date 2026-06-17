@@ -1412,6 +1412,12 @@ packages:
               sha256: e164a87881cbe470f883ad5507dfd3e29fbde8ff1838f3d825aa377aa61ebc62
   - package: com.cyb3rko.flashdim
     signature:
+      - fingerprint: 4B:05:58:FA:9D:2E:32:B0:1C:D0:00:7B:13:66:35:B5:AC:67:B5:CA:63:FF:C2:EF:E2:58:9A:80:20:E8:CA:4F
+        sources:
+          - name: Google Play
+            issue: GH-1628
+            apk:
+              sha256: 6b78f551c16fc1b120edda5e111e9f56e126a3c2f6625bc9d755868003035cf0
       - fingerprint: EA:78:69:1C:BA:41:86:00:A4:56:32:89:B1:33:F9:D0:0D:3D:0C:24:A5:F5:4C:5C:59:EE:1C:95:2B:B0:E1:1D
         sources:
           - name: Accrescent
