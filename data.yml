@@ -6338,6 +6338,12 @@ packages:
             apk:
               sha256: e8b8bd89351aae11876435df8265b9e300227f3bfec2640022a9a52d5d160439
               link: https://github.com/x13a/Clipeus/releases/download/v1.1.1/app-release.apk
+      - fingerprint: 92:19:4A:00:76:56:98:05:06:6E:DF:1D:AB:F1:2F:AF:03:6E:3C:57:80:4C:0D:E8:C8:0F:D0:C9:83:6C:43:C6
+        sources:
+          - name: Google Play
+            issue: GH-1629
+            apk:
+              sha256: e559af68d75d946ab20b381971a442fbda4a91c59f5bfeb14bb41d9295dc2fec
   - package: me.lyft.android
     signature:
       - fingerprint: FA:9A:37:54:36:34:35:7B:E0:88:EE:7E:4F:8C:FD:D1:3B:59:07:B2:2E:92:1A:3D:47:45:3E:66:C4:5F:3E:04
