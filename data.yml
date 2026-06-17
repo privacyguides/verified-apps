@@ -6002,6 +6002,14 @@ packages:
             issue: GH-533
             apk:
               sha256: 745f5e9f571488ff149e18b92d960f6bda4dd9466dc1561240200511986093cb
+  - package: io.voiapp.voi
+    signature:
+      - fingerprint: 71:81:B6:E7:9B:33:4C:98:D2:73:1A:8B:D6:EC:D7:E7:50:F0:A6:0D:AB:17:9B:22:15:2E:FA:36:9C:75:8A:F0
+        sources:
+          - name: Google Play
+            issue: GH-1405
+            apk:
+              sha256: 9e5bc065a975c4b6f7708cfee22b8fd4780767f120929b28dddc1c6999f78cde
   - package: io.yuka.android
     signature:
       - fingerprint: A7:E3:C4:A6:12:68:01:86:93:7B:02:E7:B8:95:74:D5:FD:62:79:8B:8C:B6:68:97:39:92:FA:89:F6:19:8F:CB
