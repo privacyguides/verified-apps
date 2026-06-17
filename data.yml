@@ -4500,6 +4500,14 @@ packages:
             issue: GH-1250
             apk:
               sha256: d8c58d4340196e50437bd204c04265f2751460b2851c21a1481b9798e92b745c
+  - package: com.widex.pa
+    signature:
+      - fingerprint: 5D:05:07:70:98:09:A6:94:06:42:31:01:C2:72:13:65:8A:93:6F:A2:C5:EE:33:C4:8F:9D:34:B0:09:37:63:23
+        sources:
+          - name: Google Play
+            issue: GH-1830
+            apk:
+              sha256: b34a2589c89eafaab177595e0dad300acd4cd933699b162f7ddf4863e0a6ef95
   - package: com.windscribe.vpn
     signature:
       - fingerprint: 9F:B3:57:CA:2D:7F:0A:CC:7B:31:21:98:55:34:49:0D:0A:A7:0F:5D:C6:1C:A8:EC:59:3F:3D:A1:E9:CD:33:9B
