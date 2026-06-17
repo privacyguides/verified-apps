@@ -804,7 +804,6 @@ jobs:
       dnssec: ${{ steps.domain.outputs.dnssec }}
       recordJson: ${{ steps.domain.outputs.recordJson }}
       tableRow: ${{ steps.domain.outputs.tableRow }}
-      revokedWarning: ${{ steps.domain.outputs.revokedWarning }}
 
     steps:
       - name: Download Repository
@@ -888,7 +887,6 @@ jobs:
           DOMAIN_FOUND: ${{ needs.domainCheck.outputs.found }}
           DOMAIN_STATUS: ${{ needs.domainCheck.outputs.status }}
           DOMAIN_TABLE_ROW: ${{ needs.domainCheck.outputs.tableRow }}
-          DOMAIN_REVOKED_WARNING: ${{ needs.domainCheck.outputs.revokedWarning }}
         run: |
           set -euo pipefail
           format_sig_cell() {
@@ -897,9 +895,6 @@ jobs:
             local sig_html="${sig//$'\n'/<br>}"
             printf '%s<br>%s' "$pkg" "$sig_html"
           }
-          if [[ -n "$DOMAIN_REVOKED_WARNING" ]]; then
-            printf '%s\n\n' "$DOMAIN_REVOKED_WARNING" >> $GITHUB_STEP_SUMMARY
-          fi
           intro="We attempted to check Accrescent, F-Droid (F-Droid and IzzyOnDroid), Google Play"
           extras=()
           if [[ "$AV_FOUND" == "true" ]]; then
@@ -1253,6 +1248,7 @@ jobs:
           ISSUE: ${{ github.event.issue.number }}
           SUBMISSION_ISSUE_REF: ${{ needs.parse.outputs.submissionIssueRef }}
           DOMAIN_VERIFIED_SIG: ${{ needs.domainCheck.outputs.status == 'allowed' && needs.parse.outputs.packageSignature || '' }}
+          DOMAIN_VERIFIED_METHOD: ${{ needs.domainCheck.outputs.method }}
           ACC_SIG: ${{ needs.accrescent.outputs.signature }}
           FDROID_RESULTS_DIR: fdroid-results
           GPLAY_SIG: ${{ needs.gplay.outputs.signature }}

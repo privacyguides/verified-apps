@@ -3897,6 +3897,8 @@ packages:
     signature:
       - fingerprint: 1E:76:F1:A1:5C:BE:20:1F:0F:E2:6A:F2:7A:12:D9:1D:0D:34:81:FE:7D:CC:7D:89:E9:D2:05:69:30:F6:D5:A9
         sources:
+          - name: DNS Verified Domain
+            issue: GH-1333
           - name: Direct APK Link
             issue: GH-1119
             apk:
@@ -7646,6 +7648,8 @@ packages:
     signature:
       - fingerprint: 15:FA:52:78:85:F7:04:21:10:30:4D:1A:F0:08:81:07:27:09:BD:38:E9:84:2C:AF:9C:D8:9E:08:06:1C:5E:52
         sources:
+          - name: DNS Verified Domain
+            issue: GH-1791
           - name: Direct APK Link
             issue: GH-451
             apk:
@@ -7750,6 +7754,8 @@ packages:
     signature:
       - fingerprint: 40:5C:6B:D2:CA:7C:3A:AE:8F:46:3C:6F:8B:55:BC:F0:DD:AC:43:1C:5E:D8:EA:FF:65:D1:06:C9:81:7A:20:7F
         sources:
+          - name: DNS Verified Domain
+            issue: GH-1329
           - name: Direct APK Link
             issue: GH-1329
             apk:
@@ -7766,6 +7772,8 @@ packages:
     signature:
       - fingerprint: E8:58:37:5B:7C:45:CF:C1:D4:E4:F5:1B:4A:D6:59:73:5B:38:2C:82:4F:E2:24:48:36:A8:14:AD:7A:F3:00:61
         sources:
+          - name: DNS Verified Domain
+            issue: GH-1627
           - name: Verified Domain
             issue: GH-1627
   - package: org.proninyaroslav.libretorrent

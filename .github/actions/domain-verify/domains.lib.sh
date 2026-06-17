@@ -1,12 +1,18 @@
 # Shared helpers for domain-based app verification.
-# A developer proves control of a domain by publishing the app's signing key(s) either:
-#   - HTTPS: https://<domain>/.well-known/org.privacyguides.verified-apps.json
-#            { "version": 1, "signingkeys": { "allowed": [...], "revoked": [...] } }
-#   - DNS:   TXT records at _pgappverify.<domain> (one key set per record; allowed only)
+# A developer proves control of the domain in their app's package ID by publishing the
+# app's signing key(s) for that package either:
+#   - HTTPS: a Digital Asset Links file at https://<domain>/.well-known/assetlinks.json
+#            (the standard Android format). A statement is accepted when (relation is
+#            ignored): target.namespace == "android_app", target.package_name == the app
+#            being verified, and target.sha256_cert_fingerprints contains the app's key.
+#   - DNS:   TXT records at _pgappverify.<domain> (one key set per record).
+# Both methods derive their candidate domains from the package ID (reverse labels), most
+# specific first down to the 2-label root, so a record on a more specific subdomain wins.
 #
 # Sourced by composite actions alongside signatures.lib.sh:
 #   source "${GITHUB_ACTION_PATH}/domains.lib.sh"
-# It pulls in signatures.lib.sh (for normalization/comparison) when not already loaded.
+# It pulls in signatures.lib.sh (for normalization/comparison + domain_source_name) when
+# not already loaded.
 
 _DOMAIN_LIB_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 if ! declare -f signatures_format_block >/dev/null 2>&1; then
@@ -14,11 +20,17 @@ if ! declare -f signatures_format_block >/dev/null 2>&1; then
   source "${_DOMAIN_LIB_DIR}/../signature-lib/signatures.lib.sh"
 fi
 
-DOMAIN_WELLKNOWN_PATH=".well-known/org.privacyguides.verified-apps.json"
+DOMAIN_WELLKNOWN_PATH=".well-known/assetlinks.json"
 DOMAIN_DNS_PREFIX="_pgappverify"
 DOMAIN_VERIFIED_FILE="data-verified-domains.yml"
-DOMAIN_VERIFIED_SCHEMA=1
-DOMAIN_SOURCE_NAME="Verified Domain"
+DOMAIN_VERIFIED_SCHEMA=2
+# Relation advertised in the assetlinks.json instructions example. Any relation is accepted
+# when verifying; this is only what we tell developers to publish. The standard predefined
+# relation also enables Android App Links URL handling, so we also offer an inert custom
+# relation (Java-scoped detail string, permitted by the Digital Asset Links spec) for
+# developers who don't want to publish a predefined one, this way it has no side effects.
+DOMAIN_DAL_RELATION="delegate_permission/common.handle_all_urls"
+DOMAIN_DAL_RELATION_INERT="delegate_permission/org.privacyguides.verifiedapps"
 # DNS-over-HTTPS query helper (RFC 8484 wire format via curl/HTTP2) and interpreter.
 # The list of resolvers it queries is controlled by the DOH_RESOLVERS env var, set
 # (hard-coded) in the calling workflows; all of them must agree on the TXT record.
@@ -104,54 +116,74 @@ domain_parse_signing_keys() {
   printf '%s' "$keys_json"
 }
 
-# Read the Domain Name field, trimmed and lowercased.
-domain_parse_domain_name() {
+# Read the Package Name field (the app's package ID), trimmed and validated. Returns 1 when
+# absent or not a valid Android application ID.
+domain_parse_package_name() {
   local body="$1" value
-  value=$(_domain_issue_section "Domain Name" "$body" | awk 'NF {print; exit}')
+  value=$(_domain_issue_section "Package Name" "$body" | awk 'NF {print; exit}')
   value="${value//$'\r'/}"
   value="${value#"${value%%[![:space:]]*}"}"
   value="${value%"${value##*[![:space:]]}"}"
   [[ -z "$value" || "$value" == "_No response_" ]] && return 1
-  printf '%s' "$value" | tr '[:upper:]' '[:lower:]'
+  is_valid_package_name "$value" || return 1
+  printf '%s' "$value"
 }
 
 # --- Instructions comment -----------------------------------------------------
 
-# Render the developer-facing setup instructions for both methods from parsed keys.
+# Render the developer-facing setup instructions for both methods from the package ID and
+# parsed keys. Candidate domains are derived from the package ID, most specific first.
 domain_render_instructions() {
-  local domain="$1" keys_json="$2"
-  local json dns_lines count i key oneline
+  local package="$1" keys_json="$2"
+  local fps_flat assetlinks dns_lines https_locs dns_locs count i key oneline domain
 
-  json=$(jq --indent 4 -n --argjson keys "$keys_json" \
-    '{version: 1, signingkeys: {allowed: $keys}}')
+  # assetlinks.json statement carries every submitted fingerprint for this package.
+  fps_flat=$(jq -c -n --argjson keys "$keys_json" '[ $keys[] | split("\n")[] | select(length > 0) ] | unique')
+  assetlinks=$(jq --indent 4 -n \
+    --arg rel "$DOMAIN_DAL_RELATION" --arg pkg "$package" --argjson fps "$fps_flat" \
+    '[ { relation: [$rel],
+         target: { namespace: "android_app", package_name: $pkg, sha256_cert_fingerprints: $fps } } ]')
 
+  # DNS TXT line(s): one record per submitted key set (multi-cert sets space-joined).
   dns_lines=""
   count=$(jq 'length' <<< "$keys_json")
   for ((i = 0; i < count; i++)); do
     key=$(jq -r ".[$i]" <<< "$keys_json")
     oneline=$(printf '%s' "$key" | tr '\n' ' ')
-    dns_lines+="$(printf '%s.%s.   IN   TXT   "%s"' "$DOMAIN_DNS_PREFIX" "$domain" "$oneline")"$'\n'
+    dns_lines+="$(printf '%s.<domain>.   IN   TXT   "%s"' "$DOMAIN_DNS_PREFIX" "$oneline")"$'\n'
   done
 
+  https_locs=""
+  dns_locs=""
+  while IFS= read -r domain; do
+    [[ -z "$domain" ]] && continue
+    https_locs+="- \`https://${domain}/${DOMAIN_WELLKNOWN_PATH}\`"$'\n'
+    dns_locs+="- \`${DOMAIN_DNS_PREFIX}.${domain}\`"$'\n'
+  done < <(domain_candidates_from_package "$package")
+
   cat <<EOF
-Thanks for your domain verification request! To prove you control \`${domain}\`, set up **one** of the two methods below using your app's signing key(s). Reply to this issue once the record is live and we'll verify it (we also re-check open requests automatically every day).
+Thanks for your verification request! To prove you control the domain behind \`${package}\`, set up **one** of the two methods below using your app's signing key(s). Reply to this issue once the record is live and we'll verify it (we also re-check open requests automatically every day).
 
-### Option 1 — HTTPS file (recommended)
+We look for the record starting at the most specific domain matching your package ID and walk up to the root, so you can publish it at whichever of these you control:
 
-Upload a JSON file to:
+${https_locs}
+### Option 1 — Digital Asset Links file (recommended)
 
-\`https://${domain}/${DOMAIN_WELLKNOWN_PATH}\`
-
-with exactly these contents:
+Upload a standard \`assetlinks.json\` file to \`/.well-known/assetlinks.json\` on one of the domains above, containing this statement (you may keep other statements in the array):
 
 \`\`\`json
-${json}
+${assetlinks}
 \`\`\`
+
+We require \`namespace\` to be \`android_app\`, \`package_name\` to match \`${package}\`, and \`sha256_cert_fingerprints\` to contain your key(s).
+
+We accept **any** \`relation\`. The example uses \`${DOMAIN_DAL_RELATION}\` (the standard predefined relation, which also grants your app Android App Links URL handling). If you'd rather not publish a predefined relation, use the inert custom relation \`${DOMAIN_DAL_RELATION_INERT}\` instead. This verifies the same way but has no other effect.
 
 ### Option 2 — DNS TXT record(s)
 
-Alternatively, add the following TXT record(s) to \`${DOMAIN_DNS_PREFIX}.${domain}\`:
+Alternatively, add the following TXT record(s), replacing \`<domain>\` with one of:
 
+${dns_locs}
 \`\`\`
 $(printf '%s' "$dns_lines")
 \`\`\`
@@ -162,42 +194,36 @@ EOF
 
 # --- Record discovery ---------------------------------------------------------
 
-# Normalize a JSON array of key-set strings into normalized fingerprint blocks.
-_domain_normalize_entry_array() {
-  local arr="$1"
-  local out="[]" count i entry norm
-  count=$(jq 'length' <<< "$arr")
-  for ((i = 0; i < count; i++)); do
-    entry=$(jq -r ".[$i]" <<< "$arr")
-    norm=$(signatures_format_block "$entry") || continue
-    out=$(jq -c --arg n "$norm" '. + [$n]' <<< "$out")
-  done
-  printf '%s' "$out"
-}
-
-# Build a normalized record object from a JSON document body.
-_domain_record_from_json() {
-  local body="$1" method="$2" domain="$3" source="$4"
-  printf '%s' "$body" | jq -e . >/dev/null 2>&1 || return 1
-  local allowed_raw revoked_raw allowed_norm revoked_norm total
-  allowed_raw=$(printf '%s' "$body" | jq -c '.signingkeys.allowed // []' 2>/dev/null) || return 1
-  revoked_raw=$(printf '%s' "$body" | jq -c '.signingkeys.revoked // []' 2>/dev/null) || revoked_raw="[]"
-  allowed_norm=$(_domain_normalize_entry_array "$allowed_raw")
-  revoked_norm=$(_domain_normalize_entry_array "$revoked_raw")
-  total=$(jq -n --argjson a "$allowed_norm" --argjson r "$revoked_norm" '($a | length) + ($r | length)')
-  [[ "$total" -gt 0 ]] || return 1
-  jq -n --arg method "$method" --arg domain "$domain" --arg source "$source" \
-    --argjson allowed "$allowed_norm" --argjson revoked "$revoked_norm" \
-    '{found: true, method: $method, domain: $domain, source: $source, allowed: $allowed, revoked: $revoked}'
-}
-
-# Fetch and normalize the HTTPS .well-known record for a domain.
+# Fetch and parse the HTTPS Digital Asset Links record for a package on a domain. Collects
+# the sha256_cert_fingerprints of every android_app statement whose package_name matches
+# the app being verified (relation is ignored), normalized to uppercase colon form. The
+# resulting .allowed array is a flat list of individual certificate fingerprints the domain
+# vouches for this package. Returns 1 when no matching statement carries a valid fingerprint.
 domain_fetch_https_record() {
-  local domain="$1"
+  local domain="$1" package="$2"
   local url="https://${domain}/${DOMAIN_WELLKNOWN_PATH}"
-  local body
+  local body fps allowed="[]" count i raw norm
   body=$(curl -fsSL --max-time 20 --retry 2 --retry-delay 1 "$url" 2>/dev/null) || return 1
-  _domain_record_from_json "$body" "https" "$domain" "$url"
+  jq -e 'type == "array"' >/dev/null 2>&1 <<< "$body" || return 1
+  fps=$(jq -c --arg pkg "$package" '
+    [ .[]
+      | select(type == "object")
+      | select((.target.namespace // "") == "android_app")
+      | select((.target.package_name // "") == $pkg)
+      | (.target.sha256_cert_fingerprints // [])[]
+      | select(type == "string")
+    ]' <<< "$body" 2>/dev/null) || return 1
+  count=$(jq 'length' <<< "$fps")
+  for ((i = 0; i < count; i++)); do
+    raw=$(jq -r ".[$i]" <<< "$fps")
+    norm=$(signatures_sha256_hex_to_colon_fp "$raw") || continue
+    allowed=$(jq -c --arg n "$norm" '. + [$n]' <<< "$allowed")
+  done
+  allowed=$(jq -c 'unique' <<< "$allowed")
+  [[ "$(jq 'length' <<< "$allowed")" -gt 0 ]] || return 1
+  jq -n --arg method "https" --arg domain "$domain" --arg source "$url" --arg pkg "$package" \
+    --argjson allowed "$allowed" \
+    '{found: true, method: $method, domain: $domain, source: $source, package: $pkg, allowed: $allowed}'
 }
 
 # Validate DNSSEC for a name back to the hard-coded ICANN root trust anchor using delv.
@@ -240,9 +266,11 @@ domain_dnssec_status() {
 }
 
 # Fetch DNS verification records at _pgappverify.<domain> over DNS-over-HTTPS, requiring
-# every configured resolver to agree, then attach a DNSSEC validation status. allowed only.
+# every configured resolver to agree, then attach a DNSSEC validation status. The .allowed
+# array holds the key set(s) published in the TXT record(s); each entry is one key set
+# (a multi-cert set keeps its members on separate lines). Echoes a record for <package>.
 domain_fetch_dns_record() {
-  local domain="$1"
+  local domain="$1" package="$2"
   local name="${DOMAIN_DNS_PREFIX}.${domain}"
   local result agree n i rec norm allowed="[]" count dnssec
 
@@ -266,15 +294,16 @@ domain_fetch_dns_record() {
   [[ "$count" -gt 0 ]] || return 1
 
   dnssec=$(domain_dnssec_status "$name")
-  jq -n --arg domain "$domain" --arg source "$name" --arg dnssec "$dnssec" --argjson allowed "$allowed" \
-    '{found: true, method: "dns", domain: $domain, source: $source, allowed: $allowed, revoked: [], dnssec: ($dnssec == "true")}'
+  jq -n --arg domain "$domain" --arg source "$name" --arg pkg "$package" --arg dnssec "$dnssec" \
+    --argjson allowed "$allowed" \
+    '{found: true, method: "dns", domain: $domain, source: $source, package: $pkg, allowed: $allowed, dnssec: ($dnssec == "true")}'
 }
 
-# Probe a single explicit domain (HTTPS first, then DNS). Echoes the record JSON.
+# Probe a single explicit domain for <package> (HTTPS first, then DNS). Echoes the record JSON.
 domain_find_record_for_domain() {
-  local domain="$1" rec
-  if rec=$(domain_fetch_https_record "$domain"); then printf '%s' "$rec"; return 0; fi
-  if rec=$(domain_fetch_dns_record "$domain"); then printf '%s' "$rec"; return 0; fi
+  local domain="$1" package="$2" rec
+  if rec=$(domain_fetch_https_record "$domain" "$package"); then printf '%s' "$rec"; return 0; fi
+  if rec=$(domain_fetch_dns_record "$domain" "$package"); then printf '%s' "$rec"; return 0; fi
   return 1
 }
 
@@ -287,7 +316,7 @@ domain_find_records_for_package() {
   local pkg="$1" domain rec records="[]"
   while IFS= read -r domain; do
     [[ -z "$domain" ]] && continue
-    rec=$(domain_find_record_for_domain "$domain") || continue
+    rec=$(domain_find_record_for_domain "$domain" "$pkg") || continue
     records=$(jq -c --argjson r "$rec" '. + [$r]' <<< "$records")
   done < <(domain_candidates_from_package "$pkg")
   [[ "$(jq 'length' <<< "$records")" -gt 0 ]] || return 1
@@ -296,7 +325,8 @@ domain_find_records_for_package() {
 
 # --- Key status / rendering ---------------------------------------------------
 
-# True when a normalized signature equals any entry in a JSON array of key sets.
+# True when a normalized signature equals any entry in a JSON array of key sets (set
+# equality; used for DNS records, where each entry is a whole published key set).
 _domain_array_contains_sig() {
   local arr="$1" sig="$2" count i entry
   count=$(jq 'length' <<< "$arr")
@@ -307,19 +337,39 @@ _domain_array_contains_sig() {
   return 1
 }
 
-# Echo allowed | revoked | none for a signature against a record (revoked wins).
+# True when every fingerprint in a normalized key set block is present in a flat JSON array
+# of individual fingerprints (subset; used for HTTPS Digital Asset Links records, where
+# sha256_cert_fingerprints lists individual certs and must "contain" the app's key).
+_domain_array_contains_block() {
+  local arr="$1" block="$2" norm line
+  norm=$(signatures_normalize "$block") || return 1
+  [[ -n "$norm" ]] || return 1
+  while IFS= read -r line; do
+    [[ -z "$line" ]] && continue
+    jq -e --arg l "$line" 'index($l)' >/dev/null 2>&1 <<< "$arr" || return 1
+  done <<< "$norm"
+  return 0
+}
+
+# Echo allowed | none for a signature against a record. HTTPS records match by subset
+# (the record's fingerprints must contain every cert in the submitted key); DNS records
+# match by set equality against a published key set.
 domain_key_status() {
-  local rec="$1" sig="$2" norm
+  local rec="$1" sig="$2" method norm
   norm=$(signatures_format_block "$sig") || { printf 'none'; return 0; }
-  if _domain_array_contains_sig "$(jq -c '.revoked' <<< "$rec")" "$norm"; then printf 'revoked'; return 0; fi
-  if _domain_array_contains_sig "$(jq -c '.allowed' <<< "$rec")" "$norm"; then printf 'allowed'; return 0; fi
+  method=$(jq -r '.method' <<< "$rec")
+  if [[ "$method" == "https" ]]; then
+    if _domain_array_contains_block "$(jq -c '.allowed' <<< "$rec")" "$norm"; then printf 'allowed'; return 0; fi
+  else
+    if _domain_array_contains_sig "$(jq -c '.allowed' <<< "$rec")" "$norm"; then printf 'allowed'; return 0; fi
+  fi
   printf 'none'
 }
 
 # Human label for a method.
 domain_method_label() {
   case "$1" in
-    https) printf 'HTTPS file' ;;
+    https) printf 'Digital Asset Links (assetlinks.json)' ;;
     dns) printf 'DNS TXT' ;;
     *) printf '%s' "$1" ;;
   esac
@@ -341,8 +391,7 @@ domain_method_display() {
   fi
 }
 
-# All key sets actually present in a record, as one <br>-joined HTML table cell.
-# Revoked sets are annotated so they can't be mistaken for allowed keys.
+# The key sets/fingerprints present in a record, as one <br>-joined HTML table cell.
 _domain_record_keys_html() {
   local rec="$1" out="" entry count i
   count=$(jq '.allowed | length' <<< "$rec")
@@ -351,36 +400,30 @@ _domain_record_keys_html() {
     [[ -n "$out" ]] && out+="<br>"
     out+="${entry//$'\n'/<br>}"
   done
-  count=$(jq '.revoked // [] | length' <<< "$rec")
-  for ((i = 0; i < count; i++)); do
-    entry=$(jq -r ".revoked[$i]" <<< "$rec")
-    [[ -n "$out" ]] && out+="<br>"
-    out+="${entry//$'\n'/<br>} (revoked)"
-  done
   printf '%s' "$out"
 }
 
 # A single markdown table row (| Source | Matches | Verification |) for a record + signature.
 # The Verification column lists where the record was actually found (the DNS name or
-# well-known URL, which may be on a more specific domain than the package's root) above
-# the keys it contains; the Matches column reports whether the submitted signature is
-# among them. An optional third argument overrides the Matches mark (used for records
-# shadowed by a more specific domain).
+# assetlinks URL, which may be on a more specific domain than the package's root) above the
+# keys it contains; the Matches column reports whether the submitted signature is among
+# them. An optional third argument overrides the Matches mark (used for records shadowed by
+# a more specific domain).
 domain_table_row() {
   local rec="$1" sig="$2" mark="${3:-}"
-  local domain source status
+  local method domain source status
+  method=$(jq -r '.method' <<< "$rec")
   domain=$(jq -r '.domain' <<< "$rec")
   source=$(jq -r '.source' <<< "$rec")
   if [[ -z "$mark" ]]; then
     status=$(domain_key_status "$rec" "$sig")
     case "$status" in
       allowed) mark=":white_check_mark:" ;;
-      revoked) mark=":rotating_light: revoked" ;;
       *) mark=":x:" ;;
     esac
   fi
-  printf '| Verified Domain (`%s` via %s) | %s | `%s`<br>%s |\n' \
-    "$domain" "$(domain_method_display "$rec")" "$mark" "$source" "$(_domain_record_keys_html "$rec")"
+  printf '| %s (`%s` via %s) | %s | `%s`<br>%s |\n' \
+    "$(domain_source_name "$method")" "$domain" "$(domain_method_display "$rec")" "$mark" "$source" "$(_domain_record_keys_html "$rec")"
 }
 
 # Markdown table rows for every record found for a package, most specific first. Only
@@ -401,37 +444,24 @@ domain_table_rows() {
   done
 }
 
-# Prominent revoked warning (empty output when the key is not revoked).
-domain_revoked_warning() {
-  local rec="$1" sig="$2"
-  [[ "$(domain_key_status "$rec" "$sig")" == "revoked" ]] || return 0
-  local domain source
-  domain=$(jq -r '.domain' <<< "$rec")
-  source=$(jq -r '.source' <<< "$rec")
-  cat <<EOF
-> [!CAUTION]
-> **This signing key is listed as REVOKED by the domain owner.** The verification record at \`${source}\` for \`${domain}\` explicitly revokes the submitted signing key. Do **not** add this submission to the database without investigating — the developer may have rotated keys or flagged this key as compromised.
-EOF
-}
+# --- data-verified-domains.yml (schema 2) ------------------------------------
 
-# --- data-verified-domains.yml (schema 1) ------------------------------------
-
-# Insert or update a domain row (by domain), keeping the file sorted by domain.
-#   $1 file  $2 domain  $3 method  $4 issue_ref  $5 checked (ISO8601)
-#   $6 dnssec   ("true"/"false"/"" — records a .dnssec boolean for DNS records)
-#   $7 allowed  (JSON array of normalized key sets seen at this check; default [])
-#   $8 revoked  (JSON array of normalized revoked key sets; default [])
+# Insert or update a domain row (by domain) and, within it, the verified package row.
+#   $1 file  $2 domain  $3 method (https/dns)  $4 package  $5 issue_ref  $6 checked (ISO8601)
+#   $7 dnssec       ("true"/"false"/"" — records a .dnssec boolean for DNS records)
+#   $8 fingerprints (JSON array of the key set(s)/fingerprints the domain vouches for this
+#                    package; default []). For HTTPS these are individual certificate
+#                    fingerprints; for DNS each entry is a published key set.
 # The .issue field is a *list*: a new issue_ref is appended (deduped) rather than
 # overwriting prior ones, so every request that proved/refreshed the domain is kept.
-# .allowed / .revoked record the key sets as of the most recent check (.revoked is
-# omitted when empty, e.g. for DNS records which carry no revocation list).
+# Verified packages are stored under .packages[] keyed by package name.
 domain_verified_upsert() {
-  local file="$1" domain="$2" method="$3" issue="$4" checked="$5" dnssec="${6:-}"
-  local allowed_json="${7:-[]}" revoked_json="${8:-[]}"
-  export DV_DOMAIN="$domain" DV_METHOD="$method" DV_ISSUE="$issue" DV_CHECKED="$checked"
-  export DV_ALLOWED="$allowed_json" DV_REVOKED="$revoked_json"
+  local file="$1" domain="$2" method="$3" package="$4" issue="$5" checked="$6" dnssec="${7:-}"
+  local fps_json="${8:-[]}"
+  export DV_DOMAIN="$domain" DV_METHOD="$method" DV_PKG="$package" DV_ISSUE="$issue" DV_CHECKED="$checked"
+  export DV_FPS="$fps_json"
   if [[ ! -f "$file" || ! -s "$file" ]]; then
-    yq -n '.schema = '"$DOMAIN_VERIFIED_SCHEMA"' | .domains = [{"domain": strenv(DV_DOMAIN), "method": strenv(DV_METHOD), "issue": [strenv(DV_ISSUE)], "checked": strenv(DV_CHECKED)}]' > "$file"
+    yq -n '.schema = '"$DOMAIN_VERIFIED_SCHEMA"' | .domains = [{"domain": strenv(DV_DOMAIN), "method": strenv(DV_METHOD), "issue": [strenv(DV_ISSUE)], "checked": strenv(DV_CHECKED), "packages": []}]' > "$file"
   else
     local schema
     schema=$(yq -r '.schema // 0' "$file")
@@ -440,24 +470,30 @@ domain_verified_upsert() {
       return 1
     fi
     if yq -e '.domains[] | select(.domain == strenv(DV_DOMAIN))' "$file" >/dev/null 2>&1; then
-      yq -i 'with(.domains[] | select(.domain == strenv(DV_DOMAIN)); .method = strenv(DV_METHOD) | .issue = ((.issue // []) + [strenv(DV_ISSUE)] | unique) | .checked = strenv(DV_CHECKED))' "$file"
+      yq -i 'with(.domains[] | select(.domain == strenv(DV_DOMAIN)); .method = strenv(DV_METHOD) | .issue = ((.issue // []) + [strenv(DV_ISSUE)] | unique) | .checked = strenv(DV_CHECKED) | .packages = (.packages // []))' "$file"
     else
-      yq -i '.domains += [{"domain": strenv(DV_DOMAIN), "method": strenv(DV_METHOD), "issue": [strenv(DV_ISSUE)], "checked": strenv(DV_CHECKED)}]' "$file"
+      yq -i '.domains += [{"domain": strenv(DV_DOMAIN), "method": strenv(DV_METHOD), "issue": [strenv(DV_ISSUE)], "checked": strenv(DV_CHECKED), "packages": []}]' "$file"
     fi
   fi
-  # Record allowed key sets as observed at this check (block style; multi-cert sets as
-  # literal block scalars so they read like the rest of the file).
-  yq -i 'with(.domains[] | select(.domain == strenv(DV_DOMAIN)); .allowed = (strenv(DV_ALLOWED) | from_json) | .allowed style="" | .allowed[] style="")' "$file"
-  # Record revoked key sets when present, otherwise drop the field.
-  if [[ "$(jq 'length' <<< "$revoked_json")" -gt 0 ]]; then
-    yq -i 'with(.domains[] | select(.domain == strenv(DV_DOMAIN)); .revoked = (strenv(DV_REVOKED) | from_json) | .revoked style="" | .revoked[] style="")' "$file"
-  else
-    yq -i 'with(.domains[] | select(.domain == strenv(DV_DOMAIN)); del(.revoked))' "$file"
-  fi
-  if [[ -n "$dnssec" ]]; then
+  # Record DNSSEC for DNS records; otherwise drop the field.
+  if [[ "$method" == "dns" && -n "$dnssec" ]]; then
     export DV_DNSSEC="$dnssec"
     yq -i 'with(.domains[] | select(.domain == strenv(DV_DOMAIN)); .dnssec = (strenv(DV_DNSSEC) == "true"))' "$file"
+  else
+    yq -i 'with(.domains[] | select(.domain == strenv(DV_DOMAIN)); del(.dnssec))' "$file"
   fi
+  # Upsert the verified package row within this domain.
+  if yq -e '.domains[] | select(.domain == strenv(DV_DOMAIN)) | .packages[] | select(.package == strenv(DV_PKG))' "$file" >/dev/null 2>&1; then
+    yq -i 'with(.domains[] | select(.domain == strenv(DV_DOMAIN)) | .packages[] | select(.package == strenv(DV_PKG)); .fingerprints = (strenv(DV_FPS) | from_json))' "$file"
+  else
+    yq -i 'with(.domains[] | select(.domain == strenv(DV_DOMAIN)); .packages += [{"package": strenv(DV_PKG), "fingerprints": (strenv(DV_FPS) | from_json)}])' "$file"
+  fi
+  # Render the fingerprints as a block list (clear the flow style from_json produces); a
+  # multi-cert key set keeps its members in one literal block scalar so it reads like the
+  # rest of the file.
+  yq -i 'with(.domains[] | select(.domain == strenv(DV_DOMAIN)) | .packages[] | select(.package == strenv(DV_PKG)); .fingerprints style="" | .fingerprints[] style="")' "$file"
+  yq -i '(.domains[] | select(.domain == strenv(DV_DOMAIN)) | .packages[] | select(.package == strenv(DV_PKG)) | .fingerprints[] | select(type == "!!str" and contains("\n"))) style="literal"' "$file" 2>/dev/null || true
+  yq -i 'with(.domains[] | select(.domain == strenv(DV_DOMAIN)); .packages |= sort_by(.package))' "$file"
   yq -i '.domains |= sort_by(.domain)' "$file"
 }
 
@@ -476,37 +512,34 @@ domain_verified_diff() {
 
 # --- data.yml annotation ------------------------------------------------------
 
-# Add a {name: "Verified Domain", issue: <ref>} source to every fingerprint group whose
-# package is covered by <domain> and whose fingerprint matches an allowed key set.
+# Add a method-specific {name, issue} source (HTTPS/DNS Verified Domain) to every fingerprint
+# group of <package> in data.yml whose key set is vouched for by the verified record <rec>.
 # Dedups by source name. Returns 0; sets DOMAIN_ANNOTATE_CHANGED=1 when anything changed.
 domain_annotate_data_yml() {
-  local data_file="$1" domain="$2" allowed_json="$3" issue_ref="$4"
+  local data_file="$1" package="$2" rec="$3" issue_ref="$4"
   DOMAIN_ANNOTATE_CHANGED=0
   [[ -f "$data_file" && -s "$data_file" ]] || return 0
-  local schema
+  local schema method source_name
   schema=$(yq -r '.schema // 0' "$data_file")
   if ! signatures_data_schema_supported "$schema"; then
     echo "Unsupported data.yml schema (expected 3 or 4): $schema" >&2
     return 1
   fi
-  export DA_NAME="$DOMAIN_SOURCE_NAME" DA_ISSUE="$issue_ref"
-  local pkg sig_count i fp fp_norm has
-  while IFS= read -r pkg; do
-    [[ -z "$pkg" ]] && continue
-    domain_covers_package "$domain" "$pkg" || continue
-    export DA_PKG="$pkg"
-    sig_count=$(yq -r '.packages[] | select(.package == strenv(DA_PKG)) | .signature | length' "$data_file")
-    [[ "$sig_count" =~ ^[0-9]+$ ]] || continue
-    for ((i = 0; i < sig_count; i++)); do
-      fp=$(yq -r ".packages[] | select(.package == strenv(DA_PKG)) | .signature[$i].fingerprint" "$data_file")
-      fp_norm=$(signatures_format_block "$fp") || continue
-      _domain_array_contains_sig "$allowed_json" "$fp_norm" || continue
-      has=$(yq -r ".packages[] | select(.package == strenv(DA_PKG)) | .signature[$i].sources[] | select(.name == strenv(DA_NAME)) | .name" "$data_file" | head -1)
-      [[ "$has" == "$DOMAIN_SOURCE_NAME" ]] && continue
-      yq -i "(.packages[] | select(.package == strenv(DA_PKG)) | .signature[$i].sources) += [{\"name\": strenv(DA_NAME), \"issue\": strenv(DA_ISSUE)}]" "$data_file"
-      DOMAIN_ANNOTATE_CHANGED=1
-    done
-  done < <(yq -r '.packages[].package' "$data_file")
+  method=$(jq -r '.method' <<< "$rec")
+  source_name=$(domain_source_name "$method")
+  export DA_NAME="$source_name" DA_ISSUE="$issue_ref" DA_PKG="$package"
+  local sig_count i fp fp_norm has
+  sig_count=$(yq -r '.packages[] | select(.package == strenv(DA_PKG)) | .signature | length' "$data_file")
+  [[ "$sig_count" =~ ^[0-9]+$ ]] || return 0
+  for ((i = 0; i < sig_count; i++)); do
+    fp=$(yq -r ".packages[] | select(.package == strenv(DA_PKG)) | .signature[$i].fingerprint" "$data_file")
+    fp_norm=$(signatures_format_block "$fp") || continue
+    [[ "$(domain_key_status "$rec" "$fp_norm")" == "allowed" ]] || continue
+    has=$(yq -r ".packages[] | select(.package == strenv(DA_PKG)) | .signature[$i].sources[] | select(.name == strenv(DA_NAME)) | .name" "$data_file" | head -1)
+    [[ "$has" == "$source_name" ]] && continue
+    yq -i "(.packages[] | select(.package == strenv(DA_PKG)) | .signature[$i].sources) += [{\"name\": strenv(DA_NAME), \"issue\": strenv(DA_ISSUE)}]" "$data_file"
+    DOMAIN_ANNOTATE_CHANGED=1
+  done
   [[ "$DOMAIN_ANNOTATE_CHANGED" == "1" ]] && yq -i '.packages |= sort_by(.package)' "$data_file"
   return 0
 }

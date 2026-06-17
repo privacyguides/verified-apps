@@ -1,33 +1,39 @@
-schema: 1
+schema: 2
 domains:
   - domain: appverifier.roundsalmon4.com
     method: dns
     issue:
       - GH-1333
     checked: "2026-06-05T22:42:34Z"
-    allowed:
-      - 1E:76:F1:A1:5C:BE:20:1F:0F:E2:6A:F2:7A:12:D9:1D:0D:34:81:FE:7D:CC:7D:89:E9:D2:05:69:30:F6:D5:A9
+    packages:
+      - package: com.roundsalmon4.appverifier
+        fingerprints:
+          - 1E:76:F1:A1:5C:BE:20:1F:0F:E2:6A:F2:7A:12:D9:1D:0D:34:81:FE:7D:CC:7D:89:E9:D2:05:69:30:F6:D5:A9
   - domain: magicgrants.org
     method: dns
     issue:
       - GH-1791
     checked: "2026-06-15T02:36:34Z"
-    allowed:
-      - 15:FA:52:78:85:F7:04:21:10:30:4D:1A:F0:08:81:07:27:09:BD:38:E9:84:2C:AF:9C:D8:9E:08:06:1C:5E:52
-    dnssec: true
+    packages:
+      - package: org.magicgrants.skylight
+        fingerprints:
+          - 15:FA:52:78:85:F7:04:21:10:30:4D:1A:F0:08:81:07:27:09:BD:38:E9:84:2C:AF:9C:D8:9E:08:06:1C:5E:52
   - domain: play.verifiedapps.privacyguides.org
     method: dns
     issue:
       - GH-1627
     checked: "2026-06-13T00:59:10Z"
-    allowed:
-      - E8:58:37:5B:7C:45:CF:C1:D4:E4:F5:1B:4A:D6:59:73:5B:38:2C:82:4F:E2:24:48:36:A8:14:AD:7A:F3:00:61
-    dnssec: true
+    packages:
+      - package: org.privacyguides.verifiedapps.play
+        fingerprints:
+          - E8:58:37:5B:7C:45:CF:C1:D4:E4:F5:1B:4A:D6:59:73:5B:38:2C:82:4F:E2:24:48:36:A8:14:AD:7A:F3:00:61
   - domain: privacyguides.org
     method: dns
     issue:
       - GH-1321
       - GH-1329
     checked: "2026-06-05T22:21:57Z"
-    allowed:
-      - 40:5C:6B:D2:CA:7C:3A:AE:8F:46:3C:6F:8B:55:BC:F0:DD:AC:43:1C:5E:D8:EA:FF:65:D1:06:C9:81:7A:20:7F
+    packages:
+      - package: org.privacyguides.verifiedapps
+        fingerprints:
+          - 40:5C:6B:D2:CA:7C:3A:AE:8F:46:3C:6F:8B:55:BC:F0:DD:AC:43:1C:5E:D8:EA:FF:65:D1:06:C9:81:7A:20:7F
