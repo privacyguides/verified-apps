@@ -2780,6 +2780,16 @@ packages:
             issue: GH-677
             apk:
               sha256: 8cc65dcaf4c1b82bfb9afd3e29194ec27563bdcc9533787381e70d9710d1f945
+  - package: com.iudesk.android.photo.editor
+    signature:
+      - fingerprint: |-
+          4D:BF:93:A4:B5:E7:DC:59:D2:16:60:9D:7F:22:8E:AD:88:15:86:08:68:52:AD:4B:42:21:40:DD:18:90:5C:B0
+          82:FA:C9:72:33:B2:18:83:81:D8:6F:7A:8A:38:D6:AE:0B:B2:0A:90:B6:34:52:DF:16:BE:3F:43:80:78:80:84
+        sources:
+          - name: Google Play
+            issue: GH-1444
+            apk:
+              sha256: e2da6978c346e7a7805d52186eefecc25d93d9fb8dec3054bdf509e2e596d6e5
   - package: com.jarsilio.android.scrambledeggsif
     signature:
       - fingerprint: 3C:DF:16:22:C3:7D:21:2B:E5:86:B2:29:28:F2:8C:CA:DB:D7:CB:95:4F:10:05:FC:E1:3E:81:85:0B:EB:1D:73
