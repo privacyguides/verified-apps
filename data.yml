@@ -3674,6 +3674,14 @@ packages:
             issue: GH-332
             apk:
               sha256: 9f01c3e0ce984b9f8cadc01328e9d3d6bbd168e701a3992d3fd7b1b4de43de00
+  - package: com.sonova.chb.control
+    signature:
+      - fingerprint: 62:51:D6:78:41:32:F6:E0:47:75:8D:3E:7F:60:31:7F:04:9A:E4:A5:03:A0:0A:39:63:F9:60:CF:60:C0:CC:FA
+        sources:
+          - name: Google Play
+            issue: GH-1603
+            apk:
+              sha256: e33e883b31d27d0a78f6aea16595c4bf001391b0d32d729dedcdc34a66b70c32
   - package: com.sony.songpal.mdr
     signature:
       - fingerprint: 42:76:91:96:80:F4:AB:A6:D4:19:24:03:1C:20:AC:26:24:FE:EA:5E:8E:C6:8A:36:52:9B:2A:CB:66:4D:91:1E
@@ -6723,14 +6731,6 @@ packages:
             issue: CB-51
             apk:
               sha256: 1651df0d655e26dc19bcbf2ed09424976f5c0bb9bcef28fb1d352b3eea379667
-  - package: org.jw.jwlibrary.mobile
-    signature:
-      - fingerprint: 7E:A7:4C:8E:1E:69:F2:35:D6:0A:23:F2:91:7A:4E:C1:9A:0D:1C:BC:73:EB:E4:67:0C:2C:E1:BA:E1:01:4E:5D
-        sources:
-          - name: Google Play
-            issue: CB-112
-            apk:
-              sha256: d9e751c23b6b37d6d0e6a04cb13dd734995f8724f89ccaee507d039d14059338
   - package: org.kde.kdeconnect_tp
     signature:
       - fingerprint: 25:32:94:C6:84:D4:C2:31:C4:5A:2B:92:11:DF:AA:01:10:45:62:73:8B:62:A0:9D:BF:B7:14:50:B8:A6:66:F4
