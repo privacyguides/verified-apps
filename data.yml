@@ -6623,6 +6623,14 @@ packages:
             apk:
               sha256: 0fcc8ac73eb1307783799d8c9090d8bbe9be39d659463e2166dadfa3deabcd64
               link: https://github.com/azahar-emu/azahar/releases/download/2125.1.2/azahar-android-vanilla-2125.1.2.apk
+  - package: org.blitzortung.android.app
+    signature:
+      - fingerprint: 0B:3E:F6:40:A4:A4:B3:22:EF:6C:48:10:7C:B2:F1:AE:FB:57:CB:F2:B5:BE:34:8D:1D:46:40:A5:54:F0:EB:B9
+        sources:
+          - name: Google Play
+            issue: GH-1413
+            apk:
+              sha256: 2f72f5f179b0703f2e258655291d3d1669ca667346ed907030393abff7d26fa8
   - package: org.breezyweather
     signature:
       - fingerprint: 29:D4:35:F7:0A:A9:AE:C3:C1:FA:FF:7F:7F:FA:6E:15:78:50:88:D8:7F:06:EC:FC:AB:9C:3C:C6:2D:C2:69:D8
