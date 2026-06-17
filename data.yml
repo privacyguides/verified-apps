@@ -2669,14 +2669,6 @@ packages:
             issue: GH-822
             apk:
               sha256: 84fe28e381333a43166cb8ae11e457c3605e9271badb5bc33cf8dcdc40110d96
-  - package: com.microsoft.copilot
-    signature:
-      - fingerprint: 7A:F4:8E:E5:0F:6E:3A:54:19:A8:9B:82:34:08:0C:37:A6:B9:84:8C:6F:8E:4D:E7:EC:71:C5:79:4D:11:84:E2
-        sources:
-          - name: Google Play
-            issue: GH-1420
-            apk:
-              sha256: cc846adb0357538e02a2e106bfb80174aaf18c9a896f25399bdf97acecbfa947
   - package: com.microsoft.office.onenote
     signature:
       - fingerprint: |-
@@ -5230,6 +5222,14 @@ packages:
             apk:
               sha256: a0c802fed67251d0846af31269df15e916f731f861bd2ace8c08d6b8e94f3fac
               link: https://github.com/anyproto/anytype-kotlin/releases/download/0.46.12/anytype-0.46.12-arm64-v8a.apk
+  - package: io.appflowy.appflowy
+    signature:
+      - fingerprint: 19:13:85:33:DB:B3:A2:FD:65:2F:61:D7:F2:35:95:79:FE:6E:CC:B5:AC:94:AA:02:9E:BE:E7:0E:02:6B:45:FF
+        sources:
+          - name: Google Play
+            issue: GH-1412
+            apk:
+              sha256: cca674ba96e065d3ed9290c0b9478c8e2b7e57d1685610cee19e6272d8c26148
   - package: io.element.android.x
     signature:
       - fingerprint: 6A:2F:DC:31:48:04:9C:E0:D5:C6:E8:50:10:72:3B:83:FB:20:7D:20:C7:47:7F:5C:22:AC:53:C8:77:E9:2D:47
@@ -5492,14 +5492,6 @@ packages:
             issue: GH-533
             apk:
               sha256: 745f5e9f571488ff149e18b92d960f6bda4dd9466dc1561240200511986093cb
-  - package: io.voiapp.voi
-    signature:
-      - fingerprint: 71:81:B6:E7:9B:33:4C:98:D2:73:1A:8B:D6:EC:D7:E7:50:F0:A6:0D:AB:17:9B:22:15:2E:FA:36:9C:75:8A:F0
-        sources:
-          - name: Google Play
-            issue: GH-1405
-            apk:
-              sha256: 9e5bc065a975c4b6f7708cfee22b8fd4780767f120929b28dddc1c6999f78cde
   - package: io.yuka.android
     signature:
       - fingerprint: A7:E3:C4:A6:12:68:01:86:93:7B:02:E7:B8:95:74:D5:FD:62:79:8B:8C:B6:68:97:39:92:FA:89:F6:19:8F:CB
@@ -6099,6 +6091,14 @@ packages:
             apk:
               sha256: 0fcc8ac73eb1307783799d8c9090d8bbe9be39d659463e2166dadfa3deabcd64
               link: https://github.com/azahar-emu/azahar/releases/download/2125.1.2/azahar-android-vanilla-2125.1.2.apk
+  - package: org.blitzortung.android.app
+    signature:
+      - fingerprint: 0B:3E:F6:40:A4:A4:B3:22:EF:6C:48:10:7C:B2:F1:AE:FB:57:CB:F2:B5:BE:34:8D:1D:46:40:A5:54:F0:EB:B9
+        sources:
+          - name: Google Play
+            issue: GH-1413
+            apk:
+              sha256: 2f72f5f179b0703f2e258655291d3d1669ca667346ed907030393abff7d26fa8
   - package: org.breezyweather
     signature:
       - fingerprint: 29:D4:35:F7:0A:A9:AE:C3:C1:FA:FF:7F:7F:FA:6E:15:78:50:88:D8:7F:06:EC:FC:AB:9C:3C:C6:2D:C2:69:D8
