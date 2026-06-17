@@ -4086,6 +4086,14 @@ packages:
             issue: GH-839
             apk:
               sha256: 966b9cb22be34da65371e3f9893a9831f3fe246e1d5f5f6055cf775d43098a2a
+  - package: com.urbandroid.dontkillmyapp
+    signature:
+      - fingerprint: 2F:84:FB:3C:3A:39:CA:F2:01:A1:11:54:03:7B:50:D3:2C:05:A4:C1:18:B8:F1:39:F9:C7:9C:15:FB:D5:54:82
+        sources:
+          - name: Google Play
+            issue: GH-1655
+            apk:
+              sha256: 100dfa034900e92e91ed3cc22eefbc2993e65b7ea2b116e2e754fa5d44e9c923
   - package: com.urbandroid.kinestop
     signature:
       - fingerprint: 2F:84:FB:3C:3A:39:CA:F2:01:A1:11:54:03:7B:50:D3:2C:05:A4:C1:18:B8:F1:39:F9:C7:9C:15:FB:D5:54:82
@@ -5119,14 +5127,6 @@ packages:
             issue: GH-195
             apk:
               sha256: 575aac457e2229c782c13aebffe64c4ffe6eca0e4459155baaa86b8bf94ea21d
-  - package: flar2.devcheck
-    signature:
-      - fingerprint: F8:16:AA:5F:F7:22:63:D1:A9:A6:AF:B8:1E:4C:25:E7:2F:BF:90:02:44:4F:80:A6:E0:43:F0:80:C7:01:09:90
-        sources:
-          - name: Google Play
-            issue: GH-1638
-            apk:
-              sha256: 750db1171194ba11fbc1260c6380ddc045eceeee62321a4d5bd170650e071a32
   - package: flipboard.app
     signature:
       - fingerprint: A6:78:5F:A9:B3:DA:2A:1D:A4:AC:1A:6F:70:65:60:46:DD:7C:DD:A0:A4:42:E9:F1:B5:0D:97:07:69:05:FC:A5
