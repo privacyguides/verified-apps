@@ -2842,6 +2842,14 @@ packages:
             issue: GH-766
             apk:
               sha256: ff12e539b2a2420a4fcb54b0d839bbff2827ab3b5c2bc6a91a1fb97cb501714b
+  - package: com.marc.files
+    signature:
+      - fingerprint: BD:B9:3E:91:A2:D7:FE:BF:AA:EB:4A:33:7D:99:4C:52:9F:F7:3B:D8:34:6A:5D:95:95:93:6A:43:05:AF:0C:8C
+        sources:
+          - name: Google Play
+            issue: GH-1847
+            apk:
+              sha256: d5b9c156fd2fa3f3bce47365e950b66393b077ab5cb8cbeafa8e3a2ba9d78590
   - package: com.masarat.salati
     signature:
       - fingerprint: 82:06:BF:C4:05:AB:72:3D:21:87:C4:E1:2E:E1:3F:57:2B:D7:81:E9:47:23:EC:2D:74:32:C6:28:85:E0:7B:6F
