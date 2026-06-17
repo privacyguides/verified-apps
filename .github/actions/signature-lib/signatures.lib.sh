@@ -579,6 +579,82 @@ signatures_sync_codeberg_issue_labels() {
   echo "Synced labels to ${SUBMISSION_EXTERNAL_REF} on Codeberg."
 }
 
+# Compare-and-swap commit + push to a branch ref. Repeatedly: sync the working tree to the
+# latest origin/<ref>, re-apply the caller's delta (a shell function named in $1 that mutates
+# the tracked files against that fresh tip), stage <files>, create a signed commit, and push.
+# If the push is rejected because <ref> advanced (a concurrent writer landed first), the whole
+# cycle retries against the new tip. Because the delta is RE-APPLIED onto the current tip every
+# attempt — never committed as a stale whole-file snapshot — concurrent writers serialize
+# without ever reverting each other's entries (optimistic concurrency / CAS on the git ref).
+#
+# Echoes the pushed commit SHA on success (return 0). Returns 3 when the delta yields no change
+# against the current tip (nothing to commit — e.g. another run already added it). Returns 1 on
+# delta failure or exhausted retries.
+#
+# The caller must configure git identity + commit signing beforehand. apply_fn MUST be
+# idempotent under re-application (the merge/upsert helpers here are: they dedupe by
+# package/fingerprint/source/domain), since it runs once per attempt against a fresh tip.
+# Usage: submission_cas_commit_push <apply_fn> <ref> <message_file> <author> <files> [max_attempts]
+submission_cas_commit_push() {
+  local apply_fn="$1" ref="$2" msg_file="$3" author="$4" files="$5" max="${6:-10}"
+  local attempt=0 f sha
+
+  while (( attempt < max )); do
+    attempt=$((attempt + 1))
+    if ! git fetch --quiet origin "$ref"; then
+      echo "CAS: fetch origin/${ref} failed (attempt ${attempt}/${max})" >&2
+      sleep 2
+      continue
+    fi
+    # Discard any prior attempt's commit and re-sync to the freshly fetched tip.
+    git reset --quiet --hard FETCH_HEAD
+
+    if ! "$apply_fn"; then
+      echo "CAS: delta function '${apply_fn}' failed" >&2
+      return 1
+    fi
+
+    while IFS= read -r f; do
+      [[ -z "$f" ]] && continue
+      [[ -e "$f" ]] && git add -- "$f"
+    done <<< "$files"
+
+    if git diff --cached --quiet; then
+      echo "CAS: delta produced no change against origin/${ref}; nothing to commit." >&2
+      return 3
+    fi
+
+    git commit --quiet -F "$msg_file" --author="$author"
+
+    if git push --quiet origin "HEAD:${ref}" 2>/dev/null; then
+      sha=$(git rev-parse HEAD)
+      printf '%s\n' "$sha"
+      return 0
+    fi
+    echo "CAS: push to ${ref} rejected — it advanced; re-applying onto the new tip (${attempt}/${max})" >&2
+    sleep $(( (RANDOM % 3) + 1 ))
+  done
+
+  echo "CAS: exhausted ${max} attempts pushing to ${ref}" >&2
+  return 1
+}
+
+# Configure git identity + SSH commit signing as the Privacy Guides bot (the same identity
+# bot-commit uses, so commits read "Verified"). $1 is the SSH private key contents. Echoes the
+# temp key file path so the caller can remove it (e.g. trap 'rm -f "$kf"' EXIT).
+submission_configure_git_signing() {
+  local ssh_key="$1" key_file
+  git config user.name "Privacy Guides [bot]"
+  git config user.email "github-bot@privacyguides.net"
+  key_file="$(mktemp)"
+  printf '%s\n' "$ssh_key" > "$key_file"
+  chmod 600 "$key_file"
+  git config gpg.format ssh
+  git config user.signingkey "$key_file"
+  git config commit.gpgsign true
+  printf '%s' "$key_file"
+}
+
 # Write a submission commit message; always closes the synced GitHub issue (GH-N).
 submission_write_commit_message_file() {
   local msg_file="$1"

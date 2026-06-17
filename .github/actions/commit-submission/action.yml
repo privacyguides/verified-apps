@@ -164,6 +164,10 @@ runs:
           exit 0
         fi
 
+        # Export the built entry (the delta) so a downstream CAS push can re-merge it onto the
+        # latest main, rather than committing a whole-file snapshot that may have gone stale.
+        cp "$entry" "${GITHUB_WORKSPACE}/submission-entry.yml"
+
         submission_merge_entry_into_data_yml "$entry"
         rm -f "$entry"
 
