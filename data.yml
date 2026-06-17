@@ -808,14 +808,6 @@ packages:
             issue: GH-957
             apk:
               sha256: 5f17b9b988a6dbbf3523a1ec798c1b4b865192ee46cf70618e9a1259499ef8c6
-  - package: com.axlebolt.standoff2
-    signature:
-      - fingerprint: CD:29:02:A2:CF:38:54:91:75:95:13:A1:01:74:CC:71:98:F8:E0:8B:6D:B7:75:6E:1F:8A:E2:E3:A1:B2:06:3D
-        sources:
-          - name: Google Play
-            issue: GH-1863
-            apk:
-              sha256: 85ee0324b043f3bf093bdaa6617886b77df9cfa079ffbd4d50d406d86097f0ce
   - package: com.azure.authenticator
     signature:
       - fingerprint: EE:BD:0F:16:E6:29:AF:8B:83:81:BF:ED:FD:D6:49:60:5F:E9:0F:76:3F:5C:B7:BA:47:3E:B9:EE:F9:4D:9A:F1
@@ -2323,14 +2315,6 @@ packages:
             issue: GH-948
             apk:
               sha256: becd7fcf3859bc8bec82df8378c6b04d1847469c6a6a40ff0e05e6bcf1a3eb4e
-  - package: com.kevinforeman.nzb360
-    signature:
-      - fingerprint: 73:41:1E:C1:9C:17:CF:AF:4E:6B:57:70:37:00:1F:E1:67:71:D2:9C:C1:8C:E3:6C:B7:34:06:98:1A:ED:98:E4
-        sources:
-          - name: Google Play
-            issue: GH-1858
-            apk:
-              sha256: 5dd9fcdbdeb9ca6f8a393a9181714058775dd6cd446ea7a119b0a6cfb2d55bf1
   - package: com.kin.easynotes
     signature:
       - fingerprint: FC:E8:7D:A9:7F:79:13:01:DF:39:0B:FA:47:E8:16:85:19:11:67:CA:B5:DB:D5:55:DB:82:87:54:1F:78:6E:28
@@ -3855,6 +3839,22 @@ packages:
             apk:
               sha256: e0eaacfd91288fcc50b7226a8256d57dc85f955649653ffc686d28e2c0c85d13
               link: https://github.com/termux/termux-float/releases/download/v0.17.0/termux-float-app_v0.17.0+github.debug.apk
+  - package: com.teslacoilsw.launcher
+    signature:
+      - fingerprint: 47:F8:42:30:82:F3:90:61:6C:18:09:26:2A:A6:DF:3A:11:44:9A:7B:D0:58:00:CE:DC:3D:A6:77:4B:D4:EE:9B
+        sources:
+          - name: Google Play
+            issue: GH-1856
+            apk:
+              sha256: 6b2b42499b145a81cda61c8b85551d4455593f1e82ea54e0bb6a45c4348d1631
+  - package: com.thetransitapp.droid
+    signature:
+      - fingerprint: A0:55:A8:6A:4F:75:38:D3:EE:2D:57:5C:06:74:32:81:B8:13:05:23:73:DE:A5:BF:F1:0D:20:15:81:55:13:41
+        sources:
+          - name: Google Play
+            issue: GH-1832
+            apk:
+              sha256: b3cd440ef1a4d3bcf9e74bc77b98bb791a64a23cd4846ada4c2f055ac0497483
   - package: com.tinder
     signature:
       - fingerprint: 8A:B1:4F:D7:50:B8:20:57:4D:20:C3:54:41:EA:14:A9:B5:D1:95:9A:31:04:0C:EC:12:B4:6B:B2:90:F4:DA:1B
