@@ -9,6 +9,15 @@ domains:
       - package: com.roundsalmon4.appverifier
         fingerprints:
           - 1E:76:F1:A1:5C:BE:20:1F:0F:E2:6A:F2:7A:12:D9:1D:0D:34:81:FE:7D:CC:7D:89:E9:D2:05:69:30:F6:D5:A9
+  - domain: citymapper.com
+    method: https
+    issue:
+      - GH-1885
+    checked: "2026-06-17T20:24:33Z"
+    packages:
+      - package: com.citymapper.app.release
+        fingerprints:
+          - BE:8A:28:01:CA:E3:F4:4B:49:1A:8E:CC:A2:8C:3A:C2:23:B3:BD:57:10:9A:71:A5:F2:0B:45:A6:96:D1:7E:5D
   - domain: magicgrants.org
     method: dns
     issue:
