@@ -6398,6 +6398,18 @@ packages:
             issue: GH-180
             apk:
               sha256: 3f5074b61c35e344b68c6f5ad014891da58d3eca9a541bb382de5f80de6c3577
+  - package: org.fossify.musicplayer
+    signature:
+      - fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
+        sources:
+          - name: F-Droid
+            issue: GH-1822
+            apk:
+              sha256: b5d0ce367544df1ac162adf71d642878c5b963a304ca0ddf8f8556f07bbba79b
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1822
+            apk:
+              sha256: b5d0ce367544df1ac162adf71d642878c5b963a304ca0ddf8f8556f07bbba79b
   - package: org.fossify.notes
     signature:
       - fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
