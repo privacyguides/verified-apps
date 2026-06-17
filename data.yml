@@ -5171,6 +5171,14 @@ packages:
             issue: CB-74
             apk:
               sha256: fc44909ff8dd36be964804aa32cefdd13e81347a49d3ad704745214d40cc1eb1
+  - package: de.dieEinsteiger.LiniennetzeF
+    signature:
+      - fingerprint: ED:88:C3:07:C9:6A:51:41:34:C0:88:F5:AC:43:DE:58:4C:92:2B:69:32:90:54:BF:A5:7E:78:DC:80:BE:77:F2
+        sources:
+          - name: Google Play
+            issue: GH-1640
+            apk:
+              sha256: f3008b2b8c873d119793ae9cbb8409008a95425ebc102e757b6449670c651065
   - package: de.felixnuesse.extract
     signature:
       - fingerprint: 1F:1E:E8:3B:8C:11:74:A6:1D:0D:18:F0:9F:F1:21:5D:59:E5:E6:3E:0B:01:A4:DA:69:5B:8E:B5:2D:16:BF:E9
