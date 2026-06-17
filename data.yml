@@ -513,14 +513,6 @@ packages:
             issue: GH-793
             apk:
               sha256: 6faf58dae01287869f7bb85717359e6929a366ea5f9ec6eb1325e0dcdd0e70d1
-  - package: com.activision.callofduty.shooter
-    signature:
-      - fingerprint: 79:AF:5C:28:6E:D6:54:BA:73:44:2D:E7:66:68:BD:4F:A7:FC:92:EC:C3:00:31:67:8B:EC:A8:7C:7F:61:00:70
-        sources:
-          - name: Google Play
-            issue: GH-1841
-            apk:
-              sha256: 46f70bd5496023e02c4fa6be76af30c3c551d7f805441c70b539b17be0415ab3
   - package: com.adobe.reader
     signature:
       - fingerprint: B6:DD:05:62:25:64:87:FC:D6:C9:8C:DE:13:78:58:EF:50:D9:AD:B9:F9:CD:2F:1C:A5:8C:53:57:EF:DF:0F:AF
@@ -545,14 +537,6 @@ packages:
             issue: GH-326
             apk:
               sha256: 36b3f935dec1944dd3746329255359ebc032ab10382e92680cf993c40a3b84b5
-  - package: com.airbnb.android
-    signature:
-      - fingerprint: 43:7B:7C:9A:94:6C:3C:E9:F2:49:A4:30:86:14:F5:42:C1:4D:7C:7A:3B:C9:77:89:98:4E:02:47:CD:23:01:FB
-        sources:
-          - name: Google Play
-            issue: GH-1839
-            apk:
-              sha256: c048bc3dbb8486f3f9218cca09d261415aba917765cba2abd3e69700e1675973
   - package: com.aircanada
     signature:
       - fingerprint: 39:09:4C:C7:95:A9:86:B6:45:D1:F6:59:F1:5A:5B:8E:5C:8C:63:F7:80:37:F9:95:E7:E7:1B:62:FE:93:D2:E9
@@ -824,6 +808,14 @@ packages:
             issue: GH-957
             apk:
               sha256: 5f17b9b988a6dbbf3523a1ec798c1b4b865192ee46cf70618e9a1259499ef8c6
+  - package: com.axlebolt.standoff2
+    signature:
+      - fingerprint: CD:29:02:A2:CF:38:54:91:75:95:13:A1:01:74:CC:71:98:F8:E0:8B:6D:B7:75:6E:1F:8A:E2:E3:A1:B2:06:3D
+        sources:
+          - name: Google Play
+            issue: GH-1863
+            apk:
+              sha256: 85ee0324b043f3bf093bdaa6617886b77df9cfa079ffbd4d50d406d86097f0ce
   - package: com.azure.authenticator
     signature:
       - fingerprint: EE:BD:0F:16:E6:29:AF:8B:83:81:BF:ED:FD:D6:49:60:5F:E9:0F:76:3F:5C:B7:BA:47:3E:B9:EE:F9:4D:9A:F1
@@ -1287,14 +1279,6 @@ packages:
             issue: GH-266
             apk:
               sha256: dfe359b3b2c16ff23b56c02c4703a9437824469f5035d109b53b2acc09a7635e
-  - package: com.defend3dapp
-    signature:
-      - fingerprint: 28:AF:3A:50:E0:83:74:18:95:92:49:1A:8E:EF:63:59:B4:B5:8E:E7:BC:A5:BF:08:C7:3E:7B:F2:4B:48:18:DA
-        sources:
-          - name: Google Play
-            issue: GH-1410
-            apk:
-              sha256: b677b39772926321a1d118947cfa63e1f6c23ee2bd4d12724d8a140e48272b0f
   - package: com.delta.mobile.android
     signature:
       - fingerprint: DC:BE:F3:76:6B:C1:AA:52:28:EB:75:AC:A9:C7:AE:02:3C:FE:BB:43:83:90:CB:73:75:85:28:0A:26:DE:AA:11
@@ -2339,6 +2323,14 @@ packages:
             issue: GH-948
             apk:
               sha256: becd7fcf3859bc8bec82df8378c6b04d1847469c6a6a40ff0e05e6bcf1a3eb4e
+  - package: com.kevinforeman.nzb360
+    signature:
+      - fingerprint: 73:41:1E:C1:9C:17:CF:AF:4E:6B:57:70:37:00:1F:E1:67:71:D2:9C:C1:8C:E3:6C:B7:34:06:98:1A:ED:98:E4
+        sources:
+          - name: Google Play
+            issue: GH-1858
+            apk:
+              sha256: 5dd9fcdbdeb9ca6f8a393a9181714058775dd6cd446ea7a119b0a6cfb2d55bf1
   - package: com.kin.easynotes
     signature:
       - fingerprint: FC:E8:7D:A9:7F:79:13:01:DF:39:0B:FA:47:E8:16:85:19:11:67:CA:B5:DB:D5:55:DB:82:87:54:1F:78:6E:28
@@ -2958,6 +2950,14 @@ packages:
             issue: GH-1207
             apk:
               sha256: 8819bfe633faa7affce5b035ad5f553fb5c68368ecaa1d2cdee02dd205773512
+  - package: com.oceanwing.battery.cam
+    signature:
+      - fingerprint: 16:6C:23:45:57:B7:76:CA:D8:AC:94:C9:79:37:9E:48:DF:38:7D:4D:8F:96:A3:43:DF:40:FC:D9:05:BF:F6:86
+        sources:
+          - name: Google Play
+            issue: GH-1844
+            apk:
+              sha256: 02022254f83f9393be47d54cba370fd3c77034c9c3c6e8d32706224650b1d3d2
   - package: com.oceanwing.soundcore
     signature:
       - fingerprint: EA:B2:B0:AE:8A:49:0A:58:A5:ED:1F:CA:E8:1F:50:3D:F0:01:89:2F:0B:26:55:FF:C0:31:51:1A:F5:A3:86:7F
@@ -3249,6 +3249,14 @@ packages:
             issue: GH-674
             apk:
               sha256: ec0bde236aac9e5e2eb95c46ea805966ace8ecd6bf49fffa85e00ce03ec60251
+  - package: com.riotgames.league.wildrift
+    signature:
+      - fingerprint: 93:1D:96:95:02:F3:DE:01:A4:C2:39:E4:19:92:11:EB:DC:57:BB:9A:75:26:39:4B:9E:3E:2D:1C:C0:79:FF:0C
+        sources:
+          - name: Google Play
+            issue: GH-1837
+            apk:
+              sha256: 41b12a3eacdf7bff6b6d6f4372bc6f4ba3392599c6832f874edd6eb93708fef9
   - package: com.riteshsahu.SMSBackupRestore
     signature:
       - fingerprint: F4:47:DC:11:66:22:7B:E1:BC:E3:44:1F:38:D8:CD:FA:79:9A:4F:7D:14:58:DA:15:AE:33:C3:F7:7C:38:ED:0A
@@ -5032,14 +5040,6 @@ packages:
             issue: GH-1072
             apk:
               sha256: 95527b05a417ec2a438eba17c739b9019832d3e2d4caa63019a4d84975b6029d
-  - package: eu.opencloud.android
-    signature:
-      - fingerprint: 0A:1E:55:60:92:9F:6A:DE:6A:EF:6B:44:67:11:E1:4B:0D:2A:90:8E:4D:EB:37:45:37:22:EF:51:C2:DC:A0:37
-        sources:
-          - name: Google Play
-            issue: GH-1860
-            apk:
-              sha256: 682f827da2bd335fccee1d0d462eb7cfefc021044cd017bcd1d6338ae9aa9b0b
   - package: eu.siacs.conversations
     signature:
       - fingerprint: C7:5A:BE:78:59:36:43:AE:7C:AC:52:73:27:CD:21:93:48:2D:B0:67:40:4A:88:B8:C1:3F:7A:07:01:94:61:87
@@ -5484,6 +5484,14 @@ packages:
             issue: GH-533
             apk:
               sha256: 745f5e9f571488ff149e18b92d960f6bda4dd9466dc1561240200511986093cb
+  - package: io.voiapp.voi
+    signature:
+      - fingerprint: 71:81:B6:E7:9B:33:4C:98:D2:73:1A:8B:D6:EC:D7:E7:50:F0:A6:0D:AB:17:9B:22:15:2E:FA:36:9C:75:8A:F0
+        sources:
+          - name: Google Play
+            issue: GH-1405
+            apk:
+              sha256: 9e5bc065a975c4b6f7708cfee22b8fd4780767f120929b28dddc1c6999f78cde
   - package: io.yuka.android
     signature:
       - fingerprint: A7:E3:C4:A6:12:68:01:86:93:7B:02:E7:B8:95:74:D5:FD:62:79:8B:8C:B6:68:97:39:92:FA:89:F6:19:8F:CB
