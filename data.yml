@@ -755,6 +755,14 @@ packages:
             issue: GH-1129
             apk:
               sha256: 020f9e2cb13c1321bf99663fe6b5418049fcc1a9819f7c8f8424e72761598655
+  - package: com.astrapaging.vff
+    signature:
+      - fingerprint: D2:4B:40:DE:53:0C:D6:22:A6:04:74:0C:9D:D0:36:47:5E:E6:AC:FB:32:6D:29:E3:4A:06:AD:CD:1F:6C:6A:1F
+        sources:
+          - name: Google Play
+            issue: GH-1454
+            apk:
+              sha256: d846f31f74c5816ba32a69d7f9cb8b0f77f0755a0cac39c7a7c5d6faea28b904
   - package: com.audiobookshelf.app
     signature:
       - fingerprint: 36:48:29:26:56:96:6C:63:D1:B5:7D:93:EA:00:E3:5C:7D:97:51:1E:1F:5B:06:78:A7:17:DA:E7:73:79:39:56
@@ -1678,14 +1686,6 @@ packages:
             issue: GH-1434
             apk:
               sha256: 043d7cbcc85c6828e6c8ce26d58c838c9c5b7364bb6f3b40e2ac053ca6548707
-  - package: com.fronius.solarweb
-    signature:
-      - fingerprint: 5A:6A:DE:A2:F3:F8:49:65:8E:8D:3E:8B:05:4A:75:A4:86:D7:5B:E6:1A:BC:B7:60:8B:09:4B:62:DA:85:51:3E
-        sources:
-          - name: Google Play
-            issue: GH-1449
-            apk:
-              sha256: c538680e2102486747f5d03e929f0cd4bd566df21ba717e05d86215b4334992a
   - package: com.fsck.k9
     signature:
       - fingerprint: 55:C8:A5:23:B9:73:35:F5:BF:60:DF:E8:A9:F3:E1:DD:E7:44:51:6D:93:57:E8:0A:92:5B:7B:22:E4:F5:55:24
@@ -5267,6 +5267,14 @@ packages:
             issue: GH-865
             apk:
               sha256: b26cb2f48caaeaa6d5a5e8747440ea9a85689b476fe30776fd1de155ba370407
+  - package: image.to.text.ocr
+    signature:
+      - fingerprint: 10:FF:42:11:D3:60:F1:02:01:0A:BD:52:62:5D:D9:D3:21:4E:B4:C0:28:0B:89:DA:61:13:45:31:91:62:E1:C2
+        sources:
+          - name: Google Play
+            issue: GH-1451
+            apk:
+              sha256: cd0a4e1a51e47425351e747c658503f257fa1b484a491be3ed1491fe3b428889
   - package: info.zverev.ilya.every_door
     signature:
       - fingerprint: 9F:FC:A7:0F:77:A8:5E:F6:82:90:27:66:02:BB:5B:4C:92:A6:54:67:C5:4F:F6:FB:89:C4:B2:02:39:50:62:03
