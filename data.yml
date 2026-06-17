@@ -322,6 +322,16 @@ packages:
             issue: CB-46
             apk:
               sha256: ef0f40be1b947752e8441fe106ecb15e3705ab5aa52a9726c5e9a04a3a499038
+  - package: cc.dict.dictcc
+    signature:
+      - fingerprint: 85:32:C2:A9:14:09:8F:33:A1:F6:FF:10:0D:E7:8E:06:2A:84:59:44:B5:5F:16:96:B8:9E:21:4F:95:15:EF:90
+        sources:
+          - name: Google Play
+            issue: GH-1498
+            apk:
+              sha256: 1730236a2f8e31fadad249347f232da01e85eae6d727dc5acd1dd1f9ec548193
+          - name: HTTPS Verified Domain
+            issue: GH-1498
   - package: cc.narumi.chaldea
     signature:
       - fingerprint: 32:3A:BD:30:AE:C1:C0:15:EF:AF:AA:3C:B1:49:DF:74:26:57:86:30:1B:D6:A9:D9:8A:40:62:A7:A5:A6:1E:99
