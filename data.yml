@@ -1910,6 +1910,14 @@ packages:
             issue: GH-983
             apk:
               sha256: 3e7e5786399373552fc3e1b0284b1c6ee772bd564ff47b6b2f64306d15d70856
+  - package: com.floraincognita.app.floraincognita
+    signature:
+      - fingerprint: F4:CA:67:14:53:F3:F2:A2:7E:41:1E:A1:15:08:AC:3F:BB:C7:EA:E0:68:B4:10:D3:64:B2:D9:DD:AD:89:F8:BC
+        sources:
+          - name: Google Play
+            issue: GH-1543
+            apk:
+              sha256: e2a052195e18b0c58722ca3a9615c6ee78bd43b231e1b169f5be3d0f02f9f86c
   - package: com.flyersoft.moonreader
     signature:
       - fingerprint: 5A:C6:46:EB:C6:80:17:E4:CC:58:2B:11:B1:C2:AE:5D:29:B1:5D:9B:0A:C3:A5:4F:C6:09:72:41:7B:41:C9:AD
