@@ -4658,6 +4658,14 @@ packages:
             issue: GH-839
             apk:
               sha256: 966b9cb22be34da65371e3f9893a9831f3fe246e1d5f5f6055cf775d43098a2a
+  - package: com.urbandroid.dontkillmyapp
+    signature:
+      - fingerprint: 2F:84:FB:3C:3A:39:CA:F2:01:A1:11:54:03:7B:50:D3:2C:05:A4:C1:18:B8:F1:39:F9:C7:9C:15:FB:D5:54:82
+        sources:
+          - name: Google Play
+            issue: GH-1655
+            apk:
+              sha256: 100dfa034900e92e91ed3cc22eefbc2993e65b7ea2b116e2e754fa5d44e9c923
   - package: com.urbandroid.kinestop
     signature:
       - fingerprint: 2F:84:FB:3C:3A:39:CA:F2:01:A1:11:54:03:7B:50:D3:2C:05:A4:C1:18:B8:F1:39:F9:C7:9C:15:FB:D5:54:82
