@@ -5162,6 +5162,14 @@ packages:
             issue: CB-88
             apk:
               sha256: b5320fb923002ebcb8ef9efcbbecf8bcb37cb442190ccc6d962bcfd1d2b5d471
+  - package: coredevices.coreapp
+    signature:
+      - fingerprint: E1:62:46:18:4F:6F:C8:F7:A3:F2:73:14:A4:3C:30:08:54:55:6D:11:AC:F5:95:60:08:A4:DF:4F:FE:61:C3:9D
+        sources:
+          - name: Google Play
+            issue: GH-1882
+            apk:
+              sha256: ddea7baf2e114277c5d4aea038fc31294877b0fe538178a399f186bc7cdc39c6
   - package: de.astubenbord.paperless_mobile
     signature:
       - fingerprint: 55:B1:8F:9C:A4:08:9F:BA:70:C2:E5:7C:E5:09:F2:40:B8:12:94:EF:69:1B:0D:D1:B1:9D:44:1E:57:64:02:A8
