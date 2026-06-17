@@ -262,6 +262,14 @@ packages:
             issue: CB-87
             apk:
               sha256: 03cd6c64c5cb33653c6d250ba98ce3c84c0fa7eea96c9df6f214c131d14c7523
+  - package: appinventor.ai_ondraaudy.ADSBFT
+    signature:
+      - fingerprint: AA:66:5C:0F:41:D2:86:F8:08:23:17:4C:DB:3C:EE:F4:12:D7:20:B5:B2:31:8C:A7:46:FB:BF:08:EF:65:93:28
+        sources:
+          - name: Google Play
+            issue: GH-1761
+            apk:
+              sha256: d4cbc6719a11e322f8fb1e24bc0c0d3fd8fc82c0be39eb4b76a59dbfb02c4646
   - package: at.bitfire.davdroid
     signature:
       - fingerprint: 8B:48:E6:76:A6:86:49:67:79:17:83:C1:D8:D0:FC:0D:D6:D2:CE:33:E1:FB:36:78:77:93:EC:D0:86:D4:47:07
