@@ -718,6 +718,14 @@ packages:
             issue: GH-975
             apk:
               sha256: d32d9da15d88abfc1b9fd69a172e9342807e53c31ae77673acf4536cc99921bf
+  - package: com.andoku.three.gp
+    signature:
+      - fingerprint: EF:B3:C2:A3:E3:BA:8B:95:7F:EA:31:6A:80:CF:5A:2D:9C:2B:52:4F:D3:41:0E:F0:DB:76:88:20:39:D3:93:C8
+        sources:
+          - name: Google Play
+            issue: GH-1811
+            apk:
+              sha256: 817c3ee36321fe41e09988d01de87b072edd877c8138572252b1b9e4c7582a79
   - package: com.android.chrome
     signature:
       - fingerprint: F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
