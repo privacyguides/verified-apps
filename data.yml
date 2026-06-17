@@ -1595,16 +1595,6 @@ packages:
             issue: CB-3
             apk:
               sha256: 3bc37e619307bace32ab54433874fef34ad2a5a9343289d2f9b62eedc1466b86
-  - package: com.fitbit.FitbitMobile
-    signature:
-      - fingerprint: |-
-          2C:C9:14:DA:5A:84:94:26:C1:B5:91:E1:2F:0A:8A:DB:04:2F:A2:FE:AD:E3:A4:76:28:45:CE:6B:FA:DC:F3:13
-          FA:6A:19:88:03:AA:C1:93:9F:ED:6B:AB:92:95:E5:18:4C:00:96:6B:F9:12:F8:C5:FA:FF:26:57:6C:C7:70:FF
-        sources:
-          - name: Google Play
-            issue: GH-1884
-            apk:
-              sha256: 82bba1f939305db1c4e455df2c8a44306ed2f096346288252be1c5ce456728bb
   - package: com.flauschcode.broccoli
     signature:
       - fingerprint: 73:8E:4F:5A:7C:A8:28:E8:00:C0:22:AB:44:AB:51:72:8E:66:00:1E:61:D3:50:E2:7C:E7:D9:DF:CF:0F:6B:99
@@ -7228,6 +7218,16 @@ packages:
             issue: GH-744
             apk:
               sha256: 29767d603ba25c2be7c369c42d9a0c983268f29deda3e60ba4574b211a63e3d0
+  - package: org.wikipedia
+    signature:
+      - fingerprint: F5:40:E9:37:41:9A:1F:E3:08:E3:35:31:35:9C:23:CE:19:DF:D8:4A:66:01:E2:EF:85:C2:17:C8:23:A7:08:7F
+        sources:
+          - name: Google Play
+            issue: GH-1886
+            apk:
+              sha256: 23c1d44a281ab093d4c1396849428cc28afd43749d6a9d719a9f8741833bb3de
+          - name: HTTPS Verified Domain
+            issue: GH-1886
   - package: org.y20k.stayput
     signature:
       - fingerprint: 61:05:14:5F:84:E5:CB:D6:97:F0:F6:E1:2C:97:77:04:2E:9B:2D:B6:67:A7:FF:0D:A4:12:F6:74:35:31:6D:D8
