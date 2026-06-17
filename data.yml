@@ -5864,6 +5864,14 @@ packages:
             issue: GH-1243
             apk:
               sha256: 6d45d1aac5ef57c1fc6dc836c896f38a04f3d5863eba04404419b22dccecfed7
+  - package: io.safepal.wallet
+    signature:
+      - fingerprint: B5:9B:F8:07:63:AD:0D:0A:A3:B2:85:79:8B:CB:F6:5E:11:1D:ED:41:35:C4:B3:43:BB:4C:EC:2A:EA:C2:FC:62
+        sources:
+          - name: Google Play
+            issue: GH-1862
+            apk:
+              sha256: d470f3c118b414ae4850a2649117a50589fd40223686fd2b4a2ece95f677f801
   - package: io.sanford.wormhole_william
     signature:
       - fingerprint: 4F:BD:DD:75:06:50:73:63:4B:D5:3D:26:6F:C4:3E:7C:61:6E:40:F4:A4:48:BB:DA:2F:AF:60:D7:65:EB:3A:0E
