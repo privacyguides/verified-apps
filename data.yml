@@ -3157,6 +3157,14 @@ packages:
             issue: GH-587
             apk:
               sha256: 6a8b9a5a4ee709975f0936eff9a1936c07a40ecf6cfbc29b404a7396e5c245fc
+  - package: com.minrax.sofiabus
+    signature:
+      - fingerprint: 07:F3:22:4D:AB:06:C9:7E:91:DD:B5:72:26:A2:E1:55:9D:A0:EF:72:C3:17:C8:ED:3C:61:1A:3A:09:ED:D6:C7
+        sources:
+          - name: Google Play
+            issue: GH-1644
+            apk:
+              sha256: 28e147d16af2b53f50451385e28a65f65ef673aa0fb9b776ba9ada4695417591
   - package: com.mm.android.DMSS
     signature:
       - fingerprint: 7A:7D:89:BC:2C:DA:B8:23:0F:A3:DC:5C:9D:1F:AA:F0:01:4A:F8:64:D5:75:ED:7A:FF:77:4C:71:78:89:9E:AF
