@@ -1885,6 +1885,14 @@ packages:
             issue: GH-994
             apk:
               sha256: 0e5a8fbfb03ab5e7196b6c1388a3dc04ffd84739a81bfc395c8edeaa895051fb
+  - package: com.foxit.mobile.pdf.lite
+    signature:
+      - fingerprint: 1A:D0:DE:1D:95:54:C5:3F:6C:45:3A:4B:7A:89:1F:11:EF:DE:F0:9B:74:93:C3:8D:BF:A7:3E:4C:4F:94:FC:8F
+        sources:
+          - name: Google Play
+            issue: GH-1434
+            apk:
+              sha256: 043d7cbcc85c6828e6c8ce26d58c838c9c5b7364bb6f3b40e2ac053ca6548707
   - package: com.fsck.k9
     signature:
       - fingerprint: 55:C8:A5:23:B9:73:35:F5:BF:60:DF:E8:A9:F3:E1:DD:E7:44:51:6D:93:57:E8:0A:92:5B:7B:22:E4:F5:55:24
