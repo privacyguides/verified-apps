@@ -6352,6 +6352,12 @@ packages:
             apk:
               sha256: 609f2c93b9bbdac5c17218b32d1e0de1b0022e71c96665edf4eefe16ff4a196d
               link: https://github.com/binwiederhier/ntfy-android/releases/download/v1.24.0/ntfy-1.24.0-fdroid-release.apk
+      - fingerprint: 75:9A:B9:7F:A5:6D:90:2C:90:32:13:11:4A:BE:1E:32:94:40:BE:77:B9:8F:C0:85:F6:24:FF:59:14:B9:4A:83
+        sources:
+          - name: Google Play
+            issue: GH-1509
+            apk:
+              sha256: 956a1059120cdbc2d5e2877a63576c0bfca2b748faf9b644151a185861dffb8d
       - fingerprint: 76:E9:4D:8E:04:70:6C:5B:99:06:4C:23:21:0D:8C:A9:91:06:08:AB:AE:8F:3E:97:2B:41:E3:88:39:16:46:E0
         sources:
           - name: F-Droid
