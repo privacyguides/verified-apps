@@ -4213,6 +4213,14 @@ packages:
             apk:
               sha256: e0eaacfd91288fcc50b7226a8256d57dc85f955649653ffc686d28e2c0c85d13
               link: https://github.com/termux/termux-float/releases/download/v0.17.0/termux-float-app_v0.17.0+github.debug.apk
+  - package: com.teslacoilsw.launcher
+    signature:
+      - fingerprint: 47:F8:42:30:82:F3:90:61:6C:18:09:26:2A:A6:DF:3A:11:44:9A:7B:D0:58:00:CE:DC:3D:A6:77:4B:D4:EE:9B
+        sources:
+          - name: Google Play
+            issue: GH-1856
+            apk:
+              sha256: 6b2b42499b145a81cda61c8b85551d4455593f1e82ea54e0bb6a45c4348d1631
   - package: com.thetransitapp.droid
     signature:
       - fingerprint: A0:55:A8:6A:4F:75:38:D3:EE:2D:57:5C:06:74:32:81:B8:13:05:23:73:DE:A5:BF:F1:0D:20:15:81:55:13:41
