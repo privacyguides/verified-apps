@@ -366,9 +366,7 @@ domain_find_record_for_domain() {
 }
 
 # Probe every candidate domain for a package, most specific first, collecting every
-# record found. Echoes a JSON array ordered most specific first; the FIRST element is
-# the authoritative record — a record on a more specific domain shadows its parents,
-# so later elements are reported in the summary table but never used for matching.
+# record found.
 # Returns 1 when no candidate domain has a record.
 domain_find_records_for_package() {
   local pkg="$1" domain rec records="[]"
@@ -506,7 +504,7 @@ domain_table_rows() {
 
 # Insert or update a domain row (by domain) and, within it, the verified package row.
 #   $1 file  $2 domain  $3 method (https/dns)  $4 package  $5 issue_ref  $6 checked (ISO8601)
-#   $7 dnssec       ("true"/"false"/"" — records a .dnssec boolean for DNS records)
+#   $7 dnssec       ("true"/"false"/"" - records a .dnssec boolean for DNS records)
 #   $8 fingerprints (JSON array of the key set(s)/fingerprints the domain vouches for this
 #                    package; default []). For HTTPS these are individual certificate
 #                    fingerprints; for DNS each entry is a published key set.
@@ -553,6 +551,15 @@ domain_verified_upsert() {
   yq -i '(.domains[] | select(.domain == strenv(DV_DOMAIN)) | .packages[] | select(.package == strenv(DV_PKG)) | .fingerprints[] | select(type == "!!str" and contains("\n"))) style="literal"' "$file" 2>/dev/null || true
   yq -i 'with(.domains[] | select(.domain == strenv(DV_DOMAIN)); .packages |= sort_by(.package))' "$file"
   yq -i '.domains |= sort_by(.domain)' "$file"
+}
+
+# Remove <package> entirely from every domain in <file>, then drop domains left with no packages.
+domain_verified_remove_package() { # file package
+  local file="$1" package="$2"
+  [[ -f "$file" && -s "$file" ]] || return 0
+  export DV_RM_PKG="$package"
+  yq -i '(.domains[].packages) |= map(select(.package != strenv(DV_RM_PKG)))' "$file"
+  yq -i '.domains |= map(select((.packages // []) | length > 0))' "$file"
 }
 
 # GFM-ready unified diff between two data-verified-domains.yml files.

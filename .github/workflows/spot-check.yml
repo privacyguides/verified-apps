@@ -2,13 +2,12 @@ name: Spot-check Re-verification
 
 # Re-runs the full verification suite on a random sample of data.yml packages and opens a
 # single, human-reviewed PR that adds sources which now verify and removes sources that no
-# longer match (signature mismatch only — see scripts/spot_check_reverify.sh). The PR is
+# longer match (signature mismatch only: see scripts/spot_check_reverify.sh). The PR is
 # never auto-merged. A separate job re-attests data.yml after a maintainer merges the PR,
 # because a plain merge to main does not otherwise refresh the attestation.
 #
 # NOTE: runtime scales with the percentage. ~5% (~36 packages) finishes comfortably; large
-# percentages run long and ~100% will exceed the 6-hour job limit. Use dry_run / packages to
-# test cheaply.
+# percentages run long and ~100% will exceed the 6-hour job limit.
 
 on:
   schedule:
@@ -46,6 +45,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      issues: write # add the spot-check:eviction label to PRs that remove whole package entries
     env:
       GH_REPO: ${{ github.repository }}
       PERCENT: ${{ inputs.percent || '5' }}
@@ -84,7 +84,7 @@ jobs:
                 . static-ds 20326 8 2 "E06D44B80B8F1D39A95C0B0D7C65D08458E880409BBC683457104237C7F8EC8D";
                 . static-ds 38696 8 2 "683D2D0ACB8C9B712A1948B27F741219298D0A450D612C483AF444A4C0FB2B16";
             };
-        run: bash scripts/spot_check_reverify.sh
+        run: bash .github/scripts/spot_check_reverify.sh
 
       - name: Prepare commit
         id: prep
@@ -96,9 +96,10 @@ jobs:
           msg_file="${GITHUB_WORKSPACE}/spot-check-commit-msg"
           {
             printf 'Spot-check reconciliation (run %s)\n\n' "${{ github.run_id }}"
-            printf '%s addition(s), %s deletion(s) across %s package(s).\n' \
+            printf '%s addition(s), %s source removal(s) (%s full package eviction(s)) across %s package(s).\n' \
               "${{ steps.spot.outputs.additions }}" \
               "${{ steps.spot.outputs.deletions }}" \
+              "${{ steps.spot.outputs.evictions }}" \
               "${{ steps.spot.outputs.selected }}"
           } > "$msg_file"
           echo "branch=$branch" >> "$GITHUB_OUTPUT"
@@ -128,12 +129,28 @@ jobs:
           set -euo pipefail
           pr_url=$(gh pr create \
             --repo "$GH_REPO" \
-            --title "Spot-check reconciliation (${{ steps.spot.outputs.additions }} additions, ${{ steps.spot.outputs.deletions }} deletions)" \
+            --title "Spot-check reconciliation (${{ steps.spot.outputs.additions }} additions, ${{ steps.spot.outputs.deletions }} source removals, ${{ steps.spot.outputs.evictions }} package evictions)" \
             --body-file "${{ steps.spot.outputs.prBody }}" \
             --head "${{ steps.prep.outputs.branch }}" \
             --base main)
           echo "Opened ${pr_url}"
+          echo "prUrl=${pr_url}" >> "$GITHUB_OUTPUT"
           echo "Opened spot-check PR: ${pr_url}" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Flag package-eviction PRs
+        # High-salience flag when the sweep removes one or more whole package entries; the count
+        # is also in the PR title/body. Best-effort: a missing label or permission downgrades to a
+        # warning rather than failing the run.
+        if: steps.spot.outputs.hasChanges == 'true' && env.DRY_RUN != 'true' && steps.spot.outputs.evictions != '0' && steps.spot.outputs.evictions != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh label create "spot-check:eviction" --repo "$GH_REPO" \
+            --color B60205 --description "Spot-check PR removes one or more whole package entries" 2>/dev/null || true
+          if ! gh pr edit "${{ steps.pr.outputs.prUrl }}" --repo "$GH_REPO" --add-label "spot-check:eviction"; then
+            echo "::warning::could not add the spot-check:eviction label; evictions remain flagged in the PR title and body"
+          fi
 
   # --- Post-merge: re-attest data.yml and sync mirrors --------------------------------------
   # pr-commit-as-is is additive-only and only accepts new/* branches, so spot-check PRs (which

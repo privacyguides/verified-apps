@@ -397,7 +397,7 @@ signatures_mirror_issue_comment_to_codeberg() {
     return 0
   fi
 
-  # Nothing to mirror yet (no bot comments) — skip quietly.
+  # Nothing to mirror yet (no bot comments), skip quietly.
   body=$(signatures_build_status_comment_body "$github_issue_number") || return 0
 
   if ! comments_json=$(codeberg_list_issue_comments "$token" "$owner" "$repo" "$cb_issue_num"); then
@@ -584,16 +584,13 @@ signatures_sync_codeberg_issue_labels() {
 # the tracked files against that fresh tip), stage <files>, create a signed commit, and push.
 # If the push is rejected because <ref> advanced (a concurrent writer landed first), the whole
 # cycle retries against the new tip. Because the delta is RE-APPLIED onto the current tip every
-# attempt — never committed as a stale whole-file snapshot — concurrent writers serialize
+# attempt (never committed as a stale whole-file snapshot) concurrent writers serialize
 # without ever reverting each other's entries (optimistic concurrency / CAS on the git ref).
 #
 # Echoes the pushed commit SHA on success (return 0). Returns 3 when the delta yields no change
-# against the current tip (nothing to commit — e.g. another run already added it). Returns 1 on
+# against the current tip (nothing to commit, e.g. another run already added it). Returns 1 on
 # delta failure or exhausted retries.
 #
-# The caller must configure git identity + commit signing beforehand. apply_fn MUST be
-# idempotent under re-application (the merge/upsert helpers here are: they dedupe by
-# package/fingerprint/source/domain), since it runs once per attempt against a fresh tip.
 # Usage: submission_cas_commit_push <apply_fn> <ref> <message_file> <author> <files> [max_attempts]
 submission_cas_commit_push() {
   local apply_fn="$1" ref="$2" msg_file="$3" author="$4" files="$5" max="${6:-10}"
@@ -631,7 +628,7 @@ submission_cas_commit_push() {
       printf '%s\n' "$sha"
       return 0
     fi
-    echo "CAS: push to ${ref} rejected — it advanced; re-applying onto the new tip (${attempt}/${max})" >&2
+    echo "CAS: push to ${ref} rejected - it advanced; re-applying onto the new tip (${attempt}/${max})" >&2
     sleep $(( (RANDOM % 3) + 1 ))
   done
 
@@ -863,7 +860,7 @@ signatures_gather_apksigner() {
   _captured_verify=$("$apksigner" verify --print-certs "$apk_path" 2>&1) || true
 
   # Full rotation lineage when present; -v prints every certificate in the chain.
-  # APKs without lineage (e.g. com.google.android.gsf) print an error here — verify output still applies.
+  # APKs without lineage (e.g. com.google.android.gsf) print an error here.
   _captured_lineage=$("$apksigner" lineage --in "$apk_path" --print-certs -v 2>&1) || true
 
   printf -v "$verify_name" '%s' "$_captured_verify"
@@ -998,7 +995,11 @@ signatures_extract_from_apk() {
 # the new-submission directApk step. Returns 1 on a download error or a non-APK file.
 signatures_download_direct_apk() {
   local url="$1" dest="$2"
-  curl -fsSL --retry 3 --retry-delay 2 -o "$dest" "$url"
+  # Remove any prior file first and make the curl failure explicit: callers may invoke this inside an
+  # `if` (where `set -e` is suspended), so a 404 must NOT leave a stale APK from a previous download
+  # that the file/grep check below would then wrongly accept.
+  rm -f "$dest"
+  curl -fsSL --retry 3 --retry-delay 2 -o "$dest" "$url" || return 1
   file "$dest"
   if ! file "$dest" | grep -qiE 'zip archive|android'; then
     echo "Downloaded file does not look like an APK: ${url}" >&2
@@ -1423,9 +1424,6 @@ submission_merge_entry_into_data_yml() {
 
 # Remove the source named <source_name> from the signature group of <package> whose fingerprint
 # matches <fingerprint> (set-equal, so multi-cert blocks match regardless of order/formatting).
-# Used by the spot-check re-verification sweep to drop a source that no longer verifies. Does not
-# prune emptied groups/packages — call signatures_prune_empty afterwards. The library is otherwise
-# additive; this and signatures_prune_empty are the only removal helpers.
 signatures_remove_source() {
   local data_file="$1" package="$2" fingerprint="$3" source_name="$4"
   [[ -f "$data_file" && -s "$data_file" ]] || return 0
@@ -1449,12 +1447,7 @@ signatures_prune_empty() {
   yq -i '.packages |= map(select((.signature // []) | length > 0))' "$data_file"
 }
 
-# Merge into <dest_data> every package whose stanza in <src_data> is new or differs from
-# <dest_data> (additive: each differing package's signature is merged in and deduped by
-# fingerprint/source — dest-only entries are never removed). This re-applies a submission PR's
-# proposed additions onto the latest main without overwriting concurrent entries; pairing it
-# with git's 3-way merge at merge time keeps concurrent submissions from clobbering each other.
-# Echoes the number of packages merged. Idempotent: re-running merges nothing new.
+# Merge into <dest_data> every package whose stanza in <src_data> is new or differs from <dest_data>
 submission_merge_data_delta() {
   local src="$1" dest="$2"
   local src_json dest_json changed pkg entry merged=0
