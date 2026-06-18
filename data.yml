@@ -8676,6 +8676,14 @@ packages:
             issue: GH-902
             apk:
               sha256: b0b6ace124be6461c83f4f4124833b13fe42b4cd7461aaef465f67baa4b4719d
+  - package: uk.co.classprofessional.cpg.ukascpg
+    signature:
+      - fingerprint: 16:16:2F:6E:52:C0:E0:80:EC:6B:BB:C8:26:04:BD:74:DA:AD:29:E1:F7:BF:EE:57:1F:AF:8D:D2:A8:EF:BE:CC
+        sources:
+          - name: Google Play
+            issue: GH-1924
+            apk:
+              sha256: 70c10b3b74744555161ff241d39ae425bc04cfb183a6f44a7d0a067aaeab6777
   - package: uk.gov.hmrc.ptcalc
     signature:
       - fingerprint: 0B:75:D3:CA:1D:D1:2D:D9:AD:16:ED:80:E9:C5:B3:7B:D4:79:72:A8:7A:9D:DF:24:96:F6:F1:EC:9A:46:B1:DE
