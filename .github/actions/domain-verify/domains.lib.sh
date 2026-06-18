@@ -555,32 +555,18 @@ domain_verified_upsert() {
   yq -i '.domains |= sort_by(.domain)' "$file"
 }
 
-# Remove fingerprint set <fp> from <package> in every domain of <file> (set-equality match), then
-# drop packages left with no fingerprints and domains left with no packages. Used by the spot-check
-# sweep when no domain record vouches for a key any more, so data-verified-domains.yml stops
-# claiming a removed package/key. Idempotent; a no-op when the package/fingerprint is absent.
-domain_verified_remove_key() { # file package fp
-  local file="$1" package="$2" fp="$3"
+# Remove <package> entirely from every domain in <file>, then drop domains left with no packages.
+# The spot-check sweep calls this to reset a package's ledger presence before re-upserting the
+# authoritative record, so data-verified-domains.yml ends up matching exactly the current
+# authoritative record (or absent when the domain no longer vouches). Working at package granularity
+# is correct regardless of how a row stores fingerprints — HTTPS rows hold individual certs while
+# data.yml blocks are whole key sets, so per-fingerprint set-equality could never match an HTTPS row.
+# Idempotent; a no-op when the package or file is absent.
+domain_verified_remove_package() { # file package
+  local file="$1" package="$2"
   [[ -f "$file" && -s "$file" ]] || return 0
-  local dcount di pcount pi fcount fidx stored
-  dcount=$(yq '.domains | length' "$file" 2>/dev/null)
-  [[ "$dcount" =~ ^[0-9]+$ ]] || return 0
-  for ((di = 0; di < dcount; di++)); do
-    pcount=$(yq ".domains[$di].packages | length" "$file" 2>/dev/null)
-    [[ "$pcount" =~ ^[0-9]+$ ]] || continue
-    for ((pi = 0; pi < pcount; pi++)); do
-      [[ "$(yq -r ".domains[$di].packages[$pi].package" "$file")" == "$package" ]] || continue
-      fcount=$(yq ".domains[$di].packages[$pi].fingerprints | length" "$file" 2>/dev/null)
-      [[ "$fcount" =~ ^[0-9]+$ ]] || continue
-      # Reverse order so each deletion keeps the remaining indices valid.
-      for ((fidx = fcount - 1; fidx >= 0; fidx--)); do
-        stored=$(yq -r ".domains[$di].packages[$pi].fingerprints[$fidx]" "$file")
-        signatures_equal "$stored" "$fp" && yq -i "del(.domains[$di].packages[$pi].fingerprints[$fidx])" "$file"
-      done
-    done
-  done
-  # Prune emptied package rows, then emptied domains.
-  yq -i '(.domains[].packages) |= map(select((.fingerprints // []) | length > 0))' "$file"
+  export DV_RM_PKG="$package"
+  yq -i '(.domains[].packages) |= map(select(.package != strenv(DV_RM_PKG)))' "$file"
   yq -i '.domains |= map(select((.packages // []) | length > 0))' "$file"
 }
 

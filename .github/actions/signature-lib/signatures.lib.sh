@@ -998,7 +998,11 @@ signatures_extract_from_apk() {
 # the new-submission directApk step. Returns 1 on a download error or a non-APK file.
 signatures_download_direct_apk() {
   local url="$1" dest="$2"
-  curl -fsSL --retry 3 --retry-delay 2 -o "$dest" "$url"
+  # Remove any prior file first and make the curl failure explicit: callers may invoke this inside an
+  # `if` (where `set -e` is suspended), so a 404 must NOT leave a stale APK from a previous download
+  # that the file/grep check below would then wrongly accept.
+  rm -f "$dest"
+  curl -fsSL --retry 3 --retry-delay 2 -o "$dest" "$url" || return 1
   file "$dest"
   if ! file "$dest" | grep -qiE 'zip archive|android'; then
     echo "Downloaded file does not look like an APK: ${url}" >&2

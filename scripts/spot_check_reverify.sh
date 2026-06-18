@@ -94,6 +94,7 @@ ADDITIONS="${WORK}/additions.jsonl"; : > "$ADDITIONS"
 DELETIONS="${WORK}/deletions.jsonl"; : > "$DELETIONS"
 INFO="${WORK}/info.jsonl"; : > "$INFO"
 DOMAIN_ADDS="${WORK}/domain-adds.jsonl"; : > "$DOMAIN_ADDS"
+DOMAIN_LEDGER_RESET="${WORK}/domain-ledger-reset.txt"; : > "$DOMAIN_LEDGER_RESET"  # pkgs whose ledger to reset
 EVICTIONS="${WORK}/evictions.txt"; : > "$EVICTIONS"  # packages a real apply would remove entirely
 
 declare -A R_STATUS R_SIG R_SHA
@@ -583,8 +584,7 @@ reconcile_appverifier() { # pkg
 }
 
 reconcile_domain() { # pkg
-  local pkg="$1" recs cnt n i r fp rec vouch vmethod vdsrc vdomain srcname
-  local -A _ledger=()
+  local pkg="$1" recs auth amethod adsrc n i fp srcname domain any_vouched=0
   recs=$(domain_records "$pkg") || recs=""
   if [[ -z "$recs" ]]; then
     if pkg_has_source "$pkg" "HTTPS Verified Domain" || pkg_has_source "$pkg" "DNS Verified Domain"; then
@@ -592,47 +592,49 @@ reconcile_domain() { # pkg
     fi
     return 0
   fi
-  cnt=$(jq 'length' <<< "$recs")
+  # ONLY the most-specific record (recs[0]) is authoritative; records on parent domains are shadowed,
+  # exactly as the canonical domain-verify flow treats them (.github/actions/domain-verify/action.yml
+  # and .github/workflows/domain-verification.yml both use jq '.[0]'). Use it for the add decision,
+  # the delete decision, and the ledger — never a shadowed parent. (domains.lib.sh:167's "publish at
+  # whichever of these you control" is about WHERE a submitter may publish, not which record wins.)
+  auth=$(jq -c '.[0]' <<< "$recs")
+  amethod=$(jq -r '.method' <<< "$auth"); adsrc=$(domain_source_name "$amethod")
   n=$(model_sig_count "$pkg")
   for ((i = 0; i < n; i++)); do
     fp=$(model_fp "$pkg" "$i")
-    # A record at ANY candidate domain — most-specific OR a parent up to the root — is a valid
-    # voucher: submitters publish the proof "at whichever of these they control" (domains.lib.sh
-    # request template). Use the first (most-specific) record that vouches for this key for BOTH the
-    # add decision and its source label, so add and delete share one scope. If NO record vouches,
-    # remove any recorded domain source for this key. (Previously ADD consulted only recs[0], so a
-    # key vouched for only by a parent domain was never added — inconsistent with the delete side.)
-    vouch=""
-    for ((r = 0; r < cnt; r++)); do
-      rec=$(jq -c ".[$r]" <<< "$recs")
-      if [[ "$(domain_key_status "$rec" "$fp")" == "allowed" ]]; then vouch="$rec"; break; fi
-    done
-    if [[ -n "$vouch" ]]; then
-      vmethod=$(jq -r '.method' <<< "$vouch"); vdsrc=$(domain_source_name "$vmethod")
-      if ! model_has_name "$pkg" "$i" "$vdsrc"; then
-        emit_add "$pkg" "$fp" "$vdsrc" "$(model_issue "$pkg" "$i")" "" "" ""
-        vdomain=$(jq -r '.domain' <<< "$vouch")
-        _ledger["$vdomain"]="$vouch"
+    if [[ "$(domain_key_status "$auth" "$fp")" == "allowed" ]]; then
+      any_vouched=1
+      # Ensure the current method's source is present.
+      if ! model_has_name "$pkg" "$i" "$adsrc"; then
+        emit_add "$pkg" "$fp" "$adsrc" "$(model_issue "$pkg" "$i")" "" "" ""
       fi
-    else
+      # Drop a stale OTHER-method source on this key (the domain switched HTTPS<->DNS).
       for srcname in "HTTPS Verified Domain" "DNS Verified Domain"; do
-        if model_has_name "$pkg" "$i" "$srcname"; then
-          emit_del "$pkg" "$fp" "$srcname" "no domain record (including parent domains) currently vouches for this key"
-        fi
+        [[ "$srcname" == "$adsrc" ]] && continue
+        model_has_name "$pkg" "$i" "$srcname" && \
+          emit_del "$pkg" "$fp" "$srcname" "domain now verifies via ${adsrc}; ${srcname} no longer vouches for this key"
+      done
+    else
+      # The authoritative record does not vouch for this key — remove any recorded domain source.
+      for srcname in "HTTPS Verified Domain" "DNS Verified Domain"; do
+        model_has_name "$pkg" "$i" "$srcname" && \
+          emit_del "$pkg" "$fp" "$srcname" "authoritative domain record no longer vouches for this key"
       done
     fi
   done
-  # Refresh the ledger once per domain we added a source from; the upsert records that domain's full
-  # allowed key set for this package. (No-op when _ledger is empty.)
-  for vdomain in "${!_ledger[@]}"; do
-    rec="${_ledger[$vdomain]}"
-    vmethod=$(jq -r '.method' <<< "$rec")
-    jq -cn --arg p "$pkg" --arg d "$vdomain" --arg m "$vmethod" \
+  # Reset this package's ledger presence (remove from all domains) and re-upsert the authoritative
+  # record when it still vouches. Reset-then-upsert makes data-verified-domains.yml match the
+  # authoritative record exactly — correct for HTTPS individual-cert rows, method changes, domain
+  # changes, and partial revocations — without per-fingerprint matching against the ledger.
+  printf '%s\n' "$pkg" >> "$DOMAIN_LEDGER_RESET"
+  if [[ "$any_vouched" == 1 ]]; then
+    domain=$(jq -r '.domain' <<< "$auth")
+    jq -cn --arg p "$pkg" --arg d "$domain" --arg m "$amethod" \
       --arg i "$(model_issue "$pkg" 0)" \
-      --arg ds "$(jq -r 'if .method == "dns" then (.dnssec | tostring) else "" end' <<< "$rec")" \
-      --argjson fps "$(jq -c '.allowed' <<< "$rec")" \
+      --arg ds "$(jq -r 'if .method == "dns" then (.dnssec | tostring) else "" end' <<< "$auth")" \
+      --argjson fps "$(jq -c '.allowed' <<< "$auth")" \
       '{package:$p, domain:$d, method:$m, issue:$i, dnssec:$ds, fps:$fps}' >> "$DOMAIN_ADDS"
-  done
+  fi
 }
 
 reconcile() {
@@ -654,6 +656,7 @@ reconcile() {
 # Apply mutations to the data files.
 # ---------------------------------------------------------------------------
 apply_additions() {
+  local data="${1:-$DATA_FILE}"
   [[ -s "$ADDITIONS" ]] || return 0
   local line pkg fp name issue sha link repo proposals entry
   while IFS= read -r line; do
@@ -664,14 +667,24 @@ apply_additions() {
     proposals=$(mktemp); entry=$(mktemp)
     _submission_add_proposal "$proposals" "$fp" "$name" "$issue" "$sha" "$link" "$repo"
     _submission_assemble_entry_from_proposals "$proposals" "$entry" "$pkg"
-    submission_merge_entry_into_data_yml "$entry" "$DATA_FILE"
+    submission_merge_entry_into_data_yml "$entry" "$data"
     rm -f "$proposals" "$entry"
   done < "$ADDITIONS"
 }
 
 apply_domain_ledger() {
-  [[ -s "$DOMAIN_ADDS" ]] || return 0
+  # First reset every touched package's ledger presence (remove from all domains), then upsert the
+  # authoritative record for packages that still vouch. Reset-then-upsert makes the ledger match the
+  # authoritative record exactly and handles method/domain changes and partial revocations. The data
+  # files' domain SOURCES are handled separately by apply_deletions/apply_additions on data.yml.
   local checked line pkg domain method issue dnssec fps
+  if [[ -s "$DOMAIN_LEDGER_RESET" ]]; then
+    while IFS= read -r pkg; do
+      [[ -z "$pkg" ]] && continue
+      domain_verified_remove_package "$DOMAIN_FILE" "$pkg"
+    done < <(sort -u "$DOMAIN_LEDGER_RESET")
+  fi
+  [[ -s "$DOMAIN_ADDS" ]] || return 0
   checked=$(date -u +%Y-%m-%dT%H:%M:%SZ)
   while IFS= read -r line; do
     [[ -z "$line" ]] && continue
@@ -683,37 +696,29 @@ apply_domain_ledger() {
 }
 
 apply_deletions() {
+  local data="${1:-$DATA_FILE}"
   [[ -s "$DELETIONS" ]] || return 0
   local line pkg fp name
   while IFS= read -r line; do
     [[ -z "$line" ]] && continue
     pkg=$(jq -r '.package' <<< "$line"); fp=$(jq -r '.fingerprint' <<< "$line"); name=$(jq -r '.name' <<< "$line")
-    signatures_remove_source "$DATA_FILE" "$pkg" "$fp" "$name"
-    # A domain-source removal must also drop the key from the ledger, or data-verified-domains.yml
-    # keeps claiming the package/key is domain-verified.
-    if [[ "$name" == "HTTPS Verified Domain" || "$name" == "DNS Verified Domain" ]]; then
-      domain_verified_remove_key "$DOMAIN_FILE" "$pkg" "$fp"
-    fi
+    signatures_remove_source "$data" "$pkg" "$fp" "$name"
   done < "$DELETIONS"
-  signatures_prune_empty "$DATA_FILE"
+  signatures_prune_empty "$data"
 }
 
-# Record which packages the proposed deletions would remove ENTIRELY (last source gone ->
-# signatures_prune_empty drops the package). Simulated on a copy so it works in dry-run too and
-# must be called BEFORE the data file is mutated. Additions never offset an eviction: additions
-# target equal/covered blocks while deletions only target uncovered blocks, so they are disjoint.
+# Record which packages a real apply would remove ENTIRELY (last source gone -> signatures_prune_empty
+# drops the package). Simulated on a copy (so it works in dry-run too) and must run BEFORE the real
+# mutation. It replays the SAME order as the live apply — additions THEN deletions — because a single
+# block can gain one source and lose another in the same run (e.g. ADD Google Play + DELETE
+# AppVerifier on the same fingerprint); a deletions-only simulation would false-flag such a package.
 compute_evictions() {
   : > "$EVICTIONS"
-  [[ -s "$DELETIONS" ]] || return 0
-  local sim line pkg fp name
-  sim="${WORK}/evict-sim.yml"
+  [[ -s "$DELETIONS" ]] || return 0   # no deletions => no eviction possible
+  local sim="${WORK}/evict-sim.yml"
   cp "$DATA_FILE" "$sim"
-  while IFS= read -r line; do
-    [[ -z "$line" ]] && continue
-    pkg=$(jq -r '.package' <<< "$line"); fp=$(jq -r '.fingerprint' <<< "$line"); name=$(jq -r '.name' <<< "$line")
-    signatures_remove_source "$sim" "$pkg" "$fp" "$name"
-  done < "$DELETIONS"
-  signatures_prune_empty "$sim"
+  apply_additions "$sim"
+  apply_deletions "$sim"
   comm -23 <(yq -r '.packages[].package' "$DATA_FILE" | sort -u) \
            <(yq -r '.packages[].package' "$sim" | sort -u) > "$EVICTIONS"
   rm -f "$sim"
