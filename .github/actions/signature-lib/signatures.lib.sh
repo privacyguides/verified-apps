@@ -1409,6 +1409,44 @@ submission_merge_entry_into_data_yml() {
   fi
 }
 
+# Merge into <dest_data> every package whose stanza in <src_data> is new or differs from
+# <dest_data> (additive: each differing package's signature is merged in and deduped by
+# fingerprint/source — dest-only entries are never removed). This re-applies a submission PR's
+# proposed additions onto the latest main without overwriting concurrent entries; pairing it
+# with git's 3-way merge at merge time keeps concurrent submissions from clobbering each other.
+# Echoes the number of packages merged. Idempotent: re-running merges nothing new.
+submission_merge_data_delta() {
+  local src="$1" dest="$2"
+  local src_json dest_json changed pkg entry merged=0
+
+  src_json=$(yq -o=json -I0 '[.packages[]?]' "$src" 2>/dev/null) || src_json="[]"
+  [[ -n "$src_json" ]] || src_json="[]"
+  if [[ -f "$dest" && -s "$dest" ]]; then
+    dest_json=$(yq -o=json -I0 '[.packages[]?]' "$dest" 2>/dev/null) || dest_json="[]"
+  else
+    dest_json="[]"
+  fi
+  [[ -n "$dest_json" ]] || dest_json="[]"
+
+  # Package names present in src whose stanza is absent from / differs from dest (jq compares
+  # objects by content, key-order-insensitive).
+  changed=$(jq -rn --argjson a "$dest_json" --argjson b "$src_json" '
+    ($a | map({key: .package, value: .}) | from_entries) as $A
+    | $b[] | select(. != ($A[.package] // null)) | .package')
+
+  while IFS= read -r pkg; do
+    [[ -z "$pkg" ]] && continue
+    export _SMD_PKG="$pkg"
+    entry="$(mktemp)"
+    yq -o=yaml '.packages[] | select(.package == strenv(_SMD_PKG))' "$src" > "$entry"
+    submission_merge_entry_into_data_yml "$entry" "$dest"
+    rm -f "$entry"
+    merged=$((merged + 1))
+  done <<< "$changed"
+
+  printf '%s' "$merged"
+}
+
 # Write one package stanza as it appears under packages: in data.yml.
 _submission_write_package_list_item() {
   local data_file="$1"

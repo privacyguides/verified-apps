@@ -79,9 +79,12 @@ runs:
           exit 1
         fi
 
-        git show "${HEAD_SHA}:data.yml" > "${RUNNER_TEMP}/submission-data.yml"
+        # Export the PR's proposed data.yml. The push job re-merges only its delta (the added/
+        # changed package entries) onto the LATEST main — it is never copied over main wholesale,
+        # which would revert entries that landed concurrently.
+        git show "${HEAD_SHA}:data.yml" > "${GITHUB_WORKSPACE}/pr-submission-data.yml"
 
-        schema=$(yq -r '.schema // 0' "${RUNNER_TEMP}/submission-data.yml")
+        schema=$(yq -r '.schema // 0' "${GITHUB_WORKSPACE}/pr-submission-data.yml")
         if ! signatures_data_schema_supported "$schema"; then
           echo "Unsupported data.yml schema in PR (expected 3 or 4): ${schema}" >&2
           exit 1
@@ -89,16 +92,12 @@ runs:
 
         if git cat-file -e "origin/main:data.yml" 2>/dev/null; then
           git show "origin/main:data.yml" > "${RUNNER_TEMP}/main-data.yml"
-          if cmp -s "${RUNNER_TEMP}/main-data.yml" "${RUNNER_TEMP}/submission-data.yml"; then
+          if cmp -s "${RUNNER_TEMP}/main-data.yml" "${GITHUB_WORKSPACE}/pr-submission-data.yml"; then
             echo "PR data.yml matches main; nothing to commit." >&2
             echo "skipped=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
         fi
-
-        git checkout -B "$HEAD_REF" origin/main
-        cp "${RUNNER_TEMP}/submission-data.yml" data.yml
-        git add data.yml
 
         msg_file="${GITHUB_WORKSPACE}/submission-commit-msg"
         submission_write_commit_message_file \
