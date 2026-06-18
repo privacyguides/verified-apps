@@ -3769,6 +3769,14 @@ packages:
             issue: GH-1432
             apk:
               sha256: 92b2bc5c7e1c1f6b82ed5f5cb5040de099e6df7bf8a08dc8e9357240e8803c09
+  - package: com.ovz.carscanner
+    signature:
+      - fingerprint: A9:2F:FE:7B:01:1B:04:A2:06:49:FC:03:A9:D8:8D:E6:96:F9:C6:1C:B1:0D:77:89:B0:E4:3A:59:CF:72:68:1B
+        sources:
+          - name: Google Play
+            issue: GH-1912
+            apk:
+              sha256: 6dfab1a037a10ba6faef2b60641636689e3ffc29ef7656fb3272bcbb2a60f382
   - package: com.pal.dx
     signature:
       - fingerprint: AC:D4:71:6B:03:0B:7F:EB:E6:E1:83:01:18:7B:62:5C:9C:CC:86:66:07:5A:E7:0B:21:98:B7:DC:42:83:86:A7
