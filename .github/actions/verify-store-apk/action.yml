@@ -1,0 +1,70 @@
+name: Verify store APK signature
+description: Extract APK signature, compare to user submission, and optionally write a job summary line
+inputs:
+  apkPath:
+    description: Path to the downloaded APK
+    required: true
+  packageName:
+    description: Expected Android application ID
+    required: true
+  userSignature:
+    description: Fingerprint(s) submitted in the issue
+    required: true
+  summaryPrefix:
+    description: Optional prefix for the job summary (e.g. store name); omit for package name only
+    required: false
+    default: ""
+outputs:
+  signature:
+    description: APK certificate fingerprint(s)
+    value: ${{ steps.appSignature.outputs.signature }}
+  apkSha256:
+    description: APK file SHA-256
+    value: ${{ steps.appSignature.outputs.apkSha256 }}
+  signerKind:
+    description: Signer profile from get-signature
+    value: ${{ steps.appSignature.outputs.signerKind }}
+  status:
+    description: Match indicator emoji
+    value: ${{ steps.matches.outputs.status }}
+  matchPackageName:
+    description: Application ID from match-signature
+    value: ${{ steps.matches.outputs.packageName }}
+  infoNote:
+    description: Optional footnote from match-signature
+    value: ${{ steps.matches.outputs.infoNote }}
+  storeSignedMatch:
+    description: True when fingerprints match with store-owned signing
+    value: ${{ steps.matches.outputs.storeSignedMatch }}
+
+runs:
+  using: composite
+  steps:
+    - name: Get APK signature(s)
+      id: appSignature
+      uses: ./.github/actions/get-signature
+      with:
+        path: ${{ inputs.apkPath }}
+        packageName: ${{ inputs.packageName }}
+
+    - name: Matches User-Provided?
+      id: matches
+      uses: ./.github/actions/match-signature
+      with:
+        packageName: ${{ inputs.packageName }}
+        userSignature: ${{ inputs.userSignature }}
+        storeSignature: ${{ steps.appSignature.outputs.signature }}
+        signerKind: ${{ steps.appSignature.outputs.signerKind }}
+
+    - name: Write job summary
+      shell: bash
+      env:
+        SUMMARY_PREFIX: ${{ inputs.summaryPrefix }}
+        PACKAGE_NAME: ${{ inputs.packageName }}
+        SIGNATURE: ${{ steps.appSignature.outputs.signature }}
+      run: |
+        if [[ -n "$SUMMARY_PREFIX" ]]; then
+          echo "$SUMMARY_PREFIX" >> "$GITHUB_STEP_SUMMARY"
+        fi
+        echo "$PACKAGE_NAME" >> "$GITHUB_STEP_SUMMARY"
+        echo "$SIGNATURE" >> "$GITHUB_STEP_SUMMARY"

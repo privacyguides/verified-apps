@@ -1,0 +1,72 @@
+name: Resolve submission co-authors
+description: Resolve commit author and Co-authored-by trailers for a submission (GitHub or Codeberg submitter)
+inputs:
+  labelerLogin:
+    description: Login of the maintainer who applied the action label
+    required: true
+  labelerId:
+    description: Numeric GitHub user id of the labeler
+    required: true
+  submitterLogin:
+    description: Login of the submission author on GitHub
+    required: true
+  submitterId:
+    description: Numeric GitHub user id of the submitter
+    required: true
+  codebergToken:
+    description: Codeberg sync token for live Codeberg author lookup
+    required: false
+    default: ""
+  issueBody:
+    description: Full issue body (when omitted, issueNumber and ghRepo are used to fetch it)
+    required: false
+    default: ""
+  issueNumber:
+    description: GitHub issue number (required when issueBody is empty)
+    required: false
+    default: ""
+  ghRepo:
+    description: Repository owner/name for gh issue view
+    required: false
+    default: ${{ github.repository }}
+outputs:
+  author:
+    description: Commit author identity for the submitter
+    value: ${{ steps.resolve.outputs.author }}
+  trailer:
+    description: Co-authored-by trailer block for the commit message
+    value: ${{ steps.resolve.outputs.trailer }}
+
+runs:
+  using: composite
+  steps:
+    - name: Resolve co-authors
+      id: resolve
+      shell: bash
+      env:
+        CB_SYNC_TOKEN: ${{ inputs.codebergToken }}
+        LABELER_LOGIN: ${{ inputs.labelerLogin }}
+        LABELER_ID: ${{ inputs.labelerId }}
+        SUBMITTER_LOGIN: ${{ inputs.submitterLogin }}
+        SUBMITTER_ID: ${{ inputs.submitterId }}
+        ISSUE_BODY: ${{ inputs.issueBody }}
+        ISSUE_NUMBER: ${{ inputs.issueNumber }}
+        GH_REPO: ${{ inputs.ghRepo }}
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        set -euo pipefail
+        source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
+
+        issue_body="$ISSUE_BODY"
+        if [[ -z "$issue_body" ]]; then
+          [[ -n "$ISSUE_NUMBER" ]] || { echo "issueBody or issueNumber is required" >&2; exit 1; }
+          issue_body=$(gh issue view "$ISSUE_NUMBER" --repo "$GH_REPO" --json body -q .body)
+        fi
+
+        cb_author=$(signatures_codeberg_submission_author "${CB_SYNC_TOKEN:-}" "$issue_body" || true)
+        author=$(submission_resolve_commit_author \
+          "$SUBMITTER_LOGIN" "$SUBMITTER_ID" "$cb_author")
+        trailer=$(submission_resolve_coauthor_trailers \
+          "$LABELER_LOGIN" "$LABELER_ID" "$SUBMITTER_LOGIN" "$SUBMITTER_ID" "$cb_author")
+        gha_write_multiline_output author "$author"
+        gha_write_multiline_output trailer "$trailer"

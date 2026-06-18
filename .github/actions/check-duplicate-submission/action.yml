@@ -50,26 +50,6 @@ runs:
           parse_verification_text "$(signatures_extract_verification_block "$1")"
         }
 
-        # Read the first non-empty value under a "### <header>" section of an issue body.
-        # Mirrors parse-verification-info; returns empty for absent / "_No response_" fields.
-        parse_issue_field() {
-          local header="$1"
-          local body="$2"
-          local value
-
-          value=$(printf '%s\n' "$body" | awk -v header="$header" '
-            $0 == "### " header { found=1; next }
-            found && /^### / { exit }
-            found && NF { print; exit }
-          ')
-          value="${value//$'\r'/}"
-          value="${value#"${value%%[![:space:]]*}"}"
-          value="${value%"${value##*[![:space:]]}"}"
-
-          [[ -z "$value" || "$value" == "_No response_" ]] && return 0
-          printf '%s' "$value"
-        }
-
         # A candidate is only a duplicate when it shares the submission's download source:
         # when this submission specifies a direct APK URL and/or custom F-Droid repository,
         # the candidate must point at the same URL(s). A submission without either matches on
@@ -134,8 +114,8 @@ runs:
             fi
             issue_pkg=$(printf '%s\n' "$parsed" | sed -n '1p')
             issue_sigs=$(printf '%s\n' "$parsed" | tail -n +2)
-            cand_link=$(parse_issue_field "Direct APK Link" "$body")
-            cand_repo=$(parse_issue_field "Custom F-Droid Repository" "$body")
+            cand_link=$(signatures_parse_issue_field "Direct APK Link" "$body" true)
+            cand_repo=$(signatures_parse_issue_field "Custom F-Droid Repository" "$body" true)
 
             if [[ "$issue_pkg" == "$PACKAGE" ]] && signatures_equal "$user_sigs" "$issue_sigs" \
               && download_source_matches "$cand_link" "$cand_repo"; then

@@ -25,20 +25,12 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  compareAndFile:
-    name: Compare export and open issues
+  resolveUrl:
+    name: Resolve hashes export URL
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      issues: write
-
+    outputs:
+      url: ${{ steps.hashes.outputs.url }}
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
-        with:
-          persist-credentials: false
-
       - name: Resolve hashes export URL
         id: hashes
         env:
@@ -61,72 +53,22 @@ jobs:
             echo "url=$HASHES_URL" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Download forum hashes export
-        env:
-          HASHES_URL: ${{ steps.hashes.outputs.url }}
-        run: |
-          set -euo pipefail
-          curl -fsSL --retry 3 --retry-delay 2 -o "${RUNNER_TEMP}/grapheneos-forum-hashes.txt" "$HASHES_URL"
-
-      - name: Install Python dependencies
-        run: pip3 install --disable-pip-version-check pyyaml
-
-      - name: Compare against data.yml
-        run: |
-          set -euo pipefail
-          python3 .github/scripts/grapheneos_forum_import.py compare \
-            --hashes-file "${RUNNER_TEMP}/grapheneos-forum-hashes.txt" \
-            --data-yml data.yml \
-            --output "${RUNNER_TEMP}/missing-entries.json"
-
-      - name: Summarize missing entries
-        run: |
-          set -euo pipefail
-          count=$(jq 'length' "${RUNNER_TEMP}/missing-entries.json")
-          echo "Missing forum submissions not yet represented in data.yml: ${count}"
-          if [[ "$count" -gt 0 ]]; then
-            jq -r '.[] | "\(.package): \(.fingerprints | length) fingerprint(s)"' \
-              "${RUNNER_TEMP}/missing-entries.json"
-          fi
-
-      - name: Ensure tracking label exists
-        if: inputs.dry_run != true
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh label create "Import GOS" \
-            --repo "${{ github.repository }}" \
-            --color "C5DEF5" \
-            --description "Opened automatically from the GrapheneOS forum hashes export" \
-            2>/dev/null || true
-
-      - name: Create submission issues
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          HASHES_URL: ${{ steps.hashes.outputs.url }}
-          DRY_RUN: ${{ inputs.dry_run }}
-          MAX_ISSUES: ${{ inputs.max_issues }}
-        run: |
-          set -euo pipefail
-          args=(
-            python3 .github/scripts/grapheneos_forum_import.py create-issues
-            --missing-file "${RUNNER_TEMP}/missing-entries.json"
-            --repo "${{ github.repository }}"
-            --hashes-url "$HASHES_URL"
-            --report "${RUNNER_TEMP}/created-issues.json"
-          )
-          if [[ "$DRY_RUN" == "true" ]]; then
-            args+=(--dry-run)
-          fi
-          args+=(--max-issues "${MAX_ISSUES%.*}")
-          "${args[@]}"
-
-      - name: Upload reports
-        if: always()
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
-        with:
-          name: grapheneos-forum-import-${{ github.run_id }}
-          path: |
-            ${{ runner.temp }}/missing-entries.json
-            ${{ runner.temp }}/created-issues.json
-          if-no-files-found: ignore
+  import:
+    name: Compare export and open issues
+    needs: resolveUrl
+    uses: ./.github/workflows/import-missing-submissions.yml
+    secrets: inherit
+    with:
+      source_url: ${{ needs.resolveUrl.outputs.url }}
+      download_filename: grapheneos-forum-hashes.txt
+      import_script: .github/scripts/grapheneos_forum_import.py
+      compare_input_flag: --hashes-file
+      create_issues_url_flag: --hashes-url
+      summary_jq: '.[] | "\(.package): \(.fingerprints | length) fingerprint(s)"'
+      summary_heading: Missing forum submissions not yet represented in data.yml
+      label_name: Import GOS
+      label_color: C5DEF5
+      label_description: Opened automatically from the GrapheneOS forum hashes export
+      artifact_prefix: grapheneos-forum-import
+      dry_run: ${{ inputs.dry_run }}
+      max_issues: ${{ inputs.max_issues }}

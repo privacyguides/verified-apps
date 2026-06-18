@@ -41,22 +41,9 @@ runs:
         FORCE: ${{ inputs.force }}
       run: |
         set -euo pipefail
+        source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
 
-        # Committer identity is the Privacy Guides bot (this identity signs the commit); the
-        # author is overridden to the submitter on the commit below. The reviewer and the
-        # GitHub Actions bot remain Co-authored-by trailers already present in the message file.
-        git config user.name "Privacy Guides [bot]"
-        git config user.email "github-bot@privacyguides.net"
-
-        # SSH commit signing using the key from secrets.ACTIONS_SSH_KEY. The committer email
-        # must be a verified email on the GitHub account holding this signing key to read
-        # "Verified".
-        key_file="$(mktemp)"
-        printf '%s\n' "$SSH_KEY" > "$key_file"
-        chmod 600 "$key_file"
-        git config gpg.format ssh
-        git config user.signingkey "$key_file"
-        git config commit.gpgsign true
+        key_file=$(submission_configure_git_signing "$SSH_KEY")
         trap 'rm -f "$key_file"' EXIT
 
         if [[ -n "$FILES" ]]; then

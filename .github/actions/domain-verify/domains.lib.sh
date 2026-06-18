@@ -618,3 +618,15 @@ domain_state_marker() { printf '<!-- domain-verify-state: %s -->' "$1"; }
 domain_last_state_from_comments() {
   grep -oE 'domain-verify-state: [a-z]+' | tail -n1 | awk '{print $2}'
 }
+
+# Default DNS-over-HTTPS resolvers and ICANN trust anchors when callers do not set them.
+domains_apply_default_env() {
+  if [[ -z "${DOH_RESOLVERS:-}" ]]; then
+    export DOH_RESOLVERS=$'https://dns.google/dns-query\nhttps://cloudflare-dns.com/dns-query\nhttps://dns.quad9.net/dns-query\nhttps://freedns.controld.com/p0'
+  fi
+  if [[ -z "${ICANN_ROOT_TRUST_ANCHOR:-}" ]]; then
+    export ICANN_ROOT_TRUST_ANCHOR=$'trust-anchors {\n    . static-ds 20326 8 2 "E06D44B80B8F1D39A95C0B0D7C65D08458E880409BBC683457104237C7F8EC8D";\n    . static-ds 38696 8 2 "683D2D0ACB8C9B712A1948B27F741219298D0A450D612C483AF444A4C0FB2B16";\n};'
+  fi
+}
+
+domains_apply_default_env

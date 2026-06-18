@@ -147,12 +147,12 @@ jobs:
 
     outputs:
       found: ${{ steps.availability.outputs.found }}
-      signature: ${{ steps.appSignature.outputs.signature }}
-      apkSha256: ${{ steps.appSignature.outputs.apkSha256 }}
-      match: ${{ steps.matches.outputs.status }}
-      packageName: ${{ steps.matches.outputs.packageName }}
-      infoNote: ${{ steps.matches.outputs.infoNote }}
-      storeSignedMatch: ${{ steps.matches.outputs.storeSignedMatch }}
+      signature: ${{ steps.verify.outputs.signature }}
+      apkSha256: ${{ steps.verify.outputs.apkSha256 }}
+      match: ${{ steps.verify.outputs.status }}
+      packageName: ${{ steps.verify.outputs.matchPackageName }}
+      infoNote: ${{ steps.verify.outputs.infoNote }}
+      storeSignedMatch: ${{ steps.verify.outputs.storeSignedMatch }}
 
     env:
       PACKAGE_NAME: ${{ needs.parse.outputs.packageName }}
@@ -218,32 +218,14 @@ jobs:
         run: |
           wget "$DOWNLOAD_INFO"
 
-      - name: Get APK signature(s)
-        id: appSignature
+      - name: Verify APK signature
+        id: verify
         if: steps.availability.outputs.found == 'true'
-        uses: ./.github/actions/get-signature
+        uses: ./.github/actions/verify-store-apk
         with:
-          path: ${{ steps.accrescentInfo.outputs.apkName }}
-          packageName: ${{ env.PACKAGE_NAME }}
-
-      - name: Write Summary
-        if: steps.availability.outputs.found == 'true'
-        id: summary
-        env:
-          SIGNATURE: ${{ steps.appSignature.outputs.signature }}
-        run: |
-          echo "$PACKAGE_NAME" >> $GITHUB_STEP_SUMMARY
-          echo "$SIGNATURE" >> $GITHUB_STEP_SUMMARY
-
-      - name: Matches User-Provided?
-        id: matches
-        if: steps.availability.outputs.found == 'true'
-        uses: ./.github/actions/match-signature
-        with:
+          apkPath: ${{ steps.accrescentInfo.outputs.apkName }}
           packageName: ${{ env.PACKAGE_NAME }}
           userSignature: ${{ needs.parse.outputs.packageSignature }}
-          storeSignature: ${{ steps.appSignature.outputs.signature }}
-          signerKind: ${{ steps.appSignature.outputs.signerKind }}
 
   fdroid:
     name: F-Droid
@@ -281,75 +263,29 @@ jobs:
           fDroidRepoName: ${{ matrix.fDroidRepoName }}
           fDroidRepoURL: ${{ matrix.fDroidRepoURL }}
 
-      - name: Get APK Signature
-        id: appSignature
+      - name: Verify APK signature
+        id: verify
         if: steps.appDownload.outputs.found == 'true'
-        uses: ./.github/actions/get-signature
+        uses: ./.github/actions/verify-store-apk
         with:
-          path: ${{ steps.appDownload.outputs.apkPath }}
-          packageName: ${{ env.PACKAGE_NAME }}
-
-      - name: Matches User-Provided?
-        id: matches
-        if: steps.appDownload.outputs.found == 'true'
-        uses: ./.github/actions/match-signature
-        with:
+          apkPath: ${{ steps.appDownload.outputs.apkPath }}
           packageName: ${{ env.PACKAGE_NAME }}
           userSignature: ${{ env.USER_SIGNATURE }}
-          storeSignature: ${{ steps.appSignature.outputs.signature }}
-          signerKind: ${{ steps.appSignature.outputs.signerKind }}
+          summaryPrefix: F-Droid (${{ matrix.fDroidRepoName }})
 
-      - name: Write job summary
-        if: steps.appDownload.outputs.found == 'true'
-        env:
-          REPO_NAME: ${{ matrix.fDroidRepoName }}
-          SIGNATURE: ${{ steps.appSignature.outputs.signature }}
-        run: |
-          echo "F-Droid (${REPO_NAME})" >> $GITHUB_STEP_SUMMARY
-          echo "$PACKAGE_NAME" >> $GITHUB_STEP_SUMMARY
-          echo "$SIGNATURE" >> $GITHUB_STEP_SUMMARY
-
-      - name: Write repository result
+      - name: Upload F-Droid result
         if: always()
-        env:
-          REPO_NAME: ${{ matrix.fDroidRepoName }}
-          FOUND: ${{ steps.appDownload.outputs.found }}
-          SIGNATURE: ${{ steps.appSignature.outputs.signature }}
-          APK_SHA256: ${{ steps.appSignature.outputs.apkSha256 }}
-          MATCH: ${{ steps.matches.outputs.status }}
-          PKG: ${{ steps.matches.outputs.packageName }}
-          INFO_NOTE: ${{ steps.matches.outputs.infoNote }}
-          STORE_SIGNED: ${{ steps.matches.outputs.storeSignedMatch }}
-        run: |
-          set -euo pipefail
-          mkdir -p fdroid-result
-          jq -n \
-            --arg repoName "$REPO_NAME" \
-            --arg found "$FOUND" \
-            --arg signature "$SIGNATURE" \
-            --arg apkSha256 "$APK_SHA256" \
-            --arg match "$MATCH" \
-            --arg packageName "$PKG" \
-            --arg infoNote "$INFO_NOTE" \
-            --arg storeSignedMatch "$STORE_SIGNED" \
-            '{
-              repoName: $repoName,
-              found: ($found == "true"),
-              signature: $signature,
-              apkSha256: $apkSha256,
-              match: $match,
-              packageName: $packageName,
-              infoNote: $infoNote,
-              storeSignedMatch: ($storeSignedMatch == "true")
-            }' > "fdroid-result/${REPO_NAME}.json"
-
-      - name: Upload repository result
-        if: always()
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        uses: ./.github/actions/write-fdroid-result
         with:
-          name: fdroid-result-${{ matrix.fDroidRepoName }}
-          path: fdroid-result/${{ matrix.fDroidRepoName }}.json
-          if-no-files-found: ignore
+          repoName: ${{ matrix.fDroidRepoName }}
+          artifactName: fdroid-result-${{ matrix.fDroidRepoName }}
+          found: ${{ steps.appDownload.outputs.found }}
+          signature: ${{ steps.verify.outputs.signature }}
+          apkSha256: ${{ steps.verify.outputs.apkSha256 }}
+          match: ${{ steps.verify.outputs.status }}
+          packageName: ${{ steps.verify.outputs.matchPackageName }}
+          infoNote: ${{ steps.verify.outputs.infoNote }}
+          storeSignedMatch: ${{ steps.verify.outputs.storeSignedMatch }}
 
   customFdroid:
     name: Custom F-Droid Repository
@@ -361,8 +297,8 @@ jobs:
       contents: read
 
     outputs:
-      signature: ${{ steps.appSignature.outputs.signature }}
-      apkSha256: ${{ steps.appSignature.outputs.apkSha256 }}
+      signature: ${{ steps.verify.outputs.signature }}
+      apkSha256: ${{ steps.verify.outputs.apkSha256 }}
 
     env:
       PACKAGE_NAME: ${{ needs.parse.outputs.packageName }}
@@ -393,75 +329,29 @@ jobs:
           fDroidRepoName: ${{ steps.customRepo.outputs.host }}
           fDroidRepoURL: ${{ env.FDROID_REPO_URL }}
 
-      - name: Get APK Signature
-        id: appSignature
+      - name: Verify APK signature
+        id: verify
         if: steps.appDownload.outputs.found == 'true'
-        uses: ./.github/actions/get-signature
+        uses: ./.github/actions/verify-store-apk
         with:
-          path: ${{ steps.appDownload.outputs.apkPath }}
-          packageName: ${{ env.PACKAGE_NAME }}
-
-      - name: Matches User-Provided?
-        id: matches
-        if: steps.appDownload.outputs.found == 'true'
-        uses: ./.github/actions/match-signature
-        with:
+          apkPath: ${{ steps.appDownload.outputs.apkPath }}
           packageName: ${{ env.PACKAGE_NAME }}
           userSignature: ${{ env.USER_SIGNATURE }}
-          storeSignature: ${{ steps.appSignature.outputs.signature }}
-          signerKind: ${{ steps.appSignature.outputs.signerKind }}
+          summaryPrefix: F-Droid (${{ steps.customRepo.outputs.host }})
 
-      - name: Write job summary
-        if: steps.appDownload.outputs.found == 'true'
-        env:
-          REPO_NAME: ${{ steps.customRepo.outputs.host }}
-          SIGNATURE: ${{ steps.appSignature.outputs.signature }}
-        run: |
-          echo "F-Droid (${REPO_NAME})" >> $GITHUB_STEP_SUMMARY
-          echo "$PACKAGE_NAME" >> $GITHUB_STEP_SUMMARY
-          echo "$SIGNATURE" >> $GITHUB_STEP_SUMMARY
-
-      - name: Write repository result
+      - name: Upload F-Droid result
         if: always()
-        env:
-          REPO_NAME: ${{ steps.customRepo.outputs.host }}
-          FOUND: ${{ steps.appDownload.outputs.found }}
-          SIGNATURE: ${{ steps.appSignature.outputs.signature }}
-          APK_SHA256: ${{ steps.appSignature.outputs.apkSha256 }}
-          MATCH: ${{ steps.matches.outputs.status }}
-          PKG: ${{ steps.matches.outputs.packageName }}
-          INFO_NOTE: ${{ steps.matches.outputs.infoNote }}
-          STORE_SIGNED: ${{ steps.matches.outputs.storeSignedMatch }}
-        run: |
-          set -euo pipefail
-          mkdir -p fdroid-result
-          jq -n \
-            --arg repoName "$REPO_NAME" \
-            --arg found "$FOUND" \
-            --arg signature "$SIGNATURE" \
-            --arg apkSha256 "$APK_SHA256" \
-            --arg match "$MATCH" \
-            --arg packageName "$PKG" \
-            --arg infoNote "$INFO_NOTE" \
-            --arg storeSignedMatch "$STORE_SIGNED" \
-            '{
-              repoName: $repoName,
-              found: ($found == "true"),
-              signature: $signature,
-              apkSha256: $apkSha256,
-              match: $match,
-              packageName: $packageName,
-              infoNote: $infoNote,
-              storeSignedMatch: ($storeSignedMatch == "true")
-            }' > "fdroid-result/${REPO_NAME}.json"
-
-      - name: Upload repository result
-        if: always()
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        uses: ./.github/actions/write-fdroid-result
         with:
-          name: fdroid-result-${{ steps.customRepo.outputs.host }}
-          path: fdroid-result/${{ steps.customRepo.outputs.host }}.json
-          if-no-files-found: ignore
+          repoName: ${{ steps.customRepo.outputs.host }}
+          artifactName: fdroid-result-${{ steps.customRepo.outputs.host }}
+          found: ${{ steps.appDownload.outputs.found }}
+          signature: ${{ steps.verify.outputs.signature }}
+          apkSha256: ${{ steps.verify.outputs.apkSha256 }}
+          match: ${{ steps.verify.outputs.status }}
+          packageName: ${{ steps.verify.outputs.matchPackageName }}
+          infoNote: ${{ steps.verify.outputs.infoNote }}
+          storeSignedMatch: ${{ steps.verify.outputs.storeSignedMatch }}
 
   gplay:
     name: Google Play
@@ -479,12 +369,12 @@ jobs:
 
     outputs:
       found: ${{ steps.appDownload.outputs.found }}
-      signature: ${{ steps.appSignature.outputs.signature }}
-      apkSha256: ${{ steps.appSignature.outputs.apkSha256 }}
-      match: ${{ steps.matches.outputs.status }}
-      packageName: ${{ steps.matches.outputs.packageName }}
-      infoNote: ${{ steps.matches.outputs.infoNote }}
-      storeSignedMatch: ${{ steps.matches.outputs.storeSignedMatch }}
+      signature: ${{ steps.verify.outputs.signature }}
+      apkSha256: ${{ steps.verify.outputs.apkSha256 }}
+      match: ${{ steps.verify.outputs.status }}
+      packageName: ${{ steps.verify.outputs.matchPackageName }}
+      infoNote: ${{ steps.verify.outputs.infoNote }}
+      storeSignedMatch: ${{ steps.verify.outputs.storeSignedMatch }}
 
     env:
       PACKAGE_NAME: ${{ needs.parse.outputs.packageName }}
@@ -504,32 +394,14 @@ jobs:
           GPLAY_EMAIL: ${{ secrets.GPLAY_EMAIL }}
           GPLAY_AAS_TOKEN: ${{ secrets.GPLAY_AAS_TOKEN }}
 
-      - name: Get APK signature(s)
-        id: appSignature
+      - name: Verify APK signature
+        id: verify
         if: steps.appDownload.outputs.found == 'true'
-        uses: ./.github/actions/get-signature
+        uses: ./.github/actions/verify-store-apk
         with:
-          path: ${{ steps.appDownload.outputs.apkPath }}
-          packageName: ${{ env.PACKAGE_NAME }}
-
-      - name: Matches User-Provided?
-        id: matches
-        if: steps.appDownload.outputs.found == 'true'
-        uses: ./.github/actions/match-signature
-        with:
+          apkPath: ${{ steps.appDownload.outputs.apkPath }}
           packageName: ${{ env.PACKAGE_NAME }}
           userSignature: ${{ needs.parse.outputs.packageSignature }}
-          storeSignature: ${{ steps.appSignature.outputs.signature }}
-          signerKind: ${{ steps.appSignature.outputs.signerKind }}
-
-      - name: Write Summary
-        if: steps.appDownload.outputs.found == 'true'
-        id: summary
-        env:
-          SIGNATURE: ${{ steps.appSignature.outputs.signature }}
-        run: |
-          echo "$PACKAGE_NAME" >> $GITHUB_STEP_SUMMARY
-          echo "$SIGNATURE" >> $GITHUB_STEP_SUMMARY
 
   apkpure:
     name: APKPure
@@ -554,12 +426,12 @@ jobs:
 
     outputs:
       found: ${{ steps.appDownload.outputs.found }}
-      signature: ${{ steps.appSignature.outputs.signature }}
-      apkSha256: ${{ steps.appSignature.outputs.apkSha256 }}
-      match: ${{ steps.matches.outputs.status }}
-      packageName: ${{ steps.matches.outputs.packageName }}
-      infoNote: ${{ steps.matches.outputs.infoNote }}
-      storeSignedMatch: ${{ steps.matches.outputs.storeSignedMatch }}
+      signature: ${{ steps.verify.outputs.signature }}
+      apkSha256: ${{ steps.verify.outputs.apkSha256 }}
+      match: ${{ steps.verify.outputs.status }}
+      packageName: ${{ steps.verify.outputs.matchPackageName }}
+      infoNote: ${{ steps.verify.outputs.infoNote }}
+      storeSignedMatch: ${{ steps.verify.outputs.storeSignedMatch }}
 
     env:
       PACKAGE_NAME: ${{ needs.parse.outputs.packageName }}
@@ -577,31 +449,14 @@ jobs:
           packageName: ${{ env.PACKAGE_NAME }}
           source: apk-pure
 
-      - name: Get APK signature(s)
-        id: appSignature
+      - name: Verify APK signature
+        id: verify
         if: steps.appDownload.outputs.found == 'true'
-        uses: ./.github/actions/get-signature
+        uses: ./.github/actions/verify-store-apk
         with:
-          path: ${{ steps.appDownload.outputs.apkPath }}
-          packageName: ${{ env.PACKAGE_NAME }}
-
-      - name: Matches User-Provided?
-        id: matches
-        if: steps.appDownload.outputs.found == 'true'
-        uses: ./.github/actions/match-signature
-        with:
+          apkPath: ${{ steps.appDownload.outputs.apkPath }}
           packageName: ${{ env.PACKAGE_NAME }}
           userSignature: ${{ needs.parse.outputs.packageSignature }}
-          storeSignature: ${{ steps.appSignature.outputs.signature }}
-          signerKind: ${{ steps.appSignature.outputs.signerKind }}
-
-      - name: Write Summary
-        if: steps.appDownload.outputs.found == 'true'
-        env:
-          SIGNATURE: ${{ steps.appSignature.outputs.signature }}
-        run: |
-          echo "$PACKAGE_NAME" >> $GITHUB_STEP_SUMMARY
-          echo "$SIGNATURE" >> $GITHUB_STEP_SUMMARY
 
   directApk:
     name: Direct APK Link
@@ -613,12 +468,12 @@ jobs:
       contents: read
 
     outputs:
-      signature: ${{ steps.appSignature.outputs.signature }}
-      apkSha256: ${{ steps.appSignature.outputs.apkSha256 }}
-      match: ${{ steps.matches.outputs.status }}
-      packageName: ${{ steps.matches.outputs.packageName }}
-      infoNote: ${{ steps.matches.outputs.infoNote }}
-      storeSignedMatch: ${{ steps.matches.outputs.storeSignedMatch }}
+      signature: ${{ steps.verify.outputs.signature }}
+      apkSha256: ${{ steps.verify.outputs.apkSha256 }}
+      match: ${{ steps.verify.outputs.status }}
+      packageName: ${{ steps.verify.outputs.matchPackageName }}
+      infoNote: ${{ steps.verify.outputs.infoNote }}
+      storeSignedMatch: ${{ steps.verify.outputs.storeSignedMatch }}
 
     env:
       PACKAGE_NAME: ${{ needs.parse.outputs.packageName }}
@@ -650,29 +505,13 @@ jobs:
           source .github/actions/signature-lib/signatures.lib.sh
           signatures_download_direct_apk "$APK_URL" direct-apk.apk
 
-      - name: Get APK Signature
-        id: appSignature
-        uses: ./.github/actions/get-signature
+      - name: Verify APK signature
+        id: verify
+        uses: ./.github/actions/verify-store-apk
         with:
-          path: direct-apk.apk
-          packageName: ${{ env.PACKAGE_NAME }}
-
-      - name: Write Summary
-        id: summary
-        env:
-          SIGNATURE: ${{ steps.appSignature.outputs.signature }}
-        run: |
-          echo "$PACKAGE_NAME" >> $GITHUB_STEP_SUMMARY
-          echo "$SIGNATURE" >> $GITHUB_STEP_SUMMARY
-
-      - name: Matches User-Provided?
-        id: matches
-        uses: ./.github/actions/match-signature
-        with:
+          apkPath: direct-apk.apk
           packageName: ${{ env.PACKAGE_NAME }}
           userSignature: ${{ needs.parse.outputs.packageSignature }}
-          storeSignature: ${{ steps.appSignature.outputs.signature }}
-          signerKind: ${{ steps.appSignature.outputs.signerKind }}
 
   appverifierDb:
     name: AppVerifier
@@ -1538,27 +1377,14 @@ jobs:
       - name: Resolve co-authors
         if: steps.existingPr.outputs.url == ''
         id: coauthor
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CB_SYNC_TOKEN: ${{ secrets.CB_SYNC_TOKEN }}
-          LABELER_LOGIN: ${{ github.event.sender.login }}
-          LABELER_ID: ${{ github.event.sender.id }}
-          SUBMITTER_LOGIN: ${{ github.event.issue.user.login }}
-          SUBMITTER_ID: ${{ github.event.issue.user.id }}
-          ISSUE_BODY: ${{ github.event.issue.body }}
-        run: |
-          set -euo pipefail
-          source .github/actions/signature-lib/signatures.lib.sh
-          # For Codeberg-mirrored submissions, credit the Codeberg user (fetched live, never
-          # stored on the issue) instead of the GitHub sync bot.
-          cb_author=$(signatures_codeberg_submission_author "${CB_SYNC_TOKEN:-}" "$ISSUE_BODY" || true)
-          # Author is the submitter; co-authors are the reviewer (labeler) then GitHub Actions.
-          author=$(submission_resolve_commit_author \
-            "$SUBMITTER_LOGIN" "$SUBMITTER_ID" "$cb_author")
-          trailer=$(submission_resolve_coauthor_trailers \
-            "$LABELER_LOGIN" "$LABELER_ID" "$SUBMITTER_LOGIN" "$SUBMITTER_ID" "$cb_author")
-          gha_write_multiline_output author "$author"
-          gha_write_multiline_output trailer "$trailer"
+        uses: ./.github/actions/resolve-submission-coauthors
+        with:
+          labelerLogin: ${{ github.event.sender.login }}
+          labelerId: ${{ github.event.sender.id }}
+          submitterLogin: ${{ github.event.issue.user.login }}
+          submitterId: ${{ github.event.issue.user.id }}
+          issueBody: ${{ github.event.issue.body }}
+          codebergToken: ${{ secrets.CB_SYNC_TOKEN }}
 
       - name: Create PR
         id: createPr
@@ -1666,27 +1492,14 @@ jobs:
 
       - name: Resolve co-authors
         id: coauthor
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CB_SYNC_TOKEN: ${{ secrets.CB_SYNC_TOKEN }}
-          LABELER_LOGIN: ${{ github.event.sender.login }}
-          LABELER_ID: ${{ github.event.sender.id }}
-          SUBMITTER_LOGIN: ${{ github.event.issue.user.login }}
-          SUBMITTER_ID: ${{ github.event.issue.user.id }}
-          ISSUE_BODY: ${{ github.event.issue.body }}
-        run: |
-          set -euo pipefail
-          source .github/actions/signature-lib/signatures.lib.sh
-          # For Codeberg-mirrored submissions, credit the Codeberg user (fetched live, never
-          # stored on the issue) instead of the GitHub sync bot.
-          cb_author=$(signatures_codeberg_submission_author "${CB_SYNC_TOKEN:-}" "$ISSUE_BODY" || true)
-          # Author is the submitter; co-authors are the reviewer (labeler) then GitHub Actions.
-          author=$(submission_resolve_commit_author \
-            "$SUBMITTER_LOGIN" "$SUBMITTER_ID" "$cb_author")
-          trailer=$(submission_resolve_coauthor_trailers \
-            "$LABELER_LOGIN" "$LABELER_ID" "$SUBMITTER_LOGIN" "$SUBMITTER_ID" "$cb_author")
-          gha_write_multiline_output author "$author"
-          gha_write_multiline_output trailer "$trailer"
+        uses: ./.github/actions/resolve-submission-coauthors
+        with:
+          labelerLogin: ${{ github.event.sender.login }}
+          labelerId: ${{ github.event.sender.id }}
+          submitterLogin: ${{ github.event.issue.user.login }}
+          submitterId: ${{ github.event.issue.user.id }}
+          issueBody: ${{ github.event.issue.body }}
+          codebergToken: ${{ secrets.CB_SYNC_TOKEN }}
 
       - name: Prepare submission data.yml
         id: commit

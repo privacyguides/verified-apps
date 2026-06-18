@@ -999,7 +999,7 @@ signatures_download_direct_apk() {
   # `if` (where `set -e` is suspended), so a 404 must NOT leave a stale APK from a previous download
   # that the file/grep check below would then wrongly accept.
   rm -f "$dest"
-  curl -fsSL --retry 3 --retry-delay 2 -o "$dest" "$url" || return 1
+  curl -fsS --retry 3 --retry-delay 2 -o "$dest" "$url" || return 1
   file "$dest"
   if ! file "$dest" | grep -qiE 'zip archive|android'; then
     echo "Downloaded file does not look like an APK: ${url}" >&2
@@ -1105,6 +1105,30 @@ signatures_overlap() {
     fi
   done <<< "$a"
   return 1
+}
+
+# Read the first non-empty value under a "### <header>" section of an issue body.
+# Returns 1 when absent or "_No response_" unless $3 is "true" (emit empty, exit 0).
+signatures_parse_issue_field() {
+  local header="$1"
+  local body="$2"
+  local allow_empty="${3:-false}"
+  local value
+
+  value=$(printf '%s\n' "$body" | awk -v header="$header" '
+    $0 == "### " header { found=1; next }
+    found && /^### / { exit }
+    found && NF { print; exit }
+  ')
+  value="${value//$'\r'/}"
+  value="${value#"${value%%[![:space:]]*}"}"
+  value="${value%"${value##*[![:space:]]}"}"
+
+  if [[ -z "$value" || "$value" == "_No response_" ]]; then
+    [[ "$allow_empty" == "true" ]] && return 0
+    return 1
+  fi
+  printf '%s\n' "$value"
 }
 
 # Extract the "### Verification Info" section from an issue body, unwrapping a

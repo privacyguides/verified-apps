@@ -25,20 +25,12 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  compareAndFile:
-    name: Compare database and open issues
+  resolveUrl:
+    name: Resolve database URL
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      issues: write
-
+    outputs:
+      url: ${{ steps.database.outputs.url }}
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
-        with:
-          persist-credentials: false
-
       - name: Resolve AppVerifier database URL
         id: database
         env:
@@ -60,72 +52,22 @@ jobs:
             echo "url=$DATABASE_URL" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Download AppVerifier internal database
-        env:
-          DATABASE_URL: ${{ steps.database.outputs.url }}
-        run: |
-          set -euo pipefail
-          curl -fsSL --retry 3 --retry-delay 2 -o "${RUNNER_TEMP}/InternalVerificationInfoDatabase.kt" "$DATABASE_URL"
-
-      - name: Install Python dependencies
-        run: pip3 install --disable-pip-version-check pyyaml
-
-      - name: Compare against data.yml
-        run: |
-          set -euo pipefail
-          python3 .github/scripts/appverifier_import.py compare \
-            --database-file "${RUNNER_TEMP}/InternalVerificationInfoDatabase.kt" \
-            --data-yml data.yml \
-            --output "${RUNNER_TEMP}/missing-entries.json"
-
-      - name: Summarize missing entries
-        run: |
-          set -euo pipefail
-          count=$(jq 'length' "${RUNNER_TEMP}/missing-entries.json")
-          echo "Missing AppVerifier signing configs not yet represented in data.yml: ${count}"
-          if [[ "$count" -gt 0 ]]; then
-            jq -r '.[] | "\(.package): \(.fingerprints | length) fingerprint(s), sources: \(.sources | join(", "))"' \
-              "${RUNNER_TEMP}/missing-entries.json"
-          fi
-
-      - name: Ensure tracking label exists
-        if: inputs.dry_run != true
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh label create "Import AppVerifier" \
-            --repo "${{ github.repository }}" \
-            --color "BFD4F2" \
-            --description "Opened automatically from the AppVerifier internal verification database" \
-            2>/dev/null || true
-
-      - name: Create submission issues
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DATABASE_URL: ${{ steps.database.outputs.url }}
-          DRY_RUN: ${{ inputs.dry_run }}
-          MAX_ISSUES: ${{ inputs.max_issues }}
-        run: |
-          set -euo pipefail
-          args=(
-            python3 .github/scripts/appverifier_import.py create-issues
-            --missing-file "${RUNNER_TEMP}/missing-entries.json"
-            --repo "${{ github.repository }}"
-            --database-url "$DATABASE_URL"
-            --report "${RUNNER_TEMP}/created-issues.json"
-          )
-          if [[ "$DRY_RUN" == "true" ]]; then
-            args+=(--dry-run)
-          fi
-          args+=(--max-issues "${MAX_ISSUES%.*}")
-          "${args[@]}"
-
-      - name: Upload reports
-        if: always()
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
-        with:
-          name: appverifier-import-${{ github.run_id }}
-          path: |
-            ${{ runner.temp }}/missing-entries.json
-            ${{ runner.temp }}/created-issues.json
-          if-no-files-found: ignore
+  import:
+    name: Compare database and open issues
+    needs: resolveUrl
+    uses: ./.github/workflows/import-missing-submissions.yml
+    secrets: inherit
+    with:
+      source_url: ${{ needs.resolveUrl.outputs.url }}
+      download_filename: InternalVerificationInfoDatabase.kt
+      import_script: .github/scripts/appverifier_import.py
+      compare_input_flag: --database-file
+      create_issues_url_flag: --database-url
+      summary_jq: '.[] | "\(.package): \(.fingerprints | length) fingerprint(s), sources: \(.sources | join(", "))"'
+      summary_heading: Missing AppVerifier signing configs not yet represented in data.yml
+      label_name: Import AppVerifier
+      label_color: BFD4F2
+      label_description: Opened automatically from the AppVerifier internal verification database
+      artifact_prefix: appverifier-import
+      dry_run: ${{ inputs.dry_run }}
+      max_issues: ${{ inputs.max_issues }}

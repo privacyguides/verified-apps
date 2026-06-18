@@ -1,0 +1,141 @@
+name: Import missing submissions
+
+on:
+  workflow_call:
+    inputs:
+      source_url:
+        description: URL of the upstream database or export file to download
+        required: true
+        type: string
+      download_filename:
+        description: Basename for the downloaded file under RUNNER_TEMP
+        required: true
+        type: string
+      import_script:
+        description: Path to the Python import script (compare + create-issues subcommands)
+        required: true
+        type: string
+      compare_input_flag:
+        description: CLI flag for the compare subcommand source file (--database-file or --hashes-file)
+        required: true
+        type: string
+      create_issues_url_flag:
+        description: CLI flag for create-issues source URL (--database-url or --hashes-url)
+        required: true
+        type: string
+      summary_jq:
+        description: jq -r format string for each missing entry in the summarize step
+        required: true
+        type: string
+      summary_heading:
+        description: One-line heading for the summarize step
+        required: true
+        type: string
+      label_name:
+        required: true
+        type: string
+      label_color:
+        required: true
+        type: string
+      label_description:
+        required: true
+        type: string
+      artifact_prefix:
+        required: true
+        type: string
+      dry_run:
+        required: false
+        type: boolean
+        default: false
+      max_issues:
+        required: false
+        type: number
+        default: 0
+
+jobs:
+  compareAndFile:
+    name: Compare export and open issues
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
+
+      - name: Download upstream export
+        env:
+          SOURCE_URL: ${{ inputs.source_url }}
+        run: |
+          set -euo pipefail
+          curl -fsSL --retry 3 --retry-delay 2 \
+            -o "${RUNNER_TEMP}/${{ inputs.download_filename }}" \
+            "$SOURCE_URL"
+
+      - name: Install Python dependencies
+        run: pip3 install --disable-pip-version-check pyyaml
+
+      - name: Compare against data.yml
+        run: |
+          set -euo pipefail
+          python3 "${{ inputs.import_script }}" compare \
+            "${{ inputs.compare_input_flag }}" "${RUNNER_TEMP}/${{ inputs.download_filename }}" \
+            --data-yml data.yml \
+            --output "${RUNNER_TEMP}/missing-entries.json"
+
+      - name: Summarize missing entries
+        env:
+          SUMMARY_JQ: ${{ inputs.summary_jq }}
+        run: |
+          set -euo pipefail
+          count=$(jq 'length' "${RUNNER_TEMP}/missing-entries.json")
+          echo "${{ inputs.summary_heading }}: ${count}"
+          if [[ "$count" -gt 0 ]]; then
+            jq -r "$SUMMARY_JQ" "${RUNNER_TEMP}/missing-entries.json"
+          fi
+
+      - name: Ensure tracking label exists
+        if: inputs.dry_run != true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create "${{ inputs.label_name }}" \
+            --repo "${{ github.repository }}" \
+            --color "${{ inputs.label_color }}" \
+            --description "${{ inputs.label_description }}" \
+            2>/dev/null || true
+
+      - name: Create submission issues
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SOURCE_URL: ${{ inputs.source_url }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          MAX_ISSUES: ${{ inputs.max_issues }}
+        run: |
+          set -euo pipefail
+          args=(
+            python3 "${{ inputs.import_script }}" create-issues
+            --missing-file "${RUNNER_TEMP}/missing-entries.json"
+            --repo "${{ github.repository }}"
+            "${{ inputs.create_issues_url_flag }}" "$SOURCE_URL"
+            --report "${RUNNER_TEMP}/created-issues.json"
+          )
+          if [[ "$DRY_RUN" == "true" ]]; then
+            args+=(--dry-run)
+          fi
+          args+=(--max-issues "${MAX_ISSUES%.*}")
+          "${args[@]}"
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: ${{ inputs.artifact_prefix }}-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/missing-entries.json
+            ${{ runner.temp }}/created-issues.json
+          if-no-files-found: ignore

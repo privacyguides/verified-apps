@@ -11,23 +11,6 @@ on:
     - cron: "0 3 * * *"
   workflow_dispatch:
 
-env:
-  # DNS verification is cross-checked against these four DNS-over-HTTPS resolvers; all of
-  # them must agree on the _pgappverify TXT record before it is accepted.
-  DOH_RESOLVERS: |
-    https://dns.google/dns-query
-    https://cloudflare-dns.com/dns-query
-    https://dns.quad9.net/dns-query
-    https://freedns.controld.com/p0
-  # Hard-coded ICANN DNSSEC root trust anchors (KSK-2017 tag 20326, KSK-2024 tag 38696).
-  # Source: https://www.iana.org/dnssec/files (root-anchors.xml). delv validates each
-  # _pgappverify TXT record's chain of trust back to these keys; never fetched at runtime.
-  ICANN_ROOT_TRUST_ANCHOR: |
-    trust-anchors {
-        . static-ds 20326 8 2 "E06D44B80B8F1D39A95C0B0D7C65D08458E880409BBC683457104237C7F8EC8D";
-        . static-ds 38696 8 2 "683D2D0ACB8C9B712A1948B27F741219298D0A450D612C483AF444A4C0FB2B16";
-    };
-
 jobs:
   instructions:
     name: Post setup instructions

@@ -78,29 +78,14 @@ jobs:
 
       - name: Resolve co-authors
         id: coauthor
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_REPO: ${{ github.repository }}
-          ISSUE_NUMBER: ${{ steps.prMeta.outputs.issueNumber }}
-          CB_SYNC_TOKEN: ${{ secrets.CB_SYNC_TOKEN }}
-          LABELER_LOGIN: ${{ github.event.sender.login }}
-          LABELER_ID: ${{ github.event.sender.id }}
-          SUBMITTER_LOGIN: ${{ github.event.pull_request.user.login }}
-          SUBMITTER_ID: ${{ github.event.pull_request.user.id }}
-        run: |
-          set -euo pipefail
-          source .github/actions/signature-lib/signatures.lib.sh
-          issue_body=$(gh issue view "$ISSUE_NUMBER" --repo "$GH_REPO" --json body -q .body)
-          # For Codeberg-mirrored submissions, credit the Codeberg user (fetched live, never
-          # stored on the issue) instead of the GitHub sync bot.
-          cb_author=$(signatures_codeberg_submission_author "${CB_SYNC_TOKEN:-}" "$issue_body" || true)
-          # Author is the submitter; co-authors are the reviewer (labeler) then GitHub Actions.
-          author=$(submission_resolve_commit_author \
-            "$SUBMITTER_LOGIN" "$SUBMITTER_ID" "$cb_author")
-          trailer=$(submission_resolve_coauthor_trailers \
-            "$LABELER_LOGIN" "$LABELER_ID" "$SUBMITTER_LOGIN" "$SUBMITTER_ID" "$cb_author")
-          gha_write_multiline_output author "$author"
-          gha_write_multiline_output trailer "$trailer"
+        uses: ./.github/actions/resolve-submission-coauthors
+        with:
+          labelerLogin: ${{ github.event.sender.login }}
+          labelerId: ${{ github.event.sender.id }}
+          submitterLogin: ${{ github.event.pull_request.user.login }}
+          submitterId: ${{ github.event.pull_request.user.id }}
+          issueNumber: ${{ steps.prMeta.outputs.issueNumber }}
+          codebergToken: ${{ secrets.CB_SYNC_TOKEN }}
 
       - name: Prepare submission data.yml
         id: finalize

@@ -53,26 +53,6 @@ runs:
           exit 1
         fi
 
-        parse_issue_field() {
-          local header="$1"
-          local body="$2"
-          local value
-
-          value=$(printf '%s\n' "$body" | awk -v header="$header" '
-            $0 == "### " header { found=1; next }
-            found && /^### / { exit }
-            found && NF { print; exit }
-          ')
-          value="${value//$'\r'/}"
-          value="${value#"${value%%[![:space:]]*}"}"
-          value="${value%"${value##*[![:space:]]}"}"
-
-          if [[ -z "$value" || "$value" == "_No response_" ]]; then
-            return 1
-          fi
-          printf '%s\n' "$value"
-        }
-
         if ! parsed=$(parse_verification_text "$text"); then
           echo "Could not parse package name and fingerprint from Verification Info. Paste the exact AppVerifier output (package ID and SHA-256 fingerprint(s) on separate lines)." >&2
           exit 1
@@ -112,9 +92,9 @@ runs:
         apk_url=""
         custom_fdroid_repo_url=""
         if [[ -n "$ISSUE_BODY" ]]; then
-          raw_apk_url=$(parse_issue_field "Direct APK Link" "$ISSUE_BODY" || true)
+          raw_apk_url=$(signatures_parse_issue_field "Direct APK Link" "$ISSUE_BODY" || true)
           apk_url=$(validate_apk_url "$raw_apk_url" || true)
-          raw_custom_fdroid_repo_url=$(parse_issue_field "Custom F-Droid Repository" "$ISSUE_BODY" || true)
+          raw_custom_fdroid_repo_url=$(signatures_parse_issue_field "Custom F-Droid Repository" "$ISSUE_BODY" || true)
           custom_fdroid_repo_url=$(validate_fdroid_repo_url "$raw_custom_fdroid_repo_url" || true)
         fi
 
