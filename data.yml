@@ -3238,6 +3238,14 @@ packages:
             issue: GH-464
             apk:
               sha256: ed6547c3ba618304bc7fc9d7e3a29e0899c1e960cb0965d64bc5274d2021c5e7
+  - package: com.mdaware.mdcalc
+    signature:
+      - fingerprint: DC:00:67:44:FA:C8:A9:B9:F2:2E:75:CF:FE:C7:B0:03:1B:1A:24:0D:44:44:30:2B:3C:DC:1F:55:B8:01:F8:A7
+        sources:
+          - name: Google Play
+            issue: GH-1940
+            apk:
+              sha256: f2f005fc6203fcb51156baa80cc17dbcf7ff86be9eb6e7e4c6e64d413be10e3b
   - package: com.menards.mobile
     signature:
       - fingerprint: F4:58:C7:8C:C4:61:20:5B:E2:C8:0B:94:8D:A9:E3:0A:1E:5E:A2:0A:7E:B4:2B:E5:79:9D:0C:D1:10:05:AE:64
