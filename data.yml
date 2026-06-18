@@ -7715,6 +7715,14 @@ packages:
             issue: GH-1014
             apk:
               sha256: cb5b7e3bca2a25ca0328ca9bb313060a359ace437044a4278c08d203b80e68d9
+  - package: org.ilovefreegle.direct
+    signature:
+      - fingerprint: 4C:5F:AF:84:D1:6F:5B:0C:E3:55:2C:3C:B1:BC:15:E8:A4:DC:1B:65:93:EF:84:7D:BB:49:52:7B:9A:BC:0F:5E
+        sources:
+          - name: Google Play
+            issue: GH-1920
+            apk:
+              sha256: 9d1ae38885fda1a9e2052ca35dd62efc404d1243893efab89806941dfdabd354
   - package: org.ironfoxoss.ironfox
     signature:
       - fingerprint: C5:E2:91:B5:A5:71:F9:C8:CD:9A:97:99:C2:C9:4E:02:EC:97:03:94:88:93:F2:CA:75:6D:67:B9:42:04:F9:04
