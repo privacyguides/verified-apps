@@ -46,6 +46,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      issues: write # add the spot-check:eviction label to PRs that remove whole package entries
     env:
       GH_REPO: ${{ github.repository }}
       PERCENT: ${{ inputs.percent || '5' }}
@@ -134,7 +135,23 @@ jobs:
             --head "${{ steps.prep.outputs.branch }}" \
             --base main)
           echo "Opened ${pr_url}"
+          echo "prUrl=${pr_url}" >> "$GITHUB_OUTPUT"
           echo "Opened spot-check PR: ${pr_url}" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Flag package-eviction PRs
+        # High-salience flag when the sweep removes one or more whole package entries; the count
+        # is also in the PR title/body. Best-effort: a missing label or permission downgrades to a
+        # warning rather than failing the run.
+        if: steps.spot.outputs.hasChanges == 'true' && env.DRY_RUN != 'true' && steps.spot.outputs.evictions != '0' && steps.spot.outputs.evictions != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh label create "spot-check:eviction" --repo "$GH_REPO" \
+            --color B60205 --description "Spot-check PR removes one or more whole package entries" 2>/dev/null || true
+          if ! gh pr edit "${{ steps.pr.outputs.prUrl }}" --repo "$GH_REPO" --add-label "spot-check:eviction"; then
+            echo "::warning::could not add the spot-check:eviction label; evictions remain flagged in the PR title and body"
+          fi
 
   # --- Post-merge: re-attest data.yml and sync mirrors --------------------------------------
   # pr-commit-as-is is additive-only and only accepts new/* branches, so spot-check PRs (which

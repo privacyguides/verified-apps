@@ -555,6 +555,35 @@ domain_verified_upsert() {
   yq -i '.domains |= sort_by(.domain)' "$file"
 }
 
+# Remove fingerprint set <fp> from <package> in every domain of <file> (set-equality match), then
+# drop packages left with no fingerprints and domains left with no packages. Used by the spot-check
+# sweep when no domain record vouches for a key any more, so data-verified-domains.yml stops
+# claiming a removed package/key. Idempotent; a no-op when the package/fingerprint is absent.
+domain_verified_remove_key() { # file package fp
+  local file="$1" package="$2" fp="$3"
+  [[ -f "$file" && -s "$file" ]] || return 0
+  local dcount di pcount pi fcount fidx stored
+  dcount=$(yq '.domains | length' "$file" 2>/dev/null)
+  [[ "$dcount" =~ ^[0-9]+$ ]] || return 0
+  for ((di = 0; di < dcount; di++)); do
+    pcount=$(yq ".domains[$di].packages | length" "$file" 2>/dev/null)
+    [[ "$pcount" =~ ^[0-9]+$ ]] || continue
+    for ((pi = 0; pi < pcount; pi++)); do
+      [[ "$(yq -r ".domains[$di].packages[$pi].package" "$file")" == "$package" ]] || continue
+      fcount=$(yq ".domains[$di].packages[$pi].fingerprints | length" "$file" 2>/dev/null)
+      [[ "$fcount" =~ ^[0-9]+$ ]] || continue
+      # Reverse order so each deletion keeps the remaining indices valid.
+      for ((fidx = fcount - 1; fidx >= 0; fidx--)); do
+        stored=$(yq -r ".domains[$di].packages[$pi].fingerprints[$fidx]" "$file")
+        signatures_equal "$stored" "$fp" && yq -i "del(.domains[$di].packages[$pi].fingerprints[$fidx])" "$file"
+      done
+    done
+  done
+  # Prune emptied package rows, then emptied domains.
+  yq -i '(.domains[].packages) |= map(select((.fingerprints // []) | length > 0))' "$file"
+  yq -i '.domains |= map(select((.packages // []) | length > 0))' "$file"
+}
+
 # GFM-ready unified diff between two data-verified-domains.yml files.
 domain_verified_diff() {
   local before="$1" after="$2"

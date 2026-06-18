@@ -10,11 +10,15 @@
 #            store yet (e.g. Google Play scannable again, or an old entry predating the
 #            domain-verification check). Only for mainstream/authoritative stores
 #            (Google Play, F-Droid, IzzyOnDroid, AppVerifier, verified domain) and only
-#            when the current signature equals an EXISTING recorded fingerprint.
-#   - DELETE a recorded source only on a definitive signature MISMATCH (the store still
-#            serves the app but with a signature that no longer matches the recorded
-#            fingerprint). App-not-found, download/tool errors and never-before-seen keys
-#            are reported informationally and left untouched.
+#            when the current signature EXACTLY equals an existing recorded fingerprint.
+#   - DELETE a recorded source only on a definitive, LINEAGE-UNRELATED substitution: the
+#            store serves a signature that shares no certificate with the recorded fingerprint
+#            AND is itself recognized for the package (matches/overlaps another recorded block).
+#            A served key that matches/overlaps the block (key-rotation lineage) is kept; a
+#            served key that matches NO recorded block, app-not-found, and download/tool errors
+#            are reported informationally and left untouched (never auto-deleted). signing-key
+#            "covered" = equal OR overlap, the same semantics as _import_common.fingerprint_covered.
+#            A removal that empties a package surfaces as a "Package eviction" in the report/PR.
 #
 # The script only mutates the data files and writes a report; the workflow opens the PR.
 # It reuses the existing libraries (signature extraction/compare, domain check, entry
@@ -199,7 +203,8 @@ appverifier_lookup() { # pkg
   [[ "$AV_FOUND" == "true" ]] || AV_FOUND="false"
 }
 
-# True when every certificate in <fp_block> is present in the AppVerifier union <all>.
+# True when every certificate in <fp_block> is present in the AppVerifier union <all> (lenient;
+# used to decide whether to KEEP a recorded AppVerifier source).
 appverifier_matches_fp() { # fp all
   local fp_norm all_norm line
   fp_norm=$(signatures_normalize "$1") || return 1
@@ -210,6 +215,23 @@ appverifier_matches_fp() { # fp all
     printf '%s\n' "$all_norm" | grep -Fxq "$line" || return 1
   done <<< "$fp_norm"
   return 0
+}
+
+# True when AppVerifier lists a signing block EXACTLY equal to <fp> for <pkg> (strict; used to
+# decide whether to ADD an AppVerifier source). lookup.py's choose_block returns the block whose
+# set equals the passed signature when one exists (else blocks[0]), so an exact attestation holds
+# iff the returned block set-equals <fp>. This matches submission-time matching and avoids
+# attributing AppVerifier to a combined {A,B} block it only vouches for piecewise as {A} and {B}.
+appverifier_attests_fp() { # pkg fp
+  if is_mock; then
+    local k; k=$(fpkey "$2")
+    [[ -f "${MOCK_DIR}/${1}__appverifier__${k}.exact" ]]
+    return
+  fi
+  local out blk; out="${WORK}/av-fp-out"; : > "$out"
+  GITHUB_OUTPUT="$out" python3 "$LOOKUP_PY" "$APPVERIFIER_DB_FILE" "$1" "$2" >/dev/null 2>&1 || true
+  blk="$(gha_out_get "$out" signature)"
+  [[ -n "$blk" ]] && signatures_equal "$blk" "$2"
 }
 
 # ---------------------------------------------------------------------------
@@ -326,6 +348,9 @@ run_passes() {
   if [[ "$GP_ENABLED" == "true" ]] || is_mock; then
     log "Pass: Google Play (${#SELECTED[@]} packages)"
     pass_perpkg_apk gplay "$SRC_GPLAY" dl_gplay false
+  else
+    # Make the skipped pass visible in the report rather than silently not re-checking GP.
+    emit_info "(sweep)" "$SRC_GPLAY" "Google Play credentials not configured; Google Play sources were not re-checked this run"
   fi
 
   log "Pass: F-Droid (official)"
@@ -371,7 +396,9 @@ run_passes() {
       fp=$(model_fp "$pkg" "$i"); k=$(fpkey "$fp")
       local repo; repo=$(model_repo "$pkg" "$i" "$name")
       [[ -z "$repo" ]] && continue
-      printf '%s\t%s\t%s\n' "$repo" "$pkg" "$k" >> "$tuples"
+      # Key by fingerprint AND source name: one block can list two custom repos sharing a single
+      # fpkey; without the name their download results would clobber each other in the result store.
+      printf '%s\t%s\t%s\t%s\n' "$repo" "$pkg" "$k" "$name" >> "$tuples"
     done < <(model_customfdroid "$pkg")
   done
   if [[ -s "$tuples" ]]; then
@@ -379,15 +406,15 @@ run_passes() {
     while IFS= read -r repo; do
       [[ -z "$repo" ]] && continue
       is_mock || fdroid_configure_single_repo "$FDROIDCL_BIN" "$repo"
-      while IFS=$'\t' read -r r p kk; do
+      while IFS=$'\t' read -r r p kk nm; do
         [[ "$r" == "$repo" ]] || continue
         if is_mock; then
-          mock_apk_check "$p" customfdroid "$kk"
+          mock_apk_check "$p" customfdroid "${kk}|${nm}"
         else
           local apk; apk="$(dl_fdroid "$p")" || apk=""
           _finish_apk "$p" "$apk"
         fi
-        result_set "$p" customfdroid "$kk" "$SC_STATUS" "$SC_SIG" "$SC_SHA"
+        result_set "$p" customfdroid "${kk}|${nm}" "$SC_STATUS" "$SC_SIG" "$SC_SHA"
       done < "$tuples"
     done < <(cut -f1 "$tuples" | sort -u)
   fi
@@ -511,9 +538,9 @@ reconcile_customfdroid() { # pkg
   while IFS=$'\t' read -r i name; do
     [[ -z "$i" ]] && continue
     fp=$(model_fp "$pkg" "$i"); k=$(fpkey "$fp")
-    st=$(result_status "$pkg" customfdroid "$k"); [[ -z "$st" ]] && continue
+    st=$(result_status "$pkg" customfdroid "${k}|${name}"); [[ -z "$st" ]] && continue
     if [[ "$st" == "ok" ]]; then
-      sig=$(result_sig "$pkg" customfdroid "$k")
+      sig=$(result_sig "$pkg" customfdroid "${k}|${name}")
       if signatures_equal "$sig" "$fp" || signatures_overlap "$sig" "$fp"; then
         :  # still attests this block (lineage-tolerant); keep
       elif sig_recognized_for_pkg "$pkg" "$sig"; then
@@ -529,17 +556,23 @@ reconcile_customfdroid() { # pkg
 }
 
 reconcile_appverifier() { # pkg
-  local pkg="$1" n i fp match has
-  appverifier_lookup "$pkg"
+  local pkg="$1" n i fp exact covered has
+  appverifier_lookup "$pkg"   # sets AV_FOUND and AV_ALL (the union of all AppVerifier blocks)
   n=$(model_sig_count "$pkg")
   for ((i = 0; i < n; i++)); do
     fp=$(model_fp "$pkg" "$i")
-    match=0
-    if [[ "$AV_FOUND" == "true" ]] && appverifier_matches_fp "$fp" "$AV_ALL"; then match=1; fi
     has=0; model_has_name "$pkg" "$i" "$SRC_APPVERIFIER" && has=1
-    if [[ "$match" == 1 && "$has" == 0 ]]; then
+    # ADD only on an EXACT AppVerifier block match; DELETE only when the lenient union no longer
+    # covers the key. The asymmetry is deliberate and conservative: it never over-attributes
+    # AppVerifier to a set it did not vouch for, and never deletes a source merely because the
+    # block layout differs (e.g. a multi-cert lineage block vs separate per-cert AppVerifier blocks).
+    exact=0
+    if [[ "$AV_FOUND" == "true" ]] && appverifier_attests_fp "$pkg" "$fp"; then exact=1; fi
+    covered=0
+    if [[ "$AV_FOUND" == "true" ]] && appverifier_matches_fp "$fp" "$AV_ALL"; then covered=1; fi
+    if [[ "$exact" == 1 && "$has" == 0 ]]; then
       emit_add "$pkg" "$fp" "$SRC_APPVERIFIER" "$(model_issue "$pkg" "$i")" "" "" ""
-    elif [[ "$match" == 0 && "$has" == 1 ]]; then
+    elif [[ "$covered" == 0 && "$has" == 1 ]]; then
       if [[ "$AV_FOUND" == "true" ]]; then
         emit_del "$pkg" "$fp" "$SRC_APPVERIFIER" "no longer listed in AppVerifier's internal database for this key"
       else
@@ -550,7 +583,8 @@ reconcile_appverifier() { # pkg
 }
 
 reconcile_domain() { # pkg
-  local pkg="$1" recs auth method dsrc n i fp cnt r rec allowed_auth allowed_any srcname domain dnssec fps issue domain_added=0
+  local pkg="$1" recs cnt n i r fp rec vouch vmethod vdsrc vdomain srcname
+  local -A _ledger=()
   recs=$(domain_records "$pkg") || recs=""
   if [[ -z "$recs" ]]; then
     if pkg_has_source "$pkg" "HTTPS Verified Domain" || pkg_has_source "$pkg" "DNS Verified Domain"; then
@@ -558,41 +592,47 @@ reconcile_domain() { # pkg
     fi
     return 0
   fi
-  auth=$(jq -c '.[0]' <<< "$recs")
-  method=$(jq -r '.method' <<< "$auth")
-  dsrc=$(domain_source_name "$method")
   cnt=$(jq 'length' <<< "$recs")
   n=$(model_sig_count "$pkg")
   for ((i = 0; i < n; i++)); do
     fp=$(model_fp "$pkg" "$i")
-    allowed_auth=0
-    [[ "$(domain_key_status "$auth" "$fp")" == "allowed" ]] && allowed_auth=1
-    allowed_any="$allowed_auth"
-    if [[ "$allowed_any" == 0 ]]; then
-      for ((r = 0; r < cnt; r++)); do
-        rec=$(jq -c ".[$r]" <<< "$recs")
-        if [[ "$(domain_key_status "$rec" "$fp")" == "allowed" ]]; then allowed_any=1; break; fi
+    # A record at ANY candidate domain — most-specific OR a parent up to the root — is a valid
+    # voucher: submitters publish the proof "at whichever of these they control" (domains.lib.sh
+    # request template). Use the first (most-specific) record that vouches for this key for BOTH the
+    # add decision and its source label, so add and delete share one scope. If NO record vouches,
+    # remove any recorded domain source for this key. (Previously ADD consulted only recs[0], so a
+    # key vouched for only by a parent domain was never added — inconsistent with the delete side.)
+    vouch=""
+    for ((r = 0; r < cnt; r++)); do
+      rec=$(jq -c ".[$r]" <<< "$recs")
+      if [[ "$(domain_key_status "$rec" "$fp")" == "allowed" ]]; then vouch="$rec"; break; fi
+    done
+    if [[ -n "$vouch" ]]; then
+      vmethod=$(jq -r '.method' <<< "$vouch"); vdsrc=$(domain_source_name "$vmethod")
+      if ! model_has_name "$pkg" "$i" "$vdsrc"; then
+        emit_add "$pkg" "$fp" "$vdsrc" "$(model_issue "$pkg" "$i")" "" "" ""
+        vdomain=$(jq -r '.domain' <<< "$vouch")
+        _ledger["$vdomain"]="$vouch"
+      fi
+    else
+      for srcname in "HTTPS Verified Domain" "DNS Verified Domain"; do
+        if model_has_name "$pkg" "$i" "$srcname"; then
+          emit_del "$pkg" "$fp" "$srcname" "no domain record (including parent domains) currently vouches for this key"
+        fi
       done
     fi
-    if [[ "$allowed_auth" == 1 ]] && ! model_has_name "$pkg" "$i" "$dsrc"; then
-      issue=$(model_issue "$pkg" "$i")
-      emit_add "$pkg" "$fp" "$dsrc" "$issue" "" "" ""
-      domain_added=1
-    fi
-    for srcname in "HTTPS Verified Domain" "DNS Verified Domain"; do
-      if [[ "$allowed_any" == 0 ]] && model_has_name "$pkg" "$i" "$srcname"; then
-        emit_del "$pkg" "$fp" "$srcname" "domain record no longer vouches for this key"
-      fi
-    done
   done
-  if [[ "$domain_added" == 1 ]]; then
-    domain=$(jq -r '.domain' <<< "$auth")
-    dnssec=$(jq -r 'if .method == "dns" then (.dnssec | tostring) else "" end' <<< "$auth")
-    fps=$(jq -c '.allowed' <<< "$auth")
-    issue=$(model_issue "$pkg" 0)
-    jq -cn --arg p "$pkg" --arg d "$domain" --arg m "$method" --arg i "$issue" --arg ds "$dnssec" --argjson fps "$fps" \
+  # Refresh the ledger once per domain we added a source from; the upsert records that domain's full
+  # allowed key set for this package. (No-op when _ledger is empty.)
+  for vdomain in "${!_ledger[@]}"; do
+    rec="${_ledger[$vdomain]}"
+    vmethod=$(jq -r '.method' <<< "$rec")
+    jq -cn --arg p "$pkg" --arg d "$vdomain" --arg m "$vmethod" \
+      --arg i "$(model_issue "$pkg" 0)" \
+      --arg ds "$(jq -r 'if .method == "dns" then (.dnssec | tostring) else "" end' <<< "$rec")" \
+      --argjson fps "$(jq -c '.allowed' <<< "$rec")" \
       '{package:$p, domain:$d, method:$m, issue:$i, dnssec:$ds, fps:$fps}' >> "$DOMAIN_ADDS"
-  fi
+  done
 }
 
 reconcile() {
@@ -649,6 +689,11 @@ apply_deletions() {
     [[ -z "$line" ]] && continue
     pkg=$(jq -r '.package' <<< "$line"); fp=$(jq -r '.fingerprint' <<< "$line"); name=$(jq -r '.name' <<< "$line")
     signatures_remove_source "$DATA_FILE" "$pkg" "$fp" "$name"
+    # A domain-source removal must also drop the key from the ledger, or data-verified-domains.yml
+    # keeps claiming the package/key is domain-verified.
+    if [[ "$name" == "HTTPS Verified Domain" || "$name" == "DNS Verified Domain" ]]; then
+      domain_verified_remove_key "$DOMAIN_FILE" "$pkg" "$fp"
+    fi
   done < "$DELETIONS"
   signatures_prune_empty "$DATA_FILE"
 }
