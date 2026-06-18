@@ -1842,6 +1842,14 @@ packages:
               sha256: c39352b73edc91c5e3e44386f0a3e15731f24cfceba5372b6ad67cf290c190cb
   - package: com.facebook.katana
     signature:
+      - fingerprint: |-
+          91:1D:60:44:46:08:4C:A7:F4:76:0B:77:5B:FC:16:0F:A8:70:24:41:24:0A:72:58:64:5D:7A:72:C4:31:2D:27
+          E3:F9:E1:E0:CF:99:D0:E5:6A:05:5B:A6:5E:24:1B:33:99:F7:CE:A5:24:32:6B:0C:DD:6E:C1:32:7E:D0:FD:C1
+        sources:
+          - name: Google Play
+            issue: GH-1968
+            apk:
+              sha256: 6cd2dc8fdb86c3ab4bd1de4ca2cb4fbcf56dd893f2ff32016e659de65bfa9d1f
       - fingerprint: E3:F9:E1:E0:CF:99:D0:E5:6A:05:5B:A6:5E:24:1B:33:99:F7:CE:A5:24:32:6B:0C:DD:6E:C1:32:7E:D0:FD:C1
         sources:
           - name: Google Play
