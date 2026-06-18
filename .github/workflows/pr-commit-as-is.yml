@@ -82,8 +82,6 @@ jobs:
         with:
           labelerLogin: ${{ github.event.sender.login }}
           labelerId: ${{ github.event.sender.id }}
-          submitterLogin: ${{ github.event.pull_request.user.login }}
-          submitterId: ${{ github.event.pull_request.user.id }}
           issueNumber: ${{ steps.prMeta.outputs.issueNumber }}
           codebergToken: ${{ secrets.CB_SYNC_TOKEN }}
 

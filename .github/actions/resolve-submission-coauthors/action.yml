@@ -8,11 +8,13 @@ inputs:
     description: Numeric GitHub user id of the labeler
     required: true
   submitterLogin:
-    description: Login of the submission author on GitHub
-    required: true
+    description: Login of the submission author on GitHub (fetched from issueNumber when omitted)
+    required: false
+    default: ""
   submitterId:
-    description: Numeric GitHub user id of the submitter
-    required: true
+    description: Numeric GitHub user id of the submitter (fetched from issueNumber when omitted)
+    required: false
+    default: ""
   codebergToken:
     description: Codeberg sync token for live Codeberg author lookup
     required: false
@@ -58,15 +60,24 @@ runs:
         source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
 
         issue_body="$ISSUE_BODY"
-        if [[ -z "$issue_body" ]]; then
-          [[ -n "$ISSUE_NUMBER" ]] || { echo "issueBody or issueNumber is required" >&2; exit 1; }
-          issue_body=$(gh issue view "$ISSUE_NUMBER" --repo "$GH_REPO" --json body -q .body)
+        submitter_login="$SUBMITTER_LOGIN"
+        submitter_id="$SUBMITTER_ID"
+
+        if [[ -z "$issue_body" || -z "$submitter_login" || -z "$submitter_id" ]]; then
+          [[ -n "$ISSUE_NUMBER" ]] || {
+            echo "issueNumber is required when issueBody or submitter identity is omitted" >&2
+            exit 1
+          }
+          issue_json=$(gh issue view "$ISSUE_NUMBER" --repo "$GH_REPO" --json body,author)
+          [[ -z "$issue_body" ]] && issue_body=$(printf '%s' "$issue_json" | jq -r .body)
+          [[ -z "$submitter_login" ]] && submitter_login=$(printf '%s' "$issue_json" | jq -r .author.login)
+          [[ -z "$submitter_id" ]] && submitter_id=$(printf '%s' "$issue_json" | jq -r .author.id)
         fi
 
         cb_author=$(signatures_codeberg_submission_author "${CB_SYNC_TOKEN:-}" "$issue_body" || true)
         author=$(submission_resolve_commit_author \
-          "$SUBMITTER_LOGIN" "$SUBMITTER_ID" "$cb_author")
+          "$submitter_login" "$submitter_id" "$cb_author")
         trailer=$(submission_resolve_coauthor_trailers \
-          "$LABELER_LOGIN" "$LABELER_ID" "$SUBMITTER_LOGIN" "$SUBMITTER_ID" "$cb_author")
+          "$LABELER_LOGIN" "$LABELER_ID" "$submitter_login" "$submitter_id" "$cb_author")
         gha_write_multiline_output author "$author"
         gha_write_multiline_output trailer "$trailer"
