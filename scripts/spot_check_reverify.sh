@@ -584,12 +584,17 @@ reconcile_appverifier() { # pkg
   done
 }
 
-# Current ledger row for <pkg> as compact JSON {domain, method, fps} (first match), or {} if absent.
+# Current ledger row for <pkg> as compact JSON {domain, method, dnssec, fps} (first match), or {} if
+# absent. NOTE: yq array `contains` is substring-based, so select() may also preselect a domain that
+# merely lists a package whose id CONTAINS <pkg> (e.g. "<pkg>.play"). That is harmless: the inner
+# exact `.package == <pkg>` makes `.fps` an empty stream for such a domain, which collapses its object
+# out of the array, so only a domain that actually lists <pkg> survives. Do NOT drop the exact .fps
+# filter (it is load-bearing for correctness, not just shaping).
 ledger_row_for_pkg() { # file pkg
   [[ -f "$1" && -s "$1" ]] || { printf '{}'; return 0; }
   LRP_PKG="$2" yq -o=json -I0 '
     [.domains[] | select([.packages[].package] | contains([strenv(LRP_PKG)]))
-       | {"domain": .domain, "method": .method,
+       | {"domain": .domain, "method": .method, "dnssec": .dnssec,
           "fps": (.packages[] | select(.package == strenv(LRP_PKG)) | .fingerprints)}]
     | (.[0] // {})' "$1" 2>/dev/null || printf '{}'
 }
@@ -605,7 +610,7 @@ _emit_domain_upsert() { # pkg domain method issue auth_json fps_json
 
 reconcile_domain() { # pkg
   local pkg="$1" recs auth amethod adsrc n i fp srcname any_vouched=0
-  local domain ddfps lissue li cur_row cur_domain cur_method cur_fps
+  local domain ddfps lissue li cur_row cur_domain cur_method cur_fps cur_dnssec adnssec dnssec_drift
   recs=$(domain_records "$pkg") || recs=""
   if [[ -z "$recs" ]]; then
     if pkg_has_source "$pkg" "HTTPS Verified Domain" || pkg_has_source "$pkg" "DNS Verified Domain"; then
@@ -653,6 +658,11 @@ reconcile_domain() { # pkg
   cur_domain=$(jq -r '.domain // ""' <<< "$cur_row")
   cur_method=$(jq -r '.method // ""' <<< "$cur_row")
   cur_fps=$(jq -c '.fps // []' <<< "$cur_row")
+  # DNSSEC is stored on DNS ledger rows and must trigger a refresh on its own (a dnssec flip with an
+  # otherwise-identical domain/method/fingerprint set would otherwise go undetected).
+  cur_dnssec=$(jq -r '.dnssec // false' <<< "$cur_row")
+  adnssec=$(jq -r 'if .method == "dns" then (.dnssec // false) else false end' <<< "$auth")
+  dnssec_drift=0; [[ "$amethod" == "dns" && "$cur_dnssec" != "$adnssec" ]] && dnssec_drift=1
   if [[ "$any_vouched" == 1 ]]; then
     domain=$(jq -r '.domain' <<< "$auth")
     ddfps=$(jq -c '.allowed' <<< "$auth")
@@ -669,9 +679,9 @@ reconcile_domain() { # pkg
       # Authoritative domain moved: drop the stale row, then upsert under the new domain.
       printf '%s\n' "$pkg" >> "$DOMAIN_REMOVES"
       _emit_domain_upsert "$pkg" "$domain" "$amethod" "$lissue" "$auth" "$ddfps"
-    elif [[ -z "$cur_domain" || "$cur_method" != "$amethod" ]] || ! fps_set_equal "$cur_fps" "$ddfps"; then
-      # Missing row (backfill), method change, or fingerprint-set drift -> upsert (no reset, so the
-      # row's existing .issue history survives the unique-append).
+    elif [[ -z "$cur_domain" || "$cur_method" != "$amethod" || "$dnssec_drift" == 1 ]] || ! fps_set_equal "$cur_fps" "$ddfps"; then
+      # Missing row (backfill), method change, DNSSEC flip, or fingerprint-set drift -> upsert (no
+      # reset, so the row's existing .issue history survives the unique-append).
       _emit_domain_upsert "$pkg" "$domain" "$amethod" "$lissue" "$auth" "$ddfps"
     fi
   elif [[ -n "$cur_domain" ]]; then
@@ -729,7 +739,9 @@ apply_domain_ledger() {
     done < <(sort -u "$DOMAIN_REMOVES")
   fi
   [[ -s "$DOMAIN_ADDS" ]] || return 0
-  checked=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+  # Use the run-wide pinned timestamp so the simulated diff (compute_ledger_changes) and the real
+  # apply stamp the same `checked`, keeping the PR-body ledger diff consistent with the committed file.
+  checked="${LEDGER_CHECKED:-$(date -u +%Y-%m-%dT%H:%M:%SZ)}"
   while IFS= read -r line; do
     [[ -z "$line" ]] && continue
     pkg=$(jq -r '.package' <<< "$line"); domain=$(jq -r '.domain' <<< "$line")
@@ -772,7 +784,7 @@ compute_evictions() {
 # apply_domain_ledger on a copy. Sets LEDGER_CHANGED (0/1) and LEDGER_DIFF. Runs BEFORE the real apply
 # so it behaves identically in dry-run and live, and so report() can fold ledger-only changes into
 # hasChanges (otherwise the workflow's hasChanges gate would discard a ledger-only repair).
-LEDGER_CHANGED=0; LEDGER_DIFF=""
+LEDGER_CHANGED=0; LEDGER_DIFF=""; LEDGER_CHECKED=""
 compute_ledger_changes() {
   LEDGER_CHANGED=0; LEDGER_DIFF=""
   { [[ -s "$DOMAIN_ADDS" ]] || [[ -s "$DOMAIN_REMOVES" ]]; } || return 0
@@ -900,6 +912,7 @@ log "Selected ${#SELECTED[@]} package(s) for spot-check re-verification."
 setup_tools
 run_passes
 reconcile
+LEDGER_CHECKED=$(date -u +%Y-%m-%dT%H:%M:%SZ)  # pin once so sim + real ledger apply stamp the same `checked`
 compute_evictions       # before any mutation, so dry-run and live both report full-package removals
 compute_ledger_changes  # detect ledger-only changes so hasChanges/report reflect them
 
