@@ -3911,6 +3911,14 @@ packages:
             issue: CB-30
             apk:
               sha256: 3b43b82fb9a3601186736148fc362aba9cc4ac1787246097ef4a0074a3b8dcec
+  - package: com.pixelfed
+    signature:
+      - fingerprint: 23:32:88:CD:15:B6:99:49:F1:0D:A6:22:6D:9B:B0:C6:80:52:78:0A:E1:84:C7:F4:6B:DF:B9:5B:A6:A4:4E:19
+        sources:
+          - name: Google Play
+            issue: GH-1956
+            apk:
+              sha256: b79aa674a0aa76017743c9777a76f2d72532f0530572f890d8d99c5fcaba2ef3
   - package: com.planetfitness
     signature:
       - fingerprint: 2C:87:7B:4C:C0:43:2E:E6:F3:DD:66:53:55:D7:53:4B:B6:BA:A6:56:75:C7:ED:B2:8C:8E:E8:51:9A:CB:5C:90
