@@ -3519,6 +3519,14 @@ packages:
             issue: GH-504
             apk:
               sha256: 08860526d336d4fafc17d8d0a46ed8e66a7f6b5e73884296f8ed13f195018d81
+  - package: com.nhs.online.nhsonline
+    signature:
+      - fingerprint: 15:48:51:AC:CF:1E:FE:09:19:AB:B7:7D:B8:83:B0:BD:7F:69:38:F9:7A:7F:D2:85:9C:8B:C8:C4:7B:AC:95:59
+        sources:
+          - name: Google Play
+            issue: GH-1972
+            apk:
+              sha256: 2f100d2eafe2c8dbc3ddf04fbe871fab36d9848593dc275016dd736bbd078cbf
   - package: com.niksoftware.snapseed
     signature:
       - fingerprint: 3D:12:CC:11:F4:C4:BE:82:23:5F:70:F9:04:69:BE:0B:9C:96:29:AE:C5:FC:B9:49:CB:32:B1:FA:37:5B:FC:3E
