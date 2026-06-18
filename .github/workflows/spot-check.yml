@@ -96,9 +96,10 @@ jobs:
           msg_file="${GITHUB_WORKSPACE}/spot-check-commit-msg"
           {
             printf 'Spot-check reconciliation (run %s)\n\n' "${{ github.run_id }}"
-            printf '%s addition(s), %s deletion(s) across %s package(s).\n' \
+            printf '%s addition(s), %s source removal(s) (%s full package eviction(s)) across %s package(s).\n' \
               "${{ steps.spot.outputs.additions }}" \
               "${{ steps.spot.outputs.deletions }}" \
+              "${{ steps.spot.outputs.evictions }}" \
               "${{ steps.spot.outputs.selected }}"
           } > "$msg_file"
           echo "branch=$branch" >> "$GITHUB_OUTPUT"
@@ -128,7 +129,7 @@ jobs:
           set -euo pipefail
           pr_url=$(gh pr create \
             --repo "$GH_REPO" \
-            --title "Spot-check reconciliation (${{ steps.spot.outputs.additions }} additions, ${{ steps.spot.outputs.deletions }} deletions)" \
+            --title "Spot-check reconciliation (${{ steps.spot.outputs.additions }} additions, ${{ steps.spot.outputs.deletions }} source removals, ${{ steps.spot.outputs.evictions }} package evictions)" \
             --body-file "${{ steps.spot.outputs.prBody }}" \
             --head "${{ steps.prep.outputs.branch }}" \
             --base main)

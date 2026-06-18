@@ -90,6 +90,7 @@ ADDITIONS="${WORK}/additions.jsonl"; : > "$ADDITIONS"
 DELETIONS="${WORK}/deletions.jsonl"; : > "$DELETIONS"
 INFO="${WORK}/info.jsonl"; : > "$INFO"
 DOMAIN_ADDS="${WORK}/domain-adds.jsonl"; : > "$DOMAIN_ADDS"
+EVICTIONS="${WORK}/evictions.txt"; : > "$EVICTIONS"  # packages a real apply would remove entirely
 
 declare -A R_STATUS R_SIG R_SHA
 
@@ -395,6 +396,20 @@ run_passes() {
 # ---------------------------------------------------------------------------
 # Reconciliation.
 # ---------------------------------------------------------------------------
+# True when <sig> is the SAME signing identity as ANY recorded fingerprint block of <pkg> — equal,
+# or sharing >=1 certificate (rotation lineage). Used as the "matched_any" guard for the per-block
+# passes (direct / custom F-Droid): a re-fetched key that matches NO recorded block is an ambiguous
+# rotation/availability case and must never drive an auto-deletion (which could evict the package).
+sig_recognized_for_pkg() { # pkg sig
+  local pkg="$1" sig="$2" n i fp
+  n=$(model_sig_count "$pkg")
+  for ((i = 0; i < n; i++)); do
+    fp=$(model_fp "$pkg" "$i")
+    if signatures_equal "$sig" "$fp" || signatures_overlap "$sig" "$fp"; then return 0; fi
+  done
+  return 1
+}
+
 # Per-package store with one current signature (Google Play, F-Droid, IzzyOnDroid, APKPure).
 reconcile_perpkg() { # pkg store sname allow_add
   local pkg="$1" store="$2" sname="$3" allow_add="$4"
@@ -404,24 +419,60 @@ reconcile_perpkg() { # pkg store sname allow_add
   if [[ "$allow_add" != "true" && "$has_src" == 0 ]]; then return 0; fi
 
   if [[ "$st" == "ok" ]]; then
-    local sig sha n i fp matched_any=0
+    local sig sha n i j fp matched_any=0 exempt
     sig=$(result_sig "$pkg" "$store" ""); sha=$(result_sha "$pkg" "$store" "")
     n=$(model_sig_count "$pkg")
+
+    # A store serves ONE signature. Classify each recorded block by whether the served set is the
+    # SAME signing identity: equal, OR sharing >=1 certificate (a key-rotation lineage — apksigner
+    # reports the whole lineage, so a base block and its rotated superset each "cover" the other).
+    # covered[i]=1 marks blocks the store still attests; those are never deletion candidates. This
+    # mirrors the repo's existing fingerprint_covered() = equal OR overlap semantics
+    # (.github/scripts/_import_common.py). Strict set-equality here wrongly split lineage pairs and
+    # could evict a legitimate block (verified live on com.fidelity.android) — do NOT reintroduce it.
+    local -a covered=()
     for ((i = 0; i < n; i++)); do
       fp=$(model_fp "$pkg" "$i")
       if signatures_equal "$sig" "$fp"; then
-        matched_any=1
+        covered[i]=1; matched_any=1
+        # ADD only on an EXACT fingerprint match (unchanged, conservative policy).
         if [[ "$allow_add" == "true" ]] && ! model_has_name "$pkg" "$i" "$sname"; then
           emit_add "$pkg" "$fp" "$sname" "$(model_issue "$pkg" "$i")" "$sha" "" ""
         fi
+      elif signatures_overlap "$sig" "$fp"; then
+        covered[i]=1; matched_any=1
       else
-        if model_has_name "$pkg" "$i" "$sname"; then
-          emit_del "$pkg" "$fp" "$sname" "store now serves a non-matching signature"
-        fi
+        covered[i]=0
       fi
     done
+
+    # DELETE a recorded source ONLY on a genuine, lineage-unrelated substitution:
+    #   (1) the served signature is recognized for this package (matched_any), so we never act on an
+    #       unknown key from a transient / region-locked / freshly-rotated download; AND
+    #   (2) this block shares no certificate with the served set; AND
+    #   (3) no sibling block the store currently serves shares a certificate with this block
+    #       (so a base<->rotated lineage pair is never split).
+    # A WHOLLY unrecognized served key (matched_any==0) is left as an informational note for a human,
+    # never auto-deleted — that path is exactly where benign key rotation looks like a "mismatch".
+    if [[ "$matched_any" == 1 ]]; then
+      for ((i = 0; i < n; i++)); do
+        [[ "${covered[i]}" == 1 ]] && continue
+        model_has_name "$pkg" "$i" "$sname" || continue
+        fp=$(model_fp "$pkg" "$i")
+        exempt=0
+        for ((j = 0; j < n; j++)); do
+          [[ "$j" == "$i" || "${covered[j]}" != 1 ]] && continue
+          if signatures_overlap "$fp" "$(model_fp "$pkg" "$j")"; then exempt=1; break; fi
+        done
+        if [[ "$exempt" == 1 ]]; then
+          emit_info "$pkg" "$sname" "store serves a key in the same rotation lineage; recorded block left as-is: $(first_line "$fp")"
+        else
+          emit_del "$pkg" "$fp" "$sname" "store serves an unrelated signature and no longer attests this recorded key"
+        fi
+      done
+    fi
     if [[ "$has_src" == 1 && "$matched_any" == 0 ]]; then
-      emit_info "$pkg" "$sname" "now serves an unrecorded signature (recorded key may have rotated): $(first_line "$sig")"
+      emit_info "$pkg" "$sname" "now serves an unrecorded signature (recorded key may have rotated); left as-is for manual review: $(first_line "$sig")"
     fi
   elif [[ "$has_src" == 1 ]]; then
     if [[ "$st" == "error" ]]; then
@@ -440,7 +491,15 @@ reconcile_direct() { # pkg
     st=$(result_status "$pkg" direct "$k"); [[ -z "$st" ]] && continue
     if [[ "$st" == "ok" ]]; then
       sig=$(result_sig "$pkg" direct "$k")
-      signatures_equal "$sig" "$fp" || emit_del "$pkg" "$fp" "$SRC_DIRECT" "linked APK now has a non-matching signature"
+      if signatures_equal "$sig" "$fp" || signatures_overlap "$sig" "$fp"; then
+        :  # still attests this block (lineage-tolerant); keep
+      elif sig_recognized_for_pkg "$pkg" "$sig"; then
+        emit_del "$pkg" "$fp" "$SRC_DIRECT" "linked APK now serves a different recorded key; no longer attests this fingerprint"
+      else
+        # Unrecognized key: ambiguous benign-rotation vs swapped-URL — never auto-evict; leave for a
+        # human. Same matched_any guard as reconcile_perpkg (do NOT reduce to a bare delete-on-mismatch).
+        emit_info "$pkg" "$SRC_DIRECT" "linked APK now serves an unrecognized signature; left as-is for manual review"
+      fi
     else
       emit_info "$pkg" "$SRC_DIRECT" "could not re-download the linked APK; left as-is"
     fi
@@ -455,7 +514,14 @@ reconcile_customfdroid() { # pkg
     st=$(result_status "$pkg" customfdroid "$k"); [[ -z "$st" ]] && continue
     if [[ "$st" == "ok" ]]; then
       sig=$(result_sig "$pkg" customfdroid "$k")
-      signatures_equal "$sig" "$fp" || emit_del "$pkg" "$fp" "$name" "custom F-Droid repo now serves a non-matching signature"
+      if signatures_equal "$sig" "$fp" || signatures_overlap "$sig" "$fp"; then
+        :  # still attests this block (lineage-tolerant); keep
+      elif sig_recognized_for_pkg "$pkg" "$sig"; then
+        emit_del "$pkg" "$fp" "$name" "custom F-Droid repo now serves a different recorded key; no longer attests this fingerprint"
+      else
+        # Unrecognized key: never auto-evict; leave for a human. Same guard as reconcile_perpkg.
+        emit_info "$pkg" "$name" "custom F-Droid repo now serves an unrecognized signature; left as-is for manual review"
+      fi
     else
       emit_info "$pkg" "$name" "could not re-check the custom F-Droid repo; left as-is"
     fi
@@ -587,14 +653,36 @@ apply_deletions() {
   signatures_prune_empty "$DATA_FILE"
 }
 
+# Record which packages the proposed deletions would remove ENTIRELY (last source gone ->
+# signatures_prune_empty drops the package). Simulated on a copy so it works in dry-run too and
+# must be called BEFORE the data file is mutated. Additions never offset an eviction: additions
+# target equal/covered blocks while deletions only target uncovered blocks, so they are disjoint.
+compute_evictions() {
+  : > "$EVICTIONS"
+  [[ -s "$DELETIONS" ]] || return 0
+  local sim line pkg fp name
+  sim="${WORK}/evict-sim.yml"
+  cp "$DATA_FILE" "$sim"
+  while IFS= read -r line; do
+    [[ -z "$line" ]] && continue
+    pkg=$(jq -r '.package' <<< "$line"); fp=$(jq -r '.fingerprint' <<< "$line"); name=$(jq -r '.name' <<< "$line")
+    signatures_remove_source "$sim" "$pkg" "$fp" "$name"
+  done < "$DELETIONS"
+  signatures_prune_empty "$sim"
+  comm -23 <(yq -r '.packages[].package' "$DATA_FILE" | sort -u) \
+           <(yq -r '.packages[].package' "$sim" | sort -u) > "$EVICTIONS"
+  rm -f "$sim"
+}
+
 # ---------------------------------------------------------------------------
 # Reporting.
 # ---------------------------------------------------------------------------
 count_lines() { [[ -s "$1" ]] && wc -l < "$1" | tr -d '[:space:]' || printf '0'; }
 
 report() {
-  local add_n del_n info_n body
+  local add_n del_n info_n evict_n body ev
   add_n=$(count_lines "$ADDITIONS"); del_n=$(count_lines "$DELETIONS"); info_n=$(count_lines "$INFO")
+  evict_n=$(count_lines "$EVICTIONS")
   body="${WORK}/pr-body.md"
   {
     echo "## Spot-check re-verification"
@@ -602,7 +690,7 @@ report() {
     echo "Re-checked **${#SELECTED[@]}** package(s)$( [[ -z "$PACKAGES" ]] && echo " (~${PERCENT}% random sample)" )."
     echo ""
     echo "- :heavy_plus_sign: Additions applied: **${add_n}**"
-    echo "- :x: Deletions proposed (signature mismatch): **${del_n}**"
+    echo "- :x: Source removals proposed: **${del_n}**$( [[ "$evict_n" -gt 0 ]] && echo " — :rotating_light: including **${evict_n}** full package eviction(s)" )"
     echo "- :information_source: Informational notes: **${info_n}**"
     echo ""
     if [[ "$add_n" -gt 0 ]]; then
@@ -613,14 +701,28 @@ report() {
       jq -r '"| `\(.package)` | `\(.fingerprint | split("\n")[0][0:23])…` | \(.name) |"' "$ADDITIONS"
       echo ""
     fi
+    if [[ "$evict_n" -gt 0 ]]; then
+      echo "### :rotating_light: Package evictions — these entries are removed ENTIRELY"
+      echo ""
+      echo "> The removals below take the LAST recorded source of these package(s), so the whole entry"
+      echo "> disappears from \`data.yml\`. Review each as a full de-listing, not a source tweak."
+      echo ""
+      while IFS= read -r ev; do [[ -n "$ev" ]] && echo "- \`${ev}\`"; done < "$EVICTIONS"
+      echo ""
+    fi
     if [[ "$del_n" -gt 0 ]]; then
-      echo "### :x: Deletions proposed (signature mismatch)"
+      echo "### :x: Source removals proposed"
       echo ""
-      echo "> These sources no longer match — the store still serves the app but with a different signature."
+      echo "> A store/source no longer attests the recorded key — it serves an unrelated signature with"
+      echo "> no shared certificate. Key-rotation lineages (a base key and its rotated successor) are"
+      echo "> intentionally NOT removed. The \"Evicts package\" column flags removals that delete the"
+      echo "> entire entry."
       echo ""
-      echo "| Package | Fingerprint | Source | Reason |"
-      echo "|---|---|---|---|"
-      jq -r '"| `\(.package)` | `\(.fingerprint | split("\n")[0][0:23])…` | \(.name) | \(.reason) |"' "$DELETIONS"
+      echo "| Package | Fingerprint | Source | Reason | Evicts package |"
+      echo "|---|---|---|---|---|"
+      jq -r --rawfile ev "$EVICTIONS" '
+        ($ev | split("\n") | map(select(length > 0))) as $evset
+        | "| `\(.package)` | `\(.fingerprint | split("\n")[0][0:23])…` | \(.name) | \(.reason) | \(if (.package | IN($evset[])) then ":rotating_light: YES — entire app removed" else "no" end) |"' "$DELETIONS"
       echo ""
     fi
     if [[ "$info_n" -gt 0 ]]; then
@@ -645,6 +747,7 @@ report() {
       echo "hasChanges=${has_changes}"
       echo "additions=${add_n}"
       echo "deletions=${del_n}"
+      echo "evictions=${evict_n}"
       echo "infos=${info_n}"
       echo "selected=${#SELECTED[@]}"
       echo "prBody=${body}"
@@ -674,6 +777,7 @@ log "Selected ${#SELECTED[@]} package(s) for spot-check re-verification."
 setup_tools
 run_passes
 reconcile
+compute_evictions  # before any mutation, so dry-run and live both report full-package removals
 
 if [[ "$DRY_RUN" == "true" ]]; then
   log "DRY_RUN=true; computed changes but not mutating data files."
