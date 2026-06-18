@@ -2823,6 +2823,14 @@ packages:
             issue: GH-187
             apk:
               sha256: 872f21e9c55fc7d7df54e7db8f1dbf4979b037ed70eb37c6032cc628401af93e
+  - package: com.jstappdev.identify_dog_breeds_pro
+    signature:
+      - fingerprint: 66:0A:1D:0C:DC:F1:6E:1D:74:95:AA:4C:0E:48:4F:EB:7B:28:E0:6A:4B:91:CB:04:CF:9F:E8:A1:28:52:76:0C
+        sources:
+          - name: Google Play
+            issue: GH-1923
+            apk:
+              sha256: bedb547b7b0dbf931e60533c084fe6c9b64c9dad0a5d5400d944e4de46fdb325
   - package: com.junkfood.seal
     signature:
       - fingerprint: 44:93:58:2A:41:48:DF:38:FC:26:90:73:C8:78:7C:31:C4:31:ED:5B:6D:62:71:08:92:A0:40:6F:F5:0C:4D:67
