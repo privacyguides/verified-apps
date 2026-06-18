@@ -64,6 +64,16 @@ domains:
       - package: org.privacyguides.verifiedapps
         fingerprints:
           - 40:5C:6B:D2:CA:7C:3A:AE:8F:46:3C:6F:8B:55:BC:F0:DD:AC:43:1C:5E:D8:EA:FF:65:D1:06:C9:81:7A:20:7F
+  - domain: stockevents.app
+    method: https
+    issue:
+      - GH-1974
+    checked: "2026-06-18T19:44:29Z"
+    packages:
+      - package: app.stockevents.android
+        fingerprints:
+          - DF:5B:68:01:94:B7:55:44:A5:75:29:88:23:33:BA:C2:6F:1E:94:F9:B6:14:B4:A9:BC:AB:F3:4B:FB:C7:8D:21
+          - FA:0D:C7:F4:72:C7:F9:88:07:20:27:88:4F:2C:ED:3D:81:9D:A7:A3:A5:A1:CA:51:87:9C:B9:E9:05:3B:5F:54
   - domain: waze.com
     method: https
     issue:

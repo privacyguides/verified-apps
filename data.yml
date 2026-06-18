@@ -241,6 +241,16 @@ packages:
             apk:
               sha256: cba4c461553ea74eb25a7b2e1842419c7f4f40adc619b10d518c114204b7e846
               link: https://github.com/ReVanced/revanced-manager/releases/download/v2.6.0/revanced-manager-2.6.0.apk
+  - package: app.stockevents.android
+    signature:
+      - fingerprint: DF:5B:68:01:94:B7:55:44:A5:75:29:88:23:33:BA:C2:6F:1E:94:F9:B6:14:B4:A9:BC:AB:F3:4B:FB:C7:8D:21
+        sources:
+          - name: Google Play
+            issue: GH-1974
+            apk:
+              sha256: aea6c6b6030894594d032dc6b21bbdf5a5d55ee38c7f78665ab071435e503f0e
+          - name: HTTPS Verified Domain
+            issue: GH-1974
   - package: app.udderance
     signature:
       - fingerprint: 33:2C:41:70:E0:4D:5D:D0:E7:D1:C4:E7:19:3C:E9:95:91:24:13:46:38:8A:B3:CD:02:0A:D2:9F:6F:03:D3:13
