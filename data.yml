@@ -8692,6 +8692,14 @@ packages:
             issue: GH-1924
             apk:
               sha256: 70c10b3b74744555161ff241d39ae425bc04cfb183a6f44a7d0a067aaeab6777
+  - package: uk.co.webtechpro.jesip
+    signature:
+      - fingerprint: 84:E2:9A:A1:22:A5:09:04:0E:CE:18:C1:C5:57:CB:B0:5C:E1:A0:FF:98:2D:39:C4:C2:DE:6E:C5:E9:36:CE:8F
+        sources:
+          - name: Google Play
+            issue: GH-1929
+            apk:
+              sha256: 28460f424c18a08a218ada742227516b5d8c97c8ecced7cf06e7a84a63a2ca94
   - package: uk.gov.hmrc.ptcalc
     signature:
       - fingerprint: 0B:75:D3:CA:1D:D1:2D:D9:AD:16:ED:80:E9:C5:B3:7B:D4:79:72:A8:7A:9D:DF:24:96:F6:F1:EC:9A:46:B1:DE
