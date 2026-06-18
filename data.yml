@@ -7540,6 +7540,22 @@ packages:
             issue: GH-882
             apk:
               sha256: a36730b665a8d86c9230d1866a76072ad2295977ed8d233d380ce62c0c3cdba1
+  - package: org.fossify.camera
+    signature:
+      - fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
+        sources:
+          - name: F-Droid
+            issue: GH-1985
+            apk:
+              sha256: 116004fd8743f9e47bf25eb9c6049eb77d3f19d59506c3f47513f584c6138435
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1985
+            apk:
+              sha256: 116004fd8743f9e47bf25eb9c6049eb77d3f19d59506c3f47513f584c6138435
+          - name: Google Play
+            issue: GH-1985
+            apk:
+              sha256: b2651e005df307c1f39c59a908c2aab558ddfb6d6d2cd6ee8b17b3b62f0b3651
   - package: org.fossify.clock
     signature:
       - fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
