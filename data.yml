@@ -7173,6 +7173,14 @@ packages:
             issue: GH-1793
             apk:
               sha256: 4098314cced5ffe6b6b92888cb7e003493ac01c36fbf46ba4e9025a8cd29d1da
+  - package: no.ambulansestasjon.newskalkulator
+    signature:
+      - fingerprint: E1:69:B6:54:0B:77:18:B5:49:0F:D0:AA:57:B1:39:D6:AF:86:13:CA:BD:CE:86:21:06:62:F5:29:AE:25:0C:0B
+        sources:
+          - name: Google Play
+            issue: GH-1970
+            apk:
+              sha256: a6d2f8a5c75ab30c99c8dd12259b9ef82cb1f3296a3480bcd7b073320d63758a
   - package: nodomain.freeyourgadget.gadgetbridge
     signature:
       - fingerprint: 01:CC:E9:31:6F:CB:77:EA:02:C6:DE:A8:1F:DE:9F:31:76:46:92:02:C0:CE:A0:51:4C:0E:03:CB:96:9B:C7:BE
