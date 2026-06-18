@@ -994,6 +994,18 @@ signatures_extract_from_apk() {
   printf '%s' "$formatted"
 }
 
+# Download a direct-link APK to <dest> and sanity-check it is an APK (zip/android), matching
+# the new-submission directApk step. Returns 1 on a download error or a non-APK file.
+signatures_download_direct_apk() {
+  local url="$1" dest="$2"
+  curl -fsSL --retry 3 --retry-delay 2 -o "$dest" "$url"
+  file "$dest"
+  if ! file "$dest" | grep -qiE 'zip archive|android'; then
+    echo "Downloaded file does not look like an APK: ${url}" >&2
+    return 1
+  fi
+}
+
 # Hostname from a custom F-Droid repository URL (e.g. app.simplex.chat).
 signatures_fdroid_repo_host_from_url() {
   local url="${1-}"
@@ -1407,6 +1419,34 @@ submission_merge_entry_into_data_yml() {
     export ENTRY="$entry_file"
     yq -n '.schema = 4 | .packages = [load(strenv(ENTRY))]' > "$data_file"
   fi
+}
+
+# Remove the source named <source_name> from the signature group of <package> whose fingerprint
+# matches <fingerprint> (set-equal, so multi-cert blocks match regardless of order/formatting).
+# Used by the spot-check re-verification sweep to drop a source that no longer verifies. Does not
+# prune emptied groups/packages — call signatures_prune_empty afterwards. The library is otherwise
+# additive; this and signatures_prune_empty are the only removal helpers.
+signatures_remove_source() {
+  local data_file="$1" package="$2" fingerprint="$3" source_name="$4"
+  [[ -f "$data_file" && -s "$data_file" ]] || return 0
+  export SR_PKG="$package" SR_NAME="$source_name"
+  local sig_count i fp
+  sig_count=$(yq -r '.packages[] | select(.package == strenv(SR_PKG)) | .signature | length' "$data_file" 2>/dev/null)
+  [[ "$sig_count" =~ ^[0-9]+$ ]] || return 0
+  for ((i = 0; i < sig_count; i++)); do
+    fp=$(yq -r ".packages[] | select(.package == strenv(SR_PKG)) | .signature[$i].fingerprint" "$data_file")
+    signatures_equal "$fp" "$fingerprint" || continue
+    yq -i "(.packages[] | select(.package == strenv(SR_PKG)) | .signature[$i].sources) |= map(select(.name != strenv(SR_NAME)))" "$data_file"
+  done
+}
+
+# Drop fingerprint groups whose sources became empty, then packages whose signature list became
+# empty, so a removal that empties an entry cleans it up entirely. Idempotent.
+signatures_prune_empty() {
+  local data_file="$1"
+  [[ -f "$data_file" && -s "$data_file" ]] || return 0
+  yq -i '(.packages[].signature) |= map(select((.sources // []) | length > 0))' "$data_file"
+  yq -i '.packages |= map(select((.signature // []) | length > 0))' "$data_file"
 }
 
 # Merge into <dest_data> every package whose stanza in <src_data> is new or differs from

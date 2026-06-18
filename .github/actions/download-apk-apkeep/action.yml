@@ -35,11 +35,8 @@ runs:
         APKEEP_VERSION: ${{ inputs.apkeepVersion }}
       run: |
         set -euo pipefail
-        if ! "${HOME}/.cargo/bin/apkeep" --version 2>/dev/null | grep -qF "${APKEEP_VERSION}"; then
-          cargo install apkeep --version "${APKEEP_VERSION}" --locked --force
-        fi
-        apkeep --version
-        echo "bin=${HOME}/.cargo/bin/apkeep" >> "$GITHUB_OUTPUT"
+        source "${GITHUB_ACTION_PATH}/apkeep.lib.sh"
+        echo "bin=$(apkeep_install "$APKEEP_VERSION")" >> "$GITHUB_OUTPUT"
 
     - name: Restore APK cache
       id: apkCache
@@ -59,115 +56,38 @@ runs:
         CACHE_HIT: ${{ steps.apkCache.outputs.cache-hit }}
       run: |
         set -euo pipefail
+        source "${GITHUB_ACTION_PATH}/apkeep.lib.sh"
         echo "found=false" >> "$GITHUB_OUTPUT"
         echo "apkPath=" >> "$GITHUB_OUTPUT"
-
-        # Resolve a scannable base APK from a directory. APKPure often ships .xapk
-        # bundles; unzip and use the main APK (not split config.*.apk files).
-        resolve_scannable_apk() {
-          local dir="$1"
-          local package="$2"
-
-          if [[ -f "${dir}/${package}.apk" ]]; then
-            echo "${dir}/${package}.apk"
-            return 0
-          fi
-
-          local apk
-          apk=$(find "$dir" -maxdepth 1 -type f -name '*.apk' ! -name 'config.*' | head -n1)
-          if [[ -n "$apk" && -f "$apk" ]]; then
-            echo "$apk"
-            return 0
-          fi
-
-          local xapk
-          xapk=$(find "$dir" -maxdepth 1 -type f -name '*.xapk' | head -n1)
-          if [[ -z "$xapk" ]]; then
-            xapk=$(find "$dir" -type f -name '*.xapk' | head -n1)
-          fi
-          if [[ -z "$xapk" || ! -f "$xapk" ]]; then
-            return 1
-          fi
-
-          local extract_dir="${dir}/.xapk-extract"
-          rm -rf "$extract_dir"
-          mkdir -p "$extract_dir"
-          echo "Extracting XAPK bundle: $(basename "$xapk")" >&2
-          unzip -q -o "$xapk" -d "$extract_dir"
-
-          if [[ -f "${extract_dir}/${package}.apk" ]]; then
-            echo "${extract_dir}/${package}.apk"
-            return 0
-          fi
-
-          local largest=0 main=""
-          while IFS= read -r -d '' candidate; do
-            local size
-            size=$(stat -c%s "$candidate")
-            if (( size > largest )); then
-              largest=$size
-              main=$candidate
-            fi
-          done < <(find "$extract_dir" -type f -name '*.apk' ! -name 'config.*' -print0)
-
-          if [[ -n "$main" && -f "$main" ]]; then
-            echo "$main"
-            return 0
-          fi
-          return 1
-        }
 
         cache_dir="${RUNNER_TEMP}/apkeep-${APKEEP_SOURCE}-apk-cache"
         mkdir -p "$cache_dir"
 
+        # Reuse a previously cached APK when one is present and still resolvable.
         if [[ "$CACHE_HIT" == "true" ]]; then
-          if apkPath=$(resolve_scannable_apk "$cache_dir" "$PACKAGE_NAME"); then
+          if apkPath=$(apkeep_resolve_scannable_apk "$cache_dir" "$PACKAGE_NAME"); then
             echo "found=true" >> "$GITHUB_OUTPUT"
             echo "apkPath=$apkPath" >> "$GITHUB_OUTPUT"
             exit 0
           fi
         fi
 
+        # Google Play requires credentials; preserve the action's hard failure when missing
+        # (a not-found / download failure is a soft "found=false", which apkeep_download returns).
+        if [[ "$APKEEP_SOURCE" == "google-play" && ( -z "${GPLAY_EMAIL:-}" || -z "${GPLAY_AAS_TOKEN:-}" ) ]]; then
+          echo "GPLAY_EMAIL and GPLAY_AAS_TOKEN must be set for Google Play downloads." >&2
+          exit 1
+        fi
+
         work_dir="${RUNNER_TEMP}/apkeep-download"
-        rm -rf "$work_dir"
-        mkdir -p "$work_dir"
-        download_log="${RUNNER_TEMP}/apkeep-download.log"
-
-        case "$APKEEP_SOURCE" in
-          google-play)
-            if [[ -z "${GPLAY_EMAIL:-}" || -z "${GPLAY_AAS_TOKEN:-}" ]]; then
-              echo "GPLAY_EMAIL and GPLAY_AAS_TOKEN must be set for Google Play downloads." >&2
-              exit 1
-            fi
-            if ! "$APKEEP_BIN" -a "$PACKAGE_NAME" -d google-play \
-              -e "$GPLAY_EMAIL" -t "$GPLAY_AAS_TOKEN" \
-              "$work_dir" >"$download_log" 2>&1; then
-              cat "$download_log" >&2 || true
-              exit 0
-            fi
-            ;;
-          apk-pure)
-            if ! "$APKEEP_BIN" -a "$PACKAGE_NAME" -d apk-pure \
-              "$work_dir" >"$download_log" 2>&1; then
-              cat "$download_log" >&2 || true
-              exit 0
-            fi
-            ;;
-          *)
-            echo "Unsupported apkeep source: ${APKEEP_SOURCE}" >&2
-            exit 1
-            ;;
-        esac
-
-        if ! apkPath=$(resolve_scannable_apk "$work_dir" "$PACKAGE_NAME"); then
-          cat "$download_log" >&2 || true
+        if ! apkPath=$(apkeep_download "$APKEEP_BIN" "$PACKAGE_NAME" "$APKEEP_SOURCE" \
+          "$work_dir" "${GPLAY_EMAIL:-}" "${GPLAY_AAS_TOKEN:-}"); then
           exit 0
         fi
 
         rm -f "$cache_dir"/*.apk "$cache_dir"/*.xapk 2>/dev/null || true
         cached_apk="${cache_dir}/${PACKAGE_NAME}.apk"
         cp "$apkPath" "$cached_apk"
-        apkPath="$cached_apk"
 
         echo "found=true" >> "$GITHUB_OUTPUT"
-        echo "apkPath=$apkPath" >> "$GITHUB_OUTPUT"
+        echo "apkPath=$cached_apk" >> "$GITHUB_OUTPUT"

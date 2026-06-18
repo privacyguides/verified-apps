@@ -647,12 +647,8 @@ jobs:
         if: steps.apkCache.outputs.cache-hit != 'true'
         run: |
           set -euo pipefail
-          curl -fsSL --retry 3 --retry-delay 2 -o direct-apk.apk "$APK_URL"
-          file direct-apk.apk
-          if ! file direct-apk.apk | grep -qiE 'zip archive|android'; then
-            echo "Downloaded file does not look like an APK" >&2
-            exit 1
-          fi
+          source .github/actions/signature-lib/signatures.lib.sh
+          signatures_download_direct_apk "$APK_URL" direct-apk.apk
 
       - name: Get APK Signature
         id: appSignature

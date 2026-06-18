@@ -1,0 +1,186 @@
+name: Spot-check Re-verification
+
+# Re-runs the full verification suite on a random sample of data.yml packages and opens a
+# single, human-reviewed PR that adds sources which now verify and removes sources that no
+# longer match (signature mismatch only — see scripts/spot_check_reverify.sh). The PR is
+# never auto-merged. A separate job re-attests data.yml after a maintainer merges the PR,
+# because a plain merge to main does not otherwise refresh the attestation.
+#
+# NOTE: runtime scales with the percentage. ~5% (~36 packages) finishes comfortably; large
+# percentages run long and ~100% will exceed the 6-hour job limit. Use dry_run / packages to
+# test cheaply.
+
+on:
+  schedule:
+    - cron: "0 4 * * *" # daily, offset from the 03:00 domain-verification sweep
+  workflow_dispatch:
+    inputs:
+      percent:
+        description: "Random percentage of packages to re-check (0-100)"
+        required: false
+        default: "5"
+      dry_run:
+        description: "Compute and report changes without opening a PR"
+        type: boolean
+        required: false
+        default: false
+      packages:
+        description: "Optional comma/space-separated package IDs to check instead of a random sample"
+        required: false
+        default: ""
+  pull_request:
+    types: [closed]
+    branches: [main]
+
+permissions: {}
+
+jobs:
+  spotcheck:
+    name: Spot-check sample
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    concurrency:
+      group: spot-check
+      cancel-in-progress: false
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      GH_REPO: ${{ github.repository }}
+      PERCENT: ${{ inputs.percent || '5' }}
+      DRY_RUN: ${{ inputs.dry_run || 'false' }}
+      PACKAGES: ${{ inputs.packages || '' }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main
+
+      - name: Set up Rust toolchain (for apkeep)
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          rustflags: ""
+          cache-shared-key: apkeep-1.0.0
+
+      - name: Run spot-check re-verification
+        id: spot
+        env:
+          GPLAY_EMAIL: ${{ secrets.GPLAY_EMAIL }}
+          GPLAY_AAS_TOKEN: ${{ secrets.GPLAY_AAS_TOKEN }}
+          # DNS verification is cross-checked against these four DNS-over-HTTPS resolvers,
+          # all of which must agree on the _pgappverify TXT record (consumed by domains.lib.sh).
+          DOH_RESOLVERS: |
+            https://dns.google/dns-query
+            https://cloudflare-dns.com/dns-query
+            https://dns.quad9.net/dns-query
+            https://freedns.controld.com/p0
+          # Hard-coded ICANN DNSSEC root trust anchors (KSK-2017 tag 20326, KSK-2024 tag 38696).
+          # Source: https://www.iana.org/dnssec/files (root-anchors.xml); never fetched at runtime.
+          ICANN_ROOT_TRUST_ANCHOR: |
+            trust-anchors {
+                . static-ds 20326 8 2 "E06D44B80B8F1D39A95C0B0D7C65D08458E880409BBC683457104237C7F8EC8D";
+                . static-ds 38696 8 2 "683D2D0ACB8C9B712A1948B27F741219298D0A450D612C483AF444A4C0FB2B16";
+            };
+        run: bash scripts/spot_check_reverify.sh
+
+      - name: Prepare commit
+        id: prep
+        if: steps.spot.outputs.hasChanges == 'true' && env.DRY_RUN != 'true'
+        run: |
+          set -euo pipefail
+          branch="spot-check/${{ github.run_id }}"
+          git checkout -b "$branch"
+          msg_file="${GITHUB_WORKSPACE}/spot-check-commit-msg"
+          {
+            printf 'Spot-check reconciliation (run %s)\n\n' "${{ github.run_id }}"
+            printf '%s addition(s), %s deletion(s) across %s package(s).\n' \
+              "${{ steps.spot.outputs.additions }}" \
+              "${{ steps.spot.outputs.deletions }}" \
+              "${{ steps.spot.outputs.selected }}"
+          } > "$msg_file"
+          echo "branch=$branch" >> "$GITHUB_OUTPUT"
+          echo "msgFile=$msg_file" >> "$GITHUB_OUTPUT"
+
+      - name: Commit changes as Privacy Guides bot
+        id: commit
+        if: steps.spot.outputs.hasChanges == 'true' && env.DRY_RUN != 'true'
+        uses: ./.github/actions/bot-commit
+        with:
+          ref: ${{ steps.prep.outputs.branch }}
+          # A sweep has no single submitter; the GitHub Actions bot is the author (same as the
+          # domain batch flow). Committed and SSH-signed by the Privacy Guides bot.
+          author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+          messageFile: ${{ steps.prep.outputs.msgFile }}
+          files: |
+            data.yml
+            data-verified-domains.yml
+          sshKey: ${{ secrets.ACTIONS_SSH_KEY }}
+
+      - name: Open pull request
+        id: pr
+        if: steps.spot.outputs.hasChanges == 'true' && env.DRY_RUN != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          pr_url=$(gh pr create \
+            --repo "$GH_REPO" \
+            --title "Spot-check reconciliation (${{ steps.spot.outputs.additions }} additions, ${{ steps.spot.outputs.deletions }} deletions)" \
+            --body-file "${{ steps.spot.outputs.prBody }}" \
+            --head "${{ steps.prep.outputs.branch }}" \
+            --base main)
+          echo "Opened ${pr_url}"
+          echo "Opened spot-check PR: ${pr_url}" >> "$GITHUB_STEP_SUMMARY"
+
+  # --- Post-merge: re-attest data.yml and sync mirrors --------------------------------------
+  # pr-commit-as-is is additive-only and only accepts new/* branches, so spot-check PRs (which
+  # may delete entries) are merged manually. A plain merge to main does not refresh the
+  # attestation, so we capture the merged data.yml and re-attest it here, mirroring the
+  # submission flow (merge -> capture -> sign-artifact -> sync mirrors).
+  captureMerged:
+    name: Capture merged data.yml
+    if: >-
+      github.event_name == 'pull_request' &&
+      github.event.pull_request.merged == true &&
+      startsWith(github.event.pull_request.head.ref, 'spot-check/')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: "false"
+          ref: main
+
+      - name: Upload merged data.yml for attestation
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: database
+          path: data.yml
+          if-no-files-found: error
+
+  attest:
+    name: Attest data.yml
+    needs: captureMerged
+    if: always() && needs.captureMerged.result == 'success'
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+    uses: privacyguides/.github/.github/workflows/sign-artifact.yml@5c41b37a937aab5e50262f3ab672fc9b9438dbf9
+    with:
+      artifact-name: database
+      artifact-path: data.yml
+
+  syncMirrorsAfterSpotCheck:
+    name: Sync mirrors (spot-check merge)
+    needs: attest
+    if: always() && !cancelled() && needs.attest.result == 'success'
+    permissions:
+      contents: read
+    uses: ./.github/workflows/sync-repo-to-mirrors.yml
+    secrets: inherit
