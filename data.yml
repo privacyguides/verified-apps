@@ -5057,6 +5057,14 @@ packages:
             issue: GH-920
             apk:
               sha256: 6497891c7dcf7b0bf59cf168a4474e836d5f406f0fa93278b3877a836ebab809
+  - package: com.wakdev.wdnfc
+    signature:
+      - fingerprint: EE:B2:E2:36:CC:CF:B7:10:1C:4A:E8:66:F5:B2:01:58:5D:C7:42:EE:7B:BD:FD:72:E7:90:19:B3:FE:13:61:1F
+        sources:
+          - name: Google Play
+            issue: GH-1971
+            apk:
+              sha256: 5ae8f3ff43c38c49e1f2369f145f3590e6ee8977211061f5cfd29e32301e3a00
   - package: com.walmart.android
     signature:
       - fingerprint: F3:CF:E9:B2:7C:F7:7A:41:40:51:73:4B:6A:07:42:2E:D8:B8:ED:71:DE:02:E0:D1:E8:A3:69:94:C1:5A:17:A2
