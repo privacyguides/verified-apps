@@ -290,6 +290,14 @@ packages:
             issue: GH-786
             apk:
               sha256: 9b628ad48471a6e2dff9ee02d97a4cb118209863d5050d84172005a09c239bd7
+  - package: at.csdlabs.emurmurprimer.paid
+    signature:
+      - fingerprint: F4:94:C7:B4:03:03:3C:AB:98:66:EC:03:4C:5E:3C:A4:FF:79:2F:02:6D:49:CA:62:1E:3B:0A:BB:7F:C8:07:DF
+        sources:
+          - name: Google Play
+            issue: GH-1938
+            apk:
+              sha256: 775d8392e2ee6adb6ed618921d3dfad3123becc1cc86bc431bf51e515cf17d46
   - package: at.saltyy.switchly
     signature:
       - fingerprint: 3C:51:F6:11:92:0B:15:F9:4E:E8:B3:19:1A:8D:26:2B:41:1A:06:42:42:0C:FA:E0:CA:EB:A9:75:2E:15:83:06
