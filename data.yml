@@ -8514,6 +8514,14 @@ packages:
             issue: GH-897
             apk:
               sha256: 922ed4a4c420e34a14c4d9c5d70ff36e364c7c24022c12cd35149d450ae3ed9e
+  - package: pl.solidexplorer2
+    signature:
+      - fingerprint: C5:CA:43:B9:65:6D:72:80:3E:23:2F:97:08:78:36:62:D3:47:51:A4:D6:A9:F4:C3:77:B2:40:84:27:88:F2:C3
+        sources:
+          - name: Google Play
+            issue: GH-1993
+            apk:
+              sha256: eafe5548df8a4aa74d4664e051db011d2d5e5cb62f24952ca9a58754cd42ed63
   - package: proton.android.authenticator
     signature:
       - fingerprint: DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
