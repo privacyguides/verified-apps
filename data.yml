@@ -5570,6 +5570,16 @@ packages:
             issue: GH-1225
             apk:
               sha256: b801504d9629ced0c9609e51c76655aee5e0f0135e78c00a421c15e6430c9103
+  - package: de.komoot.android
+    signature:
+      - fingerprint: FD:AE:45:0B:98:A6:FF:14:22:9C:44:F2:FC:B2:2A:B4:A2:E9:DF:EF:63:4D:3B:FC:4A:D1:B7:96:0D:01:1A:A8
+        sources:
+          - name: Google Play
+            issue: GH-1986
+            apk:
+              sha256: 6616edc5ca7d694c89cc9fa345fa78af43ffb7b009e41bd8607e8c77dc28ff53
+          - name: HTTPS Verified Domain
+            issue: GH-1986
   - package: de.lukasneugebauer.nextcloudcookbook
     signature:
       - fingerprint: 76:C2:9D:9A:87:91:FF:D9:36:38:36:96:89:60:FD:6D:63:B3:D4:41:FE:96:95:F3:66:8A:DB:E3:84:E3:64:74

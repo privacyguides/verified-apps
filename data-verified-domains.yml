@@ -36,6 +36,16 @@ domains:
       - package: cc.dict.dictcc
         fingerprints:
           - 85:32:C2:A9:14:09:8F:33:A1:F6:FF:10:0D:E7:8E:06:2A:84:59:44:B5:5F:16:96:B8:9E:21:4F:95:15:EF:90
+  - domain: komoot.de
+    method: https
+    issue:
+      - GH-1986
+    checked: "2026-06-18T19:45:13Z"
+    packages:
+      - package: de.komoot.android
+        fingerprints:
+          - 98:C0:67:82:28:10:B9:D2:64:AD:E5:C5:DF:76:E3:C5:17:57:A3:99:98:2A:95:E0:7F:51:73:69:91:9D:CA:10
+          - FD:AE:45:0B:98:A6:FF:14:22:9C:44:F2:FC:B2:2A:B4:A2:E9:DF:EF:63:4D:3B:FC:4A:D1:B7:96:0D:01:1A:A8
   - domain: magicgrants.org
     method: dns
     issue:
