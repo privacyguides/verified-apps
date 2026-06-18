@@ -1,5 +1,14 @@
 schema: 2
 domains:
+  - domain: aidungeon.com
+    method: https
+    issue:
+      - GH-1944
+    checked: "2026-06-18T19:42:27Z"
+    packages:
+      - package: com.aidungeon
+        fingerprints:
+          - 66:A5:A0:96:CB:94:79:90:BA:9C:67:49:35:F7:37:CD:57:AC:CB:E2:F3:C4:D1:AD:12:AE:74:79:AE:2B:C0:9B
   - domain: app.fastmail.com
     method: https
     issue:

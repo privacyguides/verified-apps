@@ -633,6 +633,16 @@ packages:
             issue: GH-326
             apk:
               sha256: 36b3f935dec1944dd3746329255359ebc032ab10382e92680cf993c40a3b84b5
+  - package: com.aidungeon
+    signature:
+      - fingerprint: 66:A5:A0:96:CB:94:79:90:BA:9C:67:49:35:F7:37:CD:57:AC:CB:E2:F3:C4:D1:AD:12:AE:74:79:AE:2B:C0:9B
+        sources:
+          - name: Google Play
+            issue: GH-1944
+            apk:
+              sha256: 08284dde621e43ff36b1a1c8ea91ed4b208ea16f0e95ddb00b5e73384c6ccc1f
+          - name: HTTPS Verified Domain
+            issue: GH-1944
   - package: com.airbnb.android
     signature:
       - fingerprint: 43:7B:7C:9A:94:6C:3C:E9:F2:49:A4:30:86:14:F5:42:C1:4D:7C:7A:3B:C9:77:89:98:4E:02:47:CD:23:01:FB
