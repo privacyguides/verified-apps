@@ -93,8 +93,8 @@ is_mock() { [[ -n "$MOCK_DIR" ]]; }
 ADDITIONS="${WORK}/additions.jsonl"; : > "$ADDITIONS"
 DELETIONS="${WORK}/deletions.jsonl"; : > "$DELETIONS"
 INFO="${WORK}/info.jsonl"; : > "$INFO"
-DOMAIN_ADDS="${WORK}/domain-adds.jsonl"; : > "$DOMAIN_ADDS"
-DOMAIN_LEDGER_RESET="${WORK}/domain-ledger-reset.txt"; : > "$DOMAIN_LEDGER_RESET"  # pkgs whose ledger to reset
+DOMAIN_ADDS="${WORK}/domain-adds.jsonl"; : > "$DOMAIN_ADDS"      # ledger upserts (change-driven)
+DOMAIN_REMOVES="${WORK}/domain-removes.txt"; : > "$DOMAIN_REMOVES"  # pkgs to drop from the ledger (revocation/move)
 EVICTIONS="${WORK}/evictions.txt"; : > "$EVICTIONS"  # packages a real apply would remove entirely
 
 declare -A R_STATUS R_SIG R_SHA
@@ -130,6 +130,7 @@ _model() { printf '%s/model/%s.json' "$WORK" "$1"; }
 model_sig_count() { jq '.signature | length' "$(_model "$1")"; }
 model_fp() { jq -r --argjson i "$2" '.signature[$i].fingerprint' "$(_model "$1")"; }
 model_issue() { jq -r --argjson i "$2" '.signature[$i].sources[0].issue // ""' "$(_model "$1")"; }
+model_source_issue() { jq -r --argjson i "$2" --arg n "$3" 'first(.signature[$i].sources[] | select(.name==$n) | .issue) // ""' "$(_model "$1")"; }
 model_has_name() { jq -e --argjson i "$2" --arg n "$3" '.signature[$i].sources | map(.name) | index($n)' "$(_model "$1")" >/dev/null 2>&1; }
 model_link() { jq -r --argjson i "$2" --arg n "$3" 'first(.signature[$i].sources[] | select(.name==$n) | .apk.link) // ""' "$(_model "$1")"; }
 model_repo() { jq -r --argjson i "$2" --arg n "$3" 'first(.signature[$i].sources[] | select(.name==$n) | .apk.repo) // ""' "$(_model "$1")"; }
@@ -583,8 +584,28 @@ reconcile_appverifier() { # pkg
   done
 }
 
+# Current ledger row for <pkg> as compact JSON {domain, method, fps} (first match), or {} if absent.
+ledger_row_for_pkg() { # file pkg
+  [[ -f "$1" && -s "$1" ]] || { printf '{}'; return 0; }
+  LRP_PKG="$2" yq -o=json -I0 '
+    [.domains[] | select([.packages[].package] | contains([strenv(LRP_PKG)]))
+       | {"domain": .domain, "method": .method,
+          "fps": (.packages[] | select(.package == strenv(LRP_PKG)) | .fingerprints)}]
+    | (.[0] // {})' "$1" 2>/dev/null || printf '{}'
+}
+# True when two JSON arrays of fingerprint strings are set-equal (order-independent).
+fps_set_equal() { [[ "$(jq -c 'sort' <<< "$1" 2>/dev/null)" == "$(jq -c 'sort' <<< "$2" 2>/dev/null)" ]]; }
+# Queue a ledger upsert (domain_verified_upsert appends <issue> uniquely, preserving prior issues).
+_emit_domain_upsert() { # pkg domain method issue auth_json fps_json
+  jq -cn --arg p "$1" --arg d "$2" --arg m "$3" --arg i "$4" \
+    --arg ds "$(jq -r 'if .method == "dns" then (.dnssec | tostring) else "" end' <<< "$5")" \
+    --argjson fps "$6" \
+    '{package:$p, domain:$d, method:$m, issue:$i, dnssec:$ds, fps:$fps}' >> "$DOMAIN_ADDS"
+}
+
 reconcile_domain() { # pkg
-  local pkg="$1" recs auth amethod adsrc n i fp srcname domain any_vouched=0
+  local pkg="$1" recs auth amethod adsrc n i fp srcname any_vouched=0
+  local domain ddfps lissue li cur_row cur_domain cur_method cur_fps
   recs=$(domain_records "$pkg") || recs=""
   if [[ -z "$recs" ]]; then
     if pkg_has_source "$pkg" "HTTPS Verified Domain" || pkg_has_source "$pkg" "DNS Verified Domain"; then
@@ -622,18 +643,40 @@ reconcile_domain() { # pkg
       done
     fi
   done
-  # Reset this package's ledger presence (remove from all domains) and re-upsert the authoritative
-  # record when it still vouches. Reset-then-upsert makes data-verified-domains.yml match the
-  # authoritative record exactly — correct for HTTPS individual-cert rows, method changes, domain
-  # changes, and partial revocations — without per-fingerprint matching against the ledger.
-  printf '%s\n' "$pkg" >> "$DOMAIN_LEDGER_RESET"
+  # --- Ledger sync (change-driven; preserves issue provenance; backfills missing rows) ----------
+  # data-verified-domains.yml should mirror the authoritative record for this package. Compare the
+  # package's CURRENT ledger row to the authoritative record and act ONLY on a real difference — so
+  # we neither churn `checked` every run (which the workflow's hasChanges gate would discard) nor
+  # wipe accumulated issue history. domain_verified_upsert appends the issue uniquely, so an existing
+  # row keeps its prior issues; we never remove-then-recreate except on a genuine domain move.
+  cur_row=$(ledger_row_for_pkg "$DOMAIN_FILE" "$pkg")
+  cur_domain=$(jq -r '.domain // ""' <<< "$cur_row")
+  cur_method=$(jq -r '.method // ""' <<< "$cur_row")
+  cur_fps=$(jq -c '.fps // []' <<< "$cur_row")
   if [[ "$any_vouched" == 1 ]]; then
     domain=$(jq -r '.domain' <<< "$auth")
-    jq -cn --arg p "$pkg" --arg d "$domain" --arg m "$amethod" \
-      --arg i "$(model_issue "$pkg" 0)" \
-      --arg ds "$(jq -r 'if .method == "dns" then (.dnssec | tostring) else "" end' <<< "$auth")" \
-      --argjson fps "$(jq -c '.allowed' <<< "$auth")" \
-      '{package:$p, domain:$d, method:$m, issue:$i, dnssec:$ds, fps:$fps}' >> "$DOMAIN_ADDS"
+    ddfps=$(jq -c '.allowed' <<< "$auth")
+    # Ledger issue = the authoritative-method domain source's OWN issue on the first vouched block
+    # that carries it (or that block's issue if we are adding the source this run). NEVER
+    # model_issue(pkg,0) — that is the first block's first source (often Google Play, a wrong issue).
+    lissue=""
+    for ((li = 0; li < n; li++)); do
+      [[ "$(domain_key_status "$auth" "$(model_fp "$pkg" "$li")")" == "allowed" ]] || continue
+      if model_has_name "$pkg" "$li" "$adsrc"; then lissue=$(model_source_issue "$pkg" "$li" "$adsrc"); else lissue=$(model_issue "$pkg" "$li"); fi
+      [[ -n "$lissue" ]] && break
+    done
+    if [[ -n "$cur_domain" && "$cur_domain" != "$domain" ]]; then
+      # Authoritative domain moved: drop the stale row, then upsert under the new domain.
+      printf '%s\n' "$pkg" >> "$DOMAIN_REMOVES"
+      _emit_domain_upsert "$pkg" "$domain" "$amethod" "$lissue" "$auth" "$ddfps"
+    elif [[ -z "$cur_domain" || "$cur_method" != "$amethod" ]] || ! fps_set_equal "$cur_fps" "$ddfps"; then
+      # Missing row (backfill), method change, or fingerprint-set drift -> upsert (no reset, so the
+      # row's existing .issue history survives the unique-append).
+      _emit_domain_upsert "$pkg" "$domain" "$amethod" "$lissue" "$auth" "$ddfps"
+    fi
+  elif [[ -n "$cur_domain" ]]; then
+    # Authoritative record no longer vouches for any key -> drop the package from the ledger.
+    printf '%s\n' "$pkg" >> "$DOMAIN_REMOVES"
   fi
 }
 
@@ -673,16 +716,17 @@ apply_additions() {
 }
 
 apply_domain_ledger() {
-  # First reset every touched package's ledger presence (remove from all domains), then upsert the
-  # authoritative record for packages that still vouch. Reset-then-upsert makes the ledger match the
-  # authoritative record exactly and handles method/domain changes and partial revocations. The data
-  # files' domain SOURCES are handled separately by apply_deletions/apply_additions on data.yml.
+  local dvfile="${1:-$DOMAIN_FILE}"
+  # Apply the change-driven ledger ops: first drop packages flagged for removal (full revocation or a
+  # domain move), then upsert the authoritative rows. domain_verified_upsert append-merges the issue,
+  # so an existing row keeps its prior issue history. The data files' domain SOURCES are handled
+  # separately by apply_additions/apply_deletions on data.yml.
   local checked line pkg domain method issue dnssec fps
-  if [[ -s "$DOMAIN_LEDGER_RESET" ]]; then
+  if [[ -s "$DOMAIN_REMOVES" ]]; then
     while IFS= read -r pkg; do
       [[ -z "$pkg" ]] && continue
-      domain_verified_remove_package "$DOMAIN_FILE" "$pkg"
-    done < <(sort -u "$DOMAIN_LEDGER_RESET")
+      domain_verified_remove_package "$dvfile" "$pkg"
+    done < <(sort -u "$DOMAIN_REMOVES")
   fi
   [[ -s "$DOMAIN_ADDS" ]] || return 0
   checked=$(date -u +%Y-%m-%dT%H:%M:%SZ)
@@ -691,7 +735,7 @@ apply_domain_ledger() {
     pkg=$(jq -r '.package' <<< "$line"); domain=$(jq -r '.domain' <<< "$line")
     method=$(jq -r '.method' <<< "$line"); issue=$(jq -r '.issue' <<< "$line")
     dnssec=$(jq -r '.dnssec' <<< "$line"); fps=$(jq -c '.fps' <<< "$line")
-    domain_verified_upsert "$DOMAIN_FILE" "$domain" "$method" "$pkg" "$issue" "$checked" "$dnssec" "$fps"
+    domain_verified_upsert "$dvfile" "$domain" "$method" "$pkg" "$issue" "$checked" "$dnssec" "$fps"
   done < "$DOMAIN_ADDS"
 }
 
@@ -724,6 +768,25 @@ compute_evictions() {
   rm -f "$sim"
 }
 
+# Detect (and capture a GFM diff of) the ledger mutations the queued ops would make, by simulating
+# apply_domain_ledger on a copy. Sets LEDGER_CHANGED (0/1) and LEDGER_DIFF. Runs BEFORE the real apply
+# so it behaves identically in dry-run and live, and so report() can fold ledger-only changes into
+# hasChanges (otherwise the workflow's hasChanges gate would discard a ledger-only repair).
+LEDGER_CHANGED=0; LEDGER_DIFF=""
+compute_ledger_changes() {
+  LEDGER_CHANGED=0; LEDGER_DIFF=""
+  { [[ -s "$DOMAIN_ADDS" ]] || [[ -s "$DOMAIN_REMOVES" ]]; } || return 0
+  local before="${WORK}/dv-before.yml" after="${WORK}/dv-after.yml"
+  cp "$DOMAIN_FILE" "$before" 2>/dev/null || : > "$before"
+  cp "$DOMAIN_FILE" "$after" 2>/dev/null || : > "$after"
+  apply_domain_ledger "$after"
+  if ! diff -q "$before" "$after" >/dev/null 2>&1; then
+    LEDGER_CHANGED=1
+    LEDGER_DIFF="$(domain_verified_diff "$before" "$after" 2>/dev/null || true)"
+  fi
+  rm -f "$before" "$after"
+}
+
 # ---------------------------------------------------------------------------
 # Reporting.
 # ---------------------------------------------------------------------------
@@ -741,6 +804,7 @@ report() {
     echo ""
     echo "- :heavy_plus_sign: Additions applied: **${add_n}**"
     echo "- :x: Source removals proposed: **${del_n}**$( [[ "$evict_n" -gt 0 ]] && echo " — :rotating_light: including **${evict_n}** full package eviction(s)" )"
+    echo "- :globe_with_meridians: Domain ledger updated: **$( [[ "${LEDGER_CHANGED:-0}" == 1 ]] && echo yes || echo no )**"
     echo "- :information_source: Informational notes: **${info_n}**"
     echo ""
     if [[ "$add_n" -gt 0 ]]; then
@@ -783,27 +847,36 @@ report() {
       jq -r '"| `\(.package)` | \(.source) | \(.note) |"' "$INFO"
       echo ""
     fi
-    if [[ "$add_n" -eq 0 && "$del_n" -eq 0 ]]; then
-      echo "_No additions or deletions; informational notes only (if any)._"
+    if [[ "${LEDGER_CHANGED:-0}" == 1 && -n "${LEDGER_DIFF:-}" ]]; then
+      echo "### :globe_with_meridians: Domain ledger (\`data-verified-domains.yml\`) changes"
+      echo ""
+      echo '```diff'
+      printf '%s\n' "$LEDGER_DIFF"
+      echo '```'
+      echo ""
+    fi
+    if [[ "$add_n" -eq 0 && "$del_n" -eq 0 && "${LEDGER_CHANGED:-0}" == 0 ]]; then
+      echo "_No additions, removals, or ledger changes; informational notes only (if any)._"
     fi
   } > "$body"
 
   if [[ -n "${GITHUB_STEP_SUMMARY:-}" ]]; then cat "$body" >> "$GITHUB_STEP_SUMMARY"; fi
 
   local has_changes="false"
-  [[ "$add_n" -gt 0 || "$del_n" -gt 0 ]] && has_changes="true"
+  [[ "$add_n" -gt 0 || "$del_n" -gt 0 || "${LEDGER_CHANGED:-0}" == 1 ]] && has_changes="true"
   if [[ -n "${GITHUB_OUTPUT:-}" ]]; then
     {
       echo "hasChanges=${has_changes}"
       echo "additions=${add_n}"
       echo "deletions=${del_n}"
       echo "evictions=${evict_n}"
+      echo "ledgerChanges=${LEDGER_CHANGED:-0}"
       echo "infos=${info_n}"
       echo "selected=${#SELECTED[@]}"
       echo "prBody=${body}"
     } >> "$GITHUB_OUTPUT"
   fi
-  log "Done: ${add_n} addition(s), ${del_n} deletion(s), ${info_n} note(s) across ${#SELECTED[@]} package(s)."
+  log "Done: ${add_n} addition(s), ${del_n} deletion(s), ledger-changed=${LEDGER_CHANGED:-0}, ${info_n} note(s) across ${#SELECTED[@]} package(s)."
 }
 
 # ---------------------------------------------------------------------------
@@ -827,7 +900,8 @@ log "Selected ${#SELECTED[@]} package(s) for spot-check re-verification."
 setup_tools
 run_passes
 reconcile
-compute_evictions  # before any mutation, so dry-run and live both report full-package removals
+compute_evictions       # before any mutation, so dry-run and live both report full-package removals
+compute_ledger_changes  # detect ledger-only changes so hasChanges/report reflect them
 
 if [[ "$DRY_RUN" == "true" ]]; then
   log "DRY_RUN=true; computed changes but not mutating data files."
