@@ -6155,6 +6155,14 @@ packages:
             issue: GH-337
             apk:
               sha256: 3ccbb551cdc986939339f11195c294d43b132587d0d59e80f12985b54a7384aa
+  - package: epson.print
+    signature:
+      - fingerprint: 67:99:2A:BC:DD:54:31:7A:27:55:67:55:E4:FE:F4:7D:10:AA:C1:C9:FF:FD:E0:9E:D9:41:4A:C0:7B:2E:AD:A1
+        sources:
+          - name: Google Play
+            issue: GH-2025
+            apk:
+              sha256: b6daf667b56157f00756819988bb13cca87c3be3bbd9ef4a49fc15dd8e34d8be
   - package: eu.auct.twitter2nitter
     signature:
       - fingerprint: 26:E0:02:F6:0D:0F:D6:C6:41:A5:8F:84:36:23:AC:2D:5A:A9:0A:80:F6:25:65:F5:20:61:83:62:7B:C2:96:85
