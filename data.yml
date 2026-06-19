@@ -5871,6 +5871,12 @@ packages:
             issue: GH-856
             apk:
               sha256: 6114982f794ce92da8cf52c6f8f026344a4a24e20aab0bec567223c99d33cd8b
+      - fingerprint: F4:79:47:27:E4:54:16:D8:7C:48:71:38:29:2B:70:9F:11:D1:CD:7D:AB:55:84:D8:C6:85:7D:92:E0:66:60:4B
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1894
+            apk:
+              sha256: 29bc7203104260e3593bcadca011bb6ff4c0dff05e50e61646727dcef14ef2c4
   - package: deckers.thibault.aves.libre
     signature:
       - fingerprint: E4:37:8C:86:E5:DF:4C:40:1B:0C:9C:4C:A8:00:D3:35:C8:B0:75:04:67:EA:E6:13:86:A8:03:08:9E:E9:97:2E
