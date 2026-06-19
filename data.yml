@@ -8024,6 +8024,14 @@ packages:
               sha256: 3a62bca42576edeac7ea66ce8fdf7191e04738315c5049b1974bb5ea0b50d085
   - package: org.lichess.mobileV2
     signature:
+      - fingerprint: 49:6E:D2:C1:54:28:92:A0:94:A2:A6:E2:6D:59:CD:07:FB:7E:8C:71:13:55:87:6D:AD:38:59:EA:82:F8:AF:62
+        sources:
+          - name: F-Droid
+            issue: GH-1698
+            apk:
+              sha256: 264e791dbe39bc9c4b8728afd9428366a6401cbef922f1cdf86f24c525276887
+          - name: HTTPS Verified Domain
+            issue: GH-1698
       - fingerprint: 5B:62:4B:BF:9D:72:D3:18:EA:4F:9E:E3:E2:DA:EB:A7:72:19:E5:97:11:6C:B5:93:12:30:7A:AD:18:44:94:5E
         sources:
           - name: Direct APK Link

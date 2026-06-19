@@ -46,6 +46,16 @@ domains:
         fingerprints:
           - 98:C0:67:82:28:10:B9:D2:64:AD:E5:C5:DF:76:E3:C5:17:57:A3:99:98:2A:95:E0:7F:51:73:69:91:9D:CA:10
           - FD:AE:45:0B:98:A6:FF:14:22:9C:44:F2:FC:B2:2A:B4:A2:E9:DF:EF:63:4D:3B:FC:4A:D1:B7:96:0D:01:1A:A8
+  - domain: lichess.org
+    method: https
+    issue:
+      - GH-1698
+    checked: "2026-06-19T04:44:05Z"
+    packages:
+      - package: org.lichess.mobileV2
+        fingerprints:
+          - 49:6E:D2:C1:54:28:92:A0:94:A2:A6:E2:6D:59:CD:07:FB:7E:8C:71:13:55:87:6D:AD:38:59:EA:82:F8:AF:62
+          - 5B:62:4B:BF:9D:72:D3:18:EA:4F:9E:E3:E2:DA:EB:A7:72:19:E5:97:11:6C:B5:93:12:30:7A:AD:18:44:94:5E
   - domain: magicgrants.org
     method: dns
     issue:
