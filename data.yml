@@ -2695,6 +2695,14 @@ packages:
             issue: GH-588
             apk:
               sha256: a46257e19390249f1542ba45234031bb18f894711e4da3c14ed8020ac9741c7c
+  - package: com.governikus.ausweisapp2
+    signature:
+      - fingerprint: 4C:F9:80:01:A6:AF:A4:F8:14:3C:0F:16:60:39:68:BB:BE:C2:8F:FE:3A:32:FE:F3:03:CF:9C:CC:26:03:7A:98
+        sources:
+          - name: F-Droid
+            issue: GH-1946
+            apk:
+              sha256: a1554f39fa3b093edb9f6800173c7088208ea394a6a9175628f9d45e90b04ab1
   - package: com.gpl.rpg.AndorsTrail
     signature:
       - fingerprint: 39:16:CB:37:00:F0:AB:8E:79:01:44:48:D0:00:42:9B:82:6A:59:E0:B4:36:4B:96:C9:4D:90:5A:65:59:D2:43
