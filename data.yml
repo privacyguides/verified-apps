@@ -5662,6 +5662,14 @@ packages:
             issue: GH-905
             apk:
               sha256: 2bf3bafe3f0bd3904e016b655129438fac8412e7e49acfedd661b6f8a0b7ee0d
+  - package: de.fiduciagad.banking.vr
+    signature:
+      - fingerprint: 53:A6:AF:A8:F0:D2:19:BB:A2:FE:84:15:4F:25:6E:CE:C8:5B:34:17:5F:FE:E5:B7:38:7F:DA:0A:FC:C1:26:05
+        sources:
+          - name: Google Play
+            issue: GH-2062
+            apk:
+              sha256: 971855d0145644117da2c6ae591219b28cd05ad097ef75d72fbaf14eaa8e1741
   - package: de.fiduciagad.securego.vr
     signature:
       - fingerprint: 53:A6:AF:A8:F0:D2:19:BB:A2:FE:84:15:4F:25:6E:CE:C8:5B:34:17:5F:FE:E5:B7:38:7F:DA:0A:FC:C1:26:05
