@@ -1720,6 +1720,14 @@ packages:
             issue: GH-933
             apk:
               sha256: 727a8243ecf2421e5cca3e450d5284a5b709b568698ee91debc4f091654e3c41
+  - package: com.dkbcodefactory.banking
+    signature:
+      - fingerprint: 5D:05:DB:A0:59:56:18:C0:39:D9:60:BA:75:DA:3E:10:78:51:DC:3D:2F:AE:E4:C8:C0:C6:20:94:17:51:E5:F7
+        sources:
+          - name: Google Play
+            issue: GH-2022
+            apk:
+              sha256: 11bc5e2aa5ef74e423c01f2cc264e03c928c123a5f147740f06e2db746bdb129
   - package: com.dominospizza
     signature:
       - fingerprint: 97:59:E1:5B:C7:AD:25:FB:A0:5D:43:36:16:E5:1C:E5:04:09:2E:F0:4F:63:C3:61:36:5C:FD:FE:DA:DD:3B:FC
