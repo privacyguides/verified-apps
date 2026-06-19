@@ -854,6 +854,14 @@ packages:
             issue: GH-934
             apk:
               sha256: a9b8589c52b92b210f2abf2c35844fc930b10370b5228a819b0842718f22f944
+  - package: com.apple.atve.androidtv.appletv
+    signature:
+      - fingerprint: 77:1D:86:74:D3:D9:83:7C:9E:DF:11:B1:18:73:44:39:98:F1:91:05:AB:CE:CA:B4:25:ED:9B:8E:6F:EF:FF:9B
+        sources:
+          - name: Google Play
+            issue: GH-2037
+            apk:
+              sha256: 1f267987cc818a289d4c78734a98a1734fbf6238b8b07f5059697b5da53c2033
   - package: com.appmindlab.nano
     signature:
       - fingerprint: 46:F0:5E:C2:09:B7:D5:17:91:56:71:61:96:DF:BB:F3:24:2D:0F:3F:73:A7:A7:7A:A9:BF:36:9B:FA:D6:D9:DA
