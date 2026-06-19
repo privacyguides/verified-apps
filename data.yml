@@ -635,6 +635,14 @@ packages:
             issue: GH-499
             apk:
               sha256: 6870f1f6110af5f478dd131bc1055c44fff00e0d7f4ffe29f883242317759ffc
+  - package: com.aeroshark333.artofearthify
+    signature:
+      - fingerprint: D9:61:D7:16:56:26:D4:B9:46:D6:FB:0D:CB:38:11:E8:27:AD:F2:C4:BE:32:12:D2:71:DB:82:01:75:E0:55:F2
+        sources:
+          - name: Google Play
+            issue: GH-2038
+            apk:
+              sha256: db674d176c1323d29b7968fca4dcedfc036e5b168a4ef97cf1ea7de8a6e82453
   - package: com.afklm.mobile.android.gomobile.klm
     signature:
       - fingerprint: FE:5B:C8:AD:00:6A:FC:67:81:A6:4B:4F:3C:39:DC:C5:33:68:CC:C5:45:CE:33:E5:75:12:07:EA:4B:98:75:A4
