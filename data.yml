@@ -3797,6 +3797,14 @@ packages:
         sources:
           - name: Google Play
             issue: GH-422
+  - package: com.onetwoapps.mybudgetbookpro
+    signature:
+      - fingerprint: F4:0A:C9:3D:A4:AD:90:B2:0E:22:DD:D0:2C:44:60:EF:5D:B4:DA:DF:F5:0E:7B:F5:F4:63:7C:04:CE:E9:7F:EF
+        sources:
+          - name: Google Play
+            issue: GH-2009
+            apk:
+              sha256: 7c868b6e269c5888df34994aa55138c6b91fbb0e68327489eb7c10d01fe00f6f
   - package: com.onlyoffice.documents
     signature:
       - fingerprint: E1:A8:B9:3D:A6:BD:E8:52:A2:F6:F5:A5:E6:7C:04:10:C8:4F:E1:D2:A2:F2:0B:42:D3:BB:5C:36:39:DF:9D:C2
