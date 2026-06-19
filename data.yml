@@ -7307,6 +7307,12 @@ packages:
               sha256: d01492218e64ddbb284e4bde71ecd28d261e975d345090642661af94da512801
   - package: net.typeblog.shelter
     signature:
+      - fingerprint: 2D:48:37:13:4F:35:19:A1:1D:10:46:30:ED:42:A4:A7:95:F4:AB:23:27:E1:C9:89:9C:BE:BF:BF:89:AB:A4:83
+        sources:
+          - name: F-Droid
+            issue: GH-1996
+            apk:
+              sha256: d6d67b22f066d40f8771d8d7c0e0efe9315b37224d5b7e724f4c0e9b0eecca07
       - fingerprint: D7:3D:3C:71:5B:DE:7F:C8:6C:1C:15:6F:F3:D5:73:CF:8B:9C:67:0F:5A:1F:3C:5E:F8:23:BE:40:E6:05:29:8A
         sources:
           - name: F-Droid (fdroid.typeblog.net)
