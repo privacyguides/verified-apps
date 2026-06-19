@@ -1008,6 +1008,8 @@ packages:
             issue: GH-1265
             apk:
               sha256: 10d7626c76c59886c9190abd6cae2e552a3d053bbdb60c4c383fb79d40801e44
+          - name: HTTPS Verified Domain
+            issue: GH-2066
   - package: com.bankid.bus
     signature:
       - fingerprint: AD:A2:62:4B:35:FC:A3:CC:34:0E:11:89:94:54:E5:50:FB:A9:82:B4:4D:82:B9:7E:FD:16:AA:3A:7A:46:7C:16

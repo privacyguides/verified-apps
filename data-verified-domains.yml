@@ -27,6 +27,15 @@ domains:
       - package: com.roundsalmon4.appverifier
         fingerprints:
           - 1E:76:F1:A1:5C:BE:20:1F:0F:E2:6A:F2:7A:12:D9:1D:0D:34:81:FE:7D:CC:7D:89:E9:D2:05:69:30:F6:D5:A9
+  - domain: bandcamp.com
+    method: https
+    issue:
+      - GH-2066
+    checked: "2026-06-19T05:19:56Z"
+    packages:
+      - package: com.bandcamp.android
+        fingerprints:
+          - BF:B8:97:AA:4F:7B:EC:59:ED:10:0B:8B:94:FA:2D:BD:9B:96:52:F0:B5:83:89:F8:0A:AE:2F:0F:21:55:71:E7
   - domain: dictcc.dict.cc
     method: https
     issue:
