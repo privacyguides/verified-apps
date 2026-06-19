@@ -5697,6 +5697,14 @@ packages:
             issue: GH-1804
             apk:
               sha256: b1a854c248ca3336afd112f8f620c5c8c44c02dd6aac5784199f9931c2377ce6
+  - package: de.materna.bbk.mobile.app
+    signature:
+      - fingerprint: CA:6E:F5:65:07:4E:90:33:D6:A5:D5:DD:1B:B9:B1:E8:0B:B6:7E:43:D4:A9:A0:34:A5:51:C7:B0:5F:6C:FB:A3
+        sources:
+          - name: Google Play
+            issue: GH-2026
+            apk:
+              sha256: b83ff2e41a3306e0085ee2e966b86bffe08b736d210200f6d9053f2146b79a1f
   - package: de.mm20.launcher2.release
     signature:
       - fingerprint: BF:65:BB:D6:17:99:73:97:80:0D:02:E0:AC:2E:45:CE:E1:53:15:15:18:54:5C:23:EF:66:B3:CB:2C:FD:F7:BC
