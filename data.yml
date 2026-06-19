@@ -3704,6 +3704,14 @@ packages:
             issue: GH-1207
             apk:
               sha256: 8819bfe633faa7affce5b035ad5f553fb5c68368ecaa1d2cdee02dd205773512
+  - package: com.oasisfeng.island.fdroid
+    signature:
+      - fingerprint: E9:58:DC:E4:A9:2C:C4:4F:CF:7F:9B:56:82:1E:36:DE:6E:3D:82:2A:B7:13:D8:32:5F:37:7D:B2:AB:9A:59:2C
+        sources:
+          - name: F-Droid
+            issue: GH-1926
+            apk:
+              sha256: d9bb15033def3e2bcecb6e2d9977c0b914d5f99b32dd09ab415f3968d63e71b1
   - package: com.oceanwing.battery.cam
     signature:
       - fingerprint: 16:6C:23:45:57:B7:76:CA:D8:AC:94:C9:79:37:9E:48:DF:38:7D:4D:8F:96:A3:43:DF:40:FC:D9:05:BF:F6:86
