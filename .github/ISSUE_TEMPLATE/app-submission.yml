@@ -18,7 +18,7 @@ body:
   - type: textarea
     id: verificationInfo
     attributes:
-      label: Verification Info
+      label: Verification info
       description: |
         In AppVerifier, open the app you're submitting, click "Copy Verification Info" and then paste the resultant string exactly here.
       placeholder: |
@@ -31,7 +31,7 @@ body:
   - type: input
     id: directApkLink
     attributes:
-      label: Direct APK Link
+      label: Direct download link
       description: |
         Optional. A direct HTTPS link to an APK file for this app (not a web page or store listing).
         This could be from GitHub releases, for example. If provided, we will check its signature in addition to mainstream app stores.
@@ -50,7 +50,7 @@ body:
   - type: input
     id: devVerification
     attributes:
-      label: Source
+      label: Signing key citation
       description: |
         Optional. Does the developer publish this key on an official website? Please link to that attestation if so, otherwise leave this blank.
       placeholder: https://github.com/example/app/README.md
@@ -65,7 +65,7 @@ body:
   - type: dropdown
     id: appSource
     attributes:
-      label: App Source
+      label: Submitted pp source
       description: Where did you download the app you're submitting a hash for?
       options:
         - Google Play / Aurora Store
@@ -78,15 +78,27 @@ body:
         - Other
 
   - type: dropdown
+    id: verifier
+    attributes:
+      label: Verifying app
+      description: Where did you find the signature for this app?
+      options:
+        - Verified Apps (@privacyguides)
+        - AppVerifier (@soupslurpr)
+        - AppVerifierBG (@roundsalmon4)
+        - apksigner CLI
+        - Other
+
+  - type: dropdown
     id: verifierSource
     attributes:
-      label: AppVerifier Source
-      description: Where did you download AppVerifier?
+      label: Verifying app source
+      description: Where did you download that verifying app?
       options:
-        - Accrescent (which I obtained from the GrapheneOS App Store)
-        - Accrescent (which I obtained from Accrescent's website)
-        - Accrescent (which I obtained from GitHub Releases)
-        - AppVerifier's GitHub Releases
-        - N/A - I'm using Verified Apps from PrivacyGuides
-        - N/A - I'm using VerifiedAppsBG from RoundSalmon4
-        - Other download source or fork
+        - Privacy Guides F-Droid Repo
+        - Official F-Droid Repo
+        - IzzyOnDroid F-Droid Repo
+        - GitHub Releases
+        - Accrescent
+        - GrapheneOS App Store
+        - Other download source
