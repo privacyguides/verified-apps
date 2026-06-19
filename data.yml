@@ -7544,6 +7544,14 @@ packages:
             apk:
               sha256: 554fdf79852087503fb2b5517b94c9e7b605234e2ae188fcb56811a91352796e
               link: https://github.com/openboard-team/openboard/releases/download/v1.4.5/app-release.apk
+  - package: org.eu.exodus_privacy.exodusprivacy
+    signature:
+      - fingerprint: 6F:44:C5:4D:12:7C:E0:5B:2B:EE:4A:B7:C2:11:CA:5C:3D:17:5A:88:F3:52:E6:31:DA:C6:D9:51:50:1B:48:7F
+        sources:
+          - name: F-Droid
+            issue: GH-1827
+            apk:
+              sha256: 7758d2c3189b2c7deb1c3e3d76941ce21c1a1f2c3e95b94673c81514632c017b
   - package: org.eurail.railplanner
     signature:
       - fingerprint: 4E:93:E9:A0:C7:A5:AD:70:91:98:C3:0C:20:13:9A:43:FB:F9:3C:77:DE:79:EE:73:D1:B8:F1:1B:2C:40:FE:FC
