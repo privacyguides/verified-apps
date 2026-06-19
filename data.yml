@@ -5613,6 +5613,14 @@ packages:
             issue: GH-972
             apk:
               sha256: d55c27526117362d0d5be00638e81ad61308478d81673de0cf988cc408f18757
+  - package: de.marmaro.krt.ffupdater
+    signature:
+      - fingerprint: F4:E6:42:BB:85:CB:BC:FD:73:02:B2:CB:CB:D3:46:99:3A:41:06:7C:27:D9:95:DF:49:2C:9D:0D:38:74:7E:62
+        sources:
+          - name: F-Droid
+            issue: GH-1804
+            apk:
+              sha256: b1a854c248ca3336afd112f8f620c5c8c44c02dd6aac5784199f9931c2377ce6
   - package: de.mm20.launcher2.release
     signature:
       - fingerprint: BF:65:BB:D6:17:99:73:97:80:0D:02:E0:AC:2E:45:CE:E1:53:15:15:18:54:5C:23:EF:66:B3:CB:2C:FD:F7:BC
