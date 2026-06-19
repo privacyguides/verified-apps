@@ -619,6 +619,14 @@ packages:
             issue: GH-1841
             apk:
               sha256: 46f70bd5496023e02c4fa6be76af30c3c551d7f805441c70b539b17be0415ab3
+  - package: com.adguard.vpn
+    signature:
+      - fingerprint: D2:A1:52:9C:DF:F9:3B:EF:67:E5:02:59:32:6F:24:8F:82:F0:E0:BC:84:43:E7:14:EE:DB:87:A0:5A:CA:24:15
+        sources:
+          - name: Google Play
+            issue: GH-2036
+            apk:
+              sha256: bd4724720bbf8fd0343599166b17fbad3113b043533e3538b5a37bb8b2c68819
   - package: com.adobe.reader
     signature:
       - fingerprint: B6:DD:05:62:25:64:87:FC:D6:C9:8C:DE:13:78:58:EF:50:D9:AD:B9:F9:CD:2F:1C:A5:8C:53:57:EF:DF:0F:AF
