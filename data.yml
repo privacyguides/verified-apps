@@ -5412,6 +5412,14 @@ packages:
             issue: GH-846
             apk:
               sha256: a7b34f4b44bc7dd78c82e8b59940c26c545abc9bc7c2eaab68177bd91952c9ac
+  - package: com.yamaha.hs.headphonecontrol
+    signature:
+      - fingerprint: 33:A3:BF:0E:BE:91:D5:63:C1:96:26:25:66:6C:D0:36:A1:C3:DB:64:8F:90:B3:52:56:C4:1D:CA:9D:61:81:D6
+        sources:
+          - name: Google Play
+            issue: GH-2044
+            apk:
+              sha256: 048680d733159644f39938ffe526201cae3f31e511764af1f16d4abd8327161e
   - package: com.yoc.swiss.swiss
     signature:
       - fingerprint: B3:EB:7E:D9:26:78:57:D5:B0:ED:23:A7:85:49:FB:65:0E:9C:94:7A:70:38:A5:21:66:3A:1E:06:94:43:F6:1D
