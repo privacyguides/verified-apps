@@ -7040,6 +7040,12 @@ packages:
             apk:
               sha256: 5015c770a42782f0fea17e7623ec5aadbe086316056963baa906a530f6be22eb
               link: https://github.com/aliasvault/aliasvault/releases/download/0.29.2/aliasvault-0.29.2-android.apk
+      - fingerprint: C7:BA:E8:8E:C5:94:57:68:02:04:69:C7:D5:3A:D2:DB:29:1F:E5:D1:93:AE:BB:FA:35:DD:8A:53:01:4E:90:82
+        sources:
+          - name: F-Droid
+            issue: GH-1537
+            apk:
+              sha256: 511d750ccd8030ee4034335a84b7b31813fceb01938b2411a55f8be9c8864e2e
   - package: net.bible.android.activity
     signature:
       - fingerprint: 8B:F5:16:8A:01:94:4D:62:A4:A4:C7:B6:52:F4:73:81:84:00:0D:57:A4:8C:52:89:5A:C6:CB:83:1C:48:CF:30
