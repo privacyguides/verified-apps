@@ -4276,8 +4276,6 @@ packages:
             apk:
               sha256: 261243f0df7023074ae80650192aa46dc56ff5b5db2a9694311b7b7fd316ceeb
               link: https://github.com/RoundSalmon4/AppVerifierBG/releases/download/nightly-2026-05-31/AppVerifier-nightly-2026-05-31.apk
-          - name: Verified Domain
-            issue: GH-1333
   - package: com.ryanair.cheapflights
     signature:
       - fingerprint: 7B:95:CA:16:5B:9D:E6:03:8E:B9:F1:CC:77:BC:54:2C:22:33:DE:A1:43:EE:32:38:69:3A:3F:55:B8:1A:01:E9
@@ -8309,8 +8307,6 @@ packages:
             apk:
               sha256: 4a23949039d93617df1219a5f0f61b88a22c3c388ac54999e893eb30b39ddb30
               link: https://github.com/MAGICGrants/skylight-wallet/releases/download/v1.0.10/skylight-wallet-v1.0.10-x86_64.apk
-          - name: Verified Domain
-            issue: GH-1791
   - package: org.moire.opensudoku
     signature:
       - fingerprint: A5:4C:E2:9E:BB:02:FC:B9:B4:78:62:05:72:F7:C4:DD:39:B9:03:73:6F:E6:19:96:87:47:1B:A7:29:F4:61:3A
@@ -8420,15 +8416,11 @@ packages:
             apk:
               sha256: 61f01b08224c8bed18ba53dbe87734a1e1357071901ca25e6483f51be7472d2b
               repo: https://privacyguides.github.io/fdroid/repo/
-          - name: Verified Domain
-            issue: GH-1329
   - package: org.privacyguides.verifiedapps.play
     signature:
       - fingerprint: E8:58:37:5B:7C:45:CF:C1:D4:E4:F5:1B:4A:D6:59:73:5B:38:2C:82:4F:E2:24:48:36:A8:14:AD:7A:F3:00:61
         sources:
           - name: DNS Verified Domain
-            issue: GH-1627
-          - name: Verified Domain
             issue: GH-1627
   - package: org.proninyaroslav.libretorrent
     signature:
