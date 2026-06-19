@@ -7878,6 +7878,12 @@ packages:
               sha256: e9a0fad6d25bcb552394edc224f65b0bbb031600c3440c837c33b5a5198513e9
   - package: org.handmadeideas.floccus
     signature:
+      - fingerprint: ED:70:EE:84:EB:35:BB:BF:87:56:C7:B2:D5:AF:B8:6E:CA:BA:DD:07:4F:65:79:EC:EF:5C:D7:4F:C8:93:CC:12
+        sources:
+          - name: F-Droid
+            issue: GH-1709
+            apk:
+              sha256: fb59edee44f8c3ac0cbedc21046ec5e0ec376391475c6b7b159f62669ef5dd62
       - fingerprint: FF:ED:27:78:FF:07:37:1E:63:67:B6:DC:F5:D7:C1:32:7C:57:FF:71:58:B8:44:40:29:18:2A:9A:A2:DD:70:85
         sources:
           - name: Direct APK Link
