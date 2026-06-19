@@ -29,6 +29,9 @@
 #   PERCENT            Random % of packages to check (0-100). Default 5. Ignored if PACKAGES set.
 #   PACKAGES           Optional comma/space-separated package IDs to check instead of a sample.
 #   DRY_RUN            "true" to compute + report without mutating the data files.
+#   SPOT_CHECK_ISSUE_REF  Issue ref recorded on sources the sweep ADDS. The workflow passes a
+#                      sentinel here and rewrites it to the opened PR's number (GH-<pr>) afterwards.
+#                      Unset -> added sources reuse the fingerprint's existing issue (local runs).
 #   GPLAY_EMAIL,
 #   GPLAY_AAS_TOKEN    Google Play credentials (apkeep). Google Play is skipped if unset.
 #   DATA_FILE          data.yml path (default: data.yml).
@@ -131,6 +134,14 @@ model_sig_count() { jq '.signature | length' "$(_model "$1")"; }
 model_fp() { jq -r --argjson i "$2" '.signature[$i].fingerprint' "$(_model "$1")"; }
 model_issue() { jq -r --argjson i "$2" '.signature[$i].sources[0].issue // ""' "$(_model "$1")"; }
 model_source_issue() { jq -r --argjson i "$2" --arg n "$3" 'first(.signature[$i].sources[] | select(.name==$n) | .issue) // ""' "$(_model "$1")"; }
+# Issue ref to record on a source the sweep ADDS. When SPOT_CHECK_ISSUE_REF is set (the workflow
+# passes a sentinel it rewrites to the spot-check PR number, GH-<pr>, after the PR is opened) the
+# added source points at the PR documenting THIS re-verification, instead of the original
+# submission's issue (which says nothing about the newly added source). Falls back to reusing the
+# fingerprint's existing issue when unset (e.g. local/offline runs).
+sweep_issue_ref() { # pkg index
+  if [[ -n "${SPOT_CHECK_ISSUE_REF:-}" ]]; then printf '%s' "$SPOT_CHECK_ISSUE_REF"; else model_issue "$1" "$2"; fi
+}
 model_has_name() { jq -e --argjson i "$2" --arg n "$3" '.signature[$i].sources | map(.name) | index($n)' "$(_model "$1")" >/dev/null 2>&1; }
 model_link() { jq -r --argjson i "$2" --arg n "$3" 'first(.signature[$i].sources[] | select(.name==$n) | .apk.link) // ""' "$(_model "$1")"; }
 model_repo() { jq -r --argjson i "$2" --arg n "$3" 'first(.signature[$i].sources[] | select(.name==$n) | .apk.repo) // ""' "$(_model "$1")"; }
@@ -466,7 +477,7 @@ reconcile_perpkg() { # pkg store sname allow_add
         covered[i]=1; matched_any=1
         # ADD only on an EXACT fingerprint match (unchanged, conservative policy).
         if [[ "$allow_add" == "true" ]] && ! model_has_name "$pkg" "$i" "$sname"; then
-          emit_add "$pkg" "$fp" "$sname" "$(model_issue "$pkg" "$i")" "$sha" "" ""
+          emit_add "$pkg" "$fp" "$sname" "$(sweep_issue_ref "$pkg" "$i")" "$sha" "" ""
         fi
       elif signatures_overlap "$sig" "$fp"; then
         covered[i]=1; matched_any=1
@@ -573,7 +584,7 @@ reconcile_appverifier() { # pkg
     covered=0
     if [[ "$AV_FOUND" == "true" ]] && appverifier_matches_fp "$fp" "$AV_ALL"; then covered=1; fi
     if [[ "$exact" == 1 && "$has" == 0 ]]; then
-      emit_add "$pkg" "$fp" "$SRC_APPVERIFIER" "$(model_issue "$pkg" "$i")" "" "" ""
+      emit_add "$pkg" "$fp" "$SRC_APPVERIFIER" "$(sweep_issue_ref "$pkg" "$i")" "" "" ""
     elif [[ "$covered" == 0 && "$has" == 1 ]]; then
       if [[ "$AV_FOUND" == "true" ]]; then
         emit_del "$pkg" "$fp" "$SRC_APPVERIFIER" "no longer listed in AppVerifier's internal database for this key"
@@ -632,7 +643,7 @@ reconcile_domain() { # pkg
       any_vouched=1
       # Ensure the current method's source is present.
       if ! model_has_name "$pkg" "$i" "$adsrc"; then
-        emit_add "$pkg" "$fp" "$adsrc" "$(model_issue "$pkg" "$i")" "" "" ""
+        emit_add "$pkg" "$fp" "$adsrc" "$(sweep_issue_ref "$pkg" "$i")" "" "" ""
       fi
       # Drop a stale OTHER-method source on this key (the domain switched HTTPS<->DNS).
       for srcname in "HTTPS Verified Domain" "DNS Verified Domain"; do
@@ -672,7 +683,9 @@ reconcile_domain() { # pkg
     lissue=""
     for ((li = 0; li < n; li++)); do
       [[ "$(domain_key_status "$auth" "$(model_fp "$pkg" "$li")")" == "allowed" ]] || continue
-      if model_has_name "$pkg" "$li" "$adsrc"; then lissue=$(model_source_issue "$pkg" "$li" "$adsrc"); else lissue=$(model_issue "$pkg" "$li"); fi
+      # Existing domain source: keep its OWN original proving issue (backfill must not lose it).
+      # Newly added this run: use the spot-check PR ref (sweep_issue_ref) like the data.yml source.
+      if model_has_name "$pkg" "$li" "$adsrc"; then lissue=$(model_source_issue "$pkg" "$li" "$adsrc"); else lissue=$(sweep_issue_ref "$pkg" "$li"); fi
       [[ -n "$lissue" ]] && break
     done
     if [[ -n "$cur_domain" && "$cur_domain" != "$domain" ]]; then
@@ -863,7 +876,13 @@ report() {
       echo "### :globe_with_meridians: Domain ledger (\`data-verified-domains.yml\`) changes"
       echo ""
       echo '```diff'
-      printf '%s\n' "$LEDGER_DIFF"
+      # The sentinel is rewritten to GH-<pr> only after the PR is opened; show a readable
+      # placeholder in the body so the diff doesn't expose the raw sentinel.
+      if [[ -n "${SPOT_CHECK_ISSUE_REF:-}" ]]; then
+        printf '%s\n' "${LEDGER_DIFF//${SPOT_CHECK_ISSUE_REF}/GH-(this PR)}"
+      else
+        printf '%s\n' "$LEDGER_DIFF"
+      fi
       echo '```'
       echo ""
     fi

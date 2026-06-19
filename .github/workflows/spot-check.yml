@@ -70,6 +70,10 @@ jobs:
         env:
           GPLAY_EMAIL: ${{ secrets.GPLAY_EMAIL }}
           GPLAY_AAS_TOKEN: ${{ secrets.GPLAY_AAS_TOKEN }}
+          # Sentinel recorded as the issue ref on every source the sweep adds; rewritten to the
+          # opened PR's number (GH-<pr>) in "Reference the spot-check PR" below, so added sources
+          # link to the PR documenting this re-verification rather than the original submission.
+          SPOT_CHECK_ISSUE_REF: __SPOTCHECK_PR__
         run: bash .github/scripts/spot_check_reverify.sh
 
       - name: Prepare commit
@@ -121,7 +125,45 @@ jobs:
             --base main)
           echo "Opened ${pr_url}"
           echo "prUrl=${pr_url}" >> "$GITHUB_OUTPUT"
+          echo "prNumber=${pr_url##*/}" >> "$GITHUB_OUTPUT"
           echo "Opened spot-check PR: ${pr_url}" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Reference the spot-check PR in added sources
+        id: ref
+        # Now that the PR number exists, rewrite the sentinel issue ref on the sources this sweep
+        # added to GH-<pr>, so they link to the PR documenting the re-verification (chicken-and-egg:
+        # the commit is written before the PR number is known). Single amended commit, force-pushed,
+        # so the sentinel never lands in history. No-op when nothing carried the sentinel.
+        if: steps.spot.outputs.hasChanges == 'true' && env.DRY_RUN != 'true'
+        env:
+          NEWREF: GH-${{ steps.pr.outputs.prNumber }}
+          SENTINEL: __SPOTCHECK_PR__
+        run: |
+          set -euo pipefail
+          yq -i '(.packages[].signature[].sources[] | select(.issue == strenv(SENTINEL)) | .issue) = strenv(NEWREF)' data.yml
+          if [ -f data-verified-domains.yml ]; then
+            yq -i '(.domains[].issue[] | select(. == strenv(SENTINEL))) = strenv(NEWREF)' data-verified-domains.yml
+          fi
+          if git diff --quiet -- data.yml data-verified-domains.yml; then
+            echo "No sentinel refs to rewrite."
+            echo "rewritten=false" >> "$GITHUB_OUTPUT"
+          else
+            git reset --soft HEAD~1   # fold the rewrite into a single clean commit on the same base
+            echo "rewritten=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Re-commit with the PR reference
+        if: steps.ref.outputs.rewritten == 'true'
+        uses: ./.github/actions/bot-commit
+        with:
+          ref: ${{ steps.prep.outputs.branch }}
+          author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+          messageFile: ${{ steps.prep.outputs.msgFile }}
+          files: |
+            data.yml
+            data-verified-domains.yml
+          sshKey: ${{ secrets.ACTIONS_SSH_KEY }}
+          force: "true"
 
       - name: Flag package-eviction PRs
         # High-salience flag when the sweep removes one or more whole package entries; the count
