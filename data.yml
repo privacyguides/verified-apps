@@ -8719,6 +8719,14 @@ packages:
               sha256: 23c1d44a281ab093d4c1396849428cc28afd43749d6a9d719a9f8741833bb3de
           - name: HTTPS Verified Domain
             issue: GH-1886
+  - package: org.woheller69.whisperplus
+    signature:
+      - fingerprint: 22:E3:8A:D0:5E:16:BE:41:E3:5F:F6:86:EC:CE:26:32:F4:1A:C6:98:60:5F:58:35:CD:81:6B:07:43:FB:7B:FE
+        sources:
+          - name: F-Droid
+            issue: GH-2064
+            apk:
+              sha256: 86681941999023e04119cefe37e2633d7d6653195a5c6f8c788a6311ce5273ee
   - package: org.woheller69.whobird
     signature:
       - fingerprint: 31:9B:21:56:69:54:4B:FB:67:85:5B:D6:98:19:0D:6B:94:08:9D:93:B2:26:78:0E:62:BE:37:FC:56:E9:60:95
