@@ -4694,6 +4694,12 @@ packages:
               link: https://github.com/termux/termux-app/releases/download/v0.118.3/termux-app_v0.118.3+github-debug_arm64-v8a.apk
   - package: com.termux.api
     signature:
+      - fingerprint: 22:8F:B2:CF:E9:08:31:C1:49:9E:C3:CC:AF:61:E9:6E:8E:1C:E7:07:66:B9:47:46:72:CE:42:73:34:D4:1C:42
+        sources:
+          - name: F-Droid
+            issue: GH-1881
+            apk:
+              sha256: 4497dbbf81906df52e59ed387a5223d225aa0de3aca817cc557a621e4dadda44
       - fingerprint: B6:DA:01:48:0E:EF:D5:FB:F2:CD:37:71:B8:D1:02:1E:C7:91:30:4B:DD:6C:4B:F4:1D:3F:AA:BA:D4:8E:E5:E1
         sources:
           - name: Direct APK Link
