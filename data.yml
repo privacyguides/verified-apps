@@ -1222,13 +1222,17 @@ packages:
     signature:
       - fingerprint: 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
         sources:
-          - name: Google Play
-            issue: GH-146
+          - name: AppVerifier
+            issue: GH-2069
           - name: Direct APK Link
             issue: GH-146
             apk:
               sha256: 8a888cac1062397a82de782847e07ce63b025f0c35b53857cbbdce2cca44e1e4
               link: https://github.com/brave/brave-browser/releases/download/v1.90.124/Bravearm64Universal.apk
+          - name: Google Play
+            issue: GH-146
+          - name: HTTPS Verified Domain
+            issue: GH-2069
   - package: com.brave.browser_beta
     signature:
       - fingerprint: 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
@@ -3901,6 +3905,8 @@ packages:
             issue: GH-284
             apk:
               sha256: 81d1759235dcd1ecda78bf0f905641babf6142741356c4e176ca866ec3a1bf00
+          - name: HTTPS Verified Domain
+            issue: GH-2069
   - package: com.pcloud.pcloud
     signature:
       - fingerprint: B6:5C:9C:B8:36:28:78:F8:CC:20:95:C8:12:F6:8F:55:85:2C:08:7A:2E:0E:4C:D4:F2:58:38:15:02:E7:7B:B5
@@ -8391,6 +8397,8 @@ packages:
             apk:
               sha256: 27e3f9b21d257607bcd013780c53ccc06be11916297503b76bb50f72f94d18f9
               link: https://cdn4.telesco.pe/file/Telegram.apk?token=AUvjqyVnADRVE_afc_ZZQ_0ZoGgCV9uG8WuVoi3613pI17Z2fuR6z5-ka3Mmcbb4BNQMmD63XNju0ChRBg7gh8yeAp62ZFwvq8aSN8DD0DUavBgxa01B0e_fuEL_4A8CCsOsQVFThIj-tNQsudAf74lhMW7TOzREVI9kmH30BvlltE0qmzUSqy0h4tsVIp1LjJQ9KA0095zbekdPIWjfesFbm40p1Pa9CRxh3X_q00gM7gkPH9zbgRB2AzmS93vp7O93m54lXUQTHeocW69LTRkMNTZafltHD0BHInfIdjD522n5UQn8Ppinufa1g25n0SInrJ5WIIVd6OgylFqD2oX6OWQOe7aIWoM8DY_k_MhmoP7wVT-7_o-PCf1IXTuCBwViDFfujrPt0yEtHoGG0G4OkwoVrQaUb4dUoZIpqTtWAqRWLBUNSLe_pq1SMZM1-xOZvQ6zcowy7PkF5JNtYTM0nQHGM9Vz0hhSO8BCYtAp1RO1ryQIB258wFhoXdDaBFMMA5WHDWQ3lspekHkiMyfYSWs5wtFvVp6DUyq3Qyqdt5SzYzl3DM1FeLmqaqQt9GS0vg5WwY6pDpuHLuvIzPbHD9MeoDmGL671aIvaVAYmMXdm4lq4dm-X4UDAJ7qZD-TTnV14WuyfUVSXQfNP3t21r3joLnmdYDBq2mZBN9Mh18YG3rgQJCB2VAm8Bf0HD2w2c5OmCMkDF_AsK6rL9RYM9adzD3JN57FUnej6SREk-8WYi8yOzJtIjBpr5D3jbvQo9-g1tm9FkrFpBkivuctq2tjSqZE-kO7EzR1NKPBe4w3Q9cx-NqwgVJpo1kwpKSIhrrRvm04mDMNY15hhJcR_B7LX2nhjXkLOJmi4C9xIm9tVIGOxC_jdhJvw22lGCmaGl5pOqjN9aoqh99EYqVCLiL2wMmw_dg-oW3X6fLzccL8BOX04PSgJFTujAh_MDFzwca94ovu-oIPbSAYTtZ_bBzdpa1-e49YxxQt_OrCMn5KQWpQeQQxwB9dfdL5TpzihSwGeigoo2IZvSiH8sNDYQ-6Timnmjf1CPcEglqHhcKfAPl1L9i1PIdj_aBJ5AVzRMb5lXk_fFTDQ57U1YphdBcpj9Y21z-n3PWJGliiECWDj_ugM787LYfywveZA4r-ti7bFAyToKHEu1yndvxcAfCvGBu1Y3g4O3GLcncNI1jZ9J-l4P5imtLzLtPXjAiHJ_OykU6krLrFVbgObvNLVu2Y4hx3bbPHTMxIUVG6pGWv209bDFWIOA-oi3JLRtGb7OPOHc5H4h_tDQlJqnDOyhmN5IZp3FTfKrBG2SsRFZ20_s1ewIa31eQ406bKDTZW-ITRmrQwVaA51Q90LH1je0gZpqRIHC4rl3neYKgArGLPY036-PYLRzM64X30UvheqTb9iX6WTY6Ar1EdQnd5e-msXkoit8UhSkV04DOlclopio5jGuC3avJpxWYJ4Pt2-FDuZRSV9OJjDfaPa8bNc-7X1WipgcvhkT4KJjmq7lbu8j-OPgu6xSsaI91IpO9Uino94XF_FyGwxV9VocHGvN1RibhdCAqkWB_UmoSwmgye8EuPsUKwJSt6XlIsUsoS35grOJPTfzQOOecbtAwpEcgYB7f6_JhEcWVpGnPA73KzgWT8QKGbChGX-fhTtGbBHwQ164FuSxn3INZx3g6OyxcGud2o8BE8NqpG5CFc
+          - name: HTTPS Verified Domain
+            issue: GH-2069
   - package: org.thoughtcrime.securesms
     signature:
       - fingerprint: |
