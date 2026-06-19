@@ -7886,6 +7886,12 @@ packages:
               link: https://releases.ironfoxoss.org/ironfox/releases/151.0/universal/ironfox-151.0-universal.apk
   - package: org.isoron.uhabits
     signature:
+      - fingerprint: 9F:33:8A:86:3B:01:52:C8:81:E0:49:54:D0:7A:E6:7F:62:AF:D1:1E:06:4F:B3:AC:99:A8:BD:1D:28:42:A3:95
+        sources:
+          - name: F-Droid
+            issue: GH-1474
+            apk:
+              sha256: 3903d3be3db0f1622ad61cf5bb267515c95a4069e8dd46f73249721b1bb8173e
       - fingerprint: B2:F2:FA:6F:86:8B:1E:0A:A0:3F:B8:08:4F:BC:1B:0F:FC:35:3D:9C:F9:82:6C:8B:40:CF:FF:0E:D0:80:4B:0A
         sources:
           - name: Direct APK Link
