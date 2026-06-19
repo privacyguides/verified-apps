@@ -70,6 +70,9 @@ jobs:
         env:
           GPLAY_EMAIL: ${{ secrets.GPLAY_EMAIL }}
           GPLAY_AAS_TOKEN: ${{ secrets.GPLAY_AAS_TOKEN }}
+          # Authenticates GitHub release-asset downloads (Direct APK Link re-checks): anonymous
+          # downloads from shared runner IPs get rate-limited/blocked. Used by signatures_download_direct_apk.
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # Sentinel recorded as the issue ref on every source the sweep adds; rewritten to the
           # opened PR's number (GH-<pr>) in "Reference the spot-check PR" below, so added sources
           # link to the PR documenting this re-verification rather than the original submission.

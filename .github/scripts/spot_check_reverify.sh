@@ -100,15 +100,16 @@ DOMAIN_ADDS="${WORK}/domain-adds.jsonl"; : > "$DOMAIN_ADDS"      # ledger upsert
 DOMAIN_REMOVES="${WORK}/domain-removes.txt"; : > "$DOMAIN_REMOVES"  # pkgs to drop from the ledger (revocation/move)
 EVICTIONS="${WORK}/evictions.txt"; : > "$EVICTIONS"  # packages a real apply would remove entirely
 
-declare -A R_STATUS R_SIG R_SHA
+declare -A R_STATUS R_SIG R_SHA R_DETAIL
 
-result_set() { # pkg store fpkey status sig sha
+result_set() { # pkg store fpkey status sig sha [detail]
   local key="$1|$2|$3"
-  R_STATUS["$key"]="$4"; R_SIG["$key"]="$5"; R_SHA["$key"]="$6"
+  R_STATUS["$key"]="$4"; R_SIG["$key"]="$5"; R_SHA["$key"]="$6"; R_DETAIL["$key"]="${7:-}"
 }
 result_status() { printf '%s' "${R_STATUS["$1|$2|$3"]:-}"; }
 result_sig() { printf '%s' "${R_SIG["$1|$2|$3"]:-}"; }
 result_sha() { printf '%s' "${R_SHA["$1|$2|$3"]:-}"; }
+result_detail() { printf '%s' "${R_DETAIL["$1|$2|$3"]:-}"; }
 
 emit_add() { # pkg fp name issue sha link repo
   jq -cn --arg p "$1" --arg fp "$2" --arg n "$3" --arg i "$4" --arg sha "$5" --arg link "$6" --arg repo "$7" \
@@ -168,16 +169,21 @@ gha_out_get() {
 # ---------------------------------------------------------------------------
 # APK signature extraction (mirrors the get-signature action) -> sets SC_*.
 # ---------------------------------------------------------------------------
-SC_STATUS=""; SC_SIG=""; SC_SHA=""
+SC_STATUS=""; SC_SIG=""; SC_SHA=""; SC_DETAIL=""
 _finish_apk() { # pkg apk_path
-  local pkg="$1" apk="$2" cur sha
-  SC_STATUS="unavailable"; SC_SIG=""; SC_SHA=""
-  [[ -n "$apk" && -f "$apk" ]] || return 0
-  if ! signatures_verify_apk_package "$pkg" "$apk" >/dev/null 2>&1; then
-    SC_STATUS="error"; return 0
+  local pkg="$1" apk="$2" cur sha actual
+  SC_STATUS="unavailable"; SC_SIG=""; SC_SHA=""; SC_DETAIL=""
+  [[ -n "$apk" && -f "$apk" ]] || { SC_DETAIL="download produced no file"; return 0; }
+  if ! actual=$(signatures_apk_package_name "$apk" 2>/dev/null); then
+    SC_STATUS="error"; SC_DETAIL="could not read the APK manifest (aapt)"; return 0
+  fi
+  if [[ "$actual" != "$pkg" ]]; then
+    # The downloaded APK's application ID differs from the recorded entry (e.g. a Play-listing
+    # suffix like .web/.plus whose APK manifest is the base ID). Not a signature mismatch — flag it.
+    SC_STATUS="idmismatch"; SC_DETAIL="APK package ID is ${actual}, not ${pkg}"; return 0
   fi
   if ! cur=$(signatures_extract_from_apk "$apk" 2>/dev/null); then
-    SC_STATUS="error"; return 0
+    SC_STATUS="error"; SC_DETAIL="signature extraction failed"; return 0
   fi
   sha=$(sha256sum "$apk" | awk '{print $1}')
   SC_STATUS="ok"; SC_SIG="$cur"; SC_SHA="$sha"
@@ -186,7 +192,7 @@ _finish_apk() { # pkg apk_path
 # Mock store result from fixtures: <pkg>__<store>[__<fpkey>].sig / .error, else unavailable.
 mock_apk_check() { # pkg store fpkey
   local base="${MOCK_DIR}/${1}__${2}${3:+__$3}"
-  SC_STATUS="unavailable"; SC_SIG=""; SC_SHA=""
+  SC_STATUS="unavailable"; SC_SIG=""; SC_SHA=""; SC_DETAIL=""
   if [[ -f "${base}.sig" ]]; then
     SC_SIG="$(cat "${base}.sig")"
     SC_SHA="$(printf '%s' "$SC_SIG" | sha256sum | awk '{print $1}')"
@@ -349,7 +355,7 @@ pass_perpkg_apk() { # store source-name downloader-fn [only-if-has-source]
       apk="$("$fn" "$pkg")" || apk=""
       _finish_apk "$pkg" "$apk"
     fi
-    result_set "$pkg" "$store" "" "$SC_STATUS" "$SC_SIG" "$SC_SHA"
+    result_set "$pkg" "$store" "" "$SC_STATUS" "$SC_SIG" "$SC_SHA" "$SC_DETAIL"
   done
 }
 
@@ -380,7 +386,7 @@ run_passes() {
   fi
 
   log "Pass: Direct APK Link (recorded sources only)"
-  local pkg i fp k link dest
+  local pkg i fp k link dest rc
   for pkg in "${SELECTED[@]}"; do
     while IFS= read -r i; do
       [[ -z "$i" ]] && continue
@@ -390,13 +396,23 @@ run_passes() {
       else
         link=$(model_link "$pkg" "$i" "$SRC_DIRECT")
         dest="${WORK}/direct.apk"
-        if [[ -n "$link" ]] && signatures_download_direct_apk "$link" "$dest" >/dev/null 2>&1; then
+        SC_STATUS="unavailable"; SC_SIG=""; SC_SHA=""; SC_DETAIL=""
+        # Note: the helper's stderr (HTTP status) is intentionally NOT suppressed, so download
+        # failures are diagnosable in the job log instead of vanishing behind a vague note.
+        if [[ -z "$link" ]]; then
+          SC_DETAIL="no direct link recorded"
+        elif signatures_download_direct_apk "$link" "$dest"; then
           _finish_apk "$pkg" "$dest"
         else
-          SC_STATUS="unavailable"; SC_SIG=""; SC_SHA=""
+          rc=$?
+          if [[ "$rc" == "22" ]]; then
+            SC_DETAIL="download failed (HTTP error / rate-limited)"
+          else
+            SC_DETAIL="downloaded file was not an APK"
+          fi
         fi
       fi
-      result_set "$pkg" direct "$k" "$SC_STATUS" "$SC_SIG" "$SC_SHA"
+      result_set "$pkg" direct "$k" "$SC_STATUS" "$SC_SIG" "$SC_SHA" "$SC_DETAIL"
     done < <(model_direct_indices "$pkg")
   done
 
@@ -427,7 +443,7 @@ run_passes() {
           local apk; apk="$(dl_fdroid "$p")" || apk=""
           _finish_apk "$p" "$apk"
         fi
-        result_set "$p" customfdroid "${kk}|${nm}" "$SC_STATUS" "$SC_SIG" "$SC_SHA"
+        result_set "$p" customfdroid "${kk}|${nm}" "$SC_STATUS" "$SC_SIG" "$SC_SHA" "$SC_DETAIL"
       done < "$tuples"
     done < <(cut -f1 "$tuples" | sort -u)
   fi
@@ -515,16 +531,18 @@ reconcile_perpkg() { # pkg store sname allow_add
       emit_info "$pkg" "$sname" "now serves an unrecorded signature (recorded key may have rotated); left as-is for manual review: $(first_line "$sig")"
     fi
   elif [[ "$has_src" == 1 ]]; then
-    if [[ "$st" == "error" ]]; then
-      emit_info "$pkg" "$sname" "re-check error; left as-is"
-    else
-      emit_info "$pkg" "$sname" "app not available to re-check; left as-is (not a mismatch)"
-    fi
+    local detail; detail=$(result_detail "$pkg" "$store" "")
+    case "$st" in
+      error|idmismatch)
+        emit_info "$pkg" "$sname" "could not re-verify (${detail:-extraction error}); left as-is" ;;
+      *)
+        emit_info "$pkg" "$sname" "not available to re-check (${detail:-unavailable}); left as-is (not a mismatch)" ;;
+    esac
   fi
 }
 
 reconcile_direct() { # pkg
-  local pkg="$1" i fp k st sig
+  local pkg="$1" i fp k st sig detail
   while IFS= read -r i; do
     [[ -z "$i" ]] && continue
     fp=$(model_fp "$pkg" "$i"); k=$(fpkey "$fp")
@@ -541,13 +559,14 @@ reconcile_direct() { # pkg
         emit_info "$pkg" "$SRC_DIRECT" "linked APK now serves an unrecognized signature; left as-is for manual review"
       fi
     else
-      emit_info "$pkg" "$SRC_DIRECT" "could not re-download the linked APK; left as-is"
+      detail=$(result_detail "$pkg" direct "$k")
+      emit_info "$pkg" "$SRC_DIRECT" "${detail:-could not re-check the linked APK}; left as-is"
     fi
   done < <(model_direct_indices "$pkg")
 }
 
 reconcile_customfdroid() { # pkg
-  local pkg="$1" i name fp k st sig
+  local pkg="$1" i name fp k st sig detail
   while IFS=$'\t' read -r i name; do
     [[ -z "$i" ]] && continue
     fp=$(model_fp "$pkg" "$i"); k=$(fpkey "$fp")
@@ -563,7 +582,8 @@ reconcile_customfdroid() { # pkg
         emit_info "$pkg" "$name" "custom F-Droid repo now serves an unrecognized signature; left as-is for manual review"
       fi
     else
-      emit_info "$pkg" "$name" "could not re-check the custom F-Droid repo; left as-is"
+      detail=$(result_detail "$pkg" customfdroid "${k}|${name}")
+      emit_info "$pkg" "$name" "${detail:-could not re-check the custom F-Droid repo}; left as-is"
     fi
   done < <(model_customfdroid "$pkg")
 }

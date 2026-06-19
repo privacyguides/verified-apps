@@ -500,6 +500,10 @@ jobs:
 
       - name: Download APK
         if: steps.apkCache.outputs.cache-hit != 'true'
+        env:
+          # Authenticate GitHub release-asset downloads; anonymous downloads from shared runner IPs
+          # get rate-limited/blocked. Used by signatures_download_direct_apk for github.com URLs.
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           source .github/actions/signature-lib/signatures.lib.sh

@@ -991,18 +991,38 @@ signatures_extract_from_apk() {
   printf '%s' "$formatted"
 }
 
-# Download a direct-link APK to <dest> and sanity-check it is an APK (zip/android), matching
-# the new-submission directApk step. Returns 1 on a download error or a non-APK file.
+# Download a direct-link APK to <dest> and sanity-check it is an APK (zip/android).
+#
+# GitHub release assets are fetched with a bearer token when GH_TOKEN/GITHUB_TOKEN is present in
+# the environment. GitHub rate-limits/blocks ANONYMOUS release-asset downloads from shared CI IPs
+# (HTTP 403, or a 200 HTML interstitial), which makes good links look broken on runners.
+# Authenticated requests are not subject to that limit. curl drops the Authorization header on a
+# cross-host redirect (the asset 302s to a signed *.githubusercontent.com URL), so the token is
+# never sent to a non-github.com host.
+#
+# Returns: 0 success; 22 on a download/HTTP failure (the status is printed to stderr); 1 when the
+# downloaded bytes are not an APK (e.g. an HTML interstitial).
 signatures_download_direct_apk() {
   local url="$1" dest="$2"
-  # Remove any prior file first and make the curl failure explicit: callers may invoke this inside an
-  # `if` (where `set -e` is suspended), so a 404 must NOT leave a stale APK from a previous download
-  # that the file/grep check below would then wrongly accept.
+  local token="${GH_TOKEN:-${GITHUB_TOKEN:-}}"
+  local -a header=()
+  if [[ -n "$token" && "$url" == https://github.com/* ]]; then
+    header=(-H "Authorization: Bearer ${token}")
+  fi
+  # Remove any prior file first: callers may invoke this inside an `if` (where `set -e` is
+  # suspended), so a failure must NOT leave a stale APK from a previous download that the
+  # file/grep check below would then wrongly accept.
   rm -f "$dest"
-  curl -fsS --retry 3 --retry-delay 2 -o "$dest" "$url" || return 1
-  file "$dest"
+  # -L is REQUIRED: GitHub release assets 302-redirect to a signed *.githubusercontent.com URL;
+  # without it curl saves the empty redirect body and the APK check below fails on every release.
+  local code
+  if ! code=$(curl -fsSL --retry 3 --retry-delay 2 "${header[@]}" \
+      -o "$dest" -w '%{http_code}' "$url" 2>/dev/null); then
+    echo "Direct APK download failed for ${url} (HTTP ${code:-000})" >&2
+    return 22
+  fi
   if ! file "$dest" | grep -qiE 'zip archive|android'; then
-    echo "Downloaded file does not look like an APK: ${url}" >&2
+    echo "Direct APK download for ${url} returned a non-APK file (HTTP ${code}): $(file -b "$dest" 2>/dev/null)" >&2
     return 1
   fi
 }
