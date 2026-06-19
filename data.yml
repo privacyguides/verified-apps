@@ -78,9 +78,9 @@ packages:
       - fingerprint: CA:51:80:DA:AC:F1:F2:6A:18:F9:8F:F4:BC:E2:D6:2B:BA:AA:39:36:1C:99:8B:22:67:CE:D1:BC:0D:2F:93:2B
         sources:
           - name: F-Droid
-            issue: CB-35
+            issue: GH-1637
             apk:
-              sha256: 20d441e9ab6cf49e55224532ba6c93e1937322eb9094fe2c3f52db920583ccca
+              sha256: 028fccca5ecd28ff1c502b25c163ce0cbe509b2b9a93c1fe0f71580968d865e8
   - package: app.comaps.google
     signature:
       - fingerprint: 8C:3D:DE:72:D3:B1:D5:98:41:AF:B4:F2:80:67:A7:D7:BC:86:B5:1C:C7:AD:F4:85:B6:C8:11:49:F9:FA:AC:19
