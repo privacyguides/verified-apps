@@ -5937,6 +5937,14 @@ packages:
             issue: GH-559
             apk:
               sha256: fdab93454ac98c7e8841815678264e4ef7ee65a3b0d9fd6928a1e7512639fe76
+  - package: de.szalkowski.activitylauncher
+    signature:
+      - fingerprint: 76:AD:D4:86:A2:75:E1:40:96:D7:C9:AA:BE:25:A5:26:6D:19:C7:61:B9:42:7B:60:BB:59:6F:79:A0:3E:D4:F7
+        sources:
+          - name: Google Play
+            issue: GH-1796
+            apk:
+              sha256: af7c70f5fbea79ca7fba8759b3dfb2963ed003c1216df5f36fc1c38558cb55ee
   - package: de.tutao.calendar
     signature:
       - fingerprint: B4:54:C1:76:F9:0A:1E:A0:57:29:87:D3:82:72:3B:5C:D7:4F:94:2A:79:37:A2:A0:B9:9A:36:80:69:14:88:50
