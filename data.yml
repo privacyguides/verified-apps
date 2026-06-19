@@ -2894,6 +2894,12 @@ packages:
             apk:
               sha256: 23112395e489da4655fe3f6e5be2a47bca8ab3b406cc5ed7590a00b4548faa37
               link: https://github.com/JunkFood02/Seal/releases/download/v1.13.1/Seal-1.13.1-arm64-v8a-release.apk
+      - fingerprint: 7D:E6:AE:B9:3F:19:6E:67:7B:08:7B:C8:D0:40:FE:59:8B:61:3A:96:54:99:0D:6F:CA:A4:0D:71:EB:13:CD:49
+        sources:
+          - name: F-Droid
+            issue: GH-1686
+            apk:
+              sha256: 095c2275152653155219d0f276f7a8e09be6436b3196cf1d1b56ebb5a39bf488
   - package: com.kakaku.tabelog.tourists
     signature:
       - fingerprint: 41:DF:CB:EF:4C:AE:B2:47:27:FB:3D:31:10:89:68:A4:24:12:9E:88:FF:AD:0A:E0:D7:58:A0:70:F8:EB:CA:BC
