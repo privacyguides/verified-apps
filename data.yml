@@ -687,6 +687,18 @@ packages:
             issue: GH-534
             apk:
               sha256: 37c740393bc397759ab3edacc15c568c341aa81ca6b0adfe5f15e9e068e4641c
+  - package: com.aisleron
+    signature:
+      - fingerprint: E1:A1:72:5F:32:B3:02:C6:C6:9A:EE:BD:25:C5:E5:07:41:82:1A:F7:BF:EC:0A:E1:8A:DF:CA:28:70:56:39:EA
+        sources:
+          - name: F-Droid
+            issue: GH-2013
+            apk:
+              sha256: 9084bfdffaebb61d4656c1d228cc09f19906f35a76b253a55e7b4373e3398a2e
+          - name: Google Play
+            issue: GH-2013
+            apk:
+              sha256: 14d8980122f99154ac5d3ef9f14c5fea07e00f38d9392de6e60e0fc82914315a
   - package: com.akylas.documentscanner
     signature:
       - fingerprint: 0D:10:AA:10:E0:3A:7E:76:97:22:BE:43:88:BE:63:BD:15:7A:7B:7B:F1:96:FB:3C:EB:AB:87:37:F9:6C:A8:71
