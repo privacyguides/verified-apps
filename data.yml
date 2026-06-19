@@ -595,6 +595,14 @@ packages:
             issue: GH-503
             apk:
               sha256: fa5ef32e3318d55123a2f208c90dab27ec5cc244bbd6afdcd7cae87bb407e2f5
+  - package: com.abcbank.pushtan
+    signature:
+      - fingerprint: 31:E2:A9:0E:CE:AD:1E:13:5D:B5:16:2E:0C:53:57:B0:E5:04:CE:82:2D:D4:42:27:32:C7:26:33:02:FA:8D:4A
+        sources:
+          - name: Google Play
+            issue: GH-2052
+            apk:
+              sha256: 99664f6478bf94ba8b1e96e0bfd8831a25f1b4d1aa2d570144e1a37bc2570c3e
   - package: com.acehardware.rewards
     signature:
       - fingerprint: 37:F9:BE:EC:83:94:80:36:4D:F6:1A:49:27:ED:58:DB:06:10:F9:F1:FB:4A:AA:E4:BC:A0:3C:EA:13:17:2C:F7
