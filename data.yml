@@ -5613,6 +5613,14 @@ packages:
             issue: GH-1640
             apk:
               sha256: f3008b2b8c873d119793ae9cbb8409008a95425ebc102e757b6449670c651065
+  - package: de.dwd.warnapp
+    signature:
+      - fingerprint: D8:C3:DD:D4:ED:EC:5B:84:B8:49:AD:33:E7:E6:4A:93:97:83:16:3A:B9:BE:5A:A8:DC:2E:78:BD:95:FD:A5:D5
+        sources:
+          - name: Google Play
+            issue: GH-2012
+            apk:
+              sha256: ecbf873de931fe854aec3053327402acfb698056da39c49e2612ecb37595fb42
   - package: de.felixnuesse.extract
     signature:
       - fingerprint: 1F:1E:E8:3B:8C:11:74:A6:1D:0D:18:F0:9F:F1:21:5D:59:E5:E6:3E:0B:01:A4:DA:69:5B:8E:B5:2D:16:BF:E9
