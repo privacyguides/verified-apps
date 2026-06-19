@@ -8902,6 +8902,14 @@ packages:
             apk:
               sha256: d07b9a00c6f43da49812ad6a237c97418e519cf17f1c384443562c858a49f1b2
               link: https://github.com/mateusz-bak/openreads/releases/download/v2.11.0/openreads-v2.11.0-release.apk
+  - package: software.msm.portfolio_performance
+    signature:
+      - fingerprint: 57:D6:01:13:C0:64:38:10:FE:8D:B6:97:37:03:0D:00:63:DB:48:DF:E2:FE:57:D3:50:08:DD:ED:D0:D2:55:05
+        sources:
+          - name: Google Play
+            issue: GH-2027
+            apk:
+              sha256: 5980c654bbb9e4535191d03fdac2253a5d34b5db784c561822e5797ad8ee1290
   - package: spam.blocker
     signature:
       - fingerprint: 7B:1C:E7:27:85:6F:34:27:EA:B1:FA:DF:AD:6C:97:30:CD:4E:6B:A2:01:66:15:47:F0:09:20:63:77:DF:FB:58
