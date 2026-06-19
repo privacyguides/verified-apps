@@ -4108,6 +4108,22 @@ packages:
             issue: GH-1242
             apk:
               sha256: 9c7a0657d50953813677ae487d6b46a8e5e5ac63b32223aff96cacdb964eab64
+  - package: com.razeeman.util.simpletimetracker
+    signature:
+      - fingerprint: 9F:22:41:EA:F7:8B:E6:B8:41:5F:2D:B4:24:EF:99:C9:74:55:76:FE:07:B0:E5:8B:08:C9:22:28:9A:36:33:E4
+        sources:
+          - name: F-Droid
+            issue: GH-2055
+            apk:
+              sha256: 74fd2f25d08fa8c1a5ac405801fc8ff368700ec8d9e5e9c18a35839f9d620779
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-2055
+            apk:
+              sha256: 74fd2f25d08fa8c1a5ac405801fc8ff368700ec8d9e5e9c18a35839f9d620779
+          - name: Google Play
+            issue: GH-2055
+            apk:
+              sha256: 4f58018a1218c251bab19b11979c69fb8a8040ff8ad8bf802faf75b20988ab59
   - package: com.reddit.frontpage
     signature:
       - fingerprint: 97:0B:91:14:38:13:B4:C9:D5:F3:63:4F:67:2C:9F:CA:A5:62:1B:4E:FA:AE:DA:FD:6C:23:5C:BB:B8:69:73:6F
