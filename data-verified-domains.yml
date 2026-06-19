@@ -36,6 +36,15 @@ domains:
       - package: com.bandcamp.android
         fingerprints:
           - BF:B8:97:AA:4F:7B:EC:59:ED:10:0B:8B:94:FA:2D:BD:9B:96:52:F0:B5:83:89:F8:0A:AE:2F:0F:21:55:71:E7
+  - domain: brave.com
+    method: https
+    issue:
+      - GH-2069
+    checked: "2026-06-19T06:20:55Z"
+    packages:
+      - package: com.brave.browser
+        fingerprints:
+          - 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
   - domain: dictcc.dict.cc
     method: https
     issue:
@@ -74,6 +83,27 @@ domains:
       - package: org.magicgrants.skylight
         fingerprints:
           - 15:FA:52:78:85:F7:04:21:10:30:4D:1A:F0:08:81:07:27:09:BD:38:E9:84:2C:AF:9C:D8:9E:08:06:1C:5E:52
+  - domain: messenger.telegram.org
+    method: https
+    issue:
+      - GH-2069
+    checked: "2026-06-19T06:20:55Z"
+    packages:
+      - package: org.telegram.messenger.web
+        fingerprints:
+          - 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
+  - domain: paypal.com
+    method: https
+    issue:
+      - GH-2069
+    checked: "2026-06-19T06:20:55Z"
+    packages:
+      - package: com.paypal.android.p2pmobile
+        fingerprints:
+          - 69:25:88:A7:D1:8B:D1:55:DA:4E:6E:25:36:28:0F:2C:BE:4B:42:DF:7C:86:C6:42:46:1A:6C:0B:DF:3B:AB:28
+          - B4:53:D3:7C:78:28:56:F7:82:A8:E0:9F:14:EE:20:B8:4F:49:A3:10:75:F4:7F:D3:A0:79:82:D8:CA:FE:FF:D9
+          - C7:C6:2E:A0:F6:E2:F6:EB:A8:7F:95:40:69:87:50:55:30:EF:2F:51:6E:7C:DE:59:91:D7:14:03:31:44:80:72
+          - DB:EE:80:B6:07:32:0F:B8:24:C6:E6:FA:BE:D6:97:A7:7E:18:D9:60:1A:48:43:31:40:EF:22:AD:6A:71:48:9F
   - domain: play.verifiedapps.privacyguides.org
     method: dns
     issue:
