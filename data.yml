@@ -1847,6 +1847,14 @@ packages:
             issue: GH-537
             apk:
               sha256: a815c2763e0c01edb9e945e38902070175eb14675a9235c07e1b2a870bace806
+  - package: com.ehwplus
+    signature:
+      - fingerprint: 6F:82:30:4F:DF:12:5A:78:E0:C5:30:93:DC:D8:A2:2E:87:11:D3:64:F8:AF:89:5E:4D:75:12:F8:59:95:9E:AA
+        sources:
+          - name: Google Play
+            issue: GH-2024
+            apk:
+              sha256: 68fa0f569d9ca309525cffbe1d4d112d0a0aecef7c74ff13037e7d7f81032600
   - package: com.einnovation.temu
     signature:
       - fingerprint: 8A:DE:FE:CE:37:49:DC:F2:3C:3C:EB:3A:8B:BB:C9:A1:D8:80:91:B6:76:30:05:88:91:1B:B5:8B:85:97:0B:AF
