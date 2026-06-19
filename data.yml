@@ -8861,6 +8861,18 @@ packages:
             issue: GH-1111
             apk:
               sha256: 3dde10ba22cb0d0c240551c0b60e1245f5bfe1cfaed5df8ab486e491857e2ffd
+  - package: tech.techlore.plexus
+    signature:
+      - fingerprint: F0:2B:66:E8:E6:18:37:04:C3:FD:6A:E0:63:2F:62:40:DE:8E:EC:0D:6B:DB:E9:17:73:1C:41:AB:8C:7D:9A:AB
+        sources:
+          - name: F-Droid
+            issue: GH-1990
+            apk:
+              sha256: df8ca44bb501ad990a6de529d61b600b5f81e9edde94961a91d038d6f0329f09
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1990
+            apk:
+              sha256: df8ca44bb501ad990a6de529d61b600b5f81e9edde94961a91d038d6f0329f09
   - package: tech.ula
     signature:
       - fingerprint: 3A:19:DD:7D:23:81:C9:41:4F:70:64:5C:F0:BA:AB:EB:CB:0A:74:3F:1E:EE:07:0D:61:9B:0C:A1:79:73:3F:9F
