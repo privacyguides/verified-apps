@@ -1690,6 +1690,8 @@ packages:
             issue: GH-159
             apk:
               sha256: f538f891e5d29bc8481cbd6329efb5b4ed7eda9a9c375b94aded2ac708c33b85
+          - name: HTTPS Verified Domain
+            issue: GH-2068
   - package: com.discourse
     signature:
       - fingerprint: 7C:01:A2:90:5B:FD:7F:A6:53:A3:51:35:6B:81:2F:E7:24:D0:18:3D:EF:AF:32:D7:50:C4:7D:75:D3:66:61:94
@@ -2107,6 +2109,8 @@ packages:
             issue: GH-982
             apk:
               sha256: fee64d9c24ac4bf78c6b4b4ed477a21f04bd2deb7262fbc33e0b8af9961cc307
+          - name: HTTPS Verified Domain
+            issue: GH-2068
   - package: com.fundriven.breath_ball
     signature:
       - fingerprint: 12:E3:00:21:DA:68:B8:A4:5F:1A:3B:C0:28:CF:C8:87:7D:18:3F:52:DF:50:5D:C6:59:F4:37:70:46:36:B9:60
@@ -2733,6 +2737,8 @@ packages:
             issue: GH-1828
             apk:
               sha256: 8f32e518459d974b3c31860c60baf83b92e7bef1ff17d9e16c5be621ff848664
+          - name: HTTPS Verified Domain
+            issue: GH-2068
   - package: com.hassaneltantawy.hisnelmoslem
     signature:
       - fingerprint: C4:65:5F:DE:AC:77:E5:10:E7:1E:73:8D:23:B8:E2:32:21:CF:6B:BA:C8:D8:95:88:C8:55:65:A6:F0:B1:59:38
@@ -4610,6 +4616,8 @@ packages:
             issue: GH-912
             apk:
               sha256: 00fc3f8d7dd8e6fb85efcf698fba50d05e37fe698f918a19ba0296f4a0d7c29e
+          - name: HTTPS Verified Domain
+            issue: GH-2068
   - package: com.streetwriters.notesnook
     signature:
       - fingerprint: 23:AF:C1:F8:ED:5F:BB:D0:85:2A:37:22:2D:DC:E0:6F:92:92:71:02:F0:12:6F:99:6A:56:23:F5:27:74:C6:90
@@ -5026,6 +5034,8 @@ packages:
             issue: GH-946
             apk:
               sha256: 8ba08d508f0194fc6ab4824c28b0d036cc025b8c509c19b41e1d7869f4dd8dbb
+          - name: HTTPS Verified Domain
+            issue: GH-2068
   - package: com.uvnv.mintsim
     signature:
       - fingerprint: B1:FC:C0:1C:13:BF:7C:BF:51:69:DA:2D:4A:A1:82:86:96:DA:CD:51:D5:D4:C7:0A:62:2F:4C:F1:CF:5F:45:3C
