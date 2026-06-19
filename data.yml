@@ -8252,6 +8252,12 @@ packages:
               link: https://github.com/PurpleI2P/i2pd-android/releases/download/2.60.0/i2pd-2.60.0-arm64-v8a-release.apk
   - package: org.quantumbadger.redreader
     signature:
+      - fingerprint: 19:9F:DB:F8:30:08:EC:CE:44:ED:FD:EE:F4:E1:A2:DD:1A:EF:D9:CA:0F:5C:39:5A:36:B4:7C:07:22:07:AC:2F
+        sources:
+          - name: F-Droid
+            issue: GH-1726
+            apk:
+              sha256: 572dc75b357802204711d6748a449a83984c83afe67710dd060553aa7bbb1d8e
       - fingerprint: D9:49:6A:86:F9:95:08:78:79:F4:11:99:98:6A:6D:36:C1:93:06:AC:90:DB:D1:E0:79:3F:3A:B1:98:1F:37:44
         sources:
           - name: Google Play
