@@ -4655,6 +4655,12 @@ packages:
               sha256: f7eadc12eab6bfdb0459edf109c631a0e91d3ee715259a5100b071d022cb39c1
   - package: com.tailscale.ipn
     signature:
+      - fingerprint: 37:05:F1:84:CB:67:D6:83:E7:6E:CC:20:3C:C9:CC:35:7E:64:48:C5:0E:59:00:24:19:08:5B:4C:28:6D:F0:E8
+        sources:
+          - name: F-Droid
+            issue: CB-125
+            apk:
+              sha256: 37bdcfd49821d2d73844db527d883e5ef20086b969450208d078d61e99d60849
       - fingerprint: 5C:DB:29:55:51:BF:E1:A0:87:FE:D6:AC:DA:07:14:1C:6C:92:9F:A7:C2:9B:D2:73:A7:09:28:13:AC:C4:34:BF
         sources:
           - name: Google Play
