@@ -19,7 +19,8 @@ try:
 except ImportError as exc:  # pragma: no cover
     raise SystemExit("PyYAML is required (install pyyaml)") from exc
 
-VERIFICATION_HEADER = "### Verification Info"
+VERIFICATION_HEADER = "### Verification info"
+VERIFICATION_HEADERS = (VERIFICATION_HEADER, "### Verification Info")
 FULL_HASH_RE = re.compile(r"^([0-9A-Fa-f]{2}(?::[0-9A-Fa-f]{2}){31})$")
 PACKAGE_RE = re.compile(r"^[a-zA-Z][a-zA-Z0-9_]*(\.[a-zA-Z][a-zA-Z0-9_]*)+$")
 
@@ -47,10 +48,13 @@ def load_data_yml_fingerprints(path: Path) -> dict[str, list[str]]:
 
 
 def parse_issue_verification(body: str) -> tuple[str | None, list[str]]:
-    if VERIFICATION_HEADER not in body:
+    section = None
+    for header in VERIFICATION_HEADERS:
+        if header in body:
+            section = body.split(header, 1)[1]
+            break
+    if section is None:
         return None, []
-
-    section = body.split(VERIFICATION_HEADER, 1)[1]
     section = section.split("###", 1)[0]
     lines: list[str] = []
     in_fence = False

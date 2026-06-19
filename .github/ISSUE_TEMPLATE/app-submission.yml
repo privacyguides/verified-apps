@@ -65,7 +65,7 @@ body:
   - type: dropdown
     id: appSource
     attributes:
-      label: Submitted pp source
+      label: Submitted app source
       description: Where did you download the app you're submitting a hash for?
       options:
         - Google Play / Aurora Store

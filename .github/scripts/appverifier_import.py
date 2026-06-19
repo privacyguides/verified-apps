@@ -171,17 +171,19 @@ def format_issue_body(
     return (
         f"{VERIFICATION_HEADER}\n\n"
         f"```text\n{verification}\n```\n\n"
-        "### Direct APK Link\n\n"
+        "### Direct download link\n\n"
         "_No response_\n\n"
         "### Custom F-Droid Repository\n\n"
         "_No response_\n\n"
-        "### Source\n\n"
+        "### Signing key citation\n\n"
         f"AppVerifier internal database ({database_url}). "
         f"Signing configuration sources in AppVerifier: {sources_line}.\n\n"
-        "### App Source\n\n"
+        "### Submitted app source\n\n"
         f"{app_source}\n\n"
-        "### AppVerifier Source\n\n"
-        "Other\n"
+        "### Verifying app\n\n"
+        "AppVerifier (@soupslurpr)\n\n"
+        "### Verifying app source\n\n"
+        "Other download source"
     )
 
 

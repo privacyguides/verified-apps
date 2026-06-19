@@ -114,7 +114,7 @@ runs:
             fi
             issue_pkg=$(printf '%s\n' "$parsed" | sed -n '1p')
             issue_sigs=$(printf '%s\n' "$parsed" | tail -n +2)
-            cand_link=$(signatures_parse_issue_field "Direct APK Link" "$body" true)
+            cand_link=$(signatures_parse_issue_field "Direct download link|Direct APK Link" "$body" true)
             cand_repo=$(signatures_parse_issue_field "Custom F-Droid Repository" "$body" true)
 
             if [[ "$issue_pkg" == "$PACKAGE" ]] && signatures_equal "$user_sigs" "$issue_sigs" \

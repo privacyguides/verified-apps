@@ -1280,15 +1280,9 @@ jobs:
           ISSUE_BODY: ${{ github.event.issue.body }}
         run: |
           set -euo pipefail
-          app_source=$(printf '%s\n' "$ISSUE_BODY" | awk -v header="App Source" '
-            $0 == "### " header { found=1; next }
-            found && /^### / { exit }
-            found && NF { print; exit }
-          ')
-          app_source="${app_source//$'\r'/}"
-          app_source="${app_source#"${app_source%%[![:space:]]*}"}"
-          app_source="${app_source%"${app_source##*[![:space:]]}"}"
-          if [[ -z "$app_source" || "$app_source" == "_No response_" ]]; then
+          source "${GITHUB_WORKSPACE}/.github/actions/signature-lib/signatures.lib.sh"
+          app_source=$(signatures_parse_issue_field "Submitted app source|App Source" "$ISSUE_BODY" true || true)
+          if [[ -z "$app_source" ]]; then
             app_source="Submission"
           fi
           echo "value=$app_source" >> "$GITHUB_OUTPUT"

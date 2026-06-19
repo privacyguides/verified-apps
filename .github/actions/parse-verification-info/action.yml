@@ -92,7 +92,7 @@ runs:
         apk_url=""
         custom_fdroid_repo_url=""
         if [[ -n "$ISSUE_BODY" ]]; then
-          raw_apk_url=$(signatures_parse_issue_field "Direct APK Link" "$ISSUE_BODY" || true)
+          raw_apk_url=$(signatures_parse_issue_field "Direct download link|Direct APK Link" "$ISSUE_BODY" || true)
           apk_url=$(validate_apk_url "$raw_apk_url" || true)
           raw_custom_fdroid_repo_url=$(signatures_parse_issue_field "Custom F-Droid Repository" "$ISSUE_BODY" || true)
           custom_fdroid_repo_url=$(validate_fdroid_repo_url "$raw_custom_fdroid_repo_url" || true)
