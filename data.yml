@@ -762,6 +762,8 @@ packages:
             issue: GH-712
             apk:
               sha256: bb72034c6133de936e4cc64f57dd15f86c4220c63adb5fe3d13f55c80025bcca
+          - name: HTTPS Verified Domain
+            issue: GH-712
   - package: com.amc
     signature:
       - fingerprint: A3:85:95:CB:9F:EF:41:D2:89:7C:C5:B6:C3:CC:EB:00:E8:97:5B:C6:7D:09:2E:28:99:2D:51:58:8D:07:7C:D1
