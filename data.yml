@@ -3036,6 +3036,14 @@ packages:
             issue: GH-397
             apk:
               sha256: 1e45223579c8bb2b5abdb7c42477f075dafe7680fdbac2719f9362ad2c01a061
+  - package: com.kj17798.app
+    signature:
+      - fingerprint: CA:1E:62:6C:BF:39:80:7A:C0:05:82:39:F9:95:44:7E:8C:0F:7B:32:84:58:C8:88:CF:A3:96:5A:3C:95:77:0B
+        sources:
+          - name: Google Play
+            issue: GH-2034
+            apk:
+              sha256: 4d234b472acccd4fc73326abcdcc6b85c953695b5d279183af86f136756242a3
   - package: com.klook
     signature:
       - fingerprint: AD:B8:11:84:1B:66:C5:B2:D4:26:47:D4:89:7D:8B:01:64:82:CA:46:31:A8:87:C6:80:5B:1E:33:BB:31:5D:14
