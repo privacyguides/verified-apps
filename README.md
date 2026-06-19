@@ -241,6 +241,9 @@ The same file is used by Android App Links, so if you already publish one you ca
 
 ### DNS Verification
 
+> [!TIP]
+> DNS records are less securely protected than HTTPS web servers. While your verification will be supported and added to the database, some consumers of this dataset may not trust the verification to the same degree, e.g. you may not be eligible for badges indicating higher tier verification in some database viewer apps. We recommend HTTPS Verification as a more robust alternative to DNS Verification that you should use whenever possible.
+
 Create a `TXT` record with the name `_pgappverify` on the domain or subdomain you are verifying. For the package ID `com.example.appname.fdroid` there would be three valid locations for you to create this DNS record:
 
 - `_pgappverify.fdroid.appname.example.com` - would apply this data to an app ID'd `com.example.appname.fdroid` or any apps with an ID starting with `com.example.appname.fdroid.`

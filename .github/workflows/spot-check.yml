@@ -220,12 +220,3 @@ jobs:
     with:
       artifact-name: database
       artifact-path: data.yml
-
-  syncMirrorsAfterSpotCheck:
-    name: Sync mirrors (spot-check merge)
-    needs: attest
-    if: always() && !cancelled() && needs.attest.result == 'success'
-    permissions:
-      contents: read
-    uses: ./.github/workflows/sync-repo-to-mirrors.yml
-    secrets: inherit

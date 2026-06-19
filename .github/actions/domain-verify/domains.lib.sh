@@ -188,6 +188,8 @@ ${dns_locs}
 $(printf '%s' "$dns_lines")
 \`\`\`
 
+DNS records are less securely protected than HTTPS web servers. While your verification will be supported and added to the database, some consumers of this dataset may not trust the verification to the same degree, e.g. you may not be eligible for badges indicating higher tier verification in some database viewer apps.
+
 When you've created the record (either method), leave a comment here and we'll check it.
 EOF
 }
