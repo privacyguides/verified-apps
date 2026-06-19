@@ -5742,6 +5742,14 @@ packages:
             issue: GH-853
             apk:
               sha256: 8fa68638aeb80f277eaf23181ea628c6ceaeff4f35358b40bee71d99f7b11eaa
+  - package: de.seemoo.at_tracking_detection
+    signature:
+      - fingerprint: FD:93:BE:74:53:F6:3A:99:65:4F:3E:E4:25:FB:53:57:40:94:40:94:6A:4E:1B:23:8D:23:19:09:08:AA:F1:55
+        sources:
+          - name: F-Droid
+            issue: CB-114
+            apk:
+              sha256: ada9fd46a02277e4a1cd2f0ae9023d5696f0f9422f5d509a2361c5854b9e6023
   - package: de.seemoo.at_tracking_detection.release
     signature:
       - fingerprint: 98:B9:E1:89:18:DB:BB:BB:83:81:DC:F3:59:F4:47:37:2D:E7:06:FD:94:87:39:6D:1E:F3:8F:20:39:30:41:48
