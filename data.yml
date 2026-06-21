@@ -1145,6 +1145,8 @@ packages:
             issue: GH-937
             apk:
               sha256: dfd0432527f6c5d9cfa525e246209f7869b5d9b908d711a6fbcf7bea909d236b
+          - name: HTTPS Verified Domain
+            issue: GH-2310
   - package: com.bibliocommons.sonoma
     signature:
       - fingerprint: FC:78:6A:C8:44:1B:A8:C7:9C:EF:CE:6C:9A:B3:3F:28:0B:21:A7:46:43:61:67:EF:EF:92:CF:0A:6B:2B:BC:CD
@@ -1238,6 +1240,8 @@ packages:
             issue: GH-273
             apk:
               sha256: b9a8b3f656de37c1e8b249b91d9ff5613e6091a0c46cbffd917cf009267dd119
+          - name: HTTPS Verified Domain
+            issue: GH-2310
   - package: com.bose.app.android.brussels
     signature:
       - fingerprint: DD:51:4B:64:D4:B2:43:4F:22:EB:E1:20:D9:73:FB:E8:5F:E3:04:D9:42:7E:C6:9A:3B:BD:DC:58:41:58:97:39
