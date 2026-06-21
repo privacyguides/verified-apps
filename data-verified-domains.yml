@@ -148,11 +148,13 @@ domains:
     issue:
       - GH-1321
       - GH-1329
-    checked: "2026-06-05T22:21:57Z"
+      - GH-2067
+    checked: "2026-06-21T04:39:14Z"
     packages:
       - package: org.privacyguides.verifiedapps
         fingerprints:
           - 40:5C:6B:D2:CA:7C:3A:AE:8F:46:3C:6F:8B:55:BC:F0:DD:AC:43:1C:5E:D8:EA:FF:65:D1:06:C9:81:7A:20:7F
+    dnssec: true
   - domain: starlink.com
     method: https
     issue:
