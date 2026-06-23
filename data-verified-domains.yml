@@ -36,6 +36,15 @@ domains:
       - package: com.bandcamp.android
         fingerprints:
           - BF:B8:97:AA:4F:7B:EC:59:ED:10:0B:8B:94:FA:2D:BD:9B:96:52:F0:B5:83:89:F8:0A:AE:2F:0F:21:55:71:E7
+  - domain: booking.com
+    method: https
+    issue:
+      - GH-2338
+    checked: "2026-06-23T05:40:35Z"
+    packages:
+      - package: com.booking
+        fingerprints:
+          - 6A:C8:C8:A9:E6:F3:6E:14:E5:2A:0A:05:15:A3:6B:70:66:E7:20:A1:B0:C8:A1:B0:59:E0:78:17:50:A8:71:99
   - domain: brave.com
     method: https
     issue:
@@ -45,6 +54,17 @@ domains:
       - package: com.brave.browser
         fingerprints:
           - 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
+  - domain: bumble.com
+    method: https
+    issue:
+      - GH-2338
+    checked: "2026-06-23T05:40:35Z"
+    packages:
+      - package: com.bumble.app
+        fingerprints:
+          - 43:2C:60:B3:F8:84:9E:A0:EA:93:B8:50:D2:68:EC:EB:5D:C4:0E:E2:27:0C:08:45:B5:5B:6E:70:9D:A8:24:D1
+          - 44:A1:04:DA:00:F0:3A:7B:BE:A9:83:7A:DE:54:F7:BF:F9:7C:34:B7:DC:46:DA:13:10:CC:EA:FE:AF:A6:83:2F
+          - E2:9E:74:1A:F1:ED:08:9E:8B:A1:89:FE:55:B3:EE:E7:68:30:82:17:50:2B:8E:CF:E3:A5:C2:16:A5:1D:C3:BF
   - domain: dictcc.dict.cc
     method: https
     issue:
@@ -134,6 +154,15 @@ domains:
           - B4:53:D3:7C:78:28:56:F7:82:A8:E0:9F:14:EE:20:B8:4F:49:A3:10:75:F4:7F:D3:A0:79:82:D8:CA:FE:FF:D9
           - C7:C6:2E:A0:F6:E2:F6:EB:A8:7F:95:40:69:87:50:55:30:EF:2F:51:6E:7C:DE:59:91:D7:14:03:31:44:80:72
           - DB:EE:80:B6:07:32:0F:B8:24:C6:E6:FA:BE:D6:97:A7:7E:18:D9:60:1A:48:43:31:40:EF:22:AD:6A:71:48:9F
+  - domain: photos.ente.io
+    method: https
+    issue:
+      - GH-2338
+    checked: "2026-06-23T05:40:35Z"
+    packages:
+      - package: io.ente.photos.independent
+        fingerprints:
+          - 35:ED:56:81:B7:0B:B3:BD:35:D9:0D:85:6A:F5:69:4C:50:4D:EF:46:AA:D8:3F:77:7B:1C:67:5C:F4:51:35:0B
   - domain: play.verifiedapps.privacyguides.org
     method: dns
     issue:
@@ -198,3 +227,13 @@ domains:
         fingerprints:
           - 03:63:7F:6C:5D:8F:60:4E:6F:DB:79:A6:FF:BF:A5:78:DE:4E:31:8F:8D:A2:2F:C6:10:66:65:24:7F:88:07:D7
           - 7F:D2:CE:A3:0C:3A:60:22:EB:29:41:9C:E8:F6:F9:2C:E8:A4:BD:35:B0:CC:87:9E:D3:CC:A6:CB:F5:E9:99:2D
+  - domain: wikipedia.org
+    method: https
+    issue:
+      - GH-1886
+    checked: "2026-06-23T05:40:35Z"
+    packages:
+      - package: org.wikipedia
+        fingerprints:
+          - 1C:3D:DB:0E:8F:32:58:B0:FF:3B:7B:6A:60:8D:19:E7:CD:EE:D3:8A:58:97:BB:DA:23:BA:C1:55:92:3B:12:67
+          - F5:40:E9:37:41:9A:1F:E3:08:E3:35:31:35:9C:23:CE:19:DF:D8:4A:66:01:E2:EF:85:C2:17:C8:23:A7:08:7F
