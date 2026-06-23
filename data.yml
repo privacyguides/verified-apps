@@ -1238,6 +1238,8 @@ packages:
             issue: GH-273
             apk:
               sha256: b9a8b3f656de37c1e8b249b91d9ff5613e6091a0c46cbffd917cf009267dd119
+          - name: HTTPS Verified Domain
+            issue: GH-2338
   - package: com.bose.app.android.brussels
     signature:
       - fingerprint: DD:51:4B:64:D4:B2:43:4F:22:EB:E1:20:D9:73:FB:E8:5F:E3:04:D9:42:7E:C6:9A:3B:BD:DC:58:41:58:97:39
@@ -1336,6 +1338,8 @@ packages:
             issue: GH-770
             apk:
               sha256: 7d2f6ada55ba05741acd09be55a4022d4e49ccfc51105a41815b06470e961fad
+          - name: HTTPS Verified Domain
+            issue: GH-2338
   - package: com.cakewallet.cake_wallet
     signature:
       - fingerprint: 09:C7:C4:F9:6B:5F:3A:75:99:8E:CF:53:78:E6:39:19:0E:02:3E:26:75:02:6D:26:21:E4:AC:78:1C:94:88:FC
@@ -6623,6 +6627,8 @@ packages:
             apk:
               sha256: cd5ddf49dabbb7b9870db57441b8b8e426b09f41951853c13af1a595aed5d62d
               link: https://github.com/ente-io/ente/releases/download/photos-v1.3.44/ente-photos-v1.3.44.apk
+          - name: HTTPS Verified Domain
+            issue: GH-2338
   - package: io.filen.app
     signature:
       - fingerprint: 5B:DD:27:47:B7:CF:A9:8D:62:9E:4D:44:41:01:A9:CE:DC:E3:32:AD:6A:7F:2A:0B:14:F4:69:ED:93:7F:13:27
