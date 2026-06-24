@@ -1262,6 +1262,8 @@ packages:
             issue: GH-1414
             apk:
               sha256: 5913347fd78fdbdd7727fb99252a60ff3db2cce94541a053ad8d1c575bc7f4b9
+          - name: HTTPS Verified Domain
+            issue: GH-2363
   - package: com.brave.browser
     signature:
       - fingerprint: 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
@@ -3682,6 +3684,10 @@ packages:
             apk:
               sha256: 83be1b81e9abbb4434d020a86142c47e455a5ae35d395449472baf2de82f0558
               link: https://github.com/Tommy-Geenexus/exif-eraser/releases/download/v6.5.0/app-release.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-2363
+            apk:
+              sha256: 83be1b81e9abbb4434d020a86142c47e455a5ae35d395449472baf2de82f0558
           - name: Google Play
             issue: GH-650
             apk:
