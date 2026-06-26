@@ -9,6 +9,15 @@ domains:
       - package: com.aidungeon
         fingerprints:
           - 66:A5:A0:96:CB:94:79:90:BA:9C:67:49:35:F7:37:CD:57:AC:CB:E2:F3:C4:D1:AD:12:AE:74:79:AE:2B:C0:9B
+  - domain: amazon.com
+    method: https
+    issue:
+      - GH-2509
+    checked: "2026-06-26T05:50:22Z"
+    packages:
+      - package: com.amazon.mShop.android.shopping
+        fingerprints:
+          - 2F:19:AD:EB:28:4E:B3:6F:7F:07:78:61:52:B9:A1:D1:4B:21:65:32:03:AD:0B:04:EB:BF:9C:73:AB:6D:76:25
   - domain: app.fastmail.com
     method: https
     issue:
