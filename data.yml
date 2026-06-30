@@ -525,6 +525,8 @@ packages:
             issue: GH-749
             apk:
               sha256: ff34857e5a53a7b60a4338ac0639b0a6b4ab9132c92f5c1ab977cf729af10727
+          - name: HTTPS Verified Domain
+            issue: GH-2686
   - package: co.uk.exocron.android.qlango
     signature:
       - fingerprint: 5D:40:43:44:B8:E6:4C:B7:3A:96:C0:84:29:FA:DE:99:22:BC:25:69:E5:F4:91:A5:A4:1F:72:B9:72:F1:39:85
@@ -1036,6 +1038,8 @@ packages:
             issue: GH-760
             apk:
               sha256: 996aa9095aafc7c066084089a712c0485d63800aae33e9e0c387a87bd3f800c7
+          - name: HTTPS Verified Domain
+            issue: GH-2686
   - package: com.bancodebogota.bancamovil
     signature:
       - fingerprint: FC:6B:24:9E:4F:75:A8:1B:51:85:33:6F:F5:A1:11:7A:5B:46:6E:C2:DC:E6:52:A9:49:45:E7:0C:2E:EC:26:10
@@ -6597,6 +6601,8 @@ packages:
             issue: GH-571
             apk:
               sha256: 6d88f9e94beae7790ffbe729569d08026cd339ca3b8a6611d9608c9032624545
+          - name: HTTPS Verified Domain
+            issue: GH-2686
   - package: io.ente.auth.independent
     signature:
       - fingerprint: BA:8B:F0:32:98:62:70:05:ED:DF:F6:B1:D6:0B:3B:FA:A1:4E:E8:BD:C7:61:4F:FB:3B:B1:1C:58:8D:9E:3A:D7
@@ -7111,6 +7117,12 @@ packages:
             apk:
               sha256: 367109070b08a4d687467fe251ad06433b3b21219a6c89d26ebe30d993230047
               link: https://proton.me/download/calendar/android/ProtonCalendar-Android.apk
+          - name: Google Play
+            issue: GH-2686
+            apk:
+              sha256: 265394c5c0b557efe8aeee0aa5959e63f75fb4e5c4100995dd442aa48b697e98
+          - name: HTTPS Verified Domain
+            issue: GH-2686
   - package: me.proton.android.drive
     signature:
       - fingerprint: DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
