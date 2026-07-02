@@ -462,6 +462,8 @@ packages:
             issue: GH-493
             apk:
               repo: https://app.simplex.chat/fdroid/repo?fingerprint=9F358FF284D1F71656A2BFAF0E005DEAE6AA14143720E089F11FF2DDCFEB01BA
+          - name: HTTPS Verified Domain
+            issue: GH-2752
       - fingerprint: 5E:3E:DC:C2:00:FB:A8:D5:F4:88:F3:CA:4C:32:5B:05:78:C5:6A:9C:03:A1:CC:B5:92:9C:D7:5C:7E:57:E2:4D
         sources:
           - name: AppVerifier
@@ -470,6 +472,8 @@ packages:
             issue: GH-565
             apk:
               sha256: 95e555c92391049e08df56b712cea59769e3d0ac4276c0ca649814a03e7b2671
+          - name: HTTPS Verified Domain
+            issue: GH-2752
       - fingerprint: AE:C1:95:DC:FD:46:14:BD:3A:91:EC:26:D1:D5:14:C8:75:71:C5:CC:8D:CF:48:08:3F:92:83:14:3C:A2:B9:A6
         sources:
           - name: AppVerifier
@@ -478,6 +482,8 @@ packages:
             issue: GH-564
             apk:
               sha256: 6186c80da39dd7566e1c64cee096b0623d8dfb171627d50525f64dd420ed9345
+          - name: HTTPS Verified Domain
+            issue: GH-2752
   - package: cloud.pablos.overload
     signature:
       - fingerprint: BD:39:CA:B0:CB:22:4D:4A:E0:97:95:11:F3:24:1E:D8:85:8D:1A:F8:69:37:B7:C6:39:7B:E4:BA:7E:C1:A2:B4
@@ -3421,6 +3427,10 @@ packages:
             apk:
               sha256: 2b764a9660dd76dae41f319e65d29ba17a38e065ec7a2ffe6e130b4977528177
               link: https://github.com/MetrolistGroup/Metrolist/releases/download/v13.4.3/Metrolist.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-2752
+            apk:
+              sha256: 5a952ae5d883f03d885c56cdd898089cf2f049d5337afc42ff044e65af347e14
   - package: com.michaels.michaelsstores
     signature:
       - fingerprint: |-
@@ -6479,6 +6489,10 @@ packages:
         sources:
           - name: F-Droid
             issue: GH-53
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-2752
+            apk:
+              sha256: 4cccf4943ad4e5fce218ec47153c57a783c56b12a3c18d82ff0d36686efb837d
   - package: host.stjin.anonaddy
     signature:
       - fingerprint: 12:D4:69:1B:9F:67:A7:06:D4:E5:B0:AB:DF:A2:58:6A:A4:B0:18:BE:A1:99:9E:ED:79:18:0A:73:61:CA:ED:D2
@@ -7126,6 +7140,8 @@ packages:
             issue: GH-223
             apk:
               sha256: 5063ceb3ecdc65972606c5921ca40b4490d688e6310be7bf736b874cbad39f3a
+          - name: HTTPS Verified Domain
+            issue: GH-2752
   - package: me.proton.android.lumo
     signature:
       - fingerprint: A5:76:9B:88:D3:C5:00:F9:C5:8C:69:39:A7:B0:9D:C2:93:63:0C:8B:93:B6:9F:44:57:88:80:60:BF:1F:AA:43
