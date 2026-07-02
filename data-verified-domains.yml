@@ -155,6 +155,26 @@ domains:
         fingerprints:
           - 40:5C:6B:D2:CA:7C:3A:AE:8F:46:3C:6F:8B:55:BC:F0:DD:AC:43:1C:5E:D8:EA:FF:65:D1:06:C9:81:7A:20:7F
     dnssec: true
+  - domain: proton.me
+    method: https
+    issue:
+      - GH-2752
+    checked: "2026-07-02T05:45:15Z"
+    packages:
+      - package: me.proton.android.drive
+        fingerprints:
+          - DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
+  - domain: simplex.chat
+    method: https
+    issue:
+      - GH-2752
+    checked: "2026-07-02T05:45:15Z"
+    packages:
+      - package: chat.simplex.app
+        fingerprints:
+          - 3C:52:C4:FD:3C:AD:1C:07:C9:B0:0A:70:80:E3:58:FA:B9:FE:FC:B8:AF:5A:EC:14:77:65:F1:6D:0F:21:AD:85
+          - 5E:3E:DC:C2:00:FB:A8:D5:F4:88:F3:CA:4C:32:5B:05:78:C5:6A:9C:03:A1:CC:B5:92:9C:D7:5C:7E:57:E2:4D
+          - AE:C1:95:DC:FD:46:14:BD:3A:91:EC:26:D1:D5:14:C8:75:71:C5:CC:8D:CF:48:08:3F:92:83:14:3C:A2:B9:A6
   - domain: starlink.com
     method: https
     issue:
