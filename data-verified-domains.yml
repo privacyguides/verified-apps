@@ -122,6 +122,15 @@ domains:
       - package: org.telegram.messenger.web
         fingerprints:
           - 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
+  - domain: naver.com
+    method: https
+    issue:
+      - GH-2762
+    checked: "2026-07-03T05:33:43Z"
+    packages:
+      - package: com.naver.labs.translator
+        fingerprints:
+          - 0B:8B:85:23:BB:4A:EF:FA:34:6E:4B:DD:4F:BF:7D:19:34:50:56:9A:A1:4A:AA:D4:AD:FD:94:A3:F7:B2:27:BB
   - domain: paypal.com
     method: https
     issue:

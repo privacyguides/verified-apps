@@ -3584,6 +3584,8 @@ packages:
             issue: GH-291
             apk:
               sha256: a188a9f0dc387f55b99c312254d12be208a60fd9250c9decbd9e97f17b7df48e
+          - name: HTTPS Verified Domain
+            issue: GH-2762
   - package: com.navitime.inbound.walk
     signature:
       - fingerprint: BC:2E:DD:D7:A9:FF:50:30:41:5F:DE:27:2D:D7:70:3C:86:C4:63:09:C0:C0:8B:46:54:B0:C1:FD:AE:99:CF:59
