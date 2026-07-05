@@ -2667,6 +2667,8 @@ packages:
           7C:E8:3C:1B:71:F3:D5:72:FE:D0:4C:8D:40:C5:CB:10:FF:75:E6:D8:7D:9D:F6:FB:D5:3F:04:68:C2:90:50:53
           F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
         sources:
+          - name: AppVerifier
+            issue: GH-2812
           - name: Google Play
             issue: GH-111
   - package: com.google.android.markup
@@ -2892,6 +2894,8 @@ packages:
             issue: GH-1845
             apk:
               sha256: a8bcc87c33eaa1acd05b4d77cccc75aa0960514dd898fb68994025f35dc3d05c
+          - name: HTTPS Verified Domain
+            issue: GH-2812
   - package: com.infomaniak.mail
     signature:
       - fingerprint: 54:CE:26:CB:66:CB:12:EE:E6:FF:51:04:C9:5A:C4:1C:F1:93:9D:B9:C1:83:13:13:AA:52:3D:41:D7:29:EC:C2
@@ -5324,6 +5328,8 @@ packages:
             issue: GH-1250
             apk:
               sha256: d8c58d4340196e50437bd204c04265f2751460b2851c21a1481b9798e92b745c
+          - name: HTTPS Verified Domain
+            issue: GH-2812
   - package: com.widex.pa
     signature:
       - fingerprint: 5D:05:07:70:98:09:A6:94:06:42:31:01:C2:72:13:65:8A:93:6F:A2:C5:EE:33:C4:8F:9D:34:B0:09:37:63:23
