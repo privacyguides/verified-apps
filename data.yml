@@ -5055,6 +5055,14 @@ packages:
             issue: GH-1248
             apk:
               sha256: a3ce8129720f24f1c47d4bc62361e2141f9a109f8377862f035073544d5c792d
+  - package: com.topsmarkets.app.android
+    signature:
+      - fingerprint: F2:F0:EF:B6:17:AC:85:C3:65:BC:45:DC:78:D6:27:4D:84:81:DC:A6:0C:8A:C7:DA:13:83:6B:43:F4:37:6B:EF
+        sources:
+          - name: Google Play
+            issue: GH-2079
+            apk:
+              sha256: d19f5e7e81c652d6afe19de9f86887dd7fbf024a8e05a109378e6cd810f1528b
   - package: com.tplink.kasa_android
     signature:
       - fingerprint: 58:03:7B:6C:40:8D:7F:A0:43:16:91:AE:1E:7B:79:D4:DF:15:45:ED:59:F7:05:27:86:39:10:9B:11:35:9F:75
