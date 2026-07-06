@@ -6907,6 +6907,12 @@ packages:
             issue: CB-7
             apk:
               sha256: 82ebc961c6e4058be1447754061fdf3ca98eeaaacf2e1d8c2f81f6b5a317f946
+      - fingerprint: 6C:DC:05:70:CF:94:62:BC:5A:BB:01:17:19:D7:5F:2E:F2:A1:17:C7:D7:C9:0C:FF:8C:4D:14:F5:B6:81:AA:26
+        sources:
+          - name: Google Play
+            issue: GH-2538
+            apk:
+              sha256: 341638651bae943da95c84b8eb2895836201e9b6138f9f7b17f5945ab45f0ce0
   - package: eu.opencloud.android
     signature:
       - fingerprint: 0A:1E:55:60:92:9F:6A:DE:6A:EF:6B:44:67:11:E1:4B:0D:2A:90:8E:4D:EB:37:45:37:22:EF:51:C2:DC:A0:37
