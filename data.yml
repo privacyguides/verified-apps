@@ -9745,6 +9745,14 @@ packages:
             issue: GH-773
             apk:
               sha256: 9790b3c0f168013a1baf455abb48a2b555c29ad33cc421d2a581b6c411b2a095
+  - package: waltti.com.mobiili
+    signature:
+      - fingerprint: AF:93:CA:0A:06:5E:6E:33:50:9E:8D:81:94:8E:DC:69:B8:72:C1:79:78:68:18:39:4A:19:3E:B1:59:8B:FB:5A
+        sources:
+          - name: Google Play
+            issue: GH-2726
+            apk:
+              sha256: 342db018dd0b04df4551b7e7364aae67fd5dcca81a702b5300a6bc4badcf151c
   - package: ws.xsoh.etar
     signature:
       - fingerprint: 3F:31:76:C3:CE:18:9C:98:05:4F:F9:E1:D3:2D:AE:CF:00:A4:15:72:F4:C7:BD:2B:2F:80:60:72:52:DD:B0:6E
