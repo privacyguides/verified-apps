@@ -9270,6 +9270,14 @@ packages:
             issue: CB-157
             apk:
               sha256: db996b5c9a60fe56e6e38a54fb4e860815a9541e6a9eb70d99720a762cf850cc
+  - package: pe.com.scotiabank.blpm.android.client
+    signature:
+      - fingerprint: 6B:5B:09:53:67:DA:54:BD:1F:E1:6C:AE:35:3E:61:59:A5:5D:2A:14:9F:82:BA:FC:95:09:E0:56:C8:80:88:0C
+        sources:
+          - name: Google Play
+            issue: CB-161
+            apk:
+              sha256: 7198bf1d9e36cd29ad5c892791441aa007035aa37646753061cef85cde9b2ec6
   - package: peergos.android
     signature:
       - fingerprint: 2C:5B:61:53:7D:0B:18:C8:E8:58:CC:F3:F4:85:A8:B0:FA:34:50:B6:17:C6:21:1D:18:50:77:78:1F:26:F0:30
