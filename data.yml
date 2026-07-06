@@ -9303,6 +9303,14 @@ packages:
             issue: GH-333
             apk:
               sha256: 5f3dcabcd67ec50461f8ae859729858aa1501837abb4d5ec05bedb259e2a1b93
+  - package: snugsafety.com.snugsafety
+    signature:
+      - fingerprint: 62:96:F5:E2:7F:52:63:C2:DF:DF:AC:7D:8D:14:2A:A3:E0:50:00:C8:4B:E9:9D:05:05:4F:EE:EB:76:0E:6B:6B
+        sources:
+          - name: Google Play
+            issue: GH-2080
+            apk:
+              sha256: d84588c1fcbac0787c02b7a797a7043f035cf769a086e1cf31efa7ac594fc6a7
   - package: software.mdev.bookstracker
     signature:
       - fingerprint: 3C:22:99:61:23:D7:F3:B1:6F:11:E6:D0:67:D1:29:CC:E2:85:D2:17:B2:31:F5:C4:DE:EF:76:E4:F7:5B:B4:F2
