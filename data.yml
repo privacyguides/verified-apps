@@ -8450,6 +8450,14 @@ packages:
             issue: CB-112
             apk:
               sha256: d9e751c23b6b37d6d0e6a04cb13dd734995f8724f89ccaee507d039d14059338
+  - package: org.kde.bettercounter
+    signature:
+      - fingerprint: 25:32:94:C6:84:D4:C2:31:C4:5A:2B:92:11:DF:AA:01:10:45:62:73:8B:62:A0:9D:BF:B7:14:50:B8:A6:66:F4
+        sources:
+          - name: Google Play
+            issue: GH-1904
+            apk:
+              sha256: 145c1f9aab6d212e7e1427d28b2c91c0cf1f1dcd3fc4c6d5cadcd3c37af75441
   - package: org.kde.kdeconnect_tp
     signature:
       - fingerprint: 25:32:94:C6:84:D4:C2:31:C4:5A:2B:92:11:DF:AA:01:10:45:62:73:8B:62:A0:9D:BF:B7:14:50:B8:A6:66:F4
