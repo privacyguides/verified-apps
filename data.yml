@@ -906,6 +906,14 @@ packages:
             issue: GH-742
             apk:
               sha256: 39ea7ec2164940835eeb388b057b923bab822727c256b546f3b9d8ff14eb429b
+  - package: com.apkmirror.helper.prod
+    signature:
+      - fingerprint: D2:7D:AF:C6:88:19:3C:F5:79:E0:30:B0:2B:3A:15:33:E5:05:E0:55:F5:3E:77:BC:49:F0:41:00:AA:A2:24:8E
+        sources:
+          - name: Google Play
+            issue: GH-2694
+            apk:
+              sha256: f8648a86591faeb51451562613a3a31a4a0998d4a53d11507a2ded61cb1b869c
   - package: com.apple.android.music
     signature:
       - fingerprint: 88:BA:59:0E:C2:E1:EA:33:C4:45:8D:AF:59:48:9F:AE:E2:CE:F2:97:A9:B4:07:1E:18:CF:82:EF:53:11:00:AA
