@@ -114,6 +114,17 @@ domains:
       - package: com.brave.browser
         fingerprints:
           - 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
+  - domain: bumble.com
+    method: https
+    issue:
+      - GH-2332
+    checked: "2026-06-22T06:12:40Z"
+    packages:
+      - package: com.bumble.app
+        fingerprints:
+          - 43:2C:60:B3:F8:84:9E:A0:EA:93:B8:50:D2:68:EC:EB:5D:C4:0E:E2:27:0C:08:45:B5:5B:6E:70:9D:A8:24:D1
+          - 44:A1:04:DA:00:F0:3A:7B:BE:A9:83:7A:DE:54:F7:BF:F9:7C:34:B7:DC:46:DA:13:10:CC:EA:FE:AF:A6:83:2F
+          - E2:9E:74:1A:F1:ED:08:9E:8B:A1:89:FE:55:B3:EE:E7:68:30:82:17:50:2B:8E:CF:E3:A5:C2:16:A5:1D:C3:BF
   - domain: chase.com
     method: https
     issue:
@@ -123,6 +134,15 @@ domains:
       - package: com.chase.sig.android
         fingerprints:
           - 73:F0:D9:50:8A:25:72:C1:10:07:7C:FF:1C:AD:4E:D9:2C:00:F0:20:4F:AF:ED:BA:C8:43:4B:D7:6B:C4:AC:D1
+  - domain: club.qobuz.com
+    method: https
+    issue:
+      - GH-2831
+    checked: "2026-07-06T19:29:37Z"
+    packages:
+      - package: com.qobuz.club
+        fingerprints:
+          - 2C:E2:F1:9A:17:9C:13:FA:C9:EA:F1:39:C3:F0:84:D5:5B:02:64:58:96:29:52:D4:E6:B5:F2:F1:A2:9C:A2:1E
   - domain: copilot.microsoft.com
     method: https
     issue:
@@ -136,26 +156,6 @@ domains:
           - 7A:F4:8E:E5:0F:6E:3A:54:19:A8:9B:82:34:08:0C:37:A6:B9:84:8C:6F:8E:4D:E7:EC:71:C5:79:4D:11:84:E2
           - AC:46:AB:A9:23:6E:BD:5A:ED:35:99:4E:9E:88:EE:75:D1:D6:B5:10:E1:D5:F1:41:B7:19:DA:62:DC:35:86:FA
           - B1:7E:82:01:B1:28:E1:E7:4C:C0:23:51:0A:B7:EA:03:AC:27:DD:E5:0D:32:D8:10:EA:15:77:75:8F:1C:C0:98
-  - domain: bumble.com
-    method: https
-    issue:
-      - GH-2332
-    checked: "2026-06-22T06:12:40Z"
-    packages:
-      - package: com.bumble.app
-        fingerprints:
-          - 43:2C:60:B3:F8:84:9E:A0:EA:93:B8:50:D2:68:EC:EB:5D:C4:0E:E2:27:0C:08:45:B5:5B:6E:70:9D:A8:24:D1
-          - 44:A1:04:DA:00:F0:3A:7B:BE:A9:83:7A:DE:54:F7:BF:F9:7C:34:B7:DC:46:DA:13:10:CC:EA:FE:AF:A6:83:2F
-          - E2:9E:74:1A:F1:ED:08:9E:8B:A1:89:FE:55:B3:EE:E7:68:30:82:17:50:2B:8E:CF:E3:A5:C2:16:A5:1D:C3:BF
-  - domain: club.qobuz.com
-    method: https
-    issue:
-      - GH-2831
-    checked: "2026-07-06T19:29:37Z"
-    packages:
-      - package: com.qobuz.club
-        fingerprints:
-          - 2C:E2:F1:9A:17:9C:13:FA:C9:EA:F1:39:C3:F0:84:D5:5B:02:64:58:96:29:52:D4:E6:B5:F2:F1:A2:9C:A2:1E
   - domain: dictcc.dict.cc
     method: https
     issue:
@@ -175,6 +175,16 @@ domains:
         fingerprints:
           - 3C:39:D2:3C:F9:36:78:49:A5:C6:99:39:56:47:FE:0E:5B:FE:A5:A1:F1:F4:0D:8C:71:7D:DC:70:F8:BF:A1:13
           - 99:03:CA:AD:D3:9C:B4:0B:6A:3E:CB:33:C4:2C:B8:85:65:1D:C4:A8:EA:AE:27:CC:66:56:9D:E8:6B:DD:FC:62
+  - domain: duckduckgo.com
+    method: https
+    issue:
+      - GH-2332
+    checked: "2026-06-22T06:12:40Z"
+    packages:
+      - package: com.duckduckgo.mobile.android
+        fingerprints:
+          - 8F:A8:ED:5E:FC:6B:67:60:FD:77:79:B6:CB:24:E8:F0:4B:A8:E9:92:17:3A:4C:CA:F4:C5:1E:78:4A:D2:3F:30
+          - BB:7B:B3:1C:57:3C:46:A1:DA:7F:C5:C5:28:A6:AC:F4:32:10:84:56:FE:EC:50:81:0C:7F:33:69:4E:B3:D2:D4
   - domain: euria.infomaniak.com
     method: https
     issue:
@@ -197,16 +207,6 @@ domains:
           - 7E:ED:BF:2C:7B:FD:98:FF:BA:5B:C2:6F:F9:4A:07:3F:FF:27:32:52:6C:0F:92:00:68:DE:F8:41:53:CE:AB:23
           - 8C:D3:9C:EE:60:F3:60:E9:89:9C:3C:CF:B9:F7:AC:17:13:4F:B2:35:78:21:E5:C7:E2:D8:E7:8C:E0:87:91:40
           - E3:F9:E1:E0:CF:99:D0:E5:6A:05:5B:A6:5E:24:1B:33:99:F7:CE:A5:24:32:6B:0C:DD:6E:C1:32:7E:D0:FD:C1
-  - domain: duckduckgo.com
-    method: https
-    issue:
-      - GH-2332
-    checked: "2026-06-22T06:12:40Z"
-    packages:
-      - package: com.duckduckgo.mobile.android
-        fingerprints:
-          - 8F:A8:ED:5E:FC:6B:67:60:FD:77:79:B6:CB:24:E8:F0:4B:A8:E9:92:17:3A:4C:CA:F4:C5:1E:78:4A:D2:3F:30
-          - BB:7B:B3:1C:57:3C:46:A1:DA:7F:C5:C5:28:A6:AC:F4:32:10:84:56:FE:EC:50:81:0C:7F:33:69:4E:B3:D2:D4
   - domain: frontpage.reddit.com
     method: https
     issue:
@@ -313,15 +313,6 @@ domains:
       - package: org.telegram.messenger.web
         fingerprints:
           - 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
-  - domain: newsblur.com
-    method: https
-    issue:
-      - GH-2779
-    checked: "2026-07-04T05:36:22Z"
-    packages:
-      - package: com.newsblur
-        fingerprints:
-          - 5C:5E:93:50:3C:6A:C4:89:88:6A:29:BE:0C:28:6B:A6:04:82:E2:C2:5A:A6:D6:EF:56:84:FD:6E:8F:D7:C3:19
   - domain: naver.com
     method: https
     issue:
@@ -331,6 +322,15 @@ domains:
       - package: com.naver.labs.translator
         fingerprints:
           - 0B:8B:85:23:BB:4A:EF:FA:34:6E:4B:DD:4F:BF:7D:19:34:50:56:9A:A1:4A:AA:D4:AD:FD:94:A3:F7:B2:27:BB
+  - domain: newsblur.com
+    method: https
+    issue:
+      - GH-2779
+    checked: "2026-07-04T05:36:22Z"
+    packages:
+      - package: com.newsblur
+        fingerprints:
+          - 5C:5E:93:50:3C:6A:C4:89:88:6A:29:BE:0C:28:6B:A6:04:82:E2:C2:5A:A6:D6:EF:56:84:FD:6E:8F:D7:C3:19
   - domain: openai.com
     method: https
     issue:
@@ -435,6 +435,16 @@ domains:
         fingerprints:
           - DF:5B:68:01:94:B7:55:44:A5:75:29:88:23:33:BA:C2:6F:1E:94:F9:B6:14:B4:A9:BC:AB:F3:4B:FB:C7:8D:21
           - FA:0D:C7:F4:72:C7:F9:88:07:20:27:88:4F:2C:ED:3D:81:9D:A7:A3:A5:A1:CA:51:87:9C:B9:E9:05:3B:5F:54
+  - domain: transferwise.com
+    method: https
+    issue:
+      - GH-2678
+    checked: "2026-07-06T21:08:05Z"
+    packages:
+      - package: com.transferwise.android
+        fingerprints:
+          - 14:9C:4E:A5:82:5A:81:06:55:89:D2:7A:60:EA:7E:55:4D:F4:B4:9E:3C:66:0C:B6:5B:A7:30:02:50:80:DB:D0
+          - 98:78:14:AC:EF:07:6E:D6:F0:90:BF:05:3B:A4:9C:F0:62:4A:0E:B6:F9:AF:6F:FF:22:70:80:CD:2E:A7:F7:3B
   - domain: upside.com
     method: https
     issue:
@@ -467,6 +477,15 @@ domains:
         fingerprints:
           - 03:63:7F:6C:5D:8F:60:4E:6F:DB:79:A6:FF:BF:A5:78:DE:4E:31:8F:8D:A2:2F:C6:10:66:65:24:7F:88:07:D7
           - 7F:D2:CE:A3:0C:3A:60:22:EB:29:41:9C:E8:F6:F9:2C:E8:A4:BD:35:B0:CC:87:9E:D3:CC:A6:CB:F5:E9:99:2D
+  - domain: weawow.com
+    method: https
+    issue:
+      - GH-2526
+    checked: "2026-06-27T05:43:04Z"
+    packages:
+      - package: com.weawow
+        fingerprints:
+          - 70:3B:0F:C8:DC:E8:8D:21:56:64:B0:97:CA:A1:2A:66:B7:E1:31:FE:43:19:AC:57:6B:3A:36:FA:3B:03:67:4D
   - domain: whatsapp.com
     method: https
     issue:
@@ -478,15 +497,6 @@ domains:
           - 39:87:D0:43:D1:0A:EF:AF:5A:87:10:B3:67:14:18:FE:57:E0:E1:9B:65:3C:9D:F8:25:58:FE:B5:FF:CE:5D:44
           - CC:E5:84:32:83:F0:A5:60:6B:0F:AC:F6:F7:3E:F7:98:91:C4:8A:82:0E:84:F8:11:E0:04:44:35:B3:97:9E:A2
           - FB:92:0D:38:1B:EE:1B:20:93:F2:7D:C8:F1:3D:99:4D:A6:29:DC:91:88:7D:05:29:B3:5C:9A:2D:C4:F4:A6:C2
-  - domain: weawow.com
-    method: https
-    issue:
-      - GH-2526
-    checked: "2026-06-27T05:43:04Z"
-    packages:
-      - package: com.weawow
-        fingerprints:
-          - 70:3B:0F:C8:DC:E8:8D:21:56:64:B0:97:CA:A1:2A:66:B7:E1:31:FE:43:19:AC:57:6B:3A:36:FA:3B:03:67:4D
   - domain: wikipedia.org
     method: https
     issue:

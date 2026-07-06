@@ -5225,6 +5225,16 @@ packages:
             issue: GH-915
             apk:
               sha256: 0fc4db76c46a0072ee0ee37d61338b29d985aa109db5974d1100651ca5a3ef19
+  - package: com.transferwise.android
+    signature:
+      - fingerprint: 14:9C:4E:A5:82:5A:81:06:55:89:D2:7A:60:EA:7E:55:4D:F4:B4:9E:3C:66:0C:B6:5B:A7:30:02:50:80:DB:D0
+        sources:
+          - name: Google Play
+            issue: GH-2678
+            apk:
+              sha256: decf683c6a37d583429e45d5203e334dfdabf130642299db0f7cbf21ef60ee8f
+          - name: HTTPS Verified Domain
+            issue: GH-2678
   - package: com.tranzmate
     signature:
       - fingerprint: C4:2F:90:60:27:4B:C6:22:DD:53:D1:AC:25:DC:1C:01:67:C3:02:3E:C3:D8:76:49:C3:C9:EC:10:E3:AD:7D:B0
