@@ -1972,6 +1972,14 @@ packages:
             issue: GH-1426
             apk:
               sha256: 60cc799aace0ab88ed026f820845572e32c17987855ac33a0dfe566cc656465a
+  - package: com.eboks.activities
+    signature:
+      - fingerprint: 5F:13:3E:11:D7:5C:33:D2:1A:93:25:B3:B6:77:FC:86:3A:95:3A:D5:CE:42:91:EF:CC:17:22:A6:DA:DC:B2:31
+        sources:
+          - name: Google Play
+            issue: GH-2719
+            apk:
+              sha256: 1ba1d1cd7a2289cfccf46837aa9d2be29f5b332d42c5e114f5b9b84b6ab387b2
   - package: com.eckey.vizpin.dm
     signature:
       - fingerprint: 43:F6:D7:1E:13:EA:F0:62:BB:9F:D3:4A:0C:6C:D5:B3:BA:A8:AD:14:DE:DC:87:99:23:7F:2F:F9:33:FD:53:DC
