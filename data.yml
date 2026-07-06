@@ -6767,6 +6767,14 @@ packages:
             issue: GH-1076
             apk:
               sha256: f31e4bc0a9e7c9d3feb27455b0941bd7e48fcac0ec376468f80f154698623183
+  - package: fr.fan.wallet
+    signature:
+      - fingerprint: 3F:F7:BF:97:A7:7D:03:E2:C1:EC:1E:A9:FF:0C:5B:64:7E:BF:93:51:7D:FE:D9:39:78:68:81:33:9A:58:FF:31
+        sources:
+          - name: Google Play
+            issue: GH-2804
+            apk:
+              sha256: 28cac8592eeda156b2c343d83daba87ed4deab9109e2365225b6f51371d95d80
   - package: fr.gouv.franceidentite
     signature:
       - fingerprint: 6A:7A:20:A8:7D:26:90:67:05:24:DF:47:93:59:95:0C:DF:CB:E9:69:86:D8:26:1F:5E:5A:12:F9:FE:08:75:53
