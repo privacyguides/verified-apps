@@ -4272,6 +4272,14 @@ packages:
             issue: GH-829
             apk:
               sha256: 03bcde51ac127fdbd5fe6f01c6e321a5ffe7e909bf218c783d471710659fa26f
+  - package: com.prosegur.smart20
+    signature:
+      - fingerprint: 39:49:AB:3B:71:A8:69:53:D4:47:7D:D5:51:5D:7B:4B:92:27:9B:69:7B:C5:77:4D:27:B4:24:8D:B6:E1:F8:8D
+        sources:
+          - name: Google Play
+            issue: CB-160
+            apk:
+              sha256: c574d9c99dc90fd9f0b60136485fdf76113a811bf49a437a15bc22c8dfbbdcca
   - package: com.q2e.pawtucket5040android.pcumobile.uwnmobile
     signature:
       - fingerprint: 2C:0A:A9:4C:64:24:91:D7:D3:A9:F8:57:F9:9E:D4:1C:00:8B:B4:28:F0:D0:E8:5B:4F:08:9A:E1:3E:E6:AD:41
