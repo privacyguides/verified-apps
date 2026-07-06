@@ -6810,6 +6810,14 @@ packages:
             issue: GH-195
             apk:
               sha256: 575aac457e2229c782c13aebffe64c4ffe6eca0e4459155baaa86b8bf94ea21d
+  - package: fi.sok.abcasemat
+    signature:
+      - fingerprint: 79:E6:0E:68:52:76:0A:7B:FC:0B:F7:53:1A:23:FB:25:44:B5:8F:8E:E7:98:30:20:04:B0:75:2C:86:C5:56:F8
+        sources:
+          - name: Google Play
+            issue: GH-2724
+            apk:
+              sha256: 7b43cf342d014f9c1803bdfde1645d535364dd8d407a6288845377dbffbd392e
   - package: flar2.devcheck
     signature:
       - fingerprint: F8:16:AA:5F:F7:22:63:D1:A9:A6:AF:B8:1E:4C:25:E7:2F:BF:90:02:44:4F:80:A6:E0:43:F0:80:C7:01:09:90
