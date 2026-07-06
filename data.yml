@@ -5134,6 +5134,14 @@ packages:
             issue: GH-343
             apk:
               sha256: 31a6dafe9180c09d1078d693104f21ee3e1f8c3da73c40b52257594c71691d5e
+  - package: com.tutpro.baresip
+    signature:
+      - fingerprint: FE:CC:79:C2:0A:B7:25:B9:B7:8B:B1:6A:75:BA:9A:04:09:28:22:CF:52:BA:32:E4:A4:37:17:0A:68:02:06:02
+        sources:
+          - name: Google Play
+            issue: GH-1903
+            apk:
+              sha256: 38eab1fad87e4a6b25d12d35c02c69a161f9fb5c29eeb84394768902033ace2b
   - package: com.tuya.smart
     signature:
       - fingerprint: 93:21:9F:C2:73:E2:20:0F:4A:DE:E5:F7:19:1D:C6:56:BA:2A:2D:7B:2F:F5:D2:4C:D5:5C:4B:61:55:00:1E:40
