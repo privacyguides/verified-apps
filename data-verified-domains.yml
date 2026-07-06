@@ -58,6 +58,26 @@ domains:
       - package: com.roundsalmon4.appverifier
         fingerprints:
           - 1E:76:F1:A1:5C:BE:20:1F:0F:E2:6A:F2:7A:12:D9:1D:0D:34:81:FE:7D:CC:7D:89:E9:D2:05:69:30:F6:D5:A9
+  - domain: auth.ente.io
+    method: https
+    issue:
+      - GH-2686
+    checked: "2026-06-30T05:45:06Z"
+    packages:
+      - package: io.ente.auth
+        fingerprints:
+          - DD:CE:AA:D6:88:F0:05:D3:40:68:94:BA:00:FC:E3:FF:82:54:13:0A:10:2B:B2:52:E6:3C:D8:EA:A9:72:B2:EF
+  - domain: badoo.com
+    method: https
+    issue:
+      - GH-2686
+    checked: "2026-06-30T05:45:06Z"
+    packages:
+      - package: com.badoo.mobile
+        fingerprints:
+          - 43:2C:60:B3:F8:84:9E:A0:EA:93:B8:50:D2:68:EC:EB:5D:C4:0E:E2:27:0C:08:45:B5:5B:6E:70:9D:A8:24:D1
+          - 44:A1:04:DA:00:F0:3A:7B:BE:A9:83:7A:DE:54:F7:BF:F9:7C:34:B7:DC:46:DA:13:10:CC:EA:FE:AF:A6:83:2F
+          - 54:80:4A:91:1A:6A:E3:EE:64:C3:18:A4:28:3D:DF:3C:A2:A9:45:A4:16:A9:A7:AA:11:DA:86:B7:80:2E:B7:75
   - domain: bandcamp.com
     method: https
     issue:
@@ -326,6 +346,15 @@ domains:
         fingerprints:
           - 40:5C:6B:D2:CA:7C:3A:AE:8F:46:3C:6F:8B:55:BC:F0:DD:AC:43:1C:5E:D8:EA:FF:65:D1:06:C9:81:7A:20:7F
     dnssec: true
+  - domain: proton.me
+    method: https
+    issue:
+      - GH-2686
+    checked: "2026-06-30T05:45:06Z"
+    packages:
+      - package: me.proton.android.calendar
+        fingerprints:
+          - DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
   - domain: spotify.com
     method: https
     issue:
