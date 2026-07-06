@@ -1569,6 +1569,14 @@ packages:
               sha256: c179d234cf9d622551085557777c7feaff369ee45d6ab2751dde88ec2c9ebd93
           - name: HTTPS Verified Domain
             issue: GH-1885
+  - package: com.claro.pe.miclaro
+    signature:
+      - fingerprint: 7D:72:26:77:2D:4F:6D:77:8F:EF:53:A3:6B:E1:5A:D7:8D:8D:9D:4B:C4:CE:00:C5:F2:E3:21:6C:19:48:0F:A0
+        sources:
+          - name: Google Play
+            issue: CB-159
+            apk:
+              sha256: 97efec20b1ed129c4d326f964f934c31314fa3994a5a2cd89dd2e4a690d7d8a0
   - package: com.cloudflare.onedotonedotonedotone
     signature:
       - fingerprint: 27:3A:3A:5E:09:DC:72:0D:3B:39:45:16:2E:72:4D:9A:69:B2:1F:C5:42:BE:D7:45:7F:11:59:66:B1:45:E8:BC
