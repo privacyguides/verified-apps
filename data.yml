@@ -5885,6 +5885,14 @@ packages:
             issue: GH-2012
             apk:
               sha256: ecbf873de931fe854aec3053327402acfb698056da39c49e2612ecb37595fb42
+  - package: de.elster.elstersecure.app
+    signature:
+      - fingerprint: 06:C9:49:7F:9D:45:EF:CA:F2:FA:33:23:10:09:B4:60:21:48:E1:91:29:4C:DE:FE:12:B7:08:A3:CE:AC:1E:B1
+        sources:
+          - name: Google Play
+            issue: GH-2805
+            apk:
+              sha256: 566c4b8c98b1495dee16bef11b9f3a5da5ff4c828d4a0a4651894f8789efc999
   - package: de.felixnuesse.extract
     signature:
       - fingerprint: 1F:1E:E8:3B:8C:11:74:A6:1D:0D:18:F0:9F:F1:21:5D:59:E5:E6:3E:0B:01:A4:DA:69:5B:8E:B5:2D:16:BF:E9
