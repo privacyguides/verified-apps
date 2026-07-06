@@ -6056,6 +6056,14 @@ packages:
             issue: GH-853
             apk:
               sha256: 8fa68638aeb80f277eaf23181ea628c6ceaeff4f35358b40bee71d99f7b11eaa
+  - package: de.sdirekt.carriertech.kundenportal
+    signature:
+      - fingerprint: C9:00:19:B4:4B:76:95:07:A6:DA:7B:B3:E7:09:12:EA:EE:D3:4F:6A:2E:47:82:1B:A0:F3:71:6D:81:36:EC:38
+        sources:
+          - name: Google Play
+            issue: GH-2859
+            apk:
+              sha256: 3bc49251c6cabf3a06dc2a1e31ff73ff9edc38b0c808ebe1644d59480d7e60d6
   - package: de.seemoo.at_tracking_detection
     signature:
       - fingerprint: FD:93:BE:74:53:F6:3A:99:65:4F:3E:E4:25:FB:53:57:40:94:40:94:6A:4E:1B:23:8D:23:19:09:08:AA:F1:55
