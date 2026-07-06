@@ -3736,6 +3736,8 @@ packages:
             issue: GH-1240
             apk:
               sha256: 0b64dc8318950983eb648809c6f78777f02032902407b3b85a275e47691c78b1
+          - name: HTTPS Verified Domain
+            issue: GH-2779
   - package: com.nextcloud.client
     signature:
       - fingerprint: 57:09:57:6F:9D:6C:6A:76:87:DD:5D:56:B2:69:D1:FA:5E:37:97:02:B9:1B:C8:3F:39:FD:7B:7C:59:7C:1B:83
@@ -7935,13 +7937,17 @@ packages:
     signature:
       - fingerprint: 01:CC:E9:31:6F:CB:77:EA:02:C6:DE:A8:1F:DE:9F:31:76:46:92:02:C0:CE:A0:51:4C:0E:03:CB:96:9B:C7:BE
         sources:
-          - name: F-Droid
-            issue: GH-171
           - name: Direct APK Link
             issue: GH-171
             apk:
               sha256: 504eb88c5a90031dcb146e24390aafea0685e9678165dc7cf70e369a9409e004
               link: https://f-droid.org/repo/nodomain.freeyourgadget.gadgetbridge_248_01cce93.apk
+          - name: F-Droid
+            issue: GH-171
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-2779
+            apk:
+              sha256: 79588927ddf0da3849b2ccc6ca0ab9b4fb530ab4dc3e6307130e4a22411bebdf
   - package: nz.eloque.foss_wallet
     signature:
       - fingerprint: CE:3C:E7:92:A7:65:42:7E:E0:6A:D6:BC:33:28:75:E5:0D:32:E2:26:A5:79:14:75:76:1D:D3:86:C7:F3:47:5D

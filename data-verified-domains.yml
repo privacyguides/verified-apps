@@ -295,6 +295,15 @@ domains:
       - package: org.telegram.messenger.web
         fingerprints:
           - 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
+  - domain: newsblur.com
+    method: https
+    issue:
+      - GH-2779
+    checked: "2026-07-04T05:36:22Z"
+    packages:
+      - package: com.newsblur
+        fingerprints:
+          - 5C:5E:93:50:3C:6A:C4:89:88:6A:29:BE:0C:28:6B:A6:04:82:E2:C2:5A:A6:D6:EF:56:84:FD:6E:8F:D7:C3:19
   - domain: naver.com
     method: https
     issue:
