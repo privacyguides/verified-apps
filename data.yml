@@ -5961,6 +5961,16 @@ packages:
             issue: CB-38
             apk:
               sha256: 00ebcff767b548c1a836e2ca270a80cc04f7cab22ca5ae76a349b42856fb06f6
+  - package: de.hafas.android.db
+    signature:
+      - fingerprint: |-
+          4C:77:78:80:DA:1F:27:AD:60:FD:6B:0F:B6:05:F4:19:AC:41:48:34:96:DC:5F:3F:A3:60:EB:E1:73:01:3A:93
+          FF:88:BA:69:61:28:19:7F:27:95:D5:2A:4D:0A:5B:4B:4A:FA:46:91:8C:15:17:BD:04:B6:A7:08:CF:80:CF:7F
+        sources:
+          - name: Google Play
+            issue: GH-2806
+            apk:
+              sha256: 9a0bafe71e28c4899910893c983400b8551a798c6ed8284932a618768c02ba50
   - package: de.hafas.android.sbahnberlin
     signature:
       - fingerprint: FF:88:BA:69:61:28:19:7F:27:95:D5:2A:4D:0A:5B:4B:4A:FA:46:91:8C:15:17:BD:04:B6:A7:08:CF:80:CF:7F
