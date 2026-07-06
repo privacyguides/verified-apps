@@ -5034,6 +5034,14 @@ packages:
             issue: GH-268
             apk:
               sha256: f9b8ef878f829381bf0ea6c80bb688094b168377df746d3ffc4edca1c1d9b774
+  - package: com.tryhackme.mobileapp
+    signature:
+      - fingerprint: 06:6E:11:96:74:2F:1C:BA:3D:27:26:83:D5:37:F1:B8:A1:5C:FC:D8:06:1D:4E:33:AD:7C:CD:84:8F:FF:55:96
+        sources:
+          - name: Google Play
+            issue: GH-2839
+            apk:
+              sha256: 3d437b7fcdf6b529b0dabd5b4b3475f2e0e7ab63712e4570611f07121e002339
   - package: com.turkishairlines.mobile
     signature:
       - fingerprint: DD:85:EB:7F:24:CC:AD:39:D3:B8:30:26:12:5C:D5:16:4E:19:FD:1E:AA:26:7F:A0:B0:73:AE:72:20:D2:75:6E
