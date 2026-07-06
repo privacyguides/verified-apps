@@ -667,6 +667,14 @@ packages:
             issue: GH-1283
             apk:
               sha256: 28bc5e5fb5fd72d66ddf223a4bef2becd8e062d906355e59f28ff953a8597041
+  - package: com.adt.adtcontrolalarm
+    signature:
+      - fingerprint: 5F:CD:C6:E1:B0:20:D4:F0:52:17:F0:5C:BB:1D:AC:F4:35:5D:D9:9B:FB:A4:18:B9:F7:EB:B1:02:0B:30:43:75
+        sources:
+          - name: Google Play
+            issue: GH-2745
+            apk:
+              sha256: a4d17a491d89187346c33da6b676b80e38f63ca29e3f3cc69c14e4af7624116b
   - package: com.aegean.airlines.prod
     signature:
       - fingerprint: C4:5E:16:E7:DB:54:40:7E:87:43:B5:DF:45:BB:C0:40:F4:81:50:41:2C:20:D2:5D:F1:BC:63:06:6B:26:E8:DF
