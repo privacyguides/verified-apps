@@ -72,6 +72,15 @@ domains:
       - package: com.brave.browser
         fingerprints:
           - 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
+  - domain: club.qobuz.com
+    method: https
+    issue:
+      - GH-2831
+    checked: "2026-07-06T19:29:37Z"
+    packages:
+      - package: com.qobuz.club
+        fingerprints:
+          - 2C:E2:F1:9A:17:9C:13:FA:C9:EA:F1:39:C3:F0:84:D5:5B:02:64:58:96:29:52:D4:E6:B5:F2:F1:A2:9C:A2:1E
   - domain: dictcc.dict.cc
     method: https
     issue:
