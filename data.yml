@@ -804,6 +804,8 @@ packages:
             issue: GH-683
             apk:
               sha256: ed8a428a3e6c27abc43a5f8e27d0f5029a315c7446af27d880d8fc4f9e781697
+          - name: HTTPS Verified Domain
+            issue: GH-2332
   - package: com.amazon.mShop.android.shopping
     signature:
       - fingerprint: 2F:19:AD:EB:28:4E:B3:6F:7F:07:78:61:52:B9:A1:D1:4B:21:65:32:03:AD:0B:04:EB:BF:9C:73:AB:6D:76:25
@@ -1358,6 +1360,8 @@ packages:
             issue: GH-770
             apk:
               sha256: 7d2f6ada55ba05741acd09be55a4022d4e49ccfc51105a41815b06470e961fad
+          - name: HTTPS Verified Domain
+            issue: GH-2332
   - package: com.cakewallet.cake_wallet
     signature:
       - fingerprint: 09:C7:C4:F9:6B:5F:3A:75:99:8E:CF:53:78:E6:39:19:0E:02:3E:26:75:02:6D:26:21:E4:AC:78:1C:94:88:FC
@@ -1856,6 +1860,8 @@ packages:
             issue: GH-1732
             apk:
               sha256: 3e0c51fe01ed765b636da89cb504a821579f9c2808512d58ce3c83c825c48ec9
+          - name: HTTPS Verified Domain
+            issue: GH-2332
   - package: com.duolingo
     signature:
       - fingerprint: 12:33:FF:6D:E4:C7:0E:F4:D7:DE:AE:54:AF:15:B1:67:FC:7C:FD:25:39:51:7B:D2:17:58:70:F3:CB:77:17:31
@@ -3273,6 +3279,8 @@ packages:
             issue: GH-753
             apk:
               sha256: 195f854ab1449eded5f53413fdc87692d44f4481c02f3d6d3e463c778deed2c6
+          - name: HTTPS Verified Domain
+            issue: GH-2332
   - package: com.logseq.app
     signature:
       - fingerprint: E2:EA:95:DF:B0:1D:FD:B8:CD:DC:8A:63:B4:1D:97:66:E5:3D:68:B2:CE:85:1E:C7:A7:E5:FD:F3:D1:66:D2:35
@@ -4248,6 +4256,8 @@ packages:
             issue: GH-292
             apk:
               sha256: 40d192e0becb2e2d9a6f4ad9d984d9eb1fe40a5f24718f43953f73dbd2211f09
+          - name: HTTPS Verified Domain
+            issue: GH-2332
   - package: com.retroarch
     signature:
       - fingerprint: D7:A5:EA:B3:09:02:C9:B2:77:5A:F6:FB:4E:AC:2D:29:4A:64:63:4F:B4:7D:D1:38:2B:C3:AC:5B:F6:69:98:2E
@@ -5479,6 +5489,8 @@ packages:
             issue: GH-400
             apk:
               sha256: 32c4db9e557c99858d3f32b57911970cfe3e804f7c8b18e4ff0d170a819b0052
+          - name: HTTPS Verified Domain
+            issue: GH-2332
   - package: com.wordwebsoftware.android.wordweb
     signature:
       - fingerprint: F0:F7:29:8D:C1:E8:EA:E0:DC:2D:51:DF:6E:06:1F:96:2B:0F:25:F0:18:E1:A2:CC:5A:EE:2F:FE:66:A3:11:23
