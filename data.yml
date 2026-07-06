@@ -2223,6 +2223,14 @@ packages:
             issue: GH-1527
             apk:
               sha256: 68ceaaa080904311ad726fc6628eac32dcf118f56825e287fa8febc4af1a19fd
+  - package: com.funnycat.virustotal
+    signature:
+      - fingerprint: 42:6A:A4:14:0F:71:CD:1F:F2:C3:B9:F6:A3:BC:17:D9:A1:A8:F7:9C:2C:EB:46:61:29:10:43:FC:55:7A:A7:9A
+        sources:
+          - name: Google Play
+            issue: GH-2077
+            apk:
+              sha256: dffdebc552f92cb032fc0c653ffda37e8b4e99dd634f399451595f06fc0d5169
   - package: com.futo.platformplayer
     signature:
       - fingerprint: EF:81:ED:A9:8F:61:7F:7F:17:07:D8:05:09:F2:8D:AE:4E:50:F5:6E:41:E0:77:EB:30:24:D9:C9:07:2D:07:4E
