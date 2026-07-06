@@ -2816,6 +2816,16 @@ packages:
             issue: GH-944
             apk:
               sha256: cdc5c9f211b42de364d2c15bf6e5a00f5cf8afe8841947ea9a4cb1ee0ddf9f12
+  - package: com.google.android.contacts
+    signature:
+      - fingerprint: |-
+          60:9C:2B:E6:52:B1:68:55:74:3E:42:73:99:D3:B0:5F:F5:7A:82:B0:97:09:BB:B1:DC:3A:98:90:A6:DA:D4:78
+          91:7F:87:19:D4:C2:C8:92:DB:F2:6B:BE:2B:DB:17:9F:FF:0E:0D:DB:EB:8F:F9:F3:1A:4D:D9:8B:B4:A4:D2:5D
+        sources:
+          - name: Google Play
+            issue: GH-2570
+            apk:
+              sha256: 6d3685ea880c7fcff0c6c5ebabd2f27683773f650dfbaa2d385b88c510bf2711
   - package: com.google.android.deskclock
     signature:
       - fingerprint: |-
