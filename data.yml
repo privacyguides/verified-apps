@@ -4888,6 +4888,14 @@ packages:
             issue: GH-332
             apk:
               sha256: 9f01c3e0ce984b9f8cadc01328e9d3d6bbd168e701a3992d3fd7b1b4de43de00
+  - package: com.smbc_card.vpass
+    signature:
+      - fingerprint: 10:18:A2:EB:10:EF:51:1F:52:F8:48:4B:11:39:42:FE:99:12:41:26:C0:E1:AF:16:D9:95:3E:AC:5B:84:76:2C
+        sources:
+          - name: Google Play
+            issue: GH-2708
+            apk:
+              sha256: 6b9df70c5f3a40c840fd45573385690bd777e6b341134f1e585ad3b87ba95a9a
   - package: com.sonova.chb.control
     signature:
       - fingerprint: 62:51:D6:78:41:32:F6:E0:47:75:8D:3E:7F:60:31:7F:04:9A:E4:A5:03:A0:0A:39:63:F9:60:CF:60:C0:CC:FA
