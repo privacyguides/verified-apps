@@ -1564,6 +1564,14 @@ packages:
             issue: GH-993
             apk:
               sha256: af34d79db686fc7e3b54070973948f7b0ec057c6f9d39de2c044398efa8bb695
+  - package: com.comuto
+    signature:
+      - fingerprint: D0:F8:58:4B:7D:13:8B:47:1D:29:ED:D0:D8:CE:A8:F5:A1:81:76:F0:02:FF:4D:E6:D3:5D:38:31:6B:AC:07:26
+        sources:
+          - name: Google Play
+            issue: GH-2840
+            apk:
+              sha256: 612e701ef006ab18c8cc65ad99863b001caf821044e2c658f675800978378d67
   - package: com.contactoffice.mailfence
     signature:
       - fingerprint: 97:FE:5D:AA:04:8D:40:D3:CC:F0:A1:09:8F:47:FC:99:D1:A0:36:FA:BA:AF:B9:80:1F:51:E5:63:69:59:14:38
