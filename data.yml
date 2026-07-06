@@ -5153,6 +5153,14 @@ packages:
             issue: GH-678
             apk:
               sha256: 5750da2ca8df5c0590876e06f5f5fbca5729b7935773772b21948071013a547d
+  - package: com.tecdrop.pitchblackwallpaper
+    signature:
+      - fingerprint: 2E:8C:34:27:C5:D3:2D:9D:A0:A0:A5:61:AF:2D:BE:1A:A1:18:C6:CA:0D:9F:C6:CB:1B:2E:19:AB:B3:36:5F:D4
+        sources:
+          - name: Google Play
+            issue: GH-2611
+            apk:
+              sha256: 3bb4d9bcf2c474325c36b0b042ec633a41ea095cf9e8e75463c2bce5af23219f
   - package: com.termux
     signature:
       - fingerprint: 22:8F:B2:CF:E9:08:31:C1:49:9E:C3:CC:AF:61:E9:6E:8E:1C:E7:07:66:B9:47:46:72:CE:42:73:34:D4:1C:42
