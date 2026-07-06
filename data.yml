@@ -6307,6 +6307,14 @@ packages:
             issue: GH-852
             apk:
               sha256: 10fb92b0e4e5ed9e99d67be992d0009eb17b76184aef86b9256944c438ba3bb4
+  - package: de.onedigital.blockchaininvestor.customer
+    signature:
+      - fingerprint: 75:1B:93:E6:75:49:97:6E:35:6B:E5:1F:E2:8F:CB:50:34:6E:6C:21:FC:D7:91:07:E9:DA:6B:EB:3C:EA:6B:BF
+        sources:
+          - name: Google Play
+            issue: GH-2650
+            apk:
+              sha256: 8ca15e5890df3399ea8e143411d65029b28bf411a04ba815a5cb11579c678c4d
   - package: de.onedigital.buythedip.customer
     signature:
       - fingerprint: 60:9A:3C:62:95:F7:EF:58:F5:37:99:32:AA:D6:0E:2C:7E:DF:47:E8:22:58:9B:CD:F4:79:B3:39:2A:C6:EC:66
