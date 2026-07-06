@@ -691,6 +691,14 @@ packages:
             issue: GH-326
             apk:
               sha256: 36b3f935dec1944dd3746329255359ebc032ab10382e92680cf993c40a3b84b5
+  - package: com.aftership.AfterShip
+    signature:
+      - fingerprint: 42:5C:56:B5:7A:C5:FF:3E:1E:7F:7B:49:E2:46:DF:A3:50:DB:1A:8D:74:03:E2:63:8E:9D:4F:85:C1:34:44:9F
+        sources:
+          - name: Google Play
+            issue: GH-2753
+            apk:
+              sha256: d441ff2ff5e11248851173cd27020552cb1d7fe337ad3aa1815695b907d07216
   - package: com.aidungeon
     signature:
       - fingerprint: 66:A5:A0:96:CB:94:79:90:BA:9C:67:49:35:F7:37:CD:57:AC:CB:E2:F3:C4:D1:AD:12:AE:74:79:AE:2B:C0:9B
