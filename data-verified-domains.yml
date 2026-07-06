@@ -169,6 +169,17 @@ domains:
         fingerprints:
           - 98:C0:67:82:28:10:B9:D2:64:AD:E5:C5:DF:76:E3:C5:17:57:A3:99:98:2A:95:E0:7F:51:73:69:91:9D:CA:10
           - FD:AE:45:0B:98:A6:FF:14:22:9C:44:F2:FC:B2:2A:B4:A2:E9:DF:EF:63:4D:3B:FC:4A:D1:B7:96:0D:01:1A:A8
+  - domain: kraken.com
+    method: https
+    issue:
+      - GH-2711
+    checked: "2026-07-01T06:11:33Z"
+    packages:
+      - package: com.kraken.invest.app
+        fingerprints:
+          - 40:AB:4B:44:11:60:00:25:83:A3:62:45:FE:36:11:7D:2A:BF:CF:12:D1:E3:CC:F8:9D:A5:D6:F4:95:19:7B:0E
+          - 61:CF:C4:4E:FF:55:C4:28:27:6D:9C:25:C9:02:EA:B5:CF:68:D7:1A:BF:BC:7C:70:7A:5F:AE:AC:55:27:41:CB
+          - E6:4B:34:B8:A9:B4:5E:84:4D:A0:46:79:33:F0:DF:2B:9C:50:A6:D1:13:1D:98:20:4D:7F:D2:7E:72:34:35:35
   - domain: lichess.org
     method: https
     issue:
@@ -197,6 +208,15 @@ domains:
       - package: org.magicgrants.skylight
         fingerprints:
           - 15:FA:52:78:85:F7:04:21:10:30:4D:1A:F0:08:81:07:27:09:BD:38:E9:84:2C:AF:9C:D8:9E:08:06:1C:5E:52
+  - domain: markusfisch.de
+    method: https
+    issue:
+      - GH-2711
+    checked: "2026-07-01T06:11:33Z"
+    packages:
+      - package: de.markusfisch.android.binaryeye
+        fingerprints:
+          - DD:A9:21:96:50:57:4B:2D:70:2F:DF:2D:F9:0F:61:9B:D4:E2:D0:F3:A6:6E:26:BB:03:2F:2F:01:88:40:CF:8E
   - domain: messenger.telegram.org
     method: https
     issue:
@@ -248,6 +268,15 @@ domains:
         fingerprints:
           - 40:5C:6B:D2:CA:7C:3A:AE:8F:46:3C:6F:8B:55:BC:F0:DD:AC:43:1C:5E:D8:EA:FF:65:D1:06:C9:81:7A:20:7F
     dnssec: true
+  - domain: spotify.com
+    method: https
+    issue:
+      - GH-2711
+    checked: "2026-07-01T06:11:33Z"
+    packages:
+      - package: com.spotify.music
+        fingerprints:
+          - 65:05:B1:81:93:33:44:F9:38:93:D5:86:E3:99:B9:46:16:18:3F:04:34:9C:B5:72:A9:E8:1A:33:35:E2:8F:FD
   - domain: starlink.com
     method: https
     issue:
@@ -268,6 +297,15 @@ domains:
         fingerprints:
           - DF:5B:68:01:94:B7:55:44:A5:75:29:88:23:33:BA:C2:6F:1E:94:F9:B6:14:B4:A9:BC:AB:F3:4B:FB:C7:8D:21
           - FA:0D:C7:F4:72:C7:F9:88:07:20:27:88:4F:2C:ED:3D:81:9D:A7:A3:A5:A1:CA:51:87:9C:B9:E9:05:3B:5F:54
+  - domain: upside.com
+    method: https
+    issue:
+      - GH-2711
+    checked: "2026-07-01T06:11:33Z"
+    packages:
+      - package: com.upside.consumer.android
+        fingerprints:
+          - ED:99:88:71:D7:9D:5E:91:A4:FF:BB:75:71:5B:1B:FD:DB:4B:06:8D:80:EF:C3:75:5F:AA:F0:3F:C5:87:D8:B2
   - domain: usmobile.com
     method: https
     issue:

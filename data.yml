@@ -3184,6 +3184,8 @@ packages:
             issue: CB-45
             apk:
               sha256: aa820a76a12a2443d7c092736fa24a7e1fc5ce00d86e164296431fa9be9a59a4
+          - name: HTTPS Verified Domain
+            issue: GH-2711
   - package: com.kunzisoft.hardware.key
     signature:
       - fingerprint: 39:62:A9:67:2F:DB:E0:48:65:38:58:CD:67:50:15:B5:BC:21:7E:82:51:5A:15:9C:BE:EA:E5:58:FC:0F:5A:22
@@ -4793,6 +4795,8 @@ packages:
             issue: GH-952
             apk:
               sha256: 9c9e75b65b8e56f867456f737cdf240727cf6b65a52b056bed866d9dfc8f7e7c
+          - name: HTTPS Verified Domain
+            issue: GH-2711
   - package: com.squareup.cash
     signature:
       - fingerprint: 21:A7:46:75:96:C1:68:65:0F:D7:B6:31:B6:54:22:EB:56:3E:1D:21:AF:F2:2D:DE:73:89:BA:0D:5D:73:87:48
@@ -5290,6 +5294,8 @@ packages:
             issue: GH-839
             apk:
               sha256: 966b9cb22be34da65371e3f9893a9831f3fe246e1d5f5f6055cf775d43098a2a
+          - name: HTTPS Verified Domain
+            issue: GH-2711
   - package: com.urbandroid.dontkillmyapp
     signature:
       - fingerprint: 2F:84:FB:3C:3A:39:CA:F2:01:A1:11:54:03:7B:50:D3:2C:05:A4:C1:18:B8:F1:39:F9:C7:9C:15:FB:D5:54:82
@@ -6051,6 +6057,8 @@ packages:
             issue: GH-972
             apk:
               sha256: d55c27526117362d0d5be00638e81ad61308478d81673de0cf988cc408f18757
+          - name: HTTPS Verified Domain
+            issue: GH-2711
   - package: de.marmaro.krt.ffupdater
     signature:
       - fingerprint: F4:E6:42:BB:85:CB:BC:FD:73:02:B2:CB:CB:D3:46:99:3A:41:06:7C:27:D9:95:DF:49:2C:9D:0D:38:74:7E:62
