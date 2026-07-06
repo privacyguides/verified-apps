@@ -1330,6 +1330,14 @@ packages:
               sha256: 5913347fd78fdbdd7727fb99252a60ff3db2cce94541a053ad8d1c575bc7f4b9
           - name: HTTPS Verified Domain
             issue: GH-2363
+  - package: com.branded.arrl
+    signature:
+      - fingerprint: AC:1F:16:F0:D9:4D:8B:75:D6:16:20:0B:EF:A3:2B:23:45:A7:B9:D4:B8:E3:D2:4E:62:EC:D3:BD:F9:88:F9:B7
+        sources:
+          - name: Google Play
+            issue: GH-2737
+            apk:
+              sha256: 9d7f3c0215da08951d843297a24fa42b11681fa96fe7e1394fa56d4912bd0277
   - package: com.brave.browser
     signature:
       - fingerprint: 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
