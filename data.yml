@@ -8214,6 +8214,16 @@ packages:
             issue: GH-1827
             apk:
               sha256: 7758d2c3189b2c7deb1c3e3d76941ce21c1a1f2c3e95b94673c81514632c017b
+      - fingerprint: C9:A4:06:BD:8E:61:4C:72:BB:DD:24:2D:56:79:5F:7A:5C:E1:3C:0C:F1:4B:AC:22:AE:C9:80:30:A7:1B:E4:86
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-2721
+            apk:
+              sha256: 3fc2119af9119a187e298e9f6bc2099feae1f83e51dc18d78d5f21a9be0d8ecb
+          - name: Google Play
+            issue: GH-2721
+            apk:
+              sha256: e022e273a4c52fa0e5da842d351f8468d3ddaecfb653b45d7f783fdadf4fa7d6
   - package: org.eurail.railplanner
     signature:
       - fingerprint: 4E:93:E9:A0:C7:A5:AD:70:91:98:C3:0C:20:13:9A:43:FB:F9:3C:77:DE:79:EE:73:D1:B8:F1:1B:2C:40:FE:FC
