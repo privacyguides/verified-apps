@@ -1104,6 +1104,14 @@ packages:
             issue: CB-162
             apk:
               sha256: 9e088f3f67bc170a3251ba12d5353b38470998a1e5db46a091b9a3f7e0e7e76c
+  - package: com.bcp.innovacxion.yapeapp
+    signature:
+      - fingerprint: EF:25:08:E6:29:68:EB:51:1B:02:DC:2C:8C:FA:4B:4B:78:F4:2A:DC:15:4E:04:4F:1A:F9:89:AC:AD:23:16:16
+        sources:
+          - name: Google Play
+            issue: CB-164
+            apk:
+              sha256: 9ae72f3413a6aad93bd16073590c1a5b33c436406a6fa29de1b0a72cf49c7ebb
   - package: com.beToken
     signature:
       - fingerprint: F0:4E:48:28:92:5B:10:79:D3:20:D0:64:A7:CE:78:69:C0:44:C1:29:6F:F5:5F:48:06:4E:1E:0E:F0:82:78:6C
