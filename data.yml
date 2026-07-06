@@ -820,6 +820,18 @@ packages:
             issue: GH-304
             apk:
               sha256: 8ad600f2ad835ffd3502819c3925c7aa7444d53240102f76950a1231f1c0bbdd
+  - package: com.amaze.filemanager
+    signature:
+      - fingerprint: AF:F6:56:D7:CA:84:D7:12:54:D2:72:C5:5F:B4:20:ED:F1:72:B2:54:9D:E1:4F:5C:CE:FD:5A:82:52:8D:F5:54
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-2635
+            apk:
+              sha256: 2042c4422b80988b8cec4971ccaf7e931193ffbfdcf4867fd02927c2d31f9c35
+          - name: Google Play
+            issue: GH-2635
+            apk:
+              sha256: 8cc2cce2596848bc16f9a4fdf171a5645011d60ba2c971daa687559c3ba79240
   - package: com.amazon.dee.app
     signature:
       - fingerprint: 2F:19:AD:EB:28:4E:B3:6F:7F:07:78:61:52:B9:A1:D1:4B:21:65:32:03:AD:0B:04:EB:BF:9C:73:AB:6D:76:25
