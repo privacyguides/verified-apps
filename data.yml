@@ -9232,6 +9232,14 @@ packages:
             issue: GH-895
             apk:
               sha256: 42e5566e3742c17e2810f9607d652692cbaf0bf4fd7042454e9e7e95f65d4869
+  - package: pe.com.interbank.mobilebanking
+    signature:
+      - fingerprint: 4A:4A:8C:95:8D:74:58:B9:03:1E:E5:D5:B5:66:55:19:DC:CC:F6:2A:6E:85:68:61:03:D2:4C:21:BE:DA:F8:61
+        sources:
+          - name: Google Play
+            issue: CB-157
+            apk:
+              sha256: db996b5c9a60fe56e6e38a54fb4e860815a9541e6a9eb70d99720a762cf850cc
   - package: peergos.android
     signature:
       - fingerprint: 2C:5B:61:53:7D:0B:18:C8:E8:58:CC:F3:F4:85:A8:B0:FA:34:50:B6:17:C6:21:1D:18:50:77:78:1F:26:F0:30
