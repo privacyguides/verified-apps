@@ -5276,6 +5276,14 @@ packages:
               sha256: 8ba08d508f0194fc6ab4824c28b0d036cc025b8c509c19b41e1d7869f4dd8dbb
           - name: HTTPS Verified Domain
             issue: GH-2068
+  - package: com.usps.app
+    signature:
+      - fingerprint: B8:CA:C7:74:6F:F8:96:1A:FB:45:19:EB:FB:8A:43:F1:72:51:AF:A1:4A:0D:E8:5F:99:C0:8C:08:1C:B5:24:B3
+        sources:
+          - name: Google Play
+            issue: GH-2078
+            apk:
+              sha256: 267b655dcadb5829ec34ca4180bbc7ae2b49d8a7e7696653ba1e5099ce63b356
   - package: com.uvnv.mintsim
     signature:
       - fingerprint: B1:FC:C0:1C:13:BF:7C:BF:51:69:DA:2D:4A:A1:82:86:96:DA:CD:51:D5:D4:C7:0A:62:2F:4C:F1:CF:5F:45:3C
