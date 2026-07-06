@@ -166,6 +166,15 @@ domains:
         fingerprints:
           - 3C:39:D2:3C:F9:36:78:49:A5:C6:99:39:56:47:FE:0E:5B:FE:A5:A1:F1:F4:0D:8C:71:7D:DC:70:F8:BF:A1:13
           - 99:03:CA:AD:D3:9C:B4:0B:6A:3E:CB:33:C4:2C:B8:85:65:1D:C4:A8:EA:AE:27:CC:66:56:9D:E8:6B:DD:FC:62
+  - domain: euria.infomaniak.com
+    method: https
+    issue:
+      - GH-2812
+    checked: "2026-07-05T05:35:45Z"
+    packages:
+      - package: com.infomaniak.euria
+        fingerprints:
+          - C3:10:73:8F:60:AC:5B:F6:65:95:53:BE:C7:21:7D:BF:24:4E:9D:4C:04:BD:7D:5B:F5:51:51:2D:22:E5:03:03
   - domain: facebook.com
     method: https
     issue:
@@ -449,6 +458,17 @@ domains:
         fingerprints:
           - 03:63:7F:6C:5D:8F:60:4E:6F:DB:79:A6:FF:BF:A5:78:DE:4E:31:8F:8D:A2:2F:C6:10:66:65:24:7F:88:07:D7
           - 7F:D2:CE:A3:0C:3A:60:22:EB:29:41:9C:E8:F6:F9:2C:E8:A4:BD:35:B0:CC:87:9E:D3:CC:A6:CB:F5:E9:99:2D
+  - domain: whatsapp.com
+    method: https
+    issue:
+      - GH-2812
+    checked: "2026-07-05T05:35:45Z"
+    packages:
+      - package: com.whatsapp.w4b
+        fingerprints:
+          - 39:87:D0:43:D1:0A:EF:AF:5A:87:10:B3:67:14:18:FE:57:E0:E1:9B:65:3C:9D:F8:25:58:FE:B5:FF:CE:5D:44
+          - CC:E5:84:32:83:F0:A5:60:6B:0F:AC:F6:F7:3E:F7:98:91:C4:8A:82:0E:84:F8:11:E0:04:44:35:B3:97:9E:A2
+          - FB:92:0D:38:1B:EE:1B:20:93:F2:7D:C8:F1:3D:99:4D:A6:29:DC:91:88:7D:05:29:B3:5C:9A:2D:C4:F4:A6:C2
   - domain: weawow.com
     method: https
     issue:
