@@ -7504,6 +7504,14 @@ packages:
             issue: GH-1083
             apk:
               sha256: 41732ae9a57737c060b66f2d24a10440c53a92beee9dfdce8d5cc3d76041069a
+  - package: me.blog.korn123.easydiary
+    signature:
+      - fingerprint: 34:FD:D8:AA:CE:2D:37:52:7E:94:78:C2:F1:5F:FF:70:41:B8:01:D5:92:40:07:1B:47:66:96:A5:4A:44:32:9E
+        sources:
+          - name: Google Play
+            issue: GH-2697
+            apk:
+              sha256: 4f56313162e51d37563205517a4aec48bba7eb13cfa40b2131cef8ee6dbd37bd
   - package: me.easyapps.easynotes
     signature:
       - fingerprint: 79:E8:5C:E8:1D:F2:F4:F2:25:C2:2F:EA:0B:2D:19:50:B3:68:62:7E:47:5F:B7:2B:73:85:D2:50:31:3B:F7:C1
