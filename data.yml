@@ -1794,6 +1794,14 @@ packages:
             issue: GH-686
             apk:
               sha256: 33154ad5f0aabb771b6cfac41dac810d7626b9bcb1612e3e6323e1330f93388c
+  - package: com.debank.rabbymobile
+    signature:
+      - fingerprint: 2C:55:F6:E7:EA:A6:07:D5:76:A8:61:85:1E:37:96:F0:57:03:C7:7E:69:77:BA:B9:67:38:D3:AA:2A:35:52:1E
+        sources:
+          - name: Google Play
+            issue: GH-2630
+            apk:
+              sha256: 59249eedf9143d64c17f5071ca1bac1441f0da94b9337cb092174b4e5cbbc218
   - package: com.deepl.mobiletranslator
     signature:
       - fingerprint: EF:ED:F6:6E:64:29:F7:F0:C6:79:6F:64:AD:08:A6:D1:F0:55:82:BF:21:48:36:56:DE:B4:00:65:1D:1E:F5:BE
