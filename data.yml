@@ -3557,6 +3557,8 @@ packages:
             issue: GH-1420
             apk:
               sha256: cc846adb0357538e02a2e106bfb80174aaf18c9a896f25399bdf97acecbfa947
+          - name: HTTPS Verified Domain
+            issue: GH-2526
   - package: com.microsoft.office.excel
     signature:
       - fingerprint: |-
@@ -5505,6 +5507,8 @@ packages:
             issue: GH-845
             apk:
               sha256: 13bc83c4c21973728c0a388bc23e782592fed8ed20c68f18d35ac0330906c8f7
+          - name: HTTPS Verified Domain
+            issue: GH-2526
   - package: com.wegmans.wegmans2go
     signature:
       - fingerprint: 43:BC:14:3B:C9:62:7C:B3:45:FC:8A:F9:40:A1:21:DE:B3:6F:1D:C6:71:62:26:B1:46:2B:E5:2D:73:EB:58:F1

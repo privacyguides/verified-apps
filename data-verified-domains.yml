@@ -85,6 +85,19 @@ domains:
       - package: com.brave.browser
         fingerprints:
           - 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
+  - domain: copilot.microsoft.com
+    method: https
+    issue:
+      - GH-2526
+    checked: "2026-06-27T05:43:04Z"
+    packages:
+      - package: com.microsoft.copilot
+        fingerprints:
+          - 15:59:09:CA:ED:2A:36:81:12:94:D0:00:F8:C8:B2:47:1F:D8:A5:12:E6:D7:3E:48:72:38:F7:29:ED:B3:1A:43
+          - 28:48:36:1A:9C:1E:32:DF:1D:3E:2E:D6:A7:B9:E6:7A:52:5C:F8:A1:3B:16:4F:80:06:C9:47:95:78:F7:46:DE
+          - 7A:F4:8E:E5:0F:6E:3A:54:19:A8:9B:82:34:08:0C:37:A6:B9:84:8C:6F:8E:4D:E7:EC:71:C5:79:4D:11:84:E2
+          - AC:46:AB:A9:23:6E:BD:5A:ED:35:99:4E:9E:88:EE:75:D1:D6:B5:10:E1:D5:F1:41:B7:19:DA:62:DC:35:86:FA
+          - B1:7E:82:01:B1:28:E1:E7:4C:C0:23:51:0A:B7:EA:03:AC:27:DD:E5:0D:32:D8:10:EA:15:77:75:8F:1C:C0:98
   - domain: bumble.com
     method: https
     issue:
@@ -229,11 +242,12 @@ domains:
     method: dns
     issue:
       - GH-1791
-    checked: "2026-06-15T02:36:34Z"
+    checked: "2026-06-27T05:43:04Z"
     packages:
       - package: org.magicgrants.skylight
         fingerprints:
           - 15:FA:52:78:85:F7:04:21:10:30:4D:1A:F0:08:81:07:27:09:BD:38:E9:84:2C:AF:9C:D8:9E:08:06:1C:5E:52
+    dnssec: true
   - domain: markusfisch.de
     method: https
     issue:
@@ -355,6 +369,15 @@ domains:
         fingerprints:
           - 03:63:7F:6C:5D:8F:60:4E:6F:DB:79:A6:FF:BF:A5:78:DE:4E:31:8F:8D:A2:2F:C6:10:66:65:24:7F:88:07:D7
           - 7F:D2:CE:A3:0C:3A:60:22:EB:29:41:9C:E8:F6:F9:2C:E8:A4:BD:35:B0:CC:87:9E:D3:CC:A6:CB:F5:E9:99:2D
+  - domain: weawow.com
+    method: https
+    issue:
+      - GH-2526
+    checked: "2026-06-27T05:43:04Z"
+    packages:
+      - package: com.weawow
+        fingerprints:
+          - 70:3B:0F:C8:DC:E8:8D:21:56:64:B0:97:CA:A1:2A:66:B7:E1:31:FE:43:19:AC:57:6B:3A:36:FA:3B:03:67:4D
   - domain: wikipedia.org
     method: https
     issue:
