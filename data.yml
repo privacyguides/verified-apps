@@ -2160,6 +2160,16 @@ packages:
               sha256: 6ebe5c150cadcc255e497af7fa162ca1d1930f4942ad60e8aea515314ed59d02
           - name: HTTPS Verified Domain
             issue: GH-2446
+  - package: com.farcaster.mobile
+    signature:
+      - fingerprint: |-
+          55:84:D5:7E:65:95:3E:6D:A5:B0:04:D6:96:B7:ED:E1:A5:6D:D4:A9:40:F5:65:AF:DB:7C:7B:2C:D7:C8:23:7B
+          8D:B5:93:29:9C:69:E1:43:3D:DD:58:FE:9B:40:C5:6A:21:F4:5A:31:A2:7E:5A:25:D1:44:49:4D:F8:14:14:8A
+        sources:
+          - name: Google Play
+            issue: GH-2628
+            apk:
+              sha256: e09291c5a50fc56297e35f3201d25dbd9e1bfaf86c0c5edd660bee56319a6c28
   - package: com.fastmail.app
     signature:
       - fingerprint: C9:2C:5E:E8:F6:BA:CB:E9:3C:A6:C0:8A:E9:6E:F4:7D:09:91:80:63:F5:71:64:78:BF:90:E6:86:09:C9:0D:1D
