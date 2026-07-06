@@ -7355,6 +7355,22 @@ packages:
             issue: GH-1895
             apk:
               sha256: eabf6e05df9992a35fb50e6f61bbf3ee91d4e507806c023da0d9d89d36a861ac
+  - package: io.github.samolego.canta
+    signature:
+      - fingerprint: 0A:26:40:31:7C:43:27:21:88:C3:E1:31:94:C1:54:60:69:1F:12:C3:9E:A1:9B:BA:72:7D:D6:7F:B5:62:89:D4
+        sources:
+          - name: F-Droid
+            issue: GH-2585
+            apk:
+              sha256: 5a646d366905c0be2033aa270b008b3ef79fda99fbc95988445b0f430283a1ed
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-2585
+            apk:
+              sha256: 5a646d366905c0be2033aa270b008b3ef79fda99fbc95988445b0f430283a1ed
+          - name: Google Play
+            issue: GH-2585
+            apk:
+              sha256: 0936f8836307dc1ae33f1851b3ec67b5c2b6df49104f3f59953e168ac14acc8a
   - package: io.heckel.ntfy
     signature:
       - fingerprint: 6E:14:5D:7A:E6:85:EF:F7:54:68:E5:06:7E:03:A6:C3:64:54:53:34:3E:4E:18:1D:AC:8B:6B:17:FF:67:48:9D
