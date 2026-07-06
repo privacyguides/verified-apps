@@ -95,6 +95,14 @@ packages:
         sources:
           - name: F-Droid
             issue: GH-560
+  - package: app.govroam.getgovroam
+    signature:
+      - fingerprint: 14:25:A0:14:D9:42:36:54:60:D6:05:82:E4:E5:A8:06:00:2C:67:B5:40:94:1C:6C:FF:6F:56:DD:CC:32:3E:96
+        sources:
+          - name: Google Play
+            issue: GH-2816
+            apk:
+              sha256: 0631b8d286cfccffe4ddae881666f1c5d03ff06263b95c5dfba424f784d941dc
   - package: app.grapheneos.apps
     signature:
       - fingerprint: 33:84:C3:1F:CE:4A:7C:00:8A:8F:7B:26:52:BC:48:CC:43:21:F1:D2:C8:77:B1:8E:30:A4:ED:61:9A:F1:2F:6B
