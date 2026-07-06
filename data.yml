@@ -1868,6 +1868,14 @@ packages:
             issue: GH-803
             apk:
               sha256: 4f2195ada0d94e7ca34e54bef998c591af09813bc6213084645860de84ac76dc
+  - package: com.driveby.app
+    signature:
+      - fingerprint: 92:56:48:24:3A:B7:CB:E5:F7:3A:C5:7F:5C:E3:B6:FE:D9:23:BC:9F:6E:CA:AF:E4:9B:71:3D:FC:E2:B0:21:D8
+        sources:
+          - name: Google Play
+            issue: GH-2801
+            apk:
+              sha256: cbc52f2916ce35a2a1157718f39bf8048558628c1f2c571edd0fca54f4a71238
   - package: com.dsemu.drastic
     signature:
       - fingerprint: 81:FB:B6:04:02:BA:CF:84:DD:55:BD:BA:40:9A:34:CB:F1:E1:01:C3:CB:12:4D:3F:CD:84:51:28:57:B5:BF:80
