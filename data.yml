@@ -6039,6 +6039,14 @@ packages:
             issue: GH-559
             apk:
               sha256: fdab93454ac98c7e8841815678264e4ef7ee65a3b0d9fd6928a1e7512639fe76
+  - package: de.starfinanz.fico2.xamarin
+    signature:
+      - fingerprint: 48:53:EB:52:4C:DF:4A:22:EB:41:94:7B:0D:3F:49:F0:2F:9C:F3:00:42:88:0E:F6:29:85:47:92:2E:3A:E9:DD
+        sources:
+          - name: Google Play
+            issue: GH-2847
+            apk:
+              sha256: b7c79fd97e336568b5763196bc0c89ad49e79a31785ced41ab15fe612b95c5bd
   - package: de.szalkowski.activitylauncher
     signature:
       - fingerprint: 76:AD:D4:86:A2:75:E1:40:96:D7:C9:AA:BE:25:A5:26:6D:19:C7:61:B9:42:7B:60:BB:59:6F:79:A0:3E:D4:F7
