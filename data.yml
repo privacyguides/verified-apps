@@ -7431,6 +7431,12 @@ packages:
               sha256: 463f78fdd0e52d104f50173ed2fa6777c5e639df01e65c1b96336d1c9e4a16b1
   - package: me.zhanghai.android.files
     signature:
+      - fingerprint: 87:3B:9B:60:C7:7C:F7:F3:CD:5F:AE:66:D0:FE:11:2C:4A:86:97:3E:11:8E:E8:A2:9C:34:6C:4C:67:3C:97:F0
+        sources:
+          - name: Google Play
+            issue: GH-2794
+            apk:
+              sha256: b792494ccee48264855a544743862f3083c1e537c1ac94f3915609e87b457570
       - fingerprint: 9C:22:A7:42:FA:20:0C:85:BA:FB:C9:92:4A:02:DD:C8:F3:A0:B9:75:D4:D7:B5:A8:DA:21:D7:CF:34:CE:2B:20
         sources:
           - name: Direct APK Link
