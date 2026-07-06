@@ -3042,6 +3042,12 @@ packages:
               sha256: e2da6978c346e7a7805d52186eefecc25d93d9fb8dec3054bdf509e2e596d6e5
   - package: com.jarsilio.android.scrambledeggsif
     signature:
+      - fingerprint: 24:06:CA:D9:83:B1:C5:A1:D9:9C:5C:D5:06:4F:D3:D7:83:E9:85:02:7A:1C:4C:E9:CE:87:9B:50:ED:3C:08:B6
+        sources:
+          - name: Google Play
+            issue: CB-153
+            apk:
+              sha256: f3a5f1922cd80ccaa6bb0c12fedec688836333ad18b7ae1bf9d825ae8640eef2
       - fingerprint: 3C:DF:16:22:C3:7D:21:2B:E5:86:B2:29:28:F2:8C:CA:DB:D7:CB:95:4F:10:05:FC:E1:3E:81:85:0B:EB:1D:73
         sources:
           - name: F-Droid
