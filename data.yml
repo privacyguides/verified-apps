@@ -4784,6 +4784,14 @@ packages:
             issue: GH-2846
             apk:
               sha256: e1095980434f5531d30566bbbc0dabf0ded79df441324622fd1e73a817dd27da
+  - package: com.starfinanz.mobile.android.invest
+    signature:
+      - fingerprint: 48:53:EB:52:4C:DF:4A:22:EB:41:94:7B:0D:3F:49:F0:2F:9C:F3:00:42:88:0E:F6:29:85:47:92:2E:3A:E9:DD
+        sources:
+          - name: Google Play
+            issue: GH-2848
+            apk:
+              sha256: 9c91b4376cbb337b5374cb324fa6700313a55c3f3234ac27ab5c39e9a74d22c4
   - package: com.starfinanz.mobile.android.pushtan
     signature:
       - fingerprint: 48:53:EB:52:4C:DF:4A:22:EB:41:94:7B:0D:3F:49:F0:2F:9C:F3:00:42:88:0E:F6:29:85:47:92:2E:3A:E9:DD
