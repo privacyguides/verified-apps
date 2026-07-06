@@ -6113,6 +6113,14 @@ packages:
             issue: GH-559
             apk:
               sha256: fdab93454ac98c7e8841815678264e4ef7ee65a3b0d9fd6928a1e7512639fe76
+  - package: de.sparda.banking.app
+    signature:
+      - fingerprint: 9D:B5:52:4D:FA:58:84:0B:EF:66:AB:85:7B:0A:0E:23:D3:F8:C7:59:8A:72:A4:92:9D:E0:08:6B:D1:3F:06:93
+        sources:
+          - name: Google Play
+            issue: GH-2864
+            apk:
+              sha256: 73ae623dd9538fa4a408c96596438a2e7698daa7abd84c7d595988c2ebcb020d
   - package: de.starfinanz.fico2.xamarin
     signature:
       - fingerprint: 48:53:EB:52:4C:DF:4A:22:EB:41:94:7B:0D:3F:49:F0:2F:9C:F3:00:42:88:0E:F6:29:85:47:92:2E:3A:E9:DD
