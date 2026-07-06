@@ -978,6 +978,14 @@ packages:
             issue: CB-80
             apk:
               sha256: 102b12e9933927e3aef0cec7cfe0d20e125ebffc62ac9d5271c25b5160c097cd
+  - package: com.arumcomm.systeminfo
+    signature:
+      - fingerprint: C3:F4:61:EC:35:A4:6D:B3:31:0C:E6:9F:14:D2:FB:C8:AE:8A:40:D6:6C:EA:D8:E0:C0:13:EB:42:21:ED:F4:3F
+        sources:
+          - name: Google Play
+            issue: GH-2716
+            apk:
+              sha256: cd96332e9c4cf33bd967b6bdb3e41b3a3cf7e181ad42ba8664ee66126ed91983
   - package: com.aryan.reader.oss
     signature:
       - fingerprint: 4D:77:F5:57:45:74:9B:04:FC:BE:9A:60:E1:A2:ED:CA:5D:D0:CF:BB:D7:2B:B5:8C:E0:DD:15:6C:B1:B8:14:C9
