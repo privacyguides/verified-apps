@@ -1456,6 +1456,8 @@ packages:
             issue: GH-960
             apk:
               sha256: bc093a94acd871083316a31e6e6519a28663c6f1d96276ad056051f135dae81c
+          - name: HTTPS Verified Domain
+            issue: GH-2878
   - package: com.cheogram.android
     signature:
       - fingerprint: 51:F6:B6:65:F6:6C:CE:94:A7:F7:AF:5F:10:B5:F2:CE:13:55:DB:13:82:6E:C7:D8:D9:8C:58:EA:84:2E:2E:94

@@ -45,6 +45,15 @@ domains:
       - package: com.brave.browser
         fingerprints:
           - 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
+  - domain: chase.com
+    method: https
+    issue:
+      - GH-2878
+    checked: "2026-07-06T05:47:41Z"
+    packages:
+      - package: com.chase.sig.android
+        fingerprints:
+          - 73:F0:D9:50:8A:25:72:C1:10:07:7C:FF:1C:AD:4E:D9:2C:00:F0:20:4F:AF:ED:BA:C8:43:4B:D7:6B:C4:AC:D1
   - domain: dictcc.dict.cc
     method: https
     issue:
