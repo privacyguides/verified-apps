@@ -6028,6 +6028,14 @@ packages:
             issue: GH-489
             apk:
               sha256: ec25bc534ec2d1f716020129561a9fea6877ca0f3677beda6293eaae7f72238c
+  - package: de.sbk.meinesbk
+    signature:
+      - fingerprint: 22:39:00:11:E3:5D:A6:AB:CF:B0:FD:73:16:81:C8:B5:6E:A0:05:AC:F5:5F:23:91:F3:74:26:8A:E6:8E:02:F2
+        sources:
+          - name: Google Play
+            issue: GH-2860
+            apk:
+              sha256: d2487c9c2665bfffb4690cdfe6a3662801e94cd470a3bba6618f4bc55db30658
   - package: de.schildbach.oeffi
     signature:
       - fingerprint: BA:61:B8:8F:0F:43:64:00:6F:A6:DB:84:B2:B9:2F:A6:19:12:A0:27:71:65:9B:20:7C:41:27:21:04:C2:E5:C4
