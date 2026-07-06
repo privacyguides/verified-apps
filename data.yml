@@ -3864,6 +3864,14 @@ packages:
               sha256: 0b64dc8318950983eb648809c6f78777f02032902407b3b85a275e47691c78b1
           - name: HTTPS Verified Domain
             issue: GH-2779
+  - package: com.nexowallet
+    signature:
+      - fingerprint: 4C:59:7D:8B:39:5C:20:6A:3D:68:4B:9B:D5:F7:A4:A7:2E:06:6A:CA:FE:CB:FB:FD:00:6C:99:C0:48:D0:F3:A8
+        sources:
+          - name: Google Play
+            issue: GH-2629
+            apk:
+              sha256: 9c82f5eba170d8e50699640eec1b0c65060263212e5582ccc1ea409ae8524620
   - package: com.nextcloud.client
     signature:
       - fingerprint: 57:09:57:6F:9D:6C:6A:76:87:DD:5D:56:B2:69:D1:FA:5E:37:97:02:B9:1B:C8:3F:39:FD:7B:7C:59:7C:1B:83
