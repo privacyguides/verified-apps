@@ -594,6 +594,16 @@ packages:
             issue: GH-439
             apk:
               sha256: af8be27f292aaa8f9739ca21f652e86e611633b68615f550464742b6f4d07e6f
+  - package: com.Slack
+    signature:
+      - fingerprint: 33:53:36:19:75:6E:87:01:A8:2E:78:87:56:5B:15:2D:C3:48:18:87:11:EB:B5:C4:8D:07:3B:2C:94:2F:7E:41
+        sources:
+          - name: Google Play
+            issue: GH-2633
+            apk:
+              sha256: 6d8b26df16e0e5cabe6029c395f64fbb4d2590a4f88c252a549c0777a1bb83fc
+          - name: HTTPS Verified Domain
+            issue: GH-2633
   - package: com.TrainHeroic.TrainHeroic
     signature:
       - fingerprint: EB:94:E7:8E:50:A7:B2:16:27:1E:EA:55:2C:25:25:41:03:A0:5B:CE:AA:77:6F:EF:32:0F:5F:98:24:B3:8D:92

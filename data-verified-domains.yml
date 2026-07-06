@@ -1,5 +1,17 @@
 schema: 2
 domains:
+  - domain: Slack.com
+    method: https
+    issue:
+      - GH-2633
+    checked: "2026-07-06T23:39:43Z"
+    packages:
+      - package: com.Slack
+        fingerprints:
+          - 33:53:36:19:75:6E:87:01:A8:2E:78:87:56:5B:15:2D:C3:48:18:87:11:EB:B5:C4:8D:07:3B:2C:94:2F:7E:41
+          - 6F:D3:5A:F2:73:FF:DC:AB:30:5A:17:14:55:66:DD:E1:E1:D1:F2:CA:24:15:A8:BA:AE:E8:A6:51:28:E4:D0:DE
+          - 77:6F:86:9A:03:A0:25:4C:B5:C9:3E:87:21:84:11:8A:58:F7:49:A0:0E:B4:60:E8:07:C1:13:6F:E5:5B:75:7E
+          - AA:9F:1D:13:D2:10:C2:6E:32:52:A4:AD:76:71:FE:AB:A8:57:5A:3D:AF:30:03:B4:A0:26:E8:06:20:02:BF:68
   - domain: aidungeon.com
     method: https
     issue:
