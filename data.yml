@@ -6396,6 +6396,16 @@ packages:
             issue: GH-931
             apk:
               sha256: eef73a49ae186487ee5d4f17c5633a2545afc268de66471e4d4a4a6e17c42e2d
+  - package: fr.doctolib.www
+    signature:
+      - fingerprint: 19:9A:C4:B1:F6:81:74:65:06:FE:90:78:26:FB:42:94:C7:1F:7D:AE:F5:37:2D:D0:3B:A6:7C:E0:1C:4C:D0:83
+        sources:
+          - name: Google Play
+            issue: GH-2819
+            apk:
+              sha256: e138638e21f36db221a5c7dac35b788c542a0d98bb3a2a1a127a577630257677
+          - name: HTTPS Verified Domain
+            issue: GH-2819
   - package: fr.emersion.goguma
     signature:
       - fingerprint: 2D:39:E6:25:CD:51:45:F5:40:97:50:CD:D1:B6:38:A6:0E:82:67:AE:92:35:BF:36:2B:08:21:2B:DE:2B:A6:25

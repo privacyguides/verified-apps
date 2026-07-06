@@ -198,3 +198,12 @@ domains:
         fingerprints:
           - 03:63:7F:6C:5D:8F:60:4E:6F:DB:79:A6:FF:BF:A5:78:DE:4E:31:8F:8D:A2:2F:C6:10:66:65:24:7F:88:07:D7
           - 7F:D2:CE:A3:0C:3A:60:22:EB:29:41:9C:E8:F6:F9:2C:E8:A4:BD:35:B0:CC:87:9E:D3:CC:A6:CB:F5:E9:99:2D
+  - domain: www.doctolib.fr
+    method: https
+    issue:
+      - GH-2819
+    checked: "2026-07-06T19:26:32Z"
+    packages:
+      - package: fr.doctolib.www
+        fingerprints:
+          - 19:9A:C4:B1:F6:81:74:65:06:FE:90:78:26:FB:42:94:C7:1F:7D:AE:F5:37:2D:D0:3B:A6:7C:E0:1C:4C:D0:83
