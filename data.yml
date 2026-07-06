@@ -5103,6 +5103,14 @@ packages:
             issue: GH-512
             apk:
               sha256: 0cdf0176449b0f03e0d91d46c8d0d17576482e36f5b4ebd24700937ced1e70d0
+  - package: com.trafi.whitelabel.bvg
+    signature:
+      - fingerprint: 3F:EC:E6:B5:C2:27:18:9B:1E:F5:89:66:4F:92:26:61:BB:39:B5:60:C5:63:8E:58:34:88:9C:E9:87:E7:6B:09
+        sources:
+          - name: Google Play
+            issue: GH-2802
+            apk:
+              sha256: 55915dd12f93ae1ce49ae64a50b35bbe21e838d32d9956afc8a5a31ce77c31e2
   - package: com.trainose.android
     signature:
       - fingerprint: 17:F1:55:9B:7F:CD:C9:37:38:06:CE:B6:64:58:B4:34:AA:A5:6A:D8:7E:AF:1B:B8:CC:31:F9:34:D5:E3:E5:4A
