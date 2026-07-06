@@ -6776,6 +6776,14 @@ packages:
             issue: GH-169
             apk:
               sha256: af45d8f6a0169d3c9bd4f0494cdb3d5b2ebed9acf6a7f9713b2f4f4adbb43043
+  - package: fi.hsl.app
+    signature:
+      - fingerprint: F9:C1:3D:18:3F:29:81:F0:50:10:F9:BE:3C:01:1C:B1:44:0A:D6:5D:CB:22:2F:B9:E9:86:22:0B:10:5D:3E:0A
+        sources:
+          - name: Google Play
+            issue: GH-2725
+            apk:
+              sha256: de83a90f639346395b930f4c9b4ed77b65d8dece3fa41896142197fa8bce816b
   - package: fi.nordea.mobilebank
     signature:
       - fingerprint: |-
