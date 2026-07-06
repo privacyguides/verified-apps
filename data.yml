@@ -4174,6 +4174,14 @@ packages:
             issue: GH-532
             apk:
               sha256: aab59f4908f4e862c5c6454fb03e9e2ab63e7db00b7fe224ef3c34c0ad287715
+  - package: com.qobuz.music
+    signature:
+      - fingerprint: 20:C8:21:2F:97:13:A6:2A:C5:BA:EE:54:F5:C9:C7:16:CD:01:91:2F:AB:47:CD:E2:17:A9:29:B0:0B:D6:B6:A9
+        sources:
+          - name: Google Play
+            issue: GH-2830
+            apk:
+              sha256: db159043b49b0c87a6ccd69323e8016d9ec0fbcdb5f3460ab52d98f536c60583
   - package: com.queue.queuebee
     signature:
       - fingerprint: 84:81:D6:D5:5E:EA:B3:05:E2:3A:D1:CF:F5:47:44:04:CD:D1:EB:3C:16:19:7E:D5:30:6A:37:14:82:E8:C1:0F
