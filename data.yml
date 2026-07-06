@@ -5707,6 +5707,14 @@ packages:
             issue: GH-1636
             apk:
               sha256: e2ababc9eef975f2e842f280c280aac0164d45d1e21d90e1d615b6d39672ba2f
+  - package: de.dak.dak_app
+    signature:
+      - fingerprint: 84:BA:E8:B5:D0:92:F0:49:51:37:BA:34:1A:D1:CC:88:2C:D9:F9:43:3E:B7:DB:A7:9D:9E:0E:5B:9F:77:7B:A2
+        sources:
+          - name: Google Play
+            issue: GH-2856
+            apk:
+              sha256: f3565efdd136e9b5340d5cfb4a20210c8a34e1b5abeb8bba593f293a354f0b34
   - package: de.danoeh.antennapod
     signature:
       - fingerprint: 17:94:30:56:5A:4A:04:BF:E7:82:74:83:24:30:99:BD:10:87:04:10:80:0C:D7:C4:C7:B4:8D:8D:32:26:DF:55
