@@ -7029,6 +7029,12 @@ packages:
             issue: GH-2338
   - package: io.filen.app
     signature:
+      - fingerprint: 2C:90:DF:59:1A:39:E0:8A:AD:E9:4F:72:80:D1:92:D3:34:47:F0:1E:1E:12:75:19:82:B8:AE:C3:F9:0F:AD:AB
+        sources:
+          - name: Google Play
+            issue: CB-152
+            apk:
+              sha256: 629345ece9a38ce722088b0e0e0a7edfb36b392f2d23cf37c07a9fa4a913422d
       - fingerprint: 5B:DD:27:47:B7:CF:A9:8D:62:9E:4D:44:41:01:A9:CE:DC:E3:32:AD:6A:7F:2A:0B:14:F4:69:ED:93:7F:13:27
         sources:
           - name: Direct APK Link
