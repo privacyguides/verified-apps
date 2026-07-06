@@ -6784,6 +6784,14 @@ packages:
             issue: GH-169
             apk:
               sha256: af45d8f6a0169d3c9bd4f0494cdb3d5b2ebed9acf6a7f9713b2f4f4adbb43043
+  - package: fi.frankstudents.frankapp
+    signature:
+      - fingerprint: DE:C7:9D:F0:6C:36:27:F7:DF:CD:0A:6F:F2:7D:EB:93:B2:21:8A:76:72:91:CB:06:9C:9C:0E:8A:80:3E:FB:9A
+        sources:
+          - name: Google Play
+            issue: GH-2728
+            apk:
+              sha256: d163e7fa8f03642a18ad0deff1da2df5b91e98d82b4bfc65fe94613404a742bb
   - package: fi.hsl.app
     signature:
       - fingerprint: F9:C1:3D:18:3F:29:81:F0:50:10:F9:BE:3C:01:1C:B1:44:0A:D6:5D:CB:22:2F:B9:E9:86:22:0B:10:5D:3E:0A
