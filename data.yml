@@ -7022,6 +7022,14 @@ packages:
             apk:
               sha256: 4e0e56d97d1f28a256ab2cffe16ad62fbb24fd3ebb049c35ba6e7f2316169c8a
               link: https://github.com/ente-io/ente/releases/download/auth-v4.4.22/ente-auth-v4.4.22.apk
+  - package: io.ente.locker
+    signature:
+      - fingerprint: FE:BD:D7:3B:5D:52:1C:CD:14:A2:F5:E6:9F:19:E8:C0:66:BE:5B:EF:70:D7:F5:18:49:FC:E1:0C:7C:81:AE:FD
+        sources:
+          - name: Google Play
+            issue: CB-158
+            apk:
+              sha256: b4731e0671b4465303867389d7818cf67c481ff01af4304271b7b02ea4912369
   - package: io.ente.photos
     signature:
       - fingerprint: 37:D4:0B:10:3B:BF:86:43:EB:AE:23:B3:BB:73:F8:65:B4:E9:3A:BF:65:45:EF:37:12:8A:4C:EA:5B:C2:7E:2E
