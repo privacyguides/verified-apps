@@ -9,6 +9,24 @@ domains:
       - package: com.aidungeon
         fingerprints:
           - 66:A5:A0:96:CB:94:79:90:BA:9C:67:49:35:F7:37:CD:57:AC:CB:E2:F3:C4:D1:AD:12:AE:74:79:AE:2B:C0:9B
+  - domain: amazon.com
+    method: https
+    issue:
+      - GH-2332
+    checked: "2026-06-22T06:12:40Z"
+    packages:
+      - package: com.amazon.dee.app
+        fingerprints:
+          - 2F:19:AD:EB:28:4E:B3:6F:7F:07:78:61:52:B9:A1:D1:4B:21:65:32:03:AD:0B:04:EB:BF:9C:73:AB:6D:76:25
+  - domain: android.box.com
+    method: https
+    issue:
+      - GH-2363
+    checked: "2026-06-24T05:42:36Z"
+    packages:
+      - package: com.box.android
+        fingerprints:
+          - 5E:6E:4B:82:82:99:CA:01:D7:A4:92:21:1F:CC:88:FA:68:05:0B:AA:A2:5A:50:EA:69:59:6F:D2:A3:E6:B3:66
   - domain: app.fastmail.com
     method: https
     issue:
@@ -39,12 +57,21 @@ domains:
   - domain: bestbuy.com
     method: https
     issue:
-      - GH-2711
-    checked: "2026-07-01T06:11:33Z"
+      - GH-2310
+    checked: "2026-06-21T05:56:42Z"
     packages:
       - package: com.bestbuy.android
         fingerprints:
           - 83:E0:E9:06:D7:F0:6F:4E:2E:D1:1F:7F:CF:51:96:2A:72:54:3D:1A:F4:18:99:FE:AD:87:F5:46:AF:CC:CE:9B
+  - domain: booking.com
+    method: https
+    issue:
+      - GH-2310
+    checked: "2026-06-21T05:56:42Z"
+    packages:
+      - package: com.booking
+        fingerprints:
+          - 6A:C8:C8:A9:E6:F3:6E:14:E5:2A:0A:05:15:A3:6B:70:66:E7:20:A1:B0:C8:A1:B0:59:E0:78:17:50:A8:71:99
   - domain: brave.com
     method: https
     issue:
@@ -57,14 +84,23 @@ domains:
   - domain: bumble.com
     method: https
     issue:
-      - GH-2711
-    checked: "2026-07-01T06:11:33Z"
+      - GH-2332
+    checked: "2026-06-22T06:12:40Z"
     packages:
       - package: com.bumble.app
         fingerprints:
           - 43:2C:60:B3:F8:84:9E:A0:EA:93:B8:50:D2:68:EC:EB:5D:C4:0E:E2:27:0C:08:45:B5:5B:6E:70:9D:A8:24:D1
           - 44:A1:04:DA:00:F0:3A:7B:BE:A9:83:7A:DE:54:F7:BF:F9:7C:34:B7:DC:46:DA:13:10:CC:EA:FE:AF:A6:83:2F
           - E2:9E:74:1A:F1:ED:08:9E:8B:A1:89:FE:55:B3:EE:E7:68:30:82:17:50:2B:8E:CF:E3:A5:C2:16:A5:1D:C3:BF
+  - domain: club.qobuz.com
+    method: https
+    issue:
+      - GH-2831
+    checked: "2026-07-06T19:29:37Z"
+    packages:
+      - package: com.qobuz.club
+        fingerprints:
+          - 2C:E2:F1:9A:17:9C:13:FA:C9:EA:F1:39:C3:F0:84:D5:5B:02:64:58:96:29:52:D4:E6:B5:F2:F1:A2:9C:A2:1E
   - domain: dictcc.dict.cc
     method: https
     issue:
@@ -84,6 +120,25 @@ domains:
         fingerprints:
           - 3C:39:D2:3C:F9:36:78:49:A5:C6:99:39:56:47:FE:0E:5B:FE:A5:A1:F1:F4:0D:8C:71:7D:DC:70:F8:BF:A1:13
           - 99:03:CA:AD:D3:9C:B4:0B:6A:3E:CB:33:C4:2C:B8:85:65:1D:C4:A8:EA:AE:27:CC:66:56:9D:E8:6B:DD:FC:62
+  - domain: duckduckgo.com
+    method: https
+    issue:
+      - GH-2332
+    checked: "2026-06-22T06:12:40Z"
+    packages:
+      - package: com.duckduckgo.mobile.android
+        fingerprints:
+          - 8F:A8:ED:5E:FC:6B:67:60:FD:77:79:B6:CB:24:E8:F0:4B:A8:E9:92:17:3A:4C:CA:F4:C5:1E:78:4A:D2:3F:30
+          - BB:7B:B3:1C:57:3C:46:A1:DA:7F:C5:C5:28:A6:AC:F4:32:10:84:56:FE:EC:50:81:0C:7F:33:69:4E:B3:D2:D4
+  - domain: frontpage.reddit.com
+    method: https
+    issue:
+      - GH-2332
+    checked: "2026-06-22T06:12:40Z"
+    packages:
+      - package: com.reddit.frontpage
+        fingerprints:
+          - 97:0B:91:14:38:13:B4:C9:D5:F3:63:4F:67:2C:9F:CA:A5:62:1B:4E:FA:AE:DA:FD:6C:23:5C:BB:B8:69:73:6F
   - domain: fundrise.com
     method: https
     issue:
@@ -138,8 +193,8 @@ domains:
   - domain: linkedin.com
     method: https
     issue:
-      - GH-2711
-    checked: "2026-07-01T06:11:33Z"
+      - GH-2332
+    checked: "2026-06-22T06:12:40Z"
     packages:
       - package: com.linkedin.android
         fingerprints:
@@ -183,6 +238,15 @@ domains:
           - B4:53:D3:7C:78:28:56:F7:82:A8:E0:9F:14:EE:20:B8:4F:49:A3:10:75:F4:7F:D3:A0:79:82:D8:CA:FE:FF:D9
           - C7:C6:2E:A0:F6:E2:F6:EB:A8:7F:95:40:69:87:50:55:30:EF:2F:51:6E:7C:DE:59:91:D7:14:03:31:44:80:72
           - DB:EE:80:B6:07:32:0F:B8:24:C6:E6:FA:BE:D6:97:A7:7E:18:D9:60:1A:48:43:31:40:EF:22:AD:6A:71:48:9F
+  - domain: photos.ente.io
+    method: https
+    issue:
+      - GH-2338
+    checked: "2026-06-23T05:40:35Z"
+    packages:
+      - package: io.ente.photos.independent
+        fingerprints:
+          - 35:ED:56:81:B7:0B:B3:BD:35:D9:0D:85:6A:F5:69:4C:50:4D:EF:46:AA:D8:3F:77:7B:1C:67:5C:F4:51:35:0B
   - domain: play.verifiedapps.privacyguides.org
     method: dns
     issue:
@@ -265,3 +329,33 @@ domains:
         fingerprints:
           - 03:63:7F:6C:5D:8F:60:4E:6F:DB:79:A6:FF:BF:A5:78:DE:4E:31:8F:8D:A2:2F:C6:10:66:65:24:7F:88:07:D7
           - 7F:D2:CE:A3:0C:3A:60:22:EB:29:41:9C:E8:F6:F9:2C:E8:A4:BD:35:B0:CC:87:9E:D3:CC:A6:CB:F5:E9:99:2D
+  - domain: wikipedia.org
+    method: https
+    issue:
+      - GH-1886
+    checked: "2026-06-23T05:40:35Z"
+    packages:
+      - package: org.wikipedia
+        fingerprints:
+          - 1C:3D:DB:0E:8F:32:58:B0:FF:3B:7B:6A:60:8D:19:E7:CD:EE:D3:8A:58:97:BB:DA:23:BA:C1:55:92:3B:12:67
+          - F5:40:E9:37:41:9A:1F:E3:08:E3:35:31:35:9C:23:CE:19:DF:D8:4A:66:01:E2:EF:85:C2:17:C8:23:A7:08:7F
+  - domain: wolt.com
+    method: https
+    issue:
+      - GH-2332
+    checked: "2026-06-22T06:12:40Z"
+    packages:
+      - package: com.wolt.android
+        fingerprints:
+          - 16:E0:AA:B4:BD:52:D9:99:8E:59:87:CA:20:7F:71:6B:CE:82:07:B7:47:4D:44:DE:51:F0:6D:FD:3D:C9:54:B7
+          - 23:EB:F4:CC:3D:2C:F2:E0:55:57:69:83:53:E8:8D:1E:DF:12:32:2F:B7:3D:01:CC:95:3A:C1:14:C5:B7:74:A0
+          - 73:E8:FB:3D:82:59:E9:4C:27:C5:5D:E6:08:91:58:94:56:4A:8C:72:99:F6:C9:C2:DC:E7:89:BA:EB:7E:1E:13
+  - domain: www.doctolib.fr
+    method: https
+    issue:
+      - GH-2819
+    checked: "2026-07-06T19:26:32Z"
+    packages:
+      - package: fr.doctolib.www
+        fingerprints:
+          - 19:9A:C4:B1:F6:81:74:65:06:FE:90:78:26:FB:42:94:C7:1F:7D:AE:F5:37:2D:D0:3B:A6:7C:E0:1C:4C:D0:83
