@@ -2749,6 +2749,16 @@ packages:
             issue: GH-2729
             apk:
               sha256: 527c46ead5e711e983fbd7ab93957315621d2c41efaa592a2ef7bf77b333ac14
+  - package: com.google.android.apps.recorder
+    signature:
+      - fingerprint: |-
+          26:EC:42:C1:C3:F7:8B:73:D2:90:42:B0:6C:7D:9B:23:49:E0:91:1A:E5:10:F1:AD:CE:74:5F:9C:69:98:56:F9
+          AD:57:4F:AA:ED:A5:56:3E:67:78:E7:4C:A4:A0:94:AB:7F:75:9A:B0:87:9C:B4:2E:85:21:5A:D4:EB:3E:B4:E8
+        sources:
+          - name: Google Play
+            issue: GH-2574
+            apk:
+              sha256: b3643a7d02fb29f9dc121e6cb5ff83a87960aa6e80d9d1255695cee0ba0b5a69
   - package: com.google.android.apps.tasks
     signature:
       - fingerprint: |-
