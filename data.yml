@@ -1284,6 +1284,14 @@ packages:
             issue: GH-1244
             apk:
               sha256: 8eec7437cfda087acdf25944427dcd427bd7400746b86192686bfa16f790ad0b
+  - package: com.block.puzzle.jewel.games.blast.free
+    signature:
+      - fingerprint: E6:76:1C:85:FE:63:1F:F8:B9:04:41:9D:D5:C3:F1:A0:2D:8D:8D:2F:8A:D2:D9:7E:F7:6C:54:26:9A:DC:07:36
+        sources:
+          - name: Google Play
+            issue: GH-2741
+            apk:
+              sha256: a15a63ed4063be09e78e9e9edcf8d0aeabd240303ab8af577495e05be49b4d61
   - package: com.bnyro.translate
     signature:
       - fingerprint: B3:BC:73:B1:17:DF:5D:FE:38:13:0C:6C:2B:94:68:52:AE:70:88:55:7F:E8:E4:33:F0:D9:98:3A:6B:55:CC:95
