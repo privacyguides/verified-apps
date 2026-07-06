@@ -3434,6 +3434,14 @@ packages:
             issue: GH-1940
             apk:
               sha256: f2f005fc6203fcb51156baa80cc17dbcf7ff86be9eb6e7e4c6e64d413be10e3b
+  - package: com.melodis.midomiMusicIdentifier.freemium
+    signature:
+      - fingerprint: 56:D8:B2:57:7B:EA:4C:B3:44:87:E6:C6:02:25:F1:E3:F0:AB:C3:9E:24:FD:34:E4:57:69:87:6E:BB:06:2A:3C
+        sources:
+          - name: Google Play
+            issue: GH-2836
+            apk:
+              sha256: 96d2d5957b128629e977ae51b876c93e8a1eafcb89f84e0f353fe6f0cdc3346e
   - package: com.menards.mobile
     signature:
       - fingerprint: F4:58:C7:8C:C4:61:20:5B:E2:C8:0B:94:8D:A9:E3:0A:1E:5E:A2:0A:7E:B4:2B:E5:79:9D:0C:D1:10:05:AE:64
