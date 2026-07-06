@@ -5945,6 +5945,14 @@ packages:
             issue: CB-38
             apk:
               sha256: 00ebcff767b548c1a836e2ca270a80cc04f7cab22ca5ae76a349b42856fb06f6
+  - package: de.hafas.android.sbahnberlin
+    signature:
+      - fingerprint: FF:88:BA:69:61:28:19:7F:27:95:D5:2A:4D:0A:5B:4B:4A:FA:46:91:8C:15:17:BD:04:B6:A7:08:CF:80:CF:7F
+        sources:
+          - name: Google Play
+            issue: CB-166
+            apk:
+              sha256: 406600311c6288401a3bad1cfbffae6cb2d059586c15f4e47eb99c1b3fc94595
   - package: de.ingdiba.bankingapp
     signature:
       - fingerprint: CB:74:26:85:E4:8B:8F:F9:59:64:A6:81:39:AB:16:43:91:A1:6C:F2:A4:54:39:BA:59:8E:C0:BF:CB:0E:FB:FC
