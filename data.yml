@@ -4179,6 +4179,14 @@ packages:
             issue: GH-696
             apk:
               sha256: 7aed4f4042f81ea5f2576b256d084e7fad9cfc44b39f0e05ac26a198f5191b63
+  - package: com.otp.octopilauncher
+    signature:
+      - fingerprint: 94:FB:88:56:2B:A7:F2:47:A0:AB:9B:15:4C:44:A1:2F:53:5B:54:BC:2B:E7:7A:0F:C7:CE:C7:65:C5:33:6F:25
+        sources:
+          - name: Google Play
+            issue: GH-2610
+            apk:
+              sha256: da85bb1519fe573e9000f77a6b49ce7222be0d913cf5fe9fa9c49972e27296b6
   - package: com.ourfamilywizard
     signature:
       - fingerprint: 9B:CC:23:2D:34:BE:A2:26:94:C4:E7:8C:5E:B8:84:35:B7:3B:35:6D:59:2F:4B:BB:11:F5:E7:45:37:D5:B3:2D
