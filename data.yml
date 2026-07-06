@@ -2036,6 +2036,8 @@ packages:
             issue: GH-752
             apk:
               sha256: 6ebe5c150cadcc255e497af7fa162ca1d1930f4942ad60e8aea515314ed59d02
+          - name: HTTPS Verified Domain
+            issue: GH-2446
   - package: com.fastmail.app
     signature:
       - fingerprint: C9:2C:5E:E8:F6:BA:CB:E9:3C:A6:C0:8A:E9:6E:F4:7D:09:91:80:63:F5:71:64:78:BF:90:E6:86:09:C9:0D:1D
@@ -3000,6 +3002,8 @@ packages:
             issue: GH-1195
             apk:
               sha256: cd86b5cb53061ee4675a7785f1f8c90addfafd757f63bfc6fbd3f1474a4aa2fd
+          - name: HTTPS Verified Domain
+            issue: GH-2446
   - package: com.innovatise.cityofminnetonka
     signature:
       - fingerprint: E7:C9:C3:EB:DB:3B:52:C1:34:C1:AC:F9:11:6A:7E:E2:18:4E:49:9F:E5:4A:2A:01:99:3C:D3:9E:D8:4B:41:FF
