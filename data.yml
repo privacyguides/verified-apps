@@ -5836,6 +5836,14 @@ packages:
             issue: GH-606
             apk:
               sha256: 32f217e3198f5286f6811f922930d79e82f6cdf7dd49dd96e4587f9a8bfc2c47
+  - package: com.zarrx.web
+    signature:
+      - fingerprint: 93:21:5A:F2:47:C1:3B:44:A1:5F:C8:D0:EC:F2:D2:FA:95:3D:F6:9D:46:E5:F5:00:47:3A:DC:C9:5F:AB:75:FB
+        sources:
+          - name: Google Play
+            issue: GH-2710
+            apk:
+              sha256: 4c19092ff9c427ea85b174c66913a2d95fc2ef9c35f55d489e6a3609540c5629
   - package: com.zdf.android.mediathek
     signature:
       - fingerprint: E6:F9:48:D0:24:B5:88:6C:77:CE:D9:FA:AD:33:B8:BC:C8:79:E8:B3:CF:DC:53:F5:6D:0F:A0:48:E4:80:23:E1
