@@ -4792,6 +4792,14 @@ packages:
             issue: GH-519
             apk:
               sha256: dcd20af1ec351bda4d46a9c6353c24fcce05fd17de75d54103249a3b9d076342
+  - package: com.starfinanz.smob.android.bwmobilbanking
+    signature:
+      - fingerprint: 48:53:EB:52:4C:DF:4A:22:EB:41:94:7B:0D:3F:49:F0:2F:9C:F3:00:42:88:0E:F6:29:85:47:92:2E:3A:E9:DD
+        sources:
+          - name: Google Play
+            issue: GH-2852
+            apk:
+              sha256: fd4b8f64ab4ce5572e42a4f19390d075dbf824c7eaf9f212e40fa15a146389c0
   - package: com.starlink.mobile
     signature:
       - fingerprint: CD:FB:A7:80:57:6F:7A:48:00:E2:A6:09:72:6F:83:F0:53:B5:1B:AE:6A:23:90:03:AB:C1:6B:7F:75:E9:F5:88
