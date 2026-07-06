@@ -2641,6 +2641,14 @@ packages:
             issue: GH-221
             apk:
               sha256: 959c9839cf1767adb4d2929fcd77c9830816a2713ee498644904ec29268bb394
+  - package: com.google.android.apps.pixel.creativeassistant
+    signature:
+      - fingerprint: F5:3A:B3:53:FB:00:42:BA:99:05:BA:B5:0E:83:8A:54:9B:A4:A8:F2:5D:F9:D5:6C:8A:75:92:77:A1:58:FD:7D
+        sources:
+          - name: Google Play
+            issue: GH-2729
+            apk:
+              sha256: 527c46ead5e711e983fbd7ab93957315621d2c41efaa592a2ef7bf77b333ac14
   - package: com.google.android.apps.tasks
     signature:
       - fingerprint: |-
