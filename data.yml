@@ -4007,6 +4007,12 @@ packages:
             apk:
               sha256: 22715cf7b923baa73cfe21379ebe58e44da5f792bf353b53b49f725ba9d943d7
               link: https://github.com/TylerWilliamson/QuickWeather/releases/download/2.8.7/QuickWeather-2.8.7.apk
+      - fingerprint: 93:5F:E7:26:8B:C3:FF:93:B1:F8:4E:4F:EE:D9:DE:23:26:54:87:49:45:EE:68:5D:21:42:7E:A3:6D:F5:EB:3D
+        sources:
+          - name: Google Play
+            issue: CB-155
+            apk:
+              sha256: 9f135b9db2f5570120a480d07d9bd3c2d8dc2f6b6c7284f57f64747d9db32c46
       - fingerprint: 96:AA:C6:5A:0E:9E:98:25:54:CB:26:74:32:52:26:42:46:13:30:F3:1C:86:AF:77:CA:21:92:3D:6D:82:37:9B
         sources:
           - name: F-Droid
