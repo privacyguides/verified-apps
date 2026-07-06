@@ -2150,6 +2150,14 @@ packages:
             issue: CB-3
             apk:
               sha256: 3bc37e619307bace32ab54433874fef34ad2a5a9343289d2f9b62eedc1466b86
+  - package: com.firstdirect.bankingonthego
+    signature:
+      - fingerprint: 1F:3C:64:81:45:3D:FC:5F:41:ED:FE:E2:01:DD:CE:47:6A:A0:AA:60:5F:6D:8E:32:59:C2:52:F4:6A:0A:09:2F
+        sources:
+          - name: Google Play
+            issue: GH-2681
+            apk:
+              sha256: 7dc2dcdb8278881034ceb4e4d7365f31da5c3f3aad0facff7f4eb5878582b5dd
   - package: com.firsty.app
     signature:
       - fingerprint: EC:C7:12:8F:D0:81:50:E3:FB:D5:75:F2:98:B5:08:E8:58:D4:F2:60:7F:78:FA:05:3F:84:48:8F:CD:4C:89:A8
