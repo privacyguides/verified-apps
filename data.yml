@@ -5676,6 +5676,16 @@ packages:
             issue: GH-1882
             apk:
               sha256: ddea7baf2e114277c5d4aea038fc31294877b0fe538178a399f186bc7cdc39c6
+  - package: de.aoksystems.amg
+    signature:
+      - fingerprint: |-
+          01:1D:BF:47:D4:D2:E3:92:E0:3D:D4:61:74:0B:65:FB:E6:33:53:EC:C4:39:50:70:F9:17:78:A3:AD:14:5F:0D
+          34:16:17:48:DF:56:C4:77:FA:E1:DD:78:A2:20:E7:5F:D4:1A:CD:B4:73:73:57:36:34:06:F9:78:CA:92:83:B1
+        sources:
+          - name: Google Play
+            issue: GH-2857
+            apk:
+              sha256: e83e19a371cf6af7c6fa3d15cf1d7f3c270ae566f52d1ee7ebb7937877687380
   - package: de.astubenbord.paperless_mobile
     signature:
       - fingerprint: 55:B1:8F:9C:A4:08:9F:BA:70:C2:E5:7C:E5:09:F2:40:B8:12:94:EF:69:1B:0D:D1:B1:9D:44:1E:57:64:02:A8
