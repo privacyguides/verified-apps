@@ -1592,6 +1592,14 @@ packages:
             issue: GH-993
             apk:
               sha256: af34d79db686fc7e3b54070973948f7b0ec057c6f9d39de2c044398efa8bb695
+  - package: com.comdirect.phototan
+    signature:
+      - fingerprint: 8F:EF:54:18:47:9F:56:B2:77:76:CD:91:14:E1:7D:DA:26:31:E1:8A:93:58:DA:90:FD:5B:1F:23:47:2A:60:3F
+        sources:
+          - name: Google Play
+            issue: GH-2800
+            apk:
+              sha256: 8568f9bd3221e7a5ed9b3813e66b17172777f4fcb28e10558903973d01b17619
   - package: com.comuto
     signature:
       - fingerprint: D0:F8:58:4B:7D:13:8B:47:1D:29:ED:D0:D8:CE:A8:F5:A1:81:76:F0:02:FF:4D:E6:D3:5D:38:31:6B:AC:07:26
