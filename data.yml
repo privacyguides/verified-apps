@@ -1096,6 +1096,14 @@ packages:
             issue: GH-611
             apk:
               sha256: e264330ee21b54f11442810a0f25a7be4b358877f57f2fae4e5573c48c685226
+  - package: com.bcp.bank.bcp
+    signature:
+      - fingerprint: B1:63:C1:C3:CB:B9:AB:7F:44:72:87:37:60:17:E9:88:6C:27:35:3E:E8:6C:C1:2C:94:BF:94:2B:46:77:9C:A1
+        sources:
+          - name: Google Play
+            issue: CB-162
+            apk:
+              sha256: 9e088f3f67bc170a3251ba12d5353b38470998a1e5db46a091b9a3f7e0e7e76c
   - package: com.beToken
     signature:
       - fingerprint: F0:4E:48:28:92:5B:10:79:D3:20:D0:64:A7:CE:78:69:C0:44:C1:29:6F:F5:5F:48:06:4E:1E:0E:F0:82:78:6C
