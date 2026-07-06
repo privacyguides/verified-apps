@@ -541,6 +541,8 @@ packages:
             issue: GH-749
             apk:
               sha256: ff34857e5a53a7b60a4338ac0639b0a6b4ab9132c92f5c1ab977cf729af10727
+          - name: HTTPS Verified Domain
+            issue: GH-2584
   - package: co.uk.exocron.android.qlango
     signature:
       - fingerprint: 5D:40:43:44:B8:E6:4C:B7:3A:96:C0:84:29:FA:DE:99:22:BC:25:69:E5:F4:91:A5:A4:1F:72:B9:72:F1:39:85
@@ -4013,6 +4015,8 @@ packages:
             issue: GH-921
             apk:
               sha256: a2e831a276acb24c1c8b7c92cd7a184f78a760c1ce2754f92324fee31ce84e24
+          - name: HTTPS Verified Domain
+            issue: GH-2584
   - package: com.orange.mobinilandme
     signature:
       - fingerprint: |-

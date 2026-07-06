@@ -40,6 +40,15 @@ domains:
       - package: com.fastmail.app
         fingerprints:
           - C9:2C:5E:E8:F6:BA:CB:E9:3C:A6:C0:8A:E9:6E:F4:7D:09:91:80:63:F5:71:64:78:BF:90:E6:86:09:C9:0D:1D
+  - domain: app.hinge.co
+    method: https
+    issue:
+      - GH-2584
+    checked: "2026-06-28T06:04:50Z"
+    packages:
+      - package: co.hinge.app
+        fingerprints:
+          - 3C:9E:97:5E:34:B9:9E:AA:B1:E6:CE:09:55:BD:B7:F5:49:9E:36:CB:BA:56:61:9C:1E:EE:D1:96:C5:63:5E:5F
   - domain: appverifier.roundsalmon4.com
     method: dns
     issue:
@@ -266,6 +275,15 @@ domains:
       - package: org.telegram.messenger.web
         fingerprints:
           - 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
+  - domain: openai.com
+    method: https
+    issue:
+      - GH-2584
+    checked: "2026-06-28T06:04:50Z"
+    packages:
+      - package: com.openai.chatgpt
+        fingerprints:
+          - B2:4F:4B:FB:B3:CF:29:3F:93:87:03:B9:D8:70:27:C1:10:2C:C3:6D:C4:FA:20:69:10:E0:89:27:DB:40:47:3C
   - domain: paypal.com
     method: https
     issue:
