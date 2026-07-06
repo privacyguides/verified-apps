@@ -4808,6 +4808,14 @@ packages:
             issue: GH-2851
             apk:
               sha256: 475e8ef25c34b4cd85d0134375d40a5a60a95e45536def4f5e74c15287f596f0
+  - package: com.starfinanz.smob.android.starmoney
+    signature:
+      - fingerprint: 48:53:EB:52:4C:DF:4A:22:EB:41:94:7B:0D:3F:49:F0:2F:9C:F3:00:42:88:0E:F6:29:85:47:92:2E:3A:E9:DD
+        sources:
+          - name: Google Play
+            issue: GH-2850
+            apk:
+              sha256: 0b152ad988cc43e5ef9306a7aae45e75c256f69f7900d201b50de5868680ee86
   - package: com.starlink.mobile
     signature:
       - fingerprint: CD:FB:A7:80:57:6F:7A:48:00:E2:A6:09:72:6F:83:F0:53:B5:1B:AE:6A:23:90:03:AB:C1:6B:7F:75:E9:F5:88
