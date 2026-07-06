@@ -7625,6 +7625,18 @@ packages:
             issue: GH-300
             apk:
               sha256: 9f5b4e7e6733e67b6a69f484fe7656035db19b99ae37a48f51203deb4d47f000
+  - package: jp.naver.line.android
+    signature:
+      - fingerprint: |-
+          E6:82:FE:0B:CD:60:90:7D:FE:D5:15:E0:B8:A4:DE:03:AA:1C:28:1D:11:1A:07:83:39:86:60:2B:60:98:AF:D2
+          E6:E8:03:6E:01:23:4E:91:9F:BE:9C:F9:EA:5D:21:04:35:CF:C0:54:23:28:64:1A:A7:0A:01:8F:52:F6:3C:F8
+        sources:
+          - name: Google Play
+            issue: GH-2627
+            apk:
+              sha256: 84fd27502c473ea00ff968378ad6b78b620b1e8d86106a6076d6115c1ee1cea0
+          - name: HTTPS Verified Domain
+            issue: GH-2627
   - package: keepass2android.keepass2android
     signature:
       - fingerprint: 0B:F8:05:6D:3A:39:4E:D7:C7:71:73:C4:B4:2C:80:05:65:B4:F0:A4:29:77:56:9C:F3:47:2C:27:1C:56:29:39
