@@ -1007,6 +1007,14 @@ packages:
             issue: GH-1454
             apk:
               sha256: d846f31f74c5816ba32a69d7f9cb8b0f77f0755a0cac39c7a7c5d6faea28b904
+  - package: com.att.myWireless
+    signature:
+      - fingerprint: C7:F7:9A:BA:69:D3:A7:5C:FA:4F:A0:35:99:D0:8E:EB:C5:D1:C0:EE:B1:C3:90:CF:6C:A8:79:40:D4:F1:92:AD
+        sources:
+          - name: Google Play
+            issue: GH-2738
+            apk:
+              sha256: b15ac4ba3d93dee13409216d839df832be83d3a72d843ad73191aa807e3749c9
   - package: com.audiobookshelf.app
     signature:
       - fingerprint: 36:48:29:26:56:96:6C:63:D1:B5:7D:93:EA:00:E3:5C:7D:97:51:1E:1F:5B:06:78:A7:17:DA:E7:73:79:39:56
