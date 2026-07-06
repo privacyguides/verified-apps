@@ -5937,6 +5937,14 @@ packages:
             issue: GH-2026
             apk:
               sha256: b83ff2e41a3306e0085ee2e966b86bffe08b736d210200f6d9053f2146b79a1f
+  - package: de.meine_krankenkasse.vhoenixapp
+    signature:
+      - fingerprint: D5:B4:2D:F3:19:D0:4F:64:73:06:FD:8B:57:32:E4:6E:44:46:89:38:46:F6:3D:B7:A4:8B:B6:FD:5A:8A:D0:DF
+        sources:
+          - name: Google Play
+            issue: GH-2861
+            apk:
+              sha256: d025acc9ad4efe02d1a405574aa0c22af2f9269628dcca8b4f50d08b0ff947ec
   - package: de.mm20.launcher2.release
     signature:
       - fingerprint: BF:65:BB:D6:17:99:73:97:80:0D:02:E0:AC:2E:45:CE:E1:53:15:15:18:54:5C:23:EF:66:B3:CB:2C:FD:F7:BC
