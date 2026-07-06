@@ -2004,6 +2004,14 @@ packages:
             issue: GH-2042
             apk:
               sha256: aedccab52bb3caa8623c13ef05ef1fd5bb108f8d244982cb048ba24217a2c56a
+  - package: com.ebay.kleinanzeigen
+    signature:
+      - fingerprint: FC:96:EA:1B:82:69:39:0A:B1:A8:35:B8:53:46:EC:3B:E4:C3:D6:AD:10:A4:32:3C:A4:B8:3F:40:60:7A:B9:80
+        sources:
+          - name: Google Play
+            issue: GH-2606
+            apk:
+              sha256: d1054421767d2c660492b4ecd7235267a2776dcfe335aff6fa4c0a85e81c53ec
   - package: com.ebay.mobile
     signature:
       - fingerprint: 85:B4:01:54:97:15:4D:FA:89:DE:30:87:71:A9:FC:61:A6:4B:19:AF:1A:3F:B0:32:56:E8:CC:3A:79:55:67:E5
