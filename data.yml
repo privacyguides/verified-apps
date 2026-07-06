@@ -6126,6 +6126,14 @@ packages:
             apk:
               sha256: c4fbedb69a9eb682e4bf2923a8c3803b2caa140ca1468b4a440cb68c459158ae
               link: https://github.com/deckerst/aves/releases/download/v1.14.4/app-libre-x86_64-release.apk
+  - package: deezer.android.app
+    signature:
+      - fingerprint: 51:A8:91:A6:C5:D1:7B:4E:36:A6:F4:6B:AB:67:5C:1C:AE:78:6A:5A:F0:6F:51:D0:10:5D:AB:7E:C6:A9:45:16
+        sources:
+          - name: Google Play
+            issue: GH-2828
+            apk:
+              sha256: 1cc8357c0c3914b0d62a72eb882b22d585ef7c74906fa582c2370e580be78529
   - package: dev.bartuzen.qbitcontroller
     signature:
       - fingerprint: 36:60:38:E5:1E:E4:10:78:A2:3A:37:FD:92:12:23:8E:BA:D0:3F:1D:E0:73:E8:1C:73:8B:B6:F0:7B:11:43:39
