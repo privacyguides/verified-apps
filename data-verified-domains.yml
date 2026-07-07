@@ -353,6 +353,15 @@ domains:
         fingerprints:
           - 15:FA:52:78:85:F7:04:21:10:30:4D:1A:F0:08:81:07:27:09:BD:38:E9:84:2C:AF:9C:D8:9E:08:06:1C:5E:52
     dnssec: true
+  - domain: mail.zoho.com
+    method: https
+    issue:
+      - GH-2312
+    checked: "2026-07-07T15:46:21Z"
+    packages:
+      - package: com.zoho.mail
+        fingerprints:
+          - A9:D6:D0:A2:AF:DB:15:84:9B:8C:D3:1D:51:FE:73:B8:E1:B1:70:BA:A5:70:C2:F8:F2:A3:F8:65:28:29:CB:BD
   - domain: markusfisch.de
     method: https
     issue:
