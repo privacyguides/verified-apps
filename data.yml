@@ -1726,6 +1726,14 @@ packages:
             issue: GH-676
             apk:
               sha256: 83b41f9359303d96efc6482284a99d25e3c96bcd65afe37dc3af6056174fd97f
+  - package: com.chartcross.gpstest
+    signature:
+      - fingerprint: DF:D8:5F:83:4D:19:53:E3:64:E6:60:33:A9:8A:49:0E:B0:AD:58:AB:8F:07:6A:85:C8:F2:DD:71:90:50:91:EF
+        sources:
+          - name: Google Play
+            issue: GH-1438
+            apk:
+              sha256: 0c61f827fc0b17fea8edada31a01a5bc72e1cbaa7d18513c7e87822945b8fb64
   - package: com.chase.sig.android
     signature:
       - fingerprint: 73:F0:D9:50:8A:25:72:C1:10:07:7C:FF:1C:AD:4E:D9:2C:00:F0:20:4F:AF:ED:BA:C8:43:4B:D7:6B:C4:AC:D1
