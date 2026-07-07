@@ -5587,6 +5587,14 @@ packages:
             issue: GH-2850
             apk:
               sha256: 0b152ad988cc43e5ef9306a7aae45e75c256f69f7900d201b50de5868680ee86
+  - package: com.starlingbank.android
+    signature:
+      - fingerprint: 46:9F:63:0D:7C:10:09:4F:53:AF:CF:CD:79:1C:0F:C4:E8:14:E7:4A:25:79:90:76:C4:45:25:02:0E:3D:33:0C
+        sources:
+          - name: Google Play
+            issue: GH-2165
+            apk:
+              sha256: 42160c80c4050b85e20280368fb7cb04820583165fa9b66e927f619058855544
   - package: com.starlink.mobile
     signature:
       - fingerprint: CD:FB:A7:80:57:6F:7A:48:00:E2:A6:09:72:6F:83:F0:53:B5:1B:AE:6A:23:90:03:AB:C1:6B:7F:75:E9:F5:88
