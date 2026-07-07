@@ -5952,6 +5952,16 @@ packages:
             issue: GH-690
             apk:
               sha256: a45ec003660f4fa9b20bd992359c83f63fcff504767ff670264a2acc867c5c5c
+  - package: com.xiaomi.wearable
+    signature:
+      - fingerprint: |-
+          3F:B1:84:66:B9:9C:E7:DC:F5:B8:5D:4C:32:6D:88:B0:4E:07:66:71:A0:12:59:A1:43:96:99:05:D5:4E:0F:1A
+          B0:31:FE:98:A4:DB:B0:D4:D8:26:61:78:7F:25:DE:64:31:82:B3:78:E9:EF:63:2D:8A:DE:A7:5A:AB:58:F2:D8
+        sources:
+          - name: Google Play
+            issue: GH-2524
+            apk:
+              sha256: d26f0b8d78370f3ba6257ac46fe2d31e15805ac5a3a5fea7ecba113676dcebf9
   - package: com.xodo.pdf.reader
     signature:
       - fingerprint: 4B:64:FF:7B:9E:AB:D6:88:75:43:09:E1:91:67:B3:DB:49:CD:32:75:77:F3:70:81:C9:BC:BF:19:DE:AB:10:A3
