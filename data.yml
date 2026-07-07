@@ -3231,6 +3231,14 @@ packages:
             issue: GH-596
             apk:
               sha256: 1aeae599ceb630a3a7ad6846787a192f64e47bd935e755038fdcfee48e4d93f3
+  - package: com.hrd.iam
+    signature:
+      - fingerprint: 51:78:37:10:09:97:E4:84:59:6B:A9:5A:97:B2:B7:07:8F:30:95:68:54:41:19:C9:02:EF:C0:BC:F8:45:DE:58
+        sources:
+          - name: Google Play
+            issue: GH-2293
+            apk:
+              sha256: ad31b42b685aae3081380f56397a71a92a7a90fa100e27fa73981c45f6e62c03
   - package: com.hushed.release
     signature:
       - fingerprint: 8D:7F:DF:E7:FE:0A:09:0A:88:CB:BC:8A:97:BD:90:69:DE:55:A7:90:E6:54:F0:30:7D:29:17:48:25:43:1E:ED
