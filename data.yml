@@ -5942,6 +5942,14 @@ packages:
             issue: GH-500
             apk:
               sha256: 889b36a202b40088afab38b868ad1b77144fa685e06dfe9910671a554e3c0f52
+  - package: com.viettel.appviettel
+    signature:
+      - fingerprint: 5F:C8:FE:00:AD:0B:3C:F8:7B:AF:B1:D9:F3:E3:A3:0C:88:C5:52:B0:74:7B:68:E2:6D:53:F3:B4:F6:ED:B5:B0
+        sources:
+          - name: Google Play
+            issue: GH-2197
+            apk:
+              sha256: 6decaabd00bf38f0e31c6ef1536c5b4a292f2e9deb75c89bd35d72ecaa732bc1
   - package: com.viewer.comicscreen
     signature:
       - fingerprint: DA:B3:D2:40:F3:67:96:6F:2E:30:26:CB:41:7B:75:10:45:14:45:62:66:43:2D:2A:BC:41:71:90:1A:ED:87:E0
