@@ -3257,6 +3257,14 @@ packages:
             issue: GH-588
             apk:
               sha256: a46257e19390249f1542ba45234031bb18f894711e4da3c14ed8020ac9741c7c
+  - package: com.govee.home
+    signature:
+      - fingerprint: 94:25:7A:44:97:87:17:E5:68:B0:0C:24:BF:CC:38:5E:C2:F1:CF:EA:F4:28:85:BB:EB:32:32:C9:49:07:EB:43
+        sources:
+          - name: Google Play
+            issue: GH-2134
+            apk:
+              sha256: 616fb625801c91ca59bb8a0566992aa88bad817f0f52124759f2b14c903df199
   - package: com.governikus.ausweisapp2
     signature:
       - fingerprint: 4C:F9:80:01:A6:AF:A4:F8:14:3C:0F:16:60:39:68:BB:BE:C2:8F:FE:3A:32:FE:F3:03:CF:9C:CC:26:03:7A:98
