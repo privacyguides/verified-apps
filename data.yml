@@ -603,6 +603,14 @@ packages:
             issue: GH-114
           - name: Google Play
             issue: GH-114
+  - package: co.uk.getmondo
+    signature:
+      - fingerprint: 41:B7:4A:B3:BB:F3:33:4B:15:6E:00:80:EE:B1:8A:85:BA:F4:3D:DE:E4:97:D2:66:3B:75:FB:55:66:49:2B:35
+        sources:
+          - name: Google Play
+            issue: GH-2150
+            apk:
+              sha256: d127d5295ab04a89657a7a1dcb40ac8407c68c5e8bce8ccf4c969c0499181025
   - package: code.name.monkey.retromusic
     signature:
       - fingerprint: B1:F1:41:22:9A:C4:2E:28:33:15:49:86:33:65:A6:0A:74:25:40:8C:A0:8C:E9:61:99:26:BE:BC:18:71:E3:42
