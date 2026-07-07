@@ -2341,6 +2341,14 @@ packages:
             issue: GH-322
             apk:
               sha256: a6f90cdd7d19692c06e047c9622778531745b97a4748408f5a054df4ad174656
+  - package: com.everydollar.android
+    signature:
+      - fingerprint: 57:3D:6C:04:CE:97:96:CE:41:19:6A:81:87:96:DF:1E:C0:46:F3:26:6B:35:46:91:E1:2D:E6:C8:32:0B:DB:9E
+        sources:
+          - name: Google Play
+            issue: GH-2107
+            apk:
+              sha256: 838ad03b7bfe714c141b6b0d5915125e8c64492c185f056f12d3789287d26b48
   - package: com.example.deeplviewer
     signature:
       - fingerprint: 9D:4A:B3:C7:FD:F9:F6:E9:EE:1C:2A:4E:62:EE:80:7D:0E:74:39:01:F4:8C:B9:93:AB:D0:FA:06:A2:00:3F:49
