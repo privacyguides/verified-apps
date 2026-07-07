@@ -4995,6 +4995,14 @@ packages:
             issue: GH-2055
             apk:
               sha256: 4f58018a1218c251bab19b11979c69fb8a8040ff8ad8bf802faf75b20988ab59
+  - package: com.red.by.dufry
+    signature:
+      - fingerprint: 65:04:0D:BD:5D:6C:5A:C1:98:31:74:B9:DE:B4:F2:56:E2:EF:21:10:50:35:4B:58:85:90:C4:55:CA:2D:7F:26
+        sources:
+          - name: Google Play
+            issue: GH-2121
+            apk:
+              sha256: 8b392bd0fe52900db8ecd7e0f72714d485c856c4567326d8b137a89bb66d2249
   - package: com.reddit.frontpage
     signature:
       - fingerprint: 97:0B:91:14:38:13:B4:C9:D5:F3:63:4F:67:2C:9F:CA:A5:62:1B:4E:FA:AE:DA:FD:6C:23:5C:BB:B8:69:73:6F
