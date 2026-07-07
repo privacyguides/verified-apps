@@ -6190,6 +6190,14 @@ packages:
             issue: GH-501
             apk:
               sha256: 3a07687ce560dc0b9c63cc344a2a484c47c8d5f53c0649d29d658e37d870d3f2
+  - package: com.youmail.android.vvm
+    signature:
+      - fingerprint: 34:3D:A2:AD:BE:82:99:66:E6:73:3A:9B:BA:8D:FC:56:E2:90:B7:97:93:51:1B:AD:13:11:E2:EA:F2:FE:12:B3
+        sources:
+          - name: Google Play
+            issue: GH-2307
+            apk:
+              sha256: 4fa9c352a5dfc3a2161e9797b225bbbb9b20c5fbd897fd5dcf95064a3a19e4f1
   - package: com.youneedabudget.evergreen.app
     signature:
       - fingerprint: 1A:9D:B5:68:EE:A7:A3:C7:AD:C6:46:21:11:FE:1A:51:8A:AC:C5:DF:8A:47:A6:C3:EB:BC:4F:63:8A:5C:CB:1C
