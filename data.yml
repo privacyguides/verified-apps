@@ -10012,6 +10012,14 @@ packages:
             apk:
               sha256: 883f205e15b2793a872de0d24b6c33c3ef48794d0afb04f3643337fea4e8c65c
               link: https://github.com/CypherpunkArmory/UserLAnd/releases/download/v2.8.3/app-release.apk
+  - package: tv.plex.labs.plexamp
+    signature:
+      - fingerprint: E5:86:93:82:D6:BA:E4:7E:C1:66:31:11:8E:7C:52:2A:7B:98:82:8E:1B:0E:86:B1:18:CB:50:86:CB:9B:21:6B
+        sources:
+          - name: Google Play
+            issue: GH-2330
+            apk:
+              sha256: d7755f0bc904a81572be9f7c2883aeadc8f45e7fef1e02133bf86aa8f4943a96
   - package: tv.trakt.trakt
     signature:
       - fingerprint: 2A:FF:40:C6:A3:68:82:31:0C:6B:D1:B3:9F:F1:0D:A0:4A:DD:FB:D2:D1:00:1B:8C:29:3C:9B:CF:5C:40:F5:8B
