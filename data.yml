@@ -3707,6 +3707,14 @@ packages:
             issue: GH-538
             apk:
               sha256: 88949b2d89d8ebdc69cfb203103b3a3b39f8801589aba0d6ccaa0a8b18a9f1b2
+  - package: com.liamcottle.meshcore.android
+    signature:
+      - fingerprint: F9:36:C9:3F:DD:6F:57:F1:CD:F2:A7:1B:E6:16:4A:03:F2:4E:89:62:10:83:F1:74:08:32:CE:50:93:62:B4:7B
+        sources:
+          - name: Google Play
+            issue: GH-2261
+            apk:
+              sha256: c7b8c698df6296d832365ca6f93becf007e3cba33acede6bd31867dc92336186
   - package: com.limbo.emu.main
     signature:
       - fingerprint: F7:8B:31:E0:F5:B8:2F:06:0B:44:17:E7:E2:7A:E5:1B:CE:DE:42:77:B6:F2:7A:7F:42:43:EB:74:2C:C5:4A:A2
