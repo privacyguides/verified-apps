@@ -5364,6 +5364,14 @@ packages:
             issue: GH-834
             apk:
               sha256: f517c97fbc73db92e23670e32b770729764add3e222b57ab24a51aa910152b1d
+  - package: com.sizestream.sah
+    signature:
+      - fingerprint: 73:22:75:75:30:B1:E4:FF:CE:62:82:39:C2:D2:52:A7:2A:F2:6F:DF:14:38:20:2F:4F:18:9C:EE:F7:6F:EC:A5
+        sources:
+          - name: Google Play
+            issue: GH-2148
+            apk:
+              sha256: 37e4b57a99d31a19fd067dc693ff430a6f647084d1f6dd7e49830f015484d44e
   - package: com.sl.SLBiljetter
     signature:
       - fingerprint: CB:5E:04:4D:55:D3:C1:60:7F:C7:C6:23:57:95:43:BD:2B:3A:9E:86:70:A6:57:30:A2:3C:79:18:C7:D8:E0:67
