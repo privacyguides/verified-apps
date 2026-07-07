@@ -4366,6 +4366,14 @@ packages:
             issue: GH-1853
             apk:
               sha256: a2fd303c9b54672478d81011b0b2fdd595c5327ffe453e2aeb6c789a5ba07c52
+  - package: com.nintendo.znma
+    signature:
+      - fingerprint: 1B:C2:C2:5D:00:8B:FD:03:02:3C:1B:A6:01:40:DF:D2:C1:7F:85:0A:4A:D5:25:03:88:E2:CF:29:2E:02:16:7D
+        sources:
+          - name: Google Play
+            issue: GH-2154
+            apk:
+              sha256: 4422d0ccbf1c7fd017e289c863d0b7a20938eab73530ecc88433b4d18d56312b
   - package: com.noahjutz.gymroutines
     signature:
       - fingerprint: C5:0C:37:9B:64:63:43:CF:83:85:F4:21:E9:DE:27:BC:BA:DB:29:05:4F:81:67:52:52:37:B7:AB:F4:A2:8E:31
