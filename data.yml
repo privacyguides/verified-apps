@@ -5212,6 +5212,14 @@ packages:
             issue: GH-655
             apk:
               sha256: 9712b3b0611f5f06021c55ffe8fc9401c4b778932016609c958596923b39259d
+  - package: com.subtlesignals.gradientweather
+    signature:
+      - fingerprint: EB:45:0E:3E:D0:41:55:2C:8E:7F:A5:0E:3D:8D:5D:8D:58:6D:67:48:5E:EB:CC:53:78:5F:8B:26:85:7E:54:AC
+        sources:
+          - name: Google Play
+            issue: GH-2453
+            apk:
+              sha256: 7bb81314895e1b495085012033ba7b77c5ff633489e520efeca3b4516d938395
   - package: com.superproductivity.superproductivity
     signature:
       - fingerprint: 16:3C:87:6B:91:7D:76:20:A3:92:92:CC:9D:7C:3C:DF:0C:3C:65:93:24:AB:45:9D:5D:AF:D9:B9:97:11:17:AA
