@@ -9962,6 +9962,14 @@ packages:
             issue: GH-602
             apk:
               sha256: 21d156cbcff6cc6755dde7f0eba4d58163bfd80d8ef26f22bc732697c540fc80
+  - package: ridewithvia.rgrtarochester
+    signature:
+      - fingerprint: 44:29:8F:DF:D9:CD:9D:AF:6E:4C:59:0D:55:B3:02:41:BF:BA:D3:A0:29:CB:1B:2A:33:76:C6:4E:CD:E8:5A:D1
+        sources:
+          - name: Google Play
+            issue: GH-2304
+            apk:
+              sha256: 1a69afc903cee284a7fb580340d6b10904ad0b4147daddc0104f401c51b0b464
   - package: rk.android.app.lockscreen
     signature:
       - fingerprint: 5B:13:ED:BA:E9:61:E4:FB:32:A7:E4:91:F1:A3:C5:45:C8:CD:F9:7E:70:41:F3:39:D9:F9:0C:02:77:51:BF:03
