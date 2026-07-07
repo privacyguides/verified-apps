@@ -4353,6 +4353,16 @@ packages:
             issue: GH-1197
             apk:
               sha256: cdc7f35cf835c1199d6353a4fc484dde833dd26abbba2790badd77f843ea9fc7
+  - package: com.omronhealthcare.omronconnect
+    signature:
+      - fingerprint: 2C:E0:24:80:91:C4:85:52:9E:D5:FB:8D:CC:42:0F:27:50:16:10:A0:9B:4A:66:EE:CD:E9:7A:26:53:33:AD:61
+        sources:
+          - name: Google Play
+            issue: GH-2301
+            apk:
+              sha256: ce33aa0f1160afdf73221cf068278003ffa834eb9054fba36bbec576d0f97e7d
+          - name: HTTPS Verified Domain
+            issue: GH-2301
   - package: com.onepassword.android
     signature:
       - fingerprint: B3:5B:68:D5:CE:84:50:55:7C:6A:55:FD:64:B5:1F:EA:C1:10:CB:36:D6:A3:52:1C:59:48:DB:3A:38:0A:34:A9

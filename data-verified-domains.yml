@@ -389,6 +389,16 @@ domains:
       - package: com.newsblur
         fingerprints:
           - 5C:5E:93:50:3C:6A:C4:89:88:6A:29:BE:0C:28:6B:A6:04:82:E2:C2:5A:A6:D6:EF:56:84:FD:6E:8F:D7:C3:19
+  - domain: omronhealthcare.com
+    method: https
+    issue:
+      - GH-2301
+    checked: "2026-07-07T15:44:28Z"
+    packages:
+      - package: com.omronhealthcare.omronconnect
+        fingerprints:
+          - 2C:E0:24:80:91:C4:85:52:9E:D5:FB:8D:CC:42:0F:27:50:16:10:A0:9B:4A:66:EE:CD:E9:7A:26:53:33:AD:61
+          - FF:91:38:F9:7D:9E:9F:28:99:9A:7E:11:53:D5:53:72:21:64:23:51:87:38:11:03:2F:FA:7A:A2:F3:E6:B6:48
   - domain: openai.com
     method: https
     issue:
