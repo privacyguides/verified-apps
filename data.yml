@@ -2122,6 +2122,14 @@ packages:
             issue: GH-2022
             apk:
               sha256: 11bc5e2aa5ef74e423c01f2cc264e03c928c123a5f147740f06e2db746bdb129
+  - package: com.dolby.dolby234
+    signature:
+      - fingerprint: 0D:08:DE:C2:D2:CF:EC:EE:4F:BA:35:E8:9B:E4:29:65:E7:66:40:9E:B0:5E:7E:F0:43:78:F9:EB:15:50:B1:40
+        sources:
+          - name: Google Play
+            issue: GH-2124
+            apk:
+              sha256: 6e072b0045332bd7ee6cc91e3c4777243ed39249765f382037fe6ef4f21be0a6
   - package: com.dominospizza
     signature:
       - fingerprint: 97:59:E1:5B:C7:AD:25:FB:A0:5D:43:36:16:E5:1C:E5:04:09:2E:F0:4F:63:C3:61:36:5C:FD:FE:DA:DD:3B:FC
