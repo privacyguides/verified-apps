@@ -781,6 +781,14 @@ packages:
               sha256: 08284dde621e43ff36b1a1c8ea91ed4b208ea16f0e95ddb00b5e73384c6ccc1f
           - name: HTTPS Verified Domain
             issue: GH-1944
+  - package: com.aimp.player
+    signature:
+      - fingerprint: B0:5C:F2:CF:72:52:24:1B:39:F7:EC:1F:C4:2B:6C:E0:EA:F9:F7:71:5C:0B:01:44:A7:F8:36:A3:72:5E:2A:4D
+        sources:
+          - name: Google Play
+            issue: GH-2114
+            apk:
+              sha256: 503c4067339523b286b5c4f433672eb64ed135adb71756ecadd810312bc8f125
   - package: com.airbnb.android
     signature:
       - fingerprint: 43:7B:7C:9A:94:6C:3C:E9:F2:49:A4:30:86:14:F5:42:C1:4D:7C:7A:3B:C9:77:89:98:4E:02:47:CD:23:01:FB
