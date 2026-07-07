@@ -5478,6 +5478,14 @@ packages:
             issue: GH-1452
             apk:
               sha256: d8f61f0ae358402b15f6f7ee1e9557973d751ea822e4a78a6c7fe59cf9d3fcef
+  - package: com.twofasapp
+    signature:
+      - fingerprint: B1:95:0E:D5:56:E1:36:02:77:11:38:C9:35:A1:43:D1:28:D0:20:AF:62:CB:06:FE:7E:41:1E:ED:39:89:0C:0B
+        sources:
+          - name: Google Play
+            issue: GH-2532
+            apk:
+              sha256: 8f64403ebdbe27359ba8c23cf9ba2d7597b3e773b548b176670c45982fa8eed2
   - package: com.ubercab
     signature:
       - fingerprint: 40:03:23:1A:B4:2F:EB:8D:95:5E:62:FD:FA:A4:FA:D5:95:67:05:4B:9C:6B:BC:3D:95:02:99:DD:FC:26:83:92
