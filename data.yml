@@ -6352,6 +6352,14 @@ packages:
             issue: GH-2823
             apk:
               sha256: a0455422f89c76d7c4f0521d01d5b9a1e718d183e8e9d6380e9642c6d2785375
+  - package: com.zenplanner.memberapp
+    signature:
+      - fingerprint: E4:49:C5:87:C5:88:CD:96:54:C4:72:22:C6:C0:52:17:7E:22:A9:5A:BA:82:31:CF:5A:AE:64:7E:9D:65:60:E3
+        sources:
+          - name: Google Play
+            issue: GH-2249
+            apk:
+              sha256: 3c6abadeaacb04e943988912ec1595f3a08310d49edd87d84884950db67d5540
   - package: com.zensms.app
     signature:
       - fingerprint: 74:AE:97:5A:B3:D3:EF:C1:49:CE:72:43:00:83:82:CC:D9:15:80:A3:72:0A:5D:7A:8C:4F:6A:1B:A3:60:F2:23
