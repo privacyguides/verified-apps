@@ -2233,6 +2233,14 @@ packages:
             issue: GH-466
             apk:
               sha256: d573dbc7ce7a649880739eab5e8287e2418b16a7fbac90e473ab2f6658aa318a
+  - package: com.eero.android
+    signature:
+      - fingerprint: D5:BC:3E:11:83:AA:8B:29:E4:55:CE:33:56:77:BA:6F:32:B2:04:7A:15:F5:AA:E8:36:B2:A8:8D:D5:52:D6:86
+        sources:
+          - name: Google Play
+            issue: GH-2128
+            apk:
+              sha256: cd9489c86f0c866392c72316b0512fbbfb886f82c75e962d9806e564227bf21e
   - package: com.efs.dondesang
     signature:
       - fingerprint: BA:85:51:7D:FD:2A:41:E0:71:E8:0B:2E:70:C6:9C:C3:D2:23:8F:41:29:D3:4D:81:5B:68:57:D5:48:EE:26:D3
