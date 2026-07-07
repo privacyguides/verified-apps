@@ -8214,6 +8214,16 @@ packages:
         sources:
           - name: F-Droid
             issue: GH-36
+  - package: net.koofr.app
+    signature:
+      - fingerprint: F7:CD:D1:CC:59:94:D8:CE:9C:E2:D6:DF:A5:1B:82:3B:E9:17:DC:61:F2:52:8A:28:B2:05:21:4E:43:96:6B:C1
+        sources:
+          - name: Google Play
+            issue: GH-2336
+            apk:
+              sha256: c2d1f7fd482100fbd17d68157f4dee31a103ef8c5f3c60b1c63cd92d63082417
+          - name: HTTPS Verified Domain
+            issue: GH-2336
   - package: net.leodesouza.blitz
     signature:
       - fingerprint: 6D:7F:D2:71:5E:D2:1C:FF:64:08:6D:C5:FC:F8:82:0A:68:5A:79:3E:BD:07:D9:72:16:3D:86:17:2B:AB:BA:75

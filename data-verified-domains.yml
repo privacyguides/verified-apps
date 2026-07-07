@@ -61,6 +61,15 @@ domains:
       - package: co.hinge.app
         fingerprints:
           - 3C:9E:97:5E:34:B9:9E:AA:B1:E6:CE:09:55:BD:B7:F5:49:9E:36:CB:BA:56:61:9C:1E:EE:D1:96:C5:63:5E:5F
+  - domain: app.koofr.net
+    method: https
+    issue:
+      - GH-2336
+    checked: "2026-07-07T14:05:56Z"
+    packages:
+      - package: net.koofr.app
+        fingerprints:
+          - F7:CD:D1:CC:59:94:D8:CE:9C:E2:D6:DF:A5:1B:82:3B:E9:17:DC:61:F2:52:8A:28:B2:05:21:4E:43:96:6B:C1
   - domain: appverifier.roundsalmon4.com
     method: dns
     issue:
