@@ -3273,6 +3273,14 @@ packages:
             issue: GH-1358
             apk:
               sha256: 25c437912d62ce4926dc6b3ddf15622eac13b3fa6b8e305e927c681e1a069d47
+  - package: com.greeneking.orderandpay
+    signature:
+      - fingerprint: FF:FF:82:60:83:D9:C1:08:7A:F8:20:48:1E:DA:64:E1:85:F4:27:ED:07:6D:4D:BF:52:F7:2B:64:15:F7:3A:F5
+        sources:
+          - name: Google Play
+            issue: GH-2135
+            apk:
+              sha256: 96916fc105a656d1dc9dbb7fd3f841ede792e679b2adc165bc878cd7a0cc0a1c
   - package: com.greyhound.mobile.consumer
     signature:
       - fingerprint: 5B:C8:66:6B:B7:85:52:97:A0:1F:C1:EF:62:F1:E8:B3:54:7F:C5:5E:4F:B6:1E:85:8A:A5:00:86:AA:1B:35:6D
