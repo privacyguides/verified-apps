@@ -7248,6 +7248,14 @@ packages:
             issue: GH-1451
             apk:
               sha256: cd0a4e1a51e47425351e747c658503f257fa1b484a491be3ed1491fe3b428889
+  - package: in.krosbits.musicolet
+    signature:
+      - fingerprint: 8A:4D:41:21:F5:41:E3:64:4C:1F:D1:E5:C3:50:2E:B4:BE:A4:97:92:CA:FD:26:E6:00:D4:13:CD:1F:10:85:1F
+        sources:
+          - name: Google Play
+            issue: GH-2318
+            apk:
+              sha256: ce1aa63f8d72e5ad4ab83d11c4c7ff866300eb9b2ec3040feabf12268cb75517
   - package: info.zverev.ilya.every_door
     signature:
       - fingerprint: 9F:FC:A7:0F:77:A8:5E:F6:82:90:27:66:02:BB:5B:4C:92:A6:54:67:C5:4F:F6:FB:89:C4:B2:02:39:50:62:03
