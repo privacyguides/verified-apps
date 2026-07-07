@@ -5740,6 +5740,14 @@ packages:
             issue: GH-349
             apk:
               sha256: 163651fc4514e9bf15fa1eed8f36c7e97da571c3200f726e1a8dd472603275cc
+  - package: com.ups.mobile.android
+    signature:
+      - fingerprint: 18:6B:F3:89:70:3E:CD:05:60:20:08:3D:97:DC:F0:89:06:1B:58:19:6E:D7:20:8F:D9:C4:AC:F9:60:BD:19:FB
+        sources:
+          - name: Google Play
+            issue: GH-2306
+            apk:
+              sha256: 0e23d9a22f32cf2be5ea4983cd25613ad35749678efff8b4808fd5f3b1e2d803
   - package: com.upside.consumer.android
     signature:
       - fingerprint: ED:99:88:71:D7:9D:5E:91:A4:FF:BB:75:71:5B:1B:FD:DB:4B:06:8D:80:EF:C3:75:5F:AA:F0:3F:C5:87:D8:B2
