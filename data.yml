@@ -4931,6 +4931,14 @@ packages:
             issue: GH-831
             apk:
               sha256: 2a45a45b85d6edbda7dd564648d8a32608bdd0b81d0c43bdc63fbe7276379f3c
+  - package: com.rkbapps.gdealz
+    signature:
+      - fingerprint: 00:60:EF:80:A5:2B:A4:55:40:8E:89:6A:E9:C5:31:0C:17:F0:55:8D:04:17:D2:91:FA:55:27:CD:3F:83:C9:2E
+        sources:
+          - name: Google Play
+            issue: GH-2131
+            apk:
+              sha256: a20f9d7a3267f486d2bdede572b1fc445e29ec0668ea5ad6119df3b17cfc0e3a
   - package: com.robinhood.android
     signature:
       - fingerprint: 82:59:FA:51:3C:FD:54:A6:AA:8D:93:43:50:1B:FA:13:45:8C:55:D2:5E:27:C5:8F:8D:CA:03:EF:E2:F0:02:E5
