@@ -3853,6 +3853,14 @@ packages:
             issue: GH-270
             apk:
               sha256: 1507a631c1a039444090b7eafa0746c6a993022c0bf05e1a86cc6338c70d8671
+  - package: com.mona_prod.bad
+    signature:
+      - fingerprint: 54:34:68:CF:37:C5:53:67:17:B8:95:01:68:F7:99:0E:7D:5B:C6:1E:A8:DC:5B:39:D8:D4:FF:24:9F:89:2A:4C
+        sources:
+          - name: Google Play
+            issue: GH-2324
+            apk:
+              sha256: d521592fb849fcc24f0f9adb018a93a86d42f3cc9346dfaac3f52ea4fca46365
   - package: com.monero.app
     signature:
       - fingerprint: EA:C7:62:C6:D4:E9:7D:5A:BB:5F:0D:02:36:EA:32:CE:C4:B1:67:1F:9E:AA:FB:D1:25:5F:36:B4:D3:97:20:A9
