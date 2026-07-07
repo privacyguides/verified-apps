@@ -998,6 +998,14 @@ packages:
             issue: GH-1021
             apk:
               sha256: d6ac4a0d3137d9882719091edca78f935c8fafdf76ddd0d3fc5ab475216d05ca
+  - package: com.artermobilize.alertable
+    signature:
+      - fingerprint: 26:58:BC:41:AA:B1:23:7E:84:3D:83:53:3D:5A:8C:88:57:F4:DF:03:CE:1F:6B:7E:F3:FA:8F:BF:16:1A:5D:B0
+        sources:
+          - name: Google Play
+            issue: GH-2280
+            apk:
+              sha256: 4293e2a600b441d52aa58e7c58c6964b87b824c7fe4715cf5c90511d4345ae3b
   - package: com.artifex.mupdf.viewer.app
     signature:
       - fingerprint: A0:B9:A1:FA:8F:17:1F:EE:79:70:C4:A3:F5:0F:D1:19:57:F8:3D:F7:B4:89:ED:46:96:C7:12:60:9E:DA:53:4F
