@@ -2250,6 +2250,14 @@ packages:
             issue: GH-1203
             apk:
               sha256: 6ca1881877c8b2f68ed41ef82e479df058e28401c3403a71122bdece5825f335
+  - package: com.fedex.ida.android
+    signature:
+      - fingerprint: 1F:56:17:DA:56:A1:97:99:2F:07:4E:D5:56:BB:8B:77:30:1D:E6:F4:3A:A0:06:64:18:E9:24:E7:D8:17:F3:36
+        sources:
+          - name: Google Play
+            issue: GH-2289
+            apk:
+              sha256: 5aa4774d5b921c13bb4d406cf5236ee7acbd2d17bb943c6386900e9055a9b1ec
   - package: com.ferrarid.converterpro
     signature:
       - fingerprint: A8:9D:74:3A:06:77:45:83:0D:8F:BE:C0:B9:49:02:1B:5E:5F:CC:0A:6B:EA:D3:2C:A7:A3:0E:0F:B6:2B:E9:EC
