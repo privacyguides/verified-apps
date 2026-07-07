@@ -7871,6 +7871,12 @@ packages:
             issue: GH-1151
             apk:
               sha256: 7e6d1232a01ab43b46840db31bc3272e0c0c7d8b22944addbbf1caa3400ec70c
+      - fingerprint: 16:6C:F4:74:6C:E8:B3:A3:53:B7:0E:49:8A:CE:97:8D:DC:7E:CE:41:E7:09:8B:E1:37:22:88:7B:B9:A5:4E:34
+        sources:
+          - name: Google Play
+            issue: GH-2110
+            apk:
+              sha256: 8005eb8319969e27507a77d179fa1d3ab5d52d47a7e7ba5f8d9d914e0af70009
   - package: hu.webvalto.bkkfutar
     signature:
       - fingerprint: D5:F6:99:F5:5B:E2:80:47:00:FF:00:9A:9E:16:18:B4:00:23:DD:A9:73:B8:3D:DE:AD:8E:9E:C3:31:DC:3D:3C
