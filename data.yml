@@ -382,6 +382,14 @@ packages:
             issue: CB-46
             apk:
               sha256: ef0f40be1b947752e8441fe106ecb15e3705ab5aa52a9726c5e9a04a3a499038
+  - package: callfilter.app
+    signature:
+      - fingerprint: DF:6C:0E:8D:CD:F5:0E:E1:55:25:71:58:23:DB:AC:51:CB:7E:A9:66:AA:5B:62:52:AE:25:65:37:D1:B1:49:46
+        sources:
+          - name: Google Play
+            issue: GH-2186
+            apk:
+              sha256: ba357e956478242473c8e925c5cbad6d656de0926117172bd58a8bfdd913b974
   - package: cc.dict.dictcc
     signature:
       - fingerprint: 85:32:C2:A9:14:09:8F:33:A1:F6:FF:10:0D:E7:8E:06:2A:84:59:44:B5:5F:16:96:B8:9E:21:4F:95:15:EF:90
