@@ -5090,6 +5090,14 @@ packages:
             issue: GH-1236
             apk:
               sha256: b41e5d867a39a1623127c5d881cfe02f980711d204c562f81b2ab2bfee83b018
+  - package: com.silicondust.view
+    signature:
+      - fingerprint: FC:FE:D2:13:47:78:5D:6C:BA:AB:64:04:48:D6:96:DB:11:AC:D9:85:09:F4:5E:48:E5:0B:56:1B:13:A4:09:EB
+        sources:
+          - name: Google Play
+            issue: GH-2292
+            apk:
+              sha256: db042e3d867046cc56ca9b7678191be026fe674c725beed087b1823f9d7dbf1d
   - package: com.simplepractice.video
     signature:
       - fingerprint: 21:E1:56:78:30:77:33:7D:F5:13:65:75:31:6C:3A:D7:FA:E3:4F:19:7F:61:DD:C0:25:87:0F:B6:F7:0F:C2:99
