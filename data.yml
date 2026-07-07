@@ -2104,6 +2104,14 @@ packages:
             issue: GH-803
             apk:
               sha256: 4f2195ada0d94e7ca34e54bef998c591af09813bc6213084645860de84ac76dc
+  - package: com.doubleangels.nextdnsmanagement
+    signature:
+      - fingerprint: 66:1C:01:5C:35:8F:0A:74:5F:3F:1D:6A:2E:63:85:EB:52:DC:60:7F:A5:E6:60:7C:7A:F5:38:87:B7:04:61:E4
+        sources:
+          - name: Google Play
+            issue: GH-2257
+            apk:
+              sha256: efd36133ec63ef5f27f43cccbeb865b68e7cdac1a6af45f00ebaa7a2d7c6cade
   - package: com.dozingcatsoftware.bouncy
     signature:
       - fingerprint: A0:32:B0:9E:9A:AD:9E:06:F5:90:6E:39:0D:69:B6:13:5D:FE:F1:BA:20:D8:4B:A5:3E:4B:2A:4A:ED:64:2E:31
