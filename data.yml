@@ -374,6 +374,14 @@ packages:
             issue: GH-787
             apk:
               sha256: 29c0190fd7524f2b77121c302d4114a7504dcb2ba0152a8835b17a445a2dd9ab
+  - package: br.gov.meugovbr
+    signature:
+      - fingerprint: E1:33:06:7F:C5:0B:DA:43:9C:1F:C6:1A:A8:0C:D5:F2:38:DC:65:B3:4D:8D:30:3B:FF:4A:33:AE:2F:47:05:AB
+        sources:
+          - name: Google Play
+            issue: GH-2187
+            apk:
+              sha256: 8993db30e8cca12e6438bc5f7aaa1e7f2dd85f876401fb4f22db53e81580e3a3
   - package: btools.routingapp
     signature:
       - fingerprint: D1:9E:79:3B:A6:9A:73:6A:A6:ED:88:0B:DC:48:C8:31:FA:0B:58:0E:ED:D9:59:D0:49:75:6D:3B:BE:58:7D:43
