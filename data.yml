@@ -6050,6 +6050,14 @@ packages:
             issue: GH-2823
             apk:
               sha256: a0455422f89c76d7c4f0521d01d5b9a1e718d183e8e9d6380e9642c6d2785375
+  - package: com.zensms.app
+    signature:
+      - fingerprint: 74:AE:97:5A:B3:D3:EF:C1:49:CE:72:43:00:83:82:CC:D9:15:80:A3:72:0A:5D:7A:8C:4F:6A:1B:A3:60:F2:23
+        sources:
+          - name: Google Play
+            issue: GH-2317
+            apk:
+              sha256: 86703c7ed26fe821aa336f226d7074b5ac4de17de28d140210198f48df58e362
   - package: com.zhiliaoapp.musically
     signature:
       - fingerprint: 90:41:80:3E:91:BC:B8:14:B4:B4:39:9F:B5:C8:5A:91:64:0B:75:5E:5E:8B:A7:68:13:81:4B:F4:CF:2A:B5:BA
