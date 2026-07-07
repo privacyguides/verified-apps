@@ -4048,6 +4048,14 @@ packages:
             issue: GH-664
             apk:
               sha256: d1273746f03733ea2a410f2ac97b02039330e80033e77a5a79d359abc8c6b48e
+  - package: com.meross.meross
+    signature:
+      - fingerprint: 7E:98:AF:18:6A:25:D0:1D:30:59:B7:8D:24:4C:21:7D:92:81:28:93:79:9C:F9:C4:20:EA:04:F0:6A:C8:BA:7A
+        sources:
+          - name: Google Play
+            issue: GH-2147
+            apk:
+              sha256: 3bc6226fe97e7be47beac9549a8d875f8c09fcbedfe5bec7d109be2538a8884a
   - package: com.metrolist.music
     signature:
       - fingerprint: E3:2C:4F:2E:FD:7E:E9:54:8F:AE:E2:2E:45:A6:04:25:F7:72:8A:55:A6:10:FD:5E:8A:B9:36:4F:74:B7:BC:C9
