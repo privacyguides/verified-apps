@@ -5449,6 +5449,14 @@ packages:
             issue: GH-678
             apk:
               sha256: 5750da2ca8df5c0590876e06f5f5fbca5729b7935773772b21948071013a547d
+  - package: com.taxis99
+    signature:
+      - fingerprint: 97:A0:16:3C:F8:8E:37:5E:BD:9C:CA:DD:BA:66:74:24:46:E5:DD:5C:93:BE:E5:26:8C:0F:31:0C:C8:76:9F:B2
+        sources:
+          - name: Google Play
+            issue: GH-2184
+            apk:
+              sha256: 32b9228f3f650e7edca76b5c5010ca6bd506eb5ba265d803b27ca322b0a876ef
   - package: com.tecdrop.pitchblackwallpaper
     signature:
       - fingerprint: 2E:8C:34:27:C5:D3:2D:9D:A0:A0:A5:61:AF:2D:BE:1A:A1:18:C6:CA:0D:9F:C6:CB:1B:2E:19:AB:B3:36:5F:D4
