@@ -297,6 +297,16 @@ domains:
           - 40:AB:4B:44:11:60:00:25:83:A3:62:45:FE:36:11:7D:2A:BF:CF:12:D1:E3:CC:F8:9D:A5:D6:F4:95:19:7B:0E
           - 61:CF:C4:4E:FF:55:C4:28:27:6D:9C:25:C9:02:EA:B5:CF:68:D7:1A:BF:BC:7C:70:7A:5F:AE:AC:55:27:41:CB
           - E6:4B:34:B8:A9:B4:5E:84:4D:A0:46:79:33:F0:DF:2B:9C:50:A6:D1:13:1D:98:20:4D:7F:D2:7E:72:34:35:35
+  - domain: lego.com
+    method: https
+    issue:
+      - GH-2297
+    checked: "2026-07-07T15:40:53Z"
+    packages:
+      - package: com.lego.membership
+        fingerprints:
+          - E4:BA:79:65:42:83:08:61:00:3E:A0:77:FE:5F:80:A0:D8:9C:8A:A4:BD:4C:05:D1:E8:7C:D6:D7:24:D8:9A:0A
+          - FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C
   - domain: lichess.org
     method: https
     issue:
