@@ -6503,6 +6503,14 @@ packages:
             issue: GH-690
             apk:
               sha256: a45ec003660f4fa9b20bd992359c83f63fcff504767ff670264a2acc867c5c5c
+  - package: com.xiaomi.hm.health
+    signature:
+      - fingerprint: B1:45:A7:CB:36:4E:81:25:92:11:5E:FC:B1:E3:A8:BC:7B:56:45:C5:70:49:3C:B9:0A:07:5C:35:93:DC:2A:CB
+        sources:
+          - name: Google Play
+            issue: GH-2175
+            apk:
+              sha256: b6630d0b758afb7ca47bfdf6707ba6ba303f18a8af56fe73bd9144f57e05d288
   - package: com.xiaomi.wearable
     signature:
       - fingerprint: |-
