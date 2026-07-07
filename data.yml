@@ -3338,6 +3338,14 @@ packages:
             issue: GH-677
             apk:
               sha256: 8cc65dcaf4c1b82bfb9afd3e29194ec27563bdcc9533787381e70d9710d1f945
+  - package: com.instacart.client
+    signature:
+      - fingerprint: 63:B7:7B:DC:EC:15:67:5F:E0:15:15:6D:82:0F:04:02:1A:BD:A7:1C:3E:67:EC:00:F2:56:29:20:6B:21:0F:72
+        sources:
+          - name: Google Play
+            issue: GH-2295
+            apk:
+              sha256: f9711523fb04d6d5e6b7848dd6004879a52bd24df99b124003d517a6aeceb728
   - package: com.iudesk.android.photo.editor
     signature:
       - fingerprint: |-
