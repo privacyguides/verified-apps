@@ -6005,6 +6005,14 @@ packages:
             issue: GH-1616
             apk:
               sha256: 54a41f8df49aea21d37981c06c6e432780a90d87dca5abc33f77b1697014effa
+  - package: com.vttm.vietteldiscovery
+    signature:
+      - fingerprint: 37:AF:C5:DE:7D:6C:C3:40:D1:0D:72:CF:88:F9:EF:E4:1D:5B:1A:4D:6C:84:B9:07:87:95:A8:D5:6A:9C:2A:6C
+        sources:
+          - name: Google Play
+            issue: GH-2199
+            apk:
+              sha256: 287c13c14da7e223f034e6e44eeaae8b100de1f6f7d26189c23cf9644fdb8504
   - package: com.vzw.hss.myverizon
     signature:
       - fingerprint: AE:23:A0:34:36:DF:07:B0:CD:70:FE:88:1C:DA:2E:C1:D2:12:15:D7:B7:B0:CC:68:E6:7B:67:F5:DF:89:52:6A
