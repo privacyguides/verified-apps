@@ -3787,6 +3787,14 @@ packages:
             issue: GH-2261
             apk:
               sha256: c7b8c698df6296d832365ca6f93becf007e3cba33acede6bd31867dc92336186
+  - package: com.life360.android.safetymapd
+    signature:
+      - fingerprint: 86:A7:1B:09:EC:B5:C6:DE:70:5D:C4:75:C5:50:DB:C3:A1:AC:4F:4B:93:73:3F:90:19:7B:13:1B:92:33:3E:9A
+        sources:
+          - name: Google Play
+            issue: GH-2142
+            apk:
+              sha256: b8f8a10ad73da118a349bc2ea9b9a97cf798bb17416e0f3ba715ca90c8cba3ba
   - package: com.limbo.emu.main
     signature:
       - fingerprint: F7:8B:31:E0:F5:B8:2F:06:0B:44:17:E7:E2:7A:E5:1B:CE:DE:42:77:B6:F2:7A:7F:42:43:EB:74:2C:C5:4A:A2
