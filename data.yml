@@ -1472,6 +1472,14 @@ packages:
             issue: GH-525
             apk:
               sha256: a9e80cec287b1b89b79642677872aa7621a3a220da1a78388408f1040efb4a77
+  - package: com.brickit.brickit
+    signature:
+      - fingerprint: E1:63:57:00:69:89:D6:6A:98:F0:CE:D3:18:6F:82:29:2C:49:5F:FC:97:00:EB:C5:4C:07:79:BF:A8:18:8F:C2
+        sources:
+          - name: Google Play
+            issue: GH-2287
+            apk:
+              sha256: f253e4cad5b6ff3e94630f15abff23af886ea95d9e169928610126fa35d3a717
   - package: com.bring.sporing.controller
     signature:
       - fingerprint: E6:3E:4F:74:98:DA:04:92:36:D7:27:A8:E2:F1:58:E5:1B:7D:A7:26:5B:48:5C:94:4E:64:55:1C:CA:7A:8C:6A
