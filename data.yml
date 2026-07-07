@@ -2095,6 +2095,14 @@ packages:
             issue: GH-466
             apk:
               sha256: d573dbc7ce7a649880739eab5e8287e2418b16a7fbac90e473ab2f6658aa318a
+  - package: com.efs.dondesang
+    signature:
+      - fingerprint: BA:85:51:7D:FD:2A:41:E0:71:E8:0B:2E:70:C6:9C:C3:D2:23:8F:41:29:D3:4D:81:5B:68:57:D5:48:EE:26:D3
+        sources:
+          - name: Google Play
+            issue: GH-2320
+            apk:
+              sha256: 9911c963b48960538085ce2dc3b7d7e4bb3fe64182d5fb61881392b529306263
   - package: com.egyptianbanks.instapay
     signature:
       - fingerprint: 9F:21:C4:FF:30:33:E2:03:F1:CB:B5:15:90:66:E5:A0:E3:FB:4F:0A:D1:F6:80:36:20:2F:9B:F4:A4:A2:9B:55
