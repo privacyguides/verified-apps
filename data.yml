@@ -3839,6 +3839,14 @@ packages:
               sha256: 195f854ab1449eded5f53413fdc87692d44f4481c02f3d6d3e463c778deed2c6
           - name: HTTPS Verified Domain
             issue: GH-2332
+  - package: com.livescore
+    signature:
+      - fingerprint: 82:BF:3A:1C:64:98:D9:3A:22:C4:FE:6A:B8:F2:72:D5:A8:49:50:93:A8:E0:4A:66:B0:B1:C9:2C:DC:D1:2E:BB
+        sources:
+          - name: Google Play
+            issue: GH-2143
+            apk:
+              sha256: 0a28470ff4e4abdcb8983ef5bee133c2d3f0cb3329715407407fedfe9fcabf92
   - package: com.logseq.app
     signature:
       - fingerprint: E2:EA:95:DF:B0:1D:FD:B8:CD:DC:8A:63:B4:1D:97:66:E5:3D:68:B2:CE:85:1E:C7:A7:E5:FD:F3:D1:66:D2:35
