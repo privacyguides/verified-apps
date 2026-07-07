@@ -5834,6 +5834,16 @@ packages:
             issue: GH-2149
             apk:
               sha256: af9215aca8a1b423467ab53be2e40f59fb4328aa0546b487e85cae479b647da5
+  - package: com.tplink.iot
+    signature:
+      - fingerprint: |-
+          38:EF:F4:3E:FB:59:31:34:14:FB:44:2C:EE:16:39:9D:48:45:2E:3C:4B:01:6C:C1:F2:D0:73:E8:15:E2:43:D7
+          58:A5:07:41:C1:3A:7D:71:5C:80:42:95:6C:21:FD:FE:3B:8C:B6:42:9B:97:0B:D9:6C:F0:F8:7C:7B:11:57:50
+        sources:
+          - name: Google Play
+            issue: GH-2167
+            apk:
+              sha256: 818fd7c480982bb8616df30f425f353d0fa571b109aa4626a7c8f9d0c7545f91
   - package: com.tplink.kasa_android
     signature:
       - fingerprint: 58:03:7B:6C:40:8D:7F:A0:43:16:91:AE:1E:7B:79:D4:DF:15:45:ED:59:F7:05:27:86:39:10:9B:11:35:9F:75
