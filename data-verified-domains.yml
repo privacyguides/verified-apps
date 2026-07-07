@@ -26,8 +26,12 @@ domains:
     issue:
       - GH-2332
       - GH-2509
-    checked: "2026-06-22T06:12:40Z"
+      - GH-2156
+    checked: "2026-07-07T17:00:33Z"
     packages:
+      - package: com.amazon.avod.thirdpartyclient
+        fingerprints:
+          - 2F:19:AD:EB:28:4E:B3:6F:7F:07:78:61:52:B9:A1:D1:4B:21:65:32:03:AD:0B:04:EB:BF:9C:73:AB:6D:76:25
       - package: com.amazon.dee.app
         fingerprints:
           - 2F:19:AD:EB:28:4E:B3:6F:7F:07:78:61:52:B9:A1:D1:4B:21:65:32:03:AD:0B:04:EB:BF:9C:73:AB:6D:76:25

@@ -896,6 +896,16 @@ packages:
             issue: GH-2635
             apk:
               sha256: 8cc2cce2596848bc16f9a4fdf171a5645011d60ba2c971daa687559c3ba79240
+  - package: com.amazon.avod.thirdpartyclient
+    signature:
+      - fingerprint: 2F:19:AD:EB:28:4E:B3:6F:7F:07:78:61:52:B9:A1:D1:4B:21:65:32:03:AD:0B:04:EB:BF:9C:73:AB:6D:76:25
+        sources:
+          - name: Google Play
+            issue: GH-2156
+            apk:
+              sha256: 8da7b841d326a42aa1e9b86bebf8b49d064b4bb7986469047d09d3260a627057
+          - name: HTTPS Verified Domain
+            issue: GH-2156
   - package: com.amazon.dee.app
     signature:
       - fingerprint: 2F:19:AD:EB:28:4E:B3:6F:7F:07:78:61:52:B9:A1:D1:4B:21:65:32:03:AD:0B:04:EB:BF:9C:73:AB:6D:76:25
