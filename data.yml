@@ -3306,6 +3306,14 @@ packages:
             issue: GH-327
             apk:
               sha256: 3fcec5f3bd27321e6fc49e03bb8f7653f16d6e9046d473dfb341c6a92eedab41
+  - package: com.kakao.talk
+    signature:
+      - fingerprint: 2B:06:CC:3D:47:78:2D:7C:49:7C:07:F1:7C:B5:F8:59:CD:6B:BC:B6:68:29:F3:E6:7B:96:B7:A4:48:20:D2:CE
+        sources:
+          - name: Google Play
+            issue: GH-2327
+            apk:
+              sha256: 6e0fe0fb43ba589c209dc753bdbb1f2501cd8647d7d3212497d72383864de89e
   - package: com.ketchapp.stack
     signature:
       - fingerprint: 9F:E9:CA:4B:85:42:41:96:AB:D9:53:37:7B:88:AA:A2:E8:9D:86:DA:81:7E:FD:06:CA:7C:CE:58:FE:B0:45:C1
