@@ -1671,6 +1671,14 @@ packages:
             issue: GH-985
             apk:
               sha256: 40d83b3491f46363e666ac4565fdcbb2a9aa011e80c62d9289d2db9ec979defb
+  - package: com.coingecko.coingeckoapp
+    signature:
+      - fingerprint: C4:80:62:6A:2A:02:54:29:05:9C:14:32:15:40:86:66:DE:CB:D8:58:3C:2A:17:AB:73:C9:68:03:6F:24:D1:22
+        sources:
+          - name: Google Play
+            issue: GH-2535
+            apk:
+              sha256: d691e6ba5f47a9b4c8b08e95f7e256a1710a930fa70e3a8d74d3c40bcec1079f
   - package: com.collabora.libreoffice
     signature:
       - fingerprint: 57:32:58:C8:4E:14:9B:5F:4D:92:99:E7:43:4B:2B:69:A8:41:03:72:92:1D:4A:E5:86:BA:91:EC:76:78:92:CC
