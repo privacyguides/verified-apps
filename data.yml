@@ -10185,6 +10185,14 @@ packages:
             issue: GH-336
             apk:
               sha256: 0f7a324318364d1f0826dde8401cddcd85cd323f870638ea98396309d394c5f8
+  - package: se.sparbankerna.mobilbank
+    signature:
+      - fingerprint: 14:19:C1:27:BD:86:58:8D:DC:A8:E0:3D:F2:6E:B7:D8:2E:31:13:2B:28:DB:7C:42:B1:7B:36:43:9A:0E:7E:FA
+        sources:
+          - name: Google Play
+            issue: GH-2193
+            apk:
+              sha256: 5c0af860d799a4d34c53bfe6988290aacc9e24f0c249c310a554bd4f1318591d
   - package: se.ul.app
     signature:
       - fingerprint: 67:E3:2A:6E:6A:7A:85:FF:5D:AE:BB:B1:D1:01:2E:1A:F2:A5:2A:4C:54:C0:FA:EF:54:9B:20:CC:12:4E:DA:CE
