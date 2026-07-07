@@ -7104,6 +7104,14 @@ packages:
             issue: GH-931
             apk:
               sha256: eef73a49ae186487ee5d4f17c5633a2545afc268de66471e4d4a4a6e17c42e2d
+  - package: fr.cnamts.it.activity
+    signature:
+      - fingerprint: 11:B6:A8:B3:19:FC:ED:5A:3E:FC:88:0B:B3:73:BD:81:58:CB:3C:7F:F8:3D:F2:05:1F:E2:A3:60:13:E8:A1:D9
+        sources:
+          - name: Google Play
+            issue: GH-2322
+            apk:
+              sha256: 129799fb390abb5db24db3759be1d1a9c476617d85026f2e61cf63f8ef21566a
   - package: fr.doctolib.www
     signature:
       - fingerprint: 19:9A:C4:B1:F6:81:74:65:06:FE:90:78:26:FB:42:94:C7:1F:7D:AE:F5:37:2D:D0:3B:A6:7C:E0:1C:4C:D0:83
