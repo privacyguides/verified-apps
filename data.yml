@@ -2308,6 +2308,14 @@ packages:
             issue: GH-1668
             apk:
               sha256: 2f18db74a05ad29455ebfe7161228dd0bb50f66b00d0048563b7bbd410aecb13
+  - package: com.finch.finch
+    signature:
+      - fingerprint: 58:1D:B9:64:C6:1C:25:36:9A:50:14:2A:3E:96:F1:C8:25:C3:7A:70:C2:DD:F3:33:21:4B:4B:E3:1C:95:5B:C7
+        sources:
+          - name: Google Play
+            issue: GH-2290
+            apk:
+              sha256: 029cf31e32a6ac095bc563e4ea63bddb8fd2a4ccaee4366c6bcd54d5902a877e
   - package: com.fingersoft.hillclimb
     signature:
       - fingerprint: AA:16:9A:97:53:E2:FF:66:76:AC:26:E4:AF:35:73:FB:38:7F:05:C6:6D:E8:0D:C3:52:CE:33:24:BD:9A:B0:8F
