@@ -4798,6 +4798,14 @@ packages:
             issue: GH-1956
             apk:
               sha256: b79aa674a0aa76017743c9777a76f2d72532f0530572f890d8d99c5fcaba2ef3
+  - package: com.pl.premierleague
+    signature:
+      - fingerprint: 1E:01:6F:37:61:4A:01:72:9F:E4:C1:6A:83:BF:3E:65:DC:10:B1:B3:4E:F0:97:3C:B8:54:33:D0:28:1C:A3:FA
+        sources:
+          - name: Google Play
+            issue: GH-2155
+            apk:
+              sha256: 471913f710670abc738043a6c69ce748767eb97c048119a44f8d28f407d45e23
   - package: com.planetfitness
     signature:
       - fingerprint: 2C:87:7B:4C:C0:43:2E:E6:F3:DD:66:53:55:D7:53:4B:B6:BA:A6:56:75:C7:ED:B2:8C:8E:E8:51:9A:CB:5C:90
