@@ -1844,6 +1844,14 @@ packages:
             issue: CB-2
             apk:
               sha256: 68705ee7655987728124e045a54d8bcd68e7c66f5b19d491a25ae22af77e47aa
+  - package: com.cube.gdpc.fa
+    signature:
+      - fingerprint: 0D:54:4C:E9:08:7E:18:3E:A4:E1:03:6C:30:F6:41:FB:48:A7:CA:BA:66:76:42:BA:27:F8:86:3E:A4:8A:B8:D0
+        sources:
+          - name: Google Play
+            issue: GH-2273
+            apk:
+              sha256: f5b53f12fca94ded98cb8446b5dc8d11ff1fbf3446c79dd3112113615ec0ed85
   - package: com.cxinventor.file.explorer
     signature:
       - fingerprint: 26:A4:15:39:86:2A:72:19:06:EF:C2:9D:78:6C:FD:B3:EE:BE:D7:34:9D:34:9F:97:C3:87:1E:0E:74:8C:90:6D
