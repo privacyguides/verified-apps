@@ -5966,6 +5966,14 @@ packages:
             issue: GH-500
             apk:
               sha256: 889b36a202b40088afab38b868ad1b77144fa685e06dfe9910671a554e3c0f52
+  - package: com.viettel.ViettelPost
+    signature:
+      - fingerprint: 39:41:04:E3:38:6F:23:EA:49:0A:B5:27:A3:1A:B5:19:48:AF:D1:73:35:6A:51:2D:BF:AB:48:00:C1:DB:3B:90
+        sources:
+          - name: Google Play
+            issue: GH-2200
+            apk:
+              sha256: 2c6986397f98a43668e5eb9e8116dae64854f97ef7f836dacae3321e6ebb3544
   - package: com.viettel.appviettel
     signature:
       - fingerprint: 5F:C8:FE:00:AD:0B:3C:F8:7B:AF:B1:D9:F3:E3:A3:0C:88:C5:52:B0:74:7B:68:E2:6D:53:F3:B4:F6:ED:B5:B0
