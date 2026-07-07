@@ -10751,6 +10751,14 @@ packages:
             issue: GH-1924
             apk:
               sha256: 70c10b3b74744555161ff241d39ae425bc04cfb183a6f44a7d0a067aaeab6777
+  - package: uk.co.dominos.android
+    signature:
+      - fingerprint: 21:CD:B7:26:A4:F2:BE:FB:59:0F:AC:39:A6:61:81:1E:15:34:B5:A7:27:B6:A2:06:11:8B:D7:44:74:5A:CF:C1
+        sources:
+          - name: Google Play
+            issue: GH-2125
+            apk:
+              sha256: 455ffefff2433fec7ec88b0e85b2ef272e9e15e46a3d83d568a83f40ade446ff
   - package: uk.co.webtechpro.jesip
     signature:
       - fingerprint: 84:E2:9A:A1:22:A5:09:04:0E:CE:18:C1:C5:57:CB:B0:5C:E1:A0:FF:98:2D:39:C4:C2:DE:6E:C5:E9:36:CE:8F
