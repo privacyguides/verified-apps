@@ -17,6 +17,16 @@ packages:
             issue: GH-198
             apk:
               sha256: 56b3ddc154322975a721290fc89f401fc368a70a522057fbba754198e942f60e
+  - package: air.com.parkerstech.day
+    signature:
+      - fingerprint: |-
+          02:B9:EE:EE:6B:7E:F0:0A:3D:F9:15:5D:83:1E:B5:E5:DB:43:DA:FD:BF:7A:38:72:6C:05:5C:C1:37:E6:95:A2
+          FF:2D:09:13:F5:CA:7B:E3:3E:D9:B9:88:BB:2D:02:6B:B6:7B:5F:22:96:70:8A:63:2D:BD:91:B2:7F:88:97:32
+        sources:
+          - name: Google Play
+            issue: GH-2300
+            apk:
+              sha256: 57d05987e84662f35a4d9c45a0a8f4f4a5004687c7cc25114dabf513c39f76d1
   - package: app.aawireless
     signature:
       - fingerprint: 47:A3:74:83:9C:2A:EF:FC:3E:EB:F1:17:2B:8F:F7:D9:90:A9:84:E3:7B:FE:48:E6:8B:49:92:F8:65:B8:DF:DF
