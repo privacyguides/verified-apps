@@ -4027,6 +4027,14 @@ packages:
             issue: GH-1425
             apk:
               sha256: d518ce166e638dcd416c185699734c149ec1d867ed129dbdbd2c88d376219a49
+  - package: com.mm.android.smartlifeiot
+    signature:
+      - fingerprint: DD:B5:9D:AB:BB:17:C8:E3:78:5F:12:32:57:40:C6:BC:2B:D0:01:C1:1F:51:82:4E:AA:F7:60:FD:95:04:6C:5C
+        sources:
+          - name: Google Play
+            issue: GH-2198
+            apk:
+              sha256: 19f09d0494e5a3a1d8e84d92237b1c9d92c2bb1240ce16730ce5789e35722a4b
   - package: com.mobillium.airalo
     signature:
       - fingerprint: 03:61:DD:85:0D:D3:AB:65:D9:2D:F4:18:9A:26:41:3D:A5:3A:FF:AA:31:8F:7D:AD:91:47:94:AD:A2:C9:B4:09
