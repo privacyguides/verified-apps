@@ -3514,6 +3514,14 @@ packages:
             issue: GH-1686
             apk:
               sha256: 095c2275152653155219d0f276f7a8e09be6436b3196cf1d1b56ebb5a39bf488
+  - package: com.justeat.app.uk
+    signature:
+      - fingerprint: BB:9D:27:D3:6A:8F:FA:1D:FC:B9:21:43:EB:F8:EE:CD:EC:11:2B:62:6E:C0:3B:8A:D1:23:4E:5B:A2:CA:3C:CE
+        sources:
+          - name: Google Play
+            issue: GH-2140
+            apk:
+              sha256: 5dd49af7d108088c438334680cadb67b500c2572e32fe14fc2556f7037541f72
   - package: com.kakaku.tabelog.tourists
     signature:
       - fingerprint: 41:DF:CB:EF:4C:AE:B2:47:27:FB:3D:31:10:89:68:A4:24:12:9E:88:FF:AD:0A:E0:D7:58:A0:70:F8:EB:CA:BC
