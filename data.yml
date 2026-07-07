@@ -1307,6 +1307,14 @@ packages:
             issue: GH-1204
             apk:
               sha256: 5cff10df62fc1360964851a4d08b80d156a1bec8b22ad74bb1c44dc6facb7b66
+  - package: com.bigbook3
+    signature:
+      - fingerprint: B4:C9:AF:FD:7D:DD:C4:69:E9:90:FE:89:E6:07:6A:E2:B9:42:7C:56:48:E2:92:4D:93:E7:39:1B:E7:11:E6:A5
+        sources:
+          - name: Google Play
+            issue: GH-2288
+            apk:
+              sha256: 67588b090e6e9bc91422916cc60660aa333694dc2a41f03716f151160b80d3ff
   - package: com.bilingify.readest
     signature:
       - fingerprint: E0:E7:60:55:80:8D:3A:DE:A0:D1:CF:7C:20:85:40:A3:DD:4B:E6:4D:17:5C:0F:DE:26:57:7D:9C:5B:29:5F:51
