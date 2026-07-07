@@ -6358,6 +6358,14 @@ packages:
             issue: GH-843
             apk:
               sha256: 26d26764682f361fade5e73087fe40acd0ba40ef0260627fb47bcd1674b99e0f
+  - package: com.watchfun.earjoy
+    signature:
+      - fingerprint: D9:F6:01:E5:D5:C0:BA:2C:13:08:F9:D7:9A:07:46:37:9C:F6:E3:65:2F:1B:F0:9E:21:3C:55:11:1B:EE:55:6D
+        sources:
+          - name: Google Play
+            issue: GH-2126
+            apk:
+              sha256: 26a506ca61b0983f96a34a086b116ac453d02cfcbf1c7170608f44ba42743903
   - package: com.waze
     signature:
       - fingerprint: 03:63:7F:6C:5D:8F:60:4E:6F:DB:79:A6:FF:BF:A5:78:DE:4E:31:8F:8D:A2:2F:C6:10:66:65:24:7F:88:07:D7
