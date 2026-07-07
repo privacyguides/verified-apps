@@ -9321,6 +9321,14 @@ packages:
             issue: GH-1920
             apk:
               sha256: 9d1ae38885fda1a9e2052ca35dd62efc404d1243893efab89806941dfdabd354
+  - package: org.inaturalist.android
+    signature:
+      - fingerprint: 88:E4:71:74:32:47:56:E9:EF:2A:7A:80:4E:E1:B4:2C:0B:7E:79:54:FB:41:57:72:B1:3A:72:F7:6B:6F:4C:2D
+        sources:
+          - name: Google Play
+            issue: GH-2266
+            apk:
+              sha256: 7b3cdae0a3b11451749d433c0959c0bda0ba8fa27b80476b78b087282105680c
   - package: org.ironfoxoss.ironfox
     signature:
       - fingerprint: C5:E2:91:B5:A5:71:F9:C8:CD:9A:97:99:C2:C9:4E:02:EC:97:03:94:88:93:F2:CA:75:6D:67:B9:42:04:F9:04
