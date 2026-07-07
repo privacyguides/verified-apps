@@ -3406,6 +3406,12 @@ packages:
               sha256: b5edea35c0b3cb22675aa79fa0f920e17e2c35d31e19d8121d7e0e68c9c0e5d8
   - package: com.jgeek00.adguard_home_manager
     signature:
+      - fingerprint: 1A:28:1D:5C:9E:26:52:25:44:03:1F:15:F4:EA:A3:FC:E6:75:10:3D:02:31:17:6E:EE:78:C2:5A:AD:81:76:75
+        sources:
+          - name: Google Play
+            issue: GH-2196
+            apk:
+              sha256: a3a7bbce9d4c0ef1a4052937887b0c90655ba2fea9cb8efeb4795e0bb5c94f68
       - fingerprint: 6E:60:C8:16:4F:7F:32:2B:93:B4:7D:1E:F2:86:AF:F9:B8:D1:64:24:DB:5E:18:B8:69:95:D3:76:87:06:29:26
         sources:
           - name: Direct APK Link
