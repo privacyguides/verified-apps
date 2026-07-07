@@ -5990,6 +5990,14 @@ packages:
             issue: GH-2197
             apk:
               sha256: 6decaabd00bf38f0e31c6ef1536c5b4a292f2e9deb75c89bd35d72ecaa732bc1
+  - package: com.viettel.mocha.app
+    signature:
+      - fingerprint: 5E:8C:3C:A7:E2:86:A4:81:97:F9:B0:BE:59:FA:85:0D:8F:11:EB:0C:C1:48:A5:30:71:EC:CA:F2:1E:66:1C:C0
+        sources:
+          - name: Google Play
+            issue: GH-2202
+            apk:
+              sha256: 2d3df85a03ef6e1b3bc51e12fb588f5830aa8abc60289f086b2af018826f8c3f
   - package: com.viewer.comicscreen
     signature:
       - fingerprint: DA:B3:D2:40:F3:67:96:6F:2E:30:26:CB:41:7B:75:10:45:14:45:62:66:43:2D:2A:BC:41:71:90:1A:ED:87:E0
