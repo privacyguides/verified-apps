@@ -4033,6 +4033,16 @@ packages:
               sha256: cc846adb0357538e02a2e106bfb80174aaf18c9a896f25399bdf97acecbfa947
           - name: HTTPS Verified Domain
             issue: GH-2526
+  - package: com.microsoft.emmx
+    signature:
+      - fingerprint: |-
+          01:E1:99:97:10:A8:2C:27:49:B4:D5:0C:44:5D:C8:5D:67:0B:61:36:08:9D:0A:76:6A:73:82:7C:82:A1:EA:C9
+          F6:A1:71:39:95:6B:E7:C7:DD:0E:53:77:10:02:5D:D2:16:90:AE:80:5B:20:B6:19:EE:D9:D6:67:8A:C4:6B:28
+        sources:
+          - name: Google Play
+            issue: GH-2127
+            apk:
+              sha256: de189c670b97d6308ad077142a6be2282a4fa779bc3c7246f0cbc5070792bc52
   - package: com.microsoft.office.excel
     signature:
       - fingerprint: |-
