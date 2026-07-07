@@ -2610,6 +2610,14 @@ packages:
             apk:
               sha256: bbe436bed7e3ae7b3eb00a8437d29ae91ecff8e1c2d31dce80108cb761604956
               repo: https://app.futo.org/fdroid/repo/
+  - package: com.garmin.android.apps.connectmobile
+    signature:
+      - fingerprint: 84:FF:2B:FA:39:5C:5A:21:E5:3A:E2:96:33:E4:A6:E6:8B:6B:5C:67:07:BB:60:84:C2:5B:70:F8:66:B7:17:29
+        sources:
+          - name: Google Play
+            issue: GH-2268
+            apk:
+              sha256: 93d755c32abe0686811710c1480f776780c97033c7867e1d3e5218dde6ff7996
   - package: com.garmin.android.apps.explore
     signature:
       - fingerprint: 84:FF:2B:FA:39:5C:5A:21:E5:3A:E2:96:33:E4:A6:E6:8B:6B:5C:67:07:BB:60:84:C2:5B:70:F8:66:B7:17:29
