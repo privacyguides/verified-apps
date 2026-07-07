@@ -301,8 +301,13 @@ domains:
     method: https
     issue:
       - GH-2297
-    checked: "2026-07-07T15:40:53Z"
+      - GH-2296
+    checked: "2026-07-07T15:43:01Z"
     packages:
+      - package: com.lego.legobuildinginstructions
+        fingerprints:
+          - 18:34:12:EB:6E:77:C0:4C:C3:80:F1:D4:0B:86:EF:CF:E6:C5:BA:AA:93:9B:09:6D:A6:F8:4A:A4:0C:DB:E6:5C
+          - D9:51:A3:D0:75:64:63:20:E7:3D:F5:39:F9:40:5F:B0:1C:A4:B4:E6:FA:A7:A3:6C:F8:F8:6C:52:56:59:21:44
       - package: com.lego.membership
         fingerprints:
           - E4:BA:79:65:42:83:08:61:00:3E:A0:77:FE:5F:80:A0:D8:9C:8A:A4:BD:4C:05:D1:E8:7C:D6:D7:24:D8:9A:0A

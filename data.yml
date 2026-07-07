@@ -3605,6 +3605,16 @@ packages:
             apk:
               sha256: c5d9021641a3546423223e4f926b7bb35c514786a6e43d99de911cb6fa914350
               link: https://github.com/kylecorry31/Trail-Sense/releases/download/8.0.1/Trail-Sense-8.0.1-release.apk
+  - package: com.lego.legobuildinginstructions
+    signature:
+      - fingerprint: D9:51:A3:D0:75:64:63:20:E7:3D:F5:39:F9:40:5F:B0:1C:A4:B4:E6:FA:A7:A3:6C:F8:F8:6C:52:56:59:21:44
+        sources:
+          - name: Google Play
+            issue: GH-2296
+            apk:
+              sha256: c7927dff9db816f9e37885f39a4dc46536ff8cd26af0186729dc7ef5ada5391a
+          - name: HTTPS Verified Domain
+            issue: GH-2296
   - package: com.lego.membership
     signature:
       - fingerprint: E4:BA:79:65:42:83:08:61:00:3E:A0:77:FE:5F:80:A0:D8:9C:8A:A4:BD:4C:05:D1:E8:7C:D6:D7:24:D8:9A:0A
