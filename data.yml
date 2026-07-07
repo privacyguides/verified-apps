@@ -1392,6 +1392,16 @@ packages:
             issue: GH-1244
             apk:
               sha256: 8eec7437cfda087acdf25944427dcd427bd7400746b86192686bfa16f790ad0b
+  - package: com.blizzard.messenger
+    signature:
+      - fingerprint: F7:83:85:9E:ED:6E:4A:40:A4:EB:D0:20:57:8D:36:E0:0A:62:CF:9C:F2:7D:A3:95:F7:7D:1D:73:A6:A9:A4:1F
+        sources:
+          - name: Google Play
+            issue: GH-2195
+            apk:
+              sha256: 0ac105f1838d05931c2d08047ccd088ddc066866487f9011fb29da0567bb6595
+          - name: HTTPS Verified Domain
+            issue: GH-2195
   - package: com.block.puzzle.jewel.games.blast.free
     signature:
       - fingerprint: E6:76:1C:85:FE:63:1F:F8:B9:04:41:9D:D5:C3:F1:A0:2D:8D:8D:2F:8A:D2:D9:7E:F7:6C:54:26:9A:DC:07:36
