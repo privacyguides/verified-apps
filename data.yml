@@ -1231,6 +1231,14 @@ packages:
             issue: GH-1025
             apk:
               sha256: f06945f1fed619c3a4494b8ffbc17fb41e8fe2e51fdae99f8b025a965231116f
+  - package: com.beeper.android
+    signature:
+      - fingerprint: 78:6F:42:F5:E9:3E:8A:7C:11:1F:DE:4E:AB:01:8A:B4:90:66:6D:ED:CD:A7:CC:E4:BC:70:06:F5:2A:6F:31:F8
+        sources:
+          - name: Google Play
+            issue: GH-2326
+            apk:
+              sha256: b88d7a4c37a3352f996bb14dc5309ee20b6ee02366dc298e923bbe845ef4cf86
   - package: com.best.deskclock
     signature:
       - fingerprint: 95:8E:CB:D2:3C:F3:DC:04:3B:0A:34:37:2C:06:8E:34:27:5A:D8:C1:F2:A1:97:4D:77:91:63:A2:22:A8:99:9E
