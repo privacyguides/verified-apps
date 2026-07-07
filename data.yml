@@ -6939,6 +6939,14 @@ packages:
             apk:
               sha256: 45cc002843a771ed6f16de83e08a18c4a8480f32ee1382f8168999ce74f7f4be
               link: https://github.com/VentralDigital/InterProfileSharing/releases/download/v1.1/ips-1.1.apk
+  - package: edu.cornell.birds.ebird
+    signature:
+      - fingerprint: 4B:F4:7C:FE:28:13:74:26:54:31:AA:CC:08:FD:BF:5B:E4:FB:CE:CA:D4:86:8F:35:2B:E6:46:8B:86:52:98:8D
+        sources:
+          - name: Google Play
+            issue: GH-2276
+            apk:
+              sha256: 4a71294af9c523d5366c871e166af35594ff66aac00be5eb7935be900f765eec
   - package: ee.mtakso.client
     signature:
       - fingerprint: A7:5C:63:72:A0:B6:7D:B0:16:86:B4:7D:F6:8C:91:51:6E:E1:62:29:EE:C4:C0:C6:7D:35:5E:32:20:7C:66:17
