@@ -3273,6 +3273,14 @@ packages:
             issue: GH-679
             apk:
               sha256: b5a92adc5b370a67ca5df2be3d1599ee861c07a41e69dab083cd91f4bb762bc2
+  - package: com.iamrare.iamrare
+    signature:
+      - fingerprint: B5:A9:26:C9:03:65:92:94:CA:F6:DA:28:0A:C2:3F:09:E7:B0:75:54:12:67:08:D3:95:97:B8:88:C9:5A:F4:D8
+        sources:
+          - name: Google Play
+            issue: GH-2294
+            apk:
+              sha256: 4b84e701b89dc5250c84740f9933fe78193a7863342264f2ea4b59f3a025f69a
   - package: com.icelandair.mobile.app.android
     signature:
       - fingerprint: AD:29:A3:4B:6D:13:8B:15:7F:03:DE:CB:22:70:02:05:DD:89:51:C6:0E:F6:6A:E0:99:CC:D6:B6:BE:97:15:8C
