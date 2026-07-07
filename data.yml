@@ -7167,6 +7167,14 @@ packages:
             issue: GH-1848
             apk:
               sha256: 69736fbd68fc10f18094465d45effd9681cc301c806b536d50bb7be7820d2f77
+  - package: fr.laposte.idn
+    signature:
+      - fingerprint: 33:F9:B8:8A:9F:7B:93:29:30:0F:7E:72:E1:A5:97:0E:8F:75:29:D3:B1:94:EE:E3:10:9F:1B:69:5C:72:E0:1E
+        sources:
+          - name: Google Play
+            issue: GH-2323
+            apk:
+              sha256: 24f98d2338dc355d2ac6932f016f70f8eea4e2480d52dc1cfff912e9e417923c
   - package: fr.schiller.remoteScreen
     signature:
       - fingerprint: FF:BA:EC:12:8E:25:5A:52:54:04:18:CC:8C:E1:21:E5:79:50:96:F0:AD:C5:70:A9:AC:A2:83:BC:C6:BD:C1:6E
