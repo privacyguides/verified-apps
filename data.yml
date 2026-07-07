@@ -40,6 +40,14 @@ packages:
             apk:
               sha256: 62b9163f821073d8b71768a067bd10d51270d4017a264192179fdfb032597c98
               link: https://github.com/immich-app/immich/releases/download/v2.7.5/app-arm64-v8a-release.apk
+  - package: app.android.cloaked
+    signature:
+      - fingerprint: 58:1D:49:7A:77:F9:97:EC:3D:5F:28:60:F8:76:0F:E2:75:C0:38:60:33:F4:8C:38:14:40:8B:6B:5E:3E:63:C3
+        sources:
+          - name: Google Play
+            issue: GH-2278
+            apk:
+              sha256: 26d45e4a140feb85a5a97828677024245832bf765c2f035bafd57465d647cad5
   - package: app.attestation.auditor.play
     signature:
       - fingerprint: 07:53:35:BD:7B:54:C9:65:22:2B:52:84:D2:A1:FD:EF:11:98:AE:45:EC:7B:09:A4:93:42:87:A0:E3:A2:43:C7
