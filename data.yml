@@ -4286,6 +4286,17 @@ packages:
             issue: GH-748
             apk:
               sha256: 04b79689e49d93a7cb990c0f5ec4a9139e733737758987584f05fb2521aaa4df
+  - package: com.netflix.mediaclient
+    signature:
+      - fingerprint: |-
+          28:0B:F0:0D:98:7A:64:F2:35:EA:34:F9:F4:D3:BB:2F:95:D4:8F:B3:04:E5:EE:8A:2B:1D:1E:5F:3D:19:CF:D0
+          36:38:63:59:6E:A9:92:41:EB:71:B1:A9:85:55:3A:A6:04:DE:3E:A3:C5:F0:C5:46:74:23:90:E6:82:16:4E:6B
+          86:E1:75:77:EB:E9:4B:D6:4F:F6:15:90:65:18:63:FB:5A:2D:12:5F:40:5F:CB:BF:76:BA:0F:E4:83:A3:1D:91
+        sources:
+          - name: Google Play
+            issue: GH-2153
+            apk:
+              sha256: 3b06700335733210551ec3ba3fcdb1cd4001f71d66093e859417973ed781f08d
   - package: com.newsblur
     signature:
       - fingerprint: 5C:5E:93:50:3C:6A:C4:89:88:6A:29:BE:0C:28:6B:A6:04:82:E2:C2:5A:A6:D6:EF:56:84:FD:6E:8F:D7:C3:19
