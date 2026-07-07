@@ -7010,6 +7010,18 @@ packages:
             issue: GH-1072
             apk:
               sha256: 95527b05a417ec2a438eba17c739b9019832d3e2d4caa63019a4d84975b6029d
+  - package: eu.faircode.netguard
+    signature:
+      - fingerprint: E4:A2:60:A2:DC:E7:B7:AF:23:EE:91:9C:48:9E:15:FD:01:02:B9:3F:9E:7C:9D:82:B0:9C:0B:39:50:00:E4:D4
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: CB-143
+            apk:
+              sha256: 34769a2b308ac48e7c5f69bf7e4b8b45006274166c18e6e58eb0ec51fc09f012
+          - name: Google Play
+            issue: CB-143
+            apk:
+              sha256: 2fc146623736fabbd6d066227d05a394b58aebb42ff89d60d35da3e0b4e919a1
   - package: eu.heili.wormhole
     signature:
       - fingerprint: 57:F6:F8:E7:72:92:E1:61:5D:E2:3D:43:49:7F:00:7E:25:68:5A:B1:54:69:6D:31:BD:10:32:96:ED:65:35:18
