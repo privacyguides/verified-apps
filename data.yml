@@ -950,6 +950,14 @@ packages:
             issue: GH-714
             apk:
               sha256: a23fb58ac8a427949bed12b15923e479e06b359ce526da9c148234e130309c39
+  - package: com.anker.charging
+    signature:
+      - fingerprint: 64:95:30:80:93:3C:95:3E:5D:21:57:93:90:37:42:30:BA:AB:A4:B4:DE:AD:E3:3B:BB:40:56:12:9B:E7:5F:8B
+        sources:
+          - name: Google Play
+            issue: CB-167
+            apk:
+              sha256: 97b6b2920f34d372ccddf7b598ccfdaab9e558ee9e6f200e64d1b67092b6aeba
   - package: com.anthropic.claude
     signature:
       - fingerprint: 30:5A:1E:8A:43:2E:5E:C0:C6:12:B2:46:53:59:C3:B8:8E:3C:95:D6:25:35:99:AC:60:88:56:2B:81:8B:64:A0
