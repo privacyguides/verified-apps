@@ -206,6 +206,16 @@ domains:
         fingerprints:
           - 8F:A8:ED:5E:FC:6B:67:60:FD:77:79:B6:CB:24:E8:F0:4B:A8:E9:92:17:3A:4C:CA:F4:C5:1E:78:4A:D2:3F:30
           - BB:7B:B3:1C:57:3C:46:A1:DA:7F:C5:C5:28:A6:AC:F4:32:10:84:56:FE:EC:50:81:0C:7F:33:69:4E:B3:D2:D4
+  - domain: duomobile.duosecurity.com
+    method: https
+    issue:
+      - GH-2277
+    checked: "2026-07-07T15:38:34Z"
+    packages:
+      - package: com.duosecurity.duomobile
+        fingerprints:
+          - 97:FC:DB:FF:C4:F3:0C:C3:14:1A:76:D7:17:9A:FB:42:97:4B:79:76:D6:8E:B0:AA:49:7C:12:E5:26:52:66:13
+          - BE:5A:A8:A5:43:6E:99:71:21:E5:E5:5E:4C:A7:E0:47:84:48:88:09:14:B9:F9:4C:24:2C:5E:4F:DB:E8:D8:98
   - domain: euria.infomaniak.com
     method: https
     issue:

@@ -2078,6 +2078,16 @@ packages:
             issue: GH-285
           - name: AppVerifier
             issue: GH-285
+  - package: com.duosecurity.duomobile
+    signature:
+      - fingerprint: BE:5A:A8:A5:43:6E:99:71:21:E5:E5:5E:4C:A7:E0:47:84:48:88:09:14:B9:F9:4C:24:2C:5E:4F:DB:E8:D8:98
+        sources:
+          - name: Google Play
+            issue: GH-2277
+            apk:
+              sha256: 40e8deb471d5e088797dbb4a0ffe9e082d0291150b9a80b71644262e7e05abe7
+          - name: HTTPS Verified Domain
+            issue: GH-2277
   - package: com.ebase.banking
     signature:
       - fingerprint: 1A:51:D8:15:E3:A4:84:E2:33:AE:97:A8:BA:EC:E9:E8:AC:FB:18:57:79:9A:5F:44:C4:12:C9:EE:E8:4C:6E:D7
