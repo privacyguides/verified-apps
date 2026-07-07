@@ -168,6 +168,18 @@ domains:
       - package: com.chase.sig.android
         fingerprints:
           - 73:F0:D9:50:8A:25:72:C1:10:07:7C:FF:1C:AD:4E:D9:2C:00:F0:20:4F:AF:ED:BA:C8:43:4B:D7:6B:C4:AC:D1
+  - domain: classdojo.com
+    method: https
+    issue:
+      - GH-2120
+    checked: "2026-07-07T17:08:12Z"
+    packages:
+      - package: com.classdojo.android
+        fingerprints:
+          - 7C:05:F9:ED:40:AF:F3:5F:7E:56:01:28:1F:A3:44:EF:5A:2E:19:C5:35:19:79:46:D8:22:1C:F9:87:B3:49:D9
+          - 9D:21:2E:31:82:34:2D:AC:BD:37:89:0F:D7:B0:B3:CF:07:EC:09:A2:6C:58:37:9E:81:E0:3D:6C:10:03:9C:0B
+          - DE:58:8F:B0:15:51:4F:D3:E7:62:89:D5:C6:51:54:E9:F4:C0:0F:AC:B8:28:50:25:19:C2:45:28:F5:8D:FE:B0
+          - F5:B8:1C:78:81:7A:64:62:41:DA:21:D3:13:C0:B6:DB:36:AA:45:3A:CE:55:2B:7A:84:64:86:95:2F:11:08:AF
   - domain: club.qobuz.com
     method: https
     issue:

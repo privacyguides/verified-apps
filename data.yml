@@ -1801,6 +1801,16 @@ packages:
             issue: CB-159
             apk:
               sha256: 97efec20b1ed129c4d326f964f934c31314fa3994a5a2cd89dd2e4a690d7d8a0
+  - package: com.classdojo.android
+    signature:
+      - fingerprint: 7C:05:F9:ED:40:AF:F3:5F:7E:56:01:28:1F:A3:44:EF:5A:2E:19:C5:35:19:79:46:D8:22:1C:F9:87:B3:49:D9
+        sources:
+          - name: Google Play
+            issue: GH-2120
+            apk:
+              sha256: 81e014f88b59e6356e057254d35ba2065e60e69c26a1c26572d188000c145eaa
+          - name: HTTPS Verified Domain
+            issue: GH-2120
   - package: com.cloudflare.onedotonedotonedotone
     signature:
       - fingerprint: 27:3A:3A:5E:09:DC:72:0D:3B:39:45:16:2E:72:4D:9A:69:B2:1F:C5:42:BE:D7:45:7F:11:59:66:B1:45:E8:BC
