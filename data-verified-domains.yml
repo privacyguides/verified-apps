@@ -442,6 +442,16 @@ domains:
       - package: com.openai.chatgpt
         fingerprints:
           - B2:4F:4B:FB:B3:CF:29:3F:93:87:03:B9:D8:70:27:C1:10:2C:C3:6D:C4:FA:20:69:10:E0:89:27:DB:40:47:3C
+  - domain: paralino.app
+    method: https
+    issue:
+      - GH-2994
+    checked: "2026-07-09T05:42:35Z"
+    packages:
+      - package: app.paralino.android
+        fingerprints:
+          - 2B:66:56:E2:BE:9B:3C:12:EF:55:A5:F6:FA:4E:AA:83:E0:B2:44:60:2D:18:5E:2C:3D:8C:48:98:95:36:3D:B6
+          - 7C:36:87:CA:81:BC:A2:0C:32:09:5E:CE:AD:18:29:09:DC:50:87:03:6A:37:F0:77:2B:2D:9E:5D:85:91:41:DC
   - domain: paypal.com
     method: https
     issue:
