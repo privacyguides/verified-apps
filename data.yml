@@ -1685,6 +1685,10 @@ packages:
             issue: GH-561
           - name: F-Droid (IzzyOnDroid)
             issue: GH-561
+          - name: Google Play
+            issue: GH-3033
+            apk:
+              sha256: a0c9916ffa772ab544de3f99206de52499d231053534bf2724f4a9935f956c1c
   - package: com.carriez.flutter_hbb
     signature:
       - fingerprint: E9:2D:44:BA:9B:65:00:3C:73:40:68:3B:0A:92:34:F6:17:C1:B2:3A:1D:D9:0E:89:F7:D0:41:70:B7:2B:FC:86
@@ -5141,6 +5145,14 @@ packages:
             apk:
               sha256: 261243f0df7023074ae80650192aa46dc56ff5b5db2a9694311b7b7fd316ceeb
               link: https://github.com/RoundSalmon4/AppVerifierBG/releases/download/nightly-2026-05-31/AppVerifier-nightly-2026-05-31.apk
+          - name: F-Droid
+            issue: GH-3033
+            apk:
+              sha256: 93a2a802821899522cfe680385446c00dec8a7d26a6a6a4d24e7450364049284
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-3033
+            apk:
+              sha256: 93a2a802821899522cfe680385446c00dec8a7d26a6a6a4d24e7450364049284
   - package: com.ryanair.cheapflights
     signature:
       - fingerprint: 7B:95:CA:16:5B:9D:E6:03:8E:B9:F1:CC:77:BC:54:2C:22:33:DE:A1:43:EE:32:38:69:3A:3F:55:B8:1A:01:E9
@@ -6233,6 +6245,8 @@ packages:
             issue: GH-689
             apk:
               sha256: f8f9713c8fb7214ce0a976453ec4a8df519098d2e03c4be38b4032816b9a03f0
+          - name: HTTPS Verified Domain
+            issue: GH-3033
   - package: com.verisec.mobile.frejaeid
     signature:
       - fingerprint: 1F:14:FE:04:C5:19:52:C5:E3:C8:E6:82:51:AE:8A:C3:73:B8:4C:59:76:BD:7F:24:8E:64:3A:F2:50:C8:BA:91
@@ -8568,6 +8582,8 @@ packages:
             issue: GH-971
             apk:
               sha256: 9d83d3ad2f3e84f3d61379ba49196633c14585eb3358467b5fbd46dde28a6380
+          - name: HTTPS Verified Domain
+            issue: GH-3033
   - package: me.ocv.partyup_dbg
     signature:
       - fingerprint: CA:8D:3B:0D:DA:29:61:D8:93:05:40:A0:3C:41:9B:A5:4A:76:25:7F:B2:08:C9:B4:85:94:42:BE:16:29:65:D8
@@ -9975,6 +9991,10 @@ packages:
         sources:
           - name: DNS Verified Domain
             issue: GH-1627
+          - name: Google Play
+            issue: GH-3033
+            apk:
+              sha256: 5573a24a38ff890a06ed05d6db66347f5b7b7c026babe0a60555a8d5e924b992
   - package: org.proninyaroslav.libretorrent
     signature:
       - fingerprint: 1A:96:ED:44:27:98:2C:52:E0:67:09:C9:41:A8:F3:9B:2A:BA:68:BC:CA:E8:6B:6C:86:F9:F0:30:BD:95:99:EA

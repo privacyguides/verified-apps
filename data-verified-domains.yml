@@ -405,6 +405,15 @@ domains:
       - package: org.telegram.messenger.web
         fingerprints:
           - 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
+  - domain: nanoleaf.me
+    method: https
+    issue:
+      - GH-3033
+    checked: "2026-07-10T05:48:48Z"
+    packages:
+      - package: me.nanoleaf.nanoleaf
+        fingerprints:
+          - 93:5C:70:4E:4B:FA:CF:48:58:AF:80:FB:FB:5D:06:1A:29:D3:0B:71:A2:BC:C2:5A:2F:6B:45:F1:13:DE:7F:81
   - domain: naver.com
     method: https
     issue:
@@ -467,11 +476,12 @@ domains:
     method: dns
     issue:
       - GH-1627
-    checked: "2026-06-13T00:59:10Z"
+    checked: "2026-07-10T05:48:48Z"
     packages:
       - package: org.privacyguides.verifiedapps.play
         fingerprints:
           - E8:58:37:5B:7C:45:CF:C1:D4:E4:F5:1B:4A:D6:59:73:5B:38:2C:82:4F:E2:24:48:36:A8:14:AD:7A:F3:00:61
+    dnssec: true
   - domain: privacyguides.org
     method: dns
     issue:
@@ -569,6 +579,15 @@ domains:
           - 35:1B:A8:5C:06:69:64:FA:A6:B9:88:1F:AB:B3:43:CA:41:86:2C:D0:9F:C5:62:85:46:CA:2F:BE:68:5F:CE:3F
           - AF:0C:9F:84:71:27:35:35:79:49:FA:CB:7C:33:73:D5:8F:43:6E:3F:BF:2D:B2:61:F0:5E:53:B7:EB:F8:65:F2
           - FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C
+  - domain: venmo.com
+    method: https
+    issue:
+      - GH-3033
+    checked: "2026-07-10T05:48:48Z"
+    packages:
+      - package: com.venmo
+        fingerprints:
+          - C7:7E:26:31:AC:04:51:C0:86:F2:5F:79:AE:25:82:38:AF:A4:00:96:1E:8D:59:9D:B7:8E:25:EA:DC:DC:C9:47
   - domain: waze.com
     method: https
     issue:
