@@ -387,6 +387,17 @@ domains:
       - package: com.zoho.mail
         fingerprints:
           - A9:D6:D0:A2:AF:DB:15:84:9B:8C:D3:1D:51:FE:73:B8:E1:B1:70:BA:A5:70:C2:F8:F2:A3:F8:65:28:29:CB:BD
+  - domain: mapillary.com
+    method: https
+    issue:
+      - GH-3154
+    checked: "2026-07-11T05:22:34Z"
+    packages:
+      - package: com.mapillary.app
+        fingerprints:
+          - 2D:41:BE:21:D2:77:E9:05:70:4A:B5:FB:25:23:E0:CA:13:35:C2:8E:69:64:56:AC:F8:20:2E:56:12:C0:51:80
+          - 48:07:2A:2C:25:E6:EB:5C:F1:96:27:1D:26:F5:BF:49:4A:26:FF:EE:CB:77:9A:5C:70:C1:3D:EB:E3:31:D3:21
+          - DC:E7:1C:BF:92:B7:7E:CE:9F:E1:33:04:66:A4:0C:68:43:CE:8B:6E:86:D4:74:5C:45:36:A2:32:12:DF:6D:58
   - domain: markusfisch.de
     method: https
     issue:
@@ -537,6 +548,18 @@ domains:
         fingerprints:
           - DF:5B:68:01:94:B7:55:44:A5:75:29:88:23:33:BA:C2:6F:1E:94:F9:B6:14:B4:A9:BC:AB:F3:4B:FB:C7:8D:21
           - FA:0D:C7:F4:72:C7:F9:88:07:20:27:88:4F:2C:ED:3D:81:9D:A7:A3:A5:A1:CA:51:87:9C:B9:E9:05:3B:5F:54
+  - domain: tinder.com
+    method: https
+    issue:
+      - GH-3154
+    checked: "2026-07-11T05:22:34Z"
+    packages:
+      - package: com.tinder
+        fingerprints:
+          - 14:F1:45:31:43:6F:29:E3:E8:F6:8E:BA:03:5B:32:6F:8D:73:DD:7E:A5:DD:36:AA:26:35:31:C7:37:6E:29:57
+          - 8A:B1:4F:D7:50:B8:20:57:4D:20:C3:54:41:EA:14:A9:B5:D1:95:9A:31:04:0C:EC:12:B4:6B:B2:90:F4:DA:1B
+          - F1:75:9B:3C:F6:F7:83:BC:7D:88:9C:DC:13:34:14:58:67:70:2B:F7:EB:7B:09:54:5C:02:4B:9F:D2:21:13:DB
+          - F7:95:EA:38:3D:3A:5A:65:D8:CC:C1:61:05:08:28:C3:32:66:DD:57:5C:95:6E:5A:8B:9E:40:BE:8D:7D:8C:74
   - domain: transferwise.com
     method: https
     issue:
