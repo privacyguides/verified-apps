@@ -337,6 +337,15 @@ domains:
         fingerprints:
           - E4:BA:79:65:42:83:08:61:00:3E:A0:77:FE:5F:80:A0:D8:9C:8A:A4:BD:4C:05:D1:E8:7C:D6:D7:24:D8:9A:0A
           - FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C
+  - domain: letterboxd.com
+    method: https
+    issue:
+      - GH-3245
+    checked: "2026-07-13T05:29:24Z"
+    packages:
+      - package: com.letterboxd.letterboxd
+        fingerprints:
+          - 4E:A9:E6:0E:75:13:70:C1:CC:D6:D1:C1:91:96:4C:83:40:A8:91:CB:BF:CC:2D:A1:56:8B:84:31:3B:9A:4E:74
   - domain: lichess.org
     method: https
     issue:
@@ -442,6 +451,16 @@ domains:
       - package: com.openai.chatgpt
         fingerprints:
           - B2:4F:4B:FB:B3:CF:29:3F:93:87:03:B9:D8:70:27:C1:10:2C:C3:6D:C4:FA:20:69:10:E0:89:27:DB:40:47:3C
+  - domain: paralino.app
+    method: https
+    issue:
+      - GH-3245
+    checked: "2026-07-13T05:29:24Z"
+    packages:
+      - package: app.paralino.android
+        fingerprints:
+          - 2B:66:56:E2:BE:9B:3C:12:EF:55:A5:F6:FA:4E:AA:83:E0:B2:44:60:2D:18:5E:2C:3D:8C:48:98:95:36:3D:B6
+          - 7C:36:87:CA:81:BC:A2:0C:32:09:5E:CE:AD:18:29:09:DC:50:87:03:6A:37:F0:77:2B:2D:9E:5D:85:91:41:DC
   - domain: paypal.com
     method: https
     issue:
