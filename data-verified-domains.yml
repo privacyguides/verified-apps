@@ -281,6 +281,15 @@ domains:
       - package: com.fundrise.android
         fingerprints:
           - FF:4B:21:E4:BB:0F:1F:AF:33:75:2D:9E:15:8E:0A:B0:ED:F1:E1:A8:2A:81:E0:C4:8F:29:40:23:55:82:B1:8B
+  - domain: github.com
+    method: https
+    issue:
+      - GH-3291
+    checked: "2026-07-15T05:24:59Z"
+    packages:
+      - package: com.github.android
+        fingerprints:
+          - DF:08:C9:F2:D8:09:18:9D:9D:50:64:97:C1:57:45:A7:39:5A:41:53:6E:FB:43:3E:3A:EE:1A:ED:BE:11:B2:61
   - domain: guavahealth.com
     method: https
     issue:
@@ -442,6 +451,16 @@ domains:
       - package: com.openai.chatgpt
         fingerprints:
           - B2:4F:4B:FB:B3:CF:29:3F:93:87:03:B9:D8:70:27:C1:10:2C:C3:6D:C4:FA:20:69:10:E0:89:27:DB:40:47:3C
+  - domain: paralino.app
+    method: https
+    issue:
+      - GH-3291
+    checked: "2026-07-15T05:24:59Z"
+    packages:
+      - package: app.paralino.android
+        fingerprints:
+          - 2B:66:56:E2:BE:9B:3C:12:EF:55:A5:F6:FA:4E:AA:83:E0:B2:44:60:2D:18:5E:2C:3D:8C:48:98:95:36:3D:B6
+          - 7C:36:87:CA:81:BC:A2:0C:32:09:5E:CE:AD:18:29:09:DC:50:87:03:6A:37:F0:77:2B:2D:9E:5D:85:91:41:DC
   - domain: paypal.com
     method: https
     issue:
@@ -467,11 +486,12 @@ domains:
     method: dns
     issue:
       - GH-1627
-    checked: "2026-06-13T00:59:10Z"
+    checked: "2026-07-15T05:24:59Z"
     packages:
       - package: org.privacyguides.verifiedapps.play
         fingerprints:
           - E8:58:37:5B:7C:45:CF:C1:D4:E4:F5:1B:4A:D6:59:73:5B:38:2C:82:4F:E2:24:48:36:A8:14:AD:7A:F3:00:61
+    dnssec: true
   - domain: privacyguides.org
     method: dns
     issue:
@@ -537,6 +557,16 @@ domains:
         fingerprints:
           - DF:5B:68:01:94:B7:55:44:A5:75:29:88:23:33:BA:C2:6F:1E:94:F9:B6:14:B4:A9:BC:AB:F3:4B:FB:C7:8D:21
           - FA:0D:C7:F4:72:C7:F9:88:07:20:27:88:4F:2C:ED:3D:81:9D:A7:A3:A5:A1:CA:51:87:9C:B9:E9:05:3B:5F:54
+  - domain: target.com
+    method: https
+    issue:
+      - GH-3291
+    checked: "2026-07-15T05:24:59Z"
+    packages:
+      - package: com.target.ui
+        fingerprints:
+          - B4:BF:25:47:5A:69:24:36:51:42:D9:7F:A8:38:68:C5:D1:09:20:4F:4F:DD:56:20:20:01:75:78:39:AA:03:55
+          - C2:0F:71:D4:25:62:53:57:F0:C0:52:3A:E1:C2:20:C5:9E:22:E4:9A:94:BC:9F:26:6F:9C:97:77:36:89:A0:9B
   - domain: transferwise.com
     method: https
     issue:
@@ -569,6 +599,15 @@ domains:
           - 35:1B:A8:5C:06:69:64:FA:A6:B9:88:1F:AB:B3:43:CA:41:86:2C:D0:9F:C5:62:85:46:CA:2F:BE:68:5F:CE:3F
           - AF:0C:9F:84:71:27:35:35:79:49:FA:CB:7C:33:73:D5:8F:43:6E:3F:BF:2D:B2:61:F0:5E:53:B7:EB:F8:65:F2
           - FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C
+  - domain: venmo.com
+    method: https
+    issue:
+      - GH-3291
+    checked: "2026-07-15T05:24:59Z"
+    packages:
+      - package: com.venmo
+        fingerprints:
+          - C7:7E:26:31:AC:04:51:C0:86:F2:5F:79:AE:25:82:38:AF:A4:00:96:1E:8D:59:9D:B7:8E:25:EA:DC:DC:C9:47
   - domain: waze.com
     method: https
     issue:
