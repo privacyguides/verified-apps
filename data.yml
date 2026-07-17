@@ -9791,6 +9791,8 @@ packages:
             issue: GH-731
             apk:
               sha256: 4ac7d24400bb22778fcb48e7e3326b1c402814a5d52d9fd980a066694e7700ba
+          - name: HTTPS Verified Domain
+            issue: GH-3428
   - package: org.kiwix.kiwixmobile
     signature:
       - fingerprint: 6D:FB:FC:62:E1:65:87:A7:8A:A2:D9:58:5A:E9:BB:7F:69:73:C2:BF:84:03:4B:7B:90:10:1A:40:14:09:F5:AA
