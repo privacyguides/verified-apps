@@ -1843,6 +1843,8 @@ packages:
             issue: GH-985
             apk:
               sha256: 40d83b3491f46363e666ac4565fdcbb2a9aa011e80c62d9289d2db9ec979defb
+          - name: HTTPS Verified Domain
+            issue: GH-3484
   - package: com.coingecko.coingeckoapp
     signature:
       - fingerprint: C4:80:62:6A:2A:02:54:29:05:9C:14:32:15:40:86:66:DE:CB:D8:58:3C:2A:17:AB:73:C9:68:03:6F:24:D1:22
@@ -4026,6 +4028,8 @@ packages:
             issue: GH-766
             apk:
               sha256: ff12e539b2a2420a4fcb54b0d839bbff2827ab3b5c2bc6a91a1fb97cb501714b
+          - name: HTTPS Verified Domain
+            issue: GH-3484
   - package: com.marc.files
     signature:
       - fingerprint: BD:B9:3E:91:A2:D7:FE:BF:AA:EB:4A:33:7D:99:4C:52:9F:F7:3B:D8:34:6A:5D:95:95:93:6A:43:05:AF:0C:8C
@@ -7272,11 +7276,15 @@ packages:
             apk:
               sha256: 1d589a4490e09c7f6e85bf72b0d9fb8504501f7e5bded32b5032d7e371a78989
               link: https://github.com/tutao/tutanota/releases/download/tutanota-android-release-348.260519.0/tutanota-app-tutao-release-348.260519.0.apk
+          - name: Google Play
+            issue: GH-3484
+            apk:
+              sha256: b7d4fa89f6327ad3c275ffe21ef6ef39f4f77a0d063cbf18649b54bfcf58e8ef
       - fingerprint: FC:19:32:E0:84:64:AE:FC:AE:82:59:7D:C0:FC:9D:04:C0:8B:24:AA:09:D1:F9:50:DF:20:EA:81:23:4F:30:CB
         sources:
-          - name: F-Droid
-            issue: GH-539
           - name: AppVerifier
+            issue: GH-539
+          - name: F-Droid
             issue: GH-539
   - package: de.westnordost.streetcomplete
     signature:

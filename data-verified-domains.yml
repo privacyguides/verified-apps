@@ -189,6 +189,15 @@ domains:
       - package: com.qobuz.club
         fingerprints:
           - 2C:E2:F1:9A:17:9C:13:FA:C9:EA:F1:39:C3:F0:84:D5:5B:02:64:58:96:29:52:D4:E6:B5:F2:F1:A2:9C:A2:1E
+  - domain: coinbase.com
+    method: https
+    issue:
+      - GH-3484
+    checked: "2026-07-18T05:26:51Z"
+    packages:
+      - package: com.coinbase.android
+        fingerprints:
+          - 41:6A:E0:CE:11:21:E9:C6:A6:B0:B7:C6:B5:D1:D9:BA:2B:9B:23:A1:4F:4F:1B:9A:87:E0:3B:49:8E:20:CF:3B
   - domain: copilot.microsoft.com
     method: https
     issue:
@@ -387,6 +396,17 @@ domains:
       - package: com.zoho.mail
         fingerprints:
           - A9:D6:D0:A2:AF:DB:15:84:9B:8C:D3:1D:51:FE:73:B8:E1:B1:70:BA:A5:70:C2:F8:F2:A3:F8:65:28:29:CB:BD
+  - domain: mapillary.com
+    method: https
+    issue:
+      - GH-3484
+    checked: "2026-07-18T05:26:51Z"
+    packages:
+      - package: com.mapillary.app
+        fingerprints:
+          - 2D:41:BE:21:D2:77:E9:05:70:4A:B5:FB:25:23:E0:CA:13:35:C2:8E:69:64:56:AC:F8:20:2E:56:12:C0:51:80
+          - 48:07:2A:2C:25:E6:EB:5C:F1:96:27:1D:26:F5:BF:49:4A:26:FF:EE:CB:77:9A:5C:70:C1:3D:EB:E3:31:D3:21
+          - DC:E7:1C:BF:92:B7:7E:CE:9F:E1:33:04:66:A4:0C:68:43:CE:8B:6E:86:D4:74:5C:45:36:A2:32:12:DF:6D:58
   - domain: markusfisch.de
     method: https
     issue:
