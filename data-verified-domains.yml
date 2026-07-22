@@ -168,6 +168,15 @@ domains:
       - package: com.chase.sig.android
         fingerprints:
           - 73:F0:D9:50:8A:25:72:C1:10:07:7C:FF:1C:AD:4E:D9:2C:00:F0:20:4F:AF:ED:BA:C8:43:4B:D7:6B:C4:AC:D1
+  - domain: citymapper.com
+    method: https
+    issue:
+      - GH-1885
+    checked: "2026-07-22T05:29:07Z"
+    packages:
+      - package: com.citymapper.app.release
+        fingerprints:
+          - BE:8A:28:01:CA:E3:F4:4B:49:1A:8E:CC:A2:8C:3A:C2:23:B3:BD:57:10:9A:71:A5:F2:0B:45:A6:96:D1:7E:5D
   - domain: classdojo.com
     method: https
     issue:
@@ -241,6 +250,15 @@ domains:
         fingerprints:
           - 97:FC:DB:FF:C4:F3:0C:C3:14:1A:76:D7:17:9A:FB:42:97:4B:79:76:D6:8E:B0:AA:49:7C:12:E5:26:52:66:13
           - BE:5A:A8:A5:43:6E:99:71:21:E5:E5:5E:4C:A7:E0:47:84:48:88:09:14:B9:F9:4C:24:2C:5E:4F:DB:E8:D8:98
+  - domain: element.io
+    method: https
+    issue:
+      - GH-3590
+    checked: "2026-07-22T05:29:07Z"
+    packages:
+      - package: io.element.android.x
+        fingerprints:
+          - C6:DB:9B:9C:8C:BD:D6:5D:16:E8:EC:8C:8B:91:C8:31:B9:EF:C9:5C:BF:98:AE:41:F6:A9:D8:35:15:1A:7E:16
   - domain: euria.infomaniak.com
     method: https
     issue:
@@ -405,6 +423,15 @@ domains:
       - package: org.telegram.messenger.web
         fingerprints:
           - 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
+  - domain: mobile.usaa.com
+    method: https
+    issue:
+      - GH-3590
+    checked: "2026-07-22T05:29:07Z"
+    packages:
+      - package: com.usaa.mobile.android.usaa
+        fingerprints:
+          - 28:8C:B7:0D:CF:14:7E:1E:A6:D0:AD:F6:70:F9:3F:17:82:58:42:25:A8:E2:00:73:D2:7A:6C:38:F4:16:DE:1B
   - domain: naver.com
     method: https
     issue:
@@ -442,6 +469,15 @@ domains:
       - package: com.openai.chatgpt
         fingerprints:
           - B2:4F:4B:FB:B3:CF:29:3F:93:87:03:B9:D8:70:27:C1:10:2C:C3:6D:C4:FA:20:69:10:E0:89:27:DB:40:47:3C
+  - domain: parkster.se
+    method: https
+    issue:
+      - GH-3590
+    checked: "2026-07-22T05:29:07Z"
+    packages:
+      - package: se.parkster.client.android
+        fingerprints:
+          - 8B:7D:7C:E3:43:90:34:D3:26:34:05:5F:46:BD:C4:7F:4D:94:D5:9D:A2:7D:D6:25:D5:A3:DC:E4:4F:1B:67:5D
   - domain: paypal.com
     method: https
     issue:
@@ -497,6 +533,16 @@ domains:
       - package: me.proton.android.drive
         fingerprints:
           - DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
+  - domain: robinhood.com
+    method: https
+    issue:
+      - GH-3590
+    checked: "2026-07-22T05:29:07Z"
+    packages:
+      - package: com.robinhood.android
+        fingerprints:
+          - 82:59:FA:51:3C:FD:54:A6:AA:8D:93:43:50:1B:FA:13:45:8C:55:D2:5E:27:C5:8F:8D:CA:03:EF:E2:F0:02:E5
+          - FE:CB:D7:44:58:69:DC:91:E4:C7:97:4F:2E:EC:E0:CB:3E:4B:4F:67:2F:F5:83:F0:17:A8:A3:B9:8C:02:5C:2C
   - domain: simplex.chat
     method: https
     issue:

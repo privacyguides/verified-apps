@@ -5114,6 +5114,8 @@ packages:
             issue: GH-989
             apk:
               sha256: 1e166381f60601081c57eddca017e0c6aceea2d09b01e14dcd4883b0dbc67e0a
+          - name: HTTPS Verified Domain
+            issue: GH-3590
   - package: com.rode.rodecentralmobile
     signature:
       - fingerprint: 80:76:3F:94:79:A1:2F:8F:DB:D7:9C:D0:48:F5:22:58:8C:1C:2A:39:8D:DF:A0:33:04:D4:7C:B5:28:F8:95:B1
@@ -6173,6 +6175,8 @@ packages:
             issue: GH-961
             apk:
               sha256: b0cf93237f5a028d71c626d3c2495d9f36974726236f9727c69a268691f5f9e2
+          - name: HTTPS Verified Domain
+            issue: GH-3590
   - package: com.usmobile.dashboard
     signature:
       - fingerprint: 34:25:D5:1C:A1:A8:DB:37:CA:E7:96:68:D0:FC:B8:3F:BA:05:62:3C:35:7D:9F:BD:30:4F:F3:71:D9:26:E2:A1
@@ -8012,6 +8016,8 @@ packages:
             issue: GH-730
             apk:
               sha256: b96367f7c2011bf0181474fe23df2055f86eee40776909bb0f7fd0bd94102cb6
+          - name: HTTPS Verified Domain
+            issue: GH-3590
   - package: io.ente.auth
     signature:
       - fingerprint: DD:CE:AA:D6:88:F0:05:D3:40:68:94:BA:00:FC:E3:FF:82:54:13:0A:10:2B:B2:52:E6:3C:D8:EA:A9:72:B2:EF
@@ -10554,6 +10560,8 @@ packages:
             issue: GH-1642
             apk:
               sha256: 7769dfc2ac9405a2e598960d625f89e47254fcf2b353389252681dd25251e6e1
+          - name: HTTPS Verified Domain
+            issue: GH-3590
   - package: se.postnord.private
     signature:
       - fingerprint: 71:33:6E:97:C6:D3:EF:FF:FA:42:38:5F:A8:33:F9:05:95:AC:8C:1C:05:D8:98:04:97:DE:2F:E1:F5:3D:97:53
