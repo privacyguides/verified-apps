@@ -8079,6 +8079,8 @@ packages:
             issue: CB-152
             apk:
               sha256: 629345ece9a38ce722088b0e0e0a7edfb36b392f2d23cf37c07a9fa4a913422d
+          - name: HTTPS Verified Domain
+            issue: GH-5599
       - fingerprint: 5B:DD:27:47:B7:CF:A9:8D:62:9E:4D:44:41:01:A9:CE:DC:E3:32:AD:6A:7F:2A:0B:14:F4:69:ED:93:7F:13:27
         sources:
           - name: Direct APK Link
@@ -9990,6 +9992,10 @@ packages:
             apk:
               sha256: 61f01b08224c8bed18ba53dbe87734a1e1357071901ca25e6483f51be7472d2b
               link: https://github.com/privacyguides/verified-apps-android/releases/download/26.6.2/VerifiedApps-26.6.2.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-5599
+            apk:
+              sha256: fd41d6a1013dd10e4502a89539a4ae40afc0a602cb756a9c5665086c07ab64b6
           - name: F-Droid (privacyguides.github.io)
             issue: GH-1329
             apk:
