@@ -6575,6 +6575,14 @@ packages:
             issue: GH-736
             apk:
               sha256: 105c11042da5f2404c92731c3ff070151db37174cab71b20abfc3ba3156a1fc3
+  - package: com.workday.workdroidapp
+    signature:
+      - fingerprint: 8B:85:52:7E:C6:9D:D1:DC:9E:49:E6:53:5C:E0:13:01:19:20:8F:F6:4A:43:8C:B0:6C:9A:87:04:A9:2E:8B:2E
+        sources:
+          - name: Google Play
+            issue: CB-274
+            apk:
+              sha256: afe3192223e676720bb69a0d0df3076f23438a9b59cda03e8c56481dcac2d19a
   - package: com.x8bit.bitwarden
     signature:
       - fingerprint: 24:E0:6C:04:C2:08:04:8F:19:F1:C9:93:B4:DD:A4:43:0E:A8:B0:6D:B8:37:5E:A0:E3:7B:83:46:96:B9:AC:3A
