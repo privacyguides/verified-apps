@@ -7954,6 +7954,14 @@ packages:
             issue: GH-865
             apk:
               sha256: b26cb2f48caaeaa6d5a5e8747440ea9a85689b476fe30776fd1de155ba370407
+  - package: image.canon
+    signature:
+      - fingerprint: 7C:8A:2F:7C:E4:91:2D:0E:4F:25:B9:D4:AF:E0:37:F8:FE:0F:CE:C5:25:B7:78:F0:0A:F3:B3:6D:F5:32:49:00
+        sources:
+          - name: Google Play
+            issue: GH-4522
+            apk:
+              sha256: d69d20dd79bacb8351cbe9a92971b844f26dd0b8610dec86fddc0d5231adb8c1
   - package: image.to.text.ocr
     signature:
       - fingerprint: 10:FF:42:11:D3:60:F1:02:01:0A:BD:52:62:5D:D9:D3:21:4E:B4:C0:28:0B:89:DA:61:13:45:31:91:62:E1:C2
