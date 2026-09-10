@@ -1,6 +1,8 @@
 name: Android App Submission
 description: Submit a new app signature to the database
 title: "[New]: "
+labels:
+  - Run Checks
 body:
   - type: markdown
     attributes:
