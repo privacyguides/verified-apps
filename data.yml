@@ -2665,6 +2665,14 @@ packages:
             issue: CB-264
             apk:
               sha256: ebdb113b8ce6f040d4fbd5ff494b8b54aaba51dc1f22392ad5e07976d1eccc27
+  - package: com.frontrow.vlog
+    signature:
+      - fingerprint: 54:F8:D5:47:C7:1F:25:AF:CD:09:17:28:91:55:F7:D2:DD:9D:76:7F:5D:E1:48:C0:C0:7C:4E:19:E3:4B:E6:1F
+        sources:
+          - name: Google Play
+            issue: CB-275
+            apk:
+              sha256: 6de0ec5c0718d79df9995559331a5031118fbb227cb0075ceb9562fea027f820
   - package: com.fsck.k9
     signature:
       - fingerprint: 55:C8:A5:23:B9:73:35:F5:BF:60:DF:E8:A9:F3:E1:DD:E7:44:51:6D:93:57:E8:0A:92:5B:7B:22:E4:F5:55:24
