@@ -6754,6 +6754,14 @@ packages:
             issue: GH-1665
             apk:
               sha256: ddf8cd9f4e6cb52e302c2fe34060b3f666c6636b72dd239e07e2f6f825b9c712
+  - package: com.zoho.creator.portal
+    signature:
+      - fingerprint: A9:D6:D0:A2:AF:DB:15:84:9B:8C:D3:1D:51:FE:73:B8:E1:B1:70:BA:A5:70:C2:F8:F2:A3:F8:65:28:29:CB:BD
+        sources:
+          - name: Google Play
+            issue: CB-273
+            apk:
+              sha256: 2664621e97312942444643c701fcc918c4a174b427311b541acffc7d742f02d6
   - package: com.zoho.mail
     signature:
       - fingerprint: A9:D6:D0:A2:AF:DB:15:84:9B:8C:D3:1D:51:FE:73:B8:E1:B1:70:BA:A5:70:C2:F8:F2:A3:F8:65:28:29:CB:BD
