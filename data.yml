@@ -8393,6 +8393,14 @@ packages:
             issue: GH-303
             apk:
               sha256: ddc13a49884b4fa71a65996fcf163bca55e946e0951c5e666c24d8e89466763e
+  - package: jp.co.canon.bsd.easyphotoprinteditor
+    signature:
+      - fingerprint: 17:6E:98:E6:70:67:DA:BF:63:97:4B:C5:44:1C:20:74:2F:FE:4E:DB:58:95:0A:27:8C:A6:05:4A:C0:5B:C4:FF
+        sources:
+          - name: Google Play
+            issue: GH-4520
+            apk:
+              sha256: 4e40928a60cf56b6f125191bad727841ae8234ac854b7e62b5e85335424cc4d7
   - package: jp.co.jal.dom
     signature:
       - fingerprint: 00:65:8A:4F:77:3E:FC:FE:13:E0:1D:7E:C3:9C:35:F6:A5:29:CD:56:2F:43:B7:C8:EB:DE:76:FE:B2:34:FB:C9
