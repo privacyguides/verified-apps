@@ -10499,6 +10499,14 @@ packages:
             issue: GH-896
             apk:
               sha256: 060ee62638739451f1ab8c21ecfb5e4b5340c653fc5a66460d4ce86dbff37eb9
+  - package: pl.bydgoszcz.aktywna
+    signature:
+      - fingerprint: B0:A9:72:42:DB:82:E3:DA:27:5E:49:E9:1F:25:23:6C:A0:7F:AA:AC:61:4F:54:49:9E:D6:23:B9:65:DA:3E:26
+        sources:
+          - name: Google Play
+            issue: GH-4571
+            apk:
+              sha256: f0529d0098a6633dd004b7f14c71100a3113c818b21c02dccc99a34460edc28f
   - package: pl.lebihan.authnkey
     signature:
       - fingerprint: BB:F5:D7:BE:D8:2B:5B:9B:9F:8D:98:25:E6:20:46:4C:8A:28:ED:6C:7A:1E:B0:98:DF:C1:F9:72:DF:9C:58:0B
