@@ -1048,6 +1048,14 @@ packages:
             issue: GH-934
             apk:
               sha256: a9b8589c52b92b210f2abf2c35844fc930b10370b5228a819b0842718f22f944
+  - package: com.apple.android.music.classical
+    signature:
+      - fingerprint: 88:BA:59:0E:C2:E1:EA:33:C4:45:8D:AF:59:48:9F:AE:E2:CE:F2:97:A9:B4:07:1E:18:CF:82:EF:53:11:00:AA
+        sources:
+          - name: Google Play
+            issue: CB-267
+            apk:
+              sha256: 8670f5cbc196b31508a2e8b62e78230f811f13166236f3d496a37b3a15e91520
   - package: com.apple.atve.androidtv.appletv
     signature:
       - fingerprint: 77:1D:86:74:D3:D9:83:7C:9E:DF:11:B1:18:73:44:39:98:F1:91:05:AB:CE:CA:B4:25:ED:9B:8E:6F:EF:FF:9B
