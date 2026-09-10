@@ -4933,10 +4933,16 @@ packages:
     signature:
       - fingerprint: 8B:6A:E2:B9:B0:6F:4D:18:17:FD:3F:84:6F:88:E4:40:DD:43:1A:3F:46:62:0B:DD:4A:15:2B:70:FC:90:89:A2
         sources:
+          - name: F-Droid
+            issue: GH-5621
+            apk:
+              sha256: 312e179139b55464184cef54348b42c4763fd6816b83c603cd7c3669435b9719
           - name: Google Play
             issue: GH-829
             apk:
               sha256: 03bcde51ac127fdbd5fe6f01c6e321a5ffe7e909bf218c783d471710659fa26f
+          - name: HTTPS Verified Domain
+            issue: GH-5621
   - package: com.prosegur.smart20
     signature:
       - fingerprint: 39:49:AB:3B:71:A8:69:53:D4:47:7D:D5:51:5D:7B:4B:92:27:9B:69:7B:C5:77:4D:27:B4:24:8D:B6:E1:F8:8D
@@ -8079,6 +8085,8 @@ packages:
             issue: CB-152
             apk:
               sha256: 629345ece9a38ce722088b0e0e0a7edfb36b392f2d23cf37c07a9fa4a913422d
+          - name: HTTPS Verified Domain
+            issue: GH-5621
       - fingerprint: 5B:DD:27:47:B7:CF:A9:8D:62:9E:4D:44:41:01:A9:CE:DC:E3:32:AD:6A:7F:2A:0B:14:F4:69:ED:93:7F:13:27
         sources:
           - name: Direct APK Link
@@ -8656,6 +8664,8 @@ packages:
             issue: GH-1648
             apk:
               sha256: 463f78fdd0e52d104f50173ed2fa6777c5e639df01e65c1b96336d1c9e4a16b1
+          - name: HTTPS Verified Domain
+            issue: GH-5621
   - package: me.zhanghai.android.files
     signature:
       - fingerprint: 87:3B:9B:60:C7:7C:F7:F3:CD:5F:AE:66:D0:FE:11:2C:4A:86:97:3E:11:8E:E8:A2:9C:34:6C:4C:67:3C:97:F0
