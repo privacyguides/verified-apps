@@ -7763,6 +7763,14 @@ packages:
             issue: GH-615
             apk:
               sha256: a2fe8b7c713fc7ff62d248b2d8608299a0eeaa2fa030e2c6bfb12c6f5d229928
+  - package: exa.free.bbin
+    signature:
+      - fingerprint: 50:7C:1F:58:38:AD:8D:90:B7:75:E3:DE:31:21:42:C3:8A:63:BF:BB:67:E8:D9:C4:CA:86:1C:67:0E:13:98:49
+        sources:
+          - name: Google Play
+            issue: GH-4603
+            apk:
+              sha256: 3ecac36cbd62641a4130d09085c395c1ef596a3ed7519a668759d4d013fad463
   - package: exa.lnx.a
     signature:
       - fingerprint: 50:7C:1F:58:38:AD:8D:90:B7:75:E3:DE:31:21:42:C3:8A:63:BF:BB:67:E8:D9:C4:CA:86:1C:67:0E:13:98:49
