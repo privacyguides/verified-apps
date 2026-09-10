@@ -4319,6 +4319,14 @@ packages:
             issue: GH-1238
             apk:
               sha256: c983268a65408620c14c24633a668c954000e797902c450174529efbaafaba2d
+  - package: com.mooneva.app
+    signature:
+      - fingerprint: 96:B0:1B:6F:20:C4:6B:35:46:70:A1:00:92:7F:72:1D:40:3E:07:E8:BA:25:96:B5:27:24:AC:21:39:56:9F:83
+        sources:
+          - name: Google Play
+            issue: GH-4609
+            apk:
+              sha256: a72fc5ff255a5e6fc70c5c956803d5ae2fbc8d4a6ceaf2b2151ad05c4de4fef7
   - package: com.mrsep.musicrecognizer
     signature:
       - fingerprint: A5:A1:DC:1D:78:D7:F0:3A:95:36:51:B2:7D:3A:07:C2:5E:3A:F0:13:27:F4:5C:DF:86:19:A2:23:B7:03:57:D0
