@@ -5056,6 +5056,14 @@ packages:
             issue: GH-2055
             apk:
               sha256: 4f58018a1218c251bab19b11979c69fb8a8040ff8ad8bf802faf75b20988ab59
+  - package: com.rbs.mobile.android.natwest
+    signature:
+      - fingerprint: 9E:AD:6F:DE:83:B2:1B:F1:BD:42:BC:ED:1D:A1:A1:0F:82:2B:63:45:B6:D3:CC:8A:FC:26:E6:6B:B2:0F:97:7F
+        sources:
+          - name: Google Play
+            issue: CB-269
+            apk:
+              sha256: 930c184e600e56016f493bb0bf4af94040270295fac3680fc3e06dc65f1e6f24
   - package: com.red.by.dufry
     signature:
       - fingerprint: 65:04:0D:BD:5D:6C:5A:C1:98:31:74:B9:DE:B4:F2:56:E2:EF:21:10:50:35:4B:58:85:90:C4:55:CA:2D:7F:26
