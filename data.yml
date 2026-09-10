@@ -2212,6 +2212,14 @@ packages:
             issue: GH-2695
             apk:
               sha256: c3780a3145ed17c3ee83237c8ba5583d39e6ff777d972a35903ed188fdea8226
+  - package: com.driot.bookplayerpure
+    signature:
+      - fingerprint: 9E:73:D3:BA:39:DE:BA:6C:A9:DF:06:E2:8B:D9:BC:85:90:55:B8:6C:5A:17:29:93:0B:EF:25:84:86:19:85:74
+        sources:
+          - name: Google Play
+            issue: GH-4602
+            apk:
+              sha256: 0f512f7778b38e4252b4643920f53cb4fad2755c1762b6b24193f3e31260fbf4
   - package: com.driveby.app
     signature:
       - fingerprint: 92:56:48:24:3A:B7:CB:E5:F7:3A:C5:7F:5C:E3:B6:FE:D9:23:BC:9F:6E:CA:AF:E4:9B:71:3D:FC:E2:B0:21:D8
