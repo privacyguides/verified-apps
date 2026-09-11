@@ -82,6 +82,8 @@ packages:
             issue: GH-765
             apk:
               sha256: 3983db549a59e681473446be319bdcbd65b2a1f10a745a8ab4e30188b678f59a
+          - name: HTTPS Verified Domain
+            issue: GH-5702
   - package: app.comaps
     signature:
       - fingerprint: 48:94:E8:E6:96:36:27:EF:66:00:31:D8:59:3F:E7:72:97:F8:35:AC:B4:E2:38:10:00:3E:92:61:35:02:3B:4C
@@ -7616,6 +7618,8 @@ packages:
             apk:
               sha256: 8619dabc77c84b7ba5621f1b707153460e0dd643ec65bd814d4e6f32560be66b
               link: https://cdn.zapstore.dev/8619dabc77c84b7ba5621f1b707153460e0dd643ec65bd814d4e6f32560be66b.apk
+          - name: HTTPS Verified Domain
+            issue: GH-5702
   - package: digital.ventral.ips
     signature:
       - fingerprint: 03:24:3D:0C:0D:44:B6:E0:B4:1E:3C:B2:45:B1:DC:26:9B:E4:C3:FF:E1:77:F8:43:FC:00:5B:C4:EA:0C:74:26
@@ -10132,6 +10136,10 @@ packages:
             apk:
               sha256: 61f01b08224c8bed18ba53dbe87734a1e1357071901ca25e6483f51be7472d2b
               link: https://github.com/privacyguides/verified-apps-android/releases/download/26.6.2/VerifiedApps-26.6.2.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-5702
+            apk:
+              sha256: fd41d6a1013dd10e4502a89539a4ae40afc0a602cb756a9c5665086c07ab64b6
           - name: F-Droid (privacyguides.github.io)
             issue: GH-1329
             apk:
