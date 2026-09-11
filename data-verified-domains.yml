@@ -168,6 +168,17 @@ domains:
           - 43:2C:60:B3:F8:84:9E:A0:EA:93:B8:50:D2:68:EC:EB:5D:C4:0E:E2:27:0C:08:45:B5:5B:6E:70:9D:A8:24:D1
           - 44:A1:04:DA:00:F0:3A:7B:BE:A9:83:7A:DE:54:F7:BF:F9:7C:34:B7:DC:46:DA:13:10:CC:EA:FE:AF:A6:83:2F
           - E2:9E:74:1A:F1:ED:08:9E:8B:A1:89:FE:55:B3:EE:E7:68:30:82:17:50:2B:8E:CF:E3:A5:C2:16:A5:1D:C3:BF
+  - domain: bumpy.app
+    method: https
+    issue:
+      - GH-5702
+    checked: "2026-09-11T04:39:04Z"
+    packages:
+      - package: app.bumpy.android
+        fingerprints:
+          - 5A:AF:64:5E:C6:04:5B:CD:B2:27:CB:B0:62:DB:FA:18:EE:B9:09:B8:42:66:83:A3:29:29:24:29:3D:4F:A2:2A
+          - 93:7C:3B:7F:DD:77:C4:57:C0:DE:63:5A:2C:19:25:35:12:65:89:18:83:52:F7:4F:93:03:4E:89:D8:23:4B:72
+          - FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C
   - domain: chase.com
     method: https
     issue:
@@ -647,3 +658,13 @@ domains:
       - package: fr.doctolib.www
         fingerprints:
           - 19:9A:C4:B1:F6:81:74:65:06:FE:90:78:26:FB:42:94:C7:1F:7D:AE:F5:37:2D:D0:3B:A6:7C:E0:1C:4C:D0:83
+  - domain: zapstore.dev
+    method: https
+    issue:
+      - GH-5702
+    checked: "2026-09-11T04:39:04Z"
+    packages:
+      - package: dev.zapstore.app
+        fingerprints:
+          - 1E:55:68:38:46:47:0C:97:FB:38:13:1E:06:01:80:D2:CF:B4:82:AC:78:54:C8:E4:A4:EB:B0:C8:BA:B1:E8:35
+          - 99:E3:3B:0C:2D:07:E7:5F:CD:9D:F7:E4:0E:88:66:46:FF:66:7E:3A:A6:64:8E:1A:11:60:B0:36:CF:2B:93:20
