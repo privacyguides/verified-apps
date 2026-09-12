@@ -65,6 +65,15 @@ domains:
       - package: com.fastmail.app
         fingerprints:
           - C9:2C:5E:E8:F6:BA:CB:E9:3C:A6:C0:8A:E9:6E:F4:7D:09:91:80:63:F5:71:64:78:BF:90:E6:86:09:C9:0D:1D
+  - domain: app.filen.io
+    method: https
+    issue:
+      - GH-5621
+    checked: "2026-09-10T04:48:24Z"
+    packages:
+      - package: io.filen.app
+        fingerprints:
+          - 2C:90:DF:59:1A:39:E0:8A:AD:E9:4F:72:80:D1:92:D3:34:47:F0:1E:1E:12:75:19:82:B8:AE:C3:F9:0F:AD:AB
   - domain: app.hinge.co
     method: https
     issue:
@@ -502,18 +511,32 @@ domains:
       - package: app.privacynotes
         fingerprints:
           - 98:A0:BB:5A:AF:69:4F:6B:EA:50:AD:CB:4A:36:D4:B5:7A:3C:3E:42:F6:7A:FF:08:FB:EA:46:89:69:6C:AA:87
+  - domain: privateinternetaccess.com
+    method: https
+    issue:
+      - GH-5621
+    checked: "2026-09-10T04:48:24Z"
+    packages:
+      - package: com.privateinternetaccess.android
+        fingerprints:
+          - 8B:6A:E2:B9:B0:6F:4D:18:17:FD:3F:84:6F:88:E4:40:DD:43:1A:3F:46:62:0B:DD:4A:15:2B:70:FC:90:89:A2
   - domain: proton.me
     method: https
     issue:
       - GH-2752
       - GH-2686
-    checked: "2026-07-02T05:45:15Z"
+      - GH-5621
+    checked: "2026-09-10T04:48:24Z"
     packages:
       - package: me.proton.android.calendar
         fingerprints:
           - DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
       - package: me.proton.android.drive
         fingerprints:
+          - DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
+      - package: me.proton.android.lumo
+        fingerprints:
+          - A7:47:EA:EE:28:61:1E:25:21:7B:79:3C:07:BF:30:22:34:40:5C:FD:1E:19:06:81:62:55:6C:79:E5:BF:04:F0
           - DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
   - domain: simplex.chat
     method: https
