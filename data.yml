@@ -5191,6 +5191,8 @@ packages:
             issue: GH-989
             apk:
               sha256: 1e166381f60601081c57eddca017e0c6aceea2d09b01e14dcd4883b0dbc67e0a
+          - name: HTTPS Verified Domain
+            issue: GH-5836
   - package: com.rode.rodecentralmobile
     signature:
       - fingerprint: 80:76:3F:94:79:A1:2F:8F:DB:D7:9C:D0:48:F5:22:58:8C:1C:2A:39:8D:DF:A0:33:04:D4:7C:B5:28:F8:95:B1
