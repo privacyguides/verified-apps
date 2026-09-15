@@ -198,6 +198,15 @@ domains:
       - package: com.qobuz.club
         fingerprints:
           - 2C:E2:F1:9A:17:9C:13:FA:C9:EA:F1:39:C3:F0:84:D5:5B:02:64:58:96:29:52:D4:E6:B5:F2:F1:A2:9C:A2:1E
+  - domain: coinbase.com
+    method: https
+    issue:
+      - GH-4902
+    checked: "2026-08-26T04:30:08Z"
+    packages:
+      - package: com.coinbase.android
+        fingerprints:
+          - 41:6A:E0:CE:11:21:E9:C6:A6:B0:B7:C6:B5:D1:D9:BA:2B:9B:23:A1:4F:4F:1B:9A:87:E0:3B:49:8E:20:CF:3B
   - domain: copilot.microsoft.com
     method: https
     issue:
@@ -310,6 +319,15 @@ domains:
       - package: com.innersloth.spacemafia
         fingerprints:
           - 67:A4:DF:80:B1:D9:A4:88:FF:DB:10:07:54:84:1F:D8:3F:90:9C:7C:73:DF:16:E2:46:8C:EC:75:AB:81:C5:8A
+  - domain: kgurgul.com
+    method: https
+    issue:
+      - GH-4902
+    checked: "2026-08-26T04:30:08Z"
+    packages:
+      - package: com.kgurgul.cpuinfo
+        fingerprints:
+          - AF:24:23:BE:B5:89:E5:5F:DF:95:1F:DE:2F:23:ED:AA:78:5F:57:C7:14:76:4A:FB:BD:D1:5A:85:F1:AE:D3:3C
   - domain: komoot.de
     method: https
     issue:
@@ -515,6 +533,16 @@ domains:
       - package: me.proton.android.drive
         fingerprints:
           - DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
+  - domain: revolut.com
+    method: https
+    issue:
+      - GH-4902
+    checked: "2026-08-26T04:30:08Z"
+    packages:
+      - package: com.revolut.revolut
+        fingerprints:
+          - 11:F2:5B:D6:30:60:CE:B4:EF:EC:48:7C:C8:1F:6D:3D:D0:3A:75:C3:E9:D2:C5:32:3D:69:55:9D:C1:7F:6A:23
+          - 9C:9B:E0:71:35:E9:72:78:02:82:C2:E5:D2:7D:A0:6E:CB:8E:E3:AD:FC:75:30:39:17:DD:F6:6D:6F:AA:EF:A4
   - domain: simplex.chat
     method: https
     issue:
@@ -587,6 +615,16 @@ domains:
           - 35:1B:A8:5C:06:69:64:FA:A6:B9:88:1F:AB:B3:43:CA:41:86:2C:D0:9F:C5:62:85:46:CA:2F:BE:68:5F:CE:3F
           - AF:0C:9F:84:71:27:35:35:79:49:FA:CB:7C:33:73:D5:8F:43:6E:3F:BF:2D:B2:61:F0:5E:53:B7:EB:F8:65:F2
           - FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C
+  - domain: video.simplepractice.com
+    method: https
+    issue:
+      - GH-4902
+    checked: "2026-08-26T04:30:08Z"
+    packages:
+      - package: com.simplepractice.video
+        fingerprints:
+          - 21:E1:56:78:30:77:33:7D:F5:13:65:75:31:6C:3A:D7:FA:E3:4F:19:7F:61:DD:C0:25:87:0F:B6:F7:0F:C2:99
+          - E4:09:A5:7E:B2:17:44:1E:2E:39:0C:A1:C7:DE:22:7F:06:0B:8B:DF:84:F3:F2:1D:8A:B8:FB:80:85:D3:E2:AA
   - domain: waze.com
     method: https
     issue:
