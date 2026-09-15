@@ -168,6 +168,17 @@ domains:
           - 43:2C:60:B3:F8:84:9E:A0:EA:93:B8:50:D2:68:EC:EB:5D:C4:0E:E2:27:0C:08:45:B5:5B:6E:70:9D:A8:24:D1
           - 44:A1:04:DA:00:F0:3A:7B:BE:A9:83:7A:DE:54:F7:BF:F9:7C:34:B7:DC:46:DA:13:10:CC:EA:FE:AF:A6:83:2F
           - E2:9E:74:1A:F1:ED:08:9E:8B:A1:89:FE:55:B3:EE:E7:68:30:82:17:50:2B:8E:CF:E3:A5:C2:16:A5:1D:C3:BF
+  - domain: bumpy.app
+    method: https
+    issue:
+      - GH-4002
+    checked: "2026-08-05T05:23:30Z"
+    packages:
+      - package: app.bumpy.android
+        fingerprints:
+          - 5A:AF:64:5E:C6:04:5B:CD:B2:27:CB:B0:62:DB:FA:18:EE:B9:09:B8:42:66:83:A3:29:29:24:29:3D:4F:A2:2A
+          - 93:7C:3B:7F:DD:77:C4:57:C0:DE:63:5A:2C:19:25:35:12:65:89:18:83:52:F7:4F:93:03:4E:89:D8:23:4B:72
+          - FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C
   - domain: chase.com
     method: https
     issue:
@@ -414,6 +425,15 @@ domains:
       - package: org.telegram.messenger.web
         fingerprints:
           - 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
+  - domain: nanoleaf.me
+    method: https
+    issue:
+      - GH-4002
+    checked: "2026-08-05T05:23:30Z"
+    packages:
+      - package: me.nanoleaf.nanoleaf
+        fingerprints:
+          - 93:5C:70:4E:4B:FA:CF:48:58:AF:80:FB:FB:5D:06:1A:29:D3:0B:71:A2:BC:C2:5A:2F:6B:45:F1:13:DE:7F:81
   - domain: naver.com
     method: https
     issue:
