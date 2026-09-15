@@ -515,6 +515,16 @@ domains:
       - package: me.proton.android.drive
         fingerprints:
           - DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
+  - domain: revolut.com
+    method: https
+    issue:
+      - GH-3701
+    checked: "2026-07-25T05:32:13Z"
+    packages:
+      - package: com.revolut.revolut
+        fingerprints:
+          - 11:F2:5B:D6:30:60:CE:B4:EF:EC:48:7C:C8:1F:6D:3D:D0:3A:75:C3:E9:D2:C5:32:3D:69:55:9D:C1:7F:6A:23
+          - 9C:9B:E0:71:35:E9:72:78:02:82:C2:E5:D2:7D:A0:6E:CB:8E:E3:AD:FC:75:30:39:17:DD:F6:6D:6F:AA:EF:A4
   - domain: simplex.chat
     method: https
     issue:
