@@ -414,6 +414,15 @@ domains:
       - package: org.telegram.messenger.web
         fingerprints:
           - 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
+  - domain: mobile.usaa.com
+    method: https
+    issue:
+      - GH-4637
+    checked: "2026-08-21T04:39:59Z"
+    packages:
+      - package: com.usaa.mobile.android.usaa
+        fingerprints:
+          - 28:8C:B7:0D:CF:14:7E:1E:A6:D0:AD:F6:70:F9:3F:17:82:58:42:25:A8:E2:00:73:D2:7A:6C:38:F4:16:DE:1B
   - domain: naver.com
     method: https
     issue:
