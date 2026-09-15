@@ -409,8 +409,12 @@ domains:
     method: https
     issue:
       - GH-2069
-    checked: "2026-06-19T06:20:55Z"
+      - GH-3709
+    checked: "2026-07-26T05:28:24Z"
     packages:
+      - package: org.telegram.messenger
+        fingerprints:
+          - 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
       - package: org.telegram.messenger.web
         fingerprints:
           - 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
@@ -476,11 +480,12 @@ domains:
     method: dns
     issue:
       - GH-1627
-    checked: "2026-06-13T00:59:10Z"
+    checked: "2026-07-26T05:28:24Z"
     packages:
       - package: org.privacyguides.verifiedapps.play
         fingerprints:
           - E8:58:37:5B:7C:45:CF:C1:D4:E4:F5:1B:4A:D6:59:73:5B:38:2C:82:4F:E2:24:48:36:A8:14:AD:7A:F3:00:61
+    dnssec: true
   - domain: privacyguides.org
     method: dns
     issue:
@@ -555,6 +560,15 @@ domains:
         fingerprints:
           - DF:5B:68:01:94:B7:55:44:A5:75:29:88:23:33:BA:C2:6F:1E:94:F9:B6:14:B4:A9:BC:AB:F3:4B:FB:C7:8D:21
           - FA:0D:C7:F4:72:C7:F9:88:07:20:27:88:4F:2C:ED:3D:81:9D:A7:A3:A5:A1:CA:51:87:9C:B9:E9:05:3B:5F:54
+  - domain: tradingview.com
+    method: https
+    issue:
+      - GH-3709
+    checked: "2026-07-26T05:28:24Z"
+    packages:
+      - package: com.tradingview.tradingviewapp
+        fingerprints:
+          - 44:F0:47:FC:6B:34:B0:BA:0C:49:1F:82:5B:B4:E4:37:70:D2:BC:94:12:20:D2:90:A7:0F:3A:84:67:AE:D6:01
   - domain: transferwise.com
     method: https
     issue:
@@ -610,8 +624,14 @@ domains:
     method: https
     issue:
       - GH-2812
-    checked: "2026-07-05T05:35:45Z"
+      - GH-3709
+    checked: "2026-07-26T05:28:24Z"
     packages:
+      - package: com.whatsapp
+        fingerprints:
+          - 39:87:D0:43:D1:0A:EF:AF:5A:87:10:B3:67:14:18:FE:57:E0:E1:9B:65:3C:9D:F8:25:58:FE:B5:FF:CE:5D:44
+          - CC:E5:84:32:83:F0:A5:60:6B:0F:AC:F6:F7:3E:F7:98:91:C4:8A:82:0E:84:F8:11:E0:04:44:35:B3:97:9E:A2
+          - FB:92:0D:38:1B:EE:1B:20:93:F2:7D:C8:F1:3D:99:4D:A6:29:DC:91:88:7D:05:29:B3:5C:9A:2D:C4:F4:A6:C2
       - package: com.whatsapp.w4b
         fingerprints:
           - 39:87:D0:43:D1:0A:EF:AF:5A:87:10:B3:67:14:18:FE:57:E0:E1:9B:65:3C:9D:F8:25:58:FE:B5:FF:CE:5D:44
@@ -647,3 +667,13 @@ domains:
       - package: fr.doctolib.www
         fingerprints:
           - 19:9A:C4:B1:F6:81:74:65:06:FE:90:78:26:FB:42:94:C7:1F:7D:AE:F5:37:2D:D0:3B:A6:7C:E0:1C:4C:D0:83
+  - domain: zapstore.dev
+    method: https
+    issue:
+      - GH-3709
+    checked: "2026-07-26T05:28:24Z"
+    packages:
+      - package: dev.zapstore.app
+        fingerprints:
+          - 1E:55:68:38:46:47:0C:97:FB:38:13:1E:06:01:80:D2:CF:B4:82:AC:78:54:C8:E4:A4:EB:B0:C8:BA:B1:E8:35
+          - 99:E3:3B:0C:2D:07:E7:5F:CD:9D:F7:E4:0E:88:66:46:FF:66:7E:3A:A6:64:8E:1A:11:60:B0:36:CF:2B:93:20
