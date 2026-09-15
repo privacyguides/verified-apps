@@ -177,6 +177,15 @@ domains:
       - package: com.chase.sig.android
         fingerprints:
           - 73:F0:D9:50:8A:25:72:C1:10:07:7C:FF:1C:AD:4E:D9:2C:00:F0:20:4F:AF:ED:BA:C8:43:4B:D7:6B:C4:AC:D1
+  - domain: citymapper.com
+    method: https
+    issue:
+      - GH-1885
+    checked: "2026-08-27T06:41:59Z"
+    packages:
+      - package: com.citymapper.app.release
+        fingerprints:
+          - BE:8A:28:01:CA:E3:F4:4B:49:1A:8E:CC:A2:8C:3A:C2:23:B3:BD:57:10:9A:71:A5:F2:0B:45:A6:96:D1:7E:5D
   - domain: classdojo.com
     method: https
     issue:
