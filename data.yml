@@ -91,6 +91,10 @@ packages:
             apk:
               sha256: 5731fab450af68400373c9256bf215cc95a62ec7b6703926fb865588c1427119
               link: https://codeberg.org/comaps/comaps/releases/download/v2026.05.06-11/CoMaps-26050611-main-release.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-5451
+            apk:
+              sha256: 6fa705e67b464ef4c3daa7781c53ae6e5061858687e4c46b7836b4a99bab4ed3
   - package: app.comaps.fdroid
     signature:
       - fingerprint: CA:51:80:DA:AC:F1:F2:6A:18:F9:8F:F4:BC:E2:D6:2B:BA:AA:39:36:1C:99:8B:22:67:CE:D1:BC:0D:2F:93:2B
@@ -797,6 +801,8 @@ packages:
             issue: GH-1839
             apk:
               sha256: c048bc3dbb8486f3f9218cca09d261415aba917765cba2abd3e69700e1675973
+          - name: HTTPS Verified Domain
+            issue: GH-5451
   - package: com.aircanada
     signature:
       - fingerprint: 39:09:4C:C7:95:A9:86:B6:45:D1:F6:59:F1:5A:5B:8E:5C:8C:63:F7:80:37:F9:95:E7:E7:1B:62:FE:93:D2:E9
@@ -9988,6 +9994,8 @@ packages:
             issue: GH-595
             apk:
               sha256: cf702081a0f833e96dd93c1864bc2ea282994102cf1b05196bfc9bb555718506
+          - name: HTTPS Verified Domain
+            issue: GH-5451
   - package: org.localsend.localsend_app
     signature:
       - fingerprint: 32:20:C3:53:A7:3C:FB:D0:C2:F3:05:24:71:C4:45:32:4C:F4:52:BC:BA:26:DE:1C:47:3A:52:FE:5C:44:E1:D6
@@ -10020,6 +10028,10 @@ packages:
             apk:
               sha256: 4a23949039d93617df1219a5f0f61b88a22c3c388ac54999e893eb30b39ddb30
               link: https://github.com/MAGICGrants/skylight-wallet/releases/download/v1.0.10/skylight-wallet-v1.0.10-x86_64.apk
+          - name: F-Droid
+            issue: GH-5451
+            apk:
+              sha256: a755f6fa4ef77a74c46dd2d9cad20852db3023041ab224f288af95238cd8d10e
   - package: org.meetingguide
     signature:
       - fingerprint: 79:D5:76:8B:78:1B:9D:C5:A6:C6:3E:77:D4:57:A0:50:5C:C1:1D:D5:41:3F:13:89:3D:4B:78:09:A1:E9:5D:C7
@@ -10249,10 +10261,12 @@ packages:
     signature:
       - fingerprint: 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
         sources:
-          - name: Google Play
-            issue: GH-498
           - name: AppVerifier
             issue: GH-498
+          - name: Google Play
+            issue: GH-498
+          - name: HTTPS Verified Domain
+            issue: GH-5451
   - package: org.telegram.messenger.web
     signature:
       - fingerprint: 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
