@@ -3903,6 +3903,8 @@ packages:
             issue: GH-538
             apk:
               sha256: 88949b2d89d8ebdc69cfb203103b3a3b39f8801589aba0d6ccaa0a8b18a9f1b2
+          - name: HTTPS Verified Domain
+            issue: GH-4496
   - package: com.liamcottle.meshcore.android
     signature:
       - fingerprint: F9:36:C9:3F:DD:6F:57:F1:CD:F2:A7:1B:E6:16:4A:03:F2:4E:89:62:10:83:F1:74:08:32:CE:50:93:62:B4:7B
@@ -5945,6 +5947,8 @@ packages:
             issue: GH-750
             apk:
               sha256: 11a9d9f263468dcb891b01202e017497e0f7889372f866edd69b0aa730407630
+          - name: HTTPS Verified Domain
+            issue: GH-4496
   - package: com.tmob.AveaOIM
     signature:
       - fingerprint: 44:CE:C0:5A:F5:04:97:13:BA:66:94:74:7A:EA:29:66:AA:AC:1C:BD:07:7A:22:17:A6:CC:F4:E0:98:37:14:C5
