@@ -4981,6 +4981,10 @@ packages:
     signature:
       - fingerprint: 8B:6A:E2:B9:B0:6F:4D:18:17:FD:3F:84:6F:88:E4:40:DD:43:1A:3F:46:62:0B:DD:4A:15:2B:70:FC:90:89:A2
         sources:
+          - name: F-Droid
+            issue: GH-4348
+            apk:
+              sha256: 312e179139b55464184cef54348b42c4763fd6816b83c603cd7c3669435b9719
           - name: Google Play
             issue: GH-829
             apk:
