@@ -1859,6 +1859,8 @@ packages:
             issue: GH-985
             apk:
               sha256: 40d83b3491f46363e666ac4565fdcbb2a9aa011e80c62d9289d2db9ec979defb
+          - name: HTTPS Verified Domain
+            issue: GH-3811
   - package: com.coingecko.coingeckoapp
     signature:
       - fingerprint: C4:80:62:6A:2A:02:54:29:05:9C:14:32:15:40:86:66:DE:CB:D8:58:3C:2A:17:AB:73:C9:68:03:6F:24:D1:22
@@ -2288,6 +2290,8 @@ packages:
             issue: GH-1426
             apk:
               sha256: 60cc799aace0ab88ed026f820845572e32c17987855ac33a0dfe566cc656465a
+          - name: HTTPS Verified Domain
+            issue: GH-3811
   - package: com.eboks.activities
     signature:
       - fingerprint: 5F:13:3E:11:D7:5C:33:D2:1A:93:25:B3:B6:77:FC:86:3A:95:3A:D5:CE:42:91:EF:CC:17:22:A6:DA:DC:B2:31
@@ -5131,6 +5135,8 @@ packages:
             issue: GH-506
             apk:
               sha256: 3ba12ceb8c5a2f028f8415e610f27570c737d5625ebbaa59bd1d9bff4e3d47e5
+          - name: HTTPS Verified Domain
+            issue: GH-3811
   - package: com.reworewo.prayertimes
     signature:
       - fingerprint: CD:1F:0D:9A:62:D0:47:9C:4B:71:BB:C4:D5:19:69:82:69:D6:DC:49:9D:39:53:DE:75:28:08:7E:51:5A:19:68

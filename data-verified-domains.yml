@@ -198,6 +198,15 @@ domains:
       - package: com.qobuz.club
         fingerprints:
           - 2C:E2:F1:9A:17:9C:13:FA:C9:EA:F1:39:C3:F0:84:D5:5B:02:64:58:96:29:52:D4:E6:B5:F2:F1:A2:9C:A2:1E
+  - domain: coinbase.com
+    method: https
+    issue:
+      - GH-3811
+    checked: "2026-07-30T05:29:04Z"
+    packages:
+      - package: com.coinbase.android
+        fingerprints:
+          - 41:6A:E0:CE:11:21:E9:C6:A6:B0:B7:C6:B5:D1:D9:BA:2B:9B:23:A1:4F:4F:1B:9A:87:E0:3B:49:8E:20:CF:3B
   - domain: copilot.microsoft.com
     method: https
     issue:
@@ -250,6 +259,16 @@ domains:
         fingerprints:
           - 97:FC:DB:FF:C4:F3:0C:C3:14:1A:76:D7:17:9A:FB:42:97:4B:79:76:D6:8E:B0:AA:49:7C:12:E5:26:52:66:13
           - BE:5A:A8:A5:43:6E:99:71:21:E5:E5:5E:4C:A7:E0:47:84:48:88:09:14:B9:F9:4C:24:2C:5E:4F:DB:E8:D8:98
+  - domain: ebay.com
+    method: https
+    issue:
+      - GH-3811
+    checked: "2026-07-30T05:29:04Z"
+    packages:
+      - package: com.ebay.mobile
+        fingerprints:
+          - 85:B4:01:54:97:15:4D:FA:89:DE:30:87:71:A9:FC:61:A6:4B:19:AF:1A:3F:B0:32:56:E8:CC:3A:79:55:67:E5
+          - 9B:3F:9B:A0:2F:AD:D4:EC:0B:48:E0:12:8A:95:27:93:96:BF:58:01:DF:07:6D:09:D9:4F:E3:D8:9D:EC:D6:69
   - domain: euria.infomaniak.com
     method: https
     issue:
@@ -515,6 +534,16 @@ domains:
       - package: me.proton.android.drive
         fingerprints:
           - DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
+  - domain: revolut.com
+    method: https
+    issue:
+      - GH-3811
+    checked: "2026-07-30T05:29:04Z"
+    packages:
+      - package: com.revolut.revolut
+        fingerprints:
+          - 11:F2:5B:D6:30:60:CE:B4:EF:EC:48:7C:C8:1F:6D:3D:D0:3A:75:C3:E9:D2:C5:32:3D:69:55:9D:C1:7F:6A:23
+          - 9C:9B:E0:71:35:E9:72:78:02:82:C2:E5:D2:7D:A0:6E:CB:8E:E3:AD:FC:75:30:39:17:DD:F6:6D:6F:AA:EF:A4
   - domain: simplex.chat
     method: https
     issue:
