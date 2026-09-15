@@ -30,6 +30,15 @@ domains:
       - package: com.aidungeon
         fingerprints:
           - 66:A5:A0:96:CB:94:79:90:BA:9C:67:49:35:F7:37:CD:57:AC:CB:E2:F3:C4:D1:AD:12:AE:74:79:AE:2B:C0:9B
+  - domain: airbnb.com
+    method: https
+    issue:
+      - GH-3899
+    checked: "2026-08-02T05:28:02Z"
+    packages:
+      - package: com.airbnb.android
+        fingerprints:
+          - 43:7B:7C:9A:94:6C:3C:E9:F2:49:A4:30:86:14:F5:42:C1:4D:7C:7A:3B:C9:77:89:98:4E:02:47:CD:23:01:FB
   - domain: amazon.com
     method: https
     issue:
@@ -396,6 +405,17 @@ domains:
       - package: com.zoho.mail
         fingerprints:
           - A9:D6:D0:A2:AF:DB:15:84:9B:8C:D3:1D:51:FE:73:B8:E1:B1:70:BA:A5:70:C2:F8:F2:A3:F8:65:28:29:CB:BD
+  - domain: mapillary.com
+    method: https
+    issue:
+      - GH-3899
+    checked: "2026-08-02T05:28:02Z"
+    packages:
+      - package: com.mapillary.app
+        fingerprints:
+          - 2D:41:BE:21:D2:77:E9:05:70:4A:B5:FB:25:23:E0:CA:13:35:C2:8E:69:64:56:AC:F8:20:2E:56:12:C0:51:80
+          - 48:07:2A:2C:25:E6:EB:5C:F1:96:27:1D:26:F5:BF:49:4A:26:FF:EE:CB:77:9A:5C:70:C1:3D:EB:E3:31:D3:21
+          - DC:E7:1C:BF:92:B7:7E:CE:9F:E1:33:04:66:A4:0C:68:43:CE:8B:6E:86:D4:74:5C:45:36:A2:32:12:DF:6D:58
   - domain: markusfisch.de
     method: https
     issue:
