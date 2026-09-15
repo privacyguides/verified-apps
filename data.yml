@@ -91,6 +91,10 @@ packages:
             apk:
               sha256: 5731fab450af68400373c9256bf215cc95a62ec7b6703926fb865588c1427119
               link: https://codeberg.org/comaps/comaps/releases/download/v2026.05.06-11/CoMaps-26050611-main-release.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-3924
+            apk:
+              sha256: 2fbffc4a779eeaa5d306216ff2409d3143ead76e21a92d6895ca738f9d684b94
   - package: app.comaps.fdroid
     signature:
       - fingerprint: CA:51:80:DA:AC:F1:F2:6A:18:F9:8F:F4:BC:E2:D6:2B:BA:AA:39:36:1C:99:8B:22:67:CE:D1:BC:0D:2F:93:2B
@@ -2313,6 +2317,10 @@ packages:
             apk:
               sha256: d573dbc7ce7a649880739eab5e8287e2418b16a7fbac90e473ab2f6658aa318a
               link: https://github.com/eddyizm/tempus/releases/download/v4.17.0/app-degoogled-arm64-v8a-release.apk
+          - name: F-Droid
+            issue: GH-3924
+            apk:
+              sha256: d20d7323732933495c6e5850121c60599f0c3ef5a68672c803a1377477b74a6c
           - name: F-Droid (IzzyOnDroid)
             issue: GH-466
             apk:
@@ -4981,6 +4989,10 @@ packages:
     signature:
       - fingerprint: 8B:6A:E2:B9:B0:6F:4D:18:17:FD:3F:84:6F:88:E4:40:DD:43:1A:3F:46:62:0B:DD:4A:15:2B:70:FC:90:89:A2
         sources:
+          - name: F-Droid
+            issue: GH-3924
+            apk:
+              sha256: 2724c82bf46229fbcd54a565ad0e21b4afa570878cd4c1ebea9773f36585e0a5
           - name: Google Play
             issue: GH-829
             apk:
