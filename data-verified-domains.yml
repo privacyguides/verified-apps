@@ -65,6 +65,15 @@ domains:
       - package: com.fastmail.app
         fingerprints:
           - C9:2C:5E:E8:F6:BA:CB:E9:3C:A6:C0:8A:E9:6E:F4:7D:09:91:80:63:F5:71:64:78:BF:90:E6:86:09:C9:0D:1D
+  - domain: app.filen.io
+    method: https
+    issue:
+      - GH-4199
+    checked: "2026-08-07T05:10:01Z"
+    packages:
+      - package: io.filen.app
+        fingerprints:
+          - 2C:90:DF:59:1A:39:E0:8A:AD:E9:4F:72:80:D1:92:D3:34:47:F0:1E:1E:12:75:19:82:B8:AE:C3:F9:0F:AD:AB
   - domain: app.hinge.co
     method: https
     issue:
@@ -130,6 +139,15 @@ domains:
       - package: com.bestbuy.android
         fingerprints:
           - 83:E0:E9:06:D7:F0:6F:4E:2E:D1:1F:7F:CF:51:96:2A:72:54:3D:1A:F4:18:99:FE:AD:87:F5:46:AF:CC:CE:9B
+  - domain: blip.net
+    method: https
+    issue:
+      - GH-1525
+    checked: "2026-08-07T05:10:01Z"
+    packages:
+      - package: net.blip.android
+        fingerprints:
+          - 01:35:2E:DE:0D:91:D7:AA:11:70:12:6A:2E:A9:18:9C:E1:DC:C2:21:E1:D1:44:44:9F:13:26:BA:BA:7F:2D:48
   - domain: blizzard.com
     method: https
     issue:
@@ -414,6 +432,15 @@ domains:
       - package: org.telegram.messenger.web
         fingerprints:
           - 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
+  - domain: nanoleaf.me
+    method: https
+    issue:
+      - GH-4199
+    checked: "2026-08-07T05:10:01Z"
+    packages:
+      - package: me.nanoleaf.nanoleaf
+        fingerprints:
+          - 93:5C:70:4E:4B:FA:CF:48:58:AF:80:FB:FB:5D:06:1A:29:D3:0B:71:A2:BC:C2:5A:2F:6B:45:F1:13:DE:7F:81
   - domain: naver.com
     method: https
     issue:
@@ -555,6 +582,16 @@ domains:
         fingerprints:
           - DF:5B:68:01:94:B7:55:44:A5:75:29:88:23:33:BA:C2:6F:1E:94:F9:B6:14:B4:A9:BC:AB:F3:4B:FB:C7:8D:21
           - FA:0D:C7:F4:72:C7:F9:88:07:20:27:88:4F:2C:ED:3D:81:9D:A7:A3:A5:A1:CA:51:87:9C:B9:E9:05:3B:5F:54
+  - domain: target.com
+    method: https
+    issue:
+      - GH-4199
+    checked: "2026-08-07T05:10:01Z"
+    packages:
+      - package: com.target.ui
+        fingerprints:
+          - B4:BF:25:47:5A:69:24:36:51:42:D9:7F:A8:38:68:C5:D1:09:20:4F:4F:DD:56:20:20:01:75:78:39:AA:03:55
+          - C2:0F:71:D4:25:62:53:57:F0:C0:52:3A:E1:C2:20:C5:9E:22:E4:9A:94:BC:9F:26:6F:9C:97:77:36:89:A0:9B
   - domain: transferwise.com
     method: https
     issue:
