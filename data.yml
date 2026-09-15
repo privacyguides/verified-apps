@@ -7371,11 +7371,15 @@ packages:
             apk:
               sha256: 1d589a4490e09c7f6e85bf72b0d9fb8504501f7e5bded32b5032d7e371a78989
               link: https://github.com/tutao/tutanota/releases/download/tutanota-android-release-348.260519.0/tutanota-app-tutao-release-348.260519.0.apk
+          - name: Google Play
+            issue: GH-4294
+            apk:
+              sha256: 6d83478282111255416dc116ae0a8bd3362aaad392e347e43fcf8d0255c833ae
       - fingerprint: FC:19:32:E0:84:64:AE:FC:AE:82:59:7D:C0:FC:9D:04:C0:8B:24:AA:09:D1:F9:50:DF:20:EA:81:23:4F:30:CB
         sources:
-          - name: F-Droid
-            issue: GH-539
           - name: AppVerifier
+            issue: GH-539
+          - name: F-Droid
             issue: GH-539
   - package: de.westnordost.streetcomplete
     signature:
