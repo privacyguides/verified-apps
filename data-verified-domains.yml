@@ -168,6 +168,17 @@ domains:
           - 43:2C:60:B3:F8:84:9E:A0:EA:93:B8:50:D2:68:EC:EB:5D:C4:0E:E2:27:0C:08:45:B5:5B:6E:70:9D:A8:24:D1
           - 44:A1:04:DA:00:F0:3A:7B:BE:A9:83:7A:DE:54:F7:BF:F9:7C:34:B7:DC:46:DA:13:10:CC:EA:FE:AF:A6:83:2F
           - E2:9E:74:1A:F1:ED:08:9E:8B:A1:89:FE:55:B3:EE:E7:68:30:82:17:50:2B:8E:CF:E3:A5:C2:16:A5:1D:C3:BF
+  - domain: bumpy.app
+    method: https
+    issue:
+      - GH-5536
+    checked: "2026-09-07T04:35:08Z"
+    packages:
+      - package: app.bumpy.android
+        fingerprints:
+          - 5A:AF:64:5E:C6:04:5B:CD:B2:27:CB:B0:62:DB:FA:18:EE:B9:09:B8:42:66:83:A3:29:29:24:29:3D:4F:A2:2A
+          - 93:7C:3B:7F:DD:77:C4:57:C0:DE:63:5A:2C:19:25:35:12:65:89:18:83:52:F7:4F:93:03:4E:89:D8:23:4B:72
+          - FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C
   - domain: chase.com
     method: https
     issue:
@@ -263,7 +274,8 @@ domains:
     method: https
     issue:
       - GH-2446
-    checked: "2026-06-25T05:45:08Z"
+      - GH-5536
+    checked: "2026-09-07T04:35:08Z"
     packages:
       - package: com.facebook.katana
         fingerprints:
@@ -271,6 +283,7 @@ domains:
           - 48:07:2A:2C:25:E6:EB:5C:F1:96:27:1D:26:F5:BF:49:4A:26:FF:EE:CB:77:9A:5C:70:C1:3D:EB:E3:31:D3:21
           - 7E:ED:BF:2C:7B:FD:98:FF:BA:5B:C2:6F:F9:4A:07:3F:FF:27:32:52:6C:0F:92:00:68:DE:F8:41:53:CE:AB:23
           - 8C:D3:9C:EE:60:F3:60:E9:89:9C:3C:CF:B9:F7:AC:17:13:4F:B2:35:78:21:E5:C7:E2:D8:E7:8C:E0:87:91:40
+          - 91:1D:60:44:46:08:4C:A7:F4:76:0B:77:5B:FC:16:0F:A8:70:24:41:24:0A:72:58:64:5D:7A:72:C4:31:2D:27
           - E3:F9:E1:E0:CF:99:D0:E5:6A:05:5B:A6:5E:24:1B:33:99:F7:CE:A5:24:32:6B:0C:DD:6E:C1:32:7E:D0:FD:C1
   - domain: frontpage.reddit.com
     method: https
@@ -290,6 +303,20 @@ domains:
       - package: com.fundrise.android
         fingerprints:
           - FF:4B:21:E4:BB:0F:1F:AF:33:75:2D:9E:15:8E:0A:B0:ED:F1:E1:A8:2A:81:E0:C4:8F:29:40:23:55:82:B1:8B
+  - domain: google.com
+    method: https
+    issue:
+      - GH-5536
+    checked: "2026-09-07T04:35:08Z"
+    packages:
+      - package: com.google.android.gms
+        fingerprints:
+          - 19:75:B2:F1:71:77:BC:89:A5:DF:F3:1F:9E:64:A6:CA:E2:81:A5:3D:C1:D1:D5:9B:1D:14:7F:E1:C8:2A:FA:00
+          - 5F:23:91:27:7B:1D:BD:48:90:00:46:7E:4C:2F:A6:AF:80:24:30:08:04:57:DC:E2:F6:18:99:2E:9D:FB:54:02
+          - 7C:E8:3C:1B:71:F3:D5:72:FE:D0:4C:8D:40:C5:CB:10:FF:75:E6:D8:7D:9D:F6:FB:D5:3F:04:68:C2:90:50:53
+          - 8F:D4:A0:E7:B8:EB:7C:72:6D:2D:AC:79:44:5B:2C:79:31:F6:2B:7E:B6:92:F5:04:4B:DC:FD:FA:AD:07:0A:36
+          - D2:2C:C5:00:29:9F:B2:28:73:A0:1A:01:0D:E1:C8:2F:BE:4D:06:11:19:B9:48:14:DD:30:1D:AB:50:CB:76:78
+          - F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
   - domain: guavahealth.com
     method: https
     issue:
@@ -346,6 +373,15 @@ domains:
         fingerprints:
           - E4:BA:79:65:42:83:08:61:00:3E:A0:77:FE:5F:80:A0:D8:9C:8A:A4:BD:4C:05:D1:E8:7C:D6:D7:24:D8:9A:0A
           - FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C
+  - domain: letterboxd.com
+    method: https
+    issue:
+      - GH-5536
+    checked: "2026-09-07T04:35:08Z"
+    packages:
+      - package: com.letterboxd.letterboxd
+        fingerprints:
+          - 4E:A9:E6:0E:75:13:70:C1:CC:D6:D1:C1:91:96:4C:83:40:A8:91:CB:BF:CC:2D:A1:56:8B:84:31:3B:9A:4E:74
   - domain: lichess.org
     method: https
     issue:
