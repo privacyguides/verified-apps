@@ -290,6 +290,20 @@ domains:
       - package: com.fundrise.android
         fingerprints:
           - FF:4B:21:E4:BB:0F:1F:AF:33:75:2D:9E:15:8E:0A:B0:ED:F1:E1:A8:2A:81:E0:C4:8F:29:40:23:55:82:B1:8B
+  - domain: google.com
+    method: https
+    issue:
+      - GH-4859
+    checked: "2026-08-25T04:27:39Z"
+    packages:
+      - package: com.google.android.gms
+        fingerprints:
+          - 19:75:B2:F1:71:77:BC:89:A5:DF:F3:1F:9E:64:A6:CA:E2:81:A5:3D:C1:D1:D5:9B:1D:14:7F:E1:C8:2A:FA:00
+          - 5F:23:91:27:7B:1D:BD:48:90:00:46:7E:4C:2F:A6:AF:80:24:30:08:04:57:DC:E2:F6:18:99:2E:9D:FB:54:02
+          - 7C:E8:3C:1B:71:F3:D5:72:FE:D0:4C:8D:40:C5:CB:10:FF:75:E6:D8:7D:9D:F6:FB:D5:3F:04:68:C2:90:50:53
+          - 8F:D4:A0:E7:B8:EB:7C:72:6D:2D:AC:79:44:5B:2C:79:31:F6:2B:7E:B6:92:F5:04:4B:DC:FD:FA:AD:07:0A:36
+          - D2:2C:C5:00:29:9F:B2:28:73:A0:1A:01:0D:E1:C8:2F:BE:4D:06:11:19:B9:48:14:DD:30:1D:AB:50:CB:76:78
+          - F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
   - domain: guavahealth.com
     method: https
     issue:
@@ -405,6 +419,15 @@ domains:
       - package: de.markusfisch.android.binaryeye
         fingerprints:
           - DD:A9:21:96:50:57:4B:2D:70:2F:DF:2D:F9:0F:61:9B:D4:E2:D0:F3:A6:6E:26:BB:03:2F:2F:01:88:40:CF:8E
+  - domain: meetingguide.org
+    method: https
+    issue:
+      - GH-4859
+    checked: "2026-08-25T04:27:39Z"
+    packages:
+      - package: org.meetingguide
+        fingerprints:
+          - 79:D5:76:8B:78:1B:9D:C5:A6:C6:3E:77:D4:57:A0:50:5C:C1:1D:D5:41:3F:13:89:3D:4B:78:09:A1:E9:5D:C7
   - domain: messenger.telegram.org
     method: https
     issue:
