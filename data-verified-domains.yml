@@ -405,6 +405,16 @@ domains:
       - package: de.markusfisch.android.binaryeye
         fingerprints:
           - DD:A9:21:96:50:57:4B:2D:70:2F:DF:2D:F9:0F:61:9B:D4:E2:D0:F3:A6:6E:26:BB:03:2F:2F:01:88:40:CF:8E
+  - domain: meetingguide.org
+    method: https
+    issue:
+      - GH-6069
+    checked: "2026-09-18T04:53:39Z"
+    packages:
+      - package: org.meetingguide
+        fingerprints:
+          - 44:B7:4D:46:74:4E:4D:0D:1C:87:BC:EF:AF:31:4A:2D:88:D9:01:10:2B:3D:0D:26:73:A7:7A:5B:AB:41:42:AC
+          - 79:D5:76:8B:78:1B:9D:C5:A6:C6:3E:77:D4:57:A0:50:5C:C1:1D:D5:41:3F:13:89:3D:4B:78:09:A1:E9:5D:C7
   - domain: messenger.telegram.org
     method: https
     issue:
@@ -587,6 +597,16 @@ domains:
           - 35:1B:A8:5C:06:69:64:FA:A6:B9:88:1F:AB:B3:43:CA:41:86:2C:D0:9F:C5:62:85:46:CA:2F:BE:68:5F:CE:3F
           - AF:0C:9F:84:71:27:35:35:79:49:FA:CB:7C:33:73:D5:8F:43:6E:3F:BF:2D:B2:61:F0:5E:53:B7:EB:F8:65:F2
           - FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C
+  - domain: video.simplepractice.com
+    method: https
+    issue:
+      - GH-6069
+    checked: "2026-09-18T04:53:39Z"
+    packages:
+      - package: com.simplepractice.video
+        fingerprints:
+          - 21:E1:56:78:30:77:33:7D:F5:13:65:75:31:6C:3A:D7:FA:E3:4F:19:7F:61:DD:C0:25:87:0F:B6:F7:0F:C2:99
+          - E4:09:A5:7E:B2:17:44:1E:2E:39:0C:A1:C7:DE:22:7F:06:0B:8B:DF:84:F3:F2:1D:8A:B8:FB:80:85:D3:E2:AA
   - domain: waze.com
     method: https
     issue:
