@@ -310,6 +310,15 @@ domains:
       - package: com.innersloth.spacemafia
         fingerprints:
           - 67:A4:DF:80:B1:D9:A4:88:FF:DB:10:07:54:84:1F:D8:3F:90:9C:7C:73:DF:16:E2:46:8C:EC:75:AB:81:C5:8A
+  - domain: keyholm.app
+    method: https
+    issue:
+      - GH-6226
+    checked: "2026-09-21T16:25:44Z"
+    packages:
+      - package: app.keyholm
+        fingerprints:
+          - 91:85:C9:57:79:4A:7F:F4:43:F5:BD:45:3B:1C:91:3D:80:BA:D0:D0:9D:14:88:2E:1D:F2:81:C6:81:F0:A9:2E
   - domain: komoot.de
     method: https
     issue:
