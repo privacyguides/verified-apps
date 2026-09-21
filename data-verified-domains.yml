@@ -56,6 +56,15 @@ domains:
       - package: com.box.android
         fingerprints:
           - 5E:6E:4B:82:82:99:CA:01:D7:A4:92:21:1F:CC:88:FA:68:05:0B:AA:A2:5A:50:EA:69:59:6F:D2:A3:E6:B3:66
+  - domain: android.khanacademy.org
+    method: https
+    issue:
+      - GH-5864
+    checked: "2026-09-14T04:50:09Z"
+    packages:
+      - package: org.khanacademy.android
+        fingerprints:
+          - EF:FC:FE:21:10:60:12:61:7B:D6:3D:EB:9D:FD:B8:35:4D:1D:57:4D:1D:67:C5:66:4A:5D:02:E6:69:B2:4E:CB
   - domain: app.fastmail.com
     method: https
     issue:
@@ -656,3 +665,13 @@ domains:
       - package: fr.doctolib.www
         fingerprints:
           - 19:9A:C4:B1:F6:81:74:65:06:FE:90:78:26:FB:42:94:C7:1F:7D:AE:F5:37:2D:D0:3B:A6:7C:E0:1C:4C:D0:83
+  - domain: zapstore.dev
+    method: https
+    issue:
+      - GH-5864
+    checked: "2026-09-14T04:50:09Z"
+    packages:
+      - package: dev.zapstore.app
+        fingerprints:
+          - 1E:55:68:38:46:47:0C:97:FB:38:13:1E:06:01:80:D2:CF:B4:82:AC:78:54:C8:E4:A4:EB:B0:C8:BA:B1:E8:35
+          - 99:E3:3B:0C:2D:07:E7:5F:CD:9D:F7:E4:0E:88:66:46:FF:66:7E:3A:A6:64:8E:1A:11:60:B0:36:CF:2B:93:20
