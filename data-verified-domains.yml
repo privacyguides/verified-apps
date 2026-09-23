@@ -56,6 +56,15 @@ domains:
       - package: com.box.android
         fingerprints:
           - 5E:6E:4B:82:82:99:CA:01:D7:A4:92:21:1F:CC:88:FA:68:05:0B:AA:A2:5A:50:EA:69:59:6F:D2:A3:E6:B3:66
+  - domain: android.khanacademy.org
+    method: https
+    issue:
+      - GH-6316
+    checked: "2026-09-23T04:47:44Z"
+    packages:
+      - package: org.khanacademy.android
+        fingerprints:
+          - EF:FC:FE:21:10:60:12:61:7B:D6:3D:EB:9D:FD:B8:35:4D:1D:57:4D:1D:67:C5:66:4A:5D:02:E6:69:B2:4E:CB
   - domain: app.fastmail.com
     method: https
     issue:
@@ -130,6 +139,15 @@ domains:
       - package: com.bestbuy.android
         fingerprints:
           - 83:E0:E9:06:D7:F0:6F:4E:2E:D1:1F:7F:CF:51:96:2A:72:54:3D:1A:F4:18:99:FE:AD:87:F5:46:AF:CC:CE:9B
+  - domain: blip.net
+    method: https
+    issue:
+      - GH-1525
+    checked: "2026-09-23T04:47:44Z"
+    packages:
+      - package: net.blip.android
+        fingerprints:
+          - 01:35:2E:DE:0D:91:D7:AA:11:70:12:6A:2E:A9:18:9C:E1:DC:C2:21:E1:D1:44:44:9F:13:26:BA:BA:7F:2D:48
   - domain: blizzard.com
     method: https
     issue:
@@ -460,6 +478,15 @@ domains:
       - package: com.openai.chatgpt
         fingerprints:
           - B2:4F:4B:FB:B3:CF:29:3F:93:87:03:B9:D8:70:27:C1:10:2C:C3:6D:C4:FA:20:69:10:E0:89:27:DB:40:47:3C
+  - domain: parkster.se
+    method: https
+    issue:
+      - GH-6316
+    checked: "2026-09-23T04:47:44Z"
+    packages:
+      - package: se.parkster.client.android
+        fingerprints:
+          - 8B:7D:7C:E3:43:90:34:D3:26:34:05:5F:46:BD:C4:7F:4D:94:D5:9D:A2:7D:D6:25:D5:A3:DC:E4:4F:1B:67:5D
   - domain: paypal.com
     method: https
     issue:
