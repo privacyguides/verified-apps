@@ -2313,6 +2313,10 @@ packages:
             apk:
               sha256: d573dbc7ce7a649880739eab5e8287e2418b16a7fbac90e473ab2f6658aa318a
               link: https://github.com/eddyizm/tempus/releases/download/v4.17.0/app-degoogled-arm64-v8a-release.apk
+          - name: F-Droid
+            issue: GH-4305
+            apk:
+              sha256: 34da2fc78d71ad9733a80f0c4a398521cf9a0baa153679b09cca108261a8cb95
           - name: F-Droid (IzzyOnDroid)
             issue: GH-466
             apk:
