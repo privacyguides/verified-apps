@@ -82,6 +82,8 @@ packages:
             issue: GH-765
             apk:
               sha256: 3983db549a59e681473446be319bdcbd65b2a1f10a745a8ab4e30188b678f59a
+          - name: HTTPS Verified Domain
+            issue: GH-5536
   - package: app.comaps
     signature:
       - fingerprint: 48:94:E8:E6:96:36:27:EF:66:00:31:D8:59:3F:E7:72:97:F8:35:AC:B4:E2:38:10:00:3E:92:61:35:02:3B:4C
@@ -2424,6 +2426,8 @@ packages:
             issue: GH-1968
             apk:
               sha256: 6cd2dc8fdb86c3ab4bd1de4ca2cb4fbcf56dd893f2ff32016e659de65bfa9d1f
+          - name: HTTPS Verified Domain
+            issue: GH-5536
       - fingerprint: E3:F9:E1:E0:CF:99:D0:E5:6A:05:5B:A6:5E:24:1B:33:99:F7:CE:A5:24:32:6B:0C:DD:6E:C1:32:7E:D0:FD:C1
         sources:
           - name: Google Play
@@ -3233,6 +3237,8 @@ packages:
             issue: GH-1038
             apk:
               sha256: 501ab35f241cbd1edad4a005fdc9ebe7ba4ff4f7840d24b440277d7e8d0182cb
+          - name: HTTPS Verified Domain
+            issue: GH-5536
   - package: com.google.android.googlequicksearchbox
     signature:
       - fingerprint: |-
@@ -3903,6 +3909,8 @@ packages:
             issue: GH-538
             apk:
               sha256: 88949b2d89d8ebdc69cfb203103b3a3b39f8801589aba0d6ccaa0a8b18a9f1b2
+          - name: HTTPS Verified Domain
+            issue: GH-5536
   - package: com.liamcottle.meshcore.android
     signature:
       - fingerprint: F9:36:C9:3F:DD:6F:57:F1:CD:F2:A7:1B:E6:16:4A:03:F2:4E:89:62:10:83:F1:74:08:32:CE:50:93:62:B4:7B
