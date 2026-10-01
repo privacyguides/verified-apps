@@ -290,6 +290,17 @@ domains:
       - package: com.fundrise.android
         fingerprints:
           - FF:4B:21:E4:BB:0F:1F:AF:33:75:2D:9E:15:8E:0A:B0:ED:F1:E1:A8:2A:81:E0:C4:8F:29:40:23:55:82:B1:8B
+  - domain: getyourguide.com
+    method: https
+    issue:
+      - GH-6636
+    checked: "2026-10-01T04:43:51Z"
+    packages:
+      - package: com.getyourguide.android
+        fingerprints:
+          - 2B:47:AC:B3:D0:BC:0C:9C:CF:CA:B5:FD:BA:91:CA:DC:D1:6E:6B:EF:14:26:D7:3B:8A:F0:2C:76:C5:FC:5A:E8
+          - 44:2B:C2:17:7C:82:79:92:80:A5:EB:C7:32:2F:D2:07:89:4F:17:30:91:88:B3:03:68:3A:C0:E8:6B:99:2A:77
+          - FA:00:44:80:50:1A:F0:30:73:FF:D5:03:9D:21:77:4D:87:4C:BD:2B:63:87:3F:D2:5E:2C:4A:86:59:78:5E:DB
   - domain: guavahealth.com
     method: https
     issue:
@@ -511,6 +522,15 @@ domains:
       - package: app.privacynotes
         fingerprints:
           - 98:A0:BB:5A:AF:69:4F:6B:EA:50:AD:CB:4A:36:D4:B5:7A:3C:3E:42:F6:7A:FF:08:FB:EA:46:89:69:6C:AA:87
+  - domain: privateinternetaccess.com
+    method: https
+    issue:
+      - GH-6636
+    checked: "2026-10-01T04:43:51Z"
+    packages:
+      - package: com.privateinternetaccess.android
+        fingerprints:
+          - 8B:6A:E2:B9:B0:6F:4D:18:17:FD:3F:84:6F:88:E4:40:DD:43:1A:3F:46:62:0B:DD:4A:15:2B:70:FC:90:89:A2
   - domain: proton.me
     method: https
     issue:
