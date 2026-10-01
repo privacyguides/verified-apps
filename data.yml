@@ -82,6 +82,8 @@ packages:
             issue: GH-765
             apk:
               sha256: 3983db549a59e681473446be319bdcbd65b2a1f10a745a8ab4e30188b678f59a
+          - name: HTTPS Verified Domain
+            issue: GH-6219
   - package: app.comaps
     signature:
       - fingerprint: 48:94:E8:E6:96:36:27:EF:66:00:31:D8:59:3F:E7:72:97:F8:35:AC:B4:E2:38:10:00:3E:92:61:35:02:3B:4C
@@ -9959,6 +9961,8 @@ packages:
             issue: GH-731
             apk:
               sha256: 4ac7d24400bb22778fcb48e7e3326b1c402814a5d52d9fd980a066694e7700ba
+          - name: HTTPS Verified Domain
+            issue: GH-6219
   - package: org.kiwix.kiwixmobile
     signature:
       - fingerprint: 6D:FB:FC:62:E1:65:87:A7:8A:A2:D9:58:5A:E9:BB:7F:69:73:C2:BF:84:03:4B:7B:90:10:1A:40:14:09:F5:AA
