@@ -5831,6 +5831,8 @@ packages:
             issue: GH-678
             apk:
               sha256: 5750da2ca8df5c0590876e06f5f5fbca5729b7935773772b21948071013a547d
+          - name: HTTPS Verified Domain
+            issue: GH-4199
   - package: com.taxis99
     signature:
       - fingerprint: 97:A0:16:3C:F8:8E:37:5E:BD:9C:CA:DD:BA:66:74:24:46:E5:DD:5C:93:BE:E5:26:8C:0F:31:0C:C8:76:9F:B2
@@ -8181,6 +8183,8 @@ packages:
             issue: CB-152
             apk:
               sha256: 629345ece9a38ce722088b0e0e0a7edfb36b392f2d23cf37c07a9fa4a913422d
+          - name: HTTPS Verified Domain
+            issue: GH-4199
       - fingerprint: 5B:DD:27:47:B7:CF:A9:8D:62:9E:4D:44:41:01:A9:CE:DC:E3:32:AD:6A:7F:2A:0B:14:F4:69:ED:93:7F:13:27
         sources:
           - name: Direct APK Link
@@ -8736,6 +8740,8 @@ packages:
             issue: GH-971
             apk:
               sha256: 9d83d3ad2f3e84f3d61379ba49196633c14585eb3358467b5fbd46dde28a6380
+          - name: HTTPS Verified Domain
+            issue: GH-4199
   - package: me.ocv.partyup_dbg
     signature:
       - fingerprint: CA:8D:3B:0D:DA:29:61:D8:93:05:40:A0:3C:41:9B:A5:4A:76:25:7F:B2:08:C9:B4:85:94:42:BE:16:29:65:D8
