@@ -797,6 +797,8 @@ packages:
             issue: GH-1839
             apk:
               sha256: c048bc3dbb8486f3f9218cca09d261415aba917765cba2abd3e69700e1675973
+          - name: HTTPS Verified Domain
+            issue: GH-3854
   - package: com.aircanada
     signature:
       - fingerprint: 39:09:4C:C7:95:A9:86:B6:45:D1:F6:59:F1:5A:5B:8E:5C:8C:63:F7:80:37:F9:95:E7:E7:1B:62:FE:93:D2:E9
@@ -5831,6 +5833,8 @@ packages:
             issue: GH-678
             apk:
               sha256: 5750da2ca8df5c0590876e06f5f5fbca5729b7935773772b21948071013a547d
+          - name: HTTPS Verified Domain
+            issue: GH-3854
   - package: com.taxis99
     signature:
       - fingerprint: 97:A0:16:3C:F8:8E:37:5E:BD:9C:CA:DD:BA:66:74:24:46:E5:DD:5C:93:BE:E5:26:8C:0F:31:0C:C8:76:9F:B2
