@@ -290,6 +290,17 @@ domains:
       - package: com.fundrise.android
         fingerprints:
           - FF:4B:21:E4:BB:0F:1F:AF:33:75:2D:9E:15:8E:0A:B0:ED:F1:E1:A8:2A:81:E0:C4:8F:29:40:23:55:82:B1:8B
+  - domain: getyourguide.com
+    method: https
+    issue:
+      - GH-6662
+    checked: "2026-10-02T04:35:08Z"
+    packages:
+      - package: com.getyourguide.android
+        fingerprints:
+          - 2B:47:AC:B3:D0:BC:0C:9C:CF:CA:B5:FD:BA:91:CA:DC:D1:6E:6B:EF:14:26:D7:3B:8A:F0:2C:76:C5:FC:5A:E8
+          - 44:2B:C2:17:7C:82:79:92:80:A5:EB:C7:32:2F:D2:07:89:4F:17:30:91:88:B3:03:68:3A:C0:E8:6B:99:2A:77
+          - FA:00:44:80:50:1A:F0:30:73:FF:D5:03:9D:21:77:4D:87:4C:BD:2B:63:87:3F:D2:5E:2C:4A:86:59:78:5E:DB
   - domain: guavahealth.com
     method: https
     issue:
@@ -665,3 +676,13 @@ domains:
       - package: fr.doctolib.www
         fingerprints:
           - 19:9A:C4:B1:F6:81:74:65:06:FE:90:78:26:FB:42:94:C7:1F:7D:AE:F5:37:2D:D0:3B:A6:7C:E0:1C:4C:D0:83
+  - domain: zapstore.dev
+    method: https
+    issue:
+      - GH-6662
+    checked: "2026-10-02T04:35:08Z"
+    packages:
+      - package: dev.zapstore.app
+        fingerprints:
+          - 1E:55:68:38:46:47:0C:97:FB:38:13:1E:06:01:80:D2:CF:B4:82:AC:78:54:C8:E4:A4:EB:B0:C8:BA:B1:E8:35
+          - 99:E3:3B:0C:2D:07:E7:5F:CD:9D:F7:E4:0E:88:66:46:FF:66:7E:3A:A6:64:8E:1A:11:60:B0:36:CF:2B:93:20

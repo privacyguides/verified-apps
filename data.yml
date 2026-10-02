@@ -2313,6 +2313,10 @@ packages:
             apk:
               sha256: d573dbc7ce7a649880739eab5e8287e2418b16a7fbac90e473ab2f6658aa318a
               link: https://github.com/eddyizm/tempus/releases/download/v4.17.0/app-degoogled-arm64-v8a-release.apk
+          - name: F-Droid
+            issue: GH-6662
+            apk:
+              sha256: 466e8ed622b2c63a17d04297e8f02ba478f1b5a0527804da3525ae1aa26cb08e
           - name: F-Droid (IzzyOnDroid)
             issue: GH-466
             apk:
@@ -2799,6 +2803,8 @@ packages:
             issue: GH-314
             apk:
               sha256: 36bc747c6b4c1042557a640d9f7bfd4533bb28fafb02f57f6fdec8f84ebc7226
+          - name: HTTPS Verified Domain
+            issue: GH-6662
   - package: com.github.android
     signature:
       - fingerprint: DF:08:C9:F2:D8:09:18:9D:9D:50:64:97:C1:57:45:A7:39:5A:41:53:6E:FB:43:3E:3A:EE:1A:ED:BE:11:B2:61
@@ -7616,6 +7622,8 @@ packages:
             apk:
               sha256: 8619dabc77c84b7ba5621f1b707153460e0dd643ec65bd814d4e6f32560be66b
               link: https://cdn.zapstore.dev/8619dabc77c84b7ba5621f1b707153460e0dd643ec65bd814d4e6f32560be66b.apk
+          - name: HTTPS Verified Domain
+            issue: GH-6662
   - package: digital.ventral.ips
     signature:
       - fingerprint: 03:24:3D:0C:0D:44:B6:E0:B4:1E:3C:B2:45:B1:DC:26:9B:E4:C3:FF:E1:77:F8:43:FC:00:5B:C4:EA:0C:74:26
@@ -10132,6 +10140,10 @@ packages:
             apk:
               sha256: 61f01b08224c8bed18ba53dbe87734a1e1357071901ca25e6483f51be7472d2b
               link: https://github.com/privacyguides/verified-apps-android/releases/download/26.6.2/VerifiedApps-26.6.2.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-6662
+            apk:
+              sha256: fd41d6a1013dd10e4502a89539a4ae40afc0a602cb756a9c5665086c07ab64b6
           - name: F-Droid (privacyguides.github.io)
             issue: GH-1329
             apk:
