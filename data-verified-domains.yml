@@ -319,6 +319,15 @@ domains:
       - package: app.keyholm
         fingerprints:
           - 91:85:C9:57:79:4A:7F:F4:43:F5:BD:45:3B:1C:91:3D:80:BA:D0:D0:9D:14:88:2E:1D:F2:81:C6:81:F0:A9:2E
+  - domain: kgurgul.com
+    method: https
+    issue:
+      - GH-6677
+    checked: "2026-10-03T04:39:44Z"
+    packages:
+      - package: com.kgurgul.cpuinfo
+        fingerprints:
+          - AF:24:23:BE:B5:89:E5:5F:DF:95:1F:DE:2F:23:ED:AA:78:5F:57:C7:14:76:4A:FB:BD:D1:5A:85:F1:AE:D3:3C
   - domain: komoot.de
     method: https
     issue:
@@ -355,6 +364,15 @@ domains:
         fingerprints:
           - E4:BA:79:65:42:83:08:61:00:3E:A0:77:FE:5F:80:A0:D8:9C:8A:A4:BD:4C:05:D1:E8:7C:D6:D7:24:D8:9A:0A
           - FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C
+  - domain: letterboxd.com
+    method: https
+    issue:
+      - GH-6677
+    checked: "2026-10-03T04:39:44Z"
+    packages:
+      - package: com.letterboxd.letterboxd
+        fingerprints:
+          - 4E:A9:E6:0E:75:13:70:C1:CC:D6:D1:C1:91:96:4C:83:40:A8:91:CB:BF:CC:2D:A1:56:8B:84:31:3B:9A:4E:74
   - domain: lichess.org
     method: https
     issue:
@@ -414,12 +432,26 @@ domains:
       - package: de.markusfisch.android.binaryeye
         fingerprints:
           - DD:A9:21:96:50:57:4B:2D:70:2F:DF:2D:F9:0F:61:9B:D4:E2:D0:F3:A6:6E:26:BB:03:2F:2F:01:88:40:CF:8E
+  - domain: meetingguide.org
+    method: https
+    issue:
+      - GH-6677
+    checked: "2026-10-03T04:39:44Z"
+    packages:
+      - package: org.meetingguide
+        fingerprints:
+          - 44:B7:4D:46:74:4E:4D:0D:1C:87:BC:EF:AF:31:4A:2D:88:D9:01:10:2B:3D:0D:26:73:A7:7A:5B:AB:41:42:AC
+          - 79:D5:76:8B:78:1B:9D:C5:A6:C6:3E:77:D4:57:A0:50:5C:C1:1D:D5:41:3F:13:89:3D:4B:78:09:A1:E9:5D:C7
   - domain: messenger.telegram.org
     method: https
     issue:
       - GH-2069
-    checked: "2026-06-19T06:20:55Z"
+      - GH-6677
+    checked: "2026-10-03T04:39:44Z"
     packages:
+      - package: org.telegram.messenger
+        fingerprints:
+          - 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
       - package: org.telegram.messenger.web
         fingerprints:
           - 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
