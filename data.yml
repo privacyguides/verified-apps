@@ -6003,6 +6003,8 @@ packages:
             issue: GH-512
             apk:
               sha256: 0cdf0176449b0f03e0d91d46c8d0d17576482e36f5b4ebd24700937ced1e70d0
+          - name: HTTPS Verified Domain
+            issue: GH-5901
   - package: com.trafi.whitelabel.bvg
     signature:
       - fingerprint: 3F:EC:E6:B5:C2:27:18:9B:1E:F5:89:66:4F:92:26:61:BB:39:B5:60:C5:63:8E:58:34:88:9C:E9:87:E7:6B:09
