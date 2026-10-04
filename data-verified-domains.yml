@@ -605,6 +605,25 @@ domains:
           - 35:1B:A8:5C:06:69:64:FA:A6:B9:88:1F:AB:B3:43:CA:41:86:2C:D0:9F:C5:62:85:46:CA:2F:BE:68:5F:CE:3F
           - AF:0C:9F:84:71:27:35:35:79:49:FA:CB:7C:33:73:D5:8F:43:6E:3F:BF:2D:B2:61:F0:5E:53:B7:EB:F8:65:F2
           - FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C
+  - domain: venmo.com
+    method: https
+    issue:
+      - GH-6767
+    checked: "2026-10-04T06:13:12Z"
+    packages:
+      - package: com.venmo
+        fingerprints:
+          - C7:7E:26:31:AC:04:51:C0:86:F2:5F:79:AE:25:82:38:AF:A4:00:96:1E:8D:59:9D:B7:8E:25:EA:DC:DC:C9:47
+  - domain: video.simplepractice.com
+    method: https
+    issue:
+      - GH-6767
+    checked: "2026-10-04T06:13:12Z"
+    packages:
+      - package: com.simplepractice.video
+        fingerprints:
+          - 21:E1:56:78:30:77:33:7D:F5:13:65:75:31:6C:3A:D7:FA:E3:4F:19:7F:61:DD:C0:25:87:0F:B6:F7:0F:C2:99
+          - E4:09:A5:7E:B2:17:44:1E:2E:39:0C:A1:C7:DE:22:7F:06:0B:8B:DF:84:F3:F2:1D:8A:B8:FB:80:85:D3:E2:AA
   - domain: waze.com
     method: https
     issue:
