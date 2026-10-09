@@ -3233,6 +3233,8 @@ packages:
             issue: GH-1038
             apk:
               sha256: 501ab35f241cbd1edad4a005fdc9ebe7ba4ff4f7840d24b440277d7e8d0182cb
+          - name: HTTPS Verified Domain
+            issue: GH-7001
   - package: com.google.android.googlequicksearchbox
     signature:
       - fingerprint: |-
