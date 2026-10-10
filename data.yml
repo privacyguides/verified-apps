@@ -2799,6 +2799,8 @@ packages:
             issue: GH-314
             apk:
               sha256: 36bc747c6b4c1042557a640d9f7bfd4533bb28fafb02f57f6fdec8f84ebc7226
+          - name: HTTPS Verified Domain
+            issue: GH-6636
   - package: com.github.android
     signature:
       - fingerprint: DF:08:C9:F2:D8:09:18:9D:9D:50:64:97:C1:57:45:A7:39:5A:41:53:6E:FB:43:3E:3A:EE:1A:ED:BE:11:B2:61
@@ -4981,10 +4983,16 @@ packages:
     signature:
       - fingerprint: 8B:6A:E2:B9:B0:6F:4D:18:17:FD:3F:84:6F:88:E4:40:DD:43:1A:3F:46:62:0B:DD:4A:15:2B:70:FC:90:89:A2
         sources:
+          - name: F-Droid
+            issue: GH-6636
+            apk:
+              sha256: 312e179139b55464184cef54348b42c4763fd6816b83c603cd7c3669435b9719
           - name: Google Play
             issue: GH-829
             apk:
               sha256: 03bcde51ac127fdbd5fe6f01c6e321a5ffe7e909bf218c783d471710659fa26f
+          - name: HTTPS Verified Domain
+            issue: GH-6636
   - package: com.prosegur.smart20
     signature:
       - fingerprint: 39:49:AB:3B:71:A8:69:53:D4:47:7D:D5:51:5D:7B:4B:92:27:9B:69:7B:C5:77:4D:27:B4:24:8D:B6:E1:F8:8D
