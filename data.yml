@@ -1701,6 +1701,10 @@ packages:
             issue: GH-561
           - name: F-Droid (IzzyOnDroid)
             issue: GH-561
+          - name: Google Play
+            issue: GH-5106
+            apk:
+              sha256: 2c50853bdc6a4ed0e46d840a87f7230168a34e6fd5309bedf793675f1be39d16
   - package: com.carriez.flutter_hbb
     signature:
       - fingerprint: E9:2D:44:BA:9B:65:00:3C:73:40:68:3B:0A:92:34:F6:17:C1:B2:3A:1D:D9:0E:89:F7:D0:41:70:B7:2B:FC:86
@@ -6256,6 +6260,8 @@ packages:
             issue: GH-961
             apk:
               sha256: b0cf93237f5a028d71c626d3c2495d9f36974726236f9727c69a268691f5f9e2
+          - name: HTTPS Verified Domain
+            issue: GH-5106
   - package: com.usmobile.dashboard
     signature:
       - fingerprint: 34:25:D5:1C:A1:A8:DB:37:CA:E7:96:68:D0:FC:B8:3F:BA:05:62:3C:35:7D:9F:BD:30:4F:F3:71:D9:26:E2:A1
@@ -6316,6 +6322,8 @@ packages:
             issue: GH-689
             apk:
               sha256: f8f9713c8fb7214ce0a976453ec4a8df519098d2e03c4be38b4032816b9a03f0
+          - name: HTTPS Verified Domain
+            issue: GH-5106
   - package: com.verisec.mobile.frejaeid
     signature:
       - fingerprint: 1F:14:FE:04:C5:19:52:C5:E3:C8:E6:82:51:AE:8A:C3:73:B8:4C:59:76:BD:7F:24:8E:64:3A:F2:50:C8:BA:91
@@ -6518,6 +6526,8 @@ packages:
             apk:
               sha256: 468769d315aa0bbe9ccc1c5993f8d58b5ff973b02a4f5d13b9dde8c570bf5cc2
               link: https://www.whatsapp.com/android/7/WhatsApp.apk
+          - name: HTTPS Verified Domain
+            issue: GH-5106
       - fingerprint: |-
           39:87:D0:43:D1:0A:EF:AF:5A:87:10:B3:67:14:18:FE:57:E0:E1:9B:65:3C:9D:F8:25:58:FE:B5:FF:CE:5D:44
           FB:92:0D:38:1B:EE:1B:20:93:F2:7D:C8:F1:3D:99:4D:A6:29:DC:91:88:7D:05:29:B3:5C:9A:2D:C4:F4:A6:C2
@@ -6528,6 +6538,8 @@ packages:
             issue: GH-779
             apk:
               sha256: 27faf4cc0b5556034c2be5eeb14239a5924891e03d9e6d457ac217294832ea13
+          - name: HTTPS Verified Domain
+            issue: GH-5106
   - package: com.whatsapp.w4b
     signature:
       - fingerprint: |-
@@ -10143,6 +10155,10 @@ packages:
         sources:
           - name: DNS Verified Domain
             issue: GH-1627
+          - name: Google Play
+            issue: GH-5106
+            apk:
+              sha256: 5573a24a38ff890a06ed05d6db66347f5b7b7c026babe0a60555a8d5e924b992
   - package: org.proninyaroslav.libretorrent
     signature:
       - fingerprint: 1A:96:ED:44:27:98:2C:52:E0:67:09:C9:41:A8:F3:9B:2A:BA:68:BC:CA:E8:6B:6C:86:F9:F0:30:BD:95:99:EA
