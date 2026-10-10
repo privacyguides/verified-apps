@@ -130,6 +130,15 @@ domains:
       - package: com.bestbuy.android
         fingerprints:
           - 83:E0:E9:06:D7:F0:6F:4E:2E:D1:1F:7F:CF:51:96:2A:72:54:3D:1A:F4:18:99:FE:AD:87:F5:46:AF:CC:CE:9B
+  - domain: blip.net
+    method: https
+    issue:
+      - GH-1525
+    checked: "2026-10-10T04:36:49Z"
+    packages:
+      - package: net.blip.android
+        fingerprints:
+          - 01:35:2E:DE:0D:91:D7:AA:11:70:12:6A:2E:A9:18:9C:E1:DC:C2:21:E1:D1:44:44:9F:13:26:BA:BA:7F:2D:48
   - domain: blizzard.com
     method: https
     issue:
@@ -198,6 +207,15 @@ domains:
       - package: com.qobuz.club
         fingerprints:
           - 2C:E2:F1:9A:17:9C:13:FA:C9:EA:F1:39:C3:F0:84:D5:5B:02:64:58:96:29:52:D4:E6:B5:F2:F1:A2:9C:A2:1E
+  - domain: coinbase.com
+    method: https
+    issue:
+      - GH-7016
+    checked: "2026-10-10T04:36:49Z"
+    packages:
+      - package: com.coinbase.android
+        fingerprints:
+          - 41:6A:E0:CE:11:21:E9:C6:A6:B0:B7:C6:B5:D1:D9:BA:2B:9B:23:A1:4F:4F:1B:9A:87:E0:3B:49:8E:20:CF:3B
   - domain: copilot.microsoft.com
     method: https
     issue:
@@ -521,6 +539,15 @@ domains:
       - package: app.privacynotes
         fingerprints:
           - 98:A0:BB:5A:AF:69:4F:6B:EA:50:AD:CB:4A:36:D4:B5:7A:3C:3E:42:F6:7A:FF:08:FB:EA:46:89:69:6C:AA:87
+  - domain: privateinternetaccess.com
+    method: https
+    issue:
+      - GH-7016
+    checked: "2026-10-10T04:36:49Z"
+    packages:
+      - package: com.privateinternetaccess.android
+        fingerprints:
+          - 8B:6A:E2:B9:B0:6F:4D:18:17:FD:3F:84:6F:88:E4:40:DD:43:1A:3F:46:62:0B:DD:4A:15:2B:70:FC:90:89:A2
   - domain: proton.me
     method: https
     issue:
@@ -638,12 +665,16 @@ domains:
     method: https
     issue:
       - GH-2812
-    checked: "2026-07-05T05:35:45Z"
+      - GH-7016
+    checked: "2026-10-10T04:36:49Z"
     packages:
+      - package: com.whatsapp
+        fingerprints:
+          - 39:87:D0:43:D1:0A:EF:AF:5A:87:10:B3:67:14:18:FE:57:E0:E1:9B:65:3C:9D:F8:25:58:FE:B5:FF:CE:5D:44
+          - FB:92:0D:38:1B:EE:1B:20:93:F2:7D:C8:F1:3D:99:4D:A6:29:DC:91:88:7D:05:29:B3:5C:9A:2D:C4:F4:A6:C2
       - package: com.whatsapp.w4b
         fingerprints:
           - 39:87:D0:43:D1:0A:EF:AF:5A:87:10:B3:67:14:18:FE:57:E0:E1:9B:65:3C:9D:F8:25:58:FE:B5:FF:CE:5D:44
-          - CC:E5:84:32:83:F0:A5:60:6B:0F:AC:F6:F7:3E:F7:98:91:C4:8A:82:0E:84:F8:11:E0:04:44:35:B3:97:9E:A2
           - FB:92:0D:38:1B:EE:1B:20:93:F2:7D:C8:F1:3D:99:4D:A6:29:DC:91:88:7D:05:29:B3:5C:9A:2D:C4:F4:A6:C2
   - domain: wikipedia.org
     method: https
