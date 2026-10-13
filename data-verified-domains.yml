@@ -65,6 +65,15 @@ domains:
       - package: com.fastmail.app
         fingerprints:
           - C9:2C:5E:E8:F6:BA:CB:E9:3C:A6:C0:8A:E9:6E:F4:7D:09:91:80:63:F5:71:64:78:BF:90:E6:86:09:C9:0D:1D
+  - domain: app.filen.io
+    method: https
+    issue:
+      - GH-7128
+    checked: "2026-10-13T04:51:21Z"
+    packages:
+      - package: io.filen.app
+        fingerprints:
+          - 2C:90:DF:59:1A:39:E0:8A:AD:E9:4F:72:80:D1:92:D3:34:47:F0:1E:1E:12:75:19:82:B8:AE:C3:F9:0F:AD:AB
   - domain: app.hinge.co
     method: https
     issue:
@@ -250,6 +259,16 @@ domains:
         fingerprints:
           - 97:FC:DB:FF:C4:F3:0C:C3:14:1A:76:D7:17:9A:FB:42:97:4B:79:76:D6:8E:B0:AA:49:7C:12:E5:26:52:66:13
           - BE:5A:A8:A5:43:6E:99:71:21:E5:E5:5E:4C:A7:E0:47:84:48:88:09:14:B9:F9:4C:24:2C:5E:4F:DB:E8:D8:98
+  - domain: ebay.com
+    method: https
+    issue:
+      - GH-7128
+    checked: "2026-10-13T04:51:21Z"
+    packages:
+      - package: com.ebay.mobile
+        fingerprints:
+          - 85:B4:01:54:97:15:4D:FA:89:DE:30:87:71:A9:FC:61:A6:4B:19:AF:1A:3F:B0:32:56:E8:CC:3A:79:55:67:E5
+          - 9B:3F:9B:A0:2F:AD:D4:EC:0B:48:E0:12:8A:95:27:93:96:BF:58:01:DF:07:6D:09:D9:4F:E3:D8:9D:EC:D6:69
   - domain: euria.infomaniak.com
     method: https
     issue:
@@ -418,8 +437,12 @@ domains:
     method: https
     issue:
       - GH-2069
-    checked: "2026-06-19T06:20:55Z"
+      - GH-7128
+    checked: "2026-10-13T04:51:21Z"
     packages:
+      - package: org.telegram.messenger
+        fingerprints:
+          - 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
       - package: org.telegram.messenger.web
         fingerprints:
           - 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
@@ -470,6 +493,16 @@ domains:
       - package: com.openai.chatgpt
         fingerprints:
           - B2:4F:4B:FB:B3:CF:29:3F:93:87:03:B9:D8:70:27:C1:10:2C:C3:6D:C4:FA:20:69:10:E0:89:27:DB:40:47:3C
+  - domain: paralino.app
+    method: https
+    issue:
+      - GH-7128
+    checked: "2026-10-13T04:51:21Z"
+    packages:
+      - package: app.paralino.android
+        fingerprints:
+          - 2B:66:56:E2:BE:9B:3C:12:EF:55:A5:F6:FA:4E:AA:83:E0:B2:44:60:2D:18:5E:2C:3D:8C:48:98:95:36:3D:B6
+          - 7C:36:87:CA:81:BC:A2:0C:32:09:5E:CE:AD:18:29:09:DC:50:87:03:6A:37:F0:77:2B:2D:9E:5D:85:91:41:DC
   - domain: paypal.com
     method: https
     issue:
