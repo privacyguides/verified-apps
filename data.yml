@@ -6316,6 +6316,8 @@ packages:
             issue: GH-689
             apk:
               sha256: f8f9713c8fb7214ce0a976453ec4a8df519098d2e03c4be38b4032816b9a03f0
+          - name: HTTPS Verified Domain
+            issue: GH-6602
   - package: com.verisec.mobile.frejaeid
     signature:
       - fingerprint: 1F:14:FE:04:C5:19:52:C5:E3:C8:E6:82:51:AE:8A:C3:73:B8:4C:59:76:BD:7F:24:8E:64:3A:F2:50:C8:BA:91
