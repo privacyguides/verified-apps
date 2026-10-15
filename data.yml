@@ -2288,6 +2288,8 @@ packages:
             issue: GH-1426
             apk:
               sha256: 60cc799aace0ab88ed026f820845572e32c17987855ac33a0dfe566cc656465a
+          - name: HTTPS Verified Domain
+            issue: GH-4595
   - package: com.eboks.activities
     signature:
       - fingerprint: 5F:13:3E:11:D7:5C:33:D2:1A:93:25:B3:B6:77:FC:86:3A:95:3A:D5:CE:42:91:EF:CC:17:22:A6:DA:DC:B2:31
@@ -5218,6 +5220,14 @@ packages:
             apk:
               sha256: 261243f0df7023074ae80650192aa46dc56ff5b5db2a9694311b7b7fd316ceeb
               link: https://github.com/RoundSalmon4/AppVerifierBG/releases/download/nightly-2026-05-31/AppVerifier-nightly-2026-05-31.apk
+          - name: F-Droid
+            issue: GH-4595
+            apk:
+              sha256: 56839f39523026a55c88567d17f222bb5454a1056bf6fb5a062321a8dd6dd147
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-4595
+            apk:
+              sha256: 2a6550a3f36f948a747a98c850c48167511998f8f76fe30f8bc977cc7468e9bf
   - package: com.ryanair.cheapflights
     signature:
       - fingerprint: 7B:95:CA:16:5B:9D:E6:03:8E:B9:F1:CC:77:BC:54:2C:22:33:DE:A1:43:EE:32:38:69:3A:3F:55:B8:1A:01:E9
