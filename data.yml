@@ -5115,6 +5115,10 @@ packages:
             apk:
               sha256: 2eca60b3a540697cd7676edea2fbabdfaf54c3ae958584168231981099d2868a
               link: https://buildbot.libretro.com/stable/1.22.2/android/RetroArch.apk
+          - name: Google Play
+            issue: GH-5864
+            apk:
+              sha256: f9ba6d0ad784e6e843b1fd5782ecc9aa891e910d4dee707ed610370de69cc20b
   - package: com.retroarch.aarch64
     signature:
       - fingerprint: D7:A5:EA:B3:09:02:C9:B2:77:5A:F6:FB:4E:AC:2D:29:4A:64:63:4F:B4:7D:D1:38:2B:C3:AC:5B:F6:69:98:2E
@@ -7616,6 +7620,8 @@ packages:
             apk:
               sha256: 8619dabc77c84b7ba5621f1b707153460e0dd643ec65bd814d4e6f32560be66b
               link: https://cdn.zapstore.dev/8619dabc77c84b7ba5621f1b707153460e0dd643ec65bd814d4e6f32560be66b.apk
+          - name: HTTPS Verified Domain
+            issue: GH-5864
   - package: digital.ventral.ips
     signature:
       - fingerprint: 03:24:3D:0C:0D:44:B6:E0:B4:1E:3C:B2:45:B1:DC:26:9B:E4:C3:FF:E1:77:F8:43:FC:00:5B:C4:EA:0C:74:26
@@ -9959,6 +9965,8 @@ packages:
             issue: GH-731
             apk:
               sha256: 4ac7d24400bb22778fcb48e7e3326b1c402814a5d52d9fd980a066694e7700ba
+          - name: HTTPS Verified Domain
+            issue: GH-5864
   - package: org.kiwix.kiwixmobile
     signature:
       - fingerprint: 6D:FB:FC:62:E1:65:87:A7:8A:A2:D9:58:5A:E9:BB:7F:69:73:C2:BF:84:03:4B:7B:90:10:1A:40:14:09:F5:AA
