@@ -198,6 +198,15 @@ domains:
       - package: com.qobuz.club
         fingerprints:
           - 2C:E2:F1:9A:17:9C:13:FA:C9:EA:F1:39:C3:F0:84:D5:5B:02:64:58:96:29:52:D4:E6:B5:F2:F1:A2:9C:A2:1E
+  - domain: coinbase.com
+    method: https
+    issue:
+      - GH-7215
+    checked: "2026-10-16T05:27:18Z"
+    packages:
+      - package: com.coinbase.android
+        fingerprints:
+          - 41:6A:E0:CE:11:21:E9:C6:A6:B0:B7:C6:B5:D1:D9:BA:2B:9B:23:A1:4F:4F:1B:9A:87:E0:3B:49:8E:20:CF:3B
   - domain: copilot.microsoft.com
     method: https
     issue:
@@ -290,6 +299,15 @@ domains:
       - package: com.fundrise.android
         fingerprints:
           - FF:4B:21:E4:BB:0F:1F:AF:33:75:2D:9E:15:8E:0A:B0:ED:F1:E1:A8:2A:81:E0:C4:8F:29:40:23:55:82:B1:8B
+  - domain: github.com
+    method: https
+    issue:
+      - GH-7215
+    checked: "2026-10-16T05:27:18Z"
+    packages:
+      - package: com.github.android
+        fingerprints:
+          - DF:08:C9:F2:D8:09:18:9D:9D:50:64:97:C1:57:45:A7:39:5A:41:53:6E:FB:43:3E:3A:EE:1A:ED:BE:11:B2:61
   - domain: guavahealth.com
     method: https
     issue:
