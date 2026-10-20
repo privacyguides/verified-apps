@@ -8649,10 +8649,6 @@ packages:
         sources:
           - name: AppVerifier
             issue: GH-1085
-          - name: F-Droid
-            issue: GH-1085
-            apk:
-              sha256: 4105e0f1f8e53893d6294729c39f974ee9248f3a8caede5b6e1192d475888a17
       - fingerprint: 75:FD:99:1B:AC:EA:84:8E:5A:BF:F1:4A:01:D9:60:9B:76:50:CF:03:06:B3:7A:60:ED:56:15:67:8C:B3:64:07
         sources:
           - name: AppVerifier
@@ -8670,6 +8666,10 @@ packages:
             apk:
               sha256: bd6ca8ec343ccbd974cf9f0719cff55a9d1001106c7190a6bab42dff9f77c536
               link: https://github.com/CatimaLoyalty/Android/releases/download/v2.42.1/app-foss-release.apk
+          - name: F-Droid
+            issue: GH-7306
+            apk:
+              sha256: 271980b62f73137db2d843fb4fc35f103c4126d769f816d365206c5c1adff3a9
           - name: F-Droid (IzzyOnDroid)
             issue: GH-1084
             apk:
