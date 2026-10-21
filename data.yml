@@ -5191,6 +5191,8 @@ packages:
             issue: GH-989
             apk:
               sha256: 1e166381f60601081c57eddca017e0c6aceea2d09b01e14dcd4883b0dbc67e0a
+          - name: HTTPS Verified Domain
+            issue: GH-7265
   - package: com.rode.rodecentralmobile
     signature:
       - fingerprint: 80:76:3F:94:79:A1:2F:8F:DB:D7:9C:D0:48:F5:22:58:8C:1C:2A:39:8D:DF:A0:33:04:D4:7C:B5:28:F8:95:B1
@@ -8798,6 +8800,8 @@ packages:
             issue: GH-1648
             apk:
               sha256: 463f78fdd0e52d104f50173ed2fa6777c5e639df01e65c1b96336d1c9e4a16b1
+          - name: HTTPS Verified Domain
+            issue: GH-7265
   - package: me.zhanghai.android.files
     signature:
       - fingerprint: 87:3B:9B:60:C7:7C:F7:F3:CD:5F:AE:66:D0:FE:11:2C:4A:86:97:3E:11:8E:E8:A2:9C:34:6C:4C:67:3C:97:F0
@@ -9959,6 +9963,8 @@ packages:
             issue: GH-731
             apk:
               sha256: 4ac7d24400bb22778fcb48e7e3326b1c402814a5d52d9fd980a066694e7700ba
+          - name: HTTPS Verified Domain
+            issue: GH-7265
   - package: org.kiwix.kiwixmobile
     signature:
       - fingerprint: 6D:FB:FC:62:E1:65:87:A7:8A:A2:D9:58:5A:E9:BB:7F:69:73:C2:BF:84:03:4B:7B:90:10:1A:40:14:09:F5:AA
@@ -10249,10 +10255,12 @@ packages:
     signature:
       - fingerprint: 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
         sources:
-          - name: Google Play
-            issue: GH-498
           - name: AppVerifier
             issue: GH-498
+          - name: Google Play
+            issue: GH-498
+          - name: HTTPS Verified Domain
+            issue: GH-7265
   - package: org.telegram.messenger.web
     signature:
       - fingerprint: 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
