@@ -797,6 +797,8 @@ packages:
             issue: GH-1839
             apk:
               sha256: c048bc3dbb8486f3f9218cca09d261415aba917765cba2abd3e69700e1675973
+          - name: HTTPS Verified Domain
+            issue: GH-6834
   - package: com.aircanada
     signature:
       - fingerprint: 39:09:4C:C7:95:A9:86:B6:45:D1:F6:59:F1:5A:5B:8E:5C:8C:63:F7:80:37:F9:95:E7:E7:1B:62:FE:93:D2:E9
@@ -2288,6 +2290,8 @@ packages:
             issue: GH-1426
             apk:
               sha256: 60cc799aace0ab88ed026f820845572e32c17987855ac33a0dfe566cc656465a
+          - name: HTTPS Verified Domain
+            issue: GH-6834
   - package: com.eboks.activities
     signature:
       - fingerprint: 5F:13:3E:11:D7:5C:33:D2:1A:93:25:B3:B6:77:FC:86:3A:95:3A:D5:CE:42:91:EF:CC:17:22:A6:DA:DC:B2:31
@@ -9988,6 +9992,8 @@ packages:
             issue: GH-595
             apk:
               sha256: cf702081a0f833e96dd93c1864bc2ea282994102cf1b05196bfc9bb555718506
+          - name: HTTPS Verified Domain
+            issue: GH-6834
   - package: org.localsend.localsend_app
     signature:
       - fingerprint: 32:20:C3:53:A7:3C:FB:D0:C2:F3:05:24:71:C4:45:32:4C:F4:52:BC:BA:26:DE:1C:47:3A:52:FE:5C:44:E1:D6
