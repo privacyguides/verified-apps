@@ -10730,6 +10730,8 @@ packages:
             issue: GH-1642
             apk:
               sha256: 7769dfc2ac9405a2e598960d625f89e47254fcf2b353389252681dd25251e6e1
+          - name: HTTPS Verified Domain
+            issue: GH-6440
   - package: se.postnord.private
     signature:
       - fingerprint: 71:33:6E:97:C6:D3:EF:FF:FA:42:38:5F:A8:33:F9:05:95:AC:8C:1C:05:D8:98:04:97:DE:2F:E1:F5:3D:97:53
