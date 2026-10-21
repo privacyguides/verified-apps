@@ -82,6 +82,8 @@ packages:
             issue: GH-765
             apk:
               sha256: 3983db549a59e681473446be319bdcbd65b2a1f10a745a8ab4e30188b678f59a
+          - name: HTTPS Verified Domain
+            issue: GH-4002
   - package: app.comaps
     signature:
       - fingerprint: 48:94:E8:E6:96:36:27:EF:66:00:31:D8:59:3F:E7:72:97:F8:35:AC:B4:E2:38:10:00:3E:92:61:35:02:3B:4C
@@ -8736,6 +8738,8 @@ packages:
             issue: GH-971
             apk:
               sha256: 9d83d3ad2f3e84f3d61379ba49196633c14585eb3358467b5fbd46dde28a6380
+          - name: HTTPS Verified Domain
+            issue: GH-4002
   - package: me.ocv.partyup_dbg
     signature:
       - fingerprint: CA:8D:3B:0D:DA:29:61:D8:93:05:40:A0:3C:41:9B:A5:4A:76:25:7F:B2:08:C9:B4:85:94:42:BE:16:29:65:D8
