@@ -5115,6 +5115,10 @@ packages:
             apk:
               sha256: 2eca60b3a540697cd7676edea2fbabdfaf54c3ae958584168231981099d2868a
               link: https://buildbot.libretro.com/stable/1.22.2/android/RetroArch.apk
+          - name: Google Play
+            issue: GH-6069
+            apk:
+              sha256: f9ba6d0ad784e6e843b1fd5782ecc9aa891e910d4dee707ed610370de69cc20b
   - package: com.retroarch.aarch64
     signature:
       - fingerprint: D7:A5:EA:B3:09:02:C9:B2:77:5A:F6:FB:4E:AC:2D:29:4A:64:63:4F:B4:7D:D1:38:2B:C3:AC:5B:F6:69:98:2E
@@ -5568,6 +5572,8 @@ packages:
             issue: GH-762
             apk:
               sha256: 55aae2e08e439a42afc2ac6464e31bfdba34caf23505a7581caa7720eb4db126
+          - name: HTTPS Verified Domain
+            issue: GH-6069
   - package: com.simplytranslate_mobile
     signature:
       - fingerprint: C1:03:5F:AB:0B:E4:75:EB:9F:C7:0E:92:12:48:0D:22:0B:90:C7:E7:4A:1F:9B:53:B5:CA:23:A6:0A:D2:99:F9
@@ -10028,6 +10034,8 @@ packages:
             issue: GH-2298
             apk:
               sha256: abcc10c8cc26bf03325d758f88da724b62fb370479de6dddaf3ae39ecdfd6844
+          - name: HTTPS Verified Domain
+            issue: GH-6069
   - package: org.moire.opensudoku
     signature:
       - fingerprint: A5:4C:E2:9E:BB:02:FC:B9:B4:78:62:05:72:F7:C4:DD:39:B9:03:73:6F:E6:19:96:87:47:1B:A7:29:F4:61:3A
