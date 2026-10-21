@@ -5131,6 +5131,8 @@ packages:
             issue: GH-506
             apk:
               sha256: 3ba12ceb8c5a2f028f8415e610f27570c737d5625ebbaa59bd1d9bff4e3d47e5
+          - name: HTTPS Verified Domain
+            issue: GH-3701
   - package: com.reworewo.prayertimes
     signature:
       - fingerprint: CD:1F:0D:9A:62:D0:47:9C:4B:71:BB:C4:D5:19:69:82:69:D6:DC:49:9D:39:53:DE:75:28:08:7E:51:5A:19:68
