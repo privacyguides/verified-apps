@@ -4981,6 +4981,10 @@ packages:
     signature:
       - fingerprint: 8B:6A:E2:B9:B0:6F:4D:18:17:FD:3F:84:6F:88:E4:40:DD:43:1A:3F:46:62:0B:DD:4A:15:2B:70:FC:90:89:A2
         sources:
+          - name: F-Droid
+            issue: GH-4268
+            apk:
+              sha256: 2724c82bf46229fbcd54a565ad0e21b4afa570878cd4c1ebea9773f36585e0a5
           - name: Google Play
             issue: GH-829
             apk:
@@ -7616,6 +7620,8 @@ packages:
             apk:
               sha256: 8619dabc77c84b7ba5621f1b707153460e0dd643ec65bd814d4e6f32560be66b
               link: https://cdn.zapstore.dev/8619dabc77c84b7ba5621f1b707153460e0dd643ec65bd814d4e6f32560be66b.apk
+          - name: HTTPS Verified Domain
+            issue: GH-4268
   - package: digital.ventral.ips
     signature:
       - fingerprint: 03:24:3D:0C:0D:44:B6:E0:B4:1E:3C:B2:45:B1:DC:26:9B:E4:C3:FF:E1:77:F8:43:FC:00:5B:C4:EA:0C:74:26
@@ -9988,6 +9994,8 @@ packages:
             issue: GH-595
             apk:
               sha256: cf702081a0f833e96dd93c1864bc2ea282994102cf1b05196bfc9bb555718506
+          - name: HTTPS Verified Domain
+            issue: GH-4268
   - package: org.localsend.localsend_app
     signature:
       - fingerprint: 32:20:C3:53:A7:3C:FB:D0:C2:F3:05:24:71:C4:45:32:4C:F4:52:BC:BA:26:DE:1C:47:3A:52:FE:5C:44:E1:D6
