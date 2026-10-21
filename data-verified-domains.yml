@@ -65,6 +65,15 @@ domains:
       - package: com.fastmail.app
         fingerprints:
           - C9:2C:5E:E8:F6:BA:CB:E9:3C:A6:C0:8A:E9:6E:F4:7D:09:91:80:63:F5:71:64:78:BF:90:E6:86:09:C9:0D:1D
+  - domain: app.filen.io
+    method: https
+    issue:
+      - GH-5599
+    checked: "2026-09-09T04:44:51Z"
+    packages:
+      - package: io.filen.app
+        fingerprints:
+          - 2C:90:DF:59:1A:39:E0:8A:AD:E9:4F:72:80:D1:92:D3:34:47:F0:1E:1E:12:75:19:82:B8:AE:C3:F9:0F:AD:AB
   - domain: app.hinge.co
     method: https
     issue:
