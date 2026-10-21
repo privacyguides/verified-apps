@@ -3233,6 +3233,8 @@ packages:
             issue: GH-1038
             apk:
               sha256: 501ab35f241cbd1edad4a005fdc9ebe7ba4ff4f7840d24b440277d7e8d0182cb
+          - name: HTTPS Verified Domain
+            issue: GH-4859
   - package: com.google.android.googlequicksearchbox
     signature:
       - fingerprint: |-
@@ -10028,6 +10030,8 @@ packages:
             issue: GH-2298
             apk:
               sha256: abcc10c8cc26bf03325d758f88da724b62fb370479de6dddaf3ae39ecdfd6844
+          - name: HTTPS Verified Domain
+            issue: GH-4859
   - package: org.moire.opensudoku
     signature:
       - fingerprint: A5:4C:E2:9E:BB:02:FC:B9:B4:78:62:05:72:F7:C4:DD:39:B9:03:73:6F:E6:19:96:87:47:1B:A7:29:F4:61:3A
