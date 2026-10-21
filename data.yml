@@ -3702,6 +3702,8 @@ packages:
             issue: GH-1421
             apk:
               sha256: 2732b960f86df985b2a99d6cc1a03fdb71cf58e153f5774af48937c96f665cf8
+          - name: HTTPS Verified Domain
+            issue: GH-6677
   - package: com.kin.easynotes
     signature:
       - fingerprint: FC:E8:7D:A9:7F:79:13:01:DF:39:0B:FA:47:E8:16:85:19:11:67:CA:B5:DB:D5:55:DB:82:87:54:1F:78:6E:28
@@ -3903,6 +3905,8 @@ packages:
             issue: GH-538
             apk:
               sha256: 88949b2d89d8ebdc69cfb203103b3a3b39f8801589aba0d6ccaa0a8b18a9f1b2
+          - name: HTTPS Verified Domain
+            issue: GH-6677
   - package: com.liamcottle.meshcore.android
     signature:
       - fingerprint: F9:36:C9:3F:DD:6F:57:F1:CD:F2:A7:1B:E6:16:4A:03:F2:4E:89:62:10:83:F1:74:08:32:CE:50:93:62:B4:7B
@@ -10028,6 +10032,8 @@ packages:
             issue: GH-2298
             apk:
               sha256: abcc10c8cc26bf03325d758f88da724b62fb370479de6dddaf3ae39ecdfd6844
+          - name: HTTPS Verified Domain
+            issue: GH-6677
   - package: org.moire.opensudoku
     signature:
       - fingerprint: A5:4C:E2:9E:BB:02:FC:B9:B4:78:62:05:72:F7:C4:DD:39:B9:03:73:6F:E6:19:96:87:47:1B:A7:29:F4:61:3A
@@ -10249,10 +10255,12 @@ packages:
     signature:
       - fingerprint: 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
         sources:
-          - name: Google Play
-            issue: GH-498
           - name: AppVerifier
             issue: GH-498
+          - name: Google Play
+            issue: GH-498
+          - name: HTTPS Verified Domain
+            issue: GH-6677
   - package: org.telegram.messenger.web
     signature:
       - fingerprint: 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
