@@ -1859,6 +1859,8 @@ packages:
             issue: GH-985
             apk:
               sha256: 40d83b3491f46363e666ac4565fdcbb2a9aa011e80c62d9289d2db9ec979defb
+          - name: HTTPS Verified Domain
+            issue: GH-7016
   - package: com.coingecko.coingeckoapp
     signature:
       - fingerprint: C4:80:62:6A:2A:02:54:29:05:9C:14:32:15:40:86:66:DE:CB:D8:58:3C:2A:17:AB:73:C9:68:03:6F:24:D1:22
@@ -4981,10 +4983,16 @@ packages:
     signature:
       - fingerprint: 8B:6A:E2:B9:B0:6F:4D:18:17:FD:3F:84:6F:88:E4:40:DD:43:1A:3F:46:62:0B:DD:4A:15:2B:70:FC:90:89:A2
         sources:
+          - name: F-Droid
+            issue: GH-7016
+            apk:
+              sha256: 01dc9cd9e1cafac203ad22cd4ee0ca887c9cb4caa592884aac09614b0d80e948
           - name: Google Play
             issue: GH-829
             apk:
               sha256: 03bcde51ac127fdbd5fe6f01c6e321a5ffe7e909bf218c783d471710659fa26f
+          - name: HTTPS Verified Domain
+            issue: GH-7016
   - package: com.prosegur.smart20
     signature:
       - fingerprint: 39:49:AB:3B:71:A8:69:53:D4:47:7D:D5:51:5D:7B:4B:92:27:9B:69:7B:C5:77:4D:27:B4:24:8D:B6:E1:F8:8D
@@ -6518,6 +6526,8 @@ packages:
             apk:
               sha256: 468769d315aa0bbe9ccc1c5993f8d58b5ff973b02a4f5d13b9dde8c570bf5cc2
               link: https://www.whatsapp.com/android/7/WhatsApp.apk
+          - name: HTTPS Verified Domain
+            issue: GH-7016
       - fingerprint: |-
           39:87:D0:43:D1:0A:EF:AF:5A:87:10:B3:67:14:18:FE:57:E0:E1:9B:65:3C:9D:F8:25:58:FE:B5:FF:CE:5D:44
           FB:92:0D:38:1B:EE:1B:20:93:F2:7D:C8:F1:3D:99:4D:A6:29:DC:91:88:7D:05:29:B3:5C:9A:2D:C4:F4:A6:C2
@@ -6528,6 +6538,8 @@ packages:
             issue: GH-779
             apk:
               sha256: 27faf4cc0b5556034c2be5eeb14239a5924891e03d9e6d457ac217294832ea13
+          - name: HTTPS Verified Domain
+            issue: GH-7016
   - package: com.whatsapp.w4b
     signature:
       - fingerprint: |-
