@@ -435,6 +435,15 @@ domains:
       - package: com.zoho.mail
         fingerprints:
           - A9:D6:D0:A2:AF:DB:15:84:9B:8C:D3:1D:51:FE:73:B8:E1:B1:70:BA:A5:70:C2:F8:F2:A3:F8:65:28:29:CB:BD
+  - domain: mapillary.com
+    method: https
+    issue:
+      - GH-7328
+    checked: "2026-10-21T04:34:59Z"
+    packages:
+      - package: com.mapillary.app
+        fingerprints:
+          - DC:E7:1C:BF:92:B7:7E:CE:9F:E1:33:04:66:A4:0C:68:43:CE:8B:6E:86:D4:74:5C:45:36:A2:32:12:DF:6D:58
   - domain: markusfisch.de
     method: https
     issue:
