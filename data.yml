@@ -5947,6 +5947,8 @@ packages:
             issue: GH-750
             apk:
               sha256: 11a9d9f263468dcb891b01202e017497e0f7889372f866edd69b0aa730407630
+          - name: HTTPS Verified Domain
+            issue: GH-7194
   - package: com.tmob.AveaOIM
     signature:
       - fingerprint: 44:CE:C0:5A:F5:04:97:13:BA:66:94:74:7A:EA:29:66:AA:AC:1C:BD:07:7A:22:17:A6:CC:F4:E0:98:37:14:C5
@@ -8655,10 +8657,6 @@ packages:
         sources:
           - name: AppVerifier
             issue: GH-1085
-          - name: F-Droid
-            issue: GH-1085
-            apk:
-              sha256: 4105e0f1f8e53893d6294729c39f974ee9248f3a8caede5b6e1192d475888a17
       - fingerprint: 75:FD:99:1B:AC:EA:84:8E:5A:BF:F1:4A:01:D9:60:9B:76:50:CF:03:06:B3:7A:60:ED:56:15:67:8C:B3:64:07
         sources:
           - name: AppVerifier
@@ -8676,6 +8674,10 @@ packages:
             apk:
               sha256: bd6ca8ec343ccbd974cf9f0719cff55a9d1001106c7190a6bab42dff9f77c536
               link: https://github.com/CatimaLoyalty/Android/releases/download/v2.42.1/app-foss-release.apk
+          - name: F-Droid
+            issue: GH-7194
+            apk:
+              sha256: 271980b62f73137db2d843fb4fc35f103c4126d769f816d365206c5c1adff3a9
           - name: F-Droid (IzzyOnDroid)
             issue: GH-1084
             apk:
@@ -10149,6 +10151,10 @@ packages:
         sources:
           - name: DNS Verified Domain
             issue: GH-1627
+          - name: Google Play
+            issue: GH-7194
+            apk:
+              sha256: 5573a24a38ff890a06ed05d6db66347f5b7b7c026babe0a60555a8d5e924b992
   - package: org.proninyaroslav.libretorrent
     signature:
       - fingerprint: 1A:96:ED:44:27:98:2C:52:E0:67:09:C9:41:A8:F3:9B:2A:BA:68:BC:CA:E8:6B:6C:86:F9:F0:30:BD:95:99:EA
