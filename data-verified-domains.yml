@@ -300,6 +300,15 @@ domains:
       - package: com.fundrise.android
         fingerprints:
           - FF:4B:21:E4:BB:0F:1F:AF:33:75:2D:9E:15:8E:0A:B0:ED:F1:E1:A8:2A:81:E0:C4:8F:29:40:23:55:82:B1:8B
+  - domain: github.com
+    method: https
+    issue:
+      - GH-7527
+    checked: "2026-10-25T14:36:29Z"
+    packages:
+      - package: com.github.android
+        fingerprints:
+          - DF:08:C9:F2:D8:09:18:9D:9D:50:64:97:C1:57:45:A7:39:5A:41:53:6E:FB:43:3E:3A:EE:1A:ED:BE:11:B2:61
   - domain: guavahealth.com
     method: https
     issue:

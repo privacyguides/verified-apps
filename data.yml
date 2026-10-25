@@ -2807,6 +2807,8 @@ packages:
             issue: GH-807
             apk:
               sha256: e6ac0e638c84346ec9df78b7e5dca1ecc015d7b39cb5bb25b2604fe68f3d385e
+          - name: HTTPS Verified Domain
+            issue: GH-7527
   - package: com.github.catfriend1.syncthingandroid
     signature:
       - fingerprint: F8:E0:27:73:B8:2C:F7:E9:4A:AB:01:62:02:9F:57:88:5F:F0:72:0F:AE:C1:0C:6B:CE:F4:9F:7D:F8:C9:4A:99
