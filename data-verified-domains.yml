@@ -444,6 +444,16 @@ domains:
       - package: de.markusfisch.android.binaryeye
         fingerprints:
           - DD:A9:21:96:50:57:4B:2D:70:2F:DF:2D:F9:0F:61:9B:D4:E2:D0:F3:A6:6E:26:BB:03:2F:2F:01:88:40:CF:8E
+  - domain: meetingguide.org
+    method: https
+    issue:
+      - GH-7102
+    checked: "2026-10-12T05:01:32Z"
+    packages:
+      - package: org.meetingguide
+        fingerprints:
+          - 44:B7:4D:46:74:4E:4D:0D:1C:87:BC:EF:AF:31:4A:2D:88:D9:01:10:2B:3D:0D:26:73:A7:7A:5B:AB:41:42:AC
+          - 79:D5:76:8B:78:1B:9D:C5:A6:C6:3E:77:D4:57:A0:50:5C:C1:1D:D5:41:3F:13:89:3D:4B:78:09:A1:E9:5D:C7
   - domain: messenger.telegram.org
     method: https
     issue:
