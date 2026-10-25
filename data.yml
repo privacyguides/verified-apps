@@ -1859,6 +1859,8 @@ packages:
             issue: GH-985
             apk:
               sha256: 40d83b3491f46363e666ac4565fdcbb2a9aa011e80c62d9289d2db9ec979defb
+          - name: HTTPS Verified Domain
+            issue: GH-7393
   - package: com.coingecko.coingeckoapp
     signature:
       - fingerprint: C4:80:62:6A:2A:02:54:29:05:9C:14:32:15:40:86:66:DE:CB:D8:58:3C:2A:17:AB:73:C9:68:03:6F:24:D1:22
