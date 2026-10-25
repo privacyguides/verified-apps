@@ -56,6 +56,15 @@ domains:
       - package: com.box.android
         fingerprints:
           - 5E:6E:4B:82:82:99:CA:01:D7:A4:92:21:1F:CC:88:FA:68:05:0B:AA:A2:5A:50:EA:69:59:6F:D2:A3:E6:B3:66
+  - domain: android.khanacademy.org
+    method: https
+    issue:
+      - GH-7265
+    checked: "2026-10-18T04:34:16Z"
+    packages:
+      - package: org.khanacademy.android
+        fingerprints:
+          - EF:FC:FE:21:10:60:12:61:7B:D6:3D:EB:9D:FD:B8:35:4D:1D:57:4D:1D:67:C5:66:4A:5D:02:E6:69:B2:4E:CB
   - domain: app.fastmail.com
     method: https
     issue:
@@ -448,8 +457,12 @@ domains:
     method: https
     issue:
       - GH-2069
-    checked: "2026-06-19T06:20:55Z"
+      - GH-7265
+    checked: "2026-10-18T04:34:16Z"
     packages:
+      - package: org.telegram.messenger
+        fingerprints:
+          - 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
       - package: org.telegram.messenger.web
         fingerprints:
           - 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
@@ -556,7 +569,8 @@ domains:
     issue:
       - GH-2752
       - GH-2686
-    checked: "2026-07-02T05:45:15Z"
+      - GH-7265
+    checked: "2026-10-18T04:34:16Z"
     packages:
       - package: me.proton.android.calendar
         fingerprints:
@@ -564,6 +578,20 @@ domains:
       - package: me.proton.android.drive
         fingerprints:
           - DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
+      - package: me.proton.android.lumo
+        fingerprints:
+          - A7:47:EA:EE:28:61:1E:25:21:7B:79:3C:07:BF:30:22:34:40:5C:FD:1E:19:06:81:62:55:6C:79:E5:BF:04:F0
+          - DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
+  - domain: robinhood.com
+    method: https
+    issue:
+      - GH-7265
+    checked: "2026-10-18T04:34:16Z"
+    packages:
+      - package: com.robinhood.android
+        fingerprints:
+          - 82:59:FA:51:3C:FD:54:A6:AA:8D:93:43:50:1B:FA:13:45:8C:55:D2:5E:27:C5:8F:8D:CA:03:EF:E2:F0:02:E5
+          - FE:CB:D7:44:58:69:DC:91:E4:C7:97:4F:2E:EC:E0:CB:3E:4B:4F:67:2F:F5:83:F0:17:A8:A3:B9:8C:02:5C:2C
   - domain: simplex.chat
     method: https
     issue:
