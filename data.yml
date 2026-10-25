@@ -2424,6 +2424,8 @@ packages:
             issue: GH-1968
             apk:
               sha256: 6cd2dc8fdb86c3ab4bd1de4ca2cb4fbcf56dd893f2ff32016e659de65bfa9d1f
+          - name: HTTPS Verified Domain
+            issue: GH-7510
       - fingerprint: E3:F9:E1:E0:CF:99:D0:E5:6A:05:5B:A6:5E:24:1B:33:99:F7:CE:A5:24:32:6B:0C:DD:6E:C1:32:7E:D0:FD:C1
         sources:
           - name: Google Play
@@ -2799,6 +2801,8 @@ packages:
             issue: GH-314
             apk:
               sha256: 36bc747c6b4c1042557a640d9f7bfd4533bb28fafb02f57f6fdec8f84ebc7226
+          - name: HTTPS Verified Domain
+            issue: GH-7510
   - package: com.github.android
     signature:
       - fingerprint: DF:08:C9:F2:D8:09:18:9D:9D:50:64:97:C1:57:45:A7:39:5A:41:53:6E:FB:43:3E:3A:EE:1A:ED:BE:11:B2:61
