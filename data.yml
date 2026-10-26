@@ -5570,6 +5570,8 @@ packages:
             issue: GH-762
             apk:
               sha256: 55aae2e08e439a42afc2ac6464e31bfdba34caf23505a7581caa7720eb4db126
+          - name: HTTPS Verified Domain
+            issue: GH-7578
   - package: com.simplytranslate_mobile
     signature:
       - fingerprint: C1:03:5F:AB:0B:E4:75:EB:9F:C7:0E:92:12:48:0D:22:0B:90:C7:E7:4A:1F:9B:53:B5:CA:23:A6:0A:D2:99:F9
@@ -8187,6 +8189,8 @@ packages:
             issue: CB-152
             apk:
               sha256: 629345ece9a38ce722088b0e0e0a7edfb36b392f2d23cf37c07a9fa4a913422d
+          - name: HTTPS Verified Domain
+            issue: GH-7578
       - fingerprint: 5B:DD:27:47:B7:CF:A9:8D:62:9E:4D:44:41:01:A9:CE:DC:E3:32:AD:6A:7F:2A:0B:14:F4:69:ED:93:7F:13:27
         sources:
           - name: Direct APK Link
