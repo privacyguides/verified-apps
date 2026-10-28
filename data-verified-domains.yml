@@ -56,6 +56,15 @@ domains:
       - package: com.box.android
         fingerprints:
           - 5E:6E:4B:82:82:99:CA:01:D7:A4:92:21:1F:CC:88:FA:68:05:0B:AA:A2:5A:50:EA:69:59:6F:D2:A3:E6:B3:66
+  - domain: android.khanacademy.org
+    method: https
+    issue:
+      - GH-7642
+    checked: "2026-10-28T04:52:06Z"
+    packages:
+      - package: org.khanacademy.android
+        fingerprints:
+          - EF:FC:FE:21:10:60:12:61:7B:D6:3D:EB:9D:FD:B8:35:4D:1D:57:4D:1D:67:C5:66:4A:5D:02:E6:69:B2:4E:CB
   - domain: app.fastmail.com
     method: https
     issue:
@@ -187,6 +196,15 @@ domains:
       - package: com.chase.sig.android
         fingerprints:
           - 73:F0:D9:50:8A:25:72:C1:10:07:7C:FF:1C:AD:4E:D9:2C:00:F0:20:4F:AF:ED:BA:C8:43:4B:D7:6B:C4:AC:D1
+  - domain: citymapper.com
+    method: https
+    issue:
+      - GH-1885
+    checked: "2026-10-28T04:52:06Z"
+    packages:
+      - package: com.citymapper.app.release
+        fingerprints:
+          - BE:8A:28:01:CA:E3:F4:4B:49:1A:8E:CC:A2:8C:3A:C2:23:B3:BD:57:10:9A:71:A5:F2:0B:45:A6:96:D1:7E:5D
   - domain: classdojo.com
     method: https
     issue:
@@ -260,6 +278,16 @@ domains:
         fingerprints:
           - 97:FC:DB:FF:C4:F3:0C:C3:14:1A:76:D7:17:9A:FB:42:97:4B:79:76:D6:8E:B0:AA:49:7C:12:E5:26:52:66:13
           - BE:5A:A8:A5:43:6E:99:71:21:E5:E5:5E:4C:A7:E0:47:84:48:88:09:14:B9:F9:4C:24:2C:5E:4F:DB:E8:D8:98
+  - domain: ebay.com
+    method: https
+    issue:
+      - GH-7642
+    checked: "2026-10-28T04:52:06Z"
+    packages:
+      - package: com.ebay.mobile
+        fingerprints:
+          - 85:B4:01:54:97:15:4D:FA:89:DE:30:87:71:A9:FC:61:A6:4B:19:AF:1A:3F:B0:32:56:E8:CC:3A:79:55:67:E5
+          - 9B:3F:9B:A0:2F:AD:D4:EC:0B:48:E0:12:8A:95:27:93:96:BF:58:01:DF:07:6D:09:D9:4F:E3:D8:9D:EC:D6:69
   - domain: euria.infomaniak.com
     method: https
     issue:
@@ -349,6 +377,15 @@ domains:
       - package: app.keyholm
         fingerprints:
           - 91:85:C9:57:79:4A:7F:F4:43:F5:BD:45:3B:1C:91:3D:80:BA:D0:D0:9D:14:88:2E:1D:F2:81:C6:81:F0:A9:2E
+  - domain: kgurgul.com
+    method: https
+    issue:
+      - GH-7642
+    checked: "2026-10-28T04:52:06Z"
+    packages:
+      - package: com.kgurgul.cpuinfo
+        fingerprints:
+          - AF:24:23:BE:B5:89:E5:5F:DF:95:1F:DE:2F:23:ED:AA:78:5F:57:C7:14:76:4A:FB:BD:D1:5A:85:F1:AE:D3:3C
   - domain: komoot.de
     method: https
     issue:
@@ -604,6 +641,18 @@ domains:
         fingerprints:
           - DF:5B:68:01:94:B7:55:44:A5:75:29:88:23:33:BA:C2:6F:1E:94:F9:B6:14:B4:A9:BC:AB:F3:4B:FB:C7:8D:21
           - FA:0D:C7:F4:72:C7:F9:88:07:20:27:88:4F:2C:ED:3D:81:9D:A7:A3:A5:A1:CA:51:87:9C:B9:E9:05:3B:5F:54
+  - domain: tinder.com
+    method: https
+    issue:
+      - GH-7642
+    checked: "2026-10-28T04:52:06Z"
+    packages:
+      - package: com.tinder
+        fingerprints:
+          - 14:F1:45:31:43:6F:29:E3:E8:F6:8E:BA:03:5B:32:6F:8D:73:DD:7E:A5:DD:36:AA:26:35:31:C7:37:6E:29:57
+          - 8A:B1:4F:D7:50:B8:20:57:4D:20:C3:54:41:EA:14:A9:B5:D1:95:9A:31:04:0C:EC:12:B4:6B:B2:90:F4:DA:1B
+          - F1:75:9B:3C:F6:F7:83:BC:7D:88:9C:DC:13:34:14:58:67:70:2B:F7:EB:7B:09:54:5C:02:4B:9F:D2:21:13:DB
+          - F7:95:EA:38:3D:3A:5A:65:D8:CC:C1:61:05:08:28:C3:32:66:DD:57:5C:95:6E:5A:8B:9E:40:BE:8D:7D:8C:74
   - domain: transferwise.com
     method: https
     issue:
