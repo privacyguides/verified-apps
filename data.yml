@@ -2799,6 +2799,8 @@ packages:
             issue: GH-314
             apk:
               sha256: 36bc747c6b4c1042557a640d9f7bfd4533bb28fafb02f57f6fdec8f84ebc7226
+          - name: HTTPS Verified Domain
+            issue: GH-7663
   - package: com.github.android
     signature:
       - fingerprint: DF:08:C9:F2:D8:09:18:9D:9D:50:64:97:C1:57:45:A7:39:5A:41:53:6E:FB:43:3E:3A:EE:1A:ED:BE:11:B2:61
@@ -5947,6 +5949,8 @@ packages:
             issue: GH-750
             apk:
               sha256: 11a9d9f263468dcb891b01202e017497e0f7889372f866edd69b0aa730407630
+          - name: HTTPS Verified Domain
+            issue: GH-7663
   - package: com.tmob.AveaOIM
     signature:
       - fingerprint: 44:CE:C0:5A:F5:04:97:13:BA:66:94:74:7A:EA:29:66:AA:AC:1C:BD:07:7A:22:17:A6:CC:F4:E0:98:37:14:C5
