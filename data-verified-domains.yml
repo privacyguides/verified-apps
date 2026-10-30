@@ -56,6 +56,15 @@ domains:
       - package: com.box.android
         fingerprints:
           - 5E:6E:4B:82:82:99:CA:01:D7:A4:92:21:1F:CC:88:FA:68:05:0B:AA:A2:5A:50:EA:69:59:6F:D2:A3:E6:B3:66
+  - domain: android.khanacademy.org
+    method: https
+    issue:
+      - GH-7677
+    checked: "2026-10-30T05:25:47Z"
+    packages:
+      - package: org.khanacademy.android
+        fingerprints:
+          - EF:FC:FE:21:10:60:12:61:7B:D6:3D:EB:9D:FD:B8:35:4D:1D:57:4D:1D:67:C5:66:4A:5D:02:E6:69:B2:4E:CB
   - domain: app.fastmail.com
     method: https
     issue:
@@ -448,8 +457,12 @@ domains:
     method: https
     issue:
       - GH-2069
-    checked: "2026-06-19T06:20:55Z"
+      - GH-7677
+    checked: "2026-10-30T05:25:47Z"
     packages:
+      - package: org.telegram.messenger
+        fingerprints:
+          - 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
       - package: org.telegram.messenger.web
         fingerprints:
           - 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
