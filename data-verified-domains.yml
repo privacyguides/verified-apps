@@ -282,6 +282,16 @@ domains:
           - 7E:ED:BF:2C:7B:FD:98:FF:BA:5B:C2:6F:F9:4A:07:3F:FF:27:32:52:6C:0F:92:00:68:DE:F8:41:53:CE:AB:23
           - 8C:D3:9C:EE:60:F3:60:E9:89:9C:3C:CF:B9:F7:AC:17:13:4F:B2:35:78:21:E5:C7:E2:D8:E7:8C:E0:87:91:40
           - E3:F9:E1:E0:CF:99:D0:E5:6A:05:5B:A6:5E:24:1B:33:99:F7:CE:A5:24:32:6B:0C:DD:6E:C1:32:7E:D0:FD:C1
+  - domain: fotoshi.com
+    method: https
+    issue:
+      - GH-7720
+    checked: "2026-10-31T15:57:48Z"
+    packages:
+      - package: com.fotoshi.app
+        fingerprints:
+          - 2A:C2:C9:12:62:C2:E0:E1:64:C9:95:C8:BC:B9:5E:B0:32:C3:11:2D:8A:5F:59:63:17:E3:A0:F4:B0:76:00:F8
+          - F6:35:2D:28:8A:82:DF:49:49:80:D0:CF:D5:22:EC:FF:FC:8F:26:34:09:6A:B7:CA:F2:70:25:EA:57:B0:27:FD
   - domain: frontpage.reddit.com
     method: https
     issue:
