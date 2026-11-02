@@ -65,6 +65,15 @@ domains:
       - package: com.fastmail.app
         fingerprints:
           - C9:2C:5E:E8:F6:BA:CB:E9:3C:A6:C0:8A:E9:6E:F4:7D:09:91:80:63:F5:71:64:78:BF:90:E6:86:09:C9:0D:1D
+  - domain: app.filen.io
+    method: https
+    issue:
+      - GH-7818
+    checked: "2026-11-02T04:27:28Z"
+    packages:
+      - package: io.filen.app
+        fingerprints:
+          - 2C:90:DF:59:1A:39:E0:8A:AD:E9:4F:72:80:D1:92:D3:34:47:F0:1E:1E:12:75:19:82:B8:AE:C3:F9:0F:AD:AB
   - domain: app.hinge.co
     method: https
     issue:
@@ -350,6 +359,16 @@ domains:
       - package: com.innersloth.spacemafia
         fingerprints:
           - 67:A4:DF:80:B1:D9:A4:88:FF:DB:10:07:54:84:1F:D8:3F:90:9C:7C:73:DF:16:E2:46:8C:EC:75:AB:81:C5:8A
+  - domain: kakao.com
+    method: https
+    issue:
+      - GH-7818
+    checked: "2026-11-02T04:27:28Z"
+    packages:
+      - package: com.kakao.talk
+        fingerprints:
+          - 2B:06:CC:3D:47:78:2D:7C:49:7C:07:F1:7C:B5:F8:59:CD:6B:BC:B6:68:29:F3:E6:7B:96:B7:A4:48:20:D2:CE
+          - 7E:E7:78:79:CC:5B:62:35:5F:BB:06:19:E9:C1:B2:72:7B:9A:98:40:6B:3F:B3:34:31:D3:E6:54:4C:CA:C7:63
   - domain: keyholm.app
     method: https
     issue:
@@ -454,6 +473,16 @@ domains:
       - package: de.markusfisch.android.binaryeye
         fingerprints:
           - DD:A9:21:96:50:57:4B:2D:70:2F:DF:2D:F9:0F:61:9B:D4:E2:D0:F3:A6:6E:26:BB:03:2F:2F:01:88:40:CF:8E
+  - domain: meetingguide.org
+    method: https
+    issue:
+      - GH-7818
+    checked: "2026-11-02T04:27:28Z"
+    packages:
+      - package: org.meetingguide
+        fingerprints:
+          - 44:B7:4D:46:74:4E:4D:0D:1C:87:BC:EF:AF:31:4A:2D:88:D9:01:10:2B:3D:0D:26:73:A7:7A:5B:AB:41:42:AC
+          - 79:D5:76:8B:78:1B:9D:C5:A6:C6:3E:77:D4:57:A0:50:5C:C1:1D:D5:41:3F:13:89:3D:4B:78:09:A1:E9:5D:C7
   - domain: messenger.telegram.org
     method: https
     issue:
