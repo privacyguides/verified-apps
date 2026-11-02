@@ -4321,6 +4321,8 @@ packages:
             issue: GH-1238
             apk:
               sha256: c983268a65408620c14c24633a668c954000e797902c450174529efbaafaba2d
+          - name: HTTPS Verified Domain
+            issue: GH-7721
   - package: com.mooneva.app
     signature:
       - fingerprint: 96:B0:1B:6F:20:C4:6B:35:46:70:A1:00:92:7F:72:1D:40:3E:07:E8:BA:25:96:B5:27:24:AC:21:39:56:9F:83
