@@ -266,6 +266,8 @@ packages:
             apk:
               sha256: 751c9dd83d86f93a21bfb696fbbfd4afc1084b3f839bb2ec3a70c6b81d414bd0
               link: https://static.paralino.com/downloads/ParalinoAndroidDirect.apk
+          - name: HTTPS Verified Domain
+            issue: GH-7868
   - package: app.revanced.manager.flutter
     signature:
       - fingerprint: B6:36:2C:6E:A7:88:8E:FD:15:C0:80:0F:48:07:86:AD:0F:5B:13:3B:4F:84:E1:2D:46:AF:BA:5F:9E:AC:12:23
@@ -1859,6 +1861,8 @@ packages:
             issue: GH-985
             apk:
               sha256: 40d83b3491f46363e666ac4565fdcbb2a9aa011e80c62d9289d2db9ec979defb
+          - name: HTTPS Verified Domain
+            issue: GH-7868
   - package: com.coingecko.coingeckoapp
     signature:
       - fingerprint: C4:80:62:6A:2A:02:54:29:05:9C:14:32:15:40:86:66:DE:CB:D8:58:3C:2A:17:AB:73:C9:68:03:6F:24:D1:22
@@ -6007,6 +6011,8 @@ packages:
             issue: GH-512
             apk:
               sha256: 0cdf0176449b0f03e0d91d46c8d0d17576482e36f5b4ebd24700937ced1e70d0
+          - name: HTTPS Verified Domain
+            issue: GH-7868
   - package: com.trafi.whitelabel.bvg
     signature:
       - fingerprint: 3F:EC:E6:B5:C2:27:18:9B:1E:F5:89:66:4F:92:26:61:BB:39:B5:60:C5:63:8E:58:34:88:9C:E9:87:E7:6B:09
@@ -10151,6 +10157,10 @@ packages:
         sources:
           - name: DNS Verified Domain
             issue: GH-1627
+          - name: Google Play
+            issue: GH-7868
+            apk:
+              sha256: 5573a24a38ff890a06ed05d6db66347f5b7b7c026babe0a60555a8d5e924b992
   - package: org.proninyaroslav.libretorrent
     signature:
       - fingerprint: 1A:96:ED:44:27:98:2C:52:E0:67:09:C9:41:A8:F3:9B:2A:BA:68:BC:CA:E8:6B:6C:86:F9:F0:30:BD:95:99:EA

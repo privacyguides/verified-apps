@@ -208,6 +208,15 @@ domains:
       - package: com.qobuz.club
         fingerprints:
           - 2C:E2:F1:9A:17:9C:13:FA:C9:EA:F1:39:C3:F0:84:D5:5B:02:64:58:96:29:52:D4:E6:B5:F2:F1:A2:9C:A2:1E
+  - domain: coinbase.com
+    method: https
+    issue:
+      - GH-7868
+    checked: "2026-11-03T04:28:02Z"
+    packages:
+      - package: com.coinbase.android
+        fingerprints:
+          - 41:6A:E0:CE:11:21:E9:C6:A6:B0:B7:C6:B5:D1:D9:BA:2B:9B:23:A1:4F:4F:1B:9A:87:E0:3B:49:8E:20:CF:3B
   - domain: copilot.microsoft.com
     method: https
     issue:
@@ -520,6 +529,16 @@ domains:
       - package: com.openai.chatgpt
         fingerprints:
           - B2:4F:4B:FB:B3:CF:29:3F:93:87:03:B9:D8:70:27:C1:10:2C:C3:6D:C4:FA:20:69:10:E0:89:27:DB:40:47:3C
+  - domain: paralino.app
+    method: https
+    issue:
+      - GH-7868
+    checked: "2026-11-03T04:28:02Z"
+    packages:
+      - package: app.paralino.android
+        fingerprints:
+          - 2B:66:56:E2:BE:9B:3C:12:EF:55:A5:F6:FA:4E:AA:83:E0:B2:44:60:2D:18:5E:2C:3D:8C:48:98:95:36:3D:B6
+          - 7C:36:87:CA:81:BC:A2:0C:32:09:5E:CE:AD:18:29:09:DC:50:87:03:6A:37:F0:77:2B:2D:9E:5D:85:91:41:DC
   - domain: paypal.com
     method: https
     issue:
@@ -545,11 +564,12 @@ domains:
     method: dns
     issue:
       - GH-1627
-    checked: "2026-06-13T00:59:10Z"
+    checked: "2026-11-03T04:28:02Z"
     packages:
       - package: org.privacyguides.verifiedapps.play
         fingerprints:
           - E8:58:37:5B:7C:45:CF:C1:D4:E4:F5:1B:4A:D6:59:73:5B:38:2C:82:4F:E2:24:48:36:A8:14:AD:7A:F3:00:61
+    dnssec: true
   - domain: privacyguides.org
     method: dns
     issue:
@@ -624,6 +644,15 @@ domains:
         fingerprints:
           - DF:5B:68:01:94:B7:55:44:A5:75:29:88:23:33:BA:C2:6F:1E:94:F9:B6:14:B4:A9:BC:AB:F3:4B:FB:C7:8D:21
           - FA:0D:C7:F4:72:C7:F9:88:07:20:27:88:4F:2C:ED:3D:81:9D:A7:A3:A5:A1:CA:51:87:9C:B9:E9:05:3B:5F:54
+  - domain: tradingview.com
+    method: https
+    issue:
+      - GH-7868
+    checked: "2026-11-03T04:28:02Z"
+    packages:
+      - package: com.tradingview.tradingviewapp
+        fingerprints:
+          - 44:F0:47:FC:6B:34:B0:BA:0C:49:1F:82:5B:B4:E4:37:70:D2:BC:94:12:20:D2:90:A7:0F:3A:84:67:AE:D6:01
   - domain: transferwise.com
     method: https
     issue:
