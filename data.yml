@@ -1701,6 +1701,10 @@ packages:
             issue: GH-561
           - name: F-Droid (IzzyOnDroid)
             issue: GH-561
+          - name: Google Play
+            issue: GH-7885
+            apk:
+              sha256: b50cba796018b719e1d345a552e1f9e72a8d45c1454460e6301c979c6e7a2bc2
   - package: com.carriez.flutter_hbb
     signature:
       - fingerprint: E9:2D:44:BA:9B:65:00:3C:73:40:68:3B:0A:92:34:F6:17:C1:B2:3A:1D:D9:0E:89:F7:D0:41:70:B7:2B:FC:86
@@ -4985,10 +4989,16 @@ packages:
     signature:
       - fingerprint: 8B:6A:E2:B9:B0:6F:4D:18:17:FD:3F:84:6F:88:E4:40:DD:43:1A:3F:46:62:0B:DD:4A:15:2B:70:FC:90:89:A2
         sources:
+          - name: F-Droid
+            issue: GH-7885
+            apk:
+              sha256: 777f0d538d406162dc732c07496fef43a5f15099a3da1afe149c5c612a2c1022
           - name: Google Play
             issue: GH-829
             apk:
               sha256: 03bcde51ac127fdbd5fe6f01c6e321a5ffe7e909bf218c783d471710659fa26f
+          - name: HTTPS Verified Domain
+            issue: GH-7885
   - package: com.prosegur.smart20
     signature:
       - fingerprint: 39:49:AB:3B:71:A8:69:53:D4:47:7D:D5:51:5D:7B:4B:92:27:9B:69:7B:C5:77:4D:27:B4:24:8D:B6:E1:F8:8D
@@ -5119,6 +5129,10 @@ packages:
             apk:
               sha256: 2eca60b3a540697cd7676edea2fbabdfaf54c3ae958584168231981099d2868a
               link: https://buildbot.libretro.com/stable/1.22.2/android/RetroArch.apk
+          - name: Google Play
+            issue: GH-7885
+            apk:
+              sha256: b70a99d5d7d0afcf67fee470479b590e1cadd0000e7123c043a3ed1c9439a839
   - package: com.retroarch.aarch64
     signature:
       - fingerprint: D7:A5:EA:B3:09:02:C9:B2:77:5A:F6:FB:4E:AC:2D:29:4A:64:63:4F:B4:7D:D1:38:2B:C3:AC:5B:F6:69:98:2E
@@ -8806,6 +8820,8 @@ packages:
             issue: GH-1648
             apk:
               sha256: 463f78fdd0e52d104f50173ed2fa6777c5e639df01e65c1b96336d1c9e4a16b1
+          - name: HTTPS Verified Domain
+            issue: GH-7885
   - package: me.zhanghai.android.files
     signature:
       - fingerprint: 87:3B:9B:60:C7:7C:F7:F3:CD:5F:AE:66:D0:FE:11:2C:4A:86:97:3E:11:8E:E8:A2:9C:34:6C:4C:67:3C:97:F0
@@ -10140,6 +10156,10 @@ packages:
             apk:
               sha256: 61f01b08224c8bed18ba53dbe87734a1e1357071901ca25e6483f51be7472d2b
               link: https://github.com/privacyguides/verified-apps-android/releases/download/26.6.2/VerifiedApps-26.6.2.apk
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-7885
+            apk:
+              sha256: fd41d6a1013dd10e4502a89539a4ae40afc0a602cb756a9c5665086c07ab64b6
           - name: F-Droid (privacyguides.github.io)
             issue: GH-1329
             apk:
