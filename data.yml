@@ -41,6 +41,10 @@ packages:
         sources:
           - name: Accrescent
             issue: GH-66
+          - name: AppVerifier
+            issue: GH-7981
+          - name: HTTPS Verified Domain
+            issue: GH-7981
   - package: app.alextran.immich
     signature:
       - fingerprint: 86:C5:C4:55:DF:AF:49:85:92:3A:8F:35:AD:B3:1D:0C:9E:0B:95:7D:7F:94:C2:D2:AF:6A:24:38:AA:96:00:20
@@ -10036,6 +10040,8 @@ packages:
             issue: GH-2298
             apk:
               sha256: abcc10c8cc26bf03325d758f88da724b62fb370479de6dddaf3ae39ecdfd6844
+          - name: HTTPS Verified Domain
+            issue: GH-7981
   - package: org.moire.opensudoku
     signature:
       - fingerprint: A5:4C:E2:9E:BB:02:FC:B9:B4:78:62:05:72:F7:C4:DD:39:B9:03:73:6F:E6:19:96:87:47:1B:A7:29:F4:61:3A
