@@ -30,6 +30,15 @@ domains:
       - package: com.aidungeon
         fingerprints:
           - 66:A5:A0:96:CB:94:79:90:BA:9C:67:49:35:F7:37:CD:57:AC:CB:E2:F3:C4:D1:AD:12:AE:74:79:AE:2B:C0:9B
+  - domain: airbnb.com
+    method: https
+    issue:
+      - __SPOTCHECK_PR__
+    checked: "2026-11-08T04:23:36Z"
+    packages:
+      - package: com.airbnb.android
+        fingerprints:
+          - 43:7B:7C:9A:94:6C:3C:E9:F2:49:A4:30:86:14:F5:42:C1:4D:7C:7A:3B:C9:77:89:98:4E:02:47:CD:23:01:FB
   - domain: amazon.com
     method: https
     issue:
@@ -310,6 +319,17 @@ domains:
       - package: com.fundrise.android
         fingerprints:
           - FF:4B:21:E4:BB:0F:1F:AF:33:75:2D:9E:15:8E:0A:B0:ED:F1:E1:A8:2A:81:E0:C4:8F:29:40:23:55:82:B1:8B
+  - domain: getyourguide.com
+    method: https
+    issue:
+      - __SPOTCHECK_PR__
+    checked: "2026-11-08T04:23:36Z"
+    packages:
+      - package: com.getyourguide.android
+        fingerprints:
+          - 2B:47:AC:B3:D0:BC:0C:9C:CF:CA:B5:FD:BA:91:CA:DC:D1:6E:6B:EF:14:26:D7:3B:8A:F0:2C:76:C5:FC:5A:E8
+          - 44:2B:C2:17:7C:82:79:92:80:A5:EB:C7:32:2F:D2:07:89:4F:17:30:91:88:B3:03:68:3A:C0:E8:6B:99:2A:77
+          - FA:00:44:80:50:1A:F0:30:73:FF:D5:03:9D:21:77:4D:87:4C:BD:2B:63:87:3F:D2:5E:2C:4A:86:59:78:5E:DB
   - domain: github.com
     method: https
     issue:
