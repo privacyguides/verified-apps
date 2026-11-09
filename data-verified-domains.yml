@@ -12,6 +12,15 @@ domains:
           - 6F:D3:5A:F2:73:FF:DC:AB:30:5A:17:14:55:66:DD:E1:E1:D1:F2:CA:24:15:A8:BA:AE:E8:A6:51:28:E4:D0:DE
           - 77:6F:86:9A:03:A0:25:4C:B5:C9:3E:87:21:84:11:8A:58:F7:49:A0:0E:B4:60:E8:07:C1:13:6F:E5:5B:75:7E
           - AA:9F:1D:13:D2:10:C2:6E:32:52:A4:AD:76:71:FE:AB:A8:57:5A:3D:AF:30:03:B4:A0:26:E8:06:20:02:BF:68
+  - domain: Xplore.lonelycatgames.com
+    method: https
+    issue:
+      - __SPOTCHECK_PR__
+    checked: "2026-11-09T04:28:25Z"
+    packages:
+      - package: com.lonelycatgames.Xplore
+        fingerprints:
+          - D4:6C:D5:FA:44:AE:52:14:13:46:DA:0E:2C:21:D0:CE:A7:C6:E0:58:7B:1E:E5:AD:12:1D:90:90:31:EF:EC:57
   - domain: adityarajput.co
     method: https
     issue:
