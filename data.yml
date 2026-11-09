@@ -3990,6 +3990,8 @@ packages:
             issue: GH-1457
             apk:
               sha256: fe6fcf912f5480cda0078c1f11aa898a0733e3f6c0e3897f7964793655c0a85c
+          - name: HTTPS Verified Domain
+            issue: __SPOTCHECK_PR__
   - package: com.looker.droidify
     signature:
       - fingerprint: B4:F1:C8:A8:1E:4B:9F:6E:02:63:8E:93:BE:AD:56:65:65:02:C2:1F:B9:5C:8D:3E:C9:3D:0C:DD:1F:6E:0D:3F
@@ -5222,6 +5224,14 @@ packages:
             apk:
               sha256: 261243f0df7023074ae80650192aa46dc56ff5b5db2a9694311b7b7fd316ceeb
               link: https://github.com/RoundSalmon4/AppVerifierBG/releases/download/nightly-2026-05-31/AppVerifier-nightly-2026-05-31.apk
+          - name: F-Droid
+            issue: __SPOTCHECK_PR__
+            apk:
+              sha256: 3e461f61cca53420c972daf707f72ecd98410690585762c21853877ea99c2f97
+          - name: F-Droid (IzzyOnDroid)
+            issue: __SPOTCHECK_PR__
+            apk:
+              sha256: 3e461f61cca53420c972daf707f72ecd98410690585762c21853877ea99c2f97
   - package: com.ryanair.cheapflights
     signature:
       - fingerprint: 7B:95:CA:16:5B:9D:E6:03:8E:B9:F1:CC:77:BC:54:2C:22:33:DE:A1:43:EE:32:38:69:3A:3F:55:B8:1A:01:E9
@@ -7379,11 +7389,15 @@ packages:
             apk:
               sha256: 1d589a4490e09c7f6e85bf72b0d9fb8504501f7e5bded32b5032d7e371a78989
               link: https://github.com/tutao/tutanota/releases/download/tutanota-android-release-348.260519.0/tutanota-app-tutao-release-348.260519.0.apk
+          - name: Google Play
+            issue: __SPOTCHECK_PR__
+            apk:
+              sha256: 2f42d2c2afaf199757477cae7cc747a2bbc314f2629e08e3418500eaff22859f
       - fingerprint: FC:19:32:E0:84:64:AE:FC:AE:82:59:7D:C0:FC:9D:04:C0:8B:24:AA:09:D1:F9:50:DF:20:EA:81:23:4F:30:CB
         sources:
-          - name: F-Droid
-            issue: GH-539
           - name: AppVerifier
+            issue: GH-539
+          - name: F-Droid
             issue: GH-539
   - package: de.westnordost.streetcomplete
     signature:
