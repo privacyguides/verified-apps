@@ -5119,6 +5119,10 @@ packages:
             apk:
               sha256: 2eca60b3a540697cd7676edea2fbabdfaf54c3ae958584168231981099d2868a
               link: https://buildbot.libretro.com/stable/1.22.2/android/RetroArch.apk
+          - name: Google Play
+            issue: __SPOTCHECK_PR__
+            apk:
+              sha256: b70a99d5d7d0afcf67fee470479b590e1cadd0000e7123c043a3ed1c9439a839
   - package: com.retroarch.aarch64
     signature:
       - fingerprint: D7:A5:EA:B3:09:02:C9:B2:77:5A:F6:FB:4E:AC:2D:29:4A:64:63:4F:B4:7D:D1:38:2B:C3:AC:5B:F6:69:98:2E
