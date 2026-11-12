@@ -2288,6 +2288,8 @@ packages:
             issue: GH-1426
             apk:
               sha256: 60cc799aace0ab88ed026f820845572e32c17987855ac33a0dfe566cc656465a
+          - name: HTTPS Verified Domain
+            issue: __SPOTCHECK_PR__
   - package: com.eboks.activities
     signature:
       - fingerprint: 5F:13:3E:11:D7:5C:33:D2:1A:93:25:B3:B6:77:FC:86:3A:95:3A:D5:CE:42:91:EF:CC:17:22:A6:DA:DC:B2:31
