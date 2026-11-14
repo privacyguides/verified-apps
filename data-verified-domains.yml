@@ -17,9 +17,13 @@ domains:
     issue:
       - GH-4860
       - GH-8205
-    checked: "2026-11-14T17:55:14Z"
+      - GH-8207
+    checked: "2026-11-14T18:00:23Z"
     packages:
       - package: co.adityarajput.fileflow
+        fingerprints:
+          - 56:0A:30:9B:4F:01:AC:3D:28:65:EA:C6:E3:C3:35:59:EC:C7:E9:AD:8E:A7:9E:CD:58:D2:56:B4:B6:45:8A:0E
+      - package: co.adityarajput.fileflow.network
         fingerprints:
           - 56:0A:30:9B:4F:01:AC:3D:28:65:EA:C6:E3:C3:35:59:EC:C7:E9:AD:8E:A7:9E:CD:58:D2:56:B4:B6:45:8A:0E
       - package: co.adityarajput.notifilter
