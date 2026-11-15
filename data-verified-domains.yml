@@ -375,6 +375,15 @@ domains:
       - package: app.keyholm
         fingerprints:
           - 91:85:C9:57:79:4A:7F:F4:43:F5:BD:45:3B:1C:91:3D:80:BA:D0:D0:9D:14:88:2E:1D:F2:81:C6:81:F0:A9:2E
+  - domain: kgurgul.com
+    method: https
+    issue:
+      - GH-8216
+    checked: "2026-11-15T04:56:04Z"
+    packages:
+      - package: com.kgurgul.cpuinfo
+        fingerprints:
+          - AF:24:23:BE:B5:89:E5:5F:DF:95:1F:DE:2F:23:ED:AA:78:5F:57:C7:14:76:4A:FB:BD:D1:5A:85:F1:AE:D3:3C
   - domain: komoot.de
     method: https
     issue:
@@ -592,13 +601,18 @@ domains:
     issue:
       - GH-2752
       - GH-2686
-    checked: "2026-07-02T05:45:15Z"
+      - GH-8216
+    checked: "2026-11-15T04:56:04Z"
     packages:
       - package: me.proton.android.calendar
         fingerprints:
           - DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
       - package: me.proton.android.drive
         fingerprints:
+          - DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
+      - package: me.proton.android.lumo
+        fingerprints:
+          - A7:47:EA:EE:28:61:1E:25:21:7B:79:3C:07:BF:30:22:34:40:5C:FD:1E:19:06:81:62:55:6C:79:E5:BF:04:F0
           - DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
   - domain: simplex.chat
     method: https
@@ -640,6 +654,15 @@ domains:
         fingerprints:
           - DF:5B:68:01:94:B7:55:44:A5:75:29:88:23:33:BA:C2:6F:1E:94:F9:B6:14:B4:A9:BC:AB:F3:4B:FB:C7:8D:21
           - FA:0D:C7:F4:72:C7:F9:88:07:20:27:88:4F:2C:ED:3D:81:9D:A7:A3:A5:A1:CA:51:87:9C:B9:E9:05:3B:5F:54
+  - domain: tradingview.com
+    method: https
+    issue:
+      - GH-8216
+    checked: "2026-11-15T04:56:04Z"
+    packages:
+      - package: com.tradingview.tradingviewapp
+        fingerprints:
+          - 44:F0:47:FC:6B:34:B0:BA:0C:49:1F:82:5B:B4:E4:37:70:D2:BC:94:12:20:D2:90:A7:0F:3A:84:67:AE:D6:01
   - domain: transferwise.com
     method: https
     issue:
