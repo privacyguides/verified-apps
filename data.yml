@@ -1859,6 +1859,8 @@ packages:
             issue: GH-985
             apk:
               sha256: 40d83b3491f46363e666ac4565fdcbb2a9aa011e80c62d9289d2db9ec979defb
+          - name: HTTPS Verified Domain
+            issue: GH-8220
   - package: com.coingecko.coingeckoapp
     signature:
       - fingerprint: C4:80:62:6A:2A:02:54:29:05:9C:14:32:15:40:86:66:DE:CB:D8:58:3C:2A:17:AB:73:C9:68:03:6F:24:D1:22
@@ -3672,6 +3674,8 @@ packages:
             issue: GH-2327
             apk:
               sha256: 6e0fe0fb43ba589c209dc753bdbb1f2501cd8647d7d3212497d72383864de89e
+          - name: HTTPS Verified Domain
+            issue: GH-8220
   - package: com.ketchapp.stack
     signature:
       - fingerprint: 9F:E9:CA:4B:85:42:41:96:AB:D9:53:37:7B:88:AA:A2:E8:9D:86:DA:81:7E:FD:06:CA:7C:CE:58:FE:B0:45:C1
@@ -6007,6 +6011,8 @@ packages:
             issue: GH-512
             apk:
               sha256: 0cdf0176449b0f03e0d91d46c8d0d17576482e36f5b4ebd24700937ced1e70d0
+          - name: HTTPS Verified Domain
+            issue: GH-8220
   - package: com.trafi.whitelabel.bvg
     signature:
       - fingerprint: 3F:EC:E6:B5:C2:27:18:9B:1E:F5:89:66:4F:92:26:61:BB:39:B5:60:C5:63:8E:58:34:88:9C:E9:87:E7:6B:09
