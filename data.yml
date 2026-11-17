@@ -1654,6 +1654,8 @@ packages:
             issue: GH-908
             apk:
               sha256: bd8f9e3f222eb1c204d9bc2697c53208cafcd6e0e184672de5028461e2367523
+          - name: HTTPS Verified Domain
+            issue: GH-8228
       - fingerprint: C5:40:53:AB:0F:10:D9:54:17:62:A3:DA:76:65:AE:3D:BA:5E:7C:74:3A:B4:F1:08:A5:34:9D:62:AC:10:6E:F5
         sources:
           - name: Accrescent
@@ -1663,6 +1665,8 @@ packages:
             apk:
               sha256: 8c5301e11ef165290f872ade6e452a166a594eee71067c950b6caefbc40cf705
               link: https://github.com/cake-tech/cake_wallet/releases/download/v6.1.2/Cake_Wallet_v6.1.2_4410.apk
+          - name: HTTPS Verified Domain
+            issue: GH-8228
   - package: com.cakewallet.cupcake
     signature:
       - fingerprint: A4:77:72:07:CC:B2:44:B4:1E:D5:E9:0B:97:1B:BB:AE:D0:4B:B7:74:B2:50:A5:BE:E7:E8:94:7B:8C:A0:11:7C
@@ -3235,6 +3239,8 @@ packages:
             issue: GH-1038
             apk:
               sha256: 501ab35f241cbd1edad4a005fdc9ebe7ba4ff4f7840d24b440277d7e8d0182cb
+          - name: HTTPS Verified Domain
+            issue: GH-8228
   - package: com.google.android.googlequicksearchbox
     signature:
       - fingerprint: |-
@@ -5572,6 +5578,8 @@ packages:
             issue: GH-762
             apk:
               sha256: 55aae2e08e439a42afc2ac6464e31bfdba34caf23505a7581caa7720eb4db126
+          - name: HTTPS Verified Domain
+            issue: GH-8228
   - package: com.simplytranslate_mobile
     signature:
       - fingerprint: C1:03:5F:AB:0B:E4:75:EB:9F:C7:0E:92:12:48:0D:22:0B:90:C7:E7:4A:1F:9B:53:B5:CA:23:A6:0A:D2:99:F9
@@ -8657,10 +8665,6 @@ packages:
         sources:
           - name: AppVerifier
             issue: GH-1085
-          - name: F-Droid
-            issue: GH-1085
-            apk:
-              sha256: 4105e0f1f8e53893d6294729c39f974ee9248f3a8caede5b6e1192d475888a17
       - fingerprint: 75:FD:99:1B:AC:EA:84:8E:5A:BF:F1:4A:01:D9:60:9B:76:50:CF:03:06:B3:7A:60:ED:56:15:67:8C:B3:64:07
         sources:
           - name: AppVerifier
@@ -8678,6 +8682,10 @@ packages:
             apk:
               sha256: bd6ca8ec343ccbd974cf9f0719cff55a9d1001106c7190a6bab42dff9f77c536
               link: https://github.com/CatimaLoyalty/Android/releases/download/v2.42.1/app-foss-release.apk
+          - name: F-Droid
+            issue: GH-8228
+            apk:
+              sha256: 46b034d3052dc10ff6e1b4024ab5b9b2795dcb1bb3acf4ecad33cbce3f22219c
           - name: F-Droid (IzzyOnDroid)
             issue: GH-1084
             apk:

@@ -194,6 +194,16 @@ domains:
           - 43:2C:60:B3:F8:84:9E:A0:EA:93:B8:50:D2:68:EC:EB:5D:C4:0E:E2:27:0C:08:45:B5:5B:6E:70:9D:A8:24:D1
           - 44:A1:04:DA:00:F0:3A:7B:BE:A9:83:7A:DE:54:F7:BF:F9:7C:34:B7:DC:46:DA:13:10:CC:EA:FE:AF:A6:83:2F
           - E2:9E:74:1A:F1:ED:08:9E:8B:A1:89:FE:55:B3:EE:E7:68:30:82:17:50:2B:8E:CF:E3:A5:C2:16:A5:1D:C3:BF
+  - domain: cakewallet.com
+    method: https
+    issue:
+      - GH-8228
+    checked: "2026-11-17T04:29:03Z"
+    packages:
+      - package: com.cakewallet.cake_wallet
+        fingerprints:
+          - 09:C7:C4:F9:6B:5F:3A:75:99:8E:CF:53:78:E6:39:19:0E:02:3E:26:75:02:6D:26:21:E4:AC:78:1C:94:88:FC
+          - C5:40:53:AB:0F:10:D9:54:17:62:A3:DA:76:65:AE:3D:BA:5E:7C:74:3A:B4:F1:08:A5:34:9D:62:AC:10:6E:F5
   - domain: chase.com
     method: https
     issue:
@@ -339,12 +349,21 @@ domains:
     method: https
     issue:
       - GH-7530
-    checked: "2026-10-25T15:01:36Z"
+      - GH-8228
+    checked: "2026-11-17T04:29:03Z"
     packages:
       - package: com.google.android.apps.maps
         fingerprints:
           - 19:75:B2:F1:71:77:BC:89:A5:DF:F3:1F:9E:64:A6:CA:E2:81:A5:3D:C1:D1:D5:9B:1D:14:7F:E1:C8:2A:FA:00
           - 3D:7A:12:23:01:9A:A3:9D:9E:A0:E3:43:6A:B7:C0:89:6B:FB:4F:B6:79:F4:DE:5F:E7:C2:3F:32:6C:8F:99:4A
+          - F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
+      - package: com.google.android.gms
+        fingerprints:
+          - 19:75:B2:F1:71:77:BC:89:A5:DF:F3:1F:9E:64:A6:CA:E2:81:A5:3D:C1:D1:D5:9B:1D:14:7F:E1:C8:2A:FA:00
+          - 5F:23:91:27:7B:1D:BD:48:90:00:46:7E:4C:2F:A6:AF:80:24:30:08:04:57:DC:E2:F6:18:99:2E:9D:FB:54:02
+          - 7C:E8:3C:1B:71:F3:D5:72:FE:D0:4C:8D:40:C5:CB:10:FF:75:E6:D8:7D:9D:F6:FB:D5:3F:04:68:C2:90:50:53
+          - 8F:D4:A0:E7:B8:EB:7C:72:6D:2D:AC:79:44:5B:2C:79:31:F6:2B:7E:B6:92:F5:04:4B:DC:FD:FA:AD:07:0A:36
+          - D2:2C:C5:00:29:9F:B2:28:73:A0:1A:01:0D:E1:C8:2F:BE:4D:06:11:19:B9:48:14:DD:30:1D:AB:50:CB:76:78
           - F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
   - domain: guavahealth.com
     method: https
@@ -681,6 +700,16 @@ domains:
           - 35:1B:A8:5C:06:69:64:FA:A6:B9:88:1F:AB:B3:43:CA:41:86:2C:D0:9F:C5:62:85:46:CA:2F:BE:68:5F:CE:3F
           - AF:0C:9F:84:71:27:35:35:79:49:FA:CB:7C:33:73:D5:8F:43:6E:3F:BF:2D:B2:61:F0:5E:53:B7:EB:F8:65:F2
           - FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C
+  - domain: video.simplepractice.com
+    method: https
+    issue:
+      - GH-8228
+    checked: "2026-11-17T04:29:03Z"
+    packages:
+      - package: com.simplepractice.video
+        fingerprints:
+          - 21:E1:56:78:30:77:33:7D:F5:13:65:75:31:6C:3A:D7:FA:E3:4F:19:7F:61:DD:C0:25:87:0F:B6:F7:0F:C2:99
+          - E4:09:A5:7E:B2:17:44:1E:2E:39:0C:A1:C7:DE:22:7F:06:0B:8B:DF:84:F3:F2:1D:8A:B8:FB:80:85:D3:E2:AA
   - domain: waze.com
     method: https
     issue:
