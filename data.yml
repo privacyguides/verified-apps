@@ -1654,6 +1654,8 @@ packages:
             issue: GH-908
             apk:
               sha256: bd8f9e3f222eb1c204d9bc2697c53208cafcd6e0e184672de5028461e2367523
+          - name: HTTPS Verified Domain
+            issue: GH-8201
       - fingerprint: C5:40:53:AB:0F:10:D9:54:17:62:A3:DA:76:65:AE:3D:BA:5E:7C:74:3A:B4:F1:08:A5:34:9D:62:AC:10:6E:F5
         sources:
           - name: Accrescent
@@ -1663,6 +1665,8 @@ packages:
             apk:
               sha256: 8c5301e11ef165290f872ade6e452a166a594eee71067c950b6caefbc40cf705
               link: https://github.com/cake-tech/cake_wallet/releases/download/v6.1.2/Cake_Wallet_v6.1.2_4410.apk
+          - name: HTTPS Verified Domain
+            issue: GH-8201
   - package: com.cakewallet.cupcake
     signature:
       - fingerprint: A4:77:72:07:CC:B2:44:B4:1E:D5:E9:0B:97:1B:BB:AE:D0:4B:B7:74:B2:50:A5:BE:E7:E8:94:7B:8C:A0:11:7C
@@ -2313,6 +2317,10 @@ packages:
             apk:
               sha256: d573dbc7ce7a649880739eab5e8287e2418b16a7fbac90e473ab2f6658aa318a
               link: https://github.com/eddyizm/tempus/releases/download/v4.17.0/app-degoogled-arm64-v8a-release.apk
+          - name: F-Droid
+            issue: GH-8201
+            apk:
+              sha256: 4038d365cc622cbb130f81d74e6e8395d011bff9fc18c9abc49c3cb6de3e6e7c
           - name: F-Droid (IzzyOnDroid)
             issue: GH-466
             apk:
@@ -3905,6 +3913,8 @@ packages:
             issue: GH-538
             apk:
               sha256: 88949b2d89d8ebdc69cfb203103b3a3b39f8801589aba0d6ccaa0a8b18a9f1b2
+          - name: HTTPS Verified Domain
+            issue: GH-8201
   - package: com.liamcottle.meshcore.android
     signature:
       - fingerprint: F9:36:C9:3F:DD:6F:57:F1:CD:F2:A7:1B:E6:16:4A:03:F2:4E:89:62:10:83:F1:74:08:32:CE:50:93:62:B4:7B
@@ -7379,11 +7389,15 @@ packages:
             apk:
               sha256: 1d589a4490e09c7f6e85bf72b0d9fb8504501f7e5bded32b5032d7e371a78989
               link: https://github.com/tutao/tutanota/releases/download/tutanota-android-release-348.260519.0/tutanota-app-tutao-release-348.260519.0.apk
+          - name: Google Play
+            issue: GH-8201
+            apk:
+              sha256: d2407e2f09524cc8a7e96d32f7a78c0ce40f39300178a337317e618947681f9b
       - fingerprint: FC:19:32:E0:84:64:AE:FC:AE:82:59:7D:C0:FC:9D:04:C0:8B:24:AA:09:D1:F9:50:DF:20:EA:81:23:4F:30:CB
         sources:
-          - name: F-Droid
-            issue: GH-539
           - name: AppVerifier
+            issue: GH-539
+          - name: F-Droid
             issue: GH-539
   - package: de.westnordost.streetcomplete
     signature:
@@ -9996,6 +10010,8 @@ packages:
             issue: GH-595
             apk:
               sha256: cf702081a0f833e96dd93c1864bc2ea282994102cf1b05196bfc9bb555718506
+          - name: HTTPS Verified Domain
+            issue: GH-8201
   - package: org.localsend.localsend_app
     signature:
       - fingerprint: 32:20:C3:53:A7:3C:FB:D0:C2:F3:05:24:71:C4:45:32:4C:F4:52:BC:BA:26:DE:1C:47:3A:52:FE:5C:44:E1:D6
