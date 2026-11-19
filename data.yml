@@ -797,6 +797,8 @@ packages:
             issue: GH-1839
             apk:
               sha256: c048bc3dbb8486f3f9218cca09d261415aba917765cba2abd3e69700e1675973
+          - name: HTTPS Verified Domain
+            issue: GH-8267
   - package: com.aircanada
     signature:
       - fingerprint: 39:09:4C:C7:95:A9:86:B6:45:D1:F6:59:F1:5A:5B:8E:5C:8C:63:F7:80:37:F9:95:E7:E7:1B:62:FE:93:D2:E9
@@ -2424,6 +2426,8 @@ packages:
             issue: GH-1968
             apk:
               sha256: 6cd2dc8fdb86c3ab4bd1de4ca2cb4fbcf56dd893f2ff32016e659de65bfa9d1f
+          - name: HTTPS Verified Domain
+            issue: GH-8267
       - fingerprint: E3:F9:E1:E0:CF:99:D0:E5:6A:05:5B:A6:5E:24:1B:33:99:F7:CE:A5:24:32:6B:0C:DD:6E:C1:32:7E:D0:FD:C1
         sources:
           - name: Google Play
@@ -10738,6 +10742,8 @@ packages:
             issue: GH-1642
             apk:
               sha256: 7769dfc2ac9405a2e598960d625f89e47254fcf2b353389252681dd25251e6e1
+          - name: HTTPS Verified Domain
+            issue: GH-8267
   - package: se.postnord.private
     signature:
       - fingerprint: 71:33:6E:97:C6:D3:EF:FF:FA:42:38:5F:A8:33:F9:05:95:AC:8C:1C:05:D8:98:04:97:DE:2F:E1:F5:3D:97:53
