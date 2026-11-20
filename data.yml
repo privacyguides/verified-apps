@@ -3990,6 +3990,8 @@ packages:
             issue: GH-1457
             apk:
               sha256: fe6fcf912f5480cda0078c1f11aa898a0733e3f6c0e3897f7964793655c0a85c
+          - name: HTTPS Verified Domain
+            issue: GH-8280
   - package: com.looker.droidify
     signature:
       - fingerprint: B4:F1:C8:A8:1E:4B:9F:6E:02:63:8E:93:BE:AD:56:65:65:02:C2:1F:B9:5C:8D:3E:C9:3D:0C:DD:1F:6E:0D:3F
