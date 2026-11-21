@@ -46,6 +46,15 @@ domains:
       - package: com.aidungeon
         fingerprints:
           - 66:A5:A0:96:CB:94:79:90:BA:9C:67:49:35:F7:37:CD:57:AC:CB:E2:F3:C4:D1:AD:12:AE:74:79:AE:2B:C0:9B
+  - domain: airbnb.com
+    method: https
+    issue:
+      - GH-8297
+    checked: "2026-11-21T04:26:31Z"
+    packages:
+      - package: com.airbnb.android
+        fingerprints:
+          - 43:7B:7C:9A:94:6C:3C:E9:F2:49:A4:30:86:14:F5:42:C1:4D:7C:7A:3B:C9:77:89:98:4E:02:47:CD:23:01:FB
   - domain: amazon.com
     method: https
     issue:
@@ -366,6 +375,16 @@ domains:
       - package: com.innersloth.spacemafia
         fingerprints:
           - 67:A4:DF:80:B1:D9:A4:88:FF:DB:10:07:54:84:1F:D8:3F:90:9C:7C:73:DF:16:E2:46:8C:EC:75:AB:81:C5:8A
+  - domain: kakao.com
+    method: https
+    issue:
+      - GH-8297
+    checked: "2026-11-21T04:26:31Z"
+    packages:
+      - package: com.kakao.talk
+        fingerprints:
+          - 2B:06:CC:3D:47:78:2D:7C:49:7C:07:F1:7C:B5:F8:59:CD:6B:BC:B6:68:29:F3:E6:7B:96:B7:A4:48:20:D2:CE
+          - 7E:E7:78:79:CC:5B:62:35:5F:BB:06:19:E9:C1:B2:72:7B:9A:98:40:6B:3F:B3:34:31:D3:E6:54:4C:CA:C7:63
   - domain: keyholm.app
     method: https
     issue:
@@ -705,7 +724,7 @@ domains:
     issue:
       - GH-2812
       - GH-7528
-    checked: "2026-10-25T14:46:41Z"
+    checked: "2026-11-21T04:26:31Z"
     packages:
       - package: com.whatsapp
         fingerprints:
@@ -714,7 +733,6 @@ domains:
       - package: com.whatsapp.w4b
         fingerprints:
           - 39:87:D0:43:D1:0A:EF:AF:5A:87:10:B3:67:14:18:FE:57:E0:E1:9B:65:3C:9D:F8:25:58:FE:B5:FF:CE:5D:44
-          - CC:E5:84:32:83:F0:A5:60:6B:0F:AC:F6:F7:3E:F7:98:91:C4:8A:82:0E:84:F8:11:E0:04:44:35:B3:97:9E:A2
           - FB:92:0D:38:1B:EE:1B:20:93:F2:7D:C8:F1:3D:99:4D:A6:29:DC:91:88:7D:05:29:B3:5C:9A:2D:C4:F4:A6:C2
   - domain: wikipedia.org
     method: https
