@@ -2397,6 +2397,8 @@ packages:
             issue: GH-2107
             apk:
               sha256: 838ad03b7bfe714c141b6b0d5915125e8c64492c185f056f12d3789287d26b48
+          - name: HTTPS Verified Domain
+            issue: GH-8309
   - package: com.example.deeplviewer
     signature:
       - fingerprint: 9D:4A:B3:C7:FD:F9:F6:E9:EE:1C:2A:4E:62:EE:80:7D:0E:74:39:01:F4:8C:B9:93:AB:D0:FA:06:A2:00:3F:49
@@ -5222,6 +5224,14 @@ packages:
             apk:
               sha256: 261243f0df7023074ae80650192aa46dc56ff5b5db2a9694311b7b7fd316ceeb
               link: https://github.com/RoundSalmon4/AppVerifierBG/releases/download/nightly-2026-05-31/AppVerifier-nightly-2026-05-31.apk
+          - name: F-Droid
+            issue: GH-8309
+            apk:
+              sha256: 3e461f61cca53420c972daf707f72ecd98410690585762c21853877ea99c2f97
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-8309
+            apk:
+              sha256: 3e461f61cca53420c972daf707f72ecd98410690585762c21853877ea99c2f97
   - package: com.ryanair.cheapflights
     signature:
       - fingerprint: 7B:95:CA:16:5B:9D:E6:03:8E:B9:F1:CC:77:BC:54:2C:22:33:DE:A1:43:EE:32:38:69:3A:3F:55:B8:1A:01:E9
@@ -10028,6 +10038,10 @@ packages:
             apk:
               sha256: 4a23949039d93617df1219a5f0f61b88a22c3c388ac54999e893eb30b39ddb30
               link: https://github.com/MAGICGrants/skylight-wallet/releases/download/v1.0.10/skylight-wallet-v1.0.10-x86_64.apk
+          - name: F-Droid
+            issue: GH-8309
+            apk:
+              sha256: 735d2212a427af014955997c5390d26064be9fd17fb5cece2cf31ea7fd5e5dc2
   - package: org.meetingguide
     signature:
       - fingerprint: 79:D5:76:8B:78:1B:9D:C5:A6:C6:3E:77:D4:57:A0:50:5C:C1:1D:D5:41:3F:13:89:3D:4B:78:09:A1:E9:5D:C7

@@ -285,6 +285,16 @@ domains:
       - package: com.infomaniak.euria
         fingerprints:
           - C3:10:73:8F:60:AC:5B:F6:65:95:53:BE:C7:21:7D:BF:24:4E:9D:4C:04:BD:7D:5B:F5:51:51:2D:22:E5:03:03
+  - domain: everydollar.com
+    method: https
+    issue:
+      - GH-8309
+    checked: "2026-11-22T04:27:12Z"
+    packages:
+      - package: com.everydollar.android
+        fingerprints:
+          - 57:3D:6C:04:CE:97:96:CE:41:19:6A:81:87:96:DF:1E:C0:46:F3:26:6B:35:46:91:E1:2D:E6:C8:32:0B:DB:9E
+          - DC:AB:E5:B6:48:35:E7:F1:16:94:C9:7E:D8:BD:19:A1:CA:E0:81:2B:FE:2D:5A:E6:44:7F:C3:D7:6A:16:91:3A
   - domain: facebook.com
     method: https
     issue:
