@@ -12,6 +12,15 @@ domains:
           - 6F:D3:5A:F2:73:FF:DC:AB:30:5A:17:14:55:66:DD:E1:E1:D1:F2:CA:24:15:A8:BA:AE:E8:A6:51:28:E4:D0:DE
           - 77:6F:86:9A:03:A0:25:4C:B5:C9:3E:87:21:84:11:8A:58:F7:49:A0:0E:B4:60:E8:07:C1:13:6F:E5:5B:75:7E
           - AA:9F:1D:13:D2:10:C2:6E:32:52:A4:AD:76:71:FE:AB:A8:57:5A:3D:AF:30:03:B4:A0:26:E8:06:20:02:BF:68
+  - domain: Xplore.lonelycatgames.com
+    method: https
+    issue:
+      - GH-8334
+    checked: "2026-11-23T04:29:55Z"
+    packages:
+      - package: com.lonelycatgames.Xplore
+        fingerprints:
+          - D4:6C:D5:FA:44:AE:52:14:13:46:DA:0E:2C:21:D0:CE:A7:C6:E0:58:7B:1E:E5:AD:12:1D:90:90:31:EF:EC:57
   - domain: adityarajput.co
     method: https
     issue:
@@ -285,6 +294,16 @@ domains:
       - package: com.infomaniak.euria
         fingerprints:
           - C3:10:73:8F:60:AC:5B:F6:65:95:53:BE:C7:21:7D:BF:24:4E:9D:4C:04:BD:7D:5B:F5:51:51:2D:22:E5:03:03
+  - domain: everydollar.com
+    method: https
+    issue:
+      - GH-8334
+    checked: "2026-11-23T04:29:55Z"
+    packages:
+      - package: com.everydollar.android
+        fingerprints:
+          - 57:3D:6C:04:CE:97:96:CE:41:19:6A:81:87:96:DF:1E:C0:46:F3:26:6B:35:46:91:E1:2D:E6:C8:32:0B:DB:9E
+          - DC:AB:E5:B6:48:35:E7:F1:16:94:C9:7E:D8:BD:19:A1:CA:E0:81:2B:FE:2D:5A:E6:44:7F:C3:D7:6A:16:91:3A
   - domain: facebook.com
     method: https
     issue:
@@ -326,6 +345,17 @@ domains:
       - package: com.fundrise.android
         fingerprints:
           - FF:4B:21:E4:BB:0F:1F:AF:33:75:2D:9E:15:8E:0A:B0:ED:F1:E1:A8:2A:81:E0:C4:8F:29:40:23:55:82:B1:8B
+  - domain: getyourguide.com
+    method: https
+    issue:
+      - GH-8334
+    checked: "2026-11-23T04:29:55Z"
+    packages:
+      - package: com.getyourguide.android
+        fingerprints:
+          - 2B:47:AC:B3:D0:BC:0C:9C:CF:CA:B5:FD:BA:91:CA:DC:D1:6E:6B:EF:14:26:D7:3B:8A:F0:2C:76:C5:FC:5A:E8
+          - 44:2B:C2:17:7C:82:79:92:80:A5:EB:C7:32:2F:D2:07:89:4F:17:30:91:88:B3:03:68:3A:C0:E8:6B:99:2A:77
+          - FA:00:44:80:50:1A:F0:30:73:FF:D5:03:9D:21:77:4D:87:4C:BD:2B:63:87:3F:D2:5E:2C:4A:86:59:78:5E:DB
   - domain: github.com
     method: https
     issue:
