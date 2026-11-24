@@ -797,6 +797,8 @@ packages:
             issue: GH-1839
             apk:
               sha256: c048bc3dbb8486f3f9218cca09d261415aba917765cba2abd3e69700e1675973
+          - name: HTTPS Verified Domain
+            issue: GH-8351
   - package: com.aircanada
     signature:
       - fingerprint: 39:09:4C:C7:95:A9:86:B6:45:D1:F6:59:F1:5A:5B:8E:5C:8C:63:F7:80:37:F9:95:E7:E7:1B:62:FE:93:D2:E9
@@ -6320,6 +6322,8 @@ packages:
             issue: GH-689
             apk:
               sha256: f8f9713c8fb7214ce0a976453ec4a8df519098d2e03c4be38b4032816b9a03f0
+          - name: HTTPS Verified Domain
+            issue: GH-8351
   - package: com.verisec.mobile.frejaeid
     signature:
       - fingerprint: 1F:14:FE:04:C5:19:52:C5:E3:C8:E6:82:51:AE:8A:C3:73:B8:4C:59:76:BD:7F:24:8E:64:3A:F2:50:C8:BA:91
@@ -8806,6 +8810,8 @@ packages:
             issue: GH-1648
             apk:
               sha256: 463f78fdd0e52d104f50173ed2fa6777c5e639df01e65c1b96336d1c9e4a16b1
+          - name: HTTPS Verified Domain
+            issue: GH-8351
   - package: me.zhanghai.android.files
     signature:
       - fingerprint: 87:3B:9B:60:C7:7C:F7:F3:CD:5F:AE:66:D0:FE:11:2C:4A:86:97:3E:11:8E:E8:A2:9C:34:6C:4C:67:3C:97:F0
@@ -10257,10 +10263,12 @@ packages:
     signature:
       - fingerprint: 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
         sources:
-          - name: Google Play
-            issue: GH-498
           - name: AppVerifier
             issue: GH-498
+          - name: Google Play
+            issue: GH-498
+          - name: HTTPS Verified Domain
+            issue: GH-8351
   - package: org.telegram.messenger.web
     signature:
       - fingerprint: 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1

@@ -46,6 +46,15 @@ domains:
       - package: com.aidungeon
         fingerprints:
           - 66:A5:A0:96:CB:94:79:90:BA:9C:67:49:35:F7:37:CD:57:AC:CB:E2:F3:C4:D1:AD:12:AE:74:79:AE:2B:C0:9B
+  - domain: airbnb.com
+    method: https
+    issue:
+      - GH-8351
+    checked: "2026-11-24T04:26:28Z"
+    packages:
+      - package: com.airbnb.android
+        fingerprints:
+          - 43:7B:7C:9A:94:6C:3C:E9:F2:49:A4:30:86:14:F5:42:C1:4D:7C:7A:3B:C9:77:89:98:4E:02:47:CD:23:01:FB
   - domain: amazon.com
     method: https
     issue:
@@ -474,8 +483,12 @@ domains:
     method: https
     issue:
       - GH-2069
-    checked: "2026-06-19T06:20:55Z"
+      - GH-8351
+    checked: "2026-11-24T04:26:28Z"
     packages:
+      - package: org.telegram.messenger
+        fingerprints:
+          - 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
       - package: org.telegram.messenger.web
         fingerprints:
           - 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
@@ -592,13 +605,18 @@ domains:
     issue:
       - GH-2752
       - GH-2686
-    checked: "2026-07-02T05:45:15Z"
+      - GH-8351
+    checked: "2026-11-24T04:26:28Z"
     packages:
       - package: me.proton.android.calendar
         fingerprints:
           - DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
       - package: me.proton.android.drive
         fingerprints:
+          - DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
+      - package: me.proton.android.lumo
+        fingerprints:
+          - A7:47:EA:EE:28:61:1E:25:21:7B:79:3C:07:BF:30:22:34:40:5C:FD:1E:19:06:81:62:55:6C:79:E5:BF:04:F0
           - DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
   - domain: simplex.chat
     method: https
@@ -681,6 +699,15 @@ domains:
           - 35:1B:A8:5C:06:69:64:FA:A6:B9:88:1F:AB:B3:43:CA:41:86:2C:D0:9F:C5:62:85:46:CA:2F:BE:68:5F:CE:3F
           - AF:0C:9F:84:71:27:35:35:79:49:FA:CB:7C:33:73:D5:8F:43:6E:3F:BF:2D:B2:61:F0:5E:53:B7:EB:F8:65:F2
           - FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C
+  - domain: venmo.com
+    method: https
+    issue:
+      - GH-8351
+    checked: "2026-11-24T04:26:28Z"
+    packages:
+      - package: com.venmo
+        fingerprints:
+          - C7:7E:26:31:AC:04:51:C0:86:F2:5F:79:AE:25:82:38:AF:A4:00:96:1E:8D:59:9D:B7:8E:25:EA:DC:DC:C9:47
   - domain: waze.com
     method: https
     issue:
