@@ -8215,6 +8215,14 @@ packages:
             issue: CB-270
             apk:
               sha256: 60c0b058e72100f076aca6fa74ef479e690ee6a6b581585046246148e8c56005
+  - package: com.theripper.slowmail
+    signature:
+      - fingerprint: CA:F5:AC:43:0E:EE:B7:85:0F:CF:3F:F5:A2:BA:33:98:FA:4C:26:B4:0C:F0:A6:9B:A1:A5:69:B1:55:AE:EB:65
+        sources:
+          - name: F-Droid
+            issue: GH-7842
+            apk:
+              sha256: c5d5d4397461356fa63d865adb08f68d5e822fcbdd790214ebfdd2f1d8cf59fd
   - package: com.thetransitapp.droid
     signature:
       - fingerprint: A0:55:A8:6A:4F:75:38:D3:EE:2D:57:5C:06:74:32:81:B8:13:05:23:73:DE:A5:BF:F1:0D:20:15:81:55:13:41
