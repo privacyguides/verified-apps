@@ -9704,6 +9704,14 @@ packages:
             apk:
               sha256: 0fcc8ac73eb1307783799d8c9090d8bbe9be39d659463e2166dadfa3deabcd64
               link: https://github.com/azahar-emu/azahar/releases/download/2125.1.2/azahar-android-vanilla-2125.1.2.apk
+  - package: org.billthefarmer.buses
+    signature:
+      - fingerprint: 10:51:3E:8B:9D:F6:B5:8D:2F:6B:83:A3:D9:37:EE:5C:F8:AA:9C:BB:E0:D6:94:39:E7:60:36:0C:A6:86:F0:7D
+        sources:
+          - name: F-Droid
+            issue: GH-1909
+            apk:
+              sha256: d103a034ec2ba9ca4217265a105d575732341c3ab2cf0427745bf155a5ce33d5
   - package: org.billthefarmer.editor
     signature:
       - fingerprint: DC:44:CA:63:EF:A2:98:03:55:D9:BC:4E:90:89:7F:6B:66:E0:C2:6E:E3:0B:01:90:C8:9A:6F:6B:2B:13:CC:09
