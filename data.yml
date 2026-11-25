@@ -7118,6 +7118,18 @@ packages:
             issue: GH-1245
             apk:
               sha256: 361af500ccca466f9e585cfd842f5440ef5b85dd09998a6dc8159a794255db39
+  - package: com.vitorpamplona.amethyst
+    signature:
+      - fingerprint: C2:D0:AA:86:BC:B6:B6:20:90:56:1A:41:BB:E3:36:E9:8B:78:C2:D0:21:0A:49:8D:C8:85:F2:8E:13:48:CF:17
+        sources:
+          - name: F-Droid
+            issue: GH-5607
+            apk:
+              sha256: 47968b1002546cbe11fe9b5c657e342aebf38e3e11551ae1830eddeabdba14e8
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-5607
+            apk:
+              sha256: b21f5a7b0ff193bf0ba102eeaa862e0ef4cb4f87f58714d56f01f1591d2877a4
   - package: com.vivaldi.browser
     signature:
       - fingerprint: E8:A7:85:44:65:5B:A8:C0:98:17:F7:32:76:8F:56:89:B1:66:2E:C4:B2:BC:5A:0B:C0:EC:13:8D:33:CA:3D:1E
