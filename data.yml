@@ -9027,6 +9027,14 @@ packages:
             issue: GH-7099
             apk:
               sha256: 238a024429f89a51bff13bdbfba29702fbc3d6b3d9b43563402311031c9b72a6
+  - package: cz.sukl.ereceptpacient
+    signature:
+      - fingerprint: 66:CB:0B:3C:8E:A1:B5:0F:D1:5E:7E:E9:C9:5A:04:FD:12:3B:8B:02:EA:19:8C:1A:B5:16:92:92:16:ED:61:22
+        sources:
+          - name: Google Play
+            issue: GH-7100
+            apk:
+              sha256: c95dd8877139f345772b9776d15a7cba51c57f0a909ea32fc27ada924c8afcdc
   - package: de.aoksystems.amg
     signature:
       - fingerprint: |-
