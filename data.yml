@@ -7933,6 +7933,14 @@ packages:
             issue: GH-857
             apk:
               sha256: c0f03515dedf62c4a38d96397111c59e8e04646a2d1877200008c56a0ab80c45
+  - package: dev.dimension.flare
+    signature:
+      - fingerprint: 18:7B:97:6A:E0:67:51:EA:CD:30:64:94:16:DC:C7:25:B8:9B:F1:2D:D4:66:CC:CE:09:7B:B4:89:AD:76:97:68
+        sources:
+          - name: F-Droid
+            issue: GH-1949
+            apk:
+              sha256: 51e7593bfc8c8842a7c0b8cd0cd3816245b6f79763c957b34e6548420d40727a
   - package: dev.goodwy.contacts
     signature:
       - fingerprint: F0:57:35:AE:2C:02:CD:43:70:E4:BB:E6:0F:28:65:2E:D5:F0:3A:82:BB:2F:17:D2:B1:FE:A2:52:6B:EB:BD:E8
