@@ -2484,6 +2484,14 @@ packages:
             issue: GH-7483
             apk:
               sha256: 079d42d3360812b79e49bd431e554b0c3971c6b907b78248d6e766598f42694c
+  - package: com.cajavalores.inversor
+    signature:
+      - fingerprint: 3D:8B:01:C7:C0:F8:DC:73:46:5E:41:0D:C5:48:AA:2E:DF:9B:8D:AA:83:B9:C2:A4:DA:35:9A:AE:AB:DA:B9:E1
+        sources:
+          - name: Google Play
+            issue: GH-7999
+            apk:
+              sha256: 2740d1bc1d9dbb2b81f2e900b2ad7b82b678032b3205ef1b4fa3e160edc1bb35
   - package: com.cakewallet.cake_wallet
     signature:
       - fingerprint: 09:C7:C4:F9:6B:5F:3A:75:99:8E:CF:53:78:E6:39:19:0E:02:3E:26:75:02:6D:26:21:E4:AC:78:1C:94:88:FC
