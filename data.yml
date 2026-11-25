@@ -388,6 +388,14 @@ packages:
             issue: GH-1761
             apk:
               sha256: d4cbc6719a11e322f8fb1e24bc0c0d3fd8fc82c0be39eb4b76a59dbfb02c4646
+  - package: art.widgeet.android.clock.flip
+    signature:
+      - fingerprint: AA:CE:28:B9:AA:9B:E9:3B:9E:DE:28:B0:1A:28:97:0B:A5:DE:A5:37:61:D7:C5:B8:F4:E7:72:BB:21:65:1F:8E
+        sources:
+          - name: Google Play
+            issue: GH-5739
+            apk:
+              sha256: 17957e465641a6c5b9b81b8737cc09c56b67c30f8f8d17013d64c2bac0cbed0e
   - package: at.bitfire.davdroid
     signature:
       - fingerprint: 8B:48:E6:76:A6:86:49:67:79:17:83:C1:D8:D0:FC:0D:D6:D2:CE:33:E1:FB:36:78:77:93:EC:D0:86:D4:47:07
