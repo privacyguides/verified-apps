@@ -3495,6 +3495,14 @@ packages:
             issue: GH-2144
             apk:
               sha256: a06dd4ca492be188ca324fdda87b977d82f182e37feb6df13a271ae199c69b8a
+  - package: com.gtp.showapicturetoyourfriend
+    signature:
+      - fingerprint: 72:31:C2:62:CF:F6:1B:6C:60:8A:CC:56:7E:41:64:8D:1D:06:2A:D5:4B:22:8D:68:D3:79:DF:9D:36:2F:71:A2
+        sources:
+          - name: F-Droid
+            issue: GH-1597
+            apk:
+              sha256: 7ed18fa93125757282223fb57aacec315b1e57de0baae4e0848bd83e7c33237b
   - package: com.guavahealth.app
     signature:
       - fingerprint: C2:9F:44:0D:6B:32:FF:86:4D:27:4F:D3:A2:CC:AE:F8:38:53:48:4B:E9:A1:05:A5:57:3B:99:4A:F4:6D:D0:E5
