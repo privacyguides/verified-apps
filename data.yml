@@ -2919,6 +2919,14 @@ packages:
               sha256: c179d234cf9d622551085557777c7feaff369ee45d6ab2751dde88ec2c9ebd93
           - name: HTTPS Verified Domain
             issue: GH-1885
+  - package: com.citynav.jakdojade.pl.android
+    signature:
+      - fingerprint: 4B:8D:2D:C1:7B:59:BF:62:FC:A5:B1:06:F3:8A:F0:96:65:CA:4E:58:DB:F8:2C:4B:B2:99:CB:19:AC:CB:8B:32
+        sources:
+          - name: Google Play
+            issue: GH-2996
+            apk:
+              sha256: d2985f4db2edc0ccbe8be4c1338ffa392c71b0a8acf70efa12468baf7d0738eb
   - package: com.claro.pe.miclaro
     signature:
       - fingerprint: 7D:72:26:77:2D:4F:6D:77:8F:EF:53:A3:6B:E1:5A:D7:8D:8D:9D:4B:C4:CE:00:C5:F2:E3:21:6C:19:48:0F:A0
