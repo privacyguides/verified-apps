@@ -9456,6 +9456,14 @@ packages:
             issue: GH-1094
             apk:
               sha256: d5cb6c0bb40b5a82fe4ea5689599aa871bb725c25f0d6d1bde44120b696073b9
+  - package: org.disroot.disrootapp
+    signature:
+      - fingerprint: 25:AD:0D:7C:16:B4:22:31:15:8D:2E:36:E8:C1:80:88:52:5B:CC:4F:95:0F:2C:C7:B5:E3:B2:F6:7F:E7:E7:3F
+        sources:
+          - name: F-Droid
+            issue: GH-1424
+            apk:
+              sha256: 3dd107149293e8fba420c66b293d7b628f200dde8e6c7039675fc2cfa71465bc
   - package: org.documentfoundation.libreoffice
     signature:
       - fingerprint: 54:D3:57:33:E9:64:DC:B6:5F:51:1E:50:25:B8:3F:9B:D7:B5:73:31:14:34:AB:79:A7:CD:09:F8:27:BC:45:50
