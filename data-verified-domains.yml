@@ -81,6 +81,16 @@ domains:
       - package: com.box.android
         fingerprints:
           - 5E:6E:4B:82:82:99:CA:01:D7:A4:92:21:1F:CC:88:FA:68:05:0B:AA:A2:5A:50:EA:69:59:6F:D2:A3:E6:B3:66
+  - domain: anonyome.com
+    method: https
+    issue:
+      - GH-7620
+    checked: "2026-11-25T09:34:02Z"
+    packages:
+      - package: com.anonyome.mysudo
+        fingerprints:
+          - 14:E6:70:A0:B3:F2:0E:5C:40:65:BC:8D:CD:60:3E:1E:B4:2B:28:EE:75:03:97:52:A7:1F:0A:7B:F5:A8:52:DA
+          - 26:3F:42:88:D6:DD:54:B9:BE:2E:02:DC:AD:91:D8:C3:30:20:BF:11:BA:74:6C:68:A0:84:C5:3B:C3:08:BD:D2
   - domain: app.deel.com
     method: https
     issue:

@@ -1438,6 +1438,16 @@ packages:
             issue: CB-167
             apk:
               sha256: 97b6b2920f34d372ccddf7b598ccfdaab9e558ee9e6f200e64d1b67092b6aeba
+  - package: com.anonyome.mysudo
+    signature:
+      - fingerprint: 14:E6:70:A0:B3:F2:0E:5C:40:65:BC:8D:CD:60:3E:1E:B4:2B:28:EE:75:03:97:52:A7:1F:0A:7B:F5:A8:52:DA
+        sources:
+          - name: Google Play
+            issue: GH-7620
+            apk:
+              sha256: 830233d2435e640eb661f270ccc388d46594dad5e9fa44aff9501ad0be1645df
+          - name: HTTPS Verified Domain
+            issue: GH-7620
   - package: com.anthonyla.paperize
     signature:
       - fingerprint: DE:DA:86:75:D6:37:93:CB:0C:F7:BC:2D:EC:B6:A2:50:6B:16:B3:30:40:A1:FC:B1:D3:08:07:A5:11:E2:70:AC
