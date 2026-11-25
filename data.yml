@@ -6763,6 +6763,14 @@ packages:
             issue: GH-261
             apk:
               sha256: e62d0c8000c7e64cc65c4fd6529baaa6d5bb48a04323227a24fdeffa0911bcfb
+  - package: com.molink.john.hummingbird
+    signature:
+      - fingerprint: AF:C1:4B:22:78:33:F8:40:0F:E2:F1:C4:98:9B:C4:4A:AD:99:28:49:68:CF:67:89:7D:8B:12:84:1E:75:63:9F
+        sources:
+          - name: Google Play
+            issue: GH-2931
+            apk:
+              sha256: fb45f0a7bda5f4d167f3cebabda6866481ca8ff535805c0efa7cf1330ceae058
   - package: com.momondo.flightsearch
     signature:
       - fingerprint: 32:3D:9F:92:DA:BE:24:A4:79:14:9C:48:F7:00:0F:1B:EC:CF:FA:A9:45:49:42:F9:BF:F3:48:5B:4C:86:D6:C1
