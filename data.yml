@@ -8969,6 +8969,14 @@ packages:
             issue: GH-1596
             apk:
               sha256: 7de17f0339afa6160f9b7b93a864ed199dcf7256f2d8dde72d0341a0d4496e63
+  - package: cz.ackee.bazos
+    signature:
+      - fingerprint: 81:A2:EA:A3:62:2F:3E:9A:3F:B3:54:E5:EA:4F:6B:81:90:CA:93:DC:FF:2B:10:D3:86:F4:20:B8:EB:45:27:9F
+        sources:
+          - name: Google Play
+            issue: GH-7080
+            apk:
+              sha256: d4b8dd5188379c6bfb47ca7f696717e101ba424897a410a266f54b7f99d722f3
   - package: cz.airbank.android
     signature:
       - fingerprint: AE:6A:AA:B7:D4:5F:A6:0E:40:AB:8B:2F:B7:43:0A:3A:0E:BA:01:7C:2D:99:EC:C1:38:99:B2:33:E8:1E:23:87
