@@ -8350,6 +8350,14 @@ packages:
             issue: GH-655
             apk:
               sha256: 9712b3b0611f5f06021c55ffe8fc9401c4b778932016609c958596923b39259d
+  - package: com.sube.app
+    signature:
+      - fingerprint: 0B:30:E6:36:FE:98:0A:30:1E:81:E3:5C:03:A7:37:FD:47:DA:B1:6A:71:46:2A:94:75:57:C4:DD:3D:83:B4:4E
+        sources:
+          - name: Google Play
+            issue: GH-8017
+            apk:
+              sha256: 39d22fcb5f1eddf6522a7f6408e5956a8b74883c33beea97dd62284bb4c03a1e
   - package: com.subtlesignals.gradientweather
     signature:
       - fingerprint: EB:45:0E:3E:D0:41:55:2C:8E:7F:A5:0E:3D:8D:5D:8D:58:6D:67:48:5E:EB:CC:53:78:5F:8B:26:85:7E:54:AC
