@@ -7081,6 +7081,16 @@ packages:
             issue: GH-833
             apk:
               sha256: 9b910433145a208c5a3cb56538fdbf917ed661ff0ac5821109ebd8849629527a
+  - package: com.shopify.arrive
+    signature:
+      - fingerprint: 07:DC:83:26:F6:05:D2:72:F6:2D:93:18:E2:C2:03:D5:00:93:5F:2D:6E:0E:6A:67:BA:94:A1:3F:FF:83:51:38
+        sources:
+          - name: Google Play
+            issue: GH-6844
+            apk:
+              sha256: 98ad2ea2ba0709d373bd9228e2cf2b67bdeee9c40d074f95e47034f79ff30f1e
+          - name: HTTPS Verified Domain
+            issue: GH-6844
   - package: com.shub39.grit
     signature:
       - fingerprint: 0F:E1:B9:F4:4A:4D:B9:7E:C5:09:48:F5:18:9F:6B:43:00:71:6C:C6:D4:84:3F:56:98:D6:14:A2:15:2E:21:88

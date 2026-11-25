@@ -653,6 +653,15 @@ domains:
           - 2B:EB:D1:89:E8:D3:10:64:01:34:70:56:C9:3D:04:5B:61:E2:0E:22:D0:C3:CB:ED:85:47:4A:EB:00:A3:D1:2A
           - 44:93:2E:A3:5A:17:A2:67:37:2D:71:B5:4D:1A:0C:B3:DA:0D:CA:51:13:E9:44:06:AE:2F:E1:80:90:BA:14:77
           - 7B:04:82:FB:61:2B:D9:C8:70:84:D6:FA:48:F1:C7:BA:A7:F1:A2:2F:47:12:20:CB:A7:F6:42:8D:FB:75:46:2E
+  - domain: shopify.com
+    method: https
+    issue:
+      - GH-6844
+    checked: "2026-11-25T08:45:40Z"
+    packages:
+      - package: com.shopify.arrive
+        fingerprints:
+          - 07:DC:83:26:F6:05:D2:72:F6:2D:93:18:E2:C2:03:D5:00:93:5F:2D:6E:0E:6A:67:BA:94:A1:3F:FF:83:51:38
   - domain: simplex.chat
     method: https
     issue:
