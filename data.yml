@@ -6587,6 +6587,16 @@ packages:
             issue: GH-1447
             apk:
               sha256: 09f8f43f282bfdc876b3ed633b44c904e9819c3e01f44a7919d11e151e891a9e
+  - package: com.milvum.kopieid
+    signature:
+      - fingerprint: |-
+          74:16:10:FD:D2:83:4C:B6:6C:3B:1F:02:22:1D:94:A8:10:A6:A1:F9:6C:D2:C9:C0:CA:3D:6C:98:90:EF:48:35
+          F4:88:44:10:3B:F8:48:46:FF:66:20:1E:5F:0F:C0:80:2B:54:23:B7:AC:57:A9:A0:23:0E:39:61:05:70:DA:68
+        sources:
+          - name: Google Play
+            issue: GH-8385
+            apk:
+              sha256: 5a138e0bf11cd5230872df10a3174adbd0eb5584e9c879059e9730215d9fc916
   - package: com.minar.birday
     signature:
       - fingerprint: 3E:02:DF:D7:16:10:F3:39:3E:0C:83:8A:03:5C:1D:9E:BC:A3:38:AD:03:78:7B:04:96:57:B9:ED:40:51:84:A9
