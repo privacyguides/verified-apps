@@ -4209,6 +4209,14 @@ packages:
             issue: GH-1048
             apk:
               sha256: ca46b96cbadba42d126caebf94136c1aa6de05440fb38cd4937a64652362313d
+  - package: com.lorenzovainigli.foodexpirationdates.foss
+    signature:
+      - fingerprint: A4:4B:8D:A1:8B:45:6C:5F:0D:F1:A7:DC:5A:F9:9A:04:54:8A:80:0E:84:B7:9C:B6:68:9E:3B:22:CB:B4:1A:F7
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1918
+            apk:
+              sha256: fb548f8ee509b7e02daab91d538f40ceafd1279b01448698a9661a5fafecc386
   - package: com.lufthansa.android.lufthansa
     signature:
       - fingerprint: AF:75:72:3A:86:9D:50:C9:20:04:D8:B2:D5:74:46:48:DE:70:14:CA:D8:33:38:86:8E:5F:4C:AA:0B:B8:A8:8E
