@@ -6240,6 +6240,17 @@ packages:
             issue: GH-2447
             apk:
               sha256: 03fe158eb59441f048bf7c38d66cef3aac270d75704fc2ad58d2ec8342d122ef
+  - package: com.mosync.app_Banco_Galicia
+    signature:
+      - fingerprint: |-
+          43:18:75:70:F9:11:32:EF:0E:80:3A:DF:93:59:41:43:CA:BF:B0:0B:56:54:2D:A9:47:14:B2:BD:66:68:4A:90
+          8C:38:69:43:F5:F2:C9:F7:49:B9:A7:B9:7B:BF:2A:D2:7B:7F:B4:EF:17:55:1A:87:14:B0:92:3F:92:57:21:28
+          A2:0D:01:22:BE:27:BA:25:51:DB:29:ED:4F:E5:E2:EF:B6:61:21:03:75:F9:AC:4D:8C:34:39:21:A0:68:B8:19
+        sources:
+          - name: Google Play
+            issue: GH-7990
+            apk:
+              sha256: 3bcaed89733318ede79358c2c5b1d2c8406ad96c17f33f641f4285d2f8313721
   - package: com.motorola.tag
     signature:
       - fingerprint: BE:88:04:A5:5E:90:45:A5:80:D2:04:97:9F:6E:FB:15:C0:58:73:1A:A1:02:1B:78:C0:46:FE:AB:8A:E7:6A:26
