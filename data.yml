@@ -7451,6 +7451,14 @@ packages:
             issue: GH-1796
             apk:
               sha256: af7c70f5fbea79ca7fba8759b3dfb2963ed003c1216df5f36fc1c38558cb55ee
+  - package: de.tadris.fitness
+    signature:
+      - fingerprint: D6:0B:C3:DC:52:63:65:EA:58:83:B4:21:30:6A:A0:B5:0B:AD:E5:9A:ED:50:80:F1:07:0F:11:8F:E3:B7:F7:8E
+        sources:
+          - name: F-Droid
+            issue: GH-1542
+            apk:
+              sha256: e1708c7c4256748a5825e3f898a6898dac8a0988f6499c78d63ea48bbf8f352b
   - package: de.tk.tkapp
     signature:
       - fingerprint: 64:59:9C:D0:AB:91:92:B7:CF:FA:91:10:3A:F5:CB:63:02:5B:63:2F:ED:BB:3B:0C:C4:9C:79:80:6E:B9:3D:6E
