@@ -1363,6 +1363,14 @@ packages:
             issue: GH-2013
             apk:
               sha256: 14d8980122f99154ac5d3ef9f14c5fea07e00f38d9392de6e60e0fc82914315a
+  - package: com.aistats.ai_stats
+    signature:
+      - fingerprint: 57:2C:0B:B8:53:2A:05:81:5E:C0:6F:2D:30:F8:BF:1D:F6:4C:95:28:73:94:4F:5C:B9:60:D9:7E:E3:F0:6C:D0
+        sources:
+          - name: Google Play
+            issue: GH-8312
+            apk:
+              sha256: 93a0e24e062db2bc5846446054f653fc54ee6f091a917a821c9dddb665647657
   - package: com.ajaxsystems
     signature:
       - fingerprint: 6D:37:B1:AB:D4:DC:91:2A:A7:83:FE:55:73:A0:DE:E8:20:DD:79:57:D0:9C:C4:B3:1F:C1:D2:BC:54:DD:EE:5A
