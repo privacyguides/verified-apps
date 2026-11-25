@@ -2048,6 +2048,14 @@ packages:
               sha256: 996aa9095aafc7c066084089a712c0485d63800aae33e9e0c387a87bd3f800c7
           - name: HTTPS Verified Domain
             issue: GH-2686
+  - package: com.ballistiq.artstation
+    signature:
+      - fingerprint: 1E:33:D6:28:20:50:8A:18:ED:7E:A4:87:10:D9:7B:31:2C:72:08:BC:FC:01:9F:57:26:AB:A2:6F:94:1D:F7:55
+        sources:
+          - name: Google Play
+            issue: GH-8274
+            apk:
+              sha256: 1878ed41096ccb4ccab4223719227da6f5f7bd8ee66fc8cde048338e062e8dd1
   - package: com.bancodebogota.bancamovil
     signature:
       - fingerprint: FC:6B:24:9E:4F:75:A8:1B:51:85:33:6F:F5:A1:11:7A:5B:46:6E:C2:DC:E6:52:A9:49:45:E7:0C:2E:EC:26:10
