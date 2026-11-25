@@ -10692,6 +10692,14 @@ packages:
             issue: CB-82
             apk:
               sha256: 742c53eac1e9dda4715514c37e3b7941b853d32054456154939f3489ab0d01f6
+  - package: org.stypox.dicio
+    signature:
+      - fingerprint: F1:8A:3A:A2:8B:65:A3:B6:7F:1F:C9:F0:61:AA:34:54:71:AA:AB:F0:06:E3:FA:51:38:73:97:75:4B:86:D7:1F
+        sources:
+          - name: F-Droid
+            issue: GH-1805
+            apk:
+              sha256: f17270a0e8809a7c076a423e39cdbdd86dc487e881762eafca57e03f82258e80
   - package: org.sufficientlysecure.keychain
     signature:
       - fingerprint: 28:05:A6:F4:65:AC:B9:23:10:3A:2A:B3:A1:45:E1:A9:7A:74:C4:4A:CF:75:12:50:B5:88:EB:C3:F8:8A:0C:C9
