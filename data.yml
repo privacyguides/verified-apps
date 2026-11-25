@@ -9436,6 +9436,14 @@ packages:
             issue: GH-1084
             apk:
               sha256: bd6ca8ec343ccbd974cf9f0719cff55a9d1001106c7190a6bab42dff9f77c536
+  - package: me.lecaro.breakout
+    signature:
+      - fingerprint: 9E:B8:0B:A1:5D:A3:41:94:49:3F:16:93:77:B2:60:0E:61:A9:FA:BA:0F:E7:5B:2F:F3:6C:C5:52:A8:D1:7E:F6
+        sources:
+          - name: F-Droid
+            issue: GH-2285
+            apk:
+              sha256: 7df3f569a198b4447683156f1aebfde48110ea0a352ea84b895370c439da70e2
   - package: me.lucky.clipeus
     signature:
       - fingerprint: 00:6A:FF:63:E6:03:9B:1B:A2:B6:80:2A:3A:E1:5D:C4:A5:55:4D:5C:2D:BF:66:DD:DB:C0:38:60:25:18:F5:F5
