@@ -456,6 +456,14 @@ packages:
             issue: GH-395
             apk:
               sha256: f03bd7f92dadee073f9dbd706ac1aeafe7ac0763950aea83b49c53262dc02bfa
+  - package: au.com.ing.banking
+    signature:
+      - fingerprint: 50:66:0F:2B:C4:9B:3E:C9:12:69:AD:D6:48:73:CE:A2:2B:71:32:C8:A1:88:34:60:93:10:FD:07:61:06:B3:37
+        sources:
+          - name: Google Play
+            issue: GH-5794
+            apk:
+              sha256: 273d7233a5596b359997a11cb0c31d7433eb92a16306d8b6fb7acd4dd9f87cc8
   - package: au.com.qantas.qantas
     signature:
       - fingerprint: 85:DB:DE:85:4E:B1:EA:5A:05:4E:43:4B:D3:FF:8F:2A:C3:EF:78:B6:8A:A9:13:EA:F4:72:27:14:D8:FB:42:60
