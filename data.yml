@@ -11310,6 +11310,14 @@ packages:
             issue: GH-4524
             apk:
               sha256: a87f08b48e14cc5cd5cf8fec81dbffaa7934f646994f1c9d9f868b55a5208b02
+  - package: jp.co.canon.ic.cameraconnect
+    signature:
+      - fingerprint: 81:74:F3:17:1A:53:EC:4E:2E:AC:BB:39:34:6D:B8:65:B4:55:30:A9:A9:6A:2A:91:27:4F:4D:9C:3C:A9:4F:7D
+        sources:
+          - name: Google Play
+            issue: GH-7088
+            apk:
+              sha256: 2346b843eb2343f657715449cb0517ba99cdfd0eb67aa4fd41f3dbbf27ee1dd3
   - package: jp.co.canon.ic.ctp
     signature:
       - fingerprint: D9:5E:8C:B6:63:FC:E5:98:FD:1C:8A:C7:D5:92:BB:40:64:33:55:8A:3F:E0:4D:E8:BE:BD:68:9E:D0:9C:3D:A0
