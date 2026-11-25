@@ -8966,6 +8966,12 @@ packages:
             issue: GH-71
             apk:
               sha256: e6265a57eb5ca363808488e3b01955958bed93bc0c8a0d281849b363b11027ec
+      - fingerprint: 73:8F:0A:30:A0:4D:3C:8A:1B:E3:04:AF:18:D0:77:9B:CF:3E:A8:8F:B6:08:08:F6:57:A3:52:18:61:C2:EB:F9
+        sources:
+          - name: Google Play
+            issue: GH-8387
+            apk:
+              sha256: aa0e788f5666b91ff1d40c936ca8d19fbb7ac5c280c36b8d53c8619cb6d7085a
       - fingerprint: B6:DA:01:48:0E:EF:D5:FB:F2:CD:37:71:B8:D1:02:1E:C7:91:30:4B:DD:6C:4B:F4:1D:3F:AA:BA:D4:8E:E5:E1
         sources:
           - name: Direct APK Link
