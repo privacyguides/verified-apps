@@ -1689,6 +1689,16 @@ packages:
             issue: GH-2738
             apk:
               sha256: b15ac4ba3d93dee13409216d839df832be83d3a72d843ad73191aa807e3749c9
+  - package: com.att.tv
+    signature:
+      - fingerprint: |-
+          C7:F7:9A:BA:69:D3:A7:5C:FA:4F:A0:35:99:D0:8E:EB:C5:D1:C0:EE:B1:C3:90:CF:6C:A8:79:40:D4:F1:92:AD
+          EC:80:3E:F2:C7:DF:5A:98:7D:75:60:84:67:46:2E:4B:62:25:A2:D6:C0:31:A4:DA:B0:43:81:EE:6A:91:B3:76
+        sources:
+          - name: Google Play
+            issue: GH-7649
+            apk:
+              sha256: 6741c7217b2bc17633651308eb7076bf38a3cb5a932fcb161558582fcf6bb402
   - package: com.audible.application
     signature:
       - fingerprint: 57:90:1D:5C:9F:67:44:F2:86:36:F9:8F:68:AE:5A:32:48:57:1C:0E:F6:10:47:0C:09:B0:8B:34:B6:B3:A8:0F
