@@ -3226,6 +3226,14 @@ packages:
             issue: GH-6857
             apk:
               sha256: 391b608e645fdf50d66b33d503378bd3bb0ede361982b9075bcfb3aacd34e3ed
+  - package: com.finalwire.aida64
+    signature:
+      - fingerprint: 06:E0:B6:A9:D2:0A:A3:48:E2:91:57:95:17:8D:63:54:4F:05:67:11:D3:FC:18:2C:B6:08:14:A1:E6:43:E2:76
+        sources:
+          - name: Google Play
+            issue: GH-6908
+            apk:
+              sha256: 5138488c5db0eb98f0bc75281e384769712c34054ebaff64787c0ec57f90f911
   - package: com.finch.finch
     signature:
       - fingerprint: 58:1D:B9:64:C6:1C:25:36:9A:50:14:2A:3E:96:F1:C8:25:C3:7A:70:C2:DD:F3:33:21:4B:4B:E3:1C:95:5B:C7
