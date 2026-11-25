@@ -3618,6 +3618,14 @@ packages:
             issue: GH-1884
             apk:
               sha256: 82bba1f939305db1c4e455df2c8a44306ed2f096346288252be1c5ce456728bb
+  - package: com.flashsphere.privatednsqs.nolauncher
+    signature:
+      - fingerprint: B2:D8:A4:70:8B:05:94:73:D9:04:D0:F8:27:07:D7:1E:3E:72:58:6F:50:BA:2D:11:83:CC:FA:B1:DF:D8:45:C4
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-7704
+            apk:
+              sha256: 8c0a13d1283ddf527cc8f81a0e6080f7c31156c71ab8e3ccdf8f6126e2574e0d
   - package: com.flasskamp.energize
     signature:
       - fingerprint: 58:EE:B8:AF:51:66:4B:25:E6:0E:6B:1B:98:8E:95:A1:1F:DB:40:29:9C:61:85:3A:8A:AD:93:37:FA:C9:B9:EC
