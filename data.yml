@@ -13895,6 +13895,14 @@ packages:
             issue: GH-6893
             apk:
               sha256: 444d3c52123146492b55bd769e6352c09f44956b4afa02104dc4cf5ce964dc71
+  - package: nl.ns.android.activity
+    signature:
+      - fingerprint: E7:E3:6C:ED:C9:21:4A:41:C9:12:32:97:73:24:38:7E:61:15:3F:24:D7:7E:34:0B:E9:79:07:AE:5E:79:05:34
+        sources:
+          - name: Google Play
+            issue: GH-8384
+            apk:
+              sha256: 6b4d81aba02e62cf4abb0ea34eedbb3deee406b3c1a0c1297d252ed5691eb952
   - package: nl.privacydragon.bookwyrm
     signature:
       - fingerprint: 05:51:27:4D:D6:23:7A:90:36:52:27:8C:C0:74:4C:CA:35:D7:5A:41:4A:0A:4E:F1:AC:8F:40:5A:F4:D5:60:0C
