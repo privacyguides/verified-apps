@@ -5769,6 +5769,16 @@ packages:
             issue: GH-2143
             apk:
               sha256: 0a28470ff4e4abdcb8983ef5bee133c2d3f0cb3329715407407fedfe9fcabf92
+  - package: com.llamalab.automate
+    signature:
+      - fingerprint: AC:B4:0B:D2:BD:7C:8E:C8:E0:1D:16:85:BE:A7:12:95:7F:0A:6E:4C:15:BE:DF:DE:48:4C:34:D6:06:FD:08:23
+        sources:
+          - name: Google Play
+            issue: GH-8032
+            apk:
+              sha256: 3c9bc8451c419cb563f304d2961da93a9e9ea7f942711bd91ae5d9a69fbec131
+          - name: HTTPS Verified Domain
+            issue: GH-8032
   - package: com.lmu.qookies
     signature:
       - fingerprint: |-

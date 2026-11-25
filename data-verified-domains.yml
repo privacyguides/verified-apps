@@ -532,6 +532,15 @@ domains:
       - package: com.linkedin.android
         fingerprints:
           - 3B:6A:40:3C:A9:1D:56:AB:85:45:17:72:02:03:17:66:40:81:6D:3F:92:3F:92:CC:A1:61:38:F5:CC:3D:07:27
+  - domain: llamalab.com
+    method: https
+    issue:
+      - GH-8032
+    checked: "2026-11-25T10:17:00Z"
+    packages:
+      - package: com.llamalab.automate
+        fingerprints:
+          - AC:B4:0B:D2:BD:7C:8E:C8:E0:1D:16:85:BE:A7:12:95:7F:0A:6E:4C:15:BE:DF:DE:48:4C:34:D6:06:FD:08:23
   - domain: magicgrants.org
     method: dns
     issue:
