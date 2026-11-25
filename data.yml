@@ -10251,6 +10251,14 @@ packages:
               sha256: 86f14e1101e7f98952bc402234a7223e99a9defa100a4e12918ee3d88192e448
           - name: HTTPS Verified Domain
             issue: GH-6137
+  - package: de.themorpheus.morphcook
+    signature:
+      - fingerprint: 87:3F:DC:82:99:2D:A8:03:AD:AB:88:A4:C3:92:C8:EA:4D:F4:CF:76:C5:7E:7B:F2:98:69:44:A2:73:69:2A:45
+        sources:
+          - name: F-Droid
+            issue: GH-7855
+            apk:
+              sha256: f2a84fac0a1b0bffdd99b4b793ebba4e1c2e71bcac9cfa76470cd8939fa8e406
   - package: de.tk.tkapp
     signature:
       - fingerprint: 64:59:9C:D0:AB:91:92:B7:CF:FA:91:10:3A:F5:CB:63:02:5B:63:2F:ED:BB:3B:0C:C4:9C:79:80:6E:B9:3D:6E
