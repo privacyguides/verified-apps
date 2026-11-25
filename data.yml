@@ -7918,6 +7918,16 @@ packages:
             issue: GH-5785
             apk:
               sha256: 3e6821a8b69ede3ee5cb5540c966ed20810550903753c7978496adc78fbc1d21
+  - package: com.yinzcam.nba.spurs
+    signature:
+      - fingerprint: |-
+          06:2A:52:9C:53:71:28:96:8F:32:39:0D:35:72:F6:8C:27:4A:38:57:D6:4F:45:66:F7:C4:60:79:0A:69:68:03
+          73:EE:B0:C6:4A:CB:01:A5:8B:C2:2D:47:EB:33:54:03:37:46:90:C1:68:42:2A:6E:CA:9D:A2:65:21:D6:E7:17
+        sources:
+          - name: Google Play
+            issue: GH-6129
+            apk:
+              sha256: 71c16a9bb0e0a8857f2838219a383057081ea253a49cf04d57925fd77e47fa9d
   - package: com.yoc.swiss.swiss
     signature:
       - fingerprint: B3:EB:7E:D9:26:78:57:D5:B0:ED:23:A7:85:49:FB:65:0E:9C:94:7A:70:38:A5:21:66:3A:1E:06:94:43:F6:1D
