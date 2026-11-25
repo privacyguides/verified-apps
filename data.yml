@@ -9929,6 +9929,14 @@ packages:
             apk:
               sha256: 629a7ca09a11a156040fd2f9cb2a062baecd13c35e052595d86c4c1b085c950a
               repo: https://fdroid.typeblog.net/repo
+  - package: net.wigle.wigleandroid
+    signature:
+      - fingerprint: 69:9D:BE:E5:94:79:7D:7E:FB:68:1F:62:56:20:EC:1E:41:E4:1E:6A:57:AF:DC:D8:53:3F:8D:22:00:35:29:E8
+        sources:
+          - name: F-Droid
+            issue: GH-2247
+            apk:
+              sha256: c0e30f80def10eabd2283446e2216d5d7b9f0525a4f6d8d33543cd5743531a06
   - package: net.youapps.transport
     signature:
       - fingerprint: B3:BC:73:B1:17:DF:5D:FE:38:13:0C:6C:2B:94:68:52:AE:70:88:55:7F:E8:E4:33:F0:D9:98:3A:6B:55:CC:95
