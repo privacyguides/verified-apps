@@ -7155,6 +7155,14 @@ packages:
               sha256: d55c27526117362d0d5be00638e81ad61308478d81673de0cf988cc408f18757
           - name: HTTPS Verified Domain
             issue: GH-2711
+  - package: de.markusfisch.android.pielauncher
+    signature:
+      - fingerprint: 23:85:E4:9F:F0:72:D9:0D:CE:F9:DB:28:90:B3:30:53:3C:E4:72:EF:EB:79:01:99:4E:0D:22:2D:52:00:97:8B
+        sources:
+          - name: F-Droid
+            issue: CB-92
+            apk:
+              sha256: c43ec071c785433464637fc6ff25186b71e1f680c5c9ab4a59fe3a1c90a1ac31
   - package: de.marmaro.krt.ffupdater
     signature:
       - fingerprint: F4:E6:42:BB:85:CB:BC:FD:73:02:B2:CB:CB:D3:46:99:3A:41:06:7C:27:D9:95:DF:49:2C:9D:0D:38:74:7E:62
