@@ -11598,6 +11598,12 @@ packages:
             issue: GH-567
             apk:
               sha256: e094ad80be5fbb69e177b394e0671de91c7eb329cb2e816986e37265d9c2bfc8
+      - fingerprint: EF:23:60:37:CA:64:1F:CF:49:BA:6E:1B:C5:CA:02:30:EF:E9:75:09:0B:AC:18:4D:AC:BA:7A:34:04:E8:54:06
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-3044
+            apk:
+              sha256: 9711592efeab66fc47454a628abcb88d25356d24a80de34882b2ff4cd1f921af
   - package: de.wger.flutter
     signature:
       - fingerprint: 43:A0:6F:0A:62:22:C3:60:D8:20:DF:B5:0B:E5:B5:E6:72:20:D5:8C:A6:45:23:DC:3B:69:7A:9E:0C:02:9E:75
