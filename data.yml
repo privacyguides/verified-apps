@@ -10268,6 +10268,14 @@ packages:
             issue: GH-1116
             apk:
               sha256: ca60fa7522dd57f9ed88de8f6f3ec72722cf413511773067de48803c749008da
+  - package: io.github.lauworks.p02multicounter
+    signature:
+      - fingerprint: E3:2E:E3:CA:17:99:EB:64:A1:87:66:64:87:7A:BD:E2:A4:ED:7A:E4:6B:26:11:46:A9:FB:B3:36:09:3F:43:A9
+        sources:
+          - name: Google Play
+            issue: GH-6522
+            apk:
+              sha256: 1b3b3f718370a40a40aa8274d0bf651169c799ac34bd9b052e0db22e25c0c9fd
   - package: io.github.leonidius20.recorder.lite
     signature:
       - fingerprint: 11:9D:C8:E6:C1:AB:5C:87:B2:32:86:C7:E3:D8:9B:4B:2B:31:1D:09:9A:88:7C:40:58:CB:A1:C8:1A:94:76:36
