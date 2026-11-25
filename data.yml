@@ -8090,6 +8090,14 @@ packages:
               sha256: f38b96e13b4ec76ac3279549e5fcd09982dc774e5c27a341d11d20671e036a8f
           - name: HTTPS Verified Domain
             issue: GH-2943
+  - package: com.purplecover.anylist
+    signature:
+      - fingerprint: 48:5C:A3:01:86:F6:48:E0:D4:AA:5F:22:DA:6F:A6:CA:02:1A:1E:6F:EE:23:18:1F:7D:EA:D8:5B:EB:F7:60:50
+        sources:
+          - name: Google Play
+            issue: GH-3066
+            apk:
+              sha256: d8f3371eb5f0b60f3a6ff348297212b555e6192a9ff692aa1b51d5231f4f9c08
   - package: com.q2e.pawtucket5040android.pcumobile.uwnmobile
     signature:
       - fingerprint: 2C:0A:A9:4C:64:24:91:D7:D3:A9:F8:57:F9:9E:D4:1C:00:8B:B4:28:F0:D0:E8:5B:4F:08:9A:E1:3E:E6:AD:41
