@@ -5347,6 +5347,14 @@ packages:
             issue: GH-319
             apk:
               sha256: a3c73e651a2cf670cb64339ab3b2894b341ad1bc399425a39f0a669e5ec5b3dd
+  - package: com.nahnah.florid
+    signature:
+      - fingerprint: 84:86:D1:CB:98:E0:EB:EB:A9:0B:57:15:C5:E9:19:6C:68:67:F0:DB:10:44:D7:60:41:6C:13:9E:5C:10:CE:12
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-6402
+            apk:
+              sha256: 1d4da9e505155b79673dd3cf6e55a8e4fa98593cb6d5830345ec851856d5a3e9
   - package: com.naver.labs.translator
     signature:
       - fingerprint: 0B:8B:85:23:BB:4A:EF:FA:34:6E:4B:DD:4F:BF:7D:19:34:50:56:9A:A1:4A:AA:D4:AD:FD:94:A3:F7:B2:27:BB
