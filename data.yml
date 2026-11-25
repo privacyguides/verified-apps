@@ -8714,6 +8714,14 @@ packages:
             apk:
               sha256: bbe462cd7f0dff94e906c0aba0024c4db36c526fb0d7f30a10d4a499c2dc7b5b
               link: https://github.com/FilenCloudDienste/filen-mobile/releases/download/v3.0.35/app-release.apk
+  - package: io.freetubeapp.freetube
+    signature:
+      - fingerprint: 4D:96:64:DA:AE:8A:83:53:27:56:AD:C8:77:7E:96:A6:DE:9F:84:97:BB:60:AD:1C:78:2A:DB:71:FA:E8:0F:C1
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1984
+            apk:
+              sha256: 28fc2639f7816278313dab245c18eb6df7697bd024e5324560e51f472e10ce3f
   - package: io.github.devhyper.openvideoeditor
     signature:
       - fingerprint: 84:DF:64:4C:C5:DB:D4:EA:50:60:2B:9F:23:E4:FB:F3:B2:2E:E5:CD:21:82:43:7B:EF:72:C7:C7:99:F1:2D:B6
