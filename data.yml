@@ -3213,6 +3213,14 @@ packages:
             issue: GH-2107
             apk:
               sha256: 838ad03b7bfe714c141b6b0d5915125e8c64492c185f056f12d3789287d26b48
+  - package: com.evolveocam.mykj
+    signature:
+      - fingerprint: B6:7E:10:E9:67:0C:F0:2D:AA:59:BA:10:41:44:86:EE:C9:A9:D0:2E:B7:50:C2:B2:98:B7:51:40:BE:E9:30:5C
+        sources:
+          - name: Google Play
+            issue: GH-7109
+            apk:
+              sha256: 4997f138424d3cb2c71c612007ff55fc53f7182589ee7440a5acc7d3a1cb32a2
   - package: com.example.deeplviewer
     signature:
       - fingerprint: 9D:4A:B3:C7:FD:F9:F6:E9:EE:1C:2A:4E:62:EE:80:7D:0E:74:39:01:F4:8C:B9:93:AB:D0:FA:06:A2:00:3F:49
