@@ -7296,6 +7296,14 @@ packages:
             issue: GH-850
             apk:
               sha256: c54115da817d70906f60bcd652a1883f6b493de407f1474a9c129ada1b1da162
+  - package: de.noisruker.openPasskeyAuth
+    signature:
+      - fingerprint: 5E:80:04:53:27:4D:72:D5:66:89:31:81:7F:82:BA:19:36:F2:42:3D:90:BD:16:30:D0:A2:EA:3B:CE:36:BC:CF
+        sources:
+          - name: F-Droid
+            issue: GH-1577
+            apk:
+              sha256: c34cc7d975a839efcdfef22d4831db9d313b4a73d88336fe2d6b27813a265365
   - package: de.nucleus.foss_warn
     signature:
       - fingerprint: 69:72:4A:B4:62:25:A5:52:A7:EE:21:1C:D4:D7:2F:B8:74:88:9A:76:99:C5:83:6A:CA:1B:D8:DF:47:D3:CB:D2
