@@ -3765,6 +3765,14 @@ packages:
               sha256: 8f32e518459d974b3c31860c60baf83b92e7bef1ff17d9e16c5be621ff848664
           - name: HTTPS Verified Domain
             issue: GH-2068
+  - package: com.hardbacknutter.nevertoomanybooks
+    signature:
+      - fingerprint: DF:97:1C:E7:D5:8D:3C:DF:37:7C:32:E0:E2:F5:3D:65:99:BD:7F:13:0A:50:C0:52:9C:45:58:3D:DC:12:A0:08
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-2609
+            apk:
+              sha256: a3769b6b501e21ded7966c1048477666e527c02298e39a663cddc2e0084cea94
   - package: com.hassaneltantawy.hisnelmoslem
     signature:
       - fingerprint: C4:65:5F:DE:AC:77:E5:10:E7:1E:73:8D:23:B8:E2:32:21:CF:6B:BA:C8:D8:95:88:C8:55:65:A6:F0:B1:59:38
