@@ -16046,6 +16046,14 @@ packages:
             issue: GH-7316
             apk:
               sha256: 642e0142621e8508a34f67e50979ba055b4838a79eec1b031dc5ba3f6e42a409
+  - package: video.player.videoplayer
+    signature:
+      - fingerprint: 09:20:A1:04:84:A7:52:8E:B2:0E:86:62:B9:1C:01:F7:26:3C:BF:72:5A:06:DC:50:7C:99:E3:26:7E:B3:8D:74
+        sources:
+          - name: Google Play
+            issue: GH-8196
+            apk:
+              sha256: 3de4f9000b6d53e11344afdd701a404aad8a7190afeda81e00714a00f46f960e
   - package: waltti.com.mobiili
     signature:
       - fingerprint: AF:93:CA:0A:06:5E:6E:33:50:9E:8D:81:94:8E:DC:69:B8:72:C1:79:78:68:18:39:4A:19:3E:B1:59:8B:FB:5A
