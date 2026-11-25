@@ -1413,6 +1413,14 @@ packages:
             issue: GH-1454
             apk:
               sha256: d846f31f74c5816ba32a69d7f9cb8b0f77f0755a0cac39c7a7c5d6faea28b904
+  - package: com.atharok.barcodescanner
+    signature:
+      - fingerprint: EB:F1:67:ED:88:46:61:3E:6B:AE:94:3D:63:CB:3D:EB:37:03:30:7C:68:2E:BB:47:DF:4A:3F:43:31:AF:18:76
+        sources:
+          - name: F-Droid
+            issue: GH-6178
+            apk:
+              sha256: f76c033c47bf2d79aa1b40aa8869e2d659b82d4ce41048e0a6b1c70c48309cb6
   - package: com.atharok.btremote
     signature:
       - fingerprint: E6:CF:16:29:D4:62:A3:68:6A:A4:BA:2D:37:E0:27:77:25:7F:D0:A3:BB:E5:54:0D:8C:70:F8:0E:12:D1:11:CD
