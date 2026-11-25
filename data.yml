@@ -13017,6 +13017,14 @@ packages:
             issue: GH-1212
             apk:
               sha256: 2924fb2424f2787602c7712bcc41b8339d15da60cdb253cec6db19b09381cfc0
+  - package: us.mitene
+    signature:
+      - fingerprint: DF:45:DE:BD:39:1C:EC:65:84:6E:30:57:9E:1A:3D:73:83:5D:1F:8C:ED:C7:FE:96:1E:F5:5B:8E:6D:4C:5B:72
+        sources:
+          - name: Google Play
+            issue: GH-5982
+            apk:
+              sha256: 9414af55db2670efbcecbb6a3cbd4c1cd3c1886b4099d3769774fe8955935c03
   - package: us.spotco.malwarescanner
     signature:
       - fingerprint: 26:0E:0A:49:67:8C:78:B7:0C:02:D6:53:7A:DD:3B:6D:C0:A1:71:71:BB:DE:8C:E7:5F:D4:02:6A:8A:3E:18:D2
