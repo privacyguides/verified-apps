@@ -2692,6 +2692,14 @@ packages:
             issue: GH-983
             apk:
               sha256: 3e7e5786399373552fc3e1b0284b1c6ee772bd564ff47b6b2f64306d15d70856
+  - package: com.floflacards.app
+    signature:
+      - fingerprint: E9:DF:22:7F:11:BF:27:BD:24:64:37:DD:60:9C:16:A4:B4:B9:9F:80:B7:8C:93:E2:93:CB:4A:C9:59:F4:2D:9F
+        sources:
+          - name: F-Droid
+            issue: GH-1917
+            apk:
+              sha256: a0a633fe9a29d4bf252ff4386100687f328e7f1e604a32404d9ef8f80d856f97
   - package: com.floraincognita.app.floraincognita
     signature:
       - fingerprint: F4:CA:67:14:53:F3:F2:A2:7E:41:1E:A1:15:08:AC:3F:BB:C7:EA:E0:68:B4:10:D3:64:B2:D9:DD:AD:89:F8:BC
