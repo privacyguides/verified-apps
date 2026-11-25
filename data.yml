@@ -3254,6 +3254,14 @@ packages:
             issue: GH-2452
             apk:
               sha256: 74e8ef0a933371b04d93b08fd7a1c511c0711041cccef35d8992cb8704b54421
+  - package: com.ezviz
+    signature:
+      - fingerprint: 45:E9:84:F7:20:60:DC:78:34:90:C3:90:5C:7E:FA:E8:73:97:E7:9F:CB:03:3C:4E:0C:54:C7:AC:C0:61:E2:C5
+        sources:
+          - name: Google Play
+            issue: GH-7110
+            apk:
+              sha256: 9066f08baf749c7ef30d11c27bc6a0f2f34e298389bff22a35151486d38b150c
   - package: com.facebook.katana
     signature:
       - fingerprint: |-
