@@ -3507,6 +3507,14 @@ packages:
             issue: GH-1358
             apk:
               sha256: 25c437912d62ce4926dc6b3ddf15622eac13b3fa6b8e305e927c681e1a069d47
+  - package: com.greenart7c3.nostrsigner
+    signature:
+      - fingerprint: 56:DC:63:19:96:A5:5C:22:84:79:04:48:C7:DC:9F:1D:D0:5D:F5:96:B2:CE:48:82:31:36:33:F5:60:2E:5F:E4
+        sources:
+          - name: F-Droid
+            issue: CB-113
+            apk:
+              sha256: c41902b2aa23f9f48bd1fa711becf38e034f4f59a4523a7f6be6c8367fcb7a52
   - package: com.greeneking.orderandpay
     signature:
       - fingerprint: FF:FF:82:60:83:D9:C1:08:7A:F8:20:48:1E:DA:64:E1:85:F4:27:ED:07:6D:4D:BF:52:F7:2B:64:15:F7:3A:F5
