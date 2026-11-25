@@ -837,6 +837,15 @@ domains:
       - package: dev.tulis
         fingerprints:
           - BA:29:5F:BF:D8:57:41:ED:AC:5C:37:72:43:0B:BA:B1:91:81:91:E8:99:90:D8:6C:87:17:B4:39:95:93:37:12
+  - domain: twitch.tv
+    method: https
+    issue:
+      - GH-8026
+    checked: "2026-11-25T10:16:05Z"
+    packages:
+      - package: tv.twitch.android.app
+        fingerprints:
+          - 13:38:F9:B0:49:89:3C:C7:0B:78:43:2A:17:75:82:F9:0B:D4:BC:62:96:EA:4E:D3:5B:CC:7D:F5:96:87:AC:53
   - domain: upside.com
     method: https
     issue:

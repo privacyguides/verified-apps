@@ -15583,6 +15583,16 @@ packages:
             issue: GH-901
             apk:
               sha256: a4ace1208482c5f26170fb0fb17d4c0c77e99e2b3031c587e3dec5849fbeec96
+  - package: tv.twitch.android.app
+    signature:
+      - fingerprint: 13:38:F9:B0:49:89:3C:C7:0B:78:43:2A:17:75:82:F9:0B:D4:BC:62:96:EA:4E:D3:5B:CC:7D:F5:96:87:AC:53
+        sources:
+          - name: Google Play
+            issue: GH-8026
+            apk:
+              sha256: 2beac790fccaf56f1d6312e98cb7913ca2443f8dba55e8cdc39a30e5070277aa
+          - name: HTTPS Verified Domain
+            issue: GH-8026
   - package: tw.nekomimi.nekogram
     signature:
       - fingerprint: 5C:E9:32:B9:70:19:9F:BD:A2:AA:E7:BF:21:E1:AD:9E:70:B0:80:9A:7B:1A:C9:4C:06:99:F5:D5:AD:A8:33:13
