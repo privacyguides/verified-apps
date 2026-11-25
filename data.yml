@@ -3288,6 +3288,18 @@ packages:
             issue: GH-1543
             apk:
               sha256: e2a052195e18b0c58722ca3a9615c6ee78bd43b231e1b169f5be3d0f02f9f86c
+  - package: com.flux
+    signature:
+      - fingerprint: BD:CC:CA:30:AE:93:30:2C:46:46:DB:9C:F2:3F:4E:47:59:C1:D5:B6:0A:D5:72:8B:35:AE:0F:C0:FE:B7:94:02
+        sources:
+          - name: F-Droid
+            issue: GH-6764
+            apk:
+              sha256: 6c4289089dba1153b505453e3a4940505f6e56f901be6882e563d0b94495e05f
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-6764
+            apk:
+              sha256: 6c4289089dba1153b505453e3a4940505f6e56f901be6882e563d0b94495e05f
   - package: com.flyersoft.moonreader
     signature:
       - fingerprint: 5A:C6:46:EB:C6:80:17:E4:CC:58:2B:11:B1:C2:AE:5D:29:B1:5D:9B:0A:C3:A5:4F:C6:09:72:41:7B:41:C9:AD
