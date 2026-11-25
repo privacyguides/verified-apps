@@ -6011,6 +6011,14 @@ packages:
             issue: GH-1050
             apk:
               sha256: ba0f8c361c35bc07f291a9403d53dec430013afcbd14190ab0c323f752421ee5
+  - package: com.maize.digitalClock
+    signature:
+      - fingerprint: 06:7C:3E:76:6B:D5:E4:86:72:1D:51:D0:8D:13:AE:3A:AD:E6:07:04:9A:DB:DB:0F:A5:CA:35:FD:0B:C8:A5:9B
+        sources:
+          - name: Google Play
+            issue: GH-8153
+            apk:
+              sha256: 11eb237d60f8afaaeed5818fbfaf524aa964196eb87a220a64f50c4974dcba8d
   - package: com.maltaisn.notes.sync
     signature:
       - fingerprint: 1F:8B:4C:5A:D8:7F:E9:E6:41:4F:AE:5C:13:6A:C5:75:FB:F0:78:EC:DF:3C:7F:0B:3C:6A:08:6B:86:28:0C:55
