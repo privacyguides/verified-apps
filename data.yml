@@ -5731,6 +5731,14 @@ packages:
             issue: GH-1209
             apk:
               sha256: 5cdf3d865afde5125aac24aa15e45cc3eed7f6d4cc5cc57d9558efe4ee9086f2
+  - package: com.nfcarchiver.banana_split
+    signature:
+      - fingerprint: 37:67:29:F4:72:5C:06:37:A4:2C:0D:C9:8B:E7:CD:D6:5C:28:3B:37:9C:3C:90:3F:87:5D:FB:09:6F:C6:D0:02
+        sources:
+          - name: F-Droid
+            issue: GH-6912
+            apk:
+              sha256: 46d628e7e1e6a1a1597ea4157fbc1f65e88afeb0d0ef31c9375cc893b8630d43
   - package: com.nhn.android.nmap
     signature:
       - fingerprint: 0B:8B:85:23:BB:4A:EF:FA:34:6E:4B:DD:4F:BF:7D:19:34:50:56:9A:A1:4A:AA:D4:AD:FD:94:A3:F7:B2:27:BB
