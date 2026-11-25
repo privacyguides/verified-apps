@@ -2228,6 +2228,14 @@ packages:
             issue: GH-4602
             apk:
               sha256: 0f512f7778b38e4252b4643920f53cb4fad2755c1762b6b24193f3e31260fbf4
+  - package: com.drip
+    signature:
+      - fingerprint: 4C:FD:84:5C:10:E6:06:1B:7E:07:69:6A:17:48:55:79:9A:59:74:3F:B0:18:85:93:27:F1:E9:2D:D1:25:05:82
+        sources:
+          - name: F-Droid
+            issue: CB-94
+            apk:
+              sha256: 835afb75daabff0f31c761b352f6412de78a9aa8f9b573b871cc34c90d5fe95e
   - package: com.driveby.app
     signature:
       - fingerprint: 92:56:48:24:3A:B7:CB:E5:F7:3A:C5:7F:5C:E3:B6:FE:D9:23:BC:9F:6E:CA:AF:E4:9B:71:3D:FC:E2:B0:21:D8
