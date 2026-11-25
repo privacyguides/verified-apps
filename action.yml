@@ -1,5 +1,8 @@
 name: Fetch Verified Apps database
 description: Download the Privacy Guides Verified Apps data.yml to $RUNNER_TEMP/data.yml and verify its provenance attestation.
+branding:
+  icon: 'database'
+  color: 'green'
 
 inputs:
   source:
