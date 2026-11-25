@@ -11303,6 +11303,14 @@ packages:
             issue: GH-954
             apk:
               sha256: f6d55fe6289cd3a3803d63d9548371378d18220f7a756dc97185979dde46f3a5
+  - package: org.totschnig.myexpenses
+    signature:
+      - fingerprint: CC:73:D1:AF:73:2C:D0:2B:84:A9:C7:D5:6B:7B:64:B9:D6:9D:47:A2:65:EC:34:B0:88:D6:85:7D:9F:BF:97:CE
+        sources:
+          - name: F-Droid
+            issue: GH-2258
+            apk:
+              sha256: 2663816b73db4bc24fc72e40cdc04e88e020d4a3cb3094f9973171b28364379a
   - package: org.traccar.client
     signature:
       - fingerprint: 4E:E4:1F:0E:EF:8C:C6:E6:30:E0:F7:34:46:85:BD:FE:55:55:7B:D4:50:E3:E7:77:82:69:93:CB:1D:7C:61:A6
