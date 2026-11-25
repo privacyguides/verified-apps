@@ -4597,6 +4597,12 @@ packages:
               sha256: 3ce68ac93006a640685641a69c5ba9ba1b28311c8660fc78145fcddb76836e51
   - package: com.google.android.apps.photos
     signature:
+      - fingerprint: 35:7C:24:3C:84:DA:6B:10:B6:B3:4F:CD:CC:AB:B6:C9:F8:39:D8:CF:0F:7D:93:D4:F4:5F:02:13:FE:D6:BC:5E
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-8036
+            apk:
+              sha256: 9b526fbd11e77ecc1ece496eb89a79d42fd1339e61aba54a5a201cd5f8a6510b
       - fingerprint: |-
           3D:7A:12:23:01:9A:A3:9D:9E:A0:E3:43:6A:B7:C0:89:6B:FB:4F:B6:79:F4:DE:5F:E7:C2:3F:32:6C:8F:99:4A
           5A:AD:2B:EE:6D:B9:5D:17:E0:5A:08:D7:D1:E6:4C:10:A1:51:18:79:15:44:83:91:6B:6A:E6:C7:FD:9C:B0:C6
