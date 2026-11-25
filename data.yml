@@ -7784,6 +7784,14 @@ packages:
             apk:
               sha256: 8619dabc77c84b7ba5621f1b707153460e0dd643ec65bd814d4e6f32560be66b
               link: https://cdn.zapstore.dev/8619dabc77c84b7ba5621f1b707153460e0dd643ec65bd814d4e6f32560be66b.apk
+  - package: dev.zwander.peertuberedirect
+    signature:
+      - fingerprint: 75:5C:46:BD:7C:E6:95:65:D9:80:04:C5:B1:38:3D:F9:BD:5B:4F:27:0D:E8:0F:39:92:FB:42:D8:22:11:3D:0B
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1584
+            apk:
+              sha256: 9dbdd9f83a93be1cf2127474bf68a96adb017f9cd7c6128677685ba43f0ea126
   - package: digital.ventral.ips
     signature:
       - fingerprint: 03:24:3D:0C:0D:44:B6:E0:B4:1E:3C:B2:45:B1:DC:26:9B:E4:C3:FF:E1:77:F8:43:FC:00:5B:C4:EA:0C:74:26
