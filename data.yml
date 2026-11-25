@@ -259,6 +259,14 @@ packages:
             issue: GH-528
             apk:
               sha256: 3895123ffeb1b29e5bc51522c93eee757cf9e2e510f5929ec6eb8e7f50c33361
+  - package: app.marmalade.stt
+    signature:
+      - fingerprint: 09:AC:15:30:90:E9:9A:04:F3:6A:B5:C4:D3:96:8F:F9:DA:25:59:12:83:F1:E4:23:49:89:ED:AC:36:A4:7C:82
+        sources:
+          - name: F-Droid
+            issue: GH-7659
+            apk:
+              sha256: 1d8194c36dabfdd30259ca5d99158aa4e3c1e21a0022e7d28d6c582276b305d3
   - package: app.mihon
     signature:
       - fingerprint: 9A:DD:65:5A:78:E9:6C:4E:C7:A5:3E:F8:9D:CC:B5:57:CB:5D:76:74:89:FA:C5:E7:85:D6:71:A5:A7:5D:4D:A2
