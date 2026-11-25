@@ -12979,6 +12979,14 @@ packages:
             issue: GH-595
             apk:
               sha256: cf702081a0f833e96dd93c1864bc2ea282994102cf1b05196bfc9bb555718506
+  - package: org.ligi.passandroid
+    signature:
+      - fingerprint: 5F:C7:5C:1D:C4:89:56:23:14:EE:E0:0C:9D:05:71:33:F0:0B:4B:1D:C3:5F:8C:F6:D2:00:A6:83:75:70:B7:A8
+        sources:
+          - name: F-Droid
+            issue: GH-6926
+            apk:
+              sha256: 1b2f35f99dff9c26812c3650b6c2754dabd85b024dcd692e6f2c3aea698b8bda
   - package: org.ligi.survivalmanual
     signature:
       - fingerprint: A8:E0:5C:FB:C3:43:D0:33:54:77:E4:C8:5B:1F:03:24:53:86:68:62:6A:20:B4:DC:34:8F:CF:0D:4C:D5:72:8B
