@@ -3541,6 +3541,17 @@ packages:
             issue: GH-2574
             apk:
               sha256: b3643a7d02fb29f9dc121e6cb5ff83a87960aa6e80d9d1255695cee0ba0b5a69
+  - package: com.google.android.apps.tachyon
+    signature:
+      - fingerprint: |-
+          07:DD:0C:BA:5A:36:5F:B2:27:B1:6D:03:3B:FD:60:51:02:DF:EC:27:5E:BE:91:0B:61:7E:81:AC:AD:21:13:FE
+          16:9C:54:64:31:51:C1:50:EB:AE:8F:5E:7F:33:B2:0A:38:41:82:75:18:61:DF:4F:2F:E8:B7:F4:0A:1E:F4:4A
+          7C:AA:B6:E6:BA:70:0E:0D:DC:F7:5C:CA:52:B8:C3:B1:9A:3C:7D:23:30:8F:7E:B1:77:A6:4E:B2:47:61:97:BD
+        sources:
+          - name: Google Play
+            issue: GH-5755
+            apk:
+              sha256: 2244a5cab57a60c593a758a033e371a163e21a0af2b391e7fafd37bab11b52ec
   - package: com.google.android.apps.tasks
     signature:
       - fingerprint: |-
