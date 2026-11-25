@@ -5743,6 +5743,14 @@ packages:
             issue: GH-530
             apk:
               sha256: 5652d4146576f8ac47fb3a05408548793eefdb9e9c8cbf6f9f22fcea5c1b11d6
+  - package: com.orbit.orbitsmarthome
+    signature:
+      - fingerprint: C4:73:BA:6A:AA:95:2D:74:B2:77:05:B4:7E:F7:E0:67:B9:26:59:66:DA:38:C8:36:6C:18:12:26:3C:4B:AC:93
+        sources:
+          - name: Google Play
+            issue: GH-6329
+            apk:
+              sha256: 6f8e47cf7a0df96d5c4fa622169e4c7eec07a37535efccd1566f493ea42d158f
   - package: com.orgzlyrevived
     signature:
       - fingerprint: 6F:C9:C2:E2:2D:07:D2:5C:E7:7E:2E:96:34:55:05:3C:38:B8:31:8A:1A:24:91:B3:ED:95:D5:0C:BA:85:49:3D
