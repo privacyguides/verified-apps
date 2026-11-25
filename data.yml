@@ -2771,6 +2771,14 @@ packages:
             issue: GH-965
             apk:
               sha256: 221cab1a1741fbdce756a7bda811f575cddb33cb25d555e3fc08f167578aa715
+  - package: com.chickfila.cfaflagship
+    signature:
+      - fingerprint: F2:96:A4:7A:C1:44:15:C8:6D:B2:61:A0:0A:D6:DE:7F:97:3F:42:84:D3:6C:50:45:5F:C8:14:20:18:56:6B:91
+        sources:
+          - name: Google Play
+            issue: GH-8326
+            apk:
+              sha256: 4821f684efda6f2461acffe5f41e0597fe791201c1df5da3fb5316cebe49fe77
   - package: com.chiller3.rsaf
     signature:
       - fingerprint: B2:50:64:99:BE:A1:C5:A6:E6:58:F0:7B:E6:77:3F:E4:86:99:9D:C1:24:20:4C:65:22:AF:74:07:50:3A:C9:F9
