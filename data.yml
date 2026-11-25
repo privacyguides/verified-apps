@@ -4894,6 +4894,14 @@ packages:
             apk:
               sha256: 79a0f5c7383f463b33a5f3c5fedfeb06f3733abcb74b3816917594a3771487ae
               link: https://github.com/JGeek00/adguard-home-manager/releases/download/2.22.0_(154)/AdGuardHome_2.22.0_Android.apk
+  - package: com.jiaqifeng.hacki
+    signature:
+      - fingerprint: E1:5E:4C:D2:44:4E:E5:BC:03:47:16:39:86:C1:82:B8:BA:45:85:30:D3:0C:C7:92:44:25:FC:BF:EB:A2:13:B5
+        sources:
+          - name: F-Droid
+            issue: GH-7351
+            apk:
+              sha256: a0460abec09411b124281e2f4e19d2a826840254f44514e51e3f9259989775b4
   - package: com.jmstudios.redmoon
     signature:
       - fingerprint: 66:85:06:F3:98:AF:7C:EF:CC:AB:8C:21:C2:F1:40:9A:9D:00:51:CD:2D:9D:4A:B3:22:19:6B:67:EE:5B:34:47
