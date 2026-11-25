@@ -7631,6 +7631,14 @@ packages:
             issue: GH-844
             apk:
               sha256: e04fe1b50256759740fcdfb1b3d7c3909e90303feabe897154120bec2fece3fa
+  - package: com.wealthsimple.trade
+    signature:
+      - fingerprint: 55:FD:F6:2A:68:F5:24:3D:A3:93:E2:8C:33:32:B4:DF:0D:3C:FD:57:3A:18:66:D9:2A:8D:A0:68:16:BC:20:F0
+        sources:
+          - name: Google Play
+            issue: GH-6104
+            apk:
+              sha256: 618cd74e3d9f0166775e8bc13a1db915a97b3102211514883717c92e70f132f3
   - package: com.weawow
     signature:
       - fingerprint: 70:3B:0F:C8:DC:E8:8D:21:56:64:B0:97:CA:A1:2A:66:B7:E1:31:FE:43:19:AC:57:6B:3A:36:FA:3B:03:67:4D
