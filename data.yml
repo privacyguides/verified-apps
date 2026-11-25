@@ -5157,6 +5157,14 @@ packages:
             issue: GH-2299
             apk:
               sha256: fdc8bc057dba428339794e4d69babf5b8577feee6e534fe3886866c8493a4265
+  - package: com.newspaperdirect.pressreader.android
+    signature:
+      - fingerprint: D6:32:92:A6:DD:8B:1D:07:82:23:DA:27:1B:B0:50:90:C4:88:89:4B:28:B0:0A:9B:51:97:2B:F6:72:C5:B1:C3
+        sources:
+          - name: Google Play
+            issue: GH-6100
+            apk:
+              sha256: c26c54f317d423659f260750ac5de6050ae531705bf70e38facf12f9a71196d9
   - package: com.nexowallet
     signature:
       - fingerprint: 4C:59:7D:8B:39:5C:20:6A:3D:68:4B:9B:D5:F7:A4:A7:2E:06:6A:CA:FE:CB:FB:FD:00:6C:99:C0:48:D0:F3:A8
