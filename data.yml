@@ -1587,6 +1587,14 @@ packages:
             issue: GH-2326
             apk:
               sha256: b88d7a4c37a3352f996bb14dc5309ee20b6ee02366dc298e923bbe845ef4cf86
+  - package: com.bendigobank.aussie
+    signature:
+      - fingerprint: D6:0D:16:FA:01:73:6D:C5:A9:B4:94:D6:48:74:3A:CE:AC:49:22:30:4F:00:0B:6A:CB:12:F7:5B:00:31:37:C0
+        sources:
+          - name: Google Play
+            issue: GH-5797
+            apk:
+              sha256: 689553dff62b81701be8ca4511b45f9c477961bdfb55e10074be0772d274ad2e
   - package: com.best.deskclock
     signature:
       - fingerprint: 95:8E:CB:D2:3C:F3:DC:04:3B:0A:34:37:2C:06:8E:34:27:5A:D8:C1:F2:A1:97:4D:77:91:63:A2:22:A8:99:9E
