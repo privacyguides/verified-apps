@@ -7967,6 +7967,14 @@ packages:
             issue: GH-852
             apk:
               sha256: 10fb92b0e4e5ed9e99d67be992d0009eb17b76184aef86b9256944c438ba3bb4
+  - package: de.nulide.shiftcal
+    signature:
+      - fingerprint: 6F:AF:F5:70:1F:1C:4F:33:0A:D3:DD:E6:ED:8D:82:89:11:59:D2:8B:1C:44:9C:3E:69:11:51:49:28:FE:8A:91
+        sources:
+          - name: F-Droid
+            issue: GH-2888
+            apk:
+              sha256: bdd1207aea2eaefee07ff3bafb165cd86f80a798a9f047c4a4f39dde4463ff68
   - package: de.oeffisounds.app
     signature:
       - fingerprint: B7:72:65:AB:88:7A:80:E9:8E:8C:42:58:20:06:D5:DA:7E:AD:77:41:03:9A:EB:30:D0:39:17:8A:7D:2D:FB:66
