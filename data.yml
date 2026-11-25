@@ -540,6 +540,14 @@ packages:
             issue: GH-529
             apk:
               sha256: 4e158793f02ad616a80558e512adf320ed694ab2cc912671c24f963e6d3a4027
+  - package: at.tomtasche.reader
+    signature:
+      - fingerprint: A3:6A:A2:68:47:61:55:E7:51:AA:25:E1:DC:2F:B4:5B:94:18:FB:F6:5B:D5:1E:27:90:48:95:D0:17:A1:07:39
+        sources:
+          - name: F-Droid
+            issue: GH-7839
+            apk:
+              sha256: f01636bb8a67164facb39a9f1a10635d8ba259db2d0bce598281e71238b76122
   - package: at.wienerlinien.wienmobillab
     signature:
       - fingerprint: 7A:EC:06:2E:97:ED:AC:E6:C9:87:5D:C5:88:B7:C4:19:1C:CC:D5:BC:7E:A8:8C:18:F1:53:85:83:A9:23:1B:6D
