@@ -6051,6 +6051,12 @@ packages:
               link: https://github.com/super-productivity/super-productivity/releases/download/v18.7.0/app-play-release.apk
   - package: com.svenjacobs.app.leon
     signature:
+      - fingerprint: 3E:94:E0:C5:89:4C:17:5F:7F:15:F5:17:D4:46:FE:E0:71:10:12:B1:B1:E7:62:ED:0C:B5:B2:8C:2C:20:13:5D
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1825
+            apk:
+              sha256: 46fa2d0f4f3e913d162c6f341a2a3bbaddab688e10a54f86cf3b4cb2a26b6cef
       - fingerprint: 46:4A:DB:D4:A2:42:46:E4:18:56:3D:F6:46:8D:A9:6C:F4:B2:82:80:A3:91:47:B2:82:4D:E0:51:CA:D1:48:D7
         sources:
           - name: F-Droid
