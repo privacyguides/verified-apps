@@ -10315,6 +10315,14 @@ packages:
             issue: GH-6920
             apk:
               sha256: 9b03c0a44d3e6f55580e035abb3f9086c79f199208012cf51c0b1ff512fb8907
+  - package: de.kaffeemitkoffein.imagepipe
+    signature:
+      - fingerprint: 54:B3:C1:46:F2:C9:CC:D1:FE:23:17:13:20:51:7E:2A:AD:96:66:79:8D:38:3C:52:33:2F:FF:99:40:0A:79:6E
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-8117
+            apk:
+              sha256: 930c0ab249096b0a865e76841a7374b9e40ee8f98cd8593bdbf8a6f706657245
   - package: de.kaffeemitkoffein.tinyweatherforecastgermany
     signature:
       - fingerprint: 54:B3:C1:46:F2:C9:CC:D1:FE:23:17:13:20:51:7E:2A:AD:96:66:79:8D:38:3C:52:33:2F:FF:99:40:0A:79:6E
