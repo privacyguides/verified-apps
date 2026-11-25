@@ -3882,6 +3882,14 @@ packages:
             apk:
               sha256: bbe436bed7e3ae7b3eb00a8437d29ae91ecff8e1c2d31dce80108cb761604956
               repo: https://app.futo.org/fdroid/repo/
+  - package: com.futuremark.dmandroid.application
+    signature:
+      - fingerprint: 32:43:8E:A0:EB:BE:9B:3E:7E:DD:3A:13:54:D9:6C:89:83:C3:CD:5E:24:DA:5A:1A:AE:23:6B:8F:B8:64:27:8E
+        sources:
+          - name: Google Play
+            issue: GH-7716
+            apk:
+              sha256: 807ee857b0af96015d4d9a6948dcac020410deb6f47f5b43a7e95de6f4cdb46c
   - package: com.gabriel.backtap
     signature:
       - fingerprint: CB:DC:E3:93:D7:A8:0F:20:EE:9B:9E:45:FE:EE:0F:2A:56:30:CA:02:B4:E9:38:AA:DB:C0:B5:ED:E2:7E:30:51
