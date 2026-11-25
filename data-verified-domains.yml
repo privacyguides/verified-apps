@@ -178,9 +178,13 @@ domains:
     method: https
     issue:
       - GH-2069
-    checked: "2026-06-19T06:20:55Z"
+      - GH-5929
+    checked: "2026-11-25T07:15:55Z"
     packages:
       - package: com.brave.browser
+        fingerprints:
+          - 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
+      - package: com.brave.browser_nightly
         fingerprints:
           - 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
   - domain: budzdorov.ru

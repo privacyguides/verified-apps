@@ -1866,6 +1866,16 @@ packages:
             issue: GH-525
             apk:
               sha256: a9e80cec287b1b89b79642677872aa7621a3a220da1a78388408f1040efb4a77
+  - package: com.brave.browser_nightly
+    signature:
+      - fingerprint: 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
+        sources:
+          - name: Google Play
+            issue: GH-5929
+            apk:
+              sha256: 4b0a6dc69571e30057a819a50159242405941c89520fc781f506cd14fff06c46
+          - name: HTTPS Verified Domain
+            issue: GH-5929
   - package: com.brickit.brickit
     signature:
       - fingerprint: E1:63:57:00:69:89:D6:6A:98:F0:CE:D3:18:6F:82:29:2C:49:5F:FC:97:00:EB:C5:4C:07:79:BF:A8:18:8F:C2
