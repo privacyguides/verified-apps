@@ -640,6 +640,19 @@ domains:
       - package: me.proton.android.drive
         fingerprints:
           - DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
+  - domain: roblox.com
+    method: https
+    issue:
+      - GH-6787
+    checked: "2026-11-25T08:29:42Z"
+    packages:
+      - package: com.roblox.client
+        fingerprints:
+          - 14:E8:82:B1:F7:37:54:66:03:05:B1:E5:50:30:F7:6F:E6:B2:35:3F:46:C4:E5:93:D5:69:93:3E:95:BC:F7:C3
+          - 29:4F:2C:82:1D:5B:CA:5B:CB:0A:A5:60:04:8E:2E:CF:78:A4:2D:F2:85:8D:06:A3:65:EA:5B:74:45:B0:09:40
+          - 2B:EB:D1:89:E8:D3:10:64:01:34:70:56:C9:3D:04:5B:61:E2:0E:22:D0:C3:CB:ED:85:47:4A:EB:00:A3:D1:2A
+          - 44:93:2E:A3:5A:17:A2:67:37:2D:71:B5:4D:1A:0C:B3:DA:0D:CA:51:13:E9:44:06:AE:2F:E1:80:90:BA:14:77
+          - 7B:04:82:FB:61:2B:D9:C8:70:84:D6:FA:48:F1:C7:BA:A7:F1:A2:2F:47:12:20:CB:A7:F6:42:8D:FB:75:46:2E
   - domain: simplex.chat
     method: https
     issue:

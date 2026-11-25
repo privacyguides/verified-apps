@@ -6606,6 +6606,18 @@ packages:
             issue: GH-989
             apk:
               sha256: 1e166381f60601081c57eddca017e0c6aceea2d09b01e14dcd4883b0dbc67e0a
+  - package: com.roblox.client
+    signature:
+      - fingerprint: |-
+          2B:EB:D1:89:E8:D3:10:64:01:34:70:56:C9:3D:04:5B:61:E2:0E:22:D0:C3:CB:ED:85:47:4A:EB:00:A3:D1:2A
+          44:93:2E:A3:5A:17:A2:67:37:2D:71:B5:4D:1A:0C:B3:DA:0D:CA:51:13:E9:44:06:AE:2F:E1:80:90:BA:14:77
+        sources:
+          - name: Google Play
+            issue: GH-6787
+            apk:
+              sha256: 2badef75db6f27724ed2c667fa5d5a4ab91c40fa425826bb00c5bfbd41de4f17
+          - name: HTTPS Verified Domain
+            issue: GH-6787
   - package: com.rode.rodecentralmobile
     signature:
       - fingerprint: 80:76:3F:94:79:A1:2F:8F:DB:D7:9C:D0:48:F5:22:58:8C:1C:2A:39:8D:DF:A0:33:04:D4:7C:B5:28:F8:95:B1
