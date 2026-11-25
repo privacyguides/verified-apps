@@ -8598,6 +8598,14 @@ packages:
             issue: GH-2318
             apk:
               sha256: ce1aa63f8d72e5ad4ab83d11c4c7ff866300eb9b2ec3040feabf12268cb75517
+  - package: info.guardianproject.ripple
+    signature:
+      - fingerprint: 92:7F:7E:38:B6:AC:BE:CD:84:E0:2D:AC:E3:3E:FA:9A:7A:2F:09:79:75:0F:28:F5:85:68:8E:E3:8B:3A:4E:28
+        sources:
+          - name: F-Droid
+            issue: GH-1991
+            apk:
+              sha256: c94d8aec3c47ad090933116bac0b3d35699bda11c98eaf0a963ec713f0dcbbe9
   - package: info.zverev.ilya.every_door
     signature:
       - fingerprint: 9F:FC:A7:0F:77:A8:5E:F6:82:90:27:66:02:BB:5B:4C:92:A6:54:67:C5:4F:F6:FB:89:C4:B2:02:39:50:62:03
