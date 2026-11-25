@@ -11503,6 +11503,14 @@ packages:
             issue: GH-1606
             apk:
               sha256: c400508d9efdd6de91af697950975215766969210f2406d98ac8643d98769516
+  - package: tech.dongdongbh.mindwtr
+    signature:
+      - fingerprint: 1A:3E:0A:B4:21:78:30:6C:36:53:4C:EE:2E:F3:B8:88:75:6C:6E:43:F0:D1:9D:E6:7F:7B:55:24:6C:47:3D:F5
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1941
+            apk:
+              sha256: feeac6515f77137947421282ef143b74e413dec3c0bad310cd90d85b77a87f45
   - package: tech.lolli.toolbox
     signature:
       - fingerprint: 5E:8B:24:51:85:AA:A5:37:36:F9:32:10:6A:23:64:A9:94:8A:C3:C2:C2:D9:72:AB:D1:0F:B0:A8:68:F4:2D:5D
