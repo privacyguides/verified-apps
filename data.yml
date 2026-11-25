@@ -15914,6 +15914,14 @@ packages:
             issue: GH-1111
             apk:
               sha256: 3dde10ba22cb0d0c240551c0b60e1245f5bfe1cfaed5df8ab486e491857e2ffd
+  - package: tech.mmarca.openvitals
+    signature:
+      - fingerprint: 04:16:C0:65:15:43:E9:51:EF:3B:6C:1E:D9:BE:B1:38:33:BF:F3:A2:BE:9D:DA:CF:49:22:70:71:28:61:E0:5D
+        sources:
+          - name: F-Droid
+            issue: GH-8236
+            apk:
+              sha256: 534e3c22efdff10f87add3b4901d179df6ee2cfe4d2503a89060db9be6721214
   - package: tech.techlore.plexus
     signature:
       - fingerprint: F0:2B:66:E8:E6:18:37:04:C3:FD:6A:E0:63:2F:62:40:DE:8E:EC:0D:6B:DB:E9:17:73:1C:41:AB:8C:7D:9A:AB
