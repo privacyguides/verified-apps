@@ -9951,6 +9951,14 @@ packages:
             issue: GH-1945
             apk:
               sha256: 1de11645ee2bd177adf31a933494b8ce32b6cdaf1843c7852894f449d193e927
+  - package: org.andstatus.todoagenda
+    signature:
+      - fingerprint: 95:77:DF:E6:DE:7A:E7:CE:7B:6B:E2:63:54:8C:F5:F3:5F:6A:BE:AD:64:0C:A3:89:5A:D4:E1:C0:B9:51:C7:88
+        sources:
+          - name: F-Droid
+            issue: GH-2059
+            apk:
+              sha256: cf77b706a59a56113c0ed0f92b35f9a720e5d074d39b25f4c6c559c3145c67ae
   - package: org.azahar_emu.azahar
     signature:
       - fingerprint: 5B:A2:56:3E:0D:13:FA:E2:AB:A0:67:D1:C2:30:CD:1C:86:3A:93:00:5C:10:D6:48:CE:5B:33:17:92:AA:0A:F1
