@@ -7357,6 +7357,14 @@ packages:
             issue: GH-2839
             apk:
               sha256: 3d437b7fcdf6b529b0dabd5b4b3475f2e0e7ab63712e4570611f07121e002339
+  - package: com.ttxapps.autosync
+    signature:
+      - fingerprint: 25:A9:C8:EA:6D:2D:64:93:EB:CE:25:08:82:5F:4A:4F:6D:D0:6F:AE:87:A0:7D:1C:5A:D9:7A:25:4A:4F:FA:AB
+        sources:
+          - name: Google Play
+            issue: GH-6327
+            apk:
+              sha256: f0acb5817d3f4693340f3ec2524d6e84d12dd277721798fc2761805f6e2cd0f3
   - package: com.turkishairlines.mobile
     signature:
       - fingerprint: DD:85:EB:7F:24:CC:AD:39:D3:B8:30:26:12:5C:D5:16:4E:19:FD:1E:AA:26:7F:A0:B0:73:AE:72:20:D2:75:6E
