@@ -11302,6 +11302,14 @@ packages:
             issue: GH-4521
             apk:
               sha256: 575ab501732137c3b9a04f8f663e13c2dae4e19b69a0a98a9f36a99a600cbbe9
+  - package: jp.co.canon.bsd.ad.pixmaprint
+    signature:
+      - fingerprint: 38:4B:13:CB:C6:D4:F9:0E:BF:F9:D9:3C:6E:BF:6E:80:BB:A7:BF:51:34:27:8D:56:7E:93:81:19:CB:F1:63:D5
+        sources:
+          - name: Google Play
+            issue: GH-7090
+            apk:
+              sha256: 2ea31bdc6e36b102a0b908d4674cc4b6b691946b914eba038ba91ebbd202661d
   - package: jp.co.canon.bsd.easyphotoprinteditor
     signature:
       - fingerprint: 17:6E:98:E6:70:67:DA:BF:63:97:4B:C5:44:1C:20:74:2F:FE:4E:DB:58:95:0A:27:8C:A6:05:4A:C0:5B:C4:FF
