@@ -9056,6 +9056,12 @@ packages:
             issue: GH-1887
             apk:
               sha256: cd82516f5d7fec0a433eabc961691f9ac04686d0b894d65f95bdf1219c1b4eee
+      - fingerprint: FB:D0:79:35:EF:2E:2A:DA:5D:91:8A:EA:62:EC:25:DD:7D:DA:74:07:49:2C:6C:3D:15:82:B5:9B:6C:B8:4B:ED
+        sources:
+          - name: F-Droid
+            issue: GH-2845
+            apk:
+              sha256: fca4c9d9d2218eb6f9d0a810abb0f8bf66863abcc5362319882e5a7c3cee0290
   - package: io.anytype.app
     signature:
       - fingerprint: 76:E3:DE:17:53:18:F9:30:20:FA:0B:7D:65:75:C0:AF:4D:33:1F:51:35:47:3F:9A:B7:FC:34:BA:49:A3:6F:8E
