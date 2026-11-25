@@ -9943,6 +9943,14 @@ packages:
             issue: GH-2861
             apk:
               sha256: d025acc9ad4efe02d1a405574aa0c22af2f9269628dcca8b4f50d08b0ff947ec
+  - package: de.micmun.android.deufeitage
+    signature:
+      - fingerprint: 41:D6:F2:0F:09:C1:0C:38:11:76:D5:99:4E:AF:24:0D:8D:8B:0A:6B:4E:8D:E7:45:93:F0:10:46:4A:1D:DF:FC
+        sources:
+          - name: F-Droid
+            issue: GH-7850
+            apk:
+              sha256: 253b94c233585f98a1624a253347f507690fc6379d9177b9d5545d3747192efb
   - package: de.mm20.launcher2.release
     signature:
       - fingerprint: BF:65:BB:D6:17:99:73:97:80:0D:02:E0:AC:2E:45:CE:E1:53:15:15:18:54:5C:23:EF:66:B3:CB:2C:FD:F7:BC
