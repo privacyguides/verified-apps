@@ -865,6 +865,14 @@ packages:
             issue: GH-5870
             apk:
               sha256: e42690cf1ccdfb262427dc202d63ce150abe6f94feb87e26605a3f105da1f8f6
+  - package: com.accuweather.android
+    signature:
+      - fingerprint: 46:12:0A:F6:3F:CC:75:CA:58:44:D1:81:A8:7C:66:E2:84:CB:0E:1D:6B:7F:7F:A5:6D:32:54:72:0B:A6:8E:02
+        sources:
+          - name: Google Play
+            issue: GH-6319
+            apk:
+              sha256: 5cfe2c7dbfd77862ff606f1a72fe6dfe25c7745d5b00f5493e5e12a4d589bbd5
   - package: com.acehardware.rewards
     signature:
       - fingerprint: 37:F9:BE:EC:83:94:80:36:4D:F6:1A:49:27:ED:58:DB:06:10:F9:F1:FB:4A:AA:E4:BC:A0:3C:EA:13:17:2C:F7
