@@ -2161,6 +2161,14 @@ packages:
             issue: GH-1581
             apk:
               sha256: c7d342fb64e0e3846e6ff3501c13bf2492fc0a773448a435572cbe5ac9d80924
+  - package: com.bio.apto
+    signature:
+      - fingerprint: 5C:00:01:FF:8F:38:D7:8B:49:F7:F6:5F:91:DF:87:55:04:74:B3:3C:B6:20:AE:DF:48:6C:3A:B6:BB:07:44:CA
+        sources:
+          - name: Google Play
+            issue: GH-7988
+            apk:
+              sha256: 20375072d4e0c7527f1456b0f22ddae3c366c3df3e1363809f812cb9938c00f6
   - package: com.bitchat.droid
     signature:
       - fingerprint: 3B:03:FA:66:A5:45:13:21:10:07:92:F5:B5:5A:7B:49:66:D5:C8:DC:10:C6:DA:A4:0A:A9:5E:A4:89:53:1B:CA
