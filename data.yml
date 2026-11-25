@@ -538,6 +538,14 @@ packages:
             issue: GH-5568
             apk:
               sha256: 59d6efea5d03c065ad3fff1eb42bbe774cce9c0296f1af9661eb261820f04ff7
+  - package: bluepie.ad_silence
+    signature:
+      - fingerprint: CE:85:A4:F2:D4:3F:04:B6:BD:CF:1D:85:5F:B9:26:6F:C4:9B:F2:54:BF:14:C5:65:F5:AC:A1:6D:ED:2E:9C:4C
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-6721
+            apk:
+              sha256: 3729020966638bfff13ec7f1f76046195c53c096d3bfce93b17e4e6558fde201
   - package: br.gov.meugovbr
     signature:
       - fingerprint: E1:33:06:7F:C5:0B:DA:43:9C:1F:C6:1A:A8:0C:D5:F2:38:DC:65:B3:4D:8D:30:3B:FF:4A:33:AE:2F:47:05:AB
