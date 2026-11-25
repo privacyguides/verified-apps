@@ -3362,6 +3362,14 @@ packages:
             issue: GH-6927
             apk:
               sha256: 16ec0870b35adefc6869ad57d1474d2764f399b1f22824f7fc316d60b7e0fdea
+  - package: com.deutschebahn.bahnbonus
+    signature:
+      - fingerprint: 73:4A:18:E9:3E:C2:D1:A5:82:DD:7D:17:CB:92:4E:79:0A:A5:E2:A2:83:0B:02:03:B9:5E:D6:F7:5B:6D:88:9F
+        sources:
+          - name: Google Play
+            issue: GH-3037
+            apk:
+              sha256: 60b8af66464feb345b0bfa358a90f6c8621c79267131b163ea2d117ea2e45a35
   - package: com.devhd.feedly
     signature:
       - fingerprint: B4:EF:58:DB:C0:76:3C:0B:F3:EE:D7:B1:5C:96:11:AE:A8:03:1E:97:36:0E:B9:85:D5:2E:DA:CC:2C:63:77:5E
