@@ -355,6 +355,14 @@ packages:
             apk:
               sha256: ba28ca92f5a09ab19cdf490f054f1bcf7b311b0a64007077b3c31fcec2bbfd60
               link: https://github.com/organicmaps/organicmaps/releases/download/2026.05.27-11-android/OrganicMaps-26052711-web-release.apk
+  - package: app.palimpsest
+    signature:
+      - fingerprint: 4E:79:C9:36:0B:A7:E8:AB:24:49:AD:24:3A:0E:AA:22:96:BD:74:D7:22:44:12:FF:8E:49:E5:07:E4:D3:7B:8B
+        sources:
+          - name: F-Droid
+            issue: GH-7857
+            apk:
+              sha256: 7404d94b31165e1bcc82c683ee9fa1938ea0f193d7998000e5bcc96324221c21
   - package: app.paralino.android
     signature:
       - fingerprint: 7C:36:87:CA:81:BC:A2:0C:32:09:5E:CE:AD:18:29:09:DC:50:87:03:6A:37:F0:77:2B:2D:9E:5D:85:91:41:DC
