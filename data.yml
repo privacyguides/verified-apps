@@ -464,6 +464,14 @@ packages:
             issue: GH-5739
             apk:
               sha256: 17957e465641a6c5b9b81b8737cc09c56b67c30f8f8d17013d64c2bac0cbed0e
+  - package: at.billa.international.czech
+    signature:
+      - fingerprint: B1:5B:E7:ED:D5:3D:44:3F:DF:A1:27:CB:63:B8:60:B1:A2:65:FB:86:AE:A8:F1:36:F3:26:12:00:E2:AE:4C:CC
+        sources:
+          - name: Google Play
+            issue: GH-7082
+            apk:
+              sha256: 5b4fc33f9e6f85216969e9f58f4a439f63c97ee9deac30b107224eb7b8a30897
   - package: at.bitfire.davdroid
     signature:
       - fingerprint: 8B:48:E6:76:A6:86:49:67:79:17:83:C1:D8:D0:FC:0D:D6:D2:CE:33:E1:FB:36:78:77:93:EC:D0:86:D4:47:07
