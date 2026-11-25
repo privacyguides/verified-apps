@@ -9019,6 +9019,14 @@ packages:
             issue: GH-7098
             apk:
               sha256: cb12da47c646ae517554d2609c831c6898cd14c34165a9326ce88185d0cf0076
+  - package: cz.gov.edoklady
+    signature:
+      - fingerprint: 22:4D:AD:90:C2:82:5B:B6:34:05:1B:35:AF:B9:7B:B0:2D:B1:2A:61:9D:5B:D7:AD:13:CF:5F:14:B2:2F:01:09
+        sources:
+          - name: Google Play
+            issue: GH-7099
+            apk:
+              sha256: 238a024429f89a51bff13bdbfba29702fbc3d6b3d9b43563402311031c9b72a6
   - package: de.aoksystems.amg
     signature:
       - fingerprint: |-
