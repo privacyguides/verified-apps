@@ -10198,6 +10198,14 @@ packages:
             issue: GH-1424
             apk:
               sha256: 3dd107149293e8fba420c66b293d7b628f200dde8e6c7039675fc2cfa71465bc
+  - package: org.disspair.disspair
+    signature:
+      - fingerprint: 88:B9:F4:3D:99:1A:EC:89:F0:7A:8E:FF:C6:F9:DB:8A:10:3A:EF:79:71:B6:EA:92:95:90:61:36:C6:CD:0E:18
+        sources:
+          - name: F-Droid
+            issue: GH-2179
+            apk:
+              sha256: 5bb6242b34e17ca275259d743c7a88f1e1c75414cb872579abfa7cc0c0812711
   - package: org.documentfoundation.libreoffice
     signature:
       - fingerprint: 54:D3:57:33:E9:64:DC:B6:5F:51:1E:50:25:B8:3F:9B:D7:B5:73:31:14:34:AB:79:A7:CD:09:F8:27:BC:45:50
