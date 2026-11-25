@@ -10126,6 +10126,14 @@ packages:
             issue: GH-842
             apk:
               sha256: 1bef8f7b7d9c1b4c4a287c7628721c1f8999e5e02a4d154fd625671aa64f6756
+  - package: com.voyagerfiles
+    signature:
+      - fingerprint: DB:49:62:77:D4:56:75:1A:BE:8C:A6:40:50:26:33:7C:81:A5:61:A1:34:E3:8D:49:C8:E2:1F:B8:F0:36:BA:DF
+        sources:
+          - name: F-Droid
+            issue: GH-3074
+            apk:
+              sha256: 8304acf99f861691e4419d11228045871d061108a54fae530a14633dd53c1d43
   - package: com.vrem.wifianalyzer
     signature:
       - fingerprint: 17:EA:63:A0:60:1C:E9:E2:46:F4:25:58:0D:81:2E:7F:5D:41:5B:76:85:D4:97:10:3B:B3:82:AF:52:D3:5D:59
