@@ -652,6 +652,15 @@ domains:
         fingerprints:
           - AF:F9:30:D6:71:FA:0A:57:B8:C4:1D:16:78:CC:2A:8E:A7:17:07:5A:74:E3:46:94:2A:14:0A:FA:44:13:39:D2
           - C7:85:F3:ED:59:35:36:6B:3E:FA:10:EF:37:F2:B8:81:DC:F4:AB:53:02:B1:13:50:B9:C1:9A:83:A1:E1:47:34
+  - domain: spothero.com
+    method: https
+    issue:
+      - GH-6521
+    checked: "2026-11-25T08:17:44Z"
+    packages:
+      - package: com.spothero.spothero
+        fingerprints:
+          - DE:77:C8:BD:A6:69:30:48:D5:AF:BE:1A:1E:9B:97:D7:B4:14:D8:67:FA:11:0D:19:A3:0A:72:74:89:DA:34:AB
   - domain: spotify.com
     method: https
     issue:

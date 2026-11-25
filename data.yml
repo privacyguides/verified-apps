@@ -6972,6 +6972,16 @@ packages:
               sha256: 4ca959b8c7ac9d792bf73293a8bc4ca60cf39d229ee59368bca64768ebb2ab69
           - name: HTTPS Verified Domain
             issue: GH-5773
+  - package: com.spothero.spothero
+    signature:
+      - fingerprint: DE:77:C8:BD:A6:69:30:48:D5:AF:BE:1A:1E:9B:97:D7:B4:14:D8:67:FA:11:0D:19:A3:0A:72:74:89:DA:34:AB
+        sources:
+          - name: Google Play
+            issue: GH-6521
+            apk:
+              sha256: f034ef10d809857f32c27e11d6f21a4791830745c5497e0f89e5c554a680b53f
+          - name: HTTPS Verified Domain
+            issue: GH-6521
   - package: com.spotify.music
     signature:
       - fingerprint: 65:05:B1:81:93:33:44:F9:38:93:D5:86:E3:99:B9:46:16:18:3F:04:34:9C:B5:72:A9:E8:1A:33:35:E2:8F:FD
