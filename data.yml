@@ -6909,6 +6909,14 @@ packages:
             issue: GH-920
             apk:
               sha256: 6497891c7dcf7b0bf59cf168a4474e836d5f406f0fa93278b3877a836ebab809
+  - package: com.wa2c.android.cifsdocumentsprovider
+    signature:
+      - fingerprint: 32:64:44:88:EA:8F:82:47:D8:E1:07:B1:41:FB:B5:F1:67:48:64:AD:09:15:6B:A8:C3:57:A1:FC:A9:B5:7A:EB
+        sources:
+          - name: F-Droid
+            issue: GH-2340
+            apk:
+              sha256: 215f005994efed4a55e10708132ae41543ab7af48d5409d38c634090cfa15768
   - package: com.wakdev.wdnfc
     signature:
       - fingerprint: EE:B2:E2:36:CC:CF:B7:10:1C:4A:E8:66:F5:B2:01:58:5D:C7:42:EE:7B:BD:FD:72:E7:90:19:B3:FE:13:61:1F
