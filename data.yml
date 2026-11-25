@@ -2038,6 +2038,14 @@ packages:
               sha256: b9a8b3f656de37c1e8b249b91d9ff5613e6091a0c46cbffd917cf009267dd119
           - name: HTTPS Verified Domain
             issue: GH-2310
+  - package: com.bootiq2.gtsisic
+    signature:
+      - fingerprint: D9:5A:A7:48:C5:24:F0:7B:03:46:CB:61:06:86:48:6A:45:7E:2E:71:FF:B5:1D:32:E7:56:0F:A1:B4:73:32:53
+        sources:
+          - name: Google Play
+            issue: GH-7018
+            apk:
+              sha256: 6fac6fac121d2a3cd931a0467ec3d95e54d15111707e294a89c5f9cfca3f9195
   - package: com.bose.app.android.brussels
     signature:
       - fingerprint: DD:51:4B:64:D4:B2:43:4F:22:EB:E1:20:D9:73:FB:E8:5F:E3:04:D9:42:7E:C6:9A:3B:BD:DC:58:41:58:97:39
