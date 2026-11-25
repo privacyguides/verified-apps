@@ -10352,6 +10352,12 @@ packages:
             issue: GH-1860
             apk:
               sha256: 682f827da2bd335fccee1d0d462eb7cfefc021044cd017bcd1d6338ae9aa9b0b
+      - fingerprint: A2:5A:9F:E9:64:E9:D9:7A:2C:B1:AE:D1:48:51:98:8C:94:45:7F:5C:3D:B3:FD:93:D4:5A:95:49:B6:A5:9F:3C
+        sources:
+          - name: F-Droid
+            issue: GH-7198
+            apk:
+              sha256: ad70a6e272b3e73c18608739f8a69168abc66c94b7199a310450938148ebe79b
   - package: eu.siacs.conversations
     signature:
       - fingerprint: C7:5A:BE:78:59:36:43:AE:7C:AC:52:73:27:CD:21:93:48:2D:B0:67:40:4A:88:B8:C1:3F:7A:07:01:94:61:87
