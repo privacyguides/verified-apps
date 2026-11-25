@@ -7399,6 +7399,14 @@ packages:
             issue: GH-2805
             apk:
               sha256: 566c4b8c98b1495dee16bef11b9f3a5da5ff4c828d4a0a4651894f8789efc999
+  - package: de.felixnuesse.disky
+    signature:
+      - fingerprint: 17:EB:5F:E8:5B:9D:3B:A5:F5:E1:D2:61:7D:C8:06:96:05:FD:C9:1F:A3:44:5C:0C:08:E7:00:F7:04:5B:96:7C
+        sources:
+          - name: F-Droid
+            issue: GH-2021
+            apk:
+              sha256: 1f2d28407b5b5c878a8795dcd9082bc3788e4bda8b5055ee2abdc80f6943fb44
   - package: de.felixnuesse.extract
     signature:
       - fingerprint: 1F:1E:E8:3B:8C:11:74:A6:1D:0D:18:F0:9F:F1:21:5D:59:E5:E6:3E:0B:01:A4:DA:69:5B:8E:B5:2D:16:BF:E9
