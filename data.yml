@@ -9796,6 +9796,14 @@ packages:
             issue: GH-2323
             apk:
               sha256: 24f98d2338dc355d2ac6932f016f70f8eea4e2480d52dc1cfff912e9e417923c
+  - package: fr.neamar.kiss
+    signature:
+      - fingerprint: EF:C8:22:3B:D3:CB:92:B3:FD:7C:80:D0:1E:B8:7D:F4:79:0C:21:5F:01:C5:23:5A:0B:8F:BF:03:F5:77:5F:4B
+        sources:
+          - name: Google Play
+            issue: GH-6405
+            apk:
+              sha256: 1e3325c9d27a94fb4dad2592a45ec32494d4ff6ab3a7919ebd385d148bcffd59
   - package: fr.schiller.remoteScreen
     signature:
       - fingerprint: FF:BA:EC:12:8E:25:5A:52:54:04:18:CC:8C:E1:21:E5:79:50:96:F0:AD:C5:70:A9:AC:A2:83:BC:C6:BD:C1:6E
