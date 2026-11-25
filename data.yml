@@ -11282,6 +11282,14 @@ packages:
             issue: GH-1908
             apk:
               sha256: fbe2fa19b05adc4d1335f7a2456c138b8483b643746c45dee6c6fb14ca7a6db8
+  - package: org.woheller69.ttsengine
+    signature:
+      - fingerprint: EE:03:D0:E5:E6:91:80:86:2D:0B:E4:BD:E3:6A:D1:58:39:A3:07:89:64:08:FC:6F:74:B7:6B:A3:1B:81:7E:71
+        sources:
+          - name: F-Droid
+            issue: GH-2054
+            apk:
+              sha256: cd309af4a915b5f94c80b243da897c2b38db20068f4c7e92f8d133a985673fc7
   - package: org.woheller69.whisperplus
     signature:
       - fingerprint: 22:E3:8A:D0:5E:16:BE:41:E3:5F:F6:86:EC:CE:26:32:F4:1A:C6:98:60:5F:58:35:CD:81:6B:07:43:FB:7B:FE
