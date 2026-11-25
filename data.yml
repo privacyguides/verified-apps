@@ -5874,6 +5874,14 @@ packages:
             issue: GH-282
             apk:
               sha256: cd82720732a16ae642ac8c9f83738f105e6444a37da8bae287e6a0f4629e0a45
+  - package: com.machiav3lli.backup
+    signature:
+      - fingerprint: C9:4F:10:24:3C:14:D5:7D:D6:9D:ED:E6:1C:23:4B:B5:E8:BB:07:04:D6:1B:45:DA:FE:49:67:28:AC:32:F3:78
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-8065
+            apk:
+              sha256: d2bd2fbd57bf1e99d12a40ba4418e66543a2983742f16b0f3509262f36f7b4f7
   - package: com.machiav3lli.fdroid
     signature:
       - fingerprint: 6D:8F:A0:E2:D8:F4:C1:D8:11:B8:5C:C7:33:E8:7D:5D:AC:66:67:40:C5:D7:32:38:E2:37:5B:81:A1:17:61:B5
