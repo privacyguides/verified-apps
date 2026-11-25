@@ -5522,6 +5522,14 @@ packages:
             apk:
               sha256: 37ad242b86aa6200317a9c382ae4e919bfeeac5aaa8aa14915b229dadbe5d7e0
               link: https://github.com/savvasdalkitsis/uhuruphotos-android/releases/download/v0.0.259/app-release.apk
+  - package: com.sb.recordequalizer
+    signature:
+      - fingerprint: CA:EC:A8:86:70:04:BB:D7:91:60:AD:EF:8B:0E:8F:94:A8:98:BE:86:0A:0C:3D:99:68:85:91:A5:3B:61:7C:43
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1586
+            apk:
+              sha256: a4c7ca3859ae040879007268875ba68b71f6fd7915e6da73ae1076780bf9f71a
   - package: com.scee.psxandroid
     signature:
       - fingerprint: DB:4C:38:96:42:CD:DC:76:2F:6C:72:B8:67:B8:FC:D9:39:E5:B5:DA:E4:AC:37:63:DB:CD:F6:23:27:D3:82:F7
