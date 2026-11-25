@@ -12906,6 +12906,14 @@ packages:
             issue: GH-7709
             apk:
               sha256: a82a8f58e88c8858c7fe5ca457c10c4b1a1dfd00de55d1a31d9c9e11eddf4ecf
+  - package: montafra.beam
+    signature:
+      - fingerprint: 9C:11:95:A2:89:6F:B8:36:9B:E0:CD:22:6F:A8:85:07:48:F6:CE:2E:2D:23:54:3C:C7:37:C6:8C:D5:05:3D:BE
+        sources:
+          - name: F-Droid
+            issue: GH-8073
+            apk:
+              sha256: bd993c5b1d253d85f0167ebc2fdc77162c2ec7d3499a84ecc45909493b78532c
   - package: mv.com.bml.mib
     signature:
       - fingerprint: B5:61:EE:21:02:40:1A:16:26:35:43:C1:95:D5:AF:00:91:81:6B:87:9B:31:AA:FE:7C:6A:5F:B0:25:62:74:59
