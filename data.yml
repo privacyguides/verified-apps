@@ -4521,6 +4521,14 @@ packages:
             issue: GH-1446
             apk:
               sha256: ba990648e44739d9b0171ddafebfe215e626a0e832cd3bc795f699a1537e6590
+  - package: com.github.dyhkwong.sagernet
+    signature:
+      - fingerprint: E9:FE:39:E1:CE:25:4C:50:C2:F9:47:0A:75:7B:37:8C:0B:7C:C5:36:11:98:67:F7:69:14:05:B5:92:E6:99:4B
+        sources:
+          - name: F-Droid
+            issue: GH-3069
+            apk:
+              sha256: 1703ff23debd436223e3f1502d294b52705b451f323dd0ec500e223aa0248c1e
   - package: com.github.gotify
     signature:
       - fingerprint: 7A:4C:46:88:B9:24:21:8A:BC:A2:41:9A:6A:73:AA:F3:1A:F6:B9:D4:45:5A:4B:02:47:06:5E:33:F6:7A:8F:75
