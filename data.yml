@@ -8156,6 +8156,18 @@ packages:
             issue: GH-1808
             apk:
               sha256: e19896b4e74642b8de05f91231466a16758dc12d1d0ba12f8d1cd109684971a7
+  - package: eu.darken.sdmse
+    signature:
+      - fingerprint: F4:90:03:2B:E5:38:3F:55:90:04:95:FA:7F:C2:07:EC:E2:E7:86:A5:C2:C6:CC:52:02:7B:99:54:8A:9C:E9:38
+        sources:
+          - name: F-Droid
+            issue: GH-1992
+            apk:
+              sha256: 29a98e6160cab1e0fe137e7b19210651122c6ea43791cddc66924ca12e103ac2
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1992
+            apk:
+              sha256: 29a98e6160cab1e0fe137e7b19210651122c6ea43791cddc66924ca12e103ac2
   - package: eu.depau.etchdroid
     signature:
       - fingerprint: B2:42:E9:89:E4:01:36:6D:0E:92:4B:15:C9:BC:66:76:7D:A7:4A:B3:08:FF:21:B0:BA:50:33:02:81:59:A6:AE
