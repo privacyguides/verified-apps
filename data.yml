@@ -3555,6 +3555,14 @@ packages:
             issue: GH-1436
             apk:
               sha256: 7e80608184f463d0837328998983beb30799d13de2d5b28dca8f76978dc8a05c
+  - package: com.gifboard
+    signature:
+      - fingerprint: 17:87:24:E7:94:A0:3A:85:71:EA:71:D6:B1:F8:0D:F9:AA:CB:8B:88:34:0D:E5:09:30:1A:0A:6C:AE:84:04:A4
+        sources:
+          - name: F-Droid
+            issue: GH-6798
+            apk:
+              sha256: 76b01a491bfb0618c7ea7cf88b702116aefb3b31e059bb8372d8df10dbef7c8d
   - package: com.github.android
     signature:
       - fingerprint: DF:08:C9:F2:D8:09:18:9D:9D:50:64:97:C1:57:45:A7:39:5A:41:53:6E:FB:43:3E:3A:EE:1A:ED:BE:11:B2:61
