@@ -4688,6 +4688,16 @@ packages:
             issue: GH-8133
             apk:
               sha256: d15a86d9d7717b09142bbd526338d2d2f6883a66c092f1b915b831d6df7ffdb6
+  - package: com.google.android.apps.safetyhub
+    signature:
+      - fingerprint: |-
+          6C:78:F8:46:A8:43:0A:D8:9F:DE:1B:01:F6:71:EB:54:3B:5A:2D:BC:1B:9F:2C:1C:CB:4A:64:F7:66:5E:68:25
+          A0:33:29:28:E6:1E:86:F1:E6:83:C2:9D:C6:E5:5F:51:81:12:7B:9F:5E:D8:A7:C4:E8:4F:9B:87:18:F0:06:E3
+        sources:
+          - name: Google Play
+            issue: GH-8139
+            apk:
+              sha256: 144b8eb7c438b9bb6f8f9add51f93bd83d7f0e8ebdb32efcd7ad1950e69b3d1e
   - package: com.google.android.apps.tachyon
     signature:
       - fingerprint: |-
