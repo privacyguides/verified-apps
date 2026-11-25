@@ -12423,6 +12423,14 @@ packages:
             apk:
               sha256: 54ca6534a4e6e8b1715dbf4a23ff8292a979d7183e2e5e0847d8b1e360d0a8d5
               link: https://github.com/pynicolas/FairScan/releases/download/v1.22.1/FairScan-1.22.1-arm64-v8a.apk
+  - package: org.fairspeed.test
+    signature:
+      - fingerprint: AB:66:08:24:E3:85:AE:17:A2:D6:34:50:22:05:6B:D6:D5:36:D2:E6:13:AF:60:69:88:41:E5:BE:22:D6:5C:64
+        sources:
+          - name: F-Droid
+            issue: GH-6941
+            apk:
+              sha256: 05d738f0f81d784f7cf24760a55d56218086e3e4020980c26193265a67bb326f
   - package: org.fcitx.fcitx5.android
     signature:
       - fingerprint: E4:DB:1E:9E:DF:F1:36:29:D0:7D:E4:BB:F8:16:5F:E9:BD:85:57:AB:55:09:26:72:DA:8E:40:DB:E4:84:EC:D7
