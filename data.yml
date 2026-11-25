@@ -2806,6 +2806,14 @@ packages:
             issue: GH-2260
             apk:
               sha256: 990f61386cb827e3e23244173d19dc2fcb6321286a9efa74715904303ff37ba5
+  - package: com.gbros.tabslite
+    signature:
+      - fingerprint: 49:80:5B:38:5A:A9:7F:72:5A:37:22:D3:D1:95:DE:84:A3:76:10:4A:AD:26:BD:FB:08:D5:2A:59:CB:CB:97:47
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1609
+            apk:
+              sha256: d3fe7f2a36c4b4581cb5eb385d1849eda94b0f367198a00971d85c090d7de61c
   - package: com.geeksville.mesh
     signature:
       - fingerprint: A9:3B:45:65:68:C1:75:DB:08:00:A0:9F:06:77:7F:89:2D:81:24:32:AD:B8:A3:DF:73:BC:3E:7F:06:C8:0C:6D
