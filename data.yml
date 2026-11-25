@@ -1684,6 +1684,14 @@ packages:
             issue: GH-317
             apk:
               sha256: 7bee1bf2c9c3fe2aaa3c84b367788b0b121f644ff3441ecd96d857048477db83
+  - package: com.authy.authy
+    signature:
+      - fingerprint: 50:5C:D6:3D:A5:1F:19:8F:3F:B1:C2:95:0B:6B:46:B6:06:FE:C4:13:57:4B:96:7F:3D:86:A3:CF:73:FE:05:53
+        sources:
+          - name: Google Play
+            issue: GH-7053
+            apk:
+              sha256: 75d64ca9a401136b0d8a03e06d5739138d04e9694bd2f3af58c57cb314b7ee5e
   - package: com.autowashco.autowash
     signature:
       - fingerprint: 66:CB:86:A5:1E:A9:6B:36:E3:F4:CC:34:2A:21:74:32:7C:36:76:2E:CB:81:14:12:F1:5B:76:BF:5B:C4:12:C3
