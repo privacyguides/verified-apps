@@ -10831,6 +10831,14 @@ packages:
             issue: GH-2865
             apk:
               sha256: 31e296fe4e338fb3c9b1638efc35febfebaf132f4c468e2e5ee343afb5246cba
+  - package: de.traderepublic.app
+    signature:
+      - fingerprint: AC:DA:C7:3A:09:06:4A:F7:2D:3C:71:15:25:6B:44:91:F1:58:C6:C8:C7:E0:45:4F:E4:4A:C5:A6:04:38:1A:08
+        sources:
+          - name: Google Play
+            issue: GH-8152
+            apk:
+              sha256: f7fca2dae64536b8900cf1c04463cdc103c6cbb86e7d4a64252ec9451e91d93a
   - package: de.tutao.calendar
     signature:
       - fingerprint: B4:54:C1:76:F9:0A:1E:A0:57:29:87:D3:82:72:3B:5C:D7:4F:94:2A:79:37:A2:A0:B9:9A:36:80:69:14:88:50
