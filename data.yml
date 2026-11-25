@@ -4966,6 +4966,14 @@ packages:
             issue: GH-239
             apk:
               sha256: 27e83f4ed50d0ff5fe57e22353ddafa79704ef6ba97e36d6af70756669e793c5
+  - package: com.idunnololz.summit.fdroid
+    signature:
+      - fingerprint: 3C:51:00:7D:D6:FF:62:BE:38:02:6F:29:4F:73:1E:F0:69:16:1E:BB:8C:25:4D:F3:54:24:9B:35:BB:5B:FE:D1
+        sources:
+          - name: F-Droid
+            issue: GH-7805
+            apk:
+              sha256: 7af11aea29dbadc40c9d4d8f97e4fd2026c875747d167bc8ca65b21730f448da
   - package: com.infomaniak.euria
     signature:
       - fingerprint: B9:34:BF:F7:20:9A:A0:8B:ED:D0:11:52:46:7A:24:80:87:AB:68:91:17:45:82:CC:23:8D:B2:4B:4F:97:D6:EF
