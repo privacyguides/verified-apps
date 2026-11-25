@@ -3543,6 +3543,14 @@ packages:
             issue: GH-812
             apk:
               sha256: 8c4a4c4218692458334646fbec0a74014ff2f5175edb2700ef578d56c00e3c7a
+  - package: com.google.android.apps.wearables.maestro.companion
+    signature:
+      - fingerprint: 86:3A:AD:42:BF:47:95:57:5E:2B:E1:37:82:8B:BE:28:13:99:93:DB:B9:68:99:D4:F9:EF:18:81:8B:30:F5:DB
+        sources:
+          - name: Google Play
+            issue: GH-5681
+            apk:
+              sha256: 350ed40cb53afdd017ed11f352659ef80ac51b6ed67c27e28b86f57853f463fc
   - package: com.google.android.apps.work.clouddpc
     signature:
       - fingerprint: |-
