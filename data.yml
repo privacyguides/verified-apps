@@ -1968,6 +1968,14 @@ packages:
             issue: GH-668
             apk:
               sha256: 44bb9396e74e09a486dd7a069bef312a411b17a0eefc983fd513ce0d92f4237e
+  - package: com.b44t.messenger
+    signature:
+      - fingerprint: 9D:B6:67:8E:D7:4C:88:12:4B:82:5E:8F:90:50:2B:76:CD:97:C5:EC:CC:9A:A9:2F:40:33:02:71:02:D9:AA:9D
+        sources:
+          - name: F-Droid
+            issue: GH-8074
+            apk:
+              sha256: 2a40d3407820184663f76adbe9948213caa6ed4356bd49a8bbfd34a58ebc6933
   - package: com.badgermeter.eyeonwater
     signature:
       - fingerprint: AB:67:24:26:F0:5D:4F:58:25:49:68:D6:F2:EB:9A:86:A4:EB:26:EA:95:9E:42:1B:21:A5:B3:B0:CF:E4:44:90
