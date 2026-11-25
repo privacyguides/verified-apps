@@ -9011,6 +9011,14 @@ packages:
             issue: GH-7017
             apk:
               sha256: ddec767b0ff24806f8340fec9e67ca1d1ceda0675a032767df2307bd4e93d58d
+  - package: cz.asdsoft.dek
+    signature:
+      - fingerprint: 28:80:2E:3C:4C:A3:C6:34:3A:44:83:6E:71:65:F9:AA:8B:E9:8A:47:FE:B8:97:22:42:DB:5A:AB:3B:63:B9:E7
+        sources:
+          - name: Google Play
+            issue: GH-7098
+            apk:
+              sha256: cb12da47c646ae517554d2609c831c6898cd14c34165a9326ce88185d0cf0076
   - package: de.aoksystems.amg
     signature:
       - fingerprint: |-
