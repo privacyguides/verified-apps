@@ -11682,6 +11682,14 @@ packages:
             issue: GH-333
             apk:
               sha256: 5f3dcabcd67ec50461f8ae859729858aa1501837abb4d5ec05bedb259e2a1b93
+  - package: slowscript.warpinator
+    signature:
+      - fingerprint: EB:8C:95:5A:2A:5C:55:7D:61:8D:79:24:DC:0D:DF:C3:81:58:81:EB:93:A6:FA:CD:DD:A8:33:C0:DD:49:C2:37
+        sources:
+          - name: F-Droid
+            issue: GH-2063
+            apk:
+              sha256: 0554b69a01dd325180003261772ae7e97e378409b98bb8242534a064ce79e4e4
   - package: snugsafety.com.snugsafety
     signature:
       - fingerprint: 62:96:F5:E2:7F:52:63:C2:DF:DF:AC:7D:8D:14:2A:A3:E0:50:00:C8:4B:E9:9D:05:05:4F:EE:EB:76:0E:6B:6B
