@@ -9342,6 +9342,14 @@ packages:
             issue: GH-1427
             apk:
               sha256: 343d17e11d0914e1a7708df2781580a0413e52501c0a41d91f7ef725d9615fe9
+  - package: org.billthefarmer.print
+    signature:
+      - fingerprint: B6:EC:E1:EA:01:99:F5:C5:FD:8C:EC:6D:09:34:DC:87:7C:0D:83:14:64:2E:0D:A4:73:92:57:CC:53:16:24:28
+        sources:
+          - name: F-Droid
+            issue: GH-1445
+            apk:
+              sha256: 4f9290bf74d8e3c83bb11c9f7050fe5c8dc1f7336b7145bc2910a366f926da17
   - package: org.blitzortung.android.app
     signature:
       - fingerprint: 0B:3E:F6:40:A4:A4:B3:22:EF:6C:48:10:7C:B2:F1:AE:FB:57:CB:F2:B5:BE:34:8D:1D:46:40:A5:54:F0:EB:B9
