@@ -2168,6 +2168,14 @@ packages:
             issue: GH-278
             apk:
               sha256: d4a5df2222efc3d9bfd23e1947f5b26fd7f447f0f57e5460e522bc6c62902fdf
+  - package: com.barberini.museum.barberinidigital
+    signature:
+      - fingerprint: 39:3D:C1:08:20:93:A4:F6:C4:26:95:01:FB:DF:C5:C4:02:F4:FB:91:17:56:1E:6F:AB:02:91:9B:8A:D6:AC:D6
+        sources:
+          - name: Google Play
+            issue: GH-3038
+            apk:
+              sha256: 43483b8ee315e9774b0fb1b2b01f6be5bc6cd635c9c94a6f4c5b6ddef3ed5f4e
   - package: com.barclaycardus
     signature:
       - fingerprint: B0:7E:99:7D:17:4E:10:F5:AA:60:EA:B3:88:17:81:AE:6C:42:72:60:A6:36:33:F0:88:E3:48:E3:2E:1D:66:F9
