@@ -724,6 +724,18 @@ packages:
             issue: CB-46
             apk:
               sha256: ef0f40be1b947752e8441fe106ecb15e3705ab5aa52a9726c5e9a04a3a499038
+  - package: ca.ilianokokoro.umihi.music
+    signature:
+      - fingerprint: F1:F8:3F:A5:EB:F5:A4:3E:E0:F4:AB:C8:D0:AD:D8:9D:94:34:38:0E:A4:E7:F2:96:FF:E8:4E:1A:66:10:C5:BB
+        sources:
+          - name: F-Droid
+            issue: GH-8225
+            apk:
+              sha256: c7d00d873b98d3609845bb4ffe159ad7fd0bcbf976cbc0799244f255a8dafade
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-8225
+            apk:
+              sha256: c7d00d873b98d3609845bb4ffe159ad7fd0bcbf976cbc0799244f255a8dafade
   - package: ca.ymca.weemarkable
     signature:
       - fingerprint: 75:4C:11:C3:8F:25:FD:61:0E:BC:8A:08:53:FC:0F:1C:F7:53:9E:10:40:6E:20:A0:1A:C5:CA:7E:61:D2:9E:25
