@@ -7164,6 +7164,14 @@ packages:
             issue: GH-1882
             apk:
               sha256: ddea7baf2e114277c5d4aea038fc31294877b0fe538178a399f186bc7cdc39c6
+  - package: cx.ring
+    signature:
+      - fingerprint: 41:56:82:37:5E:C0:BF:BD:31:73:1F:21:B8:B9:8E:35:DA:63:3F:11:59:FD:59:13:3B:AF:06:13:48:78:10:25
+        sources:
+          - name: F-Droid
+            issue: GH-1928
+            apk:
+              sha256: 1aa109ab1d3946886a4197f38a8956a396d484db893c280156e34a7047e6eb7c
   - package: cx.vmx.sdcontacts
     signature:
       - fingerprint: CF:06:CA:33:EB:51:26:62:8D:67:E9:82:DC:96:C1:72:98:09:83:B4:73:D2:7B:33:E8:F6:9B:59:05:D0:93:BC
