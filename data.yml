@@ -514,6 +514,14 @@ packages:
             issue: GH-787
             apk:
               sha256: 29c0190fd7524f2b77121c302d4114a7504dcb2ba0152a8835b17a445a2dd9ab
+  - package: au.gov.ato.ATOTax
+    signature:
+      - fingerprint: CA:0A:76:90:5E:0A:85:A0:23:6B:88:CD:0B:6B:1D:B6:A8:7F:2A:7B:59:A6:28:5F:53:18:1F:DB:64:E6:3D:DE
+        sources:
+          - name: Google Play
+            issue: GH-6510
+            apk:
+              sha256: f0722793e3ced83fbacbe12aedc98e42e19e8d69daeea262a1e0bd28dbd0ccde
   - package: be.chvp.nanoledger
     signature:
       - fingerprint: 54:1F:AD:2A:B1:6C:1F:D8:D4:64:B2:8E:E7:03:18:49:EA:13:33:A8:E8:E3:01:6C:D4:60:FE:22:CB:DE:2B:61
