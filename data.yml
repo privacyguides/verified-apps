@@ -3775,6 +3775,12 @@ packages:
             issue: GH-1608
             apk:
               sha256: e740195eb74ff087e258660e0dab4430cb4fe5e4895c86c0c0a305e7e6073a69
+  - package: com.fotoshi.app
+    signature:
+      - fingerprint: 2A:C2:C9:12:62:C2:E0:E1:64:C9:95:C8:BC:B9:5E:B0:32:C3:11:2D:8A:5F:59:63:17:E3:A0:F4:B0:76:00:F8
+        sources:
+          - name: HTTPS Verified Domain
+            issue: GH-7719
   - package: com.foxit.mobile.pdf.lite
     signature:
       - fingerprint: 1A:D0:DE:1D:95:54:C5:3F:6C:45:3A:4B:7A:89:1F:11:EF:DE:F0:9B:74:93:C3:8D:BF:A7:3E:4C:4F:94:FC:8F
