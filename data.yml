@@ -5165,6 +5165,14 @@ packages:
             issue: GH-6014
             apk:
               sha256: c7fdfe4f9a169f90ada7ae0a237d27f397cdfdcbf1f6a737d3bd740e922d3dc7
+  - package: com.megogo.application
+    signature:
+      - fingerprint: 81:47:20:70:12:94:71:D6:9F:75:24:24:51:78:21:9D:FE:E8:04:41:FB:52:A2:B6:7B:19:39:2D:A3:4D:9E:20
+        sources:
+          - name: Google Play
+            issue: GH-6699
+            apk:
+              sha256: 88d5054d0bca2c4339e0a1da15395b0c25514786d749309f897668b731b9f4f8
   - package: com.melodis.midomiMusicIdentifier.freemium
     signature:
       - fingerprint: 56:D8:B2:57:7B:EA:4C:B3:44:87:E6:C6:02:25:F1:E3:F0:AB:C3:9E:24:FD:34:E4:57:69:87:6E:BB:06:2A:3C
