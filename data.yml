@@ -11250,6 +11250,14 @@ packages:
             issue: GH-2697
             apk:
               sha256: 4f56313162e51d37563205517a4aec48bba7eb13cfa40b2131cef8ee6dbd37bd
+  - package: me.davidteresi.elsewhere
+    signature:
+      - fingerprint: B1:AA:B8:25:E8:27:D9:48:6E:BF:1C:15:B2:E0:22:1A:C5:07:52:F5:89:BC:0E:45:6D:94:10:C1:0F:73:C2:45
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-6915
+            apk:
+              sha256: ffffff6175ab24089a0de0a4478eae47cfc55cdcaebb026f1fce4b33a093c4ee
   - package: me.easyapps.easynotes
     signature:
       - fingerprint: 79:E8:5C:E8:1D:F2:F4:F2:25:C2:2F:EA:0B:2D:19:50:B3:68:62:7E:47:5F:B7:2B:73:85:D2:50:31:3B:F7:C1
