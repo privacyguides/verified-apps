@@ -7263,6 +7263,14 @@ packages:
             issue: GH-5986
             apk:
               sha256: 35ae9665a999512c8176beffe093090d8d5e885460482a7e56d6809269169852
+  - package: com.portfoliopersonal.app
+    signature:
+      - fingerprint: 3D:66:69:41:6A:66:D9:9B:C2:06:E6:9E:94:F1:F8:F0:D7:B6:07:2A:68:9A:80:62:EF:11:6D:80:78:2E:1B:A9
+        sources:
+          - name: Google Play
+            issue: GH-8014
+            apk:
+              sha256: d5f5f237ef818dcf99616d278a408ec479f18dcf8b2e338843b15310007fd2cb
   - package: com.poupa.vinylmusicplayer
     signature:
       - fingerprint: 5B:FF:14:F9:B3:BD:BC:B3:B2:F3:7D:B6:23:CF:32:1F:D2:B4:80:03:5B:54:08:BB:81:82:C9:3F:C4:F8:ED:A2
