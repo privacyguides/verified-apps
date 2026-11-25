@@ -146,6 +146,17 @@ domains:
           - 43:2C:60:B3:F8:84:9E:A0:EA:93:B8:50:D2:68:EC:EB:5D:C4:0E:E2:27:0C:08:45:B5:5B:6E:70:9D:A8:24:D1
           - 44:A1:04:DA:00:F0:3A:7B:BE:A9:83:7A:DE:54:F7:BF:F9:7C:34:B7:DC:46:DA:13:10:CC:EA:FE:AF:A6:83:2F
           - 54:80:4A:91:1A:6A:E3:EE:64:C3:18:A4:28:3D:DF:3C:A2:A9:45:A4:16:A9:A7:AA:11:DA:86:B7:80:2E:B7:75
+  - domain: bahnvorhersage.de
+    method: https
+    issue:
+      - GH-6911
+    checked: "2026-11-25T08:49:21Z"
+    packages:
+      - package: de.bahnvorhersage.app
+        fingerprints:
+          - 11:0D:33:1E:6D:13:EB:1A:8A:9A:B8:3F:72:1B:FA:35:FC:8D:31:B8:67:D3:8A:06:1F:36:3E:5D:FC:5E:F8:C2
+          - B3:15:51:00:55:4B:98:99:9F:8B:A4:68:9D:AD:6F:5D:21:A4:69:06:4C:40:55:B2:03:95:E8:4C:FD:8A:C8:04
+          - FC:7F:C6:5C:E4:D6:31:4F:B5:78:97:68:83:0F:16:F8:4A:33:F9:B1:D6:96:5D:D9:7D:04:0C:7C:EC:4B:6E:33
   - domain: bandcamp.com
     method: https
     issue:

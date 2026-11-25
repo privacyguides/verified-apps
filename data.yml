@@ -8856,6 +8856,12 @@ packages:
             issue: GH-1113
             apk:
               sha256: 2bce2f2c32e97b89ede5bd0ee95f482a358015e9dd11584a7016b8b822710f2c
+  - package: de.bahnvorhersage.app
+    signature:
+      - fingerprint: B3:15:51:00:55:4B:98:99:9F:8B:A4:68:9D:AD:6F:5D:21:A4:69:06:4C:40:55:B2:03:95:E8:4C:FD:8A:C8:04
+        sources:
+          - name: HTTPS Verified Domain
+            issue: GH-6911
   - package: de.bbbank.securego
     signature:
       - fingerprint: 9D:50:FA:04:48:C7:44:67:F5:41:D9:73:5D:82:63:8A:78:2B:11:F7:5D:ED:70:2E:17:03:F1:15:1C:7F:E1:0D
