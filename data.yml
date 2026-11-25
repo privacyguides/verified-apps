@@ -12387,6 +12387,16 @@ packages:
             issue: GH-208
             apk:
               sha256: a49862cec4e8e6b8c1ffcb065ce828fc21af070b0c6637cf809fe3f50ee554cb
+  - package: ru.yandex.mail
+    signature:
+      - fingerprint: AC:A4:05:DE:D8:B2:5C:B2:E8:C6:DA:69:42:5D:2B:43:07:D0:87:C1:27:6F:C0:6A:D5:94:27:31:CC:C5:1D:BA
+        sources:
+          - name: Google Play
+            issue: GH-5770
+            apk:
+              sha256: c116f65ad9921c8a148542e40cb86cc7028f88c3f4aba53c4d6ff919d4b4649e
+          - name: HTTPS Verified Domain
+            issue: GH-5770
   - package: ru.yandex.taxi
     signature:
       - fingerprint: AC:A4:05:DE:D8:B2:5C:B2:E8:C6:DA:69:42:5D:2B:43:07:D0:87:C1:27:6F:C0:6A:D5:94:27:31:CC:C5:1D:BA

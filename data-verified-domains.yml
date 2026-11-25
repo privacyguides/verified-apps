@@ -765,3 +765,12 @@ domains:
       - package: fr.doctolib.www
         fingerprints:
           - 19:9A:C4:B1:F6:81:74:65:06:FE:90:78:26:FB:42:94:C7:1F:7D:AE:F5:37:2D:D0:3B:A6:7C:E0:1C:4C:D0:83
+  - domain: yandex.ru
+    method: https
+    issue:
+      - GH-5770
+    checked: "2026-11-25T06:54:04Z"
+    packages:
+      - package: ru.yandex.mail
+        fingerprints:
+          - AC:A4:05:DE:D8:B2:5C:B2:E8:C6:DA:69:42:5D:2B:43:07:D0:87:C1:27:6F:C0:6A:D5:94:27:31:CC:C5:1D:BA
