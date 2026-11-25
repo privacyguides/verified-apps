@@ -2868,6 +2868,12 @@ packages:
             issue: CB-94
             apk:
               sha256: 835afb75daabff0f31c761b352f6412de78a9aa8f9b573b871cc34c90d5fe95e
+      - fingerprint: E9:1C:F5:CA:C4:4B:FB:3A:DF:C8:A7:31:74:AA:A0:11:F5:FC:FB:06:68:14:AD:D8:C9:72:4A:0A:51:55:52:3C
+        sources:
+          - name: Google Play
+            issue: GH-6876
+            apk:
+              sha256: 8c0d028e7fca854e7411774136be2ed49d34a9ad70d306ab0a4fb55f775f0b2c
   - package: com.driveby.app
     signature:
       - fingerprint: 92:56:48:24:3A:B7:CB:E5:F7:3A:C5:7F:5C:E3:B6:FE:D9:23:BC:9F:6E:CA:AF:E4:9B:71:3D:FC:E2:B0:21:D8
