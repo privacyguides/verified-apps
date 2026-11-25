@@ -12405,6 +12405,14 @@ packages:
             issue: GH-1413
             apk:
               sha256: 2f72f5f179b0703f2e258655291d3d1669ca667346ed907030393abff7d26fa8
+  - package: org.bom.bank
+    signature:
+      - fingerprint: 20:24:6F:20:27:BF:D4:6F:16:18:F2:1A:00:F7:FB:40:20:A3:E8:ED:0C:CD:79:94:C6:2B:F5:14:A1:20:6B:7E
+        sources:
+          - name: Google Play
+            issue: GH-7241
+            apk:
+              sha256: 15c8ff9a44f818511eb64f020f976753f598019290215863403f3ee6ee6f3f76
   - package: org.breezyweather
     signature:
       - fingerprint: 29:D4:35:F7:0A:A9:AE:C3:C1:FA:FF:7F:7F:FA:6E:15:78:50:88:D8:7F:06:EC:FC:AB:9C:3C:C6:2D:C2:69:D8
