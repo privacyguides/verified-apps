@@ -12218,6 +12218,14 @@ packages:
             issue: GH-740
             apk:
               sha256: 3e88d31c7f861b4de800f5e13a16d9ddaa4a9cef6329c2b644ac55eb97a4289d
+  - package: io.ente.photos.fdroid
+    signature:
+      - fingerprint: 54:64:A4:93:48:BE:56:80:62:24:6D:B5:20:F4:90:94:D1:8E:72:AA:6B:08:54:DD:E3:FA:67:84:45:F2:88:56
+        sources:
+          - name: F-Droid
+            issue: GH-8239
+            apk:
+              sha256: 9be87c23efc8e17ab9349e7be27a1ed036e4fb1e55a7ca2732d8fbc338ba8283
   - package: io.ente.photos.independent
     signature:
       - fingerprint: 35:ED:56:81:B7:0B:B3:BD:35:D9:0D:85:6A:F5:69:4C:50:4D:EF:46:AA:D8:3F:77:7B:1C:67:5C:F4:51:35:0B
