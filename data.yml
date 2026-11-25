@@ -11555,6 +11555,14 @@ packages:
             issue: GH-1606
             apk:
               sha256: c400508d9efdd6de91af697950975215766969210f2406d98ac8643d98769516
+  - package: sushi.hardcore.droidfs
+    signature:
+      - fingerprint: 1B:89:34:D4:93:31:0A:34:2B:29:BB:E0:3B:C2:05:E0:D3:D5:86:59:D1:AB:AF:17:95:77:D9:47:45:24:99:D6
+        sources:
+          - name: F-Droid
+            issue: GH-1967
+            apk:
+              sha256: 3e0ddc93df0cc8e9367cfdb5be9ad9b690ebb77f55cbbfb41f7e38ed90ba37bb
   - package: tech.dongdongbh.mindwtr
     signature:
       - fingerprint: 1A:3E:0A:B4:21:78:30:6C:36:53:4C:EE:2E:F3:B8:88:75:6C:6E:43:F0:D1:9D:E6:7F:7B:55:24:6C:47:3D:F5
