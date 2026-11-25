@@ -11470,6 +11470,14 @@ packages:
             issue: GH-2847
             apk:
               sha256: b7c79fd97e336568b5763196bc0c89ad49e79a31785ced41ab15fe612b95c5bd
+  - package: de.stephanlindauer.criticalmaps
+    signature:
+      - fingerprint: D4:0C:A6:9A:1E:4D:DD:81:B6:EC:A2:92:D3:DF:96:96:50:18:69:EC:E4:CA:19:63:7B:C5:7E:45:A8:B3:91:64
+        sources:
+          - name: F-Droid
+            issue: GH-3054
+            apk:
+              sha256: 0e9f0b591857c41f26bfb64f1594a807205f7f61b5bdb10d08f50fe9ae237a92
   - package: de.swr.avp.ard
     signature:
       - fingerprint: 7D:96:7F:33:4D:C9:98:21:69:93:2C:C7:3A:C2:A0:E6:07:4F:81:59:44:AE:FA:A1:5C:0F:99:C3:F3:B1:68:1F
