@@ -504,6 +504,14 @@ packages:
             issue: GH-7993
             apk:
               sha256: 832f415309f0e026324b1b52b6c63e4e91f661f9a94ebd8fc2ded23c8ae5fdc9
+  - package: ar.com.personal
+    signature:
+      - fingerprint: E7:9D:68:A3:BA:64:DF:73:81:23:6B:89:63:72:DB:FD:7B:2B:A5:5D:04:6C:5B:37:03:54:9E:65:3E:BB:AD:F7
+        sources:
+          - name: Google Play
+            issue: GH-8006
+            apk:
+              sha256: f74f1f8b14e98ed3a8767f3ab8c53a3ea42cae6a857b1161c76c0ba4d6227b39
   - package: ar.gob.argentinagobar
     signature:
       - fingerprint: 22:3B:C7:C7:E1:0D:74:E2:E5:80:E3:79:FD:EF:9A:A0:27:97:50:CF:05:AA:1D:E6:E3:B0:FC:14:D5:F5:9E:6A
