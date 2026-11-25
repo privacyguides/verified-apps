@@ -12814,6 +12814,14 @@ packages:
             issue: GH-6933
             apk:
               sha256: 8d11bca634b467778e74c15e76601cdc2fb91123a8bff7d2158e8a852885a399
+  - package: net.serverdata.ascend
+    signature:
+      - fingerprint: FF:02:EF:D2:E9:12:E6:1E:1A:17:AE:91:FD:8E:E0:C8:9C:BF:6C:EB:07:15:9E:EE:2F:3B:75:48:2F:01:69:CA
+        sources:
+          - name: Google Play
+            issue: GH-7934
+            apk:
+              sha256: b2a9abe2226d29df66d48bee3d8a9b1bbfd874499d9627a0385455b8da20e18b
   - package: net.sourceforge.opencamera
     signature:
       - fingerprint: 43:89:91:C9:68:E8:D3:08:CA:34:07:8D:37:51:1C:90:C5:02:D5:96:BA:F9:F0:D0:C5:FB:D1:C9:BF:67:DF:6D
