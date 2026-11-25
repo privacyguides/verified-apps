@@ -3181,6 +3181,14 @@ packages:
             issue: GH-5976
             apk:
               sha256: 1df5eb50e199ee789c3520cb1b85f24ca4c83b8f6825562f068b80d71b41f4b2
+  - package: com.etoro.openbook
+    signature:
+      - fingerprint: 8B:5F:4A:8F:51:CB:26:F2:C1:78:10:D1:B5:C9:3C:1E:13:15:6D:C3:E5:EE:69:55:69:E9:16:D3:F6:BE:5D:E8
+        sources:
+          - name: Google Play
+            issue: GH-7107
+            apk:
+              sha256: d3927de59c073753a27943da01619e66830c33bd55df0b538bfb65885d9bdfb8
   - package: com.etsy.android
     signature:
       - fingerprint: C6:ED:C6:02:BD:51:32:E7:23:C2:4E:45:71:BD:EA:DC:F0:D1:D9:DB:E1:CF:7F:A1:6E:3B:B3:4D:37:58:9C:9C
