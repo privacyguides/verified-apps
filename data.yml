@@ -443,6 +443,14 @@ packages:
               sha256: aea6c6b6030894594d032dc6b21bbdf5a5d55ee38c7f78665ab071435e503f0e
           - name: HTTPS Verified Domain
             issue: GH-1974
+  - package: app.tryst
+    signature:
+      - fingerprint: FC:7E:30:AB:1F:F1:29:F4:20:DA:D3:8C:07:DE:EE:65:8C:06:67:00:E2:3E:84:FB:2C:C0:62:BA:BD:85:6C:53
+        sources:
+          - name: F-Droid
+            issue: GH-7861
+            apk:
+              sha256: c4c20bd20722b9255e59c8070bda84cb8ad487bbd55564058b09aeea13956874
   - package: app.udderance
     signature:
       - fingerprint: 33:2C:41:70:E0:4D:5D:D0:E7:D1:C4:E7:19:3C:E9:95:91:24:13:46:38:8A:B3:CD:02:0A:D2:9F:6F:03:D3:13
