@@ -6998,6 +6998,14 @@ packages:
             issue: GH-1882
             apk:
               sha256: ddea7baf2e114277c5d4aea038fc31294877b0fe538178a399f186bc7cdc39c6
+  - package: cx.vmx.sdcontacts
+    signature:
+      - fingerprint: CF:06:CA:33:EB:51:26:62:8D:67:E9:82:DC:96:C1:72:98:09:83:B4:73:D2:7B:33:E8:F6:9B:59:05:D0:93:BC
+        sources:
+          - name: F-Droid
+            issue: GH-1596
+            apk:
+              sha256: 7de17f0339afa6160f9b7b93a864ed199dcf7256f2d8dde72d0341a0d4496e63
   - package: de.aoksystems.amg
     signature:
       - fingerprint: |-
