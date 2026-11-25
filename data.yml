@@ -1312,6 +1312,14 @@ packages:
             issue: GH-1811
             apk:
               sha256: 817c3ee36321fe41e09988d01de87b072edd877c8138572252b1b9e4c7582a79
+  - package: com.andreacioccarelli.androoster
+    signature:
+      - fingerprint: C0:7F:28:E9:82:C2:53:6F:63:CF:48:17:3E:9E:A9:CA:8C:2C:E8:DB:C1:9B:0F:50:91:C1:14:AA:DF:40:D5:82
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-6862
+            apk:
+              sha256: 96215804d31dae0e9b3492fe97550637b945e8dd524bee2c4249651edfcf13e2
   - package: com.android.chrome
     signature:
       - fingerprint: F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
