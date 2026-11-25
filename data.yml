@@ -14112,6 +14112,14 @@ packages:
             issue: GH-6193
             apk:
               sha256: 3a79dcc01871f5e77e363c28bc8ed5577bf5f3191d2cf61705bbdc6eeb4be013
+  - package: nl.amersfoortse.android.mijnamersfoortse
+    signature:
+      - fingerprint: F9:B2:D5:9D:DA:F5:C8:78:9C:EF:1B:79:87:53:E5:6F:13:4A:3E:27:31:80:DD:67:37:F1:4A:E1:91:44:87:78
+        sources:
+          - name: Google Play
+            issue: GH-8402
+            apk:
+              sha256: 5d0650ee9addbc22b83dfe7aa5ecd9def9530fa049c3c6472addd98edc02f584
   - package: nl.appyhapps.healthsync
     signature:
       - fingerprint: F7:BB:BD:D2:F3:A3:FE:CA:52:2D:C7:CA:B7:0C:62:0F:C1:17:A1:67:68:C1:AF:64:41:34:F6:DA:C0:F9:E7:BC
