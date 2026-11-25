@@ -3652,6 +3652,16 @@ packages:
             issue: GH-290
             apk:
               sha256: c39352b73edc91c5e3e44386f0a3e15731f24cfceba5372b6ad67cf290c190cb
+  - package: com.expressvpn.keys
+    signature:
+      - fingerprint: |-
+          19:C6:27:26:60:B9:8E:F9:0F:E3:66:D2:9D:FC:B4:81:9F:C3:3F:21:AA:91:5B:93:57:EE:03:F6:20:6F:4B:AC
+          F1:29:15:D1:AD:B3:27:EC:37:01:D0:5B:49:80:CF:8D:07:CA:52:BA:E4:AA:56:53:8F:06:B1:C9:DB:4F:F5:BB
+        sources:
+          - name: Google Play
+            issue: GH-8189
+            apk:
+              sha256: 3546bc5baed85d8665d15f4e237be15465884dd76591dcafa9bd5c0ab623a748
   - package: com.expressvpn.vpn
     signature:
       - fingerprint: 19:C6:27:26:60:B9:8E:F9:0F:E3:66:D2:9D:FC:B4:81:9F:C3:3F:21:AA:91:5B:93:57:EE:03:F6:20:6F:4B:AC
