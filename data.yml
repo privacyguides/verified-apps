@@ -2689,6 +2689,14 @@ packages:
             issue: GH-994
             apk:
               sha256: 0e5a8fbfb03ab5e7196b6c1388a3dc04ffd84739a81bfc395c8edeaa895051fb
+  - package: com.forrestguice.suntimeswidget
+    signature:
+      - fingerprint: 8F:72:A9:1F:27:0F:66:7D:C7:C9:07:F4:52:52:9D:7A:3E:40:42:2F:C3:7F:16:DF:5B:E6:01:0C:11:CD:F8:48
+        sources:
+          - name: F-Droid
+            issue: GH-1608
+            apk:
+              sha256: e740195eb74ff087e258660e0dab4430cb4fe5e4895c86c0c0a305e7e6073a69
   - package: com.foxit.mobile.pdf.lite
     signature:
       - fingerprint: 1A:D0:DE:1D:95:54:C5:3F:6C:45:3A:4B:7A:89:1F:11:EF:DE:F0:9B:74:93:C3:8D:BF:A7:3E:4C:4F:94:FC:8F
