@@ -4734,6 +4734,17 @@ packages:
             issue: GH-5681
             apk:
               sha256: 350ed40cb53afdd017ed11f352659ef80ac51b6ed67c27e28b86f57853f463fc
+  - package: com.google.android.apps.wellbeing
+    signature:
+      - fingerprint: |-
+          07:18:4F:6E:E5:CD:6A:E5:4B:BE:55:74:5E:79:36:8B:A9:11:04:B3:CF:49:01:22:98:C7:7F:07:C1:F4:B2:EF
+          BC:82:05:A1:1F:FE:FD:2D:E6:DD:66:53:8E:2E:32:9C:98:E5:29:DF:E3:0E:D6:61:71:93:3A:6E:18:32:48:EB
+          E4:D6:A4:6D:54:EC:E6:CA:90:F4:E8:7F:67:F5:EC:4F:26:2F:C5:5C:2E:D8:40:AD:BF:64:9D:E5:5F:E4:90:94
+        sources:
+          - name: Google Play
+            issue: GH-8128
+            apk:
+              sha256: 1ce6dd3bfaf6beef0c88786688559148983dd09e8612ccbc0168e2b3765e144d
   - package: com.google.android.apps.work.clouddpc
     signature:
       - fingerprint: |-
