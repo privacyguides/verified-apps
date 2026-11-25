@@ -6285,6 +6285,14 @@ packages:
             issue: GH-917
             apk:
               sha256: 0448cf0086e1670e6ff2bb31901f33597acfd5bb45758c70540d8e01ef623069
+  - package: com.pnc.ecommerce.mobile
+    signature:
+      - fingerprint: 5B:40:6C:C9:BE:5F:5C:6D:01:F3:1A:4C:A9:71:73:95:B9:45:EB:63:A5:88:E7:40:F3:62:7C:C7:25:7B:21:DD
+        sources:
+          - name: Google Play
+            issue: GH-6789
+            apk:
+              sha256: 6fb8a3fddcb6494ae7f3a3988412384113c04d451d7e331ca76a1b284af0b0f4
   - package: com.pocketpalai
     signature:
       - fingerprint: 69:65:4D:9C:9C:B7:BE:AA:D2:24:A4:00:02:76:56:F7:DC:BE:39:B3:42:4F:E8:C5:96:69:1A:32:D7:E8:37:37
