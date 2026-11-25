@@ -1901,6 +1901,14 @@ packages:
             issue: GH-5797
             apk:
               sha256: 689553dff62b81701be8ca4511b45f9c477961bdfb55e10074be0772d274ad2e
+  - package: com.beradeep.aiyo
+    signature:
+      - fingerprint: 98:B4:DF:BB:38:F8:D6:36:0C:F2:1F:DA:46:FB:7A:3B:46:73:5C:FC:9A:67:92:24:7E:F0:40:67:60:78:3D:0B
+        sources:
+          - name: F-Droid
+            issue: GH-7273
+            apk:
+              sha256: 94f7ddfe604e778c0116a75e234df2a0f8b47e3d5faf6446bab25ef782cef2ac
   - package: com.best.deskclock
     signature:
       - fingerprint: 95:8E:CB:D2:3C:F3:DC:04:3B:0A:34:37:2C:06:8E:34:27:5A:D8:C1:F2:A1:97:4D:77:91:63:A2:22:A8:99:9E
