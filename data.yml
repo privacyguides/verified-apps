@@ -3890,6 +3890,12 @@ packages:
               sha256: 27e83f4ed50d0ff5fe57e22353ddafa79704ef6ba97e36d6af70756669e793c5
   - package: com.infomaniak.euria
     signature:
+      - fingerprint: B9:34:BF:F7:20:9A:A0:8B:ED:D0:11:52:46:7A:24:80:87:AB:68:91:17:45:82:CC:23:8D:B2:4B:4F:97:D6:EF
+        sources:
+          - name: F-Droid
+            issue: GH-2720
+            apk:
+              sha256: acf2d696b1dbd23fb6be21bf81d633fde388e642b9308fe0957a0002f0359979
       - fingerprint: C3:10:73:8F:60:AC:5B:F6:65:95:53:BE:C7:21:7D:BF:24:4E:9D:4C:04:BD:7D:5B:F5:51:51:2D:22:E5:03:03
         sources:
           - name: Google Play
