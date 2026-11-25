@@ -8005,6 +8005,14 @@ packages:
             issue: GH-1112
             apk:
               sha256: 22a4d7e5e16f7128093f62fe2b76754e6c760e872cbfa83e37b052a7d0db928c
+  - package: dev.brgr.outspoke
+    signature:
+      - fingerprint: 1E:E2:43:3E:BF:79:58:42:00:FB:FC:F0:1C:F3:23:E5:87:6F:D4:91:39:57:0F:E6:90:44:8E:7C:33:04:E3:88
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-2105
+            apk:
+              sha256: dc9a63c2791b840c268dadeaf68855e30de4125d81eb446e99eb5d23bd4f46f0
   - package: dev.clombardo.dnsnet
     signature:
       - fingerprint: D7:6F:62:07:D8:18:2C:DC:1E:E2:DC:BF:E7:4D:B2:ED:F3:7F:36:B8:2D:08:4B:01:7F:79:FE:9F:06:71:21:E4
