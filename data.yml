@@ -16224,6 +16224,14 @@ packages:
             apk:
               sha256: 75d9804c39287f11b3f71805765f6781c96326b3eef7a43a9682bb83b40b0106
               link: https://github.com/NextAlone/Nagram/releases/download/1236/Nagram-v12.6.4.1236-arm64-v8a.apk
+  - package: zed.rainxch.githubstore
+    signature:
+      - fingerprint: B7:F2:8E:19:8E:48:C1:93:B0:38:C6:5D:92:DD:F7:BC:07:7B:0D:B5:9E:BC:9B:25:0A:6D:AC:48:C1:18:03:CA
+        sources:
+          - name: F-Droid
+            issue: GH-8235
+            apk:
+              sha256: ed23380dc11a5e97a666e2cdfaed455b529f69d65569d228655899e661c409aa
   - package: zip.arcanum
     signature:
       - fingerprint: D5:34:FA:17:3D:BC:64:0E:44:86:CF:C0:56:65:EE:82:39:59:08:54:2B:45:E2:5D:5C:C0:56:2E:4C:CA:55:3B
