@@ -9118,6 +9118,18 @@ packages:
             issue: GH-2318
             apk:
               sha256: ce1aa63f8d72e5ad4ab83d11c4c7ff866300eb9b2ec3040feabf12268cb75517
+  - package: in.sunilpaulmathew.ashell
+    signature:
+      - fingerprint: B4:27:A2:47:88:CE:5C:44:24:32:84:A6:4F:F6:29:C5:BB:72:AC:30:93:56:A1:F1:EE:7D:24:13:33:9F:E4:24
+        sources:
+          - name: F-Droid
+            issue: GH-4601
+            apk:
+              sha256: cf52769d27dc4e715dbfced7e2f3fce52cab09da0645bca83ffc8c66860726f4
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-4601
+            apk:
+              sha256: f3369f827792a6c065d1b64407fd2f7cfe8e0884f50b4597516710d6642b80e2
   - package: info.guardianproject.ripple
     signature:
       - fingerprint: 92:7F:7E:38:B6:AC:BE:CD:84:E0:2D:AC:E3:3E:FA:9A:7A:2F:09:79:75:0F:28:F5:85:68:8E:E3:8B:3A:4E:28
