@@ -9338,6 +9338,14 @@ packages:
             issue: GH-2805
             apk:
               sha256: 566c4b8c98b1495dee16bef11b9f3a5da5ff4c828d4a0a4651894f8789efc999
+  - package: de.eplus.mappecc.client.android.alditalk
+    signature:
+      - fingerprint: AE:1E:26:FE:04:06:D0:48:CE:B9:92:CE:30:34:A5:D9:9E:99:89:20:AE:51:AA:63:F4:C3:B0:E3:5C:9F:FB:61
+        sources:
+          - name: Google Play
+            issue: GH-7362
+            apk:
+              sha256: c9e23095cacc502e9f65011b9e148018c9d495389be56194f0f4a350590d5501
   - package: de.felixnuesse.disky
     signature:
       - fingerprint: 17:EB:5F:E8:5B:9D:3B:A5:F5:E1:D2:61:7D:C8:06:96:05:FD:C9:1F:A3:44:5C:0C:08:E7:00:F7:04:5B:96:7C
