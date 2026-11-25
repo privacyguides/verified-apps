@@ -6200,6 +6200,14 @@ packages:
             issue: GH-2447
             apk:
               sha256: 03fe158eb59441f048bf7c38d66cef3aac270d75704fc2ad58d2ec8342d122ef
+  - package: com.motorola.tag
+    signature:
+      - fingerprint: BE:88:04:A5:5E:90:45:A5:80:D2:04:97:9F:6E:FB:15:C0:58:73:1A:A1:02:1B:78:C0:46:FE:AB:8A:E7:6A:26
+        sources:
+          - name: Google Play
+            issue: GH-7972
+            apk:
+              sha256: 5f2545b6f66f5d96f5f863b20eb034b411de9c5c55b12077022734421b807267
   - package: com.mrsep.musicrecognizer
     signature:
       - fingerprint: A5:A1:DC:1D:78:D7:F0:3A:95:36:51:B2:7D:3A:07:C2:5E:3A:F0:13:27:F4:5C:DF:86:19:A2:23:B7:03:57:D0
