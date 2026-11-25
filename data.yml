@@ -8695,6 +8695,18 @@ packages:
             issue: GH-6516
             apk:
               sha256: 845dd5d69c9e28aa759457afc43696493e8c02ba3c17b7e402effdd3a31024bc
+  - package: com.signalsense.app
+    signature:
+      - fingerprint: 77:FF:F6:58:B2:FE:10:04:DF:65:83:D8:2D:2C:83:C1:7B:5A:86:E3:94:D1:B4:07:B9:77:2E:FE:E7:FF:F6:E3
+        sources:
+          - name: F-Droid
+            issue: GH-2946
+            apk:
+              sha256: fe6024e4f876bfaa002040531aa381f45ea126909bd7089394a1b759245ec6de
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-2946
+            apk:
+              sha256: fe6024e4f876bfaa002040531aa381f45ea126909bd7089394a1b759245ec6de
   - package: com.silicondust.view
     signature:
       - fingerprint: FC:FE:D2:13:47:78:5D:6C:BA:AB:64:04:48:D6:96:DB:11:AC:D9:85:09:F4:5E:48:E5:0B:56:1B:13:A4:09:EB
