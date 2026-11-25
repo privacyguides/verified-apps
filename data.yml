@@ -8215,6 +8215,14 @@ packages:
             issue: GH-672
             apk:
               sha256: 4ed48424e62ca99ef5e074e78e231163314ad3612eb7ae12d88fb5297b6d9c37
+  - package: com.tplink.tpm5
+    signature:
+      - fingerprint: 58:A5:07:41:C1:3A:7D:71:5C:80:42:95:6C:21:FD:FE:3B:8C:B6:42:9B:97:0B:D9:6C:F0:F8:7C:7B:11:57:50
+        sources:
+          - name: Google Play
+            issue: GH-7693
+            apk:
+              sha256: ccf9c2fd648e675b35657cd6165a7d28489b5dc27dbdc198b78adb29bb7d0197
   - package: com.tradera
     signature:
       - fingerprint: 46:F6:D3:D0:B6:E5:66:67:CF:33:CA:9A:71:A0:AB:0E:87:DD:46:1B:7D:B3:DC:E5:CF:97:F9:9E:1C:ED:23:72
