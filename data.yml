@@ -3377,6 +3377,14 @@ packages:
             issue: GH-1032
             apk:
               sha256: f4117fa4aee8d6b55a37737436cfbfc644366a45aa45d38151222c3ee4b75085
+  - package: com.ftband.mono
+    signature:
+      - fingerprint: C8:F5:67:90:42:17:22:56:81:67:2D:70:BA:58:EE:15:80:A3:96:E8:84:3E:79:7D:61:8C:04:2B:AC:02:98:F3
+        sources:
+          - name: Google Play
+            issue: GH-6690
+            apk:
+              sha256: 8607796cab3e2887ebb5442f1ddac2c494cc8548cf610dde665ca253ba8b6a9c
   - package: com.fundrise.android
     signature:
       - fingerprint: FF:4B:21:E4:BB:0F:1F:AF:33:75:2D:9E:15:8E:0A:B0:ED:F1:E1:A8:2A:81:E0:C4:8F:29:40:23:55:82:B1:8B
