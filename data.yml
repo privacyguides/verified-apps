@@ -8123,6 +8123,18 @@ packages:
             apk:
               sha256: 4b96925f1fa7362949b81a3f008dd03e21be3ff57feaa11073bd753b65ce0f45
               link: https://github.com/quik-sms/quik/releases/download/v4.3.6/QUIK-v4.3.6-release.apk
+  - package: dev.pranav.applock
+    signature:
+      - fingerprint: AF:7F:36:02:3C:6A:77:50:84:72:52:E5:D4:D1:4A:99:2B:62:13:64:60:07:05:E1:D8:B0:FE:44:D1:AC:8C:81
+        sources:
+          - name: F-Droid
+            issue: GH-2092
+            apk:
+              sha256: 1cc169e34303ab749155bea025597f6474279a37614fb9cffcb6024685866566
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-2092
+            apk:
+              sha256: 8b11477bcdc3afcc662759c05c353520b855e8d0e32a6648b5e2d5fb09dbbd1b
   - package: dev.rubec.otoscope
     signature:
       - fingerprint: 69:4D:49:76:7B:3E:3F:1A:40:24:07:2F:9B:13:FE:FC:44:FC:04:36:28:03:C5:5F:E0:3E:30:BA:27:07:AF:A9
