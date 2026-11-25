@@ -8709,6 +8709,14 @@ packages:
             issue: GH-523
             apk:
               sha256: d2b3ad1a152524061cce0cd401943d212015f98ee19e69ba84cf9c332da53215
+  - package: com.starbucks.mobilecard
+    signature:
+      - fingerprint: 3E:67:A8:1E:FA:21:CB:C7:71:4A:4F:42:BE:CA:FD:DD:06:C4:E7:62:A6:68:93:A9:93:89:EB:0E:3F:55:A0:21
+        sources:
+          - name: Google Play
+            issue: GH-8381
+            apk:
+              sha256: f718af034816a5076359713ae95452f986f1e12910c9be117a7f800c908abae3
   - package: com.starfinanz.mobile.android.bwpushtan
     signature:
       - fingerprint: 48:53:EB:52:4C:DF:4A:22:EB:41:94:7B:0D:3F:49:F0:2F:9C:F3:00:42:88:0E:F6:29:85:47:92:2E:3A:E9:DD
