@@ -13891,6 +13891,14 @@ packages:
             issue: GH-1619
             apk:
               sha256: 0c7029f7b7bd3fa7d0339a4e7d8813f7f2d02dcc5b1fbf8239093abbf16357ae
+  - package: org.kaijinlab.usbdevinfo
+    signature:
+      - fingerprint: 0A:5D:7A:16:F0:5B:05:BE:38:BC:0D:AD:EE:41:36:E4:B6:59:BB:BA:13:8D:93:78:13:C4:33:09:D6:69:ED:8C
+        sources:
+          - name: F-Droid
+            issue: GH-7862
+            apk:
+              sha256: 13f76989d26b5a478b8bce1641b6297133965246497263624c5fbc3606b67624
   - package: org.kde.bettercounter
     signature:
       - fingerprint: 25:32:94:C6:84:D4:C2:31:C4:5A:2B:92:11:DF:AA:01:10:45:62:73:8B:62:A0:9D:BF:B7:14:50:B8:A6:66:F4
