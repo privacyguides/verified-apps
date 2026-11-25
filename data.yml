@@ -3680,6 +3680,14 @@ packages:
               sha256: 5546fac68f30b29d8aaf9e4d969d5e7f661bca8450c86a7c69843c5e6c2a5dee
           - name: HTTPS Verified Domain
             issue: GH-7496
+  - package: com.fairphone.android.fairbudsapp
+    signature:
+      - fingerprint: 71:AB:E8:53:13:F6:4E:6D:DB:F1:3A:F6:F9:D8:E5:4D:2A:2E:44:D9:49:24:C8:FD:9E:60:4A:53:61:24:B1:0A
+        sources:
+          - name: Google Play
+            issue: GH-8081
+            apk:
+              sha256: 14631551f7302d0c56f958919d3b8c750cfe0b3e32f8af22a622692e40f70264
   - package: com.faltenreich.diaguard
     signature:
       - fingerprint: 6F:67:B5:55:A0:FA:64:C4:F0:F1:6C:85:FA:57:96:E4:07:E9:F9:97:7D:B3:54:06:E6:2E:0F:42:34:60:45:CD
