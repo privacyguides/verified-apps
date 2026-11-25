@@ -2063,6 +2063,16 @@ packages:
             issue: GH-1173
             apk:
               sha256: 2d4ace2877eaa42fea365c3a31165e4cf0d13be1dbff593e1c0ae8ff3e29c0eb
+  - package: com.clue.android
+    signature:
+      - fingerprint: |-
+          B1:92:54:E1:ED:B1:9F:FB:52:54:6E:F5:B4:E1:18:51:43:0E:95:B0:42:E0:6D:4A:D7:77:BA:69:D6:72:D8:F6
+          B8:3B:3E:CC:8D:18:FA:08:99:7F:A7:A5:A7:D5:7C:0D:60:24:F6:24:78:98:0E:C3:27:55:D5:D4:6B:CC:00:8D
+        sources:
+          - name: Google Play
+            issue: GH-5679
+            apk:
+              sha256: b038677d7918f771d7fd43bf55a35068bab7fb7abea19d745a6e5650a1f38fd3
   - package: com.codedead.deadhash
     signature:
       - fingerprint: 33:46:CF:D5:67:6A:EF:D9:A2:7E:A2:5B:9F:13:A1:20:C2:F6:F6:8E:E2:6E:6F:8B:76:84:5C:EA:27:4E:A7:EE
