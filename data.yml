@@ -1070,6 +1070,14 @@ packages:
             issue: GH-1807
             apk:
               sha256: 83016ab7269aeb32a2e7612948276d9aaeea5903e453e342a20e467de0a2e14c
+  - package: com.amrdeveloper.linkhub
+    signature:
+      - fingerprint: 2B:9B:77:34:5E:B3:CA:D8:CE:36:B3:D6:DE:15:2A:57:05:E5:E7:BF:52:E8:02:64:F8:2A:8A:E6:F3:15:06:66
+        sources:
+          - name: F-Droid
+            issue: GH-2755
+            apk:
+              sha256: af99136317b28facd46fc837777aa1834fdccd27950c2bb4ef510a49331aadfa
   - package: com.amtrak.rider
     signature:
       - fingerprint: B2:CF:72:BB:EF:F5:BC:CB:1A:0A:D7:FE:52:ED:49:77:5C:B9:C1:30:0E:65:7C:0F:FB:4F:A5:81:52:91:C4:10
