@@ -12066,6 +12066,14 @@ packages:
             issue: GH-704
             apk:
               sha256: fa573c1903ad9a09dccd07be7f311e4585639aa1f5832ec377f4407814391ac4
+  - package: org.ttrssreader
+    signature:
+      - fingerprint: EC:C7:6F:AC:21:FB:A9:1E:7E:03:70:A9:5C:29:73:62:A4:DF:0E:AF:CD:5A:01:B7:BE:2F:F6:82:2E:08:F7:00
+        sources:
+          - name: F-Droid
+            issue: GH-5786
+            apk:
+              sha256: 47834a24aae3b3173b5d2b9af49152e604e978cd8e8f3c52dad42ad479325c5d
   - package: org.unifiedpush.distributor.nextpush
     signature:
       - fingerprint: 4D:77:EB:02:F1:66:55:9E:43:B2:A3:B3:4E:86:1D:62:8C:CC:EE:CB:F7:65:3E:E1:38:70:97:1B:25:E1:75:F0
