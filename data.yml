@@ -8244,6 +8244,14 @@ packages:
             issue: GH-843
             apk:
               sha256: 26d26764682f361fade5e73087fe40acd0ba40ef0260627fb47bcd1674b99e0f
+  - package: com.washingtonpost.android
+    signature:
+      - fingerprint: F2:28:36:00:A2:E1:1E:CF:30:EF:B5:C7:56:AC:8A:BB:74:45:F2:74:78:7B:67:E9:1B:E5:53:53:12:B4:5E:5D
+        sources:
+          - name: Google Play
+            issue: GH-6836
+            apk:
+              sha256: 834c2add05646c76a9f1bc4ccc63e00617200e114f9376226ad46b3d0fa5bee5
   - package: com.wasimaster.wmkeyboard
     signature:
       - fingerprint: D6:C1:F3:0A:61:16:D3:3E:4E:77:8B:37:2F:33:5F:AA:91:DA:D3:5F:65:7A:84:E4:E7:07:7B:29:64:1E:7C:AD
