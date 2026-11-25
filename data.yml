@@ -13867,6 +13867,14 @@ packages:
             issue: GH-492
             apk:
               sha256: c881430de6f3424287b3e42f945f77754a0b7d4b4965c605c20d1efa23a24fe5
+  - package: net.obscura.vpnclientapp
+    signature:
+      - fingerprint: B5:EB:FB:C9:7C:0E:86:09:DB:5C:8D:05:73:1A:FB:A7:EC:37:E2:C8:3D:D1:75:1C:98:D6:0D:04:72:10:17:11
+        sources:
+          - name: Google Play
+            issue: GH-2933
+            apk:
+              sha256: 37780e9511bb5e70f83b875fe4f83cd858a58691dd4462b2b9098943aa16094f
   - package: net.oneplus.forums
     signature:
       - fingerprint: |-
