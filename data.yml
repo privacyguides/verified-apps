@@ -6407,6 +6407,14 @@ packages:
             issue: GH-909
             apk:
               sha256: 139f6af42361ea44066bcd5f20431204c2d9295f255969866023e3e2a54b3b34
+  - package: com.nooto.app
+    signature:
+      - fingerprint: 46:CE:92:59:DD:8E:BA:36:47:0F:AA:F0:DC:DC:D1:FC:95:8B:6D:3C:5F:84:F0:30:36:45:60:3A:5B:86:E8:B0
+        sources:
+          - name: F-Droid
+            issue: GH-7856
+            apk:
+              sha256: fb8f8afbca9276da0cbef1b11b51b5d7ef03447acef999af02fd27ed4e11226a
   - package: com.nordea.mobiletoken
     signature:
       - fingerprint: 3E:46:30:6E:A8:93:00:F6:24:40:F2:03:5C:E7:AF:7B:45:D6:D0:75:4E:BB:8E:0C:13:63:D3:8F:18:34:6C:8F
