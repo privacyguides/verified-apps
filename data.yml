@@ -3585,6 +3585,14 @@ packages:
             issue: GH-353
             apk:
               sha256: 9ddb180c6f322b4da7f25cb97f40d16b956e6e34c301a7db4cdf1838cebdb36e
+  - package: com.gettaxi.android
+    signature:
+      - fingerprint: EA:4D:FE:EA:92:35:B0:13:0D:EE:CF:C5:50:DD:37:12:C5:B0:4F:A7:24:BC:DE:DE:89:16:BC:A0:57:4A:2B:2F
+        sources:
+          - name: Google Play
+            issue: GH-6878
+            apk:
+              sha256: 88d9ece71b6c73147626cae52373a4a89f62f101d6835ae7c35115d191a75396
   - package: com.getyourguide.android
     signature:
       - fingerprint: 2B:47:AC:B3:D0:BC:0C:9C:CF:CA:B5:FD:BA:91:CA:DC:D1:6E:6B:EF:14:26:D7:3B:8A:F0:2C:76:C5:FC:5A:E8
