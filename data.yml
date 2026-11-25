@@ -3088,6 +3088,14 @@ packages:
             issue: GH-1031
             apk:
               sha256: 4c221d7a0c66c36680bf1fcfbf4cba9f737806e497943f3120545f3bad0d923c
+  - package: com.folio.reader
+    signature:
+      - fingerprint: 51:F8:A3:A0:E3:45:27:25:BE:73:23:15:8C:15:F1:C3:34:29:B3:F6:07:68:3E:E3:10:C9:DA:40:CC:A0:00:56
+        sources:
+          - name: F-Droid
+            issue: GH-6181
+            apk:
+              sha256: 3ee259c31bc2f74514e17bad680a69fa175680f4eacf2aac0480b7a717bbaa1f
   - package: com.foobnix.pro.pdf.reader
     signature:
       - fingerprint: CD:F4:E1:C3:1C:41:A5:5E:D7:28:96:BF:44:3C:E5:6D:50:FB:34:BB:93:3E:31:89:B3:DD:C2:60:9C:90:D8:F9
