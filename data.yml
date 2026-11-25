@@ -4938,6 +4938,14 @@ packages:
             issue: GH-2264
             apk:
               sha256: 6b6813017396df441707618a884ed2f66499a08966869b1fbab24cf380063f57
+  - package: com.languagedrops.drops.international
+    signature:
+      - fingerprint: 93:94:52:1E:09:80:D7:5E:3A:30:02:EE:63:0A:23:1B:D6:A3:01:9C:11:10:52:30:AB:A6:B6:D0:4C:7C:9C:EF
+        sources:
+          - name: Google Play
+            issue: GH-6877
+            apk:
+              sha256: e1821754bf661f9faf68f6c2156b2d3c273454add8782b69cd2876411ef63266
   - package: com.lego.legobuildinginstructions
     signature:
       - fingerprint: D9:51:A3:D0:75:64:63:20:E7:3D:F5:39:F9:40:5F:B0:1C:A4:B4:E6:FA:A7:A3:6C:F8:F8:6C:52:56:59:21:44
