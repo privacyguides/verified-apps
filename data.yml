@@ -2716,6 +2716,18 @@ packages:
             issue: GH-647
             apk:
               sha256: e02b988e3f72901b623b77f768ea38e82c5e1204f379360a1c73a04dff6346f1
+  - package: com.dessalines.rankmyfavs
+    signature:
+      - fingerprint: EA:71:95:CF:CE:63:8A:E6:B1:A8:00:2D:DC:0D:48:63:36:60:95:EA:5B:8D:95:C1:CD:5E:25:DB:0F:E2:E7:C3
+        sources:
+          - name: F-Droid
+            issue: GH-6927
+            apk:
+              sha256: 16ec0870b35adefc6869ad57d1474d2764f399b1f22824f7fc316d60b7e0fdea
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-6927
+            apk:
+              sha256: 16ec0870b35adefc6869ad57d1474d2764f399b1f22824f7fc316d60b7e0fdea
   - package: com.devhd.feedly
     signature:
       - fingerprint: B4:EF:58:DB:C0:76:3C:0B:F3:EE:D7:B1:5C:96:11:AE:A8:03:1E:97:36:0E:B9:85:D5:2E:DA:CC:2C:63:77:5E
