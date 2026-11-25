@@ -1920,6 +1920,14 @@ packages:
             issue: GH-2800
             apk:
               sha256: 8568f9bd3221e7a5ed9b3813e66b17172777f4fcb28e10558903973d01b17619
+  - package: com.companyname.andriodapp1
+    signature:
+      - fingerprint: 73:34:5E:7D:43:FE:B5:59:39:45:0D:E4:49:7D:64:C0:01:D2:AE:76:42:65:B6:9C:2C:BF:3E:A0:36:77:A8:A2
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1598
+            apk:
+              sha256: d5977600c2de3778987a63a726b2da88bf87bce3c4762a1f02b55fc4474b21e8
   - package: com.comuto
     signature:
       - fingerprint: D0:F8:58:4B:7D:13:8B:47:1D:29:ED:D0:D8:CE:A8:F5:A1:81:76:F0:02:FF:4D:E6:D3:5D:38:31:6B:AC:07:26
