@@ -1216,6 +1216,14 @@ packages:
             issue: GH-1021
             apk:
               sha256: d6ac4a0d3137d9882719091edca78f935c8fafdf76ddd0d3fc5ab475216d05ca
+  - package: com.armanmaurya.archiv
+    signature:
+      - fingerprint: CE:A0:D7:86:39:36:FD:A4:48:46:D3:70:1F:47:07:6E:E5:B0:C7:FE:F3:37:71:2D:17:85:A9:87:95:FB:BA:95
+        sources:
+          - name: F-Droid
+            issue: GH-2593
+            apk:
+              sha256: ea6b8fb0ca9fba2a6a130408065e9e534b5f3d0b89029948a2a7eca52fe05312
   - package: com.artermobilize.alertable
     signature:
       - fingerprint: 26:58:BC:41:AA:B1:23:7E:84:3D:83:53:3D:5A:8C:88:57:F4:DF:03:CE:1F:6B:7E:F3:FA:8F:BF:16:1A:5D:B0
