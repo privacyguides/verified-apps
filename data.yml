@@ -5749,6 +5749,14 @@ packages:
             apk:
               sha256: a71532d37273ea5d9bd0cb0e1e91ac894e3fd34e3ac2917e7c792425d7a8ca0c
               link: https://github.com/a-ghorbani/pocketpal-ai/releases/download/v1.15.1/app-prod-release.apk
+  - package: com.podverse.fdroid
+    signature:
+      - fingerprint: C8:56:BB:36:F8:E0:66:15:25:78:87:2B:09:9E:5B:CB:63:E1:00:55:99:38:F7:71:49:B8:21:DC:DA:A1:82:47
+        sources:
+          - name: F-Droid
+            issue: GH-5986
+            apk:
+              sha256: 35ae9665a999512c8176beffe093090d8d5e885460482a7e56d6809269169852
   - package: com.poupa.vinylmusicplayer
     signature:
       - fingerprint: 5B:FF:14:F9:B3:BD:BC:B3:B2:F3:7D:B6:23:CF:32:1F:D2:B4:80:03:5B:54:08:BB:81:82:C9:3F:C4:F8:ED:A2
