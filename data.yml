@@ -3645,6 +3645,15 @@ packages:
             issue: GH-811
             apk:
               sha256: d8717153fbced7b61b496f5f3b81fe56dd2b4e729292afb30a2321065d7c4796
+      - fingerprint: |-
+          3D:7A:12:23:01:9A:A3:9D:9E:A0:E3:43:6A:B7:C0:89:6B:FB:4F:B6:79:F4:DE:5F:E7:C2:3F:32:6C:8F:99:4A
+          5A:AD:2B:EE:6D:B9:5D:17:E0:5A:08:D7:D1:E6:4C:10:A1:51:18:79:15:44:83:91:6B:6A:E6:C7:FD:9C:B0:C6
+          E5:D2:C6:E3:44:47:71:6E:E1:4D:CC:3B:8C:36:78:07:EA:9D:C0:08:0A:F6:45:69:A3:A3:AE:00:4B:4D:7C:02
+        sources:
+          - name: Google Play
+            issue: GH-6308
+            apk:
+              sha256: ccbb9476747ac1f43e523735d724193f94a26cc7e779c1950e07b6a8a355b328
   - package: com.google.android.apps.healthdata
     signature:
       - fingerprint: B2:C0:A8:0E:48:59:34:BF:B0:8F:90:2C:A2:75:05:81:3D:F3:15:9E:4E:6D:D4:A4:DF:07:8D:66:CB:1C:20:03
