@@ -9569,6 +9569,14 @@ packages:
         sources:
           - name: F-Droid
             issue: GH-36
+  - package: net.kollnig.missioncontrol.fdroid
+    signature:
+      - fingerprint: D5:4D:E7:92:E8:B6:8C:B2:2D:3D:AD:7B:5C:9F:37:31:64:89:72:4C:E6:FB:21:57:24:63:EE:5D:4E:07:4F:01
+        sources:
+          - name: F-Droid
+            issue: GH-1959
+            apk:
+              sha256: 6765ca27889d91f41c05982151f47e284e831fd14124b9cd17e5031c435a2bf1
   - package: net.koofr.app
     signature:
       - fingerprint: F7:CD:D1:CC:59:94:D8:CE:9C:E2:D6:DF:A5:1B:82:3B:E9:17:DC:61:F2:52:8A:28:B2:05:21:4E:43:96:6B:C1
