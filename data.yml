@@ -7718,6 +7718,18 @@ packages:
               sha256: 98ad2ea2ba0709d373bd9228e2cf2b67bdeee9c40d074f95e47034f79ff30f1e
           - name: HTTPS Verified Domain
             issue: GH-6844
+  - package: com.shub39.dharmik.online
+    signature:
+      - fingerprint: 0F:E1:B9:F4:4A:4D:B9:7E:C5:09:48:F5:18:9F:6B:43:00:71:6C:C6:D4:84:3F:56:98:D6:14:A2:15:2E:21:88
+        sources:
+          - name: F-Droid
+            issue: GH-7846
+            apk:
+              sha256: 549b4c1a9da65fd78866afdb961d3367072a02a325f3cb7507bc855d68188911
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-7846
+            apk:
+              sha256: d2d3609aed0ea485d6b2a14cf3c341e7526f1f71c0fe719dddc4cbd2d9e3b86b
   - package: com.shub39.grit
     signature:
       - fingerprint: 0F:E1:B9:F4:4A:4D:B9:7E:C5:09:48:F5:18:9F:6B:43:00:71:6C:C6:D4:84:3F:56:98:D6:14:A2:15:2E:21:88
