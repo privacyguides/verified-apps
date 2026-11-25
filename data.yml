@@ -2678,6 +2678,14 @@ packages:
             issue: GH-2840
             apk:
               sha256: 612e701ef006ab18c8cc65ad99863b001caf821044e2c658f675800978378d67
+  - package: com.condenast.wired
+    signature:
+      - fingerprint: 4B:DC:50:A9:08:CB:47:76:7F:FD:9E:63:7E:7D:C1:28:36:A8:73:4C:2A:BB:D4:E1:11:66:D6:03:E4:09:2C:41
+        sources:
+          - name: Google Play
+            issue: GH-7690
+            apk:
+              sha256: 3317217ecdb7e810db35a8086fe879407cf56d349639f0c2cb1ae012cca1093c
   - package: com.contactoffice.mailfence
     signature:
       - fingerprint: 97:FE:5D:AA:04:8D:40:D3:CC:F0:A1:09:8F:47:FC:99:D1:A0:36:FA:BA:AF:B9:80:1F:51:E5:63:69:59:14:38
