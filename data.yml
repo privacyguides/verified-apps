@@ -1550,6 +1550,14 @@ packages:
             issue: GH-536
             apk:
               sha256: b4be67875caad1e1c276759052154778f8aec52326d826e2a84b8e7f69859264
+  - package: com.bearinmind.equalizer314
+    signature:
+      - fingerprint: 7A:83:68:D1:8A:D6:42:94:F9:AA:DF:4B:73:6A:DC:D1:5C:B0:CB:88:C6:B9:DC:2E:0B:D5:F1:E4:61:B8:3E:52
+        sources:
+          - name: F-Droid
+            issue: GH-5865
+            apk:
+              sha256: 8d9f777854929956bd6e2eb5baaec730738dbc2eb8061dd57a7fdec1809f0fbd
   - package: com.beemdevelopment.aegis
     signature:
       - fingerprint: 09:CF:DE:62:E2:A8:1C:80:50:D3:BE:4C:20:E3:F8:D8:DD:D0:15:31:BE:1B:47:CB:3B:0E:EC:21:3F:64:1F:89
