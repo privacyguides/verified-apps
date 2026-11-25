@@ -8795,6 +8795,14 @@ packages:
             issue: GH-1856
             apk:
               sha256: 6b2b42499b145a81cda61c8b85551d4455593f1e82ea54e0bb6a45c4348d1631
+  - package: com.teslamotors.tesla
+    signature:
+      - fingerprint: F2:7A:58:47:96:22:C8:D7:BF:CD:87:CB:30:E9:80:09:15:76:11:91:F6:EF:7B:26:8E:30:47:6E:9D:7A:0E:71
+        sources:
+          - name: Google Play
+            issue: GH-8191
+            apk:
+              sha256: f8a7bb06ce9f3e6950b0c42c90df3ce337d6257a304a63babb9c745c6b9a48d8
   - package: com.tharunbirla.librecuts
     signature:
       - fingerprint: B4:78:1B:17:8D:A1:24:92:9F:BC:81:EA:7C:16:AA:48:E2:04:3C:47:8C:E1:F8:61:C8:8C:A1:2F:39:8A:DA:CD
