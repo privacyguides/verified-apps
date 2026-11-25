@@ -12493,6 +12493,14 @@ packages:
             apk:
               sha256: 0fcc8ac73eb1307783799d8c9090d8bbe9be39d659463e2166dadfa3deabcd64
               link: https://github.com/azahar-emu/azahar/releases/download/2125.1.2/azahar-android-vanilla-2125.1.2.apk
+  - package: org.barebrowser
+    signature:
+      - fingerprint: AE:2A:0E:7F:B7:A1:32:EC:51:7D:26:A8:E7:C8:3D:27:5E:83:74:7B:0A:77:7D:4A:42:22:5B:1D:34:32:71:A0
+        sources:
+          - name: Google Play
+            issue: GH-7363
+            apk:
+              sha256: fac05c01c87388e5cdc147fcbbf6f4633cd05de546af6013f420f5bf0343538b
   - package: org.billthefarmer.buses
     signature:
       - fingerprint: 10:51:3E:8B:9D:F6:B5:8D:2F:6B:83:A3:D9:37:EE:5C:F8:AA:9C:BB:E0:D6:94:39:E7:60:36:0C:A6:86:F0:7D
