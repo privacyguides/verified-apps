@@ -2795,6 +2795,14 @@ packages:
             issue: GH-6335
             apk:
               sha256: a031ea4897fb3f9dcba370eb553e46468643b049624eca9c0769683628761666
+  - package: com.chipotle.ordering
+    signature:
+      - fingerprint: D8:69:F7:1A:65:B3:8A:1E:77:76:A8:CE:EE:C6:11:36:48:A3:F6:38:24:02:0F:53:D3:E5:A7:DD:56:BC:32:88
+        sources:
+          - name: Google Play
+            issue: GH-8327
+            apk:
+              sha256: c95c29952b35308c9511e451fed5e168617b8af5043b76f7b5256d1e6e2735a9
   - package: com.chiranth7.webstack
     signature:
       - fingerprint: FC:55:83:B6:3C:4F:A5:78:DA:D3:DE:F3:83:88:78:AC:9E:2E:13:8D:47:C6:1B:66:24:CC:15:5E:61:55:66:BE
