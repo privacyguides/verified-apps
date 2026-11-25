@@ -8994,6 +8994,14 @@ packages:
             issue: GH-1648
             apk:
               sha256: 463f78fdd0e52d104f50173ed2fa6777c5e639df01e65c1b96336d1c9e4a16b1
+  - package: me.timschneeberger.rootlessjamesdsp
+    signature:
+      - fingerprint: 95:0B:C2:0F:05:7A:CB:B2:C4:CA:D7:5F:08:C7:25:C9:72:DB:B6:73:B7:B0:78:5D:9F:DA:88:C2:F5:1D:F3:73
+        sources:
+          - name: F-Droid
+            issue: GH-1589
+            apk:
+              sha256: 4cdd6cbc57abb00b1ce28668dc29c021640bae8c4521ec592efc58c4239d83a1
   - package: me.zhanghai.android.files
     signature:
       - fingerprint: 87:3B:9B:60:C7:7C:F7:F3:CD:5F:AE:66:D0:FE:11:2C:4A:86:97:3E:11:8E:E8:A2:9C:34:6C:4C:67:3C:97:F0
