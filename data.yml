@@ -4483,6 +4483,14 @@ packages:
             issue: GH-1429
             apk:
               sha256: 95ac29578676300887a8e8e8dc04af9edc687dd88a279cf99c967a09f0363e69
+  - package: com.google.android.apps.labs.language.tailwind
+    signature:
+      - fingerprint: BA:49:17:69:08:27:5F:83:BE:9A:E1:03:49:68:F0:B1:8E:65:17:7A:64:E5:A4:0B:3A:62:1F:14:8D:FB:6F:A2
+        sources:
+          - name: Google Play
+            issue: GH-7970
+            apk:
+              sha256: fecf6b4b7c7a9f01ba6d5b52f3d17a4fbe31171fc961dce66fe20453ffc03efc
   - package: com.google.android.apps.maps
     signature:
       - fingerprint: |-
