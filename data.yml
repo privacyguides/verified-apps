@@ -1410,6 +1410,14 @@ packages:
             issue: GH-1351
             apk:
               sha256: 7c0aee33e8b643fd0d139232b8c616f96625adbd9e0f49caa788167af65cdba7
+  - package: com.alarm.alarmmobile.android.cpi
+    signature:
+      - fingerprint: 0F:B9:60:E3:E4:95:76:73:E7:9C:55:7C:CB:69:FB:A7:A0:3A:C5:BC:C3:09:B4:E0:E9:E6:B0:97:79:A7:12:7F
+        sources:
+          - name: Google Play
+            issue: GH-8328
+            apk:
+              sha256: baccb9f7d78d9d21908f88e44f6da0f1588747a3959c21b98ab5cdf3efbf42af
   - package: com.alexmercerind.audire
     signature:
       - fingerprint: 29:DA:10:94:31:62:D3:ED:38:6B:97:CF:F1:EF:BE:2F:9C:01:2C:9E:3A:5D:86:1F:8F:49:44:0B:16:C0:01:08
