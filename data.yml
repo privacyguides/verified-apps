@@ -4527,6 +4527,14 @@ packages:
             issue: GH-1447
             apk:
               sha256: 09f8f43f282bfdc876b3ed633b44c904e9819c3e01f44a7919d11e151e891a9e
+  - package: com.minar.birday
+    signature:
+      - fingerprint: AB:4E:35:A0:33:AD:C5:A1:53:7A:5C:CB:6F:1F:01:7C:3D:C5:34:A7:4A:2A:D9:A8:B2:FF:18:59:85:0A:00:50
+        sources:
+          - name: F-Droid
+            issue: GH-2019
+            apk:
+              sha256: 7de628399c7ec0d650e727dce4819c18c9d740e38603237ce65e6bddfdd1dc5f
   - package: com.minrax.sofiabus
     signature:
       - fingerprint: 07:F3:22:4D:AB:06:C9:7E:91:DD:B5:72:26:A2:E1:55:9D:A0:EF:72:C3:17:C8:ED:3C:61:1A:3A:09:ED:D6:C7
