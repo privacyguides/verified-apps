@@ -1169,6 +1169,14 @@ packages:
             issue: GH-1454
             apk:
               sha256: d846f31f74c5816ba32a69d7f9cb8b0f77f0755a0cac39c7a7c5d6faea28b904
+  - package: com.atharok.btremote
+    signature:
+      - fingerprint: E6:CF:16:29:D4:62:A3:68:6A:A4:BA:2D:37:E0:27:77:25:7F:D0:A3:BB:E5:54:0D:8C:70:F8:0E:12:D1:11:CD
+        sources:
+          - name: F-Droid
+            issue: CB-118
+            apk:
+              sha256: 58000262bb6fcbab195501cc18d3f46685b06f0d65abb76e168ddf769b898e6a
   - package: com.att.myWireless
     signature:
       - fingerprint: C7:F7:9A:BA:69:D3:A7:5C:FA:4F:A0:35:99:D0:8E:EB:C5:D1:C0:EE:B1:C3:90:CF:6C:A8:79:40:D4:F1:92:AD
