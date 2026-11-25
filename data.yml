@@ -11540,6 +11540,12 @@ packages:
               sha256: 95527b05a417ec2a438eba17c739b9019832d3e2d4caa63019a4d84975b6029d
   - package: eu.faircode.netguard
     signature:
+      - fingerprint: CD:77:5F:59:EE:5A:EB:BA:18:D9:F2:0A:A5:D6:9C:7B:69:52:95:82:24:B7:C9:3F:59:7E:17:4B:57:B4:DD:8F
+        sources:
+          - name: F-Droid
+            issue: GH-8237
+            apk:
+              sha256: 158b4308da0006298d22ed557adbff24b282fddeb1bc0b3468829a60f405a8c4
       - fingerprint: E4:A2:60:A2:DC:E7:B7:AF:23:EE:91:9C:48:9E:15:FD:01:02:B9:3F:9E:7C:9D:82:B0:9C:0B:39:50:00:E4:D4
         sources:
           - name: F-Droid (IzzyOnDroid)
