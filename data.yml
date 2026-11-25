@@ -9796,6 +9796,14 @@ packages:
             issue: GH-1980
             apk:
               sha256: bccc3a765c64cda04ea83a44f0c26e22f832a9a54f93aa88cd0227a0de44e68b
+  - package: eu.novapost
+    signature:
+      - fingerprint: 70:A4:2F:BF:DE:F5:58:DF:E1:F2:F1:A6:4C:63:0E:FE:43:4F:5F:66:1F:F5:FB:5C:E7:28:DE:CA:87:3A:8F:47
+        sources:
+          - name: Google Play
+            issue: GH-6698
+            apk:
+              sha256: 7f4e4b8bc9adfaec44dba2951afde6d2c6b0c6ba977e8d1ecfbc5d8ea41366bc
   - package: eu.opencloud.android
     signature:
       - fingerprint: 0A:1E:55:60:92:9F:6A:DE:6A:EF:6B:44:67:11:E1:4B:0D:2A:90:8E:4D:EB:37:45:37:22:EF:51:C2:DC:A0:37
