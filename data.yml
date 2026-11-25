@@ -7244,6 +7244,16 @@ packages:
             issue: GH-592
             apk:
               sha256: e453ac17dbdc93ee23dd2056bf721b62d41d1ffc7886cca36bc16771e2b0af64
+  - package: com.pandora.android
+    signature:
+      - fingerprint: E6:22:71:55:59:94:B1:14:34:E4:E3:DF:FF:F8:ED:B3:1C:8B:50:80:C8:3C:06:05:46:C3:8B:1C:C7:24:0C:49
+        sources:
+          - name: Google Play
+            issue: GH-8185
+            apk:
+              sha256: 4f38170306a25c8ed46416c659db547511a92dadae97bed1be21309b3cdd352c
+          - name: HTTPS Verified Domain
+            issue: GH-8185
   - package: com.papajohns.android
     signature:
       - fingerprint: 74:1F:D3:0F:10:A0:7A:09:B5:2C:DF:37:F1:77:F0:22:8E:B1:DE:13:06:E8:63:06:95:41:1E:A8:29:E9:E6:CD

@@ -649,6 +649,16 @@ domains:
       - package: ru.ozon.app.android
         fingerprints:
           - C8:FE:81:75:2C:60:F8:67:F7:80:1E:40:59:A9:98:9C:66:03:51:D4:59:32:3F:22:D9:BC:94:91:82:FD:6D:61
+  - domain: pandora.com
+    method: https
+    issue:
+      - GH-8185
+    checked: "2026-11-25T10:34:06Z"
+    packages:
+      - package: com.pandora.android
+        fingerprints:
+          - 28:03:7B:2A:DE:24:84:DB:B1:57:51:98:6B:5A:17:5A:0A:37:62:0B:03:CB:EB:17:2B:CB:76:98:D0:93:4B:EA
+          - E6:22:71:55:59:94:B1:14:34:E4:E3:DF:FF:F8:ED:B3:1C:8B:50:80:C8:3C:06:05:46:C3:8B:1C:C7:24:0C:49
   - domain: paypal.com
     method: https
     issue:
