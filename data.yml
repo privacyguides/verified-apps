@@ -1013,6 +1013,14 @@ packages:
             issue: GH-791
             apk:
               sha256: 7f6f826651dc28d3bc93f19748e5d23d1771bb8322c6c979941cb2771878376e
+  - package: codes.swistak.batterymonitor
+    signature:
+      - fingerprint: 70:72:34:A8:AB:DA:C2:51:09:1C:A3:AA:71:DB:B8:62:10:75:DE:2E:05:4B:9F:7B:80:04:69:E5:9B:7F:DA:D2
+        sources:
+          - name: F-Droid
+            issue: GH-8186
+            apk:
+              sha256: eb5d370187c3699a9d4d74d1890e8226a165ed65f66a16e6a968aa5baf19aec7
   - package: com.FDGEntertainment.redball4.gp
     signature:
       - fingerprint: 46:5E:93:D5:C0:8C:1C:BD:5F:28:DE:82:7F:98:BB:D7:85:E5:17:6F:D2:75:96:CC:BB:02:98:7F:3E:B5:36:31
