@@ -15896,3 +15896,11 @@ packages:
             apk:
               sha256: 75d9804c39287f11b3f71805765f6781c96326b3eef7a43a9682bb83b40b0106
               link: https://github.com/NextAlone/Nagram/releases/download/1236/Nagram-v12.6.4.1236-arm64-v8a.apk
+  - package: zip.arcanum
+    signature:
+      - fingerprint: D5:34:FA:17:3D:BC:64:0E:44:86:CF:C0:56:65:EE:82:39:59:08:54:2B:45:E2:5D:5C:C0:56:2E:4C:CA:55:3B
+        sources:
+          - name: F-Droid
+            issue: GH-8072
+            apk:
+              sha256: bf04ec5559082e58a3d712d563a6cb01a1d8c7e50190e317e5298a37eb203853
