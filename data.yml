@@ -9523,6 +9523,14 @@ packages:
             issue: GH-526
             apk:
               sha256: cf5886cfa21088647d5812fca06241e3285c3816837af7c0f484049bef6a4e9e
+  - package: com.vivi.vivimusic
+    signature:
+      - fingerprint: E0:58:1B:AB:0B:93:0B:17:93:96:E1:30:08:AA:08:50:9C:DC:D1:EE:38:F7:AE:54:10:2F:C3:CF:93:25:6A:9D
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-8231
+            apk:
+              sha256: 94f4f09a046ac29d05dd67afbde4a4a6108ac8feb32c851c69fc712ec6e01f00
   - package: com.vladpen.cams
     signature:
       - fingerprint: 04:14:F0:F0:AC:59:20:DA:07:1C:7C:19:FE:8D:FD:E5:19:6E:35:B1:57:AD:41:C7:E7:A1:45:D0:B2:CD:CF:26
