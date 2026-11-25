@@ -8435,6 +8435,14 @@ packages:
             issue: GH-5743
             apk:
               sha256: e5425fa146c254c59856b8a64c129fdb95fcf8249c4958b9ec73fedf0d0d4d5c
+  - package: com.vayunmathur.findfamily
+    signature:
+      - fingerprint: 17:6F:CB:25:25:57:3E:5B:E8:E1:CB:3A:49:6D:D9:7B:13:7E:81:CA:5B:88:7A:1D:32:CB:89:4B:4E:57:17:B4
+        sources:
+          - name: F-Droid
+            issue: GH-7430
+            apk:
+              sha256: ae1da4f5844d17b18a5da4b59d40aa7eb5f365a65da946f2ad0b49ac0ac5fac8
   - package: com.vayunmathur.pdf
     signature:
       - fingerprint: 17:6F:CB:25:25:57:3E:5B:E8:E1:CB:3A:49:6D:D9:7B:13:7E:81:CA:5B:88:7A:1D:32:CB:89:4B:4E:57:17:B4
