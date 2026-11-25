@@ -7084,6 +7084,14 @@ packages:
             issue: GH-675
             apk:
               sha256: cb9b2929976846d0a55b67076ed0adb45bd8e58d476ee2e0418689f53cc39b70
+  - package: com.v2raytun.android
+    signature:
+      - fingerprint: A5:E2:70:82:BD:72:81:70:32:EA:0E:7C:A5:8B:22:4B:51:D3:C4:A5:AF:62:7A:FB:31:84:DE:67:7D:6B:CF:96
+        sources:
+          - name: Google Play
+            issue: GH-5752
+            apk:
+              sha256: bd06f0c56a2d63702dff622899a3826823762e8a3ddef39e9cd9bc5257e22ffa
   - package: com.vakifkatilim.mobil
     signature:
       - fingerprint: C1:3A:ED:85:91:45:C3:C7:33:BA:CA:E2:50:53:A7:9C:4D:8A:21:FA:8A:B2:71:F3:DB:F9:48:8A:79:C0:09:2D
