@@ -10356,6 +10356,12 @@ packages:
             issue: GH-874
             apk:
               sha256: a01cbaf17a64ee3aa3f35499edd0a6402af078412e94783ef75d1c3688742d77
+      - fingerprint: BC:51:7C:B2:16:F0:91:77:4E:1C:DF:70:34:A7:51:A6:0D:D5:37:B5:31:E4:3D:8A:8D:64:9B:FF:16:D9:95:6A
+        sources:
+          - name: F-Droid
+            issue: GH-5780
+            apk:
+              sha256: 2f99e2bcb95a0259f1a8d9b73cdd2ddc415db8242458cbc69397d0fdeff117d0
   - package: net.blip.android
     signature:
       - fingerprint: 01:35:2E:DE:0D:91:D7:AA:11:70:12:6A:2E:A9:18:9C:E1:DC:C2:21:E1:D1:44:44:9F:13:26:BA:BA:7F:2D:48
