@@ -9057,6 +9057,14 @@ packages:
             issue: GH-264
             apk:
               sha256: 56d23169baece013a3524e15cf6a98f41ed91ec5342991456050757103f6f8cb
+  - package: de.freifunk_karte.freifunk_karte
+    signature:
+      - fingerprint: 24:FB:4F:EC:0A:B8:7C:B2:CB:C0:7D:92:57:A5:56:87:1F:3C:7A:D6:D2:7C:D7:16:D3:63:FE:B9:E6:23:65:FB
+        sources:
+          - name: F-Droid
+            issue: GH-6919
+            apk:
+              sha256: b239a2a82324194bc726a1fdd68f9137628e0eb8717729601f95692790140e4a
   - package: de.grobox.liberario
     signature:
       - fingerprint: 39:BD:8E:0F:54:C8:AB:87:AC:21:C0:7A:15:B3:0F:C9:5C:DF:F1:D2:5D:75:DF:02:9D:52:3B:18:DF:86:4B:79
