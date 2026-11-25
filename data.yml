@@ -8209,6 +8209,14 @@ packages:
             apk:
               sha256: 4b96925f1fa7362949b81a3f008dd03e21be3ff57feaa11073bd753b65ce0f45
               link: https://github.com/quik-sms/quik/releases/download/v4.3.6/QUIK-v4.3.6-release.apk
+  - package: dev.octoshrimpy.quik.fdroid
+    signature:
+      - fingerprint: 52:8B:89:A6:7E:25:86:35:BE:21:29:A7:4E:27:44:F9:02:0B:0B:12:27:08:F8:09:1B:5F:D3:CA:0C:1D:2D:DF
+        sources:
+          - name: F-Droid
+            issue: GH-2343
+            apk:
+              sha256: 2eb1a967585b98ed3c77d012a644cd8d3859b43bf1f29ca84d5e154bcaaaf860
   - package: dev.pranav.applock
     signature:
       - fingerprint: AF:7F:36:02:3C:6A:77:50:84:72:52:E5:D4:D1:4A:99:2B:62:13:64:60:07:05:E1:D8:B0:FE:44:D1:AC:8C:81
