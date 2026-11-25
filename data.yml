@@ -177,6 +177,14 @@ packages:
             issue: GH-2817
             apk:
               sha256: 3477b88788e54164b1069df62bb7603e420c09898b48afbb8f55867c4f38703d
+  - package: app.expressiveclock
+    signature:
+      - fingerprint: 87:D7:F3:D0:30:FB:89:F3:A7:80:F1:96:09:2E:80:4A:C5:C2:05:82:92:FC:31:9D:AB:4A:AA:5C:62:F2:EC:22
+        sources:
+          - name: Google Play
+            issue: GH-8257
+            apk:
+              sha256: 6e6adcf6df3ba05fd1cc06e83bb712d4a0ca1a73bff10664632e91a157f21e46
   - package: app.fedilab.nitterizeme
     signature:
       - fingerprint: E5:AD:8D:80:39:27:13:5C:47:43:8D:95:D2:19:89:E2:E8:E8:E8:94:3F:D2:33:5A:64:50:52:6B:28:6B:63:93
