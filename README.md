@@ -77,6 +77,38 @@ If you use this data in your app, the [MIT License](./LICENSE.txt) at minimum re
 > [!NOTE]
 > You may not imply endorsement by Privacy Guides or the project for your app or project by using this data, but you are free to say "This app uses the Verified Apps database from Privacy Guides" or similar.
 
+### Downloading data.yml in Your Build
+
+If you build your project with GitHub Actions or Forgejo Actions, we recommend using our action to download a verified copy of `data.yml`:
+
+```yaml
+- name: Download and verify the Verified Apps database
+  uses: privacyguides/verified-apps@main # better to pin this to the full hash of the current commit though
+
+- name: Use the database
+  run: your-script "$RUNNER_TEMP/data.yml"
+```
+
+The action downloads `data.yml` from our latest [release](https://github.com/privacyguides/verified-apps/releases), verifies its attestation as described [below](#verifying-attestations), and saves it to `$RUNNER_TEMP/data.yml` for your later use. If no copy can be verified, the step fails and no file is saved. On GitHub, using the action also lists your repository as a [dependent](https://github.com/privacyguides/verified-apps/network/dependents) of this one, which helps us know who relies on this data 😊
+
+| Input | Default | Description |
+| --- | --- | --- |
+| `source` | `release` | Which copy to download: `release` for our latest release, or `main` for the current `main` branch. Copies from `main` are newer, but their attestations expire after 5 days. |
+| `fallback` | `none` | What to try if the chosen source can't be verified: `none` fails the step, `release` uses our latest release, and `commit` uses the newest of the last 10 commits to `data.yml` on `main` that has a valid attestation. |
+| `github-token` | The job's token on GitHub | This shouldn't be needed on GitHub, but on Forgejo, attestations are fetched from GitHub anonymously, and GitHub limits anonymous requests by IP address. This can help if you run into that limit. |
+
+The `source` output is `release`, `main` or `commit`, depending on which copy was verified.
+
+For example, to always get the newest data that we have attested:
+
+```yaml
+- name: Download and verify the Verified Apps database
+  uses: privacyguides/verified-apps@COMMIT_SHA
+  with:
+    source: main
+    fallback: commit
+```
+
 ### Verifying Attestations
 
 If you are downloading `data.yml` for your own purposes, we highly recommend verifying that the file you have downloaded was built by us on GitHub Actions using our automated workflows. We allow you to verify this through the use of [provenance attestations](https://docs.github.com/en/actions/how-tos/secure-your-work/use-artifact-attestations/use-artifact-attestations). A list of our *current* attestations can be found here: <https://github.com/privacyguides/verified-apps/attestations>
@@ -86,7 +118,7 @@ Provenance attestations guarantee the file you have was built from a well-define
 > [!IMPORTANT]
 > We **automatically delete** (revoke) attestations in this repo after 5 days, except for the latest one (if it's older than 5 days), and any attestations related to our (unrevoked) [releases](https://github.com/privacyguides/verified-apps/releases). In this sense, copies of our database "expire" after 5 days unless they are releases. If you verify attestations in your build process automatically, we recommend always downloading the latest copy of `data.yml` each time. If you rely on verifying the provenance of our data at any time beyond 5 days, we recommend only using copies of `data.yml` from our releases as those attestations will never be deleted unless we need to revoke one due to bad data.
 
-We *especially* recommend checking this if you are incorporating this data in your own app, to strengthen your own supply-chain security when grabbing data from an upstream source (us). One example of how to do this in your GitHub workflows can be found here: <https://github.com/RoundSalmon4/AppVerifierBG/pull/12>
+We *especially* recommend checking this if you are incorporating this data in your own app, to strengthen your own supply-chain security when grabbing data from an upstream source (us). [Our action](#downloading-datayml-in-your-build) does this check for you on every run. The commands below are for checking a copy of `data.yml` by hand.
 
 #### Verifying data.yml in main branch
 

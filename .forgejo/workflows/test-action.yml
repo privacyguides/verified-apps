@@ -1,0 +1,35 @@
+# Mostly doing this to make sure Codeberg uses the same format for our action
+name: Test fetch action
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - action.yml
+      - .forgejo/workflows/test-action.yml
+
+jobs:
+  test:
+    runs-on: codeberg-tiny
+    steps:
+      - name: Run action with defaults
+        id: release
+        uses: https://github.com/privacyguides/verified-apps@main
+
+      - name: Check result
+        env:
+          SOURCE: ${{ steps.release.outputs.source }}
+        run: test "$SOURCE" = release && grep -q '^schema:' "$RUNNER_TEMP/data.yml"
+
+      - name: Run action against main
+        id: main
+        uses: https://codeberg.org/privacyguides/verified-apps@main
+        with:
+          source: main
+          fallback: commit
+
+      - name: Check result
+        env:
+          SOURCE: ${{ steps.main.outputs.source }}
+        run: test "$SOURCE" != release && grep -q '^schema:' "$RUNNER_TEMP/data.yml"

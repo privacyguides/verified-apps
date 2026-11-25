@@ -1,0 +1,123 @@
+name: Fetch Verified Apps database
+description: Download the Privacy Guides Verified Apps data.yml to $RUNNER_TEMP/data.yml and verify its provenance attestation.
+
+inputs:
+  source:
+    description: >-
+      Which copy of data.yml to download: "release" for the latest release, or "main" for the current main branch.
+    default: release
+  fallback:
+    description: >-
+      What to try when the chosen source cannot be verified: "none" fails, "release" uses the latest
+      release, and "commit" uses the newest of the last 10 commits to data.yml on main that has a
+      valid attestation.
+    default: none
+  github-token:
+    description: >-
+      A github.com token is used to look up attestations. Defaults to the job token on github.com.
+    default: ""
+
+outputs:
+  source:
+    description: Where the verified file came from, "release", "main" or "commit".
+    value: ${{ steps.fetch.outputs.source }}
+
+runs:
+  using: composite
+  steps:
+    # Only a verified file may ever sit at data.yml, even if a caller ignores our failure.
+    - name: Clear leftovers from an earlier run
+      shell: bash
+      run: rm -f "$RUNNER_TEMP/data.yml" "$RUNNER_TEMP/data.yml.candidates"
+
+    - name: Reject unknown inputs
+      if: (inputs.source != 'release' && inputs.source != 'main') || (inputs.fallback != 'none' && inputs.fallback != 'release' && inputs.fallback != 'commit')
+      shell: bash
+      run: |
+        echo '::error::source must be "release" or "main", and fallback must be "none", "release" or "commit"'
+        exit 1
+
+    # The next four steps list the copies of data.yml to try, in order.
+    - name: Try the latest release first
+      if: inputs.source == 'release'
+      shell: bash
+      run: echo "release https://github.com/privacyguides/verified-apps/releases/latest/download/data.yml" >> "$RUNNER_TEMP/data.yml.candidates"
+
+    - name: Try main first
+      if: inputs.source == 'main'
+      shell: bash
+      run: echo "main https://raw.githubusercontent.com/privacyguides/verified-apps/main/data.yml" >> "$RUNNER_TEMP/data.yml.candidates"
+
+    - name: Fall back to the latest release
+      if: inputs.fallback == 'release' && inputs.source != 'release'
+      shell: bash
+      run: echo "release https://github.com/privacyguides/verified-apps/releases/latest/download/data.yml" >> "$RUNNER_TEMP/data.yml.candidates"
+
+    - name: Fall back to the last 10 commits to data.yml on main, newest first
+      if: inputs.fallback == 'commit'
+      shell: bash
+      env:
+        # Off github.com the job token belongs to another forge, so never default to it there.
+        TOKEN: ${{ inputs.github-token || (github.server_url == 'https://github.com' && github.token) || '' }}
+      run: |
+        set -euo pipefail
+        curl -fsSL ${TOKEN:+-H "Authorization: Bearer $TOKEN"} \
+          "https://api.github.com/repos/privacyguides/verified-apps/commits?sha=main&path=data.yml&per_page=10" |
+          jq -r '.[] | "commit https://raw.githubusercontent.com/privacyguides/verified-apps/\(.sha)/data.yml"' \
+          >> "$RUNNER_TEMP/data.yml.candidates"
+
+    - name: Check for the GitHub CLI
+      id: gh
+      shell: bash
+      run: command -v gh >/dev/null || echo "missing=true" >> "$GITHUB_OUTPUT"
+
+    # Forgejo runner images do not ship the GitHub CLI.
+    - name: Install the GitHub CLI
+      if: steps.gh.outputs.missing == 'true'
+      shell: bash
+      run: |
+        set -euo pipefail
+        # shortcut: installs Linux x86_64 only, lmk if your app needs something else
+        [ "$(uname -sm)" = "Linux x86_64" ] || { echo "::error::The GitHub CLI (gh) is required"; exit 1; }
+        curl -fsSL -o "$RUNNER_TEMP/gh.tar.gz" https://github.com/cli/cli/releases/download/v2.105.0/gh_2.105.0_linux_amd64.tar.gz
+        echo "79e7ab5db738c48777b696e374f8b428f0647debfb424f44d2f426370407fe2f  $RUNNER_TEMP/gh.tar.gz" | sha256sum -c -
+        tar -xzf "$RUNNER_TEMP/gh.tar.gz" -C "$RUNNER_TEMP"
+        echo "$RUNNER_TEMP/gh_2.105.0_linux_amd64/bin" >> "$GITHUB_PATH"
+
+    - name: Download the first copy that has a valid attestation
+      id: fetch
+      shell: bash
+      env:
+        TOKEN: ${{ inputs.github-token || (github.server_url == 'https://github.com' && github.token) || '' }}
+      run: |
+        set -euo pipefail
+        repo=privacyguides/verified-apps
+        signer='https://github.com/privacyguides/.github/.github/workflows/sign-artifact.yml*'
+        out="$RUNNER_TEMP/data.yml"
+
+        verify() {
+          if [ -n "$TOKEN" ]; then
+            GH_TOKEN="$TOKEN" gh attestation verify -R "$repo" --cert-identity-regex "$signer" "$out.unverified"
+          else
+            # gh won't query the API without a token, so we'll fetch the attestation ourselves and let
+            # gh verify it offline. This is what might be rate limited on Codeberg though:
+            curl -fsSL "https://api.github.com/repos/$repo/attestations/sha256:$(sha256sum "$out.unverified" | cut -d' ' -f1)" |
+              jq -c '.attestations[].bundle' > "$out.attestations.jsonl" &&
+              GH_TOKEN="" GITHUB_TOKEN="" gh attestation verify --bundle "$out.attestations.jsonl" \
+                -R "$repo" --cert-identity-regex "$signer" "$out.unverified"
+          fi
+        }
+
+        while read -r from url; do
+          echo "Trying $url"
+          # </dev/null keeps gh from eating the rest of the candidate list.
+          if curl -fsSL --retry 3 -o "$out.unverified" "$url" && verify </dev/null; then
+            mv "$out.unverified" "$out"
+            echo "source=$from" >> "$GITHUB_OUTPUT"
+            echo "Verified data.yml ($from) at $out"
+            exit 0
+          fi
+          echo "::warning::No valid attestation for $url"
+        done < "$out.candidates"
+        echo "::error::No copy of data.yml could be verified"
+        exit 1

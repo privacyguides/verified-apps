@@ -1,0 +1,48 @@
+name: Test Fetch Action
+
+on:
+  pull_request:
+    paths:
+      - action.yml
+      - .github/workflows/test-action.yml
+  push:
+    branches:
+      - main
+    paths:
+      - action.yml
+      - .github/workflows/test-action.yml
+
+permissions:
+  contents: read
+  attestations: read
+
+jobs:
+  test:
+    name: Fetch and verify data.yml
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: "false"
+
+      - name: Run action with defaults
+        id: release
+        uses: ./
+
+      - name: Check result
+        env:
+          SOURCE: ${{ steps.release.outputs.source }}
+        run: test "$SOURCE" = release && grep -q '^schema:' "$RUNNER_TEMP/data.yml"
+
+      - name: Run action against main
+        id: main
+        uses: ./
+        with:
+          source: main
+          fallback: commit
+
+      - name: Check result
+        env:
+          SOURCE: ${{ steps.main.outputs.source }}
+        run: test "$SOURCE" != release && grep -q '^schema:' "$RUNNER_TEMP/data.yml"
