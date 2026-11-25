@@ -4975,6 +4975,14 @@ packages:
             issue: GH-1994
             apk:
               sha256: 363ef19189bc92737eb09bec6f78ec2c4a8104d5d59e42b02bd9f490a97937a4
+  - package: com.google.android.webview
+    signature:
+      - fingerprint: 6F:AF:3C:41:40:40:74:73:40:09:34:D1:17:81:5A:21:AF:1C:FE:FC:5C:0B:EE:61:C8:58:BC:3D:72:BA:6F:E5
+        sources:
+          - name: Google Play
+            issue: GH-8131
+            apk:
+              sha256: 6a20c7c74c53401077011acd303d37140c6c04796a0da5fbfe396a167ecdd0b9
   - package: com.google.android.youtube
     signature:
       - fingerprint: |-
