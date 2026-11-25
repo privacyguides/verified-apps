@@ -8868,6 +8868,16 @@ packages:
             issue: GH-1452
             apk:
               sha256: d8f61f0ae358402b15f6f7ee1e9557973d751ea822e4a78a6c7fe59cf9d3fcef
+  - package: com.twitter.android
+    signature:
+      - fingerprint: 0F:D9:A0:CF:B0:7B:65:95:09:97:B4:EA:EB:DC:53:93:13:92:39:1A:A4:06:53:8A:3B:04:07:3B:C2:CE:2F:E9
+        sources:
+          - name: Google Play
+            issue: GH-8027
+            apk:
+              sha256: 577d5882907950b6f572349267ca91abf2e3d4050b44f475c402668d42e27721
+          - name: HTTPS Verified Domain
+            issue: GH-8027
   - package: com.twofasapp
     signature:
       - fingerprint: B1:95:0E:D5:56:E1:36:02:77:11:38:C9:35:A1:43:D1:28:D0:20:AF:62:CB:06:FE:7E:41:1E:ED:39:89:0C:0B

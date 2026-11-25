@@ -846,6 +846,17 @@ domains:
       - package: tv.twitch.android.app
         fingerprints:
           - 13:38:F9:B0:49:89:3C:C7:0B:78:43:2A:17:75:82:F9:0B:D4:BC:62:96:EA:4E:D3:5B:CC:7D:F5:96:87:AC:53
+  - domain: twitter.com
+    method: https
+    issue:
+      - GH-8027
+    checked: "2026-11-25T10:16:23Z"
+    packages:
+      - package: com.twitter.android
+        fingerprints:
+          - 0F:D9:A0:CF:B0:7B:65:95:09:97:B4:EA:EB:DC:53:93:13:92:39:1A:A4:06:53:8A:3B:04:07:3B:C2:CE:2F:E9
+          - 99:22:6E:ED:9B:9E:EE:14:6C:B1:61:49:2B:CF:91:A5:4D:97:FF:04:54:32:8D:93:B8:64:F3:1F:6C:8D:D7:0A
+          - F9:07:E3:BB:21:D6:31:9C:CA:34:07:80:CC:63:B5:15:3A:92:97:1F:85:D3:8A:48:82:E6:A5:7A:41:AC:33:84
   - domain: upside.com
     method: https
     issue:
