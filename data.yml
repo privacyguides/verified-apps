@@ -12606,6 +12606,14 @@ packages:
             apk:
               sha256: 554fdf79852087503fb2b5517b94c9e7b605234e2ae188fcb56811a91352796e
               link: https://github.com/openboard-team/openboard/releases/download/v1.4.5/app-release.apk
+  - package: org.emunix.unipatcher
+    signature:
+      - fingerprint: D7:FD:90:58:EF:94:17:6C:4B:F2:21:9A:10:61:8E:AE:57:2C:B7:9B:32:69:B5:A6:DE:C2:C3:76:D0:48:1E:1B
+        sources:
+          - name: Google Play
+            issue: GH-7240
+            apk:
+              sha256: eed5540603812b395183add7df547b32983cdc3731e414b7f06a48b279ad1dfe
   - package: org.equeim.tremotesf
     signature:
       - fingerprint: 80:A3:A0:0F:FF:EF:91:59:47:9D:D1:61:BF:6A:D5:8A:50:DB:37:99:38:12:AD:C5:05:14:39:58:45:5A:90:6A
