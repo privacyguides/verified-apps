@@ -11086,6 +11086,14 @@ packages:
             issue: GH-2847
             apk:
               sha256: b7c79fd97e336568b5763196bc0c89ad49e79a31785ced41ab15fe612b95c5bd
+  - package: de.swr.avp.ard
+    signature:
+      - fingerprint: 7D:96:7F:33:4D:C9:98:21:69:93:2C:C7:3A:C2:A0:E6:07:4F:81:59:44:AE:FA:A1:5C:0F:99:C3:F3:B1:68:1F
+        sources:
+          - name: Google Play
+            issue: GH-8338
+            apk:
+              sha256: 86add9418665be520d5980a8e2286c7326543ca2ef1c668c8ca365fb3c2c6744
   - package: de.szalkowski.activitylauncher
     signature:
       - fingerprint: 20:15:70:9D:51:9F:D6:86:B1:E3:7B:33:4F:12:08:2C:BA:FC:B9:F5:12:6A:68:A2:5B:17:20:43:EB:B5:81:DE
