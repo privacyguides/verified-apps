@@ -821,6 +821,14 @@ packages:
             issue: GH-2052
             apk:
               sha256: 99664f6478bf94ba8b1e96e0bfd8831a25f1b4d1aa2d570144e1a37bc2570c3e
+  - package: com.absa.sc.mobile.android.ui
+    signature:
+      - fingerprint: E0:08:7F:07:30:1B:82:DD:77:EE:37:86:CF:E3:A6:67:C6:1A:27:F9:1E:02:24:B2:31:68:A8:83:EF:E7:41:CD
+        sources:
+          - name: Google Play
+            issue: GH-5870
+            apk:
+              sha256: e42690cf1ccdfb262427dc202d63ce150abe6f94feb87e26605a3f105da1f8f6
   - package: com.acehardware.rewards
     signature:
       - fingerprint: 37:F9:BE:EC:83:94:80:36:4D:F6:1A:49:27:ED:58:DB:06:10:F9:F1:FB:4A:AA:E4:BC:A0:3C:EA:13:17:2C:F7
