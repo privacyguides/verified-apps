@@ -1078,6 +1078,14 @@ packages:
             issue: GH-742
             apk:
               sha256: 39ea7ec2164940835eeb388b057b923bab822727c256b546f3b9d8ff14eb429b
+  - package: com.apk.editor
+    signature:
+      - fingerprint: B4:A4:ED:79:C2:8A:F4:44:B0:B0:9E:01:2C:88:E4:B2:07:B3:93:31:07:07:D4:B9:BB:41:8D:29:61:11:9C:46
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-2015
+            apk:
+              sha256: f5bb3a68a621a9c331eebbf0a4797de43d53465dc1bbc36d581fa654cbf5cb70
   - package: com.apkmirror.helper.prod
     signature:
       - fingerprint: D2:7D:AF:C6:88:19:3C:F5:79:E0:30:B0:2B:3A:15:33:E5:05:E0:55:F5:3E:77:BC:49:F0:41:00:AA:A2:24:8E
