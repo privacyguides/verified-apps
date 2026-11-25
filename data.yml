@@ -512,6 +512,14 @@ packages:
             issue: GH-8006
             apk:
               sha256: f74f1f8b14e98ed3a8767f3ab8c53a3ea42cae6a857b1161c76c0ba4d6227b39
+  - package: ar.com.santander.rio.mbanking
+    signature:
+      - fingerprint: 4D:18:64:EC:1D:7B:2A:77:FD:2E:23:DB:70:3E:68:0A:E9:15:70:17:23:A4:AE:01:5D:C0:F0:C2:80:7A:BD:74
+        sources:
+          - name: Google Play
+            issue: GH-8015
+            apk:
+              sha256: 9947972818e9f745eb1408ffa8f943a0fbfdd7f34c21b019cde6f8a3fad88377
   - package: ar.gob.argentinagobar
     signature:
       - fingerprint: 22:3B:C7:C7:E1:0D:74:E2:E5:80:E3:79:FD:EF:9A:A0:27:97:50:CF:05:AA:1D:E6:E3:B0:FC:14:D5:F5:9E:6A
