@@ -14992,6 +14992,14 @@ packages:
             issue: GH-6091
             apk:
               sha256: 75272ac31893a893c94619d8ab153b81c8a4da4c4ae540780e1a3ec87c565406
+  - package: sh.haven.app
+    signature:
+      - fingerprint: EA:05:A8:94:31:96:1B:8A:C5:3C:36:72:54:52:67:3C:2B:E1:C2:D7:B6:E4:87:71:61:7B:97:4E:60:92:B3:32
+        sources:
+          - name: F-Droid
+            issue: GH-7853
+            apk:
+              sha256: 5a68919aa8b1759d9f693116a9748790092f44d520df3efbed266bdb2635a1af
   - package: slowscript.warpinator
     signature:
       - fingerprint: EB:8C:95:5A:2A:5C:55:7D:61:8D:79:24:DC:0D:DF:C3:81:58:81:EB:93:A6:FA:CD:DD:A8:33:C0:DD:49:C2:37
