@@ -5294,6 +5294,14 @@ packages:
             issue: GH-1430
             apk:
               sha256: 56a3a6f89272d1def7dc7d275ea7d1203e1ae5a413899916f663d42a75fc34d3
+  - package: com.pg_axis.ytcnv
+    signature:
+      - fingerprint: C9:59:9A:B3:88:0F:3B:D6:60:5A:EC:12:2E:8A:9B:06:83:30:EA:63:61:E5:07:1F:D1:18:0D:26:E2:06:0B:F1
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-2539
+            apk:
+              sha256: 85b9f28b165d35ba376997dabcae66c8a8f3202e430f4074feaae367c5c12d09
   - package: com.philips.lighting.hue2
     signature:
       - fingerprint: 1B:4B:51:67:E1:6F:D0:29:47:4B:C2:B2:94:79:02:AC:F9:EE:1E:20:E4:7C:F8:5A:B4:38:B6:2C:DE:A8:16:4A
