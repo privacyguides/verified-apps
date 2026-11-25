@@ -459,6 +459,14 @@ packages:
             issue: CB-79
             apk:
               sha256: 2074fc55fb7884a4368fb6774e6acb576b99ad1bd1247c513c5d8aac5ec8c288
+  - package: app.unnamed.rawrecording
+    signature:
+      - fingerprint: 8D:34:78:F7:3B:C9:28:22:43:8A:31:0F:B8:6D:59:71:38:18:69:48:C8:2F:B8:F1:9C:71:5F:31:0E:40:8E:5C
+        sources:
+          - name: Google Play
+            issue: GH-7974
+            apk:
+              sha256: 4f9a43b6fdde1dc328e2c6b96bd58b18fb574d478062e4130e083a8bab4c0214
   - package: app.upryzing.clerotri
     signature:
       - fingerprint: 90:FD:58:2A:49:5A:7E:C5:92:82:A1:95:27:B8:0B:09:AB:3B:C9:1D:BB:82:46:12:18:32:BD:61:00:6C:A9:AE
