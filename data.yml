@@ -7102,6 +7102,14 @@ packages:
             issue: GH-6265
             apk:
               sha256: ab03f465bb39aaa20d92291477e18a15d2f647bc3a6140a2ec4eaeb1fd24ddb4
+  - package: com.olaf.rereminder
+    signature:
+      - fingerprint: 2B:E0:AB:91:CE:1F:A7:F4:57:09:10:28:5F:1E:3A:9F:1C:85:BB:6A:E1:2B:6C:43:22:BD:2F:15:89:B0:9B:3E
+        sources:
+          - name: F-Droid
+            issue: GH-8278
+            apk:
+              sha256: 6a99344f5687c46b726c7897247cf227db02acc04452a1b42a9a6301b644d8e2
   - package: com.om1cael.hidroly
     signature:
       - fingerprint: EC:D9:3B:0E:94:44:D2:F2:AD:98:5D:35:03:1B:A0:C9:AB:2B:17:08:DC:9B:4E:6A:E7:39:15:13:59:45:EF:A0
