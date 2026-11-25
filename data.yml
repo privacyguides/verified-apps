@@ -5321,6 +5321,14 @@ packages:
             issue: GH-2172
             apk:
               sha256: 3204f52f558200e6a185b732f136aee56e434dc14658a33023c1353fa5174329
+  - package: com.presley.fit_book
+    signature:
+      - fingerprint: 01:1E:E1:A6:E4:E5:EC:D6:75:F6:7F:BF:3D:78:AD:82:61:4A:7A:7A:3F:24:ED:71:CC:9C:41:71:54:A0:F0:FD
+        sources:
+          - name: F-Droid
+            issue: GH-2272
+            apk:
+              sha256: 66bb05b29e388e1b4f6ae8112c6c9d01ab3639506b044aab51487bc609210a64
   - package: com.presley.flexify
     signature:
       - fingerprint: 01:1E:E1:A6:E4:E5:EC:D6:75:F6:7F:BF:3D:78:AD:82:61:4A:7A:7A:3F:24:ED:71:CC:9C:41:71:54:A0:F0:FD
