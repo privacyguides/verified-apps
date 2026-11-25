@@ -4788,6 +4788,14 @@ packages:
             issue: GH-1940
             apk:
               sha256: f2f005fc6203fcb51156baa80cc17dbcf7ff86be9eb6e7e4c6e64d413be10e3b
+  - package: com.medm.medmcare.diary
+    signature:
+      - fingerprint: 20:68:12:16:E3:5F:DB:78:56:1F:E3:76:D0:BE:33:40:64:C3:C3:8A:27:1D:0C:88:46:D5:D0:4E:53:14:34:BD
+        sources:
+          - name: Google Play
+            issue: GH-6014
+            apk:
+              sha256: c7fdfe4f9a169f90ada7ae0a237d27f397cdfdcbf1f6a737d3bd740e922d3dc7
   - package: com.melodis.midomiMusicIdentifier.freemium
     signature:
       - fingerprint: 56:D8:B2:57:7B:EA:4C:B3:44:87:E6:C6:02:25:F1:E3:F0:AB:C3:9E:24:FD:34:E4:57:69:87:6E:BB:06:2A:3C
