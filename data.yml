@@ -4479,6 +4479,14 @@ packages:
             issue: GH-148
             apk:
               sha256: f16e110a79968c987c22fd23180ede162279a5c19837e876279b93f9136a0886
+  - package: com.google.android.accessibility.switchaccess
+    signature:
+      - fingerprint: 8D:1C:9C:43:47:BB:CC:BE:0F:47:7F:80:3F:E3:C8:3D:EB:62:72:D8:71:33:2C:2D:62:C5:47:AE:AD:7E:BC:96
+        sources:
+          - name: Google Play
+            issue: GH-8126
+            apk:
+              sha256: cdbcfaff2dd6592456fb64a7f4e2cb8c306cc8cee36539891e47338e1dbac1cc
   - package: com.google.android.apps.adm
     signature:
       - fingerprint: |-
