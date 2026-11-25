@@ -10238,6 +10238,14 @@ packages:
             issue: GH-684
             apk:
               sha256: c6d5862877bcb43f1990bcd58ce77c872665e50239fecdbf0ac2acc34563b47d
+  - package: gov.irs
+    signature:
+      - fingerprint: EF:FE:46:4F:33:B1:5C:5B:B1:0A:DC:EA:75:9B:1A:32:6C:37:D7:4F:1C:4C:56:78:F8:E6:1D:81:3F:85:8C:8A
+        sources:
+          - name: Google Play
+            issue: GH-6831
+            apk:
+              sha256: 610fe2f43901d3f0a73fde6d9e0a67c3de8e2d0ed4f367311e3ccad366a2645d
   - package: gr.nikolasspyr.integritycheck
     signature:
       - fingerprint: 17:95:2B:5C:F8:67:05:BA:DE:87:74:3F:5A:33:1E:FE:4C:98:2B:FB:4D:A0:D2:FD:5D:70:BF:C2:35:CF:79:E3
