@@ -4455,6 +4455,14 @@ packages:
               sha256: c983268a65408620c14c24633a668c954000e797902c450174529efbaafaba2d
           - name: HTTPS Verified Domain
             issue: GH-7721
+  - package: com.monkopedia.healthdisconnect
+    signature:
+      - fingerprint: F2:3D:A6:55:77:DB:71:E2:40:A5:1D:79:9C:38:47:99:09:95:5E:98:EA:75:93:FC:D2:89:2D:E4:23:CB:F5:93
+        sources:
+          - name: F-Droid
+            issue: GH-1645
+            apk:
+              sha256: 5aa20e85d679476eb8b806309b3a0721d4d9f4793a3ab7f858536989fc048994
   - package: com.mooneva.app
     signature:
       - fingerprint: 96:B0:1B:6F:20:C4:6B:35:46:70:A1:00:92:7F:72:1D:40:3E:07:E8:BA:25:96:B5:27:24:AC:21:39:56:9F:83
