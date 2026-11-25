@@ -1286,6 +1286,14 @@ packages:
             issue: GH-1021
             apk:
               sha256: d6ac4a0d3137d9882719091edca78f935c8fafdf76ddd0d3fc5ab475216d05ca
+  - package: com.arduia.expense
+    signature:
+      - fingerprint: 02:06:A5:BC:7E:CF:2A:55:05:5E:F7:E0:BD:F8:1E:74:35:0A:68:A6:9D:D0:AB:F8:1E:85:54:B7:1A:EC:FE:2F
+        sources:
+          - name: F-Droid
+            issue: GH-5790
+            apk:
+              sha256: 50eb477c705d3aa6d5211a6e1f49e2d866192e304c751099552748e69b1fe3d2
   - package: com.armanmaurya.archiv
     signature:
       - fingerprint: CE:A0:D7:86:39:36:FD:A4:48:46:D3:70:1F:47:07:6E:E5:B0:C7:FE:F3:37:71:2D:17:85:A9:87:95:FB:BA:95
