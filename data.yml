@@ -1552,6 +1552,14 @@ packages:
             issue: GH-2593
             apk:
               sha256: ea6b8fb0ca9fba2a6a130408065e9e534b5f3d0b89029948a2a7eca52fe05312
+  - package: com.arslan.shizuwall
+    signature:
+      - fingerprint: 6D:ED:BD:D9:03:C5:43:AB:3A:00:BB:49:3B:4C:06:4D:10:CC:1E:5B:90:9E:48:D7:5C:E3:22:C3:ED:B7:0D:C9
+        sources:
+          - name: F-Droid
+            issue: GH-7129
+            apk:
+              sha256: 8eb5f059ea2d10ef96c44923248de5d308065a9ff529bf09dab6dc98c9396e03
   - package: com.artermobilize.alertable
     signature:
       - fingerprint: 26:58:BC:41:AA:B1:23:7E:84:3D:83:53:3D:5A:8C:88:57:F4:DF:03:CE:1F:6B:7E:F3:FA:8F:BF:16:1A:5D:B0
