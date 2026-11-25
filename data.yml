@@ -5247,6 +5247,14 @@ packages:
             issue: GH-814
             apk:
               sha256: c207ebf2533d50f13ba909c7a320be0e655154a91530efebc8f7dc5c27d5b52d
+  - package: com.jonathanpuckey.radiogarden
+    signature:
+      - fingerprint: 55:FE:1A:D1:6D:66:61:FA:C1:EF:42:BF:44:E7:5C:02:01:64:95:56:C0:DE:0B:70:66:A4:03:1B:A9:C1:77:86
+        sources:
+          - name: Google Play
+            issue: GH-7965
+            apk:
+              sha256: 3b57940427363d148642c4abc15cd5f7e6bde35e7679988689b087b94a2fdef3
   - package: com.jrustonapps.myauroraforecast
     signature:
       - fingerprint: 95:F5:5A:84:0F:1A:F3:40:08:FB:E4:A0:76:D5:6C:F9:39:C2:9E:59:E6:48:CC:FF:5E:2E:1A:CB:F7:2D:27:C6
