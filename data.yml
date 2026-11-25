@@ -8163,6 +8163,14 @@ packages:
             issue: GH-2864
             apk:
               sha256: 73ae623dd9538fa4a408c96596438a2e7698daa7abd84c7d595988c2ebcb020d
+  - package: de.spiritcroc.riotx
+    signature:
+      - fingerprint: 5D:47:3A:51:69:EF:71:AE:DC:BC:A1:DA:51:12:10:BA:B4:AA:FF:27:8C:5E:F7:85:76:0D:F8:82:95:4B:1A:99
+        sources:
+          - name: F-Droid
+            issue: CB-271
+            apk:
+              sha256: 02913cd498945a8e044f8fa76001abea3024190ad4a1517401f645efbd43161e
   - package: de.starfinanz.fico2.xamarin
     signature:
       - fingerprint: 48:53:EB:52:4C:DF:4A:22:EB:41:94:7B:0D:3F:49:F0:2F:9C:F3:00:42:88:0E:F6:29:85:47:92:2E:3A:E9:DD
