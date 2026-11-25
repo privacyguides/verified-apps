@@ -10752,6 +10752,14 @@ packages:
             issue: GH-432
             apk:
               sha256: ea64927a061675bedf099ab9d2e15e1cd840d93856c708583d9ad31098ed8e13
+  - package: mnn.Android
+    signature:
+      - fingerprint: A6:DF:84:56:8E:02:9D:F7:99:DB:7F:D6:91:D6:48:EC:A9:89:3A:5F:F4:0A:A5:82:BB:D8:78:43:B3:5D:AE:17
+        sources:
+          - name: Google Play
+            issue: GH-6324
+            apk:
+              sha256: d53e8e6c144cd7d64e49d47245c1e957c6e01fbccf313d33a19c161469eec6d6
   - package: moe.nb4a
     signature:
       - fingerprint: 35:76:27:58:CE:86:A6:EC:29:7D:9C:CA:C6:89:46:9B:C4:3B:9F:ED:8A:E1:B2:7F:10:0A:86:BB:AC:00:A0:55
