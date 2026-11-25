@@ -2587,6 +2587,14 @@ packages:
             issue: GH-6335
             apk:
               sha256: a031ea4897fb3f9dcba370eb553e46468643b049624eca9c0769683628761666
+  - package: com.chiranth7.webstack
+    signature:
+      - fingerprint: FC:55:83:B6:3C:4F:A5:78:DA:D3:DE:F3:83:88:78:AC:9E:2E:13:8D:47:C6:1B:66:24:CC:15:5E:61:55:66:BE
+        sources:
+          - name: F-Droid
+            issue: GH-7863
+            apk:
+              sha256: fa581b34febe74ee5ed77b87e7e14d9d4d6d70f836b47dcf98ec32bc08035355
   - package: com.chmouel.liseur
     signature:
       - fingerprint: 39:4E:04:13:02:44:51:B8:78:2C:49:2F:EE:20:3F:94:70:87:1E:63:D6:E4:10:88:E4:2A:F3:F7:C6:65:0A:94
