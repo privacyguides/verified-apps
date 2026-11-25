@@ -7546,6 +7546,14 @@ packages:
             issue: GH-294
             apk:
               sha256: 04ef71623b2533e1a19df1a246bc0d83a7ddc071ff3acd9877753c4d6de4e423
+  - package: com.tradernet.freedom24app
+    signature:
+      - fingerprint: A0:5A:5B:8D:77:CB:35:CE:EE:30:67:3F:31:F5:38:D5:06:F3:6E:20:7C:7E:56:B6:BE:0B:11:25:A5:2D:CA:7C
+        sources:
+          - name: Google Play
+            issue: GH-6694
+            apk:
+              sha256: 67857b513be708907c59abfc9b4c865502848260544fba627423d706e2c658ee
   - package: com.tradingview.tradingviewapp
     signature:
       - fingerprint: 44:F0:47:FC:6B:34:B0:BA:0C:49:1F:82:5B:B4:E4:37:70:D2:BC:94:12:20:D2:90:A7:0F:3A:84:67:AE:D6:01
