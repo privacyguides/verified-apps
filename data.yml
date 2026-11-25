@@ -1022,6 +1022,14 @@ packages:
             issue: GH-1263
             apk:
               sha256: aea71fa0daafdb13c97b1df839c80648c93792a7facbe8b0133d97841409b8df
+  - package: com.alovoa.expo
+    signature:
+      - fingerprint: BD:0B:EC:9E:C4:D3:5C:B3:94:AF:31:70:D6:40:28:E9:77:16:A3:6E:2B:CA:92:49:CC:43:DE:B6:86:74:46:F0
+        sources:
+          - name: Google Play
+            issue: GH-5866
+            apk:
+              sha256: 11b421c6305babb879b0d51414ef7d04197cf22133bc663239d746c586d95c9e
   - package: com.amadeus.merci.client.ui
     signature:
       - fingerprint: 8C:94:B5:19:AB:CA:6C:11:91:18:B5:9B:BF:0F:4D:1D:08:16:D3:D5:88:E2:B1:3C:A7:DD:AD:26:71:05:0E:EB
