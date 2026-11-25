@@ -8283,6 +8283,14 @@ packages:
             issue: GH-1248
             apk:
               sha256: a3ce8129720f24f1c47d4bc62361e2141f9a109f8377862f035073544d5c792d
+  - package: com.tnibler.cryptocam
+    signature:
+      - fingerprint: BF:DB:30:39:2B:8D:F9:F7:E8:A9:27:01:23:2E:78:05:FD:6D:C0:FC:9C:B3:C8:64:F1:66:8F:50:81:01:F9:7D
+        sources:
+          - name: F-Droid
+            issue: GH-7849
+            apk:
+              sha256: 2158d88be9f3474ada27ffcad763bb18141e5f0390bcb385427384efc1f9be1f
   - package: com.tophat.android.app
     signature:
       - fingerprint: EC:13:50:43:A0:EC:19:B1:02:33:F9:D1:DF:53:3D:8F:C7:2E:3B:00:87:E1:74:69:E8:DD:74:FF:EF:12:A3:80
