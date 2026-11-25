@@ -1266,6 +1266,14 @@ packages:
             issue: GH-2844
             apk:
               sha256: 584ad5492d87ed7c672f60ca25b77c74241a940c02ee07b1e6c03add799f9ef1
+  - package: com.android.vending
+    signature:
+      - fingerprint: |-
+          7C:E8:3C:1B:71:F3:D5:72:FE:D0:4C:8D:40:C5:CB:10:FF:75:E6:D8:7D:9D:F6:FB:D5:3F:04:68:C2:90:50:53
+          F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
+        sources:
+          - name: AppVerifier
+            issue: GH-8137
   - package: com.aniplex.fategrandorder.en
     signature:
       - fingerprint: CF:E4:13:B1:07:55:61:DD:F4:24:0C:5B:B4:0C:F9:4C:39:7C:AC:F5:7A:2B:DF:07:21:51:65:DD:41:D5:D6:84
