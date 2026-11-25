@@ -266,6 +266,18 @@ packages:
             apk:
               sha256: 751c9dd83d86f93a21bfb696fbbfd4afc1084b3f839bb2ec3a70c6b81d414bd0
               link: https://static.paralino.com/downloads/ParalinoAndroidDirect.apk
+  - package: app.pwhs.blockads
+    signature:
+      - fingerprint: 22:9E:A4:95:84:36:0B:22:A8:C7:E7:E5:30:CF:B7:E1:10:3F:AA:1B:6B:A5:F3:28:37:69:1F:B9:6F:DC:FE:5A
+        sources:
+          - name: F-Droid
+            issue: GH-1760
+            apk:
+              sha256: cd0a05b458c6524f44cb8fc90a586c7953d3da7715fc0f358501c7f0eb627731
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1760
+            apk:
+              sha256: 0d4dd3818a7e5387b11ed32a11fed9543cb251ad28978521955a94d7cb1719ba
   - package: app.pwhs.universalinstaller
     signature:
       - fingerprint: 40:E1:D8:6C:62:28:80:9E:07:85:7A:62:ED:CF:72:95:2F:EA:66:4E:71:53:17:92:01:50:B9:37:EF:75:F5:DE
