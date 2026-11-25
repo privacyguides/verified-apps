@@ -183,6 +183,15 @@ domains:
       - package: com.brave.browser
         fingerprints:
           - 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
+  - domain: budzdorov.ru
+    method: https
+    issue:
+      - GH-5778
+    checked: "2026-11-25T06:55:31Z"
+    packages:
+      - package: ru.budzdorov.client.android
+        fingerprints:
+          - 87:E2:19:67:03:43:BF:C5:5E:2F:65:66:3C:72:7C:42:D6:64:6B:10:B8:BC:23:CE:BD:51:C2:44:1A:36:EB:54
   - domain: bumble.com
     method: https
     issue:

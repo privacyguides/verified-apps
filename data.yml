@@ -12390,6 +12390,16 @@ packages:
             issue: GH-5759
             apk:
               sha256: 6038eddf7a2e24cd68d81757b790e6d88c62b585873ba7ee9884f3c5aa13017f
+  - package: ru.budzdorov.client.android
+    signature:
+      - fingerprint: 87:E2:19:67:03:43:BF:C5:5E:2F:65:66:3C:72:7C:42:D6:64:6B:10:B8:BC:23:CE:BD:51:C2:44:1A:36:EB:54
+        sources:
+          - name: Google Play
+            issue: GH-5778
+            apk:
+              sha256: 18b6642cb8827ecdf656f0d55c2319b59b598a2e6e491a7ca004db4237137aa7
+          - name: HTTPS Verified Domain
+            issue: GH-5778
   - package: ru.ozon.app.android
     signature:
       - fingerprint: C8:FE:81:75:2C:60:F8:67:F7:80:1E:40:59:A9:98:9C:66:03:51:D4:59:32:3F:22:D9:BC:94:91:82:FD:6D:61
