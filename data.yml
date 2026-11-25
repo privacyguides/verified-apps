@@ -809,6 +809,14 @@ packages:
             apk:
               sha256: 5d3662328f51d04630445e1dc998a94431ac9c4e668680357a81fd698eaaac6d
               link: https://github.com/krille-chan/fluffychat/releases/download/v2.6.0/fluffychat.apk
+  - package: chat.revolt
+    signature:
+      - fingerprint: 69:9B:25:62:92:14:95:E8:F6:11:C4:1E:95:80:BC:83:47:24:08:65:E9:5A:84:35:7F:02:3F:39:D8:33:0C:66
+        sources:
+          - name: Google Play
+            issue: GH-7959
+            apk:
+              sha256: 6677f3fb7ae398d886cef2b627ff4bc2eba427a39638da045e870be0ffd01320
   - package: chat.simplex.app
     signature:
       - fingerprint: 3C:52:C4:FD:3C:AD:1C:07:C9:B0:0A:70:80:E3:58:FA:B9:FE:FC:B8:AF:5A:EC:14:77:65:F1:6D:0F:21:AD:85
