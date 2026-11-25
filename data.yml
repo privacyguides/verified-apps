@@ -492,6 +492,14 @@ packages:
             issue: GH-1938
             apk:
               sha256: 775d8392e2ee6adb6ed618921d3dfad3123becc1cc86bc431bf51e515cf17d46
+  - package: at.erstebank.george
+    signature:
+      - fingerprint: 34:F5:1E:15:61:BA:34:A7:C5:0C:6D:2A:42:84:B0:37:0D:6B:87:8B:5B:0F:8E:E4:A7:CE:BE:41:0B:81:9C:19
+        sources:
+          - name: Google Play
+            issue: GH-6937
+            apk:
+              sha256: b328de047ed31a3fc4649cb8183a673475ce5be050a23be520268d02cdabd0c0
   - package: at.hackmas.android.schedule
     signature:
       - fingerprint: 05:EE:BF:B7:A4:AB:CB:D8:F3:82:CF:F1:64:12:09:DF:63:4F:31:B0:21:2D:E2:9A:0E:6B:91:85:B1:68:AE:3E
