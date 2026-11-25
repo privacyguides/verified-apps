@@ -443,6 +443,14 @@ packages:
               sha256: aea6c6b6030894594d032dc6b21bbdf5a5d55ee38c7f78665ab071435e503f0e
           - name: HTTPS Verified Domain
             issue: GH-1974
+  - package: app.symfonik.music.player
+    signature:
+      - fingerprint: DC:5C:F5:2E:D4:39:0D:BE:5C:35:41:8D:CB:5E:67:D4:66:05:8F:BA:53:F2:6C:9D:BE:2E:42:F6:EA:02:9E:62
+        sources:
+          - name: Google Play
+            issue: GH-8079
+            apk:
+              sha256: d20cab3a08c91581813f9923509597644106fea85e6fc09982bc6fc0d51aabf7
   - package: app.tryst
     signature:
       - fingerprint: FC:7E:30:AB:1F:F1:29:F4:20:DA:D3:8C:07:DE:EE:65:8C:06:67:00:E2:3E:84:FB:2C:C0:62:BA:BD:85:6C:53
