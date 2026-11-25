@@ -4713,6 +4713,14 @@ packages:
             issue: GH-1246
             apk:
               sha256: 439e1ffdd9c814e5510b684c54b3aefc73cb6b13f128cde2d78508900e4e541a
+  - package: com.offlinecurrencyconverter.app
+    signature:
+      - fingerprint: 8E:B5:01:85:85:CD:59:6A:94:74:21:72:9A:D6:08:F6:61:E6:E6:B0:76:18:D2:FF:14:34:98:0A:FC:4F:69:F9
+        sources:
+          - name: F-Droid
+            issue: GH-1576
+            apk:
+              sha256: 70d9097175dd3f108754f17c5359de147edcd928978200102f725545d79232db
   - package: com.om1cael.hidroly
     signature:
       - fingerprint: EC:D9:3B:0E:94:44:D2:F2:AD:98:5D:35:03:1B:A0:C9:AB:2B:17:08:DC:9B:4E:6A:E7:39:15:13:59:45:EF:A0
