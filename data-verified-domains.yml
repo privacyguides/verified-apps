@@ -720,7 +720,8 @@ domains:
     method: https
     issue:
       - GH-1886
-    checked: "2026-06-23T05:40:35Z"
+      - GH-2074
+    checked: "2026-11-25T05:41:13Z"
     packages:
       - package: org.wikipedia
         fingerprints:
