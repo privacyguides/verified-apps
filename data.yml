@@ -8030,6 +8030,18 @@ packages:
             issue: GH-1193
             apk:
               sha256: b594bc1ac098c9ceb8b01afd4c68d3a7960d539bdc74f52c99fbeab49f0acf26
+  - package: eu.darken.capod
+    signature:
+      - fingerprint: 67:29:F9:DE:72:B4:FC:A9:96:15:B2:2F:98:44:00:AD:1F:3D:AA:24:11:D8:B1:E0:9F:32:1B:03:8F:AC:85:ED
+        sources:
+          - name: F-Droid
+            issue: GH-1808
+            apk:
+              sha256: e19896b4e74642b8de05f91231466a16758dc12d1d0ba12f8d1cd109684971a7
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1808
+            apk:
+              sha256: e19896b4e74642b8de05f91231466a16758dc12d1d0ba12f8d1cd109684971a7
   - package: eu.depau.etchdroid
     signature:
       - fingerprint: B2:42:E9:89:E4:01:36:6D:0E:92:4B:15:C9:BC:66:76:7D:A7:4A:B3:08:FF:21:B0:BA:50:33:02:81:59:A6:AE
