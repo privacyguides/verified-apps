@@ -4008,6 +4008,14 @@ packages:
             issue: CB-85
             apk:
               sha256: b5edea35c0b3cb22675aa79fa0f920e17e2c35d31e19d8121d7e0e68c9c0e5d8
+  - package: com.jerboa
+    signature:
+      - fingerprint: EA:71:95:CF:CE:63:8A:E6:B1:A8:00:2D:DC:0D:48:63:36:60:95:EA:5B:8D:95:C1:CD:5E:25:DB:0F:E2:E7:C3
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-4604
+            apk:
+              sha256: 736b9b85ad8e889d56df34af4c11a39e32966f56645a97a646d602e37378def9
   - package: com.jgeek00.adguard_home_manager
     signature:
       - fingerprint: 1A:28:1D:5C:9E:26:52:25:44:03:1F:15:F4:EA:A3:FC:E6:75:10:3D:02:31:17:6E:EE:78:C2:5A:AD:81:76:75
