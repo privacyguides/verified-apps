@@ -5531,6 +5531,14 @@ packages:
             issue: GH-1918
             apk:
               sha256: fb548f8ee509b7e02daab91d538f40ceafd1279b01448698a9661a5fafecc386
+  - package: com.lostf1sh.pixelplayeross
+    signature:
+      - fingerprint: 5F:38:67:9A:E4:CE:85:50:1B:E0:30:85:6F:6A:FE:68:FE:D8:1C:F8:2B:C3:19:26:43:C1:18:3A:81:E2:8D:3D
+        sources:
+          - name: F-Droid
+            issue: GH-7703
+            apk:
+              sha256: d01e3816be3569f3e32fac67bbdf91aac3aa7fd7cbb1f31de3232dcd07cfd3c6
   - package: com.lufthansa.android.lufthansa
     signature:
       - fingerprint: AF:75:72:3A:86:9D:50:C9:20:04:D8:B2:D5:74:46:48:DE:70:14:CA:D8:33:38:86:8E:5F:4C:AA:0B:B8:A8:8E
