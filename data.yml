@@ -2917,6 +2917,14 @@ packages:
             issue: GH-5976
             apk:
               sha256: 1df5eb50e199ee789c3520cb1b85f24ca4c83b8f6825562f068b80d71b41f4b2
+  - package: com.etsy.android
+    signature:
+      - fingerprint: C6:ED:C6:02:BD:51:32:E7:23:C2:4E:45:71:BD:EA:DC:F0:D1:D9:DB:E1:CF:7F:A1:6E:3B:B3:4D:37:58:9C:9C
+        sources:
+          - name: Google Play
+            issue: GH-6341
+            apk:
+              sha256: 5bd289c559b691780938f95f1a11293bcc96ced365cdb3abcf31e7fd17b9f2e0
   - package: com.eurostar.androidapp
     signature:
       - fingerprint: F1:0B:41:49:CC:5A:9C:ED:83:02:93:E3:3A:8D:A7:D8:96:47:79:CB:65:28:F9:6C:7E:CC:79:AA:D6:CB:40:52
