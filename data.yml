@@ -13835,6 +13835,14 @@ packages:
               sha256: 23c1d44a281ab093d4c1396849428cc28afd43749d6a9d719a9f8741833bb3de
           - name: HTTPS Verified Domain
             issue: GH-1886
+  - package: org.withouthat.acalendar
+    signature:
+      - fingerprint: 6E:34:34:74:69:12:53:42:81:A9:7D:9D:B0:C0:5D:02:B7:C8:7B:9C:44:86:AA:53:46:58:BD:42:FD:A4:3A:1D
+        sources:
+          - name: Google Play
+            issue: GH-7245
+            apk:
+              sha256: 0e7d57a96b290fc107297abb41f9d8636be3dceca8d191b83fa3eac04186b630
   - package: org.woheller69.audio_analyzer_for_android
     signature:
       - fingerprint: DF:8F:63:D3:06:34:60:D7:08:75:88:97:7D:E9:B3:64:27:D6:06:04:1B:43:DB:FC:F6:E2:4C:B4:4D:7A:CF:10
