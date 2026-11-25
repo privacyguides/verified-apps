@@ -1549,6 +1549,14 @@ packages:
             issue: GH-1454
             apk:
               sha256: d846f31f74c5816ba32a69d7f9cb8b0f77f0755a0cac39c7a7c5d6faea28b904
+  - package: com.asus.aihome
+    signature:
+      - fingerprint: 19:EC:3E:1A:87:0A:37:74:8F:8F:96:4D:2E:2C:06:32:44:E7:A5:0F:CE:87:87:BC:6C:4E:B4:F8:AF:D7:7E:F1
+        sources:
+          - name: Google Play
+            issue: GH-6899
+            apk:
+              sha256: 718b4da1906abaefabb2092f6a32f8fd0f3ff766f8bd107a2e0a9f9b7ff38790
   - package: com.atharok.barcodescanner
     signature:
       - fingerprint: EB:F1:67:ED:88:46:61:3E:6B:AE:94:3D:63:CB:3D:EB:37:03:30:7C:68:2E:BB:47:DF:4A:3F:43:31:AF:18:76
