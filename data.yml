@@ -10583,6 +10583,12 @@ packages:
             issue: GH-768
             apk:
               sha256: a316bac2a81571558c03cf76b0306c9079ba462769d90096057a260eb2f56a5b
+      - fingerprint: D8:67:8C:5E:E2:C5:E8:F8:0D:5D:24:F6:64:D8:6E:F3:F8:ED:69:19:14:89:D5:4D:66:49:5F:76:6A:25:6D:47
+        sources:
+          - name: F-Droid
+            issue: GH-3075
+            apk:
+              sha256: c496c9da6bca5766d42c83c7deef5948927e05a8abc35996a4df8c21dbfb1fcb
   - package: com.zaneschepke.wireguardautotunnel
     signature:
       - fingerprint: 52:04:D8:2E:76:6E:8A:A1:4D:CB:B0:6D:C7:0A:EB:AE:2B:DD:81:2D:4D:62:03:CD:52:1A:8A:68:5D:7D:3D:80
