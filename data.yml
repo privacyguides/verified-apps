@@ -9861,6 +9861,14 @@ packages:
             apk:
               sha256: 629a7ca09a11a156040fd2f9cb2a062baecd13c35e052595d86c4c1b085c950a
               repo: https://fdroid.typeblog.net/repo
+  - package: net.youapps.transport
+    signature:
+      - fingerprint: B3:BC:73:B1:17:DF:5D:FE:38:13:0C:6C:2B:94:68:52:AE:70:88:55:7F:E8:E4:33:F0:D9:98:3A:6B:55:CC:95
+        sources:
+          - name: F-Droid
+            issue: GH-2060
+            apk:
+              sha256: 985a46c58bfd2e5909e7d64e1bce8c8e09942f89e5448c7f14d7f6b74d9caa84
   - package: nl.appyhapps.healthsync
     signature:
       - fingerprint: F7:BB:BD:D2:F3:A3:FE:CA:52:2D:C7:CA:B7:0C:62:0F:C1:17:A1:67:68:C1:AF:64:41:34:F6:DA:C0:F9:E7:BC
