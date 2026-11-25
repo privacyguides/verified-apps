@@ -994,6 +994,14 @@ packages:
             issue: GH-2635
             apk:
               sha256: 8cc2cce2596848bc16f9a4fdf171a5645011d60ba2c971daa687559c3ba79240
+  - package: com.amaze.fileutilities
+    signature:
+      - fingerprint: FB:89:9A:82:B2:67:3F:9B:80:C5:26:80:FD:82:2E:7E:82:05:52:70:71:23:FD:14:56:D9:26:BA:D8:F0:B2:AD
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-2636
+            apk:
+              sha256: 8421d8fe878e53ddfa8924b410559d4cc23e3ead4db776f625da65076932c025
   - package: com.amazon.avod.thirdpartyclient
     signature:
       - fingerprint: 2F:19:AD:EB:28:4E:B3:6F:7F:07:78:61:52:B9:A1:D1:4B:21:65:32:03:AD:0B:04:EB:BF:9C:73:AB:6D:76:25
