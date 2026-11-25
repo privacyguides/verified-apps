@@ -151,6 +151,14 @@ packages:
             issue: GH-2817
             apk:
               sha256: 3477b88788e54164b1069df62bb7603e420c09898b48afbb8f55867c4f38703d
+  - package: app.fedilab.nitterizeme
+    signature:
+      - fingerprint: E5:AD:8D:80:39:27:13:5C:47:43:8D:95:D2:19:89:E2:E8:E8:E8:94:3F:D2:33:5A:64:50:52:6B:28:6B:63:93
+        sources:
+          - name: F-Droid
+            issue: GH-6931
+            apk:
+              sha256: 062f12a538fe72850d7a8ebe954534ec10e158489541b6e46c8632296d3f7ed2
   - package: app.fluffy
     signature:
       - fingerprint: 4A:ED:2F:69:1D:F6:4A:7B:0F:EA:25:A6:B8:C8:01:83:C6:DC:52:0E:04:9D:AC:01:78:DE:FA:1D:64:72:22:8F
