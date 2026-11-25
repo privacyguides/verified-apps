@@ -11144,6 +11144,14 @@ packages:
             issue: GH-653
             apk:
               sha256: e9de9981dc1f0ae611be838637ea6e3c56dc2ad90bab50a2c2ee3eb3c3430f8d
+  - package: io.github.ifa.glancewidget
+    signature:
+      - fingerprint: 97:38:BF:53:13:43:04:D8:7B:F2:12:E4:45:C1:74:EC:25:36:5F:A4:43:16:B1:8B:88:63:0E:C7:B9:05:A4:EB
+        sources:
+          - name: Google Play
+            issue: GH-7360
+            apk:
+              sha256: 8f794527cb2c45bdd0a340c3d4766f5097138efb7ed6451f9561ca0d087eb0cc
   - package: io.github.kennethchoinfosec.haven
     signature:
       - fingerprint: 23:27:F8:DC:CF:21:A2:1E:7D:40:C1:21:14:C9:FB:BA:92:5B:D7:E6:4D:56:F1:15:D5:44:B5:74:35:AD:DB:C1
