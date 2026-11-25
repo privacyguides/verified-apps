@@ -8447,6 +8447,14 @@ packages:
             issue: GH-847
             apk:
               sha256: d0764c6787ce7f1be0c98d454491c7cd7eb549e0b4ea1f1741733b7172833952
+  - package: com.yourname.pdftoolkit
+    signature:
+      - fingerprint: 64:65:FA:23:46:26:C9:C2:DE:98:4B:A0:B1:8E:C5:32:EF:95:CF:AA:8E:1B:18:A0:C0:A9:8A:4E:B1:20:32:E0
+        sources:
+          - name: F-Droid
+            issue: GH-6701
+            apk:
+              sha256: 78ade24545d9b430b0c6f110261e0fa08e7f98b938c210ec5c5f63cc2f6094ab
   - package: com.yubico.yubioath
     signature:
       - fingerprint: 3E:21:DA:5A:CA:A8:D4:9C:E5:15:B1:C6:D2:A1:90:3B:AE:29:8D:09:11:43:2C:55:E7:5A:19:61:99:F2:B9:A0
