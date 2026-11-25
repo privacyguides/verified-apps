@@ -3142,6 +3142,18 @@ packages:
             issue: GH-1426
             apk:
               sha256: 60cc799aace0ab88ed026f820845572e32c17987855ac33a0dfe566cc656465a
+  - package: com.eblan.launcher
+    signature:
+      - fingerprint: 1E:AE:A3:5C:AA:E6:83:79:F7:D4:61:7F:28:3A:33:80:5A:FE:CE:C3:6A:B4:84:17:45:62:73:1F:75:6D:5D:49
+        sources:
+          - name: F-Droid
+            issue: GH-7626
+            apk:
+              sha256: ff8a74963b63a875a0a2bffa628a91e4ab73fe3ba51a6420014d1a802477ec78
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-7626
+            apk:
+              sha256: 2a2c2cc73e3403bea0fee92295147b6ae3164360b13005a9bd11172b91f8384e
   - package: com.eboks.activities
     signature:
       - fingerprint: 5F:13:3E:11:D7:5C:33:D2:1A:93:25:B3:B6:77:FC:86:3A:95:3A:D5:CE:42:91:EF:CC:17:22:A6:DA:DC:B2:31
