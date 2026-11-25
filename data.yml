@@ -14715,6 +14715,12 @@ packages:
               link: https://updates.signal.org/android/Signal-Android-website-prod-universal-release-8.10.3.apk
   - package: org.thunderdog.challegram
     signature:
+      - fingerprint: A1:98:45:0B:69:30:63:05:CB:B7:1D:2E:7D:82:5F:7F:A6:A6:7C:A7:C5:60:42:19:6E:05:C9:58:B9:AD:4B:F6
+        sources:
+          - name: F-Droid
+            issue: GH-8031
+            apk:
+              sha256: 5a6f13f790ce889b2984f0303ee6f605f7ae7106fed55879dc7b6c2bf9104ede
       - fingerprint: EB:80:1A:30:32:94:BA:02:A8:4D:03:0E:BB:12:16:C4:38:AC:98:5A:D4:B8:92:08:E3:2D:7A:71:90:DC:DD:33
         sources:
           - name: Google Play
