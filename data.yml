@@ -5819,6 +5819,14 @@ packages:
             issue: GH-1912
             apk:
               sha256: 6dfab1a037a10ba6faef2b60641636689e3ffc29ef7656fb3272bcbb2a60f382
+  - package: com.paget96.batteryguru
+    signature:
+      - fingerprint: 93:1A:E1:2B:B8:80:A1:3D:7D:89:0C:7C:57:9F:56:BE:97:62:E0:D7:C8:20:AF:18:FA:9D:74:EF:29:E8:86:4B
+        sources:
+          - name: Google Play
+            issue: GH-6330
+            apk:
+              sha256: 52dbd4065fb6bd569c1f50eee0d6fdb468209803886e40047262c7000185c63e
   - package: com.pal.dx
     signature:
       - fingerprint: AC:D4:71:6B:03:0B:7F:EB:E6:E1:83:01:18:7B:62:5C:9C:CC:86:66:07:5A:E7:0B:21:98:B7:DC:42:83:86:A7
