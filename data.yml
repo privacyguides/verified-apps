@@ -7027,6 +7027,14 @@ packages:
               sha256: a188a9f0dc387f55b99c312254d12be208a60fd9250c9decbd9e97f17b7df48e
           - name: HTTPS Verified Domain
             issue: GH-2762
+  - package: com.naverfin.payapp
+    signature:
+      - fingerprint: 0B:8B:85:23:BB:4A:EF:FA:34:6E:4B:DD:4F:BF:7D:19:34:50:56:9A:A1:4A:AA:D4:AD:FD:94:A3:F7:B2:27:BB
+        sources:
+          - name: Google Play
+            issue: CB-183
+            apk:
+              sha256: e5c7985029e760fa56cf76aa2ad693109e39b2a1dbecbf79c33fa3df162ae1df
   - package: com.navitime.inbound.walk
     signature:
       - fingerprint: BC:2E:DD:D7:A9:FF:50:30:41:5F:DE:27:2D:D7:70:3C:86:C4:63:09:C0:C0:8B:46:54:B0:C1:FD:AE:99:CF:59
