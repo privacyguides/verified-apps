@@ -5535,6 +5535,14 @@ packages:
             issue: CB-85
             apk:
               sha256: b5edea35c0b3cb22675aa79fa0f920e17e2c35d31e19d8121d7e0e68c9c0e5d8
+  - package: com.jemcik.jemrec
+    signature:
+      - fingerprint: 50:AE:AB:36:30:F0:19:8E:A3:84:5D:B5:14:13:B1:AD:29:58:2F:78:24:0F:A2:DF:6F:E5:5B:A8:53:7A:FD:F8
+        sources:
+          - name: F-Droid
+            issue: GH-8285
+            apk:
+              sha256: e33b3446ac124f607db604c7e41f85dacfbd47e88fa615917ec52ed348f6afd7
   - package: com.jerboa
     signature:
       - fingerprint: EA:71:95:CF:CE:63:8A:E6:B1:A8:00:2D:DC:0D:48:63:36:60:95:EA:5B:8D:95:C1:CD:5E:25:DB:0F:E2:E7:C3
