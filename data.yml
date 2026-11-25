@@ -16421,6 +16421,12 @@ packages:
             issue: GH-1941
             apk:
               sha256: feeac6515f77137947421282ef143b74e413dec3c0bad310cd90d85b77a87f45
+      - fingerprint: 8F:AF:7E:DC:3E:D8:C2:F8:75:73:24:80:13:75:54:A5:BB:D1:E4:F8:0E:B9:3D:A5:42:73:7E:8A:8F:18:6C:66
+        sources:
+          - name: F-Droid
+            issue: GH-2942
+            apk:
+              sha256: f16856cf8334883af29a9ecf3aa7c61b535881e464e3fd06f2447d5a94513b2a
   - package: tech.lolli.toolbox
     signature:
       - fingerprint: 5E:8B:24:51:85:AA:A5:37:36:F9:32:10:6A:23:64:A9:94:8A:C3:C2:C2:D9:72:AB:D1:0F:B0:A8:68:F4:2D:5D
