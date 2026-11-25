@@ -10569,6 +10569,14 @@ packages:
             issue: GH-432
             apk:
               sha256: ea64927a061675bedf099ab9d2e15e1cd840d93856c708583d9ad31098ed8e13
+  - package: moe.nb4a
+    signature:
+      - fingerprint: 35:76:27:58:CE:86:A6:EC:29:7D:9C:CA:C6:89:46:9B:C4:3B:9F:ED:8A:E1:B2:7F:10:0A:86:BB:AC:00:A0:55
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-6108
+            apk:
+              sha256: d01e76feeb05e4701f3ae382cb71c0a3ebb77039005e5893f8817e1051f8ac28
   - package: moe.shizuku.privileged.api
     signature:
       - fingerprint: 26:8B:55:90:E8:68:FB:08:BA:E7:E0:AC:41:35:64:CD:1F:F8:8F:5C:CF:F7:4A:F9:DB:D0:DC:91:8E:30:DB:30
