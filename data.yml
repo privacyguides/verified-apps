@@ -11756,6 +11756,14 @@ packages:
             issue: GH-6915
             apk:
               sha256: ffffff6175ab24089a0de0a4478eae47cfc55cdcaebb026f1fce4b33a093c4ee
+  - package: me.deflock.deflockapp
+    signature:
+      - fingerprint: 63:2B:57:B6:ED:57:E3:DE:C5:10:48:3D:48:D2:8A:01:C4:25:75:6A:A2:87:7B:DE:77:C8:7C:84:F3:4C:15:1F
+        sources:
+          - name: Google Play
+            issue: GH-7485
+            apk:
+              sha256: 2774d831aa99869c998978664eb3db00d7b7bf5c6235d1db0e54d6b28c013cdb
   - package: me.easyapps.easynotes
     signature:
       - fingerprint: 79:E8:5C:E8:1D:F2:F4:F2:25:C2:2F:EA:0B:2D:19:50:B3:68:62:7E:47:5F:B7:2B:73:85:D2:50:31:3B:F7:C1
