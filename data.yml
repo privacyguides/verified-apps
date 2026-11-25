@@ -5795,6 +5795,14 @@ packages:
             issue: GH-1440
             apk:
               sha256: 815e57ae6881e4f73e0ea73f2c2f494cc23df380c5f264a6b1b796ca91119263
+  - package: com.ost.ecowitt
+    signature:
+      - fingerprint: 56:B1:04:FB:B7:D5:54:AE:9A:AC:19:65:37:63:EB:F8:67:36:AC:99:E2:C5:FC:6A:B6:59:60:2C:0D:81:FE:99
+        sources:
+          - name: Google Play
+            issue: GH-6340
+            apk:
+              sha256: 51b4c0071e2c3090d6b2c8fb675a733b08115e45e388515f37fff201c7ff6ed0
   - package: com.oticon.app
     signature:
       - fingerprint: C5:5F:B5:25:85:D0:55:0D:8F:1D:94:DF:17:9D:F4:80:A7:BD:58:76:35:80:DF:9F:3C:54:8D:7C:E3:CD:EF:79
