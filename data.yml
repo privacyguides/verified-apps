@@ -9311,6 +9311,14 @@ packages:
             issue: GH-1639
             apk:
               sha256: 46da4b9e2a4b9c791b9d20f33c45f45a76049703b71ef4579254a124e4da226c
+  - package: opencontacts.open.com.opencontacts
+    signature:
+      - fingerprint: B9:AB:2D:78:61:CD:40:B9:8C:A4:1A:1F:E0:AA:22:0D:53:13:58:29:FF:EA:F6:B6:C6:4B:3B:36:B2:DF:95:05
+        sources:
+          - name: F-Droid
+            issue: GH-1442
+            apk:
+              sha256: 3ee6226f2a435ea48224b3772e721d7b8834f8585bbaa9a5cedc967d9e7faf04
   - package: org.andbible.andbible
     signature:
       - fingerprint: 8B:F5:16:8A:01:94:4D:62:A4:A4:C7:B6:52:F4:73:81:84:00:0D:57:A4:8C:52:89:5A:C6:CB:83:1C:48:CF:30
