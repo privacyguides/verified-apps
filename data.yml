@@ -13731,6 +13731,14 @@ packages:
             issue: GH-724
             apk:
               sha256: a0326caebd3a6839e24188d5e9152904b9c7861936df8b7425286ec1c32b7474
+  - package: net.activote.app
+    signature:
+      - fingerprint: AA:DA:BF:DA:6E:60:FF:8D:1E:18:43:AA:B9:AC:29:02:DA:91:EC:CE:AE:40:1B:A1:E4:9C:79:F3:5A:D5:E0:34
+        sources:
+          - name: Google Play
+            issue: GH-8395
+            apk:
+              sha256: 2f65f8b49648054088fc8ce5d5ad445f913357c2e6265a58c598976c236110bb
   - package: net.aliasvault.app
     signature:
       - fingerprint: 7A:65:D1:CC:85:68:80:3D:E2:E8:70:B2:DF:85:B4:E2:F5:6D:E9:48:D5:FB:B0:A0:29:8B:46:C0:1A:F8:45:09
