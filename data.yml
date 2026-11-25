@@ -11871,6 +11871,14 @@ packages:
             issue: CB-111
             apk:
               sha256: 041c1fe9a5e24766dc0a7244d077f4794175ca4144cb227a77c14cd0be98ceea
+  - package: nl.pwn.app
+    signature:
+      - fingerprint: C0:EE:82:EC:23:54:23:4F:C6:4D:01:7E:1C:21:81:40:4A:04:7C:14:44:EB:6A:A9:22:70:F4:1E:8F:C0:31:56
+        sources:
+          - name: Google Play
+            issue: GH-6895
+            apk:
+              sha256: d88e9c4932ef596301dd7d6a5e07c5608cacd93fe48a130bf3fa5544c459f264
   - package: nl.rijksoverheid.digid.pub
     signature:
       - fingerprint: 3B:90:85:EB:09:26:B0:11:1D:4E:62:2D:5A:5F:81:9F:6F:55:30:F4:F8:F7:84:9E:05:94:B2:CD:3C:AF:F1:7A
