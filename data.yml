@@ -11296,6 +11296,14 @@ packages:
             issue: GH-1908
             apk:
               sha256: fbe2fa19b05adc4d1335f7a2456c138b8483b643746c45dee6c6fb14ca7a6db8
+  - package: org.woheller69.spritpreise
+    signature:
+      - fingerprint: 19:51:4E:47:98:F6:5D:8C:64:63:DF:49:C3:12:C7:92:9B:71:ED:24:BA:7D:5C:DD:72:4B:18:B8:82:2B:16:73
+        sources:
+          - name: F-Droid
+            issue: GH-2058
+            apk:
+              sha256: 8fb93efbf26614fab30b52c69ccfb1495b611c80161f6791e03a015826c00dd4
   - package: org.woheller69.ttsengine
     signature:
       - fingerprint: EE:03:D0:E5:E6:91:80:86:2D:0B:E4:BD:E3:6A:D1:58:39:A3:07:89:64:08:FC:6F:74:B7:6B:A3:1B:81:7E:71
