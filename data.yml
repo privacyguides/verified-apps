@@ -13611,6 +13611,14 @@ packages:
               sha256: 23c1d44a281ab093d4c1396849428cc28afd43749d6a9d719a9f8741833bb3de
           - name: HTTPS Verified Domain
             issue: GH-1886
+  - package: org.woheller69.audio_analyzer_for_android
+    signature:
+      - fingerprint: DF:8F:63:D3:06:34:60:D7:08:75:88:97:7D:E9:B3:64:27:D6:06:04:1B:43:DB:FC:F6:E2:4C:B4:4D:7A:CF:10
+        sources:
+          - name: F-Droid
+            issue: GH-7051
+            apk:
+              sha256: 0bed413d2a7a45c5c37c5cbd19efe3e49ab33725740aaf143324cf796ffcfaa9
   - package: org.woheller69.gptassist
     signature:
       - fingerprint: B7:07:DB:CA:61:C2:07:CE:74:BE:61:3B:77:53:8D:50:08:A6:1F:9E:7E:2E:BC:69:56:FA:B3:43:1A:77:8E:65
