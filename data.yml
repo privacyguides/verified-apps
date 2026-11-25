@@ -11799,6 +11799,14 @@ packages:
         sources:
           - name: Accrescent
             issue: GH-120
+  - package: me.edgan.redditslide
+    signature:
+      - fingerprint: 4F:34:BF:D2:0C:C4:84:15:10:E7:EF:FB:75:CB:FB:C2:3A:09:C2:CA:92:D0:4C:ED:5B:33:6C:8F:25:A0:D3:E3
+        sources:
+          - name: Google Play
+            issue: GH-7609
+            apk:
+              sha256: 1444dd1865e78109b7c27101a1533a55dba1a20e9488475ae23f39ae5a06d59a
   - package: me.hackerchick.catima
     signature:
       - fingerprint: 62:86:4D:B7:87:CC:31:92:8D:C2:C1:14:67:3C:DB:B0:17:BE:AB:B1:3B:A6:DF:6A:E5:25:6E:73:8B:B9:53:AE
