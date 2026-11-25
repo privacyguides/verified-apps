@@ -2684,6 +2684,14 @@ packages:
             issue: GH-2439
             apk:
               sha256: 8c7b60c9cef5a6343f000f12ff0a0714bc6f3de72ced17c57f1ce4a147bc4a67
+  - package: com.datart.production
+    signature:
+      - fingerprint: E8:D8:2A:1F:21:61:E8:CE:AA:87:4A:37:B5:80:35:DE:D6:97:7B:2B:1F:BA:7F:C8:85:15:36:C9:66:DA:CE:85
+        sources:
+          - name: Google Play
+            issue: GH-7097
+            apk:
+              sha256: 982c1d0c688a2fa87773d5751fb7aeb0c8d7320c14237211d648eed95f2154d3
   - package: com.davivienda.daviviendaapp
     signature:
       - fingerprint: 88:C3:6E:43:F6:E1:6F:A4:F5:08:DA:C7:CD:43:1D:B3:EA:82:C0:2D:E2:87:75:99:F7:4C:AD:68:4A:63:D5:F7
