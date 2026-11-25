@@ -11554,6 +11554,14 @@ packages:
             issue: GH-2726
             apk:
               sha256: 342db018dd0b04df4551b7e7364aae67fd5dcca81a702b5300a6bc4badcf151c
+  - package: website.leifs.delta.foss
+    signature:
+      - fingerprint: E0:72:D5:B7:6D:41:33:D8:5B:76:26:33:A7:50:87:18:48:F4:1C:ED:3D:6D:72:82:33:91:08:E9:BE:D1:5E:2E
+        sources:
+          - name: F-Droid
+            issue: GH-1843
+            apk:
+              sha256: 087094a327ded703969996d92115904e951002724e39dd7dd44c8227388570a8
   - package: ws.xsoh.etar
     signature:
       - fingerprint: 3F:31:76:C3:CE:18:9C:98:05:4F:F9:E1:D3:2D:AE:CF:00:A4:15:72:F4:C7:BD:2B:2F:80:60:72:52:DD:B0:6E
