@@ -357,6 +357,18 @@ packages:
             apk:
               sha256: cba4c461553ea74eb25a7b2e1842419c7f4f40adc619b10d518c114204b7e846
               link: https://github.com/ReVanced/revanced-manager/releases/download/v2.6.0/revanced-manager-2.6.0.apk
+  - package: app.simple.inure
+    signature:
+      - fingerprint: 4A:3F:71:11:42:25:08:05:C7:BB:5C:0A:5A:32:87:63:1B:DB:94:88:16:E6:F4:AF:C9:52:4D:0E:B4:6B:6B:1B
+        sources:
+          - name: F-Droid
+            issue: GH-6105
+            apk:
+              sha256: 952253d8ed2d13f4865bf144a8b6d77bd5afa5e27580db54bb7b55bf3bd4ad6b
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-6105
+            apk:
+              sha256: a268b5e68ebb80651a6eef4e93ee05dd486f56300a1b91d292c30702874b4f07
   - package: app.stockevents.android
     signature:
       - fingerprint: DF:5B:68:01:94:B7:55:44:A5:75:29:88:23:33:BA:C2:6F:1E:94:F9:B6:14:B4:A9:BC:AB:F3:4B:FB:C7:8D:21
