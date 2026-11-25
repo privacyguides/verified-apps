@@ -7924,6 +7924,16 @@ packages:
             issue: CB-160
             apk:
               sha256: c574d9c99dc90fd9f0b60136485fdf76113a811bf49a437a15bc22c8dfbbdcca
+  - package: com.psono.psono
+    signature:
+      - fingerprint: A7:6C:13:F3:B7:C1:82:22:52:68:64:26:5F:39:54:1D:3A:C2:80:1F:81:F2:51:99:F9:81:C0:49:9E:68:52:5F
+        sources:
+          - name: Google Play
+            issue: GH-2943
+            apk:
+              sha256: f38b96e13b4ec76ac3279549e5fcd09982dc774e5c27a341d11d20671e036a8f
+          - name: HTTPS Verified Domain
+            issue: GH-2943
   - package: com.q2e.pawtucket5040android.pcumobile.uwnmobile
     signature:
       - fingerprint: 2C:0A:A9:4C:64:24:91:D7:D3:A9:F8:57:F9:9E:D4:1C:00:8B:B4:28:F0:D0:E8:5B:4F:08:9A:E1:3E:E6:AD:41

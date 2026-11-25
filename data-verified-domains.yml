@@ -989,6 +989,15 @@ domains:
         fingerprints:
           - A7:47:EA:EE:28:61:1E:25:21:7B:79:3C:07:BF:30:22:34:40:5C:FD:1E:19:06:81:62:55:6C:79:E5:BF:04:F0
           - DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
+  - domain: psono.com
+    method: https
+    issue:
+      - GH-2943
+    checked: "2026-11-25T23:01:55Z"
+    packages:
+      - package: com.psono.psono
+        fingerprints:
+          - A7:6C:13:F3:B7:C1:82:22:52:68:64:26:5F:39:54:1D:3A:C2:80:1F:81:F2:51:99:F9:81:C0:49:9E:68:52:5F
   - domain: revolut.com
     method: https
     issue:
