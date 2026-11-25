@@ -4631,6 +4631,18 @@ packages:
             issue: GH-2142
             apk:
               sha256: b8f8a10ad73da118a349bc2ea9b9a97cf798bb17416e0f3ba715ca90c8cba3ba
+  - package: com.likhithpraveenk.storii
+    signature:
+      - fingerprint: 94:73:22:96:44:5C:A0:C2:51:1F:AC:8A:6F:74:4B:87:FE:D6:7C:ED:37:D1:64:28:EF:88:98:5E:0B:A8:67:6A
+        sources:
+          - name: F-Droid
+            issue: GH-6262
+            apk:
+              sha256: f90a2686ca93764cdc48b55dd095d0e7ba5df6b6e93bbc9358f66a385513abad
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-6262
+            apk:
+              sha256: 90e85892e9065890acddf405503093c4b6ece6c2ebd4193eea53c60de1017bf1
   - package: com.limbo.emu.main
     signature:
       - fingerprint: F7:8B:31:E0:F5:B8:2F:06:0B:44:17:E7:E2:7A:E5:1B:CE:DE:42:77:B6:F2:7A:7F:42:43:EB:74:2C:C5:4A:A2
