@@ -3690,6 +3690,14 @@ packages:
             apk:
               sha256: bbe436bed7e3ae7b3eb00a8437d29ae91ecff8e1c2d31dce80108cb761604956
               repo: https://app.futo.org/fdroid/repo/
+  - package: com.gabriel.backtap
+    signature:
+      - fingerprint: CB:DC:E3:93:D7:A8:0F:20:EE:9B:9E:45:FE:EE:0F:2A:56:30:CA:02:B4:E9:38:AA:DB:C0:B5:ED:E2:7E:30:51
+        sources:
+          - name: Google Play
+            issue: GH-7248
+            apk:
+              sha256: f3b60ef556d7a06896f381565339ffe7e5949e167aac3a941a068b582c2f8088
   - package: com.garmin.android.apps.connectmobile
     signature:
       - fingerprint: 84:FF:2B:FA:39:5C:5A:21:E5:3A:E2:96:33:E4:A6:E6:8B:6B:5C:67:07:BB:60:84:C2:5B:70:F8:66:B7:17:29
