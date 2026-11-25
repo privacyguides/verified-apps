@@ -17,6 +17,14 @@ packages:
             issue: GH-198
             apk:
               sha256: 56b3ddc154322975a721290fc89f401fc368a70a522057fbba754198e942f60e
+  - package: ai.privatebydesign.albi
+    signature:
+      - fingerprint: C6:D4:B4:48:7E:BC:EF:11:47:64:8C:7E:54:A8:11:94:84:40:9C:22:E3:21:D1:64:C8:EF:AB:62:12:DD:F4:CE
+        sources:
+          - name: F-Droid
+            issue: GH-2497
+            apk:
+              sha256: 190b9c408c5c1aadb28cd20f2781a3140f45d193602c6cb46c6ed32b1920fdde
   - package: air.com.parkerstech.day
     signature:
       - fingerprint: |-
