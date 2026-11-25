@@ -15897,6 +15897,14 @@ packages:
             issue: GH-899
             apk:
               sha256: 6b8607c6f7dc3b5a323bd7fbb93b09046a54bc30eea66f3c8f5a02dbe08aaab4
+  - package: s1m.savertuner
+    signature:
+      - fingerprint: 48:14:1B:F3:AF:68:FE:42:73:79:5E:E9:28:69:35:33:0A:3A:31:5C:76:9C:E3:90:8E:2F:77:EF:22:86:EA:94
+        sources:
+          - name: F-Droid
+            issue: GH-8337
+            apk:
+              sha256: 98944fb8ea6b34abe6d5a00c7d8d8d8313b51684b737f463d1f14800fb83c381
   - package: se.appcorn.Blocket
     signature:
       - fingerprint: 7F:A0:4E:35:30:6B:8D:45:5C:17:BB:3F:B0:F0:C6:C3:4F:E7:92:29:09:E6:6A:AB:2F:41:A2:10:1D:23:6A:D5
