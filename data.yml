@@ -606,6 +606,14 @@ packages:
               sha256: 6186c80da39dd7566e1c64cee096b0623d8dfb171627d50525f64dd420ed9345
           - name: HTTPS Verified Domain
             issue: GH-2752
+  - package: cl.coders.faketraveler
+    signature:
+      - fingerprint: FA:1B:47:D6:2E:BE:CE:21:30:E3:3A:22:18:6C:62:2B:CF:E2:F2:B9:A3:D5:C1:44:38:AD:94:07:80:93:68:2C
+        sources:
+          - name: F-Droid
+            issue: GH-2522
+            apk:
+              sha256: ef0e17396f31773571f930901d8fc319840549f18a54d4bd0d0fb0313ececc6b
   - package: cloud.pablos.overload
     signature:
       - fingerprint: BD:39:CA:B0:CB:22:4D:4A:E0:97:95:11:F3:24:1E:D8:85:8D:1A:F8:69:37:B7:C6:39:7B:E4:BA:7E:C1:A2:B4
