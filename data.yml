@@ -3150,6 +3150,12 @@ packages:
             issue: GH-1178
             apk:
               sha256: b8c884db781b03c1dcdcf497ee5af7151a5ad27d041c519aa31db58058a5e6e6
+      - fingerprint: D6:95:66:1B:70:FA:90:67:6A:76:3B:D1:A8:9E:FE:7E:77:3C:50:22:A1:E2:5B:3B:C2:1A:39:DB:A3:95:C5:57
+        sources:
+          - name: F-Droid
+            issue: GH-2056
+            apk:
+              sha256: 80cc5836d46877148880e23671c079ceefc53b6b4e4b43dcff225c6c1bced5ba
   - package: com.gitlab.mudlej.MjPdfReader
     signature:
       - fingerprint: AF:92:A1:A8:1B:45:B9:D6:A5:D9:F1:63:7F:D6:BE:98:FD:88:9B:48:12:8C:00:9D:A9:AF:D7:BA:0F:C2:F0:89
