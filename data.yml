@@ -9088,6 +9088,16 @@ packages:
             issue: GH-6327
             apk:
               sha256: f0acb5817d3f4693340f3ec2524d6e84d12dd277721798fc2761805f6e2cd0f3
+  - package: com.tubitv
+    signature:
+      - fingerprint: AA:C5:AB:52:F6:B7:89:DC:6F:23:89:10:B6:C5:30:BE:A1:BD:BC:36:D6:A7:ED:E6:18:A9:23:29:AA:3A:2F:D0
+        sources:
+          - name: Google Play
+            issue: GH-8200
+            apk:
+              sha256: 0064b4428479a52f43086bb0bf06d7c565af0e52daaddc5c18d3e9fbc77f272f
+          - name: HTTPS Verified Domain
+            issue: GH-8200
   - package: com.turkishairlines.mobile
     signature:
       - fingerprint: DD:85:EB:7F:24:CC:AD:39:D3:B8:30:26:12:5C:D5:16:4E:19:FD:1E:AA:26:7F:A0:B0:73:AE:72:20:D2:75:6E

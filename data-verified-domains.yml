@@ -862,6 +862,15 @@ domains:
       - package: ru.yandex.translate
         fingerprints:
           - AC:A4:05:DE:D8:B2:5C:B2:E8:C6:DA:69:42:5D:2B:43:07:D0:87:C1:27:6F:C0:6A:D5:94:27:31:CC:C5:1D:BA
+  - domain: tubitv.com
+    method: https
+    issue:
+      - GH-8200
+    checked: "2026-11-25T10:36:07Z"
+    packages:
+      - package: com.tubitv
+        fingerprints:
+          - AA:C5:AB:52:F6:B7:89:DC:6F:23:89:10:B6:C5:30:BE:A1:BD:BC:36:D6:A7:ED:E6:18:A9:23:29:AA:3A:2F:D0
   - domain: tulis.dev
     method: https
     issue:
