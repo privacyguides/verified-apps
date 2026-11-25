@@ -9457,6 +9457,14 @@ packages:
             apk:
               sha256: 6251ab38cf7c79b3b8e970686e39e0a41078d6a0ecbce32000f3d4d0b5596245
               repo: https://briarproject.org/fdroid/repo/
+  - package: org.calantas.mygeo
+    signature:
+      - fingerprint: 5A:79:22:7E:96:63:D9:A8:1D:D0:77:22:09:E1:21:22:26:47:F7:CE:19:7E:46:30:13:57:A6:64:BB:AB:B5:14
+        sources:
+          - name: F-Droid
+            issue: GH-1571
+            apk:
+              sha256: 17e8da57494adbd47b9b34ed3cb5c92ee034889570f8a1e68b8227bf8354dc8f
   - package: org.chromium.chrome
     signature:
       - fingerprint: 32:A2:FC:74:D7:31:10:58:59:E5:A8:5D:F1:6D:95:F1:02:D8:5B:22:09:9B:80:64:C5:D8:91:5C:61:DA:D1:E0
