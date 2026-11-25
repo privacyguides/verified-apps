@@ -13756,6 +13756,14 @@ packages:
             issue: GH-902
             apk:
               sha256: b0b6ace124be6461c83f4f4124833b13fe42b4cd7461aaef465f67baa4b4719d
+  - package: ua.ukrposhta.ukrposhta
+    signature:
+      - fingerprint: 73:D1:A0:F7:86:D5:BF:FC:1A:12:A1:B4:D8:CD:08:B3:D7:71:3D:2B:0B:2E:BD:87:6F:4B:11:16:97:49:2F:20
+        sources:
+          - name: Google Play
+            issue: GH-6697
+            apk:
+              sha256: 964943a5b16088aa93ea8c19d33d67ed8328e9b8fd2f7cc93c952b3aa922ef22
   - package: uk.co.classprofessional.cpg.ukascpg
     signature:
       - fingerprint: 16:16:2F:6E:52:C0:E0:80:EC:6B:BB:C8:26:04:BD:74:DA:AD:29:E1:F7:BF:EE:57:1F:AF:8D:D2:A8:EF:BE:CC
