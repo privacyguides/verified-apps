@@ -6817,6 +6817,14 @@ packages:
             issue: GH-6765
             apk:
               sha256: 8257de62ebe047fb945fc04d16baaaf2af606e9779708d1efe9f9e96324a3df7
+  - package: com.mine.autooffbluetooth
+    signature:
+      - fingerprint: 24:70:74:8C:BE:67:71:F6:C6:E0:4A:3F:61:DC:4C:0D:82:16:6A:8C:A2:15:1E:8E:0A:E3:F6:4D:EF:0E:9C:D7
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-3045
+            apk:
+              sha256: 8db337cce5212c22a09d9376f02ed8339893096c5dd44af549e49a934ab8d7a5
   - package: com.minrax.sofiabus
     signature:
       - fingerprint: 07:F3:22:4D:AB:06:C9:7E:91:DD:B5:72:26:A2:E1:55:9D:A0:EF:72:C3:17:C8:ED:3C:61:1A:3A:09:ED:D6:C7
