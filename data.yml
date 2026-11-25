@@ -3196,6 +3196,14 @@ packages:
             issue: GH-1668
             apk:
               sha256: 2f18db74a05ad29455ebfe7161228dd0bb50f66b00d0048563b7bbd410aecb13
+  - package: com.fiio.control
+    signature:
+      - fingerprint: D3:BA:CD:DC:FF:1E:2F:EB:89:59:F9:19:A7:2A:6F:79:AB:8F:DE:3F:3D:E5:C8:FF:8B:73:E8:11:AE:72:C8:DD
+        sources:
+          - name: Google Play
+            issue: GH-6857
+            apk:
+              sha256: 391b608e645fdf50d66b33d503378bd3bb0ede361982b9075bcfb3aacd34e3ed
   - package: com.finch.finch
     signature:
       - fingerprint: 58:1D:B9:64:C6:1C:25:36:9A:50:14:2A:3E:96:F1:C8:25:C3:7A:70:C2:DD:F3:33:21:4B:4B:E3:1C:95:5B:C7
