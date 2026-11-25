@@ -3824,6 +3824,14 @@ packages:
             apk:
               sha256: 27f05933185f0944817a148dc1dbab1e0748ddf8a10155a25bf0f862884dd53f
               link: https://github.com/gotify/android/releases/download/v2.10.0/Gotify.apk
+  - package: com.github.jamesgay.fitnotes
+    signature:
+      - fingerprint: 8D:2E:64:B8:FC:5B:2A:EF:AA:A3:28:5F:27:41:00:FE:04:0D:9D:1F:E0:3B:8B:1B:CD:45:4E:63:7D:FC:91:68
+        sources:
+          - name: Google Play
+            issue: GH-7111
+            apk:
+              sha256: e5309a1ab6e08a5800e638a28e027459b9e1871d28b517d8add91d2a7c019a3c
   - package: com.github.lamarios.clipious
     signature:
       - fingerprint: 19:DE:04:E5:D6:84:66:06:9D:30:EC:63:C6:BA:7D:9E:3C:F7:3B:5D:61:CB:4B:37:62:C2:B9:B2:53:EC:BD:03
