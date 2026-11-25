@@ -139,6 +139,12 @@ packages:
             issue: GH-560
   - package: app.eduroam.geteduroam
     signature:
+      - fingerprint: 67:B7:0A:E9:3F:FB:23:70:65:1E:18:20:66:3E:17:FE:0F:BE:B7:6B:73:41:6A:31:A7:1D:D2:44:5C:A9:93:BD
+        sources:
+          - name: F-Droid
+            issue: GH-6459
+            apk:
+              sha256: 5bf3ba411223661ebd7425dc63e22328c81212b710eb631b351f4059595687bd
       - fingerprint: D3:56:57:29:73:0E:DB:6D:CC:E3:A3:8E:B3:7D:92:9C:FB:F5:E0:50:48:48:2E:CB:CD:D7:D4:A1:36:21:2F:6C
         sources:
           - name: Google Play
