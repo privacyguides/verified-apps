@@ -1498,6 +1498,14 @@ packages:
             issue: GH-2185
             apk:
               sha256: 2cda66c742a0a2bbea7d0bddfd931cba210231b33f0368dc94cabe432850dc44
+  - package: com.anysoftkeyboard.languagepack.german
+    signature:
+      - fingerprint: B1:1A:56:5E:AC:7D:5E:B2:32:1B:04:16:B5:2A:84:2B:BC:F9:DB:60:64:10:75:73:46:DC:AA:45:99:95:88:90
+        sources:
+          - name: F-Droid
+            issue: GH-7837
+            apk:
+              sha256: dbcb595aefe81c1ebaec7fb877ab3287aedac01c7f4ba74600864ff05480a709
   - package: com.apiture.xpressmobile.tabut.sub
     signature:
       - fingerprint: E0:85:00:80:44:B1:CA:2C:35:F8:54:1B:0E:08:28:08:78:EF:19:65:87:2E:D4:24:6C:A2:B7:1B:08:D8:ED:11
