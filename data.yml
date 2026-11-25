@@ -11798,6 +11798,16 @@ packages:
               sha256: ad70a6e272b3e73c18608739f8a69168abc66c94b7199a310450938148ebe79b
   - package: eu.siacs.conversations
     signature:
+      - fingerprint: 9C:2E:57:C8:5C:27:9E:5E:1A:42:7F:6E:87:92:7F:C1:E2:27:8F:62:D6:1D:7F:CE:FD:E9:34:6E:56:8C:CF:86
+        sources:
+          - name: F-Droid
+            issue: GH-8345
+            apk:
+              sha256: 61fd8ca12cdd2fd4736e1f36d995c174b5bda230435350c34a6c223f68749117
+          - name: Google Play
+            issue: GH-8345
+            apk:
+              sha256: afc8c40f6d2dd28710bf907e8dcb1eeca1097e7943cc9b6b0ec8539366b026c5
       - fingerprint: C7:5A:BE:78:59:36:43:AE:7C:AC:52:73:27:CD:21:93:48:2D:B0:67:40:4A:88:B8:C1:3F:7A:07:01:94:61:87
         sources:
           - name: F-Droid
