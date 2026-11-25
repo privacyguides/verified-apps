@@ -2282,6 +2282,14 @@ packages:
               sha256: 7d2f6ada55ba05741acd09be55a4022d4e49ccfc51105a41815b06470e961fad
           - name: HTTPS Verified Domain
             issue: GH-2332
+  - package: com.buswhere.shuttles
+    signature:
+      - fingerprint: 63:ED:DF:A3:45:2F:34:43:42:6B:05:DD:F3:6E:ED:33:9F:B4:A6:96:57:EF:57:37:BD:DB:59:F6:A1:62:2D:31
+        sources:
+          - name: Google Play
+            issue: GH-7483
+            apk:
+              sha256: 079d42d3360812b79e49bd431e554b0c3971c6b907b78248d6e766598f42694c
   - package: com.cakewallet.cake_wallet
     signature:
       - fingerprint: 09:C7:C4:F9:6B:5F:3A:75:99:8E:CF:53:78:E6:39:19:0E:02:3E:26:75:02:6D:26:21:E4:AC:78:1C:94:88:FC
