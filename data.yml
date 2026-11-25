@@ -1948,6 +1948,14 @@ packages:
             issue: GH-1951
             apk:
               sha256: c83204e6d3f7b3ad78c4523b2baf2a831ae48df2e237143c29dfc862af8f77ec
+  - package: com.bradycorp.expresslabels
+    signature:
+      - fingerprint: 7C:06:5F:0D:96:7E:78:0A:BF:00:6B:31:EA:59:31:F3:2F:79:96:CE:5F:52:7D:FD:10:3C:71:98:34:AE:90:E8
+        sources:
+          - name: Google Play
+            issue: GH-6342
+            apk:
+              sha256: 20ee4361f5c630109d0ba6287622c966f9a1a7c431a3fd9dbc528c775f8a443e
   - package: com.branded.arrl
     signature:
       - fingerprint: AC:1F:16:F0:D9:4D:8B:75:D6:16:20:0B:EF:A3:2B:23:45:A7:B9:D4:B8:E3:D2:4E:62:EC:D3:BD:F9:88:F9:B7
