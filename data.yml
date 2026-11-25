@@ -5691,6 +5691,14 @@ packages:
             issue: GH-6921
             apk:
               sha256: b1b5775d5734d895692f305629c3f242c2634c565c2519967ab9052ffd6bea1a
+  - package: com.itude.mobile.bps.befrank
+    signature:
+      - fingerprint: 42:29:70:91:20:28:10:DA:1C:EC:FC:75:16:3D:40:68:3B:48:1B:1B:A1:23:13:6C:EF:0E:B0:52:A8:C9:0B:8D
+        sources:
+          - name: Google Play
+            issue: GH-8407
+            apk:
+              sha256: 823a467dd29cd2f21ee4280c54d2d11bf9100516bb89b6cf197a78a2a4064f1f
   - package: com.iudesk.android.photo.editor
     signature:
       - fingerprint: |-
