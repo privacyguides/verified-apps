@@ -7879,6 +7879,14 @@ packages:
             issue: CB-166
             apk:
               sha256: 406600311c6288401a3bad1cfbffae6cb2d059586c15f4e47eb99c1b3fc94595
+  - package: de.heise.android.ch.magazin
+    signature:
+      - fingerprint: 07:10:F4:BB:4F:FB:8A:11:C3:9E:B5:3A:AA:4E:91:F8:8E:97:9F:6F:7B:BF:CB:0C:E7:B1:36:2A:D0:96:DA:3B
+        sources:
+          - name: Google Play
+            issue: GH-5597
+            apk:
+              sha256: 3e5d3ebb537f865094dd2d27617c86a71c29276afb06a3260f140998da498d2d
   - package: de.heise.android.ct.magazin
     signature:
       - fingerprint: 07:10:F4:BB:4F:FB:8A:11:C3:9E:B5:3A:AA:4E:91:F8:8E:97:9F:6F:7B:BF:CB:0C:E7:B1:36:2A:D0:96:DA:3B
