@@ -11597,6 +11597,14 @@ packages:
             issue: GH-1615
             apk:
               sha256: 2d2d1fb4c9e8b998bc0003211bf024a068e71aa486377d292d51fdd2223955f0
+  - package: io.gitlab.libre_librivox_listener
+    signature:
+      - fingerprint: 5A:23:99:44:CC:A0:F2:45:13:03:BD:03:15:88:DD:0D:D0:BC:63:F1:17:83:E6:2F:39:B7:9A:A3:7B:D5:F0:7C
+        sources:
+          - name: F-Droid
+            issue: GH-7838
+            apk:
+              sha256: dfcf24e0d0a4ec58db5029cca633956cf92f9aae960e3358c070e1af8b3b0049
   - package: io.heckel.ntfy
     signature:
       - fingerprint: 6E:14:5D:7A:E6:85:EF:F7:54:68:E5:06:7E:03:A6:C3:64:54:53:34:3E:4E:18:1D:AC:8B:6B:17:FF:67:48:9D
