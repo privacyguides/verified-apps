@@ -1220,6 +1220,14 @@ packages:
             issue: GH-2252
             apk:
               sha256: 8447d89285f7ac6e398c8f13275635d8156a7448d2706647b881e732229606f3
+  - package: com.appeaseinc.todolist135
+    signature:
+      - fingerprint: D0:4E:BC:06:14:00:90:BE:89:08:F3:5A:E4:51:09:4D:E0:A4:19:B9:99:D7:C8:76:64:2E:0C:8B:EB:27:5F:6E
+        sources:
+          - name: Google Play
+            issue: GH-5781
+            apk:
+              sha256: 849005d1c5560af678923560660ca49fc1d7282e3c24d3448323f2e6ba17e50f
   - package: com.apple.android.music
     signature:
       - fingerprint: 88:BA:59:0E:C2:E1:EA:33:C4:45:8D:AF:59:48:9F:AE:E2:CE:F2:97:A9:B4:07:1E:18:CF:82:EF:53:11:00:AA
