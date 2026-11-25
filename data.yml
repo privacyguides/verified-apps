@@ -4663,6 +4663,12 @@ packages:
             issue: GH-4609
             apk:
               sha256: a72fc5ff255a5e6fc70c5c956803d5ae2fbc8d4a6ceaf2b2151ad05c4de4fef7
+      - fingerprint: D9:DF:FA:5F:30:3E:9B:80:72:5B:74:17:64:88:67:2A:35:2A:D8:48:33:77:D9:38:B2:E3:6F:76:0A:81:1F:CD
+        sources:
+          - name: F-Droid
+            issue: GH-2447
+            apk:
+              sha256: 03fe158eb59441f048bf7c38d66cef3aac270d75704fc2ad58d2ec8342d122ef
   - package: com.mrsep.musicrecognizer
     signature:
       - fingerprint: A5:A1:DC:1D:78:D7:F0:3A:95:36:51:B2:7D:3A:07:C2:5E:3A:F0:13:27:F4:5C:DF:86:19:A2:23:B7:03:57:D0
