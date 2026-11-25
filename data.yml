@@ -3998,6 +3998,14 @@ packages:
             issue: GH-2294
             apk:
               sha256: 4b84e701b89dc5250c84740f9933fe78193a7863342264f2ea4b59f3a025f69a
+  - package: com.icedrive.app
+    signature:
+      - fingerprint: B6:EB:23:7D:3A:5B:25:66:85:E0:30:8D:85:02:15:EF:96:C2:87:03:45:CE:D2:78:58:3C:9E:4C:FF:D4:DA:F9
+        sources:
+          - name: Google Play
+            issue: GH-5777
+            apk:
+              sha256: 4fc6e346f69079dd322923a9576b22fc2aeeaa664b1e54b5f608d030e2ebf771
   - package: com.icelandair.mobile.app.android
     signature:
       - fingerprint: AD:29:A3:4B:6D:13:8B:15:7F:03:DE:CB:22:70:02:05:DD:89:51:C6:0E:F6:6A:E0:99:CC:D6:B6:BE:97:15:8C
