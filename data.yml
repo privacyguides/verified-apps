@@ -2489,6 +2489,14 @@ packages:
             apk:
               sha256: 4010dd9b11ce3bdbcccbf5d1af7456a0b5b4a1ab2d64766fb2c847ae5d2e39b6
               link: https://github.com/cyb3rko/flashdim/releases/download/v2.4.3/FlashDim-2.4.3.apk
+  - package: com.cylonid.nativealpha
+    signature:
+      - fingerprint: D3:63:7D:88:C7:7A:F7:47:5F:20:5D:7E:50:08:FA:F8:9E:92:EF:74:CA:05:00:E3:C5:56:02:7E:55:C1:FF:BB
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-6708
+            apk:
+              sha256: 2746560d2a2eb69c17537832d7b978364995a8a7d65f53880940db2b96980d0b
   - package: com.daikincomfort.daikinonehome
     signature:
       - fingerprint: 71:00:31:83:B9:8B:54:1A:58:DD:40:D7:5F:68:BC:4B:D6:67:8E:A1:F0:CE:9B:E3:41:0B:CC:12:85:13:62:67
