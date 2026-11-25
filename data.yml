@@ -4182,6 +4182,14 @@ packages:
             issue: GH-681
             apk:
               sha256: dda80c4500b21fa267f3348246b74dc3d5b65dd3868fe00911448ed4cb126840
+  - package: com.menny.android.anysoftkeyboard
+    signature:
+      - fingerprint: 71:6B:E9:8A:10:A8:86:04:5C:C3:C3:9A:7A:BA:F5:01:B9:43:4B:96:02:B2:5D:02:A8:9C:32:6B:7C:7B:9D:0A
+        sources:
+          - name: F-Droid
+            issue: GH-1411
+            apk:
+              sha256: daa95017e673f8f533fbcfa6839673ad76d66f1ad17f288d2220f751fcc258a6
   - package: com.meraki.Dashboard
     signature:
       - fingerprint: EE:4D:C3:EC:F5:DD:BA:D2:36:6B:1A:DB:4C:33:AA:4B:99:6E:E5:D5:26:DE:60:E0:D5:FF:83:D3:BD:80:06:BD
