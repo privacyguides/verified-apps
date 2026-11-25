@@ -3318,6 +3318,14 @@ packages:
             issue: GH-249
             apk:
               sha256: 69482f3ba04e3a801832813e05cb8b0f70b2deb9d5c785962835b230d2445abc
+  - package: com.derdilla.bloodPressureApp
+    signature:
+      - fingerprint: 7D:68:3A:EC:0C:43:59:99:5B:F5:05:AC:81:F7:FF:58:7F:78:EB:4B:0E:F0:A5:8D:DD:28:86:3C:6E:E9:C9:FF
+        sources:
+          - name: F-Droid
+            issue: GH-3005
+            apk:
+              sha256: 16627aa189118159eba7f5e10d8104ed9e8d0658010cc6b76141d12cc40decfc
   - package: com.desmos.scientific
     signature:
       - fingerprint: F8:E2:EF:7A:35:35:E3:A2:DE:70:65:46:F5:32:5F:0E:8B:74:7C:CC:88:1A:67:79:3D:BA:71:FC:B3:6E:4C:54
