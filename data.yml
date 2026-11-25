@@ -6592,6 +6592,14 @@ packages:
             issue: GH-681
             apk:
               sha256: dda80c4500b21fa267f3348246b74dc3d5b65dd3868fe00911448ed4cb126840
+  - package: com.mendhak.gpslogger
+    signature:
+      - fingerprint: DC:35:07:91:9A:AD:1C:98:14:23:F7:56:3A:D6:99:83:05:18:90:0F:94:36:32:BC:36:EE:B7:25:0C:39:02:35
+        sources:
+          - name: F-Droid
+            issue: GH-3052
+            apk:
+              sha256: 1d92fd8639dfc0ec210b013a81cc7dc85fc8c73ef521f71b2a08ffa165d4e265
   - package: com.menny.android.anysoftkeyboard
     signature:
       - fingerprint: 71:6B:E9:8A:10:A8:86:04:5C:C3:C3:9A:7A:BA:F5:01:B9:43:4B:96:02:B2:5D:02:A8:9C:32:6B:7C:7B:9D:0A
