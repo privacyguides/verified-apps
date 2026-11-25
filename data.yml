@@ -4863,6 +4863,16 @@ packages:
             issue: GH-1038
             apk:
               sha256: 501ab35f241cbd1edad4a005fdc9ebe7ba4ff4f7840d24b440277d7e8d0182cb
+  - package: com.google.android.gms.supervision
+    signature:
+      - fingerprint: 84:CE:21:FA:4F:62:1E:83:8C:BC:8C:4D:2C:D6:01:0F:EC:19:AF:DC:B4:97:89:26:A3:F1:FD:37:A3:AE:16:76
+        sources:
+          - name: Google Play
+            issue: GH-8127
+            apk:
+              sha256: b6e85a7809ec46b60075c73453574c8ae77d3a843c433c7ae54fea33648c21a6
+          - name: HTTPS Verified Domain
+            issue: GH-8127
   - package: com.google.android.googlequicksearchbox
     signature:
       - fingerprint: |-
