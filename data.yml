@@ -10289,6 +10289,14 @@ packages:
             apk:
               sha256: 554fdf79852087503fb2b5517b94c9e7b605234e2ae188fcb56811a91352796e
               link: https://github.com/openboard-team/openboard/releases/download/v1.4.5/app-release.apk
+  - package: org.equeim.tremotesf
+    signature:
+      - fingerprint: 80:A3:A0:0F:FF:EF:91:59:47:9D:D1:61:BF:6A:D5:8A:50:DB:37:99:38:12:AD:C5:05:14:39:58:45:5A:90:6A
+        sources:
+          - name: F-Droid
+            issue: GH-2250
+            apk:
+              sha256: 2c30e62d4429622b239827a94bd9d4b3a1fe792bd593aaa47f08131c5efeeb27
   - package: org.eu.exodus_privacy.exodusprivacy
     signature:
       - fingerprint: 6F:44:C5:4D:12:7C:E0:5B:2B:EE:4A:B7:C2:11:CA:5C:3D:17:5A:88:F3:52:E6:31:DA:C6:D9:51:50:1B:48:7F
