@@ -12115,6 +12115,16 @@ packages:
             issue: GH-492
             apk:
               sha256: c881430de6f3424287b3e42f945f77754a0b7d4b4965c605c20d1efa23a24fe5
+  - package: net.oneplus.forums
+    signature:
+      - fingerprint: |-
+          8B:DC:78:A4:B8:30:49:ED:2C:E3:D4:B5:2E:7D:12:17:93:6B:62:45:0D:B1:A4:65:D2:88:6E:7A:A1:91:2C:12
+          A0:07:68:6A:65:9C:7A:A1:3C:A7:F7:B3:4A:93:A5:E8:A4:2B:8F:61:E4:1D:FC:C1:F2:2C:B2:49:39:9E:D8:B5
+        sources:
+          - name: Google Play
+            issue: GH-7274
+            apk:
+              sha256: 793d63bc08345753f1de5e2d400016e85e455867c3bfa6c05627b42fe386c118
   - package: net.osmand.plus
     signature:
       - fingerprint: 38:29:4E:AA:C9:5C:3B:B5:A9:94:69:2C:D7:75:8F:8B:CD:BF:FB:40:81:9A:F6:E8:06:EB:7F:E4:82:32:4D:CD
