@@ -5234,6 +5234,14 @@ packages:
             issue: CB-30
             apk:
               sha256: 3b43b82fb9a3601186736148fc362aba9cc4ac1787246097ef4a0074a3b8dcec
+  - package: com.piwigo.piwigo_ng
+    signature:
+      - fingerprint: 72:9A:AA:9E:80:0C:D3:BA:D0:2B:1F:FA:B0:9A:DC:57:8D:91:42:61:CA:C8:7E:EC:46:D2:56:C6:ED:43:29:AC
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: CB-140
+            apk:
+              sha256: 2fb286cb1766f7aaabff1826a57bbe23004ffa46e9487f55d4c60c1fa89683df
   - package: com.pixelfed
     signature:
       - fingerprint: 23:32:88:CD:15:B6:99:49:F1:0D:A6:22:6D:9B:B0:C6:80:52:78:0A:E1:84:C7:F4:6B:DF:B9:5B:A6:A4:4E:19
