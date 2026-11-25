@@ -12858,6 +12858,16 @@ packages:
             issue: GH-300
             apk:
               sha256: 9f5b4e7e6733e67b6a69f484fe7656035db19b99ae37a48f51203deb4d47f000
+  - package: jp.co.shueisha.mangaplus
+    signature:
+      - fingerprint: 24:BE:3D:84:AD:FC:D6:3C:FF:2F:C7:EA:BE:3C:AB:F1:3D:8F:9C:57:85:08:A4:C9:6A:64:5D:E7:81:80:C1:E4
+        sources:
+          - name: Google Play
+            issue: GH-8288
+            apk:
+              sha256: 17281575a5334f20854244c0b9e2d81ad3c8011ec80344912dd04fcab24c9a07
+          - name: HTTPS Verified Domain
+            issue: GH-8288
   - package: jp.naver.line.android
     signature:
       - fingerprint: |-

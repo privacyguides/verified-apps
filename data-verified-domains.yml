@@ -586,6 +586,15 @@ domains:
       - package: com.zoho.mail
         fingerprints:
           - A9:D6:D0:A2:AF:DB:15:84:9B:8C:D3:1D:51:FE:73:B8:E1:B1:70:BA:A5:70:C2:F8:F2:A3:F8:65:28:29:CB:BD
+  - domain: mangaplus.shueisha.co.jp
+    method: https
+    issue:
+      - GH-8288
+    checked: "2026-11-25T10:42:12Z"
+    packages:
+      - package: jp.co.shueisha.mangaplus
+        fingerprints:
+          - 24:BE:3D:84:AD:FC:D6:3C:FF:2F:C7:EA:BE:3C:AB:F1:3D:8F:9C:57:85:08:A4:C9:6A:64:5D:E7:81:80:C1:E4
   - domain: markusfisch.de
     method: https
     issue:
