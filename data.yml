@@ -5289,6 +5289,14 @@ packages:
             issue: GH-774
             apk:
               sha256: e387f130f269d64334882bc71a4c8610124cf53f8312b91568b0a92cc073cae3
+  - package: com.pranshulgg.weather_master_app
+    signature:
+      - fingerprint: C9:7F:59:2A:D5:A4:26:EF:17:AA:4B:11:3A:A8:F9:C1:BC:3C:2F:26:75:C8:57:AD:86:BD:AC:C0:5F:BE:EE:01
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-2172
+            apk:
+              sha256: 3204f52f558200e6a185b732f136aee56e434dc14658a33023c1353fa5174329
   - package: com.presley.flexify
     signature:
       - fingerprint: 01:1E:E1:A6:E4:E5:EC:D6:75:F6:7F:BF:3D:78:AD:82:61:4A:7A:7A:3F:24:ED:71:CC:9C:41:71:54:A0:F0:FD
