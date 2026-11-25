@@ -1447,6 +1447,14 @@ packages:
             issue: GH-2288
             apk:
               sha256: 67588b090e6e9bc91422916cc60660aa333694dc2a41f03716f151160b80d3ff
+  - package: com.biglybt.android.client
+    signature:
+      - fingerprint: 25:49:BD:C0:92:0B:E4:A7:C0:78:3F:75:C6:7C:F3:D3:26:56:FC:4A:69:44:5F:E6:46:68:D3:44:17:02:A7:AE
+        sources:
+          - name: F-Droid
+            issue: GH-1792
+            apk:
+              sha256: 527cee469d0730bd37e65b7fccabbb619ef736a2ee0b0378497ca56ffdb03090
   - package: com.bilingify.readest
     signature:
       - fingerprint: E0:E7:60:55:80:8D:3A:DE:A0:D1:CF:7C:20:85:40:A3:DD:4B:E6:4D:17:5C:0F:DE:26:57:7D:9C:5B:29:5F:51
