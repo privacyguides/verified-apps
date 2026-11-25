@@ -1069,6 +1069,14 @@ packages:
             issue: GH-499
             apk:
               sha256: 6870f1f6110af5f478dd131bc1055c44fff00e0d7f4ffe29f883242317759ffc
+  - package: com.aeidolon.vaultexplorer
+    signature:
+      - fingerprint: 0B:DE:9D:3B:0E:E3:F5:66:17:D0:26:32:C8:43:B1:62:9B:F0:B2:FA:A4:56:0D:FF:5D:26:F6:51:DC:32:5F:19
+        sources:
+          - name: F-Droid
+            issue: GH-7500
+            apk:
+              sha256: d79bf6709afdedbce1a08750681d997cf834fb4119020f542ff626be02c85817
   - package: com.aeroshark333.artofearthify
     signature:
       - fingerprint: D9:61:D7:16:56:26:D4:B9:46:D6:FB:0D:CB:38:11:E8:27:AD:F2:C4:BE:32:12:D2:71:DB:82:01:75:E0:55:F2
