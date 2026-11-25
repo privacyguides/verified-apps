@@ -14423,6 +14423,16 @@ packages:
             issue: GH-461
             apk:
               sha256: 251a316c84eed55e30e63858c7a11b0bb3cfab7425a544daf1cd737bf04bcf8b
+  - package: org.framasoft.app
+    signature:
+      - fingerprint: 4A:7D:08:F0:D2:54:5E:07:C8:D6:39:34:A3:B4:4D:91:CD:F2:81:DE:B4:FC:BA:A2:BF:15:83:38:70:20:F4:CD
+        sources:
+          - name: F-Droid
+            issue: GH-8265
+            apk:
+              sha256: b9a8be05a9989161b729ad5d8e066b8658382981bcd86133a7d61ada026ffb17
+          - name: HTTPS Verified Domain
+            issue: GH-8265
   - package: org.framasoft.peertube
     signature:
       - fingerprint: C3:C6:05:C9:38:7A:A2:D6:FD:01:70:FB:E3:96:36:DC:83:84:5A:C4:E6:55:B4:E8:22:FD:BD:34:9B:02:93:DB
