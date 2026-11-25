@@ -881,6 +881,14 @@ packages:
             issue: GH-1841
             apk:
               sha256: 46f70bd5496023e02c4fa6be76af30c3c551d7f805441c70b539b17be0415ab3
+  - package: com.activitymanager
+    signature:
+      - fingerprint: 2C:A6:2F:D3:5E:B4:7E:4A:59:C6:2C:5F:7D:70:5F:96:70:57:D5:51:90:08:8A:A5:1D:46:B5:98:3D:F8:20:0E
+        sources:
+          - name: F-Droid
+            issue: GH-6215
+            apk:
+              sha256: f10482c2337a654900d4681c165b634c0845d06dc2cc132dd913f70dfe7e408c
   - package: com.adguard.vpn
     signature:
       - fingerprint: D2:A1:52:9C:DF:F9:3B:EF:67:E5:02:59:32:6F:24:8F:82:F0:E0:BC:84:43:E7:14:EE:DB:87:A0:5A:CA:24:15
