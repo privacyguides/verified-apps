@@ -3597,6 +3597,14 @@ packages:
             issue: GH-579
             apk:
               sha256: c97ebafa99bafd75628d25883287499e35907dc3d525111e267f0615d4fc6c83
+  - package: com.fooview.android.fooview
+    signature:
+      - fingerprint: D7:B1:7C:41:05:DA:96:4F:6B:50:F4:AF:3F:43:AE:66:E8:C5:26:43:D6:E2:27:05:7F:1F:BB:17:5D:BA:9E:5A
+        sources:
+          - name: Google Play
+            issue: GH-7355
+            apk:
+              sha256: eb1425a34909af5ddae39906a43fd703c51d1479fdaf12673766c769ff3aa75c
   - package: com.forem.android
     signature:
       - fingerprint: ED:60:31:EA:8D:32:5A:D5:03:3C:34:73:EB:35:A0:5E:96:22:5D:D2:9D:E3:2A:B0:DF:35:37:FA:4E:F4:CD:2A
