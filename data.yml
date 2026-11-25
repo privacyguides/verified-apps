@@ -10124,6 +10124,14 @@ packages:
             issue: GH-6405
             apk:
               sha256: 1e3325c9d27a94fb4dad2592a45ec32494d4ff6ab3a7919ebd385d148bcffd59
+  - package: fr.odrevet.fujiten
+    signature:
+      - fingerprint: 8A:B7:27:39:91:5C:24:09:39:97:E3:B3:8B:4F:90:70:59:90:B7:AB:5C:A7:58:9A:1D:8D:BA:B1:C2:70:5D:7E
+        sources:
+          - name: F-Droid
+            issue: GH-6775
+            apk:
+              sha256: 76f54f1064647e8673b2bb54e162b70942a017b44a165060f6c58de94ff3ab8e
   - package: fr.schiller.remoteScreen
     signature:
       - fingerprint: FF:BA:EC:12:8E:25:5A:52:54:04:18:CC:8C:E1:21:E5:79:50:96:F0:AD:C5:70:A9:AC:A2:83:BC:C6:BD:C1:6E
