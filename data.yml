@@ -2706,6 +2706,14 @@ packages:
             issue: GH-7653
             apk:
               sha256: 309a557d523a3e877780bfb4aa9d0e4b62737204f83ada647017ce50ded246b5
+  - package: com.csc.cpmobile
+    signature:
+      - fingerprint: 06:13:34:93:07:36:46:75:D2:A8:AA:3E:6A:93:69:BF:9F:1B:1A:99:EF:FC:F3:F8:B4:E0:B7:FC:D6:3B:C2:CA
+        sources:
+          - name: Google Play
+            issue: GH-7665
+            apk:
+              sha256: c210f8ec87cc7c2792727df2aeaabf38fd8dc9168c6ae72842f0445ff06e6a35
   - package: com.ction.playergames
     signature:
       - fingerprint: 01:8A:34:5E:13:93:F7:AC:1C:BF:35:D3:1C:DB:AF:96:55:91:37:2A:50:53:AF:7C:75:34:5B:F0:20:98:41:79
