@@ -1859,6 +1859,14 @@ packages:
             issue: GH-1173
             apk:
               sha256: 2d4ace2877eaa42fea365c3a31165e4cf0d13be1dbff593e1c0ae8ff3e29c0eb
+  - package: com.codedead.deadhash
+    signature:
+      - fingerprint: 33:46:CF:D5:67:6A:EF:D9:A2:7E:A2:5B:9F:13:A1:20:C2:F6:F6:8E:E2:6E:6F:8B:76:84:5C:EA:27:4E:A7:EE
+        sources:
+          - name: F-Droid
+            issue: GH-1423
+            apk:
+              sha256: d9a4cc160a329dc007fc88c3120fc7bf8b82296831a3e1a74c9d62976a50160f
   - package: com.coinbase.android
     signature:
       - fingerprint: 41:6A:E0:CE:11:21:E9:C6:A6:B0:B7:C6:B5:D1:D9:BA:2B:9B:23:A1:4F:4F:1B:9A:87:E0:3B:49:8E:20:CF:3B
