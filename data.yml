@@ -10072,6 +10072,14 @@ packages:
             issue: GH-2478
             apk:
               sha256: 87ea4bda74115afe7117079e3f6bd38cf303a69050d38bab6ec6246bbfd392dd
+  - package: io.olvid.messenger.nogoogle
+    signature:
+      - fingerprint: 48:6D:98:1D:59:0C:1E:28:BA:21:8D:42:27:F1:C1:0D:D7:C5:B1:58:DF:A1:33:60:55:BE:75:2F:D9:33:F8:BC
+        sources:
+          - name: F-Droid
+            issue: GH-6194
+            apk:
+              sha256: d6ebf47f6493404b5013238286c8f2b403ed592cd4687c44f7f8fcc688a76759
   - package: io.raindrop.raindropio
     signature:
       - fingerprint: DD:D7:5C:66:57:86:54:D0:85:42:48:04:CB:27:C7:B6:E0:4F:D3:66:16:04:5B:FE:E1:40:D9:75:6F:FC:A5:63
