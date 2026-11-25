@@ -2566,6 +2566,16 @@ packages:
             issue: GH-2630
             apk:
               sha256: 59249eedf9143d64c17f5071ca1bac1441f0da94b9337cb092174b4e5cbbc218
+  - package: com.deel.app
+    signature:
+      - fingerprint: D0:BB:E5:1E:F1:30:C8:B2:87:B8:DD:AF:DE:14:BC:2F:EA:DA:9D:39:F8:94:29:92:22:36:6B:50:92:48:99:B0
+        sources:
+          - name: Google Play
+            issue: GH-6692
+            apk:
+              sha256: 89de621a9de2d840917581aa7be189eb94fa99b6e02faad0c804eb6ae7a7bf68
+          - name: HTTPS Verified Domain
+            issue: GH-6692
   - package: com.deepl.mobiletranslator
     signature:
       - fingerprint: EF:ED:F6:6E:64:29:F7:F0:C6:79:6F:64:AD:08:A6:D1:F0:55:82:BF:21:48:36:56:DE:B4:00:65:1D:1E:F5:BE
