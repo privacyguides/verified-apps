@@ -2950,6 +2950,14 @@ packages:
             apk:
               sha256: 0550c9bce3efa245b7100635924f0f7ac49732e2522ef28410b7f72d674b2dac
               link: https://github.com/mueller-ma/Coffee/releases/download/2.26/coffee.apk
+  - package: com.github.muellerma.nfcreader
+    signature:
+      - fingerprint: 90:43:1B:46:5B:44:03:31:14:5C:76:9C:40:D8:72:B0:79:BE:15:40:50:88:22:CD:FC:3A:2A:C3:97:D4:6C:AE
+        sources:
+          - name: F-Droid
+            issue: GH-1575
+            apk:
+              sha256: df69c383fac1ab3e03154cb171aa40dcebb023e11948c1de3d3e068b0df4ed30
   - package: com.github.olga_yakovleva.rhvoice.android
     signature:
       - fingerprint: 10:79:02:73:B7:C5:68:B3:C3:11:35:4D:47:3D:4B:83:B4:82:07:12:E1:F5:95:E3:24:C4:DD:B9:67:2B:D2:3A
