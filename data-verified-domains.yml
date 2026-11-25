@@ -226,6 +226,15 @@ domains:
       - package: com.brave.browser_nightly
         fingerprints:
           - 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
+  - domain: brubank.com
+    method: https
+    issue:
+      - GH-7994
+    checked: "2026-11-25T10:08:22Z"
+    packages:
+      - package: com.brubank
+        fingerprints:
+          - 73:80:E0:4A:50:F7:81:C6:61:86:4C:17:7B:2C:51:AA:98:C0:B5:01:83:BF:CE:46:66:64:6D:E7:C9:12:E9:F4
   - domain: budzdorov.ru
     method: https
     issue:

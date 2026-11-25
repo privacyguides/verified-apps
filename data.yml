@@ -2439,6 +2439,16 @@ packages:
             apk:
               sha256: 52bda2653b0f21c2c82b61f0935a068e7eb7a8300a66e659929e68adc227b9b4
               link: https://github.com/moneytoo/Player/releases/download/v0.211/Just.Player.v0.211.apk
+  - package: com.brubank
+    signature:
+      - fingerprint: 73:80:E0:4A:50:F7:81:C6:61:86:4C:17:7B:2C:51:AA:98:C0:B5:01:83:BF:CE:46:66:64:6D:E7:C9:12:E9:F4
+        sources:
+          - name: Google Play
+            issue: GH-7994
+            apk:
+              sha256: 3904536956da0f08934f602a9ecb86893eec87798505bce0b3a8d92aacc8e2dd
+          - name: HTTPS Verified Domain
+            issue: GH-7994
   - package: com.budget.tracker_app
     signature:
       - fingerprint: DA:FB:B7:B4:4D:19:6D:98:0C:B1:49:F8:6C:7B:38:B4:D0:5D:E4:96:0E:1A:37:3D:89:27:AE:56:3A:77:9A:B6
