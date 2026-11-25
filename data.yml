@@ -7791,6 +7791,16 @@ packages:
             issue: GH-7712
             apk:
               sha256: f67317b2342f3f386cda03743448f78503f78fe1ea36d90679aa92ff8bffc5db
+  - package: com.pikasim.esim
+    signature:
+      - fingerprint: C2:25:ED:7E:98:03:23:CE:42:3D:83:9B:3A:DF:C1:2A:5E:F8:89:40:4E:E4:9C:0C:BF:1A:ED:DB:DB:DF:E7:11
+        sources:
+          - name: Google Play
+            issue: GH-8406
+            apk:
+              sha256: ec55a1c59073cfb85e6930da078825af70685bd831a8aafb6bd83fdaa2fc95fe
+          - name: HTTPS Verified Domain
+            issue: GH-8406
   - package: com.pittvandewitt.wavelet
     signature:
       - fingerprint: 68:92:26:16:82:81:AB:24:22:C9:EB:50:6C:BD:2C:3A:6C:3A:9A:5F:51:AE:C1:23:C9:41:93:D1:C5:87:E0:49

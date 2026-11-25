@@ -931,6 +931,16 @@ domains:
       - package: io.ente.photos.independent
         fingerprints:
           - 35:ED:56:81:B7:0B:B3:BD:35:D9:0D:85:6A:F5:69:4C:50:4D:EF:46:AA:D8:3F:77:7B:1C:67:5C:F4:51:35:0B
+  - domain: pikasim.com
+    method: https
+    issue:
+      - GH-8406
+    checked: "2026-11-25T23:06:39Z"
+    packages:
+      - package: com.pikasim.esim
+        fingerprints:
+          - C2:25:ED:7E:98:03:23:CE:42:3D:83:9B:3A:DF:C1:2A:5E:F8:89:40:4E:E4:9C:0C:BF:1A:ED:DB:DB:DF:E7:11
+          - EA:8F:B2:05:AB:CF:EC:C4:90:A0:FC:76:D9:3C:CD:C8:B1:82:E1:40:35:64:F3:C7:26:24:64:17:1E:99:6A:80
   - domain: play.verifiedapps.privacyguides.org
     method: dns
     issue:
