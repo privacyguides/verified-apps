@@ -5787,6 +5787,14 @@ packages:
             issue: GH-1440
             apk:
               sha256: 815e57ae6881e4f73e0ea73f2c2f494cc23df380c5f264a6b1b796ca91119263
+  - package: com.oticon.app
+    signature:
+      - fingerprint: C5:5F:B5:25:85:D0:55:0D:8F:1D:94:DF:17:9D:F4:80:A7:BD:58:76:35:80:DF:9F:3C:54:8D:7C:E3:CD:EF:79
+        sources:
+          - name: Google Play
+            issue: GH-6336
+            apk:
+              sha256: acc8f305dab947806e997c989c6759e00b2d6bbf49589fe1efe43a69b722c767
   - package: com.otp.octopilauncher
     signature:
       - fingerprint: 94:FB:88:56:2B:A7:F2:47:A0:AB:9B:15:4C:44:A1:2F:53:5B:54:BC:2B:E7:7A:0F:C7:CE:C7:65:C5:33:6F:25
