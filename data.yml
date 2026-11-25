@@ -10263,6 +10263,18 @@ packages:
             apk:
               sha256: a23123578232276b70d1802906d3297f55e2a41f41e2ac16648a8b0ead4f90d4
               link: https://github.com/azahar-emu/azahar/releases/download/2125.1.2/azahar-android-googleplay-2125.1.2.apk
+  - package: io.github.luantak.fokuslauncher
+    signature:
+      - fingerprint: 79:35:1D:7E:DA:A5:E5:4B:33:9C:1C:9B:E6:8E:3F:08:BC:DB:97:DC:7E:82:91:29:16:DF:60:38:55:7E:BE:48
+        sources:
+          - name: F-Droid
+            issue: GH-6505
+            apk:
+              sha256: 0672fdaa4454f881ada4c42a9e5c8cf6eaada5fef140e9758a8a14739b62e30b
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-6505
+            apk:
+              sha256: 0672fdaa4454f881ada4c42a9e5c8cf6eaada5fef140e9758a8a14739b62e30b
   - package: io.github.muntashirakon.AppManager
     signature:
       - fingerprint: B6:8E:93:49:10:C0:05:80:14:A0:6A:2E:14:47:29:F9:AA:11:3F:C5:D9:E0:DF:F5:29:EC:BF:1D:1F:61:2D:13
