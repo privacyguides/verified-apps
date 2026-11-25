@@ -9524,6 +9524,18 @@ packages:
             apk:
               sha256: 60f878f4d705dd97f26950b82069e6ccc54794cfe4ef28b26eb6eedf8864426f
               link: https://github.com/leinelissen/jellyfin-audio-player/releases/download/v2.4.6/fintunes-v2.4.6.apk
+  - package: nl.privacydragon.bookwyrm
+    signature:
+      - fingerprint: 05:51:27:4D:D6:23:7A:90:36:52:27:8C:C0:74:4C:CA:35:D7:5A:41:4A:0A:4E:F1:AC:8F:40:5A:F4:D5:60:0C
+        sources:
+          - name: F-Droid
+            issue: CB-111
+            apk:
+              sha256: 041c1fe9a5e24766dc0a7244d077f4794175ca4144cb227a77c14cd0be98ceea
+          - name: F-Droid (IzzyOnDroid)
+            issue: CB-111
+            apk:
+              sha256: 041c1fe9a5e24766dc0a7244d077f4794175ca4144cb227a77c14cd0be98ceea
   - package: nl.rijksoverheid.digid.pub
     signature:
       - fingerprint: 3B:90:85:EB:09:26:B0:11:1D:4E:62:2D:5A:5F:81:9F:6F:55:30:F4:F8:F7:84:9E:05:94:B2:CD:3C:AF:F1:7A
