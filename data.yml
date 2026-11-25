@@ -9989,6 +9989,18 @@ packages:
             issue: GH-2779
             apk:
               sha256: 79588927ddf0da3849b2ccc6ca0ab9b4fb530ab4dc3e6307130e4a22411bebdf
+  - package: nodomain.xabd.privacyscanner
+    signature:
+      - fingerprint: FC:E0:AE:50:FC:D2:1B:03:B9:6F:8F:E7:4C:F7:4C:76:FC:05:13:72:C0:79:80:D8:82:4C:01:CF:5C:75:CE:E5
+        sources:
+          - name: F-Droid
+            issue: GH-2239
+            apk:
+              sha256: c91a5f6e93ec8328fe4e2ffdabf5085abd6c7ea695ee6e0f8eca0518094cb3c3
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-2239
+            apk:
+              sha256: c91a5f6e93ec8328fe4e2ffdabf5085abd6c7ea695ee6e0f8eca0518094cb3c3
   - package: nz.eloque.foss_wallet
     signature:
       - fingerprint: CE:3C:E7:92:A7:65:42:7E:E0:6A:D6:BC:33:28:75:E5:0D:32:E2:26:A5:79:14:75:76:1D:D3:86:C7:F3:47:5D
