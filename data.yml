@@ -1287,6 +1287,14 @@ packages:
               sha256: 823f4f81a1e5e1d72845bb5ee110c70414dcd2d02670c68133361267f0669655
           - name: HTTPS Verified Domain
             issue: GH-6320
+  - package: com.afkanerd.deku
+    signature:
+      - fingerprint: DE:E0:52:2C:2F:17:D7:11:E6:B4:68:BF:21:2A:BF:D1:0D:34:63:50:C8:DF:41:C4:D4:74:D3:4C:33:FC:01:FC
+        sources:
+          - name: F-Droid
+            issue: GH-2936
+            apk:
+              sha256: 787d600108535898a616f474d433493ee159ebef61ca5ac8531aaef5aefe2a36
   - package: com.afklm.mobile.android.gomobile.klm
     signature:
       - fingerprint: FE:5B:C8:AD:00:6A:FC:67:81:A6:4B:4F:3C:39:DC:C5:33:68:CC:C5:45:CE:33:E5:75:12:07:EA:4B:98:75:A4
