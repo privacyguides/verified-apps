@@ -13503,6 +13503,14 @@ packages:
             apk:
               sha256: eb56aa9ae68b4d4b04e40251d7fe7ea49f97e0c4be5a8384e28d98ee36b9c5e2
               repo: https://archive.newpipe.net/fdroid/repo/
+  - package: org.scrib.transcriber
+    signature:
+      - fingerprint: 74:70:2F:7D:FB:63:84:68:3E:A8:D2:00:C9:ED:57:85:12:11:48:25:F4:EB:13:4F:C2:4E:B5:E5:F2:2A:1B:4C
+        sources:
+          - name: F-Droid
+            issue: GH-7127
+            apk:
+              sha256: e5b2492f2b8994eeb8d841cf756c8a120f6f8de070ecf7ac90a61ad1a65ea7b4
   - package: org.secuso.privacyfriendlyminesweeper
     signature:
       - fingerprint: 50:75:CE:FF:95:61:EB:51:B3:7D:48:37:6D:A6:10:23:0B:59:5A:BA:70:7E:2D:84:5F:9B:84:4E:A5:88:26:4D
