@@ -1430,6 +1430,14 @@ packages:
         sources:
           - name: AppVerifier
             issue: GH-8137
+  - package: com.anindra.messages
+    signature:
+      - fingerprint: CF:86:0E:C3:45:A6:81:02:30:62:9E:24:A6:6A:DA:A5:8C:31:1E:F2:DA:E2:D7:7D:A0:2B:85:D4:02:2B:F6:08
+        sources:
+          - name: F-Droid
+            issue: GH-7707
+            apk:
+              sha256: 9917b1b172d3a0317538abdb17af06d608049ecd2a4a18d90f0b98db0b4d76ff
   - package: com.aniplex.fategrandorder.en
     signature:
       - fingerprint: CF:E4:13:B1:07:55:61:DD:F4:24:0C:5B:B4:0C:F9:4C:39:7C:AC:F5:7A:2B:DF:07:21:51:65:DD:41:D5:D6:84
