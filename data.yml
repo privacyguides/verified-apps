@@ -10750,6 +10750,14 @@ packages:
             issue: GH-1433
             apk:
               sha256: 9c1ec068c4e6aed1f40c8489082653fd31b5cd6a5269314191da3606a1074c38
+  - package: org.onionshare.android.fdroid
+    signature:
+      - fingerprint: 0D:EF:4C:8A:3C:5B:65:74:8F:37:DF:F6:DC:DF:FC:AF:3E:85:C7:80:9A:56:51:43:5C:29:09:FB:2B:A2:0B:F6
+        sources:
+          - name: F-Droid
+            issue: GH-1988
+            apk:
+              sha256: 10ba7c05e22732d6b8fdb558a7a7cac7bf3dff48e37aa4181584666301726ad1
   - package: org.openobservatory.ooniprobe
     signature:
       - fingerprint: BF:7D:A8:2A:7C:77:87:EB:67:56:41:48:23:4B:6D:40:F0:EC:66:4B:F2:92:BC:7A:8F:15:47:FE:7F:E7:5E:84
