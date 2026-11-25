@@ -6977,6 +6977,14 @@ packages:
             issue: GH-1636
             apk:
               sha256: e2ababc9eef975f2e842f280c280aac0164d45d1e21d90e1d615b6d39672ba2f
+  - package: de.cweiske.headphoneindicator
+    signature:
+      - fingerprint: 45:ED:6E:CA:94:95:D5:49:14:38:0D:3F:84:84:EB:6D:D2:CA:DB:B1:E4:7B:C5:FD:57:62:EC:37:07:83:F4:15
+        sources:
+          - name: F-Droid
+            issue: GH-1549
+            apk:
+              sha256: 816e49cacfe137c91929a3983a0418fccd8c15c9e94fdb8a58b245f3bc262fb5
   - package: de.dak.dak_app
     signature:
       - fingerprint: 84:BA:E8:B5:D0:92:F0:49:51:37:BA:34:1A:D1:CC:88:2C:D9:F9:43:3E:B7:DB:A7:9D:9E:0E:5B:9F:77:7B:A2
