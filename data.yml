@@ -6168,6 +6168,14 @@ packages:
             issue: GH-2198
             apk:
               sha256: 19f09d0494e5a3a1d8e84d92237b1c9d92c2bb1240ce16730ce5789e35722a4b
+  - package: com.mobile.balanz.droid
+    signature:
+      - fingerprint: 0C:63:83:6B:16:04:45:BF:35:70:0D:0C:F3:91:C8:28:65:B8:D1:CB:DF:5D:2B:C7:3F:24:AB:C2:58:3E:FC:BB
+        sources:
+          - name: Google Play
+            issue: GH-7989
+            apk:
+              sha256: 1030e3d45afe0d5e955b0e5884d9ef1445773b10fff1cac2c307667107e16c6f
   - package: com.mobillium.airalo
     signature:
       - fingerprint: 03:61:DD:85:0D:D3:AB:65:D9:2D:F4:18:9A:26:41:3D:A5:3A:FF:AA:31:8F:7D:AD:91:47:94:AD:A2:C9:B4:09
