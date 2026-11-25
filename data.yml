@@ -7219,6 +7219,18 @@ packages:
               sha256: 00fc3f8d7dd8e6fb85efcf698fba50d05e37fe698f918a19ba0296f4a0d7c29e
           - name: HTTPS Verified Domain
             issue: GH-2068
+  - package: com.starry.myne
+    signature:
+      - fingerprint: 5D:FE:06:DA:0F:E3:B0:81:3F:3F:3D:C5:30:56:99:C2:DB:B9:DF:DB:AB:13:49:DA:7C:41:C5:9D:2F:CF:31:9C
+        sources:
+          - name: F-Droid
+            issue: GH-6707
+            apk:
+              sha256: b4949a2ff9530f9ac1c64f9e5ea73843910a03286a1bb540496c3cf8e1c630cb
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-6707
+            apk:
+              sha256: b4949a2ff9530f9ac1c64f9e5ea73843910a03286a1bb540496c3cf8e1c630cb
   - package: com.stockanalysis.app
     signature:
       - fingerprint: 20:9B:71:35:14:DA:06:1D:EA:EC:E5:BC:D4:DC:AE:3D:0F:B7:C9:E3:EC:D3:DC:FE:4A:AD:18:3F:63:63:97:43
