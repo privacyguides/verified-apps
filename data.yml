@@ -490,6 +490,14 @@ packages:
             issue: GH-395
             apk:
               sha256: f03bd7f92dadee073f9dbd706ac1aeafe7ac0763950aea83b49c53262dc02bfa
+  - package: atws.app
+    signature:
+      - fingerprint: D2:AC:A5:C0:FB:11:86:34:05:B5:60:8E:84:2B:69:4C:E3:34:1E:3B:DB:08:FA:CD:DE:F8:E8:36:9E:D8:FC:0F
+        sources:
+          - name: Google Play
+            issue: GH-6696
+            apk:
+              sha256: e43305ccef9a26dcb0638c582d58baaf292fe7655dc05e90e55de8a62d120fbc
   - package: au.com.ing.banking
     signature:
       - fingerprint: 50:66:0F:2B:C4:9B:3E:C9:12:69:AD:D6:48:73:CE:A2:2B:71:32:C8:A1:88:34:60:93:10:FD:07:61:06:B3:37
