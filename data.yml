@@ -4787,6 +4787,14 @@ packages:
             issue: GH-2153
             apk:
               sha256: 3b06700335733210551ec3ba3fcdb1cd4001f71d66093e859417973ed781f08d
+  - package: com.newoether.agora
+    signature:
+      - fingerprint: 5D:E2:6F:26:31:63:C2:20:C0:6C:23:D6:A8:2F:C0:34:D5:55:91:EC:4D:3F:F0:BA:D8:B9:DC:9B:7B:E1:AA:29
+        sources:
+          - name: F-Droid
+            issue: GH-2592
+            apk:
+              sha256: d9a6479c1051ed0ce834c75ff0472e569272f79f1bbcda07ca80683b96127486
   - package: com.newsblur
     signature:
       - fingerprint: 5C:5E:93:50:3C:6A:C4:89:88:6A:29:BE:0C:28:6B:A6:04:82:E2:C2:5A:A6:D6:EF:56:84:FD:6E:8F:D7:C3:19
