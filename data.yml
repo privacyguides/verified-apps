@@ -6659,6 +6659,14 @@ packages:
             issue: GH-1248
             apk:
               sha256: a3ce8129720f24f1c47d4bc62361e2141f9a109f8377862f035073544d5c792d
+  - package: com.topjohnwu.magisk
+    signature:
+      - fingerprint: B4:CB:83:B4:DA:D9:9F:99:7D:BE:87:2F:01:3A:A1:6C:14:EE:C4:1D:16:70:21:F3:71:F7:E1:33:0F:27:3E:E6
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-5631
+            apk:
+              sha256: 89cefac0a318afa39fb3880c45c87b036c05bc1ebf02a7a715b7f8d7c26ac6e7
   - package: com.topsmarkets.app.android
     signature:
       - fingerprint: F2:F0:EF:B6:17:AC:85:C3:65:BC:45:DC:78:D6:27:4D:84:81:DC:A6:0C:8A:C7:DA:13:83:6B:43:F4:37:6B:EF
