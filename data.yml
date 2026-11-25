@@ -3923,6 +3923,16 @@ packages:
             issue: GH-1883
             apk:
               sha256: 812678d5b46940e3e3578bbd127d60fc9650d057cd44e5de5e8560a67aab80e8
+  - package: com.google.android.gm
+    signature:
+      - fingerprint: |-
+          7C:E8:3C:1B:71:F3:D5:72:FE:D0:4C:8D:40:C5:CB:10:FF:75:E6:D8:7D:9D:F6:FB:D5:3F:04:68:C2:90:50:53
+          F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
+        sources:
+          - name: Google Play
+            issue: GH-8123
+            apk:
+              sha256: 0e67a9fdae19e252e286aadff7cec7488cd07ad9c919fcd460d38f4e556d29cc
   - package: com.google.android.gms
     signature:
       - fingerprint: |-
