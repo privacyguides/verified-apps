@@ -9667,6 +9667,14 @@ packages:
               sha256: 0186e1dd556141e7a02236d50272866903406ce66fca20e1966703703d5dcf26
           - name: HTTPS Verified Domain
             issue: GH-1525
+  - package: net.canvoki.carburoid
+    signature:
+      - fingerprint: 8C:DF:D3:89:B1:A7:97:99:43:20:13:21:18:8A:41:6E:D5:4D:BD:F1:C4:32:ED:07:E2:BB:44:B5:B3:CE:A7:22
+        sources:
+          - name: F-Droid
+            issue: CB-134
+            apk:
+              sha256: 7dbe686ddd26593526b77562f7bb06dc12004a49bdc95bcfd399a241b61827d4
   - package: net.christianbeier.droidvnc_ng
     signature:
       - fingerprint: F8:EF:C0:A7:D5:F9:D8:BA:88:ED:F0:82:F2:DC:2C:21:31:B7:54:BA:8F:ED:B4:91:6A:C2:EB:2A:CC:52:19:0D
