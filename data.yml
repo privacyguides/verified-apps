@@ -2928,6 +2928,14 @@ packages:
             issue: GH-1036
             apk:
               sha256: 88289dfff4227f54a00ee1343ea2b5c4debebe97917874a2b2f3b4bd07ed7e0a
+  - package: com.github.tmo1.sms_ie
+    signature:
+      - fingerprint: C1:05:E6:D9:67:55:42:D4:34:A9:CD:E9:DC:79:B2:49:F1:AC:0A:FC:3B:8A:AE:C7:D5:C8:20:11:36:CF:FD:BE
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1178
+            apk:
+              sha256: b8c884db781b03c1dcdcf497ee5af7151a5ad27d041c519aa31db58058a5e6e6
   - package: com.gitlab.mudlej.MjPdfReader
     signature:
       - fingerprint: AF:92:A1:A8:1B:45:B9:D6:A5:D9:F1:63:7F:D6:BE:98:FD:88:9B:48:12:8C:00:9D:A9:AF:D7:BA:0F:C2:F0:89
