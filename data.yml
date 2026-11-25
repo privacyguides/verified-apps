@@ -12868,6 +12868,14 @@ packages:
             issue: GH-333
             apk:
               sha256: 5f3dcabcd67ec50461f8ae859729858aa1501837abb4d5ec05bedb259e2a1b93
+  - package: sen.typinghero
+    signature:
+      - fingerprint: F2:40:4B:E0:F7:78:DA:A2:D1:2F:2C:F0:4B:E2:D0:7B:7E:09:1E:AE:3C:F3:D7:32:90:91:C2:0F:20:BE:B9:05
+        sources:
+          - name: Google Play
+            issue: GH-6091
+            apk:
+              sha256: 75272ac31893a893c94619d8ab153b81c8a4da4c4ae540780e1a3ec87c565406
   - package: slowscript.warpinator
     signature:
       - fingerprint: EB:8C:95:5A:2A:5C:55:7D:61:8D:79:24:DC:0D:DF:C3:81:58:81:EB:93:A6:FA:CD:DD:A8:33:C0:DD:49:C2:37
