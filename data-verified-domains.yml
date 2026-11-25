@@ -681,6 +681,16 @@ domains:
       - package: ru.yandex.taxi
         fingerprints:
           - AC:A4:05:DE:D8:B2:5C:B2:E8:C6:DA:69:42:5D:2B:43:07:D0:87:C1:27:6F:C0:6A:D5:94:27:31:CC:C5:1D:BA
+  - domain: taz.de
+    method: https
+    issue:
+      - GH-6137
+    checked: "2026-11-25T07:25:57Z"
+    packages:
+      - package: de.taz.android.app.free
+        fingerprints:
+          - 06:2D:3F:9B:64:86:96:56:3D:B3:AF:C6:BF:A0:0F:5F:15:CD:5D:09:4D:0C:07:D1:16:5D:C9:49:DD:77:34:39
+          - 9D:31:0B:56:F3:F0:EA:51:0B:19:2E:A5:90:46:DD:A7:73:32:55:4B:0C:AE:BE:D8:6F:4D:2B:9F:8B:60:F1:92
   - domain: transferwise.com
     method: https
     issue:

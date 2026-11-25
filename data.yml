@@ -8723,6 +8723,16 @@ packages:
             issue: GH-1915
             apk:
               sha256: bf2b2c7dd23d9ac1ad7a8c1daf3a9a17a64e6731ca90f3d3fe14617b57cf0c40
+  - package: de.taz.android.app.free
+    signature:
+      - fingerprint: 9D:31:0B:56:F3:F0:EA:51:0B:19:2E:A5:90:46:DD:A7:73:32:55:4B:0C:AE:BE:D8:6F:4D:2B:9F:8B:60:F1:92
+        sources:
+          - name: F-Droid
+            issue: GH-6137
+            apk:
+              sha256: 86f14e1101e7f98952bc402234a7223e99a9defa100a4e12918ee3d88192e448
+          - name: HTTPS Verified Domain
+            issue: GH-6137
   - package: de.tk.tkapp
     signature:
       - fingerprint: 64:59:9C:D0:AB:91:92:B7:CF:FA:91:10:3A:F5:CB:63:02:5B:63:2F:ED:BB:3B:0C:C4:9C:79:80:6E:B9:3D:6E
