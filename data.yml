@@ -2211,6 +2211,14 @@ packages:
             issue: GH-965
             apk:
               sha256: 221cab1a1741fbdce756a7bda811f575cddb33cb25d555e3fc08f167578aa715
+  - package: com.chilllive.chillwallpaperproject
+    signature:
+      - fingerprint: B3:79:89:49:8C:9E:28:30:F3:EF:B6:F5:02:10:2D:66:2A:CC:A8:85:1E:2C:CE:04:15:9C:29:94:D7:BE:45:56
+        sources:
+          - name: Google Play
+            issue: GH-6335
+            apk:
+              sha256: a031ea4897fb3f9dcba370eb553e46468643b049624eca9c0769683628761666
   - package: com.cisco.wx2.android
     signature:
       - fingerprint: B0:78:4C:13:1B:03:08:6D:A3:76:D3:23:0E:9C:F8:4B:39:AE:E7:69:70:9F:FB:56:2C:3B:A6:CD:BC:86:9B:8D
