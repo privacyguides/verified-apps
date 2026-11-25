@@ -10240,6 +10240,14 @@ packages:
             issue: GH-2828
             apk:
               sha256: 1cc8357c0c3914b0d62a72eb882b22d585ef7c74906fa582c2370e580be78529
+  - package: dev.anilbeesetti.nextplayer
+    signature:
+      - fingerprint: 60:6C:AE:7F:5F:88:12:2A:05:AB:88:61:60:E4:D4:D6:8F:23:F3:C6:7C:32:07:4D:96:35:58:A1:22:3C:48:90
+        sources:
+          - name: Google Play
+            issue: GH-7705
+            apk:
+              sha256: 05da3303f5564b99c602848fbede95ca4f0431f18b9203fd7f1fd68443cfb8ec
   - package: dev.arthurcose.languagedex
     signature:
       - fingerprint: 17:24:D4:E4:FB:0B:E3:17:6B:84:E0:05:C8:40:5F:98:FD:BD:D6:21:93:FB:5F:35:9F:6D:1B:2C:12:52:D6:0C
