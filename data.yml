@@ -7133,6 +7133,14 @@ packages:
             issue: GH-2126
             apk:
               sha256: 26a506ca61b0983f96a34a086b116ac453d02cfcbf1c7170608f44ba42743903
+  - package: com.watea.radio_upnp
+    signature:
+      - fingerprint: 93:E9:58:52:79:72:A6:D7:C7:86:BE:10:C0:44:12:F6:24:51:6C:B3:B6:FA:92:04:DA:6C:C6:C9:E0:0E:CD:2A
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-2889
+            apk:
+              sha256: a022a6dbe3e52f4bf9dc098d778139dd1ed73552e8e9fd31a97fc3dbaab5a0a3
   - package: com.waze
     signature:
       - fingerprint: 03:63:7F:6C:5D:8F:60:4E:6F:DB:79:A6:FF:BF:A5:78:DE:4E:31:8F:8D:A2:2F:C6:10:66:65:24:7F:88:07:D7
