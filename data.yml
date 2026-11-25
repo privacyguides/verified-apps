@@ -6367,6 +6367,14 @@ packages:
             issue: GH-1832
             apk:
               sha256: b3cd440ef1a4d3bcf9e74bc77b98bb791a64a23cd4846ada4c2f055ac0497483
+  - package: com.thirtytwo.steps
+    signature:
+      - fingerprint: B5:02:E2:F0:F3:CB:78:08:0F:85:08:B4:46:0B:C6:59:58:79:8A:10:D9:70:29:CD:59:45:A6:57:75:48:87:5B
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-2282
+            apk:
+              sha256: e4b0c25ecd1cc73a0703fca37c11a2efb4ba0d73b4d55c1938603eda237dbd92
   - package: com.tinder
     signature:
       - fingerprint: 8A:B1:4F:D7:50:B8:20:57:4D:20:C3:54:41:EA:14:A9:B5:D1:95:9A:31:04:0C:EC:12:B4:6B:B2:90:F4:DA:1B
