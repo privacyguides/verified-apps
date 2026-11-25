@@ -5390,6 +5390,14 @@ packages:
             issue: GH-2019
             apk:
               sha256: 7de628399c7ec0d650e727dce4819c18c9d740e38603237ce65e6bddfdd1dc5f
+  - package: com.mindful.android
+    signature:
+      - fingerprint: BE:67:D0:87:0C:16:B4:E8:35:43:2E:03:FD:DC:D1:76:C2:86:6E:99:71:54:1F:97:97:6C:1A:01:8C:C4:0F:C8
+        sources:
+          - name: Google Play
+            issue: GH-6765
+            apk:
+              sha256: 8257de62ebe047fb945fc04d16baaaf2af606e9779708d1efe9f9e96324a3df7
   - package: com.minrax.sofiabus
     signature:
       - fingerprint: 07:F3:22:4D:AB:06:C9:7E:91:DD:B5:72:26:A2:E1:55:9D:A0:EF:72:C3:17:C8:ED:3C:61:1A:3A:09:ED:D6:C7
