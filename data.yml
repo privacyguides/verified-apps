@@ -10527,6 +10527,14 @@ packages:
             issue: GH-6107
             apk:
               sha256: 3dbf1e7b25d9f1c99b98eb8c36c6850344fe56b9c742366020f421293b254e21
+  - package: in.kawaiis.journal
+    signature:
+      - fingerprint: 1B:B6:00:3D:99:5C:D1:27:F4:1F:2F:A7:36:01:A0:85:5F:6A:9D:CF:1E:A3:DD:EC:91:CD:05:1C:0B:65:CC:50
+        sources:
+          - name: F-Droid
+            issue: GH-6922
+            apk:
+              sha256: 7be1a85ee3ebec4885f99554ee8f8bada53da609767638a17aeb6d36cbb663d3
   - package: in.krosbits.musicolet
     signature:
       - fingerprint: 8A:4D:41:21:F5:41:E3:64:4C:1F:D1:E5:C3:50:2E:B4:BE:A4:97:92:CA:FD:26:E6:00:D4:13:CD:1F:10:85:1F
