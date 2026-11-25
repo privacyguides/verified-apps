@@ -5123,6 +5123,14 @@ packages:
             issue: GH-6525
             apk:
               sha256: 6d269746b8527ba8cb3657d9639b5984cb00162b2118a618e92c52f0ebb4b07e
+  - package: com.meshcore.meshgo
+    signature:
+      - fingerprint: 73:E2:24:40:4A:48:4E:46:A1:08:51:BB:1B:0C:30:A5:5E:4F:DE:0A:3D:E7:E1:D6:99:27:38:70:56:9B:00:C6
+        sources:
+          - name: Google Play
+            issue: GH-6526
+            apk:
+              sha256: f902748323f61219c4990e199272f1e32ca3b5074eb65a6735cc0eefde704323
   - package: com.metrolinx.presto.android.consumerapp
     signature:
       - fingerprint: 58:D8:4F:F9:5E:F5:C7:E2:15:E8:C3:74:99:41:87:1A:0A:5F:B4:0B:50:58:5C:A2:BB:B3:44:50:8F:2A:C8:24
