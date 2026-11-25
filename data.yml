@@ -13335,6 +13335,14 @@ packages:
             issue: GH-943
             apk:
               sha256: f3aa7c82f31e7e56b34aa11d4f88c6ba85f47784d0b913928d54d1754c2571d6
+  - package: nl.devolksbank.asn.bankieren
+    signature:
+      - fingerprint: A2:02:00:4A:61:2F:F4:2A:C0:FC:56:25:0A:7B:C2:62:B7:28:C8:C6:AE:8B:9A:5D:89:6F:50:00:B2:47:E4:79
+        sources:
+          - name: Google Play
+            issue: GH-8078
+            apk:
+              sha256: 4eaf31af16c3b97af8307aae50c8a59829c6456dda1ee082cb2d04b3024fa55b
   - package: nl.moeilijkedingen.jellyfinaudioplayer
     signature:
       - fingerprint: BF:6B:4D:07:C8:62:42:CE:91:D3:4B:47:6E:10:EE:C6:27:BB:4E:61:04:68:CB:2A:98:D4:5B:12:76:62:57:33
