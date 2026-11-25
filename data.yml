@@ -11072,6 +11072,14 @@ packages:
             issue: GH-1547
             apk:
               sha256: b9f601151ed9ff99fe5c7a76f7213b2c074b2155f030094169ca0819efa72f82
+  - package: org.woheller69.lavatories
+    signature:
+      - fingerprint: D8:BC:0C:F0:BF:CE:30:4F:34:BF:E2:AF:CB:C7:4C:42:74:D6:54:F6:92:20:C0:F2:69:70:D3:5F:CC:D1:9A:63
+        sources:
+          - name: F-Droid
+            issue: GH-1932
+            apk:
+              sha256: 932986fff959c79abe669237db4a685d8889e886840b92377d3e20f9b3837962
   - package: org.woheller69.level
     signature:
       - fingerprint: 23:4E:BF:A7:4F:EE:98:20:29:29:66:97:77:48:B6:D9:5C:D7:5B:4F:CB:1E:ED:38:1D:86:48:B3:6E:14:F5:CA
