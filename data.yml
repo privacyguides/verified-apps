@@ -758,6 +758,14 @@ packages:
             issue: GH-220
             apk:
               sha256: 47d5fd49c40d9c5987fa1d0e637091a3a737ffc820dd70bf4e68d8a0077a2e92
+  - package: ch.protonvpn.android.reproducible
+    signature:
+      - fingerprint: DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
+        sources:
+          - name: F-Droid
+            issue: GH-7879
+            apk:
+              sha256: 89976c70f8dbbc7bdd15551386e551f735a989167a9287f37b08104f742c2ab2
   - package: ch.rmy.android.http_shortcuts
     signature:
       - fingerprint: B6:DE:3C:05:4F:09:81:3F:D6:C0:33:BC:CF:D6:4A:AB:FB:C6:36:80:A7:EB:BC:AC:64:E9:AE:14:E5:54:7A:5F
