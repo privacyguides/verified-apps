@@ -10289,6 +10289,14 @@ packages:
             issue: GH-1639
             apk:
               sha256: 46da4b9e2a4b9c791b9d20f33c45f45a76049703b71ef4579254a124e4da226c
+  - package: one.jwr.interstellar
+    signature:
+      - fingerprint: D4:1C:E8:B1:25:12:D8:A0:9D:A4:DE:E5:F5:0A:58:AA:A0:9C:74:0E:74:90:6F:BB:ED:83:0B:32:1E:D1:F9:FB
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-2641
+            apk:
+              sha256: 84be14f65add1af115c502ab79710d61c69a4a49217015e9c5094f7d20464223
   - package: opencontacts.open.com.opencontacts
     signature:
       - fingerprint: B9:AB:2D:78:61:CD:40:B9:8C:A4:1A:1F:E0:AA:22:0D:53:13:58:29:FF:EA:F6:B6:C6:4B:3B:36:B2:DF:95:05
