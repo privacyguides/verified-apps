@@ -61,6 +61,14 @@ packages:
             issue: GH-2300
             apk:
               sha256: 57d05987e84662f35a4d9c45a0a8f4f4a5004687c7cc25114dabf513c39f76d1
+  - package: alt.nainapps.sharepaste.fdroid
+    signature:
+      - fingerprint: FD:32:55:B5:3A:55:7C:E8:A6:53:2F:CC:7C:FA:4A:5D:1C:D3:45:56:0B:55:76:BD:B5:29:46:78:C2:99:77:2A
+        sources:
+          - name: F-Droid
+            issue: GH-2945
+            apk:
+              sha256: 066ee0406d8ee9daaea521290777fc4dcfa42845eed8bbfcdb7feaffdaabe965
   - package: app.aawireless
     signature:
       - fingerprint: 47:A3:74:83:9C:2A:EF:FC:3E:EB:F1:17:2B:8F:F7:D9:90:A9:84:E3:7B:FE:48:E6:8B:49:92:F8:65:B8:DF:DF
