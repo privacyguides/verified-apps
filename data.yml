@@ -984,6 +984,18 @@ packages:
             issue: GH-986
             apk:
               sha256: eb69deac0c1105750caba22f328a66937eb12c015e4e4ef50993e65e756b62b6
+  - package: com.amnesica.clearclipboard
+    signature:
+      - fingerprint: 8E:3B:3B:FB:83:08:FA:4C:D1:4B:9A:32:DE:B3:1E:0B:15:10:6D:25:EB:62:58:B6:E2:5C:96:3B:EB:F8:B3:EE
+        sources:
+          - name: F-Droid
+            issue: GH-1807
+            apk:
+              sha256: d1162ded9f682f3e3ccf94f8fccbb2c1c08a75e476ad5244e983c8493cffda54
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1807
+            apk:
+              sha256: 83016ab7269aeb32a2e7612948276d9aaeea5903e453e342a20e467de0a2e14c
   - package: com.amtrak.rider
     signature:
       - fingerprint: B2:CF:72:BB:EF:F5:BC:CB:1A:0A:D7:FE:52:ED:49:77:5C:B9:C1:30:0E:65:7C:0F:FB:4F:A5:81:52:91:C4:10
