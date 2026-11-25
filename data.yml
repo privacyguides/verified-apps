@@ -10114,6 +10114,14 @@ packages:
             issue: GH-1014
             apk:
               sha256: cb5b7e3bca2a25ca0328ca9bb313060a359ace437044a4278c08d203b80e68d9
+  - package: org.hzontal.tellaFOSS
+    signature:
+      - fingerprint: 0F:98:D1:62:B4:43:E7:1D:E1:41:A9:3A:EC:27:C6:D5:AC:AA:72:5D:BA:4C:3F:CA:97:45:72:58:C1:93:A7:29
+        sources:
+          - name: F-Droid
+            issue: GH-1610
+            apk:
+              sha256: d796f1904692590a4f0818fd290a37c9e062ab183bf6ce56db8714eb45c367d8
   - package: org.ilovefreegle.direct
     signature:
       - fingerprint: 4C:5F:AF:84:D1:6F:5B:0C:E3:55:2C:3C:B1:BC:15:E8:A4:DC:1B:65:93:EF:84:7D:BB:49:52:7B:9A:BC:0F:5E
