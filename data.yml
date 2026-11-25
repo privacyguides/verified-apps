@@ -11778,6 +11778,14 @@ packages:
             issue: GH-1908
             apk:
               sha256: fbe2fa19b05adc4d1335f7a2456c138b8483b643746c45dee6c6fb14ca7a6db8
+  - package: org.woheller69.omweather
+    signature:
+      - fingerprint: 7C:B8:32:6B:35:9F:CF:06:10:1C:F0:33:7B:56:AF:89:E3:95:2B:71:1C:9A:00:FF:DC:7F:7B:2F:8C:09:D8:5B
+        sources:
+          - name: F-Droid
+            issue: GH-2841
+            apk:
+              sha256: 05bca980edcb78035afd8c92597ddfbf149bf3441b9f2c797e82e4f54b7eabc7
   - package: org.woheller69.spritpreise
     signature:
       - fingerprint: 19:51:4E:47:98:F6:5D:8C:64:63:DF:49:C3:12:C7:92:9B:71:ED:24:BA:7D:5C:DD:72:4B:18:B8:82:2B:16:73
