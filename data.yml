@@ -5294,6 +5294,14 @@ packages:
             issue: GH-587
             apk:
               sha256: 6a8b9a5a4ee709975f0936eff9a1936c07a40ecf6cfbc29b404a7396e5c245fc
+  - package: com.microsoft.windowsintune.companyportal
+    signature:
+      - fingerprint: E4:15:1E:38:2B:51:07:8C:AA:2E:3E:0C:71:9A:95:DF:17:72:E4:CA:F1:94:96:26:48:33:AB:66:1D:86:12:65
+        sources:
+          - name: Google Play
+            issue: GH-6680
+            apk:
+              sha256: 76e3edb2c2079072ddd8ab4f4da8fb605f086c6974d230f358569829ebf2561c
   - package: com.midea.ai.overseas
     signature:
       - fingerprint: D9:97:0B:32:C7:02:B8:E4:B2:3C:51:62:63:5F:FC:16:23:B5:18:23:B5:A5:8A:3E:4B:8C:9B:AC:97:4C:9C:B3
