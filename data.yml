@@ -9638,6 +9638,12 @@ packages:
             issue: GH-1616
             apk:
               sha256: 54a41f8df49aea21d37981c06c6e432780a90d87dca5abc33f77b1697014effa
+      - fingerprint: 3A:14:F8:BB:EA:D3:D5:30:AE:0A:A0:B5:78:B9:45:BD:D7:66:7B:6E:2E:27:DA:30:CD:46:34:93:56:99:8F:3E
+        sources:
+          - name: F-Droid
+            issue: GH-8296
+            apk:
+              sha256: 282a06fcc5ce5d889799113a1c6edf5e408b0902acc542308ad21051a2a7cc2b
   - package: com.vttm.vietteldiscovery
     signature:
       - fingerprint: 37:AF:C5:DE:7D:6C:C3:40:D1:0D:72:CF:88:F9:EF:E4:1D:5B:1A:4D:6C:84:B9:07:87:95:A8:D5:6A:9C:2A:6C
