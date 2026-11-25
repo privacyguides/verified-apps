@@ -4620,6 +4620,15 @@ packages:
   - package: com.google.android.apps.messaging
     signature:
       - fingerprint: |-
+          32:84:B5:3C:BC:69:9D:6A:DF:92:49:45:CC:5A:26:DC:5A:00:66:B1:D6:76:7F:FC:D7:BC:A4:4D:0E:A9:FA:B8
+          CC:75:52:6D:6C:0F:80:AC:3B:3A:84:EB:44:83:84:40:DB:BE:6B:12:44:43:A7:C7:D7:BD:19:18:2A:C0:22:C9
+          F7:E7:3D:4E:DC:2B:7F:55:EE:CD:3F:89:8D:3C:CA:7D:A9:CB:BF:51:69:4E:BA:14:F8:16:E2:EC:CF:01:50:35
+        sources:
+          - name: Google Play
+            issue: GH-8124
+            apk:
+              sha256: 1d54e557d1d448ef936533740d01634ef4d7ba1a4ef1005054daa702cf837685
+      - fingerprint: |-
           CC:75:52:6D:6C:0F:80:AC:3B:3A:84:EB:44:83:84:40:DB:BE:6B:12:44:43:A7:C7:D7:BD:19:18:2A:C0:22:C9
           F7:E7:3D:4E:DC:2B:7F:55:EE:CD:3F:89:8D:3C:CA:7D:A9:CB:BF:51:69:4E:BA:14:F8:16:E2:EC:CF:01:50:35
         sources:
