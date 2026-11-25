@@ -9369,6 +9369,14 @@ packages:
               sha256: 84fd27502c473ea00ff968378ad6b78b620b1e8d86106a6076d6115c1ee1cea0
           - name: HTTPS Verified Domain
             issue: GH-2627
+  - package: jp.nonbili.nora
+    signature:
+      - fingerprint: EE:16:65:5F:C0:4D:22:82:40:04:BE:97:65:7A:9E:7C:CA:C3:DD:49:82:F0:49:18:87:02:DE:D5:2C:DA:21:26
+        sources:
+          - name: F-Droid
+            issue: GH-2449
+            apk:
+              sha256: 79b39a52f463abb64ddc9c07ebb0690ee3cff5dcaccd64c88ae93cc10d078984
   - package: keepass2android.keepass2android
     signature:
       - fingerprint: 0B:F8:05:6D:3A:39:4E:D7:C7:71:73:C4:B4:2C:80:05:65:B4:F0:A4:29:77:56:9C:F3:47:2C:27:1C:56:29:39
