@@ -10536,6 +10536,12 @@ packages:
             issue: GH-776
             apk:
               sha256: 6c43c5200d2795aadbd1c7db11eac70bc52027985f3afb849b9b0329c4a417f8
+      - fingerprint: CE:B3:9F:9F:79:50:A5:FE:84:DC:91:7A:D3:43:3D:14:63:55:C8:61:F7:F3:29:4C:E8:2D:55:FB:8C:B0:C0:E6
+        sources:
+          - name: F-Droid
+            issue: GH-1800
+            apk:
+              sha256: 13f66412384dcd7b6da9d085fc3288ea6298ebfbaa22bd79d7e7e7b3e041bc08
   - package: org.outline.android.client
     signature:
       - fingerprint: F7:86:8B:84:26:94:A7:93:D2:AF:E4:71:CE:10:79:77:3C:9C:7C:52:8A:51:85:CB:41:5C:8D:CC:BF:1B:78:4D
