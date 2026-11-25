@@ -5192,6 +5192,14 @@ packages:
             issue: GH-4604
             apk:
               sha256: 736b9b85ad8e889d56df34af4c11a39e32966f56645a97a646d602e37378def9
+  - package: com.jetpaclabs.jetpac
+    signature:
+      - fingerprint: 69:C5:C8:46:27:9C:E8:DB:3F:6F:B4:9E:7C:67:9B:0D:4C:9A:7F:80:0A:E3:76:F8:44:9A:55:73:5B:E1:94:57
+        sources:
+          - name: Google Play
+            issue: GH-7944
+            apk:
+              sha256: c2d22e10b7cd3f6f82288823d657c89e1ab35dcad92c59ee87aee804a353f94d
   - package: com.jgeek00.adguard_home_manager
     signature:
       - fingerprint: 1A:28:1D:5C:9E:26:52:25:44:03:1F:15:F4:EA:A3:FC:E6:75:10:3D:02:31:17:6E:EE:78:C2:5A:AD:81:76:75
