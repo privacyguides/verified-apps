@@ -1015,6 +1015,14 @@ packages:
             issue: GH-956
             apk:
               sha256: 8ed9642fb6aef4ac5878d564a7f89363255266afc98f7cbe9341a1a6260c5618
+  - package: com.airthings.app.android
+    signature:
+      - fingerprint: 3A:8F:CE:84:4F:15:45:A2:C7:3A:D4:E0:EA:A4:22:C0:BC:DC:0D:E8:0E:EC:45:DC:FE:04:C0:8F:69:39:4A:30
+        sources:
+          - name: Google Play
+            issue: GH-6322
+            apk:
+              sha256: 1c2adf9441cbed91d046ead83888efb96ab939700fdde407877fa9d7e1e9d6fd
   - package: com.airtm.android
     signature:
       - fingerprint: BB:30:0E:E3:6D:B3:C1:49:40:BB:48:70:F9:4A:40:10:5E:CD:73:9F:E8:6C:8E:23:79:31:B2:B2:D0:15:52:A7
