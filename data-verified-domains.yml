@@ -12,6 +12,24 @@ domains:
           - 6F:D3:5A:F2:73:FF:DC:AB:30:5A:17:14:55:66:DD:E1:E1:D1:F2:CA:24:15:A8:BA:AE:E8:A6:51:28:E4:D0:DE
           - 77:6F:86:9A:03:A0:25:4C:B5:C9:3E:87:21:84:11:8A:58:F7:49:A0:0E:B4:60:E8:07:C1:13:6F:E5:5B:75:7E
           - AA:9F:1D:13:D2:10:C2:6E:32:52:A4:AD:76:71:FE:AB:A8:57:5A:3D:AF:30:03:B4:A0:26:E8:06:20:02:BF:68
+  - domain: Xplore.lonelycatgames.com
+    method: https
+    issue:
+      - GH-8334
+    checked: "2026-11-23T04:29:55Z"
+    packages:
+      - package: com.lonelycatgames.Xplore
+        fingerprints:
+          - D4:6C:D5:FA:44:AE:52:14:13:46:DA:0E:2C:21:D0:CE:A7:C6:E0:58:7B:1E:E5:AD:12:1D:90:90:31:EF:EC:57
+  - domain: accrescent.app
+    method: https
+    issue:
+      - GH-7981
+    checked: "2026-11-06T04:28:30Z"
+    packages:
+      - package: app.accrescent.client
+        fingerprints:
+          - 06:7A:40:C4:19:3A:AD:51:AC:87:F9:DD:FD:EB:B1:5E:24:A1:85:0B:AB:FA:48:21:C2:8C:5C:25:C3:FD:C0:71
   - domain: adityarajput.co
     method: https
     issue:
@@ -55,6 +73,15 @@ domains:
       - package: com.aidungeon
         fingerprints:
           - 66:A5:A0:96:CB:94:79:90:BA:9C:67:49:35:F7:37:CD:57:AC:CB:E2:F3:C4:D1:AD:12:AE:74:79:AE:2B:C0:9B
+  - domain: airbnb.com
+    method: https
+    issue:
+      - GH-8351
+    checked: "2026-11-24T04:26:28Z"
+    packages:
+      - package: com.airbnb.android
+        fingerprints:
+          - 43:7B:7C:9A:94:6C:3C:E9:F2:49:A4:30:86:14:F5:42:C1:4D:7C:7A:3B:C9:77:89:98:4E:02:47:CD:23:01:FB
   - domain: amazon.com
     method: https
     issue:
@@ -81,6 +108,15 @@ domains:
       - package: com.box.android
         fingerprints:
           - 5E:6E:4B:82:82:99:CA:01:D7:A4:92:21:1F:CC:88:FA:68:05:0B:AA:A2:5A:50:EA:69:59:6F:D2:A3:E6:B3:66
+  - domain: android.khanacademy.org
+    method: https
+    issue:
+      - GH-7677
+    checked: "2026-10-30T05:25:47Z"
+    packages:
+      - package: org.khanacademy.android
+        fingerprints:
+          - EF:FC:FE:21:10:60:12:61:7B:D6:3D:EB:9D:FD:B8:35:4D:1D:57:4D:1D:67:C5:66:4A:5D:02:E6:69:B2:4E:CB
   - domain: anonyome.com
     method: https
     issue:
@@ -109,6 +145,15 @@ domains:
       - package: com.fastmail.app
         fingerprints:
           - C9:2C:5E:E8:F6:BA:CB:E9:3C:A6:C0:8A:E9:6E:F4:7D:09:91:80:63:F5:71:64:78:BF:90:E6:86:09:C9:0D:1D
+  - domain: app.filen.io
+    method: https
+    issue:
+      - GH-7818
+    checked: "2026-11-02T04:27:28Z"
+    packages:
+      - package: io.filen.app
+        fingerprints:
+          - 2C:90:DF:59:1A:39:E0:8A:AD:E9:4F:72:80:D1:92:D3:34:47:F0:1E:1E:12:75:19:82:B8:AE:C3:F9:0F:AD:AB
   - domain: app.hinge.co
     method: https
     issue:
@@ -195,6 +240,15 @@ domains:
       - package: com.bestbuy.android
         fingerprints:
           - 83:E0:E9:06:D7:F0:6F:4E:2E:D1:1F:7F:CF:51:96:2A:72:54:3D:1A:F4:18:99:FE:AD:87:F5:46:AF:CC:CE:9B
+  - domain: blip.net
+    method: https
+    issue:
+      - GH-1525
+    checked: "2026-11-14T04:25:53Z"
+    packages:
+      - package: net.blip.android
+        fingerprints:
+          - 01:35:2E:DE:0D:91:D7:AA:11:70:12:6A:2E:A9:18:9C:E1:DC:C2:21:E1:D1:44:44:9F:13:26:BA:BA:7F:2D:48
   - domain: blizzard.com
     method: https
     issue:
@@ -266,6 +320,27 @@ domains:
           - 43:2C:60:B3:F8:84:9E:A0:EA:93:B8:50:D2:68:EC:EB:5D:C4:0E:E2:27:0C:08:45:B5:5B:6E:70:9D:A8:24:D1
           - 44:A1:04:DA:00:F0:3A:7B:BE:A9:83:7A:DE:54:F7:BF:F9:7C:34:B7:DC:46:DA:13:10:CC:EA:FE:AF:A6:83:2F
           - E2:9E:74:1A:F1:ED:08:9E:8B:A1:89:FE:55:B3:EE:E7:68:30:82:17:50:2B:8E:CF:E3:A5:C2:16:A5:1D:C3:BF
+  - domain: bumpy.app
+    method: https
+    issue:
+      - GH-6219
+    checked: "2026-09-21T04:42:02Z"
+    packages:
+      - package: app.bumpy.android
+        fingerprints:
+          - 5A:AF:64:5E:C6:04:5B:CD:B2:27:CB:B0:62:DB:FA:18:EE:B9:09:B8:42:66:83:A3:29:29:24:29:3D:4F:A2:2A
+          - 93:7C:3B:7F:DD:77:C4:57:C0:DE:63:5A:2C:19:25:35:12:65:89:18:83:52:F7:4F:93:03:4E:89:D8:23:4B:72
+          - FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C
+  - domain: cakewallet.com
+    method: https
+    issue:
+      - GH-8228
+    checked: "2026-11-17T04:29:03Z"
+    packages:
+      - package: com.cakewallet.cake_wallet
+        fingerprints:
+          - 09:C7:C4:F9:6B:5F:3A:75:99:8E:CF:53:78:E6:39:19:0E:02:3E:26:75:02:6D:26:21:E4:AC:78:1C:94:88:FC
+          - C5:40:53:AB:0F:10:D9:54:17:62:A3:DA:76:65:AE:3D:BA:5E:7C:74:3A:B4:F1:08:A5:34:9D:62:AC:10:6E:F5
   - domain: chase.com
     method: https
     issue:
@@ -275,6 +350,15 @@ domains:
       - package: com.chase.sig.android
         fingerprints:
           - 73:F0:D9:50:8A:25:72:C1:10:07:7C:FF:1C:AD:4E:D9:2C:00:F0:20:4F:AF:ED:BA:C8:43:4B:D7:6B:C4:AC:D1
+  - domain: citymapper.com
+    method: https
+    issue:
+      - GH-1885
+    checked: "2026-10-28T04:52:06Z"
+    packages:
+      - package: com.citymapper.app.release
+        fingerprints:
+          - BE:8A:28:01:CA:E3:F4:4B:49:1A:8E:CC:A2:8C:3A:C2:23:B3:BD:57:10:9A:71:A5:F2:0B:45:A6:96:D1:7E:5D
   - domain: classdojo.com
     method: https
     issue:
@@ -296,6 +380,15 @@ domains:
       - package: com.qobuz.club
         fingerprints:
           - 2C:E2:F1:9A:17:9C:13:FA:C9:EA:F1:39:C3:F0:84:D5:5B:02:64:58:96:29:52:D4:E6:B5:F2:F1:A2:9C:A2:1E
+  - domain: coinbase.com
+    method: https
+    issue:
+      - GH-8220
+    checked: "2026-11-16T04:27:50Z"
+    packages:
+      - package: com.coinbase.android
+        fingerprints:
+          - 41:6A:E0:CE:11:21:E9:C6:A6:B0:B7:C6:B5:D1:D9:BA:2B:9B:23:A1:4F:4F:1B:9A:87:E0:3B:49:8E:20:CF:3B
   - domain: copilot.microsoft.com
     method: https
     issue:
@@ -348,6 +441,25 @@ domains:
         fingerprints:
           - 97:FC:DB:FF:C4:F3:0C:C3:14:1A:76:D7:17:9A:FB:42:97:4B:79:76:D6:8E:B0:AA:49:7C:12:E5:26:52:66:13
           - BE:5A:A8:A5:43:6E:99:71:21:E5:E5:5E:4C:A7:E0:47:84:48:88:09:14:B9:F9:4C:24:2C:5E:4F:DB:E8:D8:98
+  - domain: ebay.com
+    method: https
+    issue:
+      - GH-8180
+    checked: "2026-11-13T04:25:59Z"
+    packages:
+      - package: com.ebay.mobile
+        fingerprints:
+          - 85:B4:01:54:97:15:4D:FA:89:DE:30:87:71:A9:FC:61:A6:4B:19:AF:1A:3F:B0:32:56:E8:CC:3A:79:55:67:E5
+          - 9B:3F:9B:A0:2F:AD:D4:EC:0B:48:E0:12:8A:95:27:93:96:BF:58:01:DF:07:6D:09:D9:4F:E3:D8:9D:EC:D6:69
+  - domain: element.io
+    method: https
+    issue:
+      - GH-6882
+    checked: "2026-10-07T04:34:59Z"
+    packages:
+      - package: io.element.android.x
+        fingerprints:
+          - C6:DB:9B:9C:8C:BD:D6:5D:16:E8:EC:8C:8B:91:C8:31:B9:EF:C9:5C:BF:98:AE:41:F6:A9:D8:35:15:1A:7E:16
   - domain: euria.infomaniak.com
     method: https
     issue:
@@ -357,19 +469,28 @@ domains:
       - package: com.infomaniak.euria
         fingerprints:
           - C3:10:73:8F:60:AC:5B:F6:65:95:53:BE:C7:21:7D:BF:24:4E:9D:4C:04:BD:7D:5B:F5:51:51:2D:22:E5:03:03
+  - domain: everydollar.com
+    method: https
+    issue:
+      - GH-8334
+    checked: "2026-11-23T04:29:55Z"
+    packages:
+      - package: com.everydollar.android
+        fingerprints:
+          - 57:3D:6C:04:CE:97:96:CE:41:19:6A:81:87:96:DF:1E:C0:46:F3:26:6B:35:46:91:E1:2D:E6:C8:32:0B:DB:9E
+          - DC:AB:E5:B6:48:35:E7:F1:16:94:C9:7E:D8:BD:19:A1:CA:E0:81:2B:FE:2D:5A:E6:44:7F:C3:D7:6A:16:91:3A
   - domain: facebook.com
     method: https
     issue:
       - GH-2446
       - GH-7496
+      - GH-8267
     checked: "2026-11-25T09:27:11Z"
     packages:
       - package: com.facebook.katana
         fingerprints:
           - 12:9D:C5:34:80:E2:BF:1B:55:CF:6E:EC:20:5F:E0:F5:9D:2B:9F:81:E7:EE:4F:B6:7C:EC:BB:EE:25:A0:B0:80
-          - 48:07:2A:2C:25:E6:EB:5C:F1:96:27:1D:26:F5:BF:49:4A:26:FF:EE:CB:77:9A:5C:70:C1:3D:EB:E3:31:D3:21
-          - 7E:ED:BF:2C:7B:FD:98:FF:BA:5B:C2:6F:F9:4A:07:3F:FF:27:32:52:6C:0F:92:00:68:DE:F8:41:53:CE:AB:23
-          - 8C:D3:9C:EE:60:F3:60:E9:89:9C:3C:CF:B9:F7:AC:17:13:4F:B2:35:78:21:E5:C7:E2:D8:E7:8C:E0:87:91:40
+          - 91:1D:60:44:46:08:4C:A7:F4:76:0B:77:5B:FC:16:0F:A8:70:24:41:24:0A:72:58:64:5D:7A:72:C4:31:2D:27
           - E3:F9:E1:E0:CF:99:D0:E5:6A:05:5B:A6:5E:24:1B:33:99:F7:CE:A5:24:32:6B:0C:DD:6E:C1:32:7E:D0:FD:C1
       - package: com.facebook.orca
         fingerprints:
@@ -427,6 +548,17 @@ domains:
         fingerprints:
           - A1:FC:B4:92:1B:3F:60:C0:DD:25:44:01:D2:9C:91:88:2E:19:A7:79:B6:29:B5:D4:A1:D3:01:8D:8D:E7:2B:D5
           - B1:8A:28:3D:11:79:7C:2A:84:A0:08:C1:FC:B9:E1:B8:64:E7:B4:C3:B3:01:40:8F:7A:4A:80:62:4B:0E:63:1C
+  - domain: getyourguide.com
+    method: https
+    issue:
+      - GH-8334
+    checked: "2026-11-23T04:29:55Z"
+    packages:
+      - package: com.getyourguide.android
+        fingerprints:
+          - 2B:47:AC:B3:D0:BC:0C:9C:CF:CA:B5:FD:BA:91:CA:DC:D1:6E:6B:EF:14:26:D7:3B:8A:F0:2C:76:C5:FC:5A:E8
+          - 44:2B:C2:17:7C:82:79:92:80:A5:EB:C7:32:2F:D2:07:89:4F:17:30:91:88:B3:03:68:3A:C0:E8:6B:99:2A:77
+          - FA:00:44:80:50:1A:F0:30:73:FF:D5:03:9D:21:77:4D:87:4C:BD:2B:63:87:3F:D2:5E:2C:4A:86:59:78:5E:DB
   - domain: github.com
     method: https
     issue:
@@ -441,12 +573,21 @@ domains:
     issue:
       - GH-7530
       - GH-8127
+      - GH-8259
     checked: "2026-11-25T10:24:33Z"
     packages:
       - package: com.google.android.apps.maps
         fingerprints:
           - 19:75:B2:F1:71:77:BC:89:A5:DF:F3:1F:9E:64:A6:CA:E2:81:A5:3D:C1:D1:D5:9B:1D:14:7F:E1:C8:2A:FA:00
           - 3D:7A:12:23:01:9A:A3:9D:9E:A0:E3:43:6A:B7:C0:89:6B:FB:4F:B6:79:F4:DE:5F:E7:C2:3F:32:6C:8F:99:4A
+          - F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
+      - package: com.google.android.gms
+        fingerprints:
+          - 19:75:B2:F1:71:77:BC:89:A5:DF:F3:1F:9E:64:A6:CA:E2:81:A5:3D:C1:D1:D5:9B:1D:14:7F:E1:C8:2A:FA:00
+          - 5F:23:91:27:7B:1D:BD:48:90:00:46:7E:4C:2F:A6:AF:80:24:30:08:04:57:DC:E2:F6:18:99:2E:9D:FB:54:02
+          - 7C:E8:3C:1B:71:F3:D5:72:FE:D0:4C:8D:40:C5:CB:10:FF:75:E6:D8:7D:9D:F6:FB:D5:3F:04:68:C2:90:50:53
+          - 8F:D4:A0:E7:B8:EB:7C:72:6D:2D:AC:79:44:5B:2C:79:31:F6:2B:7E:B6:92:F5:04:4B:DC:FD:FA:AD:07:0A:36
+          - D2:2C:C5:00:29:9F:B2:28:73:A0:1A:01:0D:E1:C8:2F:BE:4D:06:11:19:B9:48:14:DD:30:1D:AB:50:CB:76:78
           - F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
       - package: com.google.android.gms.supervision
         fingerprints:
@@ -482,6 +623,16 @@ domains:
         fingerprints:
           - 3A:10:C5:0C:18:BA:93:75:06:C2:87:5E:90:47:BE:74:F8:FD:8B:86:FA:E2:FF:9F:EA:A5:0A:81:FC:B4:C0:14
           - 5F:3E:50:F4:35:58:3C:9A:E6:26:30:2A:71:F7:34:00:44:08:7A:7E:2C:60:AD:AC:FC:25:42:05:A9:93:E3:05
+  - domain: kakao.com
+    method: https
+    issue:
+      - GH-8297
+    checked: "2026-11-21T04:26:31Z"
+    packages:
+      - package: com.kakao.talk
+        fingerprints:
+          - 2B:06:CC:3D:47:78:2D:7C:49:7C:07:F1:7C:B5:F8:59:CD:6B:BC:B6:68:29:F3:E6:7B:96:B7:A4:48:20:D2:CE
+          - 7E:E7:78:79:CC:5B:62:35:5F:BB:06:19:E9:C1:B2:72:7B:9A:98:40:6B:3F:B3:34:31:D3:E6:54:4C:CA:C7:63
   - domain: keyholm.app
     method: https
     issue:
@@ -491,6 +642,15 @@ domains:
       - package: app.keyholm
         fingerprints:
           - 91:85:C9:57:79:4A:7F:F4:43:F5:BD:45:3B:1C:91:3D:80:BA:D0:D0:9D:14:88:2E:1D:F2:81:C6:81:F0:A9:2E
+  - domain: kgurgul.com
+    method: https
+    issue:
+      - GH-8216
+    checked: "2026-11-15T04:56:04Z"
+    packages:
+      - package: com.kgurgul.cpuinfo
+        fingerprints:
+          - AF:24:23:BE:B5:89:E5:5F:DF:95:1F:DE:2F:23:ED:AA:78:5F:57:C7:14:76:4A:FB:BD:D1:5A:85:F1:AE:D3:3C
   - domain: komoot.de
     method: https
     issue:
@@ -527,6 +687,16 @@ domains:
         fingerprints:
           - E4:BA:79:65:42:83:08:61:00:3E:A0:77:FE:5F:80:A0:D8:9C:8A:A4:BD:4C:05:D1:E8:7C:D6:D7:24:D8:9A:0A
           - FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C
+  - domain: letterboxd.com
+    method: https
+    issue:
+      - GH-8201
+    checked: "2026-11-14T04:25:53Z"
+    packages:
+      - package: com.letterboxd.letterboxd
+        fingerprints:
+          - 4E:A9:E6:0E:75:13:70:C1:CC:D6:D1:C1:91:96:4C:83:40:A8:91:CB:BF:CC:2D:A1:56:8B:84:31:3B:9A:4E:74
+          - 80:C2:9B:40:66:60:94:DD:87:4B:BC:6F:7F:4E:14:D2:27:A4:8F:C2:9B:18:53:31:D0:61:11:93:6A:02:A8:F7
   - domain: lichess.org
     method: https
     issue:
@@ -595,6 +765,15 @@ domains:
       - package: jp.co.shueisha.mangaplus
         fingerprints:
           - 24:BE:3D:84:AD:FC:D6:3C:FF:2F:C7:EA:BE:3C:AB:F1:3D:8F:9C:57:85:08:A4:C9:6A:64:5D:E7:81:80:C1:E4
+  - domain: mapillary.com
+    method: https
+    issue:
+      - GH-7357
+    checked: "2026-10-22T04:37:10Z"
+    packages:
+      - package: com.mapillary.app
+        fingerprints:
+          - DC:E7:1C:BF:92:B7:7E:CE:9F:E1:33:04:66:A4:0C:68:43:CE:8B:6E:86:D4:74:5C:45:36:A2:32:12:DF:6D:58
   - domain: markusfisch.de
     method: https
     issue:
@@ -604,15 +783,38 @@ domains:
       - package: de.markusfisch.android.binaryeye
         fingerprints:
           - DD:A9:21:96:50:57:4B:2D:70:2F:DF:2D:F9:0F:61:9B:D4:E2:D0:F3:A6:6E:26:BB:03:2F:2F:01:88:40:CF:8E
+  - domain: meetingguide.org
+    method: https
+    issue:
+      - GH-7981
+    checked: "2026-11-06T04:28:30Z"
+    packages:
+      - package: org.meetingguide
+        fingerprints:
+          - 44:B7:4D:46:74:4E:4D:0D:1C:87:BC:EF:AF:31:4A:2D:88:D9:01:10:2B:3D:0D:26:73:A7:7A:5B:AB:41:42:AC
+          - 79:D5:76:8B:78:1B:9D:C5:A6:C6:3E:77:D4:57:A0:50:5C:C1:1D:D5:41:3F:13:89:3D:4B:78:09:A1:E9:5D:C7
   - domain: messenger.telegram.org
     method: https
     issue:
       - GH-2069
-    checked: "2026-06-19T06:20:55Z"
+      - GH-8351
+    checked: "2026-11-24T04:26:28Z"
     packages:
+      - package: org.telegram.messenger
+        fingerprints:
+          - 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
       - package: org.telegram.messenger.web
         fingerprints:
           - 49:C1:52:25:48:EB:AC:D4:6C:E3:22:B6:FD:47:F6:09:2B:B7:45:D0:F8:80:82:14:5C:AF:35:E1:4D:CC:38:E1
+  - domain: mobile.usaa.com
+    method: https
+    issue:
+      - GH-7243
+    checked: "2026-10-17T05:14:26Z"
+    packages:
+      - package: com.usaa.mobile.android.usaa
+        fingerprints:
+          - 28:8C:B7:0D:CF:14:7E:1E:A6:D0:AD:F6:70:F9:3F:17:82:58:42:25:A8:E2:00:73:D2:7A:6C:38:F4:16:DE:1B
   - domain: monero.com
     method: https
     issue:
@@ -689,6 +891,25 @@ domains:
         fingerprints:
           - 28:03:7B:2A:DE:24:84:DB:B1:57:51:98:6B:5A:17:5A:0A:37:62:0B:03:CB:EB:17:2B:CB:76:98:D0:93:4B:EA
           - E6:22:71:55:59:94:B1:14:34:E4:E3:DF:FF:F8:ED:B3:1C:8B:50:80:C8:3C:06:05:46:C3:8B:1C:C7:24:0C:49
+  - domain: paralino.app
+    method: https
+    issue:
+      - GH-8180
+    checked: "2026-11-13T04:25:59Z"
+    packages:
+      - package: app.paralino.android
+        fingerprints:
+          - 2B:66:56:E2:BE:9B:3C:12:EF:55:A5:F6:FA:4E:AA:83:E0:B2:44:60:2D:18:5E:2C:3D:8C:48:98:95:36:3D:B6
+          - 7C:36:87:CA:81:BC:A2:0C:32:09:5E:CE:AD:18:29:09:DC:50:87:03:6A:37:F0:77:2B:2D:9E:5D:85:91:41:DC
+  - domain: parkster.se
+    method: https
+    issue:
+      - GH-8267
+    checked: "2026-11-19T04:29:39Z"
+    packages:
+      - package: se.parkster.client.android
+        fingerprints:
+          - 8B:7D:7C:E3:43:90:34:D3:26:34:05:5F:46:BD:C4:7F:4D:94:D5:9D:A2:7D:D6:25:D5:A3:DC:E4:4F:1B:67:5D
   - domain: paypal.com
     method: https
     issue:
@@ -714,11 +935,12 @@ domains:
     method: dns
     issue:
       - GH-1627
-    checked: "2026-06-13T00:59:10Z"
+    checked: "2026-11-03T04:28:02Z"
     packages:
       - package: org.privacyguides.verifiedapps.play
         fingerprints:
           - E8:58:37:5B:7C:45:CF:C1:D4:E4:F5:1B:4A:D6:59:73:5B:38:2C:82:4F:E2:24:48:36:A8:14:AD:7A:F3:00:61
+    dnssec: true
   - domain: privacyguides.org
     method: dns
     issue:
@@ -740,6 +962,15 @@ domains:
       - package: app.privacynotes
         fingerprints:
           - 98:A0:BB:5A:AF:69:4F:6B:EA:50:AD:CB:4A:36:D4:B5:7A:3C:3E:42:F6:7A:FF:08:FB:EA:46:89:69:6C:AA:87
+  - domain: privateinternetaccess.com
+    method: https
+    issue:
+      - GH-8259
+    checked: "2026-11-18T04:38:26Z"
+    packages:
+      - package: com.privateinternetaccess.android
+        fingerprints:
+          - 8B:6A:E2:B9:B0:6F:4D:18:17:FD:3F:84:6F:88:E4:40:DD:43:1A:3F:46:62:0B:DD:4A:15:2B:70:FC:90:89:A2
   - domain: proton.me
     method: https
     issue:
@@ -758,6 +989,26 @@ domains:
         fingerprints:
           - A7:47:EA:EE:28:61:1E:25:21:7B:79:3C:07:BF:30:22:34:40:5C:FD:1E:19:06:81:62:55:6C:79:E5:BF:04:F0
           - DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
+  - domain: revolut.com
+    method: https
+    issue:
+      - GH-4902
+    checked: "2026-08-26T04:30:08Z"
+    packages:
+      - package: com.revolut.revolut
+        fingerprints:
+          - 11:F2:5B:D6:30:60:CE:B4:EF:EC:48:7C:C8:1F:6D:3D:D0:3A:75:C3:E9:D2:C5:32:3D:69:55:9D:C1:7F:6A:23
+          - 9C:9B:E0:71:35:E9:72:78:02:82:C2:E5:D2:7D:A0:6E:CB:8E:E3:AD:FC:75:30:39:17:DD:F6:6D:6F:AA:EF:A4
+  - domain: robinhood.com
+    method: https
+    issue:
+      - GH-7624
+    checked: "2026-10-27T04:47:31Z"
+    packages:
+      - package: com.robinhood.android
+        fingerprints:
+          - 82:59:FA:51:3C:FD:54:A6:AA:8D:93:43:50:1B:FA:13:45:8C:55:D2:5E:27:C5:8F:8D:CA:03:EF:E2:F0:02:E5
+          - FE:CB:D7:44:58:69:DC:91:E4:C7:97:4F:2E:EC:E0:CB:3E:4B:4F:67:2F:F5:83:F0:17:A8:A3:B9:8C:02:5C:2C
   - domain: roblox.com
     method: https
     issue:
@@ -859,6 +1110,16 @@ domains:
         fingerprints:
           - DF:5B:68:01:94:B7:55:44:A5:75:29:88:23:33:BA:C2:6F:1E:94:F9:B6:14:B4:A9:BC:AB:F3:4B:FB:C7:8D:21
           - FA:0D:C7:F4:72:C7:F9:88:07:20:27:88:4F:2C:ED:3D:81:9D:A7:A3:A5:A1:CA:51:87:9C:B9:E9:05:3B:5F:54
+  - domain: target.com
+    method: https
+    issue:
+      - GH-6531
+    checked: "2026-09-28T04:41:20Z"
+    packages:
+      - package: com.target.ui
+        fingerprints:
+          - B4:BF:25:47:5A:69:24:36:51:42:D9:7F:A8:38:68:C5:D1:09:20:4F:4F:DD:56:20:20:01:75:78:39:AA:03:55
+          - C2:0F:71:D4:25:62:53:57:F0:C0:52:3A:E1:C2:20:C5:9E:22:E4:9A:94:BC:9F:26:6F:9C:97:77:36:89:A0:9B
   - domain: taxi.yandex.ru
     method: https
     issue:
@@ -878,6 +1139,27 @@ domains:
         fingerprints:
           - 06:2D:3F:9B:64:86:96:56:3D:B3:AF:C6:BF:A0:0F:5F:15:CD:5D:09:4D:0C:07:D1:16:5D:C9:49:DD:77:34:39
           - 9D:31:0B:56:F3:F0:EA:51:0B:19:2E:A5:90:46:DD:A7:73:32:55:4B:0C:AE:BE:D8:6F:4D:2B:9F:8B:60:F1:92
+  - domain: tinder.com
+    method: https
+    issue:
+      - GH-7663
+    checked: "2026-10-29T04:38:35Z"
+    packages:
+      - package: com.tinder
+        fingerprints:
+          - 14:F1:45:31:43:6F:29:E3:E8:F6:8E:BA:03:5B:32:6F:8D:73:DD:7E:A5:DD:36:AA:26:35:31:C7:37:6E:29:57
+          - 8A:B1:4F:D7:50:B8:20:57:4D:20:C3:54:41:EA:14:A9:B5:D1:95:9A:31:04:0C:EC:12:B4:6B:B2:90:F4:DA:1B
+          - F1:75:9B:3C:F6:F7:83:BC:7D:88:9C:DC:13:34:14:58:67:70:2B:F7:EB:7B:09:54:5C:02:4B:9F:D2:21:13:DB
+          - F7:95:EA:38:3D:3A:5A:65:D8:CC:C1:61:05:08:28:C3:32:66:DD:57:5C:95:6E:5A:8B:9E:40:BE:8D:7D:8C:74
+  - domain: tradingview.com
+    method: https
+    issue:
+      - GH-8220
+    checked: "2026-11-16T04:27:50Z"
+    packages:
+      - package: com.tradingview.tradingviewapp
+        fingerprints:
+          - 44:F0:47:FC:6B:34:B0:BA:0C:49:1F:82:5B:B4:E4:37:70:D2:BC:94:12:20:D2:90:A7:0F:3A:84:67:AE:D6:01
   - domain: transferwise.com
     method: https
     issue:
@@ -966,6 +1248,25 @@ domains:
       - package: com.vanguard
         fingerprints:
           - A8:4F:AD:5E:DC:57:E4:31:41:89:AC:64:CC:AA:04:B4:4E:8D:A7:68:46:8C:A2:93:9B:CD:C2:15:DF:AE:3C:F7
+  - domain: venmo.com
+    method: https
+    issue:
+      - GH-8351
+    checked: "2026-11-24T04:26:28Z"
+    packages:
+      - package: com.venmo
+        fingerprints:
+          - C7:7E:26:31:AC:04:51:C0:86:F2:5F:79:AE:25:82:38:AF:A4:00:96:1E:8D:59:9D:B7:8E:25:EA:DC:DC:C9:47
+  - domain: video.simplepractice.com
+    method: https
+    issue:
+      - GH-8228
+    checked: "2026-11-17T04:29:03Z"
+    packages:
+      - package: com.simplepractice.video
+        fingerprints:
+          - 21:E1:56:78:30:77:33:7D:F5:13:65:75:31:6C:3A:D7:FA:E3:4F:19:7F:61:DD:C0:25:87:0F:B6:F7:0F:C2:99
+          - E4:09:A5:7E:B2:17:44:1E:2E:39:0C:A1:C7:DE:22:7F:06:0B:8B:DF:84:F3:F2:1D:8A:B8:FB:80:85:D3:E2:AA
   - domain: waze.com
     method: https
     issue:
@@ -990,7 +1291,7 @@ domains:
     issue:
       - GH-2812
       - GH-7528
-    checked: "2026-10-25T14:46:41Z"
+    checked: "2026-11-21T04:26:31Z"
     packages:
       - package: com.whatsapp
         fingerprints:
@@ -999,7 +1300,6 @@ domains:
       - package: com.whatsapp.w4b
         fingerprints:
           - 39:87:D0:43:D1:0A:EF:AF:5A:87:10:B3:67:14:18:FE:57:E0:E1:9B:65:3C:9D:F8:25:58:FE:B5:FF:CE:5D:44
-          - CC:E5:84:32:83:F0:A5:60:6B:0F:AC:F6:F7:3E:F7:98:91:C4:8A:82:0E:84:F8:11:E0:04:44:35:B3:97:9E:A2
           - FB:92:0D:38:1B:EE:1B:20:93:F2:7D:C8:F1:3D:99:4D:A6:29:DC:91:88:7D:05:29:B3:5C:9A:2D:C4:F4:A6:C2
   - domain: wikipedia.org
     method: https
@@ -1064,3 +1364,13 @@ domains:
       - package: ru.yandex.mail
         fingerprints:
           - AC:A4:05:DE:D8:B2:5C:B2:E8:C6:DA:69:42:5D:2B:43:07:D0:87:C1:27:6F:C0:6A:D5:94:27:31:CC:C5:1D:BA
+  - domain: zapstore.dev
+    method: https
+    issue:
+      - GH-6882
+    checked: "2026-10-07T04:34:59Z"
+    packages:
+      - package: dev.zapstore.app
+        fingerprints:
+          - 1E:55:68:38:46:47:0C:97:FB:38:13:1E:06:01:80:D2:CF:B4:82:AC:78:54:C8:E4:A4:EB:B0:C8:BA:B1:E8:35
+          - 99:E3:3B:0C:2D:07:E7:5F:CD:9D:F7:E4:0E:88:66:46:FF:66:7E:3A:A6:64:8E:1A:11:60:B0:36:CF:2B:93:20
