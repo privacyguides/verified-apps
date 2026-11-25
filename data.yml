@@ -11867,6 +11867,14 @@ packages:
             issue: GH-2467
             apk:
               sha256: 3634dfc04ec89bb03be2a1ec3a33956f3c51834405aea392e3657c67336761bc
+  - package: net.pgaskin.remotedesktop
+    signature:
+      - fingerprint: 08:D4:69:17:A8:18:AD:0C:47:97:33:B4:58:AC:B7:48:8A:4C:C3:9F:0A:5A:20:CC:C6:A3:91:81:B2:FB:8F:55
+        sources:
+          - name: F-Droid
+            issue: GH-6933
+            apk:
+              sha256: 8d11bca634b467778e74c15e76601cdc2fb91123a8bff7d2158e8a852885a399
   - package: net.sourceforge.opencamera
     signature:
       - fingerprint: 43:89:91:C9:68:E8:D3:08:CA:34:07:8D:37:51:1C:90:C5:02:D5:96:BA:F9:F0:D0:C5:FB:D1:C9:BF:67:DF:6D
