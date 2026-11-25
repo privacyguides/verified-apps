@@ -1423,6 +1423,14 @@ packages:
             issue: GH-2316
             apk:
               sha256: 502201bb6aa17c03bbe6aec1404529fbf3c0ca525221aa27b053bd15c339aae9
+  - package: com.bintianqi.owndroid
+    signature:
+      - fingerprint: E5:D5:DB:17:6A:74:2C:56:6B:A6:02:0A:C2:4D:93:FA:BD:A5:F6:95:2D:7F:CC:AE:9E:3A:46:E9:84:8E:83:B5
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1581
+            apk:
+              sha256: c7d342fb64e0e3846e6ff3501c13bf2492fc0a773448a435572cbe5ac9d80924
   - package: com.bitchat.droid
     signature:
       - fingerprint: 3B:03:FA:66:A5:45:13:21:10:07:92:F5:B5:5A:7B:49:66:D5:C8:DC:10:C6:DA:A4:0A:A9:5E:A4:89:53:1B:CA
