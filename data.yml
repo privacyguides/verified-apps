@@ -4905,6 +4905,16 @@ packages:
               sha256: 09f8f43f282bfdc876b3ed633b44c904e9819c3e01f44a7919d11e151e891a9e
   - package: com.minar.birday
     signature:
+      - fingerprint: 3E:02:DF:D7:16:10:F3:39:3E:0C:83:8A:03:5C:1D:9E:BC:A3:38:AD:03:78:7B:04:96:57:B9:ED:40:51:84:A9
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-5970
+            apk:
+              sha256: 67f64f013861e86b8b148bd5ae26effa418dbb3d6286c741d352226218ae8eb6
+          - name: Google Play
+            issue: GH-5970
+            apk:
+              sha256: 5418984c464bc2931d36c4270d48dd2d11fab44cad87d2e918d2f9dcf763a9d2
       - fingerprint: AB:4E:35:A0:33:AD:C5:A1:53:7A:5C:CB:6F:1F:01:7C:3D:C5:34:A7:4A:2A:D9:A8:B2:FF:18:59:85:0A:00:50
         sources:
           - name: F-Droid
