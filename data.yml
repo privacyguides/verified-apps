@@ -9051,6 +9051,14 @@ packages:
             issue: CB-84
             apk:
               sha256: 661400f4bfd6f18df48d559b2d9ac3384678076b420f8ff32efdf715c364fecc
+  - package: lying.fengfeng.foodrecords
+    signature:
+      - fingerprint: F6:DF:1E:05:13:71:9D:03:4A:92:61:06:A5:D9:F3:7B:F0:54:57:E8:A7:52:1E:09:19:10:D3:CF:48:02:E1:0E
+        sources:
+          - name: F-Droid
+            issue: GH-1921
+            apk:
+              sha256: 52a37454363478dae4ad266b585975e778ce62deb94d2ba94c5b21359793be35
   - package: marto.rtl_tcp_andro
     signature:
       - fingerprint: 00:0F:4F:FF:70:CA:CA:D5:02:BB:35:3F:7F:E0:49:68:2D:93:75:F7:F9:EB:CA:8D:75:40:22:A9:D6:2A:A0:48
