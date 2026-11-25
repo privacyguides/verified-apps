@@ -5507,6 +5507,14 @@ packages:
             issue: GH-1053
             apk:
               sha256: a4d762c72cec6f9fcf898df5efbc27bde7fb00817c1d454b2a26d9dbea4e13f7
+  - package: com.noctuasoftware.stellarium_free
+    signature:
+      - fingerprint: 89:E9:25:32:1F:51:3C:34:68:AA:47:7B:29:FA:5E:59:6D:C4:46:71:74:77:F1:49:70:45:64:09:65:03:28:A8
+        sources:
+          - name: Google Play
+            issue: GH-6479
+            apk:
+              sha256: fc52fa3091cda7ae6b70219056e545953b251c2fb22ad7279a3fde7213e0d928
   - package: com.none.tom.exiferaser
     signature:
       - fingerprint: D9:10:86:7C:E2:CF:3D:CD:37:DB:51:85:3E:BE:F8:63:3F:D8:3A:14:2B:26:42:27:4E:D0:68:15:2F:F1:22:01
