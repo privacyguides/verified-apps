@@ -6849,6 +6849,14 @@ packages:
             issue: GH-8010
             apk:
               sha256: 6c15bb39a2373f64df513fcd61779ee26df799925a818c9ff2738d3d0e965034
+  - package: com.mixplorer.addon.archive
+    signature:
+      - fingerprint: 72:4E:EB:D2:6A:75:6E:07:62:C2:55:05:2E:49:70:93:91:BA:A2:1D:17:D9:8C:34:07:1E:09:1F:18:B9:00:63
+        sources:
+          - name: Google Play
+            issue: GH-3056
+            apk:
+              sha256: 04ce4eb34d6c6615b3d10389dd98f1bad81f10b53a63bf5e1ec0d8b20b2ac4ca
   - package: com.mkx.hrttracker
     signature:
       - fingerprint: EA:FB:62:3C:A5:5F:65:89:4F:5F:8A:58:0D:E2:E5:B2:1B:F0:FE:94:77:F9:F8:72:01:2D:73:DC:5A:D5:1E:89
