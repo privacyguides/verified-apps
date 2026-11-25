@@ -14146,6 +14146,14 @@ packages:
             apk:
               sha256: 883f205e15b2793a872de0d24b6c33c3ef48794d0afb04f3643337fea4e8c65c
               link: https://github.com/CypherpunkArmory/UserLAnd/releases/download/v2.8.3/app-release.apk
+  - package: top.donmor.tiddloid
+    signature:
+      - fingerprint: 57:F7:74:24:15:A1:14:16:F1:6B:DA:89:1B:C2:E8:A7:85:0A:C9:0A:7B:27:FC:1E:EE:52:7E:78:F1:5F:30:32
+        sources:
+          - name: F-Droid
+            issue: GH-6930
+            apk:
+              sha256: b21f2341594c01fc935e938e8d7f1e00d91e8897deef1fd3783521489fcca6ba
   - package: tribixbite.cleverkeys
     signature:
       - fingerprint: 3C:70:DE:88:52:FC:A5:BB:27:9C:99:98:D5:58:EA:76:06:13:1F:1F:93:7A:F3:5C:C9:43:EE:E1:AE:DF:B9:7E
