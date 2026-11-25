@@ -8245,6 +8245,18 @@ packages:
             issue: GH-2538
             apk:
               sha256: 341638651bae943da95c84b8eb2895836201e9b6138f9f7b17f5945ab45f0ce0
+  - package: eu.hxreborn.cleanshare
+    signature:
+      - fingerprint: 32:B9:8D:C7:09:A7:EE:15:FA:E0:73:49:3A:1A:EC:A5:D4:28:31:6C:C0:D8:B8:F8:78:EE:D6:4B:A3:7F:32:97
+        sources:
+          - name: F-Droid
+            issue: GH-1980
+            apk:
+              sha256: bccc3a765c64cda04ea83a44f0c26e22f832a9a54f93aa88cd0227a0de44e68b
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1980
+            apk:
+              sha256: bccc3a765c64cda04ea83a44f0c26e22f832a9a54f93aa88cd0227a0de44e68b
   - package: eu.opencloud.android
     signature:
       - fingerprint: 0A:1E:55:60:92:9F:6A:DE:6A:EF:6B:44:67:11:E1:4B:0D:2A:90:8E:4D:EB:37:45:37:22:EF:51:C2:DC:A0:37
