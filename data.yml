@@ -6054,6 +6054,14 @@ packages:
             issue: GH-7703
             apk:
               sha256: d01e3816be3569f3e32fac67bbdf91aac3aa7fd7cbb1f31de3232dcd07cfd3c6
+  - package: com.lpw.graypause
+    signature:
+      - fingerprint: A6:87:2D:C7:79:DB:ED:D1:0F:A1:D8:59:EC:2A:11:4D:5A:9D:42:4E:DD:07:44:49:C8:45:EE:5B:80:83:E4:BA
+        sources:
+          - name: F-Droid
+            issue: GH-8271
+            apk:
+              sha256: eb54b3ee0b2aaa3aab14986b78e6b4ac7a149e78e889c6ba10a310ab6af76d09
   - package: com.lufthansa.android.lufthansa
     signature:
       - fingerprint: AF:75:72:3A:86:9D:50:C9:20:04:D8:B2:D5:74:46:48:DE:70:14:CA:D8:33:38:86:8E:5F:4C:AA:0B:B8:A8:8E
