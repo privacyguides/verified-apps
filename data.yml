@@ -6384,6 +6384,14 @@ packages:
             issue: GH-841
             apk:
               sha256: 09d1a31494b82a242d2d573da53df59797d82c641869817ca337575e49d6e002
+  - package: com.vishal2376.snaptick
+    signature:
+      - fingerprint: 68:25:30:97:45:04:37:10:7A:C4:6C:17:90:4E:10:2C:E3:CA:3F:A7:AE:5C:EC:F3:67:AC:38:BF:48:48:90:72
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1245
+            apk:
+              sha256: 361af500ccca466f9e585cfd842f5440ef5b85dd09998a6dc8159a794255db39
   - package: com.vivaldi.browser
     signature:
       - fingerprint: E8:A7:85:44:65:5B:A8:C0:98:17:F7:32:76:8F:56:89:B1:66:2E:C4:B2:BC:5A:0B:C0:EC:13:8D:33:CA:3D:1E
