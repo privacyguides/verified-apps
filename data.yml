@@ -298,6 +298,14 @@ packages:
             issue: GH-1439
             apk:
               sha256: 1d5c58a684b67a98b906af5e524fb83c8dfb94ee37ee58906e3a7b9feb6289a7
+  - package: app.lunatask.android
+    signature:
+      - fingerprint: 24:87:92:17:32:B2:01:F8:82:24:45:EF:C2:10:71:AA:74:42:2A:90:36:69:A7:C9:D4:63:1B:A9:CE:80:81:CF
+        sources:
+          - name: Google Play
+            issue: CB-178
+            apk:
+              sha256: 25ac2b18c8ffd6f3bb391f2cf74d2ac28ced2968cfd2a411f7cbd8404cb307b5
   - package: app.marlboroadvance.mpvex
     signature:
       - fingerprint: 68:69:06:54:E3:EE:46:D7:08:95:A1:24:45:DF:A9:8D:8C:96:3D:13:E2:DE:0F:8A:AA:20:97:65:CC:2C:41:5E
