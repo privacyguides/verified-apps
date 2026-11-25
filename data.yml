@@ -2258,6 +2258,14 @@ packages:
               sha256: bc093a94acd871083316a31e6e6519a28663c6f1d96276ad056051f135dae81c
           - name: HTTPS Verified Domain
             issue: GH-2878
+  - package: com.checkitt
+    signature:
+      - fingerprint: 2D:06:4F:96:2B:F6:58:CA:5A:44:52:19:E9:FB:3E:1A:FB:C4:FC:F9:59:21:48:D0:11:F8:B6:38:EC:9E:65:07
+        sources:
+          - name: Google Play
+            issue: GH-6799
+            apk:
+              sha256: 1ef0bbda297b8674d0a3b1218a6a89b33b7ae92956a26befa34696d73bf784ce
   - package: com.cheogram.android
     signature:
       - fingerprint: 51:F6:B6:65:F6:6C:CE:94:A7:F7:AF:5F:10:B5:F2:CE:13:55:DB:13:82:6E:C7:D8:D9:8C:58:EA:84:2E:2E:94
