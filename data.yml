@@ -121,6 +121,18 @@ packages:
             issue: GH-2817
             apk:
               sha256: 3477b88788e54164b1069df62bb7603e420c09898b48afbb8f55867c4f38703d
+  - package: app.fluffy
+    signature:
+      - fingerprint: 4A:ED:2F:69:1D:F6:4A:7B:0F:EA:25:A6:B8:C8:01:83:C6:DC:52:0E:04:9D:AC:01:78:DE:FA:1D:64:72:22:8F
+        sources:
+          - name: F-Droid
+            issue: GH-1948
+            apk:
+              sha256: 7f5caa2ee9f598d1a7ce256dfd62d775d9a02dcc4161b470251f92eff75fc195
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1948
+            apk:
+              sha256: 8fd4469f2486fc5f65825f4748ed9e47f8015d8f0b52fd2bcc401686f3c8820e
   - package: app.govroam.getgovroam
     signature:
       - fingerprint: 14:25:A0:14:D9:42:36:54:60:D6:05:82:E4:E5:A8:06:00:2C:67:B5:40:94:1C:6C:FF:6F:56:DD:CC:32:3E:96
