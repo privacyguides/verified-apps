@@ -4678,6 +4678,16 @@ packages:
             issue: GH-2574
             apk:
               sha256: b3643a7d02fb29f9dc121e6cb5ff83a87960aa6e80d9d1255695cee0ba0b5a69
+  - package: com.google.android.apps.restore
+    signature:
+      - fingerprint: |-
+          56:BE:13:2B:78:06:56:FE:24:44:CD:34:32:6E:B5:D7:AA:C9:1D:20:96:AB:F0:FE:67:3A:99:27:06:22:EC:87
+          E4:C4:3C:E2:73:30:38:95:C4:EB:D2:81:CC:8F:64:AF:74:C0:88:B7:DE:70:3C:D3:27:AF:D9:84:F4:9D:94:78
+        sources:
+          - name: Google Play
+            issue: GH-8133
+            apk:
+              sha256: d15a86d9d7717b09142bbd526338d2d2f6883a66c092f1b915b831d6df7ffdb6
   - package: com.google.android.apps.tachyon
     signature:
       - fingerprint: |-
