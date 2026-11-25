@@ -2909,6 +2909,12 @@ packages:
             issue: GH-1423
             apk:
               sha256: d9a4cc160a329dc007fc88c3120fc7bf8b82296831a3e1a74c9d62976a50160f
+      - fingerprint: D7:B6:2E:97:1F:CE:13:67:8E:83:AE:54:83:37:42:7A:2B:8A:77:96:85:34:50:6F:F0:23:BA:C3:D7:3B:2D:B0
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-8342
+            apk:
+              sha256: 1c66eeab950d1c069267385ff7adb89ce8b174162c57fd282eb459a96ed5da82
   - package: com.coinbase.android
     signature:
       - fingerprint: 41:6A:E0:CE:11:21:E9:C6:A6:B0:B7:C6:B5:D1:D9:BA:2B:9B:23:A1:4F:4F:1B:9A:87:E0:3B:49:8E:20:CF:3B
