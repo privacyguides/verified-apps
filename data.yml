@@ -4355,6 +4355,14 @@ packages:
               sha256: d4913cd8243bf9ec8930c5227836db7eb48f5e79bb69d626426a3c52b06a839a
   - package: com.github.catfriend1.syncthingandroid
     signature:
+      - fingerprint: |-
+          46:0C:A8:D6:32:87:AA:4A:31:65:20:6B:6D:C4:91:0F:9D:DE:ED:F9:DC:06:A6:A4:4C:6C:2D:AD:15:AA:BD:E3
+          F8:E0:27:73:B8:2C:F7:E9:4A:AB:01:62:02:9F:57:88:5F:F0:72:0F:AE:C1:0C:6B:CE:F4:9F:7D:F8:C9:4A:99
+        sources:
+          - name: Google Play
+            issue: GH-8365
+            apk:
+              sha256: d3ae43e6d010d56c8e113aa609d194ccbf32699e63993cf6e05070549ae3bbb4
       - fingerprint: F8:E0:27:73:B8:2C:F7:E9:4A:AB:01:62:02:9F:57:88:5F:F0:72:0F:AE:C1:0C:6B:CE:F4:9F:7D:F8:C9:4A:99
         sources:
           - name: Google Play
