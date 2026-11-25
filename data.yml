@@ -6468,6 +6468,14 @@ packages:
             issue: GH-268
             apk:
               sha256: f9b8ef878f829381bf0ea6c80bb688094b168377df746d3ffc4edca1c1d9b774
+  - package: com.trisven.safenotes
+    signature:
+      - fingerprint: 68:29:8D:7D:13:1B:9E:9E:33:4D:A4:DC:56:5A:2A:2E:69:B6:0E:7B:44:4A:0C:30:62:5A:2C:91:AC:C3:D7:C0
+        sources:
+          - name: F-Droid
+            issue: GH-2053
+            apk:
+              sha256: 81ffff3d8bfbcec3fd8e1ab33c282bb20d6769e4bdf172560e30c3304e5f61ad
   - package: com.tryhackme.mobileapp
     signature:
       - fingerprint: 06:6E:11:96:74:2F:1C:BA:3D:27:26:83:D5:37:F1:B8:A1:5C:FC:D8:06:1D:4E:33:AD:7C:CD:84:8F:FF:55:96
