@@ -1430,6 +1430,18 @@ packages:
             issue: CB-167
             apk:
               sha256: 97b6b2920f34d372ccddf7b598ccfdaab9e558ee9e6f200e64d1b67092b6aeba
+  - package: com.anthonyla.paperize
+    signature:
+      - fingerprint: DE:DA:86:75:D6:37:93:CB:0C:F7:BC:2D:EC:B6:A2:50:6B:16:B3:30:40:A1:FC:B1:D3:08:07:A5:11:E2:70:AC
+        sources:
+          - name: F-Droid
+            issue: GH-7396
+            apk:
+              sha256: 68cb5e47c730d4990f6065d7ebd7ff612891371919a65b8487434c24452720b5
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-7396
+            apk:
+              sha256: 68cb5e47c730d4990f6065d7ebd7ff612891371919a65b8487434c24452720b5
   - package: com.anthropic.claude
     signature:
       - fingerprint: 30:5A:1E:8A:43:2E:5E:C0:C6:12:B2:46:53:59:C3:B8:8E:3C:95:D6:25:35:99:AC:60:88:56:2B:81:8B:64:A0
