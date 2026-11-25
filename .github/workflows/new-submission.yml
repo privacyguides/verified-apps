@@ -5,6 +5,8 @@ on:
     types:
       - labeled
 
+cache-mode: read
+
 concurrency:
   group: submission-${{ github.event.issue.number }}-${{ github.event.label.name }}
   cancel-in-progress: true
@@ -231,6 +233,7 @@ jobs:
     name: F-Droid
     runs-on: ubuntu-latest
     needs: parse
+    cache-mode: write
     if: needs.parse.outputs.isDuplicate != 'true' && (github.event.label.name == 'Run Checks' || github.event.label.name == 'Create PR' || github.event.label.name == 'Commit As-Is')
     continue-on-error: true
     permissions:
@@ -357,6 +360,7 @@ jobs:
     name: Google Play
     runs-on: ubuntu-latest
     needs: parse
+    cache-mode: write
     concurrency:
       group: gplay-downloads
       cancel-in-progress: false
@@ -407,6 +411,7 @@ jobs:
     name: APKPure
     runs-on: ubuntu-latest
     needs: parse
+    cache-mode: write
     concurrency:
       group: apkpure-downloads
       cancel-in-progress: false

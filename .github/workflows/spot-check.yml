@@ -39,6 +39,7 @@ jobs:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 350
+    cache-mode: none
     concurrency:
       group: spot-check
       cancel-in-progress: false
@@ -63,7 +64,7 @@ jobs:
         uses: actions-rust-lang/setup-rust-toolchain@v1
         with:
           rustflags: ""
-          cache-shared-key: apkeep-1.0.0
+          cache: false
 
       - name: Run spot-check re-verification
         id: spot
