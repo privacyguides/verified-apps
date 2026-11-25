@@ -7864,6 +7864,14 @@ packages:
             issue: GH-2828
             apk:
               sha256: 1cc8357c0c3914b0d62a72eb882b22d585ef7c74906fa582c2370e580be78529
+  - package: dev.atajan.lingva_android
+    signature:
+      - fingerprint: C2:0D:C5:ED:06:3B:D7:91:B4:6D:07:A7:35:ED:E1:67:C8:BB:52:4A:8C:9C:5B:D1:90:F6:E0:69:08:75:DF:F8
+        sources:
+          - name: F-Droid
+            issue: GH-1934
+            apk:
+              sha256: 910cf606f6a5b6818b38d8e2056b5536964cba217009cdad8551bfcd55d37501
   - package: dev.bartuzen.qbitcontroller
     signature:
       - fingerprint: 36:60:38:E5:1E:E4:10:78:A2:3A:37:FD:92:12:23:8E:BA:D0:3F:1D:E0:73:E8:1C:73:8B:B6:F0:7B:11:43:39
