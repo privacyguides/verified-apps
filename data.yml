@@ -7813,6 +7813,14 @@ packages:
             apk:
               sha256: 4b96925f1fa7362949b81a3f008dd03e21be3ff57feaa11073bd753b65ce0f45
               link: https://github.com/quik-sms/quik/releases/download/v4.3.6/QUIK-v4.3.6-release.apk
+  - package: dev.secam.simpletag
+    signature:
+      - fingerprint: 9B:30:CC:CC:B2:2C:D9:DF:FC:6E:F8:E4:FA:78:5C:F1:B4:F8:3F:9D:B1:FC:67:87:2D:09:A9:71:1C:AB:C4:88
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1601
+            apk:
+              sha256: 8dbcba9c9bf04f33f3b8f539e392289a0dd31d4b4f9e559b52c1bd01584a4807
   - package: dev.soupslurpr.appverifier
     signature:
       - fingerprint: 3A:04:A8:0B:2A:88:33:4C:74:74:85:F0:B2:15:16:40:A3:8B:B3:D2:D7:3A:8E:AB:81:DF:50:3E:0F:02:02:B2
