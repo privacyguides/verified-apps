@@ -3348,6 +3348,14 @@ packages:
               sha256: 8718abdc82dc4c3b960e0766081d4abcd1c50fbb5d7e9f677a95b4f6b5b8ab52
           - name: HTTPS Verified Domain
             issue: GH-1535
+  - package: com.faultexception.reader
+    signature:
+      - fingerprint: 45:8E:69:35:52:3B:44:DA:98:9D:36:FF:DF:88:E0:96:C1:03:65:BA:A4:47:5E:F1:A4:EF:E7:7E:62:44:3B:2B
+        sources:
+          - name: Google Play
+            issue: GH-7296
+            apk:
+              sha256: 71cce9ad47d50ff1c4a00888d9215bbb00d9cf00a2114be23f9e6be16b0561aa
   - package: com.fauxx.full
     signature:
       - fingerprint: 1B:E8:F7:9B:20:F2:64:E8:24:2D:A5:EC:A6:95:F8:D0:96:1A:D0:98:71:9A:7C:6E:4A:1F:F7:5A:33:AE:A2:76
