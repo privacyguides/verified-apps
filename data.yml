@@ -11060,6 +11060,14 @@ packages:
             issue: GH-521
             apk:
               sha256: 06f917b44c543dcc922df10768f9e4211fc244a9e99db60b01c36fb263508254
+  - package: de.j4velin.wifiAutoOff
+    signature:
+      - fingerprint: DB:0A:4A:E4:6B:CA:B0:A1:25:B3:03:56:58:3F:8B:A8:F9:C8:29:81:51:89:D9:46:09:B3:C9:A1:41:99:DB:1A
+        sources:
+          - name: F-Droid
+            issue: GH-3049
+            apk:
+              sha256: 98f25ca6ab64b53eadd0b6723461626c5749e2151c0f8fcea22ba5566707e514
   - package: de.jeanlucmakiola.agendula
     signature:
       - fingerprint: 09:79:46:B3:2C:37:5A:8C:C8:1F:CD:F1:98:5D:60:1C:06:13:4B:29:61:3D:9D:86:32:F5:91:78:08:5A:F1:20
