@@ -124,6 +124,14 @@ packages:
             issue: GH-765
             apk:
               sha256: 3983db549a59e681473446be319bdcbd65b2a1f10a745a8ab4e30188b678f59a
+  - package: app.clearsms
+    signature:
+      - fingerprint: AC:B5:ED:DB:B1:BB:C2:D3:CD:12:57:76:EE:BA:B3:45:C0:83:C9:2B:9D:B7:F4:A3:3E:55:F5:D1:39:DD:04:48
+        sources:
+          - name: F-Droid
+            issue: GH-8230
+            apk:
+              sha256: d142f30a3d4b00ca8539e4dfb7be89874d5c99ddeae92aff013b1850edbb05eb
   - package: app.comaps
     signature:
       - fingerprint: 48:94:E8:E6:96:36:27:EF:66:00:31:D8:59:3F:E7:72:97:F8:35:AC:B4:E2:38:10:00:3E:92:61:35:02:3B:4C
