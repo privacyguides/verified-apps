@@ -8426,6 +8426,14 @@ packages:
             issue: GH-339
             apk:
               sha256: fab294097217c323584dcc32631991c4b5d2b0c9185bccab377504c1e49b3621
+  - package: com.wmata.metropulse
+    signature:
+      - fingerprint: C7:48:50:C9:55:56:85:F2:C9:A8:FE:C6:CA:1C:A2:AC:34:76:28:3B:A4:E2:D4:12:4D:58:CF:FD:8C:69:44:B9
+        sources:
+          - name: Google Play
+            issue: GH-6832
+            apk:
+              sha256: 72a14ebb210a141c4a6f3db8d8c0a8205dbbdefd7106c8502e0b0d4cdbb587ec
   - package: com.wolt.android
     signature:
       - fingerprint: 16:E0:AA:B4:BD:52:D9:99:8E:59:87:CA:20:7F:71:6B:CE:82:07:B7:47:4D:44:DE:51:F0:6D:FD:3D:C9:54:B7
