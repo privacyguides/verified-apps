@@ -5628,6 +5628,14 @@ packages:
               sha256: 81d1759235dcd1ecda78bf0f905641babf6142741356c4e176ca866ec3a1bf00
           - name: HTTPS Verified Domain
             issue: GH-2069
+  - package: com.pcfinancial.mobile
+    signature:
+      - fingerprint: 88:8F:1D:74:58:CC:4F:E6:4A:C2:1B:FE:1C:FF:D8:C7:FA:85:5B:DD:9C:1C:C1:6F:FE:65:F8:EB:65:05:97:F5
+        sources:
+          - name: Google Play
+            issue: GH-6092
+            apk:
+              sha256: 5f5653659985f6a3977e2d271836c6e5c21b27ec8b54aee2ae5c5f1fa4ff28f9
   - package: com.pcloud.pcloud
     signature:
       - fingerprint: B6:5C:9C:B8:36:28:78:F8:CC:20:95:C8:12:F6:8F:55:85:2C:08:7A:2E:0E:4C:D4:F2:58:38:15:02:E7:7B:B5
