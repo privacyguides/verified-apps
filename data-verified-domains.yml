@@ -226,6 +226,17 @@ domains:
       - package: com.brave.browser_nightly
         fingerprints:
           - 9C:2D:B7:05:13:51:5F:DB:FB:BC:58:5B:3E:DF:3D:71:23:D4:DC:67:C9:4F:FD:30:63:61:C1:D7:9B:BF:18:AC
+  - domain: brilliant.org
+    method: https
+    issue:
+      - GH-8229
+    checked: "2026-11-25T10:36:55Z"
+    packages:
+      - package: org.brilliant.android
+        fingerprints:
+          - 07:59:D7:9A:D4:2C:83:76:40:69:3E:FF:61:B7:66:45:C8:AA:9C:2C:BB:08:C0:67:23:89:B3:0A:B9:74:3F:4C
+          - 97:75:9F:60:C7:8F:DF:80:91:51:0F:3F:8F:FB:E3:D5:C3:6D:FB:26:AA:1F:F6:FE:00:43:89:19:04:B9:BA:7D
+          - 9B:59:03:6F:9E:2B:C6:29:E5:F1:05:15:1E:A4:F8:77:E0:F2:7D:26:E8:F9:4E:8D:C2:5F:1F:6E:70:3F:A6:B4
   - domain: brubank.com
     method: https
     issue:

@@ -13855,6 +13855,16 @@ packages:
             apk:
               sha256: 6251ab38cf7c79b3b8e970686e39e0a41078d6a0ecbce32000f3d4d0b5596245
               repo: https://briarproject.org/fdroid/repo/
+  - package: org.brilliant.android
+    signature:
+      - fingerprint: 97:75:9F:60:C7:8F:DF:80:91:51:0F:3F:8F:FB:E3:D5:C3:6D:FB:26:AA:1F:F6:FE:00:43:89:19:04:B9:BA:7D
+        sources:
+          - name: Google Play
+            issue: GH-8229
+            apk:
+              sha256: 95b6af235cfd8ce4fd4aff0a9f6eb54baa11d9d1db92741eff946312f9f74059
+          - name: HTTPS Verified Domain
+            issue: GH-8229
   - package: org.calantas.mygeo
     signature:
       - fingerprint: 5A:79:22:7E:96:63:D9:A8:1D:D0:77:22:09:E1:21:22:26:47:F7:CE:19:7E:46:30:13:57:A6:64:BB:AB:B5:14
