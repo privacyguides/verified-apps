@@ -5489,6 +5489,16 @@ packages:
             issue: GH-1576
             apk:
               sha256: 70d9097175dd3f108754f17c5359de147edcd928978200102f725545d79232db
+  - package: com.okta.android.auth
+    signature:
+      - fingerprint: |-
+          01:90:E3:31:B2:57:A5:59:6D:74:A6:B2:19:DB:62:E4:79:28:B9:26:C3:B4:44:D7:40:72:FB:BE:8F:4B:6D:84
+          70:90:B8:52:FB:4A:AF:E1:C3:71:F1:69:07:81:9D:8B:4C:2D:6D:25:FD:3F:A0:E1:D0:05:AC:BE:51:1C:21:A4
+        sources:
+          - name: Google Play
+            issue: GH-6265
+            apk:
+              sha256: ab03f465bb39aaa20d92291477e18a15d2f647bc3a6140a2ec4eaeb1fd24ddb4
   - package: com.om1cael.hidroly
     signature:
       - fingerprint: EC:D9:3B:0E:94:44:D2:F2:AD:98:5D:35:03:1B:A0:C9:AB:2B:17:08:DC:9B:4E:6A:E7:39:15:13:59:45:EF:A0
