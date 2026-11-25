@@ -5122,6 +5122,14 @@ packages:
               sha256: a2e831a276acb24c1c8b7c92cd7a184f78a760c1ce2754f92324fee31ce84e24
           - name: HTTPS Verified Domain
             issue: GH-2584
+  - package: com.openappslabs.fiveg
+    signature:
+      - fingerprint: CA:C4:CC:2A:36:E0:B8:7E:5D:60:1D:90:C0:AC:15:E8:AB:4B:43:A2:D8:D9:CF:20:67:EB:19:50:0F:DE:C4:C7
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-2508
+            apk:
+              sha256: 341711b0357998bf7808fc2999798000b50dfbfb3d981ae74758749c5f32dd11
   - package: com.orange.mobinilandme
     signature:
       - fingerprint: |-
