@@ -14277,6 +14277,14 @@ packages:
             issue: GH-583
             apk:
               sha256: a313f38530a04d9ab23ce0abb9314b3683362769e1f2c2dc72ad8e13c8c376f9
+  - package: se.leap.bitmaskclient
+    signature:
+      - fingerprint: 16:42:69:D3:EE:C9:69:47:C9:2C:F9:79:7B:76:5F:73:FA:F2:D1:82:2E:6D:B4:1F:1B:3D:AB:29:14:DC:8B:C0
+        sources:
+          - name: F-Droid
+            issue: GH-7269
+            apk:
+              sha256: 4ed7a2ed3e049aa173d45d1b7272760e429023c727696dbffb31a39d75cbb6c2
   - package: se.lublin.mumla
     signature:
       - fingerprint: 14:96:D2:90:5A:A8:D5:E9:8C:CC:DB:DB:D5:EC:4A:9B:63:8E:52:58:77:66:F1:82:DB:07:34:46:6A:B1:B7:AE
