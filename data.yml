@@ -11003,6 +11003,14 @@ packages:
             issue: GH-2060
             apk:
               sha256: 985a46c58bfd2e5909e7d64e1bce8c8e09942f89e5448c7f14d7f6b74d9caa84
+  - package: network.mysterium.vpn
+    signature:
+      - fingerprint: 40:58:A6:C2:EB:3D:85:76:C2:AA:B3:DD:57:06:7B:10:76:5F:01:E9:07:1C:64:AB:63:30:63:DC:5E:C1:97:9D
+        sources:
+          - name: F-Droid
+            issue: GH-6193
+            apk:
+              sha256: 3a79dcc01871f5e77e363c28bc8ed5577bf5f3191d2cf61705bbdc6eeb4be013
   - package: nl.appyhapps.healthsync
     signature:
       - fingerprint: F7:BB:BD:D2:F3:A3:FE:CA:52:2D:C7:CA:B7:0C:62:0F:C1:17:A1:67:68:C1:AF:64:41:34:F6:DA:C0:F9:E7:BC
