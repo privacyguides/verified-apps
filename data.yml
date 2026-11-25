@@ -1327,6 +1327,14 @@ packages:
             issue: GH-2753
             apk:
               sha256: d441ff2ff5e11248851173cd27020552cb1d7fe337ad3aa1815695b907d07216
+  - package: com.ahnlab.v3mobileplus
+    signature:
+      - fingerprint: 68:1B:36:45:0F:DF:B8:08:A2:2F:ED:7E:61:0B:EF:B4:6C:19:FA:3A:58:00:0B:B0:D9:15:7E:30:01:09:82:31
+        sources:
+          - name: Google Play
+            issue: CB-179
+            apk:
+              sha256: a8581c61ee4d10198960b6f4b79bee7a8eceafc6490b227da48e516e14ace5f6
   - package: com.aidungeon
     signature:
       - fingerprint: 66:A5:A0:96:CB:94:79:90:BA:9C:67:49:35:F7:37:CD:57:AC:CB:E2:F3:C4:D1:AD:12:AE:74:79:AE:2B:C0:9B
