@@ -10259,6 +10259,14 @@ packages:
             issue: GH-521
             apk:
               sha256: 06f917b44c543dcc922df10768f9e4211fc244a9e99db60b01c36fb263508254
+  - package: de.jeanlucmakiola.agendula
+    signature:
+      - fingerprint: 09:79:46:B3:2C:37:5A:8C:C8:1F:CD:F1:98:5D:60:1C:06:13:4B:29:61:3D:9D:86:32:F5:91:78:08:5A:F1:20
+        sources:
+          - name: F-Droid
+            issue: GH-8071
+            apk:
+              sha256: 63b32c01b51ed0b92f3470ad5fe24c393699db8bf9966973849fe529c2d431e1
   - package: de.jeanlucmakiola.calendula
     signature:
       - fingerprint: 5C:DA:EE:8E:B3:1C:B0:DF:91:57:C6:46:AE:3E:C8:B3:DC:43:B5:BB:72:62:4E:08:8C:9D:DE:A0:C4:EB:5E:C1
