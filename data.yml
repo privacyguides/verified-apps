@@ -6662,6 +6662,14 @@ packages:
               sha256: 00fc3f8d7dd8e6fb85efcf698fba50d05e37fe698f918a19ba0296f4a0d7c29e
           - name: HTTPS Verified Domain
             issue: GH-2068
+  - package: com.strava
+    signature:
+      - fingerprint: FA:D6:26:9B:06:C9:3A:48:1D:23:B1:66:A5:36:48:AF:5C:20:4F:16:48:AF:3C:8B:69:F7:7B:FB:52:A1:5A:B9
+        sources:
+          - name: Google Play
+            issue: GH-5987
+            apk:
+              sha256: 778133b6ee5ba14dfe6aa3dd372dd4efdd914bf7e59d4478449fd17576f6ec10
   - package: com.streetwriters.notesnook
     signature:
       - fingerprint: 23:AF:C1:F8:ED:5F:BB:D0:85:2A:37:22:2D:DC:E0:6F:92:92:71:02:F0:12:6F:99:6A:56:23:F5:27:74:C6:90
