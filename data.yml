@@ -66,6 +66,14 @@ packages:
             issue: GH-2278
             apk:
               sha256: 26d45e4a140feb85a5a97828677024245832bf765c2f035bafd57465d647cad5
+  - package: app.areada
+    signature:
+      - fingerprint: 02:F6:B0:E2:59:88:4A:C7:1C:01:D7:D3:2B:78:C7:C0:A0:7A:03:7E:3F:F1:65:47:1F:A1:9F:DA:FA:39:C3:A0
+        sources:
+          - name: F-Droid
+            issue: GH-2533
+            apk:
+              sha256: 53f4b2483f3b41ace8118278fd7fff04efb717f06161ab35e8644c49695a936b
   - package: app.attestation.auditor.play
     signature:
       - fingerprint: 07:53:35:BD:7B:54:C9:65:22:2B:52:84:D2:A1:FD:EF:11:98:AE:45:EC:7B:09:A4:93:42:87:A0:E3:A2:43:C7
