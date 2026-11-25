@@ -2500,6 +2500,14 @@ packages:
               sha256: 7d2f6ada55ba05741acd09be55a4022d4e49ccfc51105a41815b06470e961fad
           - name: HTTPS Verified Domain
             issue: GH-2332
+  - package: com.busuu.android.enc
+    signature:
+      - fingerprint: C5:BF:5F:1F:5F:71:57:C1:43:9F:E2:89:E3:AB:E3:C0:97:B0:80:37:CA:72:D5:4A:5F:DA:95:42:67:73:56:F6
+        sources:
+          - name: Google Play
+            issue: GH-8023
+            apk:
+              sha256: 53349ebf1cfe806d1c2b581765ac44f38190606c36c2f50f5d0b0aabd1ec26c9
   - package: com.buswhere.shuttles
     signature:
       - fingerprint: 63:ED:DF:A3:45:2F:34:43:42:6B:05:DD:F3:6E:ED:33:9F:B4:A6:96:57:EF:57:37:BD:DB:59:F6:A1:62:2D:31
