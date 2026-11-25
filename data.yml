@@ -1691,6 +1691,12 @@ packages:
               sha256: 718b4da1906abaefabb2092f6a32f8fd0f3ff766f8bd107a2e0a9f9b7ff38790
   - package: com.atharok.barcodescanner
     signature:
+      - fingerprint: B4:27:71:75:5F:9D:47:DC:84:18:51:17:88:2C:4E:03:7F:E7:BF:98:E1:07:41:77:2D:C2:CD:80:11:90:C6:2B
+        sources:
+          - name: Google Play
+            issue: GH-7708
+            apk:
+              sha256: a0b29d89afbc896105ac377c1465422d0d9060ec7f496f22e83e0da078e358a1
       - fingerprint: EB:F1:67:ED:88:46:61:3E:6B:AE:94:3D:63:CB:3D:EB:37:03:30:7C:68:2E:BB:47:DF:4A:3F:43:31:AF:18:76
         sources:
           - name: F-Droid
