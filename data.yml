@@ -963,6 +963,14 @@ packages:
             issue: GH-6480
             apk:
               sha256: 984c911fec94d60d60f91b6f64db0fa066e202e9bfeeffb34ffe4d06c3687a09
+  - package: com.JindoBlu.OfflineGames
+    signature:
+      - fingerprint: 42:97:93:CE:BF:8F:EF:E6:21:17:D4:98:47:BD:3D:71:4A:E4:03:D8:43:5C:E9:D5:C5:49:39:DA:F2:F7:2D:09
+        sources:
+          - name: Google Play
+            issue: GH-7969
+            apk:
+              sha256: cb2e5f0bbf6fda5813d6a97244bbe62d6a7698f33df0e28f038330505bc6662a
   - package: com.KaraWilson.JellyBook
     signature:
       - fingerprint: 82:9C:56:9D:05:27:20:86:80:76:49:23:6B:65:44:11:33:88:FC:3B:1E:BE:3F:34:95:75:51:F4:AB:38:FB:3B
