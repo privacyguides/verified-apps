@@ -9511,6 +9511,12 @@ packages:
             issue: GH-6547
             apk:
               sha256: 41253adcef938c57ca3ca865156392c746f28997b214172fb615fe2a07b933a4
+      - fingerprint: 8E:D7:59:44:2C:64:92:FD:0B:49:2B:73:FB:C8:C0:C6:E4:5F:06:5F:C5:C1:11:E2:4A:4B:4C:93:59:81:A1:E2
+        sources:
+          - name: F-Droid
+            issue: GH-6548
+            apk:
+              sha256: 151e02b669d018f5623b9a7995599ce535654378fb8d07894377eaffcc0b882d
   - package: dev.atajan.lingva_android
     signature:
       - fingerprint: C2:0D:C5:ED:06:3B:D7:91:B4:6D:07:A7:35:ED:E1:67:C8:BB:52:4A:8C:9C:5B:D1:90:F6:E0:69:08:75:DF:F8
