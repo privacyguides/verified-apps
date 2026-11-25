@@ -10797,6 +10797,14 @@ packages:
             issue: GH-1984
             apk:
               sha256: 28fc2639f7816278313dab245c18eb6df7697bd024e5324560e51f472e10ce3f
+  - package: io.github.benoitduffez.cupsprint
+    signature:
+      - fingerprint: 86:CA:30:07:16:94:6F:72:47:C5:92:CB:E7:65:03:64:36:85:61:89:EC:94:85:83:3F:63:71:F1:E3:01:02:68
+        sources:
+          - name: F-Droid
+            issue: GH-7050
+            apk:
+              sha256: c64d0d26b724e9bedf8ea92f455778b15663b6729569b12ecb7e395d21975f25
   - package: io.github.devhyper.openvideoeditor
     signature:
       - fingerprint: 84:DF:64:4C:C5:DB:D4:EA:50:60:2B:9F:23:E4:FB:F3:B2:2E:E5:CD:21:82:43:7B:EF:72:C7:C7:99:F1:2D:B6
