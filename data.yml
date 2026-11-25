@@ -9075,6 +9075,14 @@ packages:
             issue: GH-1848
             apk:
               sha256: 69736fbd68fc10f18094465d45effd9681cc301c806b536d50bb7be7820d2f77
+  - package: fr.heinisch.birthdayadapter
+    signature:
+      - fingerprint: 70:3E:46:99:37:74:4F:A0:0A:56:0E:B7:32:FA:96:88:BC:63:73:AF:21:E2:46:8E:A0:D2:3F:24:8E:A5:40:BB
+        sources:
+          - name: Google Play
+            issue: GH-5707
+            apk:
+              sha256: 744abf03fa94f3210e68f5bd04681df4e764158e2f6ecaeef7d11db969f62d61
   - package: fr.laposte.idn
     signature:
       - fingerprint: 33:F9:B8:8A:9F:7B:93:29:30:0F:7E:72:E1:A5:97:0E:8F:75:29:D3:B1:94:EE:E3:10:9F:1B:69:5C:72:E0:1E
