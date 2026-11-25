@@ -2831,6 +2831,14 @@ packages:
             issue: GH-314
             apk:
               sha256: 36bc747c6b4c1042557a640d9f7bfd4533bb28fafb02f57f6fdec8f84ebc7226
+  - package: com.ghostsq.commander
+    signature:
+      - fingerprint: 42:B1:74:15:42:B9:B8:E2:2D:4F:0F:03:36:C9:68:8D:3B:69:5E:EF:1D:79:13:51:35:D5:39:52:1D:7E:8A:20
+        sources:
+          - name: F-Droid
+            issue: GH-1436
+            apk:
+              sha256: 7e80608184f463d0837328998983beb30799d13de2d5b28dca8f76978dc8a05c
   - package: com.github.android
     signature:
       - fingerprint: DF:08:C9:F2:D8:09:18:9D:9D:50:64:97:C1:57:45:A7:39:5A:41:53:6E:FB:43:3E:3A:EE:1A:ED:BE:11:B2:61
