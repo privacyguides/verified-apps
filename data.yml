@@ -9280,6 +9280,14 @@ packages:
             issue: GH-1797
             apk:
               sha256: 20d39348af1cee7ee027b5777998cf60be86c74d73d3b18c5dd7846f3f8808a4
+  - package: name.gdr.acastus_photon
+    signature:
+      - fingerprint: A8:3C:1C:E4:1F:47:0D:D9:E5:2F:B5:66:A5:5C:F0:E1:DA:FF:29:B4:9A:AA:B8:BC:46:41:22:40:56:C7:B5:24
+        sources:
+          - name: F-Droid
+            issue: GH-1794
+            apk:
+              sha256: ece8e98b420feadc4265abb9558c14c944a1580794490e462d6e6cf205a4eeb4
   - package: ncit.gov.efaasblue
     signature:
       - fingerprint: 92:76:E3:A8:17:4E:EB:81:5C:79:F6:9A:7C:CD:34:37:42:6A:DA:A3:79:E7:ED:83:3A:D9:60:5E:69:40:33:D5
