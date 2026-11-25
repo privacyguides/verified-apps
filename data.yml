@@ -8406,6 +8406,14 @@ packages:
             issue: GH-1113
             apk:
               sha256: 2bce2f2c32e97b89ede5bd0ee95f482a358015e9dd11584a7016b8b822710f2c
+  - package: de.bbbank.securego
+    signature:
+      - fingerprint: 9D:50:FA:04:48:C7:44:67:F5:41:D9:73:5D:82:63:8A:78:2B:11:F7:5D:ED:70:2E:17:03:F1:15:1C:7F:E1:0D
+        sources:
+          - name: Google Play
+            issue: GH-6409
+            apk:
+              sha256: 3b5fb3924d6061a38c16cb6b0e1c591580e07a968110555fba2bba0946bbf29f
   - package: de.blau.android
     signature:
       - fingerprint: AC:5D:0C:28:7A:06:0C:1F:D0:51:F1:D2:03:C4:CE:33:FF:70:08:73:5F:2D:38:D1:95:1A:90:0C:BD:67:39:69
