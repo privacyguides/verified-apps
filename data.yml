@@ -7671,6 +7671,14 @@ packages:
             issue: GH-2315
             apk:
               sha256: 44a1b28a06a5187a48f9e6a8ebe4ad9f9cca2a0453adbaf4d3913a8399f030f3
+  - package: com.pep1lo.bakerspercentagecalculator
+    signature:
+      - fingerprint: 76:9A:0F:A3:6F:E7:26:AA:D5:10:E0:B5:C5:7D:F3:F0:01:68:56:07:64:86:16:7F:79:FC:97:F7:93:1A:94:FF
+        sources:
+          - name: F-Droid
+            issue: GH-2929
+            apk:
+              sha256: 124483af2319dc9135ad0043b7318eb23d00fdeb5ddc11a15adb0da46caac95d
   - package: com.performance.meshview
     signature:
       - fingerprint: 92:5C:7B:1D:F5:68:9F:EF:23:71:E1:F6:E7:1E:98:A3:95:62:95:DF:95:22:1B:AA:06:14:52:22:AA:89:F7:69
