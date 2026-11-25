@@ -1832,6 +1832,14 @@ packages:
             issue: GH-7053
             apk:
               sha256: 75d64ca9a401136b0d8a03e06d5739138d04e9694bd2f3af58c57cb314b7ee5e
+  - package: com.autismprime.fall
+    signature:
+      - fingerprint: 95:2F:B5:3E:84:9F:7D:DA:70:FF:2B:42:B9:1F:52:D2:E4:91:0D:F9:CE:65:43:C6:3F:9F:7A:3D:BE:CD:E6:83
+        sources:
+          - name: F-Droid
+            issue: GH-7852
+            apk:
+              sha256: a4b6fa30a02db7af7f21b064eb7a844ef8394facfd4515d11b552df2bf9a0828
   - package: com.autowashco.autowash
     signature:
       - fingerprint: 66:CB:86:A5:1E:A9:6B:36:E3:F4:CC:34:2A:21:74:32:7C:36:76:2E:CB:81:14:12:F1:5B:76:BF:5B:C4:12:C3
