@@ -5097,6 +5097,12 @@ packages:
               sha256: ba0f8c361c35bc07f291a9403d53dec430013afcbd14190ab0c323f752421ee5
   - package: com.maltaisn.notes.sync
     signature:
+      - fingerprint: 1F:8B:4C:5A:D8:7F:E9:E6:41:4F:AE:5C:13:6A:C5:75:FB:F0:78:EC:DF:3C:7F:0B:3C:6A:08:6B:86:28:0C:55
+        sources:
+          - name: F-Droid
+            issue: GH-6840
+            apk:
+              sha256: 176deff1189734d014a8078d8221ae8b249ef1b042bd12837067265f1fb47d46
       - fingerprint: 2F:57:9D:5E:09:89:55:94:B1:EF:C5:64:58:DD:2B:AE:F9:00:B0:A0:9E:6C:7E:8A:F6:48:83:44:A9:22:A7:D0
         sources:
           - name: Google Play
