@@ -7773,6 +7773,14 @@ packages:
             issue: GH-1611
             apk:
               sha256: 76fc0bdc33b7fb882faf3746e43f9bf660d53453ca2d90adba58d0ca0ae3f1a4
+  - package: de.kaiserdragon.callforwardingstatus
+    signature:
+      - fingerprint: A0:CF:A0:D1:A0:0B:98:87:A1:70:1A:69:3B:DC:3C:2A:8E:84:D3:9D:8E:3A:98:D6:81:BD:34:68:CB:81:A4:DB
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-2718
+            apk:
+              sha256: 57102c0af27e616335e9c5e6d6a48f60f634536d0d8dc4a91b8925dfafb2b9ac
   - package: de.kaiserdragon.iconrequest
     signature:
       - fingerprint: A0:CF:A0:D1:A0:0B:98:87:A1:70:1A:69:3B:DC:3C:2A:8E:84:D3:9D:8E:3A:98:D6:81:BD:34:68:CB:81:A4:DB
