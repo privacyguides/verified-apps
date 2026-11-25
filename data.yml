@@ -10934,6 +10934,14 @@ packages:
             issue: GH-1445
             apk:
               sha256: 4f9290bf74d8e3c83bb11c9f7050fe5c8dc1f7336b7145bc2910a366f926da17
+  - package: org.billthefarmer.tuner
+    signature:
+      - fingerprint: F5:51:94:7F:71:F1:27:69:FE:27:DB:76:D3:9F:91:9A:B3:E9:34:77:CF:EE:4A:0A:AC:80:D0:FD:9E:60:6F:22
+        sources:
+          - name: F-Droid
+            issue: GH-5968
+            apk:
+              sha256: 7fbfaee87f3402f7c4b269ac42a36a2ff2c91b382655647efad23d631caff944
   - package: org.blitzortung.android.app
     signature:
       - fingerprint: 0B:3E:F6:40:A4:A4:B3:22:EF:6C:48:10:7C:B2:F1:AE:FB:57:CB:F2:B5:BE:34:8D:1D:46:40:A5:54:F0:EB:B9
