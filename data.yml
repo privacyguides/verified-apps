@@ -6209,6 +6209,14 @@ packages:
             issue: GH-1586
             apk:
               sha256: a4c7ca3859ae040879007268875ba68b71f6fd7915e6da73ae1076780bf9f71a
+  - package: com.sbs.train
+    signature:
+      - fingerprint: B5:27:33:9F:F8:9D:5E:2A:97:EE:76:D9:3A:7E:77:62:8F:AC:84:FA:2E:75:C1:74:CD:E8:CF:EC:A1:E3:C0:34
+        sources:
+          - name: Google Play
+            issue: GH-5863
+            apk:
+              sha256: c4f1a9e7a76e02ba547d51c6198af85dc08583cf612c0d29b748c90ef0f45d71
   - package: com.scee.psxandroid
     signature:
       - fingerprint: DB:4C:38:96:42:CD:DC:76:2F:6C:72:B8:67:B8:FC:D9:39:E5:B5:DA:E4:AC:37:63:DB:CD:F6:23:27:D3:82:F7
