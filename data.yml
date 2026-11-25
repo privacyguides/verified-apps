@@ -12385,6 +12385,14 @@ packages:
             issue: GH-1433
             apk:
               sha256: 9c1ec068c4e6aed1f40c8489082653fd31b5cd6a5269314191da3606a1074c38
+  - package: org.nqmgaming.aneko
+    signature:
+      - fingerprint: 7E:54:67:45:82:B3:DA:8A:2C:0F:B5:58:10:06:E6:1C:25:2E:10:24:02:8F:C6:AB:60:9C:28:A4:C3:83:D8:08
+        sources:
+          - name: F-Droid
+            issue: GH-6387
+            apk:
+              sha256: eb5c652c5862e7e44acba51904977ad696fb55a87db692b63c2c91aaa02bf1c1
   - package: org.onionshare.android.fdroid
     signature:
       - fingerprint: 0D:EF:4C:8A:3C:5B:65:74:8F:37:DF:F6:DC:DF:FC:AF:3E:85:C7:80:9A:56:51:43:5C:29:09:FB:2B:A2:0B:F6
