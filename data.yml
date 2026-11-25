@@ -4336,6 +4336,14 @@ packages:
             issue: GH-751
             apk:
               sha256: fad4c6b9f45db6c3103e976351a883a877c8242f61aa137a4d271b112a1197e7
+  - package: com.hwloc.lstopo
+    signature:
+      - fingerprint: 9E:D9:A2:E7:8E:80:4F:54:AD:6D:B1:7A:67:8E:BF:96:5C:6C:A3:DB:48:46:E1:01:3D:2B:2A:5E:A9:36:C8:30
+        sources:
+          - name: F-Droid
+            issue: GH-6577
+            apk:
+              sha256: 95087b240e2a05257b1cd848ca25d7b2d832d158123d72f43a27eea183e3ebbd
   - package: com.hybridcalisthenics.app
     signature:
       - fingerprint: 16:38:CC:37:54:4C:2F:FD:4F:D2:E7:D5:BC:CA:8A:CB:D7:3E:C1:BD:9D:39:45:42:8D:3D:2E:75:E2:F5:EA:3E
