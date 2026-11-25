@@ -5103,6 +5103,14 @@ packages:
             issue: GH-1940
             apk:
               sha256: f2f005fc6203fcb51156baa80cc17dbcf7ff86be9eb6e7e4c6e64d413be10e3b
+  - package: com.mediocre.smashhit
+    signature:
+      - fingerprint: 84:D6:AD:40:15:25:6C:84:07:D1:2A:89:75:4F:94:D7:BC:62:6D:E6:D7:BE:A3:E0:06:13:8D:67:39:E9:25:6E
+        sources:
+          - name: Google Play
+            issue: GH-6604
+            apk:
+              sha256: 3b2ffa02fee8ca762f40648f1a9bec5c308764e881dd6a79cacd6dccdb16e338
   - package: com.medm.medmcare.diary
     signature:
       - fingerprint: 20:68:12:16:E3:5F:DB:78:56:1F:E3:76:D0:BE:33:40:64:C3:C3:8A:27:1D:0C:88:46:D5:D0:4E:53:14:34:BD
