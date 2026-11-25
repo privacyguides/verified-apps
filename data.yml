@@ -2073,6 +2073,14 @@ packages:
             issue: GH-2326
             apk:
               sha256: b88d7a4c37a3352f996bb14dc5309ee20b6ee02366dc298e923bbe845ef4cf86
+  - package: com.belo.android
+    signature:
+      - fingerprint: 04:C9:AD:EB:F9:9F:18:BA:08:4C:DE:D9:6F:68:18:D0:62:AA:84:3F:23:58:C6:01:59:2B:EB:24:A7:6A:AB:3E
+        sources:
+          - name: Google Play
+            issue: GH-7991
+            apk:
+              sha256: d11096c38e9b2d1a20537075b1575b44d3149cf29d2f6caded958476dbdc8bf5
   - package: com.bendigobank.aussie
     signature:
       - fingerprint: D6:0D:16:FA:01:73:6D:C5:A9:B4:94:D6:48:74:3A:CE:AC:49:22:30:4F:00:0B:6A:CB:12:F7:5B:00:31:37:C0
