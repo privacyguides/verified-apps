@@ -6705,6 +6705,18 @@ packages:
             issue: GH-2153
             apk:
               sha256: 3b06700335733210551ec3ba3fcdb1cd4001f71d66093e859417973ed781f08d
+  - package: com.networkscanner.app
+    signature:
+      - fingerprint: CF:89:91:3C:18:DC:8E:F3:0C:88:F0:95:7C:C4:92:EA:EA:04:20:20:44:FD:D4:26:0D:9C:CB:CA:97:9E:0F:FA
+        sources:
+          - name: F-Droid
+            issue: GH-8226
+            apk:
+              sha256: 489b537de7133d265ab8658a5c609bd214faea2bea0adf1842d84a750a0a07d9
+          - name: Google Play
+            issue: GH-8226
+            apk:
+              sha256: 2f7984cb8052bfa583c5604ccd60e158d21b1d2d8da76c703f0b3758fac1872f
   - package: com.newgen.alwayson
     signature:
       - fingerprint: 1E:E2:AE:B5:89:22:EB:1B:83:C4:7E:94:8C:C5:16:08:62:78:5B:1A:CD:13:A8:D2:C6:DB:EF:BF:25:FB:A9:2F
