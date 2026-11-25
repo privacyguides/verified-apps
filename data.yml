@@ -12215,6 +12215,14 @@ packages:
             issue: GH-1094
             apk:
               sha256: d5cb6c0bb40b5a82fe4ea5689599aa871bb725c25f0d6d1bde44120b696073b9
+  - package: org.decsync.cc
+    signature:
+      - fingerprint: 17:FE:07:62:58:EE:F2:C8:F7:4B:41:3B:97:9A:09:7A:E3:99:03:7D:DB:EC:DE:E8:70:FE:71:C1:19:21:C9:94
+        sources:
+          - name: F-Droid
+            issue: GH-6914
+            apk:
+              sha256: 38fd45a240fa59613fd41ef0f19e88fe1d15ff110166cd70bb2031cbd5741b1a
   - package: org.disroot.disrootapp
     signature:
       - fingerprint: 25:AD:0D:7C:16:B4:22:31:15:8D:2E:36:E8:C1:80:88:52:5B:CC:4F:95:0F:2C:C7:B5:E3:B2:F6:7F:E7:E7:3F
