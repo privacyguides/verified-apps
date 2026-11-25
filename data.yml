@@ -8867,6 +8867,14 @@ packages:
             issue: GH-2075
             apk:
               sha256: c228177f0d66e2cb663911e6ec9f79cc99a7fde2c7e9b5d2270f4a9695ac558f
+  - package: com.wepaprint.mobile
+    signature:
+      - fingerprint: 0A:CE:D5:4F:4D:52:1C:B1:10:B7:DE:2C:FE:28:FA:8F:12:9F:75:5D:FA:C7:63:58:DF:A8:0B:5A:75:65:D6:44
+        sources:
+          - name: Google Play
+            issue: GH-7664
+            apk:
+              sha256: a46c652c103d2bfd7d396f503689f9502903c77676fd3f8fd63cb0c31fcd5ad5
   - package: com.wesaphzt.privatelock
     signature:
       - fingerprint: C2:81:E4:42:E2:E0:58:F1:7C:06:43:B2:AB:78:59:0A:43:FF:53:74:B8:55:B5:43:D3:19:08:B0:57:53:09:B8
