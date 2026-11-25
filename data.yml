@@ -4794,6 +4794,14 @@ packages:
             issue: GH-988
             apk:
               sha256: 1e79ae19db7dea7f35493d451af1368a75b414e97896abaf8945740d06b1871a
+  - package: com.google.android.as
+    signature:
+      - fingerprint: 3A:F3:9A:B9:67:AA:A5:D2:79:E4:9B:5F:76:9C:B6:6E:40:79:98:38:BC:87:99:34:3E:E5:7A:E4:35:D2:45:5B
+        sources:
+          - name: Google Play
+            issue: GH-8132
+            apk:
+              sha256: ddc8c0040f535e04b61e6e1cce0be922e58fcd2f4bd8610b23ecd7d1d2aa7a94
   - package: com.google.android.calendar
     signature:
       - fingerprint: |-
