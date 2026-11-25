@@ -8917,6 +8917,14 @@ packages:
             issue: GH-2717
             apk:
               sha256: c6a83b9605dafe0dab7fb6a8f138644d8ed4bf4b69c22283d09d063b508c4d48
+  - package: com.tresorit.mobile
+    signature:
+      - fingerprint: AE:8B:02:00:8C:2F:EC:5C:59:A0:89:E1:EE:88:CC:9B:E4:BD:5E:22:48:B2:85:DF:C6:4E:38:88:CA:CC:98:9B
+        sources:
+          - name: Google Play
+            issue: GH-8141
+            apk:
+              sha256: ece8e139282a35a9a87eb006e6058ad80f7a48dbfe9570cd023b562938ca56ba
   - package: com.trianguloy.urlchecker
     signature:
       - fingerprint: 93:D7:9B:1E:72:D5:A6:B0:BC:68:11:B9:BC:0A:83:18:1C:35:10:D5:8C:11:57:11:40:FF:3F:8A:63:F2:21:74
