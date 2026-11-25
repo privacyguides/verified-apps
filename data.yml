@@ -4735,6 +4735,12 @@ packages:
               sha256: 0b64dc8318950983eb648809c6f78777f02032902407b3b85a275e47691c78b1
           - name: HTTPS Verified Domain
             issue: GH-2779
+      - fingerprint: AF:3E:76:E9:0D:BD:F4:07:F4:71:21:7C:D4:80:57:46:BE:C2:E1:9E:C5:10:50:0E:6D:F0:75:AC:C8:FB:B9:02
+        sources:
+          - name: F-Droid
+            issue: GH-2299
+            apk:
+              sha256: fdc8bc057dba428339794e4d69babf5b8577feee6e534fe3886866c8493a4265
   - package: com.nexowallet
     signature:
       - fingerprint: 4C:59:7D:8B:39:5C:20:6A:3D:68:4B:9B:D5:F7:A4:A7:2E:06:6A:CA:FE:CB:FB:FD:00:6C:99:C0:48:D0:F3:A8
