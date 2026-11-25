@@ -3349,6 +3349,14 @@ packages:
             issue: GH-7107
             apk:
               sha256: d3927de59c073753a27943da01619e66830c33bd55df0b538bfb65885d9bdfb8
+  - package: com.etrisad.zenith
+    signature:
+      - fingerprint: 0B:82:77:C4:3F:AB:0E:D3:15:18:23:4A:33:43:58:83:FA:EC:5C:A1:9C:A7:6C:00:28:78:1C:5B:F8:06:52:37
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-7698
+            apk:
+              sha256: 10b3efeeeb6df000681927236c6809e8f89e2eb76009f4b1087b431ce2f96ec3
   - package: com.etsy.android
     signature:
       - fingerprint: C6:ED:C6:02:BD:51:32:E7:23:C2:4E:45:71:BD:EA:DC:F0:D1:D9:DB:E1:CF:7F:A1:6E:3B:B3:4D:37:58:9C:9C
