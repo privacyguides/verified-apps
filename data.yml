@@ -203,6 +203,14 @@ packages:
             issue: GH-6931
             apk:
               sha256: 062f12a538fe72850d7a8ebe954534ec10e158489541b6e46c8632296d3f7ed2
+  - package: app.floatdeck
+    signature:
+      - fingerprint: 28:EA:89:1B:D0:AC:88:E7:6E:D8:4C:2A:BD:29:91:94:B8:9F:0A:2F:57:1C:1B:20:A0:FA:F6:72:E6:03:8C:48
+        sources:
+          - name: F-Droid
+            issue: GH-2923
+            apk:
+              sha256: 988e06e1e9400d79e6cce7d065bd74235dff19e68305086e25387a6204d729c6
   - package: app.fluffy
     signature:
       - fingerprint: 4A:ED:2F:69:1D:F6:4A:7B:0F:EA:25:A6:B8:C8:01:83:C6:DC:52:0E:04:9D:AC:01:78:DE:FA:1D:64:72:22:8F
