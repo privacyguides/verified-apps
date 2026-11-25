@@ -14671,6 +14671,14 @@ packages:
             issue: GH-773
             apk:
               sha256: 9790b3c0f168013a1baf455abb48a2b555c29ad33cc421d2a581b6c411b2a095
+  - package: verbosus.typtic
+    signature:
+      - fingerprint: 18:D2:E5:63:21:A7:D1:52:62:A8:53:54:44:C6:44:55:FE:FF:76:87:B4:2A:D0:62:F5:1A:4D:07:14:E0:1E:10
+        sources:
+          - name: Google Play
+            issue: GH-7316
+            apk:
+              sha256: 642e0142621e8508a34f67e50979ba055b4838a79eec1b031dc5ba3f6e42a409
   - package: waltti.com.mobiili
     signature:
       - fingerprint: AF:93:CA:0A:06:5E:6E:33:50:9E:8D:81:94:8E:DC:69:B8:72:C1:79:78:68:18:39:4A:19:3E:B1:59:8B:FB:5A
