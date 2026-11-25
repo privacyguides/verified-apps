@@ -9520,6 +9520,14 @@ packages:
             issue: GH-533
             apk:
               sha256: 745f5e9f571488ff149e18b92d960f6bda4dd9466dc1561240200511986093cb
+  - package: io.timelimit.android.open
+    signature:
+      - fingerprint: 0C:26:D7:E9:18:58:89:F3:2F:BC:AD:1C:F2:71:C0:3E:A2:D0:70:69:1A:08:5A:2E:8F:D9:20:C1:CC:02:F2:4E
+        sources:
+          - name: F-Droid
+            issue: GH-4526
+            apk:
+              sha256: 100d75129b3fc6d0d5b220d0a4dc75351084be44294152b1bd411e5847e32f30
   - package: io.voiapp.voi
     signature:
       - fingerprint: 71:81:B6:E7:9B:33:4C:98:D2:73:1A:8B:D6:EC:D7:E7:50:F0:A6:0D:AB:17:9B:22:15:2E:FA:36:9C:75:8A:F0
