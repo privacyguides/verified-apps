@@ -6771,6 +6771,14 @@ packages:
               sha256: 40d192e0becb2e2d9a6f4ad9d984d9eb1fe40a5f24718f43953f73dbd2211f09
           - name: HTTPS Verified Domain
             issue: GH-2332
+  - package: com.reincubate.camo
+    signature:
+      - fingerprint: A8:70:E6:47:54:C2:CF:29:E8:54:48:4E:FD:1A:2C:5F:F8:89:7A:57:06:3F:CC:E5:6C:94:7E:3A:62:F6:6D:FE
+        sources:
+          - name: Google Play
+            issue: GH-7089
+            apk:
+              sha256: 72ce81bad2f0353481c417bfddf8008fd215ec06190af6cfef1a29c3d205b8fd
   - package: com.resurrect.grove
     signature:
       - fingerprint: 95:A2:45:C1:FE:96:A0:28:A3:7D:0C:F5:EF:3A:FE:BB:76:57:95:71:2D:C2:2E:9D:6C:30:BF:FE:E5:FA:80:BD
