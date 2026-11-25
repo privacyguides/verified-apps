@@ -11851,6 +11851,14 @@ packages:
             apk:
               sha256: 60f878f4d705dd97f26950b82069e6ccc54794cfe4ef28b26eb6eedf8864426f
               link: https://github.com/leinelissen/jellyfin-audio-player/releases/download/v2.4.6/fintunes-v2.4.6.apk
+  - package: nl.negentwee
+    signature:
+      - fingerprint: 7A:D4:A3:50:37:39:80:3A:8E:EC:7F:2F:8D:9A:4E:67:8D:6F:33:F9:B7:7D:5B:E8:1E:2C:08:93:71:35:2A:F6
+        sources:
+          - name: Google Play
+            issue: GH-6893
+            apk:
+              sha256: 444d3c52123146492b55bd769e6352c09f44956b4afa02104dc4cf5ce964dc71
   - package: nl.privacydragon.bookwyrm
     signature:
       - fingerprint: 05:51:27:4D:D6:23:7A:90:36:52:27:8C:C0:74:4C:CA:35:D7:5A:41:4A:0A:4E:F1:AC:8F:40:5A:F4:D5:60:0C
