@@ -12610,6 +12610,12 @@ packages:
             issue: CB-70
             apk:
               sha256: 72aab4912b08431a2340fc1fb1f181be3a07e8b7ac607e0bb9e4c3814c2e4248
+      - fingerprint: F6:C8:93:15:16:9D:E0:08:0A:B7:EA:36:15:26:24:25:60:93:77:F7:61:79:89:E9:52:05:F4:09:B3:0E:59:44
+        sources:
+          - name: Google Play
+            issue: GH-6827
+            apk:
+              sha256: b6479eaf16847b9f9b2ca893b1e786b21a030313539ae4c9f4de3b06a98a3eda
   - package: org.joinmastodon.android
     signature:
       - fingerprint: 2D:3E:76:FC:B0:BA:31:3D:C0:5E:53:72:83:D4:CA:2F:3E:DD:B3:1B:F9:4D:0F:7E:73:33:C3:BA:63:14:5F:8A
