@@ -2574,6 +2574,14 @@ packages:
             issue: GH-1884
             apk:
               sha256: 82bba1f939305db1c4e455df2c8a44306ed2f096346288252be1c5ce456728bb
+  - package: com.flasskamp.energize
+    signature:
+      - fingerprint: 58:EE:B8:AF:51:66:4B:25:E6:0E:6B:1B:98:8E:95:A1:1F:DB:40:29:9C:61:85:3A:8A:AD:93:37:FA:C9:B9:EC
+        sources:
+          - name: F-Droid
+            issue: CB-95
+            apk:
+              sha256: 83568a7536acbdb1ac452158b0831ffec79ca2b467550be42ef0cc94fd97edd2
   - package: com.flauschcode.broccoli
     signature:
       - fingerprint: 73:8E:4F:5A:7C:A8:28:E8:00:C0:22:AB:44:AB:51:72:8E:66:00:1E:61:D3:50:E2:7C:E7:D9:DF:CF:0F:6B:99
