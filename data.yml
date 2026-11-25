@@ -510,6 +510,14 @@ packages:
             issue: GH-220
             apk:
               sha256: 47d5fd49c40d9c5987fa1d0e637091a3a737ffc820dd70bf4e68d8a0077a2e92
+  - package: ch.rmy.android.http_shortcuts
+    signature:
+      - fingerprint: B6:DE:3C:05:4F:09:81:3F:D6:C0:33:BC:CF:D6:4A:AB:FB:C6:36:80:A7:EB:BC:AC:64:E9:AE:14:E5:54:7A:5F
+        sources:
+          - name: F-Droid
+            issue: GH-2045
+            apk:
+              sha256: c83c7b2cb416ebe2f1dafab4c18531d9ea42b98eaa204d10ed21cef90ba975a4
   - package: ch.threema.app.libre
     signature:
       - fingerprint: 05:08:B5:3F:F1:02:B5:38:91:9C:83:4E:9E:6B:6A:FB:A0:46:ED:F6:7E:17:CA:4D:1C:E7:A4:B9:C3:82:37:41
