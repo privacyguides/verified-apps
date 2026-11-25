@@ -978,6 +978,17 @@ domains:
       - package: fr.doctolib.www
         fingerprints:
           - 19:9A:C4:B1:F6:81:74:65:06:FE:90:78:26:FB:42:94:C7:1F:7D:AE:F5:37:2D:D0:3B:A6:7C:E0:1C:4C:D0:83
+  - domain: x.ai
+    method: https
+    issue:
+      - GH-8182
+    checked: "2026-11-25T10:33:25Z"
+    packages:
+      - package: ai.x.grok
+        fingerprints:
+          - 52:1B:F5:CE:7C:98:1F:AB:A4:EB:D8:6D:23:F7:78:88:55:37:CA:D0:21:BC:10:7D:89:15:D0:05:E9:9F:4A:12
+          - 92:C7:82:90:60:C9:3E:B4:46:10:69:67:FF:AD:DD:15:E3:6D:C2:28:F0:56:76:37:59:5E:24:24:ED:BC:1B:F3
+          - FE:9B:90:A5:FE:25:5E:B7:13:1B:2C:54:02:59:86:FE:6E:34:62:C3:F2:B4:E4:06:77:8A:4B:68:DD:5C:4A:99
   - domain: yandex.ru
     method: https
     issue:
