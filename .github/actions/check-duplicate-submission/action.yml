@@ -104,6 +104,19 @@ runs:
         fi
 
         if [[ -z "$duplicate_of" ]]; then
+          candidates_dir=$(mktemp -d)
+          if ! gh issue list --repo "$GH_REPO" --state open --limit 200 \
+            --search "\"${PACKAGE}\" in:body" --json number,body,title \
+            > "${candidates_dir}/search.json"; then
+            echo "::warning::Could not search open issues for ${PACKAGE}; only the most recent open issues were checked for duplicates."
+            echo '[]' > "${candidates_dir}/search.json"
+          fi
+          if ! gh issue list --repo "$GH_REPO" --state open --limit 100 \
+            --json number,body,title > "${candidates_dir}/recent.json"; then
+            echo "::warning::Could not list the most recent open issues; a duplicate opened in the last few moments may have been missed."
+            echo '[]' > "${candidates_dir}/recent.json"
+          fi
+
           while IFS= read -r row; do
             [[ -z "$row" ]] && continue
             issue_num=$(printf '%s\n' "$row" | jq -r .number)
@@ -124,10 +137,12 @@ runs:
               fi
             fi
           done < <(
-            gh issue list --repo "$GH_REPO" --state open --limit 300 --json number,body,title \
-              | jq -c --argjson cur "$CURRENT_ISSUE" \
-                '[.[] | select(.title | startswith("[New]:")) | select(.number != $cur)] | .[]'
+            jq -c -s --argjson cur "$CURRENT_ISSUE" '
+              add | unique_by(.number)
+              | map(select(.title | startswith("[New]:")) | select(.number < $cur)) | .[]
+            ' "${candidates_dir}/search.json" "${candidates_dir}/recent.json"
           )
+          rm -rf "$candidates_dir"
         fi
 
         if [[ -n "$duplicate_of" ]]; then
