@@ -14881,6 +14881,14 @@ packages:
             issue: GH-1120
             apk:
               sha256: e9a0fad6d25bcb552394edc224f65b0bbb031600c3440c837c33b5a5198513e9
+  - package: org.ghostrain
+    signature:
+      - fingerprint: A6:15:89:D7:CA:26:97:80:09:7F:04:77:68:2F:F6:EC:D5:FB:3A:F4:F1:76:06:E9:76:71:09:93:FA:AB:82:49
+        sources:
+          - name: F-Droid
+            issue: GH-2926
+            apk:
+              sha256: d52ded1efca59ca764e6437af5c3fc4a41e4ad181fdff128c8b891a11b138ea9
   - package: org.handmadeideas.floccus
     signature:
       - fingerprint: ED:70:EE:84:EB:35:BB:BF:87:56:C7:B2:D5:AF:B8:6E:CA:BA:DD:07:4F:65:79:EC:EF:5C:D7:4F:C8:93:CC:12
