@@ -5504,6 +5504,16 @@ packages:
             issue: GH-822
             apk:
               sha256: 84fe28e381333a43166cb8ae11e457c3605e9271badb5bc33cf8dcdc40110d96
+  - package: com.microsoft.bing
+    signature:
+      - fingerprint: |-
+          7A:F4:8E:E5:0F:6E:3A:54:19:A8:9B:82:34:08:0C:37:A6:B9:84:8C:6F:8E:4D:E7:EC:71:C5:79:4D:11:84:E2
+          AC:46:AB:A9:23:6E:BD:5A:ED:35:99:4E:9E:88:EE:75:D1:D6:B5:10:E1:D5:F1:41:B7:19:DA:62:DC:35:86:FA
+        sources:
+          - name: Google Play
+            issue: GH-7084
+            apk:
+              sha256: d695819e5a06eebccdec97b4c9ec0559acbaa553ede9cd2e1a02ffc4cd0ddbdc
   - package: com.microsoft.copilot
     signature:
       - fingerprint: 7A:F4:8E:E5:0F:6E:3A:54:19:A8:9B:82:34:08:0C:37:A6:B9:84:8C:6F:8E:4D:E7:EC:71:C5:79:4D:11:84:E2
