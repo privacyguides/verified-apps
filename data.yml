@@ -5585,6 +5585,14 @@ packages:
             issue: GH-827
             apk:
               sha256: a3e4a99668290a696aefe648947918f4a4dcf600a36945ea26144bdab864f4ba
+  - package: com.platfomni.saas.ma
+    signature:
+      - fingerprint: D2:6B:31:32:90:22:37:1A:AD:2D:4E:3D:31:4C:51:05:DF:15:3C:60:C1:C9:F8:36:3C:13:DA:7F:EC:B4:83:40
+        sources:
+          - name: Google Play
+            issue: GH-5772
+            apk:
+              sha256: f3b17d2cff4b333f35e646f26de05d4380b8dcfdd2d1716ed0e3bf6a5fa76e30
   - package: com.pleco.chinesesystem
     signature:
       - fingerprint: 78:0A:2A:63:9A:3C:CB:65:62:1E:0C:AC:CF:18:FA:38:C9:1F:6C:BF:35:1D:45:37:42:EB:E2:A1:14:B0:96:24
