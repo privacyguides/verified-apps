@@ -2447,6 +2447,14 @@ packages:
               sha256: 81e014f88b59e6356e057254d35ba2065e60e69c26a1c26572d188000c145eaa
           - name: HTTPS Verified Domain
             issue: GH-2120
+  - package: com.clearancejobs.candidateapp
+    signature:
+      - fingerprint: 8C:1B:7E:32:39:CD:6B:8D:35:96:C5:32:CD:AC:C2:E8:34:42:99:BD:20:C0:97:8F:24:87:92:69:9D:CE:AE:16
+        sources:
+          - name: Google Play
+            issue: GH-7056
+            apk:
+              sha256: a101f746dd4e2858809a5b557f8dd1a119acf48c06950f3167e39dfbd352c1dd
   - package: com.cloudflare.onedotonedotonedotone
     signature:
       - fingerprint: 27:3A:3A:5E:09:DC:72:0D:3B:39:45:16:2E:72:4D:9A:69:B2:1F:C5:42:BE:D7:45:7F:11:59:66:B1:45:E8:BC
