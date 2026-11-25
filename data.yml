@@ -10435,6 +10435,14 @@ packages:
             issue: GH-1641
             apk:
               sha256: 148a1af96ec47099c0ddbfbf76e9fd7288373bf3cb396d6cce06c520af22b2f1
+  - package: dev.sasikanth.rss.reader
+    signature:
+      - fingerprint: E0:4B:94:11:C5:F1:20:1B:3C:07:81:EE:23:D1:A8:E4:C5:F0:AA:74:CE:B6:43:B1:F7:4C:C5:B4:02:11:CD:DD
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-7700
+            apk:
+              sha256: badd99e19644adb6d01ce3dd98afd8694020c080c5854e286754d9fc16900f84
   - package: dev.secam.simpletag
     signature:
       - fingerprint: 9B:30:CC:CC:B2:2C:D9:DF:FC:6E:F8:E4:FA:78:5C:F1:B4:F8:3F:9D:B1:FC:67:87:2D:09:A9:71:1C:AB:C4:88
