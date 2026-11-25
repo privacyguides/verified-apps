@@ -11113,6 +11113,14 @@ packages:
             issue: GH-6913
             apk:
               sha256: df6eb4fb1a28356261e48b3fea425daac89f39c54bd1318e9f92dff1a1e497e0
+  - package: godau.fynn.usagedirect
+    signature:
+      - fingerprint: D5:EE:31:20:06:1B:00:E1:96:72:0F:66:B8:CE:81:66:66:3F:3B:99:6C:17:2A:4D:51:65:05:9B:3D:61:26:26
+        sources:
+          - name: F-Droid
+            issue: GH-7841
+            apk:
+              sha256: c55079192a77fc6696a80c6d337c3f0c64fe4ebc27e5970aaf4baac0a60a3b31
   - package: gov.dhs.cbp.pspd.mpc
     signature:
       - fingerprint: 1D:AA:4C:59:14:D2:3B:70:FE:10:A6:31:F0:3A:A0:F9:66:A6:DD:4E:8F:5E:FD:DF:A0:20:F9:96:22:E4:69:DE
