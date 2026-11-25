@@ -10721,6 +10721,14 @@ packages:
             issue: GH-1714
             apk:
               sha256: fe42fb5c19a9d9b26828db13ec30170028631b7e8e40c98207d074a66a105107
+  - package: proton.android.authenticator.fdroid
+    signature:
+      - fingerprint: BC:60:67:89:F8:02:3C:FA:3A:67:71:57:79:60:48:E0:F5:8F:AD:D4:B1:A0:59:8C:99:9B:29:80:EA:B7:91:9D
+        sources:
+          - name: F-Droid
+            issue: CB-100
+            apk:
+              sha256: 0cb40f2618f7ee2bedbfdee0fbd048f9df99ce042a510f344b759e2fb32d1e3d
   - package: proton.android.meet
     signature:
       - fingerprint: DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
