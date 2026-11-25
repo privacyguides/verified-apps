@@ -774,6 +774,16 @@ domains:
       - package: com.spotify.music
         fingerprints:
           - 65:05:B1:81:93:33:44:F9:38:93:D5:86:E3:99:B9:46:16:18:3F:04:34:9C:B5:72:A9:E8:1A:33:35:E2:8F:FD
+  - domain: squareup.com
+    method: https
+    issue:
+      - GH-8178
+    checked: "2026-11-25T10:33:07Z"
+    packages:
+      - package: com.squareup
+        fingerprints:
+          - 21:A7:46:75:96:C1:68:65:0F:D7:B6:31:B6:54:22:EB:56:3E:1D:21:AF:F2:2D:DE:73:89:BA:0D:5D:73:87:48
+          - A3:BF:8D:EC:67:4B:14:02:24:E6:8C:AB:F5:F2:99:1A:3C:09:8A:50:CC:61:F8:4E:87:52:C5:AF:C9:DC:78:5D
   - domain: starlink.com
     method: https
     issue:
