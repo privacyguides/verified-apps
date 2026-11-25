@@ -6032,6 +6032,16 @@ packages:
             issue: GH-2142
             apk:
               sha256: b8f8a10ad73da118a349bc2ea9b9a97cf798bb17416e0f3ba715ca90c8cba3ba
+  - package: com.liftosaur.www.twa
+    signature:
+      - fingerprint: 61:DB:40:73:90:DF:B0:DC:8F:88:4D:21:15:4B:E3:83:0C:CD:68:CB:C6:54:A0:40:6C:63:28:41:11:E1:BF:49
+        sources:
+          - name: Google Play
+            issue: GH-8373
+            apk:
+              sha256: 36a7c330f53ab4cf988c974332809ffd6dd0d69ab915c8e20211f387066ff61f
+          - name: HTTPS Verified Domain
+            issue: GH-8373
   - package: com.likhithpraveenk.storii
     signature:
       - fingerprint: 94:73:22:96:44:5C:A0:C2:51:1F:AC:8A:6F:74:4B:87:FE:D6:7C:ED:37:D1:64:28:EF:88:98:5E:0B:A8:67:6A
