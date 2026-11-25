@@ -7645,6 +7645,14 @@ packages:
             issue: GH-2044
             apk:
               sha256: 048680d733159644f39938ffe526201cae3f31e511764af1f16d4abd8327161e
+  - package: com.yash.xpenc
+    signature:
+      - fingerprint: 46:88:37:A8:2D:F7:75:B5:97:4A:50:D2:07:73:A1:B3:B1:9A:DB:D0:65:7A:79:4C:9F:51:2E:D4:3C:E6:DC:E6
+        sources:
+          - name: F-Droid
+            issue: GH-5785
+            apk:
+              sha256: 3e6821a8b69ede3ee5cb5540c966ed20810550903753c7978496adc78fbc1d21
   - package: com.yoc.swiss.swiss
     signature:
       - fingerprint: B3:EB:7E:D9:26:78:57:D5:B0:ED:23:A7:85:49:FB:65:0E:9C:94:7A:70:38:A5:21:66:3A:1E:06:94:43:F6:1D
