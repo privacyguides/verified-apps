@@ -6235,6 +6235,18 @@ packages:
             issue: GH-919
             apk:
               sha256: 97c68a488d1067ba97369a5180ffc983f0dea0fe7ef82d6ee700b9a762ad35f1
+  - package: com.samyak.repostore
+    signature:
+      - fingerprint: DB:DD:C7:6B:F7:05:6F:3C:FD:E5:55:C3:85:9C:3B:BF:C3:1A:6F:38:DA:89:76:4B:E9:A7:63:3C:7E:64:CE:25
+        sources:
+          - name: F-Droid
+            issue: GH-5958
+            apk:
+              sha256: a6b725914ea99d87b3a8cdf5b6db7e786dfb369b9f107a586018e1a7778919fe
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-5958
+            apk:
+              sha256: a6b725914ea99d87b3a8cdf5b6db7e786dfb369b9f107a586018e1a7778919fe
   - package: com.savvasdalkitsis.uhuruphotos
     signature:
       - fingerprint: FC:A4:79:E1:7B:75:FB:AD:87:81:64:6C:55:E1:40:0D:F3:01:24:9F:7A:09:72:F8:A3:E8:4C:0B:DB:3C:24:A0
