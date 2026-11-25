@@ -10637,6 +10637,14 @@ packages:
             issue: GH-2317
             apk:
               sha256: 86703c7ed26fe821aa336f226d7074b5ac4de17de28d140210198f48df58e362
+  - package: com.zhangke.fread
+    signature:
+      - fingerprint: 9A:45:61:55:28:D4:38:69:FE:9D:D9:C2:5B:26:04:D7:A2:D9:5F:F1:A8:5B:CB:94:F8:FF:B7:4E:BA:75:2D:AB
+        sources:
+          - name: F-Droid
+            issue: GH-3077
+            apk:
+              sha256: 35a0973eb3b6a8a130c1a2d96b0db15387e33c9b6b67a078b8849e46d3c6c1bf
   - package: com.zhiliaoapp.musically
     signature:
       - fingerprint: 90:41:80:3E:91:BC:B8:14:B4:B4:39:9F:B5:C8:5A:91:64:0B:75:5E:5E:8B:A7:68:13:81:4B:F4:CF:2A:B5:BA
