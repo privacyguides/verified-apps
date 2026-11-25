@@ -9691,6 +9691,14 @@ packages:
             issue: GH-2857
             apk:
               sha256: e83e19a371cf6af7c6fa3d15cf1d7f3c270ae566f52d1ee7ebb7937877687380
+  - package: de.ard.audiothek
+    signature:
+      - fingerprint: 32:57:73:64:27:B9:8F:2D:56:B0:F1:B1:F9:A4:F8:0A:FC:A8:4A:D8:AF:7D:52:22:D9:CA:C7:56:A4:C9:EF:6A
+        sources:
+          - name: Google Play
+            issue: GH-7983
+            apk:
+              sha256: dc0a2b4e7f158386b2665fcdb6b1fe354c5a8bf3215396d5fe0d50e023342000
   - package: de.arnowelzel.android.periodical
     signature:
       - fingerprint: EF:16:EF:5F:EE:58:B3:F0:96:4F:DD:69:32:70:52:4A:78:55:13:4E:B5:3C:13:D0:20:65:FF:C8:76:DB:AF:01
