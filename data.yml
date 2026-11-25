@@ -16517,6 +16517,18 @@ packages:
             apk:
               sha256: 883f205e15b2793a872de0d24b6c33c3ef48794d0afb04f3643337fea4e8c65c
               link: https://github.com/CypherpunkArmory/UserLAnd/releases/download/v2.8.3/app-release.apk
+  - package: tibarj.tranquilstopwatch
+    signature:
+      - fingerprint: FE:13:FD:FA:89:1C:C1:84:26:E6:A3:61:F2:83:90:67:20:1A:67:2B:5C:AD:D2:BB:DD:EA:8C:E2:5D:39:A1:99
+        sources:
+          - name: F-Droid
+            issue: GH-2948
+            apk:
+              sha256: 7bc31fae5cd2e9d815414dafb437f9a9a2fd21f4dc16d9929adc5fec962c5cb7
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-2948
+            apk:
+              sha256: 7bc31fae5cd2e9d815414dafb437f9a9a2fd21f4dc16d9929adc5fec962c5cb7
   - package: top.donmor.tiddloid
     signature:
       - fingerprint: 57:F7:74:24:15:A1:14:16:F1:6B:DA:89:1B:C2:E8:A7:85:0A:C9:0A:7B:27:FC:1E:EE:52:7E:78:F1:5F:30:32
