@@ -4295,6 +4295,14 @@ packages:
             issue: GH-2295
             apk:
               sha256: f9711523fb04d6d5e6b7848dd6004879a52bd24df99b124003d517a6aeceb728
+  - package: com.iotsolution.aidot
+    signature:
+      - fingerprint: E5:75:72:FF:FD:11:D2:C2:92:EA:4E:25:7F:59:66:79:C8:50:3C:5D:B5:A1:E3:DD:41:A5:2E:75:BB:28:01:E5
+        sources:
+          - name: Google Play
+            issue: GH-6321
+            apk:
+              sha256: e45165ee8163c6ec6c7779eade9534589294b40536c50216493c5a7748c198e8
   - package: com.iudesk.android.photo.editor
     signature:
       - fingerprint: |-
