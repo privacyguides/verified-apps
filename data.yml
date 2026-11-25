@@ -6873,6 +6873,14 @@ packages:
             issue: GH-1591
             apk:
               sha256: b4fa293ba7fa5bd2957da6bd9fda17b3ed162e401dce6d5cc2e937b54c1b4331
+  - package: com.sidhant.watersort
+    signature:
+      - fingerprint: AE:CB:14:87:2F:43:11:E3:27:E4:EA:FD:49:E5:8E:F6:3C:D3:F1:EB:81:14:C6:4A:20:CC:4F:8E:4B:C8:0C:6F
+        sources:
+          - name: F-Droid
+            issue: GH-6516
+            apk:
+              sha256: 845dd5d69c9e28aa759457afc43696493e8c02ba3c17b7e402effdd3a31024bc
   - package: com.silicondust.view
     signature:
       - fingerprint: FC:FE:D2:13:47:78:5D:6C:BA:AB:64:04:48:D6:96:DB:11:AC:D9:85:09:F4:5E:48:E5:0B:56:1B:13:A4:09:EB
