@@ -2588,6 +2588,14 @@ packages:
             issue: GH-290
             apk:
               sha256: c39352b73edc91c5e3e44386f0a3e15731f24cfceba5372b6ad67cf290c190cb
+  - package: com.eyalm.adns
+    signature:
+      - fingerprint: 19:49:17:A5:3D:1C:AD:19:16:3D:A5:72:25:B9:A9:BD:88:37:0D:C2:1C:13:15:15:1E:8F:32:BB:6B:C2:7A:0B
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-2452
+            apk:
+              sha256: 74e8ef0a933371b04d93b08fd7a1c511c0711041cccef35d8992cb8704b54421
   - package: com.facebook.katana
     signature:
       - fingerprint: |-
