@@ -14967,6 +14967,14 @@ packages:
             issue: GH-1212
             apk:
               sha256: 2924fb2424f2787602c7712bcc41b8339d15da60cdb253cec6db19b09381cfc0
+  - package: uk.org.ngo.squeezer
+    signature:
+      - fingerprint: 92:35:A0:54:44:E0:AC:40:2D:F3:59:FE:70:FC:E9:B8:FD:6A:15:3B:A3:B3:9C:59:AA:AB:6F:CD:91:2A:F4:13
+        sources:
+          - name: F-Droid
+            issue: GH-7673
+            apk:
+              sha256: 68c74dcdea511df10cddb3ffd889d88bd95ebb8aee726553ad06f3fa9d730c68
   - package: us.mitene
     signature:
       - fingerprint: DF:45:DE:BD:39:1C:EC:65:84:6E:30:57:9E:1A:3D:73:83:5D:1F:8C:ED:C7:FE:96:1E:F5:5B:8E:6D:4C:5B:72
