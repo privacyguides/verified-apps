@@ -546,6 +546,14 @@ packages:
             issue: GH-6572
             apk:
               sha256: 38ac3165b2d93bd79723c0e43b6e543348676cbe8189ac91f0f60850df23b663
+  - package: br.org.enotariado.app
+    signature:
+      - fingerprint: 11:B2:BF:D0:9F:FF:F2:68:3E:4E:14:AF:8F:00:B8:AD:B8:9D:62:69:AE:1A:FD:80:36:1E:60:60:06:10:D1:2B
+        sources:
+          - name: Google Play
+            issue: GH-6573
+            apk:
+              sha256: 6617ccc5633788f4403af1e9a4166b4510660b817543d2f002f44538c8d6b972
   - package: btools.routingapp
     signature:
       - fingerprint: D1:9E:79:3B:A6:9A:73:6A:A6:ED:88:0B:DC:48:C8:31:FA:0B:58:0E:ED:D9:59:D0:49:75:6D:3B:BE:58:7D:43
