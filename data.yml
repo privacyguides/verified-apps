@@ -16063,6 +16063,14 @@ packages:
             issue: GH-7673
             apk:
               sha256: 68c74dcdea511df10cddb3ffd889d88bd95ebb8aee726553ad06f3fa9d730c68
+  - package: universe.constellation.orion.viewer
+    signature:
+      - fingerprint: 75:4B:55:8A:C1:E7:09:18:DA:C5:2E:11:12:6A:A8:05:47:16:1F:AF:47:D1:A1:79:96:1C:D0:26:B1:8C:08:90
+        sources:
+          - name: F-Droid
+            issue: GH-8234
+            apk:
+              sha256: 8d799448b97fc4f8d333d65f536bc7aa3e6f48619941e03c8b969c557513aec6
   - package: us.mitene
     signature:
       - fingerprint: DF:45:DE:BD:39:1C:EC:65:84:6E:30:57:9E:1A:3D:73:83:5D:1F:8C:ED:C7:FE:96:1E:F5:5B:8E:6D:4C:5B:72
