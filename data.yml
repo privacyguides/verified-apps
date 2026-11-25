@@ -4857,6 +4857,14 @@ packages:
             issue: GH-1444
             apk:
               sha256: e2da6978c346e7a7805d52186eefecc25d93d9fb8dec3054bdf509e2e596d6e5
+  - package: com.jamworks.aodnotificationledlight
+    signature:
+      - fingerprint: 8B:B4:3D:24:DC:62:A3:3C:B8:83:1D:04:38:E5:C7:9C:8C:6C:9E:3B:13:39:B6:56:71:7D:9E:8A:D4:BF:04:50
+        sources:
+          - name: Google Play
+            issue: GH-7356
+            apk:
+              sha256: fb819ff007ea3b71e8a3a58147276f3b4a777152cd18f79ee0dfd695cd147f06
   - package: com.jarsilio.android.autoautorotate
     signature:
       - fingerprint: 8F:70:D2:DF:F3:29:1F:F6:1E:12:77:0E:D6:69:C5:2E:D8:30:96:81:A3:6A:96:03:86:AF:DC:C1:8E:45:75:5F
