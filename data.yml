@@ -9439,6 +9439,12 @@ packages:
             issue: GH-81
             apk:
               sha256: fd2b4c974deddd9b89d9693764e6962cd89d3f676cceb8e0ac97c4049b5f1b86
+      - fingerprint: DB:A2:E5:11:AC:B6:79:1F:1C:9D:DC:7C:3D:90:DC:E6:9B:B1:0B:68:64:01:72:55:A3:F6:43:47:B4:66:7C:95
+        sources:
+          - name: F-Droid
+            issue: GH-5817
+            apk:
+              sha256: 61cdc951ad69c3965a69a84901589d13d78860cbbd1aa6c2b608d3d4786f4317
   - package: io.anuke.mindustry
     signature:
       - fingerprint: 87:E2:CB:A3:85:05:2D:3F:71:46:B0:91:A9:BA:B1:47:7D:4A:2A:57:BF:CE:E4:CC:B9:2C:A9:9B:6D:03:2B:F3
