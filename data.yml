@@ -7185,6 +7185,14 @@ packages:
               sha256: 00fc3f8d7dd8e6fb85efcf698fba50d05e37fe698f918a19ba0296f4a0d7c29e
           - name: HTTPS Verified Domain
             issue: GH-2068
+  - package: com.stoutner.privacybrowser.standard
+    signature:
+      - fingerprint: F9:76:14:DC:96:96:4B:EA:2E:4F:A6:6B:24:60:8A:51:0A:87:B3:B1:E0:1B:A6:8E:07:53:C0:99:13:3A:87:68
+        sources:
+          - name: F-Droid
+            issue: GH-6684
+            apk:
+              sha256: 209e0670cb44a959dd628737eaa5b8df05bfb605e4706de49ea2b72684cf72e3
   - package: com.strava
     signature:
       - fingerprint: FA:D6:26:9B:06:C9:3A:48:1D:23:B1:66:A5:36:48:AF:5C:20:4F:16:48:AF:3C:8B:69:F7:7B:FB:52:A1:5A:B9
