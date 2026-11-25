@@ -5651,6 +5651,17 @@ packages:
             issue: GH-2143
             apk:
               sha256: 0a28470ff4e4abdcb8983ef5bee133c2d3f0cb3329715407407fedfe9fcabf92
+  - package: com.lmu.qookies
+    signature:
+      - fingerprint: |-
+          40:53:05:E4:6A:0B:63:6B:CE:6D:B3:5A:F3:E3:BE:D4:60:04:EA:E5:AA:DE:F9:EF:29:D0:FE:D0:C2:62:80:B9
+          61:86:F1:5B:79:BB:91:35:13:39:F4:69:7F:96:35:CB:0B:3D:FC:04:E6:DC:40:DA:33:3B:9E:39:7F:D9:C5:C7
+          A6:D2:6B:BB:2F:04:E8:43:83:C5:3B:0B:02:B4:44:36:D6:0D:98:C0:6D:B4:CD:10:6A:BE:6F:59:78:50:D1:EF
+        sources:
+          - name: Google Play
+            issue: GH-7967
+            apk:
+              sha256: a345cf1de1cf050a29ad65ec02bdb43cd195b493ed7b4df32606f0f175d1946d
   - package: com.logseq.app
     signature:
       - fingerprint: E2:EA:95:DF:B0:1D:FD:B8:CD:DC:8A:63:B4:1D:97:66:E5:3D:68:B2:CE:85:1E:C7:A7:E5:FD:F3:D1:66:D2:35
