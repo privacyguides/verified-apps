@@ -9974,6 +9974,12 @@ packages:
             issue: GH-711
             apk:
               sha256: dd4409210f511ebea1e5d9c0e746bf3561ea6b197e5343740a697dc763e0251c
+      - fingerprint: F4:F3:A4:76:47:C6:0D:84:BD:92:11:AF:5A:34:BB:40:D4:8B:E0:E9:0C:30:43:DF:5F:4C:F2:BC:7D:6C:B2:5E
+        sources:
+          - name: F-Droid
+            issue: GH-2467
+            apk:
+              sha256: 3634dfc04ec89bb03be2a1ec3a33956f3c51834405aea392e3657c67336761bc
   - package: net.sourceforge.opencamera
     signature:
       - fingerprint: 43:89:91:C9:68:E8:D3:08:CA:34:07:8D:37:51:1C:90:C5:02:D5:96:BA:F9:F0:D0:C5:FB:D1:C9:BF:67:DF:6D
