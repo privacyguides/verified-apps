@@ -11693,6 +11693,18 @@ packages:
             issue: GH-1895
             apk:
               sha256: eabf6e05df9992a35fb50e6f61bbf3ee91d4e507806c023da0d9d89d36a861ac
+  - package: io.github.sak.read.it.later
+    signature:
+      - fingerprint: ED:3F:4D:85:AF:06:E1:FE:0A:B4:87:DF:5A:12:CE:9B:C9:DF:0B:DC:75:22:9C:B9:2C:F5:C0:EC:C8:20:CF:E1
+        sources:
+          - name: F-Droid
+            issue: GH-7859
+            apk:
+              sha256: aa03c2ee742a02045cfa64305cb15e0cbaf1004e2f11c8275529a7f42dfa5b67
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-7859
+            apk:
+              sha256: aa03c2ee742a02045cfa64305cb15e0cbaf1004e2f11c8275529a7f42dfa5b67
   - package: io.github.samolego.canta
     signature:
       - fingerprint: 0A:26:40:31:7C:43:27:21:88:C3:E1:31:94:C1:54:60:69:1F:12:C3:9E:A1:9B:BA:72:7D:D6:7F:B5:62:89:D4
