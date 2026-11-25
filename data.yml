@@ -5208,6 +5208,14 @@ packages:
             issue: GH-1861
             apk:
               sha256: 4321dfa1ca55bf7d55e0d4514484967e5bc49a6582a9ff0f08360eb393d352cd
+  - package: com.pennywiseai.tracker
+    signature:
+      - fingerprint: 23:5D:65:2B:20:12:FD:70:CF:D6:B4:91:9F:2E:66:5E:68:4A:3A:14:99:8D:DD:28:6F:FD:07:7E:ED:4C:17:02
+        sources:
+          - name: F-Droid
+            issue: GH-2315
+            apk:
+              sha256: 44a1b28a06a5187a48f9e6a8ebe4ad9f9cca2a0453adbaf4d3913a8399f030f3
   - package: com.performance.meshview
     signature:
       - fingerprint: 92:5C:7B:1D:F5:68:9F:EF:23:71:E1:F6:E7:1E:98:A3:95:62:95:DF:95:22:1B:AA:06:14:52:22:AA:89:F7:69
