@@ -1013,6 +1013,14 @@ packages:
             issue: GH-6215
             apk:
               sha256: f10482c2337a654900d4681c165b634c0845d06dc2cc132dd913f70dfe7e408c
+  - package: com.addev.listaspam
+    signature:
+      - fingerprint: 71:84:EC:EA:2F:16:A4:1A:C1:1F:E5:E7:DD:8F:4A:8E:91:1F:F0:7E:2E:08:88:73:B9:85:24:F9:8D:72:D0:51
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-7073
+            apk:
+              sha256: 119ce3d518085663064c515b4e4ef3eca616deabe55595fb094aa69de44a0025
   - package: com.adguard.vpn
     signature:
       - fingerprint: D2:A1:52:9C:DF:F9:3B:EF:67:E5:02:59:32:6F:24:8F:82:F0:E0:BC:84:43:E7:14:EE:DB:87:A0:5A:CA:24:15
