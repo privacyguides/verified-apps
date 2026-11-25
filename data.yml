@@ -8087,6 +8087,14 @@ packages:
             issue: GH-539
           - name: AppVerifier
             issue: GH-539
+  - package: de.westnordost.luftlinie
+    signature:
+      - fingerprint: 5F:2C:83:9F:3C:C5:DD:13:5D:2A:A1:69:6A:05:91:84:AB:D1:50:C7:9A:8A:3E:50:DF:CF:09:E1:48:7B:92:F4
+        sources:
+          - name: F-Droid
+            issue: GH-2608
+            apk:
+              sha256: 6ce9bed4380e7a8df88082114df5b3e3942f74993c5f1446ddbac67c016322fe
   - package: de.westnordost.streetcomplete
     signature:
       - fingerprint: 7B:DA:B5:77:0B:DB:DC:7A:38:00:24:30:A0:B5:6A:DF:63:1F:14:45:BA:47:8B:A2:A8:FB:16:8D:5C:08:75:13
