@@ -6206,6 +6206,14 @@ packages:
             issue: GH-1644
             apk:
               sha256: 28e147d16af2b53f50451385e28a65f65ef673aa0fb9b776ba9ada4695417591
+  - package: com.mirlimited.muchbetter
+    signature:
+      - fingerprint: 94:71:19:02:6E:2D:53:AE:BF:4E:E8:AD:B1:70:13:46:14:F6:31:12:C5:7A:43:E2:81:2D:F7:D9:A3:30:56:8B
+        sources:
+          - name: Google Play
+            issue: GH-8010
+            apk:
+              sha256: 6c15bb39a2373f64df513fcd61779ee26df799925a818c9ff2738d3d0e965034
   - package: com.mkx.hrttracker
     signature:
       - fingerprint: EA:FB:62:3C:A5:5F:65:89:4F:5F:8A:58:0D:E2:E5:B2:1B:F0:FE:94:77:F9:F8:72:01:2D:73:DC:5A:D5:1E:89
