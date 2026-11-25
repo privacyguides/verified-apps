@@ -6080,6 +6080,14 @@ packages:
               sha256: 195f854ab1449eded5f53413fdc87692d44f4481c02f3d6d3e463c778deed2c6
           - name: HTTPS Verified Domain
             issue: GH-2332
+  - package: com.lionbridge.aurorastudio
+    signature:
+      - fingerprint: 0E:87:61:B7:2F:B0:19:C4:53:5B:03:A9:1C:E5:41:A1:C1:0A:E0:C3:67:0C:42:BD:13:70:99:51:22:50:32:07
+        sources:
+          - name: Google Play
+            issue: GH-7077
+            apk:
+              sha256: 2d06eac225d34317ab24acd40881c0fc8ac1f6784c48024a74273cd6bc20e815
   - package: com.livescore
     signature:
       - fingerprint: 82:BF:3A:1C:64:98:D9:3A:22:C4:FE:6A:B8:F2:72:D5:A8:49:50:93:A8:E0:4A:66:B0:B1:C9:2C:DC:D1:2E:BB
