@@ -4619,6 +4619,14 @@ packages:
             issue: GH-6321
             apk:
               sha256: e45165ee8163c6ec6c7779eade9534589294b40536c50216493c5a7748c198e8
+  - package: com.isaakhanimann.journal
+    signature:
+      - fingerprint: C6:74:52:60:B1:79:FB:1B:AA:86:47:D1:21:F6:02:50:E7:B0:5C:97:3C:3F:93:48:CC:D1:17:9F:6E:DD:66:5A
+        sources:
+          - name: F-Droid
+            issue: GH-6921
+            apk:
+              sha256: b1b5775d5734d895692f305629c3f242c2634c565c2519967ab9052ffd6bea1a
   - package: com.iudesk.android.photo.editor
     signature:
       - fingerprint: |-
