@@ -13424,6 +13424,14 @@ packages:
             issue: GH-2727
             apk:
               sha256: d699ef9d7d39cd6b8cb4ebd22b7255bfea92587b72d7beee365476ae2afdf5d5
+  - package: org.kustom.lockscreen
+    signature:
+      - fingerprint: 62:BE:AF:C9:B4:EB:12:AC:6B:24:2B:04:20:F1:1B:4B:3C:3F:7D:D3:C0:EB:73:2E:5D:79:1A:66:77:6C:C2:74
+        sources:
+          - name: Google Play
+            issue: GH-7472
+            apk:
+              sha256: 39d7aede3649e180ff49aa2dca67ca0574b8cf2f1a69a8d386e0fc5f7fae38ba
   - package: org.lichess.mobileV2
     signature:
       - fingerprint: 49:6E:D2:C1:54:28:92:A0:94:A2:A6:E2:6D:59:CD:07:FB:7E:8C:71:13:55:87:6D:AD:38:59:EA:82:F8:AF:62
