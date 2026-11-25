@@ -8279,6 +8279,12 @@ packages:
               sha256: b7c79fd97e336568b5763196bc0c89ad49e79a31785ced41ab15fe612b95c5bd
   - package: de.szalkowski.activitylauncher
     signature:
+      - fingerprint: 20:15:70:9D:51:9F:D6:86:B1:E3:7B:33:4F:12:08:2C:BA:FC:B9:F5:12:6A:68:A2:5B:17:20:43:EB:B5:81:DE
+        sources:
+          - name: F-Droid
+            issue: GH-5661
+            apk:
+              sha256: d8ab42f6ab5943b380d96dd430e377d49bdc816ac792429ed0ca66768c41b153
       - fingerprint: 76:AD:D4:86:A2:75:E1:40:96:D7:C9:AA:BE:25:A5:26:6D:19:C7:61:B9:42:7B:60:BB:59:6F:79:A0:3E:D4:F7
         sources:
           - name: Google Play
