@@ -10297,6 +10297,14 @@ packages:
             issue: GH-559
             apk:
               sha256: fdab93454ac98c7e8841815678264e4ef7ee65a3b0d9fd6928a1e7512639fe76
+  - package: de.sipgate.app.satellite
+    signature:
+      - fingerprint: 83:8D:FC:31:2F:F5:9D:28:2F:F7:44:E4:E1:DE:91:86:01:3A:06:14:D0:73:7F:80:58:38:E5:97:DF:A7:06:D5
+        sources:
+          - name: Google Play
+            issue: GH-7963
+            apk:
+              sha256: 574920782e4bfcdb0306668df82ea0869a9fb55711197c3b2f285b89f6a3030a
   - package: de.sman42.gc_wizard
     signature:
       - fingerprint: 2E:F0:B6:DB:5C:FC:3D:E6:28:DD:5E:FB:A6:1A:91:94:2A:53:4C:E5:A9:DF:45:72:74:3D:83:19:78:F5:24:51
