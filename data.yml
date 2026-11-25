@@ -6701,6 +6701,14 @@ packages:
             issue: GH-723
             apk:
               sha256: 84a3e189087608cde684cdeeae9af8c4a579d2b527ebcbab027b14b50ef1aa18
+  - package: com.seazon.feedme
+    signature:
+      - fingerprint: FB:09:A0:5C:BA:58:43:3B:AE:84:22:63:C3:7A:79:C2:AE:20:DC:55:07:F6:D8:25:09:C3:43:49:F8:6D:8D:FA
+        sources:
+          - name: Google Play
+            issue: GH-6344
+            apk:
+              sha256: 06f2264788e5aa200e5c7bc566843db65853f51a639cf19fe58250043c7c7110
   - package: com.sec.android.app.clockpackage
     signature:
       - fingerprint: 34:DF:0E:7A:9F:1C:F1:89:2E:45:C0:56:B4:97:3C:D8:1C:CF:14:8A:40:50:D1:1A:EA:4A:C5:A6:5F:90:0A:42
