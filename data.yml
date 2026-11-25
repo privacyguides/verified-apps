@@ -9143,6 +9143,12 @@ packages:
             issue: GH-1730
             apk:
               sha256: ba3739e348d1ddcc28dec583ded5ffff1f6740af9322a903c5c049d2a9232811
+      - fingerprint: CE:5A:89:3E:E6:A7:99:55:9E:39:F2:D1:3C:CD:F4:1A:82:BD:66:42:12:95:2C:46:F9:C4:AB:04:41:38:BC:DB
+        sources:
+          - name: F-Droid
+            issue: GH-5955
+            apk:
+              sha256: 3d0caae9a6edb57f945c43e11070d16d19d333f93326d0870606cfc36b9b5cbc
   - package: f.cking.software
     signature:
       - fingerprint: DC:AD:DD:B8:63:2D:D0:84:02:57:D4:98:83:79:3C:D0:1B:44:68:06:4F:FF:F2:AD:95:EE:20:9A:20:61:5C:B2
