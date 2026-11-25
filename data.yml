@@ -13878,6 +13878,14 @@ packages:
             issue: GH-8078
             apk:
               sha256: 4eaf31af16c3b97af8307aae50c8a59829c6456dda1ee082cb2d04b3024fa55b
+  - package: nl.ftm.ftmpulse
+    signature:
+      - fingerprint: 2C:43:FC:30:71:5B:10:05:23:C7:9A:62:88:92:C2:57:BB:4F:34:79:10:E3:4C:DC:68:6B:7F:EC:97:FB:D9:0B
+        sources:
+          - name: Google Play
+            issue: GH-8391
+            apk:
+              sha256: 24d234ee0ef126b1318691e16914b85b9a713b193ce85d4a1cc1b646dcb45ae6
   - package: nl.moeilijkedingen.jellyfinaudioplayer
     signature:
       - fingerprint: BF:6B:4D:07:C8:62:42:CE:91:D3:4B:47:6E:10:EE:C6:27:BB:4E:61:04:68:CB:2A:98:D4:5B:12:76:62:57:33
