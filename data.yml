@@ -2989,6 +2989,14 @@ packages:
             issue: GH-235
             apk:
               sha256: 313a4b1f7a0245875d4bebdd17b7aa26773e09d348a7eeb336e2ed7f8d8beb66
+  - package: com.gmail.jiwopene.temperature
+    signature:
+      - fingerprint: F9:35:D4:78:CD:7F:46:A3:D9:82:22:54:BF:E9:BA:95:60:4F:D7:FD:02:78:4E:57:FC:54:5D:D3:06:D7:2A:BE
+        sources:
+          - name: F-Droid
+            issue: GH-1450
+            apk:
+              sha256: 7c6381e24e01213ad9acaae86537a6a3269bc120529543bf220eeeb8c0593c32
   - package: com.goeuro.rosie
     signature:
       - fingerprint: BF:D9:21:53:AE:C9:F9:A2:94:4D:4C:63:D6:75:EE:0D:72:82:40:24:CC:FC:33:74:7D:2C:19:43:3D:53:B4:99
