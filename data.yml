@@ -11815,6 +11815,14 @@ packages:
             issue: GH-895
             apk:
               sha256: 42e5566e3742c17e2810f9607d652692cbaf0bf4fd7042454e9e7e95f65d4869
+  - package: pan.alexander.tordnscrypt.stable
+    signature:
+      - fingerprint: 97:7D:4C:A0:2C:A0:B9:49:48:C5:8B:E8:7B:C3:4B:BD:D5:8E:12:35:0D:E0:78:E2:8B:17:FC:DA:17:6B:31:41
+        sources:
+          - name: F-Droid
+            issue: GH-2677
+            apk:
+              sha256: fe82b8ea1aa2a2a3402de739a0a22f0a98e18265426cd08005dbac103d636481
   - package: pe.com.interbank.mobilebanking
     signature:
       - fingerprint: 4A:4A:8C:95:8D:74:58:B9:03:1E:E5:D5:B5:66:55:19:DC:CC:F6:2A:6E:85:68:61:03:D2:4C:21:BE:DA:F8:61
