@@ -13881,6 +13881,14 @@ packages:
             issue: GH-744
             apk:
               sha256: 29767d603ba25c2be7c369c42d9a0c983268f29deda3e60ba4574b211a63e3d0
+  - package: org.wakingup.android
+    signature:
+      - fingerprint: E1:15:A3:0D:E3:55:A9:92:E7:C6:67:63:BE:99:DD:D3:12:FE:C7:2B:67:CA:A8:66:E8:EA:42:AB:BE:2F:1F:19
+        sources:
+          - name: Google Play
+            issue: GH-7333
+            apk:
+              sha256: 79d1ec370289eb742f1fd44145fe37498e74c3c009afdc65d337cee23f9174d8
   - package: org.wikipedia
     signature:
       - fingerprint: 1C:3D:DB:0E:8F:32:58:B0:FF:3B:7B:6A:60:8D:19:E7:CD:EE:D3:8A:58:97:BB:DA:23:BA:C1:55:92:3B:12:67
