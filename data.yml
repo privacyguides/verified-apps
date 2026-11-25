@@ -3438,6 +3438,14 @@ packages:
             issue: GH-1036
             apk:
               sha256: 88289dfff4227f54a00ee1343ea2b5c4debebe97917874a2b2f3b4bd07ed7e0a
+  - package: com.github.stenzek.duckstation
+    signature:
+      - fingerprint: A6:35:79:57:D2:96:B3:B0:3E:DE:B6:2D:A3:17:CB:34:7E:CD:E6:3B:65:77:97:7F:FC:BF:E0:D9:A6:97:54:50
+        sources:
+          - name: Google Play
+            issue: GH-6177
+            apk:
+              sha256: b464cc4b257f97748e7d8ef4a36ba1766ac30114c2bd8cf8279b358723c1dbb2
   - package: com.github.tmo1.sms_ie
     signature:
       - fingerprint: C1:05:E6:D9:67:55:42:D4:34:A9:CD:E9:DC:79:B2:49:F1:AC:0A:FC:3B:8A:AE:C7:D5:C8:20:11:36:CF:FD:BE
