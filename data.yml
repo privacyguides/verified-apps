@@ -10902,6 +10902,14 @@ packages:
             issue: GH-595
             apk:
               sha256: cf702081a0f833e96dd93c1864bc2ea282994102cf1b05196bfc9bb555718506
+  - package: org.ligi.survivalmanual
+    signature:
+      - fingerprint: A8:E0:5C:FB:C3:43:D0:33:54:77:E4:C8:5B:1F:03:24:53:86:68:62:6A:20:B4:DC:34:8F:CF:0D:4C:D5:72:8B
+        sources:
+          - name: F-Droid
+            issue: GH-2248
+            apk:
+              sha256: 6dbc943ce56b34a531fb7e0d6b668f980544389db40da0de7ca440f9f0ba3174
   - package: org.localsend.localsend_app
     signature:
       - fingerprint: 32:20:C3:53:A7:3C:FB:D0:C2:F3:05:24:71:C4:45:32:4C:F4:52:BC:BA:26:DE:1C:47:3A:52:FE:5C:44:E1:D6
