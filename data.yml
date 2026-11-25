@@ -8441,6 +8441,18 @@ packages:
             issue: GH-1116
             apk:
               sha256: ca60fa7522dd57f9ed88de8f6f3ec72722cf413511773067de48803c749008da
+  - package: io.github.leonidius20.recorder.lite
+    signature:
+      - fingerprint: 11:9D:C8:E6:C1:AB:5C:87:B2:32:86:C7:E3:D8:9B:4B:2B:31:1D:09:9A:88:7C:40:58:CB:A1:C8:1A:94:76:36
+        sources:
+          - name: F-Droid
+            issue: GH-1587
+            apk:
+              sha256: ec98819b087eb1af57f0da9d5ed08d67de6b52369c709c651077d0bcdd7c5556
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1587
+            apk:
+              sha256: ec98819b087eb1af57f0da9d5ed08d67de6b52369c709c651077d0bcdd7c5556
   - package: io.github.lime3ds.android
     signature:
       - fingerprint: 5B:A2:56:3E:0D:13:FA:E2:AB:A0:67:D1:C2:30:CD:1C:86:3A:93:00:5C:10:D6:48:CE:5B:33:17:92:AA:0A:F1
