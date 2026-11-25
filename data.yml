@@ -4382,6 +4382,18 @@ packages:
             issue: GH-817
             apk:
               sha256: 6d652bdf7c72127fa651b5a83594ba2810edef3e08fbc62ddefe4a92b3de0fd1
+  - package: com.kitsumed.shizucallrecorder
+    signature:
+      - fingerprint: 9D:35:65:F7:C5:6E:00:AD:83:0B:E8:57:26:84:BB:95:B2:F2:A5:55:E1:C3:CA:40:3F:94:88:19:12:58:77:EA
+        sources:
+          - name: F-Droid
+            issue: GH-6109
+            apk:
+              sha256: b36008af1d0a0328871c5e6d55d635ee3cc9ca3fed7e7ea4920f32439777f2e5
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-6109
+            apk:
+              sha256: b36008af1d0a0328871c5e6d55d635ee3cc9ca3fed7e7ea4920f32439777f2e5
   - package: com.kivra.Kivra
     signature:
       - fingerprint: |-
