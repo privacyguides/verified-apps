@@ -12584,6 +12584,14 @@ packages:
             issue: GH-2250
             apk:
               sha256: 2c30e62d4429622b239827a94bd9d4b3a1fe792bd593aaa47f08131c5efeeb27
+  - package: org.erosson.freecbt
+    signature:
+      - fingerprint: 4E:94:1E:AA:00:19:70:51:64:14:6A:52:16:4A:1E:E7:31:00:D0:90:59:6C:B6:51:D4:C0:70:53:39:1E:72:71
+        sources:
+          - name: Google Play
+            issue: GH-7112
+            apk:
+              sha256: 7f22d6e938a2f63c2f9ca8dbbeb530013c0a892059f2a1f589d48370675c25e6
   - package: org.eu.exodus_privacy.exodusprivacy
     signature:
       - fingerprint: 6F:44:C5:4D:12:7C:E0:5B:2B:EE:4A:B7:C2:11:CA:5C:3D:17:5A:88:F3:52:E6:31:DA:C6:D9:51:50:1B:48:7F
