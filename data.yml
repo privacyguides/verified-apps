@@ -3887,6 +3887,14 @@ packages:
             issue: GH-661
             apk:
               sha256: 54ebc1a57dc9d9ebb950606ef1fda26253da7c41cf3ef3d13f3f6aef2a032f1a
+  - package: com.heise.ct
+    signature:
+      - fingerprint: CE:E9:FE:34:A5:3C:C7:48:D2:7D:0B:52:88:A4:E7:60:2B:EC:FD:68:40:39:E2:81:E5:F3:1B:F3:43:98:6F:21
+        sources:
+          - name: Google Play
+            issue: GH-5590
+            apk:
+              sha256: c4fab9f8045915b422e29fef2e17cd90eec71915e68d313870c880d7d9b37eef
   - package: com.helddertierwelt.mentalmath
     signature:
       - fingerprint: DE:19:7B:4C:F2:B8:58:80:E0:21:11:59:B6:0B:6E:3C:39:F9:6F:F0:68:68:AE:48:39:C4:2D:8A:4D:6F:3F:E5
