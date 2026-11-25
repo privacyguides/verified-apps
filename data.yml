@@ -3254,6 +3254,12 @@ packages:
               sha256: 3e0c51fe01ed765b636da89cb504a821579f9c2808512d58ce3c83c825c48ec9
           - name: HTTPS Verified Domain
             issue: GH-2332
+      - fingerprint: F0:70:7D:02:1C:0B:F3:E6:F8:DC:C1:1B:A3:F5:70:04:25:D5:97:DC:A3:01:A3:1E:21:05:56:93:4E:BB:1B:0A
+        sources:
+          - name: F-Droid
+            issue: GH-7940
+            apk:
+              sha256: 1bba66cd9d5628e292c42afe6a131213d6dc8524cb961965ef01c6a107e2b1d5
   - package: com.duolingo
     signature:
       - fingerprint: 12:33:FF:6D:E4:C7:0E:F4:D7:DE:AE:54:AF:15:B1:67:FC:7C:FD:25:39:51:7B:D2:17:58:70:F3:CB:77:17:31
