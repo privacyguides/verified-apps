@@ -157,6 +157,12 @@ packages:
             issue: GH-2816
             apk:
               sha256: 0631b8d286cfccffe4ddae881666f1c5d03ff06263b95c5dfba424f784d941dc
+      - fingerprint: 27:96:EC:EB:F5:1F:18:90:14:30:D8:0A:2B:24:C1:3F:FC:DB:E2:4F:1E:F3:29:58:C3:BB:DA:EA:D0:6A:CE:83
+        sources:
+          - name: F-Droid
+            issue: GH-2815
+            apk:
+              sha256: 332c7f1ade8fcb6651c1423492742fae68043c256f338fc459de7d63f4a7c527
   - package: app.grapheneos.apps
     signature:
       - fingerprint: 33:84:C3:1F:CE:4A:7C:00:8A:8F:7B:26:52:BC:48:CC:43:21:F1:D2:C8:77:B1:8E:30:A4:ED:61:9A:F1:2F:6B
