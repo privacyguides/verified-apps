@@ -2436,6 +2436,14 @@ packages:
             issue: GH-747
             apk:
               sha256: 8a1163a0e4219ee9df4adb075c233592753b01465c7f85245b879e09f1ae45fa
+  - package: com.dc.bm6_ancel
+    signature:
+      - fingerprint: B3:88:6B:F5:D0:E0:5E:EA:CA:0D:CC:11:17:81:D5:6A:EC:4C:D1:4B:6E:75:35:B2:37:CF:39:E5:5B:7D:2E:4C
+        sources:
+          - name: Google Play
+            issue: GH-6323
+            apk:
+              sha256: 4903eaf202d32e285200f4397a6cf20e9f5761775531233bf43a7d2f5b10747d
   - package: com.dd.doordash
     signature:
       - fingerprint: 93:6F:83:B9:14:21:6D:8A:87:A7:97:EF:FB:5C:A9:D4:50:0B:D2:78:D8:92:07:9F:DB:0D:5D:05:FE:F2:10:B5
