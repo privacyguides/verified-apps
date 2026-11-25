@@ -6557,6 +6557,14 @@ packages:
             issue: GH-750
             apk:
               sha256: 11a9d9f263468dcb891b01202e017497e0f7889372f866edd69b0aa730407630
+  - package: com.tmdev.fasttimes
+    signature:
+      - fingerprint: F6:85:B7:AE:A1:3D:5B:3B:A7:52:90:D0:93:D0:37:C5:2E:3A:64:6C:C4:2A:3E:A0:2F:E6:E9:37:E6:60:E6:B4
+        sources:
+          - name: F-Droid
+            issue: GH-2881
+            apk:
+              sha256: 5e7dc5b378e81a471b4107854886d3387af989ef770bf57d7551cdd96b66e798
   - package: com.tmob.AveaOIM
     signature:
       - fingerprint: 44:CE:C0:5A:F5:04:97:13:BA:66:94:74:7A:EA:29:66:AA:AC:1C:BD:07:7A:22:17:A6:CC:F4:E0:98:37:14:C5
