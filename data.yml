@@ -2765,6 +2765,14 @@ packages:
             issue: GH-1434
             apk:
               sha256: 043d7cbcc85c6828e6c8ce26d58c838c9c5b7364bb6f3b40e2ac053ca6548707
+  - package: com.fr3ts0n.ecu.gui.androbd
+    signature:
+      - fingerprint: 60:D7:57:5F:56:E8:FE:0E:26:83:65:D0:F9:0A:84:30:72:1A:02:88:F3:0F:19:14:35:B1:23:98:EC:1A:39:90
+        sources:
+          - name: F-Droid
+            issue: GH-1810
+            apk:
+              sha256: 71d3cecd69b644da81682d95fd0030caad4ce90227859236486250d885f2d67e
   - package: com.fronius.solarweb
     signature:
       - fingerprint: 5A:6A:DE:A2:F3:F8:49:65:8E:8D:3E:8B:05:4A:75:A4:86:D7:5B:E6:1A:BC:B7:60:8B:09:4B:62:DA:85:51:3E
