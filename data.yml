@@ -2774,6 +2774,18 @@ packages:
             issue: GH-2695
             apk:
               sha256: c3780a3145ed17c3ee83237c8ba5583d39e6ff777d972a35903ed188fdea8226
+  - package: com.drdisagree.colorblendr
+    signature:
+      - fingerprint: 4A:F4:FF:A1:2C:E9:08:15:A1:77:5C:46:04:EA:16:C1:9F:5B:ED:2A:6E:09:AE:7C:3C:92:81:59:82:AF:05:2E
+        sources:
+          - name: F-Droid
+            issue: GH-6669
+            apk:
+              sha256: f1379af13d7e34ed52973e0964a21968ba75d745f4230d3e733815da8c3fc803
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-6669
+            apk:
+              sha256: f1379af13d7e34ed52973e0964a21968ba75d745f4230d3e733815da8c3fc803
   - package: com.driot.bookplayerpure
     signature:
       - fingerprint: 9E:73:D3:BA:39:DE:BA:6C:A9:DF:06:E2:8B:D9:BC:85:90:55:B8:6C:5A:17:29:93:0B:EF:25:84:86:19:85:74
