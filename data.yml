@@ -9622,6 +9622,18 @@ packages:
             issue: GH-1451
             apk:
               sha256: cd0a4e1a51e47425351e747c658503f257fa1b484a491be3ed1491fe3b428889
+  - package: in.hridayan.ashell
+    signature:
+      - fingerprint: DC:42:17:20:3A:72:84:BD:15:9D:7B:86:3B:79:90:62:00:69:C7:92:9D:6F:5A:51:F5:9A:32:1E:77:F1:8D:4C
+        sources:
+          - name: F-Droid
+            issue: GH-6107
+            apk:
+              sha256: 3dbf1e7b25d9f1c99b98eb8c36c6850344fe56b9c742366020f421293b254e21
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-6107
+            apk:
+              sha256: 3dbf1e7b25d9f1c99b98eb8c36c6850344fe56b9c742366020f421293b254e21
   - package: in.krosbits.musicolet
     signature:
       - fingerprint: 8A:4D:41:21:F5:41:E3:64:4C:1F:D1:E5:C3:50:2E:B4:BE:A4:97:92:CA:FD:26:E6:00:D4:13:CD:1F:10:85:1F
