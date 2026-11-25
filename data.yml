@@ -6688,6 +6688,14 @@ packages:
             issue: GH-1247
             apk:
               sha256: 3a2b06defdf027502a2f3564ec629d9be4cd450dca8720fde89fd550aa850192
+  - package: com.valhalla.thor
+    signature:
+      - fingerprint: 2C:E3:0E:23:B8:CD:DB:24:DD:5D:70:02:3F:CC:32:42:15:70:6C:51:A9:C4:C6:BD:F1:DE:CB:34:B1:C9:CA:3F
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-2106
+            apk:
+              sha256: 73320d370e230e785444e18448e73432388c1820b04ebfc6de3bd3c0895e8be4
   - package: com.valvesoftware.android.steam.community
     signature:
       - fingerprint: 5D:FF:6B:05:76:14:47:A5:BD:F9:19:EA:88:FC:6F:DF:20:D3:01:E3:0B:23:15:41:5C:4D:36:8E:C0:FB:DA:45
