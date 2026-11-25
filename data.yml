@@ -4843,6 +4843,14 @@ packages:
             issue: GH-6947
             apk:
               sha256: 0d877b4474d53d186a3ec9c2911a7e981edff201c537b56ce41c07e7b574f0d0
+  - package: com.instructure.candroid
+    signature:
+      - fingerprint: AB:FE:13:62:D8:4C:52:34:C1:74:C2:C0:3D:40:5A:48:04:05:E3:61:16:2F:7B:28:DA:D6:BE:C8:25:BA:02:B3
+        sources:
+          - name: Google Play
+            issue: GH-7481
+            apk:
+              sha256: 78830dff9913bfd04eb7fa66a315fc8c93f3a8bfb54ff2053058157e8fb1f3e2
   - package: com.iotsolution.aidot
     signature:
       - fingerprint: E5:75:72:FF:FD:11:D2:C2:92:EA:4E:25:7F:59:66:79:C8:50:3C:5D:B5:A1:E3:DD:41:A5:2E:75:BB:28:01:E5
