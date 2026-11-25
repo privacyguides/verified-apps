@@ -4483,6 +4483,14 @@ packages:
               sha256: 9f548f1f6a11d89f48fcbc3042b653c20b2b6849f8abf3f0125602689366260a
   - package: com.google.android.apps.docs
     signature:
+      - fingerprint: |-
+          1D:4F:2E:F6:62:F8:D0:86:AB:E0:35:E9:F5:C3:AD:34:70:0B:AA:83:1F:3E:7E:32:ED:AB:30:3E:FF:B8:F1:56
+          F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
+        sources:
+          - name: Google Play
+            issue: GH-8056
+            apk:
+              sha256: b1e72769412f3b1b87faf6dcd609e1a4f125ec034a990f8ec17b5389daaec099
       - fingerprint: F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
         sources:
           - name: Google Play
