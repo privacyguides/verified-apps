@@ -5245,6 +5245,14 @@ packages:
             issue: GH-1171
             apk:
               sha256: cf1cde77fd40c9faeec6f21031e1d7379e31823ada58ee7ce836fce1f84b44f9
+  - package: com.printnotes.printnotes
+    signature:
+      - fingerprint: 85:8B:CD:A9:3E:08:F6:32:47:F8:B0:FF:C9:99:AB:B9:E3:E2:4A:05:98:08:CA:D2:93:35:51:FD:D0:BD:86:CF
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1957
+            apk:
+              sha256: c6b28ae5fe1f20291827401f343d0f84e7c03096eb86727baeeb4e147dbb655e
   - package: com.privacy.pay
     signature:
       - fingerprint: 47:0B:62:E4:E4:6C:81:FF:E3:3B:59:AB:14:6D:92:26:B3:BB:30:6F:D1:FE:40:B2:8A:E8:C5:61:0A:2B:96:5E
