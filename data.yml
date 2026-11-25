@@ -9690,6 +9690,14 @@ packages:
             issue: GH-559
             apk:
               sha256: fdab93454ac98c7e8841815678264e4ef7ee65a3b0d9fd6928a1e7512639fe76
+  - package: de.sman42.gc_wizard
+    signature:
+      - fingerprint: 2E:F0:B6:DB:5C:FC:3D:E6:28:DD:5E:FB:A6:1A:91:94:2A:53:4C:E5:A9:DF:45:72:74:3D:83:19:78:F5:24:51
+        sources:
+          - name: Google Play
+            issue: GH-7114
+            apk:
+              sha256: dc7f358e9b4f1bbbbe9243936c1f3937712fda4f99eb2230f7d9560610dc80a6
   - package: de.sparda.banking.app
     signature:
       - fingerprint: 9D:B5:52:4D:FA:58:84:0B:EF:66:AB:85:7B:0A:0E:23:D3:F8:C7:59:8A:72:A4:92:9D:E0:08:6B:D1:3F:06:93
