@@ -11492,6 +11492,14 @@ packages:
             issue: GH-1796
             apk:
               sha256: af7c70f5fbea79ca7fba8759b3dfb2963ed003c1216df5f36fc1c38558cb55ee
+  - package: de.t_dankworth.secscanqr
+    signature:
+      - fingerprint: E0:18:B2:AC:50:50:A8:79:8B:74:8C:C9:95:FC:2B:6A:6F:61:BA:F2:C1:F0:C4:A1:54:C6:E5:FC:61:B8:F7:0F
+        sources:
+          - name: F-Droid
+            issue: GH-3050
+            apk:
+              sha256: 7f1a4eb2909afdda4abb09dab942b18a192e9c9ceb56083b6a79b64ec507ea87
   - package: de.tadris.fitness
     signature:
       - fingerprint: D6:0B:C3:DC:52:63:65:EA:58:83:B4:21:30:6A:A0:B5:0B:AD:E5:9A:ED:50:80:F1:07:0F:11:8F:E3:B7:F7:8E
