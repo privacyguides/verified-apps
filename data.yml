@@ -6565,6 +6565,14 @@ packages:
             issue: GH-1856
             apk:
               sha256: 6b2b42499b145a81cda61c8b85551d4455593f1e82ea54e0bb6a45c4348d1631
+  - package: com.tharunbirla.librecuts
+    signature:
+      - fingerprint: B4:78:1B:17:8D:A1:24:92:9F:BC:81:EA:7C:16:AA:48:E2:04:3C:47:8C:E1:F8:61:C8:8C:A1:2F:39:8A:DA:CD
+        sources:
+          - name: F-Droid
+            issue: CB-270
+            apk:
+              sha256: 60c0b058e72100f076aca6fa74ef479e690ee6a6b581585046246148e8c56005
   - package: com.thetransitapp.droid
     signature:
       - fingerprint: A0:55:A8:6A:4F:75:38:D3:EE:2D:57:5C:06:74:32:81:B8:13:05:23:73:DE:A5:BF:F1:0D:20:15:81:55:13:41
