@@ -17,6 +17,14 @@ packages:
             issue: GH-198
             apk:
               sha256: 56b3ddc154322975a721290fc89f401fc368a70a522057fbba754198e942f60e
+  - package: ai.ai1min.application
+    signature:
+      - fingerprint: 9D:F8:CA:9E:3C:77:1A:B6:81:F8:2B:6F:BF:F7:FC:29:D3:2C:0E:6B:DB:38:8A:CA:AF:77:FA:74:7F:44:7E:44
+        sources:
+          - name: Google Play
+            issue: GH-6284
+            apk:
+              sha256: 649d7082ea1ec27e3a42d4cb94128197cedb3762b3faf5edb47fe7cccc3a5a33
   - package: ai.privatebydesign.albi
     signature:
       - fingerprint: C6:D4:B4:48:7E:BC:EF:11:47:64:8C:7E:54:A8:11:94:84:40:9C:22:E3:21:D1:64:C8:EF:AB:62:12:DD:F4:CE
