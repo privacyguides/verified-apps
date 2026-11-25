@@ -3357,6 +3357,14 @@ packages:
             issue: GH-1450
             apk:
               sha256: 7c6381e24e01213ad9acaae86537a6a3269bc120529543bf220eeeb8c0593c32
+  - package: com.gnivts.selfemployed
+    signature:
+      - fingerprint: 5C:08:21:C1:67:6A:01:1A:D6:3C:92:E3:CB:D7:92:37:5D:53:32:09:F7:6C:7A:AE:82:6F:E0:48:E9:C7:45:6B
+        sources:
+          - name: Google Play
+            issue: GH-5746
+            apk:
+              sha256: 31ad24134fdcb112c1acb45396f78a9e95f873f4429a753c239d219fb93f4b12
   - package: com.goeuro.rosie
     signature:
       - fingerprint: BF:D9:21:53:AE:C9:F9:A2:94:4D:4C:63:D6:75:EE:0D:72:82:40:24:CC:FC:33:74:7D:2C:19:43:3D:53:B4:99
