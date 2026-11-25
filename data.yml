@@ -10034,6 +10034,16 @@ packages:
             issue: GH-870
             apk:
               sha256: 7cc5cb78483c0c95270cb25181f353339a77f0a0df4417628b2be01dfe8a73e5
+  - package: is.walt.app
+    signature:
+      - fingerprint: |-
+          24:66:DA:15:4E:ED:E4:07:03:F1:0D:B8:32:2A:94:4B:8C:DF:F8:19:A6:1D:46:B3:E6:B9:F5:64:E7:0C:7A:3D
+          6C:8D:50:53:EB:9D:0A:4A:84:72:CA:7D:92:F2:52:9E:FB:A9:4C:24:E4:90:1D:99:D1:6B:B8:5A:79:34:64:99
+        sources:
+          - name: Google Play
+            issue: GH-6016
+            apk:
+              sha256: e8604533e9f6a7d4c63a695e11c499433561187e7463472079c90f9f2f969725
   - package: is.xyz.mpv
     signature:
       - fingerprint: FA:E7:F9:D0:23:85:CC:24:D9:6E:88:43:66:03:E2:3E:A6:AE:C7:64:9A:D1:25:0A:BB:B4:83:7D:AA:B8:2F:FF
