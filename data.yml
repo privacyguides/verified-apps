@@ -5603,6 +5603,14 @@ packages:
             issue: GH-8322
             apk:
               sha256: 256973e00c5f16a5e4d29964e0c5419c4cdbd411b91e2e0458d038db805bd614
+  - package: com.ing.mobile
+    signature:
+      - fingerprint: 23:86:20:77:1D:F2:BC:2F:92:65:42:99:16:E3:E9:AE:8E:EA:9B:09:77:31:AC:E7:4B:71:76:60:EB:B5:44:4C
+        sources:
+          - name: Google Play
+            issue: GH-8396
+            apk:
+              sha256: 6eaa74394634acc1048878ac750905e02549d0adbec4daa7a2c44451c24e1352
   - package: com.innersloth.spacemafia
     signature:
       - fingerprint: 67:A4:DF:80:B1:D9:A4:88:FF:DB:10:07:54:84:1F:D8:3F:90:9C:7C:73:DF:16:E2:46:8C:EC:75:AB:81:C5:8A
