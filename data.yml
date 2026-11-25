@@ -10166,6 +10166,12 @@ packages:
               sha256: e8604533e9f6a7d4c63a695e11c499433561187e7463472079c90f9f2f969725
   - package: is.xyz.mpv
     signature:
+      - fingerprint: 43:50:94:43:FF:26:DE:C9:BE:7A:B6:9C:F7:E3:24:82:68:0B:E7:5A:56:43:C0:75:9C:98:05:D2:0D:49:1A:49
+        sources:
+          - name: F-Droid
+            issue: GH-6174
+            apk:
+              sha256: 5cba2237b20ba34b79eaccfbd39bdb5b09d2a9a774bdccee09ca450eac4edd34
       - fingerprint: FA:E7:F9:D0:23:85:CC:24:D9:6E:88:43:66:03:E2:3E:A6:AE:C7:64:9A:D1:25:0A:BB:B4:83:7D:AA:B8:2F:FF
         sources:
           - name: Google Play
