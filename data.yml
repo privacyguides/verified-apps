@@ -10266,6 +10266,14 @@ packages:
             apk:
               sha256: eb56aa9ae68b4d4b04e40251d7fe7ea49f97e0c4be5a8384e28d98ee36b9c5e2
               repo: https://archive.newpipe.net/fdroid/repo/
+  - package: org.secuso.privacyfriendlyminesweeper
+    signature:
+      - fingerprint: 50:75:CE:FF:95:61:EB:51:B3:7D:48:37:6D:A6:10:23:0B:59:5A:BA:70:7E:2D:84:5F:9B:84:4E:A5:88:26:4D
+        sources:
+          - name: F-Droid
+            issue: CB-96
+            apk:
+              sha256: cfd5aa57b5dafdf688a6ff2ef2e580b0ab636a47d71bd0e51db2ca21ce7cadff
   - package: org.secuso.privacyfriendlynotes
     signature:
       - fingerprint: 9B:E7:5E:46:FA:FA:2D:66:E9:B8:DB:B7:EA:6A:34:CC:09:6A:96:B2:D9:39:65:69:CF:F5:A7:F9:8F:6D:09:3D
