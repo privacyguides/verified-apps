@@ -5498,6 +5498,18 @@ packages:
             issue: GH-1644
             apk:
               sha256: 28e147d16af2b53f50451385e28a65f65ef673aa0fb9b776ba9ada4695417591
+  - package: com.mkx.hrttracker
+    signature:
+      - fingerprint: EA:FB:62:3C:A5:5F:65:89:4F:5F:8A:58:0D:E2:E5:B2:1B:F0:FE:94:77:F9:F8:72:01:2D:73:DC:5A:D5:1E:89
+        sources:
+          - name: F-Droid
+            issue: GH-6916
+            apk:
+              sha256: 3fe60a336b62dcce5667f6154d9bcee1109da4e376b31d1dc3c60820b9dcb484
+          - name: Google Play
+            issue: GH-6916
+            apk:
+              sha256: 28ec237f6af59ed9fc3c70a3facb72db3dd314555d01cdaa19f246869234318d
   - package: com.mm.android.DMSS
     signature:
       - fingerprint: 7A:7D:89:BC:2C:DA:B8:23:0F:A3:DC:5C:9D:1F:AA:F0:01:4A:F8:64:D5:75:ED:7A:FF:77:4C:71:78:89:9E:AF
