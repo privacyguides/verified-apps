@@ -9162,6 +9162,14 @@ packages:
             issue: GH-849
             apk:
               sha256: 019e5b21c62c54424f0e38d77017e6086123fd3748261e809b35a65caaf45917
+  - package: de.k3b.android.intentintercept
+    signature:
+      - fingerprint: 4F:1A:66:AA:11:34:F1:E2:3A:62:FE:A3:94:4A:AE:83:8E:EB:64:D2:23:23:98:91:2A:D5:49:EA:C7:65:45:F2
+        sources:
+          - name: F-Droid
+            issue: GH-6920
+            apk:
+              sha256: 9b03c0a44d3e6f55580e035abb3f9086c79f199208012cf51c0b1ff512fb8907
   - package: de.kaffeemitkoffein.tinyweatherforecastgermany
     signature:
       - fingerprint: 54:B3:C1:46:F2:C9:CC:D1:FE:23:17:13:20:51:7E:2A:AD:96:66:79:8D:38:3C:52:33:2F:FF:99:40:0A:79:6E
