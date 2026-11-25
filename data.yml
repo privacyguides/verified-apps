@@ -4461,6 +4461,14 @@ packages:
             issue: CB-86
             apk:
               sha256: 3e8fcc49a80d4c30ab6f6037e51402c77e2694d27ec19ae5b8a93cd08b6caffa
+  - package: com.keyontech.applister
+    signature:
+      - fingerprint: 55:3D:D7:8C:87:D7:6A:F8:7C:D1:63:00:49:A0:D0:EA:51:56:98:B3:EE:A0:92:AF:2B:B4:DA:DD:A4:61:F6:E5
+        sources:
+          - name: Google Play
+            issue: GH-6325
+            apk:
+              sha256: b5dc36da255c287403761302028663eac1892db91e4d4f20c3fc7b6881500986
   - package: com.kgurgul.cpuinfo
     signature:
       - fingerprint: AF:24:23:BE:B5:89:E5:5F:DF:95:1F:DE:2F:23:ED:AA:78:5F:57:C7:14:76:4A:FB:BD:D1:5A:85:F1:AE:D3:3C
