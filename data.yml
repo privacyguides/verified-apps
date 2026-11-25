@@ -5577,6 +5577,14 @@ packages:
             issue: GH-298
             apk:
               sha256: 40069a3eacc048590d3c286b175c42ccc1a491e273d4b5964ffe606a5d782e2d
+  - package: com.nbcnews.msnbc.mobile
+    signature:
+      - fingerprint: 2D:07:2C:E0:00:03:0D:FE:F5:56:6A:1E:AF:DF:65:1C:13:47:62:FC:B0:5B:C0:5A:EB:40:B7:31:16:EB:32:6F
+        sources:
+          - name: Google Play
+            issue: GH-6833
+            apk:
+              sha256: 28c68b713982be55e4e9ea718a11e293963f6404c388a07e7d22b157b88f7213
   - package: com.nequi.MobileApp
     signature:
       - fingerprint: 55:E0:DD:DE:F5:F5:C9:0D:94:9C:F8:8F:79:D3:90:23:A9:7F:19:AB:88:41:42:92:9C:E1:69:AF:70:F9:3D:B4
