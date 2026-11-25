@@ -12268,6 +12268,14 @@ packages:
             issue: GH-415
             apk:
               sha256: 2041dc168cd7944fe796fcfe0ff1810b0d1f6125bbb58a236a283296b1de3de5
+  - package: moe.zhs.caffeine
+    signature:
+      - fingerprint: EC:AE:E9:9F:5E:9F:7E:CE:6D:AD:44:0A:90:99:DB:9A:3D:A3:41:4F:C3:40:82:E0:42:6F:8F:18:93:44:3C:18
+        sources:
+          - name: Google Play
+            issue: GH-7709
+            apk:
+              sha256: a82a8f58e88c8858c7fe5ca457c10c4b1a1dfd00de55d1a31d9c9e11eddf4ecf
   - package: mv.com.bml.mib
     signature:
       - fingerprint: B5:61:EE:21:02:40:1A:16:26:35:43:C1:95:D5:AF:00:91:81:6B:87:9B:31:AA:FE:7C:6A:5F:B0:25:62:74:59
