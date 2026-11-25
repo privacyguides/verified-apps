@@ -10207,6 +10207,14 @@ packages:
             apk:
               sha256: 8619dabc77c84b7ba5621f1b707153460e0dd643ec65bd814d4e6f32560be66b
               link: https://cdn.zapstore.dev/8619dabc77c84b7ba5621f1b707153460e0dd643ec65bd814d4e6f32560be66b.apk
+  - package: dev.zwander.arcadyankvd21control
+    signature:
+      - fingerprint: 58:99:7A:7C:33:4D:76:DC:D5:7F:AA:91:8D:DA:90:DA:27:ED:A2:E7:68:AE:D4:EB:7F:11:0D:90:C3:19:6D:67
+        sources:
+          - name: Google Play
+            issue: GH-7352
+            apk:
+              sha256: f268b328a55ec6d2b94c36c19d7beef404b148e6a1822043d55842fd6b7fd441
   - package: dev.zwander.peertuberedirect
     signature:
       - fingerprint: 75:5C:46:BD:7C:E6:95:65:D9:80:04:C5:B1:38:3D:F9:BD:5B:4F:27:0D:E8:0F:39:92:FB:42:D8:22:11:3D:0B
