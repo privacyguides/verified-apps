@@ -784,6 +784,18 @@ packages:
               sha256: 6186c80da39dd7566e1c64cee096b0623d8dfb171627d50525f64dd420ed9345
           - name: HTTPS Verified Domain
             issue: GH-2752
+  - package: chromahub.rhythm.app
+    signature:
+      - fingerprint: CB:90:45:12:4F:6F:70:66:C7:0F:3B:85:C2:BC:FB:75:CC:22:93:BB:1B:4B:A1:C3:EC:40:E2:23:A5:CC:6A:35
+        sources:
+          - name: F-Droid
+            issue: GH-7014
+            apk:
+              sha256: 860e8adedf833b2719a9ad65b1bc1586a644380f8e0b41e47b7604337ee5af69
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-7014
+            apk:
+              sha256: fee8ff6a2ae45497a3d837998cd9b72779f56c2d9a27a58696050ac5901de98f
   - package: cl.coders.faketraveler
     signature:
       - fingerprint: FA:1B:47:D6:2E:BE:CE:21:30:E3:3A:22:18:6C:62:2B:CF:E2:F2:B9:A3:D5:C1:44:38:AD:94:07:80:93:68:2C
