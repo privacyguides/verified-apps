@@ -650,6 +650,15 @@ domains:
         fingerprints:
           - 14:9C:4E:A5:82:5A:81:06:55:89:D2:7A:60:EA:7E:55:4D:F4:B4:9E:3C:66:0C:B6:5B:A7:30:02:50:80:DB:D0
           - 98:78:14:AC:EF:07:6E:D6:F0:90:BF:05:3B:A4:9C:F0:62:4A:0E:B6:F9:AF:6F:FF:22:70:80:CD:2E:A7:F7:3B
+  - domain: translate.yandex.ru
+    method: https
+    issue:
+      - GH-5762
+    checked: "2026-11-25T06:52:54Z"
+    packages:
+      - package: ru.yandex.translate
+        fingerprints:
+          - AC:A4:05:DE:D8:B2:5C:B2:E8:C6:DA:69:42:5D:2B:43:07:D0:87:C1:27:6F:C0:6A:D5:94:27:31:CC:C5:1D:BA
   - domain: tulis.dev
     method: https
     issue:

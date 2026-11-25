@@ -12379,6 +12379,16 @@ packages:
             issue: GH-208
             apk:
               sha256: a49862cec4e8e6b8c1ffcb065ce828fc21af070b0c6637cf809fe3f50ee554cb
+  - package: ru.yandex.translate
+    signature:
+      - fingerprint: AC:A4:05:DE:D8:B2:5C:B2:E8:C6:DA:69:42:5D:2B:43:07:D0:87:C1:27:6F:C0:6A:D5:94:27:31:CC:C5:1D:BA
+        sources:
+          - name: Google Play
+            issue: GH-5762
+            apk:
+              sha256: 6c4cb0efb70c4b298b0eb8318ca79b82fd7095c40130cc8b734a063b1c8c04bf
+          - name: HTTPS Verified Domain
+            issue: GH-5762
   - package: ru.zdevs.zarchiver
     signature:
       - fingerprint: 77:27:F2:80:77:64:C3:49:9B:9A:2C:3F:F8:04:50:5D:D7:46:8B:11:7F:EB:00:58:04:EF:C7:86:59:54:4D:B2
