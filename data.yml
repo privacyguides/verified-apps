@@ -8282,6 +8282,14 @@ packages:
             issue: GH-2736
             apk:
               sha256: a528c1d62099a9b5ad831bf31f0f96478d8721bb4c60d496302d526b58f10e9c
+  - package: com.server.auditor.ssh.client
+    signature:
+      - fingerprint: 73:07:1D:45:01:B1:9A:76:B9:73:67:B5:16:1F:70:3F:1E:1D:53:D7:6A:25:7A:4B:3D:76:6D:90:83:39:78:F0
+        sources:
+          - name: Google Play
+            issue: GH-8261
+            apk:
+              sha256: 7978c01d1c75a9bf424f39f8c372eb0d3134c4800b78bf6a2516903dcae35ff1
   - package: com.shanga.walli
     signature:
       - fingerprint: A5:51:C3:3A:7B:CE:40:C2:E0:4D:AA:72:C4:72:67:D3:80:D0:06:F9:97:3C:DE:E3:E5:5F:12:11:11:05:AC:8D
