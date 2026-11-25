@@ -8867,6 +8867,14 @@ packages:
             issue: GH-1973
             apk:
               sha256: 54f1b2aa2b69fecdfa9ceb0fec66f4ac84e66f84ac85329fe79dfd533999ef0b
+  - package: fr.smarquis.sleeptimer
+    signature:
+      - fingerprint: 2C:7A:A1:E9:1C:D5:29:7A:86:A8:2B:11:A6:DB:7A:C9:04:40:E0:14:96:F3:30:C9:98:94:49:60:E5:CD:97:51
+        sources:
+          - name: F-Droid
+            issue: GH-2811
+            apk:
+              sha256: 7a0aac6054ec8a72fc4609936e23d53ac2bd5905b52a472f46f2c80135c9ac71
   - package: fr.vinted
     signature:
       - fingerprint: A0:6A:61:7E:8C:14:A1:EA:65:F6:4D:6E:79:30:39:9B:45:1A:00:1C:A8:87:C1:4C:A4:09:D1:87:8E:1B:2E:5B
