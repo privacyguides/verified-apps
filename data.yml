@@ -10019,6 +10019,12 @@ packages:
               sha256: c91a5f6e93ec8328fe4e2ffdabf5085abd6c7ea695ee6e0f8eca0518094cb3c3
   - package: nz.eloque.foss_wallet
     signature:
+      - fingerprint: BF:8A:F6:D8:9E:55:95:D9:5F:4D:22:9E:C0:FD:97:1A:3C:75:2F:DB:AB:E8:33:77:23:0E:F9:2C:70:44:43:05
+        sources:
+          - name: F-Droid
+            issue: GH-2269
+            apk:
+              sha256: 19b1c255d4b3ce934cc5eaa11da2db5d63ce9b0c1f8265f74f3b7711f7e027dc
       - fingerprint: CE:3C:E7:92:A7:65:42:7E:E0:6A:D6:BC:33:28:75:E5:0D:32:E2:26:A5:79:14:75:76:1D:D3:86:C7:F3:47:5D
         sources:
           - name: Google Play
