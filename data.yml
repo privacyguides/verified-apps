@@ -5861,6 +5861,14 @@ packages:
             apk:
               sha256: 79ee0a6c5cc8b7fc7c9ff3e2c4a858f4961ae127641c4efd5d21847b1968f9b8
               link: https://github.com/super-productivity/super-productivity/releases/download/v18.7.0/app-play-release.apk
+  - package: com.svenjacobs.app.leon
+    signature:
+      - fingerprint: 46:4A:DB:D4:A2:42:46:E4:18:56:3D:F6:46:8D:A9:6C:F4:B2:82:80:A3:91:47:B2:82:4D:E0:51:CA:D1:48:D7
+        sources:
+          - name: F-Droid
+            issue: GH-1453
+            apk:
+              sha256: 1723ffdc6d54d1168f220c3b37e5a14a1297d8f58d38e18e39c43e8ac9941fbe
   - package: com.swordfish.lemuroid
     signature:
       - fingerprint: 66:30:F8:6D:FC:E5:E0:19:B3:21:AD:62:BC:F9:3E:96:8A:C6:DB:C1:5F:C5:B1:BA:12:EB:B8:C0:5F:B2:79:F1
