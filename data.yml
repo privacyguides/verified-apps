@@ -10730,6 +10730,14 @@ packages:
             issue: GH-1113
             apk:
               sha256: 2bce2f2c32e97b89ede5bd0ee95f482a358015e9dd11584a7016b8b822710f2c
+  - package: de.bahn.callabike
+    signature:
+      - fingerprint: C6:8D:75:3E:BC:9D:4D:5A:B7:20:C3:38:05:1B:29:FE:66:C7:0A:6A:00:51:FD:A0:0F:0F:D2:E9:B6:AA:25:E9
+        sources:
+          - name: Google Play
+            issue: GH-3039
+            apk:
+              sha256: 207c0eecce7319cd029c4f96b726a917f260a655763f2792497d8d08cb5a72cd
   - package: de.bahnvorhersage.app
     signature:
       - fingerprint: B3:15:51:00:55:4B:98:99:9F:8B:A4:68:9D:AD:6F:5D:21:A4:69:06:4C:40:55:B2:03:95:E8:4C:FD:8A:C8:04
