@@ -3437,6 +3437,16 @@ packages:
             issue: GH-716
             apk:
               sha256: bf21bf730e920e48f6296975cca3ef833c1d614d597c49f7c814602b51f9af2a
+  - package: com.google.android.apps.dynamite
+    signature:
+      - fingerprint: |-
+          0F:07:1C:60:F2:3C:18:15:0B:E0:CD:68:A5:8C:51:12:DB:10:67:73:FD:B4:35:3B:F6:18:64:B9:90:81:21:62
+          CC:70:49:EB:F7:26:39:1F:DE:00:A9:53:D6:7E:79:E9:CD:72:C1:40:07:6C:D9:E3:DC:86:CA:A7:51:A9:DE:65
+        sources:
+          - name: Google Play
+            issue: GH-5738
+            apk:
+              sha256: 4d6e196d0cdfa781594a736a5b1e3ef2cf66464c458faa1404ef8fa6d5a40e2a
   - package: com.google.android.apps.googlevoice
     signature:
       - fingerprint: |-
