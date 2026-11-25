@@ -2769,6 +2769,14 @@ packages:
             issue: GH-2275
             apk:
               sha256: 1ba72af98c30a790a5925f4e59493922efd7109e3b2bffe6510fb6b6671d7be8
+  - package: com.ethereal.openscan
+    signature:
+      - fingerprint: 58:C2:F0:A3:98:50:57:8D:7C:17:C4:38:5F:D4:AF:2B:12:91:2E:3A:2B:EF:F8:F3:C7:93:F2:D1:B0:EC:6C:79
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-5976
+            apk:
+              sha256: 1df5eb50e199ee789c3520cb1b85f24ca4c83b8f6825562f068b80d71b41f4b2
   - package: com.eurostar.androidapp
     signature:
       - fingerprint: F1:0B:41:49:CC:5A:9C:ED:83:02:93:E3:3A:8D:A7:D8:96:47:79:CB:65:28:F9:6C:7E:CC:79:AA:D6:CB:40:52
