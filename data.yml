@@ -8205,6 +8205,14 @@ packages:
             issue: GH-1730
             apk:
               sha256: ba3739e348d1ddcc28dec583ded5ffff1f6740af9322a903c5c049d2a9232811
+  - package: f.cking.software
+    signature:
+      - fingerprint: DC:AD:DD:B8:63:2D:D0:84:02:57:D4:98:83:79:3C:D0:1B:44:68:06:4F:FF:F2:AD:95:EE:20:9A:20:61:5C:B2
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1906
+            apk:
+              sha256: d67626a059f5b7bb7b91c61b3207d41649e13859cf785d8c09813eacf1f493eb
   - package: fe.linksheet.nightly
     signature:
       - fingerprint: 3F:CF:76:75:BC:90:E2:39:89:2C:72:62:49:9D:CC:9F:8C:E6:A5:2B:7E:58:D0:2B:56:AA:60:CA:66:9D:67:01
