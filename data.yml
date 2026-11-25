@@ -4309,6 +4309,14 @@ packages:
             issue: GH-524
             apk:
               sha256: 9e1fe44b177e6ba163ee7b7d44773a277acae05715f524c4f5b9cc237ec7166a
+  - package: com.matrix.synapse.manager
+    signature:
+      - fingerprint: 2F:F1:40:9F:DC:C4:2C:59:93:E6:1D:E3:02:3B:6F:B1:A8:A6:66:CF:DD:0C:8B:D7:44:E2:7E:3C:0E:9C:E0:32
+        sources:
+          - name: F-Droid
+            issue: GH-1939
+            apk:
+              sha256: 7b0da6a4e4f84d08bef7a03e11a76279f23d92e8dd6fe0cd8fec0e116d776587
   - package: com.mattermost.rn
     signature:
       - fingerprint: 5C:A7:32:AB:1F:65:7D:D9:E4:BE:FF:08:40:A8:B9:D1:9C:59:C3:0D:E3:AD:CF:4B:E6:A2:92:72:26:C1:1F:4F
