@@ -5715,6 +5715,14 @@ packages:
             issue: GH-6402
             apk:
               sha256: 1d4da9e505155b79673dd3cf6e55a8e4fa98593cb6d5830345ec851856d5a3e9
+  - package: com.navasgroup.share2archive
+    signature:
+      - fingerprint: 68:D5:EB:6A:E5:4C:0B:67:E2:92:09:ED:25:6D:BE:DC:45:D0:CF:57:FD:18:5F:45:BC:12:58:A7:0D:70:AB:84
+        sources:
+          - name: Google Play
+            issue: GH-7052
+            apk:
+              sha256: fec960a008159a68e7c224e0eab33ab839324a5b98433923ee347b6cf89b902a
   - package: com.naver.labs.translator
     signature:
       - fingerprint: 0B:8B:85:23:BB:4A:EF:FA:34:6E:4B:DD:4F:BF:7D:19:34:50:56:9A:A1:4A:AA:D4:AD:FD:94:A3:F7:B2:27:BB
