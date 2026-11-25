@@ -6284,6 +6284,14 @@ packages:
               sha256: c983268a65408620c14c24633a668c954000e797902c450174529efbaafaba2d
           - name: HTTPS Verified Domain
             issue: GH-7721
+  - package: com.moneybookers.skrillpayments.neteller
+    signature:
+      - fingerprint: 93:4E:F4:F4:F3:9E:2A:7D:B3:1D:73:3C:4E:9B:43:67:25:A3:88:95:AB:05:C6:6F:2A:8A:43:F3:C4:E4:45:16
+        sources:
+          - name: Google Play
+            issue: GH-8011
+            apk:
+              sha256: ad79fb32e71507e1e8853c89253687d46f6681a96095d9bd95929d004950e4ac
   - package: com.monkopedia.healthdisconnect
     signature:
       - fingerprint: F2:3D:A6:55:77:DB:71:E2:40:A5:1D:79:9C:38:47:99:09:95:5E:98:EA:75:93:FC:D2:89:2D:E4:23:CB:F5:93
