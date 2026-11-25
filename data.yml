@@ -10433,6 +10433,14 @@ packages:
             issue: GH-2888
             apk:
               sha256: bdd1207aea2eaefee07ff3bafb165cd86f80a798a9f047c4a4f39dde4463ff68
+  - package: de.number26.android
+    signature:
+      - fingerprint: 80:0F:89:B0:10:F9:EF:7C:B4:88:4E:D6:ED:CF:D0:BA:E5:0E:7F:48:4E:C0:75:17:FD:F6:61:D6:9D:65:0A:DD
+        sources:
+          - name: Google Play
+            issue: GH-8038
+            apk:
+              sha256: 768194a066f2fd22235b077ac44f4dc91bb5686267049227dccdb34223e94ca3
   - package: de.oeffisounds.app
     signature:
       - fingerprint: B7:72:65:AB:88:7A:80:E9:8E:8C:42:58:20:06:D5:DA:7E:AD:77:41:03:9A:EB:30:D0:39:17:8A:7D:2D:FB:66
