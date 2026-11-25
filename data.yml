@@ -1657,6 +1657,14 @@ packages:
             issue: GH-1129
             apk:
               sha256: 020f9e2cb13c1321bf99663fe6b5418049fcc1a9819f7c8f8424e72761598655
+  - package: com.assaabloy.hospitality.mobileaccess.studentliving
+    signature:
+      - fingerprint: 8C:2D:DA:9D:46:B7:83:E4:7E:9C:02:70:5E:67:01:69:4A:CA:BE:99:EF:60:22:1B:FB:6D:A3:F0:BE:F1:3D:BB
+        sources:
+          - name: Google Play
+            issue: GH-7667
+            apk:
+              sha256: 953b967ad50261b21596c7b9f3435201c6f38e0b822dbed3450c0ac32f33deab
   - package: com.astrapaging.vff
     signature:
       - fingerprint: D2:4B:40:DE:53:0C:D6:22:A6:04:74:0C:9D:D0:36:47:5E:E6:AC:FB:32:6D:29:E3:4A:06:AD:CD:1F:6C:6A:1F
