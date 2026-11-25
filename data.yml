@@ -12012,6 +12012,14 @@ packages:
             issue: GH-1589
             apk:
               sha256: 4cdd6cbc57abb00b1ce28668dc29c021640bae8c4521ec592efc58c4239d83a1
+  - package: me.timschneeberger.shizustore
+    signature:
+      - fingerprint: E7:62:FF:C1:5D:2F:8D:E8:AB:19:1D:F5:3E:A5:A5:25:F9:0D:3F:F3:79:56:FC:D4:E3:04:E0:34:0B:AF:BA:BA
+        sources:
+          - name: F-Droid
+            issue: GH-7635
+            apk:
+              sha256: 182593076b8bc3390dd5ffdf1021bccba88bdc63e7adac5b190eef04287f3852
   - package: me.zhanghai.android.files
     signature:
       - fingerprint: 87:3B:9B:60:C7:7C:F7:F3:CD:5F:AE:66:D0:FE:11:2C:4A:86:97:3E:11:8E:E8:A2:9C:34:6C:4C:67:3C:97:F0
