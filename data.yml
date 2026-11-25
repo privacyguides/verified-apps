@@ -3810,6 +3810,14 @@ packages:
             issue: GH-1444
             apk:
               sha256: e2da6978c346e7a7805d52186eefecc25d93d9fb8dec3054bdf509e2e596d6e5
+  - package: com.jarsilio.android.autoautorotate
+    signature:
+      - fingerprint: 8F:70:D2:DF:F3:29:1F:F6:1E:12:77:0E:D6:69:C5:2E:D8:30:96:81:A3:6A:96:03:86:AF:DC:C1:8E:45:75:5F
+        sources:
+          - name: F-Droid
+            issue: GH-2018
+            apk:
+              sha256: 1a9a4628ae0105488db269a07393ae9f3e933ac54e4ad1eb3f4b0eeb1eaa64c7
   - package: com.jarsilio.android.scrambledeggsif
     signature:
       - fingerprint: 24:06:CA:D9:83:B1:C5:A1:D9:9C:5C:D5:06:4F:D3:D7:83:E9:85:02:7A:1C:4C:E9:CE:87:9B:50:ED:3C:08:B6
