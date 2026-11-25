@@ -945,6 +945,16 @@ packages:
             issue: GH-2038
             apk:
               sha256: db674d176c1323d29b7968fca4dcedfc036e5b168a4ef97cf1ea7de8a6e82453
+  - package: com.affirm.central
+    signature:
+      - fingerprint: 79:46:8A:08:63:E5:10:C2:C1:07:CC:48:68:51:B9:9B:85:74:19:29:6A:F0:56:F8:BB:1F:B4:FD:90:5E:84:13
+        sources:
+          - name: Google Play
+            issue: GH-6320
+            apk:
+              sha256: 823f4f81a1e5e1d72845bb5ee110c70414dcd2d02670c68133361267f0669655
+          - name: HTTPS Verified Domain
+            issue: GH-6320
   - package: com.afklm.mobile.android.gomobile.klm
     signature:
       - fingerprint: FE:5B:C8:AD:00:6A:FC:67:81:A6:4B:4F:3C:39:DC:C5:33:68:CC:C5:45:CE:33:E5:75:12:07:EA:4B:98:75:A4

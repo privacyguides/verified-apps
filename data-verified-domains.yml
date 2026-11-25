@@ -37,6 +37,15 @@ domains:
       - package: co.adityarajput.notifilter
         fingerprints:
           - 56:0A:30:9B:4F:01:AC:3D:28:65:EA:C6:E3:C3:35:59:EC:C7:E9:AD:8E:A7:9E:CD:58:D2:56:B4:B6:45:8A:0E
+  - domain: affirm.com
+    method: https
+    issue:
+      - GH-6320
+    checked: "2026-11-25T07:30:45Z"
+    packages:
+      - package: com.affirm.central
+        fingerprints:
+          - 79:46:8A:08:63:E5:10:C2:C1:07:CC:48:68:51:B9:9B:85:74:19:29:6A:F0:56:F8:BB:1F:B4:FD:90:5E:84:13
   - domain: aidungeon.com
     method: https
     issue:
