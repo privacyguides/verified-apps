@@ -2134,6 +2134,14 @@ packages:
             issue: GH-1198
             apk:
               sha256: 2642613868a8a80f0ce963a4863bc153e7281b97b3bbdf36ca92a99dded7134a
+  - package: com.dasp.worldcup2026
+    signature:
+      - fingerprint: BC:B5:58:12:4D:78:E9:8E:85:BF:BA:A6:D3:05:9B:FF:FE:40:97:69:46:D9:51:8F:77:65:54:C7:8B:20:17:92
+        sources:
+          - name: F-Droid
+            issue: GH-2439
+            apk:
+              sha256: 8c7b60c9cef5a6343f000f12ff0a0714bc6f3de72ced17c57f1ce4a147bc4a67
   - package: com.davivienda.daviviendaapp
     signature:
       - fingerprint: 88:C3:6E:43:F6:E1:6F:A4:F5:08:DA:C7:CD:43:1D:B3:EA:82:C0:2D:E2:87:75:99:F7:4C:AD:68:4A:63:D5:F7
