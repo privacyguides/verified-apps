@@ -9540,6 +9540,12 @@ packages:
               sha256: b96367f7c2011bf0181474fe23df2055f86eee40776909bb0f7fd0bd94102cb6
   - package: io.ente.auth
     signature:
+      - fingerprint: BF:54:52:86:32:81:D8:1B:FF:CD:F8:55:03:20:CA:2A:30:08:44:54:1B:EF:5C:48:59:B0:66:C2:30:5C:63:52
+        sources:
+          - name: F-Droid
+            issue: GH-5873
+            apk:
+              sha256: b0d14c249d656371dba9456a9c88cccaba9c96802b1da67d6941ba12498469d9
       - fingerprint: DD:CE:AA:D6:88:F0:05:D3:40:68:94:BA:00:FC:E3:FF:82:54:13:0A:10:2B:B2:52:E6:3C:D8:EA:A9:72:B2:EF
         sources:
           - name: Google Play
