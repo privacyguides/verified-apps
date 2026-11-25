@@ -7951,6 +7951,14 @@ packages:
             issue: GH-852
             apk:
               sha256: 10fb92b0e4e5ed9e99d67be992d0009eb17b76184aef86b9256944c438ba3bb4
+  - package: de.oeffisounds.app
+    signature:
+      - fingerprint: B7:72:65:AB:88:7A:80:E9:8E:8C:42:58:20:06:D5:DA:7E:AD:77:41:03:9A:EB:30:D0:39:17:8A:7D:2D:FB:66
+        sources:
+          - name: F-Droid
+            issue: GH-2874
+            apk:
+              sha256: 5793cc041f1a468cb90f267a2be6a4630e4c49f55651af06ed324b2e1c594694
   - package: de.onedigital.blockchaininvestor.customer
     signature:
       - fingerprint: 75:1B:93:E6:75:49:97:6E:35:6B:E5:1F:E2:8F:CB:50:34:6E:6C:21:FC:D7:91:07:E9:DA:6B:EB:3C:EA:6B:BF
