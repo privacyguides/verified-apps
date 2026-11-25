@@ -10044,6 +10044,14 @@ packages:
             issue: GH-468
             apk:
               sha256: 5d4e1fb8d0b596d814db59465015e4ae2a57653797374c0b15fdd919afb1c871
+  - package: de.deutschlandfunk.dlfaudiothek
+    signature:
+      - fingerprint: 5B:FC:10:C5:CD:4F:74:95:AA:36:33:5C:42:8F:1C:6C:0B:F3:7E:C0:83:86:75:5D:0E:AA:02:32:8A:9C:A5:94
+        sources:
+          - name: Google Play
+            issue: GH-8037
+            apk:
+              sha256: 6f8886ced2b92c8e4feaa8d66ad975dd60e4fd2ca0afbca673ddf451a7cf2548
   - package: de.deutschlandradio.dlf24
     signature:
       - fingerprint: 57:86:23:B8:67:82:45:60:56:42:96:1F:B5:4D:F3:E1:99:A6:B5:70:6B:98:54:AC:83:B9:98:2B:A8:ED:B0:D9
