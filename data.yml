@@ -2166,6 +2166,14 @@ packages:
             issue: GH-1460
             apk:
               sha256: 55822a55d95278d3843707165f3a58ed9ffba1e5c78af6319b1a0b3415848cf4
+  - package: com.capitalweather.android.weather
+    signature:
+      - fingerprint: D7:DA:B4:C6:50:B1:FA:11:1D:E0:AF:C4:F9:2C:D6:02:E0:44:D2:97:2D:50:9B:8B:FD:E9:C7:94:A4:50:69:7A
+        sources:
+          - name: Google Play
+            issue: GH-6830
+            apk:
+              sha256: 1cef53363a502057112701fd3dad45d2d0f1813916ac6dfa9442bfdaa535131a
   - package: com.cappielloantonio.tempo
     signature:
       - fingerprint: 8E:52:6B:64:42:C1:7E:4A:D9:CB:36:54:C7:A1:FC:E3:24:5B:0C:BD:22:D9:A4:01:5C:E9:23:CE:6B:83:0E:24
