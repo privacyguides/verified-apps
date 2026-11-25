@@ -1064,6 +1064,14 @@ packages:
             issue: GH-713
             apk:
               sha256: 036e33c2e0862d526045b57f5aeb69250e96cd47435c64d45a0ae95eab4e0a64
+  - package: com.allsides
+    signature:
+      - fingerprint: 95:20:E2:BB:FF:35:7B:8C:EE:09:54:43:B2:DB:BB:06:4E:B1:57:4E:AC:82:6C:67:71:F9:B6:20:4F:6F:0F:05
+        sources:
+          - name: Google Play
+            issue: GH-6285
+            apk:
+              sha256: b0634564aa056ab65121e8522c0bcf6148558eb8018210271646b7aeed6fa7bb
   - package: com.ally.MobileBanking
     signature:
       - fingerprint: |-
