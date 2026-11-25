@@ -383,6 +383,14 @@ packages:
             issue: GH-6105
             apk:
               sha256: a268b5e68ebb80651a6eef4e93ee05dd486f56300a1b91d292c30702874b4f07
+  - package: app.sterna
+    signature:
+      - fingerprint: CF:2D:00:7F:7B:FA:44:E0:8E:20:94:3D:E4:FE:17:FB:08:73:70:7F:D7:59:D6:DB:9C:AD:B1:F4:B2:AA:ED:C4
+        sources:
+          - name: F-Droid
+            issue: GH-6852
+            apk:
+              sha256: c3ffce93fd7ca45e394ca13e20c728e5c147ddece3d99d242d195b48a3c8fed1
   - package: app.stockevents.android
     signature:
       - fingerprint: DF:5B:68:01:94:B7:55:44:A5:75:29:88:23:33:BA:C2:6F:1E:94:F9:B6:14:B4:A9:BC:AB:F3:4B:FB:C7:8D:21
