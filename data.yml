@@ -278,6 +278,14 @@ packages:
             apk:
               sha256: 751c9dd83d86f93a21bfb696fbbfd4afc1084b3f839bb2ec3a70c6b81d414bd0
               link: https://static.paralino.com/downloads/ParalinoAndroidDirect.apk
+  - package: app.podiumpodcasts.podium
+    signature:
+      - fingerprint: F4:F0:C3:D1:56:F2:85:B0:D6:6E:28:8E:43:8E:69:0B:C1:C6:97:BE:3D:BB:8F:A4:86:CE:A1:BF:C9:64:9B:8F
+        sources:
+          - name: F-Droid
+            issue: GH-2349
+            apk:
+              sha256: 2b68985e34afd1f1e4cdee239a9b9387f3f69a36c243249e5cb1c519976cbe7e
   - package: app.pwhs.blockads
     signature:
       - fingerprint: 22:9E:A4:95:84:36:0B:22:A8:C7:E7:E5:30:CF:B7:E1:10:3F:AA:1B:6B:A5:F3:28:37:69:1F:B9:6F:DC:FE:5A
