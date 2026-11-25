@@ -13809,6 +13809,14 @@ packages:
             issue: GH-1428
             apk:
               sha256: d17c55a0ae869ca51fbbc9356e718f5329762be85582af4ea0f38e0d986ca7d5
+  - package: wsj.reader_sp
+    signature:
+      - fingerprint: 23:BB:0C:D3:B5:FB:C3:FD:D4:F8:69:B2:C4:23:EF:79:EA:25:FF:7C:54:B0:6E:A2:9C:CD:49:47:2F:66:45:1F
+        sources:
+          - name: Google Play
+            issue: GH-6688
+            apk:
+              sha256: a5804fd405b1185baee293625898de342c3051362542fb6361a2ef0b2c774350
   - package: xyz.blueskyweb.app
     signature:
       - fingerprint: 40:05:8E:C6:8A:35:55:21:D0:8D:F2:49:98:CF:99:A7:14:91:33:5C:65:D7:58:85:03:9E:80:C0:25:AA:DD:FF
