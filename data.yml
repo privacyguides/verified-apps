@@ -3638,6 +3638,15 @@ packages:
     signature:
       - fingerprint: |-
           1D:47:E5:1F:53:EB:11:C3:8B:69:94:00:F5:18:BD:B6:D6:D2:7A:1D:61:CC:51:E2:A6:9E:A8:28:C3:A2:DB:E8
+          2C:32:19:6D:F9:D1:D0:03:1F:37:5C:67:4B:72:22:A6:1B:E4:54:E7:A2:D4:68:11:62:B6:AF:58:FE:00:20:39
+          77:BD:89:7C:29:73:02:03:A5:48:D5:91:A0:78:3E:08:62:6C:2A:54:BC:22:C8:0E:A4:7E:D8:86:36:97:38:0C
+        sources:
+          - name: Google Play
+            issue: GH-5890
+            apk:
+              sha256: bffd1fa32c0aef7b4ae00e33f69630b4a69bcd988c3a437b13889043afe02e6a
+      - fingerprint: |-
+          1D:47:E5:1F:53:EB:11:C3:8B:69:94:00:F5:18:BD:B6:D6:D2:7A:1D:61:CC:51:E2:A6:9E:A8:28:C3:A2:DB:E8
           77:BD:89:7C:29:73:02:03:A5:48:D5:91:A0:78:3E:08:62:6C:2A:54:BC:22:C8:0E:A4:7E:D8:86:36:97:38:0C
         sources:
           - name: Google Play
