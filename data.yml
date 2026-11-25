@@ -857,6 +857,14 @@ packages:
             issue: GH-2052
             apk:
               sha256: 99664f6478bf94ba8b1e96e0bfd8831a25f1b4d1aa2d570144e1a37bc2570c3e
+  - package: com.abnamro.nl.mobile.payments
+    signature:
+      - fingerprint: 6F:F4:B4:29:AD:FE:30:E0:0C:92:C1:FF:07:17:41:06:07:0B:79:53:68:EF:B0:A3:B4:4D:F0:91:2F:79:EF:97
+        sources:
+          - name: Google Play
+            issue: GH-8371
+            apk:
+              sha256: af6ff855b58bac60db55579a75901518ab1c2a9b67d8bd12f656b1d6115bc152
   - package: com.absa.sc.mobile.android.ui
     signature:
       - fingerprint: E0:08:7F:07:30:1B:82:DD:77:EE:37:86:CF:E3:A6:67:C6:1A:27:F9:1E:02:24:B2:31:68:A8:83:EF:E7:41:CD
