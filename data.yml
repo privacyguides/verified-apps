@@ -7402,6 +7402,14 @@ packages:
             issue: GH-2857
             apk:
               sha256: e83e19a371cf6af7c6fa3d15cf1d7f3c270ae566f52d1ee7ebb7937877687380
+  - package: de.arnowelzel.android.periodical
+    signature:
+      - fingerprint: EF:16:EF:5F:EE:58:B3:F0:96:4F:DD:69:32:70:52:4A:78:55:13:4E:B5:3C:13:D0:20:65:FF:C8:76:DB:AF:01
+        sources:
+          - name: F-Droid
+            issue: GH-2471
+            apk:
+              sha256: 2e9f2fb47c7c0d6a7433ce6ac69b94c650e107ecc66264ce3aaef70c22218be1
   - package: de.astubenbord.paperless_mobile
     signature:
       - fingerprint: 55:B1:8F:9C:A4:08:9F:BA:70:C2:E5:7C:E5:09:F2:40:B8:12:94:EF:69:1B:0D:D1:B1:9D:44:1E:57:64:02:A8
