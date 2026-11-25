@@ -4296,6 +4296,14 @@ packages:
               sha256: 8f32e518459d974b3c31860c60baf83b92e7bef1ff17d9e16c5be621ff848664
           - name: HTTPS Verified Domain
             issue: GH-2068
+  - package: com.gwitko.conduit
+    signature:
+      - fingerprint: 4E:D2:01:42:CD:62:20:59:8A:57:3D:2D:F2:92:7B:5F:23:9D:B2:62:CE:2D:6C:84:CD:AC:50:7A:A5:B3:2C:5F
+        sources:
+          - name: F-Droid
+            issue: GH-6681
+            apk:
+              sha256: 0bff6b31036b982b936051007859a804bb0c7d5913f05ae88a365188b3fbb46f
   - package: com.hardbacknutter.nevertoomanybooks
     signature:
       - fingerprint: DF:97:1C:E7:D5:8D:3C:DF:37:7C:32:E0:E2:F5:3D:65:99:BD:7F:13:0A:50:C0:52:9C:45:58:3D:DC:12:A0:08
