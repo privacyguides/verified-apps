@@ -1738,6 +1738,14 @@ packages:
               sha256: 849005d1c5560af678923560660ca49fc1d7282e3c24d3448323f2e6ba17e50f
   - package: com.apple.android.music
     signature:
+      - fingerprint: |-
+          77:1D:86:74:D3:D9:83:7C:9E:DF:11:B1:18:73:44:39:98:F1:91:05:AB:CE:CA:B4:25:ED:9B:8E:6F:EF:FF:9B
+          88:BA:59:0E:C2:E1:EA:33:C4:45:8D:AF:59:48:9F:AE:E2:CE:F2:97:A9:B4:07:1E:18:CF:82:EF:53:11:00:AA
+        sources:
+          - name: Google Play
+            issue: GH-8382
+            apk:
+              sha256: d56b8cfbda542474e77bdc3d7f7a037714e143a27107123fda824ab352541518
       - fingerprint: 88:BA:59:0E:C2:E1:EA:33:C4:45:8D:AF:59:48:9F:AE:E2:CE:F2:97:A9:B4:07:1E:18:CF:82:EF:53:11:00:AA
         sources:
           - name: Google Play
