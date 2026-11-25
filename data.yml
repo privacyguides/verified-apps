@@ -6182,6 +6182,14 @@ packages:
             issue: GH-7976
             apk:
               sha256: 528b0dce561e0cf1ba1072ff970c1d394fdb6bc3429f2e57b2fc36acc5df6071
+  - package: com.lguplus.smartotp
+    signature:
+      - fingerprint: 0F:18:FD:DF:C9:90:B2:85:79:8F:3B:EE:57:10:CC:5C:DE:9F:FD:91:3F:D6:94:2F:29:6C:46:56:C7:06:5D:8C
+        sources:
+          - name: Google Play
+            issue: CB-184
+            apk:
+              sha256: 634ab653b8dda369464d87444903e4c4cbc41a05da5f7b776a8ff4c66e163145
   - package: com.liamcottle.meshcore.android
     signature:
       - fingerprint: F9:36:C9:3F:DD:6F:57:F1:CD:F2:A7:1B:E6:16:4A:03:F2:4E:89:62:10:83:F1:74:08:32:CE:50:93:62:B4:7B
