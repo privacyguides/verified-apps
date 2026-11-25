@@ -4777,6 +4777,18 @@ packages:
             issue: GH-596
             apk:
               sha256: 1aeae599ceb630a3a7ad6846787a192f64e47bd935e755038fdcfee48e4d93f3
+  - package: com.hifnawy.caffeinate
+    signature:
+      - fingerprint: 95:0A:5B:F9:8A:6C:43:76:9D:80:0A:AC:37:1E:83:B8:A6:32:B5:5D:E9:83:49:C0:1D:C5:41:9E:90:ED:B1:AB
+        sources:
+          - name: F-Droid
+            issue: GH-7633
+            apk:
+              sha256: 3336b43a04cf7e4776449b2ae4eaa4420237f4ad1a479c31718a3dc68ad87a44
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-7633
+            apk:
+              sha256: 3336b43a04cf7e4776449b2ae4eaa4420237f4ad1a479c31718a3dc68ad87a44
   - package: com.hrd.iam
     signature:
       - fingerprint: 51:78:37:10:09:97:E4:84:59:6B:A9:5A:97:B2:B7:07:8F:30:95:68:54:41:19:C9:02:EF:C0:BC:F8:45:DE:58
