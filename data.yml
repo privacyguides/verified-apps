@@ -10443,6 +10443,14 @@ packages:
             issue: CB-51
             apk:
               sha256: 1651df0d655e26dc19bcbf2ed09424976f5c0bb9bcef28fb1d352b3eea379667
+  - package: org.jshobbysoft.cameraalign
+    signature:
+      - fingerprint: 0A:54:7B:FD:35:F8:A3:A6:AF:B4:D9:46:F3:DE:23:5E:46:46:79:18:47:EC:31:3A:07:55:29:FD:73:3F:06:61
+        sources:
+          - name: F-Droid
+            issue: GH-1910
+            apk:
+              sha256: e7d13b4507e0697ece0e421f1220d44327c061d83ee03ad6519da4d9a5a94918
   - package: org.jw.jwlibrary.mobile
     signature:
       - fingerprint: 7E:A7:4C:8E:1E:69:F2:35:D6:0A:23:F2:91:7A:4E:C1:9A:0D:1C:BC:73:EB:E4:67:0C:2C:E1:BA:E1:01:4E:5D
