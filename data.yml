@@ -9190,6 +9190,14 @@ packages:
             issue: GH-2477
             apk:
               sha256: 480621da7c870831cbc4ad4876b4ccb8400014c105a8f8ac48b7a7c30b03f750
+  - package: io.keepalive.lite.android
+    signature:
+      - fingerprint: C4:55:67:B7:12:D6:FD:79:79:DF:14:F6:6F:8A:5C:25:85:9E:E2:23:E1:F0:7E:91:5A:7E:EE:20:1C:14:BA:EF
+        sources:
+          - name: F-Droid
+            issue: GH-2478
+            apk:
+              sha256: 87ea4bda74115afe7117079e3f6bd38cf303a69050d38bab6ec6246bbfd392dd
   - package: io.raindrop.raindropio
     signature:
       - fingerprint: DD:D7:5C:66:57:86:54:D0:85:42:48:04:CB:27:C7:B6:E0:4F:D3:66:16:04:5B:FE:E1:40:D9:75:6F:FC:A5:63
