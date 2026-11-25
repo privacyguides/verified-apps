@@ -1175,6 +1175,14 @@ packages:
             issue: GH-344
             apk:
               sha256: 7c7bf3b66ebc0495be9e35103e9e2c04b5e07edc999412b80aee9aadef69f66c
+  - package: com.airforce.aimhighapp
+    signature:
+      - fingerprint: 31:1E:C1:78:AA:AB:95:0E:F9:60:C2:37:89:C8:65:86:33:66:42:1B:46:1C:2A:28:DC:8E:9C:00:CB:CA:E5:13
+        sources:
+          - name: Google Play
+            issue: GH-7843
+            apk:
+              sha256: e045d189f3739d1ec84e0974fc6153c09202e68d2bbe22618479b677e546bff5
   - package: com.airfrance.android.dinamoprd
     signature:
       - fingerprint: |-
