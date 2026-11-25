@@ -9733,6 +9733,18 @@ packages:
             issue: CB-166
             apk:
               sha256: 406600311c6288401a3bad1cfbffae6cb2d059586c15f4e47eb99c1b3fc94595
+  - package: de.hbch.traewelling
+    signature:
+      - fingerprint: 98:9F:B4:F3:87:A7:EA:95:F5:64:05:84:1B:BA:E8:AF:0C:14:DD:FF:04:62:A1:C9:19:D9:11:99:44:B2:0E:FC
+        sources:
+          - name: F-Droid
+            issue: GH-7840
+            apk:
+              sha256: f9442678344ceba9207fc2487a27de0edb3d5994ffab21944b306c885e6c2121
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-7840
+            apk:
+              sha256: d18384e97c866c2a7520f71af0bbcac963f7ecbad8a4172fb101c7d22834f913
   - package: de.heise.android.ch.magazin
     signature:
       - fingerprint: 07:10:F4:BB:4F:FB:8A:11:C3:9E:B5:3A:AA:4E:91:F8:8E:97:9F:6F:7B:BF:CB:0C:E7:B1:36:2A:D0:96:DA:3B
