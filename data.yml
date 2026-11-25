@@ -2325,6 +2325,12 @@ packages:
             issue: GH-800
             apk:
               sha256: 7f4e8fc087031cf7058d4066f3ba24406f559a2d3da5fa0f9f99dc45e88d96c2
+      - fingerprint: 63:D5:B7:4D:60:F0:A8:38:64:A8:E9:39:8C:2D:E8:7A:30:8F:22:A8:06:45:70:7B:83:15:D1:5E:7F:28:6E:E0
+        sources:
+          - name: F-Droid
+            issue: GH-6032
+            apk:
+              sha256: 5b8f5b35eda6cd0a1968f42878021ffebc07e0bd1af8b5ef5e5e8dc0e388899b
   - package: com.darkempire78.opencalculator
     signature:
       - fingerprint: 21:05:0F:D6:D3:67:98:D9:75:8B:6C:A5:20:2A:EB:50:A5:BB:BD:C7:56:14:1D:94:E3:6F:6C:8C:16:8C:09:59
