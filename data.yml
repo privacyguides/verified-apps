@@ -8656,6 +8656,14 @@ packages:
             issue: GH-951
             apk:
               sha256: 5da786e1703628dbd401949fc24931450bd1b4ca83284810705771f7da2cb650
+  - package: com.ubnt.usurvey
+    signature:
+      - fingerprint: 0B:B2:49:1A:67:F9:C1:AE:9D:3A:28:CE:34:BF:3E:AB:86:B5:7E:74:9F:66:20:25:54:25:9E:2D:C7:8C:3C:F9
+        sources:
+          - name: Google Play
+            issue: GH-7954
+            apk:
+              sha256: 17a4dc300b16d4bd7b1f38faed09462752901078e207f184ba1b8da0cf46e8c3
   - package: com.unciv.app
     signature:
       - fingerprint: 7D:6E:6B:EA:76:81:61:C3:D8:DA:8B:3F:B0:0D:EF:53:77:EF:FE:65:DC:72:68:48:2F:8F:77:9B:B4:FC:6E:2E
