@@ -9253,6 +9253,14 @@ packages:
             issue: GH-1062
             apk:
               sha256: 88b5506f3e33fa018b8859ac602cf1e31c212144adb3a0a198efa3928ab1dbf7
+  - package: com.withings.wiscale2
+    signature:
+      - fingerprint: 43:3F:EF:06:8B:D8:DD:4F:03:DF:43:18:E4:D7:1B:38:81:2F:55:99:25:33:E7:C5:53:95:8B:1A:37:BE:C4:D0
+        sources:
+          - name: Google Play
+            issue: GH-7952
+            apk:
+              sha256: 9578c12e36f9e362518d06e32fa4df3ee5c67128d607daba31f3763c37ae2a30
   - package: com.wizards.mtga
     signature:
       - fingerprint: F3:1D:80:83:6A:33:E7:2A:37:82:B0:FE:0A:91:64:30:4C:25:61:AC:B0:78:97:15:38:90:E9:BB:44:52:A4:61
