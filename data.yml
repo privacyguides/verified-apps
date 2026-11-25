@@ -5308,6 +5308,18 @@ packages:
             issue: GH-2508
             apk:
               sha256: 341711b0357998bf7808fc2999798000b50dfbfb3d981ae74758749c5f32dd11
+  - package: com.opennotes
+    signature:
+      - fingerprint: 73:C5:1F:64:F5:96:9F:1F:E9:CB:AF:4E:DE:A2:14:9B:DD:5B:19:C9:38:50:0D:C2:34:A3:B0:CB:20:29:51:DC
+        sources:
+          - name: F-Droid
+            issue: GH-5708
+            apk:
+              sha256: 760a06cce88a1da588715b09ef5407937fc91e8191e50f8612f23b29be1c3180
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-5708
+            apk:
+              sha256: 760a06cce88a1da588715b09ef5407937fc91e8191e50f8612f23b29be1c3180
   - package: com.orange.mobinilandme
     signature:
       - fingerprint: |-
