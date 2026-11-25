@@ -1487,6 +1487,14 @@ packages:
             issue: GH-2738
             apk:
               sha256: b15ac4ba3d93dee13409216d839df832be83d3a72d843ad73191aa807e3749c9
+  - package: com.audible.application
+    signature:
+      - fingerprint: 57:90:1D:5C:9F:67:44:F2:86:36:F9:8F:68:AE:5A:32:48:57:1C:0E:F6:10:47:0C:09:B0:8B:34:B6:B3:A8:0F
+        sources:
+          - name: Google Play
+            issue: GH-6326
+            apk:
+              sha256: a06ce45027fef50b9193c9f9100c0070febeac5f206f2d7840bb60f55d70b7a2
   - package: com.audiobookshelf.app
     signature:
       - fingerprint: 36:48:29:26:56:96:6C:63:D1:B5:7D:93:EA:00:E3:5C:7D:97:51:1E:1F:5B:06:78:A7:17:DA:E7:73:79:39:56
