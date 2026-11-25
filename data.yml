@@ -6572,6 +6572,14 @@ packages:
             issue: GH-832
             apk:
               sha256: acd7513ba9b70ac314d620c14b989995a04f461094753708a10fa528f8dd79f7
+  - package: com.samsung.a100hz
+    signature:
+      - fingerprint: 09:87:0A:35:F5:05:C1:BD:DD:79:F8:74:8B:7C:C8:77:C1:0D:71:99:EA:10:52:06:09:D1:39:3F:79:E9:BA:7C
+        sources:
+          - name: Google Play
+            issue: GH-6575
+            apk:
+              sha256: 5b7479f44256cbe3a8a757149a8087d0c2779914547869225079d1443bc3379f
   - package: com.samsung.accessory.atticmgr
     signature:
       - fingerprint: 34:DF:0E:7A:9F:1C:F1:89:2E:45:C0:56:B4:97:3C:D8:1C:CF:14:8A:40:50:D1:1A:EA:4A:C5:A6:5F:90:0A:42
