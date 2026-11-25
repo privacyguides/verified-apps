@@ -4517,6 +4517,14 @@ packages:
             issue: GH-5972
             apk:
               sha256: 8695cc42ed3123468cba31b682ca671afda0a3d64fd231882a4c9f4be7fe8436
+  - package: com.goodwy.dialer
+    signature:
+      - fingerprint: DD:68:8C:89:2E:3F:8C:A0:C8:C5:D0:B8:60:63:66:EF:E7:83:C9:27:27:AD:F1:76:84:54:A7:A0:76:AC:5F:C9
+        sources:
+          - name: Google Play
+            issue: GH-8238
+            apk:
+              sha256: f506cdeb137af05d5a98cd0aacf63556857e604b5fa7bca712de94869eb1ec9b
   - package: com.google.ai.edge.gallery
     signature:
       - fingerprint: B3:3F:19:26:A5:4C:12:AB:CD:5B:85:4E:CB:59:16:29:38:55:AB:C2:58:0E:CB:6E:06:6C:14:D9:24:14:13:CE
