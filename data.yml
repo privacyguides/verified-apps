@@ -2473,6 +2473,14 @@ packages:
         sources:
           - name: Developer's Website
             issue: GH-424
+  - package: com.espruino.gadgetbridge.banglejs
+    signature:
+      - fingerprint: 01:CC:E9:31:6F:CB:77:EA:02:C6:DE:A8:1F:DE:9F:31:76:46:92:02:C0:CE:A0:51:4C:0E:03:CB:96:9B:C7:BE
+        sources:
+          - name: F-Droid
+            issue: GH-1809
+            apk:
+              sha256: cff995c21caf94158e378a0661734574536160a4813eb2d5d8d3d912fbc56ed0
   - package: com.eurostar.androidapp
     signature:
       - fingerprint: F1:0B:41:49:CC:5A:9C:ED:83:02:93:E3:3A:8D:A7:D8:96:47:79:CB:65:28:F9:6C:7E:CC:79:AA:D6:CB:40:52
