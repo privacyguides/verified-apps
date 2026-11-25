@@ -7395,6 +7395,14 @@ packages:
             issue: CB-166
             apk:
               sha256: 406600311c6288401a3bad1cfbffae6cb2d059586c15f4e47eb99c1b3fc94595
+  - package: de.indie42.guessiron
+    signature:
+      - fingerprint: 4F:00:A2:EF:3A:49:69:96:98:64:F8:9F:59:AF:BB:B8:6E:12:F6:0A:7D:15:01:42:00:1A:10:01:AB:8A:29:FD
+        sources:
+          - name: F-Droid
+            issue: GH-1922
+            apk:
+              sha256: 60d0106db5c7adc376912c4a566253b710f091b31cf65cc0b6e6236f9b73ab47
   - package: de.ingdiba.bankingapp
     signature:
       - fingerprint: CB:74:26:85:E4:8B:8F:F9:59:64:A6:81:39:AB:16:43:91:A1:6C:F2:A4:54:39:BA:59:8E:C0:BF:CB:0E:FB:FC
