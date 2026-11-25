@@ -2273,6 +2273,18 @@ packages:
             issue: GH-6335
             apk:
               sha256: a031ea4897fb3f9dcba370eb553e46468643b049624eca9c0769683628761666
+  - package: com.chmouel.liseur
+    signature:
+      - fingerprint: 39:4E:04:13:02:44:51:B8:78:2C:49:2F:EE:20:3F:94:70:87:1E:63:D6:E4:10:88:E4:2A:F3:F7:C6:65:0A:94
+        sources:
+          - name: F-Droid
+            issue: GH-6601
+            apk:
+              sha256: fb2f59743800049a2c2cb34df3836c75e63b4a6077c7a255e89f9d3f990175c0
+          - name: Google Play
+            issue: GH-6601
+            apk:
+              sha256: 2161cfce3e36a47f94874a0ec1d1ec8b0de8f95779f73a185f90fa13137bb543
   - package: com.cisco.wx2.android
     signature:
       - fingerprint: B0:78:4C:13:1B:03:08:6D:A3:76:D3:23:0E:9C:F8:4B:39:AE:E7:69:70:9F:FB:56:2C:3B:A6:CD:BC:86:9B:8D
