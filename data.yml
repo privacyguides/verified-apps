@@ -8544,6 +8544,16 @@ packages:
             issue: GH-5743
             apk:
               sha256: e5425fa146c254c59856b8a64c129fdb95fcf8249c4958b9ec73fedf0d0d4d5c
+  - package: com.vanguard
+    signature:
+      - fingerprint: A8:4F:AD:5E:DC:57:E4:31:41:89:AC:64:CC:AA:04:B4:4E:8D:A7:68:46:8C:A2:93:9B:CD:C2:15:DF:AE:3C:F7
+        sources:
+          - name: Google Play
+            issue: GH-7652
+            apk:
+              sha256: f34a725c497cb341653ddb3f8f7bd6fe7d1fd9c5981e070a8f62da9eca81e53d
+          - name: HTTPS Verified Domain
+            issue: GH-7652
   - package: com.vayunmathur.findfamily
     signature:
       - fingerprint: 17:6F:CB:25:25:57:3E:5B:E8:E1:CB:3A:49:6D:D9:7B:13:7E:81:CA:5B:88:7A:1D:32:CB:89:4B:4E:57:17:B4
