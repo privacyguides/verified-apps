@@ -6041,6 +6041,14 @@ packages:
             issue: GH-6912
             apk:
               sha256: 46d628e7e1e6a1a1597ea4157fbc1f65e88afeb0d0ef31c9375cc893b8630d43
+  - package: com.nhn.android.band
+    signature:
+      - fingerprint: 0B:8B:85:23:BB:4A:EF:FA:34:6E:4B:DD:4F:BF:7D:19:34:50:56:9A:A1:4A:AA:D4:AD:FD:94:A3:F7:B2:27:BB
+        sources:
+          - name: Google Play
+            issue: GH-7482
+            apk:
+              sha256: cd3f21b9c0e828cf55aced9919131abc33273e9f79d38d431d02e8a091cdebc6
   - package: com.nhn.android.nmap
     signature:
       - fingerprint: 0B:8B:85:23:BB:4A:EF:FA:34:6E:4B:DD:4F:BF:7D:19:34:50:56:9A:A1:4A:AA:D4:AD:FD:94:A3:F7:B2:27:BB
