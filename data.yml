@@ -2664,6 +2664,14 @@ packages:
             apk:
               sha256: 486d5ca96d603fa134c8626b6953b8de90aca9a4eabf872b43c663b8d351922d
               link: https://github.com/sakusaku3939/DeepLAndroid/releases/download/v9.4/DeepLAndroid.apk
+  - package: com.example.trigger
+    signature:
+      - fingerprint: E7:44:5C:91:8E:52:D4:6A:CC:02:40:15:8E:F7:8E:F8:8C:1A:07:F2:6E:C0:D3:0B:80:0E:18:B6:05:62:0F:DC
+        sources:
+          - name: F-Droid
+            issue: GH-2920
+            apk:
+              sha256: 9c336bd133db0743ac065b20a358a5df42a9591c39a15a7977e657c0326b35e2
   - package: com.expedia.bookings
     signature:
       - fingerprint: 8E:41:EC:3B:8E:F3:18:5B:BB:FE:D4:21:27:11:7C:E6:0B:3D:A4:1C:4B:49:B7:E2:99:CD:31:23:73:41:EE:6B
