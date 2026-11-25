@@ -14215,6 +14215,14 @@ packages:
             issue: GH-6895
             apk:
               sha256: d88e9c4932ef596301dd7d6a5e07c5608cacd93fe48a130bf3fa5544c459f264
+  - package: nl.rabomobiel
+    signature:
+      - fingerprint: 7B:44:35:77:DE:0E:CE:60:36:2A:5A:DD:CE:38:31:AC:08:13:93:9D:E0:FD:2B:6F:3F:60:01:10:3B:BB:14:F1
+        sources:
+          - name: Google Play
+            issue: GH-8410
+            apk:
+              sha256: a80eeb0b2b8848c659f0d3efc381bc92b113107a884f7f6fdbbf878d5adc8f4c
   - package: nl.rijksoverheid.digid.pub
     signature:
       - fingerprint: 3B:90:85:EB:09:26:B0:11:1D:4E:62:2D:5A:5F:81:9F:6F:55:30:F4:F8:F7:84:9E:05:94:B2:CD:3C:AF:F1:7A
