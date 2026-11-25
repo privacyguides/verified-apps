@@ -446,6 +446,16 @@ domains:
       - package: com.innersloth.spacemafia
         fingerprints:
           - 67:A4:DF:80:B1:D9:A4:88:FF:DB:10:07:54:84:1F:D8:3F:90:9C:7C:73:DF:16:E2:46:8C:EC:75:AB:81:C5:8A
+  - domain: instagram.com
+    method: https
+    issue:
+      - GH-8024
+    checked: "2026-11-25T10:14:49Z"
+    packages:
+      - package: com.instagram.android
+        fingerprints:
+          - 3A:10:C5:0C:18:BA:93:75:06:C2:87:5E:90:47:BE:74:F8:FD:8B:86:FA:E2:FF:9F:EA:A5:0A:81:FC:B4:C0:14
+          - 5F:3E:50:F4:35:58:3C:9A:E6:26:30:2A:71:F7:34:00:44:08:7A:7E:2C:60:AD:AC:FC:25:42:05:A9:93:E3:05
   - domain: keyholm.app
     method: https
     issue:

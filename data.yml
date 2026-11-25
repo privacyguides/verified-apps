@@ -5216,6 +5216,18 @@ packages:
             issue: GH-2295
             apk:
               sha256: f9711523fb04d6d5e6b7848dd6004879a52bd24df99b124003d517a6aeceb728
+  - package: com.instagram.android
+    signature:
+      - fingerprint: |-
+          3A:10:C5:0C:18:BA:93:75:06:C2:87:5E:90:47:BE:74:F8:FD:8B:86:FA:E2:FF:9F:EA:A5:0A:81:FC:B4:C0:14
+          5F:3E:50:F4:35:58:3C:9A:E6:26:30:2A:71:F7:34:00:44:08:7A:7E:2C:60:AD:AC:FC:25:42:05:A9:93:E3:05
+        sources:
+          - name: Google Play
+            issue: GH-8024
+            apk:
+              sha256: ebc047db5a1b9546022189bf279b88b836b8e64428143342a8dc82ec4197820f
+          - name: HTTPS Verified Domain
+            issue: GH-8024
   - package: com.instagram.barcelona
     signature:
       - fingerprint: |-
