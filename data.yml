@@ -538,6 +538,14 @@ packages:
             issue: GH-2187
             apk:
               sha256: 8993db30e8cca12e6438bc5f7aaa1e7f2dd85f876401fb4f22db53e81580e3a3
+  - package: br.jus.tse.eleitoral.etitulo
+    signature:
+      - fingerprint: 9C:0F:13:0A:01:B7:8D:50:C1:DC:EE:55:BC:CB:49:3C:69:1A:85:75:3E:DB:11:01:7E:41:6D:0C:EC:32:C3:8C
+        sources:
+          - name: Google Play
+            issue: GH-6572
+            apk:
+              sha256: 38ac3165b2d93bd79723c0e43b6e543348676cbe8189ac91f0f60850df23b663
   - package: btools.routingapp
     signature:
       - fingerprint: D1:9E:79:3B:A6:9A:73:6A:A6:ED:88:0B:DC:48:C8:31:FA:0B:58:0E:ED:D9:59:D0:49:75:6D:3B:BE:58:7D:43
