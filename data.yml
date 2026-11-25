@@ -9683,6 +9683,14 @@ packages:
             issue: GH-2030
             apk:
               sha256: 26345267697e867e41c8392b665d4f4dd0bef8341f27a0c41d527ba2326f1e22
+  - package: de.codingbrain.sharezone
+    signature:
+      - fingerprint: F2:7D:E4:D5:90:A2:22:8F:C5:BD:56:8B:83:AE:E1:63:57:5E:5F:CF:01:EA:D4:8C:E5:3B:7B:89:06:BB:8A:51
+        sources:
+          - name: Google Play
+            issue: GH-7962
+            apk:
+              sha256: 94c544f6854e45c60777bd6253c20169a5cc1facdb58e51844217886686ae3a4
   - package: de.commerzbanking.mobil
     signature:
       - fingerprint: F0:95:66:8A:4F:CC:79:C2:15:3E:15:42:8B:7C:0E:CC:FB:65:4F:5F:D3:B3:66:BD:4E:E0:7E:67:E8:1B:50:94
