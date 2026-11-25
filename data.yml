@@ -5991,6 +5991,14 @@ packages:
             issue: GH-664
             apk:
               sha256: d1273746f03733ea2a410f2ac97b02039330e80033e77a5a79d359abc8c6b48e
+  - package: com.mercadolibre
+    signature:
+      - fingerprint: 0E:42:F7:62:15:23:31:B5:57:53:2C:E6:BA:C7:C4:51:18:52:1D:46:C6:A0:D5:FC:F4:76:DD:BB:BB:BB:9F:22
+        sources:
+          - name: Google Play
+            issue: GH-8001
+            apk:
+              sha256: 3e4557a93cca518b23e310c86b822bc3f6ec0028e4898564d5a03408b9dc19ac
   - package: com.meross.meross
     signature:
       - fingerprint: 7E:98:AF:18:6A:25:D0:1D:30:59:B7:8D:24:4C:21:7D:92:81:28:93:79:9C:F9:C4:20:EA:04:F0:6A:C8:BA:7A
