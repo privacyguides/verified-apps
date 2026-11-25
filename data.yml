@@ -4649,6 +4649,16 @@ packages:
             issue: GH-2295
             apk:
               sha256: f9711523fb04d6d5e6b7848dd6004879a52bd24df99b124003d517a6aeceb728
+  - package: com.instagram.barcelona
+    signature:
+      - fingerprint: |-
+          53:67:57:0B:AD:48:8D:8D:A6:A0:FA:B7:8D:97:66:A1:A4:C2:3C:3C:70:FA:C0:AD:2E:91:C8:F0:BD:58:B4:32
+          8F:38:DA:6B:4D:C3:4B:19:00:35:3B:DE:46:30:04:31:98:CB:E3:EF:72:14:15:1F:86:67:9C:D0:00:C9:05:00
+        sources:
+          - name: Google Play
+            issue: GH-6947
+            apk:
+              sha256: 0d877b4474d53d186a3ec9c2911a7e981edff201c537b56ce41c07e7b574f0d0
   - package: com.iotsolution.aidot
     signature:
       - fingerprint: E5:75:72:FF:FD:11:D2:C2:92:EA:4E:25:7F:59:66:79:C8:50:3C:5D:B5:A1:E3:DD:41:A5:2E:75:BB:28:01:E5
