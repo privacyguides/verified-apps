@@ -611,6 +611,16 @@ domains:
           - 3C:52:C4:FD:3C:AD:1C:07:C9:B0:0A:70:80:E3:58:FA:B9:FE:FC:B8:AF:5A:EC:14:77:65:F1:6D:0F:21:AD:85
           - 5E:3E:DC:C2:00:FB:A8:D5:F4:88:F3:CA:4C:32:5B:05:78:C5:6A:9C:03:A1:CC:B5:92:9C:D7:5C:7E:57:E2:4D
           - AE:C1:95:DC:FD:46:14:BD:3A:91:EC:26:D1:D5:14:C8:75:71:C5:CC:8D:CF:48:08:3F:92:83:14:3C:A2:B9:A6
+  - domain: soundcloud.com
+    method: https
+    issue:
+      - GH-5773
+    checked: "2026-11-25T06:54:46Z"
+    packages:
+      - package: com.soundcloud.android
+        fingerprints:
+          - AF:F9:30:D6:71:FA:0A:57:B8:C4:1D:16:78:CC:2A:8E:A7:17:07:5A:74:E3:46:94:2A:14:0A:FA:44:13:39:D2
+          - C7:85:F3:ED:59:35:36:6B:3E:FA:10:EF:37:F2:B8:81:DC:F4:AB:53:02:B1:13:50:B9:C1:9A:83:A1:E1:47:34
   - domain: spotify.com
     method: https
     issue:

@@ -6376,6 +6376,16 @@ packages:
             issue: CB-8
             apk:
               sha256: a2dd80e8e08c996392382c9d0acdd1092ebc6c960c518c3da793fd773d3e67a4
+  - package: com.soundcloud.android
+    signature:
+      - fingerprint: AF:F9:30:D6:71:FA:0A:57:B8:C4:1D:16:78:CC:2A:8E:A7:17:07:5A:74:E3:46:94:2A:14:0A:FA:44:13:39:D2
+        sources:
+          - name: Google Play
+            issue: GH-5773
+            apk:
+              sha256: 4ca959b8c7ac9d792bf73293a8bc4ca60cf39d229ee59368bca64768ebb2ab69
+          - name: HTTPS Verified Domain
+            issue: GH-5773
   - package: com.spotify.music
     signature:
       - fingerprint: 65:05:B1:81:93:33:44:F9:38:93:D5:86:E3:99:B9:46:16:18:3F:04:34:9C:B5:72:A9:E8:1A:33:35:E2:8F:FD
