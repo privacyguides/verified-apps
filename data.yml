@@ -10392,6 +10392,14 @@ packages:
             issue: GH-1412
             apk:
               sha256: cca674ba96e065d3ed9290c0b9478c8e2b7e57d1685610cee19e6272d8c26148
+  - package: io.dashchan2
+    signature:
+      - fingerprint: A9:FB:AC:6C:49:8F:7A:D8:E7:C5:68:49:AF:E4:38:81:96:6B:ED:2E:D2:BC:1D:D1:C7:3D:0F:FE:0B:9E:BE:BA
+        sources:
+          - name: F-Droid
+            issue: GH-6788
+            apk:
+              sha256: 4403e2d75d707b8a5a90f8d719d3234413ae6bbee97a03b24a46b98ed3b523de
   - package: io.element.android.x
     signature:
       - fingerprint: 6A:2F:DC:31:48:04:9C:E0:D5:C6:E8:50:10:72:3B:83:FB:20:7D:20:C7:47:7F:5C:22:AC:53:C8:77:E9:2D:47
