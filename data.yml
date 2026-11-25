@@ -12348,6 +12348,14 @@ packages:
             issue: GH-5747
             apk:
               sha256: 30327c130ede3c88d00e6ac4ce54841a752b6a05b406dd6500babac27020641c
+  - package: ru.beru.android
+    signature:
+      - fingerprint: AC:A4:05:DE:D8:B2:5C:B2:E8:C6:DA:69:42:5D:2B:43:07:D0:87:C1:27:6F:C0:6A:D5:94:27:31:CC:C5:1D:BA
+        sources:
+          - name: Google Play
+            issue: GH-5759
+            apk:
+              sha256: 6038eddf7a2e24cd68d81757b790e6d88c62b585873ba7ee9884f3c5aa13017f
   - package: ru.tech.imageresizershrinker
     signature:
       - fingerprint: 20:C1:FA:01:28:41:42:36:06:AB:C9:C9:2E:1F:92:DB:98:23:3C:3C:1D:AA:52:E3:38:BD:82:8B:FB:FD:F6:27
