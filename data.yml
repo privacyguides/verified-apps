@@ -2566,6 +2566,14 @@ packages:
               sha256: 6ebe5c150cadcc255e497af7fa162ca1d1930f4942ad60e8aea515314ed59d02
           - name: HTTPS Verified Domain
             issue: GH-2446
+  - package: com.faltenreich.diaguard
+    signature:
+      - fingerprint: 6F:67:B5:55:A0:FA:64:C4:F0:F1:6C:85:FA:57:96:E4:07:E9:F9:97:7D:B3:54:06:E6:2E:0F:42:34:60:45:CD
+        sources:
+          - name: F-Droid
+            issue: GH-2020
+            apk:
+              sha256: fbb657f157a6701c7b05627b4568310491fc58d5140febe41de3cf9196830039
   - package: com.farcaster.mobile
     signature:
       - fingerprint: |-
