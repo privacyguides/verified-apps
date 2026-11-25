@@ -938,6 +938,12 @@ packages:
               sha256: 8ad600f2ad835ffd3502819c3925c7aa7444d53240102f76950a1231f1c0bbdd
   - package: com.amaze.filemanager
     signature:
+      - fingerprint: 4D:86:AD:78:C7:1D:7D:9A:C2:C6:4B:93:B5:48:B8:A6:FA:7F:DF:68:3C:ED:02:37:31:78:2D:8D:CF:A7:D6:BC
+        sources:
+          - name: F-Droid
+            issue: GH-2014
+            apk:
+              sha256: 627b8cd6a5f750dc8315ebb0fadeddfea8ff76700922049d4dbf0ca22f3397fd
       - fingerprint: AF:F6:56:D7:CA:84:D7:12:54:D2:72:C5:5F:B4:20:ED:F1:72:B2:54:9D:E1:4F:5C:CE:FD:5A:82:52:8D:F5:54
         sources:
           - name: F-Droid (IzzyOnDroid)
