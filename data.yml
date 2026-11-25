@@ -10548,6 +10548,14 @@ packages:
             issue: CB-78
             apk:
               sha256: abdbdf7e01fb94db37745e12b56098aea8237e634ee77954194ce11b947f61e0
+  - package: gmikhail.colorpicker
+    signature:
+      - fingerprint: CB:70:F2:C7:56:D0:E3:82:DD:D1:08:2C:58:FB:75:3D:F5:11:22:4D:EF:5F:69:FA:FD:9D:B0:71:87:A5:75:CB
+        sources:
+          - name: Google Play
+            issue: GH-7093
+            apk:
+              sha256: af3d54e83c30cb060dd3d7d4ec225be9b408a56a405a98ec015273036f4a3ea1
   - package: godau.fynn.moodledirect
     signature:
       - fingerprint: 98:04:47:4A:F0:8E:AB:48:D5:11:0C:91:3B:53:EB:B2:D3:F4:5B:97:97:6D:28:72:E3:38:57:D7:28:47:24:09
