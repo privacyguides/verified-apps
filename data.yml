@@ -11433,6 +11433,14 @@ packages:
             issue: GH-1412
             apk:
               sha256: cca674ba96e065d3ed9290c0b9478c8e2b7e57d1685610cee19e6272d8c26148
+  - package: io.cardijey.schulrechner
+    signature:
+      - fingerprint: 68:AB:65:2B:4D:4F:AB:1A:68:90:CC:B4:49:B1:F7:9E:6C:6C:B0:A0:81:07:CB:43:6A:25:90:38:18:76:50:98
+        sources:
+          - name: F-Droid
+            issue: GH-7860
+            apk:
+              sha256: bb05221904723b7c1fc5f0f8cd6645231fddfc42ba64c12815b0b418a1d62e22
   - package: io.dashchan2
     signature:
       - fingerprint: A9:FB:AC:6C:49:8F:7A:D8:E7:C5:68:49:AF:E4:38:81:96:6B:ED:2E:D2:BC:1D:D1:C7:3D:0F:FE:0B:9E:BE:BA
