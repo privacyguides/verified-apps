@@ -6266,6 +6266,14 @@ packages:
             issue: GH-2447
             apk:
               sha256: 03fe158eb59441f048bf7c38d66cef3aac270d75704fc2ad58d2ec8342d122ef
+  - package: com.mossapps.flick
+    signature:
+      - fingerprint: AA:6B:04:B6:D8:6F:F4:45:15:25:39:7B:3D:11:3F:8A:5D:E8:90:CB:69:FC:22:A4:B3:A4:FD:3A:FE:CA:F0:DA
+        sources:
+          - name: Google Play
+            issue: GH-7998
+            apk:
+              sha256: 8e3fbc8a2b5aac539bb980f393d962f2cad30c77a038b16a980bbafeac44eaef
   - package: com.mosync.app_Banco_Galicia
     signature:
       - fingerprint: |-
