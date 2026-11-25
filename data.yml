@@ -2947,6 +2947,14 @@ packages:
             issue: GH-1232
             apk:
               sha256: 3f90d02bde588865039b297ea0c2cdb2072786024865cb0a95e96ad6206ac5ee
+  - package: com.github.mikulash.shareasqr
+    signature:
+      - fingerprint: D1:51:57:BF:F0:B0:CC:43:6A:D4:1B:BA:05:47:7D:C8:34:7D:8E:C6:99:54:1A:D6:8F:EC:38:1A:25:98:7B:49
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1600
+            apk:
+              sha256: 96bc34f8a4ed2271a0161a56e6b766642da81132a0258f6b15d59c60ed524f07
   - package: com.github.muellerma.coffee
     signature:
       - fingerprint: 70:B1:60:C0:F6:57:4E:BE:9F:FE:B0:F3:AE:93:48:71:41:52:22:4A:BE:7D:DC:48:1C:CB:84:3E:84:F6:99:12
