@@ -5746,6 +5746,14 @@ packages:
             issue: GH-7965
             apk:
               sha256: 3b57940427363d148642c4abc15cd5f7e6bde35e7679988689b087b94a2fdef3
+  - package: com.jordanadema.nebula
+    signature:
+      - fingerprint: 87:8E:C6:CE:E2:15:25:48:2B:D8:80:C9:7B:DE:14:E1:BE:71:A2:7D:58:15:02:F7:32:64:57:DA:F6:69:36:39
+        sources:
+          - name: F-Droid
+            issue: GH-2922
+            apk:
+              sha256: 923d783c5d3b476ad92b4dfb16bb7a45081bb1d4fad1fb9131afcd7276a169c2
   - package: com.jrustonapps.myauroraforecast
     signature:
       - fingerprint: 95:F5:5A:84:0F:1A:F3:40:08:FB:E4:A0:76:D5:6C:F9:39:C2:9E:59:E6:48:CC:FF:5E:2E:1A:CB:F7:2D:27:C6
