@@ -5865,6 +5865,14 @@ packages:
               sha256: 40d192e0becb2e2d9a6f4ad9d984d9eb1fe40a5f24718f43953f73dbd2211f09
           - name: HTTPS Verified Domain
             issue: GH-2332
+  - package: com.resurrect.grove
+    signature:
+      - fingerprint: 95:A2:45:C1:FE:96:A0:28:A3:7D:0C:F5:EF:3A:FE:BB:76:57:95:71:2D:C2:2E:9D:6C:30:BF:FE:E5:FA:80:BD
+        sources:
+          - name: F-Droid
+            issue: GH-5857
+            apk:
+              sha256: f5a3110366eeed7d926586fa1f84336ceffbd693d3ebfce22c1f170fa9173b5e
   - package: com.retroarch
     signature:
       - fingerprint: D7:A5:EA:B3:09:02:C9:B2:77:5A:F6:FB:4E:AC:2D:29:4A:64:63:4F:B4:7D:D1:38:2B:C3:AC:5B:F6:69:98:2E
