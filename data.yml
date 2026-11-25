@@ -1245,6 +1245,14 @@ packages:
             issue: GH-2013
             apk:
               sha256: 14d8980122f99154ac5d3ef9f14c5fea07e00f38d9392de6e60e0fc82914315a
+  - package: com.ajaxsystems
+    signature:
+      - fingerprint: 6D:37:B1:AB:D4:DC:91:2A:A7:83:FE:55:73:A0:DE:E8:20:DD:79:57:D0:9C:C4:B3:1F:C1:D2:BC:54:DD:EE:5A
+        sources:
+          - name: Google Play
+            issue: GH-7907
+            apk:
+              sha256: 6e4d6510c35b3d642e0259ab74b832ef11b9f68a6526df22c0b3c89299c197b8
   - package: com.akylas.documentscanner
     signature:
       - fingerprint: 0D:10:AA:10:E0:3A:7E:76:97:22:BE:43:88:BE:63:BD:15:7A:7B:7B:F1:96:FB:3C:EB:AB:87:37:F9:6C:A8:71
