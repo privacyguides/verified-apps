@@ -8841,6 +8841,14 @@ packages:
             issue: GH-2804
             apk:
               sha256: 28cac8592eeda156b2c343d83daba87ed4deab9109e2365225b6f51371d95d80
+  - package: fr.free.nrw.commons
+    signature:
+      - fingerprint: 31:C2:60:36:78:DF:BB:B2:97:8B:22:32:5E:76:3C:10:43:6C:83:62:75:7D:26:4E:C2:DD:3E:21:DA:BD:3F:52
+        sources:
+          - name: F-Droid
+            issue: GH-2842
+            apk:
+              sha256: 3cff97a1986ca511e75052d58258199e5d02746ecc0e13b1f353329dc5638bf7
   - package: fr.gouv.etalab.mastodon
     signature:
       - fingerprint: 30:60:0C:C0:D4:30:A5:BD:1C:66:C1:21:C7:5F:7F:B9:E3:0D:E9:9D:85:97:E7:09:7F:A5:D7:58:01:16:46:9A
