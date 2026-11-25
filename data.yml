@@ -3348,6 +3348,18 @@ packages:
               sha256: 6ebe5c150cadcc255e497af7fa162ca1d1930f4942ad60e8aea515314ed59d02
           - name: HTTPS Verified Domain
             issue: GH-2446
+  - package: com.facebook.orca
+    signature:
+      - fingerprint: |-
+          91:1D:60:44:46:08:4C:A7:F4:76:0B:77:5B:FC:16:0F:A8:70:24:41:24:0A:72:58:64:5D:7A:72:C4:31:2D:27
+          E3:F9:E1:E0:CF:99:D0:E5:6A:05:5B:A6:5E:24:1B:33:99:F7:CE:A5:24:32:6B:0C:DD:6E:C1:32:7E:D0:FD:C1
+        sources:
+          - name: Google Play
+            issue: GH-7496
+            apk:
+              sha256: 5546fac68f30b29d8aaf9e4d969d5e7f661bca8450c86a7c69843c5e6c2a5dee
+          - name: HTTPS Verified Domain
+            issue: GH-7496
   - package: com.faltenreich.diaguard
     signature:
       - fingerprint: 6F:67:B5:55:A0:FA:64:C4:F0:F1:6C:85:FA:57:96:E4:07:E9:F9:97:7D:B3:54:06:E6:2E:0F:42:34:60:45:CD
