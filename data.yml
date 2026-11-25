@@ -13876,6 +13876,14 @@ packages:
             issue: GH-1174
             apk:
               sha256: 0fb01abf46c66d496e29de283494a8221b46329edf480c48c30ae40aeaccbc1f
+  - package: net.gaast.giggity
+    signature:
+      - fingerprint: AB:A8:80:1A:7F:C3:F9:97:6D:9D:B3:9A:C5:F4:16:27:C1:D5:FF:57:72:97:BD:58:9E:0A:97:0F:4C:71:EB:82
+        sources:
+          - name: F-Droid
+            issue: GH-3007
+            apk:
+              sha256: 9bca0b7051a1da6c962b620f76cdacb3254c7f0f52642cd5a14a89c362660822
   - package: net.gsantner.markor
     signature:
       - fingerprint: 57:D1:06:D0:CF:A8:76:34:42:B3:64:5E:F2:74:1C:38:BB:82:0B:D5:6F:D4:61:2B:F4:0A:23:B6:D9:98:BE:5E
