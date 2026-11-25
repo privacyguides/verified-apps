@@ -4955,6 +4955,12 @@ packages:
             issue: GH-1946
             apk:
               sha256: a1554f39fa3b093edb9f6800173c7088208ea394a6a9175628f9d45e90b04ab1
+      - fingerprint: B0:2A:C7:6B:50:A4:97:AE:81:0A:EA:C2:25:98:18:7B:3D:42:90:27:7D:08:51:A7:FA:8E:1A:EA:5A:97:98:70
+        sources:
+          - name: Google Play
+            issue: GH-8034
+            apk:
+              sha256: cfc19b7c77e78c94a864188112ab0f0a59c5fac491a6ebd384207a2bbcb9f6ff
   - package: com.gpl.rpg.AndorsTrail
     signature:
       - fingerprint: 39:16:CB:37:00:F0:AB:8E:79:01:44:48:D0:00:42:9B:82:6A:59:E0:B4:36:4B:96:C9:4D:90:5A:65:59:D2:43
