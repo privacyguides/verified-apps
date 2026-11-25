@@ -6059,6 +6059,14 @@ packages:
             issue: GH-2147
             apk:
               sha256: 3bc6226fe97e7be47beac9549a8d875f8c09fcbedfe5bec7d109be2538a8884a
+  - package: com.merriamwebster
+    signature:
+      - fingerprint: 58:F4:30:26:C2:5C:9E:02:81:75:3C:D6:CA:D3:8A:00:1A:6A:DB:A3:13:CA:18:DB:33:D2:5D:9A:B5:AE:7E:62
+        sources:
+          - name: Google Play
+            issue: GH-8025
+            apk:
+              sha256: 3ad6a91a66bd5e1250fd4320bbf472c7194596e7c4689605d2fb63eff123c303
   - package: com.meshcore.meshcore_open
     signature:
       - fingerprint: 43:0F:0B:87:EF:88:D8:B0:9B:80:FF:C8:B0:07:CC:09:60:CE:FA:32:84:B5:E1:53:9B:71:26:CA:0F:0E:BF:DC
