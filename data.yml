@@ -866,6 +866,14 @@ packages:
             issue: GH-1351
             apk:
               sha256: 7c0aee33e8b643fd0d139232b8c616f96625adbd9e0f49caa788167af65cdba7
+  - package: com.alexmercerind.audire
+    signature:
+      - fingerprint: 29:DA:10:94:31:62:D3:ED:38:6B:97:CF:F1:EF:BE:2F:9C:01:2C:9E:3A:5D:86:1F:8F:49:44:0B:16:C0:01:08
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: CB-34
+            apk:
+              sha256: c72d0fac595600514d493c836df0d9a2cefa90ec50714eea7ef645c569ceaf54
   - package: com.alibaba.aliexpresshd
     signature:
       - fingerprint: 4F:C3:B2:67:39:3E:A2:35:1C:47:16:B3:7E:69:10:51:7F:19:7E:B4:79:BC:43:D9:C9:A5:A4:6D:49:DD:70:0E
