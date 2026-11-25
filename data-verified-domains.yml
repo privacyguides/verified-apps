@@ -623,6 +623,17 @@ domains:
         fingerprints:
           - 3A:10:C5:0C:18:BA:93:75:06:C2:87:5E:90:47:BE:74:F8:FD:8B:86:FA:E2:FF:9F:EA:A5:0A:81:FC:B4:C0:14
           - 5F:3E:50:F4:35:58:3C:9A:E6:26:30:2A:71:F7:34:00:44:08:7A:7E:2C:60:AD:AC:FC:25:42:05:A9:93:E3:05
+  - domain: kagi.com
+    method: https
+    issue:
+      - CB-180
+    checked: "2026-11-25T23:38:00Z"
+    packages:
+      - package: com.kagi.search
+        fingerprints:
+          - 14:40:97:C9:B6:63:D2:B6:DA:A9:77:59:25:07:D7:C8:80:1A:15:D1:A5:F4:8C:D0:D0:DA:BF:90:87:EC:1F:68
+          - 35:13:AD:99:DB:D7:E5:65:B6:08:C9:C6:23:BE:E3:EE:B8:34:B7:5F:4B:15:DB:66:A3:C4:71:6F:9F:B9:59:B0
+          - CA:47:22:1E:18:93:55:F2:88:36:E5:B5:8F:46:26:50:68:44:94:36:01:E1:0B:5F:27:5C:66:79:E0:04:41:1A
   - domain: kakao.com
     method: https
     issue:

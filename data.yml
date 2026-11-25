@@ -5881,6 +5881,16 @@ packages:
             issue: GH-2140
             apk:
               sha256: 5dd49af7d108088c438334680cadb67b500c2572e32fe14fc2556f7037541f72
+  - package: com.kagi.search
+    signature:
+      - fingerprint: 35:13:AD:99:DB:D7:E5:65:B6:08:C9:C6:23:BE:E3:EE:B8:34:B7:5F:4B:15:DB:66:A3:C4:71:6F:9F:B9:59:B0
+        sources:
+          - name: Google Play
+            issue: CB-180
+            apk:
+              sha256: d0dc850619e4ce1b99a6b8ddd9ad5460dec9e5258c15de8080273f47d2948a5e
+          - name: HTTPS Verified Domain
+            issue: CB-180
   - package: com.kakaku.tabelog.tourists
     signature:
       - fingerprint: 41:DF:CB:EF:4C:AE:B2:47:27:FB:3D:31:10:89:68:A4:24:12:9E:88:FF:AD:0A:E0:D7:58:A0:70:F8:EB:CA:BC
