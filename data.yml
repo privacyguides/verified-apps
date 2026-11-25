@@ -15760,6 +15760,14 @@ packages:
             apk:
               sha256: 4f3c08e4ef6f66ee1f9abd27115790d6e9d160226bb7158787c7b21d3cae924f
               link: https://get.videolan.org/vlc-android/3.7.0/VLC-Android-3.7.0-arm64-v8a.apk
+  - package: org.vinaygopinath.launchchat
+    signature:
+      - fingerprint: A0:13:C1:57:90:9F:FD:F7:CF:26:03:72:16:AC:7C:BE:66:1F:AF:EA:A1:B3:E4:64:51:81:E1:4E:06:BB:EF:E3
+        sources:
+          - name: F-Droid
+            issue: GH-2941
+            apk:
+              sha256: 5dfe18498375d68aa2f2eef1d7cb2ff565c235d031230fd8eae730a0df795f26
   - package: org.vystarcu.vystar
     signature:
       - fingerprint: 1D:86:2E:C6:96:D5:FE:63:25:FF:C4:D5:C4:01:95:30:C3:F2:86:1C:EF:35:B8:75:65:3A:5C:DA:C4:70:53:EB
