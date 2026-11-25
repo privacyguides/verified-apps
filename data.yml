@@ -5946,6 +5946,14 @@ packages:
             issue: GH-2153
             apk:
               sha256: 3b06700335733210551ec3ba3fcdb1cd4001f71d66093e859417973ed781f08d
+  - package: com.newgen.alwayson
+    signature:
+      - fingerprint: 1E:E2:AE:B5:89:22:EB:1B:83:C4:7E:94:8C:C5:16:08:62:78:5B:1A:CD:13:A8:D2:C6:DB:EF:BF:25:FB:A9:2F
+        sources:
+          - name: Google Play
+            issue: GH-7358
+            apk:
+              sha256: 7ad74a7dce9aca71c92cc4797860b2e7717491c54cdb5907cdf3cce613c11de8
   - package: com.newoether.agora
     signature:
       - fingerprint: 5D:E2:6F:26:31:63:C2:20:C0:6C:23:D6:A8:2F:C0:34:D5:55:91:EC:4D:3F:F0:BA:D8:B9:DC:9B:7B:E1:AA:29
