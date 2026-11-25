@@ -4792,6 +4792,14 @@ packages:
             issue: GH-667
             apk:
               sha256: 96a236fdc427d9ec7e5d3c7324c4c95fdbbcfc7114f90d12ee7328423015b1f4
+  - package: com.mskd.flux
+    signature:
+      - fingerprint: 8E:5F:CB:64:3E:81:37:D5:FF:41:3B:0B:33:28:6F:17:F8:46:D2:BF:6B:24:A4:E5:E3:92:67:2C:3F:EC:81:95
+        sources:
+          - name: F-Droid
+            issue: GH-2882
+            apk:
+              sha256: 57c44971bac393394de76354e6b13a7222e5bd5d62094d9eecdc1f4bf68b9fdd
   - package: com.mttnow.droid.easyjet
     signature:
       - fingerprint: BA:E1:4D:59:3D:B0:DA:16:45:1B:1A:85:2B:72:C8:8F:38:5C:93:5E:12:A5:43:ED:15:28:EC:D2:4B:D6:6A:C2
