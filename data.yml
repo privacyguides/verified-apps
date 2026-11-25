@@ -12763,6 +12763,14 @@ packages:
             issue: GH-1094
             apk:
               sha256: d5cb6c0bb40b5a82fe4ea5689599aa871bb725c25f0d6d1bde44120b696073b9
+  - package: org.dayup.stocks
+    signature:
+      - fingerprint: 80:EF:CC:BB:BC:82:2A:79:9F:F7:E7:87:B8:89:D0:2F:33:76:CC:4B:82:98:75:EA:A2:37:AD:F1:9E:57:81:96
+        sources:
+          - name: Google Play
+            issue: GH-7487
+            apk:
+              sha256: 54ac19625e17495e1635e1b4ea6b209e909e36f6d9afc3376038c6eee28869f3
   - package: org.decsync.cc
     signature:
       - fingerprint: 17:FE:07:62:58:EE:F2:C8:F7:4B:41:3B:97:9A:09:7A:E3:99:03:7D:DB:EC:DE:E8:70:FE:71:C1:19:21:C9:94
