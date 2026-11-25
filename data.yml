@@ -5999,6 +5999,14 @@ packages:
             issue: GH-2611
             apk:
               sha256: 3bb4d9bcf2c474325c36b0b042ec633a41ea095cf9e8e75463c2bce5af23219f
+  - package: com.tengu.sharetoclipboard
+    signature:
+      - fingerprint: 54:42:CF:0E:2D:A7:60:00:EC:EA:EE:73:73:AE:5D:6A:3E:E3:32:FB:32:CF:5D:3D:A0:50:3A:1D:D3:1A:26:26
+        sources:
+          - name: F-Droid
+            issue: GH-1599
+            apk:
+              sha256: 3d42f0a7310b099372ec892b6515b6f968de2b321d3ebbabde0afd1317a92645
   - package: com.termux
     signature:
       - fingerprint: 22:8F:B2:CF:E9:08:31:C1:49:9E:C3:CC:AF:61:E9:6E:8E:1C:E7:07:66:B9:47:46:72:CE:42:73:34:D4:1C:42
