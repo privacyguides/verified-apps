@@ -496,6 +496,14 @@ packages:
             issue: GH-1761
             apk:
               sha256: d4cbc6719a11e322f8fb1e24bc0c0d3fd8fc82c0be39eb4b76a59dbfb02c4646
+  - package: ar.bapro
+    signature:
+      - fingerprint: F9:46:18:42:6F:31:69:39:52:76:79:9E:B1:15:FF:8E:B4:FF:44:6D:D3:12:EA:20:F3:A2:E4:D1:AA:97:B5:60
+        sources:
+          - name: Google Play
+            issue: GH-7993
+            apk:
+              sha256: 832f415309f0e026324b1b52b6c63e4e91f661f9a94ebd8fc2ded23c8ae5fdc9
   - package: art.widgeet.android.clock.flip
     signature:
       - fingerprint: AA:CE:28:B9:AA:9B:E9:3B:9E:DE:28:B0:1A:28:97:0B:A5:DE:A5:37:61:D7:C5:B8:F4:E7:72:BB:21:65:1F:8E
