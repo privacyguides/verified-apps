@@ -6780,6 +6780,18 @@ packages:
             issue: GH-1241
             apk:
               sha256: 823b8186bc7f33bfdd1d7ec9b6aea7f567f9fda05d79cc33bbf3551224d31ac6
+  - package: com.pasich.encly
+    signature:
+      - fingerprint: 68:84:C6:93:35:49:64:27:62:31:E6:D0:33:6B:96:5F:69:0B:F3:F1:5A:07:07:BB:59:50:5C:20:8E:5E:75:54
+        sources:
+          - name: F-Droid
+            issue: GH-7851
+            apk:
+              sha256: 73af31decba9bc999a8ff7515496d39524e2e8e75c27e352e0a06520a0ffb20b
+          - name: Google Play
+            issue: GH-7851
+            apk:
+              sha256: 08af3188f6fed5a8c0fea718296e03ac76848bde1005b2200d04bff862a788f3
   - package: com.paypal.android.p2pmobile
     signature:
       - fingerprint: C7:C6:2E:A0:F6:E2:F6:EB:A8:7F:95:40:69:87:50:55:30:EF:2F:51:6E:7C:DE:59:91:D7:14:03:31:44:80:72
