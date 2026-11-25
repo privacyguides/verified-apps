@@ -5595,6 +5595,14 @@ packages:
             issue: GH-538
             apk:
               sha256: 88949b2d89d8ebdc69cfb203103b3a3b39f8801589aba0d6ccaa0a8b18a9f1b2
+  - package: com.lge.media.lgsoundbar
+    signature:
+      - fingerprint: CE:D1:86:A2:54:6A:2F:23:77:EF:A9:19:25:C1:DC:5D:A9:78:C8:E4:6B:BA:7C:B6:FB:E9:04:C1:61:A0:B8:0A
+        sources:
+          - name: Google Play
+            issue: GH-7976
+            apk:
+              sha256: 528b0dce561e0cf1ba1072ff970c1d394fdb6bc3429f2e57b2fc36acc5df6071
   - package: com.liamcottle.meshcore.android
     signature:
       - fingerprint: F9:36:C9:3F:DD:6F:57:F1:CD:F2:A7:1B:E6:16:4A:03:F2:4E:89:62:10:83:F1:74:08:32:CE:50:93:62:B4:7B
