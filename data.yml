@@ -10354,6 +10354,14 @@ packages:
             issue: CB-78
             apk:
               sha256: abdbdf7e01fb94db37745e12b56098aea8237e634ee77954194ce11b947f61e0
+  - package: godau.fynn.moodledirect
+    signature:
+      - fingerprint: 98:04:47:4A:F0:8E:AB:48:D5:11:0C:91:3B:53:EB:B2:D3:F4:5B:97:97:6D:28:72:E3:38:57:D7:28:47:24:09
+        sources:
+          - name: F-Droid
+            issue: GH-6913
+            apk:
+              sha256: df6eb4fb1a28356261e48b3fea425daac89f39c54bd1318e9f92dff1a1e497e0
   - package: gov.dhs.cbp.pspd.mpc
     signature:
       - fingerprint: 1D:AA:4C:59:14:D2:3B:70:FE:10:A6:31:F0:3A:A0:F9:66:A6:DD:4E:8F:5E:FD:DF:A0:20:F9:96:22:E4:69:DE
