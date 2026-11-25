@@ -5732,6 +5732,14 @@ packages:
             issue: GH-4610
             apk:
               sha256: fc2ac337e2536a7a5d745e8b6503116cd3742b7e55e40c70b53e6b5750d52b3b
+  - package: com.rarlab.rar
+    signature:
+      - fingerprint: 1F:0C:AD:82:53:A5:07:E9:18:A1:B1:44:C9:62:4B:8D:EB:70:EB:BF:4E:B2:B7:E2:79:9A:1C:7C:2B:B0:6B:91
+        sources:
+          - name: Google Play
+            issue: GH-5744
+            apk:
+              sha256: b113cc6fcc7afdc22ec352f4281b4f882b98315436f27368a2ecdaaf505caf4d
   - package: com.razeeman.util.simpletimetracker
     signature:
       - fingerprint: 9F:22:41:EA:F7:8B:E6:B8:41:5F:2D:B4:24:EF:99:C9:74:55:76:FE:07:B0:E5:8B:08:C9:22:28:9A:36:33:E4
