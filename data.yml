@@ -10109,6 +10109,20 @@ packages:
             issue: GH-859
             apk:
               sha256: b396950174430aa8b72d111416f25339fabed46e1dc7af2d037e83418df1b3f9
+  - package: dev.lexip.hecate
+    signature:
+      - fingerprint: |-
+          1A:21:E8:10:4B:CE:8E:90:A5:91:B5:52:7D:01:A5:32:0B:2A:0D:46:FC:8F:97:EA:3D:5A:F4:22:5C:9A:FD:07
+          AC:EF:12:60:DC:67:02:72:AA:52:16:43:5E:85:FC:CA:F3:3D:47:1F:94:39:CD:38:F6:25:2B:42:AC:56:2C:7D
+        sources:
+          - name: F-Droid
+            issue: GH-7315
+            apk:
+              sha256: 0545ee7e445f4c66e10702ba3ab60a566e94f470ed71c2e90fad285b26bb3b2b
+          - name: Google Play
+            issue: GH-7315
+            apk:
+              sha256: 37a5ae3bbf0a974d3f2616a6d034cf860d30848a80d9d3809c4648c45735338a
   - package: dev.octoshrimpy.quik
     signature:
       - fingerprint: 52:8B:89:A6:7E:25:86:35:BE:21:29:A7:4E:27:44:F9:02:0B:0B:12:27:08:F8:09:1B:5F:D3:CA:0C:1D:2D:DF
