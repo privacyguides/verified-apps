@@ -4912,6 +4912,14 @@ packages:
             issue: GH-692
             apk:
               sha256: 5dd2244f59c7caca80a4067f41433efcdb7298dea32cddfacd469cf26f38359e
+  - package: com.paperknife.app
+    signature:
+      - fingerprint: AE:E9:5E:35:A2:47:E9:FB:0F:E0:B4:1C:09:77:F8:89:B7:33:C3:89:88:C2:D1:C6:80:F7:14:E3:18:C1:E9:76
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-1582
+            apk:
+              sha256: e1418425ea52ea20770c092363e818bfda18b6ce9ad90062df09a81511817aad
   - package: com.paperknifeplus.app
     signature:
       - fingerprint: 6B:AD:1D:71:9A:8B:B9:7C:73:FA:60:AA:08:B2:B0:D7:33:C7:75:3B:0F:C6:74:A1:30:6F:CD:94:62:23:8A:F8
