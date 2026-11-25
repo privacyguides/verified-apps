@@ -4927,6 +4927,14 @@ packages:
             issue: GH-648
           - name: Custom (GrapheneOS App Store)
             issue: GH-648
+  - package: com.google.android.marvin.talkback
+    signature:
+      - fingerprint: 7B:5A:D5:51:80:A4:8A:1F:30:F3:53:77:C0:F9:E5:F9:11:BF:94:2F:B4:CF:83:EB:A2:55:A0:EB:F5:80:BE:EF
+        sources:
+          - name: Google Play
+            issue: GH-8135
+            apk:
+              sha256: 6b40612f00010a3ba89a65101a03ba149764e35c4835cf97204dec902abff98b
   - package: com.google.android.play.games
     signature:
       - fingerprint: |-
