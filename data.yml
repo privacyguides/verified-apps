@@ -13263,6 +13263,14 @@ packages:
             issue: CB-82
             apk:
               sha256: 742c53eac1e9dda4715514c37e3b7941b853d32054456154939f3489ab0d01f6
+  - package: org.secuso.privacyfriendlytapemeasure
+    signature:
+      - fingerprint: E1:3F:A6:3F:67:68:6A:8E:30:36:8F:F2:5E:8C:3E:90:6E:BE:1F:DD:7A:5B:42:D5:8D:03:21:EE:12:B6:A8:3D
+        sources:
+          - name: F-Droid
+            issue: GH-6929
+            apk:
+              sha256: 2f7a7daa7b3c5211f84143929e5cca7d7f77ae30bf7516a9b711e62f98f73f1d
   - package: org.stypox.dicio
     signature:
       - fingerprint: F1:8A:3A:A2:8B:65:A3:B6:7F:1F:C9:F0:61:AA:34:54:71:AA:AB:F0:06:E3:FA:51:38:73:97:75:4B:86:D7:1F
