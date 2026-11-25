@@ -416,6 +416,14 @@ packages:
             issue: GH-1938
             apk:
               sha256: 775d8392e2ee6adb6ed618921d3dfad3123becc1cc86bc431bf51e515cf17d46
+  - package: at.hackmas.android.schedule
+    signature:
+      - fingerprint: 05:EE:BF:B7:A4:AB:CB:D8:F3:82:CF:F1:64:12:09:DF:63:4F:31:B0:21:2D:E2:9A:0E:6B:91:85:B1:68:AE:3E
+        sources:
+          - name: F-Droid
+            issue: GH-4545
+            apk:
+              sha256: 4fcce31e0ac9103a61b46b0ec5e1f95e1e6342f18ffc789333323dfd84aeb1e8
   - package: at.saltyy.switchly
     signature:
       - fingerprint: 3C:51:F6:11:92:0B:15:F9:4E:E8:B3:19:1A:8D:26:2B:41:1A:06:42:42:0C:FA:E0:CA:EB:A9:75:2E:15:83:06
