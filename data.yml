@@ -10351,6 +10351,14 @@ packages:
             issue: GH-509
             apk:
               sha256: 7c72c47b2b05c83d3764cbc2e970f03651c76232da8544996f2762dbbe0c8ddc
+  - package: de.yazo_games.mensaguthaben
+    signature:
+      - fingerprint: 79:4B:5A:57:16:EA:98:1A:34:5F:14:49:66:BA:5C:DC:A1:F6:69:39:4B:53:24:69:1F:C0:AF:7D:F5:44:28:56
+        sources:
+          - name: F-Droid
+            issue: GH-7854
+            apk:
+              sha256: 4f6e56e40271c995b5afb8c21a3be20beecdffd66943cd77a15d7fd7d2d326f5
   - package: deckers.thibault.aves
     signature:
       - fingerprint: 12:54:B3:37:CD:99:15:75:57:FA:C4:75:9D:03:69:51:53:34:38:24:05:0E:C1:C9:3B:2D:26:42:C6:66:E4:E2
