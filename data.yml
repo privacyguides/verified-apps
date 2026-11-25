@@ -5505,6 +5505,14 @@ packages:
             issue: GH-1430
             apk:
               sha256: 56a3a6f89272d1def7dc7d275ea7d1203e1ae5a413899916f663d42a75fc34d3
+  - package: com.pettoxic.android
+    signature:
+      - fingerprint: 0C:B9:56:7B:61:79:2C:94:8A:89:60:3A:2F:0A:FF:83:4F:27:1C:9C:CA:3A:CD:97:A5:8A:94:67:D8:12:ED:90
+        sources:
+          - name: Google Play
+            issue: GH-5766
+            apk:
+              sha256: 26077f002fddb6827658d903036883b3b563745026e57d49c5226ff9db73e513
   - package: com.pg_axis.ytcnv
     signature:
       - fingerprint: C9:59:9A:B3:88:0F:3B:D6:60:5A:EC:12:2E:8A:9B:06:83:30:EA:63:61:E5:07:1F:D1:18:0D:26:E2:06:0B:F1
