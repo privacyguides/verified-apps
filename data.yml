@@ -7185,6 +7185,16 @@ packages:
               sha256: 00fc3f8d7dd8e6fb85efcf698fba50d05e37fe698f918a19ba0296f4a0d7c29e
           - name: HTTPS Verified Domain
             issue: GH-2068
+  - package: com.stockanalysis.app
+    signature:
+      - fingerprint: 20:9B:71:35:14:DA:06:1D:EA:EC:E5:BC:D4:DC:AE:3D:0F:B7:C9:E3:EC:D3:DC:FE:4A:AD:18:3F:63:63:97:43
+        sources:
+          - name: Google Play
+            issue: GH-6689
+            apk:
+              sha256: 0c5c2348edadbb76d57822ea8d47d21cf0f6172597f46ae78736323a00b9ec55
+          - name: HTTPS Verified Domain
+            issue: GH-6689
   - package: com.stoutner.privacybrowser.standard
     signature:
       - fingerprint: F9:76:14:DC:96:96:4B:EA:2E:4F:A6:6B:24:60:8A:51:0A:87:B3:B1:E0:1B:A6:8E:07:53:C0:99:13:3A:87:68

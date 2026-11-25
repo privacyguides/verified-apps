@@ -680,6 +680,16 @@ domains:
         fingerprints:
           - CD:FB:A7:80:57:6F:7A:48:00:E2:A6:09:72:6F:83:F0:53:B5:1B:AE:6A:23:90:03:AB:C1:6B:7F:75:E9:F5:88
           - FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C
+  - domain: stockanalysis.com
+    method: https
+    issue:
+      - GH-6689
+    checked: "2026-11-25T08:23:59Z"
+    packages:
+      - package: com.stockanalysis.app
+        fingerprints:
+          - 0A:46:FF:21:13:E5:6A:11:BB:8B:23:A4:47:1A:F1:DC:A9:E7:A5:6E:4D:5F:72:DF:F7:D1:99:EA:7B:2A:5D:C9
+          - 20:9B:71:35:14:DA:06:1D:EA:EC:E5:BC:D4:DC:AE:3D:0F:B7:C9:E3:EC:D3:DC:FE:4A:AD:18:3F:63:63:97:43
   - domain: stockevents.app
     method: https
     issue:
