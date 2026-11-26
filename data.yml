@@ -14780,6 +14780,14 @@ packages:
             issue: GH-1413
             apk:
               sha256: 2f72f5f179b0703f2e258655291d3d1669ca667346ed907030393abff7d26fa8
+  - package: org.blueletterbible.blb
+    signature:
+      - fingerprint: 93:3F:9B:AE:68:DE:31:6B:8B:F6:D9:C5:17:CE:0F:1E:99:DB:83:5D:71:BB:F0:C3:E8:52:0F:22:95:BE:08:7D
+        sources:
+          - name: Google Play
+            issue: GH-3262
+            apk:
+              sha256: 495a1331084104f8ffa17f6517121b2d6892a2cb9796b20ee450e185fabcf733
   - package: org.bom.bank
     signature:
       - fingerprint: 20:24:6F:20:27:BF:D4:6F:16:18:F2:1A:00:F7:FB:40:20:A3:E8:ED:0C:CD:79:94:C6:2B:F5:14:A1:20:6B:7E
