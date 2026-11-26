@@ -6177,6 +6177,14 @@ packages:
             issue: GH-7481
             apk:
               sha256: 78830dff9913bfd04eb7fa66a315fc8c93f3a8bfb54ff2053058157e8fb1f3e2
+  - package: com.invoiceninja.app
+    signature:
+      - fingerprint: BB:BC:8B:FB:72:4E:F2:56:77:30:31:B1:C9:22:C0:51:D3:5D:EE:3F:CE:BD:59:3A:F7:11:2F:AB:46:7D:E8:88
+        sources:
+          - name: Google Play
+            issue: GH-3758
+            apk:
+              sha256: 7a357eca82ac58d1189c9e342c711a7a76183485333848f01d6bc60eb9df176d
   - package: com.iotsolution.aidot
     signature:
       - fingerprint: E5:75:72:FF:FD:11:D2:C2:92:EA:4E:25:7F:59:66:79:C8:50:3C:5D:B5:A1:E3:DD:41:A5:2E:75:BB:28:01:E5
