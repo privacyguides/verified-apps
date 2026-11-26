@@ -7657,6 +7657,14 @@ packages:
             issue: GH-530
             apk:
               sha256: 5652d4146576f8ac47fb3a05408548793eefdb9e9c8cbf6f9f22fcea5c1b11d6
+  - package: com.orange.rn.dop
+    signature:
+      - fingerprint: B7:1C:30:C9:80:EE:10:E1:C5:3F:E1:7F:21:32:3D:4A:51:8F:1B:FF:CC:29:17:DF:26:A9:09:83:64:AA:9B:26
+        sources:
+          - name: Google Play
+            issue: GH-3199
+            apk:
+              sha256: 4d06283b74490bcfba70ab20149399bf36358e9c01cf121aadcf1a951eb73eaa
   - package: com.orbit.orbitsmarthome
     signature:
       - fingerprint: C4:73:BA:6A:AA:95:2D:74:B2:77:05:B4:7E:F7:E0:67:B9:26:59:66:DA:38:C8:36:6C:18:12:26:3C:4B:AC:93
