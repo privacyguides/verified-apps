@@ -12661,6 +12661,14 @@ packages:
             issue: GH-394
             apk:
               sha256: ed0db6705108a41e96e11df12c3b4362355d1a1e96b727c9d2065380572949cf
+  - package: idm.internet.download.manager
+    signature:
+      - fingerprint: 9F:48:B6:B2:74:1F:E7:E4:F7:8E:A7:37:5F:46:9E:99:08:6C:07:F4:5A:6C:7F:38:40:7F:04:83:D2:45:1C:E7
+        sources:
+          - name: Google Play
+            issue: GH-3091
+            apk:
+              sha256: 2b49b3365a0954ccc435ae1f3346c20b4f0cbdf36d8595b6575fbaf0ab17ae28
   - package: im.cwtch.flwtch
     signature:
       - fingerprint: 82:0B:2C:24:A1:C3:D3:BB:99:87:BB:5D:DD:D0:DF:E1:F8:89:3C:0C:0A:7C:C1:A3:A7:53:7C:DA:2C:29:CC:77
