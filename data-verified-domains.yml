@@ -662,6 +662,15 @@ domains:
       - package: com.kgurgul.cpuinfo
         fingerprints:
           - AF:24:23:BE:B5:89:E5:5F:DF:95:1F:DE:2F:23:ED:AA:78:5F:57:C7:14:76:4A:FB:BD:D1:5A:85:F1:AE:D3:3C
+  - domain: koleo.pl
+    method: https
+    issue:
+      - GH-3208
+    checked: "2026-11-26T00:15:46Z"
+    packages:
+      - package: pl.koleo
+        fingerprints:
+          - F4:1C:0F:7B:75:B2:ED:81:C6:E0:52:B3:27:21:06:B5:B4:E0:83:02:EA:41:47:9C:1B:F1:E1:DA:BA:5A:C3:36
   - domain: komoot.de
     method: https
     issue:

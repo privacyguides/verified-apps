@@ -16443,6 +16443,16 @@ packages:
             issue: GH-2997
             apk:
               sha256: 24c12b51b5cfbe9a2c3e67a9682894b0f75c40d8b87c33649987bd4cb4232e7d
+  - package: pl.koleo
+    signature:
+      - fingerprint: F4:1C:0F:7B:75:B2:ED:81:C6:E0:52:B3:27:21:06:B5:B4:E0:83:02:EA:41:47:9C:1B:F1:E1:DA:BA:5A:C3:36
+        sources:
+          - name: Google Play
+            issue: GH-3208
+            apk:
+              sha256: 05408fa35f058fb4c47499886ca2765ff533207bc4845a9d1cba821b9ed50e7d
+          - name: HTTPS Verified Domain
+            issue: GH-3208
   - package: pl.lebihan.authnkey
     signature:
       - fingerprint: BB:F5:D7:BE:D8:2B:5B:9B:9F:8D:98:25:E6:20:46:4C:8A:28:ED:6C:7A:1E:B0:98:DF:C1:F9:72:DF:9C:58:0B
