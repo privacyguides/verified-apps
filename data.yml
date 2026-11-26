@@ -4986,6 +4986,14 @@ packages:
             issue: GH-1575
             apk:
               sha256: df69c383fac1ab3e03154cb171aa40dcebb023e11948c1de3d3e068b0df4ed30
+  - package: com.github.nicorac.bcrgui
+    signature:
+      - fingerprint: 9F:DF:EA:BE:A8:9F:F5:7E:7E:0C:68:3F:88:D9:27:E3:2F:D0:6F:AE:79:1F:A0:DF:A0:4B:20:99:74:56:44:59
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-3742
+            apk:
+              sha256: 8f64cdf265967a9f8823dd065140a1f99cb1a18a1576fdbaf57a4971a632c305
   - package: com.github.olga_yakovleva.rhvoice.android
     signature:
       - fingerprint: 10:79:02:73:B7:C5:68:B3:C3:11:35:4D:47:3D:4B:83:B4:82:07:12:E1:F5:95:E3:24:C4:DD:B9:67:2B:D2:3A
