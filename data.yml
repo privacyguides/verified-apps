@@ -4816,6 +4816,14 @@ packages:
             issue: GH-3257
             apk:
               sha256: bb822d3e3f45d8869c391c4a49d47b6da745520ee52fff97b5e38e25cc949f2a
+  - package: com.github.jamsinclair.owcamera2
+    signature:
+      - fingerprint: 66:1C:7A:9C:39:17:59:C3:C2:18:B0:F0:AA:9A:A0:00:67:86:9C:18:C4:D9:C9:AB:6D:82:BC:15:63:96:2A:D8
+        sources:
+          - name: F-Droid
+            issue: GH-3629
+            apk:
+              sha256: 2e0a92d5f87de4cb66e6120190fe9714f4f5ea90987aa73e32fdb20142429849
   - package: com.github.lamarios.clipious
     signature:
       - fingerprint: 19:DE:04:E5:D6:84:66:06:9D:30:EC:63:C6:BA:7D:9E:3C:F7:3B:5D:61:CB:4B:37:62:C2:B9:B2:53:EC:BD:03
