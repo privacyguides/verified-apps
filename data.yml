@@ -16016,6 +16016,14 @@ packages:
               sha256: abcc10c8cc26bf03325d758f88da724b62fb370479de6dddaf3ae39ecdfd6844
           - name: HTTPS Verified Domain
             issue: GH-7981
+  - package: org.mlm.mages
+    signature:
+      - fingerprint: 4A:ED:2F:69:1D:F6:4A:7B:0F:EA:25:A6:B8:C8:01:83:C6:DC:52:0E:04:9D:AC:01:78:DE:FA:1D:64:72:22:8F
+        sources:
+          - name: F-Droid
+            issue: GH-3388
+            apk:
+              sha256: 4e5050824d24bb64df13c745b0ef61a77731dcf2252dbfa29205f9b6f8674b7f
   - package: org.mlm.miniter
     signature:
       - fingerprint: 4A:ED:2F:69:1D:F6:4A:7B:0F:EA:25:A6:B8:C8:01:83:C6:DC:52:0E:04:9D:AC:01:78:DE:FA:1D:64:72:22:8F
