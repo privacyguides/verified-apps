@@ -6127,6 +6127,14 @@ packages:
             issue: GH-2140
             apk:
               sha256: 5dd49af7d108088c438334680cadb67b500c2572e32fe14fc2556f7037541f72
+  - package: com.k2040.geojoystick
+    signature:
+      - fingerprint: E0:A8:33:05:0D:7C:8F:CE:7D:DC:E8:5B:2A:86:56:13:04:45:6D:87:B6:7B:D6:BE:15:77:D8:F6:57:E1:67:78
+        sources:
+          - name: F-Droid
+            issue: GH-3529
+            apk:
+              sha256: bdf43cbdde6af2d96dac3c9a68818d79a7090d1f16e8265d83fc2fbcc1f9350b
   - package: com.kagi.search
     signature:
       - fingerprint: 35:13:AD:99:DB:D7:E5:65:B6:08:C9:C6:23:BE:E3:EE:B8:34:B7:5F:4B:15:DB:66:A3:C4:71:6F:9F:B9:59:B0
