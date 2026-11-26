@@ -5590,6 +5590,14 @@ packages:
             issue: GH-963
             apk:
               sha256: e4058b4aadebda0ca9a192cea3a5383effd4755336ccc8a7d48ba6a42b7c4936
+  - package: com.groundspeak.geocaching.intro
+    signature:
+      - fingerprint: 7F:00:04:58:07:0A:82:72:E5:96:0F:2B:3C:9D:33:48:37:2F:31:B0:E6:00:C8:6A:F3:4F:C0:6E:85:F8:DB:8C
+        sources:
+          - name: Google Play
+            issue: GH-3500
+            apk:
+              sha256: ae1f1510c5b6da700733d3a98cb0ea37416c104912a4d50551aa09015e7b7f65
   - package: com.groupme.android
     signature:
       - fingerprint: C2:08:E2:75:AD:2D:37:F4:FA:F5:E1:84:27:2A:0E:FF:FE:B6:D8:11:63:F1:4E:F9:9C:95:E7:29:1B:00:54:2D
