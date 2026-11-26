@@ -16736,6 +16736,12 @@ packages:
               sha256: b362605d9a7a3383262622d016a069221726a60a1288be1b8fade4b563e499f1
   - package: org.ppsspp.ppsspp
     signature:
+      - fingerprint: 19:ED:8A:FE:05:20:D5:12:BD:1D:9A:78:01:31:D4:86:ED:B7:E3:84:61:4B:5E:43:AF:9A:D8:C6:88:B2:E1:00
+        sources:
+          - name: F-Droid
+            issue: GH-3639
+            apk:
+              sha256: 44e1ecb9268702fb65adcee14cffb6cdc3607e87abcf409004c9bdb6b2543f6c
       - fingerprint: D1:76:6D:6A:91:72:68:41:E9:18:2A:D5:04:17:C3:F5:E4:93:CE:E4:B1:B7:E3:E6:75:14:7B:30:59:62:9D:EF
         sources:
           - name: Google Play
