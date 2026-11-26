@@ -1537,6 +1537,14 @@ packages:
             issue: GH-7907
             apk:
               sha256: 6e4d6510c35b3d642e0259ab74b832ef11b9f68a6526df22c0b3c89299c197b8
+  - package: com.akslabs.circletosearch
+    signature:
+      - fingerprint: F0:A7:83:EB:E9:ED:90:38:74:E9:9C:E3:5F:7D:10:89:7F:99:09:A0:E3:82:68:83:BD:D8:37:55:70:4E:D5:B5
+        sources:
+          - name: F-Droid
+            issue: GH-3664
+            apk:
+              sha256: 73e0209baf69ba6d4dad8114256a523e5d231d3a08c1734ac67a0717e33142be
   - package: com.akylas.documentscanner
     signature:
       - fingerprint: 0D:10:AA:10:E0:3A:7E:76:97:22:BE:43:88:BE:63:BD:15:7A:7B:7B:F1:96:FB:3C:EB:AB:87:37:F9:6C:A8:71
