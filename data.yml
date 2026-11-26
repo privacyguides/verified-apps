@@ -15954,6 +15954,14 @@ packages:
             issue: GH-764
             apk:
               sha256: 86cc5a2d4cf4c61897297a09fef579c787ddb8d8f6ef80daccb6274425ee202a
+  - package: org.jarsi.devicewatch
+    signature:
+      - fingerprint: A7:87:D3:BE:1F:A4:D5:87:51:E2:46:DB:A9:B8:F1:DE:D5:B6:A0:0A:B2:67:53:67:BF:49:42:09:28:E1:A5:1A
+        sources:
+          - name: F-Droid
+            issue: GH-3516
+            apk:
+              sha256: 01c3602d5a251dd0cf6f881583e3089d6d31b85ecf5e7102c1929f17355f0c02
   - package: org.jellyfin.androidtv
     signature:
       - fingerprint: D8:81:79:6E:D2:A6:7F:F6:EF:9F:67:68:28:72:3C:6B:1F:A1:8E:09:38:89:62:CB:A4:AB:C4:A5:94:A6:91:31
