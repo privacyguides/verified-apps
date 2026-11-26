@@ -12506,6 +12506,14 @@ packages:
             issue: GH-1169
             apk:
               sha256: 7f2334e6ac741841bc2dea0f0516a7193b0de10cfa507a4a0be16af2bd9ec6ea
+  - package: de.wivewa.dialer
+    signature:
+      - fingerprint: 0B:CB:97:D2:24:16:46:E2:18:2E:D4:FB:0C:C2:32:14:5E:92:93:4E:C8:76:5A:48:3E:82:8F:24:96:85:43:56
+        sources:
+          - name: F-Droid
+            issue: GH-3743
+            apk:
+              sha256: 38f7c88ffb80031efcc7f6a0035ec0ff749298a027d4fb6b4694af1ec27d2ab9
   - package: de.xcom.flatex.ptan
     signature:
       - fingerprint: 5F:8A:00:8A:83:28:A2:8F:FB:D7:FB:E0:A8:51:15:34:D7:F9:9B:DF:45:E2:29:0D:A6:6D:AF:29:C4:D5:FA:AB
