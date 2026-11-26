@@ -5869,6 +5869,14 @@ packages:
             issue: GH-7805
             apk:
               sha256: 7af11aea29dbadc40c9d4d8f97e4fd2026c875747d167bc8ca65b21730f448da
+  - package: com.imangi.templerun2
+    signature:
+      - fingerprint: F5:F6:53:1C:BD:88:53:16:5E:64:81:4F:8F:D8:C9:28:72:CE:DB:85:AB:AF:29:85:EE:54:93:68:17:21:9E:A6
+        sources:
+          - name: Google Play
+            issue: GH-3573
+            apk:
+              sha256: 3b83338613dc529929f2bc0e63f581ac665e8cb70d69cfbc4699c83c98c96ca8
   - package: com.infomaniak.drive
     signature:
       - fingerprint: BF:93:6C:18:D8:B3:B1:0A:14:2A:0A:05:26:FE:9F:44:72:31:95:5E:27:7F:10:10:2D:E6:66:50:5C:E4:FF:C5
