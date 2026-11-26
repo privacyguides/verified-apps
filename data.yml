@@ -3686,6 +3686,14 @@ packages:
             issue: GH-1013
             apk:
               sha256: 14c0ad30b7e692d0ca57fe83f60be885982f98cbf676f9b9ad36ea8b23dbf84b
+  - package: com.dt.opnsense_manager
+    signature:
+      - fingerprint: 18:7F:36:DC:E8:78:65:93:C9:B8:32:C8:D7:DF:88:8F:59:EE:CA:48:00:51:3B:EA:34:1D:02:B2:81:28:C8:CC
+        sources:
+          - name: F-Droid
+            issue: GH-3461
+            apk:
+              sha256: 90c5a58b5f539323fee6f91845481e1456c7634b194e50873c0ee3fb18a25a42
   - package: com.duckduckgo.mobile.android
     signature:
       - fingerprint: BB:7B:B3:1C:57:3C:46:A1:DA:7F:C5:C5:28:A6:AC:F4:32:10:84:56:FE:EC:50:81:0C:7F:33:69:4E:B3:D2:D4
