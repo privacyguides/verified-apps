@@ -11317,6 +11317,14 @@ packages:
             issue: GH-2317
             apk:
               sha256: 86703c7ed26fe821aa336f226d7074b5ac4de17de28d140210198f48df58e362
+  - package: com.zeptolab.ctr.ads
+    signature:
+      - fingerprint: F5:1A:71:B1:21:CF:D9:3F:25:AA:2E:00:EE:B5:0A:8A:B5:EF:0E:39:64:8B:C3:B7:A7:11:A3:F8:93:82:D3:30
+        sources:
+          - name: Google Play
+            issue: GH-3694
+            apk:
+              sha256: 3021e80b14ea191103cfa261995725a99c5592c2fefa8120a0ac47a8b0641b88
   - package: com.zhangke.fread
     signature:
       - fingerprint: 9A:45:61:55:28:D4:38:69:FE:9D:D9:C2:5B:26:04:D7:A2:D9:5F:F1:A8:5B:CB:94:F8:FF:B7:4E:BA:75:2D:AB
