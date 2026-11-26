@@ -1818,6 +1818,14 @@ packages:
             issue: GH-3325
             apk:
               sha256: 6d19182835b86a6961b39d2c6f62e820e633abd1708e18023a03eaf00d385492
+  - package: com.anywherelan.awl
+    signature:
+      - fingerprint: 74:DD:8B:26:38:F7:F0:EF:61:43:13:17:58:8F:96:14:1B:AA:EA:87:15:82:5B:28:58:D0:DF:CE:0C:07:B1:77
+        sources:
+          - name: F-Droid
+            issue: GH-3578
+            apk:
+              sha256: bc0cc5deb77ec67215a01a9a78655ed889661bc539ae0f005b9dc9e775e3557c
   - package: com.apiture.xpressmobile.tabut.sub
     signature:
       - fingerprint: E0:85:00:80:44:B1:CA:2C:35:F8:54:1B:0E:08:28:08:78:EF:19:65:87:2E:D4:24:6C:A2:B7:1B:08:D8:ED:11
