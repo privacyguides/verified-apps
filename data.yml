@@ -7025,6 +7025,14 @@ packages:
             issue: GH-1447
             apk:
               sha256: 09f8f43f282bfdc876b3ed633b44c904e9819c3e01f44a7919d11e151e891a9e
+  - package: com.milki.launcher
+    signature:
+      - fingerprint: FD:B9:F8:C5:14:0E:A3:C0:F6:80:B0:10:E9:1E:12:08:CF:23:49:2C:FC:8F:45:D9:14:E5:EB:0E:2B:CA:B7:B5
+        sources:
+          - name: F-Droid
+            issue: GH-3512
+            apk:
+              sha256: c239a3289cc70907301732611f53bb77a6a88a8b55625aa91a612ef2aa325468
   - package: com.milvum.kopieid
     signature:
       - fingerprint: |-
