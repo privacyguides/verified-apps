@@ -10982,6 +10982,14 @@ packages:
             issue: GH-1636
             apk:
               sha256: e2ababc9eef975f2e842f280c280aac0164d45d1e21d90e1d615b6d39672ba2f
+  - package: de.csicar.ning
+    signature:
+      - fingerprint: 11:4B:2B:5C:DE:7D:51:42:4A:9D:E0:AD:40:2D:99:DD:99:B7:A9:4A:33:97:3F:88:E5:9B:EB:91:2A:C6:E2:3B
+        sources:
+          - name: F-Droid
+            issue: GH-3305
+            apk:
+              sha256: 6073d6d7e9f85285ea3330eed1c219e8b9769374f4e35621a9025b15059218c2
   - package: de.cweiske.headphoneindicator
     signature:
       - fingerprint: 45:ED:6E:CA:94:95:D5:49:14:38:0D:3F:84:84:EB:6D:D2:CA:DB:B1:E4:7B:C5:FD:57:62:EC:37:07:83:F4:15
