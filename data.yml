@@ -16451,6 +16451,14 @@ packages:
             issue: GH-1993
             apk:
               sha256: eafe5548df8a4aa74d4664e051db011d2d5e5cb62f24952ca9a58754cd42ed63
+  - package: pl.tablica
+    signature:
+      - fingerprint: 8E:9F:81:78:97:6B:5C:5A:D9:08:58:AF:23:76:91:CF:C2:7F:E3:45:1A:85:B1:91:F8:31:0E:4C:8B:1E:F9:90
+        sources:
+          - name: Google Play
+            issue: GH-3202
+            apk:
+              sha256: eb9759bb6cf5e077913c44780311e57a7e30982cfdfc1e7831f91987520b3bac
   - package: pro.archiemeng.waifu2x
     signature:
       - fingerprint: 3C:34:EB:E3:CF:27:3D:6A:1F:FB:D1:17:B4:14:43:98:7C:08:BB:C7:ED:21:6D:11:40:3A:9A:A6:78:E3:83:80
