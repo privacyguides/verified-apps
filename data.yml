@@ -9295,6 +9295,14 @@ packages:
               sha256: 55aae2e08e439a42afc2ac6464e31bfdba34caf23505a7581caa7720eb4db126
           - name: HTTPS Verified Domain
             issue: GH-8228
+  - package: com.simplygood.ct
+    signature:
+      - fingerprint: CA:C0:4E:CE:1A:E1:F4:9A:CD:75:DA:F7:A3:45:1E:94:EA:5E:6F:DF:E2:8E:C3:EE:3E:D4:46:83:13:5E:07:D0
+        sources:
+          - name: Google Play
+            issue: GH-3596
+            apk:
+              sha256: 81cec73f58c5ee0ea98446b16cc97140a7a8ed01a7d1914cc23ea6910fe785a9
   - package: com.simplytranslate_mobile
     signature:
       - fingerprint: C1:03:5F:AB:0B:E4:75:EB:9F:C7:0E:92:12:48:0D:22:0B:90:C7:E7:4A:1F:9B:53:B5:CA:23:A6:0A:D2:99:F9
