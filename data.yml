@@ -2622,6 +2622,14 @@ packages:
               sha256: 4b0a6dc69571e30057a819a50159242405941c89520fc781f506cd14fff06c46
           - name: HTTPS Verified Domain
             issue: GH-5929
+  - package: com.briankhuu.nfcmessageboard
+    signature:
+      - fingerprint: 22:9E:A9:F9:AF:E1:20:6D:F0:74:00:5C:E7:E1:91:01:BE:F5:2E:04:E6:A1:31:DC:E3:67:9F:EF:53:68:20:70
+        sources:
+          - name: F-Droid
+            issue: GH-3356
+            apk:
+              sha256: 32f824c91957cf05a8337adf833492e35d5d5c5621846e311e872f106f033252
   - package: com.brickit.brickit
     signature:
       - fingerprint: E1:63:57:00:69:89:D6:6A:98:F0:CE:D3:18:6F:82:29:2C:49:5F:FC:97:00:EB:C5:4C:07:79:BF:A8:18:8F:C2
