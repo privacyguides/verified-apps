@@ -15559,6 +15559,14 @@ packages:
             issue: GH-2926
             apk:
               sha256: d52ded1efca59ca764e6437af5c3fc4a41e4ad181fdff128c8b891a11b138ea9
+  - package: org.gnu.emacs
+    signature:
+      - fingerprint: B9:8A:C0:F5:FF:9F:F2:89:3C:BF:DF:7B:18:B5:81:E2:FF:57:DF:E7:53:4A:71:8A:C8:19:D6:FE:81:8F:FA:8B
+        sources:
+          - name: F-Droid
+            issue: GH-3271
+            apk:
+              sha256: f955cfc5ed39547a0af684cf7d9454efd4d657babf09a8334c30fa63c8bd2160
   - package: org.handmadeideas.floccus
     signature:
       - fingerprint: ED:70:EE:84:EB:35:BB:BF:87:56:C7:B2:D5:AF:B8:6E:CA:BA:DD:07:4F:65:79:EC:EF:5C:D7:4F:C8:93:CC:12
