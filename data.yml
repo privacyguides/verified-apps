@@ -910,6 +910,18 @@ packages:
             issue: GH-729
             apk:
               sha256: 9a1cf2516c0f63118008258e6dcfd1de814fc597636c939b7547e9f1b5b4ffb8
+  - package: cgeo.geocaching
+    signature:
+      - fingerprint: 3D:B1:DD:84:43:B9:6F:E9:F7:68:0E:EA:4F:7F:9D:02:34:F8:40:72:83:FF:E3:E6:A4:3A:D6:8A:DC:FD:C5:E4
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-3775
+            apk:
+              sha256: 17d96f4b676651b1da4fac7f3a6644365b383b804a3beff3a8484588fca73116
+          - name: Google Play
+            issue: GH-3775
+            apk:
+              sha256: 403331cc78ac6c940579a3efc7c0dae47cdd44bf0d5e7dfe6d5dd6f0079b244c
   - package: ch.coredump.watertemp.zh
     signature:
       - fingerprint: B9:A5:BC:C0:8A:FA:69:20:0A:A6:AA:84:B4:A0:3B:AC:8F:3A:63:C9:8C:86:A2:D4:CB:C8:26:A0:F7:3D:19:71
