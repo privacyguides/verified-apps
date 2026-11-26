@@ -5682,6 +5682,14 @@ packages:
             issue: GH-3534
             apk:
               sha256: 36c78cd832840a58b334e8858e7fe10de4f30b73777d2c34472416cadda5d5ae
+  - package: com.halfbrick.jetpackjoyride
+    signature:
+      - fingerprint: 8B:33:A6:B6:E9:BD:64:E2:83:BC:34:8D:E7:74:1A:38:3A:30:37:D5:62:9B:FB:89:AA:27:C6:7D:CF:2D:DC:29
+        sources:
+          - name: Google Play
+            issue: GH-3535
+            apk:
+              sha256: bcfa261213e76769727389ff384038d29e2dd7b47907e715e823e64a61f81fa2
   - package: com.hardbacknutter.nevertoomanybooks
     signature:
       - fingerprint: DF:97:1C:E7:D5:8D:3C:DF:37:7C:32:E0:E2:F5:3D:65:99:BD:7F:13:0A:50:C0:52:9C:45:58:3D:DC:12:A0:08
