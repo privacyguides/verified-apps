@@ -3334,6 +3334,14 @@ packages:
             issue: GH-7097
             apk:
               sha256: 982c1d0c688a2fa87773d5751fb7aeb0c8d7320c14237211d648eed95f2154d3
+  - package: com.davisinstruments.weatherlink
+    signature:
+      - fingerprint: D2:0E:84:DB:D1:46:32:98:73:40:8D:A5:3B:04:DA:E5:5F:1D:21:32:78:A6:1B:16:B4:26:78:9F:5C:27:E8:08
+        sources:
+          - name: Google Play
+            issue: GH-3407
+            apk:
+              sha256: 01196293b4e12de3f23ad2ebba97d498c666de8781e154d2a6c7a5f3579d02db
   - package: com.davivienda.daviviendaapp
     signature:
       - fingerprint: 88:C3:6E:43:F6:E1:6F:A4:F5:08:DA:C7:CD:43:1D:B3:EA:82:C0:2D:E2:87:75:99:F7:4C:AD:68:4A:63:D5:F7
