@@ -13891,6 +13891,14 @@ packages:
             issue: GH-4526
             apk:
               sha256: 100d75129b3fc6d0d5b220d0a4dc75351084be44294152b1bd411e5847e32f30
+  - package: io.vikunja.app
+    signature:
+      - fingerprint: FE:24:9E:50:D7:7B:69:32:BC:E3:3F:99:4A:C7:59:2C:A6:1E:3D:3A:9A:A0:A9:FD:41:78:0F:6A:A1:6B:BA:5D
+        sources:
+          - name: Google Play
+            issue: GH-3563
+            apk:
+              sha256: ba99223e1dff86f8f92c1d4406113a7e72d7d511298e87e3837fb9377a30454a
   - package: io.voiapp.voi
     signature:
       - fingerprint: 71:81:B6:E7:9B:33:4C:98:D2:73:1A:8B:D6:EC:D7:E7:50:F0:A6:0D:AB:17:9B:22:15:2E:FA:36:9C:75:8A:F0
