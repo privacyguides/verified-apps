@@ -4310,6 +4310,14 @@ packages:
             issue: GH-3598
             apk:
               sha256: 3cd6298bd33ff248f1a833d4399f3d9ee5e90c32232d0a61ffdee935747bc94b
+  - package: com.fivemobile.myaccount
+    signature:
+      - fingerprint: EB:5A:B3:BE:FA:B6:FC:9E:FD:57:AC:B1:82:4A:E0:2D:29:03:87:08:C0:55:DD:C0:2F:51:CB:58:5E:06:75:E4
+        sources:
+          - name: Google Play
+            issue: GH-3610
+            apk:
+              sha256: f59ad8bf9ae0ef7e7a678936686549f84b9b8b4731d90554a22d22a761328b42
   - package: com.flashsphere.privatednsqs.nolauncher
     signature:
       - fingerprint: B2:D8:A4:70:8B:05:94:73:D9:04:D0:F8:27:07:D7:1E:3E:72:58:6F:50:BA:2D:11:83:CC:FA:B1:DF:D8:45:C4
