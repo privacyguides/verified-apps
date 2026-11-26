@@ -14677,6 +14677,14 @@ packages:
             issue: GH-1442
             apk:
               sha256: 3ee6226f2a435ea48224b3772e721d7b8834f8585bbaa9a5cedc967d9e7faf04
+  - package: org.alberto97.aodtoggle
+    signature:
+      - fingerprint: 9C:D9:0A:5C:DF:81:1C:56:1F:02:FF:2E:98:FC:8C:6F:AC:B2:DC:B0:ED:6F:1B:9E:C5:86:1A:84:07:F0:3D:A6
+        sources:
+          - name: F-Droid
+            issue: GH-3256
+            apk:
+              sha256: 4aa4f877fedf372db14d42dd21737bc95891774e98b91fdddf0775d92f2226ec
   - package: org.andbible.andbible
     signature:
       - fingerprint: 8B:F5:16:8A:01:94:4D:62:A4:A4:C7:B6:52:F4:73:81:84:00:0D:57:A4:8C:52:89:5A:C6:CB:83:1C:48:CF:30
