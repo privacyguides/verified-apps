@@ -5923,6 +5923,14 @@ packages:
             issue: GH-1444
             apk:
               sha256: e2da6978c346e7a7805d52186eefecc25d93d9fb8dec3054bdf509e2e596d6e5
+  - package: com.jabra.moments
+    signature:
+      - fingerprint: BC:EA:AD:9D:1C:34:9C:4C:9F:F5:B5:59:C5:B7:D1:A7:AF:35:00:CE:D8:E3:D0:89:9A:44:B9:27:02:82:1A:82
+        sources:
+          - name: Google Play
+            issue: GH-3445
+            apk:
+              sha256: b85e972a59ce642b2ac0d593a1470fd670ec393167a2f0f72d989a6a3feb3a70
   - package: com.jamworks.aodnotificationledlight
     signature:
       - fingerprint: 8B:B4:3D:24:DC:62:A3:3C:B8:83:1D:04:38:E5:C7:9C:8C:6C:9E:3B:13:39:B6:56:71:7D:9E:8A:D4:BF:04:50
