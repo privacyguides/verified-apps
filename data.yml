@@ -322,6 +322,22 @@ packages:
             issue: GH-1439
             apk:
               sha256: 1d5c58a684b67a98b906af5e524fb83c8dfb94ee37ee58906e3a7b9feb6289a7
+  - package: app.lonecloud.prism
+    signature:
+      - fingerprint: FD:29:86:45:7A:6A:6E:4D:D9:05:6B:3C:A5:A6:9E:0E:DF:D5:AA:9D:D4:5B:3D:78:DB:21:E8:AD:72:FB:AE:AD
+        sources:
+          - name: F-Droid
+            issue: GH-3728
+            apk:
+              sha256: cf33481a841ae6f515ea169843a967d9aeee9023bc8dc8a4623884a4f60a8b9f
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-3728
+            apk:
+              sha256: cf33481a841ae6f515ea169843a967d9aeee9023bc8dc8a4623884a4f60a8b9f
+          - name: Google Play
+            issue: GH-3728
+            apk:
+              sha256: b23881a764a1deffa55e12bc2e033125872b3cedf67be59a6471dd89649604a3
   - package: app.lunatask.android
     signature:
       - fingerprint: 24:87:92:17:32:B2:01:F8:82:24:45:EF:C2:10:71:AA:74:42:2A:90:36:69:A7:C9:D4:63:1B:A9:CE:80:81:CF
