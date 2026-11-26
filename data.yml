@@ -17613,6 +17613,14 @@ packages:
             issue: GH-2027
             apk:
               sha256: 5980c654bbb9e4535191d03fdac2253a5d34b5db784c561822e5797ad8ee1290
+  - package: space.o4bit.projectasteria.foss
+    signature:
+      - fingerprint: 93:24:2A:01:77:D9:2D:25:F8:3C:E4:30:06:B8:08:90:0F:08:28:43:00:DC:A3:5C:89:55:09:F7:82:3E:DE:19
+        sources:
+          - name: F-Droid
+            issue: GH-3574
+            apk:
+              sha256: b51e5d1271900d65dc4b2d05174ff1b8753d531f58d43748020bcb5bd78ce3ca
   - package: spam.blocker
     signature:
       - fingerprint: 7B:1C:E7:27:85:6F:34:27:EA:B1:FA:DF:AD:6C:97:30:CD:4E:6B:A2:01:66:15:47:F0:09:20:63:77:DF:FB:58
