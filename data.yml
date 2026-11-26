@@ -15742,6 +15742,14 @@ packages:
         sources:
           - name: F-Droid
             issue: GH-541
+  - package: org.dolphinemu.dolphinemu
+    signature:
+      - fingerprint: 40:14:F9:16:9E:3F:F0:8C:D8:FD:F8:AC:33:41:9D:46:03:ED:95:58:27:16:49:4A:03:92:85:3C:91:14:88:35
+        sources:
+          - name: F-Droid
+            issue: GH-3637
+            apk:
+              sha256: 5279425e01c552ba6cde1adc7f08f1c1f5b8f9271c2418a4ad849ee4106ee719
   - package: org.dsandler.apps.markers
     signature:
       - fingerprint: A8:0B:0D:4E:08:04:13:2B:93:5E:0A:01:1A:BF:34:57:F7:B4:1B:AE:B4:E5:65:E4:EC:E8:6A:96:D9:00:F3:90
