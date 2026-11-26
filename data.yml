@@ -18449,6 +18449,14 @@ packages:
             issue: GH-1109
             apk:
               sha256: 7e12a655bd7868e89e9d96774d5d74e7bd93a665e3a75c385aef99698b5581ca
+  - package: xyz.goodcloud.glinet
+    signature:
+      - fingerprint: 4E:AD:CB:A5:06:42:A4:C3:58:3C:F4:59:24:D0:6D:1C:C5:30:6F:02:48:24:FA:A4:E3:41:D8:FD:09:26:B2:95
+        sources:
+          - name: Google Play
+            issue: GH-3810
+            apk:
+              sha256: 88c289883b16167db93fd32d026fdd09b631bdc4eb853f64adfc0632be2e710e
   - package: xyz.lepisma.harp
     signature:
       - fingerprint: 2B:A3:CA:9F:3A:34:1E:5A:26:75:76:37:B6:BC:B7:55:8C:DF:4F:FF:05:22:1F:86:49:8A:98:49:93:3F:D9:15
