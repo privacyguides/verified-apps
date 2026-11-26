@@ -16964,6 +16964,14 @@ packages:
             issue: GH-7269
             apk:
               sha256: 4ed7a2ed3e049aa173d45d1b7272760e429023c727696dbffb31a39d75cbb6c2
+  - package: se.leap.riseupvpn
+    signature:
+      - fingerprint: CD:59:26:17:B2:7A:65:CD:44:E2:4F:B7:B8:BC:5D:13:D1:40:FC:79:0C:37:33:9E:EF:4A:BB:45:18:DD:3A:C2
+        sources:
+          - name: F-Droid
+            issue: GH-3346
+            apk:
+              sha256: a64b4612f99951b2930cdec8f06d076d8edcd0a295af0df9db95b0459fb8c74d
   - package: se.lublin.mumla
     signature:
       - fingerprint: 14:96:D2:90:5A:A8:D5:E9:8C:CC:DB:DB:D5:EC:4A:9B:63:8E:52:58:77:66:F1:82:DB:07:34:46:6A:B1:B7:AE
