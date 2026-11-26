@@ -13408,6 +13408,18 @@ packages:
             issue: GH-3362
             apk:
               sha256: 456c11810f4134fbacb00514836701b5dced8dc32e19dc87220884ef592b06f0
+  - package: io.github.jqssun.airplay
+    signature:
+      - fingerprint: 64:CA:1F:A3:9D:DF:9E:0E:89:C5:7D:73:FB:68:1D:2A:5B:35:AE:20:F0:71:77:1E:2E:B4:01:B5:03:2E:F1:A9
+        sources:
+          - name: F-Droid
+            issue: GH-3505
+            apk:
+              sha256: b8c7c595ed93f91562feedce92c27800f08f9c84df424f6ac2045e82324cf2a4
+          - name: Google Play
+            issue: GH-3505
+            apk:
+              sha256: 5f046cdcad2929f983b196753edf99051f130bf84699ad0cd01ac37504b9605d
   - package: io.github.jqssun.helium
     signature:
       - fingerprint: 09:55:40:49:4D:53:F4:8C:A0:51:BC:86:C3:92:C4:6E:DB:29:72:5D:A5:59:2B:D8:AF:3C:3D:02:7B:31:66:BB
