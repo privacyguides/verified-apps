@@ -836,6 +836,14 @@ packages:
             issue: GH-8225
             apk:
               sha256: c7d00d873b98d3609845bb4ffe159ad7fd0bcbf976cbc0799244f255a8dafade
+  - package: ca.indigo
+    signature:
+      - fingerprint: FE:44:EF:DC:DC:1E:A5:CB:38:D8:3E:CF:82:F0:F0:B8:72:E4:5C:0C:FA:7D:75:D3:8B:3E:69:46:E5:66:09:C2
+        sources:
+          - name: Google Play
+            issue: GH-3603
+            apk:
+              sha256: b5b6da1e6447437d0a69bd1c34ce486246ca51699d43bdd7cf337b7822182fd4
   - package: ca.ymca.weemarkable
     signature:
       - fingerprint: 75:4C:11:C3:8F:25:FD:61:0E:BC:8A:08:53:FC:0F:1C:F7:53:9E:10:40:6E:20:A0:1A:C5:CA:7E:61:D2:9E:25
