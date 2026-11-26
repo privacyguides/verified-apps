@@ -6483,6 +6483,12 @@ packages:
               sha256: cd82720732a16ae642ac8c9f83738f105e6444a37da8bae287e6a0f4629e0a45
   - package: com.machiav3lli.backup
     signature:
+      - fingerprint: 6A:0B:8D:B9:8C:68:D9:72:DA:3E:06:09:78:C2:D0:A2:30:EC:85:BE:05:42:B3:02:FA:F0:B5:B1:BC:4E:F0:07
+        sources:
+          - name: F-Droid
+            issue: GH-3298
+            apk:
+              sha256: 1485c964ba52b45c1057c2d6f7299286e456c61109f381d842c094ab5ec7e9c6
       - fingerprint: C9:4F:10:24:3C:14:D5:7D:D6:9D:ED:E6:1C:23:4B:B5:E8:BB:07:04:D6:1B:45:DA:FE:49:67:28:AC:32:F3:78
         sources:
           - name: F-Droid (IzzyOnDroid)
