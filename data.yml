@@ -5640,6 +5640,14 @@ packages:
             issue: GH-963
             apk:
               sha256: e4058b4aadebda0ca9a192cea3a5383effd4755336ccc8a7d48ba6a42b7c4936
+  - package: com.grmasa.soundtoggle
+    signature:
+      - fingerprint: 5C:25:EF:1E:23:C2:CF:51:97:94:D7:60:74:02:47:2F:EC:37:E5:68:34:0A:76:5B:04:C1:1F:05:F6:6A:96:93
+        sources:
+          - name: F-Droid
+            issue: GH-3564
+            apk:
+              sha256: d7f9a0a10d5e2fb96e5471b15ec0ff5a409cb20e8f0ede9b63264d8c9090abcd
   - package: com.groundspeak.geocaching.intro
     signature:
       - fingerprint: 7F:00:04:58:07:0A:82:72:E5:96:0F:2B:3C:9D:33:48:37:2F:31:B0:E6:00:C8:6A:F3:4F:C0:6E:85:F8:DB:8C
