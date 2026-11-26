@@ -9149,6 +9149,16 @@ packages:
             issue: GH-2708
             apk:
               sha256: 6b9df70c5f3a40c840fd45573385690bd777e6b341134f1e585ad3b87ba95a9a
+  - package: com.snapchat.android
+    signature:
+      - fingerprint: 2F:1C:AA:FC:A1:ED:30:D0:B4:E3:88:63:EE:FA:BE:A0:E8:15:71:1F:A4:CF:79:B8:22:51:9A:82:59:D9:5A:58
+        sources:
+          - name: Google Play
+            issue: GH-3446
+            apk:
+              sha256: 6a8a0d169fe62602d54ef5a7e79ac287e56bbc5efb6a7b29c50c6f5a9ab0a43a
+          - name: HTTPS Verified Domain
+            issue: GH-3446
   - package: com.sonova.chb.control
     signature:
       - fingerprint: 62:51:D6:78:41:32:F6:E0:47:75:8D:3E:7F:60:31:7F:04:9A:E4:A5:03:A0:0A:39:63:F9:60:CF:60:C0:CC:FA

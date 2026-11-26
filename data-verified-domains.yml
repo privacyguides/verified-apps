@@ -1094,6 +1094,16 @@ domains:
           - 3C:52:C4:FD:3C:AD:1C:07:C9:B0:0A:70:80:E3:58:FA:B9:FE:FC:B8:AF:5A:EC:14:77:65:F1:6D:0F:21:AD:85
           - 5E:3E:DC:C2:00:FB:A8:D5:F4:88:F3:CA:4C:32:5B:05:78:C5:6A:9C:03:A1:CC:B5:92:9C:D7:5C:7E:57:E2:4D
           - AE:C1:95:DC:FD:46:14:BD:3A:91:EC:26:D1:D5:14:C8:75:71:C5:CC:8D:CF:48:08:3F:92:83:14:3C:A2:B9:A6
+  - domain: snapchat.com
+    method: https
+    issue:
+      - GH-3446
+    checked: "2026-11-26T02:02:18Z"
+    packages:
+      - package: com.snapchat.android
+        fingerprints:
+          - 2F:1C:AA:FC:A1:ED:30:D0:B4:E3:88:63:EE:FA:BE:A0:E8:15:71:1F:A4:CF:79:B8:22:51:9A:82:59:D9:5A:58
+          - C7:E9:CA:F6:6D:BE:34:3D:AE:A2:B3:D9:E7:56:F7:B1:D9:13:DE:31:07:97:CF:36:17:CE:32:97:46:17:CF:48
   - domain: soundcloud.com
     method: https
     issue:
