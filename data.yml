@@ -4592,6 +4592,14 @@ packages:
             issue: GH-7111
             apk:
               sha256: e5309a1ab6e08a5800e638a28e027459b9e1871d28b517d8add91d2a7c019a3c
+  - package: com.github.jameshnsears.quoteunquote
+    signature:
+      - fingerprint: 40:56:BF:E9:13:D0:AD:5E:20:52:AB:72:E1:F7:88:00:DD:95:4F:53:63:4F:3D:B5:9B:29:53:31:BA:E1:EE:E4
+        sources:
+          - name: F-Droid
+            issue: GH-3257
+            apk:
+              sha256: bb822d3e3f45d8869c391c4a49d47b6da745520ee52fff97b5e38e25cc949f2a
   - package: com.github.lamarios.clipious
     signature:
       - fingerprint: 19:DE:04:E5:D6:84:66:06:9D:30:EC:63:C6:BA:7D:9E:3C:F7:3B:5D:61:CB:4B:37:62:C2:B9:B2:53:EC:BD:03
