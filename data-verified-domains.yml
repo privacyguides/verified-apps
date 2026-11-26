@@ -181,6 +181,15 @@ domains:
       - package: com.roundsalmon4.appverifier
         fingerprints:
           - 1E:76:F1:A1:5C:BE:20:1F:0F:E2:6A:F2:7A:12:D9:1D:0D:34:81:FE:7D:CC:7D:89:E9:D2:05:69:30:F6:D5:A9
+  - domain: asksakis.com
+    method: https
+    issue:
+      - GH-3558
+    checked: "2026-11-26T02:42:15Z"
+    packages:
+      - package: com.asksakis.freegate
+        fingerprints:
+          - 3B:F1:A6:F7:4A:92:28:AA:0F:59:0E:84:54:3A:5A:8F:C9:C8:C9:C3:0C:49:8C:A1:F3:3B:E3:5A:DA:9E:BB:A6
   - domain: auth.ente.io
     method: https
     issue:

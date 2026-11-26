@@ -2007,6 +2007,16 @@ packages:
             issue: GH-1129
             apk:
               sha256: 020f9e2cb13c1321bf99663fe6b5418049fcc1a9819f7c8f8424e72761598655
+  - package: com.asksakis.freegate
+    signature:
+      - fingerprint: 3B:F1:A6:F7:4A:92:28:AA:0F:59:0E:84:54:3A:5A:8F:C9:C8:C9:C3:0C:49:8C:A1:F3:3B:E3:5A:DA:9E:BB:A6
+        sources:
+          - name: F-Droid
+            issue: GH-3558
+            apk:
+              sha256: 5c47667dcbb591014cecea0b69b2c48233fce58bbd7ab832f7f65fc06c67366a
+          - name: HTTPS Verified Domain
+            issue: GH-3558
   - package: com.asr.mobileapp
     signature:
       - fingerprint: 73:63:53:35:DB:DF:6A:D4:43:49:75:61:9A:A1:AE:0E:2F:D6:EA:C4:A3:A5:5D:7B:38:A3:55:86:DD:E6:76:19
