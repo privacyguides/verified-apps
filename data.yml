@@ -15179,6 +15179,14 @@ packages:
             issue: GH-6527
             apk:
               sha256: 290c0d53294b820ad8f24c5eff0dcda0d84bcbd7e1ae1b1929e9356a0b4e55cb
+  - package: net.millaguie.cosmovisor
+    signature:
+      - fingerprint: 6D:7C:E9:F4:E5:F6:94:7E:1F:BA:88:BF:8C:97:B3:35:CD:92:2C:CE:CE:A2:A1:7B:18:F9:30:51:E7:2B:E0:35
+        sources:
+          - name: F-Droid
+            issue: GH-3776
+            apk:
+              sha256: 7395b9a971f4663aa67dc4e74dd9b0b2d2ac37951f0331b7e845c7daccd108f2
   - package: net.minetest.minetest
     signature:
       - fingerprint: E7:D6:04:7C:1D:75:71:98:11:B3:17:96:4A:4A:B1:C0:AD:3B:00:3B:C3:B8:B3:D7:29:25:B4:D6:05:CA:45:EE
