@@ -14374,6 +14374,18 @@ packages:
             issue: CB-203
             apk:
               sha256: f7263f464ad2637ebcffaa216e4dbcdc564c8fe97ba7d2fb144fa549a9f559f2
+  - package: juloo.keyboard2
+    signature:
+      - fingerprint: 0F:D9:6D:AF:7A:70:98:1E:DC:7A:F4:2D:14:A2:0F:F1:9E:90:51:4C:99:66:DE:93:AB:B7:AF:25:14:53:EF:C4
+        sources:
+          - name: F-Droid
+            issue: GH-3685
+            apk:
+              sha256: 14296902591e5e3c8f9040b3fc8a309d0071cd0fa4085c159f1187a48722881d
+          - name: Google Play
+            issue: GH-3685
+            apk:
+              sha256: f98e914c2a189af9a9666f1384254a1029b1ff8c50bca3ca886b0a6b8ebe3d0e
   - package: keepass2android.keepass2android
     signature:
       - fingerprint: 0B:F8:05:6D:3A:39:4E:D7:C7:71:73:C4:B4:2C:80:05:65:B4:F0:A4:29:77:56:9C:F3:47:2C:27:1C:56:29:39
