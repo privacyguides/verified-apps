@@ -412,6 +412,14 @@ packages:
             issue: GH-657
             apk:
               sha256: eb110a855e0040cb08fec545017c2623eb8536211a14f372d7528ff28edf4fce
+  - package: app.onloc.android
+    signature:
+      - fingerprint: AB:E6:80:8D:71:32:0A:B4:96:59:4F:34:BC:3E:53:A8:BD:49:45:9B:06:E7:BC:14:54:6E:8C:31:06:F5:C6:60
+        sources:
+          - name: F-Droid
+            issue: GH-3720
+            apk:
+              sha256: da2be532bfab855f3fc106a1c64addd730a9b35aeedea27599465aecc1d2f331
   - package: app.organicmaps
     signature:
       - fingerprint: 9D:5A:95:65:8F:EC:4E:A2:FD:C1:E0:A6:96:E3:69:E5:B9:38:D2:E3:0A:28:ED:FF:50:AE:99:BD:A2:7E:8F:A3
