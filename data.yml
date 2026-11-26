@@ -12893,6 +12893,14 @@ packages:
             issue: GH-62
           - name: AppVerifier
             issue: GH-62
+  - package: im.narayana.another
+    signature:
+      - fingerprint: 8C:96:C7:FB:1D:36:93:9A:20:27:EF:F9:D8:C4:22:64:F6:C5:55:73:07:CA:EA:2F:3B:9B:8C:1A:B2:4C:70:D9
+        sources:
+          - name: F-Droid
+            issue: GH-3351
+            apk:
+              sha256: fa57fe57d06eaf42288139618bab098e168885a95852942b95e821cb3f99f26f
   - package: im.vector.app
     signature:
       - fingerprint: B1:5D:9B:67:3B:55:B9:FE:65:61:90:79:4D:87:2E:59:EC:5B:85:B3:BF:B8:A7:6B:94:42:F1:7E:AE:28:87:C9
