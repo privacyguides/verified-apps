@@ -16893,6 +16893,14 @@ packages:
             issue: GH-614
             apk:
               sha256: 02e669797b4d42a1ea4afede01ee1fcb1df1dd86a89d07a6e7bb756bd0de5817
+  - package: org.runnerup
+    signature:
+      - fingerprint: FF:83:AE:6F:E5:8C:71:DF:B3:77:5A:D2:52:F4:56:11:33:94:EF:21:4C:99:68:D3:ED:4B:2B:5A:6A:40:20:E6
+        sources:
+          - name: Google Play
+            issue: GH-3689
+            apk:
+              sha256: bfa9fb97c19500e6d4429e98ca4107c6b93328a296489260118aacabf7e218b7
   - package: org.schabi.newpipe
     signature:
       - fingerprint: CB:84:06:9B:D6:81:16:BA:FA:E5:EE:4E:E5:B0:8A:56:7A:A6:D8:98:40:4E:7C:B1:2F:9E:75:6D:F5:CF:5C:AB
