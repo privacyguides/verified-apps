@@ -16193,6 +16193,14 @@ packages:
             issue: GH-7472
             apk:
               sha256: 39d7aede3649e180ff49aa2dca67ca0574b8cf2f1a69a8d386e0fc5f7fae38ba
+  - package: org.libre.agosto.p2play
+    signature:
+      - fingerprint: 11:C6:63:3E:D5:48:5E:48:76:2E:FF:59:D9:50:10:C2:08:B3:F7:2B:D1:D4:6C:1A:98:C1:F6:B1:01:34:3B:8A
+        sources:
+          - name: F-Droid
+            issue: GH-3504
+            apk:
+              sha256: b42ac400dd34afb0d00b8de6e05e5e4f70dc88534e4335029f060ff7a3638227
   - package: org.lichess.mobileV2
     signature:
       - fingerprint: 49:6E:D2:C1:54:28:92:A0:94:A2:A6:E2:6D:59:CD:07:FB:7E:8C:71:13:55:87:6D:AD:38:59:EA:82:F8:AF:62
