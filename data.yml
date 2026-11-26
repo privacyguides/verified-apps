@@ -2552,6 +2552,14 @@ packages:
             issue: GH-6342
             apk:
               sha256: 20ee4361f5c630109d0ba6287622c966f9a1a7c431a3fd9dbc528c775f8a443e
+  - package: com.brahmadeo.supertonic.tts
+    signature:
+      - fingerprint: 78:B9:4D:02:5B:CC:06:CB:69:AF:54:C9:D9:B4:E7:08:E7:73:A2:5B:7D:A3:B5:32:A4:B6:91:48:2D:D9:C1:1B
+        sources:
+          - name: F-Droid
+            issue: GH-3239
+            apk:
+              sha256: 4b4d83031d575a8c101ea9bf468744ae2cc7f2f73a359bf30fe83c6e53a6a2d1
   - package: com.branded.arrl
     signature:
       - fingerprint: AC:1F:16:F0:D9:4D:8B:75:D6:16:20:0B:EF:A3:2B:23:45:A7:B9:D4:B8:E3:D2:4E:62:EC:D3:BD:F9:88:F9:B7
