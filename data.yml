@@ -6289,6 +6289,14 @@ packages:
             issue: GH-2034
             apk:
               sha256: 4d234b472acccd4fc73326abcdcc6b85c953695b5d279183af86f136756242a3
+  - package: com.klee.sapio
+    signature:
+      - fingerprint: 27:BA:7A:70:A5:F0:FE:DA:DF:F4:A0:59:8A:4C:A7:FF:7D:9B:A7:CC:8A:6C:2E:CE:C7:55:49:CF:CB:F2:4B:D2
+        sources:
+          - name: F-Droid
+            issue: GH-3531
+            apk:
+              sha256: 3f6c083f16254ab2d3fb61506846f4fdbf0cf56b9936fda1aae58f8bda7bc60b
   - package: com.klook
     signature:
       - fingerprint: AD:B8:11:84:1B:66:C5:B2:D4:26:47:D4:89:7D:8B:01:64:82:CA:46:31:A8:87:C6:80:5B:1E:33:BB:31:5D:14
