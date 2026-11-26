@@ -6293,6 +6293,14 @@ packages:
             issue: GH-8285
             apk:
               sha256: e33b3446ac124f607db604c7e41f85dacfbd47e88fa615917ec52ed348f6afd7
+  - package: com.jens.automation2
+    signature:
+      - fingerprint: D3:12:D8:CA:65:99:EE:71:CC:27:58:31:5D:CA:0C:87:1C:AF:E9:91:B7:6E:2B:EA:BF:8F:E1:86:CA:EA:A9:3F
+        sources:
+          - name: F-Droid
+            issue: GH-3761
+            apk:
+              sha256: e4878ac5a7308f886747214168abffa332f8ae5577bcd1ab9ea8d6a41e84df87
   - package: com.jerboa
     signature:
       - fingerprint: EA:71:95:CF:CE:63:8A:E6:B1:A8:00:2D:DC:0D:48:63:36:60:95:EA:5B:8D:95:C1:CD:5E:25:DB:0F:E2:E7:C3
