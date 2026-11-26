@@ -51,6 +51,14 @@ packages:
               sha256: 73a7e07376d31e9ab41d3f919275a3880937cb300e2d2c51c23cb8bcaf72908d
           - name: HTTPS Verified Domain
             issue: GH-8182
+  - package: air.com.hypah.io.slither
+    signature:
+      - fingerprint: CC:50:D8:E5:45:33:AD:F0:E5:9E:50:8F:40:D3:C3:AB:FD:A8:A8:9E:09:1B:42:8F:4E:67:19:A6:40:D3:FA:F2
+        sources:
+          - name: Google Play
+            issue: GH-3712
+            apk:
+              sha256: b5df55c87f5ca61db59cd2733b78d64822e4dd3797a59edd844bfe09d8b7f9c8
   - package: air.com.parkerstech.day
     signature:
       - fingerprint: |-
