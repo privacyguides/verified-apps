@@ -3960,6 +3960,14 @@ packages:
             issue: GH-804
             apk:
               sha256: c542d996d9cff44ceb17489d9689c8e3ab19429c51fa37018cc3149ae7a70552
+  - package: com.eco.global.app
+    signature:
+      - fingerprint: F0:E8:E7:0C:95:9A:6F:94:9D:B6:26:D4:64:AD:E2:31:CA:A6:FF:2C:E6:52:E5:72:0E:C4:E4:1F:6F:EF:8B:E8
+        sources:
+          - name: Google Play
+            issue: GH-3809
+            apk:
+              sha256: fb22cdeda7c126fe1988de78efca8b01edd6f2333a11eb6d2aa29d99e007539d
   - package: com.ecobee.athenamobile
     signature:
       - fingerprint: 69:4E:C7:E4:33:14:FC:F0:E9:1A:34:D5:2F:E7:A9:EF:C6:5C:4C:33:BD:69:C5:71:7C:9D:93:1C:FF:F6:E9:76
