@@ -2941,6 +2941,14 @@ packages:
             issue: GH-6601
             apk:
               sha256: 2161cfce3e36a47f94874a0ec1d1ec8b0de8f95779f73a185f90fa13137bb543
+  - package: com.cisco.anyconnect.vpn.android.avf
+    signature:
+      - fingerprint: 48:2B:9D:63:DC:26:39:53:B2:62:97:3E:C3:06:89:8B:89:2B:EB:09:7E:DF:32:99:82:6E:A9:37:27:51:3E:D8
+        sources:
+          - name: Google Play
+            issue: GH-3223
+            apk:
+              sha256: ff15a40634fc8b15953b3df8be5c451b1c4a821b93b59a1f4302dc7a5aba056c
   - package: com.cisco.wx2.android
     signature:
       - fingerprint: B0:78:4C:13:1B:03:08:6D:A3:76:D3:23:0E:9C:F8:4B:39:AE:E7:69:70:9F:FB:56:2C:3B:A6:CD:BC:86:9B:8D
