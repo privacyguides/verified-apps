@@ -14548,6 +14548,14 @@ packages:
             issue: GH-2060
             apk:
               sha256: 985a46c58bfd2e5909e7d64e1bce8c8e09942f89e5448c7f14d7f6b74d9caa84
+  - package: net.yukh.xui
+    signature:
+      - fingerprint: 66:8C:DB:5C:D9:DE:B1:79:8E:1B:5A:0A:C1:26:DB:A3:B1:B3:6B:0D:A2:06:2C:64:30:9A:EB:53:CF:8F:96:4A
+        sources:
+          - name: F-Droid
+            issue: GH-3280
+            apk:
+              sha256: 7ec3865de41977ffbe47991dba8998f71e605d7d1100c910940611bc8e9a1bcc
   - package: network.mysterium.vpn
     signature:
       - fingerprint: 40:58:A6:C2:EB:3D:85:76:C2:AA:B3:DD:57:06:7B:10:76:5F:01:E9:07:1C:64:AB:63:30:63:DC:5E:C1:97:9D
