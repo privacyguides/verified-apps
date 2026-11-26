@@ -928,6 +928,14 @@ packages:
             issue: GH-987
             apk:
               sha256: ff952c37fbf0f669db43516533f19ceee4938a47940bbe32f7080f5cfc29e36f
+  - package: chat.delta.lite
+    signature:
+      - fingerprint: A2:ED:51:6B:AB:C5:8B:3E:DD:FD:35:3A:11:A9:DA:98:1B:4D:4C:A6:EE:C8:F1:98:7D:B3:28:8C:DF:51:F0:6A
+        sources:
+          - name: F-Droid
+            issue: GH-3397
+            apk:
+              sha256: 9efb36e5acc3f07c91f585d656d4a6d7a9c50aed7b0737003e2c839eff4bbfd5
   - package: chat.fluffy.fluffychat
     signature:
       - fingerprint: 05:7A:C4:51:64:A2:E6:E3:1F:6D:DE:55:5A:5F:2C:CC:B4:D8:83:4C:B1:85:25:49:68:1B:00:E3:46:68:CA:F3
