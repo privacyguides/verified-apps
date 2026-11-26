@@ -952,6 +952,16 @@ packages:
             issue: GH-2045
             apk:
               sha256: c83c7b2cb416ebe2f1dafab4c18531d9ea42b98eaa204d10ed21cef90ba975a4
+  - package: ch.sbb.mobile.android.b2c
+    signature:
+      - fingerprint: |-
+          20:89:5F:37:5B:70:74:5D:5A:FB:B5:97:E3:53:3B:D7:BE:CB:CC:1F:5E:7C:FA:21:69:D6:23:28:6D:6C:2F:0D
+          38:05:B8:B6:AF:F3:5D:FB:64:B2:51:0B:31:AF:BE:90:47:CD:41:6B:C7:AB:57:7E:FD:45:C1:07:F1:CA:9F:27
+        sources:
+          - name: Google Play
+            issue: GH-3634
+            apk:
+              sha256: 50973c6f68e76afa882e36917f3140ca13416083cff1eae6915578527a18db5d
   - package: ch.sbb.prail2
     signature:
       - fingerprint: |-
