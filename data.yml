@@ -13584,6 +13584,14 @@ packages:
             issue: GH-2585
             apk:
               sha256: 0936f8836307dc1ae33f1851b3ec67b5c2b6df49104f3f59953e168ac14acc8a
+  - package: io.github.toolicious.labler
+    signature:
+      - fingerprint: 2E:ED:22:2A:C7:B3:C3:9B:36:7A:17:E3:D4:A7:04:0D:8B:91:71:53:8E:C0:FC:13:20:D2:E4:18:4C:82:7A:5E
+        sources:
+          - name: F-Droid
+            issue: GH-3514
+            apk:
+              sha256: 77d581d6a38c3fecb69e5f4fad3928e5f5fe123db3905df12478e3485f3ca43d
   - package: io.github.wifi_password_manager
     signature:
       - fingerprint: 34:FF:A2:EE:65:8F:E0:36:B6:C5:D2:92:AE:B2:51:45:DE:69:57:ED:52:ED:D9:9F:4B:EB:8D:6B:36:31:C1:FF
