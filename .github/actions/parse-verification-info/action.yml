@@ -5,7 +5,7 @@ inputs:
     description: Full GitHub issue body (uses the Verification Info section)
     required: true
   issueNumber:
-    description: GitHub issue number (required with issueBody for submission source parsing)
+    description: GitHub issue number (needed for the submissionIssueRef output)
     required: false
     default: ""
 outputs:
@@ -17,85 +17,81 @@ outputs:
     value: ${{ steps.parse.outputs.packageSignature }}
   apkUrl:
     description: Optional direct HTTPS link to an APK from the issue form
-    value: ${{ steps.parse.outputs.apkUrl }}
+    value: ${{ steps.apk.outputs.apkUrl }}
   customFdroidRepoUrl:
     description: Optional HTTPS URL to a custom F-Droid repository from the issue form
-    value: ${{ steps.parse.outputs.customFdroidRepoUrl }}
+    value: ${{ steps.repo.outputs.customFdroidRepoUrl }}
   submissionIssueRef:
     description: Tracker-prefixed submission reference (CB-N or GH-N)
-    value: ${{ steps.parse.outputs.submissionIssueRef }}
+    value: ${{ steps.ref.outputs.submissionIssueRef }}
 
 runs:
   using: composite
   steps:
-    - shell: bash
+    - name: Read the package ID and fingerprints
       id: parse
+      shell: bash
+      env:
+        ISSUE_BODY: ${{ inputs.issueBody }}
+      run: |
+        set -euo pipefail
+        source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
+
+        text=$(signatures_extract_verification_block "$ISSUE_BODY")
+        if ! parsed=$(parse_verification_text "$text"); then
+          echo "Could not parse package name and fingerprint from Verification Info. Paste the exact AppVerifier output (package ID and SHA-256 fingerprint(s) on separate lines)." >&2
+          exit 1
+        fi
+        echo "packageName=$(printf '%s\n' "$parsed" | sed -n '1p')" >> "$GITHUB_OUTPUT"
+        gha_write_multiline_output packageSignature \
+          "$(signatures_format_block "$(printf '%s\n' "$parsed" | tail -n +2)")"
+
+    # Both links are free text typed by the submitter. A link that fails its check is ignored,
+    # with the reason in the log, so the rest of the submission can still be checked.
+    - name: Read the optional direct APK link
+      id: apk
+      shell: bash
+      env:
+        ISSUE_BODY: ${{ inputs.issueBody }}
+      run: |
+        set -euo pipefail
+        source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
+        url=$(signatures_parse_issue_field "Direct download link|Direct APK Link" "$ISSUE_BODY" true)
+        if [[ -n "$url" && ! "$url" =~ ^https:// ]]; then
+          echo "Ignoring Direct APK Link (not an https:// URL): $url" >&2
+          url=""
+        elif [[ -n "$url" && ! "$url" =~ \.apk([?#].*)?$ ]]; then
+          echo "Ignoring Direct APK Link (not a direct .apk file; store pages and listings are not supported): $url" >&2
+          url=""
+        fi
+        echo "apkUrl=$url" >> "$GITHUB_OUTPUT"
+
+    - name: Read the optional custom F-Droid repository
+      id: repo
+      shell: bash
+      env:
+        ISSUE_BODY: ${{ inputs.issueBody }}
+      run: |
+        set -euo pipefail
+        source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
+        url=$(signatures_parse_issue_field "Custom F-Droid Repository" "$ISSUE_BODY" true)
+        if [[ -n "$url" ]] && ! signatures_fdroid_repo_host_from_url "$url" > /dev/null; then
+          echo "Ignoring Custom F-Droid Repository (not an https://<host>/ URL): $url" >&2
+          url=""
+        elif [[ "$url" =~ \.apk([?#].*)?$ ]]; then
+          echo "Ignoring Custom F-Droid Repository (looks like a direct APK link; use Direct APK Link instead): $url" >&2
+          url=""
+        fi
+        echo "customFdroidRepoUrl=$url" >> "$GITHUB_OUTPUT"
+
+    - name: Work out the issue reference
+      id: ref
+      if: inputs.issueNumber != ''
+      shell: bash
       env:
         ISSUE_BODY: ${{ inputs.issueBody }}
         ISSUE_NUMBER: ${{ inputs.issueNumber }}
       run: |
         set -euo pipefail
         source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
-
-        if [[ -z "$ISSUE_BODY" ]]; then
-          echo "issueBody is required" >&2
-          exit 1
-        fi
-        text=$(signatures_extract_verification_block "$ISSUE_BODY")
-
-        if ! parsed=$(parse_verification_text "$text"); then
-          echo "Could not parse package name and fingerprint from Verification Info. Paste the exact AppVerifier output (package ID and SHA-256 fingerprint(s) on separate lines)." >&2
-          exit 1
-        fi
-        packageName=$(printf '%s\n' "$parsed" | sed -n '1p')
-        sig_lines=$(printf '%s\n' "$parsed" | tail -n +2)
-        packageSignature=$(signatures_format_block "$sig_lines")
-
-        validate_apk_url() {
-          local url="$1"
-          [[ -z "$url" ]] && return 1
-          if [[ ! "$url" =~ ^https:// ]]; then
-            echo "Ignoring Direct APK Link (not an https:// URL): $url" >&2
-            return 1
-          fi
-          if [[ ! "$url" =~ \.apk([?#].*)?$ ]]; then
-            echo "Ignoring Direct APK Link (not a direct .apk file; store pages and listings are not supported): $url" >&2
-            return 1
-          fi
-          printf '%s\n' "$url"
-        }
-
-        validate_fdroid_repo_url() {
-          local url="$1"
-          [[ -z "$url" ]] && return 1
-          if ! signatures_fdroid_repo_host_from_url "$url" > /dev/null; then
-            echo "Ignoring Custom F-Droid Repository (not an https://<host>/ URL): $url" >&2
-            return 1
-          fi
-          if [[ "$url" =~ \.apk([?#].*)?$ ]]; then
-            echo "Ignoring Custom F-Droid Repository (looks like a direct APK link; use Direct APK Link instead): $url" >&2
-            return 1
-          fi
-          printf '%s\n' "$url"
-        }
-
-        apk_url=""
-        custom_fdroid_repo_url=""
-        if [[ -n "$ISSUE_BODY" ]]; then
-          raw_apk_url=$(signatures_parse_issue_field "Direct download link|Direct APK Link" "$ISSUE_BODY" || true)
-          apk_url=$(validate_apk_url "$raw_apk_url" || true)
-          raw_custom_fdroid_repo_url=$(signatures_parse_issue_field "Custom F-Droid Repository" "$ISSUE_BODY" || true)
-          custom_fdroid_repo_url=$(validate_fdroid_repo_url "$raw_custom_fdroid_repo_url" || true)
-        fi
-
-        echo "packageName=$packageName" >> "$GITHUB_OUTPUT"
-        gha_write_multiline_output packageSignature "$packageSignature"
-        echo "apkUrl=$apk_url" >> "$GITHUB_OUTPUT"
-        echo "customFdroidRepoUrl=$custom_fdroid_repo_url" >> "$GITHUB_OUTPUT"
-
-        if [[ -n "$ISSUE_BODY" && -n "$ISSUE_NUMBER" ]]; then
-          submission_issue_ref=$(signatures_submission_issue_ref "$ISSUE_NUMBER" "$ISSUE_BODY")
-          echo "submissionIssueRef=$submission_issue_ref" >> "$GITHUB_OUTPUT"
-        else
-          echo "submissionIssueRef=" >> "$GITHUB_OUTPUT"
-        fi
+        echo "submissionIssueRef=$(signatures_submission_issue_ref "$ISSUE_NUMBER" "$ISSUE_BODY")" >> "$GITHUB_OUTPUT"

@@ -21,54 +21,27 @@ inputs:
 outputs:
   isDuplicate:
     description: Whether a duplicate was found
-    value: ${{ steps.check.outputs.isDuplicate }}
+    value: ${{ (steps.data.outputs.duplicateOf || steps.issues.outputs.duplicateOf) != '' }}
   duplicateOf:
-    description: Issue number of the existing submission or data.yml entry
-    value: ${{ steps.check.outputs.duplicateOf }}
+    description: Issue number of the existing submission or data.yml entry (the lowest when several match)
+    value: ${{ steps.data.outputs.duplicateOf || steps.issues.outputs.duplicateOf }}
 
 runs:
   using: composite
   steps:
-    - shell: bash
-      id: check
+    - name: Look for the same entry in data.yml
+      id: data
+      shell: bash
       env:
         PACKAGE: ${{ inputs.packageName }}
         SIGNATURE: ${{ inputs.packageSignature }}
-        CURRENT_ISSUE: ${{ inputs.currentIssue }}
         DIRECT_APK_URL: ${{ inputs.directApkUrl }}
         CUSTOM_FDROID_REPO_URL: ${{ inputs.customFdroidRepoUrl }}
-        GH_TOKEN: ${{ github.token }}
-        GH_REPO: ${{ github.repository }}
       run: |
         set -euo pipefail
         source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
 
-        echo "isDuplicate=false" >> "$GITHUB_OUTPUT"
-        echo "duplicateOf=" >> "$GITHUB_OUTPUT"
-
-        parse_issue_body() {
-          parse_verification_text "$(signatures_extract_verification_block "$1")"
-        }
-
-        # A candidate is only a duplicate when it shares the submission's download source:
-        # when this submission specifies a direct APK URL and/or custom F-Droid repository,
-        # the candidate must point at the same URL(s). A submission without either matches on
-        # package + fingerprint alone (store-based, original behavior).
-        download_source_matches() {
-          local cand_link="$1"
-          local cand_repo="$2"
-          if [[ -n "$DIRECT_APK_URL" && "$cand_link" != "$DIRECT_APK_URL" ]]; then
-            return 1
-          fi
-          if [[ -n "$CUSTOM_FDROID_REPO_URL" && "$cand_repo" != "$CUSTOM_FDROID_REPO_URL" ]]; then
-            return 1
-          fi
-          return 0
-        }
-
-        user_sigs=$(signatures_normalize "$SIGNATURE")
         duplicate_of=""
-
         if [[ -f data.yml ]] && [[ -s data.yml ]]; then
           schema=$(yq -r '.schema // 0' data.yml)
           if ! signatures_data_schema_supported "$schema"; then
@@ -85,7 +58,8 @@ runs:
             if ! issue_num=$(signatures_github_issue_number "$issue_ref"); then
               continue
             fi
-            if signatures_equal "$user_sigs" "$stored_fp" && download_source_matches "$stored_link" "$stored_repo"; then
+            if signatures_equal "$SIGNATURE" "$stored_fp" \
+              && submission_same_download_source "$stored_link" "$stored_repo" "$DIRECT_APK_URL" "$CUSTOM_FDROID_REPO_URL"; then
               if [[ -z "$duplicate_of" || "$issue_num" -lt "$duplicate_of" ]]; then
                 duplicate_of="$issue_num"
               fi
@@ -102,50 +76,62 @@ runs:
             ' data.yml
           )
         fi
+        echo "duplicateOf=$duplicate_of" >> "$GITHUB_OUTPUT"
 
-        if [[ -z "$duplicate_of" ]]; then
-          candidates_dir=$(mktemp -d)
-          if ! gh issue list --repo "$GH_REPO" --state open --limit 200 \
-            --search "\"${PACKAGE}\" in:body" --json number,body,title \
-            > "${candidates_dir}/search.json"; then
-            echo "::warning::Could not search open issues for ${PACKAGE}; only the most recent open issues were checked for duplicates."
-            echo '[]' > "${candidates_dir}/search.json"
-          fi
-          if ! gh issue list --repo "$GH_REPO" --state open --limit 100 \
-            --json number,body,title > "${candidates_dir}/recent.json"; then
-            echo "::warning::Could not list the most recent open issues; a duplicate opened in the last few moments may have been missed."
-            echo '[]' > "${candidates_dir}/recent.json"
-          fi
+    - name: Look for an earlier open issue with the same submission
+      id: issues
+      if: steps.data.outputs.duplicateOf == ''
+      shell: bash
+      env:
+        PACKAGE: ${{ inputs.packageName }}
+        SIGNATURE: ${{ inputs.packageSignature }}
+        CURRENT_ISSUE: ${{ inputs.currentIssue }}
+        DIRECT_APK_URL: ${{ inputs.directApkUrl }}
+        CUSTOM_FDROID_REPO_URL: ${{ inputs.customFdroidRepoUrl }}
+        GH_TOKEN: ${{ github.token }}
+        GH_REPO: ${{ github.repository }}
+      run: |
+        set -euo pipefail
+        source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
 
-          while IFS= read -r row; do
-            [[ -z "$row" ]] && continue
-            issue_num=$(printf '%s\n' "$row" | jq -r .number)
-            body=$(printf '%s\n' "$row" | jq -r .body)
-
-            if ! parsed=$(parse_issue_body "$body" 2>/dev/null); then
-              continue
-            fi
-            issue_pkg=$(printf '%s\n' "$parsed" | sed -n '1p')
-            issue_sigs=$(printf '%s\n' "$parsed" | tail -n +2)
-            cand_link=$(signatures_parse_issue_field "Direct download link|Direct APK Link" "$body" true)
-            cand_repo=$(signatures_parse_issue_field "Custom F-Droid Repository" "$body" true)
-
-            if [[ "$issue_pkg" == "$PACKAGE" ]] && signatures_equal "$user_sigs" "$issue_sigs" \
-              && download_source_matches "$cand_link" "$cand_repo"; then
-              if [[ -z "$duplicate_of" || "$issue_num" -lt "$duplicate_of" ]]; then
-                duplicate_of="$issue_num"
-              fi
-            fi
-          done < <(
-            jq -c -s --argjson cur "$CURRENT_ISSUE" '
-              add | unique_by(.number)
-              | map(select(.title | startswith("[New]:")) | select(.number < $cur)) | .[]
-            ' "${candidates_dir}/search.json" "${candidates_dir}/recent.json"
-          )
-          rm -rf "$candidates_dir"
+        candidates_dir=$(mktemp -d)
+        if ! gh issue list --repo "$GH_REPO" --state open --limit 200 \
+          --search "\"${PACKAGE}\" in:body" --json number,body,title \
+          > "${candidates_dir}/search.json"; then
+          echo "::warning::Could not search open issues for ${PACKAGE}; only the most recent open issues were checked for duplicates."
+          echo '[]' > "${candidates_dir}/search.json"
+        fi
+        if ! gh issue list --repo "$GH_REPO" --state open --limit 100 \
+          --json number,body,title > "${candidates_dir}/recent.json"; then
+          echo "::warning::Could not list the most recent open issues; a duplicate opened in the last few moments may have been missed."
+          echo '[]' > "${candidates_dir}/recent.json"
         fi
 
-        if [[ -n "$duplicate_of" ]]; then
-          echo "isDuplicate=true" >> "$GITHUB_OUTPUT"
-          echo "duplicateOf=$duplicate_of" >> "$GITHUB_OUTPUT"
-        fi
+        duplicate_of=""
+        while IFS= read -r row; do
+          [[ -z "$row" ]] && continue
+          issue_num=$(printf '%s\n' "$row" | jq -r .number)
+          body=$(printf '%s\n' "$row" | jq -r .body)
+
+          if ! parsed=$(parse_verification_text "$(signatures_extract_verification_block "$body")" 2>/dev/null); then
+            continue
+          fi
+          issue_pkg=$(printf '%s\n' "$parsed" | sed -n '1p')
+          issue_sigs=$(printf '%s\n' "$parsed" | tail -n +2)
+          cand_link=$(signatures_parse_issue_field "Direct download link|Direct APK Link" "$body" true)
+          cand_repo=$(signatures_parse_issue_field "Custom F-Droid Repository" "$body" true)
+
+          if [[ "$issue_pkg" == "$PACKAGE" ]] && signatures_equal "$SIGNATURE" "$issue_sigs" \
+            && submission_same_download_source "$cand_link" "$cand_repo" "$DIRECT_APK_URL" "$CUSTOM_FDROID_REPO_URL"; then
+            if [[ -z "$duplicate_of" || "$issue_num" -lt "$duplicate_of" ]]; then
+              duplicate_of="$issue_num"
+            fi
+          fi
+        done < <(
+          jq -c -s --argjson cur "$CURRENT_ISSUE" '
+            add | unique_by(.number)
+            | map(select(.title | startswith("[New]:")) | select(.number < $cur)) | .[]
+          ' "${candidates_dir}/search.json" "${candidates_dir}/recent.json"
+        )
+        rm -rf "$candidates_dir"
+        echo "duplicateOf=$duplicate_of" >> "$GITHUB_OUTPUT"

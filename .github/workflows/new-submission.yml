@@ -573,104 +573,104 @@ jobs:
           merge-multiple: true
           path: fdroid-results
 
-      - name: Create Table
+      # One row per source, in table order. Every later step reads this file, so whether a
+      # source matched is decided in one place.
+      - name: Collect what each source found
+        env:
+          USER_SIG: ${{ needs.parse.outputs.packageSignature }}
+          APK_URL: ${{ needs.parse.outputs.apkUrl }}
+          CHECK_APKPURE: ${{ needs.parse.outputs.checkApkpure }}
+          GPLAY: ${{ toJSON(needs.gplay.outputs) }}
+          APKPURE: ${{ toJSON(needs.apkpure.outputs) }}
+          APPVERIFIER: ${{ toJSON(needs.appverifierDb.outputs) }}
+          DIRECT: ${{ toJSON(needs.directApk.outputs) }}
+        run: |
+          set -euo pipefail
+          source .github/actions/signature-lib/signatures.lib.sh
+          rows="${RUNNER_TEMP}/sources.jsonl"
+          : > "$rows"
+
+          # add <result json> <name in the table> <label when it matches> <is a store: true|false>
+          add() {
+            local equal=false
+            if [[ "$(jq -r '.found' <<< "$1")" == "true" ]] \
+              && signatures_equal "$(jq -r '.signature // ""' <<< "$1")" "$USER_SIG"; then
+              equal=true
+            fi
+            jq -c --arg name "$2" --arg label "$3" --argjson store "$4" --argjson equal "$equal" '{
+              name: $name,
+              label: $label,
+              store: $store,
+              equal: $equal,
+              found: (.found | tostring == "true"),
+              match: (.match // ""),
+              packageName: (.packageName // ""),
+              signature: (.signature // ""),
+              infoNote: (.infoNote // ""),
+              storeSigned: (.storeSignedMatch | tostring == "true")
+            }' <<< "$1" >> "$rows"
+          }
+
+          while IFS= read -r file; do
+            repo=$(jq -r '.repoName' "$file")
+            # A repo the submitter named is not a store, same as a direct APK link.
+            if signatures_is_known_fdroid_matrix_repo "$repo"; then
+              add "$(cat "$file")" "F-Droid (${repo})" "Match ${repo}" true
+            else
+              add "$(cat "$file")" "F-Droid (${repo})" "" false
+            fi
+          done < <(find fdroid-results -type f -name '*.json' 2>/dev/null | sort)
+          add "$GPLAY" "Google Play" "Match Play" true
+          if [[ "$CHECK_APKPURE" == "true" ]]; then
+            add "$APKPURE" "APKPure" "Match APKPure" true
+          fi
+          add "$APPVERIFIER" "AppVerifier" "Match Appverifier" false
+          if [[ -n "$APK_URL" ]]; then
+            # The direct link job has no "found" flag: it is listed whenever a link was given.
+            add "$(jq -c '. + {found: "true"}' <<< "$DIRECT")" "Direct APK Link" "" false
+          fi
+
+          jq -s '.' "$rows" > "${RUNNER_TEMP}/sources.json"
+          cat "${RUNNER_TEMP}/sources.json"
+
+      - name: Write the results table
         env:
           USER_PKG: ${{ needs.parse.outputs.packageName }}
           USER_SIG: ${{ needs.parse.outputs.packageSignature }}
-          GPLAY_FOUND: ${{ needs.gplay.outputs.found }}
-          GPLAY_MATCH: ${{ needs.gplay.outputs.match }}
-          GPLAY_PKG: ${{ needs.gplay.outputs.packageName }}
-          GPLAY_SIG: ${{ needs.gplay.outputs.signature }}
           CHECK_APKPURE: ${{ needs.parse.outputs.checkApkpure }}
-          APKPURE_FOUND: ${{ needs.apkpure.outputs.found }}
-          APKPURE_MATCH: ${{ needs.apkpure.outputs.match }}
-          APKPURE_PKG: ${{ needs.apkpure.outputs.packageName }}
-          APKPURE_SIG: ${{ needs.apkpure.outputs.signature }}
           AV_FOUND: ${{ needs.appverifierDb.outputs.found }}
-          AV_MATCH: ${{ needs.appverifierDb.outputs.match }}
-          AV_PKG: ${{ needs.appverifierDb.outputs.packageName }}
-          AV_SIG: ${{ needs.appverifierDb.outputs.signature }}
-          DIRECT_MATCH: ${{ needs.directApk.outputs.match }}
-          DIRECT_PKG: ${{ needs.directApk.outputs.packageName }}
-          DIRECT_SIG: ${{ needs.directApk.outputs.signature }}
           APK_URL: ${{ needs.parse.outputs.apkUrl }}
           CUSTOM_FDROID_REPO_URL: ${{ needs.parse.outputs.customFdroidRepoUrl }}
-          DOMAIN_FOUND: ${{ needs.domainCheck.outputs.found }}
-          DOMAIN_STATUS: ${{ needs.domainCheck.outputs.status }}
-          DOMAIN_TABLE_ROW: ${{ needs.domainCheck.outputs.tableRow }}
+          DOMAIN_TABLE_ROW: ${{ needs.domainCheck.outputs.found == 'true' && needs.domainCheck.outputs.tableRow || '' }}
         run: |
           set -euo pipefail
-          format_sig_cell() {
-            local pkg="$1"
-            local sig="$2"
-            local sig_html="${sig//$'\n'/<br>}"
-            printf '%s<br>%s' "$pkg" "$sig_html"
-          }
           intro="We attempted to check F-Droid (F-Droid and IzzyOnDroid), Google Play"
-          extras=()
-          if [[ "$AV_FOUND" == "true" ]]; then
-            extras+=("AppVerifier's internal database")
-          fi
-          if [[ -n "$CUSTOM_FDROID_REPO_URL" ]]; then
-            extras+=("your custom F-Droid repository")
-          fi
-          if [[ -n "$APK_URL" ]]; then
-            extras+=("your direct APK link")
-          fi
-          if [[ "$CHECK_APKPURE" == "true" ]]; then
-            extras+=("APKPure")
-          fi
-          if [[ "$DOMAIN_FOUND" == "true" ]]; then
-            extras+=("your app's verified domain")
-          fi
-          if [[ ${#extras[@]} -gt 0 ]]; then
-            extras_joined=""
-            for extra in "${extras[@]}"; do
-              if [[ -n "$extras_joined" ]]; then
-                extras_joined+=", "
-              fi
-              extras_joined+="$extra"
-            done
-            intro+=", ${extras_joined}"
-          fi
-          intro+=" for this app. If we found any results, they'll be in the table below:"
-          echo "$intro" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Source | Matches | Verification |" >> $GITHUB_STEP_SUMMARY
-          echo "|---|---|---|"  >> $GITHUB_STEP_SUMMARY
-          echo "| User-Provided | :arrow_down: | $(format_sig_cell "$USER_PKG" "$USER_SIG") |" >> $GITHUB_STEP_SUMMARY
-          while IFS= read -r result_file; do
-            [[ -z "$result_file" ]] && continue
-            found=$(jq -r '.found' "$result_file")
-            [[ "$found" != "true" ]] && continue
-            repo_name=$(jq -r '.repoName' "$result_file")
-            match=$(jq -r '.match' "$result_file")
-            pkg=$(jq -r '.packageName' "$result_file")
-            sig=$(jq -r '.signature' "$result_file")
-            echo "| F-Droid (${repo_name}) | ${match} | $(format_sig_cell "$pkg" "$sig") |" >> $GITHUB_STEP_SUMMARY
-          done < <(find fdroid-results -type f -name '*.json' 2>/dev/null | sort)
-          if [[ "$GPLAY_FOUND" == "true" ]]; then
-            echo "| Google Play | $GPLAY_MATCH | $(format_sig_cell "$GPLAY_PKG" "$GPLAY_SIG") |" >> $GITHUB_STEP_SUMMARY
-          fi
-          if [[ "$CHECK_APKPURE" == "true" && "$APKPURE_FOUND" == "true" ]]; then
-            echo "| APKPure | $APKPURE_MATCH | $(format_sig_cell "$APKPURE_PKG" "$APKPURE_SIG") |" >> $GITHUB_STEP_SUMMARY
-          fi
-          if [[ "$AV_FOUND" == "true" ]]; then
-            echo "| AppVerifier | $AV_MATCH | $(format_sig_cell "$AV_PKG" "$AV_SIG") |" >> $GITHUB_STEP_SUMMARY
-          fi
-          if [[ "$DOMAIN_FOUND" == "true" && -n "$DOMAIN_TABLE_ROW" ]]; then
-            printf '%s\n' "$DOMAIN_TABLE_ROW" >> $GITHUB_STEP_SUMMARY
-          fi
-          if [[ -n "$APK_URL" ]]; then
-            echo "| Direct APK Link | $DIRECT_MATCH | $(format_sig_cell "$DIRECT_PKG" "$DIRECT_SIG") |" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo ":exclamation: We scanned the APK file at \`${APK_URL}\` which the submitter provided. This does not indicate its legitimacy, you must confirm this is a legitimate source." >> $GITHUB_STEP_SUMMARY
-          fi
-          if [[ -n "$CUSTOM_FDROID_REPO_URL" ]]; then
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo ":exclamation: We checked the F-Droid repository at \`${CUSTOM_FDROID_REPO_URL}\` which the submitter provided. This does not indicate its legitimacy, you must confirm this is a legitimate source." >> $GITHUB_STEP_SUMMARY
-          fi
-          cat "$GITHUB_STEP_SUMMARY" > ${RUNNER_TEMP}/issueBody.md
+          if [[ "$AV_FOUND" == "true" ]]; then intro+=", AppVerifier's internal database"; fi
+          if [[ -n "$CUSTOM_FDROID_REPO_URL" ]]; then intro+=", your custom F-Droid repository"; fi
+          if [[ -n "$APK_URL" ]]; then intro+=", your direct APK link"; fi
+          if [[ "$CHECK_APKPURE" == "true" ]]; then intro+=", APKPure"; fi
+          if [[ -n "$DOMAIN_TABLE_ROW" ]]; then intro+=", your app's verified domain"; fi
+          {
+            echo "${intro} for this app. If we found any results, they'll be in the table below:"
+            echo ""
+            echo "| Source | Matches | Verification |"
+            echo "|---|---|---|"
+            echo "| User-Provided | :arrow_down: | ${USER_PKG}<br>${USER_SIG//$'\n'/<br>} |"
+            jq -r --arg domain "$DOMAIN_TABLE_ROW" '
+              def row: "| \(.name) | \(.match) | \(.packageName)<br>\(.signature | gsub("\n"; "<br>")) |";
+              (.[] | select(.found and .name != "Direct APK Link") | row),
+              ($domain | select(. != "")),
+              (.[] | select(.name == "Direct APK Link") | row)
+            ' "${RUNNER_TEMP}/sources.json"
+            if [[ -n "$APK_URL" ]]; then
+              echo ""
+              echo ":exclamation: We scanned the APK file at \`${APK_URL}\` which the submitter provided. This does not indicate its legitimacy, you must confirm this is a legitimate source."
+            fi
+            if [[ -n "$CUSTOM_FDROID_REPO_URL" ]]; then
+              echo ""
+              echo ":exclamation: We checked the F-Droid repository at \`${CUSTOM_FDROID_REPO_URL}\` which the submitter provided. This does not indicate its legitimacy, you must confirm this is a legitimate source."
+            fi
+          } > "${RUNNER_TEMP}/issueBody.md"
 
       - name: Find related packages in data.yml
         id: relatedPackages
@@ -685,234 +685,51 @@ jobs:
         env:
           RELATED_LINES: ${{ steps.relatedPackages.outputs.relatedLines }}
         run: |
-          set -euo pipefail
-          issue_body="${RUNNER_TEMP}/issueBody.md"
           {
             echo ""
             echo "This fingerprint matches another app already confirmed in our database! This may indicate it's from the same developer, you should check. If so, this is a stronger indication that this submission is legitimate:"
             echo ""
             echo "$RELATED_LINES"
-          } | tee -a "$GITHUB_STEP_SUMMARY" >> "$issue_body"
+          } >> "${RUNNER_TEMP}/issueBody.md"
 
-      - name: Append informational notes
-        env:
-          GPLAY_INFO: ${{ needs.gplay.outputs.infoNote }}
-          APKPURE_INFO: ${{ needs.apkpure.outputs.infoNote }}
-          AV_INFO: ${{ needs.appverifierDb.outputs.infoNote }}
-          DIRECT_INFO: ${{ needs.directApk.outputs.infoNote }}
-        run: |
-          issue_body="${RUNNER_TEMP}/issueBody.md"
-          printed_file="${RUNNER_TEMP}/printed-notes.txt"
-          : > "$printed_file"
-          append_note() {
-            local note="$1"
-            [[ -z "$note" ]] && return
-            if grep -Fxq "$note" "$printed_file" 2>/dev/null; then
-              return
-            fi
-            printf '%s\n' "$note" >> "$printed_file"
-            echo "" >> "$GITHUB_STEP_SUMMARY"
-            echo "$note" >> "$GITHUB_STEP_SUMMARY"
-            echo "" >> "$issue_body"
-            echo "$note" >> "$issue_body"
-          }
-          while IFS= read -r result_file; do
-            [[ -z "$result_file" ]] && continue
-            note=$(jq -r '.infoNote // ""' "$result_file")
-            append_note "$note"
-          done < <(find fdroid-results -type f -name '*.json' 2>/dev/null | sort)
-          if [[ "${{ needs.gplay.outputs.found }}" == "true" ]]; then
-            append_note "$GPLAY_INFO"
-          fi
-          if [[ "${{ needs.parse.outputs.checkApkpure }}" == "true" && "${{ needs.apkpure.outputs.found }}" == "true" ]]; then
-            append_note "$APKPURE_INFO"
-          fi
-          append_note "$AV_INFO"
-          append_note "$DIRECT_INFO"
-
-      - name: Match Google Play signatures
-        id: gplayEqual
-        if: needs.gplay.outputs.found == 'true'
-        uses: ./.github/actions/signature-lib
-        with:
-          operation: signatures-equal
-          signatureA: ${{ needs.gplay.outputs.signature }}
-          signatureB: ${{ needs.parse.outputs.packageSignature }}
-
-      - name: Match APKPure signatures
-        id: apkpureEqual
-        if: needs.parse.outputs.checkApkpure == 'true' && needs.apkpure.outputs.found == 'true'
-        uses: ./.github/actions/signature-lib
-        with:
-          operation: signatures-equal
-          signatureA: ${{ needs.apkpure.outputs.signature }}
-          signatureB: ${{ needs.parse.outputs.packageSignature }}
-
-      - name: Match AppVerifier signatures
-        id: appverifierEqual
-        if: needs.appverifierDb.outputs.found == 'true'
-        uses: ./.github/actions/signature-lib
-        with:
-          operation: signatures-equal
-          signatureA: ${{ needs.appverifierDb.outputs.signature }}
-          signatureB: ${{ needs.parse.outputs.packageSignature }}
-
-      - name: Match direct APK signatures
-        id: directEqual
-        if: needs.parse.outputs.apkUrl != ''
-        uses: ./.github/actions/signature-lib
-        with:
-          operation: signatures-equal
-          signatureA: ${{ needs.directApk.outputs.signature }}
-          signatureB: ${{ needs.parse.outputs.packageSignature }}
-
-      - name: Count Matches
-        id: count
-        env:
-          USER_SIG: ${{ needs.parse.outputs.packageSignature }}
-          APK_URL: ${{ needs.parse.outputs.apkUrl }}
-          CUSTOM_FDROID_REPO_URL: ${{ needs.parse.outputs.customFdroidRepoUrl }}
-          CHECK_APKPURE: ${{ needs.parse.outputs.checkApkpure }}
-          GPLAY_FOUND: ${{ needs.gplay.outputs.found }}
-          APKPURE_FOUND: ${{ needs.apkpure.outputs.found }}
-          AV_FOUND: ${{ needs.appverifierDb.outputs.found }}
-          GPLAY_EQUAL: ${{ steps.gplayEqual.outputs.result }}
-          APKPURE_EQUAL: ${{ steps.apkpureEqual.outputs.result }}
-          AV_EQUAL: ${{ steps.appverifierEqual.outputs.result }}
-          DIRECT_EQUAL: ${{ steps.directEqual.outputs.result }}
+      - name: Append each source's note once
         run: |
           set -euo pipefail
-          source .github/actions/signature-lib/signatures.lib.sh
+          jq -r '
+            reduce (.[].infoNote | select(. != "")) as $note ([];
+              if any(.[]; . == $note) then . else . + [$note] end)
+            | .[] | "\n" + .
+          ' "${RUNNER_TEMP}/sources.json" >> "${RUNNER_TEMP}/issueBody.md"
 
-          sources=0
-          [[ "$GPLAY_FOUND" == "true" ]] && sources=$((sources + 1))
-          if [[ "$CHECK_APKPURE" == "true" && "$APKPURE_FOUND" == "true" ]]; then
-            sources=$((sources + 1))
-          fi
-          if [[ "$AV_FOUND" == "true" ]]; then
-            sources=$((sources + 1))
-          fi
-          if [[ -n "$APK_URL" ]]; then
-            sources=$((sources + 1))
-          fi
-          while IFS= read -r result_file; do
-            [[ -z "$result_file" ]] && continue
-            [[ "$(jq -r '.found' "$result_file")" != "true" ]] && continue
-            sources=$((sources + 1))
-          done < <(find fdroid-results -type f -name '*.json' 2>/dev/null)
-          echo "sources=$sources" >> "$GITHUB_OUTPUT"
+      - name: Count matches
+        id: count
+        run: |
+          set -euo pipefail
+          jq -r '
+            "sources=\(map(select(.found)) | length)",
+            "matches=\(map(select(.equal)) | length)",
+            "storeMatches=\(map(select(.equal and .store)) | length)",
+            "storeSigned=\(any(.[]; .equal and .storeSigned))",
+            "hasNotes=\(any(.[]; .infoNote != ""))"
+          ' "${RUNNER_TEMP}/sources.json" | tee -a "$GITHUB_OUTPUT"
 
-          i=0
-          if [[ "$GPLAY_FOUND" == "true" && "$GPLAY_EQUAL" == "true" ]]; then
-            i=$((i + 1))
-          fi
-          if [[ "$CHECK_APKPURE" == "true" && "$APKPURE_FOUND" == "true" && "$APKPURE_EQUAL" == "true" ]]; then
-            i=$((i + 1))
-          fi
-          while IFS= read -r result_file; do
-            [[ -z "$result_file" ]] && continue
-            [[ "$(jq -r '.found' "$result_file")" != "true" ]] && continue
-            sig=$(jq -r '.signature' "$result_file")
-            if signatures_equal "$sig" "$USER_SIG"; then
-              i=$((i + 1))
-            fi
-          done < <(find fdroid-results -type f -name '*.json' 2>/dev/null)
-          if [[ "$AV_FOUND" == "true" && "$AV_EQUAL" == "true" ]]; then
-            i=$((i + 1))
-          fi
-          if [[ -n "$APK_URL" && "$DIRECT_EQUAL" == "true" ]]; then
-            i=$((i + 1))
-          fi
-          echo "$i"
-          echo "matches=$i" >> "$GITHUB_OUTPUT"
-
-          store_matches=0
-          if [[ "$GPLAY_FOUND" == "true" && "$GPLAY_EQUAL" == "true" ]]; then
-            store_matches=$((store_matches + 1))
-          fi
-          if [[ "$CHECK_APKPURE" == "true" && "$APKPURE_FOUND" == "true" && "$APKPURE_EQUAL" == "true" ]]; then
-            store_matches=$((store_matches + 1))
-          fi
-          while IFS= read -r result_file; do
-            [[ -z "$result_file" ]] && continue
-            [[ "$(jq -r '.found' "$result_file")" != "true" ]] && continue
-            # A repo the submitter named is not a store, same as a direct APK link.
-            signatures_is_known_fdroid_matrix_repo "$(jq -r '.repoName' "$result_file")" || continue
-            sig=$(jq -r '.signature' "$result_file")
-            if signatures_equal "$sig" "$USER_SIG"; then
-              store_matches=$((store_matches + 1))
-            fi
-          done < <(find fdroid-results -type f -name '*.json' 2>/dev/null)
-          echo "storeMatches=$store_matches" >> "$GITHUB_OUTPUT"
-          cat ${RUNNER_TEMP}/issueBody.md
-
-      - name: Add Match Count
+      - name: Report how many sources matched
+        if: steps.count.outputs.matches != '0'
         env:
           MATCHES: ${{ steps.count.outputs.matches }}
           SOURCES: ${{ steps.count.outputs.sources }}
-          USER_SIG: ${{ needs.parse.outputs.packageSignature }}
-          CHECK_APKPURE: ${{ needs.parse.outputs.checkApkpure }}
-          GPLAY_FOUND: ${{ needs.gplay.outputs.found }}
-          APKPURE_FOUND: ${{ needs.apkpure.outputs.found }}
-          GPLAY_EQUAL: ${{ steps.gplayEqual.outputs.result }}
-          APKPURE_EQUAL: ${{ steps.apkpureEqual.outputs.result }}
-          AV_EQUAL: ${{ steps.appverifierEqual.outputs.result }}
-          DIRECT_EQUAL: ${{ steps.directEqual.outputs.result }}
-          GPLAY_STORE_SIGNED: ${{ needs.gplay.outputs.storeSignedMatch }}
-          APKPURE_STORE_SIGNED: ${{ needs.apkpure.outputs.storeSignedMatch }}
-          DIRECT_STORE_SIGNED: ${{ needs.directApk.outputs.storeSignedMatch }}
-          GPLAY_INFO: ${{ needs.gplay.outputs.infoNote }}
-          APKPURE_INFO: ${{ needs.apkpure.outputs.infoNote }}
-          AV_INFO: ${{ needs.appverifierDb.outputs.infoNote }}
-          DIRECT_INFO: ${{ needs.directApk.outputs.infoNote }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_REPO: ${{ github.repository }}
-          NUMBER: ${{ github.event.issue.number }}
         run: |
-          set -euo pipefail
-          source .github/actions/signature-lib/signatures.lib.sh
-          fdroid_has_info=false
-          while IFS= read -r result_file; do
-            [[ -z "$result_file" ]] && continue
-            [[ -n "$(jq -r '.infoNote // ""' "$result_file")" ]] && fdroid_has_info=true
-          done < <(find fdroid-results -type f -name '*.json' 2>/dev/null)
+          printf '\n%s\n' "${MATCHES}/${SOURCES} of our sources matched what was provided. Some mismatches between app stores can be normal." >> "${RUNNER_TEMP}/issueBody.md"
 
-          echo "" >> ${RUNNER_TEMP}/issueBody.md
-          has_info=false
-          if [[ ( "$GPLAY_FOUND" == "true" && -n "$GPLAY_INFO" ) || ( "$CHECK_APKPURE" == "true" && "$APKPURE_FOUND" == "true" && -n "$APKPURE_INFO" ) || -n "$AV_INFO" || -n "$DIRECT_INFO" || "$fdroid_has_info" == true ]]; then
-            has_info=true
-          fi
-          store_signed_label=false
-          while IFS= read -r result_file; do
-            [[ -z "$result_file" ]] && continue
-            [[ "$(jq -r '.found' "$result_file")" != "true" ]] && continue
-            [[ "$(jq -r '.storeSignedMatch' "$result_file")" != "true" ]] && continue
-            sig=$(jq -r '.signature' "$result_file")
-            if signatures_equal "$sig" "$USER_SIG"; then
-              store_signed_label=true
-            fi
-          done < <(find fdroid-results -type f -name '*.json' 2>/dev/null)
-          if [[ "$GPLAY_FOUND" == "true" && "$GPLAY_EQUAL" == "true" && "$GPLAY_STORE_SIGNED" == "true" ]]; then
-            store_signed_label=true
-          fi
-          if [[ "$CHECK_APKPURE" == "true" && "$APKPURE_FOUND" == "true" && "$APKPURE_EQUAL" == "true" && "$APKPURE_STORE_SIGNED" == "true" ]]; then
-            store_signed_label=true
-          fi
-          if [[ "$DIRECT_EQUAL" == "true" && "$DIRECT_STORE_SIGNED" == "true" ]]; then
-            store_signed_label=true
-          fi
-          if [[ "$MATCHES" != "0" ]]; then
-            echo "${MATCHES}/${SOURCES} of our sources matched what was provided. Some mismatches between app stores can be normal." >> ${RUNNER_TEMP}/issueBody.md
-            if [[ "$store_signed_label" == true ]]; then
-              gh issue edit "$NUMBER" --repo "$GH_REPO" --add-label "Store Signed"
-            fi
-          else
-            echo "We either weren't able to grab this app from stores, or no stores matched it. Please provide a link to exactly where you downloaded it, thanks!" >> ${RUNNER_TEMP}/issueBody.md
-            if [[ "$has_info" == true ]]; then
-              echo "" >> ${RUNNER_TEMP}/issueBody.md
-              echo "None of our sources matched the fingerprint you provided exactly, but see the notes above: For example, **Google Play App Signing** or **non-reproducible F-Droid builds** can explain a mismatch without indicating a bad submission." >> ${RUNNER_TEMP}/issueBody.md
-            fi
-          fi
+      - name: Report that no source matched
+        if: steps.count.outputs.matches == '0'
+        run: |
+          printf '\n%s\n' "We either weren't able to grab this app from stores, or no stores matched it. Please provide a link to exactly where you downloaded it, thanks!" >> "${RUNNER_TEMP}/issueBody.md"
+
+      - name: Point to the notes when no source matched
+        if: steps.count.outputs.matches == '0' && steps.count.outputs.hasNotes == 'true'
+        run: |
+          printf '\n%s\n' "None of our sources matched the fingerprint you provided exactly, but see the notes above: For example, **Google Play App Signing** or **non-reproducible F-Droid builds** can explain a mismatch without indicating a bad submission." >> "${RUNNER_TEMP}/issueBody.md"
 
       - name: Append as-is database preview
         env:
@@ -942,7 +759,7 @@ jobs:
             {
               echo ""
               echo "We could not build a database entry from store matches alone, so there is no as-is preview. Add the **Create PR** label after review if you want to merge signatures manually."
-            } | tee -a "$issue_body" >> "$GITHUB_STEP_SUMMARY"
+            } >> "$issue_body"
             rm -f "$entry"
             exit 0
           fi
@@ -957,7 +774,7 @@ jobs:
             echo '```'
             echo ""
             echo "Maintainers: add **Commit As-Is** to accept this entry on \`main\` immediately, or **Create PR** to open a pull request for manual edits first."
-          } | tee -a "$issue_body" >> "$GITHUB_STEP_SUMMARY"
+          } >> "$issue_body"
 
       # Commit As-Is only runs while the issue text still has this hash (see "Check the issue
       # text is the one that was checked" in commitAsIsPrepare). The marker must stay on a line
@@ -970,6 +787,9 @@ jobs:
           body_hash=$(printf '%s' "$ISSUE_BODY" | sha256sum | cut -d' ' -f1)
           printf '\n<!-- pg-checked-body: %s -->\n' "$body_hash" >> "${RUNNER_TEMP}/issueBody.md"
 
+      - name: Show the comment in the job summary
+        run: cat "${RUNNER_TEMP}/issueBody.md" >> "$GITHUB_STEP_SUMMARY"
+
       - name: Comment on Issue
         uses: ./.github/actions/issue-comment
         with:
@@ -978,54 +798,24 @@ jobs:
           issueBody: ${{ github.event.issue.body }}
           codebergToken: ${{ secrets.CB_SYNC_TOKEN }}
 
-      - name: Label issue by matching sources
+      - name: Label the issue by what matched
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
           STORE_MATCHES: ${{ steps.count.outputs.storeMatches }}
-          CHECK_APKPURE: ${{ needs.parse.outputs.checkApkpure }}
-          GPLAY_FOUND: ${{ needs.gplay.outputs.found }}
-          APKPURE_FOUND: ${{ needs.apkpure.outputs.found }}
-          AV_FOUND: ${{ needs.appverifierDb.outputs.found }}
-          USER_SIG: ${{ needs.parse.outputs.packageSignature }}
-          GPLAY_EQUAL: ${{ steps.gplayEqual.outputs.result }}
-          APKPURE_EQUAL: ${{ steps.apkpureEqual.outputs.result }}
-          AV_EQUAL: ${{ steps.appverifierEqual.outputs.result }}
+          STORE_SIGNED: ${{ steps.count.outputs.storeSigned }}
         run: |
           set -euo pipefail
-          source .github/actions/signature-lib/signatures.lib.sh
           label_args=()
-          if [[ "$STORE_MATCHES" == "0" ]]; then
-            label_args+=(--add-label "No Store Match")
+          while IFS= read -r label; do
+            label_args+=(--add-label "$label")
+          done < <(jq -r '.[] | select(.equal and .label != "") | .label' "${RUNNER_TEMP}/sources.json")
+          if [[ "$STORE_MATCHES" == "0" ]]; then label_args+=(--add-label "No Store Match"); fi
+          if [[ "$STORE_SIGNED" == "true" ]]; then label_args+=(--add-label "Store Signed"); fi
+          if [[ ${#label_args[@]} -gt 0 ]]; then
+            gh issue edit "$NUMBER" --repo "$GH_REPO" "${label_args[@]}"
           fi
-          if [[ "$AV_FOUND" == "true" && "$AV_EQUAL" == "true" ]]; then
-            label_args+=(--add-label "Match Appverifier")
-          fi
-          while IFS= read -r result_file; do
-            [[ -z "$result_file" ]] && continue
-            [[ "$(jq -r '.found' "$result_file")" != "true" ]] && continue
-            repo_name=$(jq -r '.repoName' "$result_file")
-            sig=$(jq -r '.signature' "$result_file")
-            if ! signatures_equal "$sig" "$USER_SIG"; then
-              continue
-            fi
-            if [[ "$repo_name" == "IzzyOnDroid" ]]; then
-              label_args+=(--add-label "Match IzzyOnDroid")
-            elif [[ "$repo_name" == "F-Droid" ]]; then
-              label_args+=(--add-label "Match F-Droid")
-            fi
-          done < <(find fdroid-results -type f -name '*.json' 2>/dev/null | sort)
-          if [[ "$GPLAY_FOUND" == "true" && "$GPLAY_EQUAL" == "true" ]]; then
-            label_args+=(--add-label "Match Play")
-          fi
-          if [[ "$CHECK_APKPURE" == "true" && "$APKPURE_FOUND" == "true" && "$APKPURE_EQUAL" == "true" ]]; then
-            label_args+=(--add-label "Match APKPure")
-          fi
-          if [[ ${#label_args[@]} -eq 0 ]]; then
-            exit 0
-          fi
-          gh issue edit "$NUMBER" --repo "$GH_REPO" "${label_args[@]}"
 
       - name: Remove Run Checks label
         env:

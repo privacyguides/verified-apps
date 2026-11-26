@@ -32,26 +32,18 @@ outputs:
 runs:
   using: composite
   steps:
-    - shell: bash
+    - name: Download AppVerifier's database
+      shell: bash
+      env:
+        DATABASE_URL: ${{ inputs.databaseUrl }}
+      run: |
+        curl -fsSL --retry 3 --retry-delay 2 -o "${RUNNER_TEMP}/InternalVerificationInfoDatabase.kt" "$DATABASE_URL"
+
+    - name: Look up the package
       id: lookup
+      shell: bash
       env:
         PACKAGE_NAME: ${{ inputs.packageName }}
         USER_SIGNATURE: ${{ inputs.userSignature }}
-        DATABASE_URL: ${{ inputs.databaseUrl }}
       run: |
-        set -euo pipefail
-        database_file="${RUNNER_TEMP}/InternalVerificationInfoDatabase.kt"
-        url_hash=$(printf '%s' "$DATABASE_URL" | sha256sum | awk '{print $1}')
-
-        cache_dir="${RUNNER_TEMP}/appverifier-db-cache"
-        mkdir -p "$cache_dir"
-        cached_file="${cache_dir}/${url_hash}.kt"
-
-        if [[ -f "$cached_file" ]]; then
-          cp "$cached_file" "$database_file"
-        else
-          curl -fsSL --retry 3 --retry-delay 2 -o "$database_file" "$DATABASE_URL"
-          cp "$database_file" "$cached_file"
-        fi
-
-        python3 "${GITHUB_ACTION_PATH}/lookup.py" "$database_file" "$PACKAGE_NAME" "$USER_SIGNATURE"
+        python3 "${GITHUB_ACTION_PATH}/lookup.py" "${RUNNER_TEMP}/InternalVerificationInfoDatabase.kt" "$PACKAGE_NAME" "$USER_SIGNATURE"

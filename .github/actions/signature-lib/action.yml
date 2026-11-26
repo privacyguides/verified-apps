@@ -1,123 +1,102 @@
 name: Signature utilities
-description: Validate, compare, and format APK certificate fingerprint sets
+description: Validate a parsed submission, or list other packages in data.yml that share its fingerprint
 inputs:
   operation:
-    description: validate-submission, signatures-equal, or find-related-packages
+    description: validate-submission or find-related-packages
     required: true
   packageName:
-    description: Android application ID (validate-submission)
+    description: Android application ID
     required: false
     default: ""
   packageSignature:
     description: Fingerprint text (one or more lines)
     required: false
     default: ""
-  signatureA:
-    description: First fingerprint set (signatures-equal)
-    required: false
-    default: ""
-  signatureB:
-    description: Second fingerprint set (signatures-equal)
-    required: false
-    default: ""
 outputs:
-  result:
-    description: "true or false for comparison operations"
-    value: ${{ steps.run.outputs.result }}
   relatedLines:
     description: Markdown list of other packages sharing a fingerprint (find-related-packages)
-    value: ${{ steps.run.outputs.relatedLines }}
+    value: ${{ steps.related.outputs.relatedLines }}
 
 runs:
   using: composite
   steps:
-    - shell: bash
-      id: run
+    - name: Reject an unknown operation
+      if: inputs.operation != 'validate-submission' && inputs.operation != 'find-related-packages'
+      shell: bash
       env:
         OPERATION: ${{ inputs.operation }}
+      run: |
+        echo "Unknown operation: $OPERATION" >&2
+        exit 1
+
+    - name: Check the package ID and fingerprints are well formed
+      if: inputs.operation == 'validate-submission'
+      shell: bash
+      env:
         PACKAGE_NAME: ${{ inputs.packageName }}
         PACKAGE_SIGNATURE: ${{ inputs.packageSignature }}
-        SIGNATURE_A: ${{ inputs.signatureA }}
-        SIGNATURE_B: ${{ inputs.signatureB }}
+      run: |
+        set -euo pipefail
+        source "${GITHUB_ACTION_PATH}/signatures.lib.sh"
+        errors=0
+        if ! is_valid_package_name "$PACKAGE_NAME"; then
+          echo "Invalid packageName: $PACKAGE_NAME" >&2
+          errors=1
+        fi
+        # signatures_normalize keeps only well-formed fingerprints, so empty means none were valid.
+        if [[ -z "$(signatures_normalize "$PACKAGE_SIGNATURE")" ]]; then
+          echo "Invalid packageSignature: no fingerprints found" >&2
+          errors=1
+        fi
+        exit "$errors"
+
+    - name: List other packages in data.yml that share a fingerprint
+      id: related
+      if: inputs.operation == 'find-related-packages'
+      shell: bash
+      env:
+        PACKAGE_NAME: ${{ inputs.packageName }}
+        PACKAGE_SIGNATURE: ${{ inputs.packageSignature }}
       run: |
         set -euo pipefail
         source "${GITHUB_ACTION_PATH}/signatures.lib.sh"
 
-        echo "result=false" >> "$GITHUB_OUTPUT"
-
-        case "$OPERATION" in
-          validate-submission)
-            errors=0
-            if ! is_valid_package_name "$PACKAGE_NAME"; then
-              echo "Invalid packageName: $PACKAGE_NAME" >&2
-              errors=1
-            fi
-            sig_count=0
-            while IFS= read -r fp; do
-              [[ -z "$fp" ]] && continue
-              sig_count=$((sig_count + 1))
-              if ! is_valid_sha256_colon "$fp"; then
-                echo "Invalid packageSignature line: $fp" >&2
-                errors=1
-              fi
-            done < <(signatures_normalize "$PACKAGE_SIGNATURE")
-            if (( sig_count == 0 )); then
-              echo "Invalid packageSignature: no fingerprints found" >&2
-              errors=1
-            fi
-            if (( errors )); then
-              exit 1
-            fi
-            echo "result=true" >> "$GITHUB_OUTPUT"
-            ;;
-          signatures-equal)
-            if signatures_equal "$SIGNATURE_A" "$SIGNATURE_B"; then
-              echo "result=true" >> "$GITHUB_OUTPUT"
-            fi
-            ;;
-          find-related-packages)
-            related_lines=""
-            if [[ -f data.yml ]] && [[ -s data.yml ]]; then
-              schema=$(yq -r '.schema // 0' data.yml)
-              if ! signatures_data_schema_supported "$schema"; then
-                echo "Unsupported data.yml schema (expected 3 or 4): $schema" >&2
-                exit 1
-              fi
-              while IFS= read -r row; do
-                [[ -z "$row" ]] && continue
-                if ! printf '%s' "$row" | jq -e . >/dev/null 2>&1; then
-                  continue
-                fi
-                pkg=$(printf '%s' "$row" | jq -r '.package')
-                issue=$(printf '%s' "$row" | jq -r '.issue')
-                fp=$(printf '%s' "$row" | jq -r '.fingerprint')
-                [[ -z "$pkg" || -z "$fp" || -z "$issue" || "$issue" == "null" ]] && continue
-                [[ "$pkg" == "$PACKAGE_NAME" ]] && continue
-                if ! signatures_overlap "$PACKAGE_SIGNATURE" "$fp"; then
-                  continue
-                fi
-                display_ref="$issue"
-                if [[ "$issue" =~ ^[0-9]+$ ]]; then
-                  display_ref=$(signatures_github_issue_ref "$issue")
-                fi
-                related_lines+="- ${pkg} from ${display_ref}"$'\n'
-              done < <(
-                yq -r '
-                  .packages[]
-                  | . as $entry
-                  | $entry.signature[]
-                  | . as $sig
-                  | ($sig.fingerprint | split("\n") | join("")) as $fp
-                  | $sig.sources[]
-                  | {"package": $entry.package, "issue": .issue, "fingerprint": $fp} | @json
-                ' data.yml
-              )
-              related_lines=$(printf '%s' "$related_lines" | sort -u)
-            fi
-            gha_write_multiline_output relatedLines "$related_lines"
-            ;;
-          *)
-            echo "Unknown operation: $OPERATION" >&2
+        related_lines=""
+        if [[ -f data.yml ]] && [[ -s data.yml ]]; then
+          schema=$(yq -r '.schema // 0' data.yml)
+          if ! signatures_data_schema_supported "$schema"; then
+            echo "Unsupported data.yml schema (expected 3 or 4): $schema" >&2
             exit 1
-            ;;
-        esac
+          fi
+          while IFS= read -r row; do
+            [[ -z "$row" ]] && continue
+            if ! printf '%s' "$row" | jq -e . >/dev/null 2>&1; then
+              continue
+            fi
+            pkg=$(printf '%s' "$row" | jq -r '.package')
+            issue=$(printf '%s' "$row" | jq -r '.issue')
+            fp=$(printf '%s' "$row" | jq -r '.fingerprint')
+            [[ -z "$pkg" || -z "$fp" || -z "$issue" || "$issue" == "null" ]] && continue
+            [[ "$pkg" == "$PACKAGE_NAME" ]] && continue
+            if ! signatures_overlap "$PACKAGE_SIGNATURE" "$fp"; then
+              continue
+            fi
+            display_ref="$issue"
+            if [[ "$issue" =~ ^[0-9]+$ ]]; then
+              display_ref=$(signatures_github_issue_ref "$issue")
+            fi
+            related_lines+="- ${pkg} from ${display_ref}"$'\n'
+          done < <(
+            yq -r '
+              .packages[]
+              | . as $entry
+              | $entry.signature[]
+              | . as $sig
+              | ($sig.fingerprint | split("\n") | join("")) as $fp
+              | $sig.sources[]
+              | {"package": $entry.package, "issue": .issue, "fingerprint": $fp} | @json
+            ' data.yml
+          )
+          related_lines=$(printf '%s' "$related_lines" | sort -u)
+        fi
+        gha_write_multiline_output relatedLines "$related_lines"

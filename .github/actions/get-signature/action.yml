@@ -27,7 +27,8 @@ outputs:
 runs:
   using: composite
   steps:
-    - shell: bash
+    - name: Read the signing certificates from the APK
+      shell: bash
       id: analysis
       env:
         APK_PATH: ${{ inputs.path }}

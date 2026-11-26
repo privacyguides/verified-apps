@@ -21,14 +21,16 @@ outputs:
 runs:
   using: composite
   steps:
-    - shell: bash
+    - name: Install fdroidcl
+      shell: bash
       id: fdroidcl
       run: |
         set -euo pipefail
         source "${GITHUB_ACTION_PATH}/fdroid.lib.sh"
         echo "bin=$(fdroid_install_cli)" >> "$GITHUB_OUTPUT"
 
-    - shell: bash
+    - name: Work out the cache key for this repo
+      shell: bash
       id: fdroidRepoCacheKey
       env:
         FDROID_REPO_URL: ${{ inputs.fDroidRepoURL }}
@@ -44,7 +46,8 @@ runs:
         path: /home/runner/.cache/fdroidcl/cache-gob
         key: ${{ steps.fdroidRepoCacheKey.outputs.cacheKey }}
 
-    - shell: bash
+    - name: Point fdroidcl at this repo only
+      shell: bash
       env:
         FDROID_REPO_URL: ${{ inputs.fDroidRepoURL }}
         FDROIDCL_BIN: ${{ steps.fdroidcl.outputs.bin }}
@@ -60,7 +63,8 @@ runs:
         path: /home/runner/.cache/fdroidcl/apks
         key: ${{ steps.fdroidRepoCacheKey.outputs.cacheKey }}-${{ inputs.packageName }}
 
-    - shell: bash
+    - name: Download the app
+      shell: bash
       id: download
       env:
         PACKAGE_NAME: ${{ inputs.packageName }}

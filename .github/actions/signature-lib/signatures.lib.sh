@@ -726,6 +726,14 @@ submission_resolve_coauthor_trailers() {
   printf '%s' "$trailers"
 }
 
+# A candidate only duplicates a submission when it has the same download source. A submission
+# that names a direct APK URL or a custom F-Droid repo must match on it; one that names neither
+# matches on package and fingerprint alone.
+# Usage: submission_same_download_source <cand_link> <cand_repo> <want_link> <want_repo>
+submission_same_download_source() {
+  [[ -z "$3" || "$1" == "$3" ]] && [[ -z "$4" || "$2" == "$4" ]]
+}
+
 is_valid_package_name() {
   [[ "$1" =~ ^[a-zA-Z][a-zA-Z0-9_]*(\.[a-zA-Z][a-zA-Z0-9_]*)+$ ]]
 }

@@ -71,23 +71,23 @@ inputs:
     default: ""
 outputs:
   prepared:
-    description: Whether data.yml was prepared for commit
-    value: ${{ steps.prepare.outputs.prepared }}
+    description: Whether submission-entry.yml and submission-commit-msg were written to the workspace
+    value: ${{ steps.message.outputs.prepared == 'true' }}
   skipped:
-    description: Whether commit was skipped (no matching store signatures)
-    value: ${{ steps.prepare.outputs.skipped }}
+    description: Whether there is nothing to commit (no source matched the submission)
+    value: ${{ steps.entry.outputs.skipped }}
 
 runs:
   using: composite
   steps:
-    - shell: bash
-      id: prepare
+    - name: Build the entry from the sources that matched
+      id: entry
+      shell: bash
       env:
         PACKAGE: ${{ inputs.packageName }}
         USER_SIG: ${{ inputs.packageSignature }}
         ISSUE: ${{ inputs.issueNumber }}
         ISSUE_BODY: ${{ inputs.issueBody }}
-        CO_AUTHOR_TRAILER: ${{ inputs.coAuthorTrailer }}
         FDROID_RESULTS_DIR: ${{ inputs.fdroidResultsDir }}
         GPLAY_SIG: ${{ inputs.gplaySignature }}
         APPVERIFIER_SIG: ${{ inputs.appverifierSignature }}
@@ -105,33 +105,39 @@ runs:
         set -euo pipefail
         source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
 
-        echo "prepared=false" >> "$GITHUB_OUTPUT"
-        echo "skipped=false" >> "$GITHUB_OUTPUT"
-
         SUBMISSION_ISSUE_REF=$(signatures_submission_issue_ref "$ISSUE" "$ISSUE_BODY")
         export SUBMISSION_ISSUE_REF
+        echo "issueRef=$SUBMISSION_ISSUE_REF" >> "$GITHUB_OUTPUT"
 
-        entry="$(mktemp)"
-        if ! submission_build_entry_file "$entry"; then
+        if submission_build_entry_file "${GITHUB_WORKSPACE}/submission-entry.yml"; then
+          echo "skipped=false" >> "$GITHUB_OUTPUT"
+        else
           echo "No store matched the user-provided signature(s); skipping commit." >&2
           echo "skipped=true" >> "$GITHUB_OUTPUT"
-          rm -f "$entry"
-          exit 0
         fi
 
-        # Export the built entry (the delta) so a downstream CAS push can re-merge it onto the
-        # latest main, rather than committing a whole-file snapshot that may have gone stale.
-        cp "$entry" "${GITHUB_WORKSPACE}/submission-entry.yml"
+    # Nothing here is committed. Merging now makes a bad entry fail in this job, before the
+    # push job takes the write lock.
+    - name: Check the entry merges into data.yml
+      if: steps.entry.outputs.skipped == 'false'
+      shell: bash
+      run: |
+        set -euo pipefail
+        source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
+        submission_merge_entry_into_data_yml "${GITHUB_WORKSPACE}/submission-entry.yml"
 
-        submission_merge_entry_into_data_yml "$entry"
-        rm -f "$entry"
-
-        msg_file="${GITHUB_WORKSPACE}/submission-commit-msg"
-        submission_write_commit_message_file \
-          "$msg_file" \
-          "Add ${PACKAGE} from ${SUBMISSION_ISSUE_REF}" \
-          "$ISSUE" \
-          "$CO_AUTHOR_TRAILER"
-
-        git add data.yml
+    - name: Write the commit message
+      id: message
+      if: steps.entry.outputs.skipped == 'false'
+      shell: bash
+      env:
+        PACKAGE: ${{ inputs.packageName }}
+        ISSUE: ${{ inputs.issueNumber }}
+        ISSUE_REF: ${{ steps.entry.outputs.issueRef }}
+        CO_AUTHOR_TRAILER: ${{ inputs.coAuthorTrailer }}
+      run: |
+        set -euo pipefail
+        source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
+        submission_write_commit_message_file "${GITHUB_WORKSPACE}/submission-commit-msg" \
+          "Add ${PACKAGE} from ${ISSUE_REF}" "$ISSUE" "$CO_AUTHOR_TRAILER"
         echo "prepared=true" >> "$GITHUB_OUTPUT"

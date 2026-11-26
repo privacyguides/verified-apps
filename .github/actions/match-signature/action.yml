@@ -31,7 +31,8 @@ outputs:
 runs:
   using: composite
   steps:
-    - shell: bash
+    - name: Compare the store's fingerprints with the submitted ones
+      shell: bash
       id: match
       env:
         PACKAGE_NAME: ${{ inputs.packageName }}

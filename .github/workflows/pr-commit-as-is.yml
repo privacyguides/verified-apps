@@ -25,35 +25,36 @@ jobs:
       issues: write
 
     outputs:
-      prepared: ${{ steps.meta.outputs.prepared }}
-      skipped: ${{ steps.meta.outputs.skipped }}
-      headRef: ${{ steps.meta.outputs.headRef }}
-      issueNumber: ${{ steps.meta.outputs.issueNumber }}
+      prepared: ${{ steps.finalize.outputs.prepared }}
+      issueNumber: ${{ steps.prMeta.outputs.issueNumber }}
       author: ${{ steps.coauthor.outputs.author }}
 
     steps:
-      - name: Validate pull request
+      - name: Require an open pull request
+        if: github.event.pull_request.state != 'open'
+        run: |
+          echo "Pull request is not open." >&2
+          exit 1
+
+      - name: Read the issue number from the branch name
         id: prMeta
         env:
-          GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
           HEAD_REF: ${{ github.event.pull_request.head.ref }}
         run: |
-          set -euo pipefail
-
-          if [[ "${{ github.event.pull_request.state }}" != "open" ]]; then
-            echo "Pull request is not open." >&2
-            exit 1
-          fi
-
           issue="${HEAD_REF#new/}"
-          if [[ "$issue" == "$HEAD_REF" || ! "$issue" =~ ^[0-9]+$ ]]; then
+          if [[ ! "$issue" =~ ^[0-9]+$ ]]; then
             echo "Expected head branch new/<issue>, got: ${HEAD_REF}" >&2
             exit 1
           fi
           echo "issueNumber=$issue" >> "$GITHUB_OUTPUT"
 
+      - name: Require that only data.yml changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
           files=$(gh pr view "$PR_NUMBER" --repo "$GH_REPO" --json files -q '.files[].path')
           unexpected=$(printf '%s\n' "$files" | grep -vxF 'data.yml' || true)
           if [[ -n "$unexpected" ]]; then
@@ -95,19 +96,10 @@ jobs:
           commitSubject: ${{ github.event.pull_request.title }}
           coAuthorTrailer: ${{ steps.coauthor.outputs.trailer }}
 
-      - name: Export metadata
-        id: meta
-        if: always()
-        run: |
-          echo "prepared=${{ steps.finalize.outputs.prepared }}" >> "$GITHUB_OUTPUT"
-          echo "skipped=${{ steps.finalize.outputs.skipped }}" >> "$GITHUB_OUTPUT"
-          echo "headRef=${{ github.event.pull_request.head.ref }}" >> "$GITHUB_OUTPUT"
-          echo "issueNumber=${{ steps.prMeta.outputs.issueNumber }}" >> "$GITHUB_OUTPUT"
-
       # The push job re-merges this PR's delta onto the latest main; data.yml is attested
       # *after* it is merged, so no whole-file snapshot is uploaded here.
       - name: Upload PR submission data (delta source)
-        if: steps.meta.outputs.prepared == 'true'
+        if: steps.finalize.outputs.prepared == 'true'
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: pr-submission-data
@@ -115,7 +107,7 @@ jobs:
           if-no-files-found: error
 
       - name: Upload commit message
-        if: steps.meta.outputs.prepared == 'true'
+        if: steps.finalize.outputs.prepared == 'true'
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: submission-commit-msg
@@ -123,7 +115,7 @@ jobs:
           if-no-files-found: error
 
       - name: Comment when skipped
-        if: steps.meta.outputs.skipped == 'true'
+        if: steps.finalize.outputs.skipped == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
@@ -176,7 +168,7 @@ jobs:
         env:
           SSH_KEY: ${{ secrets.ACTIONS_SSH_KEY }}
           AUTHOR: ${{ needs.prepare.outputs.author }}
-          HEAD_REF: ${{ needs.prepare.outputs.headRef }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
           PR_NUMBER: ${{ github.event.pull_request.number }}

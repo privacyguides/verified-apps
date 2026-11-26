@@ -15,10 +15,10 @@ inputs:
 outputs:
   found:
     description: Whether the package could be resolved on the chosen source
-    value: ${{ steps.download.outputs.found }}
+    value: ${{ (steps.cached.outputs.apkPath || steps.download.outputs.apkPath) != '' }}
   apkPath:
     description: Path to the downloaded APK file
-    value: ${{ steps.download.outputs.apkPath }}
+    value: ${{ steps.cached.outputs.apkPath || steps.download.outputs.apkPath }}
 
 runs:
   using: composite
@@ -29,7 +29,8 @@ runs:
         rustflags: ''
         cache-shared-key: apkeep-${{ inputs.apkeepVersion }}
 
-    - shell: bash
+    - name: Install apkeep
+      shell: bash
       id: apkeep
       env:
         APKEEP_VERSION: ${{ inputs.apkeepVersion }}
@@ -45,49 +46,47 @@ runs:
         path: ${{ runner.temp }}/apkeep-${{ inputs.source }}-apk-cache
         key: apkeep-${{ inputs.source }}-${{ inputs.packageName }}
 
-    - shell: bash
+    - name: Use the cached APK when it is still usable
+      id: cached
+      if: steps.apkCache.outputs.cache-hit == 'true'
+      shell: bash
+      env:
+        PACKAGE_NAME: ${{ inputs.packageName }}
+        CACHE_DIR: ${{ runner.temp }}/apkeep-${{ inputs.source }}-apk-cache
+      run: |
+        source "${GITHUB_ACTION_PATH}/apkeep.lib.sh"
+        if apkPath=$(apkeep_resolve_scannable_apk "$CACHE_DIR" "$PACKAGE_NAME"); then
+          echo "apkPath=$apkPath" >> "$GITHUB_OUTPUT"
+        fi
+
+    # A missing credential is a set-up error and fails the job. An app that is not in the store
+    # is not an error: the download step below just leaves apkPath empty.
+    - name: Require Google Play credentials
+      if: steps.cached.outputs.apkPath == '' && inputs.source == 'google-play' && (env.GPLAY_EMAIL == '' || env.GPLAY_AAS_TOKEN == '')
+      shell: bash
+      run: |
+        echo "GPLAY_EMAIL and GPLAY_AAS_TOKEN must be set for Google Play downloads." >&2
+        exit 1
+
+    - name: Download from the store
       id: download
+      if: steps.cached.outputs.apkPath == ''
+      shell: bash
       env:
         PACKAGE_NAME: ${{ inputs.packageName }}
         APKEEP_BIN: ${{ steps.apkeep.outputs.bin }}
         APKEEP_SOURCE: ${{ inputs.source }}
         GPLAY_EMAIL: ${{ env.GPLAY_EMAIL }}
         GPLAY_AAS_TOKEN: ${{ env.GPLAY_AAS_TOKEN }}
-        CACHE_HIT: ${{ steps.apkCache.outputs.cache-hit }}
+        CACHE_DIR: ${{ runner.temp }}/apkeep-${{ inputs.source }}-apk-cache
       run: |
         set -euo pipefail
         source "${GITHUB_ACTION_PATH}/apkeep.lib.sh"
-        echo "found=false" >> "$GITHUB_OUTPUT"
-        echo "apkPath=" >> "$GITHUB_OUTPUT"
-
-        cache_dir="${RUNNER_TEMP}/apkeep-${APKEEP_SOURCE}-apk-cache"
-        mkdir -p "$cache_dir"
-
-        # Reuse a previously cached APK when one is present and still resolvable.
-        if [[ "$CACHE_HIT" == "true" ]]; then
-          if apkPath=$(apkeep_resolve_scannable_apk "$cache_dir" "$PACKAGE_NAME"); then
-            echo "found=true" >> "$GITHUB_OUTPUT"
-            echo "apkPath=$apkPath" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-        fi
-
-        # Google Play requires credentials; preserve the action's hard failure when missing
-        # (a not-found / download failure is a soft "found=false", which apkeep_download returns).
-        if [[ "$APKEEP_SOURCE" == "google-play" && ( -z "${GPLAY_EMAIL:-}" || -z "${GPLAY_AAS_TOKEN:-}" ) ]]; then
-          echo "GPLAY_EMAIL and GPLAY_AAS_TOKEN must be set for Google Play downloads." >&2
-          exit 1
-        fi
-
-        work_dir="${RUNNER_TEMP}/apkeep-download"
         if ! apkPath=$(apkeep_download "$APKEEP_BIN" "$PACKAGE_NAME" "$APKEEP_SOURCE" \
-          "$work_dir" "${GPLAY_EMAIL:-}" "${GPLAY_AAS_TOKEN:-}"); then
+          "${RUNNER_TEMP}/apkeep-download" "${GPLAY_EMAIL:-}" "${GPLAY_AAS_TOKEN:-}"); then
           exit 0
         fi
-
-        rm -f "$cache_dir"/*.apk "$cache_dir"/*.xapk 2>/dev/null || true
-        cached_apk="${cache_dir}/${PACKAGE_NAME}.apk"
-        cp "$apkPath" "$cached_apk"
-
-        echo "found=true" >> "$GITHUB_OUTPUT"
-        echo "apkPath=$cached_apk" >> "$GITHUB_OUTPUT"
+        mkdir -p "$CACHE_DIR"
+        rm -f "${CACHE_DIR:?}"/*.apk "${CACHE_DIR:?}"/*.xapk 2>/dev/null || true
+        cp "$apkPath" "${CACHE_DIR}/${PACKAGE_NAME}.apk"
+        echo "apkPath=${CACHE_DIR}/${PACKAGE_NAME}.apk" >> "$GITHUB_OUTPUT"

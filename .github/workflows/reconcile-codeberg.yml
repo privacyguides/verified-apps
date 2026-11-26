@@ -47,13 +47,30 @@ jobs:
             .github/actions/signature-lib
           sparse-checkout-cone-mode: false
 
-      - name: Reconcile linked Codeberg issues
+      - name: List the issues to reconcile
         env:
-          CB_SYNC_TOKEN: ${{ secrets.CB_SYNC_TOKEN }}
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
           ISSUE: ${{ github.event.inputs.issue }}
           LIMIT: ${{ github.event.inputs.limit || '300' }}
+        run: |
+          set -euo pipefail
+          if [[ -n "$ISSUE" ]]; then
+            gh issue view "$ISSUE" --repo "$GH_REPO" --json number,state,body,labels \
+              | jq -s '.' > "${RUNNER_TEMP}/issues.json"
+          else
+            gh issue list --repo "$GH_REPO" --label "Import Codeberg" --state all \
+              --limit "$LIMIT" --json number,state,body,labels > "${RUNNER_TEMP}/issues.json"
+          fi
+          echo "Reconciling $(jq 'length' "${RUNNER_TEMP}/issues.json") issue(s)."
+
+      # For each issue: labels (also repairs issues older than the label sync), open or closed
+      # state, then the rolling status comment (created if missing, edited otherwise).
+      - name: Bring each linked Codeberg issue back in sync
+        env:
+          CB_SYNC_TOKEN: ${{ secrets.CB_SYNC_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
           # Backfill creates may need to wait out Codeberg's ~10 min comment-create window;
           # be more patient here than the interactive submission jobs (defaults: 60s / 5).
           CODEBERG_RETRY_CAP: "600"
@@ -68,17 +85,7 @@ jobs:
           fi
 
           issues_json="${RUNNER_TEMP}/issues.json"
-          if [[ -n "${ISSUE:-}" ]]; then
-            gh issue view "$ISSUE" --repo "$GH_REPO" --json number,state,body,labels \
-              | jq -s '.' > "$issues_json"
-          else
-            gh issue list --repo "$GH_REPO" --label "Import Codeberg" --state all \
-              --limit "$LIMIT" --json number,state,body,labels > "$issues_json"
-          fi
-
           total=$(jq 'length' "$issues_json")
-          echo "Reconciling ${total} issue(s)."
-
           ok=0; skipped=0; failed=0
           for ((i = 0; i < total; i++)); do
             num=$(jq -r ".[$i].number" "$issues_json")
@@ -95,21 +102,11 @@ jobs:
             echo "Linked to ${SUBMISSION_EXTERNAL_REF}."
 
             issue_ok=true
-
-            # Labels (also repairs issues predating the label-sync workflow).
             signatures_sync_codeberg_issue_labels "$CB_SYNC_TOKEN" "$body" "$labels" || issue_ok=false
-
-            # Open/closed state.
             case "$state" in
-              open) state_action="opened" ;;
-              closed) state_action="closed" ;;
-              *) state_action="" ;;
+              open) signatures_sync_codeberg_issue_state "$CB_SYNC_TOKEN" "$body" opened || issue_ok=false ;;
+              closed) signatures_sync_codeberg_issue_state "$CB_SYNC_TOKEN" "$body" closed || issue_ok=false ;;
             esac
-            if [[ -n "$state_action" ]]; then
-              signatures_sync_codeberg_issue_state "$CB_SYNC_TOKEN" "$body" "$state_action" || issue_ok=false
-            fi
-
-            # Rolling status comment (create if missing, edit otherwise).
             signatures_mirror_issue_comment_to_codeberg "$CB_SYNC_TOKEN" "$num" "$body" || issue_ok=false
 
             if [[ "$issue_ok" == "true" ]]; then

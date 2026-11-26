@@ -77,25 +77,25 @@ inputs:
 outputs:
   prCreated:
     description: Whether a pull request was opened
-    value: ${{ steps.create.outputs.prCreated }}
+    value: ${{ steps.create.outputs.prUrl != '' }}
   prUrl:
     description: URL of the created pull request
     value: ${{ steps.create.outputs.prUrl }}
   skipped:
     description: Whether PR creation was skipped (no matching store signatures)
-    value: ${{ steps.prepare.outputs.skipped }}
+    value: ${{ steps.entry.outputs.skipped }}
 
 runs:
   using: composite
   steps:
-    - shell: bash
-      id: prepare
+    - name: Build the entry from the sources that matched
+      id: entry
+      shell: bash
       env:
         PACKAGE: ${{ inputs.packageName }}
         USER_SIG: ${{ inputs.packageSignature }}
         ISSUE: ${{ inputs.issueNumber }}
         ISSUE_BODY: ${{ inputs.issueBody }}
-        CO_AUTHOR_TRAILER: ${{ inputs.coAuthorTrailer }}
         FDROID_RESULTS_DIR: ${{ inputs.fdroidResultsDir }}
         GPLAY_SIG: ${{ inputs.gplaySignature }}
         APPVERIFIER_SIG: ${{ inputs.appverifierSignature }}
@@ -112,73 +112,73 @@ runs:
         set -euo pipefail
         source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
 
-        echo "skipped=false" >> "$GITHUB_OUTPUT"
-        echo "branch=new/${ISSUE}" >> "$GITHUB_OUTPUT"
-
         SUBMISSION_ISSUE_REF=$(signatures_submission_issue_ref "$ISSUE" "$ISSUE_BODY")
         export SUBMISSION_ISSUE_REF
+        echo "issueRef=$SUBMISSION_ISSUE_REF" >> "$GITHUB_OUTPUT"
+        echo "branch=new/${ISSUE}" >> "$GITHUB_OUTPUT"
 
-        entry="$(mktemp)"
-        if ! submission_build_entry_file "$entry"; then
+        if submission_build_entry_file "${RUNNER_TEMP}/submission-entry.yml"; then
+          echo "skipped=false" >> "$GITHUB_OUTPUT"
+        else
           echo "No store matched the user-provided signature(s); skipping PR." >&2
           echo "skipped=true" >> "$GITHUB_OUTPUT"
-          rm -f "$entry"
-          exit 0
         fi
 
-        submission_merge_entry_into_data_yml "$entry"
-        rm -f "$entry"
+    - name: Add the entry to data.yml on a new branch
+      if: steps.entry.outputs.skipped == 'false'
+      shell: bash
+      env:
+        BRANCH: ${{ steps.entry.outputs.branch }}
+      run: |
+        set -euo pipefail
+        source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
+        submission_merge_entry_into_data_yml "${RUNNER_TEMP}/submission-entry.yml"
+        git checkout -b "$BRANCH"
 
-        branch="new/${ISSUE}"
-        git checkout -b "$branch"
-
-        msg_file="${GITHUB_WORKSPACE}/submission-commit-msg"
-        submission_write_commit_message_file \
-          "$msg_file" \
-          "Add ${PACKAGE} from ${SUBMISSION_ISSUE_REF}" \
-          "$ISSUE" \
-          "$CO_AUTHOR_TRAILER"
-
-        git add data.yml
+    - name: Write the commit message
+      if: steps.entry.outputs.skipped == 'false'
+      shell: bash
+      env:
+        PACKAGE: ${{ inputs.packageName }}
+        ISSUE: ${{ inputs.issueNumber }}
+        ISSUE_REF: ${{ steps.entry.outputs.issueRef }}
+        CO_AUTHOR_TRAILER: ${{ inputs.coAuthorTrailer }}
+      run: |
+        set -euo pipefail
+        source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
+        submission_write_commit_message_file "${GITHUB_WORKSPACE}/submission-commit-msg" \
+          "Add ${PACKAGE} from ${ISSUE_REF}" "$ISSUE" "$CO_AUTHOR_TRAILER"
 
     - name: Push verified commit to branch
-      if: steps.prepare.outputs.skipped != 'true'
-      id: verified-commit
+      if: steps.entry.outputs.skipped == 'false'
       uses: ./.github/actions/bot-commit
       with:
-        ref: ${{ steps.prepare.outputs.branch }}
+        ref: ${{ steps.entry.outputs.branch }}
         author: ${{ inputs.author }}
         messageFile: submission-commit-msg
         files: |
           data.yml
         sshKey: ${{ inputs.sshSigningKey }}
 
-    - shell: bash
+    - name: Open the pull request
       id: create
-      if: steps.prepare.outputs.skipped != 'true'
+      if: steps.entry.outputs.skipped == 'false'
+      shell: bash
       env:
         PACKAGE: ${{ inputs.packageName }}
-        ISSUE: ${{ inputs.issueNumber }}
         PR_BODY_FILE: ${{ inputs.prBodyFile }}
-        BRANCH: ${{ steps.prepare.outputs.branch }}
+        BRANCH: ${{ steps.entry.outputs.branch }}
         GH_TOKEN: ${{ github.token }}
         GH_REPO: ${{ github.repository }}
       run: |
         set -euo pipefail
-
-        echo "prCreated=false" >> "$GITHUB_OUTPUT"
-        echo "prUrl=" >> "$GITHUB_OUTPUT"
-
         if [[ ! -f "$PR_BODY_FILE" ]]; then
           echo "PR body file not found: $PR_BODY_FILE" >&2
           exit 1
         fi
-
         pr_url=$(gh pr create \
           --repo "$GH_REPO" \
           --title "Add ${PACKAGE}" \
           --body-file "$PR_BODY_FILE" \
           --head "$BRANCH")
-
-        echo "prCreated=true" >> "$GITHUB_OUTPUT"
         echo "prUrl=$pr_url" >> "$GITHUB_OUTPUT"

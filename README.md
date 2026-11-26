@@ -34,8 +34,6 @@ We will also check the following:
 
 We can not automatically validate the *legitimacy* of these sources, but they will be noted for manual review purposes. If we believe the direct sources are legitimate, we will add them to the database alongside any app store releases.
 
-We will also check submissions against the hashes [submitted to the GrapheneOS forum](https://discuss.grapheneos.org/d/15368-lets-compare-hashes-for-apps-not-in-appverifiers-database) and compiled by @RoundSalmon4 at <https://github.com/RoundSalmon4/AppVerifier/releases>. This information is **not** used for any database-related purposes (**not** added to data.yml), because the comments in that thread are unverified user-submissions. However, they can act as an additional data point that someone is vouching for that submission. Therefore, matches will merely be noted in the GitHub issue here for a particular submission. 
-
 ## Verification Process
 
 Currently we are checking submitted apps considering one or more of the following factors:

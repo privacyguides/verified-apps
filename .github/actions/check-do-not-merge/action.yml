@@ -25,66 +25,80 @@ inputs:
 runs:
   using: composite
   steps:
-    - shell: bash
+    - name: Require an issue or pull request number
+      if: inputs.issueNumber == '' && inputs.pullRequestNumber == ''
+      shell: bash
+      run: |
+        echo "At least one of issueNumber or pullRequestNumber is required." >&2
+        exit 1
+
+    - name: Look for a blocking label
+      id: block
+      shell: bash
       env:
         GH_TOKEN: ${{ github.token }}
         GH_REPO: ${{ github.repository }}
         ISSUE_NUMBER: ${{ inputs.issueNumber }}
         PR_NUMBER: ${{ inputs.pullRequestNumber }}
         ACTION: ${{ inputs.actionDescription }}
-        ISSUE_BODY: ${{ inputs.issueBody }}
-        CODEBERG_TOKEN: ${{ inputs.codebergToken }}
       run: |
         set -euo pipefail
-        source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
-
-        if [[ -z "$ISSUE_NUMBER" && -z "$PR_NUMBER" ]]; then
-          echo "At least one of issueNumber or pullRequestNumber is required." >&2
-          exit 1
-        fi
-
-        blocked_label=""
-        blocked_on=""
-
-        if [[ -n "$ISSUE_NUMBER" ]]; then
-          labels=$(gh issue view "$ISSUE_NUMBER" --repo "$GH_REPO" --json labels -q '.labels[].name')
-          if printf '%s\n' "$labels" | grep -qxF 'Do Not Merge'; then
-            blocked_label="Do Not Merge"
-            blocked_on="issue GH-${ISSUE_NUMBER}"
-          elif printf '%s\n' "$labels" | grep -qxF 'Needs a +1'; then
-            blocked_label="Needs a +1"
-            blocked_on="issue GH-${ISSUE_NUMBER}"
-          fi
-        fi
-
-        if [[ -z "$blocked_label" && -n "$PR_NUMBER" ]]; then
-          labels=$(gh pr view "$PR_NUMBER" --repo "$GH_REPO" --json labels -q '.labels[].name')
-          if printf '%s\n' "$labels" | grep -qxF 'Do Not Merge'; then
-            blocked_label="Do Not Merge"
-            blocked_on="pull request GH-${PR_NUMBER}"
-          elif printf '%s\n' "$labels" | grep -qxF 'Needs a +1'; then
-            blocked_label="Needs a +1"
-            blocked_on="pull request GH-${PR_NUMBER}"
-          fi
-        fi
-
-        if [[ -n "$blocked_label" ]]; then
-          body="Cannot run **${ACTION}**: ${blocked_on} has the **${blocked_label}** label. Remove that label before retrying."
-          if [[ -n "$PR_NUMBER" ]]; then
-            gh pr comment "$PR_NUMBER" --repo "$GH_REPO" --body "$body"
-          fi
-          if [[ -n "$ISSUE_NUMBER" ]]; then
-            gh issue comment "$ISSUE_NUMBER" --repo "$GH_REPO" --body "$body"
-
-            issue_body="$ISSUE_BODY"
-            if [[ -z "$issue_body" ]]; then
-              issue_body=$(gh issue view "$ISSUE_NUMBER" --repo "$GH_REPO" --json body -q .body)
+        # stdin: label names, one per line. Prints the blocking label, if any.
+        blocking() {
+          local labels blocker
+          labels=$(cat)
+          for blocker in 'Do Not Merge' 'Needs a +1'; do
+            if grep -qxF "$blocker" <<< "$labels"; then
+              printf '%s' "$blocker"
+              return
             fi
-            signatures_mirror_issue_comment_to_codeberg \
-              "$CODEBERG_TOKEN" \
-              "$ISSUE_NUMBER" \
-              "$issue_body"
-          fi
-          echo "::error::${blocked_on} has the ${blocked_label} label; refusing to proceed."
-          exit 1
+          done
+        }
+
+        label=""
+        where=""
+        if [[ -n "$ISSUE_NUMBER" ]]; then
+          label=$(gh issue view "$ISSUE_NUMBER" --repo "$GH_REPO" --json labels -q '.labels[].name' | blocking)
+          where="issue GH-${ISSUE_NUMBER}"
         fi
+        if [[ -z "$label" && -n "$PR_NUMBER" ]]; then
+          label=$(gh pr view "$PR_NUMBER" --repo "$GH_REPO" --json labels -q '.labels[].name' | blocking)
+          where="pull request GH-${PR_NUMBER}"
+        fi
+        if [[ -n "$label" ]]; then
+          {
+            echo "label=$label"
+            echo "where=$where"
+            echo "message=Cannot run **${ACTION}**: ${where} has the **${label}** label. Remove that label before retrying."
+          } >> "$GITHUB_OUTPUT"
+        fi
+
+    - name: Comment on the pull request
+      if: steps.block.outputs.label != '' && inputs.pullRequestNumber != ''
+      shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
+        GH_REPO: ${{ github.repository }}
+        PR_NUMBER: ${{ inputs.pullRequestNumber }}
+        MESSAGE: ${{ steps.block.outputs.message }}
+      run: |
+        gh pr comment "$PR_NUMBER" --repo "$GH_REPO" --body "$MESSAGE"
+
+    - name: Comment on the issue
+      if: steps.block.outputs.label != '' && inputs.issueNumber != ''
+      uses: ./.github/actions/issue-comment
+      with:
+        issueNumber: ${{ inputs.issueNumber }}
+        body: ${{ steps.block.outputs.message }}
+        issueBody: ${{ inputs.issueBody }}
+        codebergToken: ${{ inputs.codebergToken }}
+
+    - name: Refuse to proceed
+      if: steps.block.outputs.label != ''
+      shell: bash
+      env:
+        WHERE: ${{ steps.block.outputs.where }}
+        LABEL: ${{ steps.block.outputs.label }}
+      run: |
+        echo "::error::${WHERE} has the ${LABEL} label; refusing to proceed."
+        exit 1

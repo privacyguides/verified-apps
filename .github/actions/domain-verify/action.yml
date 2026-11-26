@@ -33,7 +33,8 @@ outputs:
 runs:
   using: composite
   steps:
-    - shell: bash
+    - name: Look for a verification record on the package's domains
+      shell: bash
       id: check
       env:
         PACKAGE_NAME: ${{ inputs.packageName }}
