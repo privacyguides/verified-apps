@@ -11457,6 +11457,14 @@ packages:
             issue: GH-850
             apk:
               sha256: c54115da817d70906f60bcd652a1883f6b493de407f1474a9c129ada1b1da162
+  - package: de.moekadu.tuner
+    signature:
+      - fingerprint: D1:AC:7F:2F:F8:9E:6D:C1:A1:04:9D:6E:EA:22:ED:A0:5A:0D:91:DC:4C:97:3C:D6:B5:D7:C6:98:D9:5A:9B:02
+        sources:
+          - name: F-Droid
+            issue: GH-3338
+            apk:
+              sha256: 3ba7da9486fb8ea5860057d430877e7e0b12fd46ed4927dcfd3d96d8ea5265c5
   - package: de.noisruker.openPasskeyAuth
     signature:
       - fingerprint: 5E:80:04:53:27:4D:72:D5:66:89:31:81:7F:82:BA:19:36:F2:42:3D:90:BD:16:30:D0:A2:EA:3B:CE:36:BC:CF
