@@ -9657,6 +9657,14 @@ packages:
             issue: GH-2453
             apk:
               sha256: 7bb81314895e1b495085012033ba7b77c5ff633489e520efeca3b4516d938395
+  - package: com.sunlife.ca.mysunlife
+    signature:
+      - fingerprint: 18:82:79:D2:3D:BB:85:E5:65:B0:92:7F:19:02:F6:6A:5C:9F:CB:05:64:2E:F7:F7:BD:31:8E:17:A3:EF:67:B2
+        sources:
+          - name: Google Play
+            issue: GH-3609
+            apk:
+              sha256: 73aab8692097161b68f62b5fe8b5bac7a582e484f1f1cfdffa90ae3b7be9bd14
   - package: com.superproductivity.superproductivity
     signature:
       - fingerprint: 16:3C:87:6B:91:7D:76:20:A3:92:92:CC:9D:7C:3C:DF:0C:3C:65:93:24:AB:45:9D:5D:AF:D9:B9:97:11:17:AA
