@@ -14387,6 +14387,14 @@ packages:
             issue: GH-84
             apk:
               sha256: a05e2daba998bf115ed5db566e724fb0e5934713d2f567d36ea99a8b83b24290
+  - package: it.bancareale.app
+    signature:
+      - fingerprint: 49:F9:AB:CD:73:E7:7D:CF:2E:3B:C2:7B:52:B4:49:FF:1A:5F:E3:5A:74:1A:0F:87:20:46:DC:AB:18:CF:BF:89
+        sources:
+          - name: Google Play
+            issue: GH-3808
+            apk:
+              sha256: 996498b94eee7accdc08f962d0efbde85b56f6674603914c1abb54b6f255215e
   - package: it.belloworld.mercurygram
     signature:
       - fingerprint: FE:B8:02:F2:F1:4C:EE:16:EF:D9:FE:C5:D8:09:FA:3B:EF:7A:2B:34:9B:98:9F:81:6D:42:AA:D9:C3:9E:F7:7A
