@@ -11814,6 +11814,14 @@ packages:
             issue: GH-539
           - name: F-Droid
             issue: GH-539
+  - package: de.uni_potsdam.hpi.openmensa
+    signature:
+      - fingerprint: 7F:42:63:A1:A6:C1:36:AF:1D:CF:C8:30:19:5F:E0:8E:6D:18:C1:9B:6C:B8:56:13:42:86:90:65:8C:E6:BC:3A
+        sources:
+          - name: F-Droid
+            issue: GH-3331
+            apk:
+              sha256: a0162bd46b61595e56993883ae10018dab647a435cdc2dd8d2f0405753af6098
   - package: de.westnordost.luftlinie
     signature:
       - fingerprint: 5F:2C:83:9F:3C:C5:DD:13:5D:2A:A1:69:6A:05:91:84:AB:D1:50:C7:9A:8A:3E:50:DF:CF:09:E1:48:7B:92:F4
