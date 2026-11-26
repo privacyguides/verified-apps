@@ -963,6 +963,18 @@ packages:
             issue: GH-7959
             apk:
               sha256: 6677f3fb7ae398d886cef2b627ff4bc2eba427a39638da045e870be0ffd01320
+  - package: chat.schildi.android
+    signature:
+      - fingerprint: 66:12:AD:E7:E9:31:74:A5:89:CF:5B:A2:6E:D3:AB:28:23:1A:78:96:40:54:6C:8F:30:37:5E:F0:45:BC:92:42
+        sources:
+          - name: F-Droid
+            issue: GH-3401
+            apk:
+              sha256: 921dfb3c7f90e6189c033fa1a46d1b0543cc87c316105e5df3ba4ecd17a4de07
+          - name: Google Play
+            issue: GH-3401
+            apk:
+              sha256: 437272b8cf5b3dd910af3fdd8700810f8f133d17ae2f8025542cd3fb2daee743
   - package: chat.simplex.app
     signature:
       - fingerprint: 3C:52:C4:FD:3C:AD:1C:07:C9:B0:0A:70:80:E3:58:FA:B9:FE:FC:B8:AF:5A:EC:14:77:65:F1:6D:0F:21:AD:85
