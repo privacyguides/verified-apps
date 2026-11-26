@@ -16549,6 +16549,14 @@ packages:
             issue: GH-7892
             apk:
               sha256: 67a33c9dfa32aff5c0a3995ecf49c5fa46ad5f5057098ab5c5fe0f7aba9383f0
+  - package: protectedwp.safespace
+    signature:
+      - fingerprint: BC:FC:C9:21:A8:16:7A:FE:3C:3B:52:8F:02:E1:57:D7:66:09:D4:17:AD:CB:80:E2:A2:9A:59:5F:C6:CE:74:83
+        sources:
+          - name: F-Droid
+            issue: GH-3236
+            apk:
+              sha256: 60278e8e01ea7a59762a4f656e0ed4ec1bd01f13b5ac6ce1dbbe31fe52a5f359
   - package: proton.android.authenticator
     signature:
       - fingerprint: DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
