@@ -7969,6 +7969,14 @@ packages:
             issue: GH-6290
             apk:
               sha256: c58dcf67d8a573b2da6c02c14e6df766b564aa81dd7aa6487ed1fa5199c1638c
+  - package: com.peer.topeer.global_send
+    signature:
+      - fingerprint: FD:03:DA:E4:A8:70:E0:33:50:99:F7:F8:35:E1:FE:9B:7B:9C:03:49:73:3C:F8:27:8D:EE:69:5A:7A:ED:E7:C4
+        sources:
+          - name: F-Droid
+            issue: GH-3376
+            apk:
+              sha256: 012a0297e800744f7ba760f1938c01a17b0e4387e7bf2bdb70006e7ec2c76257
   - package: com.pennywiseai.tracker
     signature:
       - fingerprint: 23:5D:65:2B:20:12:FD:70:CF:D6:B4:91:9F:2E:66:5E:68:4A:3A:14:99:8D:DD:28:6F:FD:07:7E:ED:4C:17:02
