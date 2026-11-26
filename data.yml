@@ -13355,6 +13355,14 @@ packages:
             issue: GH-6505
             apk:
               sha256: 0672fdaa4454f881ada4c42a9e5c8cf6eaada5fef140e9758a8a14739b62e30b
+  - package: io.github.mlm_games.musicore
+    signature:
+      - fingerprint: 4A:ED:2F:69:1D:F6:4A:7B:0F:EA:25:A6:B8:C8:01:83:C6:DC:52:0E:04:9D:AC:01:78:DE:FA:1D:64:72:22:8F
+        sources:
+          - name: F-Droid
+            issue: GH-3386
+            apk:
+              sha256: d4f9128b049d4c7b5235a7d74e34942a3a76acf3306219d3a89ba7849b5ac9cf
   - package: io.github.muntashirakon.AppManager
     signature:
       - fingerprint: B6:8E:93:49:10:C0:05:80:14:A0:6A:2E:14:47:29:F9:AA:11:3F:C5:D9:E0:DF:F5:29:EC:BF:1D:1F:61:2D:13
