@@ -1692,6 +1692,14 @@ packages:
             issue: GH-1814
             apk:
               sha256: a518e903106aca3c6044883a37ab03387dbc62b5e7990f9140f69a8b0b5e62ca
+  - package: com.android.geto
+    signature:
+      - fingerprint: 94:A9:D8:7C:C8:F0:C3:31:91:A2:33:AC:74:ED:5C:9E:4E:1A:FD:55:6A:9D:91:6A:C5:33:BC:50:08:3A:8D:FF
+        sources:
+          - name: F-Droid
+            issue: GH-3489
+            apk:
+              sha256: 8bf453ce79521ee1f1306c86df5751a99df0a8cca59d2447307a9705b205ae22
   - package: com.android.gpstest.osmdroid
     signature:
       - fingerprint: 5D:72:EE:AF:8B:95:F4:45:E1:90:9E:92:CE:DD:39:95:4C:B1:29:F8:D1:D5:2D:C0:6A:1B:44:27:13:0A:4D:DA
