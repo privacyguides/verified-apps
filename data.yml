@@ -10550,6 +10550,14 @@ packages:
             apk:
               sha256: 7ae8d6c5358410bf96c2b14d46eb7f210f9c173a8f1f8f82b5e3ccef1cdc46e5
               link: https://github.com/Windscribe/Android-App/releases/download/v4.0/mobile.apk
+  - package: com.wire
+    signature:
+      - fingerprint: 15:97:EE:68:B7:B4:F7:4E:47:EE:6F:AB:1F:BD:D3:15:5C:36:5E:48:BA:81:97:E0:45:C4:9A:C4:ED:A3:E6:3B
+        sources:
+          - name: F-Droid
+            issue: GH-3393
+            apk:
+              sha256: 213aec73871210e267b96fd287a9f30dee179805a5c23b9fe9b487d0afd9b085
   - package: com.wireguard.android
     signature:
       - fingerprint: 84:A1:3F:A2:C4:E0:06:4B:0C:11:65:4B:8A:86:57:4B:7A:9B:93:52:A3:83:4C:EE:32:45:5B:06:1C:3D:41:27
