@@ -13258,6 +13258,14 @@ packages:
             issue: GH-7360
             apk:
               sha256: 8f794527cb2c45bdd0a340c3d4766f5097138efb7ed6451f9561ca0d087eb0cc
+  - package: io.github.jd1378.otphelper
+    signature:
+      - fingerprint: 83:2D:24:30:2A:EA:88:12:20:52:17:AE:A7:81:EB:5A:28:43:5D:8A:D3:BE:CE:92:B4:C6:94:0B:1E:E6:A4:DB
+        sources:
+          - name: F-Droid
+            issue: GH-3362
+            apk:
+              sha256: 456c11810f4134fbacb00514836701b5dced8dc32e19dc87220884ef592b06f0
   - package: io.github.jqssun.helium
     signature:
       - fingerprint: 09:55:40:49:4D:53:F4:8C:A0:51:BC:86:C3:92:C4:6E:DB:29:72:5D:A5:59:2B:D8:AF:3C:3D:02:7B:31:66:BB
