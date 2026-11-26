@@ -4432,6 +4432,14 @@ packages:
             issue: GH-7248
             apk:
               sha256: f3b60ef556d7a06896f381565339ffe7e5949e167aac3a941a068b582c2f8088
+  - package: com.game.plutonic
+    signature:
+      - fingerprint: 80:3B:9D:40:28:12:F5:75:E5:E0:1B:47:7B:35:31:E6:88:67:2B:FF:B3:88:29:29:DE:01:F2:D6:C8:7E:38:1E
+        sources:
+          - name: F-Droid
+            issue: GH-3382
+            apk:
+              sha256: cb082e7c6213b081438ba00bcd886e01482e11ac1f5e1f4230e65acbea46bc7c
   - package: com.garmin.android.apps.connectmobile
     signature:
       - fingerprint: 84:FF:2B:FA:39:5C:5A:21:E5:3A:E2:96:33:E4:A6:E6:8B:6B:5C:67:07:BB:60:84:C2:5B:70:F8:66:B7:17:29
