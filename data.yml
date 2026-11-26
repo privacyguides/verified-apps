@@ -816,6 +816,14 @@ packages:
             issue: GH-3592
             apk:
               sha256: 48082dea935674de86a7454fd38c252356301c7b94ec491796fad9ddcf594ff8
+  - package: ca.cbc.mobile.android.cbcnewsandroidwebview
+    signature:
+      - fingerprint: 3D:8A:10:88:7C:EA:5C:09:8E:FD:E9:9F:23:A1:5C:D2:18:F8:AA:6F:F3:46:E4:6E:09:A1:2A:79:24:6A:70:EB
+        sources:
+          - name: Google Play
+            issue: GH-3597
+            apk:
+              sha256: f9ed99684ae8cdef41d471a2b6ef3b315dbc9860a0d463b6bc8a8bc3b9223dcb
   - package: ca.ilianokokoro.umihi.music
     signature:
       - fingerprint: F1:F8:3F:A5:EB:F5:A4:3E:E0:F4:AB:C8:D0:AD:D8:9D:94:34:38:0E:A4:E7:F2:96:FF:E8:4E:1A:66:10:C5:BB
