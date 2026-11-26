@@ -13809,6 +13809,16 @@ packages:
               sha256: e372bd7f4428d2ca51f19da72470de4130796892a88a2fb533a930962cb55bdf
           - name: HTTPS Verified Domain
             issue: GH-8386
+  - package: me.proton.wallet.android
+    signature:
+      - fingerprint: DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53
+        sources:
+          - name: Google Play
+            issue: GH-3157
+            apk:
+              sha256: 2b320ef952427b3593ad405a6bc9602682c57aaca7360ac907f80fa3d28fbfec
+          - name: HTTPS Verified Domain
+            issue: GH-3157
   - package: me.timschneeberger.rootlessjamesdsp
     signature:
       - fingerprint: 95:0B:C2:0F:05:7A:CB:B2:C4:CA:D7:5F:08:C7:25:C9:72:DB:B6:73:B7:B0:78:5D:9F:DA:88:C2:F5:1D:F3:73
