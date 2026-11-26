@@ -13590,6 +13590,14 @@ packages:
             issue: GH-2449
             apk:
               sha256: 79b39a52f463abb64ddc9c07ebb0690ee3cff5dcaccd64c88ae93cc10d078984
+  - package: jp.telnavi.app.phone
+    signature:
+      - fingerprint: 1D:E3:25:6F:07:4B:A9:17:27:39:87:D7:47:00:8B:F5:69:E8:9B:5F:E8:7D:C5:98:59:F0:FB:1D:B8:F4:1E:93
+        sources:
+          - name: Google Play
+            issue: CB-203
+            apk:
+              sha256: f7263f464ad2637ebcffaa216e4dbcdc564c8fe97ba7d2fb144fa549a9f559f2
   - package: keepass2android.keepass2android
     signature:
       - fingerprint: 0B:F8:05:6D:3A:39:4E:D7:C7:71:73:C4:B4:2C:80:05:65:B4:F0:A4:29:77:56:9C:F3:47:2C:27:1C:56:29:39
