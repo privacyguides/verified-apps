@@ -9235,6 +9235,14 @@ packages:
             issue: GH-723
             apk:
               sha256: 84a3e189087608cde684cdeeae9af8c4a579d2b527ebcbab027b14b50ef1aa18
+  - package: com.seafile.seadroid2
+    signature:
+      - fingerprint: 9D:EB:B4:38:91:C6:67:EA:D7:A9:99:D4:5A:BB:69:AF:CC:A9:C4:3A:48:CE:B7:F4:F4:CA:BB:AF:FB:1E:48:AF
+        sources:
+          - name: F-Droid
+            issue: GH-3678
+            apk:
+              sha256: 120073a68d3749dd3774bb63790a18f20a849c04a0b437069eed5ae63bd0408c
   - package: com.seazon.feedme
     signature:
       - fingerprint: FB:09:A0:5C:BA:58:43:3B:AE:84:22:63:C3:7A:79:C2:AE:20:DC:55:07:F6:D8:25:09:C3:43:49:F8:6D:8D:FA
