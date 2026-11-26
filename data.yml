@@ -15308,6 +15308,14 @@ packages:
             issue: GH-2179
             apk:
               sha256: 5bb6242b34e17ca275259d743c7a88f1e1c75414cb872579abfa7cc0c0812711
+  - package: org.distrinet.lanshield
+    signature:
+      - fingerprint: A7:37:07:FD:07:7D:51:67:0F:79:04:A5:6E:0F:03:8A:62:E3:0B:48:BE:E3:A6:55:C3:02:5E:86:48:26:2B:52
+        sources:
+          - name: F-Droid
+            issue: GH-3471
+            apk:
+              sha256: 8413f5d31faf82c06655e2a5b4eb50f04efecd37b594879fcaa03805060647c9
   - package: org.documentfoundation.libreoffice
     signature:
       - fingerprint: 54:D3:57:33:E9:64:DC:B6:5F:51:1E:50:25:B8:3F:9B:D7:B5:73:31:14:34:AB:79:A7:CD:09:F8:27:BC:45:50
