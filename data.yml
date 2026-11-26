@@ -10327,6 +10327,14 @@ packages:
             issue: GH-6345
             apk:
               sha256: 363161ef802d884f3f65b4399d2e3d9ba1a8079499ee636549708a4e7ecb7f09
+  - package: com.ventoid.app
+    signature:
+      - fingerprint: 87:B3:52:DB:B7:50:30:F9:DE:B5:45:D8:C4:FA:75:86:F2:5E:D7:30:4C:5E:FB:E7:E8:D3:F0:28:44:03:FA:C3
+        sources:
+          - name: F-Droid
+            issue: GH-3525
+            apk:
+              sha256: 33bd783a7abe1aa3152e2bba1ccb23f11c66fb9ad3f05b65734e642643d462f4
   - package: com.verisec.mobile.frejaeid
     signature:
       - fingerprint: 1F:14:FE:04:C5:19:52:C5:E3:C8:E6:82:51:AE:8A:C3:73:B8:4C:59:76:BD:7F:24:8E:64:3A:F2:50:C8:BA:91
