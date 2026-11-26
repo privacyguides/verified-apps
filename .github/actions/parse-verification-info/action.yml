@@ -78,8 +78,8 @@ runs:
         validate_fdroid_repo_url() {
           local url="$1"
           [[ -z "$url" ]] && return 1
-          if [[ ! "$url" =~ ^https:// ]]; then
-            echo "Ignoring Custom F-Droid Repository (not an https:// URL): $url" >&2
+          if ! signatures_fdroid_repo_host_from_url "$url" > /dev/null; then
+            echo "Ignoring Custom F-Droid Repository (not an https://<host>/ URL): $url" >&2
             return 1
           fi
           if [[ "$url" =~ \.apk([?#].*)?$ ]]; then

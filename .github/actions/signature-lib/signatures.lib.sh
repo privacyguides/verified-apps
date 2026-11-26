@@ -621,7 +621,12 @@ submission_cas_commit_push() {
       return 3
     fi
 
-    git commit --quiet -F "$msg_file" --author="$author"
+    # Callers run this with errexit off. Without the check, a failed commit (bad author, signing
+    # error) is followed by a no-op push of the old tip, which then reports success.
+    if ! git commit --quiet -F "$msg_file" --author="$author"; then
+      echo "CAS: git commit failed" >&2
+      return 1
+    fi
 
     if git push --quiet origin "HEAD:${ref}" 2>/dev/null; then
       sha=$(git rev-parse HEAD)
@@ -1016,7 +1021,8 @@ signatures_download_direct_apk() {
   # -L is REQUIRED: GitHub release assets 302-redirect to a signed *.githubusercontent.com URL;
   # without it curl saves the empty redirect body and the APK check below fails on every release.
   local code
-  if ! code=$(curl -fsSL --retry 3 --retry-delay 2 "${header[@]}" \
+  # -g: the URL is typed by the submitter; without it [1-999999] in the URL is that many requests.
+  if ! code=$(curl -g -fsSL --retry 3 --retry-delay 2 "${header[@]}" \
       -o "$dest" -w '%{http_code}' "$url" 2>/dev/null); then
     echo "Direct APK download failed for ${url} (HTTP ${code:-000})" >&2
     return 22
@@ -1027,15 +1033,16 @@ signatures_download_direct_apk() {
   fi
 }
 
-# Hostname from a custom F-Droid repository URL (e.g. app.simplex.chat).
+# Hostname from a custom F-Droid repository URL (e.g. app.simplex.chat). Fails unless the URL is
+# https://<host>[:port][/...] and the host still has a dot after dropping "www.".
 signatures_fdroid_repo_host_from_url() {
   local url="${1-}"
+  local re='^https://([A-Za-z0-9-]+(\.[A-Za-z0-9-]+)+)(:[0-9]+)?([/?#]|$)'
   local host
 
-  [[ -n "$url" ]] || return 1
-  host=$(printf '%s\n' "$url" | sed -E 's#^[a-zA-Z][a-zA-Z0-9+.-]*://([^/@:/?#]+).*#\1#')
-  host="${host#www.}"
-  [[ -n "$host" ]] || return 1
+  [[ "$url" =~ $re ]] || return 1
+  host="${BASH_REMATCH[1]#www.}"
+  [[ "$host" == *.* ]] || return 1
   printf '%s\n' "$host"
 }
 

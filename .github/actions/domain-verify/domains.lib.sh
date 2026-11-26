@@ -204,7 +204,8 @@ _domain_https_fetch_200() {
   local url="$1" tmp code
   [[ "$url" == https://* ]] || return 1
   tmp=$(mktemp)
-  code=$(curl -sS --max-time 20 --max-filesize 1048576 --retry 2 --retry-delay 1 \
+  # -g: no URL globbing. An include of https://host/[1-999999999] is otherwise that many requests.
+  code=$(curl -g -sS --max-time 20 --max-filesize 1048576 --retry 2 --retry-delay 1 \
     -o "$tmp" -w '%{http_code}' "$url" 2>/dev/null) || { rm -f "$tmp"; return 1; }
   if [[ "$code" != "200" ]]; then
     echo "HTTPS: ${url} returned HTTP ${code} (Digital Asset Links requires 200; redirects are not followed)" >&2
@@ -241,12 +242,13 @@ domain_fetch_https_record() {
     printf '%s\n' "$visited" | grep -Fxq "$cur" && continue
     visited+="${cur}"$'\n'
 
+    # Count attempts, not successes: includes that all time out must still stop at the cap.
+    docs=$((docs + 1))
     if ! body=$(_domain_https_fetch_200 "$cur"); then
       # The top-level well-known file must exist; a missing/non-200 include is just skipped.
       [[ "$cur" == "$url" ]] && return 1
       continue
     fi
-    docs=$((docs + 1))
 
     # A statement list is a JSON array; tolerate a bare {"include": ...} / statement object.
     norm_body=$(jq -c 'if type == "array" then . elif type == "object" then [.] else empty end' <<< "$body" 2>/dev/null) || continue

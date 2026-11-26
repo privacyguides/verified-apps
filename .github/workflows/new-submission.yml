@@ -23,7 +23,7 @@ jobs:
       submissionIssueRef: ${{ steps.parsed.outputs.submissionIssueRef }}
       isDuplicate: ${{ steps.duplicateCheck.outputs.isDuplicate }}
       duplicateOf: ${{ steps.duplicateCheck.outputs.duplicateOf }}
-      checkApkpure: ${{ steps.checkLabels.outputs.checkApkpure }}
+      checkApkpure: ${{ contains(github.event.issue.labels.*.name, 'Check APKPure') }}
 
     if: >-
       ${{
@@ -49,14 +49,23 @@ jobs:
           issueBody: ${{ github.event.issue.body }}
           issueNumber: ${{ github.event.issue.number }}
 
+      # Issue text reaches scripts through env only. An expression pasted into run: is executed
+      # as shell, and the two links below are free text typed by the submitter.
       - name: Print parsed submission
+        env:
+          LABELS: ${{ toJSON(github.event.issue.labels) }}
+          PACKAGE_NAME: ${{ steps.parsed.outputs.packageName }}
+          SIGNATURE: ${{ steps.parsed.outputs.packageSignature }}
+          ISSUE_REF: ${{ steps.parsed.outputs.submissionIssueRef }}
+          APK_URL: ${{ steps.parsed.outputs.apkUrl }}
+          FDROID_REPO_URL: ${{ steps.parsed.outputs.customFdroidRepoUrl }}
         run: |
-          echo "Labels: ${{ toJSON(github.event.issue.labels) }}"
-          echo "Package Name: ${{ steps.parsed.outputs.packageName }}"
-          echo "Signature: ${{ steps.parsed.outputs.packageSignature }}"
-          echo "Submission issue ref: ${{ steps.parsed.outputs.submissionIssueRef }}"
-          echo "Direct APK Link: ${{ steps.parsed.outputs.apkUrl }}"
-          echo "Custom F-Droid Repository: ${{ steps.parsed.outputs.customFdroidRepoUrl }}"
+          echo "Labels: $LABELS"
+          echo "Package Name: $PACKAGE_NAME"
+          echo "Signature: $SIGNATURE"
+          echo "Submission issue ref: $ISSUE_REF"
+          echo "Direct APK Link: $APK_URL"
+          echo "Custom F-Droid Repository: $FDROID_REPO_URL"
 
       - name: Validate parsed submission
         uses: ./.github/actions/signature-lib
@@ -74,16 +83,6 @@ jobs:
           currentIssue: ${{ github.event.issue.number }}
           directApkUrl: ${{ steps.parsed.outputs.apkUrl }}
           customFdroidRepoUrl: ${{ steps.parsed.outputs.customFdroidRepoUrl }}
-
-      - name: Detect Check APKPure label
-        id: checkLabels
-        run: |
-          set -euo pipefail
-          if jq -e 'any(.[]; .name == "Check APKPure")' <<< '${{ toJSON(github.event.issue.labels) }}' > /dev/null; then
-            echo "checkApkpure=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "checkApkpure=false" >> "$GITHUB_OUTPUT"
-          fi
 
   closeDuplicate:
     name: Close Duplicate Submission
@@ -678,25 +677,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: [parse, accrescent, fdroid, customFdroid, gplay, apkpure, appverifierDb, directApk, grapheneosForum, domainCheck]
 
-    if: always() && needs.parse.outputs.isDuplicate != 'true' && github.event.label.name == 'Run Checks'
+    if: always() && needs.parse.result == 'success' && needs.parse.outputs.isDuplicate != 'true' && github.event.label.name == 'Run Checks'
     permissions:
       contents: read
       issues: write
 
     steps:
-
-      - name: Validate
-        run: |
-          if [[ "${{ needs.parse.outputs.packageName }}" == "" ]]; then
-            exit 1
-          fi
-          if [[ "${{ needs.parse.outputs.packageSignature }}" == "" ]]; then
-            exit 1
-          fi
-          if [[ "${{ github.event.label.name }}" != "Run Checks" ]]; then
-            exit 1
-          fi
-
       - name: Download Repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
@@ -1013,6 +999,8 @@ jobs:
           while IFS= read -r result_file; do
             [[ -z "$result_file" ]] && continue
             [[ "$(jq -r '.found' "$result_file")" != "true" ]] && continue
+            # A repo the submitter named is not a store, same as a direct APK link.
+            signatures_is_known_fdroid_matrix_repo "$(jq -r '.repoName' "$result_file")" || continue
             sig=$(jq -r '.signature' "$result_file")
             if signatures_equal "$sig" "$USER_SIG"; then
               store_matches=$((store_matches + 1))
@@ -1143,6 +1131,17 @@ jobs:
             echo "Maintainers: add **Commit As-Is** to accept this entry on \`main\` immediately, or **Create PR** to open a pull request for manual edits first."
           } | tee -a "$issue_body" >> "$GITHUB_STEP_SUMMARY"
 
+      # Commit As-Is only runs while the issue text still has this hash (see "Check the issue
+      # text is the one that was checked" in commitAsIsPrepare). The marker must stay on a line
+      # of its own: that is what stops text quoted from the submission passing for it.
+      - name: Record which issue text was checked
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: |
+          set -euo pipefail
+          body_hash=$(printf '%s' "$ISSUE_BODY" | sha256sum | cut -d' ' -f1)
+          printf '\n<!-- pg-checked-body: %s -->\n' "$body_hash" >> "${RUNNER_TEMP}/issueBody.md"
+
       - name: Comment on Issue
         uses: ./.github/actions/issue-comment
         with:
@@ -1233,18 +1232,6 @@ jobs:
       issues: write
 
     steps:
-      - name: Validate
-        run: |
-          if [[ "${{ needs.parse.outputs.packageName }}" == "" ]]; then
-            exit 1
-          fi
-          if [[ "${{ needs.parse.outputs.packageSignature }}" == "" ]]; then
-            exit 1
-          fi
-          if [[ "${{ github.event.label.name }}" != "Create PR" ]]; then
-            exit 1
-          fi
-
       - name: Download Repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
@@ -1460,18 +1447,6 @@ jobs:
       author: ${{ steps.coauthor.outputs.author }}
 
     steps:
-      - name: Validate
-        run: |
-          if [[ "${{ needs.parse.outputs.packageName }}" == "" ]]; then
-            exit 1
-          fi
-          if [[ "${{ needs.parse.outputs.packageSignature }}" == "" ]]; then
-            exit 1
-          fi
-          if [[ "${{ github.event.label.name }}" != "Commit As-Is" ]]; then
-            exit 1
-          fi
-
       - name: Checkout repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
@@ -1485,6 +1460,41 @@ jobs:
           actionDescription: Commit As-Is
           issueBody: ${{ github.event.issue.body }}
           codebergToken: ${{ secrets.CB_SYNC_TOKEN }}
+
+      - name: Check the issue text is the one that was checked
+        id: bodyCheck
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: |
+          set -euo pipefail
+          current=$(printf '%s' "$ISSUE_BODY" | sha256sum | cut -d' ' -f1)
+          # Newest marker wins. Only whole lines in the bot's own comments count.
+          checked=$(gh api --paginate "repos/${GH_REPO}/issues/${NUMBER}/comments" \
+            --jq '.[] | select(.user.login == "github-actions[bot]") | .body' \
+            | tr -d '\r' | grep -xE '<!-- pg-checked-body: [0-9a-f]{64} -->' | tail -n 1 \
+            | grep -oE '[0-9a-f]{64}' || true)
+          if [[ "$checked" == "$current" ]]; then
+            echo "unchanged=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "unchanged=false" >> "$GITHUB_OUTPUT"
+            echo "Checked text hash: ${checked:-none}; current: ${current}" >&2
+          fi
+
+      - name: Report an edited or unchecked issue
+        if: steps.bodyCheck.outputs.unchanged != 'true'
+        uses: ./.github/actions/issue-comment
+        with:
+          issueNumber: ${{ github.event.issue.number }}
+          body: "Cannot run **Commit As-Is**: this issue was edited after the last checks ran, or the checks have not run on it yet. Add the **Run Checks** label again, review the new result, then retry."
+          issueBody: ${{ github.event.issue.body }}
+          codebergToken: ${{ secrets.CB_SYNC_TOKEN }}
+
+      - name: Stop when the issue text was not checked
+        if: steps.bodyCheck.outputs.unchanged != 'true'
+        run: exit 1
 
       - name: Download F-Droid results
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
