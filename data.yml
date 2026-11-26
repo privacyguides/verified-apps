@@ -274,6 +274,14 @@ packages:
             issue: GH-5964
             apk:
               sha256: b17cfe8ab652a6c166d30b9b2910dfb51157928985f60e1f7887013c94f1a877
+  - package: app.intra
+    signature:
+      - fingerprint: 77:7D:6D:E4:16:1D:FD:FD:C4:28:7E:5D:FE:D8:33:55:71:4F:9A:32:27:E2:FD:81:11:18:31:F3:05:96:E4:07
+        sources:
+          - name: F-Droid
+            issue: GH-3171
+            apk:
+              sha256: 28cf11361c6601f5d5f8be45c7e2bdfa76c633cb7ded03e908338120424e0bed
   - package: app.jointribe
     signature:
       - fingerprint: 6E:94:7F:96:CE:9D:42:48:D8:93:88:61:18:26:C8:67:9D:12:8B:35:3E:A3:FC:A0:83:A3:7C:8E:AF:51:A4:E9
