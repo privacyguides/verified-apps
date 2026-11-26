@@ -12162,6 +12162,14 @@ packages:
             issue: GH-337
             apk:
               sha256: 3ccbb551cdc986939339f11195c294d43b132587d0d59e80f12985b54a7384aa
+  - package: ephemeralwp.safespace
+    signature:
+      - fingerprint: BC:FC:C9:21:A8:16:7A:FE:3C:3B:52:8F:02:E1:57:D7:66:09:D4:17:AD:CB:80:E2:A2:9A:59:5F:C6:CE:74:83
+        sources:
+          - name: F-Droid
+            issue: GH-3232
+            apk:
+              sha256: 56dc620328aa1d29cdbef9f97576dbf28e8a836335238c1c7048da1f4f350181
   - package: epson.print
     signature:
       - fingerprint: 67:99:2A:BC:DD:54:31:7A:27:55:67:55:E4:FE:F4:7D:10:AA:C1:C9:FF:FD:E0:9E:D9:41:4A:C0:7B:2E:AD:A1
