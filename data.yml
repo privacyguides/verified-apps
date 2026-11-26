@@ -9474,6 +9474,14 @@ packages:
               sha256: 11a9d9f263468dcb891b01202e017497e0f7889372f866edd69b0aa730407630
           - name: HTTPS Verified Domain
             issue: GH-7663
+  - package: com.tippingcanoe.pepperpl
+    signature:
+      - fingerprint: 75:B2:EE:12:DF:7F:52:8C:A9:AA:9F:32:7E:E5:F8:6C:86:23:87:C6:C4:BA:42:11:30:02:9C:DA:4C:53:27:69
+        sources:
+          - name: Google Play
+            issue: GH-3198
+            apk:
+              sha256: 2c76f45b3b416f46b3f074a99701a88a64260fb191c697080033f45fa37c9e42
   - package: com.tmdev.fasttimes
     signature:
       - fingerprint: F6:85:B7:AE:A1:3D:5B:3B:A7:52:90:D0:93:D0:37:C5:2E:3A:64:6C:C4:2A:3E:A0:2F:E6:E9:37:E6:60:E6:B4
