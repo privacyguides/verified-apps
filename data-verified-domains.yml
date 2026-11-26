@@ -1445,3 +1445,17 @@ domains:
         fingerprints:
           - 1E:55:68:38:46:47:0C:97:FB:38:13:1E:06:01:80:D2:CF:B4:82:AC:78:54:C8:E4:A4:EB:B0:C8:BA:B1:E8:35
           - 99:E3:3B:0C:2D:07:E7:5F:CD:9D:F7:E4:0E:88:66:46:FF:66:7E:3A:A6:64:8E:1A:11:60:B0:36:CF:2B:93:20
+  - domain: zoom.us
+    method: https
+    issue:
+      - GH-3706
+    checked: "2026-11-26T03:29:08Z"
+    packages:
+      - package: us.zoom.videomeetings
+        fingerprints:
+          - 49:F5:3A:77:D9:9B:6B:00:FC:F4:74:22:4E:3B:27:E4:D7:BB:DB:5A:5F:3E:14:E2:B4:7D:F2:D9:E3:9A:3D:5A
+          - 4A:83:62:41:01:7E:4E:AC:50:C3:83:26:EE:23:00:C5:0E:FA:79:33:C5:AA:DB:02:EA:ED:AE:E9:8F:6B:24:10
+          - 58:63:BD:B9:8D:6F:AC:0A:84:3B:94:C0:08:AE:4A:1C:D7:70:58:F6:1D:84:17:C4:67:9B:B2:D8:A3:E6:35:51
+          - 60:B7:57:24:B3:46:86:E5:2B:DE:94:49:69:DE:12:0F:16:BD:6D:95:97:88:D5:43:84:49:4C:AE:DD:4E:44:5D
+          - A0:E8:BC:96:D2:13:68:AF:DA:28:54:82:0D:7F:94:99:12:0E:BC:D3:A6:50:BE:03:61:80:02:16:D3:0C:DD:74
+          - AA:48:F0:EA:5E:28:91:9E:DA:20:4E:16:5F:9E:DE:7E:56:A3:35:70:F1:80:74:33:C5:6F:5F:46:FE:CC:00:08

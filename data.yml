@@ -18198,6 +18198,16 @@ packages:
             issue: GH-773
             apk:
               sha256: 9790b3c0f168013a1baf455abb48a2b555c29ad33cc421d2a581b6c411b2a095
+  - package: us.zoom.videomeetings
+    signature:
+      - fingerprint: 60:B7:57:24:B3:46:86:E5:2B:DE:94:49:69:DE:12:0F:16:BD:6D:95:97:88:D5:43:84:49:4C:AE:DD:4E:44:5D
+        sources:
+          - name: Google Play
+            issue: GH-3706
+            apk:
+              sha256: cf02c3f65de432ddced6a67125c0cb82452e6869cc58757ea5e6a181217b0cb2
+          - name: HTTPS Verified Domain
+            issue: GH-3706
   - package: verbosus.typtic
     signature:
       - fingerprint: 18:D2:E5:63:21:A7:D1:52:62:A8:53:54:44:C6:44:55:FE:FF:76:87:B4:2A:D0:62:F5:1A:4D:07:14:E0:1E:10
