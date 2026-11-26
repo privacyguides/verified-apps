@@ -6271,6 +6271,14 @@ packages:
               sha256: 2732b960f86df985b2a99d6cc1a03fdb71cf58e153f5774af48937c96f665cf8
           - name: HTTPS Verified Domain
             issue: GH-8216
+  - package: com.kiloo.subwaysurf
+    signature:
+      - fingerprint: A0:32:8A:96:AC:93:BE:79:83:B5:BE:C4:17:BD:2C:03:F1:29:AF:6F:8A:FF:39:51:24:70:E6:6A:18:DD:96:4E
+        sources:
+          - name: Google Play
+            issue: GH-3585
+            apk:
+              sha256: 309494d433f36d45000f10c463345b8c68e94d33bc0e40e3b29e4ec04c5aa3e7
   - package: com.kin.easynotes
     signature:
       - fingerprint: FC:E8:7D:A9:7F:79:13:01:DF:39:0B:FA:47:E8:16:85:19:11:67:CA:B5:DB:D5:55:DB:82:87:54:1F:78:6E:28
