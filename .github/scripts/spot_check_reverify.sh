@@ -21,6 +21,10 @@
 #            A removal that empties a package surfaces as a "Package eviction" in the report/PR.
 #
 # The script only mutates the data files and writes a report; the workflow opens the PR.
+#
+# Usage: spot_check_reverify.sh [phase]
+#   The work is a sequence of phases (see "Phases" at the bottom). The workflow runs one phase
+#   per step so each has its own log and timing. With no argument every phase runs in order.
 # It reuses the existing libraries (signature extraction/compare, domain check, entry
 # merge, AppVerifier lookup) and the shared download libs, so version/path/logic live in
 # one place.
@@ -93,12 +97,13 @@ is_mock() { [[ -n "$MOCK_DIR" ]]; }
 # ---------------------------------------------------------------------------
 # Reconciliation output sinks (JSONL) + result store.
 # ---------------------------------------------------------------------------
-ADDITIONS="${WORK}/additions.jsonl"; : > "$ADDITIONS"
-DELETIONS="${WORK}/deletions.jsonl"; : > "$DELETIONS"
-INFO="${WORK}/info.jsonl"; : > "$INFO"
-DOMAIN_ADDS="${WORK}/domain-adds.jsonl"; : > "$DOMAIN_ADDS"      # ledger upserts (change-driven)
-DOMAIN_REMOVES="${WORK}/domain-removes.txt"; : > "$DOMAIN_REMOVES"  # pkgs to drop from the ledger (revocation/move)
-EVICTIONS="${WORK}/evictions.txt"; : > "$EVICTIONS"  # packages a real apply would remove entirely
+# Emptied by the select phase, then appended to by the later ones.
+ADDITIONS="${WORK}/additions.jsonl"
+DELETIONS="${WORK}/deletions.jsonl"
+INFO="${WORK}/info.jsonl"
+DOMAIN_ADDS="${WORK}/domain-adds.jsonl"      # ledger upserts (change-driven)
+DOMAIN_REMOVES="${WORK}/domain-removes.txt"  # pkgs to drop from the ledger (revocation/move)
+EVICTIONS="${WORK}/evictions.txt"            # packages a real apply would remove entirely
 
 declare -A R_STATUS R_SIG R_SHA R_DETAIL
 
@@ -363,7 +368,7 @@ dl_gplay() { apkeep_download "$APKEEP_BIN" "$1" google-play "${WORK}/gp" "${GPLA
 dl_apkpure() { apkeep_download "$APKEEP_BIN" "$1" apk-pure "${WORK}/apkpure"; }
 dl_fdroid() { fdroid_download_apk "$FDROIDCL_BIN" "$1"; }
 
-run_passes() {
+pass_gplay() {
   if [[ "$GP_ENABLED" == "true" ]] || is_mock; then
     log "Pass: Google Play (${#SELECTED[@]} packages)"
     pass_perpkg_apk gplay "$SRC_GPLAY" dl_gplay false
@@ -371,20 +376,28 @@ run_passes() {
     # Make the skipped pass visible in the report rather than silently not re-checking GP.
     emit_info "(sweep)" "$SRC_GPLAY" "Google Play credentials not configured; Google Play sources were not re-checked this run"
   fi
+}
 
+pass_fdroid() {
   log "Pass: F-Droid (official)"
   is_mock || fdroid_configure_single_repo "$FDROIDCL_BIN" "$FDROID_OFFICIAL_URL"
   pass_perpkg_apk fdroid "$SRC_FDROID" dl_fdroid false
+}
 
+pass_izzy() {
   log "Pass: F-Droid (IzzyOnDroid)"
   is_mock || fdroid_configure_single_repo "$FDROIDCL_BIN" "$IZZY_URL"
   pass_perpkg_apk izzy "$SRC_IZZY" dl_fdroid false
+}
 
+pass_apkpure() {
   if [[ "$NEED_APKEEP" == "true" ]] || is_mock; then
     log "Pass: APKPure (recorded sources only)"
     pass_perpkg_apk apkpure "$SRC_APKPURE" dl_apkpure true
   fi
+}
 
+pass_direct() {
   log "Pass: Direct APK Link (recorded sources only)"
   local pkg i fp k link dest rc
   for pkg in "${SELECTED[@]}"; do
@@ -415,8 +428,11 @@ run_passes() {
       result_set "$pkg" direct "$k" "$SC_STATUS" "$SC_SIG" "$SC_SHA" "$SC_DETAIL"
     done < <(model_direct_indices "$pkg")
   done
+}
 
+pass_customfdroid() {
   log "Pass: custom F-Droid repos (recorded sources only)"
+  local pkg i fp k name r p kk nm
   # Collect tuples then group by repo URL so each custom index is fetched once.
   local tuples="${WORK}/custom-fdroid.tsv"; : > "$tuples"
   for pkg in "${SELECTED[@]}"; do
@@ -931,36 +947,91 @@ report() {
 }
 
 # ---------------------------------------------------------------------------
-# Main.
+# Phases.
+#
+# Run as separate steps, each phase is its own process, so what one phase learns has to be
+# written down for the next: the JSONL sinks above, the models in $WORK/model, and state.sh
+# (the package list, the per-store results and the tool paths).
 # ---------------------------------------------------------------------------
+PHASES=(select setup gplay fdroid izzy apkpure direct customfdroid reconcile apply report)
+STATE="${WORK}/state.sh"
 SELECTED=()
-select_packages
-if [[ "${#SELECTED[@]}" -eq 0 ]]; then
-  log "No packages selected (percent=${PERCENT}); nothing to do."
-  [[ -n "${GITHUB_OUTPUT:-}" ]] && printf 'hasChanges=false\nselected=0\n' >> "$GITHUB_OUTPUT"
-  exit 0
-fi
-write_models
-if [[ "${#SELECTED[@]}" -eq 0 ]]; then
-  log "No selected packages resolved in ${DATA_FILE}; nothing to do."
-  [[ -n "${GITHUB_OUTPUT:-}" ]] && printf 'hasChanges=false\nselected=0\n' >> "$GITHUB_OUTPUT"
-  exit 0
-fi
 
-log "Selected ${#SELECTED[@]} package(s) for spot-check re-verification."
-setup_tools
-run_passes
-reconcile
-LEDGER_CHECKED=$(date -u +%Y-%m-%dT%H:%M:%SZ)  # pin once so sim + real ledger apply stamp the same `checked`
-compute_evictions       # before any mutation, so dry-run and live both report full-package removals
-compute_ledger_changes  # detect ledger-only changes so hasChanges/report reflect them
+save_state() {
+  declare -p SELECTED R_STATUS R_SIG R_SHA R_DETAIL PERCENT GP_ENABLED NEED_APKEEP APKEEP_BIN \
+    FDROIDCL_BIN APPVERIFIER_DB_FILE LEDGER_CHANGED LEDGER_DIFF LEDGER_CHECKED > "$STATE"
+}
 
-if [[ "$DRY_RUN" == "true" ]]; then
-  log "DRY_RUN=true; computed changes but not mutating data files."
-else
+phase_select() {
+  : > "$ADDITIONS"; : > "$DELETIONS"; : > "$INFO"
+  : > "$DOMAIN_ADDS"; : > "$DOMAIN_REMOVES"; : > "$EVICTIONS"
+  select_packages
+  if [[ "${#SELECTED[@]}" -eq 0 ]]; then
+    log "No packages selected (percent=${PERCENT}); nothing to do."
+    return 0
+  fi
+  write_models
+  if [[ "${#SELECTED[@]}" -eq 0 ]]; then
+    log "No selected packages resolved in ${DATA_FILE}; nothing to do."
+    return 0
+  fi
+  log "Selected ${#SELECTED[@]} package(s) for spot-check re-verification."
+}
+
+phase_reconcile() {
+  reconcile
+  LEDGER_CHECKED=$(date -u +%Y-%m-%dT%H:%M:%SZ)  # pin once so sim + real ledger apply stamp the same `checked`
+  compute_evictions       # before any mutation, so dry-run and live both report full-package removals
+  compute_ledger_changes  # detect ledger-only changes so hasChanges/report reflect them
+}
+
+phase_apply() {
+  if [[ "$DRY_RUN" == "true" ]]; then
+    log "DRY_RUN=true; computed changes but not mutating data files."
+    return 0
+  fi
   apply_additions
   apply_domain_ledger
   apply_deletions
-fi
+}
 
-report
+run_phase() {
+  if [[ "$1" != "select" && "${#SELECTED[@]}" -eq 0 ]]; then
+    # Nothing was selected, so there is nothing to check, change or report.
+    if [[ "$1" == "report" && -n "${GITHUB_OUTPUT:-}" ]]; then
+      printf 'hasChanges=false\nselected=0\n' >> "$GITHUB_OUTPUT"
+    fi
+    return 0
+  fi
+  case "$1" in
+    select) phase_select ;;
+    setup) setup_tools ;;
+    gplay) pass_gplay ;;
+    fdroid) pass_fdroid ;;
+    izzy) pass_izzy ;;
+    apkpure) pass_apkpure ;;
+    direct) pass_direct ;;
+    customfdroid) pass_customfdroid ;;
+    reconcile) phase_reconcile ;;
+    apply) phase_apply ;;
+    report) report ;;
+  esac
+}
+
+if [[ $# -eq 0 ]]; then
+  for phase in "${PHASES[@]}"; do run_phase "$phase"; done
+else
+  if [[ " ${PHASES[*]} " != *" $1 "* ]]; then
+    log "Unknown phase '$1' (expected one of: ${PHASES[*]})."; exit 1
+  fi
+  if [[ "$1" != "select" ]]; then
+    if [[ ! -f "$STATE" ]]; then
+      log "No saved state in ${WORK}; run the select phase first."; exit 1
+    fi
+    # Top level on purpose: sourced inside a function, the arrays would be local to it.
+    # shellcheck source=/dev/null
+    source "$STATE"
+  fi
+  run_phase "$1"
+  save_state
+fi

@@ -597,9 +597,9 @@ jobs:
               && signatures_equal "$(jq -r '.signature // ""' <<< "$1")" "$USER_SIG"; then
               equal=true
             fi
-            jq -c --arg name "$2" --arg label "$3" --argjson store "$4" --argjson equal "$equal" '{
+            jq -c --arg name "$2" --arg tag "$3" --argjson store "$4" --argjson equal "$equal" '{
               name: $name,
-              label: $label,
+              "label": $tag,
               store: $store,
               equal: $equal,
               found: (.found | tostring == "true"),

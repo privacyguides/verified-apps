@@ -52,6 +52,10 @@ jobs:
       PERCENT: ${{ inputs.percent || '5' }}
       DRY_RUN: ${{ inputs.dry_run || 'false' }}
       PACKAGES: ${{ inputs.packages || '' }}
+      # Sentinel recorded as the issue ref on every source the sweep adds; rewritten to the
+      # opened PR's number (GH-<pr>) in "Reference the spot-check PR" below, so added sources
+      # link to the PR documenting this re-verification rather than the original submission.
+      SPOT_CHECK_ISSUE_REF: __SPOTCHECK_PR__
 
     steps:
       - name: Checkout repository
@@ -66,19 +70,53 @@ jobs:
           rustflags: ""
           cache: false
 
-      - name: Run spot-check re-verification
-        id: spot
+      # Each step below runs one phase of .github/scripts/spot_check_reverify.sh. The phases hand
+      # their results to each other through files in $RUNNER_TEMP/spot-check.
+      - name: Pick the packages to re-check
+        run: bash .github/scripts/spot_check_reverify.sh select
+
+      # Without Google Play credentials the Google Play step below is skipped and says so in the report.
+      - name: Install the download tools
         env:
           GPLAY_EMAIL: ${{ secrets.GPLAY_EMAIL }}
           GPLAY_AAS_TOKEN: ${{ secrets.GPLAY_AAS_TOKEN }}
-          # Authenticates GitHub release-asset downloads (Direct APK Link re-checks): anonymous
-          # downloads from shared runner IPs get rate-limited/blocked. Used by signatures_download_direct_apk.
+        run: bash .github/scripts/spot_check_reverify.sh setup
+
+      - name: Re-check Google Play
+        env:
+          GPLAY_EMAIL: ${{ secrets.GPLAY_EMAIL }}
+          GPLAY_AAS_TOKEN: ${{ secrets.GPLAY_AAS_TOKEN }}
+        run: bash .github/scripts/spot_check_reverify.sh gplay
+
+      - name: Re-check F-Droid
+        run: bash .github/scripts/spot_check_reverify.sh fdroid
+
+      - name: Re-check IzzyOnDroid
+        run: bash .github/scripts/spot_check_reverify.sh izzy
+
+      - name: Re-check APKPure
+        run: bash .github/scripts/spot_check_reverify.sh apkpure
+
+      - name: Re-check direct APK links
+        env:
+          # Authenticates GitHub release-asset downloads: anonymous downloads from shared runner
+          # IPs get rate-limited/blocked. Used by signatures_download_direct_apk.
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # Sentinel recorded as the issue ref on every source the sweep adds; rewritten to the
-          # opened PR's number (GH-<pr>) in "Reference the spot-check PR" below, so added sources
-          # link to the PR documenting this re-verification rather than the original submission.
-          SPOT_CHECK_ISSUE_REF: __SPOTCHECK_PR__
-        run: bash .github/scripts/spot_check_reverify.sh
+        run: bash .github/scripts/spot_check_reverify.sh direct
+
+      - name: Re-check custom F-Droid repos
+        run: bash .github/scripts/spot_check_reverify.sh customfdroid
+
+      # Also re-checks AppVerifier and each package's verified domain.
+      - name: Work out what to add and remove
+        run: bash .github/scripts/spot_check_reverify.sh reconcile
+
+      - name: Apply the changes to the data files (not in a dry run)
+        run: bash .github/scripts/spot_check_reverify.sh apply
+
+      - name: Write the report
+        id: spot
+        run: bash .github/scripts/spot_check_reverify.sh report
 
       - name: Prepare commit
         id: prep
