@@ -4354,6 +4354,18 @@ packages:
             issue: GH-3610
             apk:
               sha256: f59ad8bf9ae0ef7e7a678936686549f84b9b8b4731d90554a22d22a761328b42
+  - package: com.fixupxer
+    signature:
+      - fingerprint: 78:E3:69:50:96:3A:98:EA:39:FE:30:B9:55:C2:73:64:E1:87:FE:CA:85:A1:AF:6A:D1:09:87:D1:5F:18:EC:2F
+        sources:
+          - name: F-Droid
+            issue: GH-3673
+            apk:
+              sha256: babd40503569ccbdbbfa2649767c8be17b3addf2e6293204b65d64334e344a7e
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-3673
+            apk:
+              sha256: babd40503569ccbdbbfa2649767c8be17b3addf2e6293204b65d64334e344a7e
   - package: com.flashsphere.privatednsqs.nolauncher
     signature:
       - fingerprint: B2:D8:A4:70:8B:05:94:73:D9:04:D0:F8:27:07:D7:1E:3E:72:58:6F:50:BA:2D:11:83:CC:FA:B1:DF:D8:45:C4
