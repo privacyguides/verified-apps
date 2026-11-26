@@ -8178,6 +8178,14 @@ packages:
             issue: CB-160
             apk:
               sha256: c574d9c99dc90fd9f0b60136485fdf76113a811bf49a437a15bc22c8dfbbdcca
+  - package: com.prusa3d.connect
+    signature:
+      - fingerprint: EA:A0:97:8C:33:4E:E6:0A:A4:B5:6F:74:AF:7C:52:C7:22:52:02:B5:E8:F9:63:87:03:59:F9:E8:25:C4:70:53
+        sources:
+          - name: Google Play
+            issue: GH-3273
+            apk:
+              sha256: 876d9847ee0ccaabdc1807304c3197af9013cecdb8127aaa968f53024832919e
   - package: com.psono.psono
     signature:
       - fingerprint: A7:6C:13:F3:B7:C1:82:22:52:68:64:26:5F:39:54:1D:3A:C2:80:1F:81:F2:51:99:F9:81:C0:49:9E:68:52:5F
