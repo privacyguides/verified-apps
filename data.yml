@@ -7497,6 +7497,14 @@ packages:
             issue: GH-2154
             apk:
               sha256: 4422d0ccbf1c7fd017e289c863d0b7a20938eab73530ecc88433b4d18d56312b
+  - package: com.nkls.nekovideo
+    signature:
+      - fingerprint: 94:B5:D6:7B:BC:31:D8:CA:40:3D:C3:1D:CA:C0:0D:85:D1:75:8B:38:CD:C8:A2:5C:DA:A2:22:89:3D:78:BB:24
+        sources:
+          - name: F-Droid
+            issue: GH-3507
+            apk:
+              sha256: 412092f29a458afe9896887bc4b9cfdf540dc6758a02875f0b63837626db7e97
   - package: com.noahjutz.gymroutines
     signature:
       - fingerprint: C5:0C:37:9B:64:63:43:CF:83:85:F4:21:E9:DE:27:BC:BA:DB:29:05:4F:81:67:52:52:37:B7:AB:F4:A2:8E:31
