@@ -6497,6 +6497,14 @@ packages:
             issue: GH-282
             apk:
               sha256: cd82720732a16ae642ac8c9f83738f105e6444a37da8bae287e6a0f4629e0a45
+  - package: com.maazm7d.termuxhub
+    signature:
+      - fingerprint: 51:16:96:B7:A4:A2:8A:44:7A:AC:A6:26:87:0F:67:67:7B:23:85:9A:FD:67:CF:50:48:97:C1:E1:B2:F6:DD:5C
+        sources:
+          - name: F-Droid
+            issue: GH-3336
+            apk:
+              sha256: e71227a0a42c5646d0f8ed3aa4aa85e25149c602fd150b381657688a2e9a626e
   - package: com.machiav3lli.backup
     signature:
       - fingerprint: 6A:0B:8D:B9:8C:68:D9:72:DA:3E:06:09:78:C2:D0:A2:30:EC:85:BE:05:42:B3:02:FA:F0:B5:B1:BC:4E:F0:07
