@@ -13841,6 +13841,14 @@ packages:
             issue: GH-1984
             apk:
               sha256: 28fc2639f7816278313dab245c18eb6df7697bd024e5324560e51f472e10ce3f
+  - package: io.github.RealEarthling.epoch
+    signature:
+      - fingerprint: 72:63:C0:BF:CE:95:B6:25:83:95:98:B0:1F:DC:C6:95:C0:4C:DB:E6:DD:4F:A3:4A:02:A2:D3:AD:25:22:C2:46
+        sources:
+          - name: F-Droid
+            issue: GH-3779
+            apk:
+              sha256: c10172411e7070bf193a6dd5cff522098022e1cf2c13fee42917c8b40ef35b3d
   - package: io.github.benoitduffez.cupsprint
     signature:
       - fingerprint: 86:CA:30:07:16:94:6F:72:47:C5:92:CB:E7:65:03:64:36:85:61:89:EC:94:85:83:3F:63:71:F1:E3:01:02:68
