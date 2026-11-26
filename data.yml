@@ -6675,6 +6675,14 @@ packages:
             issue: GH-761
             apk:
               sha256: 8a2d2b38dfbac371ff5276e6554fee86898bf60c573f05d23434195e5e221b82
+  - package: com.mattermost.rnbeta
+    signature:
+      - fingerprint: 1E:C6:51:D6:8A:51:63:EF:4D:2B:BA:3B:E6:BC:A4:A1:8C:DF:2F:C1:F5:32:AB:0D:66:20:DC:95:6A:44:34:D7
+        sources:
+          - name: F-Droid
+            issue: GH-3395
+            apk:
+              sha256: f10a8faabe5747a80ca741193b984e56c5c548c4e513192d19802a9bf0fcb199
   - package: com.maxmpz.equalizer
     signature:
       - fingerprint: F6:35:5B:DD:54:F8:CE:DD:64:F9:F6:E9:81:3B:B0:B5:5A:2A:C2:4B:82:B4:61:E9:9F:86:DB:33:6E:E6:42:55
