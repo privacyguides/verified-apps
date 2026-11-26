@@ -9292,6 +9292,14 @@ packages:
             issue: GH-75
             apk:
               sha256: 7ad10b100f2790b046f324fb54881968141f9c776e405e55e6aea4b0fd5f24b2
+  - package: com.taran.mybus
+    signature:
+      - fingerprint: 48:30:60:7F:D2:C4:2A:FD:77:6D:80:A7:76:22:D0:55:05:DB:BE:F4:FC:64:C6:24:5F:31:C1:84:58:F5:6D:4C
+        sources:
+          - name: Google Play
+            issue: GH-3203
+            apk:
+              sha256: 15ac4c11b92a549156a4be3f6e2df39c56620e64b6b07317b746e2aef40bc364
   - package: com.target.ui
     signature:
       - fingerprint: C2:0F:71:D4:25:62:53:57:F0:C0:52:3A:E1:C2:20:C5:9E:22:E4:9A:94:BC:9F:26:6F:9C:97:77:36:89:A0:9B
