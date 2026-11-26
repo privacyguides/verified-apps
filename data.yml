@@ -3373,6 +3373,14 @@ packages:
             issue: GH-651
             apk:
               sha256: 21db52eaeb5b842c19ff2c0adc5290b4d4d8e187dc21061175880738e4d5029e
+  - package: com.demonlab.lune
+    signature:
+      - fingerprint: CC:08:5C:B3:FE:94:02:FF:03:DF:0A:62:2A:4A:5F:A4:8E:5A:8B:36:E0:7C:1F:3C:BD:42:03:3E:F2:4C:E3:F8
+        sources:
+          - name: F-Droid
+            issue: GH-3268
+            apk:
+              sha256: 44c7b7cc0c2d0bb8846b522ba0982f1fe5f61362a76efda72b269a033073918b
   - package: com.deniscerri.ytdl
     signature:
       - fingerprint: 26:36:45:CB:52:72:EB:29:07:59:FE:1F:59:14:9A:E2:4D:F6:CE:17:1E:9F:66:66:EE:AD:98:1D:3F:C6:4C:95
