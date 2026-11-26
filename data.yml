@@ -2252,6 +2252,14 @@ packages:
             issue: GH-1266
             apk:
               sha256: 1c5e376f9e14738dfd6bbbf118210e2d4626b206d31b133b4e3ce3d906c989a2
+  - package: com.bartixxx.oneplusarbchecker
+    signature:
+      - fingerprint: 81:C9:0F:D1:6A:84:68:04:A6:13:AF:12:C6:83:B8:E0:F3:19:AE:F7:DA:C5:15:C3:3B:3D:C6:C7:FC:75:5D:B7
+        sources:
+          - name: F-Droid
+            issue: GH-3523
+            apk:
+              sha256: 1aad11c61257b63c14fbe42a91817d688a8f6a62a7433223ced92444e18eb0db
   - package: com.battlelancer.seriesguide
     signature:
       - fingerprint: 34:06:53:F1:DF:23:9E:98:6F:D5:01:AA:6E:F8:50:85:69:7A:13:30:62:C7:42:DC:FC:8A:96:A0:45:9F:63:5D
