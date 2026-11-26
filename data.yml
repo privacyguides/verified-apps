@@ -5482,6 +5482,16 @@ packages:
             issue: GH-963
             apk:
               sha256: e4058b4aadebda0ca9a192cea3a5383effd4755336ccc8a7d48ba6a42b7c4936
+  - package: com.groupme.android
+    signature:
+      - fingerprint: C2:08:E2:75:AD:2D:37:F4:FA:F5:E1:84:27:2A:0E:FF:FE:B6:D8:11:63:F1:4E:F9:9C:95:E7:29:1B:00:54:2D
+        sources:
+          - name: Google Play
+            issue: GH-3265
+            apk:
+              sha256: d1e140af83094aa2f205ee2c38674ad6d7d2944e7c3df4d295ae45c2918adbdc
+          - name: HTTPS Verified Domain
+            issue: GH-3265
   - package: com.grppl.android.shell.CMBlloydsTSB73
     signature:
       - fingerprint: CD:5A:3E:3F:58:F2:08:58:96:B7:23:12:16:6D:D6:E3:3A:42:7B:AF:FA:5E:A7:3C:7B:A5:13:C9:FE:1B:91:E2

@@ -593,6 +593,15 @@ domains:
         fingerprints:
           - 84:CE:21:FA:4F:62:1E:83:8C:BC:8C:4D:2C:D6:01:0F:EC:19:AF:DC:B4:97:89:26:A3:F1:FD:37:A3:AE:16:76
           - E6:FA:3B:83:99:77:95:D7:89:0F:1F:60:8C:A1:A7:C9:11:E0:68:5B:AF:23:0F:91:2C:F5:E4:8C:D3:A2:4E:1D
+  - domain: groupme.com
+    method: https
+    issue:
+      - GH-3265
+    checked: "2026-11-26T00:43:27Z"
+    packages:
+      - package: com.groupme.android
+        fingerprints:
+          - C2:08:E2:75:AD:2D:37:F4:FA:F5:E1:84:27:2A:0E:FF:FE:B6:D8:11:63:F1:4E:F9:9C:95:E7:29:1B:00:54:2D
   - domain: guavahealth.com
     method: https
     issue:
