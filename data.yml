@@ -14317,6 +14317,14 @@ packages:
             issue: GH-7274
             apk:
               sha256: 793d63bc08345753f1de5e2d400016e85e455867c3bfa6c05627b42fe386c118
+  - package: net.openconnect_vpn.android
+    signature:
+      - fingerprint: 4C:96:54:71:AB:DA:2F:19:59:72:2E:0A:A1:5A:DB:E3:D3:18:9D:98:B5:90:E1:F0:00:1A:E6:93:4C:A1:91:E3
+        sources:
+          - name: F-Droid
+            issue: GH-3224
+            apk:
+              sha256: 24e0ca76335317978edb9b4459dbb7be82c7a9502d13001b6c20c06dad89e7e8
   - package: net.osmand.plus
     signature:
       - fingerprint: 38:29:4E:AA:C9:5C:3B:B5:A9:94:69:2C:D7:75:8F:8B:CD:BF:FB:40:81:9A:F6:E8:06:EB:7F:E4:82:32:4D:CD
