@@ -16124,6 +16124,14 @@ packages:
             issue: GH-1433
             apk:
               sha256: 9c1ec068c4e6aed1f40c8489082653fd31b5cd6a5269314191da3606a1074c38
+  - package: org.mozilla.focus
+    signature:
+      - fingerprint: 62:03:A4:73:BE:36:D6:4E:E3:7F:87:FA:50:0E:DB:C7:9E:AB:93:06:10:AB:9B:9F:A4:CA:7D:5C:1F:1B:4F:FC
+        sources:
+          - name: Google Play
+            issue: GH-3410
+            apk:
+              sha256: b648cbc15f2aa1b07ccd328cc68cc6a29bf899ee03b15a2b06de494f33c41ad8
   - package: org.nqmgaming.aneko
     signature:
       - fingerprint: 7E:54:67:45:82:B3:DA:8A:2C:0F:B5:58:10:06:E6:1C:25:2E:10:24:02:8F:C6:AB:60:9C:28:A4:C3:83:D8:08
