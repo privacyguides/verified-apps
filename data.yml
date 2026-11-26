@@ -3213,6 +3213,14 @@ packages:
             issue: GH-6708
             apk:
               sha256: 2746560d2a2eb69c17537832d7b978364995a8a7d65f53880940db2b96980d0b
+  - package: com.daemon.ssh
+    signature:
+      - fingerprint: 81:99:41:D0:0C:32:95:33:AF:BE:3A:8C:5B:08:39:26:91:92:C6:2C:88:6F:E2:AF:40:DD:97:41:D8:EA:D3:5C
+        sources:
+          - name: F-Droid
+            issue: GH-3227
+            apk:
+              sha256: 4ecb5f636fdfa290121ed75b94b6e62dbd19b1eca2bcdb1bf0e41395bbe04e26
   - package: com.daikincomfort.daikinonehome
     signature:
       - fingerprint: 71:00:31:83:B9:8B:54:1A:58:DD:40:D7:5F:68:BC:4B:D6:67:8E:A1:F0:CE:9B:E3:41:0B:CC:12:85:13:62:67
