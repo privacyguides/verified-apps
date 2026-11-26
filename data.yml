@@ -10913,6 +10913,14 @@ packages:
             issue: GH-7100
             apk:
               sha256: c95dd8877139f345772b9776d15a7cba51c57f0a909ea32fc27ada924c8afcdc
+  - package: d.d.meshenger
+    signature:
+      - fingerprint: D5:D4:C9:50:83:8E:53:40:89:F4:CC:82:FB:73:7C:7E:AB:22:E8:91:45:19:D4:F4:94:2D:3E:8F:DC:0B:96:B1
+        sources:
+          - name: F-Droid
+            issue: GH-3354
+            apk:
+              sha256: bc0574d5fd5e16d142172dba54e48eed51106ae951c34210fb2db42acc19abb8
   - package: de.aoksystems.amg
     signature:
       - fingerprint: |-
