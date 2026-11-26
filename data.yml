@@ -12704,6 +12704,14 @@ packages:
             issue: GH-2752
             apk:
               sha256: 4cccf4943ad4e5fce218ec47153c57a783c56b12a3c18d82ff0d36686efb837d
+  - package: hidden.protectedwp.safespace
+    signature:
+      - fingerprint: BC:FC:C9:21:A8:16:7A:FE:3C:3B:52:8F:02:E1:57:D7:66:09:D4:17:AD:CB:80:E2:A2:9A:59:5F:C6:CE:74:83
+        sources:
+          - name: F-Droid
+            issue: GH-3234
+            apk:
+              sha256: fe37f044f190efe30e74c8298062538bef3749e2938fe733c31ce00491217dfa
   - package: host.stjin.anonaddy
     signature:
       - fingerprint: 12:D4:69:1B:9F:67:A7:06:D4:E5:B0:AB:DF:A2:58:6A:A4:B0:18:BE:A1:99:9E:ED:79:18:0A:73:61:CA:ED:D2
