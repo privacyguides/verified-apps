@@ -15990,6 +15990,14 @@ packages:
             issue: GH-65
           - name: AppVerifier
             issue: GH-65
+  - package: org.p1graph.pitchvis
+    signature:
+      - fingerprint: 0B:C6:A6:26:4F:97:DD:09:FE:46:61:6D:AA:0A:EA:8A:6B:AB:01:3F:12:CF:C4:BC:CD:A5:4C:C5:B5:4C:1A:05
+        sources:
+          - name: F-Droid
+            issue: GH-3332
+            apk:
+              sha256: e18e30286b31a23a121a50ab08e98489ec9cf7c0bb5a6f0260571af21563aa00
   - package: org.polymorphicshade.tubular
     signature:
       - fingerprint: 8A:D7:02:5A:8C:91:14:54:E2:A7:B4:51:5E:36:0C:52:CA:63:EC:04:10:A0:42:FF:46:E9:AD:05:B5:09:E1:87
