@@ -55,7 +55,7 @@ runs:
         combined_verification="${verify_out}"$'\n'"${lineage_out}"
 
         formatted_block=$(signatures_extract_from_apk \
-          "$APK_PATH" "$sdk_root" "" "$verify_out" "$lineage_out") || exit 1
+          "$APK_PATH" "$sdk_root" "$verify_out" "$lineage_out") || exit 1
         cert_dn=$(signatures_first_certificate_dn_from_verification "$combined_verification")
         signer_kind=$(signatures_detect_signer_kind_from_verification "$combined_verification")
 

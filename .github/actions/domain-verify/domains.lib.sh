@@ -59,15 +59,6 @@ domain_candidates_from_package() {
   done
 }
 
-# True when reverse(domain) equals the package or is a dot-boundary prefix of it.
-domain_covers_package() {
-  local domain="$1" pkg="$2"
-  local ns
-  ns=$(domain_reverse_labels "$domain")
-  [[ -n "$ns" ]] || return 1
-  [[ "$pkg" == "$ns" || "$pkg" == "$ns".* ]]
-}
-
 # --- Issue form parsing -------------------------------------------------------
 
 # Collapse a block of text to newline-joined fingerprints in their original order.

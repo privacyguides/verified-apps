@@ -21,7 +21,6 @@ App developers are encouraged to [verify the domain name](#domain-verification) 
 
 When a maintainer is ready to review a submission, we will run automated checks to check the submission against AppVerifier's legacy internal database and the following mainstream app sources:
 
-- Accrescent
 - F-Droid Official
 - F-Droid IzzyOnDroid
 - Google Play

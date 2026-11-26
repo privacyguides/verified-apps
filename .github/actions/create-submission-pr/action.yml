@@ -26,14 +26,6 @@ inputs:
   sshSigningKey:
     description: SSH private key used for commit signing (from secrets.ACTIONS_SSH_KEY)
     required: true
-  commitSuffix:
-    description: Optional suffix appended to the git commit message subject line
-    required: false
-    default: ""
-  accrescentSignature:
-    description: Fingerprint(s) from Accrescent (store-match mode only)
-    required: false
-    default: ""
   fdroidResultsDir:
     description: Directory of per-repo F-Droid result JSON files from the matrix job
     required: false
@@ -64,10 +56,6 @@ inputs:
     default: ""
   customFdroidApkSha256:
     description: SHA-256 of the APK from the custom F-Droid repository (when applicable)
-    required: false
-    default: ""
-  accrescentApkSha256:
-    description: SHA-256 of the Accrescent APK (when applicable)
     required: false
     default: ""
   gplayApkSha256:
@@ -108,8 +96,6 @@ runs:
         ISSUE: ${{ inputs.issueNumber }}
         ISSUE_BODY: ${{ inputs.issueBody }}
         CO_AUTHOR_TRAILER: ${{ inputs.coAuthorTrailer }}
-        COMMIT_SUFFIX: ${{ inputs.commitSuffix }}
-        ACC_SIG: ${{ inputs.accrescentSignature }}
         FDROID_RESULTS_DIR: ${{ inputs.fdroidResultsDir }}
         GPLAY_SIG: ${{ inputs.gplaySignature }}
         APPVERIFIER_SIG: ${{ inputs.appverifierSignature }}
@@ -118,7 +104,6 @@ runs:
         DIRECT_APK_SHA256: ${{ inputs.directApkSha256 }}
         CUSTOM_FDROID_REPO_URL: ${{ inputs.customFdroidRepoUrl }}
         CUSTOM_FDROID_APK_SHA256: ${{ inputs.customFdroidApkSha256 }}
-        ACC_APK_SHA256: ${{ inputs.accrescentApkSha256 }}
         GPLAY_APK_SHA256: ${{ inputs.gplayApkSha256 }}
         APKPURE_SIG: ${{ inputs.apkpureSignature }}
         APKPURE_APK_SHA256: ${{ inputs.apkpureApkSha256 }}
@@ -150,7 +135,7 @@ runs:
         msg_file="${GITHUB_WORKSPACE}/submission-commit-msg"
         submission_write_commit_message_file \
           "$msg_file" \
-          "Add ${PACKAGE} from ${SUBMISSION_ISSUE_REF}${COMMIT_SUFFIX}" \
+          "Add ${PACKAGE} from ${SUBMISSION_ISSUE_REF}" \
           "$ISSUE" \
           "$CO_AUTHOR_TRAILER"
 

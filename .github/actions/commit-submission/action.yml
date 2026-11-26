@@ -1,5 +1,5 @@
-name: Commit submission to main
-description: Merge store-matched signatures into data.yml and push a verified commit to main
+name: Prepare submission commit
+description: Merge store-matched signatures into data.yml and write the commit message.
 inputs:
   packageName:
     description: Android application ID
@@ -17,19 +17,6 @@ inputs:
   coAuthorTrailer:
     description: Co-authored-by trailer(s) for the git commit (reviewer and GitHub Actions)
     required: true
-  githubToken:
-    description: GitHub PAT
-    required: true
-  author:
-    description: 'Commit author identity "Name <email>" (the submission''s submitter)'
-    required: true
-  sshSigningKey:
-    description: SSH private key used for commit signing (from secrets.ACTIONS_SSH_KEY)
-    required: true
-  accrescentSignature:
-    description: Fingerprint(s) from Accrescent
-    required: false
-    default: ""
   fdroidResultsDir:
     description: Directory of per-repo F-Droid result JSON files
     required: false
@@ -62,10 +49,6 @@ inputs:
     description: SHA-256 of the APK from the custom F-Droid repository (when applicable)
     required: false
     default: ""
-  accrescentApkSha256:
-    description: SHA-256 of the Accrescent APK (when applicable)
-    required: false
-    default: ""
   gplayApkSha256:
     description: SHA-256 of the Google Play APK (when applicable)
     required: false
@@ -78,37 +61,18 @@ inputs:
     description: SHA-256 of the APKPure APK (when applicable)
     required: false
     default: ""
-  pushToMain:
-    description: When false, prepare data.yml and commit message only (no push)
-    required: false
-    default: "true"
   domainVerifiedSig:
     description: Submitter signature when it is allowed by the package's verified domain (adds an HTTPS/DNS Verified Domain source)
-    required: false
-    default: ""
-  domain:
-    description: Verified domain to record in data-verified-domains.yml (when domainVerifiedSig is set)
     required: false
     default: ""
   domainMethod:
     description: Method the verification record was found via (https or dns)
     required: false
     default: ""
-  domainDnssec:
-    description: "DNSSEC status to record for a DNS-method domain: true, false, or empty"
-    required: false
-    default: ""
-  domainRecordJson:
-    description: Normalized verification record JSON (its .allowed fingerprints are recorded under the package in data-verified-domains.yml)
-    required: false
-    default: ""
 outputs:
   prepared:
     description: Whether data.yml was prepared for commit
     value: ${{ steps.prepare.outputs.prepared }}
-  domainFileChanged:
-    description: Whether data-verified-domains.yml was changed and staged
-    value: ${{ steps.prepare.outputs.domainFileChanged }}
   skipped:
     description: Whether commit was skipped (no matching store signatures)
     value: ${{ steps.prepare.outputs.skipped }}
@@ -124,7 +88,6 @@ runs:
         ISSUE: ${{ inputs.issueNumber }}
         ISSUE_BODY: ${{ inputs.issueBody }}
         CO_AUTHOR_TRAILER: ${{ inputs.coAuthorTrailer }}
-        ACC_SIG: ${{ inputs.accrescentSignature }}
         FDROID_RESULTS_DIR: ${{ inputs.fdroidResultsDir }}
         GPLAY_SIG: ${{ inputs.gplaySignature }}
         APPVERIFIER_SIG: ${{ inputs.appverifierSignature }}
@@ -133,25 +96,17 @@ runs:
         DIRECT_APK_SHA256: ${{ inputs.directApkSha256 }}
         CUSTOM_FDROID_REPO_URL: ${{ inputs.customFdroidRepoUrl }}
         CUSTOM_FDROID_APK_SHA256: ${{ inputs.customFdroidApkSha256 }}
-        ACC_APK_SHA256: ${{ inputs.accrescentApkSha256 }}
         GPLAY_APK_SHA256: ${{ inputs.gplayApkSha256 }}
         APKPURE_SIG: ${{ inputs.apkpureSignature }}
         APKPURE_APK_SHA256: ${{ inputs.apkpureApkSha256 }}
-        PUSH_TO_MAIN: ${{ inputs.pushToMain }}
         DOMAIN_VERIFIED_SIG: ${{ inputs.domainVerifiedSig }}
         DOMAIN_VERIFIED_METHOD: ${{ inputs.domainMethod }}
-        DV_DOMAIN: ${{ inputs.domain }}
-        DV_METHOD: ${{ inputs.domainMethod }}
-        DV_DNSSEC: ${{ inputs.domainDnssec }}
-        DV_RECORD_JSON: ${{ inputs.domainRecordJson }}
       run: |
         set -euo pipefail
         source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
-        source "${GITHUB_ACTION_PATH}/../domain-verify/domains.lib.sh"
 
         echo "prepared=false" >> "$GITHUB_OUTPUT"
         echo "skipped=false" >> "$GITHUB_OUTPUT"
-        echo "domainFileChanged=false" >> "$GITHUB_OUTPUT"
 
         SUBMISSION_ISSUE_REF=$(signatures_submission_issue_ref "$ISSUE" "$ISSUE_BODY")
         export SUBMISSION_ISSUE_REF
@@ -171,21 +126,6 @@ runs:
         submission_merge_entry_into_data_yml "$entry"
         rm -f "$entry"
 
-        # Record the domain (and the verified package's fingerprints) in
-        # data-verified-domains.yml when the submitted key is allowed by it.
-        if [[ -n "${DOMAIN_VERIFIED_SIG:-}" && -n "${DV_DOMAIN:-}" ]]; then
-          checked=$(date -u +%Y-%m-%dT%H:%M:%SZ)
-          dv_fps="[]"
-          if [[ -n "${DV_RECORD_JSON:-}" ]]; then
-            dv_fps=$(jq -c '.allowed // []' <<< "$DV_RECORD_JSON")
-          fi
-          domain_verified_upsert "$DOMAIN_VERIFIED_FILE" "$DV_DOMAIN" "${DV_METHOD:-https}" "$PACKAGE" "$SUBMISSION_ISSUE_REF" "$checked" "${DV_DNSSEC:-}" "$dv_fps"
-          if ! git diff --quiet -- "$DOMAIN_VERIFIED_FILE"; then
-            git add "$DOMAIN_VERIFIED_FILE"
-            echo "domainFileChanged=true" >> "$GITHUB_OUTPUT"
-          fi
-        fi
-
         msg_file="${GITHUB_WORKSPACE}/submission-commit-msg"
         submission_write_commit_message_file \
           "$msg_file" \
@@ -195,15 +135,3 @@ runs:
 
         git add data.yml
         echo "prepared=true" >> "$GITHUB_OUTPUT"
-
-    - name: Push verified commit to main
-      if: steps.prepare.outputs.prepared == 'true' && inputs.pushToMain == 'true'
-      id: verifiedCommit
-      uses: ./.github/actions/bot-commit
-      with:
-        ref: main
-        author: ${{ inputs.author }}
-        messageFile: submission-commit-msg
-        files: |
-          data.yml
-        sshKey: ${{ inputs.sshSigningKey }}

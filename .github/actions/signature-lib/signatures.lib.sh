@@ -45,18 +45,6 @@ signatures_github_issue_number() {
   fi
 }
 
-# Normalize legacy or canonical GitHub issue refs to GH-123 for storage/display.
-signatures_normalize_github_issue_ref() {
-  local ref="$1"
-  if [[ "$ref" =~ ^GH-[0-9]+$ ]]; then
-    printf '%s' "$ref"
-  elif [[ "$ref" =~ ^[0-9]+$ ]]; then
-    signatures_github_issue_ref "$ref"
-  else
-    return 1
-  fi
-}
-
 # True when data.yml uses a supported schema version.
 signatures_data_schema_supported() {
   case "$1" in
@@ -77,13 +65,6 @@ domain_source_name() {
     dns) printf '%s' "$DOMAIN_SOURCE_NAME_DNS" ;;
     *) printf 'Verified Domain' ;;
   esac
-}
-
-# Canonical Codeberg issue ref for data.yml and commit messages (CB-123).
-signatures_codeberg_issue_ref() {
-  local number="$1"
-  [[ "$number" =~ ^[0-9]+$ ]] || return 1
-  printf 'CB-%s' "$number"
 }
 
 # Parse Codeberg issue number from CB-123 (or legacy bare 123).
@@ -942,7 +923,6 @@ signatures_colon_digests_from_outputs() {
   local sdk_root="${2:-${ANDROID_SDK_ROOT:-${ANDROID_HOME:-}}}"
   local verify_out="$3"
   local lineage_out="$4"
-  local apksigner_override="${5:-}"
   local keytool keytool_out fp sha256 colon_fps
 
   colon_fps=""
@@ -971,22 +951,16 @@ signatures_colon_digests_from_outputs() {
 signatures_extract_from_apk() {
   local apk_path="$1"
   local sdk_root="${2:-${ANDROID_SDK_ROOT:-${ANDROID_HOME:-}}}"
-  local apksigner_override="${3:-}"
-  local verify_out="${4:-}"
-  local lineage_out="${5:-}"
-  local digest_raw formatted
+  local verify_out="${3:-}"
+  local lineage_out="${4:-}"
+  local formatted
 
   if [[ -z "$verify_out" ]]; then
-    if [[ -n "$apksigner_override" ]]; then
-      verify_out=$("$apksigner_override" verify --print-certs "$apk_path" 2>&1) || true
-      lineage_out=$("$apksigner_override" lineage --in "$apk_path" --print-certs -v 2>&1) || true
-    elif ! signatures_gather_apksigner "$apk_path" "$sdk_root" verify_out lineage_out; then
-      return 1
-    fi
+    signatures_gather_apksigner "$apk_path" "$sdk_root" verify_out lineage_out || return 1
   fi
 
   if ! formatted=$(signatures_colon_digests_from_outputs \
-    "$apk_path" "$sdk_root" "$verify_out" "$lineage_out" "$apksigner_override"); then
+    "$apk_path" "$sdk_root" "$verify_out" "$lineage_out"); then
     echo "Failed to extract signing certificate SHA-256 digest(s) from ${apk_path}" >&2
     printf '%s\n' "--- apksigner verify --print-certs ---" "$verify_out" >&2
     printf '%s\n' "--- apksigner lineage --print-certs -v ---" "$lineage_out" >&2
@@ -1396,9 +1370,6 @@ submission_build_entry_file() {
     return 0
   fi
 
-  if [[ -n "${ACC_SIG:-}" ]] && signatures_equal "$ACC_SIG" "$user_sig"; then
-    _submission_add_source "$user_sig" "Accrescent" "${ACC_APK_SHA256:-}"
-  fi
   if [[ -n "${FDROID_RESULTS_DIR:-}" && -d "$FDROID_RESULTS_DIR" ]]; then
     while IFS= read -r result_file; do
       [[ -z "$result_file" ]] && continue

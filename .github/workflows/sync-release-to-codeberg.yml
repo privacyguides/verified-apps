@@ -12,16 +12,6 @@ on:
         description: Existing GitHub release tag to mirror to Codeberg
         required: true
         type: string
-  workflow_call:
-    inputs:
-      tag:
-        description: Existing GitHub release tag to mirror to Codeberg
-        required: true
-        type: string
-    secrets:
-      CB_SYNC_TOKEN:
-        description: Codeberg (Forgejo) API token used to create the release and upload assets
-        required: true
 
 permissions:
   contents: read

@@ -89,15 +89,11 @@ jobs:
         id: finalize
         uses: ./.github/actions/finalize-submission-pr
         with:
-          pushToBranch: "false"
-          pullRequestNumber: ${{ github.event.pull_request.number }}
           headRef: ${{ github.event.pull_request.head.ref }}
           headSha: ${{ github.event.pull_request.head.sha }}
           issueNumber: ${{ steps.prMeta.outputs.issueNumber }}
           commitSubject: ${{ github.event.pull_request.title }}
           coAuthorTrailer: ${{ steps.coauthor.outputs.trailer }}
-          author: ${{ steps.coauthor.outputs.author }}
-          sshSigningKey: ${{ secrets.ACTIONS_SSH_KEY }}
 
       - name: Export metadata
         id: meta

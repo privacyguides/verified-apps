@@ -1,14 +1,9 @@
 name: Parse verification info
-description: Extract package name and fingerprint from AppVerifier verification text or an issue body
+description: Extract package name, fingerprint and optional download links from a submission issue body
 inputs:
-  verificationInfo:
-    description: Raw verification info from the issue form parser
-    required: false
-    default: ""
   issueBody:
     description: Full GitHub issue body (uses the Verification Info section)
-    required: false
-    default: ""
+    required: true
   issueNumber:
     description: GitHub issue number (required with issueBody for submission source parsing)
     required: false
@@ -36,22 +31,17 @@ runs:
     - shell: bash
       id: parse
       env:
-        VERIFICATION_INFO: ${{ inputs.verificationInfo }}
         ISSUE_BODY: ${{ inputs.issueBody }}
         ISSUE_NUMBER: ${{ inputs.issueNumber }}
       run: |
         set -euo pipefail
         source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
 
-        text=""
-        if [[ -n "$ISSUE_BODY" ]]; then
-          text=$(signatures_extract_verification_block "$ISSUE_BODY")
-        elif [[ -n "$VERIFICATION_INFO" ]]; then
-          text="$VERIFICATION_INFO"
-        else
-          echo "Either verificationInfo or issueBody is required" >&2
+        if [[ -z "$ISSUE_BODY" ]]; then
+          echo "issueBody is required" >&2
           exit 1
         fi
+        text=$(signatures_extract_verification_block "$ISSUE_BODY")
 
         if ! parsed=$(parse_verification_text "$text"); then
           echo "Could not parse package name and fingerprint from Verification Info. Paste the exact AppVerifier output (package ID and SHA-256 fingerprint(s) on separate lines)." >&2

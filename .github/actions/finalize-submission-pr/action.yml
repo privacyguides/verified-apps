@@ -1,9 +1,6 @@
-name: Finalize submission PR commit
-description: Replace a submission PR branch with one verified commit containing the PR data.yml tree
+name: Prepare submission PR commit
+description: Export a submission PR's data.yml and write its commit message. Pushes nothing; the caller pushes.
 inputs:
-  pullRequestNumber:
-    description: Pull request number
-    required: true
   headRef:
     description: Pull request head branch name
     required: true
@@ -23,18 +20,6 @@ inputs:
   coAuthorTrailer:
     description: Co-authored-by trailer(s) for the git commit
     required: true
-  author:
-    description: 'Commit author identity "Name <email>" (the submission''s submitter)'
-    required: false
-    default: ""
-  sshSigningKey:
-    description: SSH private key used for commit signing (from secrets.ACTIONS_SSH_KEY)
-    required: false
-    default: ""
-  pushToBranch:
-    description: When false, prepare data.yml and commit message only (no push)
-    required: false
-    default: "true"
 outputs:
   prepared:
     description: Whether data.yml was prepared for commit
@@ -49,7 +34,6 @@ runs:
     - shell: bash
       id: prepare
       env:
-        PR_NUMBER: ${{ inputs.pullRequestNumber }}
         HEAD_REF: ${{ inputs.headRef }}
         HEAD_SHA: ${{ inputs.headSha }}
         ISSUE: ${{ inputs.issueNumber }}
@@ -107,16 +91,3 @@ runs:
           "$CO_AUTHOR_TRAILER"
 
         echo "prepared=true" >> "$GITHUB_OUTPUT"
-
-    - name: Push verified commit to PR branch
-      if: steps.prepare.outputs.prepared == 'true' && inputs.pushToBranch == 'true'
-      id: verifiedCommit
-      uses: ./.github/actions/bot-commit
-      with:
-        ref: ${{ inputs.headRef }}
-        author: ${{ inputs.author }}
-        messageFile: submission-commit-msg
-        files: |
-          data.yml
-        sshKey: ${{ inputs.sshSigningKey }}
-        force: "true"

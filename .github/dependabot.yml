@@ -17,30 +17,8 @@ updates:
       - dependency-name: "privacyguides/verified-apps/.github/workflows/create-artifact.yml"
 
   - package-ecosystem: "pip"
-    directory: "/.github/actions/get-accrescent-app"
-    schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 10
-    labels: []
-    groups:
-      grpc:
-        patterns:
-          - "grpcio*"
-
-  - package-ecosystem: "pip"
     directory: "/scripts"
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 10
     labels: []
-
-  - package-ecosystem: "pip"
-    directory: "/gplay-apk-downloader"
-    schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 10
-    labels: []
-    groups:
-      flask:
-        patterns:
-          - "flask*"

@@ -2,7 +2,7 @@ name: Signature utilities
 description: Validate, compare, and format APK certificate fingerprint sets
 inputs:
   operation:
-    description: validate-submission, signatures-equal, signatures-overlap, or find-related-packages
+    description: validate-submission, signatures-equal, or find-related-packages
     required: true
   packageName:
     description: Android application ID (validate-submission)
@@ -13,11 +13,11 @@ inputs:
     required: false
     default: ""
   signatureA:
-    description: First fingerprint set (signatures-equal, signatures-overlap)
+    description: First fingerprint set (signatures-equal)
     required: false
     default: ""
   signatureB:
-    description: Second fingerprint set (signatures-equal, signatures-overlap)
+    description: Second fingerprint set (signatures-equal)
     required: false
     default: ""
 outputs:
@@ -72,11 +72,6 @@ runs:
             ;;
           signatures-equal)
             if signatures_equal "$SIGNATURE_A" "$SIGNATURE_B"; then
-              echo "result=true" >> "$GITHUB_OUTPUT"
-            fi
-            ;;
-          signatures-overlap)
-            if signatures_overlap "$SIGNATURE_A" "$SIGNATURE_B"; then
               echo "result=true" >> "$GITHUB_OUTPUT"
             fi
             ;;
