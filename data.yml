@@ -9776,6 +9776,14 @@ packages:
             issue: GH-2184
             apk:
               sha256: 32b9228f3f650e7edca76b5c5010ca6bd506eb5ba265d803b27ca322b0a876ef
+  - package: com.teamwood.spacewood.unity
+    signature:
+      - fingerprint: 99:71:F2:1B:DF:4C:20:3E:B7:2A:69:DA:9C:0C:E7:0D:45:B7:F0:DD:8E:9C:D9:E8:02:9C:1B:5A:15:CA:D9:11
+        sources:
+          - name: Google Play
+            issue: GH-3612
+            apk:
+              sha256: 8b0b9f961c6130b8fd3ba5ceea2152ff0c64f9cc3aad6aa5824702fe6077887f
   - package: com.tecdrop.pitchblackwallpaper
     signature:
       - fingerprint: 2E:8C:34:27:C5:D3:2D:9D:A0:A0:A5:61:AF:2D:BE:1A:A1:18:C6:CA:0D:9F:C6:CB:1B:2E:19:AB:B3:36:5F:D4
