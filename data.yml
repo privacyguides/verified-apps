@@ -13249,6 +13249,14 @@ packages:
             issue: GH-6194
             apk:
               sha256: d6ebf47f6493404b5013238286c8f2b403ed592cd4687c44f7f8fcc688a76759
+  - package: io.privkey.keep
+    signature:
+      - fingerprint: 3E:B0:E6:F6:F4:E0:96:2E:BD:71:7F:84:EE:A4:74:28:B7:30:87:B6:86:C9:56:63:3D:6A:9F:CC:4C:85:4F:50
+        sources:
+          - name: F-Droid
+            issue: GH-3173
+            apk:
+              sha256: 50deb83322a3e04bbde9392910febff969f41cbfd1939b6193d72223a4a293f6
   - package: io.raindrop.raindropio
     signature:
       - fingerprint: DD:D7:5C:66:57:86:54:D0:85:42:48:04:CB:27:C7:B6:E0:4F:D3:66:16:04:5B:FE:E1:40:D9:75:6F:FC:A5:63
