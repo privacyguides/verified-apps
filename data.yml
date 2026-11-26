@@ -4375,6 +4375,14 @@ packages:
             issue: GH-1810
             apk:
               sha256: 71d3cecd69b644da81682d95fd0030caad4ce90227859236486250d885f2d67e
+  - package: com.frerisdev.opnsenseapp
+    signature:
+      - fingerprint: 26:B9:73:1D:D7:FB:EB:2D:24:D2:E1:48:60:CD:CC:14:75:5E:F8:34:2D:5F:4C:B9:5C:66:CE:BC:C7:0D:B1:CB
+        sources:
+          - name: Google Play
+            issue: GH-3463
+            apk:
+              sha256: cf2c87b877d949c65017e545d675dc073dda6a64a9dea60e8346c7105b382d95
   - package: com.fronius.solarweb
     signature:
       - fingerprint: 5A:6A:DE:A2:F3:F8:49:65:8E:8D:3E:8B:05:4A:75:A4:86:D7:5B:E6:1A:BC:B7:60:8B:09:4B:62:DA:85:51:3E
