@@ -5853,6 +5853,14 @@ packages:
             issue: GH-8407
             apk:
               sha256: 823a467dd29cd2f21ee4280c54d2d11bf9100516bb89b6cf197a78a2a4064f1f
+  - package: com.itunestoppodcastplayer.app
+    signature:
+      - fingerprint: D6:0C:53:37:25:FA:7D:24:D8:2E:34:97:7E:2B:54:A6:22:55:EE:E1:19:75:B7:59:4C:78:A8:78:BC:CA:4F:53
+        sources:
+          - name: Google Play
+            issue: GH-3367
+            apk:
+              sha256: 0162b9a4f77b43a733ef290bfa193026d20609df0b1e319a2d0a6d76c33a9daa
   - package: com.iudesk.android.photo.editor
     signature:
       - fingerprint: |-
