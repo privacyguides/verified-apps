@@ -12122,6 +12122,14 @@ packages:
             issue: GH-60
           - name: AppVerifier
             issue: GH-60
+  - package: dev.thomasbuilds.spectre
+    signature:
+      - fingerprint: C4:11:40:9B:94:F3:6B:67:8C:A8:C9:57:B6:75:D2:F1:AD:5B:7F:C0:1A:35:2B:FF:4C:99:ED:2F:FB:C1:1B:39
+        sources:
+          - name: F-Droid
+            issue: GH-3258
+            apk:
+              sha256: a61a075c103f1c8a699655a9554479cbb434d807d981f225bf2344b99c945e45
   - package: dev.zapstore.app
     signature:
       - fingerprint: 99:E3:3B:0C:2D:07:E7:5F:CD:9D:F7:E4:0E:88:66:46:FF:66:7E:3A:A6:64:8E:1A:11:60:B0:36:CF:2B:93:20
