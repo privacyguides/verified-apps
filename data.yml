@@ -6135,6 +6135,14 @@ packages:
             issue: GH-3616
             apk:
               sha256: 6d3d56a42c31198a3e6591c6870aa21cde0af36c3f97154f026d297a2396b4fc
+  - package: com.jarsilio.android.pingoff
+    signature:
+      - fingerprint: 24:06:CA:D9:83:B1:C5:A1:D9:9C:5C:D5:06:4F:D3:D7:83:E9:85:02:7A:1C:4C:E9:CE:87:9B:50:ED:3C:08:B6
+        sources:
+          - name: F-Droid
+            issue: GH-3618
+            apk:
+              sha256: 8c946cbb7c8cf0cf16e2d50d7af6b6e9abb642cc4ac0c03000f5d58fef08e4b1
   - package: com.jarsilio.android.scrambledeggsif
     signature:
       - fingerprint: 24:06:CA:D9:83:B1:C5:A1:D9:9C:5C:D5:06:4F:D3:D7:83:E9:85:02:7A:1C:4C:E9:CE:87:9B:50:ED:3C:08:B6
