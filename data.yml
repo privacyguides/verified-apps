@@ -1758,6 +1758,14 @@ packages:
             issue: GH-7837
             apk:
               sha256: dbcb595aefe81c1ebaec7fb877ab3287aedac01c7f4ba74600864ff05480a709
+  - package: com.anysoftkeyboard.languagepack.hackerkeyboardlayout
+    signature:
+      - fingerprint: ED:28:13:5B:85:DA:F5:62:40:4E:93:1B:1E:49:7E:02:1F:16:66:2A:91:F6:4A:63:65:37:DF:A4:A9:ED:69:5B
+        sources:
+          - name: F-Droid
+            issue: GH-3325
+            apk:
+              sha256: 6d19182835b86a6961b39d2c6f62e820e633abd1708e18023a03eaf00d385492
   - package: com.apiture.xpressmobile.tabut.sub
     signature:
       - fingerprint: E0:85:00:80:44:B1:CA:2C:35:F8:54:1B:0E:08:28:08:78:EF:19:65:87:2E:D4:24:6C:A2:B7:1B:08:D8:ED:11
