@@ -14899,6 +14899,14 @@ packages:
             issue: GH-3441
             apk:
               sha256: 294854c717334fe46d11360fe2fc659b761f282c72dc7fcd8ce3501606710963
+  - package: no.sparebank1.mobilbank
+    signature:
+      - fingerprint: 91:7D:45:47:28:FA:C4:BE:93:6D:F8:86:61:1E:73:1B:D0:A7:C7:3E:9C:63:F1:1C:B1:84:7B:BF:14:97:B6:C2
+        sources:
+          - name: Google Play
+            issue: GH-3442
+            apk:
+              sha256: b8fb58751cc58a4dcbe1febc7c3d55f35bfe293db194a6a1f9427ae8ff185f0a
   - package: no.vipps.bankid
     signature:
       - fingerprint: 15:63:F5:D1:2A:CF:DF:77:68:87:7A:04:16:35:ED:84:C7:27:53:B5:36:BA:5C:06:D8:B4:6C:E3:24:6A:F8:92
