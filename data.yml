@@ -13441,6 +13441,14 @@ packages:
             issue: GH-7654
             apk:
               sha256: db869354e24e627b702ac6d32f564cde8a6fbb9c4bad9c7acd05c24d208f4e83
+  - package: io.olvid.messenger
+    signature:
+      - fingerprint: CC:83:A4:7D:8E:D4:11:46:85:80:88:9F:B3:E0:58:B0:B3:1E:82:EF:81:2D:47:35:31:B5:F9:CD:4A:88:FD:33
+        sources:
+          - name: Google Play
+            issue: GH-3347
+            apk:
+              sha256: e895af32a2a8934c25ad88582acf22a79b4d13f48ba6be8fb78d646532d9314b
   - package: io.olvid.messenger.nogoogle
     signature:
       - fingerprint: 48:6D:98:1D:59:0C:1E:28:BA:21:8D:42:27:F1:C1:0D:D7:C5:B1:58:DF:A1:33:60:55:BE:75:2F:D9:33:F8:BC
