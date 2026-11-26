@@ -9499,6 +9499,14 @@ packages:
             issue: GH-1591
             apk:
               sha256: b4fa293ba7fa5bd2957da6bd9fda17b3ed162e401dce6d5cc2e937b54c1b4331
+  - package: com.shubhang.loophole
+    signature:
+      - fingerprint: 38:46:C2:6B:24:20:8E:88:D9:8E:B4:63:E9:7E:5E:39:79:B3:A3:B4:44:03:11:E0:08:14:CB:0E:64:F4:FF:66
+        sources:
+          - name: F-Droid
+            issue: GH-3766
+            apk:
+              sha256: 3e879776ea92632a88b89a064e48c4a45cdd03599d3ffe189076c255a0c31e3f
   - package: com.sidhant.watersort
     signature:
       - fingerprint: AE:CB:14:87:2F:43:11:E3:27:E4:EA:FD:49:E5:8E:F6:3C:D3:F1:EB:81:14:C6:4A:20:CC:4F:8E:4B:C8:0C:6F
