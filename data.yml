@@ -792,6 +792,14 @@ packages:
             issue: CB-46
             apk:
               sha256: ef0f40be1b947752e8441fe106ecb15e3705ab5aa52a9726c5e9a04a3a499038
+  - package: ca.asmat.buzzkill
+    signature:
+      - fingerprint: 2D:B8:6C:78:3D:4D:D4:57:F5:60:97:15:7B:08:6C:33:34:FC:2E:77:EF:CC:A3:C4:2E:1A:5F:21:71:02:F4:59
+        sources:
+          - name: F-Droid
+            issue: GH-3518
+            apk:
+              sha256: afca902bb98e0644202bedb8f477b2e0d504e1a60f8a3e09124504f8a90bc99a
   - package: ca.ilianokokoro.umihi.music
     signature:
       - fingerprint: F1:F8:3F:A5:EB:F5:A4:3E:E0:F4:AB:C8:D0:AD:D8:9D:94:34:38:0E:A4:E7:F2:96:FF:E8:4E:1A:66:10:C5:BB
