@@ -1978,6 +1978,14 @@ packages:
             issue: GH-2716
             apk:
               sha256: cd96332e9c4cf33bd967b6bdb3e41b3a3cf7e181ad42ba8664ee66126ed91983
+  - package: com.aryan.reader
+    signature:
+      - fingerprint: E6:45:5F:96:06:CC:8B:38:1B:5E:6D:09:8F:C4:4F:91:E5:E9:4A:37:BD:08:21:9A:BB:BD:3E:00:30:F5:EE:0D
+        sources:
+          - name: Google Play
+            issue: GH-3533
+            apk:
+              sha256: adefdf0ea04dde8a675cb25814ac8687b25dae552691612a33f28b3e9ac496cb
   - package: com.aryan.reader.oss
     signature:
       - fingerprint: 4D:77:F5:57:45:74:9B:04:FC:BE:9A:60:E1:A2:ED:CA:5D:D0:CF:BB:D7:2B:B5:8C:E0:DD:15:6C:B1:B8:14:C9
