@@ -9941,6 +9941,14 @@ packages:
             issue: GH-1903
             apk:
               sha256: 38eab1fad87e4a6b25d12d35c02c69a161f9fb5c29eeb84394768902033ace2b
+  - package: com.tutpro.baresip.plus
+    signature:
+      - fingerprint: E6:DC:B0:83:85:C2:F8:06:81:F6:5E:39:E2:2D:29:EF:0D:57:19:A4:16:38:B4:0F:76:D2:DD:61:68:70:6B:EE
+        sources:
+          - name: F-Droid
+            issue: GH-3411
+            apk:
+              sha256: 15c3e8cb900e1f0d725cf9a5273d757fddca1c5037f94c9c5974b5120118114e
   - package: com.tuya.smart
     signature:
       - fingerprint: 93:21:9F:C2:73:E2:20:0F:4A:DE:E5:F7:19:1D:C6:56:BA:2A:2D:7B:2F:F5:D2:4C:D5:5C:4B:61:55:00:1E:40
