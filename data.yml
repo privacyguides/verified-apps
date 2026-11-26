@@ -4432,6 +4432,14 @@ packages:
             issue: GH-7248
             apk:
               sha256: f3b60ef556d7a06896f381565339ffe7e5949e167aac3a941a068b582c2f8088
+  - package: com.game.asteroids_revenge
+    signature:
+      - fingerprint: 41:8B:E8:50:04:4B:7B:CF:23:6A:B4:FB:2F:41:47:26:8C:49:A9:7C:D3:CF:23:2B:3D:35:CF:37:93:D2:09:97
+        sources:
+          - name: F-Droid
+            issue: GH-3383
+            apk:
+              sha256: ca4575b2953d71002b32f0efee4deb5da567be3d390329a1dae53280f107ee00
   - package: com.game.plutonic
     signature:
       - fingerprint: 80:3B:9D:40:28:12:F5:75:E5:E0:1B:47:7B:35:31:E6:88:67:2B:FF:B3:88:29:29:DE:01:F2:D6:C8:7E:38:1E
