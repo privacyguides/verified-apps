@@ -11359,6 +11359,14 @@ packages:
             issue: GH-1665
             apk:
               sha256: ddf8cd9f4e6cb52e302c2fe34060b3f666c6636b72dd239e07e2f6f825b9c712
+  - package: com.zoffcc.applications.tofshare
+    signature:
+      - fingerprint: 48:2C:78:92:BF:34:23:AF:88:2D:5F:73:B8:E7:28:29:B1:5A:8C:08:36:CD:35:E8:D3:7E:83:5E:68:9D:82:04
+        sources:
+          - name: F-Droid
+            issue: GH-3698
+            apk:
+              sha256: c6337aef776f41e597d5f54bdbfdf751b49b842091261cf2d9d26760ba16fa0a
   - package: com.zoffcc.applications.toloshare
     signature:
       - fingerprint: 9A:37:3A:52:D1:77:27:39:4D:51:F6:EE:E0:2B:28:38:D6:84:6F:0D:63:8C:35:55:0E:7E:42:A1:00:F4:B7:94
