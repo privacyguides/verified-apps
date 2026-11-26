@@ -9590,6 +9590,14 @@ packages:
             issue: GH-1453
             apk:
               sha256: 1723ffdc6d54d1168f220c3b37e5a14a1297d8f58d38e18e39c43e8ac9941fbe
+  - package: com.swap.app
+    signature:
+      - fingerprint: F6:BC:4A:F1:F7:F6:F5:D4:FE:72:87:5E:35:44:71:27:E9:06:65:D5:40:A3:4B:09:6D:78:6C:30:31:D0:4A:D7
+        sources:
+          - name: F-Droid
+            issue: GH-3566
+            apk:
+              sha256: 619e766b7f30acb4c96943463b7c1b031e7c538eeb8eb820612a72a763b0243e
   - package: com.swordfish.lemuroid
     signature:
       - fingerprint: 66:30:F8:6D:FC:E5:E0:19:B3:21:AD:62:BC:F9:3E:96:8A:C6:DB:C1:5F:C5:B1:BA:12:EB:B8:C0:5F:B2:79:F1
