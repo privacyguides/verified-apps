@@ -14891,6 +14891,14 @@ packages:
             issue: GH-3441
             apk:
               sha256: 294854c717334fe46d11360fe2fc659b761f282c72dc7fcd8ce3501606710963
+  - package: no.vipps.bankid
+    signature:
+      - fingerprint: 15:63:F5:D1:2A:CF:DF:77:68:87:7A:04:16:35:ED:84:C7:27:53:B5:36:BA:5C:06:D8:B4:6C:E3:24:6A:F8:92
+        sources:
+          - name: Google Play
+            issue: GH-3440
+            apk:
+              sha256: 9e4e9af3410d27bfd3f67a7deaa1c80f366dc0cb73f7d920132dd8d54419f5c1
   - package: nodomain.freeyourgadget.gadgetbridge
     signature:
       - fingerprint: 01:CC:E9:31:6F:CB:77:EA:02:C6:DE:A8:1F:DE:9F:31:76:46:92:02:C0:CE:A0:51:4C:0E:03:CB:96:9B:C7:BE
