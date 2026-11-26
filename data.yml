@@ -3196,6 +3196,14 @@ packages:
             issue: GH-2273
             apk:
               sha256: f5b53f12fca94ded98cb8446b5dc8d11ff1fbf3446c79dd3112113615ec0ed85
+  - package: com.cvc953.localplayer
+    signature:
+      - fingerprint: C1:A8:E4:CB:CC:BB:78:83:41:96:66:B6:FA:DD:28:F4:0A:A9:38:0B:CD:D0:B0:7A:6A:48:D8:73:37:77:A1:02
+        sources:
+          - name: F-Droid
+            issue: GH-3326
+            apk:
+              sha256: 7b4a4918c207272fe3514acbd5c9020d8bdfd338a9a03f41bbd7a1e7b9954f14
   - package: com.cxinventor.file.explorer
     signature:
       - fingerprint: 26:A4:15:39:86:2A:72:19:06:EF:C2:9D:78:6C:FD:B3:EE:BE:D7:34:9D:34:9F:97:C3:87:1E:0E:74:8C:90:6D
