@@ -6157,6 +6157,14 @@ packages:
             issue: CB-85
             apk:
               sha256: b5edea35c0b3cb22675aa79fa0f920e17e2c35d31e19d8121d7e0e68c9c0e5d8
+  - package: com.jarsilio.android.waveup
+    signature:
+      - fingerprint: 76:BA:3A:A3:78:60:41:F0:F2:64:8F:28:78:21:F1:05:5C:07:1E:AE:E0:7A:A4:CF:7B:62:11:43:59:FF:48:5A
+        sources:
+          - name: F-Droid
+            issue: GH-3621
+            apk:
+              sha256: fa0b281c36cd66e7f0844402b5ce2d02d72b2f0160fd2a013c6ce68449d99e1a
   - package: com.jemcik.jemrec
     signature:
       - fingerprint: 50:AE:AB:36:30:F0:19:8E:A3:84:5D:B5:14:13:B1:AD:29:58:2F:78:24:0F:A2:DF:6F:E5:5B:A8:53:7A:FD:F8
