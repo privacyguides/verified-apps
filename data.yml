@@ -12558,6 +12558,14 @@ packages:
             issue: CB-78
             apk:
               sha256: abdbdf7e01fb94db37745e12b56098aea8237e634ee77954194ce11b947f61e0
+  - package: github.umer0586.sensorserver
+    signature:
+      - fingerprint: 9A:D8:2A:3D:8B:EF:6B:64:D2:2D:15:1B:79:9A:62:FD:5A:07:F7:C5:AC:84:63:2B:1C:62:B0:9E:D7:21:D3:FF
+        sources:
+          - name: F-Droid
+            issue: GH-3086
+            apk:
+              sha256: d3de635a5698a2669013137b5b18ed13f87fd5978c829843d40713476f5c7fe4
   - package: gmikhail.colorpicker
     signature:
       - fingerprint: CB:70:F2:C7:56:D0:E3:82:DD:D1:08:2C:58:FB:75:3D:F5:11:22:4D:EF:5F:69:FA:FD:9D:B0:71:87:A5:75:CB
