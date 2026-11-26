@@ -11483,6 +11483,14 @@ packages:
               sha256: 6616edc5ca7d694c89cc9fa345fa78af43ffb7b009e41bd8607e8c77dc28ff53
           - name: HTTPS Verified Domain
             issue: GH-1986
+  - package: de.kromke.andreas.musictagger
+    signature:
+      - fingerprint: 6C:7A:61:B1:6F:C4:61:00:B8:B1:38:8A:44:69:29:CE:49:41:69:EE:9E:20:F9:1F:2A:04:E1:5B:F0:19:52:FE
+        sources:
+          - name: F-Droid
+            issue: GH-3429
+            apk:
+              sha256: 18e0165743740d0db6fa222dd41259f31879e53b6d0eb2830d1171c0386c1348
   - package: de.lukasneugebauer.nextcloudcookbook
     signature:
       - fingerprint: 76:C2:9D:9A:87:91:FF:D9:36:38:36:96:89:60:FD:6D:63:B3:D4:41:FE:96:95:F3:66:8A:DB:E3:84:E3:64:74
