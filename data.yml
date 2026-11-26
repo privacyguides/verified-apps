@@ -3957,6 +3957,14 @@ packages:
             issue: GH-2024
             apk:
               sha256: 68fa0f569d9ca309525cffbe1d4d112d0a0aecef7c74ff13037e7d7f81032600
+  - package: com.eightybee.app
+    signature:
+      - fingerprint: 66:51:B4:B8:D3:6C:C8:D5:1E:66:6C:5E:1E:15:9C:60:4C:DF:F1:2C:E5:14:F2:3C:F1:20:85:3A:35:06:3A:02
+        sources:
+          - name: Google Play
+            issue: GH-3659
+            apk:
+              sha256: 4ab34ec8eae7c08043b171da750dec1924c7f7006d6e91021cc71a661433ef0e
   - package: com.einnovation.temu
     signature:
       - fingerprint: 8A:DE:FE:CE:37:49:DC:F2:3C:3C:EB:3A:8B:BB:C9:A1:D8:80:91:B6:76:30:05:88:91:1B:B5:8B:85:97:0B:AF
