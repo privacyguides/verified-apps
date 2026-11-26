@@ -13560,6 +13560,14 @@ packages:
             issue: GH-1230
             apk:
               sha256: b5fd8064cb38bd0c6eb98b66b3a8bfa816dfc659d24aa5412cff112e9ed5da0b
+  - package: kr.go.mobileid
+    signature:
+      - fingerprint: 09:55:EB:46:F4:84:82:73:54:16:E2:D0:50:EC:51:62:93:E9:E9:02:B4:AB:82:24:31:6C:50:78:51:7D:E6:20
+        sources:
+          - name: Google Play
+            issue: CB-187
+            apk:
+              sha256: c60a321fddd3a245e52a3eadc111ac4497f6de77bf064f48c4bacb6f77ab8d48
   - package: luci.sixsixsix.powerampache2.fdroid
     signature:
       - fingerprint: BA:F0:B1:5A:78:40:D7:78:2C:05:E4:BD:8B:99:D3:A6:C5:37:51:97:65:A9:36:88:FD:77:45:31:27:E1:E6:51
