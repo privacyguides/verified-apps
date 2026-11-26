@@ -6522,6 +6522,14 @@ packages:
             issue: GH-6877
             apk:
               sha256: e1821754bf661f9faf68f6c2156b2d3c273454add8782b69cd2876411ef63266
+  - package: com.lcbo.lcbo
+    signature:
+      - fingerprint: 5B:26:47:CF:27:77:E1:AD:8E:98:20:4C:38:9E:B4:3E:ED:BB:64:8B:67:CD:54:A2:CB:FD:B5:28:3C:C2:5D:87
+        sources:
+          - name: Google Play
+            issue: GH-3605
+            apk:
+              sha256: 20ece359ad187cd62fb46df1bfd69f89a13b13f402b5f10cfaa861f2ce9dda27
   - package: com.lego.legobuildinginstructions
     signature:
       - fingerprint: D9:51:A3:D0:75:64:63:20:E7:3D:F5:39:F9:40:5F:B0:1C:A4:B4:E6:FA:A7:A3:6C:F8:F8:6C:52:56:59:21:44
