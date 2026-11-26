@@ -16451,6 +16451,14 @@ packages:
             issue: GH-897
             apk:
               sha256: 922ed4a4c420e34a14c4d9c5d70ff36e364c7c24022c12cd35149d450ae3ed9e
+  - package: pl.mbank
+    signature:
+      - fingerprint: 0C:19:FB:74:17:CB:85:90:06:10:4C:76:EA:22:33:82:81:28:78:6A:F0:71:A1:5B:17:A4:6C:56:4E:C4:FC:4C
+        sources:
+          - name: Google Play
+            issue: GH-3207
+            apk:
+              sha256: d740fdecc8784d48c70105abc4ab4087b3cfbf93526350adb0aa64a195763b1d
   - package: pl.nask.mobywatel
     signature:
       - fingerprint: CB:4F:1E:A4:F0:BE:4A:91:EA:80:34:97:DD:A6:9F:31:84:5C:9A:98:F4:39:03:C5:60:17:CF:4A:B8:77:D8:9F
