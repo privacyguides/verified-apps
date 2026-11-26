@@ -12993,6 +12993,14 @@ packages:
             issue: GH-1078
             apk:
               sha256: 34616ae0f6b13987b097b7f92fe3dcfe5ab630c2000d832449f72426a19499a4
+  - package: io.github.giuig.auraninja
+    signature:
+      - fingerprint: A8:4D:E9:75:4F:65:37:68:5A:BB:56:CB:73:E0:66:FF:0D:0C:C0:E9:C1:EF:6B:29:A4:DB:A1:DE:49:3C:D4:D4
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-3161
+            apk:
+              sha256: 5843c70cb2dadf3e97ed860316f98aa29e20b822def35e4603b3f6aab73763b6
   - package: io.github.gonbei774.calisthenicsmemory
     signature:
       - fingerprint: 18:C0:0C:34:7E:A1:00:1A:FC:DD:87:25:88:81:D2:4D:68:40:47:BB:EB:22:C4:7F:BE:7B:51:49:95:16:AB:54
