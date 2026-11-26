@@ -14748,6 +14748,14 @@ packages:
             issue: GH-496
             apk:
               sha256: 9810f3f33960012a70e7407ca68facdd37076b7f5376973b845a1e74ccd44859
+  - package: net.taler.merchantpos
+    signature:
+      - fingerprint: A7:37:11:2F:78:39:8D:96:CA:34:9D:6C:DD:E1:77:F1:1A:27:8B:76:3A:A0:A4:C7:2D:9F:F9:B9:02:F4:CC:8A
+        sources:
+          - name: Google Play
+            issue: GH-3499
+            apk:
+              sha256: d0f2a3f61232a5261390da9d62018038fafa729122ff26174ed2fe0fd570953d
   - package: net.thunderbird.android
     signature:
       - fingerprint: B6:52:47:79:B3:DB:BC:5A:C1:7A:5A:C2:71:DD:B2:9D:CF:BF:72:35:78:C2:38:E0:3C:3C:21:78:11:35:6D:D1
