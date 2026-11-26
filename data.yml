@@ -9179,6 +9179,14 @@ packages:
             issue: GH-76
             apk:
               sha256: 122f17f6bcaf42248cf3fd2b769ae4483aaf7f147857263cfed6043e5af2e9ec
+  - package: com.shayan.firewall
+    signature:
+      - fingerprint: E2:51:1E:CA:05:E2:98:78:98:0E:8F:D8:AD:C6:BF:E3:46:01:9F:CE:D7:A5:10:9B:4F:52:1B:AB:BA:A2:5C:E3
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-3589
+            apk:
+              sha256: 39b1fea1663241083d2bf2d8358dbe31388c4e2a7379d7abb685655eb586ab85
   - package: com.shazam.android
     signature:
       - fingerprint: BF:FE:B1:49:03:FB:C9:2F:FF:E6:40:4A:36:54:09:8A:3F:85:C8:1A:35:13:AF:D5:DC:EA:C1:21:CD:67:8D:1C
