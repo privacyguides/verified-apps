@@ -14814,6 +14814,12 @@ packages:
             issue: GH-1413
             apk:
               sha256: 2f72f5f179b0703f2e258655291d3d1669ca667346ed907030393abff7d26fa8
+      - fingerprint: 4E:A0:E0:71:02:DA:8F:1A:73:1F:FE:CE:E9:75:23:70:8F:5D:AC:03:93:08:40:1D:7D:F1:BF:A2:E6:CA:61:EB
+        sources:
+          - name: F-Droid
+            issue: GH-3292
+            apk:
+              sha256: 07666ead62cc5c7b3f0bad8c33c584490b91760b46719cf3de00f7577dbe9f59
   - package: org.blueletterbible.blb
     signature:
       - fingerprint: 93:3F:9B:AE:68:DE:31:6B:8B:F6:D9:C5:17:CE:0F:1E:99:DB:83:5D:71:BB:F0:C3:E8:52:0F:22:95:BE:08:7D
