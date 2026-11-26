@@ -369,6 +369,14 @@ packages:
             issue: CB-109
             apk:
               sha256: af0f9133178872bfaa459758d2e42686a6047c91ad36cb5b4f28e5be964ec1d5
+  - package: app.nerv
+    signature:
+      - fingerprint: C7:83:57:4C:30:0B:F2:4E:4A:DE:FC:60:42:8D:27:49:8D:27:2F:5D:A5:53:2A:F5:5A:83:58:1C:DB:50:CD:A0
+        sources:
+          - name: Google Play
+            issue: CB-191
+            apk:
+              sha256: 2e1be368fdf337c688f7bd2c2f481512b4660006a47806eed5711ec9a8756661
   - package: app.ninesevennine.twofactorauthenticator.accrescent
     signature:
       - fingerprint: E5:B2:8E:A1:E0:51:C2:32:DE:A9:4C:27:C0:59:2E:2C:00:2D:17:C5:CA:81:78:8B:51:30:6D:60:8A:FE:52:C5
