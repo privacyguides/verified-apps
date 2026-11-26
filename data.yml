@@ -15111,6 +15111,22 @@ packages:
             issue: GH-386
             apk:
               sha256: 5f1ea705f577bcc0c9c022c89695233bcf3d4bbf996ed8492602c5709959bc4f
+  - package: org.fossify.home
+    signature:
+      - fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
+        sources:
+          - name: F-Droid
+            issue: GH-3178
+            apk:
+              sha256: a603d3d510482feafd73d52a93a1ea9baefd2ca0aae329a14cbf0e21f43638e3
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-3178
+            apk:
+              sha256: a603d3d510482feafd73d52a93a1ea9baefd2ca0aae329a14cbf0e21f43638e3
+          - name: Google Play
+            issue: GH-3178
+            apk:
+              sha256: bca48268e82846b3a7606f76757c3fc8e00a714aeaf11a53fab074bbce4351f0
   - package: org.fossify.math
     signature:
       - fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
