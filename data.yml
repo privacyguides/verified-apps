@@ -4959,6 +4959,14 @@ packages:
             issue: GH-1600
             apk:
               sha256: 96bc34f8a4ed2271a0161a56e6b766642da81132a0258f6b15d59c60ed524f07
+  - package: com.github.mistermo_vibecode.voiceplus
+    signature:
+      - fingerprint: E9:B7:EB:FF:DF:D9:6D:08:BB:75:18:10:81:9C:21:33:A6:C0:60:BB:6F:17:44:9D:95:22:3B:6F:8B:16:D2:F2
+        sources:
+          - name: F-Droid
+            issue: GH-3745
+            apk:
+              sha256: 48340298dbe2bb06eefe5988293928b5af4682a7029ea36687cf6035590a4870
   - package: com.github.muellerma.coffee
     signature:
       - fingerprint: 70:B1:60:C0:F6:57:4E:BE:9F:FE:B0:F3:AE:93:48:71:41:52:22:4A:BE:7D:DC:48:1C:CB:84:3E:84:F6:99:12
