@@ -14576,6 +14576,14 @@ packages:
             issue: GH-1237
             apk:
               sha256: ce3c1954039b645f36692cd128b23eb0fe9ce924c32aee664e5f0c2f59a90f45
+  - package: metro.mobile
+    signature:
+      - fingerprint: 43:2B:16:17:7E:F4:BB:84:A3:F7:84:7E:35:E1:2F:8D:A8:99:BB:66:45:10:EF:50:91:C5:22:FC:AF:6C:14:0F
+        sources:
+          - name: Google Play
+            issue: GH-3607
+            apk:
+              sha256: a37f56c0b387074a5f6e5894e7fa923644ea7a51a44e414818e4aa1e9a572369
   - package: ml.docilealligator.infinityforreddit.patreon
     signature:
       - fingerprint: C7:32:45:6D:26:23:0C:D9:86:F3:08:27:37:E7:B9:19:07:C7:88:8A:CB:02:2B:9B:19:15:C5:2F:04:55:C9:D2
