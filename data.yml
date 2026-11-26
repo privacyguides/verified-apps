@@ -16000,6 +16000,14 @@ packages:
             issue: GH-3378
             apk:
               sha256: 4ef33956dd116bd417047f65bc5edf9b36d37582045b5b9c0e6f97d6a9de3e62
+  - package: org.mlm.yadaw
+    signature:
+      - fingerprint: 4A:ED:2F:69:1D:F6:4A:7B:0F:EA:25:A6:B8:C8:01:83:C6:DC:52:0E:04:9D:AC:01:78:DE:FA:1D:64:72:22:8F
+        sources:
+          - name: F-Droid
+            issue: GH-3379
+            apk:
+              sha256: 5a3a7c1549b1c661098b807e9682bf74bce2f729b6efb4bbeead3b3ef4a2f7ca
   - package: org.moire.opensudoku
     signature:
       - fingerprint: A5:4C:E2:9E:BB:02:FC:B9:B4:78:62:05:72:F7:C4:DD:39:B9:03:73:6F:E6:19:96:87:47:1B:A7:29:F4:61:3A
