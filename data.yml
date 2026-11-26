@@ -14114,6 +14114,14 @@ packages:
             issue: GH-1615
             apk:
               sha256: 2d2d1fb4c9e8b998bc0003211bf024a068e71aa486377d292d51fdd2223955f0
+  - package: io.github.yamin8000.dooz
+    signature:
+      - fingerprint: C5:FC:36:A2:D1:80:57:15:5A:47:1F:45:62:16:F0:B1:F0:77:55:F3:31:47:F9:38:C9:2E:A6:27:5D:CE:D4:D2
+        sources:
+          - name: F-Droid
+            issue: GH-3777
+            apk:
+              sha256: 7ed504cfefd5b5fd84f6002efd93553bbac1e56e3308009d47ed455e7385ab80
   - package: io.gitlab.libre_librivox_listener
     signature:
       - fingerprint: 5A:23:99:44:CC:A0:F2:45:13:03:BD:03:15:88:DD:0D:D0:BC:63:F1:17:83:E6:2F:39:B7:9A:A3:7B:D5:F0:7C
