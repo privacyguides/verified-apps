@@ -6165,6 +6165,14 @@ packages:
             issue: GH-3621
             apk:
               sha256: fa0b281c36cd66e7f0844402b5ce2d02d72b2f0160fd2a013c6ce68449d99e1a
+  - package: com.jarsilio.android.waveup.tasker
+    signature:
+      - fingerprint: 67:A2:C1:45:9B:CE:29:6B:4C:B0:CD:15:8B:89:2D:62:B8:89:76:41:E6:50:54:4D:46:05:F1:CF:36:67:71:85
+        sources:
+          - name: F-Droid
+            issue: GH-3623
+            apk:
+              sha256: c2248f59141157c467fb7b1f5ca42b8672503ed7704fec97c3076029da6005db
   - package: com.jemcik.jemrec
     signature:
       - fingerprint: 50:AE:AB:36:30:F0:19:8E:A3:84:5D:B5:14:13:B1:AD:29:58:2F:78:24:0F:A2:DF:6F:E5:5B:A8:53:7A:FD:F8
