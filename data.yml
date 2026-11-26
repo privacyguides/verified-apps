@@ -10130,6 +10130,14 @@ packages:
               sha256: 0cdf0176449b0f03e0d91d46c8d0d17576482e36f5b4ebd24700937ced1e70d0
           - name: HTTPS Verified Domain
             issue: GH-8220
+  - package: com.trafi.android.tr
+    signature:
+      - fingerprint: 8F:56:F5:78:2E:3A:89:D1:77:4E:2D:B0:AE:96:1A:04:93:12:12:AC:AE:B3:CA:D8:20:BA:15:8A:A3:29:33:A0
+        sources:
+          - name: Google Play
+            issue: GH-3632
+            apk:
+              sha256: 64fb929eb7ed0ac6f277d55c93c341433183fcaa9ab8fe1dd173104fa75b04e4
   - package: com.trafi.whitelabel.bvg
     signature:
       - fingerprint: 3F:EC:E6:B5:C2:27:18:9B:1E:F5:89:66:4F:92:26:61:BB:39:B5:60:C5:63:8E:58:34:88:9C:E9:87:E7:6B:09
