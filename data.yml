@@ -8289,6 +8289,14 @@ packages:
             issue: GH-1430
             apk:
               sha256: 56a3a6f89272d1def7dc7d275ea7d1203e1ae5a413899916f663d42a75fc34d3
+  - package: com.petrocanada.my_petro_canada
+    signature:
+      - fingerprint: 58:9C:3F:38:A7:4E:77:28:60:92:C7:10:7E:14:8E:BC:BC:27:F0:5D:52:F8:A9:8A:FA:B6:B6:41:86:B3:24:75
+        sources:
+          - name: Google Play
+            issue: GH-3611
+            apk:
+              sha256: 4d3b4ebe25470cc73e0bd12fe5f3e19de25dc654261d8b3e80caf7640c267341
   - package: com.pettoxic.android
     signature:
       - fingerprint: 0C:B9:56:7B:61:79:2C:94:8A:89:60:3A:2F:0A:FF:83:4F:27:1C:9C:CA:3A:CD:97:A5:8A:94:67:D8:12:ED:90
