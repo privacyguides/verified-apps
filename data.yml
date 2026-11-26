@@ -808,6 +808,14 @@ packages:
             issue: GH-3518
             apk:
               sha256: afca902bb98e0644202bedb8f477b2e0d504e1a60f8a3e09124504f8a90bc99a
+  - package: ca.autotrader.userapp
+    signature:
+      - fingerprint: A6:57:EE:39:70:AD:F0:C8:CA:2D:1F:9D:96:7A:89:DF:65:74:08:6A:DF:5B:31:39:CA:E9:13:DE:65:C4:08:10
+        sources:
+          - name: Google Play
+            issue: GH-3592
+            apk:
+              sha256: 48082dea935674de86a7454fd38c252356301c7b94ec491796fad9ddcf594ff8
   - package: ca.ilianokokoro.umihi.music
     signature:
       - fingerprint: F1:F8:3F:A5:EB:F5:A4:3E:E0:F4:AB:C8:D0:AD:D8:9D:94:34:38:0E:A4:E7:F2:96:FF:E8:4E:1A:66:10:C5:BB
