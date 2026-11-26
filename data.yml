@@ -1363,6 +1363,14 @@ packages:
             issue: GH-2753
             apk:
               sha256: d441ff2ff5e11248851173cd27020552cb1d7fe337ad3aa1815695b907d07216
+  - package: com.ah.taplock
+    signature:
+      - fingerprint: 4F:02:34:5D:4C:71:72:C5:8C:88:79:2D:9B:1D:5A:BA:DB:94:EB:D0:C9:B4:33:1A:A5:2D:F5:5B:75:CE:EA:21
+        sources:
+          - name: F-Droid
+            issue: GH-3522
+            apk:
+              sha256: 5144ae922af78bfa8b80721723c9abc72125c837d4dc4fe94c669b82f655d2e9
   - package: com.ahnlab.v3mobileplus
     signature:
       - fingerprint: 68:1B:36:45:0F:DF:B8:08:A2:2F:ED:7E:61:0B:EF:B4:6C:19:FA:3A:58:00:0B:B0:D9:15:7E:30:01:09:82:31
