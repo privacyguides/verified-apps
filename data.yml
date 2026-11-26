@@ -11359,6 +11359,14 @@ packages:
             issue: GH-1665
             apk:
               sha256: ddf8cd9f4e6cb52e302c2fe34060b3f666c6636b72dd239e07e2f6f825b9c712
+  - package: com.zoffcc.applications.toloshare
+    signature:
+      - fingerprint: 9A:37:3A:52:D1:77:27:39:4D:51:F6:EE:E0:2B:28:38:D6:84:6F:0D:63:8C:35:55:0E:7E:42:A1:00:F4:B7:94
+        sources:
+          - name: F-Droid
+            issue: GH-3693
+            apk:
+              sha256: 6263a56467da67fa611296ef50f5f57cd2cd5ec6c2315e24f73060a686616da0
   - package: com.zoho.creator.portal
     signature:
       - fingerprint: A9:D6:D0:A2:AF:DB:15:84:9B:8C:D3:1D:51:FE:73:B8:E1:B1:70:BA:A5:70:C2:F8:F2:A3:F8:65:28:29:CB:BD
