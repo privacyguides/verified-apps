@@ -203,6 +203,14 @@ packages:
             issue: GH-8257
             apk:
               sha256: 6e6adcf6df3ba05fd1cc06e83bb712d4a0ca1a73bff10664632e91a157f21e46
+  - package: app.fayaz.otgmaster
+    signature:
+      - fingerprint: FA:2A:19:B4:54:9D:AE:6C:8F:71:36:2A:0D:74:BE:39:6B:ED:A8:70:D9:C6:FE:E3:27:EE:29:09:76:38:8F:3A
+        sources:
+          - name: F-Droid
+            issue: GH-3543
+            apk:
+              sha256: 6b1ac9f57c1b4413bb10112ec3ef6cbcabea9b4ead42c2e6897cca721c0eecfb
   - package: app.fedilab.nitterizeme
     signature:
       - fingerprint: E5:AD:8D:80:39:27:13:5C:47:43:8D:95:D2:19:89:E2:E8:E8:E8:94:3F:D2:33:5A:64:50:52:6B:28:6B:63:93
