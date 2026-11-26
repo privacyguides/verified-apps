@@ -14650,6 +14650,14 @@ packages:
             issue: GH-3280
             apk:
               sha256: 7ec3865de41977ffbe47991dba8998f71e605d7d1100c910940611bc8e9a1bcc
+  - package: network.loki.messenger.fdroid
+    signature:
+      - fingerprint: 99:1C:37:C7:C7:62:F6:D4:4B:99:94:C4:AE:06:6A:51:84:91:95:61:B8:3C:8A:FD:7A:35:13:DA:A6:93:A8:9A
+        sources:
+          - name: F-Droid
+            issue: GH-3361
+            apk:
+              sha256: f8146f1bb96ba6084ec8143338b71efb604e5810c6de399c04644d73e06c5eee
   - package: network.mysterium.vpn
     signature:
       - fingerprint: 40:58:A6:C2:EB:3D:85:76:C2:AA:B3:DD:57:06:7B:10:76:5F:01:E9:07:1C:64:AB:63:30:63:DC:5E:C1:97:9D
