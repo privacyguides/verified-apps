@@ -12942,6 +12942,14 @@ packages:
             issue: GH-2451
             apk:
               sha256: 6a6b8249d777c69b1a31338fc74ae48a6b47dfd874c40a893587c17a932baea3
+  - package: edge.roll
+    signature:
+      - fingerprint: 2F:E0:9F:50:18:0D:92:E3:B3:20:49:92:FF:C9:A8:C5:98:08:7B:9A:7B:AC:0B:12:D3:F2:3A:1E:36:87:FD:7F
+        sources:
+          - name: F-Droid
+            issue: GH-3778
+            apk:
+              sha256: 799c651be1333741dae66c43bf97774b273b0b4e9439f5ff37f26e153159f640
   - package: edu.cornell.birds.ebird
     signature:
       - fingerprint: 4B:F4:7C:FE:28:13:74:26:54:31:AA:CC:08:FD:BF:5B:E4:FB:CE:CA:D4:86:8F:35:2B:E6:46:8B:86:52:98:8D
