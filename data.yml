@@ -14883,6 +14883,14 @@ packages:
             issue: GH-1970
             apk:
               sha256: a6d2f8a5c75ab30c99c8dd12259b9ef82cb1f3296a3480bcd7b073320d63758a
+  - package: no.dnb.vipps
+    signature:
+      - fingerprint: F4:12:63:50:7B:57:6E:DA:72:6A:88:2B:79:1C:1A:FE:EC:65:40:30:AE:91:EF:6E:B5:D7:25:02:D1:74:4F:B8
+        sources:
+          - name: Google Play
+            issue: GH-3441
+            apk:
+              sha256: 294854c717334fe46d11360fe2fc659b761f282c72dc7fcd8ce3501606710963
   - package: nodomain.freeyourgadget.gadgetbridge
     signature:
       - fingerprint: 01:CC:E9:31:6F:CB:77:EA:02:C6:DE:A8:1F:DE:9F:31:76:46:92:02:C0:CE:A0:51:4C:0E:03:CB:96:9B:C7:BE
