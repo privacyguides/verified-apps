@@ -17709,6 +17709,14 @@ packages:
               sha256: 18b6642cb8827ecdf656f0d55c2319b59b598a2e6e491a7ca004db4237137aa7
           - name: HTTPS Verified Domain
             issue: GH-5778
+  - package: ru.henridellal.dialer
+    signature:
+      - fingerprint: 30:04:17:48:5F:FB:BB:F1:E9:D8:A8:16:6A:E8:33:B9:58:BE:07:F8:27:F4:27:B7:97:CA:4F:B6:C8:08:B6:3A
+        sources:
+          - name: F-Droid
+            issue: GH-3744
+            apk:
+              sha256: 2c1735d92bbebb4c3a5414c22642afd240edd34183c08e8f4d784bc9ee4936e0
   - package: ru.ozon.app.android
     signature:
       - fingerprint: C8:FE:81:75:2C:60:F8:67:F7:80:1E:40:59:A9:98:9C:66:03:51:D4:59:32:3F:22:D9:BC:94:91:82:FD:6D:61
