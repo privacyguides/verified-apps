@@ -6491,6 +6491,14 @@ packages:
             issue: CB-98
             apk:
               sha256: ca2a472f7383ab09f4e5baa56bd2caeb56eea0b1ff873df034a72756cefe547f
+  - package: com.kompact
+    signature:
+      - fingerprint: 58:13:FC:01:BA:8D:D9:D2:83:5B:6B:EA:E8:0F:65:CA:09:F4:44:4D:4F:B4:26:E8:E3:FF:3D:4A:DE:B1:1D:7B
+        sources:
+          - name: F-Droid
+            issue: GH-3676
+            apk:
+              sha256: 8ab21cef66be8826f714836674097734cfd8d201cee59d4afd8dc21f536c877e
   - package: com.konylabs.capitalone
     signature:
       - fingerprint: 8A:84:61:F8:B7:C7:66:46:CF:FB:19:4C:8E:4D:3A:81:1C:78:41:CF:9B:C0:78:6F:53:12:E3:92:55:98:08:45
