@@ -9129,6 +9129,14 @@ packages:
             issue: GH-6707
             apk:
               sha256: b4949a2ff9530f9ac1c64f9e5ea73843910a03286a1bb540496c3cf8e1c630cb
+  - package: com.steel101.wearsyncforbreezy
+    signature:
+      - fingerprint: DB:23:37:FA:AD:5D:BC:4C:28:D0:93:6F:6B:A5:1A:8E:CB:25:9F:CB:E9:E2:02:60:C6:E7:68:56:A2:96:DA:80
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-3175
+            apk:
+              sha256: b3989c7357ce9f1d4a3c1366bcc3e3b59610b8af06790c4545eb1dcd4b4d2dda
   - package: com.stockanalysis.app
     signature:
       - fingerprint: 20:9B:71:35:14:DA:06:1D:EA:EC:E5:BC:D4:DC:AE:3D:0F:B7:C9:E3:EC:D3:DC:FE:4A:AD:18:3F:63:63:97:43
