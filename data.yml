@@ -12300,6 +12300,14 @@ packages:
             issue: GH-2105
             apk:
               sha256: dc9a63c2791b840c268dadeaf68855e30de4125d81eb446e99eb5d23bd4f46f0
+  - package: dev.casraf.pantry
+    signature:
+      - fingerprint: F0:1B:67:75:77:5E:44:25:8A:8F:4A:C5:0D:12:B5:EA:26:74:56:FF:FD:27:66:49:94:DC:A9:F4:D4:19:42:B9
+        sources:
+          - name: F-Droid
+            issue: GH-3569
+            apk:
+              sha256: 1992872aaa63f52dedef6814c694fce7c0e9f1968e9f7f585c18f0eefea4d965
   - package: dev.clombardo.dnsnet
     signature:
       - fingerprint: D7:6F:62:07:D8:18:2C:DC:1E:E2:DC:BF:E7:4D:B2:ED:F3:7F:36:B8:2D:08:4B:01:7F:79:FE:9F:06:71:21:E4
