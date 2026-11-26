@@ -16973,6 +16973,14 @@ packages:
             issue: GH-3689
             apk:
               sha256: bfa9fb97c19500e6d4429e98ca4107c6b93328a296489260118aacabf7e218b7
+  - package: org.runnerup.free
+    signature:
+      - fingerprint: 6B:1B:9B:F6:3D:84:17:36:C7:72:DB:C1:0B:25:65:83:22:59:83:65:EC:15:A5:F9:2D:38:77:1F:5C:65:8F:6C
+        sources:
+          - name: F-Droid
+            issue: GH-3732
+            apk:
+              sha256: aea035d36c59cb7c88ad88a42f507054125cd18b97b06e5ce0b4b82ecf771824
   - package: org.schabi.newpipe
     signature:
       - fingerprint: CB:84:06:9B:D6:81:16:BA:FA:E5:EE:4E:E5:B0:8A:56:7A:A6:D8:98:40:4E:7C:B1:2F:9E:75:6D:F5:CF:5C:AB
