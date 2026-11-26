@@ -980,6 +980,14 @@ packages:
             issue: GH-790
             apk:
               sha256: ab032232e50886bce9ffeec278dd726b561ea513661b23467b2528fa5a734967
+  - package: ch.viseca.visecaone
+    signature:
+      - fingerprint: 0D:19:C2:6C:3F:EA:4E:54:B9:37:9B:9C:53:DA:E9:51:2D:28:E1:CF:9A:58:BF:8B:54:D7:4D:05:A2:80:CA:4F
+        sources:
+          - name: Google Play
+            issue: GH-3680
+            apk:
+              sha256: 0934ec04c68f8fffc796a3a2ec5aba1e81e2886b8066ed505cb9eb5fe68fcf02
   - package: chat.delta
     signature:
       - fingerprint: 35:5B:E2:C3:8E:C6:73:83:C1:02:FB:E0:3E:84:C4:BC:3E:6F:89:06:F8:D3:66:91:4F:84:52:82:08:13:2A:EE
