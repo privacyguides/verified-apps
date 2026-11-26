@@ -2884,6 +2884,14 @@ packages:
             issue: GH-676
             apk:
               sha256: 83b41f9359303d96efc6482284a99d25e3c96bcd65afe37dc3af6056174fd97f
+  - package: com.chamberlain.android.liftmaster.myq
+    signature:
+      - fingerprint: 3C:49:83:4E:C2:79:0E:B4:72:33:08:04:01:A5:D3:7B:35:4B:D5:AC:63:9B:EE:AF:BB:EF:7C:56:20:05:E4:0C
+        sources:
+          - name: Google Play
+            issue: GH-3427
+            apk:
+              sha256: fcaefee7e5b0b762731ba19116576062aa210a7eefbb38623f481c15ae095db9
   - package: com.chartcross.gpstest
     signature:
       - fingerprint: DF:D8:5F:83:4D:19:53:E3:64:E6:60:33:A9:8A:49:0E:B0:AD:58:AB:8F:07:6A:85:C8:F2:DD:71:90:50:91:EF
