@@ -15551,6 +15551,16 @@ packages:
             issue: GH-6893
             apk:
               sha256: 444d3c52123146492b55bd769e6352c09f44956b4afa02104dc4cf5ce964dc71
+  - package: nl.nlziet
+    signature:
+      - fingerprint: C0:35:B5:1C:69:B3:F3:0E:D1:6E:98:0E:58:4A:CB:B0:25:F7:41:3D:7A:1B:EB:BD:09:1D:39:94:09:DF:97:90
+        sources:
+          - name: Google Play
+            issue: GH-8536
+            apk:
+              sha256: cf37a15056f5f020f8688820c50baea2da24010a0fa7cb767a20a412b30157c8
+          - name: HTTPS Verified Domain
+            issue: GH-8536
   - package: nl.ns.android.activity
     signature:
       - fingerprint: E7:E3:6C:ED:C9:21:4A:41:C9:12:32:97:73:24:38:7E:61:15:3F:24:D7:7E:34:0B:E9:79:07:AE:5E:79:05:34
