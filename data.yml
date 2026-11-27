@@ -15526,6 +15526,14 @@ packages:
             issue: GH-8391
             apk:
               sha256: 24d234ee0ef126b1318691e16914b85b9a713b193ce85d4a1cc1b646dcb45ae6
+  - package: nl.meesman.app
+    signature:
+      - fingerprint: 07:36:04:C0:22:D7:E0:58:7B:FC:08:5A:28:E4:21:49:50:AC:AD:78:E9:5C:39:EB:F9:45:30:B5:BA:BF:64:7F
+        sources:
+          - name: Google Play
+            issue: GH-8534
+            apk:
+              sha256: 6249f88aa94d434287839559c7582ce835069acc8470dc8074a3821b977962fc
   - package: nl.moeilijkedingen.jellyfinaudioplayer
     signature:
       - fingerprint: BF:6B:4D:07:C8:62:42:CE:91:D3:4B:47:6E:10:EE:C6:27:BB:4E:61:04:68:CB:2A:98:D4:5B:12:76:62:57:33
