@@ -3712,6 +3712,14 @@ packages:
             issue: GH-933
             apk:
               sha256: 727a8243ecf2421e5cca3e450d5284a5b709b568698ee91debc4f091654e3c41
+  - package: com.disney.disneyplus
+    signature:
+      - fingerprint: B4:D2:51:E9:79:EA:97:4D:8F:07:0F:EB:5A:B6:9F:C4:C2:87:3F:4E:8A:DD:42:1F:F6:3A:D5:F2:78:9D:63:D4
+        sources:
+          - name: Google Play
+            issue: GH-8482
+            apk:
+              sha256: 93853c1b1a30650bbc6ffbc80141fd031e704fb22e6bbe3105b91a54f0bc3235
   - package: com.dkbcodefactory.banking
     signature:
       - fingerprint: 5D:05:DB:A0:59:56:18:C0:39:D9:60:BA:75:DA:3E:10:78:51:DC:3D:2F:AE:E4:C8:C0:C6:20:94:17:51:E5:F7
