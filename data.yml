@@ -7843,6 +7843,14 @@ packages:
             issue: GH-6402
             apk:
               sha256: 1d4da9e505155b79673dd3cf6e55a8e4fa98593cb6d5830345ec851856d5a3e9
+  - package: com.naturallybeing.fireready
+    signature:
+      - fingerprint: 6E:08:F5:F2:48:6D:CB:D3:DB:76:1C:FA:28:1A:45:E3:3F:68:B0:A9:F0:19:2D:B9:31:1F:DD:19:E6:D5:8F:35
+        sources:
+          - name: Google Play
+            issue: GH-3959
+            apk:
+              sha256: 51b56bbed4d54e67487432c3a911009600e8f4eb21ede6d2f93c1522c91d0fa2
   - package: com.navasgroup.share2archive
     signature:
       - fingerprint: 68:D5:EB:6A:E5:4C:0B:67:E2:92:09:ED:25:6D:BE:DC:45:D0:CF:57:FD:18:5F:45:BC:12:58:A7:0D:70:AB:84
