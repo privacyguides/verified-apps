@@ -10157,6 +10157,14 @@ packages:
               sha256: 6a8a0d169fe62602d54ef5a7e79ac287e56bbc5efb6a7b29c50c6f5a9ab0a43a
           - name: HTTPS Verified Domain
             issue: GH-3446
+  - package: com.sonos.acr2
+    signature:
+      - fingerprint: 7C:34:EB:3C:FB:DA:05:FA:F5:6E:88:90:A2:AB:BA:C1:4B:30:36:E6:E4:35:88:49:B9:8E:88:19:B6:B7:B3:29
+        sources:
+          - name: Google Play
+            issue: GH-4408
+            apk:
+              sha256: affeb642b3cdd703ba431c73d2c8e1171c3f34f1dfbbe48f7ded11d40973f4dc
   - package: com.sonova.chb.control
     signature:
       - fingerprint: 62:51:D6:78:41:32:F6:E0:47:75:8D:3E:7F:60:31:7F:04:9A:E4:A5:03:A0:0A:39:63:F9:60:CF:60:C0:CC:FA
