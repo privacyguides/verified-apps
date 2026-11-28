@@ -19718,6 +19718,14 @@ packages:
             apk:
               sha256: 75d9804c39287f11b3f71805765f6781c96326b3eef7a43a9682bb83b40b0106
               link: https://github.com/NextAlone/Nagram/releases/download/1236/Nagram-v12.6.4.1236-arm64-v8a.apk
+  - package: xyz.zedler.patrick.doodle
+    signature:
+      - fingerprint: 64:50:87:9B:2C:3E:90:FF:37:99:03:A7:2A:ED:74:F2:E4:63:F7:96:43:3C:CC:B0:30:F6:BE:D7:78:43:78:B1
+        sources:
+          - name: Google Play
+            issue: GH-4911
+            apk:
+              sha256: 1f83ecbad9938c709235e139270b29d89003bdf5dbfafbf00d21061e9360b068
   - package: zed.rainxch.githubstore
     signature:
       - fingerprint: B7:F2:8E:19:8E:48:C1:93:B0:38:C6:5D:92:DD:F7:BC:07:7B:0D:B5:9E:BC:9B:25:0A:6D:AC:48:C1:18:03:CA
