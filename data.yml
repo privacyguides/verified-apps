@@ -18231,6 +18231,14 @@ packages:
             issue: GH-3205
             apk:
               sha256: 5591f44d8a2d224ffa2d4fe149f5d47502254440f2c0fbc359d1fca6baa86882
+  - package: pl.pwpw.edohub
+    signature:
+      - fingerprint: F5:5C:F8:90:54:3E:4B:7A:8F:DE:AA:5A:50:27:D0:2D:C5:C4:AA:AF:20:02:40:5C:62:D1:B5:2D:44:6C:BF:6F
+        sources:
+          - name: Google Play
+            issue: GH-4285
+            apk:
+              sha256: 2989f32e4ca9e9bd8f071af67951bcbd5e5950073dd3bc8a7b05f31adc27e8f5
   - package: pl.solidexplorer2
     signature:
       - fingerprint: C5:CA:43:B9:65:6D:72:80:3E:23:2F:97:08:78:36:62:D3:47:51:A4:D6:A9:F4:C3:77:B2:40:84:27:88:F2:C3
