@@ -6236,6 +6236,14 @@ packages:
             issue: GH-1358
             apk:
               sha256: 25c437912d62ce4926dc6b3ddf15622eac13b3fa6b8e305e927c681e1a069d47
+  - package: com.gradescope.student
+    signature:
+      - fingerprint: 40:A5:E6:B9:89:F0:44:05:79:12:AF:CB:DB:CB:63:4F:4D:41:43:12:16:6A:D4:71:3C:FD:64:DB:E4:FC:1D:8F
+        sources:
+          - name: Google Play
+            issue: GH-4873
+            apk:
+              sha256: 6e246c1cef9f5b2fdcbfd73a6b286080b67aac4be81a29d0839f861e5de512dc
   - package: com.greenart7c3.nostrsigner
     signature:
       - fingerprint: 56:DC:63:19:96:A5:5C:22:84:79:04:48:C7:DC:9F:1D:D0:5D:F5:96:B2:CE:48:82:31:36:33:F5:60:2E:5F:E4
