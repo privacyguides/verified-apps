@@ -8283,6 +8283,14 @@ packages:
               sha256: c983268a65408620c14c24633a668c954000e797902c450174529efbaafaba2d
           - name: HTTPS Verified Domain
             issue: GH-7721
+  - package: com.money.manager.ex
+    signature:
+      - fingerprint: 50:70:F6:73:F6:A6:2B:66:34:B0:B9:53:B0:E2:82:15:78:EF:C2:F1:7D:05:BB:F3:EB:E7:BB:8B:24:B1:5A:61
+        sources:
+          - name: F-Droid
+            issue: GH-5534
+            apk:
+              sha256: c24a52e2114b5b51f84ee765c0809887f0045b2fa55d1efff4d990c0954c7d99
   - package: com.moneybookers.skrillpayments
     signature:
       - fingerprint: 7E:0C:67:C3:4D:02:71:E8:C4:78:DF:49:22:5F:26:68:8F:B8:6B:49:95:CD:8A:64:F7:1C:44:BA:D6:8A:78:71
