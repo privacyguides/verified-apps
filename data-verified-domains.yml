@@ -1252,6 +1252,16 @@ domains:
           - 8A:B1:4F:D7:50:B8:20:57:4D:20:C3:54:41:EA:14:A9:B5:D1:95:9A:31:04:0C:EC:12:B4:6B:B2:90:F4:DA:1B
           - F1:75:9B:3C:F6:F7:83:BC:7D:88:9C:DC:13:34:14:58:67:70:2B:F7:EB:7B:09:54:5C:02:4B:9F:D2:21:13:DB
           - F7:95:EA:38:3D:3A:5A:65:D8:CC:C1:61:05:08:28:C3:32:66:DD:57:5C:95:6E:5A:8B:9E:40:BE:8D:7D:8C:74
+  - domain: totum.com
+    method: https
+    issue:
+      - CB-239
+    checked: "2026-11-28T06:34:49Z"
+    packages:
+      - package: com.totum.student
+        fingerprints:
+          - 7E:AB:ED:4D:81:13:D8:02:96:D4:BB:36:5E:C3:6A:A3:E6:78:8D:2E:54:46:8E:47:93:24:0E:B3:34:D1:36:92
+          - F6:80:5C:AC:38:CD:DA:D1:E9:05:CD:0C:3B:FF:A6:5C:04:0F:FA:46:43:91:50:37:ED:1D:EC:60:E2:F9:68:CF
   - domain: tradingview.com
     method: https
     issue:
