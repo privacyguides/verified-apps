@@ -2570,6 +2570,14 @@ packages:
             issue: GH-957
             apk:
               sha256: 5f17b9b988a6dbbf3523a1ec798c1b4b865192ee46cf70618e9a1259499ef8c6
+  - package: com.avast.android.mobilesecurity
+    signature:
+      - fingerprint: BE:AC:CD:0E:28:0E:F4:02:55:D9:39:1D:CD:E6:A6:00:49:28:82:8F:BB:15:39:10:D3:FA:50:7D:3E:5B:8C:78
+        sources:
+          - name: Google Play
+            issue: GH-5190
+            apk:
+              sha256: 0bc92762c4feadb6c01a6a2dc4c0624f58928ffb367d8530b97a4300b114cc01
   - package: com.axlebolt.standoff2
     signature:
       - fingerprint: CD:29:02:A2:CF:38:54:91:75:95:13:A1:01:74:CC:71:98:F8:E0:8B:6D:B7:75:6E:1F:8A:E2:E3:A1:B2:06:3D
