@@ -9253,6 +9253,14 @@ packages:
             issue: GH-8309
             apk:
               sha256: 3e461f61cca53420c972daf707f72ecd98410690585762c21853877ea99c2f97
+  - package: com.rovio.baba
+    signature:
+      - fingerprint: 3B:F2:81:70:53:98:00:4C:6F:8E:4B:A8:42:6C:3B:A2:49:03:85:C3:AE:AF:6B:05:B6:44:03:96:C6:A1:A5:0D
+        sources:
+          - name: Google Play
+            issue: GH-3987
+            apk:
+              sha256: 6753712be46f2f3192ccc7312f646897c15eb3cc85194ce8f6d75a80bec674bc
   - package: com.ruizlenato.karabau
     signature:
       - fingerprint: 7A:66:E7:D1:CA:34:75:58:BC:DE:5F:C4:05:CB:04:78:F3:B8:1C:02:B1:01:81:CB:CE:58:F7:97:95:DA:D8:40
