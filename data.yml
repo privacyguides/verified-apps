@@ -10761,6 +10761,14 @@ packages:
             issue: GH-5752
             apk:
               sha256: bd06f0c56a2d63702dff622899a3826823762e8a3ddef39e9cd9bc5257e22ffa
+  - package: com.vakarux.instadownload
+    signature:
+      - fingerprint: E1:A5:67:FC:CC:F9:80:D5:85:19:95:78:06:00:0C:24:33:C6:8A:BF:2F:B4:D1:C2:F6:80:47:FA:DB:3A:5A:FA
+        sources:
+          - name: F-Droid
+            issue: GH-3880
+            apk:
+              sha256: d6e6ccdd05340794969225c506681b1e806dbb453499ee45ba39014ed0276624
   - package: com.vakifkatilim.mobil
     signature:
       - fingerprint: C1:3A:ED:85:91:45:C3:C7:33:BA:CA:E2:50:53:A7:9C:4D:8A:21:FA:8A:B2:71:F3:DB:F9:48:8A:79:C0:09:2D
