@@ -17351,10 +17351,10 @@ packages:
       - fingerprint: BF:8A:F6:D8:9E:55:95:D9:5F:4D:22:9E:C0:FD:97:1A:3C:75:2F:DB:AB:E8:33:77:23:0E:F9:2C:70:44:43:05
         sources:
           - name: Direct APK Link
-            issue: GH-7901
+            issue: GH-1183
             apk:
-              sha256: 65ccdafb0f892895a795f29473c03ab58a0f704ab1b1968684c0174193dbc90a
-              link: https://github.com/SeineEloquenz/fosswallet/releases/download/v0.51.0/app-release.apk
+              sha256: cb92ab5845c4c67929f78e50b43c1fb0d1a67ec6ffa152bab2eb3642b8524612
+              link: https://github.com/SeineEloquenz/fosswallet/releases/download/v0.46.1/app-release.apk
           - name: F-Droid
             issue: GH-2269
             apk:
