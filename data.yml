@@ -10144,6 +10144,14 @@ packages:
             issue: GH-2892
             apk:
               sha256: 33a076998166b76bca5bebb1c96d43d49c35bab690ad13bbaf995b4309f5f840
+  - package: com.telstra.mobile.android.mytelstra
+    signature:
+      - fingerprint: 19:AC:9D:AA:66:D8:5D:31:8C:A8:93:30:68:B5:D3:23:28:FD:0C:D2:AA:2D:8C:97:BE:2C:58:2C:1D:D3:99:6B
+        sources:
+          - name: Google Play
+            issue: GH-3908
+            apk:
+              sha256: 972d42cf7701eacf7e80302433e43a8f5d50ab8ea1d3f99bb05dcdd1b31d662f
   - package: com.tengu.sharetoclipboard
     signature:
       - fingerprint: 54:42:CF:0E:2D:A7:60:00:EC:EA:EE:73:73:AE:5D:6A:3E:E3:32:FB:32:CF:5D:3D:A0:50:3A:1D:D3:1A:26:26
