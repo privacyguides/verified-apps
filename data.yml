@@ -822,6 +822,14 @@ packages:
             issue: GH-6510
             apk:
               sha256: f0722793e3ced83fbacbe12aedc98e42e19e8d69daeea262a1e0bd28dbd0ccde
+  - package: au.gov.homeaffairs.aia
+    signature:
+      - fingerprint: 19:93:B3:CE:B3:DF:AD:AE:96:5F:CD:C8:14:5F:1F:B6:98:CB:E1:21:AD:2E:79:16:31:C6:74:EE:0A:B4:D4:CB
+        sources:
+          - name: Google Play
+            issue: GH-3942
+            apk:
+              sha256: 51cc70990bd03be4f73cb2365ed4500632a4f32f2aaaf34add8c855509f29454
   - package: au.gov.mygov.mygovapp
     signature:
       - fingerprint: D4:D2:A6:F8:93:2D:D8:DC:D7:8C:08:A1:1A:83:F7:2E:7F:AA:53:99:5B:03:9E:ED:11:D7:4B:B2:07:07:E0:09
