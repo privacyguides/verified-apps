@@ -11227,6 +11227,14 @@ packages:
             issue: GH-1599
             apk:
               sha256: 3d42f0a7310b099372ec892b6515b6f968de2b321d3ebbabde0afd1317a92645
+  - package: com.teremok.keys
+    signature:
+      - fingerprint: 73:A2:F8:F4:AF:3E:EA:4A:51:84:B6:F1:90:1C:FB:66:BB:C5:02:26:5A:52:28:B5:F3:8D:FF:C1:49:B5:BD:8D
+        sources:
+          - name: Google Play
+            issue: GH-5164
+            apk:
+              sha256: 28c31f8cb72800ff39d3a63a7e8c83809dd2b563490e80b8687fe03ba4eaa5b0
   - package: com.termux
     signature:
       - fingerprint: 22:8F:B2:CF:E9:08:31:C1:49:9E:C3:CC:AF:61:E9:6E:8E:1C:E7:07:66:B9:47:46:72:CE:42:73:34:D4:1C:42
