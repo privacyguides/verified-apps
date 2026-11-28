@@ -1643,6 +1643,14 @@ packages:
             issue: GH-2745
             apk:
               sha256: a4d17a491d89187346c33da6b676b80e38f63ca29e3f3cc69c14e4af7624116b
+  - package: com.aefyr.sai.fdroid
+    signature:
+      - fingerprint: B8:F6:FA:A6:9E:3B:3F:9F:A6:25:43:24:35:82:E0:3E:35:D2:F2:D8:4E:62:D8:D0:86:E8:83:84:9D:CE:00:6D
+        sources:
+          - name: F-Droid
+            issue: CB-473
+            apk:
+              sha256: cb96838c9a64b401bfff8c604b10712cdc7a1d96ea09b6a445cfd5b35702fc72
   - package: com.aegean.airlines.prod
     signature:
       - fingerprint: C4:5E:16:E7:DB:54:40:7E:87:43:B5:DF:45:BB:C0:40:F4:81:50:41:2C:20:D2:5D:F1:BC:63:06:6B:26:E8:DF
