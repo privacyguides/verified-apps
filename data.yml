@@ -15022,6 +15022,14 @@ packages:
             issue: GH-2449
             apk:
               sha256: 79b39a52f463abb64ddc9c07ebb0690ee3cff5dcaccd64c88ae93cc10d078984
+  - package: jp.pokemon.pokemontcgp
+    signature:
+      - fingerprint: 70:12:F8:FD:DF:F8:68:50:69:AF:10:83:48:5F:E1:25:69:F3:F5:44:2B:1B:4D:52:3B:07:26:77:B9:F6:C6:F2
+        sources:
+          - name: Google Play
+            issue: CB-241
+            apk:
+              sha256: 43499cec4a609dec6212da9b00658327bf2e714f5de90304579b8944fb2155f5
   - package: jp.telnavi.app.phone
     signature:
       - fingerprint: 1D:E3:25:6F:07:4B:A9:17:27:39:87:D7:47:00:8B:F5:69:E8:9B:5F:E8:7D:C5:98:59:F0:FB:1D:B8:F4:1E:93
