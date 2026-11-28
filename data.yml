@@ -9853,6 +9853,11 @@ packages:
     signature:
       - fingerprint: 01:1E:E1:A6:E4:E5:EC:D6:75:F6:7F:BF:3D:78:AD:82:61:4A:7A:7A:3F:24:ED:71:CC:9C:41:71:54:A0:F0:FD
         sources:
+          - name: Direct APK Link
+            issue: GH-1180
+            apk:
+              sha256: 123043b0aa613aa85d8f432d40ec57317817af974820679550ccfed42b3802aa
+              link: https://github.com/brandonp2412/Quitter/releases/download/1.1.26/app-arm64-v8a-release.apk
           - name: F-Droid
             issue: GH-2503
             apk:
