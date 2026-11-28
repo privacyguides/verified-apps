@@ -19133,6 +19133,14 @@ packages:
             issue: GH-5759
             apk:
               sha256: 6038eddf7a2e24cd68d81757b790e6d88c62b585873ba7ee9884f3c5aa13017f
+  - package: ru.black.bone.barbershop
+    signature:
+      - fingerprint: 4B:F4:F2:AA:83:3D:75:A7:0B:2B:26:E8:7E:DC:D2:CE:10:EB:06:3C:D7:E3:A2:98:F1:1E:38:6F:32:09:EF:9C
+        sources:
+          - name: Google Play
+            issue: GH-5185
+            apk:
+              sha256: c97acc3e1b13b2607269baa0dff9aee14f5c7c78f156f6d5d228534b4963aaa9
   - package: ru.budzdorov.client.android
     signature:
       - fingerprint: 87:E2:19:67:03:43:BF:C5:5E:2F:65:66:3C:72:7C:42:D6:64:6B:10:B8:BC:23:CE:BD:51:C2:44:1A:36:EB:54
