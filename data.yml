@@ -15904,6 +15904,14 @@ packages:
             issue: GH-8391
             apk:
               sha256: 24d234ee0ef126b1318691e16914b85b9a713b193ce85d4a1cc1b646dcb45ae6
+  - package: nl.kpn.mijn
+    signature:
+      - fingerprint: 99:C2:5E:73:B0:20:1F:49:B7:43:4A:B2:9F:59:AD:71:7A:A4:53:55:AC:E6:62:69:E6:95:A9:ED:31:1F:CA:9B
+        sources:
+          - name: Google Play
+            issue: GH-4185
+            apk:
+              sha256: 5ea4360756e1e6daa749d8098d1aba87711def3bd376786ecb20ede2c3ab9d23
   - package: nl.meesman.app
     signature:
       - fingerprint: 07:36:04:C0:22:D7:E0:58:7B:FC:08:5A:28:E4:21:49:50:AC:AD:78:E9:5C:39:EB:F9:45:30:B5:BA:BF:64:7F
