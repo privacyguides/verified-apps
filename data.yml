@@ -1968,6 +1968,16 @@ packages:
               sha256: 0163539149e17f25d469ce37982116b9fc54f94f5d63d1a85c79ab142ad54b04
           - name: HTTPS Verified Domain
             issue: GH-4393
+  - package: com.amazon.mShop.android.business.shopping
+    signature:
+      - fingerprint: 2F:19:AD:EB:28:4E:B3:6F:7F:07:78:61:52:B9:A1:D1:4B:21:65:32:03:AD:0B:04:EB:BF:9C:73:AB:6D:76:25
+        sources:
+          - name: Google Play
+            issue: GH-5110
+            apk:
+              sha256: b90f46948de1b7d8b19477646c5fb16066cacdd6733099034aefc1dc19c50869
+          - name: HTTPS Verified Domain
+            issue: GH-5110
   - package: com.amazon.mShop.android.shopping
     signature:
       - fingerprint: 2F:19:AD:EB:28:4E:B3:6F:7F:07:78:61:52:B9:A1:D1:4B:21:65:32:03:AD:0B:04:EB:BF:9C:73:AB:6D:76:25
