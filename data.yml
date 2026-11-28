@@ -6043,6 +6043,16 @@ packages:
             issue: GH-8132
             apk:
               sha256: ddc8c0040f535e04b61e6e1cce0be922e58fcd2f4bd8610b23ecd7d1d2aa7a94
+  - package: com.google.android.calculator
+    signature:
+      - fingerprint: |-
+          90:E8:B8:4C:91:AE:47:53:00:18:AF:7F:C3:5A:94:37:16:FC:8D:22:71:F0:35:48:A1:83:3B:E0:16:6E:20:66
+          F1:30:F9:F8:44:B4:E3:CC:57:75:4B:1B:F8:F3:C3:2E:89:6E:14:41:CA:E0:30:B3:61:6A:B4:D1:EF:D9:F2:63
+        sources:
+          - name: Google Play
+            issue: GH-5208
+            apk:
+              sha256: 4c01a7834c0a60c11856ae22a4f6c2a4d0ad2e4e777e7821799a0430b55ae885
   - package: com.google.android.calendar
     signature:
       - fingerprint: |-
