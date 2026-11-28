@@ -7369,6 +7369,14 @@ packages:
               sha256: aa820a76a12a2443d7c092736fa24a7e1fc5ce00d86e164296431fa9be9a59a4
           - name: HTTPS Verified Domain
             issue: GH-2711
+  - package: com.kumple
+    signature:
+      - fingerprint: 15:0B:91:EF:25:64:50:55:28:14:28:9A:4B:23:DA:94:71:28:C1:82:A0:CF:8B:F7:F7:8F:C3:33:79:05:7F:BC
+        sources:
+          - name: Google Play
+            issue: CB-425
+            apk:
+              sha256: 158b1d7271a283ccacb831e6b8f458f36d1e81a02db967415cd3713d78d9e5e5
   - package: com.kunzisoft.hardware.key
     signature:
       - fingerprint: 39:62:A9:67:2F:DB:E0:48:65:38:58:CD:67:50:15:B5:BC:21:7E:82:51:5A:15:9C:BE:EA:E5:58:FC:0F:5A:22
