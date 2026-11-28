@@ -14103,6 +14103,21 @@ packages:
             issue: GH-7705
             apk:
               sha256: 05da3303f5564b99c602848fbede95ca4f0431f18b9203fd7f1fd68443cfb8ec
+      - fingerprint: D3:7C:AB:F3:67:6C:F5:82:24:FB:24:2C:8D:D2:09:12:9D:05:88:03:79:29:5F:AA:A6:D0:FB:60:7B:EC:13:1B
+        sources:
+          - name: Direct APK Link
+            issue: CB-44
+            apk:
+              sha256: 5a13b308372fe1a84f2290203dee12de117bf31de75c38ff21687a3d4f164ce2
+              link: https://github.com/anilbeesetti/nextplayer/releases/download/v0.16.3/nextplayer-v0.16.3-universal.apk
+          - name: F-Droid
+            issue: CB-44
+            apk:
+              sha256: 144f4203c3911bd3638af812f864daa948151af636ceb7cc94b13c38615e89cc
+          - name: F-Droid (IzzyOnDroid)
+            issue: CB-44
+            apk:
+              sha256: 8e1d88a9f5e0c25aa10cf9a72b30a8055bc9ddaf5ed7234086fd848e62ce1c37
   - package: dev.arthurcose.languagedex
     signature:
       - fingerprint: 17:24:D4:E4:FB:0B:E3:17:6B:84:E0:05:C8:40:5F:98:FD:BD:D6:21:93:FB:5F:35:9F:6D:1B:2C:12:52:D6:0C
