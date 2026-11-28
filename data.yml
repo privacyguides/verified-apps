@@ -18254,6 +18254,14 @@ packages:
             issue: GH-7853
             apk:
               sha256: 5a68919aa8b1759d9f693116a9748790092f44d520df3efbed266bdb2635a1af
+  - package: sh.looker.plainer
+    signature:
+      - fingerprint: 0F:F8:9D:1F:35:96:D2:A2:FD:5B:25:72:3A:DE:77:1B:5E:2D:9C:C5:AA:FD:5E:0B:52:EA:11:E2:D5:79:D1:E3
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-3931
+            apk:
+              sha256: 1106679ba342fa8818460218c32e70c591560cf74252eafc23e8b279bf0ef91d
   - package: sk.styk.martin.apkanalyzer
     signature:
       - fingerprint: 4F:BD:F1:4A:FD:9C:5F:C8:37:ED:BE:61:BC:C4:5F:63:47:99:4F:F3:8E:4E:F3:26:29:F0:8F:13:FA:54:FC:BC
