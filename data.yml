@@ -3565,6 +3565,14 @@ packages:
             issue: GH-7056
             apk:
               sha256: a101f746dd4e2858809a5b557f8dd1a119acf48c06950f3167e39dfbd352c1dd
+  - package: com.cleevio.ionity.android.app
+    signature:
+      - fingerprint: AE:F7:3D:58:BB:F1:64:8B:44:62:48:4B:55:C6:EF:35:B9:B0:D1:CB:45:D1:C0:BC:FB:8B:D4:37:F8:54:C9:0C
+        sources:
+          - name: Google Play
+            issue: GH-5033
+            apk:
+              sha256: 47404936e7767c4609fc8b3e837e3c6f695e1a567421f69162c001c1e7a72773
   - package: com.cloudflare.onedotonedotonedotone
     signature:
       - fingerprint: 27:3A:3A:5E:09:DC:72:0D:3B:39:45:16:2E:72:4D:9A:69:B2:1F:C5:42:BE:D7:45:7F:11:59:66:B1:45:E8:BC
