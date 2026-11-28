@@ -16588,6 +16588,14 @@ packages:
             apk:
               sha256: 629a7ca09a11a156040fd2f9cb2a062baecd13c35e052595d86c4c1b085c950a
               repo: https://fdroid.typeblog.net/repo
+  - package: net.vonforst.evmap
+    signature:
+      - fingerprint: 27:82:35:9A:8A:19:61:4F:FE:C1:E8:9F:4C:83:41:79:C5:83:16:B5:CB:E7:94:5D:D2:76:7C:F6:D9:6E:62:60
+        sources:
+          - name: Google Play
+            issue: GH-5031
+            apk:
+              sha256: 1cca2b489ac99484f370def944ccdb23b6f8b96bb83ff80d39d6b1f9f0aded51
   - package: net.wigle.wigleandroid
     signature:
       - fingerprint: 69:9D:BE:E5:94:79:7D:7E:FB:68:1F:62:56:20:EC:1E:41:E4:1E:6A:57:AF:DC:D8:53:3F:8D:22:00:35:29:E8
