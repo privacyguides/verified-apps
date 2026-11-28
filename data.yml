@@ -9464,6 +9464,14 @@ packages:
             issue: GH-774
             apk:
               sha256: e387f130f269d64334882bc71a4c8610124cf53f8312b91568b0a92cc073cae3
+  - package: com.practiceportugueseap4.app
+    signature:
+      - fingerprint: A9:CD:20:B2:24:4E:64:4C:78:AF:4E:7D:3E:4A:24:52:12:43:16:39:36:69:C5:D2:00:1E:4F:96:8E:A4:3A:6B
+        sources:
+          - name: Google Play
+            issue: GH-5533
+            apk:
+              sha256: 0cffa0e351be897807bbc5ed9c6ac5230c5b937ad84c095ed463d0cb7db25c17
   - package: com.pranshulgg.weather_master_app
     signature:
       - fingerprint: C9:7F:59:2A:D5:A4:26:EF:17:AA:4B:11:3A:A8:F9:C1:BC:3C:2F:26:75:C8:57:AD:86:BD:AC:C0:5F:BE:EE:01
