@@ -18108,6 +18108,14 @@ packages:
             issue: GH-7853
             apk:
               sha256: 5a68919aa8b1759d9f693116a9748790092f44d520df3efbed266bdb2635a1af
+  - package: sk.styk.martin.apkanalyzer
+    signature:
+      - fingerprint: 4F:BD:F1:4A:FD:9C:5F:C8:37:ED:BE:61:BC:C4:5F:63:47:99:4F:F3:8E:4E:F3:26:29:F0:8F:13:FA:54:FC:BC
+        sources:
+          - name: Google Play
+            issue: GH-3836
+            apk:
+              sha256: 4c3a1b92cb7d1cf70c8a4aadd0a67e698aa6e50e988b17d9afb042d42ca8b2ad
   - package: slowscript.warpinator
     signature:
       - fingerprint: EB:8C:95:5A:2A:5C:55:7D:61:8D:79:24:DC:0D:DF:C3:81:58:81:EB:93:A6:FA:CD:DD:A8:33:C0:DD:49:C2:37
