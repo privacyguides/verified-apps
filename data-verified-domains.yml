@@ -1546,6 +1546,15 @@ domains:
           - 52:1B:F5:CE:7C:98:1F:AB:A4:EB:D8:6D:23:F7:78:88:55:37:CA:D0:21:BC:10:7D:89:15:D0:05:E9:9F:4A:12
           - 92:C7:82:90:60:C9:3E:B4:46:10:69:67:FF:AD:DD:15:E3:6D:C2:28:F0:56:76:37:59:5E:24:24:ED:BC:1B:F3
           - FE:9B:90:A5:FE:25:5E:B7:13:1B:2C:54:02:59:86:FE:6E:34:62:C3:F2:B4:E4:06:77:8A:4B:68:DD:5C:4A:99
+  - domain: xigxag.co.uk
+    method: https
+    issue:
+      - CB-297
+    checked: "2026-11-28T09:19:27Z"
+    packages:
+      - package: uk.co.xigxag.xigxagplayer
+        fingerprints:
+          - 7E:2A:DF:40:1D:A6:A7:00:E5:83:FB:62:23:3C:70:17:36:8F:18:24:8D:A4:41:1A:D0:5E:94:49:FD:DF:8C:C0
   - domain: yandex.ru
     method: https
     issue:
