@@ -8356,6 +8356,14 @@ packages:
             issue: GH-8278
             apk:
               sha256: 6a99344f5687c46b726c7897247cf227db02acc04452a1b42a9a6301b644d8e2
+  - package: com.olioex.android
+    signature:
+      - fingerprint: 57:DA:8F:F7:A5:27:B2:64:CA:12:2E:48:98:62:99:33:51:0A:18:00:06:01:E9:DB:85:D0:7F:64:49:0D:73:3D
+        sources:
+          - name: Google Play
+            issue: GH-4211
+            apk:
+              sha256: a9db02f7ba9e5884c747a0003c3c28857608af49ad766d735425d12a8f7ce1ff
   - package: com.om1cael.hidroly
     signature:
       - fingerprint: EC:D9:3B:0E:94:44:D2:F2:AD:98:5D:35:03:1B:A0:C9:AB:2B:17:08:DC:9B:4E:6A:E7:39:15:13:59:45:EF:A0
