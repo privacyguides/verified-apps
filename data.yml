@@ -1380,6 +1380,14 @@ packages:
               sha256: 6d8b26df16e0e5cabe6029c395f64fbb4d2590a4f88c252a549c0777a1bb83fc
           - name: HTTPS Verified Domain
             issue: GH-2633
+  - package: com.Splitwise.SplitwiseMobile
+    signature:
+      - fingerprint: 68:AE:4F:47:BC:FA:DB:F0:90:6E:2C:42:7C:14:EF:BA:66:75:B5:90:2E:D8:80:EB:7D:91:01:ED:EC:41:DC:49
+        sources:
+          - name: Google Play
+            issue: GH-4163
+            apk:
+              sha256: f757c4bf47df56e02e111926b0297d19d3d703a597bb2e6c23214d337f0f85e6
   - package: com.TrainHeroic.TrainHeroic
     signature:
       - fingerprint: EB:94:E7:8E:50:A7:B2:16:27:1E:EA:55:2C:25:25:41:03:A0:5B:CE:AA:77:6F:EF:32:0F:5F:98:24:B3:8D:92
