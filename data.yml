@@ -18683,6 +18683,14 @@ packages:
             issue: GH-2125
             apk:
               sha256: 455ffefff2433fec7ec88b0e85b2ef272e9e15e46a3d83d568a83f40ade446ff
+  - package: uk.co.santander.santanderUK
+    signature:
+      - fingerprint: 55:9F:C8:F9:BA:BD:C1:81:B0:E2:58:7F:E7:BA:EB:25:38:5B:B3:37:87:C7:FD:F9:D0:34:5B:8D:61:1F:F0:59
+        sources:
+          - name: Google Play
+            issue: GH-4161
+            apk:
+              sha256: db6231b121a893463828baae9dcf9dcc4776c198a49f589b38ed33159a9da381
   - package: uk.co.webtechpro.jesip
     signature:
       - fingerprint: 84:E2:9A:A1:22:A5:09:04:0E:CE:18:C1:C5:57:CB:B0:5C:E1:A0:FF:98:2D:39:C4:C2:DE:6E:C5:E9:36:CE:8F
