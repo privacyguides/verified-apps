@@ -7003,6 +7003,14 @@ packages:
             issue: GH-274
             apk:
               sha256: 95c0e8775be5365428d5e3fecdac0b0c5735213ed896c6e920f6fb0c22b37727
+  - package: com.kobobooks.android
+    signature:
+      - fingerprint: CC:05:57:16:12:C8:00:0D:1E:2D:AD:3A:D4:B6:5D:01:5F:26:5E:19:32:AC:48:7C:E5:EA:9F:E1:E3:5B:A6:FD
+        sources:
+          - name: Google Play
+            issue: CB-295
+            apk:
+              sha256: fb835bcdc614eed53cf17ead6735ce553934f9972842e496af0682a2b6dd918e
   - package: com.kollectivemobile.euki
     signature:
       - fingerprint: EA:52:2B:12:5F:40:1A:12:98:3F:D5:76:1D:A3:AF:18:52:21:66:20:ED:31:E6:03:52:5C:D5:9F:2D:03:41:57
