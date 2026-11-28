@@ -8109,6 +8109,14 @@ packages:
             issue: GH-261
             apk:
               sha256: e62d0c8000c7e64cc65c4fd6529baaa6d5bb48a04323227a24fdeffa0911bcfb
+  - package: com.moi.lumine
+    signature:
+      - fingerprint: 84:20:D0:7C:43:A9:A1:6A:21:52:7A:66:EE:56:9C:22:7E:0C:14:15:B5:97:19:13:2B:84:54:01:2D:F6:29:0A
+        sources:
+          - name: F-Droid
+            issue: GH-5019
+            apk:
+              sha256: 6fc9f7aa4e5703097fbc45223be5c64b1a76b2c32a142e6c8d2d93a20f92fe5e
   - package: com.molink.john.hummingbird
     signature:
       - fingerprint: AF:C1:4B:22:78:33:F8:40:0F:E2:F1:C4:98:9B:C4:4A:AD:99:28:49:68:CF:67:89:7D:8B:12:84:1E:75:63:9F
