@@ -10073,6 +10073,16 @@ packages:
             issue: GH-3973
             apk:
               sha256: e42458c51cec5866760abbf5374654776f437f566026553b3105e87cc86c44e6
+  - package: com.securew2.paladin
+    signature:
+      - fingerprint: EA:56:8B:0F:AC:B5:51:BB:B0:6F:09:12:9C:9F:82:A3:3D:B3:AE:3D:28:A9:05:E7:77:27:DA:FF:1B:4C:BB:40
+        sources:
+          - name: Google Play
+            issue: GH-4875
+            apk:
+              sha256: fdeb502e805997a912a91ef88711d50a1fd4e19db901d313ace9ec89972ff8d9
+          - name: HTTPS Verified Domain
+            issue: GH-4875
   - package: com.secuso.privacyFriendlyCodeScanner
     signature:
       - fingerprint: 75:9D:2D:25:78:5A:6D:F4:CD:66:19:69:2B:37:F0:05:32:BA:19:B2:6D:F2:0A:4E:F5:B2:21:28:C7:F1:51:BC

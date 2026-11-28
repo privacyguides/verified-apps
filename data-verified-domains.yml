@@ -1001,6 +1001,15 @@ domains:
       - package: ru.ozon.app.android
         fingerprints:
           - C8:FE:81:75:2C:60:F8:67:F7:80:1E:40:59:A9:98:9C:66:03:51:D4:59:32:3F:22:D9:BC:94:91:82:FD:6D:61
+  - domain: paladin.securew2.com
+    method: https
+    issue:
+      - GH-4875
+    checked: "2026-11-28T10:45:54Z"
+    packages:
+      - package: com.securew2.paladin
+        fingerprints:
+          - EA:56:8B:0F:AC:B5:51:BB:B0:6F:09:12:9C:9F:82:A3:3D:B3:AE:3D:28:A9:05:E7:77:27:DA:FF:1B:4C:BB:40
   - domain: pandora.com
     method: https
     issue:
