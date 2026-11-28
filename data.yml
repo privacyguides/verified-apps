@@ -3018,6 +3018,14 @@ packages:
               sha256: 4b0a6dc69571e30057a819a50159242405941c89520fc781f506cd14fff06c46
           - name: HTTPS Verified Domain
             issue: GH-5929
+  - package: com.brentpanther.bitcoinwidget
+    signature:
+      - fingerprint: E6:43:C1:31:A6:43:03:F7:D2:0B:9E:21:14:3C:D2:50:AC:92:60:69:31:5B:78:FC:AD:CF:50:78:D2:FA:3C:CF
+        sources:
+          - name: Google Play
+            issue: GH-4512
+            apk:
+              sha256: 1991f84091366a41722a366c5599ac28dc0c44c242d8a81b608d2d070dc80c4e
   - package: com.briankhuu.nfcmessageboard
     signature:
       - fingerprint: 22:9E:A9:F9:AF:E1:20:6D:F0:74:00:5C:E7:E1:91:01:BE:F5:2E:04:E6:A1:31:DC:E3:67:9F:EF:53:68:20:70
