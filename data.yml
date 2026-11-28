@@ -7995,6 +7995,14 @@ packages:
             issue: GH-3395
             apk:
               sha256: f10a8faabe5747a80ca741193b984e56c5c548c4e513192d19802a9bf0fcb199
+  - package: com.maxmpz.audioplayer
+    signature:
+      - fingerprint: F6:35:5B:DD:54:F8:CE:DD:64:F9:F6:E9:81:3B:B0:B5:5A:2A:C2:4B:82:B4:61:E9:9F:86:DB:33:6E:E6:42:55
+        sources:
+          - name: Google Play
+            issue: GH-5152
+            apk:
+              sha256: 71ff83e9e7cbca793779fe39c76ee5ac2204f5f66a24305afde483b627d3b68e
   - package: com.maxmpz.equalizer
     signature:
       - fingerprint: F6:35:5B:DD:54:F8:CE:DD:64:F9:F6:E9:81:3B:B0:B5:5A:2A:C2:4B:82:B4:61:E9:9F:86:DB:33:6E:E6:42:55
