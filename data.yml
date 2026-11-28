@@ -10426,6 +10426,14 @@ packages:
             issue: GH-3944
             apk:
               sha256: 5b0cb0c7db10b22362ad59736a9a2abaeb470dbcf53c1404e3fc12311acf518b
+  - package: com.tideo.autobrightness
+    signature:
+      - fingerprint: 3D:2D:9D:D1:0E:5C:F9:8B:04:0C:C2:36:D9:D3:EF:0D:68:74:2F:AD:F9:4B:04:0F:50:6C:06:25:F8:58:9C:AF
+        sources:
+          - name: F-Droid
+            issue: GH-4004
+            apk:
+              sha256: f7b5c81caba4a06ec5ddcc6af247a2b8df6cae67d4902bf44019fa2011996cbb
   - package: com.tinder
     signature:
       - fingerprint: 8A:B1:4F:D7:50:B8:20:57:4D:20:C3:54:41:EA:14:A9:B5:D1:95:9A:31:04:0C:EC:12:B4:6B:B2:90:F4:DA:1B
