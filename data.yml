@@ -6618,6 +6618,14 @@ packages:
             issue: GH-7633
             apk:
               sha256: 3336b43a04cf7e4776449b2ae4eaa4420237f4ad1a479c31718a3dc68ad87a44
+  - package: com.hp.printercontrol
+    signature:
+      - fingerprint: F9:77:2B:17:CD:87:2E:EA:3E:21:4E:A2:80:8F:EB:FC:FD:18:22:F8:72:EB:2E:38:16:33:9D:04:B0:54:45:0E
+        sources:
+          - name: Google Play
+            issue: CB-340
+            apk:
+              sha256: c3d028a75236d86cc07a66579b28b24e58335943ded638d5534f816e5d1cbcd6
   - package: com.hrd.iam
     signature:
       - fingerprint: 51:78:37:10:09:97:E4:84:59:6B:A9:5A:97:B2:B7:07:8F:30:95:68:54:41:19:C9:02:EF:C0:BC:F8:45:DE:58
