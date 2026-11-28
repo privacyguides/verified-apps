@@ -9443,6 +9443,14 @@ packages:
             issue: GH-7712
             apk:
               sha256: f67317b2342f3f386cda03743448f78503f78fe1ea36d90679aa92ff8bffc5db
+  - package: com.physphil.android.unitconverterultimate
+    signature:
+      - fingerprint: 11:32:63:4B:48:71:56:3B:DC:9F:5E:70:C0:CC:EE:01:8F:03:99:8D:3E:AC:92:5F:14:02:8D:3A:67:FE:9C:0F
+        sources:
+          - name: F-Droid
+            issue: CB-416
+            apk:
+              sha256: 2569924fcb71d96699f48cbc06620bb5708b88b36624df72c4badb7a2c6ebbcb
   - package: com.pikasim.esim
     signature:
       - fingerprint: C2:25:ED:7E:98:03:23:CE:42:3D:83:9B:3A:DF:C1:2A:5E:F8:89:40:4E:E4:9C:0C:BF:1A:ED:DB:DB:DF:E7:11
