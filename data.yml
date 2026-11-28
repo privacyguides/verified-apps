@@ -8727,6 +8727,14 @@ packages:
             issue: GH-696
             apk:
               sha256: 7aed4f4042f81ea5f2576b256d084e7fad9cfc44b39f0e05ac26a198f5191b63
+  - package: com.originmobileapp
+    signature:
+      - fingerprint: A7:07:9B:FF:6E:30:3A:21:17:14:F2:1A:A5:A9:9D:1E:41:31:FA:B2:4E:A9:37:67:6C:D6:2A:1D:1A:BC:6C:DC
+        sources:
+          - name: Google Play
+            issue: GH-4399
+            apk:
+              sha256: 434b7b01d05fe853bc69a6a6fd4ad2cfa842023c12a0c04c3648f7430134623d
   - package: com.oriondev.moneywallet
     signature:
       - fingerprint: 57:3A:38:66:35:5A:BE:6D:C9:0C:36:98:11:91:DE:3C:B7:20:AC:B1:1B:3D:A8:A9:F1:7D:7D:13:8F:C0:42:E5
