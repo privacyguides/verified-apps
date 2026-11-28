@@ -10539,6 +10539,14 @@ packages:
             issue: GH-2292
             apk:
               sha256: db042e3d867046cc56ca9b7678191be026fe674c725beed087b1823f9d7dbf1d
+  - package: com.simple.mSimple_Student
+    signature:
+      - fingerprint: 8E:03:78:6C:87:0B:F0:23:AF:0E:A3:F7:9C:66:E2:04:43:90:6B:7C:7B:1A:E8:26:66:69:DB:CB:51:2C:C9:ED
+        sources:
+          - name: Google Play
+            issue: CB-389
+            apk:
+              sha256: 85d67c82965854f7ab71ecb012f50da91e0d9b81aa0b716dc3c15f429bca6fbf
   - package: com.simplepractice.video
     signature:
       - fingerprint: 21:E1:56:78:30:77:33:7D:F5:13:65:75:31:6C:3A:D7:FA:E3:4F:19:7F:61:DD:C0:25:87:0F:B6:F7:0F:C2:99
