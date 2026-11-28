@@ -862,6 +862,14 @@ packages:
             issue: GH-3909
             apk:
               sha256: 76468ed522934196a5eeb744e82b7b91308e221cd27f5582357304b36af9f410
+  - package: au.gov.vic.ptv
+    signature:
+      - fingerprint: 0E:B2:EE:8B:BF:56:A9:F2:0D:72:3D:1F:81:EC:7B:8E:37:2A:18:2D:D5:0E:49:A7:23:0D:00:44:63:48:70:91
+        sources:
+          - name: Google Play
+            issue: GH-3955
+            apk:
+              sha256: 64af2c8eee5fd0100ff007ac0c1240c770a0856701a772ed46e11936de7c79d1
   - package: be.chvp.nanoledger
     signature:
       - fingerprint: 54:1F:AD:2A:B1:6C:1F:D8:D4:64:B2:8E:E7:03:18:49:EA:13:33:A8:E8:E3:01:6C:D4:60:FE:22:CB:DE:2B:61
