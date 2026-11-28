@@ -7827,6 +7827,14 @@ packages:
             issue: GH-319
             apk:
               sha256: a3c73e651a2cf670cb64339ab3b2894b341ad1bc399425a39f0a669e5ec5b3dd
+  - package: com.myunidays
+    signature:
+      - fingerprint: 1C:72:59:D5:37:0F:64:18:86:44:86:C7:4C:4A:0C:FF:A1:3D:7D:C9:FA:BE:2C:9C:EA:7F:42:BB:98:C1:A2:F0
+        sources:
+          - name: Google Play
+            issue: GH-3958
+            apk:
+              sha256: b64d690c29e40cd90d30becf0222c3d2326ebed36e84e5fae63d90905219256f
   - package: com.nahnah.florid
     signature:
       - fingerprint: 84:86:D1:CB:98:E0:EB:EB:A9:0B:57:15:C5:E9:19:6C:68:67:F0:DB:10:44:D7:60:41:6C:13:9E:5C:10:CE:12
