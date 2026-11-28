@@ -4762,6 +4762,18 @@ packages:
               sha256: 5546fac68f30b29d8aaf9e4d969d5e7f661bca8450c86a7c69843c5e6c2a5dee
           - name: HTTPS Verified Domain
             issue: GH-7496
+  - package: com.facebook.stella
+    signature:
+      - fingerprint: |-
+          81:B0:48:87:E8:EB:8A:20:9F:2E:5E:40:42:AD:CF:69:6B:F7:51:E9:9A:BD:BD:A1:32:B6:61:67:FD:CA:94:31
+          C5:6F:50:A8:26:02:9D:BD:89:3A:52:71:03:A2:24:CA:1C:A2:07:4E:D7:9D:EE:E7:6F:AE:18:E1:D6:E6:C7:68
+        sources:
+          - name: Google Play
+            issue: CB-465
+            apk:
+              sha256: de32c276a7f5ef4047b705563a3cf85eee443558b9948d4c0930c9240e14aa99
+          - name: HTTPS Verified Domain
+            issue: CB-465
   - package: com.fairphone.android.fairbudsapp
     signature:
       - fingerprint: 71:AB:E8:53:13:F6:4E:6D:DB:F1:3A:F6:F9:D8:E5:4D:2A:2E:44:D9:49:24:C8:FD:9E:60:4A:53:61:24:B1:0A
