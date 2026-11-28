@@ -147,7 +147,7 @@ runs:
         set -euo pipefail
         source "${GITHUB_ACTION_PATH}/../signature-lib/signatures.lib.sh"
         submission_write_commit_message_file "${GITHUB_WORKSPACE}/submission-commit-msg" \
-          "Add ${PACKAGE} from ${ISSUE_REF}" "$ISSUE" "$CO_AUTHOR_TRAILER"
+          "${ISSUE_REF}: Add ${PACKAGE}" "$ISSUE" "$CO_AUTHOR_TRAILER"
 
     - name: Push verified commit to branch
       if: steps.entry.outputs.skipped == 'false'

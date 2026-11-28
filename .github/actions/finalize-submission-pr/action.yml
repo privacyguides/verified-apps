@@ -83,5 +83,5 @@ runs:
         fi
         issue_ref=$(signatures_submission_issue_ref "$ISSUE" "$ISSUE_BODY")
         submission_write_commit_message_file "${GITHUB_WORKSPACE}/submission-commit-msg" \
-          "${COMMIT_SUBJECT} from ${issue_ref}" "$ISSUE" "$CO_AUTHOR_TRAILER"
+          "${issue_ref}: ${COMMIT_SUBJECT}" "$ISSUE" "$CO_AUTHOR_TRAILER"
         echo "prepared=true" >> "$GITHUB_OUTPUT"

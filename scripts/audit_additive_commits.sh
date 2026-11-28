@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 #
-# Find "Add <package> from <issue>" commits that REMOVED entries.
+# Find submission commits ("<issue>: Add <package>", or the older "Add <package> from <issue>")
+# that REMOVED entries.
 #
 # Submission commits are supposed to be purely additive. A stale-snapshot race (since fixed)
 # could make one commit revert package/domain entries that landed concurrently. Committing an
@@ -13,7 +14,7 @@
 #
 #   git-range       What to scan (default: HEAD = full history reachable from HEAD).
 #   subject-regex   Bash ERE the commit SUBJECT must match
-#                   (default: '^Add .+ from (GH|CB)-[0-9]+$').
+#                   (default matches both submission subject formats).
 #                   Domain-verification commits use a different subject; to audit those too:
 #                     scripts/audit_additive_commits.sh HEAD '^(Add|Verify) .+ from (GH|CB)-[0-9]+'
 #
@@ -26,7 +27,7 @@
 set -u
 
 RANGE="${1:-HEAD}"
-SUBJECT_RE="${2:-^Add .+ from (GH|CB)-[0-9]+$}"
+SUBJECT_RE="${2:-^((GH|CB)-[0-9]+: Add .+|Add .+ from (GH|CB)-[0-9]+)$}"
 DATA_FILE="data.yml"
 DOMAINS_FILE="data-verified-domains.yml"
 
