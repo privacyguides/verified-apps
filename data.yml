@@ -3570,6 +3570,14 @@ packages:
             issue: GH-1210
             apk:
               sha256: 842de04407732a3b2fed24f5fc43a64487e868b1c37bd9d88a1f376795b007c6
+  - package: com.costarastrology
+    signature:
+      - fingerprint: 0C:0E:48:9D:97:07:8D:4B:09:38:F7:3D:49:8A:3A:CF:1A:7F:7D:57:8E:85:DF:38:E8:1E:F5:F0:AC:E4:D4:F3
+        sources:
+          - name: Google Play
+            issue: GH-4384
+            apk:
+              sha256: d8f32bd366c3c85c287ca0c8140bba42b792159a0713e02db3857605982d1f45
   - package: com.costco.app.android
     signature:
       - fingerprint: CE:C0:85:37:BE:51:51:90:57:59:A0:E0:30:16:69:58:2E:FF:8E:6B:98:B6:67:6B:BD:0A:65:4A:53:52:45:FC
