@@ -11014,6 +11014,14 @@ packages:
             issue: GH-7849
             apk:
               sha256: 2158d88be9f3474ada27ffcad763bb18141e5f0390bcb385427384efc1f9be1f
+  - package: com.tokyoxpa3.androidproxy
+    signature:
+      - fingerprint: 3F:B0:1E:DF:2A:80:F5:BD:1D:A6:7B:FE:7B:30:23:46:1B:A9:0E:7F:26:16:21:9E:EE:59:70:71:4F:80:5B:DD
+        sources:
+          - name: F-Droid
+            issue: GH-4930
+            apk:
+              sha256: ddc455c7d0fc427a0fb98a774b715d1f25fd2b8978ea6c946891e7716e19ea6c
   - package: com.tombursch.kitchenowl
     signature:
       - fingerprint: 71:03:9D:6A:92:CC:AD:12:F0:17:68:5E:11:2D:74:EE:E4:0C:CC:2F:87:31:D9:D1:03:52:31:0D:19:4D:6D:22
