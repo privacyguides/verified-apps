@@ -1436,6 +1436,16 @@ domains:
       - package: com.upside.consumer.android
         fingerprints:
           - ED:99:88:71:D7:9D:5E:91:A4:FF:BB:75:71:5B:1B:FD:DB:4B:06:8D:80:EF:C3:75:5F:AA:F0:3F:C5:87:D8:B2
+  - domain: usbank.com
+    method: https
+    issue:
+      - GH-4888
+    checked: "2026-11-28T10:48:34Z"
+    packages:
+      - package: com.usbank.mobilebanking
+        fingerprints:
+          - 55:9B:65:69:DC:41:7C:98:93:DE:10:3B:DE:2B:75:0F:A9:44:E6:6B:ED:2D:C4:B0:15:4E:70:B3:81:61:BF:57
+          - 62:D0:0A:C8:71:46:7D:11:AC:F3:30:ED:03:C7:DF:16:93:01:5E:A8:37:6D:38:08:B1:D0:96:AD:F8:52:5B:0D
   - domain: usmobile.com
     method: https
     issue:

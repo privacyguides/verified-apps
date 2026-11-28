@@ -11463,6 +11463,16 @@ packages:
               sha256: b0cf93237f5a028d71c626d3c2495d9f36974726236f9727c69a268691f5f9e2
           - name: HTTPS Verified Domain
             issue: GH-7243
+  - package: com.usbank.mobilebanking
+    signature:
+      - fingerprint: 62:D0:0A:C8:71:46:7D:11:AC:F3:30:ED:03:C7:DF:16:93:01:5E:A8:37:6D:38:08:B1:D0:96:AD:F8:52:5B:0D
+        sources:
+          - name: Google Play
+            issue: GH-4888
+            apk:
+              sha256: 534ec5cfea8630d3e41b1567f548c22e4ed4ab1b3d6bc8731dd9d00e81d6ebbc
+          - name: HTTPS Verified Domain
+            issue: GH-4888
   - package: com.usmobile.dashboard
     signature:
       - fingerprint: 34:25:D5:1C:A1:A8:DB:37:CA:E7:96:68:D0:FC:B8:3F:BA:05:62:3C:35:7D:9F:BD:30:4F:F3:71:D9:26:E2:A1
