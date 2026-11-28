@@ -16203,6 +16203,14 @@ packages:
             issue: GH-2641
             apk:
               sha256: 84be14f65add1af115c502ab79710d61c69a4a49217015e9c5094f7d20464223
+  - package: one.wafler.transportia
+    signature:
+      - fingerprint: EF:3D:4B:6C:37:E1:A8:AE:14:8E:66:E0:80:C4:9F:5B:EA:E1:C8:93:89:AE:01:28:65:D6:F3:B6:D4:89:DF:21
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-4272
+            apk:
+              sha256: 8e137dbd01726ac63d9405059c8a36d45a687765f9846c3a3c5e77c5725224b7
   - package: opencontacts.open.com.opencontacts
     signature:
       - fingerprint: B9:AB:2D:78:61:CD:40:B9:8C:A4:1A:1F:E0:AA:22:0D:53:13:58:29:FF:EA:F6:B6:C6:4B:3B:36:B2:DF:95:05
