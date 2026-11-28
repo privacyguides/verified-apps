@@ -8889,6 +8889,14 @@ packages:
             issue: GH-7851
             apk:
               sha256: 08af3188f6fed5a8c0fea718296e03ac76848bde1005b2200d04bff862a788f3
+  - package: com.patreon.android
+    signature:
+      - fingerprint: 58:47:49:64:02:54:70:A3:B9:5E:2A:1E:31:90:79:A7:87:18:08:78:AF:89:15:F8:1A:2D:1E:77:68:3A:E2:3A
+        sources:
+          - name: Google Play
+            issue: GH-4400
+            apk:
+              sha256: e600a8993201481eb50f3977ee4053d21c6035462149ce16c8cc9427aab8207f
   - package: com.paypal.android.p2pmobile
     signature:
       - fingerprint: C7:C6:2E:A0:F6:E2:F6:EB:A8:7F:95:40:69:87:50:55:30:EF:2F:51:6E:7C:DE:59:91:D7:14:03:31:44:80:72
