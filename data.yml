@@ -8399,6 +8399,14 @@ packages:
             issue: GH-1645
             apk:
               sha256: 5aa20e85d679476eb8b806309b3a0721d4d9f4793a3ab7f858536989fc048994
+  - package: com.moodle.moodlemobile
+    signature:
+      - fingerprint: 58:A3:72:58:54:2E:B4:05:13:48:3A:DF:F2:4E:62:70:8A:53:C0:34:EA:5C:F1:CE:B4:2A:29:4B:47:F6:37:8A
+        sources:
+          - name: Google Play
+            issue: CB-395
+            apk:
+              sha256: b8c04e4a4b7ac08810bc1a9b985749ff76780851d9216a452aaa9a6b6b37d9cb
   - package: com.mooneva.app
     signature:
       - fingerprint: 96:B0:1B:6F:20:C4:6B:35:46:70:A1:00:92:7F:72:1D:40:3E:07:E8:BA:25:96:B5:27:24:AC:21:39:56:9F:83
