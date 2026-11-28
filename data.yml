@@ -6844,6 +6844,14 @@ packages:
             issue: GH-6877
             apk:
               sha256: e1821754bf661f9faf68f6c2156b2d3c273454add8782b69cd2876411ef63266
+  - package: com.lazydevs.wristotle
+    signature:
+      - fingerprint: B2:31:2E:C6:76:7A:28:DB:57:EB:4B:F7:80:33:27:4D:83:DF:81:FC:DA:C7:E9:68:EB:AA:EA:5E:FB:69:AE:A5
+        sources:
+          - name: F-Droid
+            issue: GH-3935
+            apk:
+              sha256: 249741fb74ff6439eaeee86a00a8e3db0dd7a20fd8c1f342b312d6ef5ec3d9a1
   - package: com.lcbo.lcbo
     signature:
       - fingerprint: 5B:26:47:CF:27:77:E1:AD:8E:98:20:4C:38:9E:B4:3E:ED:BB:64:8B:67:CD:54:A2:CB:FD:B5:28:3C:C2:5D:87
