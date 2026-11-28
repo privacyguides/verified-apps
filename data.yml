@@ -2944,6 +2944,14 @@ packages:
             issue: GH-1267
             apk:
               sha256: 14a9d978d2809fd05437f9d9084eb4e910cf10bc653d67fd23ef179713324808
+  - package: com.bookfusion.android.reader
+    signature:
+      - fingerprint: C5:33:C2:8C:C1:A7:2A:B4:98:50:A4:FD:4F:54:E8:E4:10:E0:2B:5D:5F:10:88:E0:91:6B:35:0E:7B:26:D3:07
+        sources:
+          - name: Google Play
+            issue: GH-4868
+            apk:
+              sha256: d540dfd88deb68c240342d630f4f65180b25ef7889ba3d4eb3f371046d04b763
   - package: com.booking
     signature:
       - fingerprint: 6A:C8:C8:A9:E6:F3:6E:14:E5:2A:0A:05:15:A3:6B:70:66:E7:20:A1:B0:C8:A1:B0:59:E0:78:17:50:A8:71:99
