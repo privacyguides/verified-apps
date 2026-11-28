@@ -822,6 +822,14 @@ packages:
             issue: GH-6510
             apk:
               sha256: f0722793e3ced83fbacbe12aedc98e42e19e8d69daeea262a1e0bd28dbd0ccde
+  - package: au.gov.ato.mygovid.droid
+    signature:
+      - fingerprint: 7D:E8:36:73:A1:A2:48:E4:91:39:49:7B:B2:97:4D:61:AC:F4:74:C7:40:8D:B8:1E:67:2D:CE:DC:2A:1D:FF:62
+        sources:
+          - name: Google Play
+            issue: GH-3951
+            apk:
+              sha256: a5eab18619e68794cf3fc01d5c1d1f00fe2ffa12fc449710fcb5e6592d2aa559
   - package: au.gov.bom.metview
     signature:
       - fingerprint: 3B:E8:D6:0E:8F:48:1A:E9:3E:A6:77:AD:67:4F:A2:5A:54:27:21:96:C6:AB:DF:D0:83:D2:C1:02:7E:B6:6D:6B
