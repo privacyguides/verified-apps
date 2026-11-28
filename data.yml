@@ -213,6 +213,14 @@ packages:
             issue: GH-4722
             apk:
               sha256: a24de0bf85d6068b2057f8b2246a83200b5297ed8bf31d87895e12a920f440ac
+  - package: app.dielinke.wahlkampf
+    signature:
+      - fingerprint: 19:BE:4E:B4:C1:E5:E6:CE:79:08:FC:24:CF:F8:F8:30:35:33:90:35:45:95:32:9B:0F:3A:3E:64:A3:CA:D8:FC
+        sources:
+          - name: Google Play
+            issue: GH-5538
+            apk:
+              sha256: 172b23e30140636be0b1edd987c35ead3be8cfc0c56da96723700e2e9e82a23c
   - package: app.eduroam.geteduroam
     signature:
       - fingerprint: 67:B7:0A:E9:3F:FB:23:70:65:1E:18:20:66:3E:17:FE:0F:BE:B7:6B:73:41:6A:31:A7:1D:D2:44:5C:A9:93:BD
