@@ -1407,6 +1407,15 @@ domains:
       - package: com.weawow
         fingerprints:
           - 70:3B:0F:C8:DC:E8:8D:21:56:64:B0:97:CA:A1:2A:66:B7:E1:31:FE:43:19:AC:57:6B:3A:36:FA:3B:03:67:4D
+  - domain: what3words.com
+    method: https
+    issue:
+      - CB-251
+    checked: "2026-11-28T07:15:09Z"
+    packages:
+      - package: com.what3words.android
+        fingerprints:
+          - 5A:18:DC:1E:9D:C2:D3:F3:C7:52:55:5F:E5:EC:84:0E:E1:1D:7A:C2:36:CF:E2:B4:C8:B2:46:69:CA:A6:34:12
   - domain: whatsapp.com
     method: https
     issue:

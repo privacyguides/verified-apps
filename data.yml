@@ -11524,6 +11524,16 @@ packages:
             issue: GH-693
             apk:
               sha256: e9ee15d7cd4b0190d81021e0f0576dc27adacbac3c2434f37e1f2e77423095ee
+  - package: com.what3words.android
+    signature:
+      - fingerprint: 5A:18:DC:1E:9D:C2:D3:F3:C7:52:55:5F:E5:EC:84:0E:E1:1D:7A:C2:36:CF:E2:B4:C8:B2:46:69:CA:A6:34:12
+        sources:
+          - name: Google Play
+            issue: CB-251
+            apk:
+              sha256: bb7d9c28b97f33ae260c96ac272719c1767ed9a58f520c93a48c0afa2cc1fe44
+          - name: HTTPS Verified Domain
+            issue: CB-251
   - package: com.whatsapp
     signature:
       - fingerprint: 39:87:D0:43:D1:0A:EF:AF:5A:87:10:B3:67:14:18:FE:57:E0:E1:9B:65:3C:9D:F8:25:58:FE:B5:FF:CE:5D:44
