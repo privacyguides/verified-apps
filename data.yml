@@ -2052,6 +2052,14 @@ packages:
             issue: GH-5790
             apk:
               sha256: 50eb477c705d3aa6d5211a6e1f49e2d866192e304c751099552748e69b1fe3d2
+  - package: com.arkushi.poetryapp
+    signature:
+      - fingerprint: B5:18:81:AD:6B:C8:5D:61:EE:6C:FE:E6:D7:D3:5A:C7:4D:FF:14:91:16:3C:0D:12:F5:C1:87:E7:75:06:96:19
+        sources:
+          - name: Google Play
+            issue: GH-8553
+            apk:
+              sha256: af1c8363029c25863b82826fb4ff521e500f436327bfdd87d23219160aaf821e
   - package: com.armanmaurya.archiv
     signature:
       - fingerprint: CE:A0:D7:86:39:36:FD:A4:48:46:D3:70:1F:47:07:6E:E5:B0:C7:FE:F3:37:71:2D:17:85:A9:87:95:FB:BA:95
