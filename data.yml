@@ -9484,6 +9484,14 @@ packages:
             issue: GH-554
             apk:
               sha256: 4e77df2480866adf7935710df92fa43e2474dfff05e3fc94896d0e20b82e8d5f
+  - package: com.rfi.sams.android
+    signature:
+      - fingerprint: D4:B1:EF:64:39:5E:F6:0A:E7:78:11:5D:A6:6A:92:56:6F:13:53:0F:E3:D2:DF:1B:1C:BC:87:00:B0:3F:42:E6
+        sources:
+          - name: Google Play
+            issue: GH-4771
+            apk:
+              sha256: 1aca2d07caaf3d84a6ec4dc2a6f7eec93703b419b6084c4e1d1e8d90f03ebd57
   - package: com.ringapp
     signature:
       - fingerprint: C6:37:07:C9:00:14:1B:80:77:49:C6:03:8E:21:5C:9B:21:71:26:2B:0D:A9:AF:C5:75:FA:60:AB:C4:D6:8D:EB
