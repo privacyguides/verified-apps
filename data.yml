@@ -4026,6 +4026,18 @@ packages:
             issue: GH-266
             apk:
               sha256: dfe359b3b2c16ff23b56c02c4703a9437824469f5035d109b53b2acc09a7635e
+  - package: com.deepseek.chat
+    signature:
+      - fingerprint: |-
+          1E:EC:C4:6F:DC:21:73:43:7D:70:14:0F:16:3A:AA:97:94:1D:41:B0:4D:91:DA:3E:B6:89:AE:C4:F3:39:AB:EB
+          C6:89:3C:53:68:F7:B5:12:2F:EC:DA:FC:6C:4E:CF:49:E0:B3:DC:4E:42:BD:16:6C:DB:64:69:07:78:8C:7F:FA
+        sources:
+          - name: Google Play
+            issue: CB-460
+            apk:
+              sha256: 577023f504d591ad9fa6692d4e2bed13452f72c5065fb19ee5d9f808bbbb0423
+          - name: HTTPS Verified Domain
+            issue: CB-460
   - package: com.defend3dapp
     signature:
       - fingerprint: 28:AF:3A:50:E0:83:74:18:95:92:49:1A:8E:EF:63:59:B4:B5:8E:E7:BC:A5:BF:08:C7:3E:7B:F2:4B:48:18:DA

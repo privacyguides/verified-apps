@@ -423,6 +423,16 @@ domains:
       - package: com.chase.sig.android
         fingerprints:
           - 73:F0:D9:50:8A:25:72:C1:10:07:7C:FF:1C:AD:4E:D9:2C:00:F0:20:4F:AF:ED:BA:C8:43:4B:D7:6B:C4:AC:D1
+  - domain: chat.deepseek.com
+    method: https
+    issue:
+      - CB-460
+    checked: "2026-11-28T17:42:24Z"
+    packages:
+      - package: com.deepseek.chat
+        fingerprints:
+          - 1E:EC:C4:6F:DC:21:73:43:7D:70:14:0F:16:3A:AA:97:94:1D:41:B0:4D:91:DA:3E:B6:89:AE:C4:F3:39:AB:EB
+          - C6:89:3C:53:68:F7:B5:12:2F:EC:DA:FC:6C:4E:CF:49:E0:B3:DC:4E:42:BD:16:6C:DB:64:69:07:78:8C:7F:FA
   - domain: citymapper.com
     method: https
     issue:
