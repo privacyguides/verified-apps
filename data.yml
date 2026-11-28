@@ -1553,6 +1553,14 @@ packages:
             issue: GH-6215
             apk:
               sha256: f10482c2337a654900d4681c165b634c0845d06dc2cc132dd913f70dfe7e408c
+  - package: com.actureunlock
+    signature:
+      - fingerprint: EF:08:4C:EF:24:52:EF:AE:1B:4A:EC:E5:39:65:B3:ED:31:9B:4A:DE:A8:C8:2C:2A:B6:E3:3C:31:5B:F2:5B:4F
+        sources:
+          - name: Google Play
+            issue: GH-4786
+            apk:
+              sha256: dce574b8cb73bb5e5eed5744628a8f8bbb1005ee8f639d5373b56ab763a6f171
   - package: com.addev.listaspam
     signature:
       - fingerprint: 71:84:EC:EA:2F:16:A4:1A:C1:1F:E5:E7:DD:8F:4A:8E:91:1F:F0:7E:2E:08:88:73:B9:85:24:F9:8D:72:D0:51
