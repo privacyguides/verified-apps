@@ -16358,6 +16358,14 @@ packages:
             issue: CB-134
             apk:
               sha256: 7dbe686ddd26593526b77562f7bb06dc12004a49bdc95bcfd399a241b61827d4
+  - package: net.carcoop.app
+    signature:
+      - fingerprint: CB:3E:47:DE:22:93:F8:0F:7D:E5:7C:BB:28:39:75:37:C7:8A:4A:91:EC:12:44:10:8C:6D:A0:D2:F8:7E:C6:2B
+        sources:
+          - name: F-Droid
+            issue: GH-5397
+            apk:
+              sha256: 8cfeecffe0459d8f4bb60f9209af9ae19d401e3442d4881b80dd3028cad86d89
   - package: net.christianbeier.droidvnc_ng
     signature:
       - fingerprint: F8:EF:C0:A7:D5:F9:D8:BA:88:ED:F0:82:F2:DC:2C:21:31:B7:54:BA:8F:ED:B4:91:6A:C2:EB:2A:CC:52:19:0D
