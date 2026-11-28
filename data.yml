@@ -7890,6 +7890,14 @@ packages:
             issue: GH-2836
             apk:
               sha256: 96d2d5957b128629e977ae51b876c93e8a1eafcb89f84e0f353fe6f0cdc3346e
+  - package: com.memrise.android.memrisecompanion
+    signature:
+      - fingerprint: 2A:24:21:A3:AD:88:97:D8:B3:86:D8:0B:8F:B4:43:9F:3F:66:2F:9A:BE:64:62:A8:83:9F:50:2E:12:0C:01:D5
+        sources:
+          - name: Google Play
+            issue: GH-5528
+            apk:
+              sha256: 699d1dd24cafbfbb6e31671e4c495b6c0b429e4500d87af5640d507e91710be9
   - package: com.menards.mobile
     signature:
       - fingerprint: F4:58:C7:8C:C4:61:20:5B:E2:C8:0B:94:8D:A9:E3:0A:1E:5E:A2:0A:7E:B4:2B:E5:79:9D:0C:D1:10:05:AE:64
