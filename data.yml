@@ -69,6 +69,14 @@ packages:
             issue: GH-2300
             apk:
               sha256: 57d05987e84662f35a4d9c45a0a8f4f4a5004687c7cc25114dabf513c39f76d1
+  - package: air.com.rosettastone.mobile.CoursePlayer
+    signature:
+      - fingerprint: 70:B4:1B:A2:63:43:06:B7:0D:25:82:EF:91:10:76:14:A8:A0:69:6B:2B:51:AC:5F:19:E0:10:8A:76:10:7C:15
+        sources:
+          - name: Google Play
+            issue: GH-4772
+            apk:
+              sha256: f147fbe30b2c6a4c97badc2beb7b36c7ba949efa9556567e14e8e5b6c623d850
   - package: alt.nainapps.sharepaste.fdroid
     signature:
       - fingerprint: FD:32:55:B5:3A:55:7C:E8:A6:53:2F:CC:7C:FA:4A:5D:1C:D3:45:56:0B:55:76:BD:B5:29:46:78:C2:99:77:2A
