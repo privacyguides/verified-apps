@@ -14357,6 +14357,14 @@ packages:
             issue: GH-4601
             apk:
               sha256: f3369f827792a6c065d1b64407fd2f7cfe8e0884f50b4597516710d6642b80e2
+  - package: in.sunilpaulmathew.izzyondroid
+    signature:
+      - fingerprint: 43:5B:F0:96:FB:5A:07:17:6B:3F:9F:DC:00:C5:09:7A:CA:B3:5C:14:42:E6:47:20:EA:C8:12:58:5D:A9:3C:23
+        sources:
+          - name: F-Droid
+            issue: GH-4456
+            apk:
+              sha256: d42f3b4bd70b0b9d5d63fcf0cdab1afc36db59299edade108ac39e0409eec063
   - package: info.guardianproject.ripple
     signature:
       - fingerprint: 92:7F:7E:38:B6:AC:BE:CD:84:E0:2D:AC:E3:3E:FA:9A:7A:2F:09:79:75:0F:28:F5:85:68:8E:E3:8B:3A:4E:28
