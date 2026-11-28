@@ -7354,6 +7354,14 @@ packages:
             issue: GH-2143
             apk:
               sha256: 0a28470ff4e4abdcb8983ef5bee133c2d3f0cb3329715407407fedfe9fcabf92
+  - package: com.lixar.allegiant
+    signature:
+      - fingerprint: 3A:6D:D9:16:1E:3E:40:25:62:71:5E:B6:56:24:24:14:B0:84:F9:25:F2:4F:53:90:98:4D:D2:B8:A2:01:79:01
+        sources:
+          - name: Google Play
+            issue: GH-4776
+            apk:
+              sha256: ec9336a4c97db40f9b01316e1d61291da8ebe804793e5e4752505e81ecbb97f7
   - package: com.llamalab.automate
     signature:
       - fingerprint: AC:B4:0B:D2:BD:7C:8E:C8:E0:1D:16:85:BE:A7:12:95:7F:0A:6E:4C:15:BE:DF:DE:48:4C:34:D6:06:FD:08:23
