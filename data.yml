@@ -11495,6 +11495,12 @@ packages:
               sha256: ac2f569045bc818bc9af6c906d94d58dc2b5063587dbc66f59bc296d5e0807a1
   - package: com.vitorpamplona.amethyst
     signature:
+      - fingerprint: 30:EA:E3:8B:EF:DB:55:3A:EB:B9:8C:0E:49:2D:04:8E:E1:F9:B5:25:4C:32:85:DD:24:F7:78:8B:A5:39:6A:EA
+        sources:
+          - name: Google Play
+            issue: GH-4511
+            apk:
+              sha256: 2b393ec2377bb5d5fe175e637eb215c13ddc56dc239bdcd84858a61637efa9e1
       - fingerprint: C2:D0:AA:86:BC:B6:B6:20:90:56:1A:41:BB:E3:36:E9:8B:78:C2:D0:21:0A:49:8D:C8:85:F2:8E:13:48:CF:17
         sources:
           - name: F-Droid
