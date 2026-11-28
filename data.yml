@@ -4256,6 +4256,14 @@ packages:
             issue: GH-2801
             apk:
               sha256: cbc52f2916ce35a2a1157718f39bf8048558628c1f2c571edd0fca54f4a71238
+  - package: com.druk.lmplayground
+    signature:
+      - fingerprint: C2:0F:81:71:07:A9:0B:C1:E0:D9:E1:30:93:B3:73:18:9E:13:B6:EF:20:4F:99:D4:28:78:C7:34:14:FA:94:F6
+        sources:
+          - name: Google Play
+            issue: GH-5182
+            apk:
+              sha256: d9330cb4d11e61f244eef2c81a5fdd0ebbe1ee0a84bd0673bc53e9c418379be7
   - package: com.dsemu.drastic
     signature:
       - fingerprint: 81:FB:B6:04:02:BA:CF:84:DD:55:BD:BA:40:9A:34:CB:F1:E1:01:C3:CB:12:4D:3F:CD:84:51:28:57:B5:BF:80
