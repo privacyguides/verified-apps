@@ -13738,6 +13738,16 @@ packages:
             apk:
               sha256: 45cc002843a771ed6f16de83e08a18c4a8480f32ee1382f8168999ce74f7f4be
               link: https://github.com/VentralDigital/InterProfileSharing/releases/download/v1.1/ips-1.1.apk
+  - package: dk.tacit.android.foldersync.lite
+    signature:
+      - fingerprint: 2D:20:10:1D:3A:40:63:16:AB:43:31:F7:5E:12:92:E6:1B:79:81:DC:36:E8:08:4B:2D:25:97:EC:40:7C:3E:05
+        sources:
+          - name: Google Play
+            issue: GH-4791
+            apk:
+              sha256: a252d7a7a05f1984946926f3cd5c24a32dc1fcdd3cd866fc8a861a76ded1d2ee
+          - name: HTTPS Verified Domain
+            issue: GH-4791
   - package: dubrowgn.wattz
     signature:
       - fingerprint: C8:8E:4E:EB:08:C2:DA:45:E5:76:67:3E:01:3A:75:BB:C3:C4:F2:FE:F8:CE:CC:A1:97:DF:05:AA:0D:8A:BF:F1
