@@ -1786,6 +1786,16 @@ packages:
             issue: GH-6285
             apk:
               sha256: b0634564aa056ab65121e8522c0bcf6148558eb8018210271646b7aeed6fa7bb
+  - package: com.alltrails.alltrails
+    signature:
+      - fingerprint: 48:CE:7D:26:B1:43:13:D8:7F:0D:18:E6:65:09:D8:90:F1:12:B6:94:24:E1:41:C0:09:B1:4F:B4:75:ED:B8:F8
+        sources:
+          - name: Google Play
+            issue: GH-4371
+            apk:
+              sha256: 2581c328b09afbc39b794443b32fe8f979b4d6a304e1429e2f8464655e0f7dc5
+          - name: HTTPS Verified Domain
+            issue: GH-4371
   - package: com.ally.MobileBanking
     signature:
       - fingerprint: |-
