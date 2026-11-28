@@ -9929,6 +9929,14 @@ packages:
             issue: GH-3987
             apk:
               sha256: 6753712be46f2f3192ccc7312f646897c15eb3cc85194ce8f6d75a80bec674bc
+  - package: com.rrajath.grove
+    signature:
+      - fingerprint: 10:DF:57:1D:83:64:8D:28:FF:86:B6:C1:61:6E:F4:1D:D3:EA:45:8C:CC:D3:84:02:88:BB:63:CB:84:B2:A0:06
+        sources:
+          - name: F-Droid
+            issue: GH-5565
+            apk:
+              sha256: 9f5c49d12ec13a888949b199996a2bc376e95c7ada792a99f32c68d2eb884696
   - package: com.ruizlenato.karabau
     signature:
       - fingerprint: 7A:66:E7:D1:CA:34:75:58:BC:DE:5F:C4:05:CB:04:78:F3:B8:1C:02:B1:01:81:CB:CE:58:F7:97:95:DA:D8:40
