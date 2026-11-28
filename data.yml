@@ -8873,6 +8873,14 @@ packages:
               sha256: ec55a1c59073cfb85e6930da078825af70685bd831a8aafb6bd83fdaa2fc95fe
           - name: HTTPS Verified Domain
             issue: GH-8406
+  - package: com.pinterest
+    signature:
+      - fingerprint: 34:1D:68:81:B1:EC:F3:83:61:FB:F8:C8:FB:AE:0A:A5:16:B4:53:75:C3:9E:F5:E7:8B:16:18:69:AC:C1:BC:FA
+        sources:
+          - name: Google Play
+            issue: CB-249
+            apk:
+              sha256: e04e7d37272ee5c67170c30fff8ba5e279a60b64c974a535abbb9ce313b7ecef
   - package: com.pittvandewitt.wavelet
     signature:
       - fingerprint: 68:92:26:16:82:81:AB:24:22:C9:EB:50:6C:BD:2C:3A:6C:3A:9A:5F:51:AE:C1:23:C9:41:93:D1:C5:87:E0:49
