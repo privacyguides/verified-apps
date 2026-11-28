@@ -6652,6 +6652,14 @@ packages:
             issue: GH-7633
             apk:
               sha256: 3336b43a04cf7e4776449b2ae4eaa4420237f4ad1a479c31718a3dc68ad87a44
+  - package: com.hisense.juconnect.connectlife
+    signature:
+      - fingerprint: 4D:71:A3:CF:ED:90:22:4A:A1:FA:FE:3C:E1:0C:60:67:7B:FD:28:DE:E5:9D:D5:38:75:DB:84:D0:7A:03:DF:C3
+        sources:
+          - name: Google Play
+            issue: CB-458
+            apk:
+              sha256: c5ece5e07338286347ee1987c92e3f4ab8546619ff5965501bc9ebed0d7ad3ed
   - package: com.hp.printercontrol
     signature:
       - fingerprint: F9:77:2B:17:CD:87:2E:EA:3E:21:4E:A2:80:8F:EB:FC:FD:18:22:F8:72:EB:2E:38:16:33:9D:04:B0:54:45:0E
