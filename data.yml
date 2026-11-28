@@ -9043,6 +9043,14 @@ packages:
             issue: GH-4610
             apk:
               sha256: fc2ac337e2536a7a5d745e8b6503116cd3742b7e55e40c70b53e6b5750d52b3b
+  - package: com.raildeliverygroup.railcard
+    signature:
+      - fingerprint: 8C:37:11:13:76:BC:79:FB:4D:7B:D9:4A:AD:69:8D:2A:CD:45:09:D6:B5:1E:A7:A4:A1:50:5C:50:A1:7C:9A:4B
+        sources:
+          - name: Google Play
+            issue: GH-4160
+            apk:
+              sha256: 3ade350111d3eed684d35b3d7741c7f2c333b5c934dfd3cfe00efb6347e0b059
   - package: com.rarlab.rar
     signature:
       - fingerprint: 1F:0C:AD:82:53:A5:07:E9:18:A1:B1:44:C9:62:4B:8D:EB:70:EB:BF:4E:B2:B7:E2:79:9A:1C:7C:2B:B0:6B:91
