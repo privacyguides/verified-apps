@@ -11515,6 +11515,14 @@ packages:
             issue: GH-2044
             apk:
               sha256: 048680d733159644f39938ffe526201cae3f31e511764af1f16d4abd8327161e
+  - package: com.yarratrams.tramtracker
+    signature:
+      - fingerprint: CB:1C:96:33:38:A8:EC:6F:48:B2:C5:9D:3A:A6:92:E1:4D:8D:89:08:1C:BC:16:5F:F1:EA:89:AF:21:40:11:16
+        sources:
+          - name: Google Play
+            issue: GH-3957
+            apk:
+              sha256: 0fd387505a61f3d3e00d361f46200c6e2ac8717880db500df53c8d75d9a5bb87
   - package: com.yash.xpenc
     signature:
       - fingerprint: 46:88:37:A8:2D:F7:75:B5:97:4A:50:D2:07:73:A1:B3:B1:9A:DB:D0:65:7A:79:4C:9F:51:2E:D4:3C:E6:DC:E6
