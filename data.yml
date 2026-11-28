@@ -8073,6 +8073,16 @@ packages:
             issue: GH-2752
             apk:
               sha256: 5a952ae5d883f03d885c56cdd898089cf2f049d5337afc42ff044e65af347e14
+  - package: com.mi.globalbrowser
+    signature:
+      - fingerprint: |-
+          40:90:C6:8A:97:07:C2:3F:1C:5D:D0:7F:8D:63:2D:EC:77:AC:51:9B:87:5D:0B:54:C4:67:90:76:40:7E:9D:96
+          C9:00:9D:01:EB:F9:F5:D0:30:2B:C7:1B:2F:E9:AA:9A:47:A4:32:BB:A1:73:08:A3:11:1B:75:D7:B2:14:90:25
+        sources:
+          - name: Google Play
+            issue: CB-345
+            apk:
+              sha256: e76a6e7428b56eb5bea4945170608c92ef3c78d4e85e6164f650afa0907468a4
   - package: com.michaels.michaelsstores
     signature:
       - fingerprint: |-
