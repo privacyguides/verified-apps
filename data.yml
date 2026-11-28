@@ -2596,6 +2596,14 @@ packages:
             issue: GH-1266
             apk:
               sha256: 1c5e376f9e14738dfd6bbbf118210e2d4626b206d31b133b4e3ce3d906c989a2
+  - package: com.barclays.android.barclaysmobilebanking
+    signature:
+      - fingerprint: DD:65:E3:58:00:29:8A:3E:FB:56:E5:86:06:B3:85:E9:AA:44:7F:8F:CA:7B:9D:B4:B7:E5:05:EE:CA:E0:64:40
+        sources:
+          - name: Google Play
+            issue: CB-279
+            apk:
+              sha256: 51201990c468e057bb44f3d0332662d2ac8d23d86ed9f917aba7c097dca79af0
   - package: com.bartixxx.oneplusarbchecker
     signature:
       - fingerprint: 81:C9:0F:D1:6A:84:68:04:A6:13:AF:12:C6:83:B8:E0:F3:19:AE:F7:DA:C5:15:C3:3B:3D:C6:C7:FC:75:5D:B7
