@@ -6622,6 +6622,16 @@ packages:
             issue: GH-596
             apk:
               sha256: 1aeae599ceb630a3a7ad6846787a192f64e47bd935e755038fdcfee48e4d93f3
+  - package: com.heytap.browser
+    signature:
+      - fingerprint: |-
+          A8:FE:A4:CA:FB:93:32:DA:26:B8:E6:81:08:17:C1:DA:90:A5:03:0E:35:A6:0A:79:E0:6C:90:97:AA:C6:A4:42
+          B2:9A:A0:BB:DC:9F:D9:DE:F5:5D:C5:6E:A7:D7:45:76:D5:84:6C:BC:F5:E5:AB:D3:05:E2:D9:31:9E:4F:42:AE
+        sources:
+          - name: Google Play
+            issue: CB-381
+            apk:
+              sha256: d17ff390debcf57bbe59c34dd530f3a02bdb2104b164af08c6fcf9de797d3e09
   - package: com.hifnawy.caffeinate
     signature:
       - fingerprint: 95:0A:5B:F9:8A:6C:43:76:9D:80:0A:AC:37:1E:83:B8:A6:32:B5:5D:E9:83:49:C0:1D:C5:41:9E:90:ED:B1:AB
