@@ -15262,6 +15262,14 @@ packages:
             issue: GH-4523
             apk:
               sha256: 5dd85d333de23a483e034645f9e803d319addb31f937a796deffebdfb79db252
+  - package: jp.co.canon.ic.photolayout
+    signature:
+      - fingerprint: 6F:EE:8C:61:55:8F:85:58:84:09:51:26:73:11:03:FC:90:D3:FF:5A:3A:B3:F8:1E:4B:9F:23:FF:15:5F:1B:66
+        sources:
+          - name: Google Play
+            issue: GH-4508
+            apk:
+              sha256: 4ac66164503a21b49cecdc2d7bc2090923c01bed5f994b60d9d4f1b1c68b37d4
   - package: jp.co.canon.oip.android.opal
     signature:
       - fingerprint: E9:37:77:B2:72:E1:11:F3:E8:5E:1C:48:B7:C9:FD:AE:89:A7:EF:28:E3:FE:17:52:7C:AB:E4:2D:03:CB:0B:70
