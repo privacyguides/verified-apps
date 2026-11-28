@@ -3620,6 +3620,14 @@ packages:
             issue: GH-7690
             apk:
               sha256: 3317217ecdb7e810db35a8086fe879407cf56d349639f0c2cb1ae012cca1093c
+  - package: com.connectyourcare.mobile30
+    signature:
+      - fingerprint: A9:C8:C2:6F:2D:8D:2E:43:3F:77:8E:B1:B4:9F:C7:5B:8C:FF:F1:5D:0D:13:A0:30:FD:7B:6E:56:17:D8:D6:12
+        sources:
+          - name: Google Play
+            issue: GH-4774
+            apk:
+              sha256: 80b671021ea306fbb3276e83a9b06d92ee66af991dce6306600720b3cc543f13
   - package: com.contactoffice.mailfence
     signature:
       - fingerprint: 97:FE:5D:AA:04:8D:40:D3:CC:F0:A1:09:8F:47:FC:99:D1:A0:36:FA:BA:AF:B9:80:1F:51:E5:63:69:59:14:38
