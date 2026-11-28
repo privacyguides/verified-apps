@@ -19488,6 +19488,14 @@ packages:
             issue: GH-6688
             apk:
               sha256: a5804fd405b1185baee293625898de342c3051362542fb6361a2ef0b2c774350
+  - package: wtf.riedel.onesec
+    signature:
+      - fingerprint: 2B:77:53:46:BE:30:D0:6D:FD:99:AB:C1:50:FB:D1:CE:B1:5A:50:6B:D6:FF:B7:04:0B:50:11:63:82:DE:1E:DA
+        sources:
+          - name: Google Play
+            issue: GH-4787
+            apk:
+              sha256: 25d27b59aefa5f5efc0f53f90fcdc142ab1bab87543ea6998b675f9dc2439258
   - package: xyz.blueskyweb.app
     signature:
       - fingerprint: 40:05:8E:C6:8A:35:55:21:D0:8D:F2:49:98:CF:99:A7:14:91:33:5C:65:D7:58:85:03:9E:80:C0:25:AA:DD:FF
