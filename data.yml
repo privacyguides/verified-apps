@@ -13660,6 +13660,14 @@ packages:
             issue: GH-2025
             apk:
               sha256: b6daf667b56157f00756819988bb13cca87c3be3bbd9ef4a49fc15dd8e34d8be
+  - package: es.aeat.pin24h
+    signature:
+      - fingerprint: 15:06:7C:61:6B:7D:CF:8D:16:3C:88:31:6C:20:03:F9:4D:4E:DD:9B:1F:3C:0B:C2:F3:CC:92:BE:A9:55:51:77
+        sources:
+          - name: Google Play
+            issue: GH-4480
+            apk:
+              sha256: 1f42820219282238d8d63cd72190268190cf7cfe327f1b5281feffa1735d2d65
   - package: eu.artectrex.bunny
     signature:
       - fingerprint: 96:72:39:27:86:CD:D8:69:13:95:56:E8:B1:45:BF:98:FA:8E:D4:DD:A1:9C:39:06:3F:D0:1A:34:AA:EE:D6:00
