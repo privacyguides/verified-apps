@@ -5889,6 +5889,16 @@ packages:
             issue: GH-7970
             apk:
               sha256: fecf6b4b7c7a9f01ba6d5b52f3d17a4fbe31171fc961dce66fe20453ffc03efc
+  - package: com.google.android.apps.magazines
+    signature:
+      - fingerprint: |-
+          7C:E8:3C:1B:71:F3:D5:72:FE:D0:4C:8D:40:C5:CB:10:FF:75:E6:D8:7D:9D:F6:FB:D5:3F:04:68:C2:90:50:53
+          F0:FD:6C:5B:41:0F:25:CB:25:C3:B5:33:46:C8:97:2F:AE:30:F8:EE:74:11:DF:91:04:80:AD:6B:2D:60:DB:83
+        sources:
+          - name: Google Play
+            issue: CB-337
+            apk:
+              sha256: 2151361a23af6c237bdb163d7cce8f7e8c78cc6704242783cb564a26a88e2cad
   - package: com.google.android.apps.maps
     signature:
       - fingerprint: |-
