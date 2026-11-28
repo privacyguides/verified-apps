@@ -5872,6 +5872,17 @@ packages:
             issue: GH-8276
             apk:
               sha256: fc795631b5b6817e87e68bb6690992446b0132bc21eadd74c123909c0f547c3e
+  - package: com.google.android.apps.docs.editors.sheets
+    signature:
+      - fingerprint: |-
+          3D:3D:81:8F:1D:C2:FE:3B:C3:07:78:D1:A3:BE:8B:19:66:F4:D2:B5:A5:5F:5B:17:70:A0:51:CE:53:C7:E7:F9
+          3D:7A:12:23:01:9A:A3:9D:9E:A0:E3:43:6A:B7:C0:89:6B:FB:4F:B6:79:F4:DE:5F:E7:C2:3F:32:6C:8F:99:4A
+          5A:AD:2B:EE:6D:B9:5D:17:E0:5A:08:D7:D1:E6:4C:10:A1:51:18:79:15:44:83:91:6B:6A:E6:C7:FD:9C:B0:C6
+        sources:
+          - name: Google Play
+            issue: GH-5157
+            apk:
+              sha256: 029a7983fa7ebdd30d21597651b31b46e0f65fa2580c4d646161e6c625400cb3
   - package: com.google.android.apps.docs.editors.slides
     signature:
       - fingerprint: |-
