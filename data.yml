@@ -12159,6 +12159,14 @@ packages:
             issue: GH-355
             apk:
               repo: https://mobileapp.bitwarden.com/fdroid/repo/
+  - package: com.xatori.Plugshare
+    signature:
+      - fingerprint: 04:7A:DF:45:00:57:52:F3:39:E3:4C:C9:AC:05:6D:C0:0D:78:13:EE:34:35:84:FF:CF:99:43:9D:D2:1C:47:07
+        sources:
+          - name: Google Play
+            issue: GH-5027
+            apk:
+              sha256: e204cd954698313999bed0a77d5a5d7c315a6cf03d554ca988b36345f1aac0ca
   - package: com.xfinity.digitalhome
     signature:
       - fingerprint: 95:3F:5A:4C:22:E7:FD:16:AD:C3:F1:2E:B0:38:68:2A:AD:37:7F:EF:9A:18:B9:D1:2C:1A:BE:A7:89:11:C7:49
