@@ -740,6 +740,15 @@ domains:
           - 69:34:C4:76:33:EE:FF:8F:A0:B8:E8:A5:3B:FF:90:0E:2F:80:7D:FF:FE:3D:E7:8E:D5:D5:75:8A:6F:AA:55:A9
           - 81:E3:3F:4F:6D:B8:8D:35:A2:23:77:E5:68:1A:28:72:83:BE:18:5E:D4:5E:AB:89:F9:48:11:81:0C:BA:A5:65
           - B1:23:20:22:72:68:C9:C3:7E:19:0B:49:31:20:A7:F6:CE:83:C0:E9:A7:61:F9:21:3D:F6:77:B5:8D:09:5B:73
+  - domain: kickstarter.com
+    method: https
+    issue:
+      - GH-4392
+    checked: "2026-11-28T07:59:53Z"
+    packages:
+      - package: com.kickstarter.kickstarter
+        fingerprints:
+          - FC:A8:BF:E6:BC:D7:18:99:A7:1C:56:CA:DA:23:D4:08:8D:9F:05:16:D7:02:14:04:B5:B9:99:44:18:26:72:89
   - domain: koleo.pl
     method: https
     issue:
