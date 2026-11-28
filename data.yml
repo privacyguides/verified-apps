@@ -10852,6 +10852,14 @@ packages:
             issue: GH-2184
             apk:
               sha256: 32b9228f3f650e7edca76b5c5010ca6bd506eb5ba265d803b27ca322b0a876ef
+  - package: com.tdbank
+    signature:
+      - fingerprint: 35:0D:3E:AA:87:19:CB:0C:F8:51:A9:05:B4:9E:18:42:18:AB:7F:64:8B:90:A2:40:91:48:EF:74:ED:99:29:49
+        sources:
+          - name: Google Play
+            issue: GH-5184
+            apk:
+              sha256: d9cda0af5b7ad18a6c8f6e7fa2a483f5a2b1ae56f5667a5e10bbeb327bc45bc5
   - package: com.teamwood.spacewood.unity
     signature:
       - fingerprint: 99:71:F2:1B:DF:4C:20:3E:B7:2A:69:DA:9C:0C:E7:0D:45:B7:F0:DD:8E:9C:D9:E8:02:9C:1B:5A:15:CA:D9:11
