@@ -1275,6 +1275,14 @@ packages:
             issue: GH-7961
             apk:
               sha256: cd31f208dc02e0df3ddd16195e063e60d1916dc826c15703ec7a117ce7465c81
+  - package: cn.rbc.termuc
+    signature:
+      - fingerprint: 99:CF:29:47:08:88:48:60:2A:FF:6A:49:4B:00:C3:7C:33:AA:83:31:99:80:84:8B:2C:F0:29:E5:11:C9:14:A2
+        sources:
+          - name: F-Droid
+            issue: GH-4324
+            apk:
+              sha256: d27b05c6a214b2cc02a4d27255cab2fad06e803b02940572a3baf163102b14cc
   - package: co.cape.matrix
     signature:
       - fingerprint: F9:30:72:E3:44:E6:91:F4:02:23:14:D3:E6:D0:D6:1B:80:0F:10:8A:3F:08:83:AE:13:0E:72:55:03:A7:91:42
