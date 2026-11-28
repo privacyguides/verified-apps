@@ -2718,6 +2718,14 @@ packages:
             issue: GH-3523
             apk:
               sha256: 1aad11c61257b63c14fbe42a91817d688a8f6a62a7433223ced92444e18eb0db
+  - package: com.bashsoftware.boycott
+    signature:
+      - fingerprint: E3:1A:44:DF:01:F0:36:1B:2B:33:17:72:22:99:AA:50:6A:93:4C:96:DE:6C:3A:BB:11:4F:9B:5F:D6:64:39:04
+        sources:
+          - name: Google Play
+            issue: CB-383
+            apk:
+              sha256: 6f007f143b91a611a5bdf44c6612d660c10bdac4e08776697a083436f0b681a6
   - package: com.battlelancer.seriesguide
     signature:
       - fingerprint: 34:06:53:F1:DF:23:9E:98:6F:D5:01:AA:6E:F8:50:85:69:7A:13:30:62:C7:42:DC:FC:8A:96:A0:45:9F:63:5D
