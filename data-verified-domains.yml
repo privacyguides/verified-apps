@@ -614,6 +614,15 @@ domains:
       - package: com.fundrise.android
         fingerprints:
           - FF:4B:21:E4:BB:0F:1F:AF:33:75:2D:9E:15:8E:0A:B0:ED:F1:E1:A8:2A:81:E0:C4:8F:29:40:23:55:82:B1:8B
+  - domain: geogebra.org
+    method: https
+    issue:
+      - GH-5166
+    checked: "2026-11-28T13:18:23Z"
+    packages:
+      - package: org.geogebra.android.calculator.suite
+        fingerprints:
+          - 71:AD:93:C8:86:A7:77:95:D4:DE:5A:E6:6C:FF:F9:8E:56:5F:D2:59:53:57:26:43:39:7B:F7:58:DB:CC:10:1A
   - domain: getknit.app
     method: https
     issue:

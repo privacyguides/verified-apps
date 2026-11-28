@@ -17709,6 +17709,16 @@ packages:
             issue: GH-1120
             apk:
               sha256: e9a0fad6d25bcb552394edc224f65b0bbb031600c3440c837c33b5a5198513e9
+  - package: org.geogebra.android.calculator.suite
+    signature:
+      - fingerprint: 71:AD:93:C8:86:A7:77:95:D4:DE:5A:E6:6C:FF:F9:8E:56:5F:D2:59:53:57:26:43:39:7B:F7:58:DB:CC:10:1A
+        sources:
+          - name: Google Play
+            issue: GH-5166
+            apk:
+              sha256: 59e80679edc94cac21e384ae9ed78ee97420308d1d7c5ff6b156a301cae414b7
+          - name: HTTPS Verified Domain
+            issue: GH-5166
   - package: org.ghostrain
     signature:
       - fingerprint: A6:15:89:D7:CA:26:97:80:09:7F:04:77:68:2F:F6:EC:D5:FB:3A:F4:F1:76:06:E9:76:71:09:93:FA:AB:82:49
