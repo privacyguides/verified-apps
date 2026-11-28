@@ -4441,6 +4441,14 @@ packages:
             issue: GH-1027
             apk:
               sha256: 42e65665cbe26e134a0a0b9ff81756d269f97e566287e03e4f9a46b7281bdf5a
+  - package: com.electra.app
+    signature:
+      - fingerprint: 0B:34:23:7D:CA:49:7A:3B:FC:F5:6E:A2:8E:08:DE:7F:21:62:D9:04:BB:A6:AC:45:69:60:51:BD:37:23:F4:49
+        sources:
+          - name: Google Play
+            issue: GH-5036
+            apk:
+              sha256: 89ba8f67dddb6f1b2c699740e09551f1b5cc2d59f0edce35dc005d5639b8f6f7
   - package: com.emirates.ek.android
     signature:
       - fingerprint: 04:E4:8B:97:C2:75:7E:BE:EE:D9:4D:8A:1C:5E:F3:F0:05:E5:43:7E:1E:76:5C:5F:7B:61:11:4E:D4:60:11:BE
