@@ -15612,6 +15612,14 @@ packages:
             apk:
               sha256: 9d6425d3d8d79f4b67ad563d9de7ca2c5a6cf48623581bce5a2f1ea0b43503ea
               link: https://github.com/fast4x/RiPlay/releases/download/v0.7.80/RiPlay-full-release-0.7.80.apk
+  - package: it.feio.android.omninotes
+    signature:
+      - fingerprint: 1C:38:A6:91:10:43:20:CA:55:BF:50:02:5D:55:4E:48:A2:20:98:D7:8B:E2:BA:25:60:BA:DC:15:7C:EF:68:1D
+        sources:
+          - name: Google Play
+            issue: GH-5221
+            apk:
+              sha256: 955e13de17562387087ab75f10bc83ca8ee37639b964d0a91466e848b0683f49
   - package: it.feio.android.omninotes.foss
     signature:
       - fingerprint: 1E:EE:2B:A9:79:FB:76:23:29:C9:98:19:3D:F3:70:5C:32:51:15:C3:51:AE:B4:CA:A5:63:1B:AD:7A:67:02:A3
