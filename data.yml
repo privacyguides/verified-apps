@@ -14235,6 +14235,14 @@ packages:
             issue: CB-158
             apk:
               sha256: b4731e0671b4465303867389d7818cf67c481ff01af4304271b7b02ea4912369
+  - package: io.ente.locker.fdroid
+    signature:
+      - fingerprint: 33:FA:EE:93:AA:33:44:C6:A8:ED:47:03:E8:C6:D1:FA:99:21:98:09:F6:8C:7D:FA:3E:42:13:75:13:81:2C:96
+        sources:
+          - name: F-Droid
+            issue: GH-4236
+            apk:
+              sha256: e2039d2734e94eecbc82d39c7fe81ef093b61ebf2c80e09290d9d683a2bbc0b3
   - package: io.ente.photos
     signature:
       - fingerprint: 37:D4:0B:10:3B:BF:86:43:EB:AE:23:B3:BB:73:F8:65:B4:E9:3A:BF:65:45:EF:37:12:8A:4C:EA:5B:C2:7E:2E
