@@ -10309,6 +10309,14 @@ packages:
               sha256: 6a8a0d169fe62602d54ef5a7e79ac287e56bbc5efb6a7b29c50c6f5a9ab0a43a
           - name: HTTPS Verified Domain
             issue: GH-3446
+  - package: com.soc.mycolorado
+    signature:
+      - fingerprint: 38:20:F9:0A:3B:8E:DF:26:66:67:D4:01:5C:69:AC:74:B8:10:DA:36:71:2C:44:3D:99:74:EF:86:B6:CE:82:53
+        sources:
+          - name: Google Play
+            issue: GH-4882
+            apk:
+              sha256: 4ff2ed019a1dbdf76596752fad32b9469a2f8af9a234ae51545ba85438e8b1d0
   - package: com.sonos.acr2
     signature:
       - fingerprint: 7C:34:EB:3C:FB:DA:05:FA:F5:6E:88:90:A2:AB:BA:C1:4B:30:36:E6:E4:35:88:49:B9:8E:88:19:B6:B7:B3:29
