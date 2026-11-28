@@ -10482,6 +10482,14 @@ packages:
             issue: GH-3566
             apk:
               sha256: 619e766b7f30acb4c96943463b7c1b031e7c538eeb8eb820612a72a763b0243e
+  - package: com.sweak.qralarm
+    signature:
+      - fingerprint: 9D:88:90:E1:97:16:01:D1:E4:E5:A1:C0:0F:F1:E3:A1:54:38:10:D2:8E:1C:5B:E4:D2:B5:C0:89:64:B1:81:57
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-4502
+            apk:
+              sha256: 0e46d2aecb424f60e3e768226e9feffc09379b0e1533aa14161c4ee510be4315
   - package: com.swordfish.lemuroid
     signature:
       - fingerprint: 36:E9:85:3F:48:84:E5:5C:35:80:3D:BF:67:1E:14:93:E8:B0:B4:D3:3E:63:5E:D8:4D:BA:A8:3B:CA:D8:30:3C
