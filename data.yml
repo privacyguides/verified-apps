@@ -12825,6 +12825,14 @@ packages:
             issue: GH-1577
             apk:
               sha256: c34cc7d975a839efcdfef22d4831db9d313b4a73d88336fe2d6b27813a265365
+  - package: de.nproth.pin
+    signature:
+      - fingerprint: 56:02:72:89:8F:F8:F6:0C:3C:0C:40:FC:7F:8A:58:1C:34:BB:11:22:7F:AE:F2:BE:37:76:B3:CE:F5:C9:E3:B4
+        sources:
+          - name: F-Droid
+            issue: CB-258
+            apk:
+              sha256: a77491908e12fbb9e7825bd9a4a5e53c3942ece3dc4918f40ac3200aeacb64c4
   - package: de.nucleus.foss_warn
     signature:
       - fingerprint: 69:72:4A:B4:62:25:A5:52:A7:EE:21:1C:D4:D7:2F:B8:74:88:9A:76:99:C5:83:6A:CA:1B:D8:DF:47:D3:CB:D2
