@@ -13552,6 +13552,14 @@ packages:
             issue: GH-615
             apk:
               sha256: a2fe8b7c713fc7ff62d248b2d8608299a0eeaa2fa030e2c6bfb12c6f5d229928
+  - package: eu.weblibre.gecko
+    signature:
+      - fingerprint: BB:2A:97:F5:61:53:35:C9:E5:7C:86:6F:1C:30:ED:4F:D7:D7:BD:DC:BC:BC:06:68:FE:93:A5:79:17:3D:3D:2D
+        sources:
+          - name: F-Droid
+            issue: GH-4183
+            apk:
+              sha256: f983f01f92fb8bb24260c0fd6de67d83541ef70b0b06cd498bf2e6d3ffe07a59
   - package: eu.zimbelstern.tournant
     signature:
       - fingerprint: A2:3D:B5:FD:8A:AB:1B:88:05:11:25:E1:27:60:05:77:E3:DC:BC:80:FF:73:DD:FC:4A:8D:24:5B:17:65:C1:3F
