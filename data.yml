@@ -4520,6 +4520,14 @@ packages:
             issue: GH-1820
             apk:
               sha256: 6dbc5d041b9261e7587e0e2716bbf57522a023d4f6fc393fa9bdc2dc544664c4
+  - package: com.fingersoft.legohillclimbadventures
+    signature:
+      - fingerprint: CC:AC:18:45:FC:09:43:E2:D6:72:5B:20:B6:EC:2F:8D:55:EC:7C:91:71:5E:F3:F6:CE:08:4D:7A:E4:40:A2:74
+        sources:
+          - name: Google Play
+            issue: GH-4170
+            apk:
+              sha256: 90367a505529b16582c1c3d0e64476c7dd08252bdbd0c9aa8d6381afa62fc17b
   - package: com.finnair
     signature:
       - fingerprint: 63:4A:9A:6A:A1:79:F2:8F:23:06:ED:00:14:FB:28:33:CE:A0:2E:2F:47:3D:4B:7B:19:A5:39:39:D6:63:17:00
