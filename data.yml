@@ -12599,6 +12599,14 @@ packages:
             issue: GH-846
             apk:
               sha256: a7b34f4b44bc7dd78c82e8b59940c26c545abc9bc7c2eaab68177bd91952c9ac
+  - package: com.yahoo.mobile.client.android.search
+    signature:
+      - fingerprint: D3:F1:FB:1B:2C:81:E0:96:E3:F5:80:9A:50:3A:FD:A0:CF:AF:56:B9:D3:9D:ED:C6:56:EE:26:60:AC:EF:61:4C
+        sources:
+          - name: Google Play
+            issue: CB-468
+            apk:
+              sha256: bc3ed094447c138e69af715bb4007224794d1421d59a53e506e5ca07185f216c
   - package: com.yamaha.hs.headphonecontrol
     signature:
       - fingerprint: 33:A3:BF:0E:BE:91:D5:63:C1:96:26:25:66:6C:D0:36:A1:C3:DB:64:8F:90:B3:52:56:C4:1D:CA:9D:61:81:D6
