@@ -19547,6 +19547,18 @@ packages:
             issue: GH-898
             apk:
               sha256: e530a697818961778eb7c5aec98a790067208384918cc48cb541fb33d6378b82
+  - package: ru.aleshin.timeplanner
+    signature:
+      - fingerprint: 87:06:F5:1A:36:65:C1:99:0C:7A:1C:BA:B0:9F:19:16:1C:F9:26:57:33:1E:3C:E4:42:77:CE:16:40:96:40:05
+        sources:
+          - name: F-Droid
+            issue: CB-253
+            apk:
+              sha256: 3087e0e035e1a915b9fc6f78c4544d44d38cec531bb92039a18cf143c9c4dc93
+          - name: F-Droid (IzzyOnDroid)
+            issue: CB-253
+            apk:
+              sha256: 3087e0e035e1a915b9fc6f78c4544d44d38cec531bb92039a18cf143c9c4dc93
   - package: ru.beeline.services
     signature:
       - fingerprint: 68:EB:73:23:FC:FF:C2:DA:32:9B:34:53:B5:BF:59:BF:84:43:F2:4E:1D:F3:92:BD:4D:3F:6C:D6:81:11:2A:04
