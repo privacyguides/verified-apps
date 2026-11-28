@@ -9925,6 +9925,14 @@ packages:
             issue: GH-655
             apk:
               sha256: 9712b3b0611f5f06021c55ffe8fc9401c4b778932016609c958596923b39259d
+  - package: com.studentservices.lostoncampus
+    signature:
+      - fingerprint: A7:46:7F:51:4F:37:06:BC:15:16:E1:B5:1C:04:1E:56:C5:D6:85:25:BD:B0:16:A0:84:C5:20:2D:72:02:7D:8C
+        sources:
+          - name: Google Play
+            issue: GH-3861
+            apk:
+              sha256: 0a467a837f6a296c8d13dfc3d06f48680a65915b2932286bf2a3d0139f61ad95
   - package: com.sube.app
     signature:
       - fingerprint: 0B:30:E6:36:FE:98:0A:30:1E:81:E3:5C:03:A7:37:FD:47:DA:B1:6A:71:46:2A:94:75:57:C4:DD:3D:83:B4:4E
