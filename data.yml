@@ -17911,6 +17911,14 @@ packages:
             issue: GH-895
             apk:
               sha256: 42e5566e3742c17e2810f9607d652692cbaf0bf4fd7042454e9e7e95f65d4869
+  - package: paige.navic
+    signature:
+      - fingerprint: DB:73:63:E8:FD:71:E4:CD:D1:3D:14:C0:73:D6:20:85:88:B0:2B:B2:79:1D:D1:97:C5:5F:9C:BA:9D:7A:52:E4
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-4000
+            apk:
+              sha256: cded938aeea7ccbb0249f8f70b097e037a156efed205e8306fa0b76ddc4b3f57
   - package: pan.alexander.tordnscrypt.stable
     signature:
       - fingerprint: 97:7D:4C:A0:2C:A0:B9:49:48:C5:8B:E8:7B:C3:4B:BD:D5:8E:12:35:0D:E0:78:E2:8B:17:FC:DA:17:6B:31:41
