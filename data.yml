@@ -5395,6 +5395,14 @@ packages:
             issue: GH-1033
             apk:
               sha256: 80878a8fc2aa22ec9383f5176b0f5376116d04911bb72cbf606c0d8ee2a4c947
+  - package: com.github.metacubex.clash.meta
+    signature:
+      - fingerprint: B3:91:08:43:CF:3C:45:14:71:5D:8E:86:73:7C:3B:B6:4B:ED:D1:32:E0:D4:D0:51:18:62:3E:7B:DC:54:1A:51
+        sources:
+          - name: F-Droid
+            issue: GH-5018
+            apk:
+              sha256: 344ae4411e22475a0921416820a66822b6df60a15f0b7fd4ead266936da60661
   - package: com.github.meypod.al_azan
     signature:
       - fingerprint: F8:78:9B:90:87:29:A9:DA:FC:79:A1:C1:C6:D5:83:22:A6:5E:D0:62:30:0D:85:AA:CA:96:8C:F7:2A:52:55:E3
