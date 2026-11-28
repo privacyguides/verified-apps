@@ -15638,6 +15638,14 @@ packages:
             issue: CB-187
             apk:
               sha256: c60a321fddd3a245e52a3eadc111ac4497f6de77bf064f48c4bacb6f77ab8d48
+  - package: lt.sb.mobileapp
+    signature:
+      - fingerprint: 2E:0F:D5:7A:5A:C6:2C:32:E8:22:A1:F4:BE:B5:B6:D9:F6:02:23:FB:57:FC:83:17:9F:DD:D0:CE:06:20:11:7B
+        sources:
+          - name: Google Play
+            issue: GH-4913
+            apk:
+              sha256: 12bf89163f2505ebc458115151972d883c31ad68b3fcae51b3a2818b0baaafc8
   - package: luci.sixsixsix.powerampache2.fdroid
     signature:
       - fingerprint: BA:F0:B1:5A:78:40:D7:78:2C:05:E4:BD:8B:99:D3:A6:C5:37:51:97:65:A9:36:88:FD:77:45:31:27:E1:E6:51
