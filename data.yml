@@ -10330,6 +10330,14 @@ packages:
             issue: GH-2282
             apk:
               sha256: e4b0c25ecd1cc73a0703fca37c11a2efb4ba0d73b4d55c1938603eda237dbd92
+  - package: com.threesixtyentertainment.nesn
+    signature:
+      - fingerprint: B8:AC:76:C8:AB:8C:BD:34:A2:9C:71:E0:42:EF:6E:05:8A:7A:77:37:77:F3:FF:CB:3D:6C:59:BE:F6:A0:7C:42
+        sources:
+          - name: Google Play
+            issue: GH-3944
+            apk:
+              sha256: 5b0cb0c7db10b22362ad59736a9a2abaeb470dbcf53c1404e3fc12311acf518b
   - package: com.tinder
     signature:
       - fingerprint: 8A:B1:4F:D7:50:B8:20:57:4D:20:C3:54:41:EA:14:A9:B5:D1:95:9A:31:04:0C:EC:12:B4:6B:B2:90:F4:DA:1B
