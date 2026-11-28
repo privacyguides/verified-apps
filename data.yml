@@ -878,6 +878,14 @@ packages:
             issue: GH-3955
             apk:
               sha256: 64af2c8eee5fd0100ff007ac0c1240c770a0856701a772ed46e11936de7c79d1
+  - package: barilyuk.batterytemperature
+    signature:
+      - fingerprint: E9:9D:38:AC:9A:FA:A7:6B:F1:87:FB:63:98:BB:73:AD:49:81:E9:B9:1F:19:8A:23:24:3C:A6:F3:20:34:45:0C
+        sources:
+          - name: F-Droid
+            issue: GH-4340
+            apk:
+              sha256: 682b10b3903e4a7c2792f1b800e634368e49ea25910528f9c1deca2d18ab6475
   - package: be.chvp.nanoledger
     signature:
       - fingerprint: 54:1F:AD:2A:B1:6C:1F:D8:D4:64:B2:8E:E7:03:18:49:EA:13:33:A8:E8:E3:01:6C:D4:60:FE:22:CB:DE:2B:61
