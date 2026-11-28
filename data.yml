@@ -15000,6 +15000,14 @@ packages:
             issue: GH-2585
             apk:
               sha256: 0936f8836307dc1ae33f1851b3ec67b5c2b6df49104f3f59953e168ac14acc8a
+  - package: io.github.sds100.keymapper
+    signature:
+      - fingerprint: F4:D7:53:30:27:10:C9:A7:A4:08:85:C8:91:AE:BD:B1:A0:F2:75:12:2F:DC:DB:7C:2F:45:A2:02:B2:13:F3:73
+        sources:
+          - name: F-Droid
+            issue: GH-4817
+            apk:
+              sha256: a3b99633082a1efe789cbecbc8797c47df8ff0856972769bb0eea5bce67c5115
   - package: io.github.thezupzup.linthra
     signature:
       - fingerprint: 83:51:89:AE:30:DF:4D:23:58:85:80:E0:A8:6E:5E:9B:67:EA:2A:27:45:FD:A5:10:75:9F:22:A3:D0:A7:8B:6C
