@@ -5645,6 +5645,14 @@ packages:
             issue: GH-235
             apk:
               sha256: 313a4b1f7a0245875d4bebdd17b7aa26773e09d348a7eeb336e2ed7f8d8beb66
+  - package: com.glovo
+    signature:
+      - fingerprint: ED:16:9A:0F:CD:88:CD:25:73:45:05:FC:2B:B5:8E:37:DD:EE:43:BD:6A:2E:81:8B:18:7D:E2:A8:09:3E:58:28
+        sources:
+          - name: Google Play
+            issue: CB-336
+            apk:
+              sha256: 5b9835a9919a54b061c54263f5d36034133d178eb84d62797f6c92001b2b4683
   - package: com.gmail.jiwopene.temperature
     signature:
       - fingerprint: F9:35:D4:78:CD:7F:46:A3:D9:82:22:54:BF:E9:BA:95:60:4F:D7:FD:02:78:4E:57:FC:54:5D:D3:06:D7:2A:BE
