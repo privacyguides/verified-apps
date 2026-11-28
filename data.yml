@@ -6200,6 +6200,12 @@ packages:
               sha256: cfc19b7c77e78c94a864188112ab0f0a59c5fac491a6ebd384207a2bbcb9f6ff
   - package: com.gpl.rpg.AndorsTrail
     signature:
+      - fingerprint: 35:12:51:57:CF:79:29:B4:3B:9C:05:E5:48:37:C8:3B:45:D3:CA:37:42:C8:B5:F4:0C:30:2F:D5:F5:AB:FE:5F
+        sources:
+          - name: Google Play
+            issue: GH-4855
+            apk:
+              sha256: cd35cd5b11649042568f3dee3d90da434b230a278481b1be5ce93bed1eb8bc6a
       - fingerprint: 39:16:CB:37:00:F0:AB:8E:79:01:44:48:D0:00:42:9B:82:6A:59:E0:B4:36:4B:96:C9:4D:90:5A:65:59:D2:43
         sources:
           - name: F-Droid
