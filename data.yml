@@ -7897,6 +7897,19 @@ packages:
             issue: GH-8153
             apk:
               sha256: 11eb237d60f8afaaeed5818fbfaf524aa964196eb87a220a64f50c4974dcba8d
+  - package: com.maksimowiczm.foodyou
+    signature:
+      - fingerprint: CD:74:B0:AE:DD:8E:AD:81:84:06:3A:65:90:9D:63:9A:8C:88:5C:F6:46:58:29:69:0A:9B:E8:3A:89:04:BD:EA
+        sources:
+          - name: Direct APK Link
+            issue: GH-1185
+            apk:
+              sha256: 391535a58b4a5e7b832bd936cf5b583ce68a51f0a3f7f458c37bc91c6ec6be7a
+              link: https://github.com/maksimowiczm/FoodYou/releases/download/3.4.8/food-you-3.4.8.apk
+          - name: F-Droid
+            issue: GH-1185
+            apk:
+              sha256: a5124a6087f10a38546493d46d70b44de72a6074804dab6c82132202e55153ac
   - package: com.maltaisn.notes.sync
     signature:
       - fingerprint: 1F:8B:4C:5A:D8:7F:E9:E6:41:4F:AE:5C:13:6A:C5:75:FB:F0:78:EC:DF:3C:7F:0B:3C:6A:08:6B:86:28:0C:55
