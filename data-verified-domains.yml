@@ -1307,6 +1307,16 @@ domains:
           - 0F:D9:A0:CF:B0:7B:65:95:09:97:B4:EA:EB:DC:53:93:13:92:39:1A:A4:06:53:8A:3B:04:07:3B:C2:CE:2F:E9
           - 99:22:6E:ED:9B:9E:EE:14:6C:B1:61:49:2B:CF:91:A5:4D:97:FF:04:54:32:8D:93:B8:64:F3:1F:6C:8D:D7:0A
           - F9:07:E3:BB:21:D6:31:9C:CA:34:07:80:CC:63:B5:15:3A:92:97:1F:85:D3:8A:48:82:E6:A5:7A:41:AC:33:84
+  - domain: up.com.au
+    method: https
+    issue:
+      - GH-3906
+    checked: "2026-11-28T04:59:55Z"
+    packages:
+      - package: au.com.up.money
+        fingerprints:
+          - EE:20:A1:6C:94:71:EE:73:93:FA:52:E5:48:29:20:A3:C2:8A:AF:D2:07:09:E8:69:AD:01:24:89:4E:11:F1:8B
+          - F0:7D:34:00:53:E1:34:B3:E8:A2:CF:66:8F:12:1A:AE:E8:A6:46:14:71:3A:75:72:AD:F7:4A:DB:C3:F1:C2:16
   - domain: upside.com
     method: https
     issue:

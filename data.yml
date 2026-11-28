@@ -796,6 +796,16 @@ packages:
             issue: GH-787
             apk:
               sha256: 29c0190fd7524f2b77121c302d4114a7504dcb2ba0152a8835b17a445a2dd9ab
+  - package: au.com.up.money
+    signature:
+      - fingerprint: F0:7D:34:00:53:E1:34:B3:E8:A2:CF:66:8F:12:1A:AE:E8:A6:46:14:71:3A:75:72:AD:F7:4A:DB:C3:F1:C2:16
+        sources:
+          - name: Google Play
+            issue: GH-3906
+            apk:
+              sha256: 5c9db86e271d08003c6e8741f808c98752bf5794e56f4592360c889a33239d62
+          - name: HTTPS Verified Domain
+            issue: GH-3906
   - package: au.gov.ato.ATOTax
     signature:
       - fingerprint: CA:0A:76:90:5E:0A:85:A0:23:6B:88:CD:0B:6B:1D:B6:A8:7F:2A:7B:59:A6:28:5F:53:18:1F:DB:64:E6:3D:DE
