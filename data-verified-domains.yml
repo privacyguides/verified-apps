@@ -226,6 +226,16 @@ domains:
         fingerprints:
           - 1F:6A:00:82:C7:61:84:82:58:B0:FB:58:71:20:E9:76:67:F9:5A:21:96:94:04:41:3B:4C:00:6C:AB:1E:15:5A
           - BB:99:9C:EB:66:01:97:64:66:5F:9C:11:F5:08:53:A1:57:7D:7F:B3:E0:42:EC:37:41:02:0C:AA:B3:4C:05:24
+  - domain: app.perekrestok.ru
+    method: https
+    issue:
+      - GH-5163
+    checked: "2026-11-28T17:52:06Z"
+    packages:
+      - package: ru.perekrestok.app
+        fingerprints:
+          - 36:CE:D8:76:0F:08:32:D7:64:C6:D9:B6:F0:CD:AC:69:6C:7F:61:FD:4F:5A:67:5F:BF:60:72:A6:3A:02:C7:3A
+          - 73:F1:67:3B:2A:D7:3D:83:2E:98:FA:1A:A6:97:BE:0D:6D:17:2E:2A:38:C2:86:A7:A2:72:3F:33:A6:E0:80:D6
   - domain: appverifier.roundsalmon4.com
     method: dns
     issue:

@@ -19654,6 +19654,16 @@ packages:
               sha256: c115065c94b0e129098e634e543589130138a112c7aec69d75c0c2b282c2c930
           - name: HTTPS Verified Domain
             issue: GH-5774
+  - package: ru.perekrestok.app
+    signature:
+      - fingerprint: 36:CE:D8:76:0F:08:32:D7:64:C6:D9:B6:F0:CD:AC:69:6C:7F:61:FD:4F:5A:67:5F:BF:60:72:A6:3A:02:C7:3A
+        sources:
+          - name: Google Play
+            issue: GH-5163
+            apk:
+              sha256: 7dabc0d1be45c54e5bacf8e47850fc9a407e0f2e48b7281cfb760f271494674a
+          - name: HTTPS Verified Domain
+            issue: GH-5163
   - package: ru.tech.imageresizershrinker
     signature:
       - fingerprint: 20:C1:FA:01:28:41:42:36:06:AB:C9:C9:2E:1F:92:DB:98:23:3C:3C:1D:AA:52:E3:38:BD:82:8B:FB:FD:F6:27
