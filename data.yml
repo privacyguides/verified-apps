@@ -12920,6 +12920,14 @@ packages:
             issue: GH-2805
             apk:
               sha256: 566c4b8c98b1495dee16bef11b9f3a5da5ff4c828d4a0a4651894f8789efc999
+  - package: de.eos.uptrade.android.fahrinfo.berlin
+    signature:
+      - fingerprint: 3D:DD:19:F0:77:43:D5:98:0E:B4:F7:A8:1C:0D:72:56:01:BD:AC:EB:0B:70:45:0C:4D:E0:E9:2B:42:BF:48:12
+        sources:
+          - name: Google Play
+            issue: GH-5542
+            apk:
+              sha256: 991710583da2518b6032b4f0fc15ecdcc8ec58d8f56cf59112699f71c990336c
   - package: de.eplus.mappecc.client.android.alditalk
     signature:
       - fingerprint: AE:1E:26:FE:04:06:D0:48:CE:B9:92:CE:30:34:A5:D9:9E:99:89:20:AE:51:AA:63:F4:C3:B0:E3:5C:9F:FB:61
