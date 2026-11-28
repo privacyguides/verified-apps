@@ -6661,6 +6661,14 @@ packages:
             issue: GH-2140
             apk:
               sha256: 5dd49af7d108088c438334680cadb67b500c2572e32fe14fc2556f7037541f72
+  - package: com.jwscheduler.jws
+    signature:
+      - fingerprint: 37:59:5F:81:CC:7F:50:BF:2C:A4:BF:E3:53:36:95:2E:0C:ED:F6:38:77:DF:2D:D2:90:BF:D4:0B:2A:A3:58:61
+        sources:
+          - name: Google Play
+            issue: CB-224
+            apk:
+              sha256: 5754423b29200e460ecfef6376def8d1d726a8ff6d744abee19f30945d821ccd
   - package: com.k2040.geojoystick
     signature:
       - fingerprint: E0:A8:33:05:0D:7C:8F:CE:7D:DC:E8:5B:2A:86:56:13:04:45:6D:87:B6:7B:D6:BE:15:77:D8:F6:57:E1:67:78
