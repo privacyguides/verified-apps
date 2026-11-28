@@ -9536,18 +9536,23 @@ packages:
     signature:
       - fingerprint: D2:14:B6:05:7B:79:F8:25:09:DD:CD:1E:35:19:65:B3:C6:EC:C4:B2:A3:89:6E:5C:DF:88:5A:70:A0:B6:1D:FD
         sources:
+          - name: Direct APK Link
+            issue: CB-10
+            apk:
+              sha256: 0f5204889e86e9cb130d07b4be60a009d421d3f4c7f8ebfc5af24dcb2cee0301
+              link: https://github.com/Crustack/NotallyX/releases/download/v7.11.2/NotallyX-7.11.2.apk
           - name: F-Droid
-            issue: GH-199
+            issue: CB-10
             apk:
-              sha256: 1264b8c6af5a5cb5b06597b4b6a7727a3436abe6287b2190ad2b261bec96e7bc
+              sha256: aae56d6be2a3dff87d28faa4c3a7b33072ad22871804e7e69e75912ff987ce33
           - name: F-Droid (IzzyOnDroid)
-            issue: GH-199
+            issue: CB-10
             apk:
-              sha256: 1264b8c6af5a5cb5b06597b4b6a7727a3436abe6287b2190ad2b261bec96e7bc
+              sha256: aae56d6be2a3dff87d28faa4c3a7b33072ad22871804e7e69e75912ff987ce33
           - name: Google Play
-            issue: GH-199
+            issue: CB-10
             apk:
-              sha256: 82b3f50dde94ed9cf4cc3183fa72b53261154637538c01f935f03c6baec34f9f
+              sha256: 8db7456c7713cd9a4066451dc8a63196f37a814fe8fc58afc7a39a3025f840f2
   - package: com.phonepe.app
     signature:
       - fingerprint: 53:35:BC:49:61:58:0B:2E:39:CF:E6:61:35:53:86:63:68:40:68:6A:D0:0B:8D:C1:60:61:D2:22:36:AA:7D:13
