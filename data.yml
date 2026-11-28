@@ -3116,6 +3116,14 @@ packages:
               sha256: 4b0a6dc69571e30057a819a50159242405941c89520fc781f506cd14fff06c46
           - name: HTTPS Verified Domain
             issue: GH-5929
+  - package: com.breboucas.portuguesparaviajar
+    signature:
+      - fingerprint: 6C:4A:77:10:C0:84:13:51:80:3B:38:B8:D5:7C:C9:B0:39:2C:55:DA:F7:3D:5D:84:84:29:54:F1:8D:F4:75:08
+        sources:
+          - name: Google Play
+            issue: GH-5532
+            apk:
+              sha256: 83202e1a2c7de74bf6178508b0fdbf0f510f36ffcabedbdf0e20a7c67c3c8221
   - package: com.brentpanther.bitcoinwidget
     signature:
       - fingerprint: E6:43:C1:31:A6:43:03:F7:D2:0B:9E:21:14:3C:D2:50:AC:92:60:69:31:5B:78:FC:AD:CF:50:78:D2:FA:3C:CF
