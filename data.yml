@@ -2145,6 +2145,16 @@ packages:
               sha256: 5c47667dcbb591014cecea0b69b2c48233fce58bbd7ab832f7f65fc06c67366a
           - name: HTTPS Verified Domain
             issue: GH-3558
+  - package: com.aspiro.tidal
+    signature:
+      - fingerprint: |-
+          2E:74:CF:21:CD:E1:53:A6:E6:AB:DB:2C:9A:3F:B5:F2:6F:C5:C4:C6:BC:DB:63:51:52:B9:67:45:94:87:EA:96
+          2E:8A:47:94:A9:54:18:36:7E:36:C8:43:03:FE:B4:37:74:91:9D:6A:35:11:29:D2:3D:0F:CF:1B:0B:72:94:54
+        sources:
+          - name: Google Play
+            issue: GH-3867
+            apk:
+              sha256: 5e8fd652d7d86dd11fc90fd14fc80ddb2256c286a4d657b9650bd177bb98b944
   - package: com.asr.mobileapp
     signature:
       - fingerprint: 73:63:53:35:DB:DF:6A:D4:43:49:75:61:9A:A1:AE:0E:2F:D6:EA:C4:A3:A5:5D:7B:38:A3:55:86:DD:E6:76:19
