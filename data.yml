@@ -5051,6 +5051,14 @@ packages:
             issue: GH-3069
             apk:
               sha256: 1703ff23debd436223e3f1502d294b52705b451f323dd0ec500e223aa0248c1e
+  - package: com.github.girator.rebooter
+    signature:
+      - fingerprint: 5A:3C:7D:DE:1A:0A:0B:20:4E:0A:AA:96:69:FD:5D:FE:25:37:B4:A1:B3:77:E3:4C:2E:D1:5B:E9:11:66:96:B2
+        sources:
+          - name: F-Droid
+            issue: GH-3990
+            apk:
+              sha256: 5306cdc7e55fc3fdab9ad30fc7db7f9adf3802a65c21cbd4a34e70a2172aed4e
   - package: com.github.gotify
     signature:
       - fingerprint: 7A:4C:46:88:B9:24:21:8A:BC:A2:41:9A:6A:73:AA:F3:1A:F6:B9:D4:45:5A:4B:02:47:06:5E:33:F6:7A:8F:75
