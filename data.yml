@@ -11569,6 +11569,14 @@ packages:
               sha256: 966b9cb22be34da65371e3f9893a9831f3fe246e1d5f5f6055cf775d43098a2a
           - name: HTTPS Verified Domain
             issue: GH-2711
+  - package: com.urbandroid.ddc
+    signature:
+      - fingerprint: 2F:84:FB:3C:3A:39:CA:F2:01:A1:11:54:03:7B:50:D3:2C:05:A4:C1:18:B8:F1:39:F9:C7:9C:15:FB:D5:54:82
+        sources:
+          - name: Google Play
+            issue: GH-5447
+            apk:
+              sha256: d15a5c31940bbf4bffa0ea9710f593f1411c4f0d1b183ff1c9ef6ae6a440b646
   - package: com.urbandroid.dontkillmyapp
     signature:
       - fingerprint: 2F:84:FB:3C:3A:39:CA:F2:01:A1:11:54:03:7B:50:D3:2C:05:A4:C1:18:B8:F1:39:F9:C7:9C:15:FB:D5:54:82
