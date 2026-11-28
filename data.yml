@@ -10492,6 +10492,14 @@ packages:
               sha256: 11a9d9f263468dcb891b01202e017497e0f7889372f866edd69b0aa730407630
           - name: HTTPS Verified Domain
             issue: GH-7663
+  - package: com.tinkertools.pebblealarmsync
+    signature:
+      - fingerprint: 79:37:AF:6B:B7:E4:26:41:99:1F:A8:3D:DF:28:AE:7F:4A:C8:63:7C:65:83:DD:4D:4C:1C:16:71:7B:C0:31:09
+        sources:
+          - name: Google Play
+            issue: GH-4172
+            apk:
+              sha256: 95d9dba06fe1bbaaa1ee67b921da1f00431d8f5f06cfd80457dc0c6381233209
   - package: com.tippingcanoe.pepperpl
     signature:
       - fingerprint: 75:B2:EE:12:DF:7F:52:8C:A9:AA:9F:32:7E:E5:F8:6C:86:23:87:C6:C4:BA:42:11:30:02:9C:DA:4C:53:27:69
