@@ -4792,6 +4792,23 @@ packages:
               sha256: de32c276a7f5ef4047b705563a3cf85eee443558b9948d4c0930c9240e14aa99
           - name: HTTPS Verified Domain
             issue: CB-465
+  - package: com.fadcam
+    signature:
+      - fingerprint: 99:9E:27:D8:EE:66:A6:73:19:DB:68:27:E0:F8:54:9C:37:62:46:01:B8:6F:01:08:C6:97:04:13:27:9E:F1:D4
+        sources:
+          - name: Direct APK Link
+            issue: CB-48
+            apk:
+              sha256: 73b8159beafbd3d9199690ddd33852a1d32a5567e8c41fab87b0e81a630d3f97
+              link: https://github.com/anonfaded/FadCam/releases/download/v3.0.1/FadCam-v3.0.1-arm64-v8a.apk
+          - name: F-Droid
+            issue: CB-48
+            apk:
+              sha256: b3a0cd1685d530ea1f0cfc77b0446fab87cb8d3740359eae2f1c6f129c477b70
+          - name: F-Droid (IzzyOnDroid)
+            issue: CB-48
+            apk:
+              sha256: bfd9e5e7313b12e05ad21426b0d83df9393088b56de9954035e281eb7df49748
   - package: com.fairphone.android.fairbudsapp
     signature:
       - fingerprint: 71:AB:E8:53:13:F6:4E:6D:DB:F1:3A:F6:F9:D8:E5:4D:2A:2E:44:D9:49:24:C8:FD:9E:60:4A:53:61:24:B1:0A
