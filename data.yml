@@ -3316,6 +3316,14 @@ packages:
             apk:
               sha256: b317296f0f4d615e4d41d52a41e59a248c9631a95f782f9a10a7e047d320df77
               link: https://github.com/rustdesk/rustdesk/releases/download/1.4.6/rustdesk-1.4.6-aarch64-signed.apk
+  - package: com.carstream.for.android.app
+    signature:
+      - fingerprint: 77:59:8E:75:1C:40:97:FF:29:3A:7D:8A:DC:A3:52:BF:69:8D:DB:98:77:BF:D6:BA:BC:DC:D1:07:E2:88:A5:AE
+        sources:
+          - name: Google Play
+            issue: GH-5026
+            apk:
+              sha256: fd0cc79315e75b8dd3f755664cc0070b9e03c8079ded54009af80f4926bef897
   - package: com.cbouvat.android.saracroche
     signature:
       - fingerprint: 53:4C:A5:DD:7D:98:74:0D:70:D1:A3:E5:E1:64:AD:38:F8:4E:6B:28:E4:11:4F:B8:46:B3:10:3C:65:7A:41:0F
