@@ -16593,6 +16593,14 @@ packages:
             issue: GH-1797
             apk:
               sha256: 20d39348af1cee7ee027b5777998cf60be86c74d73d3b18c5dd7846f3f8808a4
+  - package: name.boyle.chris.sgtpuzzles
+    signature:
+      - fingerprint: F7:15:81:EC:7D:70:41:53:BA:C3:4A:B1:48:D9:25:68:3D:B9:20:71:22:A2:93:3B:28:C0:4C:A2:E4:F2:84:53
+        sources:
+          - name: Google Play
+            issue: GH-3986
+            apk:
+              sha256: c99c6443a1cfc22676a47b33186af290c8909407deda3468b973a2a52d329704
   - package: name.gdr.acastus_photon
     signature:
       - fingerprint: A8:3C:1C:E4:1F:47:0D:D9:E5:2F:B5:66:A5:5C:F0:E1:DA:FF:29:B4:9A:AA:B8:BC:46:41:22:40:56:C7:B5:24
