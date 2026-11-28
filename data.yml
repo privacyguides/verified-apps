@@ -7043,6 +7043,14 @@ packages:
             issue: GH-817
             apk:
               sha256: 6d652bdf7c72127fa651b5a83594ba2810edef3e08fbc62ddefe4a92b3de0fd1
+  - package: com.kingsoopers.mobile
+    signature:
+      - fingerprint: 13:14:5D:46:1D:E6:99:42:15:FE:15:51:AF:38:70:BB:89:85:45:AE:3A:73:5F:C0:8C:F4:24:9B:B3:2A:1A:1C
+        sources:
+          - name: Google Play
+            issue: GH-4876
+            apk:
+              sha256: f2c98b12d2f9f034158417a1f982804f595258f2b03047adfb7ad55724268989
   - package: com.kitsumed.shizucallrecorder
     signature:
       - fingerprint: 9D:35:65:F7:C5:6E:00:AD:83:0B:E8:57:26:84:BB:95:B2:F2:A5:55:E1:C3:CA:40:3F:94:88:19:12:58:77:EA
