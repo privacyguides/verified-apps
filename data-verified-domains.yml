@@ -172,6 +172,15 @@ domains:
       - package: io.filen.app
         fingerprints:
           - 2C:90:DF:59:1A:39:E0:8A:AD:E9:4F:72:80:D1:92:D3:34:47:F0:1E:1E:12:75:19:82:B8:AE:C3:F9:0F:AD:AB
+  - domain: app.frameo.net
+    method: https
+    issue:
+      - GH-4385
+    checked: "2026-11-28T07:58:10Z"
+    packages:
+      - package: net.frameo.app
+        fingerprints:
+          - D7:9C:B4:51:97:E9:E2:52:5F:E0:98:02:AE:F7:56:41:1F:B3:2B:5C:32:76:EC:16:B8:0E:E8:F9:0B:AA:23:31
   - domain: app.hinge.co
     method: https
     issue:
