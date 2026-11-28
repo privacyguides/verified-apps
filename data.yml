@@ -19353,6 +19353,18 @@ packages:
             issue: GH-1212
             apk:
               sha256: 2924fb2424f2787602c7712bcc41b8339d15da60cdb253cec6db19b09381cfc0
+  - package: uk.me.amugofjava.anytime
+    signature:
+      - fingerprint: F0:2B:75:19:E4:01:2C:14:49:FD:BB:2D:8C:F2:1C:1A:A0:A3:3D:A7:E7:5C:06:AD:79:8B:F0:78:01:6C:78:85
+        sources:
+          - name: F-Droid
+            issue: GH-4783
+            apk:
+              sha256: 7bb4d28556b820f45e7a1683da473d0225dc81e3d6dcae3060b657820efd713e
+          - name: Google Play
+            issue: GH-4783
+            apk:
+              sha256: 39fbefb1cf691cb03775459643b8df0cef22221ca9615ea05d0795eddcca0332
   - package: uk.org.ngo.squeezer
     signature:
       - fingerprint: 92:35:A0:54:44:E0:AC:40:2D:F3:59:FE:70:FC:E9:B8:FD:6A:15:3B:A3:B3:9C:59:AA:AB:6F:CD:91:2A:F4:13
