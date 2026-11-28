@@ -756,6 +756,14 @@ packages:
               sha256: e038f833539b452a6ec4721d16e1612c966517714556f6c45065fe83a8d1247d
           - name: HTTPS Verified Domain
             issue: GH-3900
+  - package: au.com.bank86400
+    signature:
+      - fingerprint: ED:B8:FD:8C:99:FE:5E:86:A0:A1:1F:2E:2C:F0:61:CE:24:E5:17:EE:73:D6:DD:A0:9D:9A:05:45:A0:85:FC:CA
+        sources:
+          - name: Google Play
+            issue: GH-3907
+            apk:
+              sha256: 6754ec31d4f6364703ba430b7509b92fee4147cb831a8daca05a4d457ddfc176
   - package: au.com.bankwest.mobile
     signature:
       - fingerprint: 53:2C:57:26:A6:8B:F7:A8:0A:A9:11:87:2A:A0:BD:B5:0C:31:E0:53:49:20:1A:BB:9C:3F:74:16:E8:67:AA:4F
