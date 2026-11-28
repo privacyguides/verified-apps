@@ -1325,6 +1325,14 @@ packages:
             issue: GH-4324
             apk:
               sha256: d27b05c6a214b2cc02a4d27255cab2fad06e803b02940572a3baf163102b14cc
+  - package: cn.wps.moffice_eng
+    signature:
+      - fingerprint: 64:39:90:87:8D:3C:A8:39:52:A5:BE:5F:3E:58:D9:F8:BB:6C:DC:57:BF:0F:22:87:00:21:20:71:C6:8D:B3:D7
+        sources:
+          - name: Google Play
+            issue: GH-4857
+            apk:
+              sha256: 36bc5f0c2aee2c3b552f4a374c8a1936b415e41fe7e8554d4b3eae26cfdbd174
   - package: co.cape.matrix
     signature:
       - fingerprint: F9:30:72:E3:44:E6:91:F4:02:23:14:D3:E6:D0:D6:1B:80:0F:10:8A:3F:08:83:AE:13:0E:72:55:03:A7:91:42
