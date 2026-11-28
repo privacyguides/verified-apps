@@ -746,6 +746,14 @@ packages:
             issue: GH-6696
             apk:
               sha256: e43305ccef9a26dcb0638c582d58baaf292fe7655dc05e90e55de8a62d120fbc
+  - package: au.com.commbank.commbiz.prod
+    signature:
+      - fingerprint: 4B:9C:7C:44:84:2F:83:6D:C8:B6:56:2F:CF:EE:F6:74:D1:8E:31:27:01:75:AA:18:FE:EF:15:3A:05:58:81:FF
+        sources:
+          - name: Google Play
+            issue: GH-3859
+            apk:
+              sha256: da47ee2c2ad038000d3cc5e7c675aa18bc44cf8139dc6acc7fb49ec313e2b200
   - package: au.com.ing.banking
     signature:
       - fingerprint: 50:66:0F:2B:C4:9B:3E:C9:12:69:AD:D6:48:73:CE:A2:2B:71:32:C8:A1:88:34:60:93:10:FD:07:61:06:B3:37
