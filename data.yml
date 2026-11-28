@@ -1298,6 +1298,14 @@ packages:
               sha256: 6186c80da39dd7566e1c64cee096b0623d8dfb171627d50525f64dd420ed9345
           - name: HTTPS Verified Domain
             issue: GH-2752
+  - package: chess.prep.app
+    signature:
+      - fingerprint: 48:15:4F:02:68:24:BD:5C:AA:7A:0F:59:C0:2C:7F:8B:E9:F8:51:F7:F3:FE:28:1D:B4:EA:B4:D9:3C:27:78:7E
+        sources:
+          - name: Google Play
+            issue: GH-5600
+            apk:
+              sha256: ec0b3a396c2852c6293fb0fb9e89d74375a5e858446f207921e7874b7cb6caa1
   - package: chromahub.rhythm.app
     signature:
       - fingerprint: CB:90:45:12:4F:6F:70:66:C7:0F:3B:85:C2:BC:FB:75:CC:22:93:BB:1B:4B:A1:C3:EC:40:E2:23:A5:CC:6A:35
