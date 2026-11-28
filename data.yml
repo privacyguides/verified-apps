@@ -10812,6 +10812,14 @@ packages:
             issue: GH-7849
             apk:
               sha256: 2158d88be9f3474ada27ffcad763bb18141e5f0390bcb385427384efc1f9be1f
+  - package: com.tombursch.kitchenowl
+    signature:
+      - fingerprint: 71:03:9D:6A:92:CC:AD:12:F0:17:68:5E:11:2D:74:EE:E4:0C:CC:2F:87:31:D9:D1:03:52:31:0D:19:4D:6D:22
+        sources:
+          - name: F-Droid
+            issue: GH-4440
+            apk:
+              sha256: 7f6856924f1448ae21143bf43b8432c1a9a5abd800ada07e706c013859faf110
   - package: com.tophat.android.app
     signature:
       - fingerprint: EC:13:50:43:A0:EC:19:B1:02:33:F9:D1:DF:53:3D:8F:C7:2E:3B:00:87:E1:74:69:E8:DD:74:FF:EF:12:A3:80
