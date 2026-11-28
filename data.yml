@@ -5982,6 +5982,14 @@ packages:
             issue: GH-588
             apk:
               sha256: a46257e19390249f1542ba45234031bb18f894711e4da3c14ed8020ac9741c7c
+  - package: com.gorunjinian.metrovault
+    signature:
+      - fingerprint: 12:45:55:4C:EB:17:CE:A2:1E:99:12:AF:7B:F6:0D:38:D7:16:F5:88:4D:4B:36:64:E5:33:84:62:CC:76:FD:03
+        sources:
+          - name: F-Droid
+            issue: GH-4204
+            apk:
+              sha256: a0ff074ad8c8b031f8509ace1124b6803dc29c3ec7f2991bef75c9b876a1d2bd
   - package: com.govee.home
     signature:
       - fingerprint: 94:25:7A:44:97:87:17:E5:68:B0:0C:24:BF:CC:38:5E:C2:F1:CF:EA:F4:28:85:BB:EB:32:32:C9:49:07:EB:43
