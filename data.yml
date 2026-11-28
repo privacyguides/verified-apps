@@ -2140,6 +2140,14 @@ packages:
               sha256: 830233d2435e640eb661f270ccc388d46594dad5e9fa44aff9501ad0be1645df
           - name: HTTPS Verified Domain
             issue: GH-7620
+  - package: com.anopticlabs.gravel
+    signature:
+      - fingerprint: FF:B5:BD:16:B2:12:B0:22:30:51:DF:34:9B:36:50:2F:48:17:56:D4:59:22:A8:E0:EF:00:CD:3C:E1:08:D5:D2
+        sources:
+          - name: F-Droid
+            issue: CB-446
+            apk:
+              sha256: 4d7c8f38ec842790db53bb71e8a50dd11763f3db8677959e0364569e960da505
   - package: com.anthonyla.paperize
     signature:
       - fingerprint: DE:DA:86:75:D6:37:93:CB:0C:F7:BC:2D:EC:B6:A2:50:6B:16:B3:30:40:A1:FC:B1:D3:08:07:A5:11:E2:70:AC
