@@ -13012,6 +13012,14 @@ packages:
             issue: CB-38
             apk:
               sha256: 00ebcff767b548c1a836e2ca270a80cc04f7cab22ca5ae76a349b42856fb06f6
+  - package: de.gruene.wkapp
+    signature:
+      - fingerprint: A3:77:BD:B0:10:33:94:70:35:5F:35:2E:EE:B5:5B:90:45:97:E8:79:1E:10:A6:37:73:BB:82:75:2F:0A:C9:9F
+        sources:
+          - name: Google Play
+            issue: GH-5539
+            apk:
+              sha256: 18e8f1af47a8f75765fdf2c8bb1fb6675570b8e03cf1e1e5f5feac291eda5c04
   - package: de.hafas.android.db
     signature:
       - fingerprint: |-
