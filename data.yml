@@ -120,6 +120,14 @@ packages:
             issue: GH-2533
             apk:
               sha256: 53f4b2483f3b41ace8118278fd7fff04efb717f06161ab35e8644c49695a936b
+  - package: app.atrium
+    signature:
+      - fingerprint: 5E:BA:D1:FF:2F:9C:DC:63:F2:8B:36:4A:DD:F9:E8:58:33:0D:B2:69:09:D9:EB:A8:DF:BC:CB:99:8D:E3:73:51
+        sources:
+          - name: F-Droid
+            issue: CB-223
+            apk:
+              sha256: 7bf43efd334fd610452a0d3489316ee011c49b01fe84d3f76dcee98f1e43ca0d
   - package: app.attestation.auditor.play
     signature:
       - fingerprint: 07:53:35:BD:7B:54:C9:65:22:2B:52:84:D2:A1:FD:EF:11:98:AE:45:EC:7B:09:A4:93:42:87:A0:E3:A2:43:C7
