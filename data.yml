@@ -1453,6 +1453,16 @@ packages:
             issue: GH-6319
             apk:
               sha256: 5cfe2c7dbfd77862ff606f1a72fe6dfe25c7745d5b00f5493e5e12a4d589bbd5
+  - package: com.ace.shell.production
+    signature:
+      - fingerprint: |-
+          93:6A:65:38:E6:54:01:29:EC:FA:1D:2F:3E:97:F6:D6:6A:91:D2:B8:8D:E9:BE:A1:3E:31:31:F5:41:AD:DD:8F
+          E7:43:00:AA:90:22:93:A2:60:4C:BC:9C:29:A7:26:88:42:98:64:B6:B1:52:16:D1:03:DB:63:03:22:13:49:D1
+        sources:
+          - name: Google Play
+            issue: GH-4328
+            apk:
+              sha256: 56674853189f53d750e6b189c9220d93cf46cb703fe27db5acb89533e6b19f94
   - package: com.acehardware.rewards
     signature:
       - fingerprint: 37:F9:BE:EC:83:94:80:36:4D:F6:1A:49:27:ED:58:DB:06:10:F9:F1:FB:4A:AA:E4:BC:A0:3C:EA:13:17:2C:F7
