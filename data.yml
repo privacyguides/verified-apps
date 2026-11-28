@@ -3896,6 +3896,14 @@ packages:
             issue: GH-87
           - name: F-Droid
             issue: GH-87
+  - package: com.donnnno.arcticons.daynight
+    signature:
+      - fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
+        sources:
+          - name: F-Droid
+            issue: GH-4169
+            apk:
+              sha256: 7e10644035b84a6d0a59acb7f32c30ad48ea957b39961b2a6a50c35461c62726
   - package: com.donnnno.arcticons.light
     signature:
       - fingerprint: 29:9B:B9:31:2E:39:13:0D:0D:33:ED:42:BF:98:56:7F:72:6A:B1:1A:04:DC:95:0C:5B:6C:16:2E:28:C8:69:C5
