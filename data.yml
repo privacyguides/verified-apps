@@ -3326,6 +3326,14 @@ packages:
             issue: GH-2800
             apk:
               sha256: 8568f9bd3221e7a5ed9b3813e66b17172777f4fcb28e10558903973d01b17619
+  - package: com.commbank.netbank
+    signature:
+      - fingerprint: 4B:9C:7C:44:84:2F:83:6D:C8:B6:56:2F:CF:EE:F6:74:D1:8E:31:27:01:75:AA:18:FE:EF:15:3A:05:58:81:FF
+        sources:
+          - name: Google Play
+            issue: GH-3858
+            apk:
+              sha256: 37f90590f3f31b0e2cbbe4dcfe6943f317efbf66f0fa26817d67e98dd1772e68
   - package: com.companyname.andriodapp1
     signature:
       - fingerprint: 73:34:5E:7D:43:FE:B5:59:39:45:0D:E4:49:7D:64:C0:01:D2:AE:76:42:65:B6:9C:2C:BF:3E:A0:36:77:A8:A2
