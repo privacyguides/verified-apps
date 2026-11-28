@@ -6424,6 +6424,14 @@ packages:
             issue: GH-259
             apk:
               sha256: 4cbac4e3601e5ce9f462b9b100415cc33cf965d95839467234e15b0b568dbde0
+  - package: com.headupnav.chargingstations
+    signature:
+      - fingerprint: E5:98:D7:41:28:70:B4:38:C2:D1:A4:91:1C:5F:53:58:F5:9F:42:63:52:52:91:91:F3:90:4B:27:3E:9F:2A:E8
+        sources:
+          - name: Google Play
+            issue: GH-5029
+            apk:
+              sha256: 2f92f40ed3e4ac1ea4b7aec7ff2413042245d524b7d6135760ea04a6c5a9217f
   - package: com.healthyminds
     signature:
       - fingerprint: DC:DB:68:52:1F:AF:50:E8:DC:D6:B5:A1:AB:83:CB:00:85:2B:D3:45:C5:AE:A5:17:2F:ED:B7:CC:2A:94:1B:B4
