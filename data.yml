@@ -5047,6 +5047,14 @@ packages:
             issue: GH-7902
             apk:
               sha256: f2075c6a1d7631afe6ec34f892f0485c26fbe113952b218a66531106928ed233
+  - package: com.foxdebug.acode
+    signature:
+      - fingerprint: 4A:D6:55:EC:82:8B:60:7B:E7:A3:7D:DE:5D:41:75:3E:8F:33:27:78:C2:1E:FA:B8:84:5F:44:DF:72:DE:5F:FF
+        sources:
+          - name: F-Droid
+            issue: GH-5188
+            apk:
+              sha256: a9556f51e33f86c2c51846c98e3de3cca3d0e2e48221867dfe160df1a589c24b
   - package: com.foxit.mobile.pdf.lite
     signature:
       - fingerprint: 1A:D0:DE:1D:95:54:C5:3F:6C:45:3A:4B:7A:89:1F:11:EF:DE:F0:9B:74:93:C3:8D:BF:A7:3E:4C:4F:94:FC:8F
