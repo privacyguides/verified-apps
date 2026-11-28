@@ -18117,6 +18117,14 @@ packages:
             issue: GH-4394
             apk:
               sha256: 74bc78be22c5bf47d81631fd724000c9cbd035686c214fde960aebc76d0aa22a
+  - package: org.languagetransfer
+    signature:
+      - fingerprint: 8B:2F:24:EF:22:D8:EF:BE:3D:F6:38:4F:3C:36:B9:19:2E:31:AC:A9:80:6F:8A:F0:9B:B6:71:8B:C2:8E:D7:C5
+        sources:
+          - name: Google Play
+            issue: GH-5526
+            apk:
+              sha256: afacd14b57474f68d989646afb7fd62a980f6a8eee25be13e70051020939eb06
   - package: org.libre.agosto.p2play
     signature:
       - fingerprint: 11:C6:63:3E:D5:48:5E:48:76:2E:FF:59:D9:50:10:C2:08:B3:F7:2B:D1:D4:6C:1A:98:C1:F6:B1:01:34:3B:8A
