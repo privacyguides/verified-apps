@@ -14614,6 +14614,14 @@ packages:
             issue: GH-6831
             apk:
               sha256: 610fe2f43901d3f0a73fde6d9e0a67c3de8e2d0ed4f367311e3ccad366a2645d
+  - package: gov.nasa
+    signature:
+      - fingerprint: 01:AC:D2:1F:73:11:68:9D:B9:58:E4:DD:E3:86:69:11:84:DA:21:96:59:96:B1:4F:7B:8A:E1:BA:DE:86:E8:70
+        sources:
+          - name: Google Play
+            issue: GH-5193
+            apk:
+              sha256: f088a29e1c5ba4aab57de64b97bdd65bde21a08bbcbe5fa28094d759b7c6279d
   - package: gr.nikolasspyr.integritycheck
     signature:
       - fingerprint: 17:95:2B:5C:F8:67:05:BA:DE:87:74:3F:5A:33:1E:FE:4C:98:2B:FB:4D:A0:D2:FD:5D:70:BF:C2:35:CF:79:E3
