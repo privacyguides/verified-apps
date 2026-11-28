@@ -6112,6 +6112,14 @@ packages:
               sha256: 8f32e518459d974b3c31860c60baf83b92e7bef1ff17d9e16c5be621ff848664
           - name: HTTPS Verified Domain
             issue: GH-2068
+  - package: com.gumtree.android
+    signature:
+      - fingerprint: 4A:97:A7:53:DD:2D:3F:32:6A:46:F5:B9:3B:EB:E8:4D:21:8B:ED:01:B9:C9:6D:34:AE:DB:D8:52:8B:E2:E5:A6
+        sources:
+          - name: Google Play
+            issue: CB-245
+            apk:
+              sha256: c5145e6477b19661c881464c19e1e86312a022a09cb8bd8ebbd9a9e4608b1249
   - package: com.gwitko.conduit
     signature:
       - fingerprint: 4E:D2:01:42:CD:62:20:59:8A:57:3D:2D:F2:92:7B:5F:23:9D:B2:62:CE:2D:6C:84:CD:AC:50:7A:A5:B3:2C:5F
