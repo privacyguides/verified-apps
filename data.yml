@@ -5302,6 +5302,14 @@ packages:
             issue: GH-2260
             apk:
               sha256: 990f61386cb827e3e23244173d19dc2fcb6321286a9efa74715904303ff37ba5
+  - package: com.gartic.garticphone
+    signature:
+      - fingerprint: 8E:ED:7F:8C:D9:D0:10:39:ED:F6:22:1F:8B:A7:85:2C:88:D8:78:94:2A:5F:99:67:B5:00:D2:15:84:C3:93:EC
+        sources:
+          - name: Google Play
+            issue: CB-426
+            apk:
+              sha256: 233367ab9db5557cc7becebe28c5d8fec92cf4d9195481f1e09bab86592010e2
   - package: com.gbros.tabslite
     signature:
       - fingerprint: 49:80:5B:38:5A:A9:7F:72:5A:37:22:D3:D1:95:DE:84:A3:76:10:4A:AD:26:BD:FB:08:D5:2A:59:CB:CB:97:47
