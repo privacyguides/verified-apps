@@ -17523,6 +17523,22 @@ packages:
             issue: GH-3178
             apk:
               sha256: bca48268e82846b3a7606f76757c3fc8e00a714aeaf11a53fab074bbce4351f0
+  - package: org.fossify.keyboard
+    signature:
+      - fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
+        sources:
+          - name: F-Droid
+            issue: GH-5177
+            apk:
+              sha256: e326885c08b68212fd9fdda9be8a4fa492d5daba7ff37bb4ff4511826f40a8d0
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-5177
+            apk:
+              sha256: e326885c08b68212fd9fdda9be8a4fa492d5daba7ff37bb4ff4511826f40a8d0
+          - name: Google Play
+            issue: GH-5177
+            apk:
+              sha256: c72aa9987434672151af7d02dd61d1c4365fdd245a955d601c501de48dcfa0a7
   - package: org.fossify.math
     signature:
       - fingerprint: AF:FD:B1:24:D3:F4:72:0C:2F:98:DB:CA:9E:AC:BA:05:14:FB:A4:30:6E:20:A2:78:6C:86:1C:3C:0D:6F:F2:92
