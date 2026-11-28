@@ -3028,6 +3028,14 @@ packages:
               sha256: 7d2f6ada55ba05741acd09be55a4022d4e49ccfc51105a41815b06470e961fad
           - name: HTTPS Verified Domain
             issue: GH-2332
+  - package: com.bunq.android
+    signature:
+      - fingerprint: E9:16:B6:DF:B9:BF:CE:15:82:14:80:4F:36:25:39:12:CE:5A:D8:3D:FD:61:61:CD:6E:16:EC:6B:1B:A1:2C:02
+        sources:
+          - name: Google Play
+            issue: GH-4263
+            apk:
+              sha256: b016d2a71792d1391b4a52fa1578f6936acab0ce87b570fe2cf7cc9b8beb3583
   - package: com.busuu.android.enc
     signature:
       - fingerprint: C5:BF:5F:1F:5F:71:57:C1:43:9F:E2:89:E3:AB:E3:C0:97:B0:80:37:CA:72:D5:4A:5F:DA:95:42:67:73:56:F6
