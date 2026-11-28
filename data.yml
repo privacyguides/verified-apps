@@ -3380,6 +3380,14 @@ packages:
             issue: GH-3427
             apk:
               sha256: fcaefee7e5b0b762731ba19116576062aa210a7eefbb38623f481c15ae095db9
+  - package: com.chargemap_beta.android
+    signature:
+      - fingerprint: 04:87:54:78:CD:00:8D:F2:DC:D0:4C:D1:36:FD:59:C5:0C:DB:D3:2E:65:FF:83:C9:BC:A7:04:E7:34:81:7A:52
+        sources:
+          - name: Google Play
+            issue: GH-5028
+            apk:
+              sha256: 493a270729a70a7c986e252b2eee87380b0f84057f76ccdaade4b1c2aaa77b5e
   - package: com.chartcross.gpstest
     signature:
       - fingerprint: DF:D8:5F:83:4D:19:53:E3:64:E6:60:33:A9:8A:49:0E:B0:AD:58:AB:8F:07:6A:85:C8:F2:DD:71:90:50:91:EF
