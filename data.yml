@@ -197,6 +197,14 @@ packages:
         sources:
           - name: F-Droid
             issue: GH-560
+  - package: app.dawarich.Dawarich
+    signature:
+      - fingerprint: 5F:0B:34:52:74:93:5D:19:7E:5C:9F:5B:95:F1:33:A9:15:75:10:C5:58:9F:6C:AB:51:72:FD:70:27:D1:75:86
+        sources:
+          - name: Google Play
+            issue: GH-4722
+            apk:
+              sha256: a24de0bf85d6068b2057f8b2246a83200b5297ed8bf31d87895e12a920f440ac
   - package: app.eduroam.geteduroam
     signature:
       - fingerprint: 67:B7:0A:E9:3F:FB:23:70:65:1E:18:20:66:3E:17:FE:0F:BE:B7:6B:73:41:6A:31:A7:1D:D2:44:5C:A9:93:BD
