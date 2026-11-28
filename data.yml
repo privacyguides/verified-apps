@@ -4449,6 +4449,14 @@ packages:
             issue: CB-43
             apk:
               sha256: 2d695383a41ed5071a81b44e6e92a12c967dcf7a32bfbcaec4bd4f4ea6ba885e
+  - package: com.enredats.electromaps
+    signature:
+      - fingerprint: B5:24:FD:B1:37:25:F5:8D:F7:F8:6D:5B:43:93:67:07:8C:D1:27:E5:67:FE:BA:0B:7C:AB:29:CB:E9:70:E7:49
+        sources:
+          - name: Google Play
+            issue: GH-5030
+            apk:
+              sha256: 00217f5f655c7a02ef3ac821654cb450f5180a66c1088366cad3f934ec6f2abd
   - package: com.epicgames.portal
     signature:
       - fingerprint: 67:69:9A:6B:3D:31:5D:EE:51:53:6A:67:B4:F1:C6:E7:E2:17:5F:98:4B:09:6B:C2:97:6E:51:2D:22:94:08:71
