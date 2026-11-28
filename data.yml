@@ -6915,6 +6915,14 @@ packages:
               sha256: 6e0fe0fb43ba589c209dc753bdbb1f2501cd8647d7d3212497d72383864de89e
           - name: HTTPS Verified Domain
             issue: GH-8297
+  - package: com.kazumaproject.markdownhelperkeyboard.lite.fdroid
+    signature:
+      - fingerprint: EC:67:6C:30:F0:5F:39:47:A1:AE:C8:6D:02:EC:EA:D1:50:F7:72:79:0B:35:FC:AF:8A:F4:84:C1:DD:5E:B4:C0
+        sources:
+          - name: F-Droid
+            issue: GH-4789
+            apk:
+              sha256: 45c51e0c46f34e8f1ae7cf50f9023051f110ccfd0b214c95355884df5cba15ca
   - package: com.ketchapp.stack
     signature:
       - fingerprint: 9F:E9:CA:4B:85:42:41:96:AB:D9:53:37:7B:88:AA:A2:E8:9D:86:DA:81:7E:FD:06:CA:7C:CE:58:FE:B0:45:C1
