@@ -9873,6 +9873,14 @@ packages:
             issue: GH-5744
             apk:
               sha256: b113cc6fcc7afdc22ec352f4281b4f882b98315436f27368a2ecdaaf505caf4d
+  - package: com.rawcam.app
+    signature:
+      - fingerprint: E6:CB:3D:3D:C3:C3:1C:4F:FB:CC:5A:2B:95:D7:18:75:C1:86:1E:E2:B1:7D:DC:3E:59:14:71:C2:74:BD:97:68
+        sources:
+          - name: Google Play
+            issue: GH-5151
+            apk:
+              sha256: fc6d14fa42c49b8e07df9f36ff1f9a59a095dc82903787a61203607c13d40fc3
   - package: com.razeeman.util.simpletimetracker
     signature:
       - fingerprint: 9F:22:41:EA:F7:8B:E6:B8:41:5F:2D:B4:24:EF:99:C9:74:55:76:FE:07:B0:E5:8B:08:C9:22:28:9A:36:33:E4
