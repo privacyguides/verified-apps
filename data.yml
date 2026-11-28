@@ -9710,6 +9710,11 @@ packages:
     signature:
       - fingerprint: C9:7F:59:2A:D5:A4:26:EF:17:AA:4B:11:3A:A8:F9:C1:BC:3C:2F:26:75:C8:57:AD:86:BD:AC:C0:5F:BE:EE:01
         sources:
+          - name: Direct APK Link
+            issue: CB-12
+            apk:
+              sha256: c1036a39f9e6ec4433ab928b8ae0d9a3469d7da2ffb28117e211aaa151f66406
+              link: https://github.com/PranshulGG/WeatherMaster/releases/download/v3.2.0/WeatherMaster.v3.2.0.apk
           - name: F-Droid (IzzyOnDroid)
             issue: GH-2172
             apk:
