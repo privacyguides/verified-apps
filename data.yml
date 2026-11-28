@@ -6575,6 +6575,14 @@ packages:
             issue: GH-4604
             apk:
               sha256: 736b9b85ad8e889d56df34af4c11a39e32966f56645a97a646d602e37378def9
+  - package: com.jet2.holidays
+    signature:
+      - fingerprint: 4D:D3:5B:D8:E8:B9:FB:85:7C:BF:6F:D1:DD:C9:07:5A:C7:18:F0:26:17:19:FF:AE:84:94:2D:00:7D:ED:8C:91
+        sources:
+          - name: Google Play
+            issue: CB-247
+            apk:
+              sha256: 11fe75e4eec1a178c6ff6b5a7c94eb2fd2557fca0c6747691c8a3c890cf2a297
   - package: com.jetpaclabs.jetpac
     signature:
       - fingerprint: 69:C5:C8:46:27:9C:E8:DB:3F:6F:B4:9E:7C:67:9B:0D:4C:9A:7F:80:0A:E3:76:F8:44:9A:55:73:5B:E1:94:57
