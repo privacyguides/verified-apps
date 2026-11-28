@@ -14523,6 +14523,14 @@ packages:
             issue: GH-3386
             apk:
               sha256: d4f9128b049d4c7b5235a7d74e34942a3a76acf3306219d3a89ba7849b5ac9cf
+  - package: io.github.monsiu.custom_rr
+    signature:
+      - fingerprint: 53:1A:6B:AD:FA:5D:C8:3D:77:3B:A7:8C:C1:B3:73:83:DF:3D:A0:12:60:6C:F5:68:0A:66:40:9B:B0:12:08:61
+        sources:
+          - name: F-Droid
+            issue: GH-4253
+            apk:
+              sha256: aed58d6028f70822bf7d50d2f279447b02d96ab128bc939f8931a68ce2667863
   - package: io.github.muntashirakon.AppManager
     signature:
       - fingerprint: B6:8E:93:49:10:C0:05:80:14:A0:6A:2E:14:47:29:F9:AA:11:3F:C5:D9:E0:DF:F5:29:EC:BF:1D:1F:61:2D:13
