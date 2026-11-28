@@ -7232,6 +7232,14 @@ packages:
             issue: GH-1847
             apk:
               sha256: d5b9c156fd2fa3f3bce47365e950b66393b077ab5cb8cbeafa8e3a2ba9d78590
+  - package: com.marotoweb.cajuscan_app
+    signature:
+      - fingerprint: B1:BD:4E:B1:30:22:A2:5B:6B:0A:C9:B0:79:EA:25:5F:EA:C1:09:D7:A6:13:C9:44:8C:28:7E:E8:22:AB:19:B2
+        sources:
+          - name: F-Droid
+            issue: GH-3971
+            apk:
+              sha256: 004627bb1b79bddf833eda88d56c394dff3fd094da503c50305c10d678063341
   - package: com.martinmimigames.simplefileexplorer
     signature:
       - fingerprint: F8:B1:87:62:BB:8F:E3:9A:3E:5A:CB:F2:C3:C7:49:E5:78:4E:D4:D7:38:1C:95:00:36:52:67:ED:FA:C3:F5:7E
