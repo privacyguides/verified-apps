@@ -8906,6 +8906,14 @@ packages:
               sha256: 03bcde51ac127fdbd5fe6f01c6e321a5ffe7e909bf218c783d471710659fa26f
           - name: HTTPS Verified Domain
             issue: GH-8259
+  - package: com.procrastilearn.app
+    signature:
+      - fingerprint: 4F:E8:00:EA:6E:35:65:5D:54:E7:A3:6E:D8:30:04:69:6D:11:C1:CD:34:1E:46:89:52:A8:FF:C1:1D:C4:7C:50
+        sources:
+          - name: F-Droid
+            issue: GH-3975
+            apk:
+              sha256: 9878f589db7378b5bfb6fdf5f0d8acfdc70f2d5900879c3202f494cf55ed7a0d
   - package: com.prosegur.smart20
     signature:
       - fingerprint: 39:49:AB:3B:71:A8:69:53:D4:47:7D:D5:51:5D:7B:4B:92:27:9B:69:7B:C5:77:4D:27:B4:24:8D:B6:E1:F8:8D
