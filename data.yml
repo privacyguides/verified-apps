@@ -18629,6 +18629,14 @@ packages:
             issue: GH-614
             apk:
               sha256: 02e669797b4d42a1ea4afede01ee1fcb1df1dd86a89d07a6e7bb756bd0de5817
+  - package: org.readera
+    signature:
+      - fingerprint: A3:B2:96:68:BA:53:2A:0C:EB:0C:61:39:2A:02:6A:B9:53:42:78:BA:22:48:FD:B6:13:0A:63:26:C2:1B:B8:52
+        sources:
+          - name: Google Play
+            issue: CB-386
+            apk:
+              sha256: c46f2e2f899c520cd416bdb58d0d27b9e0d303a1db195a1fbc61cd4ee90d99fd
   - package: org.runnerup
     signature:
       - fingerprint: FF:83:AE:6F:E5:8C:71:DF:B3:77:5A:D2:52:F4:56:11:33:94:EF:21:4C:99:68:D3:ED:4B:2B:5A:6A:40:20:E6
