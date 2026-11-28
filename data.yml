@@ -838,6 +838,14 @@ packages:
             issue: GH-3943
             apk:
               sha256: 293de064128917021830250c1183c909f0abe7a30a31793a462a78f045753590
+  - package: au.gov.border.myvevo
+    signature:
+      - fingerprint: D1:87:CC:3F:11:CD:34:4A:B5:97:A6:BA:78:B3:C8:04:85:76:9C:C4:3F:9A:42:94:52:C6:9C:39:32:2F:8A:52
+        sources:
+          - name: Google Play
+            issue: GH-3953
+            apk:
+              sha256: 4c9087f9e60c60b691ed6c3f9496855e7055497edbc5bf3e2b96890e9b1d4e69
   - package: au.gov.homeaffairs.aia
     signature:
       - fingerprint: 19:93:B3:CE:B3:DF:AD:AE:96:5F:CD:C8:14:5F:1F:B6:98:CB:E1:21:AD:2E:79:16:31:C6:74:EE:0A:B4:D4:CB
