@@ -1071,6 +1071,15 @@ domains:
         fingerprints:
           - E8:58:37:5B:7C:45:CF:C1:D4:E4:F5:1B:4A:D6:59:73:5B:38:2C:82:4F:E2:24:48:36:A8:14:AD:7A:F3:00:61
     dnssec: true
+  - domain: primal.net
+    method: https
+    issue:
+      - GH-4510
+    checked: "2026-11-28T08:36:46Z"
+    packages:
+      - package: net.primal.android
+        fingerprints:
+          - FC:8B:0F:A9:D8:37:AB:BF:CE:25:A1:D6:54:9E:B3:67:6B:CA:EA:AD:E2:9E:28:53:D3:B3:FD:5F:28:A0:5C:95
   - domain: privacyguides.org
     method: dns
     issue:
