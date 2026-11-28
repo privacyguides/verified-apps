@@ -830,6 +830,14 @@ packages:
             issue: GH-787
             apk:
               sha256: 29c0190fd7524f2b77121c302d4114a7504dcb2ba0152a8835b17a445a2dd9ab
+  - package: au.com.skybus
+    signature:
+      - fingerprint: 59:87:0A:5D:FC:42:68:3A:BC:D6:1D:F8:D3:C6:48:5C:C2:33:5C:73:91:3E:44:56:D9:72:86:80:8B:13:A2:62
+        sources:
+          - name: Google Play
+            issue: GH-4406
+            apk:
+              sha256: 25b228625f4eb3f80a488106ec31f4a48698c60daa5bf50dfd6817deb73eebfe
   - package: au.com.up.money
     signature:
       - fingerprint: F0:7D:34:00:53:E1:34:B3:E8:A2:CF:66:8F:12:1A:AE:E8:A6:46:14:71:3A:75:72:AD:F7:4A:DB:C3:F1:C2:16
