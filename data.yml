@@ -3180,6 +3180,14 @@ packages:
             issue: GH-1438
             apk:
               sha256: 0c61f827fc0b17fea8edada31a01a5bc72e1cbaa7d18513c7e87822945b8fb64
+  - package: com.chase.intl
+    signature:
+      - fingerprint: 66:BC:53:10:E1:FD:15:FE:C5:6E:08:AF:7A:BD:35:68:A9:10:13:36:D4:4F:77:40:7C:7A:FB:37:D0:E8:92:6F
+        sources:
+          - name: Google Play
+            issue: GH-4148
+            apk:
+              sha256: 1fdfc78a4852100cd56414da8b82592284249a86d319a17ae5eebc600e4ebbb4
   - package: com.chase.sig.android
     signature:
       - fingerprint: 73:F0:D9:50:8A:25:72:C1:10:07:7C:FF:1C:AD:4E:D9:2C:00:F0:20:4F:AF:ED:BA:C8:43:4B:D7:6B:C4:AC:D1
