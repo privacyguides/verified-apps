@@ -5417,6 +5417,14 @@ packages:
             issue: GH-4633
             apk:
               sha256: 7713665f497b1f58a1af18ffd4ea360fb43086f61ae740cfe3979b8c8d6d8792
+  - package: com.goodreads
+    signature:
+      - fingerprint: 17:97:24:FF:B6:5D:E3:51:90:BE:FE:00:3E:52:1E:B6:97:AB:61:DE:DC:E2:5E:46:F5:48:2B:84:52:C5:33:30
+        sources:
+          - name: Google Play
+            issue: GH-4388
+            apk:
+              sha256: bc50137ae824d0d1f9c505d3696d613e471cebf5dbbc4be93e58c7dfd56504ef
   - package: com.goodwy.contacts
     signature:
       - fingerprint: 16:B2:78:46:E9:2E:F1:01:70:EC:BD:AE:3E:C4:07:8B:41:0C:4B:83:2A:60:88:FB:A2:94:2D:77:64:22:6E:B0
