@@ -3838,6 +3838,14 @@ packages:
             issue: GH-2695
             apk:
               sha256: c3780a3145ed17c3ee83237c8ba5583d39e6ff777d972a35903ed188fdea8226
+  - package: com.dragonpass.en.mcmea
+    signature:
+      - fingerprint: 44:38:E6:41:96:54:B7:95:B5:87:62:8A:8E:0F:B8:86:49:91:7C:BA:3D:28:3D:D6:E8:0A:1B:82:D2:0E:EF:3F
+        sources:
+          - name: Google Play
+            issue: GH-3862
+            apk:
+              sha256: 116c3b6ccaa9a02cb9a535479f3929ec5551c7e9cfe13bf01bb0b879c118678f
   - package: com.drdisagree.colorblendr
     signature:
       - fingerprint: 4A:F4:FF:A1:2C:E9:08:15:A1:77:5C:46:04:EA:16:C1:9F:5B:ED:2A:6E:09:AE:7C:3C:92:81:59:82:AF:05:2E
