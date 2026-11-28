@@ -14811,6 +14811,14 @@ packages:
             issue: GH-4526
             apk:
               sha256: 100d75129b3fc6d0d5b220d0a4dc75351084be44294152b1bd411e5847e32f30
+  - package: io.vertretungsplan.client.android
+    signature:
+      - fingerprint: 2F:E2:B0:9C:20:DC:13:3F:DB:E3:02:12:7B:92:86:7E:1A:EA:8E:03:5B:46:60:2C:37:E0:B8:06:23:DB:7D:4A
+        sources:
+          - name: F-Droid
+            issue: GH-4248
+            apk:
+              sha256: 23d3268d5f900b31d5ba957130f733f72837175172e437217aeed7f25b8b8148
   - package: io.vikunja.app
     signature:
       - fingerprint: FE:24:9E:50:D7:7B:69:32:BC:E3:3F:99:4A:C7:59:2C:A6:1E:3D:3A:9A:A0:A9:FD:41:78:0F:6A:A1:6B:BA:5D
