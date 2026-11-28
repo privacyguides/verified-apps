@@ -15876,6 +15876,14 @@ packages:
             issue: GH-6324
             apk:
               sha256: d53e8e6c144cd7d64e49d47245c1e957c6e01fbccf313d33a19c161469eec6d6
+  - package: mobi.lockdown.weather
+    signature:
+      - fingerprint: 4E:8F:84:11:76:6F:D5:42:DA:DE:C0:72:6F:A5:A2:1B:57:5F:A8:A8:5B:4B:9F:BA:D0:85:D2:CE:CE:78:B5:24
+        sources:
+          - name: Google Play
+            issue: GH-4790
+            apk:
+              sha256: b991de3c440e6eccd111c26fa86255b1a2417d01500c8dec4cfd80bfb10336dc
   - package: moe.nb4a
     signature:
       - fingerprint: 35:76:27:58:CE:86:A6:EC:29:7D:9C:CA:C6:89:46:9B:C4:3B:9F:ED:8A:E1:B2:7F:10:0A:86:BB:AC:00:A0:55
