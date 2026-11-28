@@ -11449,6 +11449,14 @@ packages:
             issue: GH-841
             apk:
               sha256: 09d1a31494b82a242d2d573da53df59797d82c641869817ca337575e49d6e002
+  - package: com.virginaustralia.vaapp
+    signature:
+      - fingerprint: C8:8F:A9:C8:DE:DC:75:E8:C3:95:6F:55:17:6C:25:C7:71:73:47:C0:DD:98:05:DF:28:6B:C2:C2:A1:69:AB:1A
+        sources:
+          - name: Google Play
+            issue: GH-4412
+            apk:
+              sha256: d1fffae28e884a13f02080c43a3d034d1a649d4980fecb21a04d2a03e0b9cb82
   - package: com.vishal2376.snaptick
     signature:
       - fingerprint: 68:25:30:97:45:04:37:10:7A:C4:6C:17:90:4E:10:2C:E3:CA:3F:A7:AE:5C:EC:F3:67:AC:38:BF:48:48:90:72
