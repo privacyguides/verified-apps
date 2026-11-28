@@ -13261,6 +13261,14 @@ packages:
             issue: CB-143
             apk:
               sha256: 2fc146623736fabbd6d066227d05a394b58aebb42ff89d60d35da3e0b4e919a1
+  - package: eu.frigo.dispensa
+    signature:
+      - fingerprint: B5:56:24:3B:EF:2A:5C:DA:15:DF:15:8D:DC:34:34:D6:27:20:F9:DE:34:EE:F5:E4:C4:B0:0A:EC:89:4E:AF:8C
+        sources:
+          - name: F-Droid
+            issue: GH-3917
+            apk:
+              sha256: 619e753060606420c640e06ad47e7e3b8fe6274f6041a7f6c741bb8150f8bfd1
   - package: eu.heili.wormhole
     signature:
       - fingerprint: 57:F6:F8:E7:72:92:E1:61:5D:E2:3D:43:49:7F:00:7E:25:68:5A:B1:54:69:6D:31:BD:10:32:96:ED:65:35:18
