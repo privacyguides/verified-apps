@@ -806,6 +806,14 @@ packages:
             issue: GH-5794
             apk:
               sha256: 273d7233a5596b359997a11cb0c31d7433eb92a16306d8b6fb7acd4dd9f87cc8
+  - package: au.com.nab.mobile
+    signature:
+      - fingerprint: CE:E8:64:A9:B7:F3:99:BA:A6:3E:FF:04:3D:5A:1B:24:C1:D8:6F:1B:44:CF:BB:11:1A:0A:F3:4C:83:3D:AF:6A
+        sources:
+          - name: Google Play
+            issue: GH-4395
+            apk:
+              sha256: 086090a9e6a342ce469bf9b0a400ff38add2a3fe048955d0b75ecc240c8d3f18
   - package: au.com.qantas.qantas
     signature:
       - fingerprint: 85:DB:DE:85:4E:B1:EA:5A:05:4E:43:4B:D3:FF:8F:2A:C3:EF:78:B6:8A:A9:13:EA:F4:72:27:14:D8:FB:42:60
