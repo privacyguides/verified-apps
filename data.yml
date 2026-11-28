@@ -3631,6 +3631,14 @@ packages:
             issue: GH-5033
             apk:
               sha256: 47404936e7767c4609fc8b3e837e3c6f695e1a567421f69162c001c1e7a72773
+  - package: com.clivebryant.camflip
+    signature:
+      - fingerprint: 63:9D:A2:07:73:AF:CE:9E:3B:7D:4C:E0:0D:30:8D:A2:5A:8C:B2:69:5A:64:3A:37:8A:43:6D:59:C9:15:D0:26
+        sources:
+          - name: Google Play
+            issue: CB-325
+            apk:
+              sha256: a4d22c11b3cbc076f051b2ae65fdd7329b4c676937a693a9d577c4c44cefa3b9
   - package: com.cloudflare.onedotonedotonedotone
     signature:
       - fingerprint: 27:3A:3A:5E:09:DC:72:0D:3B:39:45:16:2E:72:4D:9A:69:B2:1F:C5:42:BE:D7:45:7F:11:59:66:B1:45:E8:BC
