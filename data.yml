@@ -7010,6 +7010,14 @@ packages:
             issue: GH-1041
             apk:
               sha256: 85c95fb0e2cda5cdacc7f5bca360e3384e444de19bdffdf0d806b679bb612c18
+  - package: com.kurtlourens.no_mans_sky_recipes
+    signature:
+      - fingerprint: D4:90:81:AB:C8:BE:3A:E1:8B:82:85:DB:1B:9B:5E:4B:02:E2:53:47:5D:05:DD:3C:94:F2:2B:E9:FD:6D:51:79
+        sources:
+          - name: Google Play
+            issue: GH-4374
+            apk:
+              sha256: 91e4fba7459919f7ceb8861f70a87b110e6b6694d367b65ef27e09b454a74783
   - package: com.kylecorry.trail_sense
     signature:
       - fingerprint: 8A:0A:C4:74:32:1E:FD:27:8E:E1:05:BF:35:F6:7A:26:4B:94:3F:C4:D0:38:71:A0:1C:95:71:7A:D5:24:A2:62
