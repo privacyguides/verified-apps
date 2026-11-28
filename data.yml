@@ -4894,6 +4894,14 @@ packages:
             issue: GH-6764
             apk:
               sha256: 6c4289089dba1153b505453e3a4940505f6e56f901be6882e563d0b94495e05f
+  - package: com.flyerschool.app
+    signature:
+      - fingerprint: 2E:F8:61:3C:85:7B:2E:CB:16:78:4C:04:DE:E0:2E:4C:AB:78:ED:AB:2F:17:4F:31:0D:42:65:87:98:10:18:D6
+        sources:
+          - name: Google Play
+            issue: GH-4885
+            apk:
+              sha256: 67ae64d6021041625fc08eb0e991dec6b771e07ac904f6025f8c0ac6a971a7de
   - package: com.flyersoft.moonreader
     signature:
       - fingerprint: 5A:C6:46:EB:C6:80:17:E4:CC:58:2B:11:B1:C2:AE:5D:29:B1:5D:9B:0A:C3:A5:4F:C6:09:72:41:7B:41:C9:AD
