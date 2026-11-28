@@ -18506,6 +18506,14 @@ packages:
             issue: GH-7051
             apk:
               sha256: 0bed413d2a7a45c5c37c5cbd19efe3e49ab33725740aaf143324cf796ffcfaa9
+  - package: org.woheller69.exifedit
+    signature:
+      - fingerprint: ED:93:4E:C7:1B:86:A3:72:BC:2E:5D:9F:9E:FD:FB:B5:2A:11:B8:97:C0:00:BA:E6:A3:3A:C5:9F:79:88:C6:B5
+        sources:
+          - name: F-Droid (IzzyOnDroid)
+            issue: GH-4872
+            apk:
+              sha256: 8b513c02bcbfba9d69b6ccc21811a108f04e8f735202df42302422b98078afa3
   - package: org.woheller69.gptassist
     signature:
       - fingerprint: B7:07:DB:CA:61:C2:07:CE:74:BE:61:3B:77:53:8D:50:08:A6:1F:9E:7E:2E:BC:69:56:FA:B3:43:1A:77:8E:65
