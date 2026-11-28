@@ -4891,6 +4891,16 @@ packages:
             issue: GH-3463
             apk:
               sha256: cf2c87b877d949c65017e545d675dc073dda6a64a9dea60e8346c7105b382d95
+  - package: com.fresha.Fresha
+    signature:
+      - fingerprint: 75:2B:FB:A4:64:88:C2:8B:84:45:CD:AF:6E:D5:12:75:41:33:72:C8:9D:81:AA:07:E0:AD:31:E1:02:D6:E9:0B
+        sources:
+          - name: Google Play
+            issue: GH-4386
+            apk:
+              sha256: ede00cca19f73c3c1e9e1ecc2e5bfaba7a798fdaddfa20f05057629be4d32cad
+          - name: HTTPS Verified Domain
+            issue: GH-4386
   - package: com.fronius.solarweb
     signature:
       - fingerprint: 5A:6A:DE:A2:F3:F8:49:65:8E:8D:3E:8B:05:4A:75:A4:86:D7:5B:E6:1A:BC:B7:60:8B:09:4B:62:DA:85:51:3E

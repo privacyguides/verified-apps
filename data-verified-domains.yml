@@ -566,6 +566,18 @@ domains:
         fingerprints:
           - 4A:7D:08:F0:D2:54:5E:07:C8:D6:39:34:A3:B4:4D:91:CD:F2:81:DE:B4:FC:BA:A2:BF:15:83:38:70:20:F4:CD
           - 52:8F:37:4B:52:6C:08:97:79:D5:A2:CE:DE:A4:F0:54:F1:71:13:36:21:88:41:7A:84:7C:E0:58:F0:83:54:82
+  - domain: fresha.com
+    method: https
+    issue:
+      - GH-4386
+    checked: "2026-11-28T07:58:39Z"
+    packages:
+      - package: com.fresha.Fresha
+        fingerprints:
+          - 0C:E9:36:C1:2B:D7:B6:9E:D1:15:64:E1:FD:F0:F3:80:0E:97:00:1A:7B:89:EC:9B:59:DF:74:3F:83:EA:44:86
+          - 75:2B:FB:A4:64:88:C2:8B:84:45:CD:AF:6E:D5:12:75:41:33:72:C8:9D:81:AA:07:E0:AD:31:E1:02:D6:E9:0B
+          - 98:CC:12:35:AB:03:CA:36:4E:23:ED:7D:A2:2D:C4:F9:4C:2D:9B:C0:6B:87:40:A9:E4:F2:2F:2D:A4:4B:C3:12
+          - FF:F1:AC:91:0C:AB:32:CF:FC:AC:D0:0D:5F:1C:D3:20:4C:1D:D7:15:43:8A:FB:43:0E:3E:7D:9A:ED:0D:F8:EA
   - domain: frontpage.reddit.com
     method: https
     issue:
