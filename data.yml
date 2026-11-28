@@ -18425,6 +18425,18 @@ packages:
             issue: GH-6930
             apk:
               sha256: b21f2341594c01fc935e938e8d7f1e00d91e8897deef1fd3783521489fcca6ba
+  - package: trailence.org
+    signature:
+      - fingerprint: E4:41:B1:56:BC:74:53:5C:82:EB:1A:85:52:12:75:B4:70:B7:38:55:E7:92:A7:BD:E7:E9:CD:45:4F:5D:BB:C5
+        sources:
+          - name: F-Droid
+            issue: GH-3919
+            apk:
+              sha256: b32781ef275309b0a8597726619d3a64150df214aa23d393a48d05c820087d77
+          - name: Google Play
+            issue: GH-3919
+            apk:
+              sha256: 12ff999981b11792dd49e528f8c48691bc88eacf9e4d65f504d8bf66787f07c4
   - package: tribixbite.cleverkeys
     signature:
       - fingerprint: 3C:70:DE:88:52:FC:A5:BB:27:9C:99:98:D5:58:EA:76:06:13:1F:1F:93:7A:F3:5C:C9:43:EE:E1:AE:DF:B9:7E
