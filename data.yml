@@ -6324,6 +6324,14 @@ packages:
             issue: GH-2291
             apk:
               sha256: 2ff8bcfffe4b9c9608df45dec0c84f50d188c65a32f981ed358acfb6596494be
+  - package: com.grid.application
+    signature:
+      - fingerprint: A2:50:44:21:75:C8:50:5F:06:4E:2A:8A:D2:30:81:BB:96:26:9A:C8:2C:B3:0A:4C:E8:76:FF:F3:4A:F3:7F:28
+        sources:
+          - name: Google Play
+            issue: GH-5034
+            apk:
+              sha256: 24087ffbb8c3a4f3bc8a534f4c2cf460aeec97899c7140ea2974675e151370df
   - package: com.grindrapp.android
     signature:
       - fingerprint: 6E:21:A5:F9:66:A7:25:26:28:CD:8F:59:82:D9:30:86:A0:FC:F7:6C:09:ED:B9:D7:73:19:64:BB:1C:84:28:97
