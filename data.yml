@@ -17636,6 +17636,14 @@ packages:
             issue: GH-1511
             apk:
               sha256: 140d70c8432c55f18c7cfefc8df8ae8cfc85d4f72dccff52d1ea1d2fd09c0654
+  - package: org.sunsetware.phocid
+    signature:
+      - fingerprint: ED:20:B1:76:70:9C:0E:63:24:00:EE:D8:D5:BD:B3:AB:D5:10:08:67:19:FE:97:FE:90:46:B9:22:F8:FA:AF:4F
+        sources:
+          - name: F-Droid
+            issue: GH-4227
+            apk:
+              sha256: c2712822ba7be3bd76415127daa39b55afa3b1bae6d3a2a759636c11ccf647ef
   - package: org.tasks
     signature:
       - fingerprint: 9F:78:EE:B2:7C:90:2A:98:1B:3B:FB:51:F6:FE:78:90:49:A0:0C:C1:AA:F0:83:B4:ED:16:B9:85:4B:3D:28:83
