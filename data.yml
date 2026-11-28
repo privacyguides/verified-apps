@@ -33,6 +33,16 @@ packages:
             issue: GH-7346
             apk:
               sha256: d353dbac7d3c718a109e41b894cc6210e1c00f8fad78ed0b4d3dbb60cc62437c
+  - package: ai.mistral.chat
+    signature:
+      - fingerprint: 1F:3E:1E:B7:50:D1:38:27:0B:F6:98:38:B8:44:BD:F8:89:CA:C3:87:F1:B0:CC:C8:EA:96:AE:7E:25:3A:4B:D8
+        sources:
+          - name: Google Play
+            issue: CB-467
+            apk:
+              sha256: 177cf8294cab50b0c9f28ad0e458f10c25066e0d36cb49614aab4351ac80934a
+          - name: HTTPS Verified Domain
+            issue: CB-467
   - package: ai.privatebydesign.albi
     signature:
       - fingerprint: C6:D4:B4:48:7E:BC:EF:11:47:64:8C:7E:54:A8:11:94:84:40:9C:22:E3:21:D1:64:C8:EF:AB:62:12:DD:F4:CE

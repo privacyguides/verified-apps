@@ -433,6 +433,16 @@ domains:
         fingerprints:
           - 1E:EC:C4:6F:DC:21:73:43:7D:70:14:0F:16:3A:AA:97:94:1D:41:B0:4D:91:DA:3E:B6:89:AE:C4:F3:39:AB:EB
           - C6:89:3C:53:68:F7:B5:12:2F:EC:DA:FC:6C:4E:CF:49:E0:B3:DC:4E:42:BD:16:6C:DB:64:69:07:78:8C:7F:FA
+  - domain: chat.mistral.ai
+    method: https
+    issue:
+      - CB-467
+    checked: "2026-11-28T17:43:05Z"
+    packages:
+      - package: ai.mistral.chat
+        fingerprints:
+          - 1F:3E:1E:B7:50:D1:38:27:0B:F6:98:38:B8:44:BD:F8:89:CA:C3:87:F1:B0:CC:C8:EA:96:AE:7E:25:3A:4B:D8
+          - 52:AC:1F:0C:2F:25:F2:5C:3B:FB:23:7C:77:21:FC:A8:F5:F2:69:5B:72:4E:03:71:A7:0F:A2:D1:43:27:78:67
   - domain: citymapper.com
     method: https
     issue:
