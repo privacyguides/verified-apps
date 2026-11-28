@@ -6615,6 +6615,14 @@ packages:
             issue: GH-4390
             apk:
               sha256: 3999ab9618d3be554719aec1635bc337422ebb4523b6217653873201debd0b35
+  - package: com.inkren.skritter.chinese
+    signature:
+      - fingerprint: 78:1C:AD:9A:86:3F:BA:DA:C1:DA:8F:CD:B0:D2:4C:8E:BB:CC:B5:43:B8:68:72:66:E5:7B:1B:43:46:BD:56:0C
+        sources:
+          - name: Google Play
+            issue: GH-4886
+            apk:
+              sha256: f3a5cf316a965c69f271a5c55195e9bfccbee5bf4e7a7bfcf99b4d878027fa52
   - package: com.innersloth.spacemafia
     signature:
       - fingerprint: 67:A4:DF:80:B1:D9:A4:88:FF:DB:10:07:54:84:1F:D8:3F:90:9C:7C:73:DF:16:E2:46:8C:EC:75:AB:81:C5:8A
