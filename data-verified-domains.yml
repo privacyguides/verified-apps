@@ -203,6 +203,16 @@ domains:
       - package: net.koofr.app
         fingerprints:
           - F7:CD:D1:CC:59:94:D8:CE:9C:E2:D6:DF:A5:1B:82:3B:E9:17:DC:61:F2:52:8A:28:B2:05:21:4E:43:96:6B:C1
+  - domain: app.naturalgrocers.com
+    method: https
+    issue:
+      - GH-4883
+    checked: "2026-11-28T10:46:44Z"
+    packages:
+      - package: com.naturalgrocers.app
+        fingerprints:
+          - 1F:6A:00:82:C7:61:84:82:58:B0:FB:58:71:20:E9:76:67:F9:5A:21:96:94:04:41:3B:4C:00:6C:AB:1E:15:5A
+          - BB:99:9C:EB:66:01:97:64:66:5F:9C:11:F5:08:53:A1:57:7D:7F:B3:E0:42:EC:37:41:02:0C:AA:B3:4C:05:24
   - domain: appverifier.roundsalmon4.com
     method: dns
     issue:

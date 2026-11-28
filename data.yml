@@ -8249,6 +8249,16 @@ packages:
             issue: GH-6402
             apk:
               sha256: 1d4da9e505155b79673dd3cf6e55a8e4fa98593cb6d5830345ec851856d5a3e9
+  - package: com.naturalgrocers.app
+    signature:
+      - fingerprint: BB:99:9C:EB:66:01:97:64:66:5F:9C:11:F5:08:53:A1:57:7D:7F:B3:E0:42:EC:37:41:02:0C:AA:B3:4C:05:24
+        sources:
+          - name: Google Play
+            issue: GH-4883
+            apk:
+              sha256: 1cfdaff5b3586ff7d649d4ad0e76ef1790efacaa9ecdca649da824beea7403f4
+          - name: HTTPS Verified Domain
+            issue: GH-4883
   - package: com.naturallybeing.fireready
     signature:
       - fingerprint: 6E:08:F5:F2:48:6D:CB:D3:DB:76:1C:FA:28:1A:45:E3:3F:68:B0:A9:F0:19:2D:B9:31:1F:DD:19:E6:D5:8F:35
