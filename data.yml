@@ -2373,6 +2373,14 @@ packages:
             issue: GH-1129
             apk:
               sha256: 020f9e2cb13c1321bf99663fe6b5418049fcc1a9819f7c8f8424e72761598655
+  - package: com.asif.followme
+    signature:
+      - fingerprint: 20:51:69:D7:6F:3F:E4:07:F6:C1:01:C8:B8:30:43:A5:F4:BE:C9:DE:EC:57:15:97:C2:54:18:93:A2:EC:12:E6
+        sources:
+          - name: Google Play
+            issue: GH-5535
+            apk:
+              sha256: 1d30850c77952760cba4ad89419501d62be619e1b96638d94dbf13c350519804
   - package: com.asksakis.freegate
     signature:
       - fingerprint: 3B:F1:A6:F7:4A:92:28:AA:0F:59:0E:84:54:3A:5A:8F:C9:C8:C9:C3:0C:49:8C:A1:F3:3B:E3:5A:DA:9E:BB:A6
