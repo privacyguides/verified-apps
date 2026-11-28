@@ -20087,6 +20087,14 @@ packages:
             issue: GH-6697
             apk:
               sha256: 964943a5b16088aa93ea8c19d33d67ed8328e9b8fd2f7cc93c952b3aa922ef22
+  - package: uk.co.brennan.brennanapp
+    signature:
+      - fingerprint: B5:CF:67:40:DC:A4:A0:3A:11:41:93:6E:F5:6E:5B:A8:7C:BD:F7:60:8E:2D:21:DC:F9:5F:39:A2:A3:A2:23:DB
+        sources:
+          - name: Google Play
+            issue: GH-3925
+            apk:
+              sha256: 89da7cf01f0822faf0ee814d940b18bd474c66cffd6c5d533e2d4a344bda0bfd
   - package: uk.co.classprofessional.cpg.ukascpg
     signature:
       - fingerprint: 16:16:2F:6E:52:C0:E0:80:EC:6B:BB:C8:26:04:BD:74:DA:AD:29:E1:F7:BF:EE:57:1F:AF:8D:D2:A8:EF:BE:CC
