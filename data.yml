@@ -10426,6 +10426,14 @@ packages:
             issue: GH-7842
             apk:
               sha256: c5d5d4397461356fa63d865adb08f68d5e822fcbdd790214ebfdd2f1d8cf59fd
+  - package: com.thetrainline
+    signature:
+      - fingerprint: 4E:15:40:C4:FE:A7:23:E6:BC:A6:9A:BE:FB:7F:1B:32:B3:68:36:E7:A0:E1:FF:19:89:60:B9:8C:C6:5E:08:96
+        sources:
+          - name: Google Play
+            issue: GH-4164
+            apk:
+              sha256: 44c2f69ea19b0f5252642b7b16169861836f7b8fa49a0eaaa2d0993e25d61bbb
   - package: com.thetransitapp.droid
     signature:
       - fingerprint: A0:55:A8:6A:4F:75:38:D3:EE:2D:57:5C:06:74:32:81:B8:13:05:23:73:DE:A5:BF:F1:0D:20:15:81:55:13:41
