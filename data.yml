@@ -10739,6 +10739,19 @@ packages:
             issue: GH-332
             apk:
               sha256: 9f01c3e0ce984b9f8cadc01328e9d3d6bbd168e701a3992d3fd7b1b4de43de00
+  - package: com.slavabarkov.tidy
+    signature:
+      - fingerprint: BA:F2:7B:A3:9D:4E:9C:C7:9B:09:C6:E6:47:86:46:34:DE:FB:14:E8:DD:45:DB:9C:32:89:9F:D7:07:0A:43:C0
+        sources:
+          - name: Direct APK Link
+            issue: GH-1179
+            apk:
+              sha256: 0d6178e8d85ffdb7e534b85bd207aa07754351744d090c6b61aa7419035c52a2
+              link: https://github.com/slavabarkov/tidy/releases/download/1.1/tidy-release.apk
+          - name: F-Droid
+            issue: GH-1179
+            apk:
+              sha256: 0d6178e8d85ffdb7e534b85bd207aa07754351744d090c6b61aa7419035c52a2
   - package: com.smbc_card.vpass
     signature:
       - fingerprint: 10:18:A2:EB:10:EF:51:1F:52:F8:48:4B:11:39:42:FE:99:12:41:26:C0:E1:AF:16:D9:95:3E:AC:5B:84:76:2C
