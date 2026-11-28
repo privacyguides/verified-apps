@@ -6273,6 +6273,14 @@ packages:
             issue: GH-7805
             apk:
               sha256: 7af11aea29dbadc40c9d4d8f97e4fd2026c875747d167bc8ca65b21730f448da
+  - package: com.ifixit.ifixitmobile
+    signature:
+      - fingerprint: 4D:D6:8E:44:4D:82:CC:A6:AD:E4:C9:0E:96:6E:F2:D3:CA:A3:F0:4F:52:46:65:F5:75:EB:95:4F:5F:5F:00:04
+        sources:
+          - name: Google Play
+            issue: GH-4186
+            apk:
+              sha256: cecba7ca0cf981576cfb51cf1331e5d866b74b51b53a3bf0159e89c0ea83b4a9
   - package: com.imangi.templerun2
     signature:
       - fingerprint: F5:F6:53:1C:BD:88:53:16:5E:64:81:4F:8F:D8:C9:28:72:CE:DB:85:AB:AF:29:85:EE:54:93:68:17:21:9E:A6
