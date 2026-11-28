@@ -10536,6 +10536,14 @@ packages:
             issue: GH-8277
             apk:
               sha256: ef6735cc49525a7f27a8a570d3d33e413962efdc78dd3c5144979f3ac8a49632
+  - package: com.tgc.sky.android
+    signature:
+      - fingerprint: 10:53:E2:23:D9:F9:21:90:0D:3D:3D:90:74:13:CC:EE:D4:2C:4A:21:0E:40:96:90:A9:94:03:0A:E8:D2:B5:73
+        sources:
+          - name: Google Play
+            issue: GH-4316
+            apk:
+              sha256: b35e2a9246ed72561fcbcedb94d2907ba73e29ad473976df2e4bdc0a7f069393
   - package: com.tharunbirla.librecuts
     signature:
       - fingerprint: B4:78:1B:17:8D:A1:24:92:9F:BC:81:EA:7C:16:AA:48:E2:04:3C:47:8C:E1:F8:61:C8:8C:A1:2F:39:8A:DA:CD
