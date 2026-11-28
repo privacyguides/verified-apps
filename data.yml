@@ -3120,6 +3120,14 @@ packages:
             issue: GH-1460
             apk:
               sha256: 55822a55d95278d3843707165f3a58ed9ffba1e5c78af6319b1a0b3415848cf4
+  - package: com.capcom.smurfsvillage2
+    signature:
+      - fingerprint: CD:08:48:50:EF:FE:29:63:03:CF:E7:0A:74:F7:49:BD:B3:01:53:27:10:A3:F4:DE:73:57:9C:8F:42:58:71:C5
+        sources:
+          - name: Google Play
+            issue: GH-4342
+            apk:
+              sha256: e5ee50c44a44aa7dc3e4421207e4fdc3484bf90f51a0a7955e20051b4b1b1255
   - package: com.capitalweather.android.weather
     signature:
       - fingerprint: D7:DA:B4:C6:50:B1:FA:11:1D:E0:AF:C4:F9:2C:D6:02:E0:44:D2:97:2D:50:9B:8B:FD:E9:C7:94:A4:50:69:7A
