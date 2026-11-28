@@ -14374,6 +14374,14 @@ packages:
             issue: GH-653
             apk:
               sha256: e9de9981dc1f0ae611be838637ea6e3c56dc2ad90bab50a2c2ee3eb3c3430f8d
+  - package: io.github.gsantner.memetastic
+    signature:
+      - fingerprint: 60:FE:EC:EC:8A:19:A7:08:49:21:18:7A:5F:41:E5:D0:E3:CD:E1:15:C2:73:8D:B0:B7:B7:A4:53:6A:49:31:A1
+        sources:
+          - name: F-Droid
+            issue: GH-4224
+            apk:
+              sha256: e71bed4f7342af4756313b44a91552133700fae8135982326b81b06e148d2a1f
   - package: io.github.hddq.restoid
     signature:
       - fingerprint: F1:5F:66:10:3E:E8:DA:AF:23:C3:91:30:25:50:0F:08:EF:36:08:49:A6:9C:42:7B:ED:7D:B7:01:6C:3B:14:D3
