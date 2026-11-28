@@ -2430,6 +2430,14 @@ packages:
             issue: GH-1023
             apk:
               sha256: c4ce0df0bbb0e82be4e4bd7d8a3e000f08e04457187d560fe2ca3ae52941bf49
+  - package: com.australiansuper.android.australiansuper
+    signature:
+      - fingerprint: 71:9C:E8:07:5F:59:35:16:30:90:CE:F6:A1:B0:EF:99:AC:16:F1:14:62:2E:07:43:DD:C9:23:B3:6F:52:3D:6A
+        sources:
+          - name: Google Play
+            issue: GH-4377
+            apk:
+              sha256: 8414b45e37b4e23bc1bdf92075a6ef5ce483da48a75c29b1eb0b8c2d9aca15db
   - package: com.austrian.connector.android
     signature:
       - fingerprint: 18:CA:8D:A7:D9:24:CA:17:A9:DB:D4:CB:C7:AD:90:59:41:24:B2:45:F1:10:12:DF:73:FE:CC:DB:B9:36:75:F8
