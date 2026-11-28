@@ -306,6 +306,14 @@ packages:
             apk:
               sha256: 0247e7ad3f244cf7d79a00b1bc5780cbf195da6484ad6545b4940223ddb24e52
               link: https://github.com/GrapheneOS/AppStore/releases/download/36/AppStore-36.apk
+  - package: app.grapheneos.camera.play
+    signature:
+      - fingerprint: 24:B4:EB:FB:58:2B:56:1F:BC:C4:56:6E:AA:92:58:F2:30:27:B0:37:A9:48:A7:86:9F:91:7F:9C:4C:1D:27:DF
+        sources:
+          - name: Google Play
+            issue: GH-4869
+            apk:
+              sha256: 7bb825d36373c1c5cb18ff67a623b06681d435882fa832e7862c55a7c666bfe0
   - package: app.hoarder.hoardermobile
     signature:
       - fingerprint: 0A:9F:4A:6B:90:0B:DA:E4:D4:AD:7E:F3:E7:D7:73:90:1D:87:08:84:1A:DB:29:4C:49:4B:18:2A:1E:81:C3:D9
