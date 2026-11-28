@@ -18594,6 +18594,14 @@ packages:
             issue: GH-6387
             apk:
               sha256: eb5c652c5862e7e44acba51904977ad696fb55a87db692b63c2c91aaa02bf1c1
+  - package: org.nutritionfacts.dailydozen
+    signature:
+      - fingerprint: 0D:96:B9:F0:31:6B:BA:F3:1B:CA:9F:F5:9A:44:61:8D:65:10:C9:2F:A9:1A:F1:15:EA:95:BD:C8:70:7A:73:8D
+        sources:
+          - name: Google Play
+            issue: GH-3802
+            apk:
+              sha256: f868d2c665d439231e86abbb1401b16f24dbabc3470bdf7c57704c5097402043
   - package: org.onionshare.android.fdroid
     signature:
       - fingerprint: 0D:EF:4C:8A:3C:5B:65:74:8F:37:DF:F6:DC:DF:FC:AF:3E:85:C7:80:9A:56:51:43:5C:29:09:FB:2B:A2:0B:F6
