@@ -3120,6 +3120,14 @@ packages:
             issue: GH-1460
             apk:
               sha256: 55822a55d95278d3843707165f3a58ed9ffba1e5c78af6319b1a0b3415848cf4
+  - package: com.capcom.smurfsandroid
+    signature:
+      - fingerprint: FA:46:4D:52:5C:B4:B8:8E:2D:4D:B3:98:84:9D:E8:C4:A0:B7:42:AD:C0:D3:58:E3:0D:E6:12:E2:F7:69:90:7A
+        sources:
+          - name: Google Play
+            issue: GH-4343
+            apk:
+              sha256: d51af506a65782dd90f48b1afe6234d47aa88529c1000b5eca8fe87d1a53530b
   - package: com.capcom.smurfsvillage2
     signature:
       - fingerprint: CD:08:48:50:EF:FE:29:63:03:CF:E7:0A:74:F7:49:BD:B3:01:53:27:10:A3:F4:DE:73:57:9C:8F:42:58:71:C5
