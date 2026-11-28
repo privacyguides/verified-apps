@@ -690,6 +690,17 @@ domains:
       - package: com.kgurgul.cpuinfo
         fingerprints:
           - AF:24:23:BE:B5:89:E5:5F:DF:95:1F:DE:2F:23:ED:AA:78:5F:57:C7:14:76:4A:FB:BD:D1:5A:85:F1:AE:D3:3C
+  - domain: kick.com
+    method: https
+    issue:
+      - GH-4222
+    checked: "2026-11-28T06:32:58Z"
+    packages:
+      - package: com.kick.mobile
+        fingerprints:
+          - 69:34:C4:76:33:EE:FF:8F:A0:B8:E8:A5:3B:FF:90:0E:2F:80:7D:FF:FE:3D:E7:8E:D5:D5:75:8A:6F:AA:55:A9
+          - 81:E3:3F:4F:6D:B8:8D:35:A2:23:77:E5:68:1A:28:72:83:BE:18:5E:D4:5E:AB:89:F9:48:11:81:0C:BA:A5:65
+          - B1:23:20:22:72:68:C9:C3:7E:19:0B:49:31:20:A7:F6:CE:83:C0:E9:A7:61:F9:21:3D:F6:77:B5:8D:09:5B:73
   - domain: koleo.pl
     method: https
     issue:
