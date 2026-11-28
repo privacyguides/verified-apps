@@ -314,6 +314,14 @@ packages:
             issue: GH-4869
             apk:
               sha256: 7bb825d36373c1c5cb18ff67a623b06681d435882fa832e7862c55a7c666bfe0
+  - package: app.grapheneos.pdfviewer.play
+    signature:
+      - fingerprint: BA:28:9E:24:11:13:04:4F:E9:9F:D0:0E:CE:49:B8:04:C7:8C:B1:AC:8B:E4:A8:25:75:9D:C9:B9:99:FB:54:45
+        sources:
+          - name: Google Play
+            issue: GH-4884
+            apk:
+              sha256: f2db78293a95838f4ad8c4cc634f4c6e1438693d56cc41c0815f925a8c181075
   - package: app.hoarder.hoardermobile
     signature:
       - fingerprint: 0A:9F:4A:6B:90:0B:DA:E4:D4:AD:7E:F3:E7:D7:73:90:1D:87:08:84:1A:DB:29:4C:49:4B:18:2A:1E:81:C3:D9
