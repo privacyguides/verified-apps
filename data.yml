@@ -14000,6 +14000,14 @@ packages:
             issue: GH-337
             apk:
               sha256: 3ccbb551cdc986939339f11195c294d43b132587d0d59e80f12985b54a7384aa
+  - package: energy.octopus.electricjuice.android
+    signature:
+      - fingerprint: 6C:1B:F3:DD:76:0D:9C:E2:00:C4:8E:88:33:66:A3:B1:A4:3F:35:08:8A:F1:35:78:5D:C8:17:80:8E:74:4E:E9
+        sources:
+          - name: Google Play
+            issue: GH-5041
+            apk:
+              sha256: 826cd0034649ed54677eb6e5945d556598cfed02631ed6d15bf0e0eed47aeb77
   - package: ephemeralwp.safespace
     signature:
       - fingerprint: BC:FC:C9:21:A8:16:7A:FE:3C:3B:52:8F:02:E1:57:D7:66:09:D4:17:AD:CB:80:E2:A2:9A:59:5F:C6:CE:74:83
