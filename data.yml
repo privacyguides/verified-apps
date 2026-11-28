@@ -19211,6 +19211,16 @@ packages:
             issue: GH-896
             apk:
               sha256: 060ee62638739451f1ab8c21ecfb5e4b5340c653fc5a66460d4ce86dbff37eb9
+  - package: pl.allegro
+    signature:
+      - fingerprint: 10:3F:3E:C4:68:35:A8:D0:D2:DF:A6:C0:51:78:0F:68:E4:36:0B:A2:EF:FC:2D:87:A7:FB:A1:03:FC:8A:2E:3F
+        sources:
+          - name: Google Play
+            issue: CB-392
+            apk:
+              sha256: f36eff285278d1e7af2ea418c23ab4f78b03fd26bc362431f2642f60ec8c5097
+          - name: HTTPS Verified Domain
+            issue: CB-392
   - package: pl.bydgoszcz.aktywna
     signature:
       - fingerprint: B0:A9:72:42:DB:82:E3:DA:27:5E:49:E9:1F:25:23:6C:A0:7F:AA:AC:61:4F:54:49:9E:D6:23:B9:65:DA:3E:26
