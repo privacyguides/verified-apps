@@ -15012,6 +15012,14 @@ packages:
             issue: GH-2049
             apk:
               sha256: 8eddfbcb64c57616b09269f2369381ebf60324afb37af5429a62b23cd633573d
+  - package: it.rignanese.leo.slimfacebook
+    signature:
+      - fingerprint: 3C:6C:E8:92:24:64:58:00:52:F7:F0:98:DC:B5:42:CE:51:7C:24:EE:42:0F:45:81:4F:55:BC:BA:AE:8E:25:1A
+        sources:
+          - name: F-Droid
+            issue: GH-4350
+            apk:
+              sha256: 5606e03804b6316c18b4412b9e87616da75a5c66e24b44e92412665b4ee6e29f
   - package: jp.co.ana.android.tabidachi
     signature:
       - fingerprint: D8:BE:42:57:71:A1:1F:7A:2B:12:1C:DB:21:A1:47:10:42:0F:1C:AA:16:65:EB:55:4E:9F:F5:AD:33:7C:91:FD
