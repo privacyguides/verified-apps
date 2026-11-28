@@ -4780,6 +4780,14 @@ packages:
             issue: GH-1609
             apk:
               sha256: d3fe7f2a36c4b4581cb5eb385d1849eda94b0f367198a00971d85c090d7de61c
+  - package: com.gec.MarineApp.WorldViewerLite
+    signature:
+      - fingerprint: 4C:C4:0E:1D:07:3F:52:F3:4A:1C:E8:0C:FE:A0:C3:EF:1F:7A:D0:39:B4:98:E5:6F:2C:91:9A:86:07:6A:E7:7E
+        sources:
+          - name: Google Play
+            issue: GH-3840
+            apk:
+              sha256: f8bb2fa214412cbb1791ce03875179a2c92e1a9cec34b989f1d4c7bb9b1256d2
   - package: com.geeksville.mesh
     signature:
       - fingerprint: A9:3B:45:65:68:C1:75:DB:08:00:A0:9F:06:77:7F:89:2D:81:24:32:AD:B8:A3:DF:73:BC:3E:7F:06:C8:0C:6D
