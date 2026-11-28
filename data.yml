@@ -2602,6 +2602,14 @@ packages:
             issue: GH-8074
             apk:
               sha256: 2a40d3407820184663f76adbe9948213caa6ed4356bd49a8bbfd34a58ebc6933
+  - package: com.babbel.mobile.android.en
+    signature:
+      - fingerprint: 1E:8F:BA:55:02:36:24:64:20:1D:B8:05:FB:CD:4A:A5:4D:F3:92:63:B0:0D:EC:93:56:B0:EC:2A:51:27:68:41
+        sources:
+          - name: Google Play
+            issue: GH-5527
+            apk:
+              sha256: 0b42a3904e17c7c1979cb6919eb143bd359e8795517f5d7938119f7d7703c67e
   - package: com.badgermeter.eyeonwater
     signature:
       - fingerprint: AB:67:24:26:F0:5D:4F:58:25:49:68:D6:F2:EB:9A:86:A4:EB:26:EA:95:9E:42:1B:21:A5:B3:B0:CF:E4:44:90
