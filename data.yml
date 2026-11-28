@@ -15463,6 +15463,14 @@ packages:
             issue: GH-533
             apk:
               sha256: 745f5e9f571488ff149e18b92d960f6bda4dd9466dc1561240200511986093cb
+  - package: io.tessie.app
+    signature:
+      - fingerprint: CC:82:5E:47:76:05:C7:4C:C4:D6:E4:93:F8:46:38:06:D0:FC:B8:0D:53:CE:17:7C:54:6D:21:0E:AC:92:11:F5
+        sources:
+          - name: Google Play
+            issue: GH-5172
+            apk:
+              sha256: 0eba5ec6489c6a53827e727d61678412074a67f7c6f3cc0afaa724344c0d64d6
   - package: io.timelimit.android.open
     signature:
       - fingerprint: 0C:26:D7:E9:18:58:89:F3:2F:BC:AD:1C:F2:71:C0:3E:A2:D0:70:69:1A:08:5A:2E:8F:D9:20:C1:CC:02:F2:4E
