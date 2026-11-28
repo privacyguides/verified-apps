@@ -10966,6 +10966,14 @@ packages:
             issue: GH-75
             apk:
               sha256: 7ad10b100f2790b046f324fb54881968141f9c776e405e55e6aea4b0fd5f24b2
+  - package: com.talpa.hibrowser
+    signature:
+      - fingerprint: D0:CA:4F:E9:DE:DE:09:99:DF:21:CD:1E:BA:16:50:3C:19:8D:91:2C:DC:0A:42:B5:AA:4B:D9:6A:8F:8E:DC:32
+        sources:
+          - name: Google Play
+            issue: CB-338
+            apk:
+              sha256: cbea1c2567266add2ab6a0befea8cbd74063d2093a7e68c5d75bb9c1f1ccdca5
   - package: com.taran.mybus
     signature:
       - fingerprint: 48:30:60:7F:D2:C4:2A:FD:77:6D:80:A7:76:22:D0:55:05:DB:BE:F4:FC:64:C6:24:5F:31:C1:84:58:F5:6D:4C
