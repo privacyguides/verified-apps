@@ -12565,6 +12565,14 @@ packages:
             issue: GH-5039
             apk:
               sha256: 8033516c712a67b6b862c44746d8b038f73e88650e8565ea01bb3cf123bfb0ee
+  - package: de.adac.tourset
+    signature:
+      - fingerprint: E9:D5:05:AB:A7:37:92:20:33:B8:7B:A1:3A:AA:6C:F4:A2:E0:4E:24:40:61:35:70:5F:4C:9D:98:61:18:A4:A5
+        sources:
+          - name: Google Play
+            issue: GH-5040
+            apk:
+              sha256: 514e755ed2106731539b1bc3ec5d504754d63661ae2a6bc822bc9b281bbf8882
   - package: de.aoksystems.amg
     signature:
       - fingerprint: |-
