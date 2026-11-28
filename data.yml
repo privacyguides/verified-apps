@@ -13037,6 +13037,14 @@ packages:
             issue: GH-1066
             apk:
               sha256: b100a6d0333d53f68f23f58209c9618f936f2eb5ef4bbf283ae89a3acb1021b3
+  - package: de.rossmann.app.android
+    signature:
+      - fingerprint: 17:D2:C7:65:FD:56:2F:4B:25:4F:1E:BB:95:74:30:2A:39:04:B1:73:99:1D:56:E8:8E:91:78:62:F1:2D:C2:74
+        sources:
+          - name: Google Play
+            issue: GH-4781
+            apk:
+              sha256: 820cdf0099d78bfabf3d3c8e0a4afdf1969c31df966ebd729a579fc5fc4ffb5b
   - package: de.rwth_aachen.phyphox
     signature:
       - fingerprint: DE:21:41:76:00:30:16:4A:6E:2B:15:5F:91:84:3B:91:F0:60:CB:16:64:48:09:54:2A:DD:BB:04:CA:C2:F3:0C
