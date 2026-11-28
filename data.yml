@@ -11981,6 +11981,14 @@ packages:
               sha256: f34a725c497cb341653ddb3f8f7bd6fe7d1fd9c5981e070a8f62da9eca81e53d
           - name: HTTPS Verified Domain
             issue: GH-7652
+  - package: com.vayunmathur.calendar
+    signature:
+      - fingerprint: 17:6F:CB:25:25:57:3E:5B:E8:E1:CB:3A:49:6D:D9:7B:13:7E:81:CA:5B:88:7A:1D:32:CB:89:4B:4E:57:17:B4
+        sources:
+          - name: F-Droid
+            issue: GH-5148
+            apk:
+              sha256: 2fc8362b0b5494ef36778ecd6f13472ce9c5f2922d007f52c96bbc65bd572d21
   - package: com.vayunmathur.findfamily
     signature:
       - fingerprint: 17:6F:CB:25:25:57:3E:5B:E8:E1:CB:3A:49:6D:D9:7B:13:7E:81:CA:5B:88:7A:1D:32:CB:89:4B:4E:57:17:B4
