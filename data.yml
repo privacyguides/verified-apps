@@ -754,6 +754,16 @@ packages:
             issue: GH-6696
             apk:
               sha256: e43305ccef9a26dcb0638c582d58baaf292fe7655dc05e90e55de8a62d120fbc
+  - package: au.com.amaysim.android
+    signature:
+      - fingerprint: A1:6D:F4:57:D9:29:F4:4B:76:D2:5B:A0:D4:36:4F:0E:42:FA:23:58:BF:CA:94:37:4B:F0:89:AE:F8:60:30:2D
+        sources:
+          - name: Google Play
+            issue: GH-4372
+            apk:
+              sha256: 1a11a6efc371b13ace8af8a89c68408df1876e1b99dc4fa7d7ad964d1305af64
+          - name: HTTPS Verified Domain
+            issue: GH-4372
   - package: au.com.auspost.android
     signature:
       - fingerprint: 7D:69:01:01:6E:7C:5D:09:09:2F:09:A7:5D:AF:3B:3A:91:92:21:6A:3A:F2:F4:12:C6:07:AA:73:F4:63:27:A2

@@ -91,6 +91,15 @@ domains:
       - package: com.alltrails.alltrails
         fingerprints:
           - 48:CE:7D:26:B1:43:13:D8:7F:0D:18:E6:65:09:D8:90:F1:12:B6:94:24:E1:41:C0:09:B1:4F:B4:75:ED:B8:F8
+  - domain: amaysim.com.au
+    method: https
+    issue:
+      - GH-4372
+    checked: "2026-11-28T07:56:35Z"
+    packages:
+      - package: au.com.amaysim.android
+        fingerprints:
+          - A1:6D:F4:57:D9:29:F4:4B:76:D2:5B:A0:D4:36:4F:0E:42:FA:23:58:BF:CA:94:37:4B:F0:89:AE:F8:60:30:2D
   - domain: amazon.com
     method: https
     issue:
