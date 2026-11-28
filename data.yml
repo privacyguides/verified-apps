@@ -8588,6 +8588,14 @@ packages:
             issue: GH-8226
             apk:
               sha256: 2f7984cb8052bfa583c5604ccd60e158d21b1d2d8da76c703f0b3758fac1872f
+  - package: com.neutroncode.nconf
+    signature:
+      - fingerprint: FA:D9:C5:A5:47:86:70:CE:64:8F:26:F7:22:5E:BE:52:F9:DD:52:5D:7F:7C:B1:5A:E9:48:7A:62:94:22:FE:DD
+        sources:
+          - name: Google Play
+            issue: CB-348
+            apk:
+              sha256: 8ecb137ce95bf74b1b5c0ab83191c8653af90bdcce6f7af16df8c377b3353080
   - package: com.newgen.alwayson
     signature:
       - fingerprint: 1E:E2:AE:B5:89:22:EB:1B:83:C4:7E:94:8C:C5:16:08:62:78:5B:1A:CD:13:A8:D2:C6:DB:EF:BF:25:FB:A9:2F
