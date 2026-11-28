@@ -17752,6 +17752,12 @@ packages:
               sha256: 5a3a7c1549b1c661098b807e9682bf74bce2f729b6efb4bbeead3b3ef4a2f7ca
   - package: org.moire.opensudoku
     signature:
+      - fingerprint: 3E:56:00:A0:E6:8B:3A:93:CC:25:53:DA:75:05:B3:D1:67:37:BC:60:50:9C:45:36:7F:24:EE:DE:0B:70:A3:6E
+        sources:
+          - name: Google Play
+            issue: GH-4676
+            apk:
+              sha256: 34fc9c3735344ad1dd3ed8bc37ae542623c3037d0645c3ce7d8ad56e41650d6b
       - fingerprint: A5:4C:E2:9E:BB:02:FC:B9:B4:78:62:05:72:F7:C4:DD:39:B9:03:73:6F:E6:19:96:87:47:1B:A7:29:F4:61:3A
         sources:
           - name: F-Droid
